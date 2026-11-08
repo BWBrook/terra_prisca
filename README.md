@@ -35,8 +35,12 @@ on a specific scan.
 Developed by Barry W. Brook with AI collaborators: Claude (Anthropic; Claude Opus
 5.5 in Claude Code) and Codex (OpenAI). Barry sets direction and reviews; Claude
 wrote the vision, the Daisyworld reconstruction, the fidelity check against the
-digitised 1983 figures, and the tests. Codex's role will be recorded here as it
-joins. Discussion among the three takes place on a shared correspondence board,
+digitised 1983 figures, and the tests. Codex (GPT-6) independently reviewed the
+equations, solver and fidelity claims, added reproducible negative controls,
+and researched the haze-world literature. See the
+[review](models/daisyworld/review/2026-11-08.md) and
+[haze-world groundwork](docs/haze-world-groundwork.md). Discussion among the
+three takes place on a shared correspondence board,
 published in `docs/correspondence/` as reviewed snapshots.
 
 ## Citation

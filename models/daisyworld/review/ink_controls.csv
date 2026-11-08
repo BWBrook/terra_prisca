@@ -1,0 +1,19 @@
+panel,curve,subset,points,median_px,frac_within_3px
+fig1a_neutral,up area black,all,941,4.0,0.475
+fig1a_neutral,up area black,area >5%,463,26.0,0.071
+fig1a_neutral,all-zero null,all,664,1.0,0.946
+fig1b_black,up area black,all,936,0.0,0.952
+fig1b_black,up area black,area >5%,273,0.0,0.982
+fig1b_black,all-zero null,all,665,0.0,1.0
+fig1c_white,up area white,all,897,0.0,0.93
+fig1c_white,up area white,area >5%,487,0.0,1.0
+fig1c_white,all-zero null,all,666,0.0,1.0
+fig1d_both,up area white,all,893,0.0,0.894
+fig1d_both,up area white,area >5%,528,0.0,1.0
+fig1d_both,up area black,all,900,0.0,0.929
+fig1d_both,up area black,area >5%,383,0.0,0.984
+fig1d_both,all-zero null,all,664,0.0,1.0
+fig2_cloud,up area white,all,661,0.0,1.0
+fig2_cloud,up area black,all,914,0.0,0.804
+fig2_cloud,up area black,area >5%,509,0.0,0.996
+fig2_cloud,all-zero null,all,661,0.0,1.0

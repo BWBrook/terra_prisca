@@ -2,6 +2,12 @@
 
 ## Watson & Lovelock (1983): faithful reconstruction
 
+**Independent review (8 November 2026).** The [review report](review/2026-11-08.md)
+confirms the Fig. 1a equilibrium discrepancy and records a solver issue in
+one additional down-sweep point, limitations of the nearest-ink score, and
+recommended wording changes. The model and original results below have not
+yet been revised in response.
+
 **Source.** Watson, A. J. & Lovelock, J. E. (1983). Biological homeostasis of the
 global environment: the parable of Daisyworld. *Tellus B* 35, 284–289.
 [doi:10.1111/j.1600-0889.1983.tb00031.x](https://doi.org/10.1111/j.1600-0889.1983.tb00031.x).
