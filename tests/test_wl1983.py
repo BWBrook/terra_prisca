@@ -115,3 +115,10 @@ def test_black_recovers_on_downsweep_at_1_224(sweeps):
 def test_steady_state_converges_from_seed():
     a, ok = steady_state(np.array([0.01, 0.01]), 1.0, Params())
     assert ok and np.all(a > 0)
+
+
+def test_reseed_retry_exhaustion_does_not_report_convergence():
+    p = EXPERIMENTS["fig1a_neutral"]
+    a, ok = steady_state(np.array([0.0, 0.01]), 1.1439288525058846, p, extinct_below=0.01)
+    assert not ok
+    assert np.max(np.abs(invasion_rates(a, 1.1439288525058846, p)[a > 0])) > 1e-3

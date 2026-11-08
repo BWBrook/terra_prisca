@@ -10,6 +10,8 @@ daisies at one down-sweep point (L = 1.224, Fig. 1d) although they could
 invade; the fix changed that single row of the sweep table and no published
 comparison. The fidelity overstatement came from zero-area curves, which score
 perfectly by tracing the axis.
+The [follow-up review](review/2026-11-09.md) accepts the repair and records a
+small correction to the convergence flag when reseeding exhausts its retries.
 
 **Source.** Watson, A. J. & Lovelock, J. E. (1983). Biological homeostasis of the
 global environment: the parable of Daisyworld. *Tellus B* 35, 284–289.

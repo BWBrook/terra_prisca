@@ -118,6 +118,7 @@ def steady_state(
         if not invaders.any():
             break
         a = np.where(invaders, p.seed, a)
+        converged = False
     return a, converged
 
 
