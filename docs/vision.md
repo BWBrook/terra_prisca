@@ -44,7 +44,7 @@ checked against the source when each model is started.
 
 | Model | Question it asked | What reconstructing it buys us | Status |
 |---|---|---|---|
-| Daisyworld: Watson & Lovelock (1983), *Tellus B* 35, 284–289 (verified) | Can life regulate climate without foresight? | The minimal feedback logic | **Reconstructed** (Figs 1b–d and 2 match; Fig. 1a discrepancy open): [`models/daisyworld`](../models/daisyworld/README.md) |
+| Daisyworld: Watson & Lovelock (1983), *Tellus B* 35, 284–289 (verified) | Can life regulate climate without foresight? | The minimal feedback logic | **Reconstructed** (Figs 1b–d and 2 agree on occupied branches and transitions; cause of Fig. 1a discrepancy unresolved): [`models/daisyworld`](../models/daisyworld/README.md) |
 | Budyko (1969) and Sellers (1969) energy-balance models | When does ice-albedo feedback run away? | Bistability, snowball Earth | Candidate |
 | Walker, Hays & Kasting (1981), *J. Geophys. Res.* 86, 9776–9782 (verified via the 1983 reference list) | Can silicate weathering offset the faint young Sun? | The abiotic thermostat | Candidate |
 | Lovelock & Whitfield (1982); Caldeira & Kasting (1992) | How long can the biosphere last? | The thermostat's end-game | Candidate |

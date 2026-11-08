@@ -1,20 +1,31 @@
-panel,curve,points,median_px,p95_px,frac_within_3px,scan_jumps_L,model_jumps_L
-fig1a_neutral,up area black,941,4.0,70.58,0.475,,
-fig1a_neutral,up temperature,735,0.0,2.0,0.999,,
-fig1a_neutral,thresholds,,,,,[],[]
-fig1b_black,up area black,936,0.0,3.0,0.952,,
-fig1b_black,up temperature,796,0.0,3.0,0.97,,
-fig1b_black,thresholds,,,,,[0.714],[0.713]
-fig1c_white,up area white,897,0.0,7.0,0.93,,
-fig1c_white,up temperature,828,0.0,4.0,0.942,,
-fig1c_white,down area white,876,0.0,22.89,0.826,,
-fig1c_white,down temperature,813,0.0,18.25,0.882,,
-fig1c_white,thresholds,,,,,"[1.188, 1.57]","[1.225, 1.563]"
-fig1d_both,up area white,893,0.0,7.0,0.894,,
-fig1d_both,up area black,900,0.0,4.0,0.929,,
-fig1d_both,up temperature,897,1.0,5.0,0.897,,
-fig1d_both,thresholds,,,,,"[0.713, 1.571]","[0.713, 1.561]"
-fig2_cloud,up area white,661,0.0,0.0,1.0,,
-fig2_cloud,up area black,914,0.0,13.25,0.804,,
-fig2_cloud,up temperature,850,0.0,12.65,0.727,,
-fig2_cloud,thresholds,,,,,[1.517],[1.495]
+panel,curve,subset,points,median_px,p95_px,frac_within_3px,scan_jumps_L,model_jumps_L
+fig1a_neutral,up area black,full,941,4.0,70.58,0.475,,
+fig1a_neutral,up area black,occupied (>5 %),463,26.0,71.81,0.071,,
+fig1a_neutral,up temperature,full,735,0.0,2.0,0.999,,
+fig1a_neutral,null: all-zero area,full,664,1.0,3.61,0.946,,
+fig1a_neutral,transitions,,,,,,[],[]
+fig1b_black,up area black,full,936,0.0,3.0,0.952,,
+fig1b_black,up area black,occupied (>5 %),273,0.0,1.41,0.982,,
+fig1b_black,up temperature,full,796,0.0,3.0,0.97,,
+fig1b_black,null: all-zero area,full,665,0.0,1.0,1.0,,
+fig1b_black,transitions,,,,,,[0.714],[0.713]
+fig1c_white,up area white,full,897,0.0,7.0,0.93,,
+fig1c_white,up area white,occupied (>5 %),487,0.0,1.29,1.0,,
+fig1c_white,up temperature,full,828,0.0,4.0,0.942,,
+fig1c_white,down area white,full,876,0.0,22.89,0.826,,
+fig1c_white,down area white,occupied (>5 %),275,0.0,1.0,1.0,,
+fig1c_white,down temperature,full,813,0.0,18.25,0.882,,
+fig1c_white,null: all-zero area,full,666,0.0,1.0,1.0,,
+fig1c_white,transitions,,,,,,"[1.188, 1.57]","[1.225, 1.563]"
+fig1d_both,up area white,full,893,0.0,7.0,0.894,,
+fig1d_both,up area white,occupied (>5 %),528,0.0,1.41,1.0,,
+fig1d_both,up area black,full,900,0.0,4.0,0.929,,
+fig1d_both,up area black,occupied (>5 %),383,0.0,1.0,0.984,,
+fig1d_both,up temperature,full,897,1.0,5.0,0.897,,
+fig1d_both,null: all-zero area,full,664,0.0,1.0,1.0,,
+fig1d_both,transitions,,,,,,"[0.713, 1.571]","[0.713, 1.561]"
+fig2_cloud,up area black,full,914,0.0,13.25,0.804,,
+fig2_cloud,up area black,occupied (>5 %),509,0.0,2.0,0.996,,
+fig2_cloud,up temperature,full,850,0.0,12.65,0.727,,
+fig2_cloud,null: all-zero area,full,661,0.0,0.0,1.0,,
+fig2_cloud,transitions,,,,,,[1.517],[1.495]

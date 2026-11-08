@@ -10,9 +10,14 @@ calibrated from its own tick marks.
 Two scores are reported per panel:
 - ink distance: for densely resampled points along each model curve that the paper
   plots, the distance to the nearest dark pixel of the scan, in pixels
-  (1 px ~ 0.0017 in L, ~0.36 % area, ~0.25 deg C);
-- thresholds: luminosities of vertical jumps (bifurcations) in the scan's area
-  panel versus those in the reconstruction.
+  (1 px ~ 0.0017 in L, ~0.36 % area, ~0.25 deg C). Any ink counts, so zero-area
+  stretches score perfectly by following the axis: a null row (an all-zero
+  population) shows this per panel, and area curves are also scored on their
+  occupied branch (area > 5 %) alone. Even that subset is a one-way nearest-ink
+  score, not a match to an identified printed curve;
+- transitions: luminosities of vertical jumps in the scan's area panel versus
+  those in the reconstruction. They are transitions under the 0.01 reseeding
+  protocol, not necessarily mathematical bifurcations.
 """
 
 from __future__ import annotations
@@ -36,6 +41,7 @@ from .wl1983 import EXPERIMENTS, hysteresis_sweep, lifeless_temperature
 
 SCAN_SHA256 = "85b32bb0fa9e9314caaea4b4413fb6008c4eb10c7f29c9b1a7dc49333d3fef8f"
 INK = 0.55
+OCCUPIED_PCT = 5.0
 
 # Panel frames in the 300-dpi renderings: page, inner y-axis x, right frame x, top
 # frame y, area/temperature separator y (area 0), x-axis y (0 deg C).
@@ -152,25 +158,36 @@ def main(pdf: Path, outdir: Path) -> None:
         _, xi, xr, ytop, _, yax = frame
         ax.imshow(img[int(ytop) - 30:int(yax) + 60, int(xi) - 60:int(xr) + 20], cmap="gray",
                   extent=(xi - 60, xr + 20, yax + 60, ytop - 30))
-        for label, x, y in model_curves(name, up, down, cal):
-            keep = (x > xi + 3) & (x < xr - 3)
-            xs, ys = _resample(x[keep], y[keep])
-            d = dist[np.round(ys).astype(int), np.round(xs).astype(int)]
-            rows.append({"panel": name, "curve": label, "points": d.size,
-                         "median_px": round(float(np.median(d)), 2), "p95_px": round(float(np.percentile(d, 95)), 2),
-                         "frac_within_3px": round(float(np.mean(d <= 3)), 3)})
-            ax.plot(x, y, "-" if label.startswith("up") else "--", color="red" if label.startswith("up") else "dodgerblue",
-                    lw=0.9, alpha=0.7)
+        zero_axis = ("null: all-zero area", cal["x"](up["lum"]), np.full_like(up["lum"], float(cal["y_area"](0.0))))
+        for label, x, y in model_curves(name, up, down, cal) + [zero_axis]:
+            is_area = "area" in label
+            if is_area and not label.startswith("null") and np.all(y >= cal["y_area"](0.0) - 1e-9):
+                continue  # a species that never occurs only traces the axis (see the null row)
+            subsets = [("full", np.ones_like(x, dtype=bool))]
+            if is_area and not label.startswith("null"):
+                subsets.append(("occupied (>5 %)", y < cal["y_area"](OCCUPIED_PCT)))
+            for subset, mask in subsets:
+                keep = mask & (x > xi + 3) & (x < xr - 3)
+                if keep.sum() < 2:
+                    continue
+                xs, ys = _resample(x[keep], y[keep])
+                d = dist[np.round(ys).astype(int), np.round(xs).astype(int)]
+                rows.append({"panel": name, "curve": label, "subset": subset, "points": d.size,
+                             "median_px": round(float(np.median(d)), 2), "p95_px": round(float(np.percentile(d, 95)), 2),
+                             "frac_within_3px": round(float(np.mean(d <= 3)), 3)})
+            if not label.startswith("null"):
+                ax.plot(x, y, "-" if label.startswith("up") else "--",
+                        color="red" if label.startswith("up") else "dodgerblue", lw=0.9, alpha=0.7)
         lums = up["lum"]
         ax.plot(cal["x"](lums), cal["y_temp"](lifeless_temperature(lums, EXPERIMENTS[name])), ":", color="green", lw=0.8)
         ax.set_title(f"{name}: scan (black), reconstruction (red up, blue down)", fontsize=8)
         ax.axis("off")
         jumps_model = sorted(model_jumps(up) + (model_jumps(down) if "down" in DIRECTIONS[name] else []))
-        rows.append({"panel": name, "curve": "thresholds", "scan_jumps_L": [round(v, 3) for v in scan_jumps(ink, frame, cal)],
+        rows.append({"panel": name, "curve": "transitions", "scan_jumps_L": [round(v, 3) for v in scan_jumps(ink, frame, cal)],
                      "model_jumps_L": [round(v, 3) for v in jumps_model]})
     overlay.tight_layout()
     overlay.savefig(outdir / "wl1983_overlay.png", dpi=110)
-    fields = ["panel", "curve", "points", "median_px", "p95_px", "frac_within_3px", "scan_jumps_L", "model_jumps_L"]
+    fields = ["panel", "curve", "subset", "points", "median_px", "p95_px", "frac_within_3px", "scan_jumps_L", "model_jumps_L"]
     with (outdir / "wl1983_fidelity.csv").open("w", newline="") as fh:
         w = csv.DictWriter(fh, fieldnames=fields, lineterminator="\n")
         w.writeheader()

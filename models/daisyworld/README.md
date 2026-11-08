@@ -2,11 +2,14 @@
 
 ## Watson & Lovelock (1983): faithful reconstruction
 
-**Independent review (8 November 2026).** The [review report](review/2026-11-08.md)
-confirms the Fig. 1a equilibrium discrepancy and records a solver issue in
-one additional down-sweep point, limitations of the nearest-ink score, and
-recommended wording changes. The model and original results below have not
-yet been revised in response.
+**Independent review (8 November 2026).** Codex's [review](review/2026-11-08.md)
+confirmed the equations, the cloud reading and the Fig. 1a equilibrium
+discrepancy. It also found a solver defect and an overstatement in the fidelity
+score; both are addressed in the text below. The solver defect lost black
+daisies at one down-sweep point (L = 1.224, Fig. 1d) although they could
+invade; the fix changed that single row of the sweep table and no published
+comparison. The fidelity overstatement came from zero-area curves, which score
+perfectly by tracing the axis.
 
 **Source.** Watson, A. J. & Lovelock, J. E. (1983). Biological homeostasis of the
 global environment: the parable of Daisyworld. *Tellus B* 35, 284–289.
@@ -61,7 +64,8 @@ The paper leaves these open; each is our choice, with the reason.
 | Growth outside 5–40 °C | β clipped at 0 | The paper says β "is zero when" T is 5 or 40 °C; a negative growth rate would add mortality the model does not describe |
 | Steady state | LSODA (rtol 1e-10) in chunks of 200 time units until the per-capita rate falls below 1e-9 (cap 10⁵ time units; never reached) | Gives the true equilibrium, so that departures in the published curves can be diagnosed rather than copied |
 | Extinction | a < 10⁻⁶ at steady state is set to 0, and then reseeded at 0.01 at the next L | The paper's "or 0.01 if these were zero" needs a definition of zero |
-| Luminosity grid | 0.6 to 1.7 in steps of 0.002 | Fine enough that thresholds are resolved to ±0.002; the paper's step is not stated |
+| Invasion check | If a species set to 0 could grow in the returned environment (x β − γ > 10⁻⁹), it is reseeded at 0.01 at the same L and integration repeated | A species can dwindle below 10⁻⁶ while the other establishes, leaving a boundary equilibrium that is unstable to invasion (review, 8 Nov 2026) |
+| Luminosity grid | 0.6 to 1.7 in steps of 0.002 | Fine enough that transitions are resolved to ±0.002; the paper's step is not stated |
 | Fig. 2 clouds | Cloud albedo 0.8 replaces the black daisies' albedo in the planetary albedo (eqs 4–5) only; their local temperature still uses A_b = 0.25 in eq. (7) | The paper retains "the condition that black daisies are warmer than white". The match to Fig. 2 (below) confirms this reading |
 | Temperature offset | 273, not 273.15 | As printed |
 
@@ -82,25 +86,36 @@ Each published panel was calibrated from its own tick marks: L runs 0.5–1.7,
 and tick residuals are below 0.005 in L. We then measured, for every model
 curve the paper plots, the distance from points along the curve to the nearest
 ink in the scan. One pixel is about 0.0017 in L, 0.36% in area or 0.25 °C.
-Thresholds are the luminosities of the vertical jumps in each area panel. Full
-table: [`fidelity/wl1983_fidelity.csv`](fidelity/wl1983_fidelity.csv).
 
-| Panel | Curves on the scan's ink (median distance, % of points within 3 px) | Published vs reconstructed thresholds (L) |
-|---|---|---|
-| 1a neutral | temperature 0 px, 99.9%; **area 4 px, 48%** | none (smooth curve) |
-| 1b black | area 0 px, 95%; temperature 0 px, 97% | establishment 0.714 vs 0.713 |
-| 1c white | up-sweep area 0 px, 93%; temperature 0 px, 94%; down-sweep 83–88% | collapse 1.570 vs 1.563; re-establishment on the down-sweep 1.188 vs 1.225 |
-| 1d both | white 0 px, 89%; black 0 px, 93%; temperature 1 px, 90% | establishment 0.713 vs 0.713; collapse 1.571 vs 1.561 |
-| 2 cloud | area 0 px, 80%; temperature 0 px, 73% | collapse 1.517 vs 1.495 |
+Any ink counts in that score. A zero-area stretch therefore matches
+the printed axis, and an all-zero population scores 100% within 3 px on Figs
+1b–d and 2 (the *null* rows in the table). The population curves are therefore
+also scored on their **occupied branch** (area > 5%) alone. That is still a
+one-way nearest-ink score, not a match to an identified printed curve: it
+shows that our branch lies on printed ink, not that every printed curve is
+reproduced. Transitions are the luminosities of the vertical jumps in each
+area panel. They are transitions under the paper's 0.01 reseeding protocol, not
+necessarily bifurcations: black's infinitesimal invasion boundary is
+L = 0.716, but a 0.01 seed establishes at 0.714. Full table:
+[`fidelity/wl1983_fidelity.csv`](fidelity/wl1983_fidelity.csv).
 
-**Figs 1b–d and 2 are reproduced quantitatively.** Their equilibrium branches lie
-on the published ink, and establishment thresholds agree to 0.001. The
-remaining differences follow one pattern: each published threshold sits a
-little past the true bifurcation, in the direction of the sweep. Collapses come
-0.007–0.022 later on the way up, and white re-establishes 0.037 later on the way
-down. That is the signature of runs stopped slightly short of equilibrium near
-bifurcations, where relaxation is slow. Most of the points beyond 3 px are on
-these offset jumps.
+| Panel | Occupied area branch (median px, % within 3 px) | Temperature, full curve | Transitions, published vs reconstructed (L) |
+|---|---|---|---|
+| 1a neutral | **26 px, 7%** | 0 px, 99.9% | none (smooth curve) |
+| 1b black | 0 px, 98% | 0 px, 97% | establishment 0.714 vs 0.713 |
+| 1c white | up 0 px, 100%; down 0 px, 100% | up 0 px, 94%; down 0 px, 88% | collapse 1.570 vs 1.563; down-sweep re-establishment 1.188 vs 1.225 |
+| 1d both | white 0 px, 100%; black 0 px, 98% | 1 px, 90% | establishment 0.713 vs 0.713; collapse 1.571 vs 1.561 |
+| 2 cloud | 0 px, 99.6% | 0 px, 73% | collapse 1.517 vs 1.495 |
+
+**On the occupied branches of Figs 1b–d and 2, and on their transitions, the
+reconstruction agrees with the published figures.** Establishment
+transitions agree to 0.001. Each remaining transition sits a little past ours in
+the direction of the sweep: collapses come 0.007–0.022 later on the way up, and
+white re-establishes 0.037 later on the way down. Those offsets account for
+most of the temperature points beyond 3 px. Incomplete settling near the
+transitions, where relaxation is slow, would produce offsets of this sign, but
+the sign alone does not identify it. The luminosity step, finite reseeding and
+scan resolution all limit what can be inferred.
 
 **Fig. 1a does not show the steady state of the stated model.** For neutral
 daisies, local temperature equals T_e. Daisies can therefore persist only where
@@ -119,15 +134,25 @@ We tested two numerical explanations:
 Neither reproduces 1a while keeping the other panels' fit. A slow continuous
 ramp (dL/dt ≈ 0.005 per unit time), fitted to 1a alone, cuts the RMSE from 30
 to 8 percentage points. It captures the steep rise but not the long low foot or
-the tail. Our working conclusion is that Fig. 1a came from a less-converged run
-than the other panels. The exact procedure remains an **open question**, and
-the reconstruction keeps the true steady state.
+the tail.
+
+**The cause is unresolved.** Candidates include:
+- incomplete settling in a separate run;
+- a model or procedure the paper does not state;
+- a coding or plotting error in the original.
+
+None is established by the evidence so far. The reconstruction keeps the
+equation-faithful equilibrium and is not tuned to the printed hump. A bounded
+literature search (Codex, 8 November 2026, including Wood et al. 2008,
+[doi:10.1029/2006RG000217](https://doi.org/10.1029/2006RG000217)) found no earlier
+discussion of the discrepancy. That is a negative result from a limited search,
+not evidence that nobody has noticed it.
 
 ### Open threads
 
-- Independent review of the interpretive choices and of the Fig. 1a diagnosis.
-- Search the Daisyworld literature (for example Wood et al. 2008, *Reviews of
-  Geophysics*) for earlier notes on Fig. 1a.
+- The cause of the Fig. 1a discrepancy.
+- A two-way fidelity score that identifies each printed curve and excludes
+  decorative ink, if a stronger claim than branch-on-ink is ever needed.
 - An "as-computed-in-1983" variant that emulates the original numerics, worth
   building only if the Fig. 1a question can be pinned down.
 

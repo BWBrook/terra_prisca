@@ -12,7 +12,7 @@ lineage of models and the agreed order of work are in
 
 | Model | Status | Page |
 |---|---|---|
-| Daisyworld, Watson & Lovelock (1983) | Faithful reconstruction done; Figs 1b–d and 2 reproduced quantitatively; a discrepancy in Fig. 1a is under investigation | [`models/daisyworld`](models/daisyworld/README.md) |
+| Daisyworld, Watson & Lovelock (1983) | Faithful reconstruction done and independently reviewed; agrees with published Figs 1b–d and 2 on occupied branches and transitions; the cause of a Fig. 1a discrepancy is unresolved | [`models/daisyworld`](models/daisyworld/README.md) |
 | Archean haze-world (Daisyworld re-imagining) | Next | — |
 
 ## Getting started

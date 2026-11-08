@@ -6,6 +6,7 @@ from terra_prisca.daisyworld.wl1983 import (
     Params,
     growth_rate,
     hysteresis_sweep,
+    invasion_rates,
     lifeless_temperature,
     state,
     steady_state,
@@ -90,6 +91,25 @@ def test_threshold_regression(sweeps, name, direction, expected):
     r = up if direction == "up" else down
     alive = r["lum"][r["a_w"] + r["a_b"] > 0]
     assert (alive.min(), alive.max()) == pytest.approx(expected, abs=2 * STEP)
+
+
+def test_no_returned_state_is_open_to_invasion(sweeps):
+    for name, (up, down) in sweeps.items():
+        p = EXPERIMENTS[name]
+        present = np.array([p.white, p.black])
+        for r in (up, down):
+            for i in range(len(r["lum"])):
+                a = np.array([r["a_w"][i], r["a_b"][i]])
+                open_to = present & (a == 0) & (invasion_rates(a, r["lum"][i], p) > 1e-9)
+                assert not open_to.any(), (name, r["lum"][i], a)
+
+
+def test_black_recovers_on_downsweep_at_1_224(sweeps):
+    # Review 2026-11-08: black was lost here while white re-established, although
+    # it could invade the returned environment (rate +0.101).
+    _, down = sweeps["fig1d_both"]
+    i = np.argmin(np.abs(down["lum"] - 1.224))
+    assert (down["a_w"][i], down["a_b"][i]) == pytest.approx((0.59266, 0.08068), abs=1e-4)
 
 
 def test_steady_state_converges_from_seed():

@@ -85,26 +85,46 @@ def steady_state(
     t_max: float = 1e5,
     extinct_below: float = 1e-6,
 ) -> tuple[np.ndarray, bool]:
-    """Integrate eq. (1) forward until every per-capita rate |da/dt| / max(a, 1e-4) < tol."""
+    """Integrate eq. (1) forward until every |da/dt| / max(a, 1e-4) < tol.
+
+    A species can decay below `extinct_below` while the other establishes and then
+    be able to grow again in the final environment. Such a state is an equilibrium
+    on the boundary but is unstable to invasion, so an enabled species at zero
+    with a positive invasion rate is reseeded at p.seed at the same L and the
+    integration repeated.
+    """
     a = np.asarray(a0, dtype=float)
-    t = 0.0
+    present = np.array([p.white, p.black])
     converged = False
-    while t < t_max:
-        sol = solve_ivp(
-            lambda _t, y: derivatives(y, lum, p),
-            (0.0, chunk),
-            a,
-            method="LSODA",
-            rtol=1e-10,
-            atol=1e-13,
-        )
-        a = np.clip(sol.y[:, -1], 0.0, None)
-        t += chunk
-        if np.max(np.abs(derivatives(a, lum, p)) / np.maximum(a, 1e-4)) < tol:
-            converged = True
+    for _ in range(5):
+        t = 0.0
+        converged = False
+        while t < t_max:
+            sol = solve_ivp(
+                lambda _t, y: derivatives(y, lum, p),
+                (0.0, chunk),
+                a,
+                method="LSODA",
+                rtol=1e-10,
+                atol=1e-13,
+            )
+            a = np.clip(sol.y[:, -1], 0.0, None)
+            t += chunk
+            if np.max(np.abs(derivatives(a, lum, p)) / np.maximum(a, 1e-4)) < tol:
+                converged = True
+                break
+        a[a < extinct_below] = 0.0
+        invaders = present & (a == 0.0) & (invasion_rates(a, lum, p) > tol)
+        if not invaders.any():
             break
-    a[a < extinct_below] = 0.0
+        a = np.where(invaders, p.seed, a)
     return a, converged
+
+
+def invasion_rates(a: np.ndarray, lum: float, p: Params) -> np.ndarray:
+    """Per-capita growth x beta_i - gamma of each species in the environment set by a."""
+    s = state(a[0], a[1], lum, p)
+    return s["x"] * growth_rate(np.array([s["t_w"], s["t_b"]]), p) - p.death_rate
 
 
 def sweep(luminosities: np.ndarray, p: Params, start: np.ndarray | None = None) -> dict[str, np.ndarray]:
