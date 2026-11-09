@@ -1,0 +1,125 @@
+{
+  "anchors": {
+    "Y_A": 1.7,
+    "m_A30": 1.6,
+    "qmax_A30": 15.71764705882353,
+    "E_maint_J": 69000.0,
+    "maint_factor_4C": 0.0766683910337543
+  },
+  "grid": {
+    "gamma": [
+      0.38,
+      0.74,
+      1.5
+    ],
+    "y_m": [
+      0.4,
+      0.78,
+      1.7
+    ],
+    "m_m30": [
+      0.3,
+      1.0,
+      2.3
+    ],
+    "d": [
+      0.0001,
+      0.001,
+      0.01
+    ],
+    "pstar_a": [
+      5.0,
+      20.0,
+      95.0
+    ]
+  },
+  "summary": {
+    "4C": {
+      "acetogen": 53,
+      "methanogen": 109,
+      "none": 81
+    },
+    "30C": {
+      "acetogen": 76,
+      "methanogen": 167,
+      "none": 0
+    },
+    "4C_given_methanogens_win_30C": {
+      "acetogen": 33,
+      "methanogen": 107,
+      "none": 27
+    }
+  },
+  "cold_winner_by_parameter": {
+    "gamma": {
+      "0.38": {
+        "acetogen": 13,
+        "methanogen": 21
+      },
+      "0.74": {
+        "acetogen": 14,
+        "methanogen": 38
+      },
+      "1.5": {
+        "acetogen": 6,
+        "methanogen": 48
+      }
+    },
+    "y_m": {
+      "0.4": {
+        "acetogen": 17,
+        "methanogen": 25
+      },
+      "0.78": {
+        "acetogen": 12,
+        "methanogen": 36
+      },
+      "1.7": {
+        "acetogen": 4,
+        "methanogen": 46
+      }
+    },
+    "m_m30": {
+      "0.3": {
+        "acetogen": 14,
+        "methanogen": 38
+      },
+      "1.0": {
+        "acetogen": 13,
+        "methanogen": 37
+      },
+      "2.3": {
+        "acetogen": 6,
+        "methanogen": 32
+      }
+    },
+    "d": {
+      "0.0001": {
+        "acetogen": 4,
+        "methanogen": 71
+      },
+      "0.001": {
+        "acetogen": 29,
+        "methanogen": 36
+      },
+      "0.01": {
+        "acetogen": 0,
+        "methanogen": 0
+      }
+    },
+    "pstar_a": {
+      "5.0": {
+        "acetogen": 15,
+        "methanogen": 29
+      },
+      "20.0": {
+        "acetogen": 12,
+        "methanogen": 33
+      },
+      "95.0": {
+        "acetogen": 6,
+        "methanogen": 45
+      }
+    }
+  }
+}
