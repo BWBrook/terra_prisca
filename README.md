@@ -13,7 +13,8 @@ lineage of models and the agreed order of work are in
 | Model | Status | Page |
 |---|---|---|
 | Daisyworld, Watson & Lovelock (1983) | Faithful reconstruction done and independently reviewed; agrees with published Figs 1b–d and 2 on occupied branches and transitions; the cause of a Fig. 1a discrepancy is unresolved | [`models/daisyworld`](models/daisyworld/README.md) |
-| Methane–haze climate responses | Arney (2016) curves extracted; bounded interpolation available; biological coupling not yet implemented | [`models/haze_response`](models/haze_response/README.md) |
+| Methane–haze climate responses | Arney (2016) curves extracted; bounded interpolation available | [`models/haze_response`](models/haze_response/README.md) |
+| Haze-world: methanogens, finite methane budget and haze climate | First draft, awaiting review: with ample supply, haze and cold-limited methanogens hold temperature at the methanogens' cold edge, inside Arney's domain; the lifeless cold trap depends on an assumed low-methane branch | [`models/haze_world`](models/haze_world/README.md) |
 
 ## Getting started
 

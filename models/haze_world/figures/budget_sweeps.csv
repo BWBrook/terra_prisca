@@ -1,0 +1,805 @@
+methanogens,direction,r_pot,donor_flux,r,t_k,eta,domain
+thermal,up from lifeless,0.0,0.0000e+00,0.00104,266.114,0.0,bridge
+thermal,up from lifeless,0.002,2.5011e+09,0.00104,266.114,0.0,bridge
+thermal,up from lifeless,0.004,5.0021e+09,0.00104,266.114,0.0,bridge
+thermal,up from lifeless,0.006,7.5032e+09,0.00104,266.114,0.0,bridge
+thermal,up from lifeless,0.008,1.0004e+10,0.00104,266.114,0.0,bridge
+thermal,up from lifeless,0.01,1.2505e+10,0.00104,266.114,0.0,bridge
+thermal,up from lifeless,0.012,1.5006e+10,0.00104,266.114,0.0,bridge
+thermal,up from lifeless,0.014,1.7507e+10,0.00104,266.114,0.0,bridge
+thermal,up from lifeless,0.016,2.0008e+10,0.00104,266.114,0.0,bridge
+thermal,up from lifeless,0.018,2.2509e+10,0.00104,266.114,0.0,bridge
+thermal,up from lifeless,0.02,2.5011e+10,0.00104,266.114,0.0,bridge
+thermal,up from lifeless,0.022,2.7512e+10,0.00104,266.114,0.0,bridge
+thermal,up from lifeless,0.024,3.0013e+10,0.00104,266.114,0.0,bridge
+thermal,up from lifeless,0.026,3.2514e+10,0.00104,266.114,0.0,bridge
+thermal,up from lifeless,0.028,3.5015e+10,0.00104,266.114,0.0,bridge
+thermal,up from lifeless,0.03,3.7516e+10,0.00104,266.114,0.0,bridge
+thermal,up from lifeless,0.032,4.0017e+10,0.00104,266.114,0.0,bridge
+thermal,up from lifeless,0.034,4.2518e+10,0.00104,266.114,0.0,bridge
+thermal,up from lifeless,0.036,4.5019e+10,0.00104,266.114,0.0,bridge
+thermal,up from lifeless,0.038,4.7520e+10,0.00104,266.114,0.0,bridge
+thermal,up from lifeless,0.04,5.0021e+10,0.00104,266.114,0.0,bridge
+thermal,up from lifeless,0.042,5.2522e+10,0.00104,266.114,0.0,bridge
+thermal,up from lifeless,0.044,5.5023e+10,0.00104,266.114,0.0,bridge
+thermal,up from lifeless,0.046,5.7524e+10,0.00104,266.114,0.0,bridge
+thermal,up from lifeless,0.048,6.0025e+10,0.00104,266.114,0.0,bridge
+thermal,up from lifeless,0.05,6.2526e+10,0.00104,266.114,0.0,bridge
+thermal,up from lifeless,0.052,6.5027e+10,0.00104,266.114,0.0,bridge
+thermal,up from lifeless,0.054,6.7528e+10,0.00104,266.114,0.0,bridge
+thermal,up from lifeless,0.056,7.0029e+10,0.00104,266.114,0.0,bridge
+thermal,up from lifeless,0.058,7.2530e+10,0.00104,266.114,0.0,bridge
+thermal,up from lifeless,0.06,7.5032e+10,0.00104,266.114,0.0,bridge
+thermal,up from lifeless,0.062,7.7533e+10,0.00104,266.114,0.0,bridge
+thermal,up from lifeless,0.064,8.0034e+10,0.00104,266.114,0.0,bridge
+thermal,up from lifeless,0.066,8.2535e+10,0.00104,266.114,0.0,bridge
+thermal,up from lifeless,0.068,8.5036e+10,0.00104,266.114,0.0,bridge
+thermal,up from lifeless,0.07,8.7537e+10,0.00104,266.114,0.0,bridge
+thermal,up from lifeless,0.072,9.0038e+10,0.00104,266.114,0.0,bridge
+thermal,up from lifeless,0.074,9.2539e+10,0.00104,266.114,0.0,bridge
+thermal,up from lifeless,0.076,9.5040e+10,0.00104,266.114,0.0,bridge
+thermal,up from lifeless,0.078,9.7541e+10,0.00104,266.114,0.0,bridge
+thermal,up from lifeless,0.08,1.0004e+11,0.00104,266.114,0.0,bridge
+thermal,up from lifeless,0.082,1.0254e+11,0.00104,266.114,0.0,bridge
+thermal,up from lifeless,0.084,1.0504e+11,0.00104,266.114,0.0,bridge
+thermal,up from lifeless,0.086,1.0755e+11,0.00104,266.114,0.0,bridge
+thermal,up from lifeless,0.088,1.1005e+11,0.00104,266.114,0.0,bridge
+thermal,up from lifeless,0.09,1.1255e+11,0.00104,266.114,0.0,bridge
+thermal,up from lifeless,0.092,1.1505e+11,0.00104,266.114,0.0,bridge
+thermal,up from lifeless,0.094,1.1755e+11,0.00104,266.114,0.0,bridge
+thermal,up from lifeless,0.096,1.2005e+11,0.00104,266.114,0.0,bridge
+thermal,up from lifeless,0.098,1.2255e+11,0.00104,266.114,0.0,bridge
+thermal,up from lifeless,0.1,1.2505e+11,0.00104,266.114,0.0,bridge
+thermal,up from lifeless,0.102,1.2755e+11,0.00104,266.114,0.0,bridge
+thermal,up from lifeless,0.104,1.3005e+11,0.00104,266.114,0.0,bridge
+thermal,up from lifeless,0.106,1.3256e+11,0.00104,266.114,0.0,bridge
+thermal,up from lifeless,0.108,1.3506e+11,0.00104,266.114,0.0,bridge
+thermal,up from lifeless,0.11,1.3756e+11,0.00104,266.114,0.0,bridge
+thermal,up from lifeless,0.112,1.4006e+11,0.00104,266.114,0.0,bridge
+thermal,up from lifeless,0.114,1.4256e+11,0.00104,266.114,0.0,bridge
+thermal,up from lifeless,0.116,1.4506e+11,0.00104,266.114,0.0,bridge
+thermal,up from lifeless,0.118,1.4756e+11,0.00104,266.114,0.0,bridge
+thermal,up from lifeless,0.12,1.5006e+11,0.00104,266.114,0.0,bridge
+thermal,up from lifeless,0.122,1.5256e+11,0.00104,266.114,0.0,bridge
+thermal,up from lifeless,0.124,1.5507e+11,0.00104,266.114,0.0,bridge
+thermal,up from lifeless,0.126,1.5757e+11,0.00104,266.114,0.0,bridge
+thermal,up from lifeless,0.128,1.6007e+11,0.00104,266.114,0.0,bridge
+thermal,up from lifeless,0.13,1.6257e+11,0.00104,266.114,0.0,bridge
+thermal,up from lifeless,0.132,1.6507e+11,0.00104,266.114,0.0,bridge
+thermal,up from lifeless,0.134,1.6757e+11,0.00104,266.114,0.0,bridge
+thermal,up from lifeless,0.136,1.7007e+11,0.00104,266.114,0.0,bridge
+thermal,up from lifeless,0.138,1.7257e+11,0.00104,266.114,0.0,bridge
+thermal,up from lifeless,0.14,1.7507e+11,0.00104,266.114,0.0,bridge
+thermal,up from lifeless,0.142,1.7757e+11,0.00104,266.114,0.0,bridge
+thermal,up from lifeless,0.144,1.8008e+11,0.00104,266.114,0.0,bridge
+thermal,up from lifeless,0.146,1.8258e+11,0.00104,266.114,0.0,bridge
+thermal,up from lifeless,0.148,1.8508e+11,0.00104,266.114,0.0,bridge
+thermal,up from lifeless,0.15,1.8758e+11,0.00104,266.114,0.0,bridge
+thermal,up from lifeless,0.152,1.9008e+11,0.00104,266.114,0.0,bridge
+thermal,up from lifeless,0.154,1.9258e+11,0.00104,266.114,0.0,bridge
+thermal,up from lifeless,0.156,1.9508e+11,0.00104,266.114,0.0,bridge
+thermal,up from lifeless,0.158,1.9758e+11,0.00104,266.114,0.0,bridge
+thermal,up from lifeless,0.16,2.0008e+11,0.00104,266.114,0.0,bridge
+thermal,up from lifeless,0.162,2.0259e+11,0.00104,266.114,0.0,bridge
+thermal,up from lifeless,0.164,2.0509e+11,0.00104,266.114,0.0,bridge
+thermal,up from lifeless,0.166,2.0759e+11,0.00104,266.114,0.0,bridge
+thermal,up from lifeless,0.168,2.1009e+11,0.00104,266.114,0.0,bridge
+thermal,up from lifeless,0.17,2.1259e+11,0.00104,266.114,0.0,bridge
+thermal,up from lifeless,0.172,2.1509e+11,0.00104,266.114,0.0,bridge
+thermal,up from lifeless,0.174,2.1759e+11,0.00104,266.114,0.0,bridge
+thermal,up from lifeless,0.176,2.2009e+11,0.00104,266.114,0.0,bridge
+thermal,up from lifeless,0.178,2.2259e+11,0.00104,266.114,0.0,bridge
+thermal,up from lifeless,0.18,2.2509e+11,0.00104,266.114,0.0,bridge
+thermal,up from lifeless,0.182,2.2760e+11,0.00104,266.114,0.0,bridge
+thermal,up from lifeless,0.184,2.3010e+11,0.00104,266.114,0.0,bridge
+thermal,up from lifeless,0.186,2.3260e+11,0.00104,266.114,0.0,bridge
+thermal,up from lifeless,0.188,2.3510e+11,0.00104,266.114,0.0,bridge
+thermal,up from lifeless,0.19,2.3760e+11,0.00104,266.114,0.0,bridge
+thermal,up from lifeless,0.192,2.4010e+11,0.00104,266.114,0.0,bridge
+thermal,up from lifeless,0.194,2.4260e+11,0.00104,266.114,0.0,bridge
+thermal,up from lifeless,0.196,2.4510e+11,0.00104,266.114,0.0,bridge
+thermal,up from lifeless,0.198,2.4760e+11,0.00104,266.114,0.0,bridge
+thermal,up from lifeless,0.2,2.5011e+11,0.00104,266.114,0.0,bridge
+thermal,up from lifeless,0.202,2.5261e+11,0.00104,266.114,0.0,bridge
+thermal,up from lifeless,0.204,2.5511e+11,0.00104,266.114,0.0,bridge
+thermal,up from lifeless,0.206,2.5761e+11,0.00104,266.114,0.0,bridge
+thermal,up from lifeless,0.208,2.6011e+11,0.00104,266.114,0.0,bridge
+thermal,up from lifeless,0.21,2.6261e+11,0.00104,266.114,0.0,bridge
+thermal,up from lifeless,0.212,2.6511e+11,0.00104,266.114,0.0,bridge
+thermal,up from lifeless,0.214,2.6761e+11,0.00104,266.114,0.0,bridge
+thermal,up from lifeless,0.216,2.7011e+11,0.00104,266.114,0.0,bridge
+thermal,up from lifeless,0.218,2.7261e+11,0.00104,266.114,0.0,bridge
+thermal,up from lifeless,0.22,2.7512e+11,0.00104,266.114,0.0,bridge
+thermal,up from lifeless,0.222,2.7762e+11,0.00104,266.114,0.0,bridge
+thermal,up from lifeless,0.224,2.8012e+11,0.00104,266.114,0.0,bridge
+thermal,up from lifeless,0.226,2.8262e+11,0.00104,266.114,0.0,bridge
+thermal,up from lifeless,0.228,2.8512e+11,0.00104,266.114,0.0,bridge
+thermal,up from lifeless,0.23,2.8762e+11,0.00104,266.114,0.0,bridge
+thermal,up from lifeless,0.232,2.9012e+11,0.00104,266.114,0.0,bridge
+thermal,up from lifeless,0.234,2.9262e+11,0.00104,266.114,0.0,bridge
+thermal,up from lifeless,0.236,2.9512e+11,0.00104,266.114,0.0,bridge
+thermal,up from lifeless,0.238,2.9762e+11,0.00104,266.114,0.0,bridge
+thermal,up from lifeless,0.24,3.0013e+11,0.00104,266.114,0.0,bridge
+thermal,up from lifeless,0.242,3.0263e+11,0.00104,266.114,0.0,bridge
+thermal,up from lifeless,0.244,3.0513e+11,0.00104,266.114,0.0,bridge
+thermal,up from lifeless,0.246,3.0763e+11,0.00104,266.114,0.0,bridge
+thermal,up from lifeless,0.248,3.1013e+11,0.00104,266.114,0.0,bridge
+thermal,up from lifeless,0.25,3.1263e+11,0.00104,266.114,0.0,bridge
+thermal,up from lifeless,0.252,3.1513e+11,0.00104,266.114,0.0,bridge
+thermal,up from lifeless,0.254,3.1763e+11,0.00104,266.114,0.0,bridge
+thermal,up from lifeless,0.256,3.2013e+11,0.00104,266.114,0.0,bridge
+thermal,up from lifeless,0.258,3.2264e+11,0.00104,266.114,0.0,bridge
+thermal,up from lifeless,0.26,3.2514e+11,0.00104,266.114,0.0,bridge
+thermal,up from lifeless,0.262,3.2764e+11,0.00104,266.114,0.0,bridge
+thermal,up from lifeless,0.264,3.3014e+11,0.00104,266.114,0.0,bridge
+thermal,up from lifeless,0.266,3.3264e+11,0.00104,266.114,0.0,bridge
+thermal,up from lifeless,0.268,3.3514e+11,0.00104,266.114,0.0,bridge
+thermal,up from lifeless,0.27,3.3764e+11,0.00104,266.114,0.0,bridge
+thermal,up from lifeless,0.272,3.4014e+11,0.00104,266.114,0.0,bridge
+thermal,up from lifeless,0.274,3.4264e+11,0.00104,266.114,0.0,bridge
+thermal,up from lifeless,0.276,3.4514e+11,0.00104,266.114,0.0,bridge
+thermal,up from lifeless,0.278,3.4765e+11,0.00104,266.114,0.0,bridge
+thermal,up from lifeless,0.28,3.5015e+11,0.00104,266.114,0.0,bridge
+thermal,up from lifeless,0.282,3.5265e+11,0.00104,266.114,0.0,bridge
+thermal,up from lifeless,0.284,3.5515e+11,0.00104,266.114,0.0,bridge
+thermal,up from lifeless,0.286,3.5765e+11,0.00104,266.114,0.0,bridge
+thermal,up from lifeless,0.288,3.6015e+11,0.00104,266.114,0.0,bridge
+thermal,up from lifeless,0.29,3.6265e+11,0.00104,266.114,0.0,bridge
+thermal,up from lifeless,0.292,3.6515e+11,0.00104,266.114,0.0,bridge
+thermal,up from lifeless,0.294,3.6765e+11,0.00104,266.114,0.0,bridge
+thermal,up from lifeless,0.296,3.7016e+11,0.00104,266.114,0.0,bridge
+thermal,up from lifeless,0.298,3.7266e+11,0.00104,266.114,0.0,bridge
+thermal,up from lifeless,0.3,3.7516e+11,0.00104,266.114,0.0,bridge
+thermal,up from lifeless,0.302,3.7766e+11,0.00104,266.114,0.0,bridge
+thermal,up from lifeless,0.304,3.8016e+11,0.00104,266.114,0.0,bridge
+thermal,up from lifeless,0.306,3.8266e+11,0.00104,266.114,0.0,bridge
+thermal,up from lifeless,0.308,3.8516e+11,0.00104,266.114,0.0,bridge
+thermal,up from lifeless,0.31,3.8766e+11,0.00104,266.114,0.0,bridge
+thermal,up from lifeless,0.312,3.9016e+11,0.00104,266.114,0.0,bridge
+thermal,up from lifeless,0.314,3.9266e+11,0.00104,266.114,0.0,bridge
+thermal,up from lifeless,0.316,3.9517e+11,0.00104,266.114,0.0,bridge
+thermal,up from lifeless,0.318,3.9767e+11,0.00104,266.114,0.0,bridge
+thermal,up from lifeless,0.32,4.0017e+11,0.00104,266.114,0.0,bridge
+thermal,up from lifeless,0.322,4.0267e+11,0.00104,266.114,0.0,bridge
+thermal,up from lifeless,0.324,4.0517e+11,0.00104,266.114,0.0,bridge
+thermal,up from lifeless,0.326,4.0767e+11,0.00104,266.114,0.0,bridge
+thermal,up from lifeless,0.328,4.1017e+11,0.00104,266.114,0.0,bridge
+thermal,up from lifeless,0.33,4.1267e+11,0.00104,266.114,0.0,bridge
+thermal,up from lifeless,0.332,4.1517e+11,0.00104,266.114,0.0,bridge
+thermal,up from lifeless,0.334,4.1768e+11,0.00104,266.114,0.0,bridge
+thermal,up from lifeless,0.336,4.2018e+11,0.00104,266.114,0.0,bridge
+thermal,up from lifeless,0.338,4.2268e+11,0.00104,266.114,0.0,bridge
+thermal,up from lifeless,0.34,4.2518e+11,0.00104,266.114,0.0,bridge
+thermal,up from lifeless,0.342,4.2768e+11,0.00104,266.114,0.0,bridge
+thermal,up from lifeless,0.344,4.3018e+11,0.00104,266.114,0.0,bridge
+thermal,up from lifeless,0.346,4.3268e+11,0.00104,266.114,0.0,bridge
+thermal,up from lifeless,0.348,4.3518e+11,0.00104,266.114,0.0,bridge
+thermal,up from lifeless,0.35,4.3768e+11,0.00104,266.114,0.0,bridge
+thermal,up from lifeless,0.352,4.4018e+11,0.00104,266.114,0.0,bridge
+thermal,up from lifeless,0.354,4.4269e+11,0.00104,266.114,0.0,bridge
+thermal,up from lifeless,0.356,4.4519e+11,0.00104,266.114,0.0,bridge
+thermal,up from lifeless,0.358,4.4769e+11,0.00104,266.114,0.0,bridge
+thermal,up from lifeless,0.36,4.5019e+11,0.00104,266.114,0.0,bridge
+thermal,up from lifeless,0.362,4.5269e+11,0.00104,266.114,0.0,bridge
+thermal,up from lifeless,0.364,4.5519e+11,0.00104,266.114,0.0,bridge
+thermal,up from lifeless,0.366,4.5769e+11,0.00104,266.114,0.0,bridge
+thermal,up from lifeless,0.368,4.6019e+11,0.00104,266.114,0.0,bridge
+thermal,up from lifeless,0.37,4.6269e+11,0.00104,266.114,0.0,bridge
+thermal,up from lifeless,0.372,4.6520e+11,0.00104,266.114,0.0,bridge
+thermal,up from lifeless,0.374,4.6770e+11,0.00104,266.114,0.0,bridge
+thermal,up from lifeless,0.376,4.7020e+11,0.00104,266.114,0.0,bridge
+thermal,up from lifeless,0.378,4.7270e+11,0.00104,266.114,0.0,bridge
+thermal,up from lifeless,0.38,4.7520e+11,0.00104,266.114,0.0,bridge
+thermal,up from lifeless,0.382,4.7770e+11,0.00104,266.114,0.0,bridge
+thermal,up from lifeless,0.384,4.8020e+11,0.00104,266.114,0.0,bridge
+thermal,up from lifeless,0.386,4.8270e+11,0.00104,266.114,0.0,bridge
+thermal,up from lifeless,0.388,4.8520e+11,0.00104,266.114,0.0,bridge
+thermal,up from lifeless,0.39,4.8770e+11,0.00104,266.114,0.0,bridge
+thermal,up from lifeless,0.392,4.9021e+11,0.00104,266.114,0.0,bridge
+thermal,up from lifeless,0.394,4.9271e+11,0.00104,266.114,0.0,bridge
+thermal,up from lifeless,0.396,4.9521e+11,0.00104,266.114,0.0,bridge
+thermal,up from lifeless,0.398,4.9771e+11,0.00104,266.114,0.0,bridge
+thermal,up from lifeless,0.4,5.0021e+11,0.00104,266.114,0.0,bridge
+thermal,down from high supply,0.0,0.0000e+00,0.00104,266.114,0.0,bridge
+thermal,down from high supply,0.002,2.5011e+09,0.00104,266.114,0.0,bridge
+thermal,down from high supply,0.004,5.0021e+09,0.00104,266.114,0.0,bridge
+thermal,down from high supply,0.006,7.5032e+09,0.00104,266.114,0.0,bridge
+thermal,down from high supply,0.008,1.0004e+10,0.00104,266.114,0.0,bridge
+thermal,down from high supply,0.01,1.2505e+10,0.00104,266.114,0.0,bridge
+thermal,down from high supply,0.012,1.5006e+10,0.00104,266.114,0.0,bridge
+thermal,down from high supply,0.014,1.7507e+10,0.00104,266.114,0.0,bridge
+thermal,down from high supply,0.016,2.0008e+10,0.00104,266.114,0.0,bridge
+thermal,down from high supply,0.018,2.2509e+10,0.00104,266.114,0.0,bridge
+thermal,down from high supply,0.02,2.5011e+10,0.00104,266.114,0.0,bridge
+thermal,down from high supply,0.022,2.7512e+10,0.00104,266.114,0.0,bridge
+thermal,down from high supply,0.024,3.0013e+10,0.00104,266.114,0.0,bridge
+thermal,down from high supply,0.026,3.2514e+10,0.00104,266.114,0.0,bridge
+thermal,down from high supply,0.028,3.5015e+10,0.00104,266.114,0.0,bridge
+thermal,down from high supply,0.03,3.7516e+10,0.00104,266.114,0.0,bridge
+thermal,down from high supply,0.032,4.0017e+10,0.00104,266.114,0.0,bridge
+thermal,down from high supply,0.034,4.2518e+10,0.00104,266.114,0.0,bridge
+thermal,down from high supply,0.036,4.5019e+10,0.00104,266.114,0.0,bridge
+thermal,down from high supply,0.038,4.7520e+10,0.00104,266.114,0.0,bridge
+thermal,down from high supply,0.04,5.0021e+10,0.00104,266.114,0.0,bridge
+thermal,down from high supply,0.042,5.2522e+10,0.00104,266.114,0.0,bridge
+thermal,down from high supply,0.044,5.5023e+10,0.041254,283.402,0.91397,bridge
+thermal,down from high supply,0.046,5.7524e+10,0.043943,283.978,0.93267,bridge
+thermal,down from high supply,0.048,6.0025e+10,0.046346,284.469,0.94389,bridge
+thermal,down from high supply,0.05,6.2526e+10,0.048624,284.915,0.9517,bridge
+thermal,down from high supply,0.052,6.5027e+10,0.050831,285.331,0.95752,bridge
+thermal,down from high supply,0.054,6.7528e+10,0.052992,285.724,0.96208,bridge
+thermal,down from high supply,0.056,7.0029e+10,0.055121,286.098,0.96574,bridge
+thermal,down from high supply,0.058,7.2530e+10,0.057228,286.457,0.96877,bridge
+thermal,down from high supply,0.06,7.5032e+10,0.059318,286.802,0.97131,bridge
+thermal,down from high supply,0.062,7.7533e+10,0.061395,287.134,0.97347,bridge
+thermal,down from high supply,0.064,8.0034e+10,0.063461,287.455,0.97533,bridge
+thermal,down from high supply,0.066,8.2535e+10,0.065519,287.766,0.97696,bridge
+thermal,down from high supply,0.068,8.5036e+10,0.06757,288.068,0.97839,bridge
+thermal,down from high supply,0.07,8.7537e+10,0.069615,288.361,0.97965,bridge
+thermal,down from high supply,0.072,9.0038e+10,0.071655,288.646,0.98078,bridge
+thermal,down from high supply,0.074,9.2539e+10,0.073692,288.923,0.98179,bridge
+thermal,down from high supply,0.076,9.5040e+10,0.075724,289.194,0.9827,bridge
+thermal,down from high supply,0.078,9.7541e+10,0.077754,289.457,0.98352,bridge
+thermal,down from high supply,0.08,1.0004e+11,0.079781,289.714,0.98427,bridge
+thermal,down from high supply,0.082,1.0254e+11,0.081806,289.965,0.98496,bridge
+thermal,down from high supply,0.084,1.0504e+11,0.083829,290.211,0.98559,bridge
+thermal,down from high supply,0.086,1.0755e+11,0.08585,290.451,0.98616,bridge
+thermal,down from high supply,0.088,1.1005e+11,0.087869,290.686,0.9867,bridge
+thermal,down from high supply,0.09,1.1255e+11,0.089887,290.915,0.98719,bridge
+thermal,down from high supply,0.092,1.1505e+11,0.091903,291.14,0.98765,bridge
+thermal,down from high supply,0.094,1.1755e+11,0.093919,291.361,0.98808,bridge
+thermal,down from high supply,0.096,1.2005e+11,0.095933,291.577,0.98847,bridge
+thermal,down from high supply,0.098,1.2255e+11,0.097946,291.789,0.98884,bridge
+thermal,down from high supply,0.1,1.2505e+11,0.099959,291.997,0.98919,bridge
+thermal,down from high supply,0.102,1.2755e+11,0.101979,292.356,0.9896,arney
+thermal,down from high supply,0.104,1.3005e+11,0.103998,292.719,0.98998,arney
+thermal,down from high supply,0.106,1.3256e+11,0.106015,293.082,0.99033,arney
+thermal,down from high supply,0.108,1.3506e+11,0.108031,293.444,0.99066,arney
+thermal,down from high supply,0.11,1.3756e+11,0.110045,293.806,0.99096,arney
+thermal,down from high supply,0.112,1.4006e+11,0.112054,294.048,0.9912,arney
+thermal,down from high supply,0.114,1.4256e+11,0.114058,294.156,0.99139,arney
+thermal,down from high supply,0.116,1.4506e+11,0.116062,294.265,0.99157,arney
+thermal,down from high supply,0.118,1.4756e+11,0.118065,294.373,0.99174,arney
+thermal,down from high supply,0.12,1.5006e+11,0.120069,294.482,0.99191,arney
+thermal,down from high supply,0.122,1.5256e+11,0.122072,294.591,0.99207,arney
+thermal,down from high supply,0.124,1.5507e+11,0.124076,294.699,0.99223,arney
+thermal,down from high supply,0.126,1.5757e+11,0.126079,294.808,0.99238,arney
+thermal,down from high supply,0.128,1.6007e+11,0.128082,294.916,0.99252,arney
+thermal,down from high supply,0.13,1.6257e+11,0.130085,295.025,0.99266,arney
+thermal,down from high supply,0.132,1.6507e+11,0.132088,295.134,0.99279,arney
+thermal,down from high supply,0.134,1.6757e+11,0.134091,295.242,0.99292,arney
+thermal,down from high supply,0.136,1.7007e+11,0.136094,295.351,0.99305,arney
+thermal,down from high supply,0.138,1.7257e+11,0.138097,295.459,0.99317,arney
+thermal,down from high supply,0.14,1.7507e+11,0.1401,295.568,0.99329,arney
+thermal,down from high supply,0.142,1.7757e+11,0.142102,295.676,0.9934,arney
+thermal,down from high supply,0.144,1.8008e+11,0.144105,295.785,0.99351,arney
+thermal,down from high supply,0.146,1.8258e+11,0.146107,295.893,0.99362,arney
+thermal,down from high supply,0.148,1.8508e+11,0.14811,296.002,0.99372,arney
+thermal,down from high supply,0.15,1.8758e+11,0.150112,296.111,0.99382,arney
+thermal,down from high supply,0.152,1.9008e+11,0.152114,296.219,0.99391,arney
+thermal,down from high supply,0.154,1.9258e+11,0.154116,296.328,0.99401,arney
+thermal,down from high supply,0.156,1.9508e+11,0.156119,296.436,0.9941,arney
+thermal,down from high supply,0.158,1.9758e+11,0.158121,296.545,0.99418,arney
+thermal,down from high supply,0.16,2.0008e+11,0.160123,296.653,0.99427,arney
+thermal,down from high supply,0.162,2.0259e+11,0.162124,296.762,0.99435,arney
+thermal,down from high supply,0.164,2.0509e+11,0.164126,296.87,0.99443,arney
+thermal,down from high supply,0.166,2.0759e+11,0.166128,296.979,0.99451,arney
+thermal,down from high supply,0.168,2.1009e+11,0.168117,296.356,0.99451,arney
+thermal,down from high supply,0.17,2.1259e+11,0.170097,295.465,0.99446,arney
+thermal,down from high supply,0.172,2.1509e+11,0.172072,294.576,0.99437,arney
+thermal,down from high supply,0.174,2.1759e+11,0.174041,293.69,0.99426,arney
+thermal,down from high supply,0.176,2.2009e+11,0.176002,292.807,0.9941,arney
+thermal,down from high supply,0.178,2.2259e+11,0.177953,291.905,0.9939,arney
+thermal,down from high supply,0.18,2.2509e+11,0.179874,290.752,0.99353,arney
+thermal,down from high supply,0.182,2.2760e+11,0.181771,289.615,0.99303,arney
+thermal,down from high supply,0.184,2.3010e+11,0.183635,288.497,0.99236,arney
+thermal,down from high supply,0.186,2.3260e+11,0.185451,287.407,0.99146,arney
+thermal,down from high supply,0.188,2.3510e+11,0.1872,286.358,0.99022,arney
+thermal,down from high supply,0.19,2.3760e+11,0.188848,285.369,0.98846,arney
+thermal,down from high supply,0.192,2.4010e+11,0.190347,284.469,0.98598,arney
+thermal,down from high supply,0.194,2.4260e+11,0.19164,283.694,0.98248,arney
+thermal,down from high supply,0.196,2.4510e+11,0.19268,283.07,0.97776,arney
+thermal,down from high supply,0.198,2.4760e+11,0.193459,282.602,0.97182,arney
+thermal,down from high supply,0.2,2.5011e+11,0.194018,282.267,0.96489,arney
+thermal,down from high supply,0.202,2.5261e+11,0.194413,282.03,0.9573,arney
+thermal,down from high supply,0.204,2.5511e+11,0.194661,281.857,0.94912,arney
+thermal,down from high supply,0.206,2.5761e+11,0.194836,281.73,0.94076,arney
+thermal,down from high supply,0.208,2.6011e+11,0.194968,281.635,0.93235,arney
+thermal,down from high supply,0.21,2.6261e+11,0.19507,281.562,0.92395,arney
+thermal,down from high supply,0.212,2.6511e+11,0.19515,281.504,0.91562,arney
+thermal,down from high supply,0.214,2.6761e+11,0.195216,281.456,0.90736,arney
+thermal,down from high supply,0.216,2.7011e+11,0.195269,281.418,0.89921,arney
+thermal,down from high supply,0.218,2.7261e+11,0.195315,281.385,0.89117,arney
+thermal,down from high supply,0.22,2.7512e+11,0.195353,281.357,0.88324,arney
+thermal,down from high supply,0.222,2.7762e+11,0.195386,281.334,0.87543,arney
+thermal,down from high supply,0.224,2.8012e+11,0.195414,281.313,0.86774,arney
+thermal,down from high supply,0.226,2.8262e+11,0.195439,281.295,0.86018,arney
+thermal,down from high supply,0.228,2.8512e+11,0.195461,281.279,0.85273,arney
+thermal,down from high supply,0.23,2.8762e+11,0.195481,281.265,0.8454,arney
+thermal,down from high supply,0.232,2.9012e+11,0.195499,281.252,0.83819,arney
+thermal,down from high supply,0.234,2.9262e+11,0.195515,281.241,0.83109,arney
+thermal,down from high supply,0.236,2.9512e+11,0.195529,281.23,0.82411,arney
+thermal,down from high supply,0.238,2.9762e+11,0.195542,281.221,0.81724,arney
+thermal,down from high supply,0.24,3.0013e+11,0.195554,281.213,0.81048,arney
+thermal,down from high supply,0.242,3.0263e+11,0.195565,281.205,0.80382,arney
+thermal,down from high supply,0.244,3.0513e+11,0.195575,281.198,0.79727,arney
+thermal,down from high supply,0.246,3.0763e+11,0.195584,281.191,0.79083,arney
+thermal,down from high supply,0.248,3.1013e+11,0.195592,281.185,0.78449,arney
+thermal,down from high supply,0.25,3.1263e+11,0.1956,281.179,0.77824,arney
+thermal,down from high supply,0.252,3.1513e+11,0.195608,281.174,0.7721,arney
+thermal,down from high supply,0.254,3.1763e+11,0.195614,281.169,0.76604,arney
+thermal,down from high supply,0.256,3.2013e+11,0.195621,281.164,0.76008,arney
+thermal,down from high supply,0.258,3.2264e+11,0.195627,281.16,0.75421,arney
+thermal,down from high supply,0.26,3.2514e+11,0.195633,281.156,0.74843,arney
+thermal,down from high supply,0.262,3.2764e+11,0.195638,281.152,0.74274,arney
+thermal,down from high supply,0.264,3.3014e+11,0.195643,281.148,0.73713,arney
+thermal,down from high supply,0.266,3.3264e+11,0.195648,281.145,0.73161,arney
+thermal,down from high supply,0.268,3.3514e+11,0.195652,281.142,0.72617,arney
+thermal,down from high supply,0.27,3.3764e+11,0.195656,281.138,0.7208,arney
+thermal,down from high supply,0.272,3.4014e+11,0.19566,281.136,0.71552,arney
+thermal,down from high supply,0.274,3.4264e+11,0.195664,281.133,0.71031,arney
+thermal,down from high supply,0.276,3.4514e+11,0.195668,281.13,0.70517,arney
+thermal,down from high supply,0.278,3.4765e+11,0.195671,281.128,0.70011,arney
+thermal,down from high supply,0.28,3.5015e+11,0.195675,281.125,0.69513,arney
+thermal,down from high supply,0.282,3.5265e+11,0.195678,281.123,0.69021,arney
+thermal,down from high supply,0.284,3.5515e+11,0.195681,281.121,0.68536,arney
+thermal,down from high supply,0.286,3.5765e+11,0.195684,281.119,0.68057,arney
+thermal,down from high supply,0.288,3.6015e+11,0.195686,281.117,0.67586,arney
+thermal,down from high supply,0.29,3.6265e+11,0.195689,281.115,0.67121,arney
+thermal,down from high supply,0.292,3.6515e+11,0.195692,281.113,0.66662,arney
+thermal,down from high supply,0.294,3.6765e+11,0.195694,281.111,0.66209,arney
+thermal,down from high supply,0.296,3.7016e+11,0.195696,281.11,0.65762,arney
+thermal,down from high supply,0.298,3.7266e+11,0.195699,281.108,0.65322,arney
+thermal,down from high supply,0.3,3.7516e+11,0.195701,281.107,0.64887,arney
+thermal,down from high supply,0.302,3.7766e+11,0.195703,281.105,0.64458,arney
+thermal,down from high supply,0.304,3.8016e+11,0.195705,281.104,0.64035,arney
+thermal,down from high supply,0.306,3.8266e+11,0.195707,281.102,0.63617,arney
+thermal,down from high supply,0.308,3.8516e+11,0.195709,281.101,0.63204,arney
+thermal,down from high supply,0.31,3.8766e+11,0.19571,281.1,0.62797,arney
+thermal,down from high supply,0.312,3.9016e+11,0.195712,281.098,0.62395,arney
+thermal,down from high supply,0.314,3.9266e+11,0.195714,281.097,0.61998,arney
+thermal,down from high supply,0.316,3.9517e+11,0.195715,281.096,0.61606,arney
+thermal,down from high supply,0.318,3.9767e+11,0.195717,281.095,0.61219,arney
+thermal,down from high supply,0.32,4.0017e+11,0.195718,281.094,0.60837,arney
+thermal,down from high supply,0.322,4.0267e+11,0.19572,281.093,0.6046,arney
+thermal,down from high supply,0.324,4.0517e+11,0.195721,281.092,0.60087,arney
+thermal,down from high supply,0.326,4.0767e+11,0.195723,281.091,0.59719,arney
+thermal,down from high supply,0.328,4.1017e+11,0.195724,281.09,0.59355,arney
+thermal,down from high supply,0.33,4.1267e+11,0.195725,281.089,0.58996,arney
+thermal,down from high supply,0.332,4.1517e+11,0.195727,281.088,0.58641,arney
+thermal,down from high supply,0.334,4.1768e+11,0.195728,281.087,0.5829,arney
+thermal,down from high supply,0.336,4.2018e+11,0.195729,281.086,0.57943,arney
+thermal,down from high supply,0.338,4.2268e+11,0.19573,281.085,0.57601,arney
+thermal,down from high supply,0.34,4.2518e+11,0.195731,281.084,0.57262,arney
+thermal,down from high supply,0.342,4.2768e+11,0.195732,281.084,0.56928,arney
+thermal,down from high supply,0.344,4.3018e+11,0.195733,281.083,0.56597,arney
+thermal,down from high supply,0.346,4.3268e+11,0.195735,281.082,0.5627,arney
+thermal,down from high supply,0.348,4.3518e+11,0.195736,281.081,0.55947,arney
+thermal,down from high supply,0.35,4.3768e+11,0.195737,281.081,0.55628,arney
+thermal,down from high supply,0.352,4.4018e+11,0.195737,281.08,0.55312,arney
+thermal,down from high supply,0.354,4.4269e+11,0.195738,281.079,0.55,arney
+thermal,down from high supply,0.356,4.4519e+11,0.195739,281.079,0.54691,arney
+thermal,down from high supply,0.358,4.4769e+11,0.19574,281.078,0.54386,arney
+thermal,down from high supply,0.36,4.5019e+11,0.195741,281.077,0.54084,arney
+thermal,down from high supply,0.362,4.5269e+11,0.195742,281.077,0.53785,arney
+thermal,down from high supply,0.364,4.5519e+11,0.195743,281.076,0.5349,arney
+thermal,down from high supply,0.366,4.5769e+11,0.195744,281.076,0.53198,arney
+thermal,down from high supply,0.368,4.6019e+11,0.195744,281.075,0.52909,arney
+thermal,down from high supply,0.37,4.6269e+11,0.195745,281.074,0.52623,arney
+thermal,down from high supply,0.372,4.6520e+11,0.195746,281.074,0.5234,arney
+thermal,down from high supply,0.374,4.6770e+11,0.195747,281.073,0.52061,arney
+thermal,down from high supply,0.376,4.7020e+11,0.195747,281.073,0.51784,arney
+thermal,down from high supply,0.378,4.7270e+11,0.195748,281.072,0.5151,arney
+thermal,down from high supply,0.38,4.7520e+11,0.195749,281.072,0.51239,arney
+thermal,down from high supply,0.382,4.7770e+11,0.195749,281.071,0.50971,arney
+thermal,down from high supply,0.384,4.8020e+11,0.19575,281.071,0.50706,arney
+thermal,down from high supply,0.386,4.8270e+11,0.195751,281.07,0.50443,arney
+thermal,down from high supply,0.388,4.8520e+11,0.195751,281.07,0.50183,arney
+thermal,down from high supply,0.39,4.8770e+11,0.195752,281.07,0.49926,arney
+thermal,down from high supply,0.392,4.9021e+11,0.195753,281.069,0.49672,arney
+thermal,down from high supply,0.394,4.9271e+11,0.195753,281.069,0.4942,arney
+thermal,down from high supply,0.396,4.9521e+11,0.195754,281.068,0.4917,arney
+thermal,down from high supply,0.398,4.9771e+11,0.195754,281.068,0.48923,arney
+thermal,down from high supply,0.4,5.0021e+11,0.195755,281.067,0.48679,arney
+temperature-independent,up from lifeless,0.0,0.0000e+00,0.00104,266.114,0.0,bridge
+temperature-independent,up from lifeless,0.002,2.5011e+09,0.002151,267.194,0.55574,bridge
+temperature-independent,up from lifeless,0.004,5.0021e+09,0.004151,268.91,0.77787,bridge
+temperature-independent,up from lifeless,0.006,7.5032e+09,0.006151,270.398,0.85191,bridge
+temperature-independent,up from lifeless,0.008,1.0004e+10,0.008151,271.713,0.88894,bridge
+temperature-independent,up from lifeless,0.01,1.2505e+10,0.010151,272.89,0.91115,bridge
+temperature-independent,up from lifeless,0.012,1.5006e+10,0.012151,273.955,0.92596,bridge
+temperature-independent,up from lifeless,0.014,1.7507e+10,0.014151,274.929,0.93653,bridge
+temperature-independent,up from lifeless,0.016,2.0008e+10,0.016151,275.825,0.94447,bridge
+temperature-independent,up from lifeless,0.018,2.2509e+10,0.018151,276.655,0.95064,bridge
+temperature-independent,up from lifeless,0.02,2.5011e+10,0.020151,277.427,0.95557,bridge
+temperature-independent,up from lifeless,0.022,2.7512e+10,0.022151,278.151,0.95961,bridge
+temperature-independent,up from lifeless,0.024,3.0013e+10,0.024151,278.83,0.96298,bridge
+temperature-independent,up from lifeless,0.026,3.2514e+10,0.026151,279.471,0.96583,bridge
+temperature-independent,up from lifeless,0.028,3.5015e+10,0.028151,280.077,0.96827,bridge
+temperature-independent,up from lifeless,0.03,3.7516e+10,0.030151,280.653,0.97038,bridge
+temperature-independent,up from lifeless,0.032,4.0017e+10,0.032151,281.2,0.97223,bridge
+temperature-independent,up from lifeless,0.034,4.2518e+10,0.034151,281.722,0.97387,bridge
+temperature-independent,up from lifeless,0.036,4.5019e+10,0.036151,282.221,0.97532,bridge
+temperature-independent,up from lifeless,0.038,4.7520e+10,0.038151,282.699,0.97662,bridge
+temperature-independent,up from lifeless,0.04,5.0021e+10,0.040151,283.157,0.97779,bridge
+temperature-independent,up from lifeless,0.042,5.2522e+10,0.042151,283.597,0.97884,bridge
+temperature-independent,up from lifeless,0.044,5.5023e+10,0.044151,284.021,0.97981,bridge
+temperature-independent,up from lifeless,0.046,5.7524e+10,0.046151,284.429,0.98068,bridge
+temperature-independent,up from lifeless,0.048,6.0025e+10,0.048151,284.824,0.98149,bridge
+temperature-independent,up from lifeless,0.05,6.2526e+10,0.050151,285.204,0.98223,bridge
+temperature-independent,up from lifeless,0.052,6.5027e+10,0.052151,285.573,0.98291,bridge
+temperature-independent,up from lifeless,0.054,6.7528e+10,0.054151,285.929,0.98355,bridge
+temperature-independent,up from lifeless,0.056,7.0029e+10,0.056151,286.275,0.98413,bridge
+temperature-independent,up from lifeless,0.058,7.2530e+10,0.058151,286.61,0.98468,bridge
+temperature-independent,up from lifeless,0.06,7.5032e+10,0.060151,286.936,0.98519,bridge
+temperature-independent,up from lifeless,0.062,7.7533e+10,0.062151,287.253,0.98567,bridge
+temperature-independent,up from lifeless,0.064,8.0034e+10,0.064151,287.56,0.98612,bridge
+temperature-independent,up from lifeless,0.066,8.2535e+10,0.066151,287.86,0.98654,bridge
+temperature-independent,up from lifeless,0.068,8.5036e+10,0.068151,288.152,0.98693,bridge
+temperature-independent,up from lifeless,0.07,8.7537e+10,0.070151,288.437,0.98731,bridge
+temperature-independent,up from lifeless,0.072,9.0038e+10,0.072151,288.714,0.98766,bridge
+temperature-independent,up from lifeless,0.074,9.2539e+10,0.074151,288.985,0.98799,bridge
+temperature-independent,up from lifeless,0.076,9.5040e+10,0.076151,289.25,0.98831,bridge
+temperature-independent,up from lifeless,0.078,9.7541e+10,0.078151,289.508,0.98861,bridge
+temperature-independent,up from lifeless,0.08,1.0004e+11,0.080151,289.761,0.98889,bridge
+temperature-independent,up from lifeless,0.082,1.0254e+11,0.082151,290.008,0.98916,bridge
+temperature-independent,up from lifeless,0.084,1.0504e+11,0.084151,290.249,0.98942,bridge
+temperature-independent,up from lifeless,0.086,1.0755e+11,0.086151,290.486,0.98967,bridge
+temperature-independent,up from lifeless,0.088,1.1005e+11,0.088151,290.718,0.9899,bridge
+temperature-independent,up from lifeless,0.09,1.1255e+11,0.090151,290.945,0.99013,bridge
+temperature-independent,up from lifeless,0.092,1.1505e+11,0.092151,291.168,0.99034,bridge
+temperature-independent,up from lifeless,0.094,1.1755e+11,0.094151,291.386,0.99055,bridge
+temperature-independent,up from lifeless,0.096,1.2005e+11,0.096151,291.6,0.99074,bridge
+temperature-independent,up from lifeless,0.098,1.2255e+11,0.098151,291.81,0.99093,bridge
+temperature-independent,up from lifeless,0.1,1.2505e+11,0.100151,292.028,0.99111,arney
+temperature-independent,up from lifeless,0.102,1.2755e+11,0.102151,292.387,0.99129,arney
+temperature-independent,up from lifeless,0.104,1.3005e+11,0.104151,292.747,0.99146,arney
+temperature-independent,up from lifeless,0.106,1.3256e+11,0.106151,293.106,0.99162,arney
+temperature-independent,up from lifeless,0.108,1.3506e+11,0.108151,293.466,0.99177,arney
+temperature-independent,up from lifeless,0.11,1.3756e+11,0.110151,293.825,0.99192,arney
+temperature-independent,up from lifeless,0.112,1.4006e+11,0.112151,294.053,0.99207,arney
+temperature-independent,up from lifeless,0.114,1.4256e+11,0.114151,294.161,0.99221,arney
+temperature-independent,up from lifeless,0.116,1.4506e+11,0.116151,294.27,0.99234,arney
+temperature-independent,up from lifeless,0.118,1.4756e+11,0.118151,294.378,0.99247,arney
+temperature-independent,up from lifeless,0.12,1.5006e+11,0.120151,294.486,0.9926,arney
+temperature-independent,up from lifeless,0.122,1.5256e+11,0.122151,294.595,0.99272,arney
+temperature-independent,up from lifeless,0.124,1.5507e+11,0.124151,294.703,0.99283,arney
+temperature-independent,up from lifeless,0.126,1.5757e+11,0.126151,294.812,0.99295,arney
+temperature-independent,up from lifeless,0.128,1.6007e+11,0.128151,294.92,0.99306,arney
+temperature-independent,up from lifeless,0.13,1.6257e+11,0.130151,295.029,0.99317,arney
+temperature-independent,up from lifeless,0.132,1.6507e+11,0.132151,295.137,0.99327,arney
+temperature-independent,up from lifeless,0.134,1.6757e+11,0.134151,295.245,0.99337,arney
+temperature-independent,up from lifeless,0.136,1.7007e+11,0.136151,295.354,0.99347,arney
+temperature-independent,up from lifeless,0.138,1.7257e+11,0.138151,295.462,0.99356,arney
+temperature-independent,up from lifeless,0.14,1.7507e+11,0.140151,295.571,0.99365,arney
+temperature-independent,up from lifeless,0.142,1.7757e+11,0.142151,295.679,0.99374,arney
+temperature-independent,up from lifeless,0.144,1.8008e+11,0.144151,295.787,0.99383,arney
+temperature-independent,up from lifeless,0.146,1.8258e+11,0.146151,295.896,0.99391,arney
+temperature-independent,up from lifeless,0.148,1.8508e+11,0.148151,296.004,0.994,arney
+temperature-independent,up from lifeless,0.15,1.8758e+11,0.150151,296.113,0.99408,arney
+temperature-independent,up from lifeless,0.152,1.9008e+11,0.152151,296.221,0.99415,arney
+temperature-independent,up from lifeless,0.154,1.9258e+11,0.154151,296.329,0.99423,arney
+temperature-independent,up from lifeless,0.156,1.9508e+11,0.156151,296.438,0.9943,arney
+temperature-independent,up from lifeless,0.158,1.9758e+11,0.158151,296.546,0.99438,arney
+temperature-independent,up from lifeless,0.16,2.0008e+11,0.160151,296.655,0.99445,arney
+temperature-independent,up from lifeless,0.162,2.0259e+11,0.162151,296.763,0.99452,arney
+temperature-independent,up from lifeless,0.164,2.0509e+11,0.164151,296.871,0.99458,arney
+temperature-independent,up from lifeless,0.166,2.0759e+11,0.166151,296.98,0.99465,arney
+temperature-independent,up from lifeless,0.168,2.1009e+11,0.168151,296.341,0.99471,arney
+temperature-independent,up from lifeless,0.17,2.1259e+11,0.170151,295.441,0.99477,arney
+temperature-independent,up from lifeless,0.172,2.1509e+11,0.172151,294.541,0.99483,arney
+temperature-independent,up from lifeless,0.174,2.1759e+11,0.174151,293.641,0.99489,arney
+temperature-independent,up from lifeless,0.176,2.2009e+11,0.176151,292.74,0.99495,arney
+temperature-independent,up from lifeless,0.178,2.2259e+11,0.178151,291.786,0.99501,arney
+temperature-independent,up from lifeless,0.18,2.2509e+11,0.180151,290.586,0.99506,arney
+temperature-independent,up from lifeless,0.182,2.2760e+11,0.182151,289.387,0.99512,arney
+temperature-independent,up from lifeless,0.184,2.3010e+11,0.184151,288.187,0.99517,arney
+temperature-independent,up from lifeless,0.186,2.3260e+11,0.186151,286.987,0.99522,arney
+temperature-independent,up from lifeless,0.188,2.3510e+11,0.188151,285.787,0.99527,arney
+temperature-independent,up from lifeless,0.19,2.3760e+11,0.190151,284.587,0.99532,arney
+temperature-independent,up from lifeless,0.192,2.4010e+11,0.192151,283.387,0.99537,arney
+temperature-independent,up from lifeless,0.194,2.4260e+11,0.194151,282.187,0.99542,arney
+temperature-independent,up from lifeless,0.196,2.4510e+11,0.196151,280.782,0.99547,arney
+temperature-independent,up from lifeless,0.198,2.4760e+11,0.198151,279.339,0.99551,arney
+temperature-independent,up from lifeless,0.2,2.5011e+11,0.200151,277.897,0.99556,arney
+temperature-independent,up from lifeless,0.202,2.5261e+11,0.202151,276.454,0.9956,arney
+temperature-independent,up from lifeless,0.204,2.5511e+11,0.204151,275.012,0.99564,arney
+temperature-independent,up from lifeless,0.206,2.5761e+11,0.206151,273.975,0.99569,arney
+temperature-independent,up from lifeless,0.208,2.6011e+11,0.208151,273.883,0.99573,arney
+temperature-independent,up from lifeless,0.21,2.6261e+11,0.210151,273.791,0.99577,arney
+temperature-independent,up from lifeless,0.212,2.6511e+11,0.212151,273.7,0.99581,arney
+temperature-independent,up from lifeless,0.214,2.6761e+11,0.214151,273.608,0.99585,arney
+temperature-independent,up from lifeless,0.216,2.7011e+11,0.216151,273.517,0.99589,arney
+temperature-independent,up from lifeless,0.218,2.7261e+11,0.218151,273.465,0.99592,arney
+temperature-independent,up from lifeless,0.22,2.7512e+11,0.220151,273.428,0.99596,arney
+temperature-independent,up from lifeless,0.222,2.7762e+11,0.222151,273.391,0.996,arney
+temperature-independent,up from lifeless,0.224,2.8012e+11,0.224151,273.497,0.99603,arney
+temperature-independent,up from lifeless,0.226,2.8262e+11,0.226151,273.608,0.99607,arney
+temperature-independent,up from lifeless,0.228,2.8512e+11,0.228151,273.718,0.9961,arney
+temperature-independent,up from lifeless,0.23,2.8762e+11,0.230151,273.828,0.99614,arney
+temperature-independent,up from lifeless,0.232,2.9012e+11,0.232151,273.937,0.99617,arney
+temperature-independent,up from lifeless,0.234,2.9262e+11,0.234151,274.002,0.9962,plateau
+temperature-independent,up from lifeless,0.236,2.9512e+11,0.236151,274.002,0.99624,plateau
+temperature-independent,up from lifeless,0.238,2.9762e+11,0.238151,274.002,0.99627,plateau
+temperature-independent,up from lifeless,0.24,3.0013e+11,0.240151,274.002,0.9963,plateau
+temperature-independent,up from lifeless,0.242,3.0263e+11,0.242151,274.002,0.99633,plateau
+temperature-independent,up from lifeless,0.244,3.0513e+11,0.244151,274.002,0.99636,plateau
+temperature-independent,up from lifeless,0.246,3.0763e+11,0.246151,274.002,0.99639,plateau
+temperature-independent,up from lifeless,0.248,3.1013e+11,0.248151,274.002,0.99642,plateau
+temperature-independent,up from lifeless,0.25,3.1263e+11,0.250151,274.002,0.99645,plateau
+temperature-independent,up from lifeless,0.252,3.1513e+11,0.252151,274.002,0.99647,plateau
+temperature-independent,up from lifeless,0.254,3.1763e+11,0.254151,274.002,0.9965,plateau
+temperature-independent,up from lifeless,0.256,3.2013e+11,0.256151,274.002,0.99653,plateau
+temperature-independent,up from lifeless,0.258,3.2264e+11,0.258151,274.002,0.99656,plateau
+temperature-independent,up from lifeless,0.26,3.2514e+11,0.260151,274.002,0.99658,plateau
+temperature-independent,up from lifeless,0.262,3.2764e+11,0.262151,274.002,0.99661,plateau
+temperature-independent,up from lifeless,0.264,3.3014e+11,0.264151,274.002,0.99663,plateau
+temperature-independent,up from lifeless,0.266,3.3264e+11,0.266151,274.002,0.99666,plateau
+temperature-independent,up from lifeless,0.268,3.3514e+11,0.268151,274.002,0.99668,plateau
+temperature-independent,up from lifeless,0.27,3.3764e+11,0.270151,274.002,0.99671,plateau
+temperature-independent,up from lifeless,0.272,3.4014e+11,0.272151,274.002,0.99673,plateau
+temperature-independent,up from lifeless,0.274,3.4264e+11,0.274151,274.002,0.99676,plateau
+temperature-independent,up from lifeless,0.276,3.4514e+11,0.276151,274.002,0.99678,plateau
+temperature-independent,up from lifeless,0.278,3.4765e+11,0.278151,274.002,0.9968,plateau
+temperature-independent,up from lifeless,0.28,3.5015e+11,0.280151,274.002,0.99683,plateau
+temperature-independent,up from lifeless,0.282,3.5265e+11,0.282151,274.002,0.99685,plateau
+temperature-independent,up from lifeless,0.284,3.5515e+11,0.284151,274.002,0.99687,plateau
+temperature-independent,up from lifeless,0.286,3.5765e+11,0.286151,274.002,0.99689,plateau
+temperature-independent,up from lifeless,0.288,3.6015e+11,0.288151,274.002,0.99691,plateau
+temperature-independent,up from lifeless,0.29,3.6265e+11,0.290151,274.002,0.99694,plateau
+temperature-independent,up from lifeless,0.292,3.6515e+11,0.292151,274.002,0.99696,plateau
+temperature-independent,up from lifeless,0.294,3.6765e+11,0.294151,274.002,0.99698,plateau
+temperature-independent,up from lifeless,0.296,3.7016e+11,0.296151,274.002,0.997,plateau
+temperature-independent,up from lifeless,0.298,3.7266e+11,0.298151,274.002,0.99702,plateau
+temperature-independent,up from lifeless,0.3,3.7516e+11,0.300151,274.002,0.99704,plateau
+temperature-independent,up from lifeless,0.302,3.7766e+11,0.302151,274.002,0.99706,plateau
+temperature-independent,up from lifeless,0.304,3.8016e+11,0.304151,274.002,0.99708,plateau
+temperature-independent,up from lifeless,0.306,3.8266e+11,0.306151,274.002,0.9971,plateau
+temperature-independent,up from lifeless,0.308,3.8516e+11,0.308151,274.002,0.99712,plateau
+temperature-independent,up from lifeless,0.31,3.8766e+11,0.310151,274.002,0.99713,plateau
+temperature-independent,up from lifeless,0.312,3.9016e+11,0.312151,274.002,0.99715,plateau
+temperature-independent,up from lifeless,0.314,3.9266e+11,0.314151,274.002,0.99717,plateau
+temperature-independent,up from lifeless,0.316,3.9517e+11,0.316151,274.002,0.99719,plateau
+temperature-independent,up from lifeless,0.318,3.9767e+11,0.318151,274.002,0.99721,plateau
+temperature-independent,up from lifeless,0.32,4.0017e+11,0.320151,274.002,0.99722,plateau
+temperature-independent,up from lifeless,0.322,4.0267e+11,0.322151,274.002,0.99724,plateau
+temperature-independent,up from lifeless,0.324,4.0517e+11,0.324151,274.002,0.99726,plateau
+temperature-independent,up from lifeless,0.326,4.0767e+11,0.326151,274.002,0.99727,plateau
+temperature-independent,up from lifeless,0.328,4.1017e+11,0.328151,274.002,0.99729,plateau
+temperature-independent,up from lifeless,0.33,4.1267e+11,0.330151,274.002,0.99731,plateau
+temperature-independent,up from lifeless,0.332,4.1517e+11,0.332151,274.002,0.99732,plateau
+temperature-independent,up from lifeless,0.334,4.1768e+11,0.334151,274.002,0.99734,plateau
+temperature-independent,up from lifeless,0.336,4.2018e+11,0.336151,274.002,0.99736,plateau
+temperature-independent,up from lifeless,0.338,4.2268e+11,0.338151,274.002,0.99737,plateau
+temperature-independent,up from lifeless,0.34,4.2518e+11,0.340151,274.002,0.99739,plateau
+temperature-independent,up from lifeless,0.342,4.2768e+11,0.342151,274.002,0.9974,plateau
+temperature-independent,up from lifeless,0.344,4.3018e+11,0.344151,274.002,0.99742,plateau
+temperature-independent,up from lifeless,0.346,4.3268e+11,0.346151,274.002,0.99743,plateau
+temperature-independent,up from lifeless,0.348,4.3518e+11,0.348151,274.002,0.99745,plateau
+temperature-independent,up from lifeless,0.35,4.3768e+11,0.350151,274.002,0.99746,plateau
+temperature-independent,up from lifeless,0.352,4.4018e+11,0.352151,274.002,0.99748,plateau
+temperature-independent,up from lifeless,0.354,4.4269e+11,0.354151,274.002,0.99749,plateau
+temperature-independent,up from lifeless,0.356,4.4519e+11,0.356151,274.002,0.9975,plateau
+temperature-independent,up from lifeless,0.358,4.4769e+11,0.358151,274.002,0.99752,plateau
+temperature-independent,up from lifeless,0.36,4.5019e+11,0.360151,274.002,0.99753,plateau
+temperature-independent,up from lifeless,0.362,4.5269e+11,0.362151,274.002,0.99755,plateau
+temperature-independent,up from lifeless,0.364,4.5519e+11,0.364151,274.002,0.99756,plateau
+temperature-independent,up from lifeless,0.366,4.5769e+11,0.366151,274.002,0.99757,plateau
+temperature-independent,up from lifeless,0.368,4.6019e+11,0.368151,274.002,0.99759,plateau
+temperature-independent,up from lifeless,0.37,4.6269e+11,0.370151,274.002,0.9976,plateau
+temperature-independent,up from lifeless,0.372,4.6520e+11,0.372151,274.002,0.99761,plateau
+temperature-independent,up from lifeless,0.374,4.6770e+11,0.374151,274.002,0.99762,plateau
+temperature-independent,up from lifeless,0.376,4.7020e+11,0.376151,274.002,0.99764,plateau
+temperature-independent,up from lifeless,0.378,4.7270e+11,0.378151,274.002,0.99765,plateau
+temperature-independent,up from lifeless,0.38,4.7520e+11,0.380151,274.002,0.99766,plateau
+temperature-independent,up from lifeless,0.382,4.7770e+11,0.382151,274.002,0.99767,plateau
+temperature-independent,up from lifeless,0.384,4.8020e+11,0.384151,274.002,0.99769,plateau
+temperature-independent,up from lifeless,0.386,4.8270e+11,0.386151,274.002,0.9977,plateau
+temperature-independent,up from lifeless,0.388,4.8520e+11,0.388151,274.002,0.99771,plateau
+temperature-independent,up from lifeless,0.39,4.8770e+11,0.390151,274.002,0.99772,plateau
+temperature-independent,up from lifeless,0.392,4.9021e+11,0.392151,274.002,0.99773,plateau
+temperature-independent,up from lifeless,0.394,4.9271e+11,0.394151,274.002,0.99774,plateau
+temperature-independent,up from lifeless,0.396,4.9521e+11,0.396151,274.002,0.99776,plateau
+temperature-independent,up from lifeless,0.398,4.9771e+11,0.398151,274.002,0.99777,plateau
+temperature-independent,up from lifeless,0.4,5.0021e+11,0.400151,274.002,0.99778,plateau
+temperature-independent,down from high supply,0.0,0.0000e+00,0.00104,266.114,0.0,bridge
+temperature-independent,down from high supply,0.002,2.5011e+09,0.002151,267.194,0.55574,bridge
+temperature-independent,down from high supply,0.004,5.0021e+09,0.004151,268.91,0.77787,bridge
+temperature-independent,down from high supply,0.006,7.5032e+09,0.006151,270.398,0.85191,bridge
+temperature-independent,down from high supply,0.008,1.0004e+10,0.008151,271.713,0.88894,bridge
+temperature-independent,down from high supply,0.01,1.2505e+10,0.010151,272.89,0.91115,bridge
+temperature-independent,down from high supply,0.012,1.5006e+10,0.012151,273.955,0.92596,bridge
+temperature-independent,down from high supply,0.014,1.7507e+10,0.014151,274.929,0.93653,bridge
+temperature-independent,down from high supply,0.016,2.0008e+10,0.016151,275.825,0.94447,bridge
+temperature-independent,down from high supply,0.018,2.2509e+10,0.018151,276.655,0.95064,bridge
+temperature-independent,down from high supply,0.02,2.5011e+10,0.020151,277.427,0.95557,bridge
+temperature-independent,down from high supply,0.022,2.7512e+10,0.022151,278.151,0.95961,bridge
+temperature-independent,down from high supply,0.024,3.0013e+10,0.024151,278.83,0.96298,bridge
+temperature-independent,down from high supply,0.026,3.2514e+10,0.026151,279.471,0.96583,bridge
+temperature-independent,down from high supply,0.028,3.5015e+10,0.028151,280.077,0.96827,bridge
+temperature-independent,down from high supply,0.03,3.7516e+10,0.030151,280.653,0.97038,bridge
+temperature-independent,down from high supply,0.032,4.0017e+10,0.032151,281.2,0.97223,bridge
+temperature-independent,down from high supply,0.034,4.2518e+10,0.034151,281.722,0.97387,bridge
+temperature-independent,down from high supply,0.036,4.5019e+10,0.036151,282.221,0.97532,bridge
+temperature-independent,down from high supply,0.038,4.7520e+10,0.038151,282.699,0.97662,bridge
+temperature-independent,down from high supply,0.04,5.0021e+10,0.040151,283.157,0.97779,bridge
+temperature-independent,down from high supply,0.042,5.2522e+10,0.042151,283.597,0.97884,bridge
+temperature-independent,down from high supply,0.044,5.5023e+10,0.044151,284.021,0.97981,bridge
+temperature-independent,down from high supply,0.046,5.7524e+10,0.046151,284.429,0.98068,bridge
+temperature-independent,down from high supply,0.048,6.0025e+10,0.048151,284.824,0.98149,bridge
+temperature-independent,down from high supply,0.05,6.2526e+10,0.050151,285.204,0.98223,bridge
+temperature-independent,down from high supply,0.052,6.5027e+10,0.052151,285.573,0.98291,bridge
+temperature-independent,down from high supply,0.054,6.7528e+10,0.054151,285.929,0.98355,bridge
+temperature-independent,down from high supply,0.056,7.0029e+10,0.056151,286.275,0.98413,bridge
+temperature-independent,down from high supply,0.058,7.2530e+10,0.058151,286.61,0.98468,bridge
+temperature-independent,down from high supply,0.06,7.5032e+10,0.060151,286.936,0.98519,bridge
+temperature-independent,down from high supply,0.062,7.7533e+10,0.062151,287.253,0.98567,bridge
+temperature-independent,down from high supply,0.064,8.0034e+10,0.064151,287.56,0.98612,bridge
+temperature-independent,down from high supply,0.066,8.2535e+10,0.066151,287.86,0.98654,bridge
+temperature-independent,down from high supply,0.068,8.5036e+10,0.068151,288.152,0.98693,bridge
+temperature-independent,down from high supply,0.07,8.7537e+10,0.070151,288.437,0.98731,bridge
+temperature-independent,down from high supply,0.072,9.0038e+10,0.072151,288.714,0.98766,bridge
+temperature-independent,down from high supply,0.074,9.2539e+10,0.074151,288.985,0.98799,bridge
+temperature-independent,down from high supply,0.076,9.5040e+10,0.076151,289.25,0.98831,bridge
+temperature-independent,down from high supply,0.078,9.7541e+10,0.078151,289.508,0.98861,bridge
+temperature-independent,down from high supply,0.08,1.0004e+11,0.080151,289.761,0.98889,bridge
+temperature-independent,down from high supply,0.082,1.0254e+11,0.082151,290.008,0.98916,bridge
+temperature-independent,down from high supply,0.084,1.0504e+11,0.084151,290.249,0.98942,bridge
+temperature-independent,down from high supply,0.086,1.0755e+11,0.086151,290.486,0.98967,bridge
+temperature-independent,down from high supply,0.088,1.1005e+11,0.088151,290.718,0.9899,bridge
+temperature-independent,down from high supply,0.09,1.1255e+11,0.090151,290.945,0.99013,bridge
+temperature-independent,down from high supply,0.092,1.1505e+11,0.092151,291.168,0.99034,bridge
+temperature-independent,down from high supply,0.094,1.1755e+11,0.094151,291.386,0.99055,bridge
+temperature-independent,down from high supply,0.096,1.2005e+11,0.096151,291.6,0.99074,bridge
+temperature-independent,down from high supply,0.098,1.2255e+11,0.098151,291.81,0.99093,bridge
+temperature-independent,down from high supply,0.1,1.2505e+11,0.100151,292.028,0.99111,arney
+temperature-independent,down from high supply,0.102,1.2755e+11,0.102151,292.387,0.99129,arney
+temperature-independent,down from high supply,0.104,1.3005e+11,0.104151,292.747,0.99146,arney
+temperature-independent,down from high supply,0.106,1.3256e+11,0.106151,293.106,0.99162,arney
+temperature-independent,down from high supply,0.108,1.3506e+11,0.108151,293.466,0.99177,arney
+temperature-independent,down from high supply,0.11,1.3756e+11,0.110151,293.825,0.99192,arney
+temperature-independent,down from high supply,0.112,1.4006e+11,0.112151,294.053,0.99207,arney
+temperature-independent,down from high supply,0.114,1.4256e+11,0.114151,294.161,0.99221,arney
+temperature-independent,down from high supply,0.116,1.4506e+11,0.116151,294.27,0.99234,arney
+temperature-independent,down from high supply,0.118,1.4756e+11,0.118151,294.378,0.99247,arney
+temperature-independent,down from high supply,0.12,1.5006e+11,0.120151,294.486,0.9926,arney
+temperature-independent,down from high supply,0.122,1.5256e+11,0.122151,294.595,0.99272,arney
+temperature-independent,down from high supply,0.124,1.5507e+11,0.124151,294.703,0.99283,arney
+temperature-independent,down from high supply,0.126,1.5757e+11,0.126151,294.812,0.99295,arney
+temperature-independent,down from high supply,0.128,1.6007e+11,0.128151,294.92,0.99306,arney
+temperature-independent,down from high supply,0.13,1.6257e+11,0.130151,295.029,0.99317,arney
+temperature-independent,down from high supply,0.132,1.6507e+11,0.132151,295.137,0.99327,arney
+temperature-independent,down from high supply,0.134,1.6757e+11,0.134151,295.245,0.99337,arney
+temperature-independent,down from high supply,0.136,1.7007e+11,0.136151,295.354,0.99347,arney
+temperature-independent,down from high supply,0.138,1.7257e+11,0.138151,295.462,0.99356,arney
+temperature-independent,down from high supply,0.14,1.7507e+11,0.140151,295.571,0.99365,arney
+temperature-independent,down from high supply,0.142,1.7757e+11,0.142151,295.679,0.99374,arney
+temperature-independent,down from high supply,0.144,1.8008e+11,0.144151,295.787,0.99383,arney
+temperature-independent,down from high supply,0.146,1.8258e+11,0.146151,295.896,0.99391,arney
+temperature-independent,down from high supply,0.148,1.8508e+11,0.148151,296.004,0.994,arney
+temperature-independent,down from high supply,0.15,1.8758e+11,0.150151,296.113,0.99408,arney
+temperature-independent,down from high supply,0.152,1.9008e+11,0.152151,296.221,0.99415,arney
+temperature-independent,down from high supply,0.154,1.9258e+11,0.154151,296.329,0.99423,arney
+temperature-independent,down from high supply,0.156,1.9508e+11,0.156151,296.438,0.9943,arney
+temperature-independent,down from high supply,0.158,1.9758e+11,0.158151,296.546,0.99438,arney
+temperature-independent,down from high supply,0.16,2.0008e+11,0.160151,296.655,0.99445,arney
+temperature-independent,down from high supply,0.162,2.0259e+11,0.162151,296.763,0.99452,arney
+temperature-independent,down from high supply,0.164,2.0509e+11,0.164151,296.871,0.99458,arney
+temperature-independent,down from high supply,0.166,2.0759e+11,0.166151,296.98,0.99465,arney
+temperature-independent,down from high supply,0.168,2.1009e+11,0.168151,296.341,0.99471,arney
+temperature-independent,down from high supply,0.17,2.1259e+11,0.170151,295.441,0.99477,arney
+temperature-independent,down from high supply,0.172,2.1509e+11,0.172151,294.541,0.99483,arney
+temperature-independent,down from high supply,0.174,2.1759e+11,0.174151,293.641,0.99489,arney
+temperature-independent,down from high supply,0.176,2.2009e+11,0.176151,292.74,0.99495,arney
+temperature-independent,down from high supply,0.178,2.2259e+11,0.178151,291.786,0.99501,arney
+temperature-independent,down from high supply,0.18,2.2509e+11,0.180151,290.586,0.99506,arney
+temperature-independent,down from high supply,0.182,2.2760e+11,0.182151,289.387,0.99512,arney
+temperature-independent,down from high supply,0.184,2.3010e+11,0.184151,288.187,0.99517,arney
+temperature-independent,down from high supply,0.186,2.3260e+11,0.186151,286.987,0.99522,arney
+temperature-independent,down from high supply,0.188,2.3510e+11,0.188151,285.787,0.99527,arney
+temperature-independent,down from high supply,0.19,2.3760e+11,0.190151,284.587,0.99532,arney
+temperature-independent,down from high supply,0.192,2.4010e+11,0.192151,283.387,0.99537,arney
+temperature-independent,down from high supply,0.194,2.4260e+11,0.194151,282.187,0.99542,arney
+temperature-independent,down from high supply,0.196,2.4510e+11,0.196151,280.782,0.99547,arney
+temperature-independent,down from high supply,0.198,2.4760e+11,0.198151,279.339,0.99551,arney
+temperature-independent,down from high supply,0.2,2.5011e+11,0.200151,277.897,0.99556,arney
+temperature-independent,down from high supply,0.202,2.5261e+11,0.202151,276.454,0.9956,arney
+temperature-independent,down from high supply,0.204,2.5511e+11,0.204151,275.012,0.99564,arney
+temperature-independent,down from high supply,0.206,2.5761e+11,0.206151,273.975,0.99569,arney
+temperature-independent,down from high supply,0.208,2.6011e+11,0.208151,273.883,0.99573,arney
+temperature-independent,down from high supply,0.21,2.6261e+11,0.210151,273.791,0.99577,arney
+temperature-independent,down from high supply,0.212,2.6511e+11,0.212151,273.7,0.99581,arney
+temperature-independent,down from high supply,0.214,2.6761e+11,0.214151,273.608,0.99585,arney
+temperature-independent,down from high supply,0.216,2.7011e+11,0.216151,273.517,0.99589,arney
+temperature-independent,down from high supply,0.218,2.7261e+11,0.218151,273.465,0.99592,arney
+temperature-independent,down from high supply,0.22,2.7512e+11,0.220151,273.428,0.99596,arney
+temperature-independent,down from high supply,0.222,2.7762e+11,0.222151,273.391,0.996,arney
+temperature-independent,down from high supply,0.224,2.8012e+11,0.224151,273.497,0.99603,arney
+temperature-independent,down from high supply,0.226,2.8262e+11,0.226151,273.608,0.99607,arney
+temperature-independent,down from high supply,0.228,2.8512e+11,0.228151,273.718,0.9961,arney
+temperature-independent,down from high supply,0.23,2.8762e+11,0.230151,273.828,0.99614,arney
+temperature-independent,down from high supply,0.232,2.9012e+11,0.232151,273.937,0.99617,arney
+temperature-independent,down from high supply,0.234,2.9262e+11,0.234151,274.002,0.9962,plateau
+temperature-independent,down from high supply,0.236,2.9512e+11,0.236151,274.002,0.99624,plateau
+temperature-independent,down from high supply,0.238,2.9762e+11,0.238151,274.002,0.99627,plateau
+temperature-independent,down from high supply,0.24,3.0013e+11,0.240151,274.002,0.9963,plateau
+temperature-independent,down from high supply,0.242,3.0263e+11,0.242151,274.002,0.99633,plateau
+temperature-independent,down from high supply,0.244,3.0513e+11,0.244151,274.002,0.99636,plateau
+temperature-independent,down from high supply,0.246,3.0763e+11,0.246151,274.002,0.99639,plateau
+temperature-independent,down from high supply,0.248,3.1013e+11,0.248151,274.002,0.99642,plateau
+temperature-independent,down from high supply,0.25,3.1263e+11,0.250151,274.002,0.99645,plateau
+temperature-independent,down from high supply,0.252,3.1513e+11,0.252151,274.002,0.99647,plateau
+temperature-independent,down from high supply,0.254,3.1763e+11,0.254151,274.002,0.9965,plateau
+temperature-independent,down from high supply,0.256,3.2013e+11,0.256151,274.002,0.99653,plateau
+temperature-independent,down from high supply,0.258,3.2264e+11,0.258151,274.002,0.99656,plateau
+temperature-independent,down from high supply,0.26,3.2514e+11,0.260151,274.002,0.99658,plateau
+temperature-independent,down from high supply,0.262,3.2764e+11,0.262151,274.002,0.99661,plateau
+temperature-independent,down from high supply,0.264,3.3014e+11,0.264151,274.002,0.99663,plateau
+temperature-independent,down from high supply,0.266,3.3264e+11,0.266151,274.002,0.99666,plateau
+temperature-independent,down from high supply,0.268,3.3514e+11,0.268151,274.002,0.99668,plateau
+temperature-independent,down from high supply,0.27,3.3764e+11,0.270151,274.002,0.99671,plateau
+temperature-independent,down from high supply,0.272,3.4014e+11,0.272151,274.002,0.99673,plateau
+temperature-independent,down from high supply,0.274,3.4264e+11,0.274151,274.002,0.99676,plateau
+temperature-independent,down from high supply,0.276,3.4514e+11,0.276151,274.002,0.99678,plateau
+temperature-independent,down from high supply,0.278,3.4765e+11,0.278151,274.002,0.9968,plateau
+temperature-independent,down from high supply,0.28,3.5015e+11,0.280151,274.002,0.99683,plateau
+temperature-independent,down from high supply,0.282,3.5265e+11,0.282151,274.002,0.99685,plateau
+temperature-independent,down from high supply,0.284,3.5515e+11,0.284151,274.002,0.99687,plateau
+temperature-independent,down from high supply,0.286,3.5765e+11,0.286151,274.002,0.99689,plateau
+temperature-independent,down from high supply,0.288,3.6015e+11,0.288151,274.002,0.99691,plateau
+temperature-independent,down from high supply,0.29,3.6265e+11,0.290151,274.002,0.99694,plateau
+temperature-independent,down from high supply,0.292,3.6515e+11,0.292151,274.002,0.99696,plateau
+temperature-independent,down from high supply,0.294,3.6765e+11,0.294151,274.002,0.99698,plateau
+temperature-independent,down from high supply,0.296,3.7016e+11,0.296151,274.002,0.997,plateau
+temperature-independent,down from high supply,0.298,3.7266e+11,0.298151,274.002,0.99702,plateau
+temperature-independent,down from high supply,0.3,3.7516e+11,0.300151,274.002,0.99704,plateau
+temperature-independent,down from high supply,0.302,3.7766e+11,0.302151,274.002,0.99706,plateau
+temperature-independent,down from high supply,0.304,3.8016e+11,0.304151,274.002,0.99708,plateau
+temperature-independent,down from high supply,0.306,3.8266e+11,0.306151,274.002,0.9971,plateau
+temperature-independent,down from high supply,0.308,3.8516e+11,0.308151,274.002,0.99712,plateau
+temperature-independent,down from high supply,0.31,3.8766e+11,0.310151,274.002,0.99713,plateau
+temperature-independent,down from high supply,0.312,3.9016e+11,0.312151,274.002,0.99715,plateau
+temperature-independent,down from high supply,0.314,3.9266e+11,0.314151,274.002,0.99717,plateau
+temperature-independent,down from high supply,0.316,3.9517e+11,0.316151,274.002,0.99719,plateau
+temperature-independent,down from high supply,0.318,3.9767e+11,0.318151,274.002,0.99721,plateau
+temperature-independent,down from high supply,0.32,4.0017e+11,0.320151,274.002,0.99722,plateau
+temperature-independent,down from high supply,0.322,4.0267e+11,0.322151,274.002,0.99724,plateau
+temperature-independent,down from high supply,0.324,4.0517e+11,0.324151,274.002,0.99726,plateau
+temperature-independent,down from high supply,0.326,4.0767e+11,0.326151,274.002,0.99727,plateau
+temperature-independent,down from high supply,0.328,4.1017e+11,0.328151,274.002,0.99729,plateau
+temperature-independent,down from high supply,0.33,4.1267e+11,0.330151,274.002,0.99731,plateau
+temperature-independent,down from high supply,0.332,4.1517e+11,0.332151,274.002,0.99732,plateau
+temperature-independent,down from high supply,0.334,4.1768e+11,0.334151,274.002,0.99734,plateau
+temperature-independent,down from high supply,0.336,4.2018e+11,0.336151,274.002,0.99736,plateau
+temperature-independent,down from high supply,0.338,4.2268e+11,0.338151,274.002,0.99737,plateau
+temperature-independent,down from high supply,0.34,4.2518e+11,0.340151,274.002,0.99739,plateau
+temperature-independent,down from high supply,0.342,4.2768e+11,0.342151,274.002,0.9974,plateau
+temperature-independent,down from high supply,0.344,4.3018e+11,0.344151,274.002,0.99742,plateau
+temperature-independent,down from high supply,0.346,4.3268e+11,0.346151,274.002,0.99743,plateau
+temperature-independent,down from high supply,0.348,4.3518e+11,0.348151,274.002,0.99745,plateau
+temperature-independent,down from high supply,0.35,4.3768e+11,0.350151,274.002,0.99746,plateau
+temperature-independent,down from high supply,0.352,4.4018e+11,0.352151,274.002,0.99748,plateau
+temperature-independent,down from high supply,0.354,4.4269e+11,0.354151,274.002,0.99749,plateau
+temperature-independent,down from high supply,0.356,4.4519e+11,0.356151,274.002,0.9975,plateau
+temperature-independent,down from high supply,0.358,4.4769e+11,0.358151,274.002,0.99752,plateau
+temperature-independent,down from high supply,0.36,4.5019e+11,0.360151,274.002,0.99753,plateau
+temperature-independent,down from high supply,0.362,4.5269e+11,0.362151,274.002,0.99755,plateau
+temperature-independent,down from high supply,0.364,4.5519e+11,0.364151,274.002,0.99756,plateau
+temperature-independent,down from high supply,0.366,4.5769e+11,0.366151,274.002,0.99757,plateau
+temperature-independent,down from high supply,0.368,4.6019e+11,0.368151,274.002,0.99759,plateau
+temperature-independent,down from high supply,0.37,4.6269e+11,0.370151,274.002,0.9976,plateau
+temperature-independent,down from high supply,0.372,4.6520e+11,0.372151,274.002,0.99761,plateau
+temperature-independent,down from high supply,0.374,4.6770e+11,0.374151,274.002,0.99762,plateau
+temperature-independent,down from high supply,0.376,4.7020e+11,0.376151,274.002,0.99764,plateau
+temperature-independent,down from high supply,0.378,4.7270e+11,0.378151,274.002,0.99765,plateau
+temperature-independent,down from high supply,0.38,4.7520e+11,0.380151,274.002,0.99766,plateau
+temperature-independent,down from high supply,0.382,4.7770e+11,0.382151,274.002,0.99767,plateau
+temperature-independent,down from high supply,0.384,4.8020e+11,0.384151,274.002,0.99769,plateau
+temperature-independent,down from high supply,0.386,4.8270e+11,0.386151,274.002,0.9977,plateau
+temperature-independent,down from high supply,0.388,4.8520e+11,0.388151,274.002,0.99771,plateau
+temperature-independent,down from high supply,0.39,4.8770e+11,0.390151,274.002,0.99772,plateau
+temperature-independent,down from high supply,0.392,4.9021e+11,0.392151,274.002,0.99773,plateau
+temperature-independent,down from high supply,0.394,4.9271e+11,0.394151,274.002,0.99774,plateau
+temperature-independent,down from high supply,0.396,4.9521e+11,0.396151,274.002,0.99776,plateau
+temperature-independent,down from high supply,0.398,4.9771e+11,0.398151,274.002,0.99777,plateau
+temperature-independent,down from high supply,0.4,5.0021e+11,0.400151,274.002,0.99778,plateau

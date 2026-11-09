@@ -77,9 +77,12 @@ Fidelity is measured against the published figures, digitised.
    cooling, conditional on the background atmosphere and haze treatment.
    First recover those responses, then attach a biological budget. The
    [Arney et al. (2016) response family](../models/haze_response/README.md)
-   is extracted at its fixed 2.7-Ga conditions; methane lifetime, the
-   low-methane branch and solar evolution need separate evidence or explicit
-   assumptions. This direction may lead to a paper.
+   is extracted at its fixed 2.7-Ga conditions. A [first coupled
+   draft](../models/haze_world/README.md) reduces methanogens and a finite
+   methane budget to one equation. With ample supply, it holds temperature at
+   the methanogens' cold edge on the haze branch, without leaving Arney's
+   domain. Methane lifetime, the low-methane branch and solar evolution remain
+   explicit assumptions. This direction may lead to a paper.
 2. **Evolving daisies.** Give the daisies a heritable optimum temperature and
    test whether regulation survives natural selection, the core of the
    critique by Robertson & Robinson (1998) and the replies from Lenton (1998)
