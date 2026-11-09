@@ -1,0 +1,137 @@
+{
+  "reviewed_4070dc3": {
+    "equilibrium": {
+      "r": 0.19570069763584036,
+      "stable": true,
+      "t_k": 281.10652333795394,
+      "eta": 0.6488704476942191,
+      "domain": "arney"
+    },
+    "full_state": [
+      0.00010533886569180261,
+      1.946611343081974e-05,
+      0.19570069763584036
+    ],
+    "full_equilibrium_residual": 8.944667923005412e-19,
+    "reduced_rate_per_yr": -0.09464580000296803,
+    "full_eigenvalues_per_yr": [
+      [
+        -0.054252008187216844,
+        0.0
+      ],
+      [
+        -0.03560705691548729,
+        0.14655648442465244
+      ],
+      [
+        -0.03560705691548729,
+        -0.14655648442465244
+      ]
+    ],
+    "frozen_biology_eigenvalues_per_yr": [
+      [
+        -0.05651931887829914,
+        0.09921796388598106
+      ],
+      [
+        -0.05651931887829914,
+        -0.09921796388598106
+      ]
+    ],
+    "characteristic_coefficients": [
+      0.12546612202658744,
+      0.02661017431652322,
+      0.00123405228993579
+    ],
+    "routh_hurwitz": true,
+    "reduced_interval_invariant": true,
+    "boundary_full_methane_rate": -9.896698484549157e-06,
+    "boundary_reduced_methane_rate": 1.999524229652605e-05
+  },
+  "corrected_Earth_source": {
+    "equilibrium": {
+      "r": 0.195700171319507,
+      "stable": true,
+      "t_k": 281.10690294784695,
+      "eta": 0.6505213324424072,
+      "domain": "arney"
+    },
+    "full_state": [
+      0.00010484360026726008,
+      1.9515639973273992e-05,
+      0.195700171319507
+    ],
+    "full_equilibrium_residual": 2.337810934421869e-19,
+    "reduced_rate_per_yr": -0.09375696716273295,
+    "full_eigenvalues_per_yr": [
+      [
+        -0.05394963934867305,
+        0.0
+      ],
+      [
+        -0.03584802389169926,
+        0.1471033573584945
+      ],
+      [
+        -0.03584802389169926,
+        -0.1471033573584945
+      ]
+    ],
+    "frozen_biology_eigenvalues_per_yr": [
+      [
+        -0.056595602414659996,
+        0.09994069550310829
+      ],
+      [
+        -0.056595602414659996,
+        -0.09994069550310829
+      ]
+    ],
+    "characteristic_coefficients": [
+      0.12564568713318114,
+      0.026792454483939375,
+      0.0012367673507582351
+    ],
+    "routh_hurwitz": true,
+    "reduced_interval_invariant": true,
+    "boundary_full_methane_rate": -9.946277658636745e-06,
+    "boundary_reduced_methane_rate": 1.994566312243846e-05
+  },
+  "rare_biomass": {
+    "initial": [
+      0.0003,
+      1e-06,
+      0.2333365
+    ],
+    "legacy_final": [
+      0.0003,
+      -9.379393995502403e-16,
+      0.0010395633276860565
+    ],
+    "log_biomass_final": [
+      0.00010533886569180261,
+      1.9466113430819723e-05,
+      0.1957006976358404
+    ]
+  },
+  "source_contained_control": {
+    "potential_ratio": 0.22,
+    "cold_edge_k": 281.0646873467581,
+    "thermal": {
+      "r": 0.19534395049069647,
+      "stable": true,
+      "t_k": 281.36383008870456,
+      "eta": 0.8854553586569789,
+      "domain": "arney"
+    },
+    "passive": {
+      "r": 0.21965525592211496,
+      "stable": true,
+      "t_k": 273.43757382620265,
+      "eta": 0.9959612924333995,
+      "domain": "arney"
+    },
+    "difference_k": 7.926256262501909,
+    "both_reduced_intervals_invariant": true
+  }
+}

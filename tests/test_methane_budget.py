@@ -10,6 +10,7 @@ from terra_prisca.haze_world.methane_budget import (
     atmosphere,
     capture_efficiency,
     equilibria,
+    full_derivatives,
     integrate_full,
     ratio_for_flux,
     response,
@@ -59,6 +60,29 @@ def test_full_three_variable_model_settles_on_the_reduced_equilibrium():
     c = atmosphere("B")["flux_to_ratio_per_yr"]
     y = integrate_full(np.array([c * HIGH.donor_flux / 0.1, 1e-6, 0.15]), HIGH, 3e5)
     assert y[2] == pytest.approx(warm["r"], rel=1e-4)
+
+
+def test_positive_biomass_recovers_after_a_long_cold_interval():
+    warm = [e for e in equilibria(HIGH) if e["stable"] and e["eta"] > 0][-1]
+    c = atmosphere("B")["flux_to_ratio_per_yr"]
+    y = integrate_full(np.array([c * HIGH.donor_flux / 0.1, 1e-6, response("B").ratios[-1]]), HIGH, 3e5)
+    assert y[1] > 0
+    assert y[2] == pytest.approx(warm["r"], rel=1e-4)
+
+
+def test_reduced_interval_invariance_does_not_imply_full_state_invariance():
+    lo = response("B").ratios[0]
+    c = atmosphere("B")["flux_to_ratio_per_yr"]
+    assert domain_invariant(HIGH) and tendency(lo, HIGH) > 0
+    rates = full_derivatives(np.array([c * HIGH.donor_flux / 0.1, 1e-12, lo]), HIGH)
+    assert rates[2] < 0
+
+
+def test_exactly_absent_biomass_is_not_automatically_reseeded():
+    c = atmosphere("B")["flux_to_ratio_per_yr"]
+    y = integrate_full(np.array([c * HIGH.donor_flux / 0.1, 0.0, 0.2]), HIGH, 1e5)
+    assert y[1] == 0
+    assert y[2] == pytest.approx(ratio_for_flux(HIGH.abiotic_flux, HIGH), rel=0.02)
 
 
 def test_stability_labels_agree_with_the_reduced_flow():

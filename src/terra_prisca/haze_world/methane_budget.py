@@ -3,23 +3,25 @@
 This is a new model, not a reconstruction. Every closure the published response
 curves do not supply is a named, swept assumption; see models/haze_world/README.md.
 
-State: electron-donor pool D, methanogen biomass B and atmospheric methane M, all
-expressed as CH4-equivalent columns divided by the CO2 column, so that M is the
-surface CH4/CO2 ratio r used by Arney et al. (2016, doi:10.1089/ast.2015.1422).
+State: electron-donor pool D, methanogen biomass B and atmospheric methane M,
+scaled to the CO2 column. Identifying M with Arney's surface CH4/CO2 ratio r
+assumes well-mixed methane (source doi:10.1089/ast.2015.1422).
 
     dD/dt = phi - k_D D - U,              U = mu(T) B D / (K + D)
     dB/dt = Y U - delta B
     dM/dt = U + phi_abiotic - M / tau
     T     = closure(M)
 
-Biology and the donor pool relax in years and methane in ~10^4 years, so the
-biology is quasi-steady on methane time scales. Eliminating D and B gives
+Eliminating the equilibrium donor and biomass variables gives the exact
+equilibrium balance below. Using it as a time-dependent scalar equation is a
+quasi-steady approximation; the bare methane lifetime does not establish
+time-scale separation once temperature feedback is included.
 
     dr/dt = c [eta(T(r)) Phi + Phi_abiotic] - r / tau
     eta   = max(0, 1 - Phi_K / (Phi (rho(T) - 1)))
 
 where Phi is the donor supply as a CH4-equivalent flux, rho = Y mu / delta is
-the methanogens' maximum per-capita growth over loss, Phi_K = K k_D is the supply
+the methanogens' maximum per-capita growth over loss, Phi_K = K k_D / c is the supply
 at which the abiotic donor level equals the half-saturation constant, and c
 converts molecules cm-2 s-1 to ratio units per year. eta is the fraction of the
 supply that methanogens capture; it is positive exactly when they can invade.
@@ -49,11 +51,12 @@ AIR_MOLAR_MASS = 0.028  # kg mol-1, N2-dominated background
 class Params:
     case: str = "B"  # Arney et al. (2016) atmosphere: fixed pCO2, pressure, S/S0 = 0.81
     # Methane loss: first-order with lifetime tau. Assumption; Arney's haze-onset
-    # flux of 1-3e11 molecules cm-2 s-1 implies 6-19 kyr for case B (see below).
+    # aggregate flux of 1-3e11 molecules cm-2 s-1 gives a conditional 6-19 kyr
+    # estimate if assigned to case B with well-mixed methane (see the model page).
     lifetime_yr: float = 1.0e4
-    abiotic_flux: float = 1.3e9  # molecules cm-2 s-1; upper abiotic estimate quoted by Arney
+    abiotic_flux: float = 6.8e8  # molecules cm-2 s-1; Earth-mass estimate quoted by Arney
     donor_flux: float = 1.5e11  # Phi: electron-donor supply, CH4-equivalent molecules cm-2 s-1
-    maintenance_flux: float = 1.0e10  # Phi_K = K k_D, molecules cm-2 s-1
+    maintenance_flux: float = 1.0e10  # Phi_K = K k_D / c, molecules cm-2 s-1
     growth_ratio_max: float = 10.0  # rho_max = Y mu_max / delta
     t_opt_k: float = 300.0  # thermal performance: rho = rho_max (1 - ((T - T_opt)/w)^2)+
     t_halfwidth_k: float = 20.0
@@ -184,7 +187,38 @@ def full_derivatives(y: np.ndarray, p: Params, k_donor: float = 0.1, death: floa
                      uptake + c * p.abiotic_flux - m / p.lifetime_yr])
 
 
-def integrate_full(y0: np.ndarray, p: Params, years: float, **kw) -> np.ndarray:
-    sol = solve_ivp(lambda _t, y: full_derivatives(y, p, **kw), (0.0, years), y0,
-                    method="LSODA", rtol=1e-9, atol=1e-14)
-    return sol.y[:, -1]
+def integrate_full(
+    y0: np.ndarray, p: Params, years: float, k_donor: float = 0.1, death: float = 1.0,
+) -> np.ndarray:
+    """Integrate the deterministic ODE, preserving initially positive biomass.
+
+    Biomass can fall below floating-point range before conditions improve.
+    Integrating its logarithm preserves the stated continuum equations; an
+    exactly absent initial population remains absent. Demographic extinction
+    is not modelled and no automatic reseeding occurs.
+    """
+    initial = np.asarray(y0, dtype=float).copy()
+    if initial.shape != (3,) or np.any(~np.isfinite(initial)) or np.any(initial < 0):
+        raise ValueError("Initial donor, biomass and methane must be finite and nonnegative")
+    log_biomass = initial[1] > 0
+    if log_biomass:
+        initial[1] = np.log(initial[1])
+
+    def rhs(_t, y):
+        if not log_biomass:
+            return full_derivatives(y, p, k_donor, death)
+        d, log_b, m = y
+        physical = np.array([d, np.exp(log_b), m])
+        rates = full_derivatives(physical, p, k_donor, death)
+        half_sat = atmosphere(p.case)["flux_to_ratio_per_yr"] * p.maintenance_flux / k_donor
+        mu = death * growth_ratio(temperature_k(max(m, 0.0), p), p)
+        rates[1] = mu * max(d, 0.0) / (half_sat + max(d, 0.0)) - death
+        return rates
+
+    sol = solve_ivp(rhs, (0.0, years), initial, method="LSODA", rtol=1e-9, atol=1e-14)
+    if not sol.success:
+        raise RuntimeError(sol.message)
+    final = sol.y[:, -1].copy()
+    if log_biomass:
+        final[1] = np.exp(final[1])
+    return np.maximum(final, 0.0)

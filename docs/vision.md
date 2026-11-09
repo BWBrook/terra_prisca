@@ -78,11 +78,14 @@ Fidelity is measured against the published figures, digitised.
    First recover those responses, then attach a biological budget. The
    [Arney et al. (2016) response family](../models/haze_response/README.md)
    is extracted at its fixed 2.7-Ga conditions. A [first coupled
-   draft](../models/haze_world/README.md) reduces methanogens and a finite
-   methane budget to one equation. With ample supply, it holds temperature at
-   the methanogens' cold edge on the haze branch, without leaving Arney's
-   domain. Methane lifetime, the low-methane branch and solar evolution remain
-   explicit assumptions. This direction may lead to a paper.
+   model](../models/haze_world/README.md) has an exact equilibrium elimination
+   and an approximate scalar dynamics. Under its assumed biological and loss
+   budget, stable equilibria can lie near the methanogens' net-growth threshold
+   without climate extrapolation. The full ODE has distinct transients and
+   basin limits. Separate Eager-Nash low-methane checkpoints are recovered;
+   a matched Arney loss law and missing climate branch remain unavailable.
+   Methane storage, loss and solar evolution need further evidence or explicit
+   assumptions. This direction may lead to a paper.
 2. **Evolving daisies.** Give the daisies a heritable optimum temperature and
    test whether regulation survives natural selection, the core of the
    critique by Robertson & Robinson (1998) and the replies from Lenton (1998)

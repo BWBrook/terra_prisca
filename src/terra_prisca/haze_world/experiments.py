@@ -56,8 +56,11 @@ def biotic_branch(p: Params) -> dict | None:
 
 
 def domain_invariant(p: Params) -> bool:
-    """True if the flow points into Arney's extracted domain at both ends, so any
-    trajectory started inside it stays there and no closure assumption is used."""
+    """Whether the reduced scalar flow stays in Arney's climate interval.
+
+    This excludes low/high climate extrapolation for that flow; it does not
+    establish invariance for arbitrary full-system donor and biomass states.
+    """
     lo, hi = response(p.case).ratios[[0, -1]]
     return bool(tendency(lo, p) > 0 and tendency(hi, p) < 0)
 
@@ -157,7 +160,7 @@ def plot(p: Params, sweeps: list[dict], setpoint: list[dict], regimes: list[dict
         ax.plot(x[inv], y[inv], "o", color=color, ms=3)
     ax.plot([250, 300], [250, 300], "k:", lw=0.8, label="T = cold edge")
     ax.set(xlabel="methanogens' cold edge (K)", ylabel="biotic equilibrium temperature (K)",
-           title="(c) high supply: set point vs thermal tolerance\n(dots: Arney domain is invariant, no closure assumption used)")
+           title="(c) high supply: equilibrium vs thermal tolerance\n(dots: reduced flow needs no climate extrapolation)")
     ax.legend(fontsize=7)
 
     ax = axs[1, 1]
