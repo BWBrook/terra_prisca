@@ -93,7 +93,11 @@ Fidelity is measured against the published figures, digitised.
    shows that a growth trade-off can retain a contrast under other increasing
    methane losses. The open question is which physiological and chemical
    constraints leave a temperature signal, and whether it regulates climate
-   against changing conditions.
+   against changing conditions. The stage-1 variant answers part of this.
+   Buffering against supply changes survives in two cases: with a
+   hotter-is-better trade-off when methane loss rises weakly with abundance,
+   and with a hard optimum floor high enough to become the set point. Both
+   cases also open a cold trap unless the methane-free climate is warm.
    This direction may lead to a paper.
 2. **Evolving daisies.** Give the daisies a heritable optimum temperature and
    test whether regulation survives natural selection, the core of the

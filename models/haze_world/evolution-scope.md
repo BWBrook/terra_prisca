@@ -140,7 +140,8 @@ constraints must be wholly non-evolvable to matter.
 
 ## Stages
 
-1. **`darwinian.py`, a named variant.** Monomorphic adaptive dynamics for
+1. **`darwinian.py`, a named variant (built 9 November 2026; results 4–7 on
+   the [model page](README.md)).** Monomorphic adaptive dynamics for
    scenarios U, F and H. Check the exact singular-strategy formula, invasion
    criterion and domain record. Add matched-capacity controls and loss-shape
    sensitivities. Figures show T\* against trait change and the endpoint

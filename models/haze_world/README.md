@@ -163,6 +163,112 @@ needs cold edges of 284 K or higher, so the default 281-K edge has none. The
 comparison is across models, not a splice; see the
 [evolution scope](evolution-scope.md).
 
+## Variant: an evolving thermal optimum (stage 1)
+
+**Code.** [`darwinian.py`](../../src/terra_prisca/haze_world/darwinian.py)
+is a named variant; the budget above is unchanged. Tests are in
+[`tests/test_darwinian.py`](../../tests/test_darwinian.py).
+Scope and assumptions: [evolution-scope.md](evolution-scope.md).
+
+```bash
+uv run python -m terra_prisca.haze_world.darwinian
+```
+
+**Method.** The methanogens' thermal optimum θ evolves by monomorphic adaptive
+dynamics. A rare mutant invades a resident at its equilibrium when it grows
+faster at the resident's temperature T\*. The selection gradient is
+E/(kθ²) − 2x/(w² − x²), with x = θ − T\*. It depends on the resident only
+through T\*, so each evolved endpoint solves a single methane balance. Three
+constraint scenarios are compared:
+
+- **U**, unconstrained: peak growth fixed at 10;
+- **F**, a hard floor on θ, swept from 274 to 300 K;
+- **H**, hotter-is-better: peak growth 10·exp[(E/k)(1/300 K − 1/θ)], with E
+  swept from 0 to 0.65 eV. These values of E are sensitivities, not measured
+  for methanogens.
+
+Five loss shapes are compared: power laws with elasticity d ln L/d ln r of 0.2,
+0.5, 1 and 2, and Codex's logarithmic law. Each is anchored at the
+temperature-independent ρ = 10 control, so every shape leaves the control
+climate unchanged. All runs use case B at potential ratio 0.22.
+
+**Measures.** Each endpoint is compared with two controls: the ρ = 10 control,
+and a matched-peak temperature-independent strain with the same peak growth.
+
+*Regulation* is the response of temperature to a change in supply,
+dT/d ln Φ, divided by the same response of a temperature-independent strain
+that has the same realized growth at the same equilibrium. Using the same
+equilibrium matters: sensitivities taken at different equilibria are
+dominated by the local slope of Arney's curve. A ratio of 1 means no
+buffering. Below 1, the methanogens' temperature response opposes the
+change.
+
+*Persistence* is local stability of the full (D, B, M) Jacobian.
+*Re-invasion* is whether the evolved strain can grow at the lifeless,
+abiotic-only equilibrium. That depends on the bridge, and is reported for
+T₀ = 265 K and 283 K.
+
+![Evolving thermal optimum: trait paths, constraint sweeps, regulation and re-invasion](figures/darwinian_figures.png)
+
+Data: [`darwinian_endpoints.csv`](figures/darwinian_endpoints.csv) and
+[`darwinian_paths.csv`](figures/darwinian_paths.csv). All 205 endpoints
+persist and lie inside Arney's extracted interval.
+
+**4. Without a constraint, evolution erases every thermal signature (panels a
+and b).** Under U, θ evolves to T\*. Growth is then at its peak, so its
+temperature derivative is zero. Under every loss shape, the climate equals the
+ρ = 10 control exactly and the regulation ratio is 1. This null result holds
+for any loss law at a feasible interior singularity. The original cold-edge
+equilibrium does not survive selection.
+
+**5. With hotter-is-better, any surviving signal depends on how steeply methane
+loss rises with abundance (panels b and e).**
+- **Elasticity 1 or 2:** the evolved climate stays within 0.33 K of the
+  control and the regulation ratio stays at 0.92 or above.
+- **Elasticity 0.5 or less, or the log law, with E ≥ 0.3–0.4 eV:** the offset
+  reaches 4.3–4.6 K and the ratio falls to 0.3.
+
+Most of that offset is the thermal response itself, not the changed peak
+growth: the matched-peak control accounts for at most 0.35 K. Low elasticity
+amplifies the effect because a shallow loss curve converts a small change in
+methane capture into a large change in methane.
+
+So the empirical quantity that matters is how steeply photochemical loss
+rises with methane. Arney's statement about self-shielding points toward
+lower elasticity, but no curve has yet been recovered. The steps in panel (e)
+occur where the equilibrium crosses a vertex of the piecewise-linear
+extracted curve. Their levels reflect the curve's slope; their sharpness is
+an artefact of interpolation.
+
+**6. A floor restores regulation only when the floor is the set point (panels c
+and f).** Floors below about 287 K change the climate by less than 0.1 K.
+Between 290 and 293 K, depending on loss shape, the evolved cold edge
+approaches the control climate. Temperature then follows the edge, 0.14–2.8 K
+above it, and the regulation ratio falls to 0.01–0.3. The lower elasticities
+reach the threshold first but buffer less. This is Lenton & Lovelock's point:
+regulation returns, but its set point is the constraint.
+
+For comparison, the evidence pack reports optima of 288–297 K for modern
+cold-adapted isolates ([thermal margins](evidence/thermal-margins.md)). That
+range spans the threshold. This is a consistency check, not a calibration:
+w = 20 K and the mapping from habitat to global mean are placeholders.
+
+**7. A regulated biosphere persists but may not return (panel d).** When the
+climate is held near the cold edge, T\* is close to the edge. A rare strain
+can then re-invade the lifeless state only if the methane-free planet is
+warmer than that edge. In practice that means warmer than the regulated
+climate, which is possible only because haze cools the planet below its
+methane-free temperature.
+- **With the 265-K bridge:** strains under H at E ≥ 0.4–0.45 eV, or under
+  floors of 284–285 K or above, persist but cannot re-establish after a loss.
+  The exception is elasticity 2: its higher abiotic methane warms the bridge,
+  and the floor threshold rises to 293 K.
+- **With the 283-K reference:** every evolved strain re-invades.
+
+Constraints that restore regulation therefore also open a cold trap, unless
+the methane-free climate is warm. Because the loss law is anchored at the
+control, the abiotic methane level also varies with loss shape.
+
 ## Limits and next steps
 
 - **Low-methane branch.** The restricted reduced equilibria can avoid it;
@@ -182,22 +288,15 @@ comparison is across models, not a splice; see the
   constrain equilibrium balance; transients also require methane column
   storage N(r), since dr/dt = (source − required flux)/N′(r) in consistent time units. See the
   [source-recovery record](review/source-recovery.md).
-- **Evolution.** A set point at a tolerance edge is exposed to the
-  Robertson–Robinson critique. A
-  [scratch adaptive-dynamics preview](evolution-scope.md) confirms the concern.
-  Unconstrained selection on the thermal optimum moves the climate to the
-  passive, supply-limited temperature: 273.4 K in case B at potential ratio
-  0.22, with the whole path inside Arney's interval. A hotter-is-better
-  trade-off stays near that control under linear loss, but this does not
-  generalize to all increasing loss laws: an
-  [independent audit](review/evolution-review-2026-11-09.md) finds a 4.61 K
-  contrast under an illustrative logarithmic loss. The trade-off parameters
-  are not calibrated to methanogens. The scope sets out the constraint,
-  extinction and climate scenarios, with source packs for
-  [thermal margins](evidence/thermal-margins.md) and
-  [hydrogen competition](evidence/hydrogen-competition.md). This links the haze-world
-  to the "evolving daisies" re-imagining in
-  [`docs/vision.md`](../../docs/vision.md).
+- **Evolution.** Stage 1 (results 4–7) is monomorphic and deterministic.
+  Stage 2 adds strain-resolved mutation and an explicit demographic floor
+  B_min, to test evolutionary rescue under declining supply and escape from
+  the cold trap. Stage 3, hydrogen competition with homoacetogens, waits on
+  the [strain-resolved benchmark](evidence/hydrogen-competition.md). The
+  decisive empirical input for H is the elasticity of photochemical methane
+  loss with abundance. See the [scope](evolution-scope.md) and
+  [thermal evidence](evidence/thermal-margins.md). This links the haze-world to
+  the "evolving daisies" re-imagining in [`docs/vision.md`](../../docs/vision.md).
 - **Luminosity.** All results are for one epoch. A solar sweep, the analogue
   of Daisyworld's L axis, needs climate responses at other S/S₀.
 
@@ -213,3 +312,6 @@ the experiments and recovered separate low-methane comparison checkpoints.
 Codex and review subagents independently checked the evolution preview,
 derived the singular-strategy and loss-shape checks, corrected the scope's
 generalizations and compiled the thermal and hydrogen-competition evidence.
+Claude designed and wrote the evolving-optimum variant (`darwinian.py`), its
+loss family, matched controls, regulation and re-invasion measures, tests and
+the variant section above, building on Codex's loss-shape counterexample.
