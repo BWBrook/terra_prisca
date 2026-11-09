@@ -1,0 +1,50 @@
+{
+  "doi": "10.1111/j.1574-6941.2001.tb00893.x",
+  "citation": "Kotsyurbenko et al. (2001), FEMS Microbiology Ecology38:153\u2013159",
+  "version": "Publisher version of record; fresh primary HTML and registered PDF text extraction compared",
+  "source_positions": {
+    "definition": "section2.4,p155",
+    "adapted_ranges": "section3.1,p156; section4,p158",
+    "combined_range": "abstract,p153"
+  },
+  "primary_html_url": "https://academic.oup.com/femsec/article/38/2-3/153/607304?searchresult=1",
+  "registered_pdf_url": "https://academic.oup.com/femsec/article-pdf/38/2-3/153/18089579/38-2-3-153.pdf",
+  "adapted_critical_energy_kJ_per_mol_H2": {
+    "acetogen": [
+      -7,
+      -5
+    ],
+    "methanogen": [
+      -8,
+      -6
+    ]
+  },
+  "adapted_critical_energy_kJ_per_mol_reaction": {
+    "acetogen": [
+      -28,
+      -20
+    ],
+    "methanogen": [
+      -32,
+      -24
+    ]
+  },
+  "adopted_sensitivity_anchors_kJ_per_mol_reaction": {
+    "acetogen": [
+      -20,
+      -24,
+      -28
+    ],
+    "methanogen": [
+      -24,
+      -28,
+      -32
+    ]
+  },
+  "anchors_status": "Assumed representative anchors within reported adapted windows; not calibration or recovered strain-temperature points",
+  "encoding_error": "The PDF text extraction substitutes3 for minus signs, including standard reaction energies",
+  "original_local_extraction_sha256": "0a3fd0b11a3aee2bbed6d0190425a01d05a1bfa13f9a0b7a07853e96e646bac0",
+  "visual_verification": false,
+  "reviewed_claim_commit": "124ef94",
+  "audit_retrieved_utc": "2026-11-09T12:11:52.903145+00:00"
+}

@@ -1,0 +1,579 @@
+{
+  "conditioning": {
+    "yield_h2_gdw_mol": 1.7,
+    "maintenance_h2_mmol_gdw_h": 1.6,
+    "measured_maximum_growth_h": 0.024,
+    "observed_growth_h": [
+      0.007,
+      0.012,
+      0.017,
+      0.02
+    ],
+    "observed_pa": [
+      51.0,
+      94.0,
+      627.0,
+      2455.0
+    ],
+    "source_doi": "10.1111/j.1574-6941.1998.tb00516.x"
+  },
+  "fits": [
+    {
+      "pstar_pa": 0.0,
+      "objective": "log",
+      "free_capacity": true,
+      "K_pa": 76.08315927991005,
+      "capacity_mmol_gdw_h": 13.758475533722608,
+      "implied_maximum_net_growth_h": 0.02066940840732843,
+      "log_rmse": 0.269209555959063,
+      "pressure_rmse_pa": 127.50114071380283,
+      "predicted_pa": [
+        54.10097395321443,
+        129.18345197044403,
+        408.8833224460247,
+        2582.2940971690514
+      ]
+    },
+    {
+      "pstar_pa": 0.0,
+      "objective": "log",
+      "free_capacity": false,
+      "K_pa": 160.13231900608986,
+      "capacity_mmol_gdw_h": 15.71764705882353,
+      "implied_maximum_net_growth_h": 0.024,
+      "log_rmse": 0.7035398998776188,
+      "pressure_rmse_pa": 779.6606324074705,
+      "predicted_pa": [
+        91.5580082787761,
+        196.4289779808036,
+        451.11561868572727,
+        909.5515719545895
+      ]
+    },
+    {
+      "pstar_pa": 0.0,
+      "objective": "linear",
+      "free_capacity": true,
+      "K_pa": 121.1565650048229,
+      "capacity_mmol_gdw_h": 14.02374446058389,
+      "implied_maximum_net_growth_h": 0.02112036558299261,
+      "log_rmse": 0.4428711934341993,
+      "pressure_rmse_pa": 58.28245247624176,
+      "predicted_pa": [
+        83.4002352789859,
+        195.54310851274107,
+        579.8532712138204,
+        2456.945481631883
+      ]
+    },
+    {
+      "pstar_pa": 0.0,
+      "objective": "linear",
+      "free_capacity": false,
+      "K_pa": 377.2327999150733,
+      "capacity_mmol_gdw_h": 15.71764705882353,
+      "implied_maximum_net_growth_h": 0.024,
+      "log_rmse": 1.1086843366442736,
+      "pressure_rmse_pa": 335.5904367932235,
+      "predicted_pa": [
+        215.68840089261843,
+        462.7389012291567,
+        1062.718687760749,
+        2142.6823035176144
+      ]
+    },
+    {
+      "pstar_pa": 20.0,
+      "objective": "log",
+      "free_capacity": true,
+      "K_pa": 63.46732753014347,
+      "capacity_mmol_gdw_h": 13.694705782763823,
+      "implied_maximum_net_growth_h": 0.0205609998306985,
+      "log_rmse": 0.3317640555007682,
+      "pressure_rmse_pa": 145.83044680059803,
+      "predicted_pa": [
+        65.49092480603765,
+        129.12733088647744,
+        371.4674974440899,
+        2590.3709744251687
+      ]
+    },
+    {
+      "pstar_pa": 20.0,
+      "objective": "log",
+      "free_capacity": false,
+      "K_pa": 152.32611749099382,
+      "capacity_mmol_gdw_h": 15.71764705882353,
+      "implied_maximum_net_growth_h": 0.024,
+      "log_rmse": 0.7622828751696827,
+      "pressure_rmse_pa": 792.4259413135143,
+      "predicted_pa": [
+        107.09469776543884,
+        206.85337078895245,
+        449.1244338460567,
+        885.212347348844
+      ]
+    },
+    {
+      "pstar_pa": 20.0,
+      "objective": "linear",
+      "free_capacity": true,
+      "K_pa": 114.15363371466867,
+      "capacity_mmol_gdw_h": 13.990721091256235,
+      "implied_maximum_net_growth_h": 0.0210642258551356,
+      "log_rmse": 0.5141075672145705,
+      "pressure_rmse_pa": 66.19130940833331,
+      "predicted_pa": [
+        98.89330924683745,
+        205.38168787220556,
+        573.8839958927822,
+        2457.049001846326
+      ]
+    },
+    {
+      "pstar_pa": 20.0,
+      "objective": "linear",
+      "free_capacity": false,
+      "K_pa": 372.33368228363406,
+      "capacity_mmol_gdw_h": 15.71764705882353,
+      "implied_maximum_net_growth_h": 0.024,
+      "log_rmse": 1.1453043082295915,
+      "pressure_rmse_pa": 345.4519185556994,
+      "predicted_pa": [
+        232.88725834099552,
+        476.72931693459117,
+        1068.9171735190373,
+        2134.8553153710395
+      ]
+    }
+  ],
+  "rounding_sensitivity": [
+    {
+      "pstar_pa": 0.0,
+      "objective": "log",
+      "free_capacity": true,
+      "scenario": "Independent +/-0.5 Pa changes to printed residuals; rounding sensitivity, not confidence bounds",
+      "K_min_pa": 75.61949675030593,
+      "K_max_pa": 76.5464717764949
+    },
+    {
+      "pstar_pa": 0.0,
+      "objective": "log",
+      "free_capacity": false,
+      "scenario": "Independent +/-0.5 Pa changes to printed residuals; rounding sensitivity, not confidence bounds",
+      "K_min_pa": 159.48560739849114,
+      "K_max_pa": 160.77662141487662
+    },
+    {
+      "pstar_pa": 0.0,
+      "objective": "linear",
+      "free_capacity": true,
+      "scenario": "Independent +/-0.5 Pa changes to printed residuals; rounding sensitivity, not confidence bounds",
+      "K_min_pa": 120.96449612156418,
+      "K_max_pa": 121.34886428874042
+    },
+    {
+      "pstar_pa": 0.0,
+      "objective": "linear",
+      "free_capacity": false,
+      "scenario": "Independent +/-0.5 Pa changes to printed residuals; rounding sensitivity, not confidence bounds",
+      "K_min_pa": 377.11032172955726,
+      "K_max_pa": 377.3552776977762
+    },
+    {
+      "pstar_pa": 20.0,
+      "objective": "log",
+      "free_capacity": true,
+      "scenario": "Independent +/-0.5 Pa changes to printed residuals; rounding sensitivity, not confidence bounds",
+      "K_min_pa": 63.06721420965478,
+      "K_max_pa": 63.867441911762114
+    },
+    {
+      "pstar_pa": 20.0,
+      "objective": "log",
+      "free_capacity": false,
+      "scenario": "Independent +/-0.5 Pa changes to printed residuals; rounding sensitivity, not confidence bounds",
+      "K_min_pa": 151.72553964584327,
+      "K_max_pa": 152.92471275059805
+    },
+    {
+      "pstar_pa": 20.0,
+      "objective": "linear",
+      "free_capacity": true,
+      "scenario": "Independent +/-0.5 Pa changes to printed residuals; rounding sensitivity, not confidence bounds",
+      "K_min_pa": 113.96830307843494,
+      "K_max_pa": 114.33918281552216
+    },
+    {
+      "pstar_pa": 20.0,
+      "objective": "linear",
+      "free_capacity": false,
+      "scenario": "Independent +/-0.5 Pa changes to printed residuals; rounding sensitivity, not confidence bounds",
+      "K_min_pa": 372.21120389319003,
+      "K_max_pa": 372.45616024564225
+    }
+  ],
+  "leave_one_out": [
+    {
+      "pstar_pa": 0.0,
+      "objective": "log",
+      "free_capacity": true,
+      "K_pa": 78.92248691410565,
+      "capacity_mmol_gdw_h": 13.774651371862422,
+      "implied_maximum_net_growth_h": 0.020696907332166118,
+      "log_rmse": 0.30787985737253015,
+      "pressure_rmse_pa": 138.952998573199,
+      "predicted_pa": [
+        133.58070438198908,
+        420.9874097748225,
+        2572.966045736852
+      ],
+      "omitted_growth_h": 0.007,
+      "omitted_pressure_pa": 51.0,
+      "omitted_point_has_finite_positive_prediction": true
+    },
+    {
+      "pstar_pa": 0.0,
+      "objective": "log",
+      "free_capacity": false,
+      "K_pa": 194.62010626702252,
+      "capacity_mmol_gdw_h": 15.71764705882353,
+      "implied_maximum_net_growth_h": 0.024,
+      "log_rmse": 0.7125877866879389,
+      "pressure_rmse_pa": 784.9526891451484,
+      "predicted_pa": [
+        238.733997020881,
+        548.2726422265262,
+        1105.4422035966868
+      ],
+      "omitted_growth_h": 0.007,
+      "omitted_pressure_pa": 51.0,
+      "omitted_point_has_finite_positive_prediction": true
+    },
+    {
+      "pstar_pa": 0.0,
+      "objective": "linear",
+      "free_capacity": true,
+      "K_pa": 122.57946568268251,
+      "capacity_mmol_gdw_h": 14.031544932883216,
+      "implied_maximum_net_growth_h": 0.02113362638590147,
+      "log_rmse": 0.43068802328699596,
+      "pressure_rmse_pa": 64.57164123627159,
+      "predicted_pa": [
+        197.5523914175301,
+        584.7812157158314,
+        2456.7225101203735
+      ],
+      "omitted_growth_h": 0.007,
+      "omitted_pressure_pa": 51.0,
+      "omitted_point_has_finite_positive_prediction": true
+    },
+    {
+      "pstar_pa": 0.0,
+      "objective": "linear",
+      "free_capacity": false,
+      "K_pa": 379.4907217094534,
+      "capacity_mmol_gdw_h": 15.71764705882353,
+      "implied_maximum_net_growth_h": 0.024,
+      "log_rmse": 0.9765819792142104,
+      "pressure_rmse_pa": 375.5657434740405,
+      "predicted_pa": [
+        465.5086186302629,
+        1069.079576015774,
+        2155.507299309693
+      ],
+      "omitted_growth_h": 0.007,
+      "omitted_pressure_pa": 51.0,
+      "omitted_point_has_finite_positive_prediction": true
+    },
+    {
+      "pstar_pa": 0.0,
+      "objective": "log",
+      "free_capacity": true,
+      "K_pa": 91.5641246647825,
+      "capacity_mmol_gdw_h": 13.840887138359262,
+      "implied_maximum_net_growth_h": 0.020809508135210746,
+      "log_rmse": 0.21224235891670612,
+      "pressure_rmse_pa": 110.7425823148541,
+      "predicted_pa": [
+        64.44858738106706,
+        473.9836415363425,
+        2569.8777095578685
+      ],
+      "omitted_growth_h": 0.012,
+      "omitted_pressure_pa": 94.0,
+      "omitted_point_has_finite_positive_prediction": true
+    },
+    {
+      "pstar_pa": 0.0,
+      "objective": "log",
+      "free_capacity": false,
+      "K_pa": 204.7253174104824,
+      "capacity_mmol_gdw_h": 15.71764705882353,
+      "implied_maximum_net_growth_h": 0.024,
+      "log_rmse": 0.6469508397706644,
+      "pressure_rmse_pa": 747.5665456709268,
+      "predicted_pa": [
+        117.05471089587584,
+        576.7404656192444,
+        1162.8398028915387
+      ],
+      "omitted_growth_h": 0.012,
+      "omitted_pressure_pa": 94.0,
+      "omitted_point_has_finite_positive_prediction": true
+    },
+    {
+      "pstar_pa": 0.0,
+      "objective": "linear",
+      "free_capacity": true,
+      "K_pa": 132.86527725103073,
+      "capacity_mmol_gdw_h": 14.087882775729584,
+      "implied_maximum_net_growth_h": 0.021229400718740295,
+      "log_rmse": 0.3328488201969644,
+      "pressure_rmse_pa": 23.361424728298292,
+      "predicted_pa": [
+        90.7593032487421,
+        619.4975226113621,
+        2455.423242501864
+      ],
+      "omitted_growth_h": 0.012,
+      "omitted_pressure_pa": 94.0,
+      "omitted_point_has_finite_positive_prediction": true
+    },
+    {
+      "pstar_pa": 0.0,
+      "objective": "linear",
+      "free_capacity": false,
+      "K_pa": 388.39413022857315,
+      "capacity_mmol_gdw_h": 15.71764705882353,
+      "implied_maximum_net_growth_h": 0.024,
+      "log_rmse": 0.9102721432558514,
+      "pressure_rmse_pa": 321.1785059244336,
+      "predicted_pa": [
+        222.07005563657245,
+        1094.161749729637,
+        2206.078659698293
+      ],
+      "omitted_growth_h": 0.012,
+      "omitted_pressure_pa": 94.0,
+      "omitted_point_has_finite_positive_prediction": true
+    },
+    {
+      "pstar_pa": 0.0,
+      "objective": "log",
+      "free_capacity": true,
+      "K_pa": 62.59843324274384,
+      "capacity_mmol_gdw_h": 13.70666727633414,
+      "implied_maximum_net_growth_h": 0.02058133436976804,
+      "log_rmse": 0.1072582308918274,
+      "pressure_rmse_pa": 9.825170897577392,
+      "predicted_pa": [
+        44.80095655945936,
+        107.37828146860768,
+        2446.5032126736746
+      ],
+      "omitted_growth_h": 0.017,
+      "omitted_pressure_pa": 627.0,
+      "omitted_point_has_finite_positive_prediction": true
+    },
+    {
+      "pstar_pa": 0.0,
+      "objective": "log",
+      "free_capacity": false,
+      "K_pa": 143.48916036965312,
+      "capacity_mmol_gdw_h": 15.71764705882353,
+      "implied_maximum_net_growth_h": 0.024,
+      "log_rmse": 0.7821672070880438,
+      "pressure_rmse_pa": 948.1964191652332,
+      "predicted_pa": [
+        82.0420375760605,
+        176.0133700534412,
+        815.0184308996288
+      ],
+      "omitted_growth_h": 0.017,
+      "omitted_pressure_pa": 627.0,
+      "omitted_point_has_finite_positive_prediction": true
+    },
+    {
+      "pstar_pa": 0.0,
+      "objective": "linear",
+      "free_capacity": true,
+      "K_pa": 56.942657520049785,
+      "capacity_mmol_gdw_h": 13.674694940741245,
+      "implied_maximum_net_growth_h": 0.020526981399260114,
+      "log_rmse": 0.12977416195218494,
+      "pressure_rmse_pa": 6.328554108192443,
+      "predicted_pa": [
+        40.91693591928483,
+        98.29925497056473,
+        2454.9959081514726
+      ],
+      "omitted_growth_h": 0.017,
+      "omitted_pressure_pa": 627.0,
+      "omitted_point_has_finite_positive_prediction": true
+    },
+    {
+      "pstar_pa": 0.0,
+      "objective": "linear",
+      "free_capacity": false,
+      "K_pa": 413.2356399046728,
+      "capacity_mmol_gdw_h": 15.71764705882353,
+      "implied_maximum_net_growth_h": 0.024,
+      "log_rmse": 1.3155373683000022,
+      "pressure_rmse_pa": 268.60141430658007,
+      "predicted_pa": [
+        236.27355411020116,
+        506.902384949732,
+        2347.178434658539
+      ],
+      "omitted_growth_h": 0.017,
+      "omitted_pressure_pa": 627.0,
+      "omitted_point_has_finite_positive_prediction": true
+    },
+    {
+      "pstar_pa": 0.0,
+      "objective": "log",
+      "free_capacity": true,
+      "K_pa": 51.65731145854905,
+      "capacity_mmol_gdw_h": 12.579106821168867,
+      "implied_maximum_net_growth_h": 0.018664481595987072,
+      "log_rmse": 0.1493035974512446,
+      "pressure_rmse_pa": 15.185464818221739,
+      "predicted_pa": [
+        43.04598221920443,
+        114.09674011669627,
+        612.0116824472822
+      ],
+      "omitted_growth_h": 0.02,
+      "omitted_pressure_pa": 2455.0,
+      "omitted_point_has_finite_positive_prediction": false
+    },
+    {
+      "pstar_pa": 0.0,
+      "objective": "log",
+      "free_capacity": false,
+      "K_pa": 115.01052806064664,
+      "capacity_mmol_gdw_h": 15.71764705882353,
+      "implied_maximum_net_growth_h": 0.024,
+      "log_rmse": 0.47093028017692684,
+      "pressure_rmse_pa": 177.24056606760672,
+      "predicted_pa": [
+        65.75896074996973,
+        141.07958108772658,
+        324.0010876222787
+      ],
+      "omitted_growth_h": 0.02,
+      "omitted_pressure_pa": 2455.0,
+      "omitted_point_has_finite_positive_prediction": true
+    },
+    {
+      "pstar_pa": 0.0,
+      "objective": "linear",
+      "free_capacity": true,
+      "K_pa": 43.10799569464242,
+      "capacity_mmol_gdw_h": 12.397658387058623,
+      "implied_maximum_net_growth_h": 0.018356019257999658,
+      "log_rmse": 0.1900830408663353,
+      "pressure_rmse_pa": 8.81152042965547,
+      "predicted_pa": [
+        36.8975878459132,
+        99.83445154394319,
+        626.900886608619
+      ],
+      "omitted_growth_h": 0.02,
+      "omitted_pressure_pa": 2455.0,
+      "omitted_point_has_finite_positive_prediction": false
+    },
+    {
+      "pstar_pa": 0.0,
+      "objective": "linear",
+      "free_capacity": false,
+      "K_pa": 195.62151013617495,
+      "capacity_mmol_gdw_h": 15.71764705882353,
+      "implied_maximum_net_growth_h": 0.024,
+      "log_rmse": 0.7098621005924185,
+      "pressure_rmse_pa": 101.27427610451502,
+      "predicted_pa": [
+        111.84947520727181,
+        239.9623857670413,
+        551.0937399836241
+      ],
+      "omitted_growth_h": 0.02,
+      "omitted_pressure_pa": 2455.0,
+      "omitted_point_has_finite_positive_prediction": true
+    }
+  ],
+  "fixed_capacity_pointwise_K": [
+    {
+      "pstar_pa": 0.0,
+      "K_from_each_point_pa": [
+        89.19753086419752,
+        76.63043478260869,
+        222.56592292089255,
+        432.2183098591554
+      ]
+    },
+    {
+      "pstar_pa": 20.0,
+      "K_from_each_point_pa": [
+        54.21810699588477,
+        60.326086956521735,
+        215.46653144016236,
+        428.69718309859206
+      ]
+    }
+  ],
+  "source_half_growth_translation": [
+    {
+      "pstar_pa": 0.0,
+      "source_half_growth_pressure_pa": 94.0,
+      "implied_uptake_K_pa": 76.63043478260869
+    },
+    {
+      "pstar_pa": 20.0,
+      "source_half_growth_pressure_pa": 94.0,
+      "implied_uptake_K_pa": 60.326086956521735
+    }
+  ],
+  "maximum_growth_rounding_sensitivity": [
+    {
+      "pstar_pa": 0.0,
+      "objective": "log",
+      "free_capacity": false,
+      "K_pa": 149.3044441503767,
+      "capacity_mmol_gdw_h": 15.423529411764706,
+      "implied_maximum_net_growth_h": 0.0235,
+      "log_rmse": 0.665204997080443,
+      "pressure_rmse_pa": 749.7812477702854,
+      "predicted_pa": [
+        87.9538907358583,
+        191.10968851248222,
+        452.9667136377581,
+        969.1991345990159
+      ]
+    },
+    {
+      "pstar_pa": 0.0,
+      "objective": "log",
+      "free_capacity": false,
+      "K_pa": 170.74083552916557,
+      "capacity_mmol_gdw_h": 16.011764705882353,
+      "implied_maximum_net_growth_h": 0.0245,
+      "log_rmse": 0.7365098119575004,
+      "pressure_rmse_pa": 803.5198245963783,
+      "predicted_pa": [
+        94.83433836248513,
+        201.06440791914542,
+        448.93457021801925,
+        862.0515073828087
+      ]
+    }
+  ],
+  "file_sha256": {
+    "models/haze_world/review/check_woodii_affinity.py": "d362e2265ff5a722afe888cacc3d945a7f4b224a9bfd787ca9d4625b9a3b7ff5",
+    "models/haze_world/evidence/peters1998_chemostat.csv": "b0b00bf03eaeaabf45fb571330773c5158b53b088436aaee942188f8e9498320",
+    "models/haze_world/review/woodii_affinity_check.py": "93bd051584ac2a531b894f0c5e8ada1592172b4a15af13646c6e638cdadf0bbb",
+    "models/haze_world/review/woodii_affinity_check.json": "50d067f89e446dce7471d5c1736dd774879c4e190b8105f3625874053e823c24"
+  },
+  "interpretation": "Conditional mismatch supports K sensitivities; not a cold-strain calibration or identification of gas-transfer bias"
+}

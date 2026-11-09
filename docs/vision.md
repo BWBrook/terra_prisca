@@ -125,6 +125,11 @@ Fidelity is measured against the published figures, digitised.
    Sediment patterns are conditional checks; neither acetate fate nor cold
    demography is calibrated for an Archean community. Climate coupling waits
    on the habitat, activity and temperature mapping.
+   The [finite-outlet extension](../models/haze_world/hydrogen-outlet.md)
+   recovers the earlier capture closure in a defined limit and makes the
+   lifeless resource state finite. [Switch maps](../models/haze_world/competition-switches.md)
+   locate possible ecological transitions in the operating temperature range;
+   their climate feedback still depends on the radiative branch.
    A [solar-response search](../models/haze_response/solar-responses.md) found
    a second Sun-age checkpoint, but no matched hazy luminosity grid.
    This direction may lead to a paper.

@@ -43,17 +43,32 @@ class Competition:
     maintenance_energy_j: float = 69000.
     kinetics: str = "saturating"
     assimilation_m: float = 0.
+    km_scale_a: float = 1.
+    km_scale_m: float = 1.
+    cessation_energy_a_j: float = -24000.
+    cessation_energy_m_j: float = -28000.
+    threshold_m30: float = 1.
+    exchange_mol_l_h_pa: float = 0.
+    atmosphere_pa: float = 0.
+    low_temperature_variant: str = "none"
 
     def __post_init__(self):
         if self.methanogen not in (MSB, MSP):
             raise ValueError("Methanogen must be MSB or MSP")
         if self.threshold_shape not in ("constant", "fixed_energy") or self.kinetics not in ("saturating", "first_order"):
             raise ValueError("Unknown structural scenario")
+        if self.low_temperature_variant not in ("none", "constant_shape", "arrhenius_continuation"):
+            raise ValueError("Unknown low-temperature variant")
         values = (self.capacity_ratio, self.yield_m, self.maintenance_m30, self.loss_h,
                   self.threshold_a30, self.msp_threshold_4c, self.maintenance_energy_j,
-                  self.assimilation_m)
-        if not all(np.isfinite(v) and v >= 0 for v in values) or min(self.capacity_ratio, self.yield_m, self.loss_h, self.msp_threshold_4c) <= 0:
+                  self.assimilation_m, self.km_scale_a, self.km_scale_m, self.threshold_m30,
+                  self.exchange_mol_l_h_pa, self.atmosphere_pa)
+        if not all(np.isfinite(v) and v >= 0 for v in values) or min(self.capacity_ratio, self.yield_m, self.loss_h, self.msp_threshold_4c, self.km_scale_a, self.km_scale_m) <= 0:
             raise ValueError("Parameters must be finite and nonnegative; capacity, yield, loss and MSP cold level positive")
+        if not all(np.isfinite(v) and v <= 0 for v in (self.cessation_energy_a_j, self.cessation_energy_m_j)):
+            raise ValueError("Cessation energies must be finite and nonpositive, in J per four-H2 reaction")
+        if self.methanogen == MSP and self.threshold_m30 == 0:
+            raise ValueError("MSP's imposed cold anomaly requires a positive reference threshold")
         if self.assimilation_m * self.yield_m > 1:
             raise ValueError("Biomass synthesis cannot consume more H2 than uptake")
 
@@ -89,12 +104,18 @@ class Guild:
 
 
 @lru_cache(maxsize=None)
-def shape(temperature_c, strain):
-    if not np.isfinite(temperature_c) or not 4 <= temperature_c <= 30:
-        raise ValueError("Only the measured 4–30 C range is supported")
+def shape(temperature_c, strain, low_temperature_variant="none"):
+    if low_temperature_variant not in ("none", "constant_shape", "arrhenius_continuation"):
+        raise ValueError("Unknown low-temperature variant")
+    minimum = 4. if low_temperature_variant == "none" else -.15
+    if not np.isfinite(temperature_c) or not minimum <= temperature_c <= 30:
+        raise ValueError("Use measured 4–30 C temperatures or a named continuation down to 273 K")
     rows = [parameters(t, strain) for t in TEMPERATURES_C]
     relative = np.interp(temperature_c, TEMPERATURES_C, [p.vmax_nmol_h for p in rows]) / rows[-1].vmax_nmol_h
     km = np.interp(temperature_c, TEMPERATURES_C, [p.km_pa for p in rows])
+    if temperature_c < 4 and low_temperature_variant == "arrhenius_continuation":
+        energy = GAS_CONSTANT * np.log(rows[1].vmax_nmol_h / rows[0].vmax_nmol_h) / (1 / 277.15 - 1 / 283.15)
+        relative *= np.exp(-energy / GAS_CONSTANT * (1 / (temperature_c + 273.15) - 1 / 277.15))
     return float(relative), float(km)
 
 
@@ -103,61 +124,77 @@ def maintenance_factor(temperature_c, energy_j):
 
 
 def thresholds(temperature_c, config):
-    a, m = config.threshold_a30, 1.
+    a, m = config.threshold_a30, config.threshold_m30
     if config.threshold_shape == "fixed_energy":
         delta = 1 / (temperature_c + 273.15) - 1 / 303.15
-        a *= np.exp((-270700. - (-24000.)) / (4 * GAS_CONSTANT) * delta)
-        m *= np.exp((-253000. - (-28000.)) / (4 * GAS_CONSTANT) * delta)
+        a *= np.exp((-270700. - config.cessation_energy_a_j) / (4 * GAS_CONSTANT) * delta)
+        m *= np.exp((-253000. - config.cessation_energy_m_j) / (4 * GAS_CONSTANT) * delta)
     if config.methanogen == MSP:
         # Unmeasured cold anomaly: join a swept 4 C level to the 15 C baseline.
-        cold_baseline = 1. if config.threshold_shape == "constant" else np.exp(
-            (-253000. - (-28000.)) / (4 * GAS_CONSTANT) * (1 / 277.15 - 1 / 303.15))
+        cold_baseline = config.threshold_m30
+        if config.threshold_shape == "fixed_energy":
+            cold_baseline *= np.exp((-253000. - config.cessation_energy_m_j) / (4 * GAS_CONSTANT) * (1 / 277.15 - 1 / 303.15))
         weight = np.clip((15 - temperature_c) / 11, 0., 1.)
         m *= (config.msp_threshold_4c / cold_baseline) ** weight
     return float(a), float(m)
 
 
 def guilds(temperature_c, config=Competition()):
-    relative_a, km_a = shape(temperature_c, ACETOGEN)
-    relative_m, km_m = shape(temperature_c, config.methanogen)
+    relative_a, km_a = shape(temperature_c, ACETOGEN, config.low_temperature_variant)
+    relative_m, km_m = shape(temperature_c, config.methanogen, config.low_temperature_variant)
     pa, pm = thresholds(temperature_c, config)
     factor = maintenance_factor(temperature_c, config.maintenance_energy_j)
     return (
-        Guild("acetogen", inferred_reference_uptake() * relative_a, km_a, pa,
+        Guild("acetogen", inferred_reference_uptake() * relative_a, km_a * config.km_scale_a, pa,
               Y_H2_REPORTED, MAINTENANCE_H2 * factor, ASSIMILATION_A, config.kinetics),
         Guild("methanogen", inferred_reference_uptake() * config.capacity_ratio * relative_m,
-              km_m, pm, config.yield_m, config.maintenance_m30 * factor,
+              km_m * config.km_scale_m, pm, config.yield_m, config.maintenance_m30 * factor,
               config.assimilation_m, "saturating"),
     )
 
 
-def equilibrium(temperature_c, config=Competition(), supply=1e-6):
-    """Constant-input resource equilibrium; no resource washout or climate.
+def equilibrium(temperature_c, config=Competition(), supply=1e-6, *, enabled=(True, True)):
+    """Fixed-temperature community equilibrium with optional atmospheric exchange.
 
-    No viable consumer means H2 accumulates, not a finite lifeless equilibrium.
+    With positive exchange, no viable consumer gives p = p_atm + J/k_ex.
+    Zero exchange retains the explicitly named accumulating reference model.
     First-order equilibria beyond the explicit concentration limit are unresolved.
     """
     if not np.isfinite(supply) or supply <= 0:
         raise ValueError("Supply must be positive")
+    if len(enabled) != 2 or any(not isinstance(v, (bool, np.bool_)) for v in enabled):
+        raise ValueError("Enable or disable each of the two guilds explicitly")
     pair = guilds(temperature_c, config)
-    roots = np.array([g.rstar(config.loss_h) for g in pair])
+    intrinsic = np.array([g.rstar(config.loss_h) for g in pair])
+    roots = np.where(enabled, intrinsic, np.inf)
     winner = int(np.argmin(roots))
     pressure = roots[winner]
+    lifeless = config.atmosphere_pa + supply / config.exchange_mol_l_h_pa if config.exchange_mol_l_h_pa else np.inf
     status = "living"
-    if not np.isfinite(pressure):
+    if np.isfinite(lifeless) and pressure >= lifeless:
+        pressure = lifeless
+        status = "lifeless"
+    elif not np.isfinite(pressure):
         status = "no_consumer"
-    elif config.kinetics == "first_order" and pressure * HENRY_30C_MOL_L_PA > FIRST_ORDER_LIMIT_MOL_L:
+    if enabled[0] and config.kinetics == "first_order" and pressure * HENRY_30C_MOL_L_PA > FIRST_ORDER_LIMIT_MOL_L:
         status = "outside_first_order_domain"
-    elif np.isclose(roots[0], roots[1], rtol=1e-10, atol=1e-10):
+    elif status == "living" and np.isclose(roots[0], roots[1], rtol=1e-10, atol=1e-10):
         status = "tie"
     biomass = np.zeros(2)
     invasion = None
+    outlet = config.exchange_mol_l_h_pa * (pressure - config.atmosphere_pa) if config.exchange_mol_l_h_pa else 0.
+    captured = supply - outlet if status in ("living", "tie") else 0.
+    if status == "outside_first_order_domain":
+        captured, outlet = np.nan, np.nan
     if status == "living":
-        biomass[winner] = supply / float(pair[winner].uptake(pressure))
-        invasion = float(pair[1 - winner].net_growth(pressure, config.loss_h))
+        biomass[winner] = captured / float(pair[winner].uptake(pressure))
+        if enabled[1 - winner]:
+            invasion = float(pair[1 - winner].net_growth(pressure, config.loss_h))
     return dict(status=status, winner=pair[winner].name if status == "living" else status,
-                pressure_pa=float(pressure), rstar_a_pa=float(roots[0]), rstar_m_pa=float(roots[1]),
-                biomass_g_l=biomass, invader_growth_h=invasion)
+                pressure_pa=float(pressure), rstar_a_pa=float(intrinsic[0]), rstar_m_pa=float(intrinsic[1]),
+                biomass_g_l=biomass, invader_growth_h=invasion,
+                lifeless_pressure_pa=float(lifeless), outlet_h2_mol_l_h=float(outlet),
+                captured_h2_mol_l_h=float(captured), capture_fraction=float(captured / supply))
 
 
 def delivery(pressure_pa, biomass_g_l, temperature_c, config=Competition(), acetate_fraction=0.):
@@ -188,7 +225,7 @@ def integrate(temperature_c, config, pressure_pa, biomass_g_l, duration_h, *, su
               storage_mol_l_pa=HENRY_30C_MOL_L_PA):
     """Integrate pressure and log biomasses, retaining arbitrarily rare strains.
 
-    storage * dp/dt = supply - sum(q X) closes the pressure/inventory units.
+    storage * dp/dt = supply - sum(q X) - k_ex * (p - p_atm).
     Storage is fixed at the 30 C Henry reference, an explicit dynamic assumption.
     """
     biomass = np.asarray(biomass_g_l, dtype=float)
@@ -202,7 +239,7 @@ def integrate(temperature_c, config, pressure_pa, biomass_g_l, duration_h, *, su
         p, *logs = state
         populations = np.exp(logs)
         uptake = np.array([g.uptake(p) for g in pair])
-        return np.r_[(supply - uptake @ populations) / storage_mol_l_pa,
+        return np.r_[(supply - uptake @ populations - config.exchange_mol_l_h_pa * (p - config.atmosphere_pa)) / storage_mol_l_pa,
                      [g.yield_g_mol * (q - g.maintenance) - config.loss_h for g, q in zip(pair, uptake)]]
 
     result = solve_ivp(rhs, (0., duration_h), np.r_[pressure_pa, np.log(biomass)],
@@ -223,7 +260,7 @@ def parameter_grid(methanogen):
 
 def counts(rows):
     return {w: sum(r["winner"] == w for r in rows) for w in (
-        "acetogen", "methanogen", "no_consumer", "outside_first_order_domain", "tie")}
+        "acetogen", "methanogen", "lifeless", "no_consumer", "outside_first_order_domain", "tie")}
 
 
 def run(output):

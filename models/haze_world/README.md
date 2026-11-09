@@ -16,6 +16,16 @@ its methane effect also depends on downstream acetate recovery. The
 [source audit](evidence/stage3-constraints.md) supports conditional sediment
 pattern checks and acetate-fate end-members, rather than an Archean calibration.
 This stage remains at fixed temperature; it is not coupled to the climate below.
+The [finite-outlet extension](hydrogen-outlet.md) adds an atmospheric boundary
+and recovers the existing donor-capture rule in its exact zero-maintenance
+limit. A [switch-location experiment](competition-switches.md) tests whether
+living-winner exchanges fall within 273–290 K, separating measured-temperature
+support from named cold continuations. A switch alone does not establish
+the sign of climate feedback or a cold trap.
+The [feedback check](review/switch-feedback-check.md) finds that the central
+switches lie on Arney B's haze-cooling branch: less methane warms there.
+Coupling must therefore test restoring feedback and possible mixed-guild
+equilibria as well as cold traps on other branches.
 
 **Code.** [`src/terra_prisca/haze_world/methane_budget.py`](../../src/terra_prisca/haze_world/methane_budget.py)
 (model) and [`experiments.py`](../../src/terra_prisca/haze_world/experiments.py)
@@ -468,7 +478,9 @@ and gets rarer the further the seed's optimum lies from it.
   anchors but no matched cold-strain calibration; combining some published
   coefficients across assays would demand more maintenance than the
   historical uptake capacity can supply. Climate coupling also needs habitat
-  activities, colder physiology and acetate residence times. The decisive
+  activities and colder physiology; transients also need acetate residence
+  times. Positive-exchange switch maps now identify conditional transitions
+  within the observed temperature window. The decisive
   empirical inputs are:
   - the elasticity of photochemical methane loss near r ≈ 0.2
     ([evidence](evidence/loss-elasticity.md));

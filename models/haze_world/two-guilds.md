@@ -7,6 +7,12 @@ MSB and MSP are alternative methanogen phenotypes, each competing with one
 acetogen. This implements the [stage-3 specification](stage3-growth-spec.md)
 with the dimensional and evidential choices below. Climate is not coupled.
 
+**Outlet and sensitivity extension:** [hydrogen-outlet.md](hydrogen-outlet.md)
+adds finite atmospheric exchange, K scaling, cessation-energy brackets and
+the exact methanogen-only capture limit. The
+[switch-location experiment](competition-switches.md) uses positive outlets;
+the figures and counts on this page retain the no-outlet reference.
+
 ```sh
 uv run python -m terra_prisca.haze_world.woodii1998
 uv run python -m terra_prisca.haze_world.two_guilds
@@ -37,6 +43,7 @@ represent an atmospheric column or gas headspace. Other storage changes
 transient times, not the fixed-temperature resource winner.
 
 There is constant input and **no resource washout**. The demographic loss
+in this reference experiment
 is independent of maintenance and is counted once. When q < m, the chosen
 Pirt extension gives extra starvation-related biomass decline; it does not
 track intracellular reserves or methane from decaying biomass. There is no
@@ -90,6 +97,9 @@ adapted-range energies, not fitted thresholds. Keeping the ΔG_c term
 corrects the discarded enthalpy-only argument. Changing acetate, methane,
 pH or CO₂ activities would change these levels; this experiment holds them
 implicitly fixed rather than solving a full thermodynamic environment.
+The [source audit](evidence/cessation-energy-audit.md) verifies the negative
+single-digit per-H₂ ranges and corrects a later PDF extraction error in the
+review. New sweeps use all nine combinations across the two source windows.
 
 ### First-order structural alternative
 

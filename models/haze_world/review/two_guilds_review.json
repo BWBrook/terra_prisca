@@ -30,10 +30,10 @@
   },
   "msp_threshold_endpoints_verified": true,
   "zero_demand_input_rejected": true,
-  "configuration_sha256": "132ed8d1ead0f22f7c30aae0f33ed2fc3f2cd6d3d8a49aca34d211e04f00678a",
+  "configuration_sha256": "3fa4ee23844206645cfbd4fbe34485668035c183df35a4d81f23bce5e1b4d84f",
   "file_sha256": {
     "models/haze_world/review/check_two_guilds.py": "9c4dc9a1d539dee649e57359ba4cd6afbd155570140123cd8350ee2f2a513335",
-    "src/terra_prisca/haze_world/two_guilds.py": "211237223fae45e13a881173cd51d98fedfdaeb871aa713f280545d9880caec3",
+    "src/terra_prisca/haze_world/two_guilds.py": "eff6a9027c5b28d154f03462d926591ebee3408eb2c80ec0df5c38929f169f83",
     "src/terra_prisca/haze_world/woodii1998.py": "b0130f4f8ea15aa64245133f79dc8b35883a414031a8b49262c6657350cad0b0",
     "src/terra_prisca/haze_world/hydrogen_uptake.py": "c48d8231ef726605ab07be22438f3e2fd97f23b310773ac748d1b2bf5c36fafd",
     "models/haze_world/evidence/peters1998_chemostat.csv": "b0b00bf03eaeaabf45fb571330773c5158b53b088436aaee942188f8e9498320",

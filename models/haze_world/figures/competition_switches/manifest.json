@@ -1,0 +1,100 @@
+{
+  "supply_mol_l_h": 1e-06,
+  "atmosphere_pa": 0.0,
+  "step_k": 0.1,
+  "source_window_k": [
+    277.15,
+    290.0
+  ],
+  "extended_window_k": [
+    273.0,
+    290.0
+  ],
+  "controlled_cuts": "central biology;five K cuts;nine cessation-energy pairs;three positive outlets;two strains;two uptake forms;three temperature-window choices",
+  "broad_grid": "243 base sets;two strains;two uptake forms;fixed-energy central threshold law;p0=300Pa;source window only",
+  "groups": {
+    "base_grid:none": {
+      "paths": 972,
+      "paths_with_crossing": 366,
+      "paths_with_actual_exchange": 336,
+      "paths_with_multiple_crossings": 6,
+      "actual_exchange_orientations": {
+        "acetogen_cold_methanogen_warm": 336
+      },
+      "warm_condition_retained": 590,
+      "end_winners": {
+        "methanogen": 543,
+        "acetogen": 303,
+        "lifeless": 126
+      }
+    },
+    "controlled:arrhenius_continuation": {
+      "paths": 540,
+      "paths_with_crossing": 270,
+      "paths_with_actual_exchange": 270,
+      "paths_with_multiple_crossings": 0,
+      "actual_exchange_orientations": {
+        "acetogen_cold_methanogen_warm": 270
+      },
+      "warm_condition_retained": 288,
+      "end_winners": {
+        "methanogen": 270,
+        "acetogen": 252,
+        "lifeless": 18
+      }
+    },
+    "controlled:constant_shape": {
+      "paths": 540,
+      "paths_with_crossing": 270,
+      "paths_with_actual_exchange": 270,
+      "paths_with_multiple_crossings": 0,
+      "actual_exchange_orientations": {
+        "acetogen_cold_methanogen_warm": 270
+      },
+      "warm_condition_retained": 288,
+      "end_winners": {
+        "methanogen": 270,
+        "acetogen": 252,
+        "lifeless": 18
+      }
+    },
+    "controlled:none": {
+      "paths": 540,
+      "paths_with_crossing": 270,
+      "paths_with_actual_exchange": 270,
+      "paths_with_multiple_crossings": 0,
+      "actual_exchange_orientations": {
+        "acetogen_cold_methanogen_warm": 270
+      },
+      "warm_condition_retained": 288,
+      "end_winners": {
+        "methanogen": 270,
+        "acetogen": 252,
+        "lifeless": 18
+      }
+    }
+  },
+  "configuration_rows": 2592,
+  "resolution_audit": {
+    "paths": 122,
+    "type_or_count_mismatches": 0,
+    "max_temperature_difference_k": 2.1293544705258682e-10
+  },
+  "raw_points_sha256": "637ee83e535bf114b1b863b72a7d43e8a4ef0d052526208a8b6ea914b37781fb",
+  "raw_points_file": "local/haze/competition_switches/raw_points.csv.gz",
+  "input_sha256": {
+    "competition_switches.py": "0103010f96c526a4f51b0e84ea9b80e0800599b849fac37d52c568178b1258b1",
+    "two_guilds.py": "eff6a9027c5b28d154f03462d926591ebee3408eb2c80ec0df5c38929f169f83",
+    "hydrogen_uptake.py": "c48d8231ef726605ab07be22438f3e2fd97f23b310773ac748d1b2bf5c36fafd",
+    "woodii1998.py": "b0130f4f8ea15aa64245133f79dc8b35883a414031a8b49262c6657350cad0b0",
+    "kotsyurbenko2001_table2.csv": "c95b4be023e5502fbb30eb322621e5612bbbf850f99d1b6669e98b95eb370480",
+    "peters1998_chemostat.csv": "b0b00bf03eaeaabf45fb571330773c5158b53b088436aaee942188f8e9498320"
+  },
+  "caveats": [
+    "Grid counts are not probabilities or a calibration.",
+    "No assertion excludes two unresolved crossings inside one sampling cell.",
+    "Low-temperature continuations are scenarios, not recovered measurements.",
+    "A guild exchange alone establishes neither climate feedback nor bistability.",
+    "Exact ties have no selected biomass partition and are not routed as zero methane."
+  ]
+}

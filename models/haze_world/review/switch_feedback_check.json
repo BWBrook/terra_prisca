@@ -1,0 +1,60 @@
+{
+  "source": "models/haze_response/arney2016/figure4.csv",
+  "source_git_blob": "62e145e5a6ecd8bdc962e9d981bb5ed8dff8e1ad",
+  "source_sha256": "c0ef5f3d17ee7c6085ad36247f0f7814726dbbe3273842b01f2c6c4e046856f8",
+  "working_equals_committed": true,
+  "case": "B",
+  "interpolation": "Piecewise linear, matching Response.temperature_k",
+  "switch_temperatures_status": "Parent-supplied equilibrium switches, not independently re-fitted here",
+  "checks": [
+    {
+      "label": "saturating_acetogen",
+      "switch_temperature_K_input": 281.534823,
+      "matching_source_segments": [
+        {
+          "source_vertices": [
+            4,
+            5
+          ],
+          "ratio_endpoints": [
+            0.19445499,
+            0.20555088
+          ],
+          "temperature_endpoints_K": [
+            282.005,
+            274.002
+          ],
+          "dT_dr_K_per_ratio": -721.2580514046181,
+          "ratio_at_switch": 0.1951068745773497,
+          "delta_r_example": -0.0001,
+          "delta_T_K_example": 0.07212580514046181
+        }
+      ]
+    },
+    {
+      "label": "first_order_acetogen",
+      "switch_temperature_K_input": 282.780106,
+      "matching_source_segments": [
+        {
+          "source_vertices": [
+            3,
+            4
+          ],
+          "ratio_endpoints": [
+            0.17779149,
+            0.19445499
+          ],
+          "temperature_endpoints_K": [
+            292.002,
+            282.005
+          ],
+          "dT_dr_K_per_ratio": -599.9339874576178,
+          "ratio_at_switch": 0.1931630045212564,
+          "delta_r_example": -0.0001,
+          "delta_T_K_example": 0.05999339874576179
+        }
+      ]
+    }
+  ],
+  "conclusion": "At both supplied switches, a local decrease in methane ratio increases temperature."
+}
