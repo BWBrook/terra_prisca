@@ -1,5 +1,40 @@
 # Methane–haze climate responses
 
+## Eager-Nash et al. (2023): low-methane comparison
+
+[Source](https://doi.org/10.1029/2022JD037544), Fig. 5a–b:
+[36 recovered checkpoints](eager_nash2023/figure5.csv),
+[provenance](eager_nash2023/provenance.json), and
+[calibration residuals](eager_nash2023/calibration.json).
+The four haze-free 3D cases include zero methane; absolute temperatures are
+the separately plotted baseline plus methane-induced warming.
+
+| CO₂ (Pa) | Zero-methane temperature (K) |
+|---:|---:|
+| 100 | 270.60 |
+| 300 | 273.43 |
+| 1000 | 278.67 |
+| 3000 | 286.10 |
+
+![Recovered methane-free and methane-bearing checkpoints](eager_nash2023/response.png)
+
+The 1000-Pa CO₂ case shares Arney A's CO₂ partial pressure and approximately
+its epoch and pressure. It has explicit 3D clouds and ice, a different surface
+treatment, and S/S₀ = 0.809 rather than 0.81. It is therefore a separate
+climate scenario, not a matched missing segment of Arney A; it cannot supply
+Arney B's 1800-Pa baseline. No offset or cross-model splice was fitted. Lines
+in the new plot connect recovered checkpoints for inspection; no climate
+interpolation interface for these cases is asserted.
+
+```bash
+uv run python -m terra_prisca.haze_response.extract_eager_nash2023 \
+  local/sources/eager_nash2023/article.pdf models/haze_response/eager_nash2023
+```
+
+This route recovers published numerical checkpoints despite the dataset
+repository's unresolved web challenge; it does not claim to reproduce the
+underlying GCM or verify its archived fields.
+
 ## Arney et al. (2016)
 
 [Source](https://doi.org/10.1089/ast.2015.1422): Fig. 4 and Tables 1–2.

@@ -48,3 +48,7 @@ attempt to bypass that response and did not substitute a guessed inventory.
 
 This source remains a candidate for extending the haze-free methane domain;
 it is not yet a downloaded or accepted baseline.
+
+The later [Fig. 5 extraction](README.md) recovers published temperature
+checkpoints from the authors' manuscript independently of the data archive.
+The archive's exact file inventory remains unverified.
