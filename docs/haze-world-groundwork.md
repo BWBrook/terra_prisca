@@ -6,6 +6,13 @@ Literature reconnaissance and design criticism used a GPT-5.6 Sol subagent
 (medium reasoning); the parent Codex session (GPT-6) checked the principal
 sources and integrated the proposal.
 
+**9 November update.** We adopted Claude's smaller-first sequence: the
+[Arney response family](../models/haze_response/README.md) is now extracted,
+with table/figure differences preserved and a bounded interpolation interface.
+The [Mak inventory](../models/haze_response/archive-inventory.md) used small
+HTTP range requests; no payload extraction or remote workload was launched.
+The original next-step proposal below remains as the discussion record.
+
 The useful question is whether temperature-sensitive methane production
 reduces or amplifies climate sensitivity, and under which environmental
 conditions. Methane greenhouse warming and organic-haze cooling arise from

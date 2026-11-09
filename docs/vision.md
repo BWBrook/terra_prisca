@@ -70,13 +70,16 @@ Fidelity is measured against the published figures, digitised.
 
 **Re-imaginings**, roughly in order of interest:
 
-1. **Archean haze-world (agreed next build).** A Daisyworld for the real early
-   Earth. Methanogens set the climate through the methane greenhouse rather
-   than through albedo. Above a CH₄:CO₂ ratio of roughly 0.1, an organic haze
-   forms and cools the planet (an anti-greenhouse effect: Pavlov et al. 2001;
-   Domagal-Goldman et al. 2008; Arney et al. 2016). Methane warming and haze
-   cooling play the roles of black and white daisies, on the actual
-   faint-young-Sun timeline. This direction may lead to a paper.
+1. **Archean haze-world (agreed next build).** Explore methane-mediated
+   climate feedback with finite biological production and atmospheric loss.
+   Haze is a photochemical product of the same methane; it is not a second
+   biological guild. Published climate responses include both warming and
+   cooling, conditional on the background atmosphere and haze treatment.
+   First recover those responses, then attach a biological budget. The
+   [Arney et al. (2016) response family](../models/haze_response/README.md)
+   is extracted at its fixed 2.7-Ga conditions; methane lifetime, the
+   low-methane branch and solar evolution need separate evidence or explicit
+   assumptions. This direction may lead to a paper.
 2. **Evolving daisies.** Give the daisies a heritable optimum temperature and
    test whether regulation survives natural selection, the core of the
    critique by Robertson & Robinson (1998) and the replies from Lenton (1998)

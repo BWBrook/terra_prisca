@@ -1,0 +1,441 @@
+{
+  "archive_bytes": 38309598059,
+  "published_md5": "849dfee2f006c76dfa17b489fa802c1f",
+  "entries": 2527,
+  "cases": [
+    {
+      "case": "CO2_3.0pct_CH4_0.375pct",
+      "empty_files": 35,
+      "streams": {
+        "pa": {
+          "nonempty_files": 20,
+          "compressed_bytes": 44641102,
+          "uncompressed_bytes": 307036160
+        },
+        "pb": {
+          "nonempty_files": 20,
+          "compressed_bytes": 996726615,
+          "uncompressed_bytes": 1739980800
+        },
+        "pc": {
+          "nonempty_files": 20,
+          "compressed_bytes": 969945143,
+          "uncompressed_bytes": 1714421760
+        },
+        "pd": {
+          "nonempty_files": 20,
+          "compressed_bytes": 570382774,
+          "uncompressed_bytes": 1083965440
+        },
+        "pe": {
+          "nonempty_files": 20,
+          "compressed_bytes": 182543713,
+          "uncompressed_bytes": 841154560
+        }
+      }
+    },
+    {
+      "case": "CO2_3.0pct_CH4_0.375pct_AER",
+      "empty_files": 0,
+      "streams": {
+        "pa": {
+          "nonempty_files": 20,
+          "compressed_bytes": 65862198,
+          "uncompressed_bytes": 332595200
+        },
+        "pb": {
+          "nonempty_files": 20,
+          "compressed_bytes": 932922575,
+          "uncompressed_bytes": 1739980800
+        },
+        "pc": {
+          "nonempty_files": 20,
+          "compressed_bytes": 898225246,
+          "uncompressed_bytes": 1714421760
+        },
+        "pd": {
+          "nonempty_files": 20,
+          "compressed_bytes": 572717889,
+          "uncompressed_bytes": 1083965440
+        },
+        "pe": {
+          "nonempty_files": 20,
+          "compressed_bytes": 168093827,
+          "uncompressed_bytes": 841154560
+        }
+      }
+    },
+    {
+      "case": "CO2_3.0pct_CH4_0.3pct",
+      "empty_files": 0,
+      "streams": {
+        "pa": {
+          "nonempty_files": 21,
+          "compressed_bytes": 63252121,
+          "uncompressed_bytes": 336455872
+        },
+        "pb": {
+          "nonempty_files": 21,
+          "compressed_bytes": 1211603471,
+          "uncompressed_bytes": 2009606336
+        },
+        "pc": {
+          "nonempty_files": 21,
+          "compressed_bytes": 921712511,
+          "uncompressed_bytes": 1669671104
+        },
+        "pd": {
+          "nonempty_files": 21,
+          "compressed_bytes": 542413758,
+          "uncompressed_bytes": 1070737600
+        },
+        "pe": {
+          "nonempty_files": 21,
+          "compressed_bytes": 160408293,
+          "uncompressed_bytes": 840067264
+        }
+      }
+    },
+    {
+      "case": "CO2_3.0pct_CH4_0.3pct_AER",
+      "empty_files": 0,
+      "streams": {
+        "pa": {
+          "nonempty_files": 20,
+          "compressed_bytes": 63275292,
+          "uncompressed_bytes": 332595200
+        },
+        "pb": {
+          "nonempty_files": 20,
+          "compressed_bytes": 1263663745,
+          "uncompressed_bytes": 2072248320
+        },
+        "pc": {
+          "nonempty_files": 20,
+          "compressed_bytes": 993044007,
+          "uncompressed_bytes": 1714421760
+        },
+        "pd": {
+          "nonempty_files": 20,
+          "compressed_bytes": 570471543,
+          "uncompressed_bytes": 1083965440
+        },
+        "pe": {
+          "nonempty_files": 20,
+          "compressed_bytes": 133455077,
+          "uncompressed_bytes": 841154560
+        }
+      }
+    },
+    {
+      "case": "CO2_3.0pct_CH4_0.45pct",
+      "empty_files": 0,
+      "streams": {
+        "pa": {
+          "nonempty_files": 20,
+          "compressed_bytes": 44466191,
+          "uncompressed_bytes": 307036160
+        },
+        "pb": {
+          "nonempty_files": 20,
+          "compressed_bytes": 996158524,
+          "uncompressed_bytes": 1739980800
+        },
+        "pc": {
+          "nonempty_files": 20,
+          "compressed_bytes": 969526185,
+          "uncompressed_bytes": 1714421760
+        },
+        "pd": {
+          "nonempty_files": 20,
+          "compressed_bytes": 570385724,
+          "uncompressed_bytes": 1083965440
+        },
+        "pe": {
+          "nonempty_files": 20,
+          "compressed_bytes": 176525130,
+          "uncompressed_bytes": 841154560
+        }
+      }
+    },
+    {
+      "case": "CO2_3.0pct_CH4_0.45pct_AER",
+      "empty_files": 0,
+      "streams": {
+        "pa": {
+          "nonempty_files": 20,
+          "compressed_bytes": 63957476,
+          "uncompressed_bytes": 332595200
+        },
+        "pb": {
+          "nonempty_files": 20,
+          "compressed_bytes": 799767600,
+          "uncompressed_bytes": 1739980800
+        },
+        "pc": {
+          "nonempty_files": 20,
+          "compressed_bytes": 743365137,
+          "uncompressed_bytes": 1714421760
+        },
+        "pd": {
+          "nonempty_files": 20,
+          "compressed_bytes": 565016415,
+          "uncompressed_bytes": 1083965440
+        },
+        "pe": {
+          "nonempty_files": 20,
+          "compressed_bytes": 169253956,
+          "uncompressed_bytes": 841154560
+        }
+      }
+    },
+    {
+      "case": "CO2_3.0pct_CH4_0.525pct",
+      "empty_files": 0,
+      "streams": {
+        "pa": {
+          "nonempty_files": 20,
+          "compressed_bytes": 44466794,
+          "uncompressed_bytes": 307036160
+        },
+        "pb": {
+          "nonempty_files": 20,
+          "compressed_bytes": 995695469,
+          "uncompressed_bytes": 1739980800
+        },
+        "pc": {
+          "nonempty_files": 20,
+          "compressed_bytes": 969110920,
+          "uncompressed_bytes": 1714421760
+        },
+        "pd": {
+          "nonempty_files": 20,
+          "compressed_bytes": 570205170,
+          "uncompressed_bytes": 1083965440
+        },
+        "pe": {
+          "nonempty_files": 20,
+          "compressed_bytes": 176437952,
+          "uncompressed_bytes": 841154560
+        }
+      }
+    },
+    {
+      "case": "CO2_3.0pct_CH4_0.525pct_AER",
+      "empty_files": 0,
+      "streams": {
+        "pa": {
+          "nonempty_files": 20,
+          "compressed_bytes": 63594623,
+          "uncompressed_bytes": 332595200
+        },
+        "pb": {
+          "nonempty_files": 20,
+          "compressed_bytes": 767341741,
+          "uncompressed_bytes": 1739980800
+        },
+        "pc": {
+          "nonempty_files": 20,
+          "compressed_bytes": 702454415,
+          "uncompressed_bytes": 1714421760
+        },
+        "pd": {
+          "nonempty_files": 20,
+          "compressed_bytes": 563576728,
+          "uncompressed_bytes": 1083965440
+        },
+        "pe": {
+          "nonempty_files": 20,
+          "compressed_bytes": 168710398,
+          "uncompressed_bytes": 841154560
+        }
+      }
+    },
+    {
+      "case": "CO2_3.0pct_CH4_0.6pct",
+      "empty_files": 0,
+      "streams": {
+        "pa": {
+          "nonempty_files": 20,
+          "compressed_bytes": 66491156,
+          "uncompressed_bytes": 332595200
+        },
+        "pb": {
+          "nonempty_files": 20,
+          "compressed_bytes": 1273387843,
+          "uncompressed_bytes": 2072248320
+        },
+        "pc": {
+          "nonempty_files": 20,
+          "compressed_bytes": 968729144,
+          "uncompressed_bytes": 1714421760
+        },
+        "pd": {
+          "nonempty_files": 20,
+          "compressed_bytes": 570148186,
+          "uncompressed_bytes": 1083965440
+        },
+        "pe": {
+          "nonempty_files": 20,
+          "compressed_bytes": 167544231,
+          "uncompressed_bytes": 841154560
+        }
+      }
+    },
+    {
+      "case": "CO2_3.0pct_CH4_0.6pct_AER",
+      "empty_files": 0,
+      "streams": {
+        "pa": {
+          "nonempty_files": 20,
+          "compressed_bytes": 64344613,
+          "uncompressed_bytes": 332595200
+        },
+        "pb": {
+          "nonempty_files": 20,
+          "compressed_bytes": 1056087773,
+          "uncompressed_bytes": 2072248320
+        },
+        "pc": {
+          "nonempty_files": 20,
+          "compressed_bytes": 726289394,
+          "uncompressed_bytes": 1714421760
+        },
+        "pd": {
+          "nonempty_files": 20,
+          "compressed_bytes": 563013052,
+          "uncompressed_bytes": 1083965440
+        },
+        "pe": {
+          "nonempty_files": 20,
+          "compressed_bytes": 191219996,
+          "uncompressed_bytes": 841154560
+        }
+      }
+    },
+    {
+      "case": "CO2_3.0pct_CH4_1.2pct",
+      "empty_files": 0,
+      "streams": {
+        "pa": {
+          "nonempty_files": 20,
+          "compressed_bytes": 66336107,
+          "uncompressed_bytes": 332595200
+        },
+        "pb": {
+          "nonempty_files": 20,
+          "compressed_bytes": 1273127360,
+          "uncompressed_bytes": 2072248320
+        },
+        "pc": {
+          "nonempty_files": 20,
+          "compressed_bytes": 968286021,
+          "uncompressed_bytes": 1714421760
+        },
+        "pd": {
+          "nonempty_files": 20,
+          "compressed_bytes": 570163635,
+          "uncompressed_bytes": 1083965440
+        },
+        "pe": {
+          "nonempty_files": 20,
+          "compressed_bytes": 159625840,
+          "uncompressed_bytes": 841154560
+        }
+      }
+    },
+    {
+      "case": "CO2_3.0pct_CH4_1.2pct_AER",
+      "empty_files": 0,
+      "streams": {
+        "pa": {
+          "nonempty_files": 20,
+          "compressed_bytes": 64146434,
+          "uncompressed_bytes": 332595200
+        },
+        "pb": {
+          "nonempty_files": 20,
+          "compressed_bytes": 1039630898,
+          "uncompressed_bytes": 2072248320
+        },
+        "pc": {
+          "nonempty_files": 20,
+          "compressed_bytes": 708506028,
+          "uncompressed_bytes": 1714421760
+        },
+        "pd": {
+          "nonempty_files": 20,
+          "compressed_bytes": 567493991,
+          "uncompressed_bytes": 1083965440
+        },
+        "pe": {
+          "nonempty_files": 20,
+          "compressed_bytes": 191266150,
+          "uncompressed_bytes": 841154560
+        }
+      }
+    },
+    {
+      "case": "CO2_3.0pct_CH4_1.8pct",
+      "empty_files": 0,
+      "streams": {
+        "pa": {
+          "nonempty_files": 20,
+          "compressed_bytes": 66339781,
+          "uncompressed_bytes": 332595200
+        },
+        "pb": {
+          "nonempty_files": 20,
+          "compressed_bytes": 1273229988,
+          "uncompressed_bytes": 2072248320
+        },
+        "pc": {
+          "nonempty_files": 20,
+          "compressed_bytes": 968027409,
+          "uncompressed_bytes": 1714421760
+        },
+        "pd": {
+          "nonempty_files": 20,
+          "compressed_bytes": 570142361,
+          "uncompressed_bytes": 1083965440
+        },
+        "pe": {
+          "nonempty_files": 20,
+          "compressed_bytes": 159817393,
+          "uncompressed_bytes": 841154560
+        }
+      }
+    },
+    {
+      "case": "CO2_3.0pct_CH4_1.8pct_AER",
+      "empty_files": 0,
+      "streams": {
+        "pa": {
+          "nonempty_files": 20,
+          "compressed_bytes": 63993937,
+          "uncompressed_bytes": 332595200
+        },
+        "pb": {
+          "nonempty_files": 20,
+          "compressed_bytes": 1036168966,
+          "uncompressed_bytes": 2072248320
+        },
+        "pc": {
+          "nonempty_files": 20,
+          "compressed_bytes": 709040489,
+          "uncompressed_bytes": 1714421760
+        },
+        "pd": {
+          "nonempty_files": 20,
+          "compressed_bytes": 566502116,
+          "uncompressed_bytes": 1083965440
+        },
+        "pe": {
+          "nonempty_files": 20,
+          "compressed_bytes": 194194876,
+          "uncompressed_bytes": 841154560
+        }
+      }
+    }
+  ]
+}

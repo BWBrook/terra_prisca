@@ -1,0 +1,66 @@
+[
+  {
+    "case": "A",
+    "vertices": 7,
+    "reference_line_k": [
+      248.00076938275208,
+      273.1452760975492
+    ],
+    "figure_cooling_onset_ratio": 0.17999913191552194,
+    "table_haze_formation_ratio": 0.18,
+    "vector_max_k": 283.99884577188095,
+    "table_max_clear_k": 284,
+    "max_difference_k": -0.0011542281190486392,
+    "last_vertex_k": 263.9915334019263,
+    "table_stabilized_k": 263,
+    "last_difference_k": 0.99153340192629
+  },
+  {
+    "case": "B",
+    "vertices": 10,
+    "reference_line_k": [
+      248.00076938275208,
+      273.1452760975492
+    ],
+    "figure_cooling_onset_ratio": 0.16667112727155003,
+    "table_haze_formation_ratio": 0.15,
+    "vector_max_k": 297.0075043306653,
+    "table_max_clear_k": 299,
+    "max_difference_k": -1.9924956693346871,
+    "last_vertex_k": 274.0019241241743,
+    "table_stabilized_k": 274,
+    "last_difference_k": 0.0019241241743088722
+  },
+  {
+    "case": "C",
+    "vertices": 13,
+    "reference_line_k": [
+      248.00076983738637,
+      273.1452763678013
+    ],
+    "figure_cooling_onset_ratio": 0.17500591343008626,
+    "table_haze_formation_ratio": 0.19,
+    "vector_max_k": 282.1939581624355,
+    "table_max_clear_k": 282,
+    "max_difference_k": 0.1939581624354787,
+    "last_vertex_k": 262.596113501796,
+    "table_stabilized_k": 262,
+    "last_difference_k": 0.596113501796026
+  },
+  {
+    "case": "D",
+    "vertices": 8,
+    "reference_line_k": [
+      248.00076983738637,
+      273.1452763678013
+    ],
+    "figure_cooling_onset_ratio": 0.27780912234377847,
+    "table_haze_formation_ratio": 0.28,
+    "vector_max_k": 273.39041762908255,
+    "table_max_clear_k": 273,
+    "max_difference_k": 0.39041762908254896,
+    "last_vertex_k": 251.59438152166766,
+    "table_stabilized_k": 251,
+    "last_difference_k": 0.5943815216676569
+  }
+]

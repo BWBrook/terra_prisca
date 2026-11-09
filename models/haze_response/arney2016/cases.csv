@@ -1,0 +1,5 @@
+case,p_co2_bar,surface_pressure_bar,solar_fraction,epoch_ga,surface_albedo,haze_formation_ratio,table_max_clear_k,table_stabilized_k,table_ice_k
+A,0.01,1.0,0.81,2.7,0.32,0.18,284,263,257
+B,0.018,1.0,0.81,2.7,0.32,0.15,299,274,271
+C,0.01,0.5,0.81,2.7,0.32,0.19,282,262,257
+D,0.0036,0.5,0.81,2.7,0.32,0.28,273,251,241

@@ -13,7 +13,7 @@ lineage of models and the agreed order of work are in
 | Model | Status | Page |
 |---|---|---|
 | Daisyworld, Watson & Lovelock (1983) | Faithful reconstruction done and independently reviewed; agrees with published Figs 1b–d and 2 on occupied branches and transitions; the cause of a Fig. 1a discrepancy is unresolved | [`models/daisyworld`](models/daisyworld/README.md) |
-| Archean haze-world (Daisyworld re-imagining) | Next | — |
+| Methane–haze climate responses | Arney (2016) curves extracted; bounded interpolation available; biological coupling not yet implemented | [`models/haze_response`](models/haze_response/README.md) |
 
 ## Getting started
 
