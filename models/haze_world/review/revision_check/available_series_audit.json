@@ -1,0 +1,170 @@
+[
+  {
+    "key": [
+      "U",
+      "265.0",
+      "0.03",
+      "10.0",
+      "0.0"
+    ],
+    "n": 401,
+    "end": 203000.0,
+    "total_biomass_range": 0.0,
+    "total_biomass_final": 0.0,
+    "r_range": 2.7940881053073116e-09,
+    "r_final": 0.0005437720353749797,
+    "t_k_range": 2.9840001616321388e-06,
+    "t_k_final": 265.5962425108705,
+    "mean_theta_k_range": null,
+    "mean_theta_k_final": null,
+    "living_bins_range": 0.0,
+    "living_bins_final": 0.0
+  },
+  {
+    "key": [
+      "U",
+      "265.0",
+      "0.03",
+      "10.0",
+      "1e-08"
+    ],
+    "n": 401,
+    "end": 203000.0,
+    "total_biomass_range": 0.0,
+    "total_biomass_final": 0.0,
+    "r_range": 2.794087891394223e-09,
+    "r_final": 0.0005437720353749457,
+    "t_k_range": 2.9839998774150445e-06,
+    "t_k_final": 265.5962425108705,
+    "mean_theta_k_range": null,
+    "mean_theta_k_final": null,
+    "living_bins_range": 0.0,
+    "living_bins_final": 0.0
+  },
+  {
+    "key": [
+      "U",
+      "265.0",
+      "0.03",
+      "10.0",
+      "1e-06"
+    ],
+    "n": 401,
+    "end": 203000.0,
+    "total_biomass_range": 7.236202468393488e-18,
+    "total_biomass_final": 2.911148104269513e-06,
+    "r_range": 2.2965055516965815e-09,
+    "r_final": 0.029655253915083057,
+    "t_k_range": 6.521109980894835e-07,
+    "t_k_final": 280.5127941892656,
+    "mean_theta_k_range": 4.999549219064647e-09,
+    "mean_theta_k_final": 280.5000818346898,
+    "living_bins_range": 0.0,
+    "living_bins_final": 3.0
+  },
+  {
+    "key": [
+      "U",
+      "265.0",
+      "0.03",
+      "10.0",
+      "0.0001"
+    ],
+    "n": 401,
+    "end": 203000.0,
+    "total_biomass_range": 9.71805135549595e-17,
+    "total_biomass_final": 2.9111194170455153e-06,
+    "r_range": 2.3209272455304575e-09,
+    "r_final": 0.029655088766996098,
+    "t_k_range": 6.590485099877696e-07,
+    "t_k_final": 280.51274729405156,
+    "mean_theta_k_range": 3.929810645786347e-07,
+    "mean_theta_k_final": 280.50653682218393,
+    "living_bins_range": 0.0,
+    "living_bins_final": 6.0
+  },
+  {
+    "key": [
+      "H E=0.65",
+      "265.0",
+      "0.03",
+      "10.0",
+      "0.0"
+    ],
+    "n": 401,
+    "end": 203000.0,
+    "total_biomass_range": 1.5362465167234368e-13,
+    "total_biomass_final": 2.47075902985141e-06,
+    "r_range": 9.707348227333545e-09,
+    "r_final": 0.025251363915051665,
+    "t_k_range": 3.100840501701896e-06,
+    "t_k_final": 279.1872256086306,
+    "mean_theta_k_range": 0.0,
+    "mean_theta_k_final": 285.5,
+    "living_bins_range": 0.0,
+    "living_bins_final": 1.0
+  },
+  {
+    "key": [
+      "H E=0.65",
+      "265.0",
+      "0.03",
+      "10.0",
+      "1e-08"
+    ],
+    "n": 401,
+    "end": 203000.0,
+    "total_biomass_range": 9.546793448483924e-14,
+    "total_biomass_final": 2.4707586209098548e-06,
+    "r_range": 9.700856472283359e-09,
+    "r_final": 0.0252513637186962,
+    "t_k_range": 3.0987668537818536e-06,
+    "t_k_final": 279.18722554590835,
+    "mean_theta_k_range": 0.0,
+    "mean_theta_k_final": 285.5,
+    "living_bins_range": 0.0,
+    "living_bins_final": 1.0
+  },
+  {
+    "key": [
+      "H E=0.65",
+      "265.0",
+      "0.03",
+      "10.0",
+      "1e-06"
+    ],
+    "n": 401,
+    "end": 203000.0,
+    "total_biomass_range": 3.633995320408026e-13,
+    "total_biomass_final": 2.6230223691785586e-06,
+    "r_range": 2.3505810339830013e-08,
+    "r_final": 0.026774000260733476,
+    "t_k_range": 7.197621755494765e-06,
+    "t_k_final": 279.66339364612827,
+    "mean_theta_k_range": 4.5230194700707216e-08,
+    "mean_theta_k_final": 291.49955932203176,
+    "living_bins_range": 0.0,
+    "living_bins_final": 3.0
+  },
+  {
+    "key": [
+      "H E=0.65",
+      "265.0",
+      "0.03",
+      "10.0",
+      "0.0001"
+    ],
+    "n": 401,
+    "end": 203000.0,
+    "total_biomass_range": 3.6826865943347955e-13,
+    "total_biomass_final": 2.6228967343689834e-06,
+    "r_range": 2.379050725517806e-08,
+    "r_final": 0.02677279705557195,
+    "t_k_range": 7.285035962922848e-06,
+    "t_k_final": 279.66302521126227,
+    "mean_theta_k_range": 3.7591070167763974e-06,
+    "mean_theta_k_final": 291.46050103162213,
+    "living_bins_range": 0.0,
+    "living_bins_final": 5.0
+  }
+]

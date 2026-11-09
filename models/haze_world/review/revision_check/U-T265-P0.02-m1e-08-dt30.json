@@ -1,0 +1,51 @@
+{
+  "case": [
+    "U",
+    265.0,
+    0.02,
+    1e-08,
+    30.0
+  ],
+  "elapsed_seconds": 69.533830667031,
+  "tail_spans": {
+    "total_biomass": 3.868258688999391e-13,
+    "r": 2.671272189558316e-09,
+    "t_k": 1.0149718718821532e-06,
+    "mean_theta_k": 0.0
+  },
+  "biomass_tail_relative": 2.026096414638017e-07,
+  "composition_tail_L1": 0.0,
+  "final": {
+    "t_yr": 203000,
+    "potential_ratio": 0.019999999999999997,
+    "r": 0.019635954398577033,
+    "t_k": 277.233362485849,
+    "total_biomass": 1.9092174790164145e-06,
+    "mean_theta_k": 280.0,
+    "singular_theta_k": 277.233362485849,
+    "lag_k": 2.7666375141510002,
+    "living_bins": 1
+  },
+  "final_csv_delta_T": 0.00036248584899567504,
+  "final_csv_delta_theta": 0.0,
+  "census_cycle": {
+    "biomass_rel_change": -2.0210387132824655e-07,
+    "composition_L1": 0.0,
+    "methane_rel_change": -6.320447329017676e-11,
+    "D_rel_change": -4.109355119826814e-11,
+    "T_change": -4.715730028692633e-10,
+    "removed_biomass_relative": 6.012556129351018e-07
+  },
+  "extension_20k": {
+    "T_change": -1.3891207117922022e-07,
+    "theta_change": 0.0,
+    "composition_L1": 0.0,
+    "biomass_rel_change": -1.0384709872436904e-10
+  },
+  "positive_final_bins": [
+    [
+      280.0,
+      1.0
+    ]
+  ]
+}

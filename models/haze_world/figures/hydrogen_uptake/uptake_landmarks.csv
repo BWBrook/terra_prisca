@@ -1,0 +1,11 @@
+temperature_c,opponent,pressure_pa,basis,k_comp_lower,k_comp_upper,published_winner,verdict
+4,methanogenic strain MSB,40,culture,-1.0,-0.005753739930955094,methanogen,consistent
+4,methanogenic strain MSB,40,dry_mass,-1.0,0.31558339859044643,methanogen,unresolved
+4,methanogenic strain MSB,1000,culture,0.3512064343163539,0.3682844847970808,acetogen,consistent
+4,methanogenic strain MSB,1000,dry_mass,0.6039279869067103,0.6162430368918783,acetogen,consistent
+30,methanogenic strain MSB,500,culture,-0.20816670174700064,-0.06439243132242313,methanogen,consistent
+30,methanogenic strain MSB,500,dry_mass,0.12064343163538878,0.2617689067522299,methanogen,inconsistent
+30,methanogenic strain MSB,2000,culture,0.06419269332718688,0.075508559581317,acetogen,consistent
+30,methanogenic strain MSB,2000,dry_mass,0.3771812080536915,0.3868928377852902,acetogen,consistent
+15,methanogenic strain MSP,1000,culture,0.3493690851735015,0.3738643630177479,acetogen,consistent
+15,methanogenic strain MSP,1000,dry_mass,0.5835261453031005,0.6018072235230628,acetogen,consistent

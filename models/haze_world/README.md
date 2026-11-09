@@ -311,6 +311,12 @@ general equivalence.
 **Code.** [`strains.py`](../../src/terra_prisca/haze_world/strains.py), with
 tests in [`tests/test_strains.py`](../../tests/test_strains.py).
 
+An [independent review of the revision](review/revision-review-2026-11-09.md)
+supports results 8–10 within this experiment. Selected survivors also have
+negligible climate and strain-composition drift, with tiny turnover at each
+census; “settled” describes that censused regime. A small vertex-flag
+reproducibility issue remains, without changing these survival results.
+
 ```bash
 uv run python -m terra_prisca.haze_world.strains
 ```
@@ -441,8 +447,12 @@ and gets rarer the further the seed's optimum lies from it.
 - **Evolution.** Stages 1 and 2 (results 4–10) use one deterministic
   physiology with uncalibrated mutation, census and extinction settings, and
   a single forcing (declining supply) in case B. Stage 3, hydrogen
-  competition with homoacetogens, waits on the
-  [strain-resolved benchmark](evidence/hydrogen-competition.md). The decisive
+  competition with homoacetogens, now has a runnable
+  [hydrogen-uptake benchmark](hydrogen-uptake.md). Its equations and kinetic
+  table are reconstructed, while full figure reproduction remains unresolved
+  because cessation thresholds are missing and the source's culture-rate and
+  equal-biomass interpretations disagree at a central-value checkpoint.
+  Climate coupling waits on that reconciliation. The decisive
   empirical inputs are:
   - the elasticity of photochemical methane loss near r ≈ 0.2
     ([evidence](evidence/loss-elasticity.md));

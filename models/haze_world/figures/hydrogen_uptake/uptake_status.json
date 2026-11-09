@@ -1,0 +1,8 @@
+{
+  "source_doi": "10.1111/j.1574-6941.2001.tb00893.x",
+  "source_table_rows": 18,
+  "threshold_scope": "Coarse published bounds only; Fig. 1 points unrecovered",
+  "uncertainty": "Conditional on central Vmax, Km and biomass; intervals vary thresholds only, not confidence bands",
+  "figure_reproduction": "Incomplete: thresholds missing and normalization discrepancy unresolved",
+  "climate_coupling": false
+}

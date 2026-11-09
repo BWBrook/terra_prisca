@@ -1,0 +1,37 @@
+{
+  "doi": "10.1111/j.1574-6941.2001.tb00893.x",
+  "original_elsevier_doi": "10.1016/S0168-6496(01)00179-9",
+  "registered_pdf_url": "https://academic.oup.com/femsec/article-pdf/38/2-3/153/18089579/38-2-3-153.pdf",
+  "source_version": "publisher version of record, indexed PDF text recovered",
+  "retrieved_utc": "2026-11-09T10:57:31.143651+00:00",
+  "pdf_bytes_recovered": false,
+  "pdf_sha256": null,
+  "visual_verification": false,
+  "figure_digitization": false,
+  "evidence_files": {
+    "competition_landmarks.json": {
+      "bytes": 920,
+      "sha256": "14d2bf7ae8ef50a28b12bd25167505f9d8ea0b7072f1c6eb60d9cca465c4ff74"
+    },
+    "crossref.json": {
+      "bytes": 15494,
+      "sha256": "0202bdb37db29b92064479761555a2dd7db846a8d6fef69b6e3f752570632c4f"
+    },
+    "figure1_threshold_recovery_status.csv": {
+      "bytes": 1621,
+      "sha256": "d89382ae1b21f6386266726a9afc3c1e282c135cbb562c7c25336d9c7c493d40"
+    },
+    "publisher_pdf_indexed_text.txt": {
+      "bytes": 24878,
+      "sha256": "0a3fd0b11a3aee2bbed6d0190425a01d05a1bfa13f9a0b7a07853e96e646bac0"
+    },
+    "reconstruction_contract.md": {
+      "bytes": 5433,
+      "sha256": "792793c3fb4c61c2e96eb60dff3b59b597038dafb57163124d275d1442626631"
+    },
+    "table2_indexed_extraction.csv": {
+      "bytes": 798,
+      "sha256": "c95b4be023e5502fbb30eb322621e5612bbbf850f99d1b6669e98b95eb370480"
+    }
+  }
+}

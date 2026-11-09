@@ -112,6 +112,12 @@ Fidelity is measured against the published figures, digitised.
    stranding result was an artefact of the follow-up time
    ([review](../models/haze_world/review/strains-review-2026-11-09.md)).
    Mutation can rescue a declining seed but not one that cannot divide.
+   The [hydrogen-uptake benchmark](../models/haze_world/hydrogen-uptake.md)
+   now implements the published kinetics with explicit rate units. It exposes
+   a source-normalization discrepancy and still lacks the individual
+   cessation thresholds, so competition is not yet coupled to climate.
+   A [solar-response search](../models/haze_response/solar-responses.md) found
+   a second Sun-age checkpoint, but no matched hazy luminosity grid.
    This direction may lead to a paper.
 2. **Evolving daisies.** Give the daisies a heritable optimum temperature and
    test whether regulation survives natural selection, the core of the

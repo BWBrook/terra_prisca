@@ -1,0 +1,44 @@
+{
+  "checked": "2026-11-09",
+  "question": "Recoverable methane/haze climate family at varying solar forcing",
+  "conclusion": "No matched hazy Sun response family found in bounded primary-source search",
+  "arney2017": {
+    "doi": "10.3847/1538-4357/836/1/49",
+    "primary": "https://doi.org/10.3847/1538-4357/836/1/49",
+    "manuscript": "https://arxiv.org/pdf/1702.02994",
+    "local_pdf": "arney2017_arxiv.pdf",
+    "sha256": "8116e1e8012a167bb57d9a2b51d57f20cb48c9cd2de8b6ceec5b04406328c4bb",
+    "checked_targets": [
+      "Published Table3 accessed through indexed primary publisher text",
+      "Manuscript Table3 and methods, total pressure1bar,pCO2.01bar,r.2",
+      "Text nominal oldsolarconstant~.8, raw incomingSW278 versus342Wm-2 preserved"
+    ],
+    "limit": "Two solar-age checkpoints; no full methane-ratio by luminosity grid or output archive identified"
+  },
+  "charnay2013": {
+    "doi": "10.1002/jgrd.50808",
+    "primary": "https://agupubs.onlinelibrary.wiley.com/doi/full/10.1002/jgrd.50808",
+    "targets": [
+      "Section4.2 solarforcing andatmosphere",
+      "Figs6-7 multiepoch clear climate"
+    ],
+    "solar_constant_W_m2": {
+      "3.8Ga": 1025.1,
+      "3Ga": 1081.9,
+      "2.5Ga": 1120.8
+    },
+    "modern_solar_constant_W_m2": 1366,
+    "limit": "Explicitly neglects haze; land changes at2.5Ga; no full methaneaxis"
+  },
+  "mak2023": {
+    "doi": "10.1029/2023JD039343",
+    "primary": "https://agupubs.onlinelibrary.wiley.com/doi/full/10.1029/2023JD039343",
+    "limit": "Single setup with2.9Ga spectrum; prescribed spherical haze, pCO2.03bar,1bar; methanegrid isnot solargrid"
+  },
+  "claire2012": {
+    "doi": "10.1088/0004-637X/757/1/95",
+    "primary": "https://doi.org/10.1088/0004-637X/757/1/95",
+    "code_listing": "https://vpl.uw.edu/models/models/",
+    "limit": "Age-dependent spectral forcing generator, not a climate response family; code availability listed but not downloaded or executed"
+  }
+}

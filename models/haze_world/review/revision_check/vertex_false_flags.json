@@ -1,0 +1,211 @@
+[
+  {
+    "constraint": "H E=0.05",
+    "loss": "power n=0.2",
+    "r": 0.21865064499503548,
+    "distance_to_vertex": 0.001982014995035475,
+    "slopes": [
+      -18.55806885942002,
+      -18.55812570283888
+    ],
+    "csv_flag": "False"
+  },
+  {
+    "constraint": "H E=0.25",
+    "loss": "power n=0.2",
+    "r": 0.21279733469080087,
+    "distance_to_vertex": 0.0038712953091991353,
+    "slopes": [
+      -45.78265588861541,
+      -45.78259904519655
+    ],
+    "csv_flag": "False"
+  },
+  {
+    "constraint": "F floor=287",
+    "loss": "power n=0.2",
+    "r": 0.21521688966118793,
+    "distance_to_vertex": 0.0014517403388120687,
+    "slopes": [
+      -45.78259904519655,
+      -45.78265588861541
+    ],
+    "csv_flag": "False"
+  },
+  {
+    "constraint": "F floor=289",
+    "loss": "power n=0.2",
+    "r": 0.21159429453740372,
+    "distance_to_vertex": 0.00507433546259628,
+    "slopes": [
+      -45.78265588861541,
+      -45.78259904519655
+    ],
+    "csv_flag": "False"
+  },
+  {
+    "constraint": "H E=0.3",
+    "loss": "power n=0.5",
+    "r": 0.2159808287478577,
+    "distance_to_vertex": 0.0006878012521422949,
+    "slopes": [
+      -45.78259904519655,
+      -45.78265588861541
+    ],
+    "csv_flag": "False"
+  },
+  {
+    "constraint": "H E=0.35",
+    "loss": "power n=0.5",
+    "r": 0.21497067841050377,
+    "distance_to_vertex": 0.0016979515894962327,
+    "slopes": [
+      -45.78259904519655,
+      -45.78265588861541
+    ],
+    "csv_flag": "False"
+  },
+  {
+    "constraint": "H E=0.5",
+    "loss": "power n=0.5",
+    "r": 0.21074134320711863,
+    "distance_to_vertex": 0.005190463207118634,
+    "slopes": [
+      -45.78259904519655,
+      -45.78265588861541
+    ],
+    "csv_flag": "False"
+  },
+  {
+    "constraint": "H E=0.55",
+    "loss": "power n=0.5",
+    "r": 0.2087803628211461,
+    "distance_to_vertex": 0.0032294828211461013,
+    "slopes": [
+      -45.78265588861541,
+      -45.78259904519655
+    ],
+    "csv_flag": "False"
+  },
+  {
+    "constraint": "F floor=277",
+    "loss": "power n=0.5",
+    "r": 0.2195903724315344,
+    "distance_to_vertex": 0.00262838756846559,
+    "slopes": [
+      -18.55806885942002,
+      -18.55812570283888
+    ],
+    "csv_flag": "False"
+  },
+  {
+    "constraint": "F floor=291",
+    "loss": "power n=0.5",
+    "r": 0.21122468319144974,
+    "distance_to_vertex": 0.00544394680855026,
+    "slopes": [
+      -45.78259904519655,
+      -45.78265588861541
+    ],
+    "csv_flag": "False"
+  },
+  {
+    "constraint": "H E=0.4",
+    "loss": "power n=1",
+    "r": 0.21665721414586075,
+    "distance_to_vertex": 1.1415854139246173e-05,
+    "slopes": [
+      -45.78265588861541,
+      -45.78259904519655
+    ],
+    "csv_flag": "False"
+  },
+  {
+    "constraint": "H E=0.55",
+    "loss": "power n=1",
+    "r": 0.2139298946962751,
+    "distance_to_vertex": 0.0027387353037248985,
+    "slopes": [
+      -45.78259904519655,
+      -45.78265588861541
+    ],
+    "csv_flag": "False"
+  },
+  {
+    "constraint": "F floor=279",
+    "loss": "power n=1",
+    "r": 0.2195717620601492,
+    "distance_to_vertex": 0.0026469979398507926,
+    "slopes": [
+      -18.55806885942002,
+      -18.55812570283888
+    ],
+    "csv_flag": "False"
+  },
+  {
+    "constraint": "F floor=292",
+    "loss": "power n=2",
+    "r": 0.21316815742924647,
+    "distance_to_vertex": 0.0035004725707535322,
+    "slopes": [
+      -45.78259904519655,
+      -45.78265588861541
+    ],
+    "csv_flag": "False"
+  },
+  {
+    "constraint": "H E=0.15",
+    "loss": "log s=0.001",
+    "r": 0.21584054491550805,
+    "distance_to_vertex": 0.0008280850844919474,
+    "slopes": [
+      -45.78265588861541,
+      -45.78259904519655
+    ],
+    "csv_flag": "False"
+  },
+  {
+    "constraint": "H E=0.2",
+    "loss": "log s=0.001",
+    "r": 0.21417074776350944,
+    "distance_to_vertex": 0.002497882236490556,
+    "slopes": [
+      -45.78259904519655,
+      -45.78265588861541
+    ],
+    "csv_flag": "False"
+  },
+  {
+    "constraint": "H E=0.35",
+    "loss": "log s=0.001",
+    "r": 0.2076446122077572,
+    "distance_to_vertex": 0.002093732207757215,
+    "slopes": [
+      -45.78265588861541,
+      -45.78259904519655
+    ],
+    "csv_flag": "False"
+  },
+  {
+    "constraint": "F floor=286",
+    "loss": "log s=0.001",
+    "r": 0.2160155707635608,
+    "distance_to_vertex": 0.0006530592364392129,
+    "slopes": [
+      -45.78259904519655,
+      -45.78265588861541
+    ],
+    "csv_flag": "False"
+  },
+  {
+    "constraint": "F floor=287",
+    "loss": "log s=0.001",
+    "r": 0.214878502443765,
+    "distance_to_vertex": 0.001790127556235005,
+    "slopes": [
+      -45.78265588861541,
+      -45.78259904519655
+    ],
+    "csv_flag": "False"
+  }
+]
