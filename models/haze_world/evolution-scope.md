@@ -30,7 +30,8 @@ climate in this well-mixed growth-trait model. Selection nevertheless depends
 on the climate created by the resident. The invasion ranking assumes a common
 donor affinity K; allowing K to evolve changes the ranking.
 
-Below the optimum the selection gradient ∂ ln ρ/∂T_opt is negative. T_opt falls
+For E = 0, below the optimum the selection gradient ∂ ln ρ/∂T_opt is negative.
+T_opt falls
 until T_opt = T\*. With no peak-growth trade-off (E = 0), growth then equals
 the temperature-independent control's ρ = 10. Capture is exactly the same
 finite value in both, and their equilibrium balances coincide.
