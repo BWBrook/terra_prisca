@@ -99,8 +99,9 @@ Fidelity is measured against the published figures, digitised.
    and with a hard optimum floor high enough to become the set point. Both
    cases also open a cold trap unless the methane-free climate is warm.
    An [independent stage-1 review](../models/haze_world/review/darwinian-review-2026-11-09.md)
-   confirms the endpoint and stability calculations but requests correction
-   of the reported local sensitivities and return-threshold interpretation.
+   confirmed the endpoint and stability calculations; the local supply
+   responses and re-invasion thresholds have since been corrected to its
+   analytical audit.
    This direction may lead to a paper.
 2. **Evolving daisies.** Give the daisies a heritable optimum temperature and
    test whether regulation survives natural selection, the core of the

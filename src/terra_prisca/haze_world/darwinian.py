@@ -70,6 +70,13 @@ class Loss:
             shape = np.log1p(r / self.log_scale) / np.log1p(a / self.log_scale)
         return a / self.lifetime_yr * shape
 
+    def slope(self, r: float) -> float:
+        """dL/dr, per year."""
+        a = self.anchor_ratio
+        if self.kind == "power":
+            return self.elasticity * float(self.rate(r)) / r
+        return a / self.lifetime_yr / ((self.log_scale + r) * np.log1p(a / self.log_scale))
+
     def inverse(self, rate: float) -> float:
         a, x = self.anchor_ratio, rate * self.lifetime_yr / self.anchor_ratio
         if self.kind == "power":
@@ -154,7 +161,8 @@ def biotic(q: Params, loss: Loss) -> dict | None:
 
 
 def evolved(p: Params, c: Constraint, loss: Loss) -> dict | None:
-    """Warmest feasible equilibrium at which the resident sits at its singular (or floor) optimum."""
+    """Feasible equilibrium with the largest methane ratio at which the resident sits at its
+    singular (or floor) optimum. Root choice alone establishes neither an adaptive path nor a basin."""
 
     def balance(rs):
         out = np.empty_like(rs)
@@ -211,28 +219,59 @@ def full_max_real_eigenvalue(q: Params, loss: Loss, e: dict, k_donor: float = 0.
     return float(np.max(np.linalg.eigvals(jac).real))
 
 
+def abiotic_ratio(q: Params, loss: Loss) -> float:
+    return float(loss.inverse(atmosphere(q.case)["flux_to_ratio_per_yr"] * q.abiotic_flux))
+
+
 def invades_lifeless(q: Params, loss: Loss, t_zero_k: float) -> bool:
     """Whether a rare strain grows at the abiotic-only equilibrium under bridge endpoint T0."""
     qq = replace(q, t_zero_k=t_zero_k)
-    r_abiotic = loss.inverse(atmosphere(q.case)["flux_to_ratio_per_yr"] * q.abiotic_flux)
-    return bool(capture_efficiency(temperature_k(r_abiotic, qq), qq) > 0)
+    return bool(capture_efficiency(temperature_k(abiotic_ratio(q, loss), qq), qq) > 0)
 
 
-def supply_sensitivity(p: Params, c: Constraint, loss: Loss, e: dict, eps: float = 0.005) -> dict:
-    """dT/d ln(supply) with the trait fixed (ecological), re-evolved (evolutionary), and for a
-    temperature-independent control with the same realized growth at the base equilibrium."""
-    res = {}
-    fixed = strain(p, e["theta_k"], c)
-    matched = control_params(p, e["rho_realized"])
-    for name, solve in (("ecological", lambda q: biotic(replace(fixed, donor_flux=q.donor_flux), loss)),
-                        ("evolutionary", lambda q: evolved(q, c, loss)),
-                        ("matched_control", lambda q: biotic(replace(matched, donor_flux=q.donor_flux), loss))):
-        ts = []
-        for f in (1 - eps, 1 + eps):
-            s = solve(replace(p, donor_flux=p.donor_flux * f))
-            ts.append(np.nan if s is None else s["t_k"])
-        res[name] = (ts[1] - ts[0]) / (np.log(1 + eps) - np.log(1 - eps))
-    return res
+def reinvasion_window(q: Params, loss: Loss) -> dict:
+    """Bridge endpoints T0 between which a rare strain invades the lifeless state.
+
+    Invasion needs rho(T(r_a)) > 1 + Phi_K/Phi, i.e. T(r_a) between the strain's resource-dependent
+    cold and warm net-growth edges. On the bridge T(r_a) = (1 - z) T0 + z T1, so each edge maps to
+    a critical T0. T(r_a) is not T0, and the cold edge lies below the living equilibrium."""
+    r_a = abiotic_ratio(q, loss)
+    resp = response(q.case)
+    r1, t1 = resp.ratios[0], resp.temperatures_k[0]
+    if r_a >= r1:
+        return {"r_abiotic": r_a, "t0_min_k": np.nan, "t0_max_k": np.nan}
+    z = np.log1p(r_a / q.bridge_scale) / np.log1p(r1 / q.bridge_scale)
+    half = q.t_halfwidth_k * np.sqrt(1.0 - (1.0 + q.maintenance_flux / q.donor_flux) / q.growth_ratio_max)
+    return {"r_abiotic": r_a, "bridge_weight": float(z),
+            "t0_min_k": float((q.t_opt_k - half - z * t1) / (1 - z)),
+            "t0_max_k": float((q.t_opt_k + half - z * t1) / (1 - z))}
+
+
+def climate_slopes(r: float, q: Params, h: float = 1e-9) -> tuple[float, float]:
+    """One-sided dT/dr. They differ at a vertex of the piecewise-linear extracted response."""
+    t = float(temperature_k(r, q))
+    return (t - float(temperature_k(r - h, q))) / h, (float(temperature_k(r + h, q)) - t) / h
+
+
+def local_regulation(q: Params, loss: Loss, e: dict) -> dict:
+    """Analytical local supply response at a positive equilibrium, trait fixed.
+
+    S(r) = c [Phi - Phi_K/(rho(T(r)) - 1) + Phi_abiotic], so S_r = c Phi_K rho_T T_r / (rho - 1)^2,
+    dT/d ln Phi = T_r c Phi / (L_r - S_r), and a temperature-independent strain with the same
+    realized rho at the same equilibrium has T_r c Phi / L_r. Their ratio is R = L_r / (L_r - S_r).
+    At a singular optimum rho_theta = 0, so re-evolving the trait adds nothing at first order;
+    at a binding floor the trait is fixed. One value per side of a climate vertex."""
+    cr = atmosphere(q.case)["flux_to_ratio_per_yr"]
+    t, rho = e["t_k"], float(growth_ratio(e["t_k"], q))
+    rho_t = q.growth_ratio_max * -2.0 * (t - q.t_opt_k) / q.t_halfwidth_k**2 if q.thermal else 0.0
+    l_r = loss.slope(e["r"])
+    out = {}
+    for side, t_r in zip(("left", "right"), climate_slopes(e["r"], q)):
+        s_r = cr * q.maintenance_flux * rho_t * t_r / (rho - 1.0) ** 2
+        out[side] = {"ratio": l_r / (l_r - s_r), "dT_dlnS": t_r * cr * q.donor_flux / (l_r - s_r),
+                     "control_dT_dlnS": t_r * cr * q.donor_flux / l_r}
+    out["at_vertex"] = not np.isclose(out["left"]["ratio"], out["right"]["ratio"], rtol=1e-6, atol=1e-9)
+    return out
 
 
 def scenario_row(p: Params, c: Constraint, loss: Loss, t_zero_refs=(265.0, 283.0)) -> dict:
@@ -244,19 +283,23 @@ def scenario_row(p: Params, c: Constraint, loss: Loss, t_zero_refs=(265.0, 283.0
     q = strain(p, e["theta_k"], c)
     c10 = biotic(control_params(p), loss)
     cpeak = biotic(control_params(p, e["rho_peak"]), loss)
-    sens = supply_sensitivity(p, c, loss, e)
+    reg = local_regulation(q, loss, e)
+    window = reinvasion_window(q, loss)
     row.update({
         "theta_k": round(e["theta_k"], 4), "t_k": round(e["t_k"], 4), "r": round(e["r"], 7),
         "domain": e["domain"], "eta": round(e["eta"], 6), "at_floor": e["at_floor"],
         "rho_peak": round(e["rho_peak"], 4), "rho_realized": round(e["rho_realized"], 4),
         "t_minus_control10_k": round(e["t_k"] - c10["t_k"], 4),
         "t_minus_matched_peak_k": round(e["t_k"] - cpeak["t_k"], 4) if cpeak else "",
-        "dT_dlnS_ecological": round(sens["ecological"], 4),
-        "dT_dlnS_evolutionary": round(sens["evolutionary"], 4),
-        "dT_dlnS_matched_control": round(sens["matched_control"], 4),
-        "regulation_ecological": round(sens["ecological"] / sens["matched_control"], 4),
-        "regulation_evolutionary": round(sens["evolutionary"] / sens["matched_control"], 4),
+        "dT_dlnS_local": round(reg["right"]["dT_dlnS"], 5),
+        "dT_dlnS_matched_control": round(reg["right"]["control_dT_dlnS"], 5),
+        "regulation_local": round(reg["right"]["ratio"], 6),
+        "regulation_left": round(reg["left"]["ratio"], 6),
+        "at_climate_vertex": reg["at_vertex"],
         "cold_edge_k": round(float(cold_edge_k(q)), 4),
+        "r_abiotic": float(f"{window['r_abiotic']:.6g}"),
+        "reinvasion_t0_min_k": round(window["t0_min_k"], 4),
+        "reinvasion_t0_max_k": round(window["t0_max_k"], 4),
         "convergence_slope": round(convergence_slope(p, c, loss, e["theta_k"]), 5) if not e["at_floor"] else "",
         "floor_gradient": round(float(gradient(e["t_k"], e["theta_k"], c)), 5) if e["at_floor"] else "",
         "full_max_real_eig_per_yr": round(full_max_real_eigenvalue(q, loss, e), 6),
@@ -318,7 +361,7 @@ def plot(p: Params, rows: list[dict], paths: list[dict], out: Path) -> None:
     ax.legend(fontsize=6.5)
 
     for ax, key, ttl in ((axs[0, 1], "t_minus_control10_k", "(b) H: evolved climate minus ρ = 10 control"),
-                         (axs[1, 1], "regulation_ecological", "(e) H: supply sensitivity / matched control")):
+                         (axs[1, 1], "regulation_local", "(e) H: local supply response / matched control")):
         for loss in losses:
             pts = [r for r in h if r["loss"] == loss and r.get("persists")]
             x = [r["energy_ev"] for r in pts]
@@ -346,26 +389,30 @@ def plot(p: Params, rows: list[dict], paths: list[dict], out: Path) -> None:
     ax = axs[1, 2]
     for loss in losses:
         pts = [r for r in f if r["loss"] == loss and r.get("persists")]
-        ax.semilogy([r["floor_k"] for r in pts], [r["regulation_ecological"] for r in pts], "-", color=colors[loss],
+        ax.semilogy([r["floor_k"] for r in pts], [r["regulation_local"] for r in pts], "-", color=colors[loss],
                     lw=1.2, label=loss)
+        v = [r for r in pts if r["at_climate_vertex"]]
+        ax.semilogy([r["floor_k"] for r in v], [r["regulation_local"] for r in v], "x", color=colors[loss], ms=5)
     ax.axhline(1, color="0.5", lw=0.8, ls=":")
     ax.set(xlabel="hard floor on θ (K)", ylabel="dT/d ln supply, ratio to matched control",
-           title="(f) F: supply sensitivity / matched control")
+           title="(f) F: local supply response / matched control\n(x: equilibrium on a climate vertex, right-hand value)")
 
     ax = axs[1, 0]
-    lin_h = [r for r in h if r["loss"] == "power n=1" and r.get("persists")]
-    lin_f = [r for r in f if r["loss"] == "power n=1" and r.get("persists")]
-    ax.plot([r["energy_ev"] for r in lin_h], [r["cold_edge_k"] for r in lin_h], "-o", ms=2.5, color="tab:red",
-            label="H: evolved cold edge (bottom axis)")
-    for t0, ls in ((265.0, "--"), (283.0, "-.")):
-        ax.axhline(t0, color="0.4", lw=0.9, ls=ls, label=f"bridge T0 = {t0:g} K")
-    top = ax.twiny()
-    top.plot([r["floor_k"] for r in lin_f], [r["cold_edge_k"] for r in lin_f], "-", color="tab:blue")
+    for loss, ls in (("power n=1", "-"), ("log s=0.001", "--")):
+        hh = [r for r in h if r["loss"] == loss and r.get("persists")]
+        ff = [r for r in f if r["loss"] == loss and r.get("persists")]
+        ax.plot([r["energy_ev"] for r in hh], [r["reinvasion_t0_min_k"] for r in hh], ls, color="tab:red", lw=1.3,
+                label=f"H, {loss} (bottom axis)")
+        ax.plot([], [], ls, color="tab:blue", lw=1.3, label=f"F, {loss} (top axis)")
+        if ls == "-":
+            top = ax.twiny()
+        top.plot([r["floor_k"] for r in ff], [r["reinvasion_t0_min_k"] for r in ff], ls, color="tab:blue", lw=1.3)
+    for t0, ls in ((265.0, ":"), (283.0, "-.")):
+        ax.axhline(t0, color="0.4", lw=0.9, ls=ls, label=f"bridge scenario T0 = {t0:g} K")
     top.set_xlabel("hard floor on θ (K), F (blue)")
-    ax.plot([], [], "-", color="tab:blue", label="F: evolved cold edge (top axis)")
-    ax.set(xlabel="E (eV), H (red)", ylabel="lowest T0 from which the evolved strain re-invades (K)",
-           title="(d) invasion of the lifeless state needs T0 above the edge", ylim=(250, 290))
-    ax.legend(fontsize=7, loc="upper left")
+    ax.set(xlabel="E (eV), H (red)", ylabel="minimum bridge T0 for re-invasion (K)",
+           title="(d) re-invasion of the lifeless state: critical bridge T0")
+    ax.legend(fontsize=6.5, loc="upper left")
 
     fig.tight_layout()
     fig.savefig(out, dpi=130)

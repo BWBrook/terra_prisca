@@ -170,13 +170,17 @@ is a named variant; the budget above is unchanged. Tests are in
 [`tests/test_darwinian.py`](../../tests/test_darwinian.py).
 Scope and assumptions: [evolution-scope.md](evolution-scope.md).
 
-**Independent review, 9 November 2026:** the 205 endpoint climates and full
-local stability checks reproduce. The reported sensitivity ratios below use
-finite ±0.5% supply changes rather than converged local derivatives, and panel
-(d) labels a net cold edge as a bridge-temperature threshold. Their numerical
-thresholds and associated prose need correction; see the
-[review and analytical audit](review/darwinian-review-2026-11-09.md).
-The production variant and its original figure are retained pending that repair.
+**Review history.** Codex's
+[independent review](review/darwinian-review-2026-11-09.md) reproduced the
+205 endpoint climates and their full local stability, and found two errors in
+the first version (`88fbad8`):
+- **Supply response.** It used finite ±0.5% supply changes, which straddle
+  vertices of the climate curve. The response is now the analytical local
+  derivative.
+- **Return threshold.** Panel (d) labelled the net-growth edge as a bridge
+  threshold. It now shows the critical bridge T₀.
+
+The corrected values reproduce the review's independent audit.
 
 ```bash
 uv run python -m terra_prisca.haze_world.darwinian
@@ -203,18 +207,30 @@ climate unchanged. All runs use case B at potential ratio 0.22.
 **Measures.** Each endpoint is compared with two controls: the ρ = 10 control,
 and a matched-peak temperature-independent strain with the same peak growth.
 
-*Regulation* is the response of temperature to a change in supply,
+*Regulation* is the local response of temperature to a change in supply,
 dT/d ln Φ, divided by the same response of a temperature-independent strain
-that has the same realized growth at the same equilibrium. Using the same
-equilibrium matters: sensitivities taken at different equilibria are
-dominated by the local slope of Arney's curve. A ratio of 1 means no
-buffering. Below 1, the methanogens' temperature response opposes the
-change.
+that has the same realized growth at the same equilibrium. With S the methane
+source, L the loss and subscripts for derivatives with respect to r:
+
+R = L_r/(L_r − S_r), where S_r = cΦ_K ρ_T T_r/(ρ − 1)².
+
+Using the same equilibrium matters: sensitivities taken at different
+equilibria are dominated by the local slope of Arney's curve. A ratio of 1
+means no buffering. Below 1, the methanogens' temperature response opposes
+the change.
+
+The optimum is singular or held at the floor, so re-evolving it adds nothing
+at first order, and the ecological and evolutionary responses coincide. At a
+vertex of the piecewise-linear climate curve, the two one-sided values are
+both stored; no endpoint falls on a vertex.
 
 *Persistence* is local stability of the full (D, B, M) Jacobian.
 *Re-invasion* is whether the evolved strain can grow at the lifeless,
-abiotic-only equilibrium. That depends on the bridge, and is reported for
-T₀ = 265 K and 283 K.
+abiotic-only equilibrium r_a. That requires T(r_a) to lie between the strain's
+resource-dependent cold and warm net-growth edges. On the bridge,
+T(r_a) = (1 − z)T₀ + zT₁ with z = ln(1 + r_a/s)/ln(1 + r₁/s), so each edge
+maps to a critical T₀. The critical values and the classifications at
+T₀ = 265 K and 283 K are both reported.
 
 ![Evolving thermal optimum: trait paths, constraint sweeps, regulation and re-invasion](figures/darwinian_figures.png)
 
@@ -230,52 +246,65 @@ for any loss law at a feasible interior singularity. The original cold-edge
 equilibrium does not survive selection.
 
 **5. With hotter-is-better, any surviving signal depends on how steeply methane
-loss rises with abundance (panels b and e).**
-- **Elasticity 1 or 2:** the evolved climate stays within 0.33 K of the
-  control and the regulation ratio stays at 0.92 or above.
-- **Elasticity 0.5 or less, or the log law, with E ≥ 0.3–0.4 eV:** the offset
-  reaches 4.3–4.6 K and the ratio falls to 0.3.
+loss rises with abundance (panels b and e).** The lowest regulation ratios
+all occur at E = 0.65 eV.
 
-Most of that offset is the thermal response itself, not the changed peak
+| Loss | Lowest ratio | Largest offset from control (K) | First E with ratio < 0.5 (eV) |
+|---|---:|---:|---:|
+| Power, n = 0.2 | 0.296 | 4.32 | 0.45 |
+| Power, n = 0.5 | 0.312 | 1.04 | 0.65 |
+| Power, n = 1 | 0.917 | 0.32 | none |
+| Power, n = 2 | 0.953 | 0.13 | none |
+| Logarithmic | 0.295 | 4.61 | 0.40 |
+
+Most of the offset is the thermal response itself, not the changed peak
 growth: the matched-peak control accounts for at most 0.35 K. Low elasticity
 amplifies the effect because a shallow loss curve converts a small change in
 methane capture into a large change in methane.
 
+The jumps in panel (e) occur where the equilibrium moves onto a steeper
+segment of the extracted curve. Their size reflects the curve's local slope;
+their sharpness reflects the piecewise-linear interpolation.
+
 So the empirical quantity that matters is how steeply photochemical loss
-rises with methane. Arney's statement about self-shielding points toward
-lower elasticity, but no curve has yet been recovered. The steps in panel (e)
-occur where the equilibrium crosses a vertex of the piecewise-linear
-extracted curve. Their levels reflect the curve's slope; their sharpness is
-an artefact of interpolation.
+rises with methane. Published haze-free photochemistry gives finite-range
+elasticities of about 0.29–0.34 at r < 0.03
+([loss evidence](evidence/loss-elasticity.md)). That supports exploring
+shallow loss, but does not calibrate the hazy branch near r = 0.2.
 
 **6. A floor restores regulation only when the floor is the set point (panels c
-and f).** Floors below about 287 K change the climate by less than 0.1 K.
-Between 290 and 293 K, depending on loss shape, the evolved cold edge
-approaches the control climate. Temperature then follows the edge, 0.14–2.8 K
-above it, and the regulation ratio falls to 0.01–0.3. The lower elasticities
+and f).** Floors below about 287 K change the climate by less than 0.1 K. The
+ratio first falls below 0.3 at a floor of 291 K (n = 0.2 and log), 292 K
+(n = 0.5) or 293 K (n = 1 and 2). Above that, temperature follows the cold
+edge, 0.14–2.4 K above it, with a ratio of 0.01–0.16. The lower elasticities
 reach the threshold first but buffer less. This is Lenton & Lovelock's point:
-regulation returns, but its set point is the constraint.
+regulation returns, but its set point is the constraint. These thresholds
+depend on the scenario grid; they are not organismal measurements.
 
 For comparison, the evidence pack reports optima of 288–297 K for modern
 cold-adapted isolates ([thermal margins](evidence/thermal-margins.md)). That
 range spans the threshold. This is a consistency check, not a calibration:
 w = 20 K and the mapping from habitat to global mean are placeholders.
 
-**7. A regulated biosphere persists but may not return (panel d).** When the
-climate is held near the cold edge, T\* is close to the edge. A rare strain
-can then re-invade the lifeless state only if the methane-free planet is
-warmer than that edge. In practice that means warmer than the regulated
-climate, which is possible only because haze cools the planet below its
-methane-free temperature.
+**7. A regulated biosphere can return only if the methane-free climate is
+nearly as warm as the regulated one (panel d).** Re-invasion needs the abiotic
+climate above the strain's net-growth cold edge, and that edge lies below the
+living temperature. The lifeless planet may therefore be somewhat cooler than
+the living one; the earlier statement that it must be warmer was wrong.
+
+In the regulated floor states the gap is narrow. The critical bridge T₀ lies
+0.55–2.4 K below the living equilibrium for n ≤ 1, and 5.0–8.2 K below it for
+n = 2, whose anchoring gives more abiotic methane. For example, at a 300-K
+floor with linear loss, the living climate is 281.36 K and the critical T₀ is
+280.82 K.
 - **With the 265-K bridge:** strains under H at E ≥ 0.4–0.45 eV, or under
   floors of 284–285 K or above, persist but cannot re-establish after a loss.
-  The exception is elasticity 2: its higher abiotic methane warms the bridge,
-  and the floor threshold rises to 293 K.
+  With n = 2 the floor threshold rises to 293 K.
 - **With the 283-K reference:** every evolved strain re-invades.
 
-Constraints that restore regulation therefore also open a cold trap, unless
-the methane-free climate is warm. Because the loss law is anchored at the
-control, the abiotic methane level also varies with loss shape.
+Strong buffering and failed return coexist under the cold bridge. This is a
+conditional result, controlled by the assumed low-methane climate, not a
+general equivalence.
 
 ## Limits and next steps
 
