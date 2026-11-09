@@ -1,0 +1,82 @@
+{
+  "control_t_k": 273.51674403884846,
+  "mixed_t_k": 281.534823,
+  "ln_one_global_cell": -67.19697206281862,
+  "first_below": {
+    "acetogen": {
+      "1e+00_cells": 4915.0,
+      "1e+06_cells": 4915.0,
+      "1e+12_cells": 4915.0
+    },
+    "methanogen": {
+      "1e+00_cells": 20.0,
+      "1e+06_cells": 15.0,
+      "1e+12_cells": 15.0
+    }
+  },
+  "methanogen_extinct_yr": 20.0,
+  "min_ln_biomass": {
+    "acetogen": -7670.337990446029,
+    "methanogen": -7245.102388448109
+  },
+  "temperature_range_k": [
+    273.51674403884846,
+    290.7166043869129
+  ],
+  "acetogen_only_endpoints": [
+    {
+      "acetate_fraction": 0.0,
+      "end_t_k": 283.19877694899213,
+      "end_ln_acetogen": -6.784487409410263,
+      "methanogen_could_reinvade": true,
+      "equilibria": [
+        {
+          "kind": "acetogen",
+          "t_k": 283.19877678579377,
+          "stable": true
+        },
+        {
+          "kind": "lifeless",
+          "t_k": 283.19877678579377,
+          "stable": false
+        }
+      ]
+    },
+    {
+      "acetate_fraction": 0.5,
+      "end_t_k": 294.4025100361969,
+      "end_ln_acetogen": -7.342093708469424,
+      "methanogen_could_reinvade": true,
+      "equilibria": [
+        {
+          "kind": "lifeless",
+          "t_k": 283.19877678579377,
+          "stable": false
+        },
+        {
+          "kind": "acetogen",
+          "t_k": 294.40251004070655,
+          "stable": true
+        }
+      ]
+    },
+    {
+      "acetate_fraction": 0.9,
+      "end_t_k": 273.533586057458,
+      "end_ln_acetogen": -6.604083597236596,
+      "methanogen_could_reinvade": false,
+      "equilibria": [
+        {
+          "kind": "lifeless",
+          "t_k": 283.19877678579377,
+          "stable": false
+        },
+        {
+          "kind": "acetogen",
+          "t_k": 273.5335860608286,
+          "stable": true
+        }
+      ]
+    }
+  ]
+}
