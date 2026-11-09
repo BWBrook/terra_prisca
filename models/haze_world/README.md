@@ -155,6 +155,13 @@ lifeless-only band at the top of the panel holds edges above the warmest
 temperature the case allows (297 K). The bistable corner at the lower right
 comes from the warm edge, which is tied to the cold edge by the fixed width w.
 
+The default T₀ = 265 K has no published anchor. Eager-Nash et al. (2023) give
+a haze-free 3D zero-methane baseline at the same epoch, S/S₀ and pressure.
+Interpolated to case B's CO₂, that baseline is about 283 K. At that T₀ the trap
+needs cold edges of 284 K or higher, so the default 281-K edge has none. The
+comparison is across models, not a splice; see the
+[evolution scope](evolution-scope.md).
+
 ## Limits and next steps
 
 - **Low-methane branch.** The restricted reduced equilibria can avoid it;
@@ -175,9 +182,14 @@ comes from the warm edge, which is tied to the cold edge by the fixed width w.
   storage N(r), since dr/dt = (source − required flux)/N′(r) in consistent time units. See the
   [source-recovery record](review/source-recovery.md).
 - **Evolution.** A set point at a tolerance edge is exposed to the
-  Robertson–Robinson critique. Selection for cold tolerance would lower the
-  edge and walk the set point down toward the haze plateau. This links the
-  haze-world to the "evolving daisies" re-imagining in
+  Robertson–Robinson critique. A
+  [scratch adaptive-dynamics preview](evolution-scope.md) confirms the concern.
+  Unconstrained selection on the thermal optimum moves the climate to the
+  passive, supply-limited temperature: 273.4 K in case B at potential ratio
+  0.22, with the whole path inside Arney's interval. A hotter-is-better
+  trade-off does not prevent this. The scope sets out the constraint,
+  extinction and climate scenarios for the variant. This links the haze-world
+  to the "evolving daisies" re-imagining in
   [`docs/vision.md`](../../docs/vision.md).
 - **Luminosity.** All results are for one epoch. A solar sweep, the analogue
   of Daisyworld's L axis, needs climate responses at other S/S₀.

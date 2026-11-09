@@ -85,7 +85,12 @@ Fidelity is measured against the published figures, digitised.
    basin limits. Separate Eager-Nash low-methane checkpoints are recovered;
    a matched Arney loss law and missing climate branch remain unavailable.
    Methane storage, loss and solar evolution need further evidence or explicit
-   assumptions. This direction may lead to a paper.
+   assumptions. An [adaptive-dynamics
+   preview](../models/haze_world/evolution-scope.md) found that unconstrained
+   selection on the thermal optimum removes the threshold equilibrium and
+   leaves the passive, supply-limited climate. The open question is which
+   non-evolvable constraint, if any, keeps a biological temperature signal.
+   This direction may lead to a paper.
 2. **Evolving daisies.** Give the daisies a heritable optimum temperature and
    test whether regulation survives natural selection, the core of the
    critique by Robertson & Robinson (1998) and the replies from Lenton (1998)

@@ -1,0 +1,149 @@
+[
+ {
+  "potential_ratio": 0.22,
+  "activation_energy_ev": 0.0,
+  "start": {
+   "t_opt_k": 299.9353126532419,
+   "t_k": 281.30033661495685,
+   "r": 0.1954319820539131,
+   "eta": 0.8858555021233987,
+   "domain": "arney"
+  },
+  "end": {
+   "t_opt_k": 273.43947482924904,
+   "t_k": 273.4375738263682,
+   "r": 0.21965525591319576,
+   "eta": 0.9959612923928575,
+   "domain": "arney"
+  },
+  "steps": 199,
+  "domains_visited": [
+   "arney"
+  ],
+  "passive_t_k": 273.43757382620265,
+  "passive_domain": "arney"
+ },
+ {
+  "potential_ratio": 0.22,
+  "activation_energy_ev": 0.32,
+  "start": {
+   "t_opt_k": 299.9353126532419,
+   "t_k": 281.30404934614296,
+   "r": 0.19542683447714929,
+   "eta": 0.8858321040351732,
+   "domain": "arney"
+  },
+  "end": {
+   "t_opt_k": 281.3887618035238,
+   "t_k": 273.47565074801224,
+   "r": 0.21760349023237666,
+   "eta": 0.9866350847527708,
+   "domain": "arney"
+  },
+  "steps": 119,
+  "domains_visited": [
+   "arney"
+  ],
+  "passive_t_k": 273.43757382620265,
+  "passive_domain": "arney"
+ },
+ {
+  "potential_ratio": 0.22,
+  "activation_energy_ev": 0.65,
+  "start": {
+   "t_opt_k": 299.9353126532419,
+   "t_k": 281.30788890225847,
+   "r": 0.1954215110618917,
+   "eta": 0.8858079066955739,
+   "domain": "arney"
+  },
+  "end": {
+   "t_opt_k": 285.677774938003,
+   "t_k": 273.7577536849427,
+   "r": 0.21088579054858153,
+   "eta": 0.9561000861900658,
+   "domain": "arney"
+  },
+  "steps": 68,
+  "domains_visited": [
+   "arney"
+  ],
+  "passive_t_k": 273.43757382620265,
+  "passive_domain": "arney"
+ },
+ {
+  "potential_ratio": 0.3,
+  "activation_energy_ev": 0.0,
+  "start": {
+   "t_opt_k": 299.94554779367485,
+   "t_k": 281.0525088614277,
+   "r": 0.19577558688861332,
+   "eta": 0.650772717747076,
+   "domain": "arney"
+  },
+  "end": {
+   "t_opt_k": 274.00398896507386,
+   "t_k": 274.002,
+   "r": 0.2996552559123512,
+   "eta": 0.9970382810852805,
+   "domain": "plateau"
+  },
+  "steps": 197,
+  "domains_visited": [
+   "arney",
+   "plateau"
+  ],
+  "passive_t_k": 274.002,
+  "passive_domain": "plateau"
+ },
+ {
+  "potential_ratio": 0.3,
+  "activation_energy_ev": 0.32,
+  "start": {
+   "t_opt_k": 299.94554779367485,
+   "t_k": 281.0550695314116,
+   "r": 0.19577203660591092,
+   "eta": 0.6507608833972107,
+   "domain": "arney"
+  },
+  "end": {
+   "t_opt_k": 281.8943268275558,
+   "t_k": 274.002,
+   "r": 0.2977005029553458,
+   "eta": 0.9905224378952624,
+   "domain": "plateau"
+  },
+  "steps": 119,
+  "domains_visited": [
+   "arney",
+   "plateau"
+  ],
+  "passive_t_k": 274.002,
+  "passive_domain": "plateau"
+ },
+ {
+  "potential_ratio": 0.3,
+  "activation_energy_ev": 0.65,
+  "start": {
+   "t_opt_k": 299.94554779367485,
+   "t_k": 281.0577166076921,
+   "r": 0.195768366523788,
+   "eta": 0.6507486497902182,
+   "domain": "arney"
+  },
+  "end": {
+   "t_opt_k": 285.9126521371712,
+   "t_k": 274.002,
+   "r": 0.2913488800858328,
+   "eta": 0.9693503616635524,
+   "domain": "plateau"
+  },
+  "steps": 68,
+  "domains_visited": [
+   "arney",
+   "plateau"
+  ],
+  "passive_t_k": 274.002,
+  "passive_domain": "plateau"
+ }
+]
