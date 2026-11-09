@@ -1,0 +1,43 @@
+{
+  "conditioning": {
+    "temperatures_c": [
+      4.0,
+      20.0,
+      30.0
+    ],
+    "supply_mol_l_h": 1e-06,
+    "structures": 8,
+    "parameter_sets_per_structure": 243,
+    "warm_pattern_filter": false,
+    "msp_threshold_4c_pa": 20.0,
+    "acetate_routing_fractions": [
+      0.0,
+      0.5,
+      1.0
+    ]
+  },
+  "statuses": {
+    "living": 5508,
+    "no_consumer": 324
+  },
+  "maxima": {
+    "resource_balance_error_mol_l_h": 0.0,
+    "resident_growth_abs_h": 1.734723475976807e-18,
+    "invader_growth_h": -3.1376198163059264e-07,
+    "local_eigenvalue_real_h": -3.1376198163059264e-07,
+    "jacobian_relative_difference": 9.945116028907484e-11,
+    "methane_h2_input_fraction": 1.0
+  },
+  "msp_threshold_endpoints_verified": true,
+  "zero_demand_input_rejected": true,
+  "configuration_sha256": "132ed8d1ead0f22f7c30aae0f33ed2fc3f2cd6d3d8a49aca34d211e04f00678a",
+  "file_sha256": {
+    "models/haze_world/review/check_two_guilds.py": "9c4dc9a1d539dee649e57359ba4cd6afbd155570140123cd8350ee2f2a513335",
+    "src/terra_prisca/haze_world/two_guilds.py": "211237223fae45e13a881173cd51d98fedfdaeb871aa713f280545d9880caec3",
+    "src/terra_prisca/haze_world/woodii1998.py": "b0130f4f8ea15aa64245133f79dc8b35883a414031a8b49262c6657350cad0b0",
+    "src/terra_prisca/haze_world/hydrogen_uptake.py": "c48d8231ef726605ab07be22438f3e2fd97f23b310773ac748d1b2bf5c36fafd",
+    "models/haze_world/evidence/peters1998_chemostat.csv": "b0b00bf03eaeaabf45fb571330773c5158b53b088436aaee942188f8e9498320",
+    "models/haze_world/evidence/kotsyurbenko2001_table2.csv": "c95b4be023e5502fbb30eb322621e5612bbbf850f99d1b6669e98b95eb370480"
+  },
+  "scope": "Local stability and mass-balance review conditional on model transfers; no global, transient, field or climate validation"
+}

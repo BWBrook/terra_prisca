@@ -1,0 +1,43 @@
+{
+  "source_doi": "10.1111/j.1574-6941.1998.tb00516.x",
+  "source_csv_sha256": "b0b00bf03eaeaabf45fb571330773c5158b53b088436aaee942188f8e9498320",
+  "organism": "Acetobacterium woodii DSM1030",
+  "temperature_c": 30,
+  "substrate": "H2/CO2",
+  "pH": 7,
+  "source_observations": 4,
+  "table2_reported": {
+    "true_yield_acetate_gdw_mol": 7.7,
+    "true_yield_h2_gdw_mol": 1.7,
+    "maintenance_acetate_mol_gdw_h": 0.0004,
+    "maximum_growth_h": 0.024
+  },
+  "derived": {
+    "maintenance_h2_mol_gdw_h": 0.0016,
+    "assimilation_acetate_equivalent_mol_gdw": 0.0206,
+    "assimilation_corrected_yield_h2_gdw_mol": 1.6614593222972156,
+    "inferred_reference_h2_uptake_mol_gdw_h": 0.01571764705882353,
+    "reference_uptake_status": "Inferred mu_max/Y_H2,reported + m_H2; not a directly measured qmax",
+    "exact_assimilation_reference_h2_uptake_mol_gdw_h": 0.016045132467532468
+  },
+  "rounded_means_fit": {
+    "procedure": "Equal-weight OLS q_ac=mu/Y_ac,observed against mu; not the original fit",
+    "true_yield_acetate_gdw_mol": 7.621914562617655,
+    "maintenance_acetate_mol_gdw_h": 0.0003554520026595119,
+    "q_acetate_rmse_mol_gdw_h": 6.451627010535618e-06,
+    "relative_yield_difference": -0.010140965893811082,
+    "relative_maintenance_difference": -0.11136999335122033
+  },
+  "table2_fidelity": {
+    "q_acetate_rmse_mol_gdw_h": 2.7511661031668847e-05,
+    "observed_yield_rmse_gdw_mol": 0.0948102219561182,
+    "observed_yield_max_abs_residual_gdw_mol": 0.15277777777777768,
+    "residual_direction": "prediction minus reported rounded mean"
+  },
+  "limitations": [
+    "Four rounded means cannot reproduce the original unrounded fit or establish confidence limits",
+    "Residual H2 is retained as source data; no Monod or cessation-pressure model is fitted",
+    "The uptake reference is inferred from growth and Pirt parameters, not measured uptake saturation",
+    "Mesophilic A.woodii parameters do not calibrate cold A.bakii physiology"
+  ]
+}

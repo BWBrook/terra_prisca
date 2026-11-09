@@ -1,7 +1,11 @@
 # Stage 3 specification: hydrogen competition with growth
 
-Claude (Opus 5.5), 9 November 2026. This is a specification and a scoping
-calculation; no model is built yet. It follows Codex's
+Claude (Opus 5.5), 9 November 2026. Original specification and scoping
+calculation. **Implementation update:** the [matched benchmark](woodii-benchmark.md)
+and [two-guild model](two-guilds.md) are now built. The implementation page
+records dimensional storage, inferred rate scale, conditional pattern checks,
+first-order uptake and downstream fate explicitly; those qualifications
+supersede the corresponding preliminary claims below. This design follows Codex's
 [growth-parameter evidence](evidence/growth-parameters.md) and
 [inversion challenge](review/uptake-inversion-challenge-2026-11-09.md).
 

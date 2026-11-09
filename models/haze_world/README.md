@@ -9,6 +9,14 @@ The [independent review](review/2026-11-09.md) retains the equilibrium result,
 qualifies the dynamical reduction, repairs rare-biomass integration and
 separates recovered source evidence from assumptions.
 
+Stage 3 now has a matched [A. woodii growth benchmark](woodii-benchmark.md)
+and a separate [two-guild H₂ competition experiment](two-guilds.md).
+Cold routing depends on the methanogen phenotype, turnover and uptake law;
+its methane effect also depends on downstream acetate recovery. The
+[source audit](evidence/stage3-constraints.md) supports conditional sediment
+pattern checks and acetate-fate end-members, rather than an Archean calibration.
+This stage remains at fixed temperature; it is not coupled to the climate below.
+
 **Code.** [`src/terra_prisca/haze_world/methane_budget.py`](../../src/terra_prisca/haze_world/methane_budget.py)
 (model) and [`experiments.py`](../../src/terra_prisca/haze_world/experiments.py)
 (the runs below). Tests are in
@@ -452,11 +460,15 @@ and gets rarer the further the seed's optimum lies from it.
   table are reconstructed, while full figure reproduction remains unresolved
   because cessation thresholds are missing and the source's culture-rate and
   equal-biomass interpretations disagree at a central-value checkpoint.
-  Climate coupling waits on an explicit growth-model design. The new
-  [yield and maintenance evidence](evidence/growth-parameters.md) contains
-  quantitative anchors, but no matched cold-strain calibration; combining
-  some published coefficients across assays would demand more maintenance
-  than the historical uptake capacity can supply. The decisive
+  The matched [growth benchmark](woodii-benchmark.md) and
+  [population model](two-guilds.md) are now built. Alternative uptake structure
+  and phenotypes change cold routing; methane delivery is bounded by an
+  explicit downstream acetate-recovery fraction. The
+  [yield and maintenance evidence](evidence/growth-parameters.md) supplies
+  anchors but no matched cold-strain calibration; combining some published
+  coefficients across assays would demand more maintenance than the
+  historical uptake capacity can supply. Climate coupling also needs habitat
+  activities, colder physiology and acetate residence times. The decisive
   empirical inputs are:
   - the elasticity of photochemical methane loss near r ≈ 0.2
     ([evidence](evidence/loss-elasticity.md));
@@ -486,3 +498,7 @@ loss family, matched controls, regulation and re-invasion measures, tests and
 the variant section above, building on Codex's loss-shape counterexample.
 Claude also built the strain-resolved stage-2 variant (`strains.py`), its
 rescue and seed-escape experiments, tests and the stage-2 section.
+Claude designed the stage-3 growth specification. Codex and subagents built
+the matched A. woodii benchmark and fixed-temperature two-guild implementation,
+checked equilibria and local stability independently, and sourced the sediment,
+maintenance and acetate-fate constraints.

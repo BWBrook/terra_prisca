@@ -1,0 +1,10 @@
+source_id,quantity,value,reported_uncertainty,unit,conditions,interpretation_limit,locator
+tijhuis1993,maintenance activation energy,69,,kJ/mol,mixed chemotrophic organisms;5-75C,positive Arrhenius activation energy; not mortality,Abstract;Crossref message.abstract
+tijhuis1993,maintenance quantity basis,,,kJ/Cmol-biomass/h,aerobic and anaerobic;heterotrophs and autotrophs,Gibbs-energy consumption;not substrate coefficient,Abstract;Crossref message.abstract
+conrad1989,cold H2 enrichment outcome,<20,,C,paddy soil and LakeConstance sediment;H2 energy source,homoacetogen enrichments;not natural guild dominance,Summary
+conrad1989,warm H2 methanogen enrichment,30,,C,anoxic paddy soil,successful enrichment;not numerical R*,Summary
+schulz1996,dissolved H2 partial pressure,~0.5,,Pa,LakeConstance sediment at4C,H2/CO2 acetogenesis endergonic;organic acetogenesis differs,Abstract p1
+schulz1997,CH4 fraction from CO2,117,23,percent,4C;80percentH2+20percentCO2;25-32days,mean+/-SE;n5;estimate may exceed100,Section3 Results;Table1
+schulz1997,acetate fraction from CO2,46,2,percent,4C;80percentH2+20percentCO2;25-32days,mean+/-SE;n5;separate product pool,Section3 Results;Table1
+schulz1997,CH4 fraction from CO2,32,10,percent,20C;unamended;25-32days,mean+/-SE;n5,Section3 Results;Table1
+schulz1997,CH4 and acetate fractions from CO2,not detectable,,percent,4C;unamended;25-32days,nondetection limit not recovered,Section3 Results;Table1

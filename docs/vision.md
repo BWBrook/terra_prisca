@@ -117,9 +117,14 @@ Fidelity is measured against the published figures, digitised.
    a source-normalization discrepancy and still lacks the individual
    cessation thresholds, so competition is not yet coupled to climate.
    [Growth-yield and maintenance sources](../models/haze_world/evidence/growth-parameters.md)
-   now provide quantitative anchors. They also expose incompatible assay
-   transfers, so a matched growth benchmark is needed before parameterizing
-   the new competition model.
+   now provide quantitative anchors. A matched
+   [A. woodii benchmark](../models/haze_world/woodii-benchmark.md) and
+   [two-guild model](../models/haze_world/two-guilds.md) are built. They retain
+   assay transfers explicitly: cold competition depends on phenotype and
+   uptake structure, and its methane effect on downstream acetate recovery.
+   Sediment patterns are conditional checks; neither acetate fate nor cold
+   demography is calibrated for an Archean community. Climate coupling waits
+   on the habitat, activity and temperature mapping.
    A [solar-response search](../models/haze_response/solar-responses.md) found
    a second Sun-age checkpoint, but no matched hazy luminosity grid.
    This direction may lead to a paper.

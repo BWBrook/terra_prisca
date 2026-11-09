@@ -1,0 +1,1852 @@
+{
+  "climate_coupled": false,
+  "summary": [
+    {
+      "strain": "methanogenic strain MSB",
+      "kinetics": "saturating",
+      "threshold_shape": "constant",
+      "msp_threshold_4c_pa": null,
+      "condition": "all",
+      "retained": 243,
+      "cold_4c": {
+        "acetogen": 53,
+        "methanogen": 109,
+        "no_consumer": 81,
+        "outside_first_order_domain": 0,
+        "tie": 0
+      },
+      "by_loss_h": {
+        "0.0001": {
+          "acetogen": 8,
+          "methanogen": 73,
+          "no_consumer": 0,
+          "outside_first_order_domain": 0,
+          "tie": 0
+        },
+        "0.001": {
+          "acetogen": 45,
+          "methanogen": 36,
+          "no_consumer": 0,
+          "outside_first_order_domain": 0,
+          "tie": 0
+        },
+        "0.01": {
+          "acetogen": 0,
+          "methanogen": 0,
+          "no_consumer": 81,
+          "outside_first_order_domain": 0,
+          "tie": 0
+        }
+      }
+    },
+    {
+      "strain": "methanogenic strain MSB",
+      "kinetics": "saturating",
+      "threshold_shape": "constant",
+      "msp_threshold_4c_pa": null,
+      "condition": "M_wins_30C",
+      "retained": 167,
+      "cold_4c": {
+        "acetogen": 33,
+        "methanogen": 107,
+        "no_consumer": 27,
+        "outside_first_order_domain": 0,
+        "tie": 0
+      },
+      "by_loss_h": {
+        "0.0001": {
+          "acetogen": 4,
+          "methanogen": 71,
+          "no_consumer": 0,
+          "outside_first_order_domain": 0,
+          "tie": 0
+        },
+        "0.001": {
+          "acetogen": 29,
+          "methanogen": 36,
+          "no_consumer": 0,
+          "outside_first_order_domain": 0,
+          "tie": 0
+        },
+        "0.01": {
+          "acetogen": 0,
+          "methanogen": 0,
+          "no_consumer": 27,
+          "outside_first_order_domain": 0,
+          "tie": 0
+        }
+      }
+    },
+    {
+      "strain": "methanogenic strain MSB",
+      "kinetics": "saturating",
+      "threshold_shape": "constant",
+      "msp_threshold_4c_pa": null,
+      "condition": "M_wins_20_and_30C",
+      "retained": 164,
+      "cold_4c": {
+        "acetogen": 30,
+        "methanogen": 107,
+        "no_consumer": 27,
+        "outside_first_order_domain": 0,
+        "tie": 0
+      },
+      "by_loss_h": {
+        "0.0001": {
+          "acetogen": 4,
+          "methanogen": 71,
+          "no_consumer": 0,
+          "outside_first_order_domain": 0,
+          "tie": 0
+        },
+        "0.001": {
+          "acetogen": 26,
+          "methanogen": 36,
+          "no_consumer": 0,
+          "outside_first_order_domain": 0,
+          "tie": 0
+        },
+        "0.01": {
+          "acetogen": 0,
+          "methanogen": 0,
+          "no_consumer": 27,
+          "outside_first_order_domain": 0,
+          "tie": 0
+        }
+      }
+    },
+    {
+      "strain": "methanogenic strain MSB",
+      "kinetics": "saturating",
+      "threshold_shape": "fixed_energy",
+      "msp_threshold_4c_pa": null,
+      "condition": "all",
+      "retained": 243,
+      "cold_4c": {
+        "acetogen": 76,
+        "methanogen": 86,
+        "no_consumer": 81,
+        "outside_first_order_domain": 0,
+        "tie": 0
+      },
+      "by_loss_h": {
+        "0.0001": {
+          "acetogen": 22,
+          "methanogen": 59,
+          "no_consumer": 0,
+          "outside_first_order_domain": 0,
+          "tie": 0
+        },
+        "0.001": {
+          "acetogen": 54,
+          "methanogen": 27,
+          "no_consumer": 0,
+          "outside_first_order_domain": 0,
+          "tie": 0
+        },
+        "0.01": {
+          "acetogen": 0,
+          "methanogen": 0,
+          "no_consumer": 81,
+          "outside_first_order_domain": 0,
+          "tie": 0
+        }
+      }
+    },
+    {
+      "strain": "methanogenic strain MSB",
+      "kinetics": "saturating",
+      "threshold_shape": "fixed_energy",
+      "msp_threshold_4c_pa": null,
+      "condition": "M_wins_30C",
+      "retained": 167,
+      "cold_4c": {
+        "acetogen": 54,
+        "methanogen": 86,
+        "no_consumer": 27,
+        "outside_first_order_domain": 0,
+        "tie": 0
+      },
+      "by_loss_h": {
+        "0.0001": {
+          "acetogen": 16,
+          "methanogen": 59,
+          "no_consumer": 0,
+          "outside_first_order_domain": 0,
+          "tie": 0
+        },
+        "0.001": {
+          "acetogen": 38,
+          "methanogen": 27,
+          "no_consumer": 0,
+          "outside_first_order_domain": 0,
+          "tie": 0
+        },
+        "0.01": {
+          "acetogen": 0,
+          "methanogen": 0,
+          "no_consumer": 27,
+          "outside_first_order_domain": 0,
+          "tie": 0
+        }
+      }
+    },
+    {
+      "strain": "methanogenic strain MSB",
+      "kinetics": "saturating",
+      "threshold_shape": "fixed_energy",
+      "msp_threshold_4c_pa": null,
+      "condition": "M_wins_20_and_30C",
+      "retained": 161,
+      "cold_4c": {
+        "acetogen": 48,
+        "methanogen": 86,
+        "no_consumer": 27,
+        "outside_first_order_domain": 0,
+        "tie": 0
+      },
+      "by_loss_h": {
+        "0.0001": {
+          "acetogen": 16,
+          "methanogen": 59,
+          "no_consumer": 0,
+          "outside_first_order_domain": 0,
+          "tie": 0
+        },
+        "0.001": {
+          "acetogen": 32,
+          "methanogen": 27,
+          "no_consumer": 0,
+          "outside_first_order_domain": 0,
+          "tie": 0
+        },
+        "0.01": {
+          "acetogen": 0,
+          "methanogen": 0,
+          "no_consumer": 27,
+          "outside_first_order_domain": 0,
+          "tie": 0
+        }
+      }
+    },
+    {
+      "strain": "methanogenic strain MSB",
+      "kinetics": "first_order",
+      "threshold_shape": "constant",
+      "msp_threshold_4c_pa": null,
+      "condition": "all",
+      "retained": 243,
+      "cold_4c": {
+        "acetogen": 134,
+        "methanogen": 109,
+        "no_consumer": 0,
+        "outside_first_order_domain": 0,
+        "tie": 0
+      },
+      "by_loss_h": {
+        "0.0001": {
+          "acetogen": 8,
+          "methanogen": 73,
+          "no_consumer": 0,
+          "outside_first_order_domain": 0,
+          "tie": 0
+        },
+        "0.001": {
+          "acetogen": 45,
+          "methanogen": 36,
+          "no_consumer": 0,
+          "outside_first_order_domain": 0,
+          "tie": 0
+        },
+        "0.01": {
+          "acetogen": 81,
+          "methanogen": 0,
+          "no_consumer": 0,
+          "outside_first_order_domain": 0,
+          "tie": 0
+        }
+      }
+    },
+    {
+      "strain": "methanogenic strain MSB",
+      "kinetics": "first_order",
+      "threshold_shape": "constant",
+      "msp_threshold_4c_pa": null,
+      "condition": "M_wins_30C",
+      "retained": 161,
+      "cold_4c": {
+        "acetogen": 54,
+        "methanogen": 107,
+        "no_consumer": 0,
+        "outside_first_order_domain": 0,
+        "tie": 0
+      },
+      "by_loss_h": {
+        "0.0001": {
+          "acetogen": 4,
+          "methanogen": 71,
+          "no_consumer": 0,
+          "outside_first_order_domain": 0,
+          "tie": 0
+        },
+        "0.001": {
+          "acetogen": 28,
+          "methanogen": 36,
+          "no_consumer": 0,
+          "outside_first_order_domain": 0,
+          "tie": 0
+        },
+        "0.01": {
+          "acetogen": 22,
+          "methanogen": 0,
+          "no_consumer": 0,
+          "outside_first_order_domain": 0,
+          "tie": 0
+        }
+      }
+    },
+    {
+      "strain": "methanogenic strain MSB",
+      "kinetics": "first_order",
+      "threshold_shape": "constant",
+      "msp_threshold_4c_pa": null,
+      "condition": "M_wins_20_and_30C",
+      "retained": 157,
+      "cold_4c": {
+        "acetogen": 50,
+        "methanogen": 107,
+        "no_consumer": 0,
+        "outside_first_order_domain": 0,
+        "tie": 0
+      },
+      "by_loss_h": {
+        "0.0001": {
+          "acetogen": 4,
+          "methanogen": 71,
+          "no_consumer": 0,
+          "outside_first_order_domain": 0,
+          "tie": 0
+        },
+        "0.001": {
+          "acetogen": 25,
+          "methanogen": 36,
+          "no_consumer": 0,
+          "outside_first_order_domain": 0,
+          "tie": 0
+        },
+        "0.01": {
+          "acetogen": 21,
+          "methanogen": 0,
+          "no_consumer": 0,
+          "outside_first_order_domain": 0,
+          "tie": 0
+        }
+      }
+    },
+    {
+      "strain": "methanogenic strain MSB",
+      "kinetics": "first_order",
+      "threshold_shape": "fixed_energy",
+      "msp_threshold_4c_pa": null,
+      "condition": "all",
+      "retained": 243,
+      "cold_4c": {
+        "acetogen": 158,
+        "methanogen": 85,
+        "no_consumer": 0,
+        "outside_first_order_domain": 0,
+        "tie": 0
+      },
+      "by_loss_h": {
+        "0.0001": {
+          "acetogen": 22,
+          "methanogen": 59,
+          "no_consumer": 0,
+          "outside_first_order_domain": 0,
+          "tie": 0
+        },
+        "0.001": {
+          "acetogen": 55,
+          "methanogen": 26,
+          "no_consumer": 0,
+          "outside_first_order_domain": 0,
+          "tie": 0
+        },
+        "0.01": {
+          "acetogen": 81,
+          "methanogen": 0,
+          "no_consumer": 0,
+          "outside_first_order_domain": 0,
+          "tie": 0
+        }
+      }
+    },
+    {
+      "strain": "methanogenic strain MSB",
+      "kinetics": "first_order",
+      "threshold_shape": "fixed_energy",
+      "msp_threshold_4c_pa": null,
+      "condition": "M_wins_30C",
+      "retained": 161,
+      "cold_4c": {
+        "acetogen": 76,
+        "methanogen": 85,
+        "no_consumer": 0,
+        "outside_first_order_domain": 0,
+        "tie": 0
+      },
+      "by_loss_h": {
+        "0.0001": {
+          "acetogen": 16,
+          "methanogen": 59,
+          "no_consumer": 0,
+          "outside_first_order_domain": 0,
+          "tie": 0
+        },
+        "0.001": {
+          "acetogen": 38,
+          "methanogen": 26,
+          "no_consumer": 0,
+          "outside_first_order_domain": 0,
+          "tie": 0
+        },
+        "0.01": {
+          "acetogen": 22,
+          "methanogen": 0,
+          "no_consumer": 0,
+          "outside_first_order_domain": 0,
+          "tie": 0
+        }
+      }
+    },
+    {
+      "strain": "methanogenic strain MSB",
+      "kinetics": "first_order",
+      "threshold_shape": "fixed_energy",
+      "msp_threshold_4c_pa": null,
+      "condition": "M_wins_20_and_30C",
+      "retained": 153,
+      "cold_4c": {
+        "acetogen": 68,
+        "methanogen": 85,
+        "no_consumer": 0,
+        "outside_first_order_domain": 0,
+        "tie": 0
+      },
+      "by_loss_h": {
+        "0.0001": {
+          "acetogen": 16,
+          "methanogen": 59,
+          "no_consumer": 0,
+          "outside_first_order_domain": 0,
+          "tie": 0
+        },
+        "0.001": {
+          "acetogen": 32,
+          "methanogen": 26,
+          "no_consumer": 0,
+          "outside_first_order_domain": 0,
+          "tie": 0
+        },
+        "0.01": {
+          "acetogen": 20,
+          "methanogen": 0,
+          "no_consumer": 0,
+          "outside_first_order_domain": 0,
+          "tie": 0
+        }
+      }
+    },
+    {
+      "strain": "methanogenic strain MSP",
+      "kinetics": "saturating",
+      "threshold_shape": "constant",
+      "msp_threshold_4c_pa": 2.0,
+      "condition": "all",
+      "retained": 243,
+      "cold_4c": {
+        "acetogen": 135,
+        "methanogen": 27,
+        "no_consumer": 81,
+        "outside_first_order_domain": 0,
+        "tie": 0
+      },
+      "by_loss_h": {
+        "0.0001": {
+          "acetogen": 57,
+          "methanogen": 24,
+          "no_consumer": 0,
+          "outside_first_order_domain": 0,
+          "tie": 0
+        },
+        "0.001": {
+          "acetogen": 78,
+          "methanogen": 3,
+          "no_consumer": 0,
+          "outside_first_order_domain": 0,
+          "tie": 0
+        },
+        "0.01": {
+          "acetogen": 0,
+          "methanogen": 0,
+          "no_consumer": 81,
+          "outside_first_order_domain": 0,
+          "tie": 0
+        }
+      }
+    },
+    {
+      "strain": "methanogenic strain MSP",
+      "kinetics": "saturating",
+      "threshold_shape": "constant",
+      "msp_threshold_4c_pa": 2.0,
+      "condition": "M_wins_30C",
+      "retained": 166,
+      "cold_4c": {
+        "acetogen": 112,
+        "methanogen": 27,
+        "no_consumer": 27,
+        "outside_first_order_domain": 0,
+        "tie": 0
+      },
+      "by_loss_h": {
+        "0.0001": {
+          "acetogen": 51,
+          "methanogen": 24,
+          "no_consumer": 0,
+          "outside_first_order_domain": 0,
+          "tie": 0
+        },
+        "0.001": {
+          "acetogen": 61,
+          "methanogen": 3,
+          "no_consumer": 0,
+          "outside_first_order_domain": 0,
+          "tie": 0
+        },
+        "0.01": {
+          "acetogen": 0,
+          "methanogen": 0,
+          "no_consumer": 27,
+          "outside_first_order_domain": 0,
+          "tie": 0
+        }
+      }
+    },
+    {
+      "strain": "methanogenic strain MSP",
+      "kinetics": "saturating",
+      "threshold_shape": "constant",
+      "msp_threshold_4c_pa": 2.0,
+      "condition": "M_wins_20_and_30C",
+      "retained": 153,
+      "cold_4c": {
+        "acetogen": 103,
+        "methanogen": 27,
+        "no_consumer": 23,
+        "outside_first_order_domain": 0,
+        "tie": 0
+      },
+      "by_loss_h": {
+        "0.0001": {
+          "acetogen": 50,
+          "methanogen": 24,
+          "no_consumer": 0,
+          "outside_first_order_domain": 0,
+          "tie": 0
+        },
+        "0.001": {
+          "acetogen": 53,
+          "methanogen": 3,
+          "no_consumer": 0,
+          "outside_first_order_domain": 0,
+          "tie": 0
+        },
+        "0.01": {
+          "acetogen": 0,
+          "methanogen": 0,
+          "no_consumer": 23,
+          "outside_first_order_domain": 0,
+          "tie": 0
+        }
+      }
+    },
+    {
+      "strain": "methanogenic strain MSP",
+      "kinetics": "saturating",
+      "threshold_shape": "constant",
+      "msp_threshold_4c_pa": 20.0,
+      "condition": "all",
+      "retained": 243,
+      "cold_4c": {
+        "acetogen": 143,
+        "methanogen": 19,
+        "no_consumer": 81,
+        "outside_first_order_domain": 0,
+        "tie": 0
+      },
+      "by_loss_h": {
+        "0.0001": {
+          "acetogen": 64,
+          "methanogen": 17,
+          "no_consumer": 0,
+          "outside_first_order_domain": 0,
+          "tie": 0
+        },
+        "0.001": {
+          "acetogen": 79,
+          "methanogen": 2,
+          "no_consumer": 0,
+          "outside_first_order_domain": 0,
+          "tie": 0
+        },
+        "0.01": {
+          "acetogen": 0,
+          "methanogen": 0,
+          "no_consumer": 81,
+          "outside_first_order_domain": 0,
+          "tie": 0
+        }
+      }
+    },
+    {
+      "strain": "methanogenic strain MSP",
+      "kinetics": "saturating",
+      "threshold_shape": "constant",
+      "msp_threshold_4c_pa": 20.0,
+      "condition": "M_wins_30C",
+      "retained": 166,
+      "cold_4c": {
+        "acetogen": 120,
+        "methanogen": 19,
+        "no_consumer": 27,
+        "outside_first_order_domain": 0,
+        "tie": 0
+      },
+      "by_loss_h": {
+        "0.0001": {
+          "acetogen": 58,
+          "methanogen": 17,
+          "no_consumer": 0,
+          "outside_first_order_domain": 0,
+          "tie": 0
+        },
+        "0.001": {
+          "acetogen": 62,
+          "methanogen": 2,
+          "no_consumer": 0,
+          "outside_first_order_domain": 0,
+          "tie": 0
+        },
+        "0.01": {
+          "acetogen": 0,
+          "methanogen": 0,
+          "no_consumer": 27,
+          "outside_first_order_domain": 0,
+          "tie": 0
+        }
+      }
+    },
+    {
+      "strain": "methanogenic strain MSP",
+      "kinetics": "saturating",
+      "threshold_shape": "constant",
+      "msp_threshold_4c_pa": 20.0,
+      "condition": "M_wins_20_and_30C",
+      "retained": 153,
+      "cold_4c": {
+        "acetogen": 111,
+        "methanogen": 19,
+        "no_consumer": 23,
+        "outside_first_order_domain": 0,
+        "tie": 0
+      },
+      "by_loss_h": {
+        "0.0001": {
+          "acetogen": 57,
+          "methanogen": 17,
+          "no_consumer": 0,
+          "outside_first_order_domain": 0,
+          "tie": 0
+        },
+        "0.001": {
+          "acetogen": 54,
+          "methanogen": 2,
+          "no_consumer": 0,
+          "outside_first_order_domain": 0,
+          "tie": 0
+        },
+        "0.01": {
+          "acetogen": 0,
+          "methanogen": 0,
+          "no_consumer": 23,
+          "outside_first_order_domain": 0,
+          "tie": 0
+        }
+      }
+    },
+    {
+      "strain": "methanogenic strain MSP",
+      "kinetics": "saturating",
+      "threshold_shape": "constant",
+      "msp_threshold_4c_pa": 200.0,
+      "condition": "all",
+      "retained": 243,
+      "cold_4c": {
+        "acetogen": 162,
+        "methanogen": 0,
+        "no_consumer": 81,
+        "outside_first_order_domain": 0,
+        "tie": 0
+      },
+      "by_loss_h": {
+        "0.0001": {
+          "acetogen": 81,
+          "methanogen": 0,
+          "no_consumer": 0,
+          "outside_first_order_domain": 0,
+          "tie": 0
+        },
+        "0.001": {
+          "acetogen": 81,
+          "methanogen": 0,
+          "no_consumer": 0,
+          "outside_first_order_domain": 0,
+          "tie": 0
+        },
+        "0.01": {
+          "acetogen": 0,
+          "methanogen": 0,
+          "no_consumer": 81,
+          "outside_first_order_domain": 0,
+          "tie": 0
+        }
+      }
+    },
+    {
+      "strain": "methanogenic strain MSP",
+      "kinetics": "saturating",
+      "threshold_shape": "constant",
+      "msp_threshold_4c_pa": 200.0,
+      "condition": "M_wins_30C",
+      "retained": 166,
+      "cold_4c": {
+        "acetogen": 139,
+        "methanogen": 0,
+        "no_consumer": 27,
+        "outside_first_order_domain": 0,
+        "tie": 0
+      },
+      "by_loss_h": {
+        "0.0001": {
+          "acetogen": 75,
+          "methanogen": 0,
+          "no_consumer": 0,
+          "outside_first_order_domain": 0,
+          "tie": 0
+        },
+        "0.001": {
+          "acetogen": 64,
+          "methanogen": 0,
+          "no_consumer": 0,
+          "outside_first_order_domain": 0,
+          "tie": 0
+        },
+        "0.01": {
+          "acetogen": 0,
+          "methanogen": 0,
+          "no_consumer": 27,
+          "outside_first_order_domain": 0,
+          "tie": 0
+        }
+      }
+    },
+    {
+      "strain": "methanogenic strain MSP",
+      "kinetics": "saturating",
+      "threshold_shape": "constant",
+      "msp_threshold_4c_pa": 200.0,
+      "condition": "M_wins_20_and_30C",
+      "retained": 153,
+      "cold_4c": {
+        "acetogen": 130,
+        "methanogen": 0,
+        "no_consumer": 23,
+        "outside_first_order_domain": 0,
+        "tie": 0
+      },
+      "by_loss_h": {
+        "0.0001": {
+          "acetogen": 74,
+          "methanogen": 0,
+          "no_consumer": 0,
+          "outside_first_order_domain": 0,
+          "tie": 0
+        },
+        "0.001": {
+          "acetogen": 56,
+          "methanogen": 0,
+          "no_consumer": 0,
+          "outside_first_order_domain": 0,
+          "tie": 0
+        },
+        "0.01": {
+          "acetogen": 0,
+          "methanogen": 0,
+          "no_consumer": 23,
+          "outside_first_order_domain": 0,
+          "tie": 0
+        }
+      }
+    },
+    {
+      "strain": "methanogenic strain MSP",
+      "kinetics": "saturating",
+      "threshold_shape": "fixed_energy",
+      "msp_threshold_4c_pa": 2.0,
+      "condition": "all",
+      "retained": 243,
+      "cold_4c": {
+        "acetogen": 161,
+        "methanogen": 1,
+        "no_consumer": 81,
+        "outside_first_order_domain": 0,
+        "tie": 0
+      },
+      "by_loss_h": {
+        "0.0001": {
+          "acetogen": 80,
+          "methanogen": 1,
+          "no_consumer": 0,
+          "outside_first_order_domain": 0,
+          "tie": 0
+        },
+        "0.001": {
+          "acetogen": 81,
+          "methanogen": 0,
+          "no_consumer": 0,
+          "outside_first_order_domain": 0,
+          "tie": 0
+        },
+        "0.01": {
+          "acetogen": 0,
+          "methanogen": 0,
+          "no_consumer": 81,
+          "outside_first_order_domain": 0,
+          "tie": 0
+        }
+      }
+    },
+    {
+      "strain": "methanogenic strain MSP",
+      "kinetics": "saturating",
+      "threshold_shape": "fixed_energy",
+      "msp_threshold_4c_pa": 2.0,
+      "condition": "M_wins_30C",
+      "retained": 166,
+      "cold_4c": {
+        "acetogen": 138,
+        "methanogen": 1,
+        "no_consumer": 27,
+        "outside_first_order_domain": 0,
+        "tie": 0
+      },
+      "by_loss_h": {
+        "0.0001": {
+          "acetogen": 74,
+          "methanogen": 1,
+          "no_consumer": 0,
+          "outside_first_order_domain": 0,
+          "tie": 0
+        },
+        "0.001": {
+          "acetogen": 64,
+          "methanogen": 0,
+          "no_consumer": 0,
+          "outside_first_order_domain": 0,
+          "tie": 0
+        },
+        "0.01": {
+          "acetogen": 0,
+          "methanogen": 0,
+          "no_consumer": 27,
+          "outside_first_order_domain": 0,
+          "tie": 0
+        }
+      }
+    },
+    {
+      "strain": "methanogenic strain MSP",
+      "kinetics": "saturating",
+      "threshold_shape": "fixed_energy",
+      "msp_threshold_4c_pa": 2.0,
+      "condition": "M_wins_20_and_30C",
+      "retained": 148,
+      "cold_4c": {
+        "acetogen": 124,
+        "methanogen": 1,
+        "no_consumer": 23,
+        "outside_first_order_domain": 0,
+        "tie": 0
+      },
+      "by_loss_h": {
+        "0.0001": {
+          "acetogen": 72,
+          "methanogen": 1,
+          "no_consumer": 0,
+          "outside_first_order_domain": 0,
+          "tie": 0
+        },
+        "0.001": {
+          "acetogen": 52,
+          "methanogen": 0,
+          "no_consumer": 0,
+          "outside_first_order_domain": 0,
+          "tie": 0
+        },
+        "0.01": {
+          "acetogen": 0,
+          "methanogen": 0,
+          "no_consumer": 23,
+          "outside_first_order_domain": 0,
+          "tie": 0
+        }
+      }
+    },
+    {
+      "strain": "methanogenic strain MSP",
+      "kinetics": "saturating",
+      "threshold_shape": "fixed_energy",
+      "msp_threshold_4c_pa": 20.0,
+      "condition": "all",
+      "retained": 243,
+      "cold_4c": {
+        "acetogen": 162,
+        "methanogen": 0,
+        "no_consumer": 81,
+        "outside_first_order_domain": 0,
+        "tie": 0
+      },
+      "by_loss_h": {
+        "0.0001": {
+          "acetogen": 81,
+          "methanogen": 0,
+          "no_consumer": 0,
+          "outside_first_order_domain": 0,
+          "tie": 0
+        },
+        "0.001": {
+          "acetogen": 81,
+          "methanogen": 0,
+          "no_consumer": 0,
+          "outside_first_order_domain": 0,
+          "tie": 0
+        },
+        "0.01": {
+          "acetogen": 0,
+          "methanogen": 0,
+          "no_consumer": 81,
+          "outside_first_order_domain": 0,
+          "tie": 0
+        }
+      }
+    },
+    {
+      "strain": "methanogenic strain MSP",
+      "kinetics": "saturating",
+      "threshold_shape": "fixed_energy",
+      "msp_threshold_4c_pa": 20.0,
+      "condition": "M_wins_30C",
+      "retained": 166,
+      "cold_4c": {
+        "acetogen": 139,
+        "methanogen": 0,
+        "no_consumer": 27,
+        "outside_first_order_domain": 0,
+        "tie": 0
+      },
+      "by_loss_h": {
+        "0.0001": {
+          "acetogen": 75,
+          "methanogen": 0,
+          "no_consumer": 0,
+          "outside_first_order_domain": 0,
+          "tie": 0
+        },
+        "0.001": {
+          "acetogen": 64,
+          "methanogen": 0,
+          "no_consumer": 0,
+          "outside_first_order_domain": 0,
+          "tie": 0
+        },
+        "0.01": {
+          "acetogen": 0,
+          "methanogen": 0,
+          "no_consumer": 27,
+          "outside_first_order_domain": 0,
+          "tie": 0
+        }
+      }
+    },
+    {
+      "strain": "methanogenic strain MSP",
+      "kinetics": "saturating",
+      "threshold_shape": "fixed_energy",
+      "msp_threshold_4c_pa": 20.0,
+      "condition": "M_wins_20_and_30C",
+      "retained": 148,
+      "cold_4c": {
+        "acetogen": 125,
+        "methanogen": 0,
+        "no_consumer": 23,
+        "outside_first_order_domain": 0,
+        "tie": 0
+      },
+      "by_loss_h": {
+        "0.0001": {
+          "acetogen": 73,
+          "methanogen": 0,
+          "no_consumer": 0,
+          "outside_first_order_domain": 0,
+          "tie": 0
+        },
+        "0.001": {
+          "acetogen": 52,
+          "methanogen": 0,
+          "no_consumer": 0,
+          "outside_first_order_domain": 0,
+          "tie": 0
+        },
+        "0.01": {
+          "acetogen": 0,
+          "methanogen": 0,
+          "no_consumer": 23,
+          "outside_first_order_domain": 0,
+          "tie": 0
+        }
+      }
+    },
+    {
+      "strain": "methanogenic strain MSP",
+      "kinetics": "saturating",
+      "threshold_shape": "fixed_energy",
+      "msp_threshold_4c_pa": 200.0,
+      "condition": "all",
+      "retained": 243,
+      "cold_4c": {
+        "acetogen": 162,
+        "methanogen": 0,
+        "no_consumer": 81,
+        "outside_first_order_domain": 0,
+        "tie": 0
+      },
+      "by_loss_h": {
+        "0.0001": {
+          "acetogen": 81,
+          "methanogen": 0,
+          "no_consumer": 0,
+          "outside_first_order_domain": 0,
+          "tie": 0
+        },
+        "0.001": {
+          "acetogen": 81,
+          "methanogen": 0,
+          "no_consumer": 0,
+          "outside_first_order_domain": 0,
+          "tie": 0
+        },
+        "0.01": {
+          "acetogen": 0,
+          "methanogen": 0,
+          "no_consumer": 81,
+          "outside_first_order_domain": 0,
+          "tie": 0
+        }
+      }
+    },
+    {
+      "strain": "methanogenic strain MSP",
+      "kinetics": "saturating",
+      "threshold_shape": "fixed_energy",
+      "msp_threshold_4c_pa": 200.0,
+      "condition": "M_wins_30C",
+      "retained": 166,
+      "cold_4c": {
+        "acetogen": 139,
+        "methanogen": 0,
+        "no_consumer": 27,
+        "outside_first_order_domain": 0,
+        "tie": 0
+      },
+      "by_loss_h": {
+        "0.0001": {
+          "acetogen": 75,
+          "methanogen": 0,
+          "no_consumer": 0,
+          "outside_first_order_domain": 0,
+          "tie": 0
+        },
+        "0.001": {
+          "acetogen": 64,
+          "methanogen": 0,
+          "no_consumer": 0,
+          "outside_first_order_domain": 0,
+          "tie": 0
+        },
+        "0.01": {
+          "acetogen": 0,
+          "methanogen": 0,
+          "no_consumer": 27,
+          "outside_first_order_domain": 0,
+          "tie": 0
+        }
+      }
+    },
+    {
+      "strain": "methanogenic strain MSP",
+      "kinetics": "saturating",
+      "threshold_shape": "fixed_energy",
+      "msp_threshold_4c_pa": 200.0,
+      "condition": "M_wins_20_and_30C",
+      "retained": 148,
+      "cold_4c": {
+        "acetogen": 125,
+        "methanogen": 0,
+        "no_consumer": 23,
+        "outside_first_order_domain": 0,
+        "tie": 0
+      },
+      "by_loss_h": {
+        "0.0001": {
+          "acetogen": 73,
+          "methanogen": 0,
+          "no_consumer": 0,
+          "outside_first_order_domain": 0,
+          "tie": 0
+        },
+        "0.001": {
+          "acetogen": 52,
+          "methanogen": 0,
+          "no_consumer": 0,
+          "outside_first_order_domain": 0,
+          "tie": 0
+        },
+        "0.01": {
+          "acetogen": 0,
+          "methanogen": 0,
+          "no_consumer": 23,
+          "outside_first_order_domain": 0,
+          "tie": 0
+        }
+      }
+    },
+    {
+      "strain": "methanogenic strain MSP",
+      "kinetics": "first_order",
+      "threshold_shape": "constant",
+      "msp_threshold_4c_pa": 2.0,
+      "condition": "all",
+      "retained": 243,
+      "cold_4c": {
+        "acetogen": 216,
+        "methanogen": 27,
+        "no_consumer": 0,
+        "outside_first_order_domain": 0,
+        "tie": 0
+      },
+      "by_loss_h": {
+        "0.0001": {
+          "acetogen": 57,
+          "methanogen": 24,
+          "no_consumer": 0,
+          "outside_first_order_domain": 0,
+          "tie": 0
+        },
+        "0.001": {
+          "acetogen": 78,
+          "methanogen": 3,
+          "no_consumer": 0,
+          "outside_first_order_domain": 0,
+          "tie": 0
+        },
+        "0.01": {
+          "acetogen": 81,
+          "methanogen": 0,
+          "no_consumer": 0,
+          "outside_first_order_domain": 0,
+          "tie": 0
+        }
+      }
+    },
+    {
+      "strain": "methanogenic strain MSP",
+      "kinetics": "first_order",
+      "threshold_shape": "constant",
+      "msp_threshold_4c_pa": 2.0,
+      "condition": "M_wins_30C",
+      "retained": 153,
+      "cold_4c": {
+        "acetogen": 126,
+        "methanogen": 27,
+        "no_consumer": 0,
+        "outside_first_order_domain": 0,
+        "tie": 0
+      },
+      "by_loss_h": {
+        "0.0001": {
+          "acetogen": 51,
+          "methanogen": 24,
+          "no_consumer": 0,
+          "outside_first_order_domain": 0,
+          "tie": 0
+        },
+        "0.001": {
+          "acetogen": 57,
+          "methanogen": 3,
+          "no_consumer": 0,
+          "outside_first_order_domain": 0,
+          "tie": 0
+        },
+        "0.01": {
+          "acetogen": 18,
+          "methanogen": 0,
+          "no_consumer": 0,
+          "outside_first_order_domain": 0,
+          "tie": 0
+        }
+      }
+    },
+    {
+      "strain": "methanogenic strain MSP",
+      "kinetics": "first_order",
+      "threshold_shape": "constant",
+      "msp_threshold_4c_pa": 2.0,
+      "condition": "M_wins_20_and_30C",
+      "retained": 139,
+      "cold_4c": {
+        "acetogen": 112,
+        "methanogen": 27,
+        "no_consumer": 0,
+        "outside_first_order_domain": 0,
+        "tie": 0
+      },
+      "by_loss_h": {
+        "0.0001": {
+          "acetogen": 50,
+          "methanogen": 24,
+          "no_consumer": 0,
+          "outside_first_order_domain": 0,
+          "tie": 0
+        },
+        "0.001": {
+          "acetogen": 51,
+          "methanogen": 3,
+          "no_consumer": 0,
+          "outside_first_order_domain": 0,
+          "tie": 0
+        },
+        "0.01": {
+          "acetogen": 11,
+          "methanogen": 0,
+          "no_consumer": 0,
+          "outside_first_order_domain": 0,
+          "tie": 0
+        }
+      }
+    },
+    {
+      "strain": "methanogenic strain MSP",
+      "kinetics": "first_order",
+      "threshold_shape": "constant",
+      "msp_threshold_4c_pa": 20.0,
+      "condition": "all",
+      "retained": 243,
+      "cold_4c": {
+        "acetogen": 224,
+        "methanogen": 19,
+        "no_consumer": 0,
+        "outside_first_order_domain": 0,
+        "tie": 0
+      },
+      "by_loss_h": {
+        "0.0001": {
+          "acetogen": 64,
+          "methanogen": 17,
+          "no_consumer": 0,
+          "outside_first_order_domain": 0,
+          "tie": 0
+        },
+        "0.001": {
+          "acetogen": 79,
+          "methanogen": 2,
+          "no_consumer": 0,
+          "outside_first_order_domain": 0,
+          "tie": 0
+        },
+        "0.01": {
+          "acetogen": 81,
+          "methanogen": 0,
+          "no_consumer": 0,
+          "outside_first_order_domain": 0,
+          "tie": 0
+        }
+      }
+    },
+    {
+      "strain": "methanogenic strain MSP",
+      "kinetics": "first_order",
+      "threshold_shape": "constant",
+      "msp_threshold_4c_pa": 20.0,
+      "condition": "M_wins_30C",
+      "retained": 153,
+      "cold_4c": {
+        "acetogen": 134,
+        "methanogen": 19,
+        "no_consumer": 0,
+        "outside_first_order_domain": 0,
+        "tie": 0
+      },
+      "by_loss_h": {
+        "0.0001": {
+          "acetogen": 58,
+          "methanogen": 17,
+          "no_consumer": 0,
+          "outside_first_order_domain": 0,
+          "tie": 0
+        },
+        "0.001": {
+          "acetogen": 58,
+          "methanogen": 2,
+          "no_consumer": 0,
+          "outside_first_order_domain": 0,
+          "tie": 0
+        },
+        "0.01": {
+          "acetogen": 18,
+          "methanogen": 0,
+          "no_consumer": 0,
+          "outside_first_order_domain": 0,
+          "tie": 0
+        }
+      }
+    },
+    {
+      "strain": "methanogenic strain MSP",
+      "kinetics": "first_order",
+      "threshold_shape": "constant",
+      "msp_threshold_4c_pa": 20.0,
+      "condition": "M_wins_20_and_30C",
+      "retained": 139,
+      "cold_4c": {
+        "acetogen": 120,
+        "methanogen": 19,
+        "no_consumer": 0,
+        "outside_first_order_domain": 0,
+        "tie": 0
+      },
+      "by_loss_h": {
+        "0.0001": {
+          "acetogen": 57,
+          "methanogen": 17,
+          "no_consumer": 0,
+          "outside_first_order_domain": 0,
+          "tie": 0
+        },
+        "0.001": {
+          "acetogen": 52,
+          "methanogen": 2,
+          "no_consumer": 0,
+          "outside_first_order_domain": 0,
+          "tie": 0
+        },
+        "0.01": {
+          "acetogen": 11,
+          "methanogen": 0,
+          "no_consumer": 0,
+          "outside_first_order_domain": 0,
+          "tie": 0
+        }
+      }
+    },
+    {
+      "strain": "methanogenic strain MSP",
+      "kinetics": "first_order",
+      "threshold_shape": "constant",
+      "msp_threshold_4c_pa": 200.0,
+      "condition": "all",
+      "retained": 243,
+      "cold_4c": {
+        "acetogen": 243,
+        "methanogen": 0,
+        "no_consumer": 0,
+        "outside_first_order_domain": 0,
+        "tie": 0
+      },
+      "by_loss_h": {
+        "0.0001": {
+          "acetogen": 81,
+          "methanogen": 0,
+          "no_consumer": 0,
+          "outside_first_order_domain": 0,
+          "tie": 0
+        },
+        "0.001": {
+          "acetogen": 81,
+          "methanogen": 0,
+          "no_consumer": 0,
+          "outside_first_order_domain": 0,
+          "tie": 0
+        },
+        "0.01": {
+          "acetogen": 81,
+          "methanogen": 0,
+          "no_consumer": 0,
+          "outside_first_order_domain": 0,
+          "tie": 0
+        }
+      }
+    },
+    {
+      "strain": "methanogenic strain MSP",
+      "kinetics": "first_order",
+      "threshold_shape": "constant",
+      "msp_threshold_4c_pa": 200.0,
+      "condition": "M_wins_30C",
+      "retained": 153,
+      "cold_4c": {
+        "acetogen": 153,
+        "methanogen": 0,
+        "no_consumer": 0,
+        "outside_first_order_domain": 0,
+        "tie": 0
+      },
+      "by_loss_h": {
+        "0.0001": {
+          "acetogen": 75,
+          "methanogen": 0,
+          "no_consumer": 0,
+          "outside_first_order_domain": 0,
+          "tie": 0
+        },
+        "0.001": {
+          "acetogen": 60,
+          "methanogen": 0,
+          "no_consumer": 0,
+          "outside_first_order_domain": 0,
+          "tie": 0
+        },
+        "0.01": {
+          "acetogen": 18,
+          "methanogen": 0,
+          "no_consumer": 0,
+          "outside_first_order_domain": 0,
+          "tie": 0
+        }
+      }
+    },
+    {
+      "strain": "methanogenic strain MSP",
+      "kinetics": "first_order",
+      "threshold_shape": "constant",
+      "msp_threshold_4c_pa": 200.0,
+      "condition": "M_wins_20_and_30C",
+      "retained": 139,
+      "cold_4c": {
+        "acetogen": 139,
+        "methanogen": 0,
+        "no_consumer": 0,
+        "outside_first_order_domain": 0,
+        "tie": 0
+      },
+      "by_loss_h": {
+        "0.0001": {
+          "acetogen": 74,
+          "methanogen": 0,
+          "no_consumer": 0,
+          "outside_first_order_domain": 0,
+          "tie": 0
+        },
+        "0.001": {
+          "acetogen": 54,
+          "methanogen": 0,
+          "no_consumer": 0,
+          "outside_first_order_domain": 0,
+          "tie": 0
+        },
+        "0.01": {
+          "acetogen": 11,
+          "methanogen": 0,
+          "no_consumer": 0,
+          "outside_first_order_domain": 0,
+          "tie": 0
+        }
+      }
+    },
+    {
+      "strain": "methanogenic strain MSP",
+      "kinetics": "first_order",
+      "threshold_shape": "fixed_energy",
+      "msp_threshold_4c_pa": 2.0,
+      "condition": "all",
+      "retained": 243,
+      "cold_4c": {
+        "acetogen": 242,
+        "methanogen": 1,
+        "no_consumer": 0,
+        "outside_first_order_domain": 0,
+        "tie": 0
+      },
+      "by_loss_h": {
+        "0.0001": {
+          "acetogen": 80,
+          "methanogen": 1,
+          "no_consumer": 0,
+          "outside_first_order_domain": 0,
+          "tie": 0
+        },
+        "0.001": {
+          "acetogen": 81,
+          "methanogen": 0,
+          "no_consumer": 0,
+          "outside_first_order_domain": 0,
+          "tie": 0
+        },
+        "0.01": {
+          "acetogen": 81,
+          "methanogen": 0,
+          "no_consumer": 0,
+          "outside_first_order_domain": 0,
+          "tie": 0
+        }
+      }
+    },
+    {
+      "strain": "methanogenic strain MSP",
+      "kinetics": "first_order",
+      "threshold_shape": "fixed_energy",
+      "msp_threshold_4c_pa": 2.0,
+      "condition": "M_wins_30C",
+      "retained": 153,
+      "cold_4c": {
+        "acetogen": 152,
+        "methanogen": 1,
+        "no_consumer": 0,
+        "outside_first_order_domain": 0,
+        "tie": 0
+      },
+      "by_loss_h": {
+        "0.0001": {
+          "acetogen": 74,
+          "methanogen": 1,
+          "no_consumer": 0,
+          "outside_first_order_domain": 0,
+          "tie": 0
+        },
+        "0.001": {
+          "acetogen": 60,
+          "methanogen": 0,
+          "no_consumer": 0,
+          "outside_first_order_domain": 0,
+          "tie": 0
+        },
+        "0.01": {
+          "acetogen": 18,
+          "methanogen": 0,
+          "no_consumer": 0,
+          "outside_first_order_domain": 0,
+          "tie": 0
+        }
+      }
+    },
+    {
+      "strain": "methanogenic strain MSP",
+      "kinetics": "first_order",
+      "threshold_shape": "fixed_energy",
+      "msp_threshold_4c_pa": 2.0,
+      "condition": "M_wins_20_and_30C",
+      "retained": 133,
+      "cold_4c": {
+        "acetogen": 132,
+        "methanogen": 1,
+        "no_consumer": 0,
+        "outside_first_order_domain": 0,
+        "tie": 0
+      },
+      "by_loss_h": {
+        "0.0001": {
+          "acetogen": 72,
+          "methanogen": 1,
+          "no_consumer": 0,
+          "outside_first_order_domain": 0,
+          "tie": 0
+        },
+        "0.001": {
+          "acetogen": 51,
+          "methanogen": 0,
+          "no_consumer": 0,
+          "outside_first_order_domain": 0,
+          "tie": 0
+        },
+        "0.01": {
+          "acetogen": 9,
+          "methanogen": 0,
+          "no_consumer": 0,
+          "outside_first_order_domain": 0,
+          "tie": 0
+        }
+      }
+    },
+    {
+      "strain": "methanogenic strain MSP",
+      "kinetics": "first_order",
+      "threshold_shape": "fixed_energy",
+      "msp_threshold_4c_pa": 20.0,
+      "condition": "all",
+      "retained": 243,
+      "cold_4c": {
+        "acetogen": 243,
+        "methanogen": 0,
+        "no_consumer": 0,
+        "outside_first_order_domain": 0,
+        "tie": 0
+      },
+      "by_loss_h": {
+        "0.0001": {
+          "acetogen": 81,
+          "methanogen": 0,
+          "no_consumer": 0,
+          "outside_first_order_domain": 0,
+          "tie": 0
+        },
+        "0.001": {
+          "acetogen": 81,
+          "methanogen": 0,
+          "no_consumer": 0,
+          "outside_first_order_domain": 0,
+          "tie": 0
+        },
+        "0.01": {
+          "acetogen": 81,
+          "methanogen": 0,
+          "no_consumer": 0,
+          "outside_first_order_domain": 0,
+          "tie": 0
+        }
+      }
+    },
+    {
+      "strain": "methanogenic strain MSP",
+      "kinetics": "first_order",
+      "threshold_shape": "fixed_energy",
+      "msp_threshold_4c_pa": 20.0,
+      "condition": "M_wins_30C",
+      "retained": 153,
+      "cold_4c": {
+        "acetogen": 153,
+        "methanogen": 0,
+        "no_consumer": 0,
+        "outside_first_order_domain": 0,
+        "tie": 0
+      },
+      "by_loss_h": {
+        "0.0001": {
+          "acetogen": 75,
+          "methanogen": 0,
+          "no_consumer": 0,
+          "outside_first_order_domain": 0,
+          "tie": 0
+        },
+        "0.001": {
+          "acetogen": 60,
+          "methanogen": 0,
+          "no_consumer": 0,
+          "outside_first_order_domain": 0,
+          "tie": 0
+        },
+        "0.01": {
+          "acetogen": 18,
+          "methanogen": 0,
+          "no_consumer": 0,
+          "outside_first_order_domain": 0,
+          "tie": 0
+        }
+      }
+    },
+    {
+      "strain": "methanogenic strain MSP",
+      "kinetics": "first_order",
+      "threshold_shape": "fixed_energy",
+      "msp_threshold_4c_pa": 20.0,
+      "condition": "M_wins_20_and_30C",
+      "retained": 133,
+      "cold_4c": {
+        "acetogen": 133,
+        "methanogen": 0,
+        "no_consumer": 0,
+        "outside_first_order_domain": 0,
+        "tie": 0
+      },
+      "by_loss_h": {
+        "0.0001": {
+          "acetogen": 73,
+          "methanogen": 0,
+          "no_consumer": 0,
+          "outside_first_order_domain": 0,
+          "tie": 0
+        },
+        "0.001": {
+          "acetogen": 51,
+          "methanogen": 0,
+          "no_consumer": 0,
+          "outside_first_order_domain": 0,
+          "tie": 0
+        },
+        "0.01": {
+          "acetogen": 9,
+          "methanogen": 0,
+          "no_consumer": 0,
+          "outside_first_order_domain": 0,
+          "tie": 0
+        }
+      }
+    },
+    {
+      "strain": "methanogenic strain MSP",
+      "kinetics": "first_order",
+      "threshold_shape": "fixed_energy",
+      "msp_threshold_4c_pa": 200.0,
+      "condition": "all",
+      "retained": 243,
+      "cold_4c": {
+        "acetogen": 243,
+        "methanogen": 0,
+        "no_consumer": 0,
+        "outside_first_order_domain": 0,
+        "tie": 0
+      },
+      "by_loss_h": {
+        "0.0001": {
+          "acetogen": 81,
+          "methanogen": 0,
+          "no_consumer": 0,
+          "outside_first_order_domain": 0,
+          "tie": 0
+        },
+        "0.001": {
+          "acetogen": 81,
+          "methanogen": 0,
+          "no_consumer": 0,
+          "outside_first_order_domain": 0,
+          "tie": 0
+        },
+        "0.01": {
+          "acetogen": 81,
+          "methanogen": 0,
+          "no_consumer": 0,
+          "outside_first_order_domain": 0,
+          "tie": 0
+        }
+      }
+    },
+    {
+      "strain": "methanogenic strain MSP",
+      "kinetics": "first_order",
+      "threshold_shape": "fixed_energy",
+      "msp_threshold_4c_pa": 200.0,
+      "condition": "M_wins_30C",
+      "retained": 153,
+      "cold_4c": {
+        "acetogen": 153,
+        "methanogen": 0,
+        "no_consumer": 0,
+        "outside_first_order_domain": 0,
+        "tie": 0
+      },
+      "by_loss_h": {
+        "0.0001": {
+          "acetogen": 75,
+          "methanogen": 0,
+          "no_consumer": 0,
+          "outside_first_order_domain": 0,
+          "tie": 0
+        },
+        "0.001": {
+          "acetogen": 60,
+          "methanogen": 0,
+          "no_consumer": 0,
+          "outside_first_order_domain": 0,
+          "tie": 0
+        },
+        "0.01": {
+          "acetogen": 18,
+          "methanogen": 0,
+          "no_consumer": 0,
+          "outside_first_order_domain": 0,
+          "tie": 0
+        }
+      }
+    },
+    {
+      "strain": "methanogenic strain MSP",
+      "kinetics": "first_order",
+      "threshold_shape": "fixed_energy",
+      "msp_threshold_4c_pa": 200.0,
+      "condition": "M_wins_20_and_30C",
+      "retained": 133,
+      "cold_4c": {
+        "acetogen": 133,
+        "methanogen": 0,
+        "no_consumer": 0,
+        "outside_first_order_domain": 0,
+        "tie": 0
+      },
+      "by_loss_h": {
+        "0.0001": {
+          "acetogen": 73,
+          "methanogen": 0,
+          "no_consumer": 0,
+          "outside_first_order_domain": 0,
+          "tie": 0
+        },
+        "0.001": {
+          "acetogen": 51,
+          "methanogen": 0,
+          "no_consumer": 0,
+          "outside_first_order_domain": 0,
+          "tie": 0
+        },
+        "0.01": {
+          "acetogen": 9,
+          "methanogen": 0,
+          "no_consumer": 0,
+          "outside_first_order_domain": 0,
+          "tie": 0
+        }
+      }
+    }
+  ],
+  "kinetics_variants": {
+    "saturating": "Both guilds saturating",
+    "first_order": "Acetogen low-pressure-slope matched first order; methanogen stays saturating"
+  },
+  "source_capacity_ratios_30C": {
+    "MSB_dry_mass": 0.37894736842105264,
+    "MSB_culture": 0.7368421052631579,
+    "MSP_dry_mass": 0.2583732057416268,
+    "MSP_culture": 0.47368421052631576
+  },
+  "maintenance_energy_j": 69000.0,
+  "supply_mol_l_h": 1e-06,
+  "threshold_energy_assumptions_j_reaction": {
+    "acetogen": -24000,
+    "methanogen": -28000
+  },
+  "first_order_limit_mol_l": 0.00045,
+  "input_sha256": {
+    "peters1998_chemostat.csv": "b0b00bf03eaeaabf45fb571330773c5158b53b088436aaee942188f8e9498320",
+    "kotsyurbenko2001_table2.csv": "c95b4be023e5502fbb30eb322621e5612bbbf850f99d1b6669e98b95eb370480"
+  },
+  "msb_scoping_grid_size": 243,
+  "caveat": "Counts are sensitivity-grid outcomes, not probabilities or a calibration"
+}

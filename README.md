@@ -15,6 +15,7 @@ lineage of models and the agreed order of work are in
 | Daisyworld, Watson & Lovelock (1983) | Faithful reconstruction done and independently reviewed; agrees with published Figs 1b–d and 2 on occupied branches and transitions; the cause of a Fig. 1a discrepancy is unresolved | [`models/daisyworld`](models/daisyworld/README.md) |
 | Methane–haze climate responses | Arney (2016) responses and separate Eager-Nash (2023) low-methane checkpoints recovered | [`models/haze_response`](models/haze_response/README.md) |
 | Haze-world: methanogens, finite methane budget and haze climate | Reviewed conditional model: stable equilibria near a net-growth threshold; reduced dynamics and cold-trap claims have explicit limits | [`models/haze_world`](models/haze_world/README.md) |
+| Hydrogen competition | Matched A. woodii growth benchmark and fixed-temperature two-guild sensitivities; climate coupling pending | [Two guilds](models/haze_world/two-guilds.md) |
 
 ## Getting started
 

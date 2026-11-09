@@ -1,0 +1,94 @@
+{
+  "access_date": "2026-11-09",
+  "scope": "Primary-source maintenance, sediment-pattern and acetate-fate audit; sources are not cold Archean calibrations",
+  "sources": [
+    {
+      "source_id": "conrad1989",
+      "doi": "10.1111/j.1574-6968.1989.tb03382.x",
+      "title": "Hydrogen turnover by psychrotrophic homoacetogenic and mesophilic methanogenic bacteria in anoxic paddy soil and lake sediment",
+      "primary_url": "https://academic.oup.com/femsec/article/5/5/285/639730",
+      "metadata_sha256": "78ca0dcec85d3e2a96a942025744989d3da2bab32425ef84795e1d1396cd82cc",
+      "verification": "DOI metadata verified;primary source content inspected through web;direct HTML downloads blocked",
+      "metadata_note": "Primary publisher identifies FEMS Microbiology Ecology5(5),285\u2013293 and author Sch\u00fctz; registry labels Letters62(5) and has mojibake.",
+      "locator": "Opening summary"
+    },
+    {
+      "source_id": "schulz1996",
+      "doi": "10.1111/j.1574-6941.1996.tb00299.x",
+      "title": "Influence of temperature on pathways to methane production in the permanently cold profundal sediment of Lake Constance",
+      "primary_url": "https://academic.oup.com/femsec/article/20/1/1/516188",
+      "metadata_sha256": "098bb95db4a67cb984ee0273e3b59cfc1b82bf3e19bf5000a00839abed1d24de",
+      "verification": "DOI metadata verified;primary source content inspected through web;direct HTML downloads blocked",
+      "locator": "Abstract p1"
+    },
+    {
+      "source_id": "schulz1997",
+      "doi": "10.1111/j.1574-6941.1997.tb00372.x",
+      "title": "Temperature dependence of methane production from different precursors in a profundal sediment (Lake Constance)",
+      "primary_url": "https://academic.oup.com/femsec/article/22/3/207/559904",
+      "metadata_sha256": "aeb8231f1a519ed342aa09d91ea84828bf6d17f16ac38eec99eb38d3ddafecb1",
+      "verification": "DOI metadata verified;primary source content inspected through web;direct HTML downloads blocked",
+      "metadata_note": "Print year1997 and volume22 follow primary article; registry online date2006 is not the original publication year.",
+      "locator": "Results section3 and Table1"
+    },
+    {
+      "source_id": "tijhuis1993",
+      "doi": "10.1002/bit.260420415",
+      "title": "A thermodynamically based correlation for maintenance gibbs energy requirements in aerobic and anaerobic chemotrophic growth",
+      "primary_url": "https://analyticalsciencejournals.onlinelibrary.wiley.com/doi/abs/10.1002/bit.260420415",
+      "metadata_sha256": "92b3753a758e2d7822d1987d4c8417fbab236cef0b92d44ee10ecf363a700d56",
+      "verification": "DOI metadata verified;primary source content inspected through web;direct HTML downloads blocked",
+      "locator": "Primary publisher abstract; same publisher abstract in Crossref metadata"
+    },
+    {
+      "id": "Kharecha2005",
+      "doi": "10.1111/j.1472-4669.2005.00049.x",
+      "citation": "Kharecha P., Kasting J., Siefert J. (2005). A coupled atmosphere\u2013ecosystem model of the early Archean Earth. Geobiology3(2):53\u201376.",
+      "primary_url": "https://www.giss.nasa.gov/pubs/docs/2005/2005_Kharecha_kh01000b.pdf",
+      "locators": [
+        "p56,R4\u2013R5 and following paragraph",
+        "p57,first paragraph and R6",
+        "p60,Coupled atmosphere\u2013ecosystem model,paragraph starting Based on laboratory studies; final paragraph before solution algorithm"
+      ],
+      "epistemic_status": "Published model assumption; PDF downloaded and p56 visually inspected; not an Archean measurement.",
+      "pdf_sha256": "4f484c8f75d9e0b3da9276bacd238ae54af32bfe14247ab7559b95806b671a59"
+    },
+    {
+      "id": "ZinderKoch1984",
+      "doi": "10.1007/BF00402133",
+      "citation": "Zinder S.H., Koch M. (1984). Non-aceticlastic methanogenesis from acetate: acetate oxidation by a thermophilic syntrophic coculture. Archives of Microbiology138:263\u2013272.",
+      "primary_url": "https://link.springer.com/article/10.1007/BF00402133",
+      "locators": [
+        "Abstract,paragraphs1\u20134 (publisher HTML)"
+      ],
+      "epistemic_status": "Primary experimental abstract verified; full paper not retrieved. No global or Archean recovery fraction inferred."
+    },
+    {
+      "id": "LovleyKlug1983",
+      "doi": "10.1128/aem.45.1.187-192.1983",
+      "citation": "Lovley D.R., Klug M.J. (1983). Sulfate Reducers Can Outcompete Methanogens at Freshwater Sulfate Concentrations. Applied and Environmental Microbiology45(1):187\u2013192.",
+      "primary_url": "https://journals.asm.org/doi/abs/10.1128/aem.45.1.187-192.1983",
+      "locators": [
+        "Abstract,entire paragraph; PMID16346164; PMCIDPMC242251"
+      ],
+      "epistemic_status": "Primary publisher/PMC abstract verified; shows an alternative acetate sink depends on electron-acceptor supply, not an Archean f_ac bound."
+    },
+    {
+      "id": "FournierGogarten2008",
+      "doi": "10.1128/JB.01382-07",
+      "citation": "Fournier G.P., Gogarten J.P. (2008). Evolution of Acetoclastic Methanogenesis in Methanosarcina via Horizontal Gene Transfer from Cellulolytic Clostridia. Journal of Bacteriology190(3):1124\u20131127.",
+      "primary_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC2223567/",
+      "locators": [
+        "Abstract",
+        "Introduction,paragraph beginning Methanogenesis from acetate",
+        "Final discussion paragraphs,starting Cellulolytic enzymatic activity and The ancestral state"
+      ],
+      "epistemic_status": "Primary full text inspected through indexedPMC content; not an evolutionary date for all acetate-to-methane pathways."
+    }
+  ],
+  "limitations": [
+    "1993 original equation/prefactor and uncertainty not recovered",
+    "no sediment mortality coefficient measured in audited sources",
+    "temperature outcome is conditioned on H2 supply,organic substrate,and assay"
+  ]
+}
