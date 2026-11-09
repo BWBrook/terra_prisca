@@ -102,6 +102,13 @@ Fidelity is measured against the published figures, digitised.
    confirmed the endpoint and stability calculations; the local supply
    responses and re-invasion thresholds have since been corrected to its
    analytical audit.
+   A strain-resolved stage 2 adds mutation and explicit extinction. When
+   supply declines, the haze clears and the planet passes back through the
+   warm peak, so the methanogens' danger is heat rather than cold. Survival
+   depends on whether the mutation supply can keep pace. A population that
+   evolves toward the transient warmth can be stranded once its biomass, and
+   with it its evolvability, collapses. Mutation cannot lift a lifeless
+   planet out of the cold trap.
    This direction may lead to a paper.
 2. **Evolving daisies.** Give the daisies a heritable optimum temperature and
    test whether regulation survives natural selection, the core of the

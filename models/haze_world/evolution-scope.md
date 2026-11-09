@@ -146,7 +146,8 @@ constraints must be wholly non-evolvable to matter.
    criterion and domain record. Add matched-capacity controls and loss-shape
    sensitivities. Figures show T\* against trait change and the endpoint
    against the constraint; arbitrary trait steps are not interpreted as years.
-2. **Strain-resolved model with B_min and mutation.** Test rescue under
+2. **Strain-resolved model with B_min and mutation (built 9 November 2026;
+   results 8–10 on the [model page](README.md)).** Test rescue under
    declining supply, and whether cold-tolerant strains escape the cold trap
    across T₀ scenarios.
 3. **Scenario C.** First reproduce strain-specific uptake competition, then

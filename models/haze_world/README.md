@@ -306,6 +306,93 @@ Strong buffering and failed return coexist under the cold bridge. This is a
 conditional result, controlled by the assumed low-methane climate, not a
 general equivalence.
 
+## Variant: strains, mutation and extinction (stage 2)
+
+**Code.** [`strains.py`](../../src/terra_prisca/haze_world/strains.py), with
+tests in [`tests/test_strains.py`](../../tests/test_strains.py).
+
+```bash
+uv run python -m terra_prisca.haze_world.strains
+```
+
+**Model.** The methanogens occupy 131 bins of thermal optimum, from 245 to
+310 K at 0.5-K spacing. Each bin follows the stage-1 physiology, and all
+bins share the donor pool and the climate. Linear loss is used throughout,
+with τ = 10 kyr.
+
+Mutation sends a fraction m of each bin's births to each neighbouring bin.
+Methane comes from uptake, so mutation leaves methane production unchanged.
+Two consequences follow:
+- **A strain that cannot divide produces no mutants.**
+- **Extinction is explicit.** Every 10 years (the census interval), any bin
+  below B_min is set to zero. Mutation from a living neighbour can repopulate
+  an emptied bin, but extinction of every bin is permanent. The effective
+  establishment condition is therefore mutant inflow per census, about
+  m·U·Δt, compared with B_min.
+
+The mutation fraction m, the threshold B_min (relative to the initial
+biomass B\*) and the census interval are uncalibrated, so they are swept or
+stated. Time is in years under the stage-1 biology.
+
+**Experiments.**
+- **Rescue.** Start at the evolved state for potential ratio 0.22, then lower
+  the supply linearly to 0.02 over 100, 1,000 or 10,000 years and hold it
+  for 60 kyr. Constraints U and H (E = 0.65 eV), with m = 10⁻⁴, 10⁻⁶ and
+  10⁻⁸, B_min = 10⁻⁹ and 10⁻⁶ B\*, and bridge T₀ = 265 and 283 K.
+- **Seed escape.** On the lifeless planet with T₀ = 265 K (265.6 K at the
+  abiotic methane level) and constant supply, seed one strain at 10⁻³ B\*.
+
+![Strain-resolved rescue under declining supply, and seed escape from the cold trap](figures/strains_figures.png)
+
+Data: [`strains_rescue.csv`](figures/strains_rescue.csv),
+[`strains_seed.csv`](figures/strains_seed.csv) and the example
+[`strains_series.csv`](figures/strains_series.csv).
+
+**8. Losing the supply means losing the haze, and the danger is heat (panel
+a).** At potential ratio 0.22 the climate sits at the haze minimum near
+273 K. As supply falls, methane decays over about 10⁴ years. The planet passes
+back through Arney's warm peak (297 K) before cooling onto the low-methane
+bridge. Methanogens adapted to the hazy minimum must first survive that
+warming.
+- **Under U with too little mutation**, they die in the warm phase,
+  2.5–7.3 kyr after the decline begins, at either T₀. Too little means
+  m = 10⁻⁸ with B_min = 10⁻⁶ B\*, where mutants cannot reach B_min within one
+  census. Methane then collapses to the abiotic level and the climate settles
+  at the lifeless 266 K or 283 K.
+- **Every other U run survives.** The largest lag behind the singular optimum
+  is 5–17 K, inside the 19-K thermal window (panel c).
+- **The duration of the decline matters little.** Methane relaxation, not the
+  supply schedule, sets the pace.
+
+**9. Evolution can strand a population (panel b).** Under H at E = 0.65 eV,
+T₀ = 265 K and B_min = 10⁻⁶ B\*:
+- with m = 10⁻⁶, the population went extinct 34–39 kyr after the decline
+  began, and the planet fell to 267 K;
+- with m = 10⁻⁸, it survived.
+
+The mechanism is mutation supply, which scales with population size. While
+supply and biomass were still high, the m = 10⁻⁶ population tracked the
+warming to an optimum near 299 K. After the supply fell, biomass dropped about
+14-fold. Mutant inflow per census fell below B_min, the population was left
+with one or two bins, and it could not follow the climate back down. The
+nearly non-mutating population kept its 285.5-K optimum. Hotter-is-better
+gives that optimum a thermal window wide enough for both the warm peak and
+the cooled endpoint.
+
+Adapting to a transient is costly when evolvability then collapses. This is
+conditional on the census threshold, which is the least constrained
+assumption here. With T₀ = 283 K every H run survives.
+
+**10. Mutation cannot carry a lifeless planet out of the cold trap (panel
+d).** A seed strain establishes only if its optimum is within about 1 K of
+the viable range: optimum ≤ 285–285.5 K, against viability below 284.5 K.
+Beyond about 285.6 K it cannot divide at 265.6 K, so it makes no mutants and
+dies within 7–16 years at any m. Escape by mutation would need standing
+variation that already reaches the viable range, which is immigration under
+another name. The cold trap is evolutionarily absorbing, so whether a lifeless
+haze-world can be colonised depends on its methane-free climate, which is
+still the bridge assumption.
+
 ## Limits and next steps
 
 - **Low-methane branch.** The restricted reduced equilibria can avoid it;
@@ -329,13 +416,18 @@ general equivalence.
   constrain equilibrium balance; transients also require methane column
   storage N(r), since dr/dt = (source − required flux)/N′(r) in consistent time units. See the
   [source-recovery record](review/source-recovery.md).
-- **Evolution.** Stage 1 (results 4–7) is monomorphic and deterministic.
-  Stage 2 adds strain-resolved mutation and an explicit demographic floor
-  B_min, to test evolutionary rescue under declining supply and escape from
-  the cold trap. Stage 3, hydrogen competition with homoacetogens, waits on
-  the [strain-resolved benchmark](evidence/hydrogen-competition.md). The
-  decisive empirical input for H is the elasticity of photochemical methane
-  loss with abundance. See the [scope](evolution-scope.md) and
+- **Evolution.** Stages 1 and 2 (results 4–10) use one deterministic
+  physiology with uncalibrated mutation, census and extinction settings, and
+  a single forcing (declining supply) in case B. Stage 3, hydrogen
+  competition with homoacetogens, waits on the
+  [strain-resolved benchmark](evidence/hydrogen-competition.md). The decisive
+  empirical inputs are:
+  - the elasticity of photochemical methane loss near r ≈ 0.2
+    ([evidence](evidence/loss-elasticity.md));
+  - the methane-free climate of a matched atmosphere;
+  - the scale of mutation supply relative to demographic extinction.
+
+  See the [scope](evolution-scope.md) and
   [thermal evidence](evidence/thermal-margins.md). This links the haze-world to
   the "evolving daisies" re-imagining in [`docs/vision.md`](../../docs/vision.md).
 - **Luminosity.** All results are for one epoch. A solar sweep, the analogue
@@ -356,3 +448,5 @@ generalizations and compiled the thermal and hydrogen-competition evidence.
 Claude designed and wrote the evolving-optimum variant (`darwinian.py`), its
 loss family, matched controls, regulation and re-invasion measures, tests and
 the variant section above, building on Codex's loss-shape counterexample.
+Claude also built the strain-resolved stage-2 variant (`strains.py`), its
+rescue and seed-escape experiments, tests and the stage-2 section.
