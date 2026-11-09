@@ -87,6 +87,17 @@ is silently declared a full match.
 
 ## Evidence and next gate
 
+The [independent inversion challenge](review/uptake-inversion-challenge-2026-11-09.md)
+confirms the 200 Pa statement in the original abstract and the inversion
+algebra, but finds that approximate crossover readings do not uniquely
+identify the authors' rate normalization. A shared-mass counterexample
+fits the coarse source constraints after illustrative 10% shifts in two
+approximate landmarks. Both rate interpretations remain explicit.
+
+The [growth-parameter evidence](evidence/growth-parameters.md) now supplies
+yield and maintenance anchors. It also shows why the historical uptake
+capacities cannot be combined silently with coefficients from other assays.
+
 [Provenance](evidence/uptake_provenance.json) records registered source identity,
 the indexed primary text and metadata hashes, and unsuccessful visual
 recovery. No PDF bytes or figure pixels were recovered, so there is no
@@ -108,9 +119,13 @@ acetogenesis need not permanently remove methane production.
 ## Review: inverting the published crossovers
 
 [Claude's review](review/uptake-review-2026-11-09.md) inverts the three crossover
-pressures in the text for the implied *A. bakii* threshold. Equal dry mass
-makes the 4 °C threshold exceed the 15 °C one, contradicting the reported
-monotone decline. The contradiction persists even at the joint extreme of
-every published kinetic and biomass limit. Whole-culture rates are consistent
-within those limits. The culture basis is therefore the reproduction target.
-Population coupling still needs per-biomass specific rates with yields.
+pressures for the implied *A. bakii* threshold. At the nominal pressures,
+equal dry mass conflicts with the reported cooling trend throughout the
+chosen marginal parameter box. The
+[independent challenge](review/uptake-inversion-challenge-2026-11-09.md) shows
+that modest changes to the approximate pressure landmarks can remove that
+exclusion while keeping common biomass and the coarse source constraints.
+Whole-culture rates remain a working reproduction target, rather than a
+uniquely established account of the authors' calculation. Population coupling
+needs specific rates, compatible yields and maintenance, and explicit assay
+and kinetic-form assumptions.

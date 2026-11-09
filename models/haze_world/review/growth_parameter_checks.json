@@ -1,0 +1,25 @@
+{
+  "pirt_fit_to_rounded_means": {
+    "true_acetate_yield": 7.621914562617655,
+    "maintenance_mmol_acetate_gdw_h": 0.3554520026595119
+  },
+  "carbon_balance": {
+    "true_H2_yield_gdw_mol": 1.6614593222972156,
+    "maintenance_mmol_H2_gdw_h": 1.6
+  },
+  "modern_observed_yield_from_mu_over_q": 0.8071748878923767,
+  "historical_qmax_mmol_H2_gdw_h": 0.21111111111111114,
+  "cross_assay_maintenance_to_qmax_ratio": 7.578947368421052,
+  "cross_assay_implied_yields": [
+    {
+      "temperature_c": 10,
+      "yield_gdw_mol_H2": 54.545454545454554,
+      "status": "assay-compatibility diagnostic, not a biological estimate"
+    },
+    {
+      "temperature_c": 20,
+      "yield_gdw_mol_H2": 107.43243243243244,
+      "status": "assay-compatibility diagnostic, not a biological estimate"
+    }
+  ]
+}

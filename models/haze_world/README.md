@@ -452,7 +452,11 @@ and gets rarer the further the seed's optimum lies from it.
   table are reconstructed, while full figure reproduction remains unresolved
   because cessation thresholds are missing and the source's culture-rate and
   equal-biomass interpretations disagree at a central-value checkpoint.
-  Climate coupling waits on that reconciliation. The decisive
+  Climate coupling waits on an explicit growth-model design. The new
+  [yield and maintenance evidence](evidence/growth-parameters.md) contains
+  quantitative anchors, but no matched cold-strain calibration; combining
+  some published coefficients across assays would demand more maintenance
+  than the historical uptake capacity can supply. The decisive
   empirical inputs are:
   - the elasticity of photochemical methane loss near r ≈ 0.2
     ([evidence](evidence/loss-elasticity.md));

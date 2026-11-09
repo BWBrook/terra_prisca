@@ -1,0 +1,122 @@
+{
+  "methanogen_sources": {
+    "retrieved": "2026-11-09",
+    "scope": "bounded primary-source parameter audit; no cold-strain calibration",
+    "sources": [
+      {
+        "id": "depoorter2007",
+        "doi": "10.1128/AEM.01885-06",
+        "authors": "de Poorter LM; Geerts WJ; Keltjens JT",
+        "year": 2007,
+        "title": "Coupling of Methanothermobacter thermautotrophicus Methane Formation and Growth in Fed-Batch and Continuous Cultures under Different H2 Gassing Regimens",
+        "primary_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC1800739/",
+        "verified": "full primary text and Fig5 inspected",
+        "local_file": "depoorter2007.html",
+        "sha256": "1f0812bc53a8db924304f3d1e648d5e57ebef12d79ae7f05c7b0dd91311d2086"
+      },
+      {
+        "id": "goyal2015",
+        "doi": "10.1186/s12934-015-0336-z",
+        "authors": "Goyal N; Padhiary M; Karimi IA; Zhou Z",
+        "year": 2015,
+        "title": "Flux measurements and maintenance energy for carbon dioxide utilization by Methanococcus maripaludis",
+        "primary_url": "https://link.springer.com/article/10.1186/s12934-015-0336-z",
+        "verified": "full primary text; methods and fitting procedure inspected",
+        "local_file": "goyal2015.html",
+        "sha256": "7db54a12c3d2492642e30b95e23e5de2a58141011b166b01e989964be72034d3"
+      },
+      {
+        "id": "morii1987",
+        "doi": "10.1002/bit.260290304",
+        "authors": "Morii H; Koga Y; Nagai S",
+        "year": 1987,
+        "title": "Energetic analysis of the growth of Methanobrevibacter arboriphilus A2 in hydrogen-limited continuous cultures",
+        "primary_url": "https://pubmed.ncbi.nlm.nih.gov/18576419/",
+        "verified": "primary abstract via web; direct local download returned challenge and was discarded",
+        "local_file": null
+      },
+      {
+        "id": "schoenheit1980",
+        "doi": "10.1007/BF00414356",
+        "authors": "Schoenheit P; Moll J; Thauer RK",
+        "year": 1980,
+        "title": "Growth parameters (Ks, mumax, Ys) of Methanobacterium thermoautotrophicum",
+        "primary_url": "https://link.springer.com/article/10.1007/BF00414356",
+        "verified": "primary publisher abstract via web; full text not recovered",
+        "local_file": null
+      },
+      {
+        "id": "bonk2019",
+        "doi": "10.3389/fmicb.2019.00166",
+        "authors": "Bonk F; Popp D; Weinrich S; Straeuber H; Becker D; Kleinsteuber S; Harms H; Centler F",
+        "year": 2019,
+        "title": "Determination of Microbial Maintenance in Acetogenesis and Methanogenesis by Experimental and Modeling Techniques",
+        "primary_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC6375858/",
+        "verified": "full primary text; mixed-community/model-dependent bound",
+        "local_file": "bonk2019.html",
+        "sha256": "393bcee22c4dbd5077e550bdc47cfbefdf89826f054e8a7d86c4e7a45d812195"
+      },
+      {
+        "id": "franzmann1997",
+        "doi": "10.1099/00207713-47-4-1068",
+        "authors": "Franzmann PD et al.",
+        "year": 1997,
+        "title": "Methanogenium frigidum sp. nov., a psychrophilic, H2-using methanogen from Ace Lake, Antarctica",
+        "primary_url": "https://www.microbiologyresearch.org/content/journal/ijsem/10.1099/00207713-47-4-1068",
+        "verified": "primary publisher abstract via web; no yield or maintenance found",
+        "local_file": null
+      }
+    ],
+    "figure": {
+      "file": "fig5.jpg",
+      "source": "depoorter2007 Fig5",
+      "url": "https://cdn.ncbi.nlm.nih.gov/pmc/blobs/a2fd/1800739/31957873d2bb/zam0030774840005.jpg",
+      "sha256": "7b0d8e561750d269480d5c37f0a4f10e14695ba443ef885f6004841e74e8769a"
+    }
+  },
+  "acetogen_sources": {
+    "access_date_local": "2026-11-09",
+    "scope": "Primary-source facts for H2/CO2 acetogen growth yields and maintenance; no cold A.bakii calibration claimed",
+    "sources": [
+      {
+        "id": "peters1998",
+        "doi": "10.1111/j.1574-6941.1998.tb00516.x",
+        "original_elsevier_doi": "10.1016/S0168-6496(98)00047-6",
+        "source_url": "https://academic.oup.com/femsec/article/26/4/317/435295",
+        "version": "Published article indexed HTML/PDF text; Table 1, Table 2 and methods inspected; no PDF bytes recovered",
+        "metadata": "peters1998.crossref.json",
+        "numeric_extraction": "facts.csv and peters1998_chemostat.csv",
+        "limitation": "Text accessible through search index; no source-byte checksum for paper"
+      },
+      {
+        "id": "neuendorf2021",
+        "doi": "10.1016/j.ymben.2021.09.004",
+        "source_url": "https://www.sciencedirect.com/science/article/pii/S1096717621001440",
+        "download_host": "www.tuwien.at",
+        "version": "Published final PDF 68:68-85; Table 1 visual inspection on journal page 72; methods and Table 2 checked in extracted text",
+        "metadata": "neuendorf2021.crossref.json",
+        "pdf": "neuendorf2021.pdf",
+        "pdf_sha256": "6d2bd62d75766d4976c288613514e336da2d147e082bda3f38022d248d6d1d44",
+        "visual_check": "neuendorf2021-table1.png"
+      },
+      {
+        "id": "shin2018",
+        "doi": "10.1261/rna.068239.118",
+        "source_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC6239172/",
+        "published_pdf_url": "https://rnajournal.cshlp.org/content/24/12/1839.full.pdf",
+        "version": "Published/indexed primary text and Figure 3; no PDF bytes recovered",
+        "metadata": "shin2018.crossref.json",
+        "limitation": "No paper-byte checksum; growth-rate uncertainty type not established"
+      },
+      {
+        "id": "munoz2025",
+        "doi": "10.1002/bit.28904",
+        "source_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC11895420/",
+        "version": "Primary full PMC article; online 2024-12-27, journal issue 2025; methods and Table 2 inspected",
+        "metadata": "munoz2025.crossref.json",
+        "limitation": "No PDF bytes recovered; not a yield or maintenance study"
+      }
+    ],
+    "reproduction": "uv run python models/haze_world/review/check_growth_parameters.py models/haze_world/review"
+  }
+}

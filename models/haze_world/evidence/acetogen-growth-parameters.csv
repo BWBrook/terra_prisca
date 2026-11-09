@@ -1,0 +1,13 @@
+source_id,doi,organism,strain,temperature_C,quantity,value,uncertainty,uncertainty_type,unit,measurement_basis,locator
+peters1998,10.1111/j.1574-6941.1998.tb00516.x,Acetobacterium woodii,DSM1030,30,maximum_specific_growth_rate,0.024,,,h^-1,H2/CO2 chemostat; no organic growth substrate,Table 2 H2 column
+peters1998,10.1111/j.1574-6941.1998.tb00516.x,Acetobacterium woodii,DSM1030,30,true_biomass_yield_acetate,7.7,,,gDW mol_acetate^-1,Pirt maintenance-corrected acetate-production basis,Table 2 H2 column
+peters1998,10.1111/j.1574-6941.1998.tb00516.x,Acetobacterium woodii,DSM1030,30,true_biomass_yield_H2,1.7,,,gDW mol_H2^-1,Published total-H2 basis includes biomass carbon balance,Table 2 H2 column
+peters1998,10.1111/j.1574-6941.1998.tb00516.x,Acetobacterium woodii,DSM1030,30,maintenance_acetate,0.40,,,mmol_acetate gDW^-1 h^-1,Pirt non-growth acetate-production intercept; not mortality,Table 2 H2 column
+peters1998,10.1111/j.1574-6941.1998.tb00516.x,Acetobacterium woodii,DSM1030,30,biomass_acetate_equivalents,20.6,,,umol_acetate mgDW^-1,Assumption for correcting substrate carbon incorporated into biomass,Methods carbon balance
+neuendorf2021,10.1016/j.ymben.2021.09.004,Acetobacterium woodii,DSM1030,30,observed_biomass_yield_H2,0.82,0.08,SD biological triplicates,gDW mol_H2^-1,H2/CO2 gas feed; yeast extract medium; observed balanced growth,Table 1 H2/CO2 row
+neuendorf2021,10.1016/j.ymben.2021.09.004,Acetobacterium woodii,DSM1030,30,specific_growth_rate,0.054,0.002,SD biological triplicates,h^-1,H2/CO2 chemostat at nominal D 0.05 h^-1,Table 2 H2/CO2 row
+neuendorf2021,10.1016/j.ymben.2021.09.004,Acetobacterium woodii,DSM1030,30,specific_H2_consumption,66.9,7.5,SD biological triplicates,mmol_H2 gDW^-1 h^-1,H2/CO2 chemostat; growth-linked uptake not resting-cell assay,Table 2 H2/CO2 row
+neuendorf2021,10.1016/j.ymben.2021.09.004,Acetobacterium woodii,DSM1030,30,acetate_yield_H2,0.228,0.012,SD biological triplicates,mol_acetate mol_H2^-1,H2/CO2 chemostat; observed product yield,Table 1 H2/CO2 row
+shin2018,10.1261/rna.068239.118,Acetobacterium bakii,DSM8239,10,specific_growth_rate,0.16,0.04,reported plus/minus; type not recovered,d^-1,H2/CO2 batch 80:20 at 200 kPa; autotrophic growth,Figure 3 and results
+shin2018,10.1261/rna.068239.118,Acetobacterium bakii,DSM8239,20,specific_growth_rate,0.53,0.02,reported plus/minus; type not recovered,d^-1,H2/CO2 batch 80:20 at 200 kPa; autotrophic growth,Figure 3 and results
+munoz2025,10.1002/bit.28904,Acetobacterium woodii,,30,DW_specific_first_order_H2_coefficient,19.36,,,L gDW^-1 h^-1,Washed cells initial-rate experiment; pH7; coefficient not uptake rate,Table 2 IR row

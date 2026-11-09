@@ -1,0 +1,119 @@
+{
+  "corner_scope": "Nominal landmarks fixed; independent reported marginal ranges, not a joint confidence region",
+  "corners": [
+    {
+      "temperature_c": 4,
+      "opponent": "methanogenic strain MSB",
+      "nominal_pressure_pa": 80,
+      "basis": "culture",
+      "minimum_raw_threshold_pa": -30.0,
+      "maximum_threshold_pa": 42.85714285714286,
+      "minimum_physical_corner_pa": 0.0,
+      "negative_threshold_corners": 6
+    },
+    {
+      "temperature_c": 4,
+      "opponent": "methanogenic strain MSB",
+      "nominal_pressure_pa": 80,
+      "basis": "dry_mass",
+      "minimum_raw_threshold_pa": 9.999999999999986,
+      "maximum_threshold_pa": 68.15489749430525,
+      "minimum_physical_corner_pa": 9.999999999999986,
+      "negative_threshold_corners": 0
+    },
+    {
+      "temperature_c": 15,
+      "opponent": "methanogenic strain MSP",
+      "nominal_pressure_pa": 10,
+      "basis": "culture",
+      "minimum_raw_threshold_pa": -3.0769230769230766,
+      "maximum_threshold_pa": 6.675191815856778,
+      "minimum_physical_corner_pa": 0.0,
+      "negative_threshold_corners": 3
+    },
+    {
+      "temperature_c": 15,
+      "opponent": "methanogenic strain MSP",
+      "nominal_pressure_pa": 10,
+      "basis": "dry_mass",
+      "minimum_raw_threshold_pa": 1.25,
+      "maximum_threshold_pa": 8.585418933623505,
+      "minimum_physical_corner_pa": 1.25,
+      "negative_threshold_corners": 0
+    },
+    {
+      "temperature_c": 30,
+      "opponent": "methanogenic strain MSB",
+      "nominal_pressure_pa": 1000,
+      "basis": "culture",
+      "minimum_raw_threshold_pa": -985.3932584269662,
+      "maximum_threshold_pa": 497.75141339729316,
+      "minimum_physical_corner_pa": 43.62416107382546,
+      "negative_threshold_corners": 12
+    },
+    {
+      "temperature_c": 30,
+      "opponent": "methanogenic strain MSB",
+      "nominal_pressure_pa": 1000,
+      "basis": "dry_mass",
+      "minimum_raw_threshold_pa": 266.8049792531117,
+      "maximum_threshold_pa": 890.4725997031073,
+      "minimum_physical_corner_pa": 266.8049792531117,
+      "negative_threshold_corners": 0
+    }
+  ],
+  "dry_mass_witness": [
+    {
+      "temperature_c": 4,
+      "opponent": "methanogenic strain MSB",
+      "pressure_pa": 72,
+      "acetogen_vmax_culture": 240,
+      "acetogen_km_pa": 220,
+      "methanogen_vmax_culture": 120,
+      "methanogen_km_pa": 40,
+      "acetogen_mass_mg": 4.2,
+      "methanogen_mass_mg": 5.8,
+      "methanogen_threshold_pa": 0.1,
+      "acetogen_threshold_pa": 5.301608336847153,
+      "acetogen_specific_rate": 13.293889248405291,
+      "methanogen_specific_rate": 13.29388924840529
+    },
+    {
+      "temperature_c": 15,
+      "opponent": "methanogenic strain MSP",
+      "pressure_pa": 10,
+      "acetogen_vmax_culture": 640,
+      "acetogen_km_pa": 260,
+      "methanogen_vmax_culture": 200,
+      "methanogen_km_pa": 190,
+      "acetogen_mass_mg": 4.2,
+      "methanogen_mass_mg": 7.0,
+      "methanogen_threshold_pa": 1.0,
+      "acetogen_threshold_pa": 7.0,
+      "acetogen_specific_rate": 1.7381857686040194,
+      "methanogen_specific_rate": 1.2921751615218953
+    },
+    {
+      "temperature_c": 30,
+      "opponent": "methanogenic strain MSB",
+      "pressure_pa": 900,
+      "acetogen_vmax_culture": 700,
+      "acetogen_km_pa": 570,
+      "methanogen_vmax_culture": 620,
+      "methanogen_km_pa": 140,
+      "acetogen_mass_mg": 4.2,
+      "methanogen_mass_mg": 5.8,
+      "methanogen_threshold_pa": 1.0,
+      "acetogen_threshold_pa": 189.22577854671272,
+      "acetogen_specific_rate": 92.49278152069297,
+      "methanogen_specific_rate": 92.49278152069297
+    }
+  ],
+  "witness_scope": "Illustrative 10% lower 4C and 30C crossovers; 15C dominance above 10 Pa treated as an inequality",
+  "common_biomass": "Same acetogen and MSB mass across temperatures; not a fitted or probabilistic estimate",
+  "vant_hoff_30_over_4": {
+    "0": 12.413783968796068,
+    "-20000": 10.305849076663195,
+    "-28000": 9.566555956727642
+  }
+}

@@ -1,0 +1,15 @@
+source_id,organism,temperature_C,pH,quantity_type,value,reported_plusminus,original_unit,assay,uncertainty_or_limit,locator
+depoorter2007,M. thermautotrophicus DSM1053,65,7.0 +/-0.1,Pirt true Y,3.1,0.3,gDW/molCH4,dissolved H2 ~1kPa; nutrient-controlled,reported regression +/-; convention unresolved,results; Fig5A
+depoorter2007,M. thermautotrophicus DSM1053,65,7.0 +/-0.1,Pirt true Y,3.1,0.1,gDW/molCH4,dissolved H2 ~5kPa; nutrient-controlled,reported regression +/-; convention unresolved,results; Fig5A
+depoorter2007,M. thermautotrophicus DSM1053,65,7.0 +/-0.1,Pirt true Y,6.9,0.5,gDW/molCH4,dissolved H2 ~15 or25kPa; nutrient-controlled,reported regression +/-; convention unresolved,results; Fig5A
+depoorter2007,M. thermautotrophicus DSM1053,65,7.0 +/-0.1,apparent Y,1.5,0.1,gDW/molCH4,H2-controlled cultures,reported regression +/-; not true Y,results; Fig5B
+depoorter2007,M. thermautotrophicus DSM1053,65,7.0 +/-0.1,graphical Pirt m range,~0.01 to~0.09,,molCH4/gDW/h,dissolved H2 ~1-25kPa,coarse visual intercept range; no numerical fit,Fig5A local fig5.jpg
+goyal2015,M. maripaludis S2 DSM14266,37,5.6,observed exponential Y,3.549,0.149,gDCW/molCH4,80:20H2:CO2 batch; total250 to100kPa,reported +/-; duplicate batches; convention unresolved,results Cell growth
+goyal2015,M. maripaludis S2 DSM14266,37,5.6,fitted NGAM,7.836,,mmolATP/gDCW/h,batch regressions +iMM518 model,no interval recovered; not directly measured substrate m,results GAM NGAM and ATP gain
+goyal2015,M. maripaludis S2 DSM14266,37,5.6,fitted GAM,27.14,,mmolATP/gDCW,batch regressions +iMM518 model,no interval recovered; not a per-time coefficient,results GAM NGAM and ATP gain
+morii1987,M. arboriphilus A2,,unverified,observed Y range,1.06 to1.42,,g cell/molCH4,H2-limited chemostat D0.21-0.43/day,unpaired range; dry-mass basis unverified,primary abstract only
+schoenheit1980,M. thermoautotrophicum original name,65,7,observed Y,1.6,,g/molCH4,H2/CO2 mineral; gas-supply nonlimited,no interval recovered; mass basis abstract,primary publisher abstract
+schoenheit1980,M. thermoautotrophicum original name,65,7,observed Y under limitation,~3,,g/molCH4,H2 orCO2 limited,no interval recovered; not proven true Pirt Y,primary publisher abstract
+bonk2019,mixed VFA-fed community,37,not extracted,model-constrained maintenance upper bound,<0.2,,kJ/Cmol-biomass/h,CSTR D0.18 and0.07/day,not isolated hydrogenotroph,abstract and model comparison
+bonk2019,mixed VFA-fed community,37,not extracted,corresponding model ATP maintenance bound,<0.12,,mmolATP/gDW/h,authors TBA-to-dFBA correspondence,conditional conversion; not direct H2 coefficient,abstract and model comparison
+franzmann1997,Methanogenium frigidum,15,6.5-7.9 growth range,maximum specific growth,0.24,,/day,H2/CO2;15C optimum,no Y or maintenance recovered,primary publisher abstract

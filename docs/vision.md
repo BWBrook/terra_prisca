@@ -116,6 +116,10 @@ Fidelity is measured against the published figures, digitised.
    now implements the published kinetics with explicit rate units. It exposes
    a source-normalization discrepancy and still lacks the individual
    cessation thresholds, so competition is not yet coupled to climate.
+   [Growth-yield and maintenance sources](../models/haze_world/evidence/growth-parameters.md)
+   now provide quantitative anchors. They also expose incompatible assay
+   transfers, so a matched growth benchmark is needed before parameterizing
+   the new competition model.
    A [solar-response search](../models/haze_response/solar-responses.md) found
    a second Sun-age checkpoint, but no matched hazy luminosity grid.
    This direction may lead to a paper.

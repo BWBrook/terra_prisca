@@ -33,5 +33,13 @@
       "bytes": 798,
       "sha256": "c95b4be023e5502fbb30eb322621e5612bbbf850f99d1b6669e98b95eb370480"
     }
+  },
+  "abstract_bounds": {
+    "source": "original abstract, printed p.153, lines14-15 in indexed PDF",
+    "methanogen_pa": 2,
+    "homoacetogen_pa": 200,
+    "exception": "MSP at or below10C",
+    "scope": "coarse descriptive source ranges, not strain-temperature measurements or statistical limits",
+    "checked": "2026-11-09"
   }
 }
