@@ -88,8 +88,12 @@ Fidelity is measured against the published figures, digitised.
    assumptions. An [adaptive-dynamics
    preview](../models/haze_world/evolution-scope.md) found that unconstrained
    selection on the thermal optimum removes the threshold equilibrium and
-   leaves the passive, supply-limited climate. The open question is which
-   non-evolvable constraint, if any, keeps a biological temperature signal.
+   leaves the passive climate when peak growth is fixed. The
+   [independent review](../models/haze_world/review/evolution-review-2026-11-09.md)
+   shows that a growth trade-off can retain a contrast under other increasing
+   methane losses. The open question is which physiological and chemical
+   constraints leave a temperature signal, and whether it regulates climate
+   against changing conditions.
    This direction may lead to a paper.
 2. **Evolving daisies.** Give the daisies a heritable optimum temperature and
    test whether regulation survives natural selection, the core of the

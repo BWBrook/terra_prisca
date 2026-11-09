@@ -1,0 +1,19 @@
+temperature_C,strain,Vmax_nmol_h_for20mL,Vmax_95CI_halfwidth,Km_Pa,Km_95CI_halfwidth
+4,Acetobacterium bakii,270,30,190,30
+4,methanogenic strain MSB,110,10,50,10
+4,methanogenic strain MSP,80,35,640,180
+10,Acetobacterium bakii,440,50,180,10
+10,methanogenic strain MSB,320,10,70,5
+10,methanogenic strain MSP,180,50,300,
+15,Acetobacterium bakii,590,50,300,40
+15,methanogenic strain MSB,470,70,110,20
+15,methanogenic strain MSP,240,40,160,30
+20,Acetobacterium bakii,740,100,400,40
+20,methanogenic strain MSB,540,90,130,30
+20,methanogenic strain MSP,320,30,170,20
+25,Acetobacterium bakii,790,90,480,80
+25,methanogenic strain MSB,590,50,140,20
+25,methanogenic strain MSP,320,20,190,20
+30,Acetobacterium bakii,760,60,520,50
+30,methanogenic strain MSB,560,60,160,20
+30,methanogenic strain MSP,360,40,190,30

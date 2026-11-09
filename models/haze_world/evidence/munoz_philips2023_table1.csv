@@ -1,0 +1,9 @@
+strain,H2_threshold_Pa,H2_threshold_SD_Pa,final_acetate_mM,final_acetate_SD_mM,critical_Gibbs_kJ_per_mol_acetate,estimated_ATP_per_acetate
+Clostridium autoethanogenum,1990,67,1.03,0.38,-75.8,1.01
+Clostridium ljungdahlii,289,75,6.82,0.87,-51.4,0.69
+Acetobacterium woodii,46,17,0.94,0.09,-37.4,0.5
+Acetobacterium wieringae,24,10,0.99,0.46,-30.9,0.41
+Acetobacterium malicum,21,10,0.9,0.03,-29.4,0.39
+Sporomusa sphaeroides,15,4,4.09,0.48,-22.6,0.3
+Sporomusa ovata DSM2663,7,2,10.65,0.7,-12.8,0.17
+Sporomusa ovata DSM2662,6,2,6.44,0.64,-11.8,0.16

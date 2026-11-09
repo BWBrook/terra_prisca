@@ -156,8 +156,9 @@ temperature the case allows (297 K). The bistable corner at the lower right
 comes from the warm edge, which is tied to the cold edge by the fixed width w.
 
 The default T₀ = 265 K has no published anchor. Eager-Nash et al. (2023) give
-a haze-free 3D zero-methane baseline at the same epoch, S/S₀ and pressure.
-Interpolated to case B's CO₂, that baseline is about 283 K. At that T₀ the trap
+a separate haze-free 3D zero-methane reference at the same epoch and similar
+sunlight and background pressure. Our chosen log-CO₂ interpolation to case B's
+CO₂ gives about 283 K; it is not a published case-B baseline. At that T₀ the trap
 needs cold edges of 284 K or higher, so the default 281-K edge has none. The
 comparison is across models, not a splice; see the
 [evolution scope](evolution-scope.md).
@@ -187,8 +188,14 @@ comparison is across models, not a splice; see the
   Unconstrained selection on the thermal optimum moves the climate to the
   passive, supply-limited temperature: 273.4 K in case B at potential ratio
   0.22, with the whole path inside Arney's interval. A hotter-is-better
-  trade-off does not prevent this. The scope sets out the constraint,
-  extinction and climate scenarios for the variant. This links the haze-world
+  trade-off stays near that control under linear loss, but this does not
+  generalize to all increasing loss laws: an
+  [independent audit](review/evolution-review-2026-11-09.md) finds a 4.61 K
+  contrast under an illustrative logarithmic loss. The trade-off parameters
+  are not calibrated to methanogens. The scope sets out the constraint,
+  extinction and climate scenarios, with source packs for
+  [thermal margins](evidence/thermal-margins.md) and
+  [hydrogen competition](evidence/hydrogen-competition.md). This links the haze-world
   to the "evolving daisies" re-imagining in
   [`docs/vision.md`](../../docs/vision.md).
 - **Luminosity.** All results are for one epoch. A solar sweep, the analogue
@@ -203,3 +210,6 @@ curves and bounded interface come from Codex's extraction of Arney et al.
 checked the equilibrium/dynamics distinction and source statements, repaired
 rare-biomass integration, corrected the Earth-mass abiotic flux, regenerated
 the experiments and recovered separate low-methane comparison checkpoints.
+Codex and review subagents independently checked the evolution preview,
+derived the singular-strategy and loss-shape checks, corrected the scope's
+generalizations and compiled the thermal and hydrogen-competition evidence.
