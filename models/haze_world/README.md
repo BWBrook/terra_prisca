@@ -170,6 +170,14 @@ is a named variant; the budget above is unchanged. Tests are in
 [`tests/test_darwinian.py`](../../tests/test_darwinian.py).
 Scope and assumptions: [evolution-scope.md](evolution-scope.md).
 
+**Independent review, 9 November 2026:** the 205 endpoint climates and full
+local stability checks reproduce. The reported sensitivity ratios below use
+finite ±0.5% supply changes rather than converged local derivatives, and panel
+(d) labels a net cold edge as a bridge-temperature threshold. Their numerical
+thresholds and associated prose need correction; see the
+[review and analytical audit](review/darwinian-review-2026-11-09.md).
+The production variant and its original figure are retained pending that repair.
+
 ```bash
 uv run python -m terra_prisca.haze_world.darwinian
 ```
@@ -283,6 +291,10 @@ control, the abiotic methane level also varies with loss shape.
   Differences in atmosphere, radiative transfer, clouds and ice must be resolved
   or retained as separate scenarios before these replace a bridge.
 - **Loss law.** No matched per-ratio sustaining-flux curve was recovered.
+  A [new source review](evidence/loss-elasticity.md) recovers published
+  haze-free finite-secant elasticities around 0.29–0.34 and separate Arney
+  2018 haze-threshold anchors. Neither identifies the local loss slope near
+  r = 0.2 for this climate case.
   A shielding-induced reduction at fixed r does not establish a negative
   slope of total loss along increasing r. Recovering sustaining fluxes would
   constrain equilibrium balance; transients also require methane column

@@ -1,0 +1,10 @@
+{
+  "reviewed_commit": "88fbad8",
+  "endpoints": 205,
+  "all_full_jacobians_stable": true,
+  "max_eigenvalue_rounding_error": 4.959136231077144e-07,
+  "max_regulation_absolute_error": 0.5073760359688748,
+  "max_cold_edge_vs_critical_bridge_t0_difference_k": 16.689939893648415,
+  "max_linear_loss_plot_threshold_error_k": 0.8467441266416245,
+  "reinvasion_labels_reproduced": true
+}

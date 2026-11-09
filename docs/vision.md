@@ -98,6 +98,9 @@ Fidelity is measured against the published figures, digitised.
    hotter-is-better trade-off when methane loss rises weakly with abundance,
    and with a hard optimum floor high enough to become the set point. Both
    cases also open a cold trap unless the methane-free climate is warm.
+   An [independent stage-1 review](../models/haze_world/review/darwinian-review-2026-11-09.md)
+   confirms the endpoint and stability calculations but requests correction
+   of the reported local sensitivities and return-threshold interpretation.
    This direction may lead to a paper.
 2. **Evolving daisies.** Give the daisies a heritable optimum temperature and
    test whether regulation survives natural selection, the core of the

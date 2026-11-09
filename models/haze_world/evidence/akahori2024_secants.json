@@ -1,0 +1,46 @@
+{
+  "source_doi": "10.3847/1538-4357/ad47f3",
+  "version": "version of record, ApJ970:20, 2024-07-20",
+  "source_url": "https://iopscience.iop.org/article/10.3847/1538-4357/ad47f3/pdf",
+  "source_sha256": "936aee8f2d00211b06715ca8745d431f1f3c224db8aaef0c1ce7fc4477706358",
+  "figure": "6a, PDF p10; native image akahori2024-figure6-000.png",
+  "figure_sha256": "2fd28a1d8e922aa1e217a161aceaab6e98181a9215dd9c6d46d5478916236508",
+  "calibration": {
+    "flux1_x": 224.0,
+    "flux10_x": 393.0,
+    "pCH4_1e_minus6_y": 256.0,
+    "pCH4_1e_minus4_y": 166.0,
+    "pCH4_1e_minus2_y": 76.0
+  },
+  "conditions": {
+    "star": "young Sun2.8Ga, wavelength scaling Claire2012",
+    "bolometric_relative_to_present": 0.8,
+    "H2_surface_flux_molecules_cm2_s": 10000000000.0,
+    "CO_surface_flux": 0,
+    "pressure_bar": 1,
+    "climate": "standard imposed vertical thermal profile, not coupled hazy climate"
+  },
+  "quantity": "imposed net CH4 surface source vs surface pCH4; not gross destruction from panels d/j",
+  "domain": "haze cases with deposition>0.1TmolC/yr are omitted in publication; read-offs all CH4/CO2<.03",
+  "uncertainty": "endpoint locations +/-5native pixels and tick centres +/-2pixels; conservative read-off envelopes, not statistical uncertainty or local slope bounds",
+  "secants": [
+    {
+      "co2_bar": 0.01,
+      "elasticity_secant": 0.3437944723241705,
+      "lower_digitization_envelope": 0.2629083587711892,
+      "upper_digitization_envelope": 0.45252525252525255
+    },
+    {
+      "co2_bar": 0.03,
+      "elasticity_secant": 0.3086336740182894,
+      "lower_digitization_envelope": 0.2387637135779167,
+      "upper_digitization_envelope": 0.4003108003108003
+    },
+    {
+      "co2_bar": 0.1,
+      "elasticity_secant": 0.28893365227244117,
+      "lower_digitization_envelope": 0.2249888839484215,
+      "upper_digitization_envelope": 0.3717171717171717
+    }
+  ]
+}

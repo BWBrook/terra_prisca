@@ -1,0 +1,53 @@
+{
+  "source_doi": "10.1089/ast.2017.1666",
+  "accepted_manuscript": "https://arxiv.org/abs/1711.01675v1",
+  "accepted_pdf_sha256": "0945fbce9940fa4218242bfb8f9a5133d195115e1da92c70b189c0c73e8b0e80",
+  "accepted_pdf_pages": [
+    42,
+    44
+  ],
+  "accepted_figure_numbers": [
+    4,
+    5
+  ],
+  "final_journal_article": "https://pmc.ncbi.nlm.nih.gov/articles/PMC5867516/",
+  "final_journal_fig4": "https://cdn.ncbi.nlm.nih.gov/pmc/blobs/5ed4/5867516/2ba0a9424ff2/fig-4.jpg",
+  "final_journal_fig5": "https://cdn.ncbi.nlm.nih.gov/pmc/blobs/5ed4/5867516/fe8096a5173a/fig-5.jpg",
+  "journal_fig4_sha256": "45e17f4e111e3baff855a20957d0f33bf632bf92eea10f56b23581f74a1d646e",
+  "journal_fig5_sha256": "984513febdab233d163bc074b8b69e150614292dfac53ff2ed8819ac77868eb1",
+  "version_comparison": "Journal raster contours visually agree with accepted-manuscript vector positions; palettes differ. No final-PDF vector extraction was performed.",
+  "paired_tau1_anchors": [
+    {
+      "fco2": 0.01,
+      "star": "2.7Ga Sun",
+      "sorg": "1x",
+      "pressure_bar": 1,
+      "log10_flux": 11.456525374405963,
+      "flux_molecules_cm2_s": 286104951750.85144,
+      "log10_surface_ch4_co2": -0.5150125945744026,
+      "surface_ch4_co2": 0.3054832521545649,
+      "horizontal_reading_envelope_log10_flux": 0.006,
+      "horizontal_reading_envelope_log10_ratio": 0.015,
+      "scope": "Paired highlighted tau190=1 contours; slice interpolates plotted field, not recovered raw run"
+    },
+    {
+      "fco2": 0.018,
+      "star": "2.7Ga Sun",
+      "sorg": "1x",
+      "pressure_bar": 1,
+      "log10_flux": 11.500158393260703,
+      "flux_molecules_cm2_s": 316343119732.2131,
+      "log10_surface_ch4_co2": -0.5661567155834843,
+      "surface_ch4_co2": 0.2715459215940986,
+      "horizontal_reading_envelope_log10_flux": 0.006,
+      "horizontal_reading_envelope_log10_ratio": 0.015,
+      "scope": "Paired highlighted tau190=1 contours; slice interpolates plotted field, not recovered raw run"
+    }
+  ],
+  "rejected_30x_flux_anchors": "At these CO2 slices, black tau1 line is interrupted by its 0 annotation in Fig4; no numerical interpolation across hidden stroke accepted.",
+  "local_elasticity_identified": false,
+  "local_elasticity_limit": "One paired tau1 point per fixedCO2/scenario cannot identify derivative. TwoCO2 anchors cannot be differenced as a fixedCO2 slope.",
+  "band_rejection_reason": "Colours use slightly different optical-depth normalization; figures use different interpolation meshes; endpointcolour correspondence is not exact physicaltau correspondence. Neither graphical envelopes nor neighboringrow sensitivity bounds localn or uncertainty in true modeldata.",
+  "closure_compatibility": "2018 chemistry includes Sorg; fixed1bar,N2background,O2=1e-8,2.7Ga Sun0.8x1360. SameCO2 as2016 does not make matched climate/photochemistry. RequiredsurfaceCH4flux includes this prescribed chemical environment.",
+  "underlying_outputs": "No per-run fluxratio archive found in accessible paper/supplement links or currentAtmosPHOTOCHEM/OUTPUT directory (readmeonly). No modelrun or authorcontact attempted."
+}
