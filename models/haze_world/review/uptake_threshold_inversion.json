@@ -1,0 +1,46 @@
+{
+  "enthalpy_J_per_mol_reaction": -270700.0,
+  "vant_hoff_ratio_30_over_4": 12.41552394014172,
+  "bases": {
+    "culture": {
+      "implied_acetogen_threshold_pa": {
+        "4C_vs_MSB_at_80Pa": [
+          16.425855513307994,
+          17.251732101616625
+        ],
+        "30C_vs_MSB_at_1000Pa": [
+          94.5273631840796,
+          95.21295143212956
+        ],
+        "15C_vs_MSP_at_10Pa": [
+          2.645556690500511,
+          4.074074074074074
+        ]
+      },
+      "implied_ratio_30_over_4": 5.634023338777493,
+      "predicted_15C_from_4C_pa": 51.669659414880684,
+      "predicted_15C_from_30C_pa": 23.447102873275846,
+      "implied_15C_from_MSP_landmark_pa": 3.3598153822872927
+    },
+    "dry_mass": {
+      "implied_acetogen_threshold_pa": {
+        "4C_vs_MSB_at_80Pa": [
+          51.87552565180825,
+          52.190378710337775
+        ],
+        "30C_vs_MSB_at_1000Pa": [
+          747.7088948787062,
+          747.8124240706245
+        ],
+        "15C_vs_MSP_at_10Pa": [
+          6.03269354394343,
+          6.796440489432704
+        ]
+      },
+      "implied_ratio_30_over_4": 14.370905899639945,
+      "predicted_15C_from_4C_pa": 159.6625594616738,
+      "predicted_15C_from_30C_pa": 184.808601616952,
+      "implied_15C_from_MSP_landmark_pa": 6.414567016688067
+    }
+  }
+}

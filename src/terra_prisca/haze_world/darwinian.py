@@ -247,10 +247,34 @@ def reinvasion_window(q: Params, loss: Loss) -> dict:
             "t0_max_k": float((q.t_opt_k + half - z * t1) / (1 - z))}
 
 
-def climate_slopes(r: float, q: Params, h: float = 1e-9) -> tuple[float, float]:
-    """One-sided dT/dr. They differ at a vertex of the piecewise-linear extracted response."""
-    t = float(temperature_k(r, q))
-    return (t - float(temperature_k(r - h, q))) / h, (float(temperature_k(r + h, q)) - t) / h
+def climate_vertex(r: float, q: Params) -> int | None:
+    """Index of the extracted-response vertex at r, within root-finder precision, else None."""
+    ratios = response(q.case).ratios
+    i = int(np.argmin(np.abs(ratios - r)))
+    return i if abs(ratios[i] - r) <= 1e-12 + 1e-9 * ratios[i] else None
+
+
+def climate_slopes(r: float, q: Params) -> tuple[float, float]:
+    """Exact one-sided dT/dr from the response geometry: the log bridge below the first
+    extracted point, linear segments inside, flat above the last. The two differ only at a vertex."""
+    resp = response(q.case)
+    x, y = resp.ratios, resp.temperatures_k
+    seg = np.diff(y) / np.diff(x)
+
+    def bridge(z: float) -> float:
+        s = q.bridge_scale
+        return float((y[0] - q.t_zero_k) / np.log1p(x[0] / s) / (s + max(z, 0.0)))
+
+    def inside(k: int) -> float:
+        if k < 0:
+            return bridge(min(r, x[0]))
+        return float(seg[k]) if k < len(seg) else 0.0
+
+    v = climate_vertex(r, q)
+    if v is not None:
+        return inside(v - 1), inside(v)
+    k = int(np.searchsorted(x, r)) - 1
+    return inside(k), inside(k)
 
 
 def local_regulation(q: Params, loss: Loss, e: dict) -> dict:
@@ -271,7 +295,7 @@ def local_regulation(q: Params, loss: Loss, e: dict) -> dict:
         s_r = cr * q.maintenance_flux * rho_t * t_r / (rho - 1.0) ** 2
         out[side] = {"ratio": l_r / (l_r - s_r), "dT_dlnS": t_r * cr * q.donor_flux / (l_r - s_r),
                      "control_dT_dlnS": t_r * cr * q.donor_flux / l_r}
-    out["at_vertex"] = not np.isclose(slopes[0], slopes[1], rtol=1e-6, atol=1e-9)
+    out["at_vertex"] = climate_vertex(e["r"], q) is not None
     return out
 
 

@@ -104,3 +104,13 @@ Then add shared hydrogen, growth yields, maintenance and acetate fate. The
 [earlier evidence pack](evidence/hydrogen-competition.md) explains why a
 chemical uptake threshold is neither Km nor a net-growth threshold, and why
 acetogenesis need not permanently remove methane production.
+
+## Review: inverting the published crossovers
+
+[Claude's review](review/uptake-review-2026-11-09.md) inverts the three crossover
+pressures in the text for the implied *A. bakii* threshold. Equal dry mass
+makes the 4 °C threshold exceed the 15 °C one, contradicting the reported
+monotone decline. The contradiction persists even at the joint extreme of
+every published kinetic and biomass limit. Whole-culture rates are consistent
+within those limits. The culture basis is therefore the reproduction target.
+Population coupling still needs per-biomass specific rates with yields.

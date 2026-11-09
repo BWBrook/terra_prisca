@@ -112,3 +112,24 @@ def test_reinvasion_threshold_is_the_bridge_endpoint_that_reaches_the_net_growth
     assert cold_edge_k(q) < e["t_k"]
     assert invades_lifeless(q, LINEAR, w["t0_min_k"] + 0.05) and not invades_lifeless(q, LINEAR, w["t0_min_k"] - 0.05)
     assert invades_lifeless(q, LINEAR, 280.9) and 280.9 < e["t_k"]
+
+
+def test_vertex_flag_uses_response_geometry_not_finite_differences():
+    from terra_prisca.haze_world.darwinian import climate_slopes
+    from terra_prisca.haze_world.methane_budget import temperature_k
+    from terra_prisca.haze_world.methane_budget import response
+    c = Constraint(floor_k=289.0)
+    e = evolved(P, c, LOSSES[0])
+    q = strain(P, e["theta_k"], c)
+    reg = local_regulation(q, LOSSES[0], e)
+    assert not reg["at_vertex"] and reg["left"] == reg["right"]
+    h = 1e-7
+    fd = (temperature_k(e["r"] + h, q) - temperature_k(e["r"] - h, q)) / (2 * h)
+    assert climate_slopes(e["r"], q)[0] == pytest.approx(fd, rel=1e-6)
+    resp = response(P.case)
+    r, t = float(resp.ratios[5]), float(resp.temperatures_k[5])
+    vertex = local_regulation(replace(P, t_opt_k=t), LINEAR, {"r": r, "t_k": t})
+    assert vertex["at_vertex"] and vertex["left"]["dT_dlnS"] != vertex["right"]["dT_dlnS"]
+    for r0 in (0.3 * resp.ratios[0], resp.ratios[0]):
+        assert climate_slopes(r0, P)[0] == pytest.approx(
+            (temperature_k(r0, P) - temperature_k(r0 - 1e-9, P)) / 1e-9, rel=1e-5)
