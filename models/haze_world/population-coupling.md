@@ -24,6 +24,11 @@ Time is years. Uptake and growth use the same
 [two-guild physiology](two-guilds.md) and [source evidence](evidence/hydrogen-competition.md)
 that generated the competition maps.
 
+Temperature still follows the quasi-static published response `T(r)`;
+there is no separate heat-capacity or ocean-temperature state. “Full” here
+refers to the explicit resource, population, acetate and methane inventories,
+not a dynamically resolved climate or geochemical system.
+
 The climate parameter object retains the older model's `growth_ratio_max`,
 `t_opt_k`, `t_halfwidth_k`, `thermal` and `maintenance_flux` fields for its climate
 interface, but the new population equations do not use them. In particular,
