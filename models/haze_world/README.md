@@ -311,6 +311,16 @@ general equivalence.
 **Code.** [`strains.py`](../../src/terra_prisca/haze_world/strains.py), with
 tests in [`tests/test_strains.py`](../../tests/test_strains.py).
 
+**Independent review, 9 November 2026:** the reported H stranding contrast
+depends on the follow-up horizon. All 19 extended cold-baseline H cases
+eventually collapse, including the low-mutation controls; the final supply
+has no stationary living equilibrium under the assumed bridge. Count and
+trait-grid choices substantially change collapse timing. Declining seed
+clones can also be rescued by new mutations. Results 9–10 and the census
+description below need reinterpretation; see the
+[review and reproducible sensitivity runs](review/strains-review-2026-11-09.md).
+Production code and original figures are retained for the next revision.
+
 ```bash
 uv run python -m terra_prisca.haze_world.strains
 ```

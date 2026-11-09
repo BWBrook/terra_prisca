@@ -1,0 +1,178 @@
+{
+  "reviewed_commit": "85041a0",
+  "final_potential": 0.02,
+  "loss": "power n=1",
+  "t_zero": 265.0,
+  "donor_flux": 25010501340.933548,
+  "maximum_ratio": 0.020543771586767096,
+  "rows": [
+    {
+      "theta": 285.5,
+      "rho_peak": 2.788806855385943,
+      "production_roots": [
+        {
+          "r": 0.0005437715867670953,
+          "stable": true,
+          "t_k": 265.59624203177106,
+          "eta": 0.0,
+          "domain": "bridge"
+        }
+      ],
+      "independent_roots": [
+        {
+          "r": 0.0005437715867670953,
+          "t_k": 265.59624203177106,
+          "eta": 0.0,
+          "flow_derivative": -9.999999999998104e-05,
+          "stable": true
+        }
+      ]
+    },
+    {
+      "theta": 286.0,
+      "rho_peak": 2.9206401758036815,
+      "production_roots": [
+        {
+          "r": 0.0005437715867670953,
+          "stable": true,
+          "t_k": 265.59624203177106,
+          "eta": 0.0,
+          "domain": "bridge"
+        }
+      ],
+      "independent_roots": [
+        {
+          "r": 0.0005437715867670953,
+          "t_k": 265.59624203177106,
+          "eta": 0.0,
+          "flow_derivative": -9.999999999998104e-05,
+          "stable": true
+        }
+      ]
+    },
+    {
+      "theta": 286.5,
+      "rho_peak": 3.0582124819285355,
+      "production_roots": [
+        {
+          "r": 0.0005437715867670953,
+          "stable": true,
+          "t_k": 265.59624203177106,
+          "eta": 0.0,
+          "domain": "bridge"
+        }
+      ],
+      "independent_roots": [
+        {
+          "r": 0.0005437715867670953,
+          "t_k": 265.59624203177106,
+          "eta": 0.0,
+          "flow_derivative": -9.999999999998104e-05,
+          "stable": true
+        }
+      ]
+    },
+    {
+      "theta": 287.0,
+      "rho_peak": 3.201751398406158,
+      "production_roots": [
+        {
+          "r": 0.0005437715867670953,
+          "stable": true,
+          "t_k": 265.59624203177106,
+          "eta": 0.0,
+          "domain": "bridge"
+        }
+      ],
+      "independent_roots": [
+        {
+          "r": 0.0005437715867670953,
+          "t_k": 265.59624203177106,
+          "eta": 0.0,
+          "flow_derivative": -9.999999999998104e-05,
+          "stable": true
+        }
+      ]
+    },
+    {
+      "theta": 287.5,
+      "rho_peak": 3.3514926588438336,
+      "production_roots": [
+        {
+          "r": 0.0005437715867670953,
+          "stable": true,
+          "t_k": 265.59624203177106,
+          "eta": 0.0,
+          "domain": "bridge"
+        }
+      ],
+      "independent_roots": [
+        {
+          "r": 0.0005437715867670953,
+          "t_k": 265.59624203177106,
+          "eta": 0.0,
+          "flow_derivative": -9.999999999998104e-05,
+          "stable": true
+        }
+      ]
+    }
+  ],
+  "evolutionary_endpoint": null,
+  "critical_supply_minima": [
+    {
+      "theta": 285.5,
+      "critical_potential": 0.020885225946206374,
+      "ratio_at_fold": 0.011728929437907923,
+      "temperature_at_fold": 273.73875951481944,
+      "singular_theta_at_fold": 285.5,
+      "current_potential": 0.02,
+      "max_quasi_steady_balance_per_yr": -8.852259462063736e-08
+    },
+    {
+      "theta": 286.0,
+      "critical_potential": 0.020888496116396177,
+      "ratio_at_fold": 0.012026604001665256,
+      "temperature_at_fold": 273.8919741475435,
+      "singular_theta_at_fold": 286.0,
+      "current_potential": 0.02,
+      "max_quasi_steady_balance_per_yr": -8.884961163961764e-08
+    },
+    {
+      "theta": 286.5,
+      "critical_potential": 0.020952583936635336,
+      "ratio_at_fold": 0.012359544628271659,
+      "temperature_at_fold": 274.0609062846118,
+      "singular_theta_at_fold": 286.5,
+      "current_potential": 0.02,
+      "max_quasi_steady_balance_per_yr": -9.525839366353352e-08
+    },
+    {
+      "theta": 287.0,
+      "critical_potential": 0.021074236931600134,
+      "ratio_at_fold": 0.012727477040492107,
+      "temperature_at_fold": 274.2446916566648,
+      "singular_theta_at_fold": 287.0,
+      "current_potential": 0.02,
+      "max_quasi_steady_balance_per_yr": -1.074236931600133e-07
+    },
+    {
+      "theta": 287.5,
+      "critical_potential": 0.02125085688306612,
+      "ratio_at_fold": 0.01313032447628039,
+      "temperature_at_fold": 274.4425358674324,
+      "singular_theta_at_fold": 287.5,
+      "current_potential": 0.02,
+      "max_quasi_steady_balance_per_yr": -1.2508568830661184e-07
+    },
+    {
+      "theta": null,
+      "critical_potential": 0.020878932296560883,
+      "ratio_at_fold": 0.011857082238231603,
+      "temperature_at_fold": 273.80497613693296,
+      "singular_theta_at_fold": 285.72261550319143,
+      "current_potential": 0.02,
+      "max_quasi_steady_balance_per_yr": -8.789322965608824e-08
+    }
+  ],
+  "scope": "No positive equilibrium under assumed265K bridge; does not alone rule out nonstationary full-system attractors or prove global extinction."
+}

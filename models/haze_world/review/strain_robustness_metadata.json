@@ -1,0 +1,20 @@
+{
+  "reviewed_commit": "85041a0",
+  "constraint": "H E=0.65",
+  "loss": "linear",
+  "bridge_T0_K": 265.0,
+  "initial_potential": 0.22,
+  "final_potential": 0.02,
+  "spinup_yr": 2000.0,
+  "decline_yr": 1000.0,
+  "trait_domain_K": [
+    245.5,
+    310.5
+  ],
+  "common_initial_theta_K": 285.5,
+  "scaling": "m=m0*(0.5/h)^2, B_min_rel=1e-6*h/0.5; raw cases hold both fixed",
+  "census_note": "Counts are model interventions, not integration timesteps",
+  "long_runs": 19,
+  "long_run_extinctions": 19,
+  "max_recorded_boundary_biomass_fraction": 0.0
+}

@@ -1,0 +1,92 @@
+[
+  {
+    "seed_theta": 285.0,
+    "mutation": 0.01,
+    "b_min_rel": 1e-09,
+    "check_yr": 1.0,
+    "extinct_at_yr": null,
+    "checkpoints": [
+      {
+        "t_yr": 500.0,
+        "potential_ratio": 0.22,
+        "r": 0.011071023590326327,
+        "t_k": 273.39254962879625,
+        "total_biomass": 2.191043998800138e-05,
+        "mean_theta_k": 272.07220631427253,
+        "singular_theta_k": 273.39254962879625,
+        "lag_k": -1.3203433145237113,
+        "living_bins": 25,
+        "total_rel": 0.9999677112438318
+      },
+      {
+        "t_yr": 5000.0,
+        "potential_ratio": 0.22,
+        "r": 0.08665450411635632,
+        "t_k": 290.5449253643869,
+        "total_biomass": 2.1910876794548863e-05,
+        "mean_theta_k": 290.2108744154471,
+        "singular_theta_k": 290.5449253643869,
+        "lag_k": -0.3340509489398187,
+        "living_bins": 25,
+        "total_rel": 0.9999876466008479
+      },
+      {
+        "t_yr": 20000.0,
+        "potential_ratio": 0.22,
+        "r": 0.18997660044456158,
+        "t_k": 284.6917381033827,
+        "total_biomass": 2.1910870026211453e-05,
+        "mean_theta_k": 285.06377960353495,
+        "singular_theta_k": 284.6917381033827,
+        "lag_k": 0.3720415001522497,
+        "living_bins": 26,
+        "total_rel": 0.9999873377015801
+      }
+    ]
+  },
+  {
+    "seed_theta": 285.5,
+    "mutation": 0.01,
+    "b_min_rel": 1e-09,
+    "check_yr": 1.0,
+    "extinct_at_yr": null,
+    "checkpoints": [
+      {
+        "t_yr": 500.0,
+        "potential_ratio": 0.22,
+        "r": 0.006367954606713731,
+        "t_k": 270.5484659731671,
+        "total_biomass": 2.191070394375809e-05,
+        "mean_theta_k": 271.6209010266531,
+        "singular_theta_k": 270.5484659731671,
+        "lag_k": 1.0724350534860037,
+        "living_bins": 26,
+        "total_rel": 0.9999797578861653
+      },
+      {
+        "t_yr": 5000.0,
+        "potential_ratio": 0.22,
+        "r": 0.08365566247545708,
+        "t_k": 290.19002022043367,
+        "total_biomass": 2.191087352342534e-05,
+        "mean_theta_k": 289.83695178970515,
+        "singular_theta_k": 290.19002022043367,
+        "lag_k": -0.3530684307285128,
+        "living_bins": 25,
+        "total_rel": 0.9999874973104684
+      },
+      {
+        "t_yr": 20000.0,
+        "potential_ratio": 0.22,
+        "r": 0.1893074685158082,
+        "t_k": 285.09317308953496,
+        "total_biomass": 2.191086844512734e-05,
+        "mean_theta_k": 285.4735653075446,
+        "singular_theta_k": 285.09317308953496,
+        "lag_k": 0.3803922180096606,
+        "living_bins": 25,
+        "total_rel": 0.9999872655426887
+      }
+    ]
+  }
+]

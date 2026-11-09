@@ -1,0 +1,50 @@
+[
+  {
+    "initial_percapita_growth": -0.4332461594579794,
+    "t_zero_k": 265.0,
+    "mutation": 0.0,
+    "b_min_rel": 1e-09,
+    "seed_theta_k": 285.0,
+    "abiotic_t_k": 265.596,
+    "steps_to_viable": 1,
+    "established": false,
+    "extinct_at_yr": 32.0,
+    "final_t_k": 265.596
+  },
+  {
+    "initial_percapita_growth": -0.4332461594579794,
+    "t_zero_k": 265.0,
+    "mutation": 0.01,
+    "b_min_rel": 1e-09,
+    "seed_theta_k": 285.0,
+    "abiotic_t_k": 265.596,
+    "steps_to_viable": 1,
+    "established": true,
+    "extinct_at_yr": "",
+    "final_t_k": 273.393
+  },
+  {
+    "initial_percapita_growth": -0.9073569549492846,
+    "t_zero_k": 265.0,
+    "mutation": 0.0,
+    "b_min_rel": 1e-09,
+    "seed_theta_k": 285.5,
+    "abiotic_t_k": 265.596,
+    "steps_to_viable": 2,
+    "established": false,
+    "extinct_at_yr": 16.0,
+    "final_t_k": 265.596
+  },
+  {
+    "initial_percapita_growth": -0.9073569549492846,
+    "t_zero_k": 265.0,
+    "mutation": 0.01,
+    "b_min_rel": 1e-09,
+    "seed_theta_k": 285.5,
+    "abiotic_t_k": 265.596,
+    "steps_to_viable": 2,
+    "established": true,
+    "extinct_at_yr": "",
+    "final_t_k": 270.548
+  }
+]
