@@ -1,11 +1,18 @@
 # Coupling the acetogen/methanogen switch to haze-world climate
 
 Claude (Opus 5.5), 9 November 2026. This is a **reduced coupling**: the
-[competition switch](competition-switches.md) enters the faithful haze-world
+[competition switch](competition-switches.md) enters the conditional haze-world
 budget as one temperature. It is not a coupled population model, and it is
 not calibrated to the Archean. It takes up Codex's
 [feedback sign check](review/switch-feedback-check.md), which corrected my
 proposed cold trap. On the haze-cooling branch, less methane warms.
+
+**Independent review:** the [audit of `aae88c5`](review/switch-coupling-review.md)
+confirms the central reduced Jacobians, but finds that inherited capture is
+assumed even at a mixed state, and that exact roots and no-capture stability
+need qualifications. The outputs below remain a reduced prototype. The
+[explicit population coupling](population-coupling.md) derives capture,
+assimilation, acetate storage and stability from one physiological budget.
 
 ```sh
 uv run python -m terra_prisca.haze_world.switch_coupling
@@ -33,12 +40,13 @@ maps: 281.5 K (MSB, saturating acetogen uptake) and 282.8 K (first-order).
 A third value, 278.5 K, is the case where both affinities are divided by
 seven.
 
-Capture efficiency η is the existing methanogen closure for both guilds.
-**That is exact at a mixed state.** Both guilds there share one break-even
-pressure, and so one captured fraction; the outlet note shows the
-methanogen-only limit recovers η exactly. For pure-acetogen states it is an
-approximation. The haze world uses the reference thermal methanogen with a
-linear loss.
+Capture efficiency η is the existing methanogen closure for both guilds,
+including mixed states. **This is an assumed closure.** Both guilds at
+coexistence share their actual break-even pressure and captured fraction,
+but the imported switch uses different physiology and does not identify
+that fraction with the inherited η. The outlet's methanogen-only limit is
+exact only under its stated restrictions. The reduced model uses the
+reference thermal methanogen and a linear loss.
 
 ## The mixed state, and when it is stable
 
@@ -79,9 +87,12 @@ lie above that.
 
 Supply is the donor potential, the CH₄/CO₂ ratio at full capture.
 
-1. **No cold trap.** The coupling adds no new cold state. The only cold
-   attractor is the haze world's existing 265.6 K abiotic state. The mixed
-   states on the greenhouse branch are saddles on its basin boundary.
+1. **No additional cold climate root found in the tested reduced scenarios.**
+   The inherited 265.6 K abiotic root remains. Capture share is undefined
+   there, and its saved stable flag checks the methane direction rather than
+   a meaningful full-community state. The greenhouse mixed states are
+   saddles. The root-finder limitations in the independent review preclude a
+   global absence claim.
 2. **The switch overrides the haze thermostat when T_sw lies above it.**
    Inside the band, temperature is held exactly at T_sw whatever the supply:
    the local sensitivity dT/d ln Φ is zero. The acetogen share absorbs the
@@ -91,8 +102,9 @@ Supply is the donor potential, the CH₄/CO₂ ratio at full capture.
 3. **Band width is set by acetate fate.** For f_ac = 0 the band covers the
    whole tested supply range. For f_ac = 0.9 it is only about 0.01 wide;
    beyond it, a pure-acetogen state sits below T_sw. At f_ac = 1 the switch
-   has no climatic effect, and the test suite confirms the haze world is
-   recovered exactly.
+   has no effect on the reduced methane equation, which recovers the old
+   budget by construction. This is not equivalence of the physiological
+   populations or the full model.
 4. **A switch below the haze thermostat does nothing.** At 278.5 K,
    methanogens win at the operating temperature and every state is the
    methanogen-only one.

@@ -10,9 +10,10 @@ The two-guild switch is imported as one temperature T_sw: acetogens win below it
 methanogens above (the orientation of every located exchange in competition-switches.md).
 Mixed communities follow d logit(s)/dt = -g (T(r) - T_sw) with g > 0.
 
-Capture efficiency eta is the existing methanogen closure for both guilds. That is exact at
-a mixed state, where the guilds share one break-even pressure and therefore one captured
-fraction; for a pure-acetogen state it is an approximation (named below).
+Capture efficiency eta is the inherited methanogen closure for both guilds,
+an assumption even at a mixed state: common R* does not identify capture
+with the closure of a different physiological model. See the independent
+review and the explicit population_coupling variant.
 """
 
 from __future__ import annotations

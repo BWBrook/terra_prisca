@@ -1,0 +1,194 @@
+{
+  "reviewed_commit": "aae88c51cebfdd9edab2bb82ce1bf9c0f481fd44",
+  "reviewed_source_sha256": {
+    "switch_coupling.py": "c09df674e4ed80bf19aea72a6847becb26caa100a9dd82bc1e501f10a19f2115",
+    "two_guilds.py": "eff6a9027c5b28d154f03462d926591ebee3408eb2c80ec0df5c38929f169f83"
+  },
+  "live_dependency_sha256": {
+    "models/haze_world/review/check_switch_coupling.py": "2e1143f5251ad921530efd53c19fb245387e835ae6180b101e5492616361baa6",
+    "src/terra_prisca/haze_world/darwinian.py": "e965035d5dfbfafcb695dc3738b23d8a445c4c1e7e246ab4688d67b33482f1aa",
+    "src/terra_prisca/haze_world/methane_budget.py": "70dc47659e4738d07809e8d23844af79bf69e5dabcc87793eac3f5e560011721",
+    "src/terra_prisca/haze_world/hydrogen_uptake.py": "c48d8231ef726605ab07be22438f3e2fd97f23b310773ac748d1b2bf5c36fafd",
+    "src/terra_prisca/haze_world/woodii1998.py": "b0130f4f8ea15aa64245133f79dc8b35883a414031a8b49262c6657350cad0b0",
+    "models/haze_response/arney2016/figure4.csv": "c0ef5f3d17ee7c6085ad36247f0f7814726dbbe3273842b01f2c6c4e046856f8"
+  },
+  "reference_jacobian_checks": [
+    {
+      "t_switch_k": 281.5,
+      "f_ac": 0.0,
+      "ratio": 0.03328879512029307,
+      "slope_k_per_ratio": 260.12333150012233,
+      "independent_jacobian": [
+        [
+          5.841275038527972e-05,
+          -2.743638035999698e-06
+        ],
+        [
+          -260.12333150012233,
+          0.0
+        ]
+      ],
+      "reference_stable": false,
+      "selection_rates_per_k_yr": [
+        0.001,
+        0.1,
+        1.0,
+        10.0,
+        1000.0
+      ],
+      "max_real_eigenvalues": [
+        0.0008745094443380129,
+        0.008477240445189119,
+        0.02674409210145106,
+        0.08450904726376968,
+        0.8448275652796748
+      ]
+    },
+    {
+      "t_switch_k": 281.5,
+      "f_ac": 0.0,
+      "ratio": 0.19515515549418969,
+      "slope_k_per_ratio": -721.2580514046181,
+      "independent_jacobian": [
+        [
+          -0.002710504433295406,
+          -7.09923844575611e-07
+        ],
+        [
+          721.2580514046181,
+          0.0
+        ]
+      ],
+      "reference_stable": true,
+      "selection_rates_per_k_yr": [
+        0.001,
+        0.1,
+        1.0,
+        10.0,
+        1000.0
+      ],
+      "max_real_eigenvalues": [
+        -0.00020430900260791715,
+        -0.0013552522166477032,
+        -0.001355252216647704,
+        -0.0013552522166477027,
+        -0.0013552522166477012
+      ]
+    },
+    {
+      "t_switch_k": 282.8,
+      "f_ac": 0.5,
+      "ratio": 0.19312984420626186,
+      "slope_k_per_ratio": -599.9339874576178,
+      "independent_jacobian": [
+        [
+          -0.000243634176548963,
+          -1.7749391671077867e-06
+        ],
+        [
+          599.9339874576178,
+          0.0
+        ]
+      ],
+      "reference_stable": true,
+      "selection_rates_per_k_yr": [
+        0.001,
+        0.1,
+        1.0,
+        10.0,
+        1000.0
+      ],
+      "max_real_eigenvalues": [
+        -0.0001218170882744815,
+        -0.0001218170882744815,
+        -0.0001218170882744815,
+        -0.0001218170882744815,
+        -0.00012181708827448152
+      ]
+    }
+  ],
+  "capture_comparison": [
+    {
+      "acetogen_kinetics": "saturating",
+      "temperature_k": 281.534823,
+      "roots_pa": [
+        22.486299810063095,
+        22.48629948417298
+      ],
+      "actual_capture": 0.9250456672997897,
+      "inherited_eta": 0.9236268046560486,
+      "post_assimilation_factors": [
+        0.8948707830182266,
+        1.0
+      ]
+    },
+    {
+      "acetogen_kinetics": "first_order",
+      "temperature_k": 282.780106,
+      "roots_pa": [
+        19.919683577646055,
+        19.91968340842653
+      ],
+      "actual_capture": 0.9336010547411798,
+      "inherited_eta": 0.9770944626516,
+      "post_assimilation_factors": [
+        0.8983852357329078,
+        1.0
+      ]
+    }
+  ],
+  "missed_vertex_and_root_checks": {
+    "ratio": 0.19445499,
+    "temperature_k": 282.005,
+    "valid_mixed_share": 0.08168167191416444,
+    "detected_mixed_ratios": [
+      0.03527437305913664
+    ],
+    "exact_grid_root_detected": false,
+    "interval_endpoint_root_detected": false,
+    "tangent_root_detected": false
+  },
+  "no_capture_flag_check": {
+    "kind": "no_capture",
+    "s": 0.0,
+    "r": 0.0005437715867670953,
+    "t_k": 265.59624203177106,
+    "stable": true,
+    "eta": 0.0,
+    "compact_share_eigenvalue_per_yr": 15.903757968228945,
+    "note": "Saved s=0 has an unstable composition direction; s=1 gives the same abiotic climate and the opposite sign"
+  },
+  "pure_switch_boundary": {
+    "kind": "methanogen",
+    "s": 0.0,
+    "r": 0.19534395049070766,
+    "t_k": 281.3638300886965,
+    "stable": true,
+    "eta": 0.8854553586542643,
+    "composition_eigenvalue_per_yr": -0.0
+  },
+  "warm_flank_haze_counterexample": {
+    "kind": "mixed",
+    "s": 0.17092326028904953,
+    "r": 0.17557417761885738,
+    "t_k": 293.0,
+    "eta": 0.9596129243339947,
+    "stable": false,
+    "sides": [
+      {
+        "t_r": -450.09445150245557,
+        "trace": 0.00023155744004212017,
+        "det": 0.0013465371125577473,
+        "max_real": 0.00011577872002106008
+      },
+      {
+        "t_r": -450.09445150245557,
+        "trace": 0.00023155744004212017,
+        "det": 0.0013465371125577473,
+        "max_real": 0.00011577872002106008
+      }
+    ]
+  },
+  "f_ac_one_reduced_climate_rhs_identical": true,
+  "scope": "Historical reduced-model audit; not a full-population calibration or global stability result"
+}

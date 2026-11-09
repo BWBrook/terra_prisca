@@ -1,0 +1,165 @@
+{
+  "reference": {
+    "climate": {
+      "case": "B",
+      "lifetime_yr": 10000.0,
+      "abiotic_flux": 680000000.0,
+      "donor_flux": 375157520114.00323,
+      "maintenance_flux": 10000000000.0,
+      "growth_ratio_max": 10.0,
+      "t_opt_k": 300.0,
+      "t_halfwidth_k": 20.0,
+      "thermal": true,
+      "t_zero_k": 283.0,
+      "bridge_scale": 0.01
+    },
+    "biology": {
+      "methanogen": "methanogenic strain MSB",
+      "capacity_ratio": 0.74,
+      "yield_m": 0.78,
+      "maintenance_m30": 0.001,
+      "loss_h": 0.001,
+      "threshold_a30": 20.0,
+      "threshold_shape": "fixed_energy",
+      "msp_threshold_4c": 20.0,
+      "maintenance_energy_j": 69000.0,
+      "kinetics": "saturating",
+      "assimilation_m": 0.0824,
+      "km_scale_a": 1.0,
+      "km_scale_m": 1.0,
+      "cessation_energy_a_j": -24000.0,
+      "cessation_energy_m_j": -28000.0,
+      "threshold_m30": 1.0,
+      "exchange_mol_l_h_pa": 3.333333333333333e-09,
+      "atmosphere_pa": 0.0,
+      "low_temperature_variant": "constant_shape"
+    },
+    "loss": {
+      "anchor_ratio": 0.3,
+      "lifetime_yr": 10000.0,
+      "kind": "power",
+      "elasticity": 1.0,
+      "log_scale": 0.001
+    },
+    "habitat_l_cm2": 0.008970677546304392,
+    "acetate_lifetime_yr": 1.0,
+    "acetate_fraction": 0.5,
+    "recycling_variant": "constant",
+    "recycling_midpoint_k": 280.0,
+    "width_k": 2.0,
+    "enabled": [
+      true,
+      true
+    ]
+  },
+  "configurations": 840,
+  "groups": {
+    "constant": {
+      "configurations": 400,
+      "states": 1328,
+      "stable_kinds": {
+        "methanogen": 96,
+        "mixed": 128,
+        "acetogen": 176
+      },
+      "mixed_stability": {
+        "stable": 128
+      },
+      "stable_climate_domains": {
+        "bridge": 16,
+        "arney": 252,
+        "plateau": 132
+      },
+      "stable_acetate_above_10mm": 151,
+      "stable_temperature_range_k": [
+        273.39106179570695,
+        296.76343694830854
+      ]
+    },
+    "cold_limited": {
+      "configurations": 400,
+      "states": 1348,
+      "stable_kinds": {
+        "methanogen": 96,
+        "mixed": 148,
+        "acetogen": 156
+      },
+      "mixed_stability": {
+        "stable": 148
+      },
+      "stable_climate_domains": {
+        "bridge": 16,
+        "arney": 320,
+        "plateau": 64
+      },
+      "stable_acetate_above_10mm": 179,
+      "stable_temperature_range_k": [
+        273.39106179570695,
+        296.76343694830854
+      ]
+    }
+  },
+  "state_records": 2769,
+  "coarse_grid": 501,
+  "resolution_audit": {
+    "configurations": 60,
+    "mismatches": 0,
+    "max_ratio_difference": 2.3522850334245504e-14
+  },
+  "stability_change_candidates": 0,
+  "refined_candidates": 0,
+  "dense_lag_audit": {
+    "states": 427,
+    "source_cases": 7,
+    "unstable_states": 0,
+    "maximum_real_yr": -1.3033108540190955e-05,
+    "max_scaled_rhs_error": 1.0842021724855046e-15
+  },
+  "trajectories": 8,
+  "max_scaled_equilibrium_rhs_error": 2.6518328611800694e-12,
+  "max_relative_redox_residual": 3.03801366887937e-16,
+  "pool_flag_mol_l": 0.01,
+  "raw_path": "local/haze/population_coupling/raw_records.jsonl.gz",
+  "raw_sha256": "eb0f24c68cd4cf9a93c481117bcbedab003eab6c58cd0e385a7b459e56f15068",
+  "long_invasion_protocol": {
+    "reference_potential": 0.3,
+    "acetate_fraction": 0.5,
+    "acetate_lifetime_yr": 1.0,
+    "recycling_variant": "constant",
+    "initial_resident": "stable methanogen-only control with same physiology",
+    "acetogen_seed_g_l": 1e-12,
+    "duration_yr": 100000.0,
+    "solver": "population_coupling.integrate: LSODA with softplus positive biomass coordinates",
+    "reproduction": "standalone CLI generates trajectory; no cache or checkpoint input"
+  },
+  "inactive_inherited_climate_fields": [
+    "growth_ratio_max",
+    "t_opt_k",
+    "t_halfwidth_k",
+    "thermal",
+    "maintenance_flux"
+  ],
+  "unavailable_estimates": "null in JSON or empty in CSV; accompanying status fields identify why",
+  "input_sha256": {
+    "src/terra_prisca/haze_world/population_experiments.py": "4b368aa6d4e42c178475758fab9e5f7f50c7cf9a4144ba833300c6f761d4d402",
+    "src/terra_prisca/haze_world/population_coupling.py": "c58925709f6c9786cc2a72b5065dc2f14ddfa7143966ee65d26c309a43757068",
+    "src/terra_prisca/haze_world/two_guilds.py": "eff6a9027c5b28d154f03462d926591ebee3408eb2c80ec0df5c38929f169f83",
+    "src/terra_prisca/haze_world/methane_budget.py": "70dc47659e4738d07809e8d23844af79bf69e5dabcc87793eac3f5e560011721",
+    "src/terra_prisca/haze_world/woodii1998.py": "b0130f4f8ea15aa64245133f79dc8b35883a414031a8b49262c6657350cad0b0",
+    "models/haze_response/arney2016/figure4.csv": "c0ef5f3d17ee7c6085ad36247f0f7814726dbbe3273842b01f2c6c4e046856f8",
+    "models/haze_world/evidence/kotsyurbenko2001_table2.csv": "c95b4be023e5502fbb30eb322621e5612bbbf850f99d1b6669e98b95eb370480",
+    "models/haze_world/evidence/peters1998_chemostat.csv": "b0b00bf03eaeaabf45fb571330773c5158b53b088436aaee942188f8e9498320"
+  },
+  "packages": {
+    "numpy": "2.5.4",
+    "scipy": "1.18.1",
+    "matplotlib": "3.11.2"
+  },
+  "caveats": [
+    "Conditional model, not Archean calibration.",
+    "Reference habitat, timescales, recycling-temperature response and low-methane climate bridge are assumptions.",
+    "Equilibrium uptake thresholds keep reference product activities despite explicit acetate pools.",
+    "A complex eigenvalue is not evidence of sustained oscillations; crossings are candidates only.",
+    "Finite equilibrium grids cannot exclude every tangent or unresolved branch."
+  ]
+}

@@ -15,7 +15,7 @@ Cold routing depends on the methanogen phenotype, turnover and uptake law;
 its methane effect also depends on downstream acetate recovery. The
 [source audit](evidence/stage3-constraints.md) supports conditional sediment
 pattern checks and acetate-fate end-members, rather than an Archean calibration.
-This stage remains at fixed temperature; it is not coupled to the climate below.
+That initial stage remains a fixed-temperature reference.
 The [finite-outlet extension](hydrogen-outlet.md) adds an atmospheric boundary
 and recovers the existing donor-capture rule in its exact zero-maintenance
 limit. A [switch-location experiment](competition-switches.md) tests whether
@@ -26,6 +26,18 @@ The [feedback check](review/switch-feedback-check.md) finds that the central
 switches lie on Arney B's haze-cooling branch: less methane warms there.
 Coupling must therefore test restoring feedback and possible mixed-guild
 equilibria as well as cold traps on other branches.
+The [reduced switch prototype](switch-coupling.md) now demonstrates that
+mechanism, with an [independent review](review/switch-coupling-review.md)
+qualifying capture and numerical claims. The subsequent
+[population coupling](population-coupling.md) evolves hydrogen, both biomasses,
+acetate and atmospheric methane in common units. It recovers a locally stable
+mixed state at 281.53 K using one physiological configuration and tests
+assimilation, recycling lag and temperature-dependent recycling explicitly.
+The [unit and inventory audit](review/full-coupling-budget-audit.md) checks its
+open-boundary budget; the [population review](review/population-coupling-review.md)
+checks equilibria, Jacobians and rare-population integration. These remain
+conditional models: habitat volume, product activities, biomass export and
+recycling kinetics are not Archean calibrations.
 
 **Code.** [`src/terra_prisca/haze_world/methane_budget.py`](../../src/terra_prisca/haze_world/methane_budget.py)
 (model) and [`experiments.py`](../../src/terra_prisca/haze_world/experiments.py)
@@ -479,8 +491,10 @@ and gets rarer the further the seed's optimum lies from it.
   coefficients across assays would demand more maintenance than the
   historical uptake capacity can supply. Climate coupling also needs habitat
   activities and colder physiology; transients also need acetate residence
-  times. Positive-exchange switch maps now identify conditional transitions
-  within the observed temperature window. The decisive
+  times. The new [population coupling](population-coupling.md) now supplies
+  the resource, biomass, acetate and methane dynamics for a declared mapping.
+  It does not solve substrate/product activities, local habitat temperature,
+  photochemistry, spatial refugia or finite-population survival. The decisive
   empirical inputs are:
   - the elasticity of photochemical methane loss near r ≈ 0.2
     ([evidence](evidence/loss-elasticity.md));
@@ -514,3 +528,7 @@ Claude designed the stage-3 growth specification. Codex and subagents built
 the matched A. woodii benchmark and fixed-temperature two-guild implementation,
 checked equilibria and local stability independently, and sourced the sediment,
 maintenance and acetate-fate constraints.
+Claude built the reduced switch–climate prototype. Codex (GPT-6) and independent
+review subagents audited that reduction and implemented the explicit population,
+acetate and methane coupling, its unit and inventory checks, stability and
+supply/lag experiments, and positive-coordinate rare-population integration.

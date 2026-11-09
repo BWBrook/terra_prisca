@@ -1,0 +1,160 @@
+{
+  "scope": "Independent dimensional/budget/Jacobian audit; not full bifurcation or attractor validation",
+  "audited_population_coupling_sha256": "c58925709f6c9786cc2a72b5065dc2f14ddfa7143966ee65d26c309a43757068",
+  "hours_per_year": 8766.0,
+  "reference_state": [
+    22.486299980548377,
+    0.0005740589129863751,
+    0.0003383233050454137,
+    0.000882392986684879,
+    0.1951068748475969
+  ],
+  "budget_checks": [
+    {
+      "case": "mixed_reference",
+      "maximum_relative_rhs_difference": 0.0,
+      "independent_inventory_residual_mol_h2_l_yr": -1.0833115163642712e-18,
+      "model_redox_residual": -2.1594977837586768e-19
+    },
+    {
+      "case": "starvation",
+      "maximum_relative_rhs_difference": 0.0,
+      "independent_inventory_residual_mol_h2_l_yr": -1.734723475976807e-18,
+      "model_redox_residual": 8.673617379884035e-19
+    },
+    {
+      "case": "stored_acetate_release",
+      "maximum_relative_rhs_difference": 0.0,
+      "independent_inventory_residual_mol_h2_l_yr": -3.469446951953614e-18,
+      "model_redox_residual": -3.469446951953614e-18
+    },
+    {
+      "case": "no_recycling",
+      "maximum_relative_rhs_difference": 0.0,
+      "independent_inventory_residual_mol_h2_l_yr": -1.3010426069826053e-18,
+      "model_redox_residual": -6.505213034913027e-19
+    },
+    {
+      "case": "complete_recycling",
+      "maximum_relative_rhs_difference": 0.0,
+      "independent_inventory_residual_mol_h2_l_yr": -1.734723475976807e-18,
+      "model_redox_residual": -8.673617379884035e-19
+    },
+    {
+      "case": "cold_limited",
+      "maximum_relative_rhs_difference": 3.8755654307366435e-16,
+      "independent_inventory_residual_mol_h2_l_yr": -1.9034501097882228e-18,
+      "model_redox_residual": -9.75781955236954e-19
+    },
+    {
+      "case": "cold_limited_complete",
+      "maximum_relative_rhs_difference": 0.0,
+      "independent_inventory_residual_mol_h2_l_yr": -1.734723475976807e-18,
+      "model_redox_residual": -1.0842021724855044e-18
+    },
+    {
+      "case": "zero_M_assimilation",
+      "maximum_relative_rhs_difference": 0.0,
+      "independent_inventory_residual_mol_h2_l_yr": -1.8431436932253575e-18,
+      "model_redox_residual": -9.215718466126788e-19
+    }
+  ],
+  "jacobian_checks": [
+    {
+      "variant": "constant",
+      "scaled_jacobian_relative_difference": 9.553750296193452e-10,
+      "maximum_matched_eigenvalue_difference_per_yr": 3.3708784030750394e-07,
+      "matched_eigenvalues": [
+        {
+          "real_per_yr": -45936.58753006386,
+          "imaginary_per_yr": 0.0,
+          "absolute_difference_per_yr": 3.3708784030750394e-07
+        },
+        {
+          "real_per_yr": -9.89064429573259,
+          "imaginary_per_yr": 0.0,
+          "absolute_difference_per_yr": 1.3145395882929733e-10
+        },
+        {
+          "real_per_yr": -0.9985650551960179,
+          "imaginary_per_yr": 0.0,
+          "absolute_difference_per_yr": 1.1270318012179814e-11
+        },
+        {
+          "real_per_yr": -0.0009260103741648706,
+          "imaginary_per_yr": 0.040943461727872985,
+          "absolute_difference_per_yr": 1.4439553418024168e-10
+        },
+        {
+          "real_per_yr": -0.0009260103741648706,
+          "imaginary_per_yr": -0.040943461727872985,
+          "absolute_difference_per_yr": 1.4439553418024168e-10
+        }
+      ],
+      "analytic_physical_entry_errors": {
+        "3,3": 7.472911178751929e-13,
+        "4,3": 3.259892356055616e-14,
+        "0,1": 0.01753544807434082,
+        "1,1": 1.5067637720173936e-26
+      },
+      "analytic_entry_relative_errors": {
+        "3,3": 7.472911178751929e-13,
+        "4,3": 3.259892356055616e-14,
+        "0,1": 1.9524191411621216e-11,
+        "1,1": 1.5067637720173936e-26
+      }
+    },
+    {
+      "variant": "cold_limited",
+      "scaled_jacobian_relative_difference": 9.55375082578194e-10,
+      "maximum_matched_eigenvalue_difference_per_yr": 3.371023922227323e-07,
+      "matched_eigenvalues": [
+        {
+          "real_per_yr": -45936.58753006634,
+          "imaginary_per_yr": 0.0,
+          "absolute_difference_per_yr": 3.371023922227323e-07
+        },
+        {
+          "real_per_yr": -9.890644869745396,
+          "imaginary_per_yr": 0.0,
+          "absolute_difference_per_yr": 1.3144507704510033e-10
+        },
+        {
+          "real_per_yr": -0.8402754024311254,
+          "imaginary_per_yr": 0.0,
+          "absolute_difference_per_yr": 1.1925349596708656e-11
+        },
+        {
+          "real_per_yr": -0.001046518166066736,
+          "imaginary_per_yr": 0.04429859232695116,
+          "absolute_difference_per_yr": 1.569437127191276e-10
+        },
+        {
+          "real_per_yr": -0.001046518166066736,
+          "imaginary_per_yr": -0.04429859232695116,
+          "absolute_difference_per_yr": 1.569437127191276e-10
+        }
+      ],
+      "analytic_physical_entry_errors": {
+        "3,3": -2.7228219678931964e-12,
+        "4,3": -7.075329905292804e-14,
+        "0,1": 0.01753544807434082,
+        "1,1": 1.5067637720173936e-26
+      },
+      "analytic_entry_relative_errors": {
+        "3,3": 2.7228219678931964e-12,
+        "4,3": 7.075329905292804e-14,
+        "0,1": 1.9524191411621216e-11,
+        "1,1": 1.5067637720173936e-26
+      }
+    }
+  ],
+  "ideal_direct_source_ratio_per_yr": 2.9999999999999997e-05,
+  "expected_column_source_ratio_per_yr": 3e-05,
+  "acetate_molarity_at_constant_rate_equilibria": {
+    "1": 0.000882392986684879,
+    "100": 0.0882392986684879,
+    "1000": 0.882392986684879,
+    "10000": 8.82392986684879
+  }
+}

@@ -1,0 +1,489 @@
+{
+  "equilibrium_and_jacobian_checks": [
+    {
+      "configuration": "reference",
+      "kind": "lifeless",
+      "temperature_k": 283.19877678579377,
+      "ratio": 0.0005437715867670953,
+      "stable": false,
+      "source_max_real_yr": 72.21430823903617,
+      "independent_max_real_yr": 72.21430823903617,
+      "maximum_normalized_jacobian_difference": 1.712307248311653e-11,
+      "invader_growth_yr": null,
+      "physical_rhs": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "configuration": "reference",
+      "kind": "acetogen",
+      "temperature_k": 294.40251004070655,
+      "ratio": 0.11860201751677815,
+      "stable": false,
+      "source_max_real_yr": 8.862522232210333,
+      "independent_max_real_yr": 8.862522232210333,
+      "maximum_normalized_jacobian_difference": 2.981324772958287e-10,
+      "invader_growth_yr": 8.862522232210333,
+      "physical_rhs": [
+        -2.8345154836222335e-11,
+        -2.462299900148493e-18,
+        0.0,
+        0.0,
+        6.945670167485263e-20
+      ]
+    },
+    {
+      "configuration": "reference",
+      "kind": "mixed",
+      "temperature_k": 281.53482280508206,
+      "ratio": 0.1951068748475969,
+      "stable": true,
+      "source_max_real_yr": -0.0009260103741648706,
+      "independent_max_real_yr": -0.000926010368170163,
+      "maximum_normalized_jacobian_difference": 5.23461073039957e-09,
+      "invader_growth_yr": null,
+      "physical_rhs": [
+        -3.2596928061655686e-10,
+        -1.0911845279862688e-18,
+        3.215464019208567e-18,
+        -2.168404344971009e-19,
+        1.0164395367051604e-20
+      ]
+    },
+    {
+      "configuration": "reference",
+      "kind": "methanogen",
+      "temperature_k": 273.51674403884846,
+      "ratio": 0.21615000467994547,
+      "stable": false,
+      "source_max_real_yr": 12.123212273307269,
+      "independent_max_real_yr": 12.123212273307269,
+      "maximum_normalized_jacobian_difference": 7.221617639097781e-09,
+      "invader_growth_yr": 12.123212273307267,
+      "physical_rhs": [
+        1.70070929017334e-10,
+        0.0,
+        1.0918665837328576e-18,
+        0.0,
+        -1.0164395367051604e-20
+      ]
+    },
+    {
+      "configuration": "methanogen_only",
+      "kind": "lifeless",
+      "temperature_k": 283.19877678579377,
+      "ratio": 0.0005437715867670953,
+      "stable": false,
+      "source_max_real_yr": 27.211418449345363,
+      "independent_max_real_yr": 27.211418449345363,
+      "maximum_normalized_jacobian_difference": 8.273917950283851e-12,
+      "invader_growth_yr": null,
+      "physical_rhs": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "configuration": "methanogen_only",
+      "kind": "methanogen",
+      "temperature_k": 273.51674403884846,
+      "ratio": 0.21615000467994547,
+      "stable": true,
+      "source_max_real_yr": -9.714455896280568e-05,
+      "independent_max_real_yr": -9.714455896279397e-05,
+      "maximum_normalized_jacobian_difference": 7.221617639097781e-09,
+      "invader_growth_yr": null,
+      "physical_rhs": [
+        1.70070929017334e-10,
+        0.0,
+        1.0918665837328576e-18,
+        0.0,
+        -1.0164395367051604e-20
+      ]
+    },
+    {
+      "configuration": "no_recycling",
+      "kind": "acetogen",
+      "temperature_k": 283.19877678579377,
+      "ratio": 0.0005437715867670953,
+      "stable": false,
+      "source_max_real_yr": 0.8284235077348562,
+      "independent_max_real_yr": 0.8284235077348562,
+      "maximum_normalized_jacobian_difference": 1.9309389175527637e-10,
+      "invader_growth_yr": 0.8284235077348562,
+      "physical_rhs": [
+        2.8345154836222335e-11,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "configuration": "no_recycling",
+      "kind": "lifeless",
+      "temperature_k": 283.19877678579377,
+      "ratio": 0.0005437715867670953,
+      "stable": false,
+      "source_max_real_yr": 72.21430823903617,
+      "independent_max_real_yr": 72.21430823903617,
+      "maximum_normalized_jacobian_difference": 1.712307248311653e-11,
+      "invader_growth_yr": null,
+      "physical_rhs": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "configuration": "no_recycling",
+      "kind": "mixed",
+      "temperature_k": 281.53482280508206,
+      "ratio": 0.1951068748475969,
+      "stable": true,
+      "source_max_real_yr": -0.00020601947194542132,
+      "independent_max_real_yr": -0.00020601947098793598,
+      "maximum_normalized_jacobian_difference": 5.234610730399569e-09,
+      "invader_growth_yr": null,
+      "physical_rhs": [
+        -7.794917579961143e-10,
+        -5.725155678024673e-19,
+        4.662939074499541e-18,
+        -1.0842021724855044e-19,
+        1.6940658945086007e-20
+      ]
+    },
+    {
+      "configuration": "no_recycling",
+      "kind": "methanogen",
+      "temperature_k": 273.51674403884846,
+      "ratio": 0.21615000467994547,
+      "stable": false,
+      "source_max_real_yr": 12.123212273307269,
+      "independent_max_real_yr": 12.123212273307269,
+      "maximum_normalized_jacobian_difference": 7.221617639097781e-09,
+      "invader_growth_yr": 12.123212273307267,
+      "physical_rhs": [
+        1.70070929017334e-10,
+        0.0,
+        1.0918665837328576e-18,
+        0.0,
+        -1.0164395367051604e-20
+      ]
+    },
+    {
+      "configuration": "full_recycling",
+      "kind": "lifeless",
+      "temperature_k": 283.19877678579377,
+      "ratio": 0.0005437715867670953,
+      "stable": false,
+      "source_max_real_yr": 72.21430823903617,
+      "independent_max_real_yr": 72.21430823903617,
+      "maximum_normalized_jacobian_difference": 1.712307248311653e-11,
+      "invader_growth_yr": null,
+      "physical_rhs": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "configuration": "full_recycling",
+      "kind": "methanogen",
+      "temperature_k": 273.51674403884846,
+      "ratio": 0.21615000467994547,
+      "stable": false,
+      "source_max_real_yr": 12.123212273307269,
+      "independent_max_real_yr": 12.123212273307269,
+      "maximum_normalized_jacobian_difference": 7.221617639097781e-09,
+      "invader_growth_yr": 12.123212273307267,
+      "physical_rhs": [
+        1.70070929017334e-10,
+        0.0,
+        1.0918665837328576e-18,
+        0.0,
+        -1.0164395367051604e-20
+      ]
+    },
+    {
+      "configuration": "full_recycling",
+      "kind": "acetogen",
+      "temperature_k": 274.002,
+      "ratio": 0.23968687006428005,
+      "stable": true,
+      "source_max_real_yr": -0.00010000000000075202,
+      "independent_max_real_yr": -9.999999999999999e-05,
+      "maximum_normalized_jacobian_difference": 1.0704757183973263e-10,
+      "invader_growth_yr": -3.5916339951169127,
+      "physical_rhs": [
+        -4.25177322543335e-11,
+        0.0,
+        -0.0,
+        0.0,
+        3.3881317890172014e-21
+      ]
+    },
+    {
+      "configuration": "cold_limited",
+      "kind": "lifeless",
+      "temperature_k": 283.19877678579377,
+      "ratio": 0.0005437715867670953,
+      "stable": false,
+      "source_max_real_yr": 72.21430823903617,
+      "independent_max_real_yr": 72.21430823903617,
+      "maximum_normalized_jacobian_difference": 1.712307248311653e-11,
+      "invader_growth_yr": null,
+      "physical_rhs": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "configuration": "cold_limited",
+      "kind": "acetogen",
+      "temperature_k": 294.4002921262633,
+      "ratio": 0.11856110033837218,
+      "stable": false,
+      "source_max_real_yr": 8.8600874872677,
+      "independent_max_real_yr": 8.8600874872677,
+      "maximum_normalized_jacobian_difference": 3.1874825491645945e-10,
+      "invader_growth_yr": 8.8600874872677,
+      "physical_rhs": [
+        -5.669030967244467e-11,
+        0.0,
+        0.0,
+        0.0,
+        4.0657581468206416e-20
+      ]
+    },
+    {
+      "configuration": "cold_limited",
+      "kind": "mixed",
+      "temperature_k": 281.53482280508206,
+      "ratio": 0.1951068748475969,
+      "stable": true,
+      "source_max_real_yr": -0.0010594966300243262,
+      "independent_max_real_yr": -0.0010594966275960377,
+      "maximum_normalized_jacobian_difference": 3.715014267571081e-07,
+      "invader_growth_yr": null,
+      "physical_rhs": [
+        -5.527305193063356e-10,
+        -9.321072875347046e-19,
+        3.659408722081409e-18,
+        -1.0842021724855044e-19,
+        1.3552527156068805e-20
+      ]
+    },
+    {
+      "configuration": "cold_limited",
+      "kind": "methanogen",
+      "temperature_k": 273.51674403884846,
+      "ratio": 0.21615000467994547,
+      "stable": false,
+      "source_max_real_yr": 12.123212273307269,
+      "independent_max_real_yr": 12.123212273307269,
+      "maximum_normalized_jacobian_difference": 7.221617639097781e-09,
+      "invader_growth_yr": 12.123212273307267,
+      "physical_rhs": [
+        1.70070929017334e-10,
+        0.0,
+        1.0918665837328576e-18,
+        0.0,
+        -1.0164395367051604e-20
+      ]
+    },
+    {
+      "configuration": "long_lag",
+      "kind": "lifeless",
+      "temperature_k": 283.19877678579377,
+      "ratio": 0.0005437715867670953,
+      "stable": false,
+      "source_max_real_yr": 72.21430823903617,
+      "independent_max_real_yr": 72.21430823903617,
+      "maximum_normalized_jacobian_difference": 1.0923378685506161e-10,
+      "invader_growth_yr": null,
+      "physical_rhs": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "configuration": "long_lag",
+      "kind": "acetogen",
+      "temperature_k": 294.40251004070655,
+      "ratio": 0.11860201751677815,
+      "stable": false,
+      "source_max_real_yr": 8.862522232210333,
+      "independent_max_real_yr": 8.862522232210333,
+      "maximum_normalized_jacobian_difference": 2.981324772958287e-10,
+      "invader_growth_yr": 8.862522232210333,
+      "physical_rhs": [
+        -2.8345154836222335e-11,
+        -2.462299900148493e-18,
+        0.0,
+        2.168404344971009e-19,
+        6.776263578034403e-20
+      ]
+    },
+    {
+      "configuration": "long_lag",
+      "kind": "mixed",
+      "temperature_k": 281.53482280508206,
+      "ratio": 0.1951068748475969,
+      "stable": true,
+      "source_max_real_yr": -5.2467195948015644e-05,
+      "independent_max_real_yr": -5.246719594973773e-05,
+      "maximum_normalized_jacobian_difference": 5.23461073039957e-09,
+      "invader_growth_yr": null,
+      "physical_rhs": [
+        -3.2596928061655686e-10,
+        -1.0911845279862688e-18,
+        3.215464019208567e-18,
+        -3.2526065174565133e-19,
+        1.0164395367051604e-20
+      ]
+    },
+    {
+      "configuration": "long_lag",
+      "kind": "methanogen",
+      "temperature_k": 273.51674403884846,
+      "ratio": 0.21615000467994547,
+      "stable": false,
+      "source_max_real_yr": 12.123212273307269,
+      "independent_max_real_yr": 12.123212273307269,
+      "maximum_normalized_jacobian_difference": 7.221617639097781e-09,
+      "invader_growth_yr": 12.123212273307267,
+      "physical_rhs": [
+        1.70070929017334e-10,
+        0.0,
+        1.0918665837328576e-18,
+        0.0,
+        -1.0164395367051604e-20
+      ]
+    }
+  ],
+  "root_resolution_check": [
+    {
+      "n_grid": 101,
+      "states": [
+        {
+          "kind": "lifeless",
+          "ratio": 0.0005437715867670953,
+          "stable": false
+        },
+        {
+          "kind": "acetogen",
+          "ratio": 0.1186020175167933,
+          "stable": false
+        },
+        {
+          "kind": "mixed",
+          "ratio": 0.1951068748475969,
+          "stable": true
+        },
+        {
+          "kind": "methanogen",
+          "ratio": 0.21615000467994544,
+          "stable": false
+        }
+      ]
+    },
+    {
+      "n_grid": 501,
+      "states": [
+        {
+          "kind": "lifeless",
+          "ratio": 0.0005437715867670953,
+          "stable": false
+        },
+        {
+          "kind": "acetogen",
+          "ratio": 0.11860201751677815,
+          "stable": false
+        },
+        {
+          "kind": "mixed",
+          "ratio": 0.1951068748475969,
+          "stable": true
+        },
+        {
+          "kind": "methanogen",
+          "ratio": 0.21615000467994547,
+          "stable": false
+        }
+      ]
+    },
+    {
+      "n_grid": 2001,
+      "states": [
+        {
+          "kind": "lifeless",
+          "ratio": 0.0005437715867670953,
+          "stable": false
+        },
+        {
+          "kind": "acetogen",
+          "ratio": 0.1186020175167788,
+          "stable": false
+        },
+        {
+          "kind": "mixed",
+          "ratio": 0.1951068748475969,
+          "stable": true
+        },
+        {
+          "kind": "methanogen",
+          "ratio": 0.21615000467994538,
+          "stable": false
+        }
+      ]
+    }
+  ],
+  "rare_invasion_checks": [
+    {
+      "seed_gdw_l": 1e-100,
+      "duration_yr": 2000.0,
+      "success": true,
+      "final_temperature_k": 278.7945155478502,
+      "target_temperature_k": 281.53482280508206,
+      "convergence_required": false,
+      "minimum_log_biomass": [
+        -230.25850929940458,
+        -6816.314303800157
+      ],
+      "log_coordinates_retained_finite": true,
+      "maximum_final_relative_error": 1.1656407083973834,
+      "warnings": []
+    }
+  ],
+  "source_sha256": {
+    "models/haze_world/review/check_population_coupling.py": "be26b8fb05a636977d147cd1e8dc46e9c6d347bd6653e7f1025faa1b03aa3a42",
+    "src/terra_prisca/haze_world/population_coupling.py": "c58925709f6c9786cc2a72b5065dc2f14ddfa7143966ee65d26c309a43757068",
+    "src/terra_prisca/haze_world/two_guilds.py": "eff6a9027c5b28d154f03462d926591ebee3408eb2c80ec0df5c38929f169f83",
+    "src/terra_prisca/haze_world/darwinian.py": "e965035d5dfbfafcb695dc3738b23d8a445c4c1e7e246ab4688d67b33482f1aa",
+    "src/terra_prisca/haze_world/methane_budget.py": "70dc47659e4738d07809e8d23844af79bf69e5dabcc87793eac3f5e560011721",
+    "src/terra_prisca/haze_world/hydrogen_uptake.py": "c48d8231ef726605ab07be22438f3e2fd97f23b310773ac748d1b2bf5c36fafd",
+    "src/terra_prisca/haze_world/woodii1998.py": "b0130f4f8ea15aa64245133f79dc8b35883a414031a8b49262c6657350cad0b0",
+    "models/haze_world/evidence/kotsyurbenko2001_table2.csv": "c95b4be023e5502fbb30eb322621e5612bbbf850f99d1b6669e98b95eb370480",
+    "models/haze_response/arney2016/cases.csv": "e3d77d275052a8875991a751868f857bffc964295bfd47591944d86bc58ab07a",
+    "models/haze_response/arney2016/figure4.csv": "c0ef5f3d17ee7c6085ad36247f0f7814726dbbe3273842b01f2c6c4e046856f8"
+  },
+  "scope": "Smooth/one-sided climate reference checks; no global root completeness or finite-population persistence claim"
+}

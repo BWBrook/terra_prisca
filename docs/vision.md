@@ -115,7 +115,7 @@ Fidelity is measured against the published figures, digitised.
    The [hydrogen-uptake benchmark](../models/haze_world/hydrogen-uptake.md)
    now implements the published kinetics with explicit rate units. It exposes
    a source-normalization discrepancy and still lacks the individual
-   cessation thresholds, so competition is not yet coupled to climate.
+   cessation thresholds, so it remains a benchmark rather than a climate calibration.
    [Growth-yield and maintenance sources](../models/haze_world/evidence/growth-parameters.md)
    now provide quantitative anchors. A matched
    [A. woodii benchmark](../models/haze_world/woodii-benchmark.md) and
@@ -123,13 +123,21 @@ Fidelity is measured against the published figures, digitised.
    assay transfers explicitly: cold competition depends on phenotype and
    uptake structure, and its methane effect on downstream acetate recovery.
    Sediment patterns are conditional checks; neither acetate fate nor cold
-   demography is calibrated for an Archean community. Climate coupling waits
-   on the habitat, activity and temperature mapping.
+   demography is calibrated for an Archean community. Habitat, activity and
+   temperature mappings remain explicit assumptions.
    The [finite-outlet extension](../models/haze_world/hydrogen-outlet.md)
    recovers the earlier capture closure in a defined limit and makes the
    lifeless resource state finite. [Switch maps](../models/haze_world/competition-switches.md)
    locate possible ecological transitions in the operating temperature range;
    their climate feedback still depends on the radiative branch.
+   A [reduced switch coupling](../models/haze_world/switch-coupling.md) then
+   found mixed communities that pin temperature in the prescribed model.
+   The [explicit population coupling](../models/haze_world/population-coupling.md)
+   now evolves hydrogen, both guilds, acetate and methane together. It tests
+   the mechanism with consistent units and full local stability, rather than
+   imposing a frequency response. Habitat size, recycling kinetics and
+   fixed product activities still limit its interpretation; very small
+   deterministic populations are not evidence of physical survival.
    A [solar-response search](../models/haze_response/solar-responses.md) found
    a second Sun-age checkpoint, but no matched hazy luminosity grid.
    This direction may lead to a paper.
