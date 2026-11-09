@@ -161,7 +161,7 @@ def rescue(p: Params, run: Run, r_pot0=0.22, r_pot1=0.02, decline_yr=1e4, spinup
 
 
 def seed_escape(p: Params, run: Run, seed_theta_k: float, seed_rel: float = 1e-3, r_pot=0.22,
-                years=500.0) -> dict:
+                years=2e4) -> dict:
     """Seed a lifeless planet at constant supply with one strain; does mutation find a viable optimum?"""
     model = StrainModel(p, run)
     phi = float(flux_for_potential(r_pot, p))
@@ -177,37 +177,91 @@ def seed_escape(p: Params, run: Run, seed_theta_k: float, seed_rel: float = 1e-3
     nearest = float(abs(viable - seed_theta_k).min()) if viable.size else np.nan
     return {"t_zero_k": run.t_zero_k, "mutation": run.mutation, "b_min_rel": run.b_min_rel,
             "seed_theta_k": seed_theta_k, "abiotic_t_k": round(t_a, 3),
+            "check_yr": run.check_yr, "years": years,
+            "initial_net_growth_per_yr": float(run.death * (model.rho(t_a)[int(np.argmin(abs(model.theta - seed_theta_k)))]
+                                                * y0[0] / (model.half_sat + y0[0]) - 1.0)),
             "steps_to_viable": int(round(nearest / Grid().step_k)) if viable.size else "",
-            "established": out["extinct_at_yr"] is None, "extinct_at_yr": out["extinct_at_yr"] or "",
+            "alive_at_end": out["extinct_at_yr"] is None, "extinct_at_yr": out["extinct_at_yr"] or "",
+            "final_total_rel": out["series"][-1]["total_biomass"] / b_star,
             "final_t_k": round(out["series"][-1]["t_k"], 3)}
 
 
+def required_potential(r, theta, p: Params, constraint: Constraint, loss: Loss) -> np.ndarray:
+    """Supply potential tau c Phi needed for a positive stationary state at methane ratio r with
+    optimum theta (linear loss): r - r_a + P_K / (rho(T(r), theta) - 1), infinite where rho <= 1."""
+    c = atmosphere(p.case)["flux_to_ratio_per_yr"]
+    tau = loss.lifetime_yr
+    r = np.asarray(r, dtype=float)
+    t = np.asarray(temperature_k(r, p), dtype=float)
+    theta = np.broadcast_to(np.asarray(theta, dtype=float), t.shape)
+    rho = peak_growth(theta, constraint) * np.maximum(0.0, 1.0 - ((t - theta) / p.t_halfwidth_k) ** 2)
+    with np.errstate(divide="ignore"):
+        extra = np.where(rho > 1.0, tau * c * p.maintenance_flux / (rho - 1.0), np.inf)
+    return r - tau * c * p.abiotic_flux + extra
+
+
+def viability_threshold(p: Params, constraint: Constraint, loss: Loss, theta: float | None = None) -> dict:
+    """Least supply potential admitting a positive stationary state, for a fixed optimum theta or,
+    with theta None, for the best-growth envelope (theta singular at each temperature).
+    No stationary community can capture more than this envelope allows."""
+    if loss.kind != "power" or loss.elasticity != 1.0:
+        raise ValueError("required_potential assumes linear loss")
+    r_a = loss.lifetime_yr * atmosphere(p.case)["flux_to_ratio_per_yr"] * p.abiotic_flux
+    r = r_a + np.geomspace(1e-9, 0.5, 20001)
+    t = np.asarray(temperature_k(r, p), dtype=float)
+    th = np.array([singular_theta(x, constraint) for x in t]) if theta is None else np.full(r.shape, theta)
+    need = required_potential(r, th, p, constraint, loss)
+    i = int(np.argmin(need))
+    return {"potential": float(need[i]), "r": float(r[i]), "t_k": float(t[i]), "theta_k": float(th[i])}
+
+
 def _rescue_job(args):
-    constraint, loss, m, b_min, t0, decline = args
-    p, _ = reference()
-    run = Run(constraint, loss, mutation=m, b_min_rel=b_min, t_zero_k=t0, check_yr=10.0)
-    return rescue(p, run, decline_yr=decline, after_yr=6e4)
+    constraint, m, census, t0, final = args
+    p, losses = reference()
+    run = Run(constraint, losses[2], mutation=m, b_min_rel=1e-6, t_zero_k=t0, check_yr=census)
+    out = rescue(p, run, r_pot1=final, decline_yr=1e3, after_yr=2e5)
+    q = replace(p, t_zero_k=t0)
+    model = StrainModel(p, run)
+    theta0 = float(model.theta[int(np.argmax(model.resident_state(float(flux_for_potential(0.22, p)))[0][2:]))])
+    frozen = viability_threshold(q, constraint, losses[2], theta0)["potential"]
+    best = viability_threshold(q, constraint, losses[2])["potential"]
+    tail = [s for s in out["series"] if s["t_yr"] >= out["series"][-1]["t_yr"] - 2e4]
+    tb = [s["total_biomass"] for s in tail]
+    settled = bool(out["survived"] and max(tb) - min(tb) < 0.01 * tb[-1])
+    return {**{k: v for k, v in out.items() if k != "series"}, "census_yr": census, "final_potential": final,
+            "initial_theta_k": theta0, "frozen_threshold": round(frozen, 6), "best_threshold": round(best, 6),
+            "frozen_viable": final > frozen, "best_viable": final > best, "settled_last_20kyr": settled,
+            "extinct_after_decline_yr": (out["extinct_at_yr"] - 2e3) if out["extinct_at_yr"] else "",
+            "series": out["series"]}
 
 
-RESCUE_GRID = {"mutation": (1e-4, 1e-6, 1e-8), "b_min_rel": (1e-9, 1e-6), "t_zero_k": (265.0, 283.0),
-               "decline_yr": (1e2, 1e3, 1e4)}
+RESCUE_GRID = {"constraint": (Constraint(), Constraint(energy_ev=0.65)), "mutation": (0.0, 1e-8, 1e-6, 1e-4),
+               "census_yr": (10.0, 30.0, 100.0), "t_zero_k": (265.0, 283.0), "final_potential": (0.02, 0.03, 0.08)}
 
 
-def run_rescue(processes: int = 8) -> list[dict]:
+def run_rescue(processes: int = 9) -> list[dict]:
     from multiprocessing import Pool
 
-    _, losses = reference()
-    jobs = [(c, losses[2], m, b, t0, d) for c in (Constraint(), Constraint(energy_ev=0.65))
-            for t0 in RESCUE_GRID["t_zero_k"] for b in RESCUE_GRID["b_min_rel"]
-            for m in RESCUE_GRID["mutation"] for d in RESCUE_GRID["decline_yr"]]
+    g = RESCUE_GRID
+    jobs = [(c, m, n, t0, f) for c in g["constraint"] for t0 in g["t_zero_k"] for f in g["final_potential"]
+            for n in g["census_yr"] for m in g["mutation"]]
+    jobs.sort(key=lambda j: j[2])  # shortest censuses first: they are the slowest
     with Pool(processes) as pool:
-        return pool.map(_rescue_job, jobs)
+        return pool.map(_rescue_job, jobs, chunksize=1)
 
 
-def run_seed() -> list[dict]:
+def _seed_job(args):
+    m, theta = args
     p, losses = reference()
-    return [seed_escape(p, Run(Constraint(), losses[2], mutation=m, b_min_rel=b), th)
-            for m in (1e-2, 1e-4, 1e-6) for b in (1e-9, 1e-6) for th in np.arange(283.0, 287.01, 0.5)]
+    return seed_escape(p, Run(Constraint(), losses[2], mutation=m, b_min_rel=1e-9, check_yr=1.0), theta)
+
+
+def run_seed(processes: int = 9) -> list[dict]:
+    from multiprocessing import Pool
+
+    jobs = [(m, th) for m in (0.0, 1e-4, 1e-2) for th in np.arange(284.0, 287.01, 0.5)]
+    with Pool(processes) as pool:
+        return pool.map(_seed_job, jobs, chunksize=1)
 
 
 def write_csv(path: Path, rows: list[dict]) -> None:
@@ -224,56 +278,71 @@ def plot(rescues: list[dict], seeds: list[dict], out: Path) -> None:
     matplotlib.use("Agg")
     import matplotlib.pyplot as plt
 
-    fig, axs = plt.subplots(2, 2, figsize=(13, 9))
+    g = RESCUE_GRID
+    fig, axs = plt.subplots(2, 2, figsize=(14, 10))
+
     ax = axs[0, 0]
-    for m, color in zip(RESCUE_GRID["mutation"], ("tab:green", "tab:orange", "tab:red")):
-        r = next(x for x in rescues if x["constraint"] == "U" and x["t_zero_k"] == 265.0 and x["b_min_rel"] == 1e-6
-                 and x["mutation"] == m and x["decline_yr"] == 1e3)
-        s = [x for x in r["series"] if x["t_yr"] <= 2.5e4]
-        t = [x["t_yr"] - 2e3 for x in s]
-        ax.plot(t, [x["t_k"] for x in s], "-", color=color, lw=1.4, label=f"climate, m = {m:g}")
-        ax.plot(t, [x["mean_theta_k"] for x in s], "--", color=color, lw=1, label=f"mean optimum, m = {m:g}")
-    ax.set(xlabel="years since supply decline began (0.22 → 0.02 over 1 kyr)", ylabel="K",
-           title="(a) U, T0 = 265 K, B_min = 1e-6 B*: tracking the climate")
+    for m, color in zip(g["mutation"], ("k", "tab:red", "tab:orange", "tab:green")):
+        r = next(x for x in rescues if x["constraint"] == "H E=0.65" and x["t_zero_k"] == 265.0
+                 and x["final_potential"] == 0.03 and x["census_yr"] == 10.0 and x["mutation"] == m)
+        s = [x for x in r["series"] if x["t_yr"] <= 1.2e5]
+        t = [(x["t_yr"] - 2e3) / 1e3 for x in s]
+        ax.plot(t, [x["t_k"] for x in s], "-", color=color, lw=1.3, label=f"climate, m = {m:g}")
+        ax.plot(t, [x["mean_theta_k"] for x in s], "--", color=color, lw=0.9)
+    ax.plot([], [], "k--", lw=0.9, label="dashed: mean optimum")
+    ax.set(xlabel="kyr since supply decline began (0.22 → 0.03 over 1 kyr)", ylabel="K",
+           title="(a) H, T0 = 265 K, final 0.03 (viable), 10-yr census")
     ax.legend(fontsize=7)
 
     ax = axs[0, 1]
-    rows = [(c, t0, b) for c in ("U", "H E=0.65") for t0 in RESCUE_GRID["t_zero_k"] for b in RESCUE_GRID["b_min_rel"]]
-    cols = [(m, d) for m in RESCUE_GRID["mutation"] for d in RESCUE_GRID["decline_yr"]]
+    rows = [(c.label, t0, f) for c in g["constraint"] for t0 in g["t_zero_k"] for f in g["final_potential"]]
+    cols = [(n, m) for n in g["census_yr"] for m in g["mutation"]]
     grid = np.zeros((len(rows), len(cols)))
-    for i, (c, t0, b) in enumerate(rows):
-        for j, (m, d) in enumerate(cols):
-            x = next(r for r in rescues if r["constraint"] == c and r["t_zero_k"] == t0 and r["b_min_rel"] == b
-                     and r["mutation"] == m and r["decline_yr"] == d)
-            grid[i, j] = x["survived"]
-            ax.text(j, i, f"{x['final_t_k']:.0f}", ha="center", va="center", fontsize=6.5)
-    ax.imshow(grid, cmap=matplotlib.colors.ListedColormap(["#ef9a9a", "#a5d6a7"]), aspect="auto", vmin=0, vmax=1)
-    ax.set_yticks(range(len(rows)), [f"{c}, T0 {t0:g}, Bmin {b:g}" for c, t0, b in rows], fontsize=7)
-    ax.set_xticks(range(len(cols)), [f"m {m:g}\n{d:g} yr" for m, d in cols], fontsize=6.5)
-    ax.set_title("(b) survival (green) after supply falls 0.22 → 0.02;\nnumbers: final climate (K)")
+    labels = []
+    for i, (c, t0, f) in enumerate(rows):
+        for j, (n, m) in enumerate(cols):
+            x = next(r for r in rescues if r["constraint"] == c and r["t_zero_k"] == t0
+                     and r["final_potential"] == f and r["census_yr"] == n and r["mutation"] == m)
+            grid[i, j] = 0 if not x["survived"] else (2 if x["settled_last_20kyr"] else 1)
+            txt = f"{x['extinct_after_decline_yr'] / 1e3:.0f}k" if not x["survived"] else f"{x['final_t_k']:.0f}"
+            ax.text(j, i, txt, ha="center", va="center", fontsize=6)
+        ref = x
+        labels.append(f"{c}, T0 {t0:g}, final {f:g}" + ("" if ref["best_viable"] else " (no living state)"))
+    ax.imshow(grid, cmap=matplotlib.colors.ListedColormap(["#ef9a9a", "#fff59d", "#a5d6a7"]), aspect="auto",
+              vmin=0, vmax=2)
+    ax.set_yticks(range(len(rows)), labels, fontsize=6.5)
+    ax.set_xticks(range(len(cols)), [f"Δt {n:g}\nm {m:g}" for n, m in cols], fontsize=6)
+    ax.set_title("(b) after 200 kyr at final supply: extinct (red, kyr after decline),\n"
+                 "alive and settled (green) or still changing (yellow); numbers: final climate (K)", fontsize=9)
 
     ax = axs[1, 0]
-    for d, ls in zip(RESCUE_GRID["decline_yr"], (":", "--", "-")):
-        for t0, color in zip(RESCUE_GRID["t_zero_k"], ("tab:blue", "tab:red")):
-            pts = [r for r in rescues if r["constraint"] == "U" and r["t_zero_k"] == t0 and r["b_min_rel"] == 1e-9
-                   and r["decline_yr"] == d]
-            ax.semilogx([r["mutation"] for r in pts], [r["max_abs_lag_k"] or np.nan for r in pts], ls, marker="o",
-                        ms=3, color=color, label=f"T0 {t0:g} K, decline {d:g} yr")
-    ax.axhline(18.9, color="0.4", lw=0.8, ls=":", label="thermal window half-width")
-    ax.set(xlabel="mutation fraction per birth per bin (m)", ylabel="largest |mean optimum − singular optimum| (K)",
-           title="(c) U, B_min = 1e-9 B*: adaptive lag")
-    ax.legend(fontsize=6.5)
+    p, losses = reference()
+    for t0, ls in ((265.0, "-"), (283.0, "--")):
+        q = replace(p, t_zero_k=t0)
+        r_a = losses[2].lifetime_yr * atmosphere(p.case)["flux_to_ratio_per_yr"] * p.abiotic_flux
+        r = r_a + np.geomspace(1e-6, 0.3, 1500)
+        c = Constraint(energy_ev=0.65)
+        t = np.asarray(temperature_k(r, q))
+        best = required_potential(r, [singular_theta(x, c) for x in t], q, c, losses[2])
+        ax.semilogx(r, best, ls, color="tab:red", lw=1.3, label=f"H best-growth envelope, T0 {t0:g} K")
+        ax.semilogx(r, required_potential(r, 285.5, q, c, losses[2]), ls, color="tab:blue", lw=1,
+                    label=f"H frozen at 285.5 K, T0 {t0:g} K")
+    for f in g["final_potential"]:
+        ax.axhline(f, color="0.5", lw=0.7, ls=":")
+    ax.set(xlabel="methane ratio r", ylabel="supply potential needed for a living steady state",
+           ylim=(0, 0.12), title="(c) which final supplies admit a living H state")
+    ax.legend(fontsize=7)
 
     ax = axs[1, 1]
-    for m, color in zip((1e-2, 1e-4, 1e-6), ("tab:green", "tab:orange", "tab:red")):
-        pts = [s for s in seeds if s["mutation"] == m and s["b_min_rel"] == 1e-9]
-        ax.plot([s["seed_theta_k"] for s in pts], [1.0 if s["established"] else 0.0 for s in pts], "o-", ms=4,
-                color=color, label=f"m = {m:g}")
+    for m, color in zip((0.0, 1e-4, 1e-2), ("k", "tab:orange", "tab:green")):
+        pts = [x for x in seeds if x["mutation"] == m]
+        ax.semilogy([x["seed_theta_k"] for x in pts], [max(x["final_total_rel"], 1e-12) for x in pts], "o-", ms=4,
+                    color=color, label=f"m = {m:g}")
     t_a = seeds[0]["abiotic_t_k"]
-    ax.axvline(t_a + 18.93, color="0.3", lw=0.8, ls="--", label="growth exceeds loss below here")
-    ax.axvline(t_a + 20.0, color="0.3", lw=0.8, ls=":", label="no growth (no births, no mutants) above here")
-    ax.set(xlabel="optimum of the single seed strain (K)", ylabel="established (1) or extinct (0)",
-           title=f"(d) lifeless planet at {t_a:.1f} K (T0 = 265 K), seed 1e-3 B*")
+    ax.axvline(t_a + 18.93, color="0.3", lw=0.8, ls="--", label="net growth positive below here")
+    ax.axvline(t_a + 20.0, color="0.3", lw=0.8, ls=":", label="no division (no mutants) above here")
+    ax.set(xlabel="optimum of the single seed strain (K)", ylabel="biomass after 20 kyr / B* (1e-12 = extinct)",
+           title=f"(d) seeding a lifeless planet at {t_a:.1f} K (T0 = 265 K), 1-yr census")
     ax.legend(fontsize=7)
     fig.tight_layout()
     fig.savefig(out, dpi=130)
@@ -284,9 +353,9 @@ def main(outdir: Path) -> None:
     rescues, seeds = run_rescue(), run_seed()
     write_csv(outdir / "strains_rescue.csv", [{k: v for k, v in r.items() if k != "series"} for r in rescues])
     write_csv(outdir / "strains_seed.csv", seeds)
-    example = [dict(constraint=r["constraint"], t_zero_k=r["t_zero_k"], b_min_rel=r["b_min_rel"],
-                    mutation=r["mutation"], decline_yr=r["decline_yr"], **s)
-               for r in rescues if r["t_zero_k"] == 265.0 and r["b_min_rel"] == 1e-6 and r["decline_yr"] == 1e3
+    example = [dict(constraint=r["constraint"], t_zero_k=r["t_zero_k"], final_potential=r["final_potential"],
+                    census_yr=r["census_yr"], mutation=r["mutation"], **s)
+               for r in rescues if r["t_zero_k"] == 265.0 and r["census_yr"] == 10.0 and r["final_potential"] == 0.03
                for s in r["series"]]
     write_csv(outdir / "strains_series.csv", example)
     plot(rescues, seeds, outdir / "strains_figures.png")

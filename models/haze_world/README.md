@@ -311,19 +311,20 @@ general equivalence.
 **Code.** [`strains.py`](../../src/terra_prisca/haze_world/strains.py), with
 tests in [`tests/test_strains.py`](../../tests/test_strains.py).
 
-**Independent review, 9 November 2026:** the reported H stranding contrast
-depends on the follow-up horizon. All 19 extended cold-baseline H cases
-eventually collapse, including the low-mutation controls; the final supply
-has no stationary living equilibrium under the assumed bridge. Count and
-trait-grid choices substantially change collapse timing. Declining seed
-clones can also be rescued by new mutations. Results 9–10 and the census
-description below need reinterpretation; see the
-[review and reproducible sensitivity runs](review/strains-review-2026-11-09.md).
-Production code and original figures are retained for the next revision.
-
 ```bash
 uv run python -m terra_prisca.haze_world.strains
 ```
+
+**Review history.** The first version (`85041a0`) followed each run for
+60 kyr with a single final supply of 0.02. Codex's
+[review](review/strains-review-2026-11-09.md) showed two problems:
+- That supply is below the least supply that admits any living H state under
+  the 265-K bridge, so every H population there eventually dies. The
+  stranding contrast was an artefact of when the runs stopped.
+- Declining seed clones can be rescued by mutation.
+
+Results 8–10 below come from the revised experiment, which adds viable final
+supplies, a no-mutation control, three census intervals and a 200-kyr hold.
 
 **Model.** The methanogens occupy 131 bins of thermal optimum, from 245 to
 310 K at 0.5-K spacing. Each bin follows the stage-1 physiology, and all
@@ -334,74 +335,85 @@ Mutation sends a fraction m of each bin's births to each neighbouring bin.
 Methane comes from uptake, so mutation leaves methane production unchanged.
 Two consequences follow:
 - **A strain that cannot divide produces no mutants.**
-- **Extinction is explicit.** Every 10 years (the census interval), any bin
-  below B_min is set to zero. Mutation from a living neighbour can repopulate
-  an emptied bin, but extinction of every bin is permanent. The effective
-  establishment condition is therefore mutant inflow per census, about
-  m·U·Δt, compared with B_min.
+- **Extinction is explicit.** At every census of Δt years, any bin below B_min
+  is set to zero. Mutation from a living neighbour can repopulate an emptied
+  bin, but extinction of every bin is permanent. Establishment of a new bin
+  therefore depends on mutant inflow per census, about m·U·Δt, compared with
+  B_min.
 
-The mutation fraction m, the threshold B_min (relative to the initial
-biomass B\*) and the census interval are uncalibrated, so they are swept or
-stated. Time is in years under the stage-1 biology.
+This is a deterministic removal rule, not a calibrated stochastic demography.
+m, B_min and Δt are uncalibrated.
+
+**Viability.** A positive steady state at methane ratio r with optimum θ
+needs supply potential
+
+P_req(r, θ) = r − r_a + P_K/(ρ(T(r), θ) − 1), where P_K = τcΦ_K.
+
+Its minimum over r, either for a frozen θ or for the best-growth envelope,
+is the least supply that admits a living state (panel c). Under the 265-K
+bridge, H needs 0.02088. U needs 0.00089 at its best, and 0.0011–0.0012
+frozen at its 273.5-K starting optimum.
 
 **Experiments.**
-- **Rescue.** Start at the evolved state for potential ratio 0.22, then lower
-  the supply linearly to 0.02 over 100, 1,000 or 10,000 years and hold it
-  for 60 kyr. Constraints U and H (E = 0.65 eV), with m = 10⁻⁴, 10⁻⁶ and
-  10⁻⁸, B_min = 10⁻⁹ and 10⁻⁶ B\*, and bridge T₀ = 265 and 283 K.
-- **Seed escape.** On the lifeless planet with T₀ = 265 K (265.6 K at the
-  abiotic methane level) and constant supply, seed one strain at 10⁻³ B\*.
+- **Rescue.** Start at the evolved state for potential ratio 0.22 and lower
+  the supply over 1 kyr to 0.02, 0.03 or 0.08. Hold it for 200 kyr.
+  Constraints U and H (E = 0.65 eV); m = 0, 10⁻⁸, 10⁻⁶ and 10⁻⁴;
+  Δt = 10, 30 and 100 yr; B_min = 10⁻⁶ B\*; bridge T₀ = 265 and 283 K.
+  That is 144 runs. A survivor is classed as settled if its total biomass
+  changed by less than 1% over the last 20 kyr. Δt = 1 and 3 yr and other
+  grid spacings are in Codex's review.
+- **Seed.** On the lifeless planet with T₀ = 265 K (265.6 K at the abiotic
+  methane level) and potential ratio 0.22, seed one strain at 10⁻³ B\*.
+  Optimum 284–287 K; m = 0, 10⁻⁴ and 10⁻²; B_min = 10⁻⁹ B\*; Δt = 1 yr;
+  followed for 20 kyr.
 
-![Strain-resolved rescue under declining supply, and seed escape from the cold trap](figures/strains_figures.png)
+![Strain-resolved rescue under declining supply, viability thresholds and seeding](figures/strains_figures.png)
 
 Data: [`strains_rescue.csv`](figures/strains_rescue.csv),
-[`strains_seed.csv`](figures/strains_seed.csv) and the example
+[`strains_seed.csv`](figures/strains_seed.csv), and the H/U example series in
 [`strains_series.csv`](figures/strains_series.csv).
 
 **8. Losing the supply means losing the haze, and the danger is heat (panel
-a).** At potential ratio 0.22 the climate sits at the haze minimum near
-273 K. As supply falls, methane decays over about 10⁴ years. The planet passes
-back through Arney's warm peak (297 K) before cooling onto the low-methane
-bridge. Methanogens adapted to the hazy minimum must first survive that
-warming.
-- **Under U with too little mutation**, they die in the warm phase,
-  2.5–7.3 kyr after the decline begins, at either T₀. Too little means
-  m = 10⁻⁸ with B_min = 10⁻⁶ B\*, where mutants cannot reach B_min within one
-  census. Methane then collapses to the abiotic level and the climate settles
-  at the lifeless 266 K or 283 K.
-- **Every other U run survives.** The largest lag behind the singular optimum
-  is 5–17 K, inside the 19-K thermal window (panel c).
-- **The duration of the decline matters little.** Methane relaxation, not the
-  supply schedule, sets the pace.
+b).** At potential ratio 0.22 the climate sits at the haze minimum near
+273 K. As supply falls, methane decays over about 10⁴ years, and the planet
+passes back through Arney's warm peak (297 K) before cooling onto the bridge.
 
-**9. Evolution can strand a population (panel b).** Under H at E = 0.65 eV,
-T₀ = 265 K and B_min = 10⁻⁶ B\*:
-- with m = 10⁻⁶, the population went extinct 34–39 kyr after the decline
-  began, and the planet fell to 267 K;
-- with m = 10⁻⁸, it survived.
+Unconstrained methanogens frozen at their 273.5-K optimum can survive
+every final supply tested: their threshold is 0.0011–0.0012. They still die
+in the warm phase, 2.9–4.2 kyr after the decline begins, at every final
+supply, both T₀ values and every Δt. This is death in transit, not an
+infeasible destination.
+- With m ≥ 10⁻⁶ the U populations track the warming and survive. All 48 U
+  survivors settle.
+- With m = 10⁻⁸, survival depends on the census: they die at Δt = 10 yr and
+  survive at 30 and 100 yr, where more mutant inflow accumulates per census.
 
-The mechanism is mutation supply, which scales with population size. While
-supply and biomass were still high, the m = 10⁻⁶ population tracked the
-warming to an optimum near 299 K. After the supply fell, biomass dropped about
-14-fold. Mutant inflow per census fell below B_min, the population was left
-with one or two bins, and it could not follow the climate back down. The
-nearly non-mutating population kept its 285.5-K optimum. Hotter-is-better
-gives that optimum a thermal window wide enough for both the warm peak and
-the cooled endpoint.
+**9. When a living state exists, H populations do not strand (panels a and
+b).** All 60 H runs with a viable final supply survive and settle, frozen
+or mutating. Hotter-is-better already places the starting optimum at
+285.5 K, whose thermal window spans both the warm peak and the cooled
+endpoint. Mutation shifts the optimum to 291–302.5 K and warms the final
+climate by up to 0.48 K.
 
-Adapting to a transient is costly when evolvability then collapses. This is
-conditional on the census threshold, which is the least constrained
-assumption here. With T₀ = 283 K every H run survives.
+At the infeasible supply of 0.02 under the 265-K bridge, every H run dies,
+34–118 kyr after the decline. When it dies depends on Δt and m, including
+their ranking. That is collapse caused by insufficient supply, not stranding
+by evolution. The earlier result 9 is withdrawn.
 
-**10. Mutation cannot carry a lifeless planet out of the cold trap (panel
-d).** A seed strain establishes only if its optimum is within about 1 K of
-the viable range: optimum ≤ 285–285.5 K, against viability below 284.5 K.
-Beyond about 285.6 K it cannot divide at 265.6 K, so it makes no mutants and
-dies within 7–16 years at any m. Escape by mutation would need standing
-variation that already reaches the viable range, which is immigration under
-another name. The cold trap is evolutionarily absorbing, so whether a lifeless
-haze-world can be colonised depends on its methane-free climate, which is
-still the bridge assumption.
+**10. Mutation can rescue a declining seed, but not one that cannot divide
+(panel d).**
+- Without mutation, only seeds that can already grow at 265.6 K survive
+  (optimum ≤ 284.5 K).
+- With mutation, clones that are declining but still dividing recover to
+  their full biomass within 20 kyr. This holds at optimum 285.0 K with
+  m = 10⁻⁴, and at 285.0 and 285.5 K with m = 10⁻².
+- Seeds at 286 K or above cannot divide at that temperature, so they make no
+  mutants and die within 14 years.
+
+The barriers are zero division and total extinction, not negative net
+growth. How far mutational rescue reaches depends on m and B_min. Escape from
+the cold trap is therefore possible for introductions near the viable range,
+and gets rarer the further the seed's optimum lies from it.
 
 ## Limits and next steps
 

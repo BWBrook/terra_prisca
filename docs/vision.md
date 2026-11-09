@@ -105,15 +105,13 @@ Fidelity is measured against the published figures, digitised.
    A strain-resolved stage 2 adds mutation and explicit extinction. When
    supply declines, the haze clears and the planet passes back through the
    warm peak, so the methanogens' danger is heat rather than cold. Survival
-   depends on whether the mutation supply can keep pace. The first H runs
-   suggested evolutionary stranding, but an
-   [extended review](../models/haze_world/review/strains-review-2026-11-09.md)
-   found that all tested cold-baseline H cases eventually collapse, including
-   the low-mutation controls: the final supply cannot support a stationary
-   living state under the assumed bridge. Census and trait-grid choices
-   change collapse times. Separate seed controls show that new mutations can
-   rescue an initially declining clone; zero reproduction and total
-   extinction are stronger barriers than negative net growth.
+   depends on whether the mutation supply can keep pace. Unconstrained
+   methanogens that cannot adapt die of heat in transit, even when the final
+   supply could sustain them. Once supply admits a living state, the
+   hotter-is-better populations survive with or without mutation; an earlier
+   stranding result was an artefact of the follow-up time
+   ([review](../models/haze_world/review/strains-review-2026-11-09.md)).
+   Mutation can rescue a declining seed but not one that cannot divide.
    This direction may lead to a paper.
 2. **Evolving daisies.** Give the daisies a heritable optimum temperature and
    test whether regulation survives natural selection, the core of the

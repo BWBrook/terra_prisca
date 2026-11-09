@@ -3,7 +3,9 @@ import pytest
 
 from terra_prisca.haze_world.darwinian import Constraint, reference
 from terra_prisca.haze_world.experiments import flux_for_potential
-from terra_prisca.haze_world.strains import Run, StrainModel, rescue, seed_escape
+from dataclasses import replace
+
+from terra_prisca.haze_world.strains import Run, StrainModel, rescue, seed_escape, viability_threshold
 
 P, LOSSES = reference()
 LINEAR = LOSSES[2]
@@ -34,10 +36,24 @@ def test_a_strain_that_cannot_divide_produces_no_mutants():
     t_k = 265.6
     warm_zero = model.theta[(model.rho(t_k) == 0.0) & (model.theta > t_k)]
     assert warm_zero.min() > t_k + 19.9
-    r = seed_escape(P, Run(Constraint(), LINEAR, mutation=1e-2, b_min_rel=1e-9), seed_theta_k=287.0)
-    assert not r["established"]
-    r = seed_escape(P, Run(Constraint(), LINEAR, mutation=1e-2, b_min_rel=1e-9), seed_theta_k=284.0)
-    assert r["established"] and r["steps_to_viable"] == 0
+    r = seed_escape(P, Run(Constraint(), LINEAR, mutation=1e-2, b_min_rel=1e-9), seed_theta_k=287.0, years=200.0)
+    assert not r["alive_at_end"]
+
+
+def test_mutation_rescues_a_declining_clone_that_can_still_divide():
+    run = Run(Constraint(), LINEAR, mutation=1e-2, b_min_rel=1e-9, check_yr=1.0)
+    rescued = seed_escape(P, run, seed_theta_k=285.5, years=2e3)
+    clone = seed_escape(P, replace(run, mutation=0.0), seed_theta_k=285.5, years=2e3)
+    assert rescued["initial_net_growth_per_yr"] < 0 and rescued["steps_to_viable"] > 0
+    assert rescued["alive_at_end"] and not clone["alive_at_end"]
+
+
+def test_final_supply_viability_threshold_matches_the_independent_check():
+    h = Constraint(energy_ev=0.65)
+    q = replace(P, t_zero_k=265.0)
+    assert viability_threshold(q, h, LINEAR)["potential"] == pytest.approx(0.02087893, abs=2e-7)
+    assert viability_threshold(q, h, LINEAR, 285.5)["potential"] == pytest.approx(0.02088523, abs=2e-7)
+    assert viability_threshold(q, Constraint(), LINEAR)["potential"] < 0.001
 
 
 def test_mutation_below_the_census_threshold_cannot_track_the_haze_loss_warming():

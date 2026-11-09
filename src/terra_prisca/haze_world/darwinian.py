@@ -266,11 +266,12 @@ def local_regulation(q: Params, loss: Loss, e: dict) -> dict:
     rho_t = q.growth_ratio_max * -2.0 * (t - q.t_opt_k) / q.t_halfwidth_k**2 if q.thermal else 0.0
     l_r = loss.slope(e["r"])
     out = {}
-    for side, t_r in zip(("left", "right"), climate_slopes(e["r"], q)):
+    slopes = climate_slopes(e["r"], q)
+    for side, t_r in zip(("left", "right"), slopes):
         s_r = cr * q.maintenance_flux * rho_t * t_r / (rho - 1.0) ** 2
         out[side] = {"ratio": l_r / (l_r - s_r), "dT_dlnS": t_r * cr * q.donor_flux / (l_r - s_r),
                      "control_dT_dlnS": t_r * cr * q.donor_flux / l_r}
-    out["at_vertex"] = not np.isclose(out["left"]["ratio"], out["right"]["ratio"], rtol=1e-6, atol=1e-9)
+    out["at_vertex"] = not np.isclose(slopes[0], slopes[1], rtol=1e-6, atol=1e-9)
     return out
 
 
