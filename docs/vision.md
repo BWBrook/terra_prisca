@@ -142,6 +142,12 @@ Fidelity is measured against the published figures, digitised.
    tests removal floors, mean immigration and product-dependent thresholds.
    It separates locally stable mixed communities from the communities
    attained after an invasion, with both invasion directions tested.
+   The [two-habitat refuge coupling](../models/haze_world/refuge-coupling.md)
+   now tests endogenous rescue under a shared atmosphere. Small warm refuges
+   can preserve coexistence without external immigration; initial refuge
+   thresholds fail to account for the transient climate path. Physiological
+   domain limits keep many reverse invasions unresolved, and measured
+   equilibrium feasibility is distinguished from attainable trajectories.
    A [solar-response search](../models/haze_response/solar-responses.md) found
    a second Sun-age checkpoint, but no matched hazy luminosity grid.
    This direction may lead to a paper.

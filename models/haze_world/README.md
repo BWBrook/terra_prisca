@@ -1,6 +1,6 @@
 # Haze-world
 
-**Status: conditional model, reviewed 9 November 2026.** This is a new
+**Status: conditional model, updated 10 November 2026.** This is a new
 model, not a reconstruction. It couples methanogens and a finite methane budget
 to the [Arney et al. (2016) climate responses](../haze_response/README.md).
 Every quantity those curves do not supply is a named assumption with a default

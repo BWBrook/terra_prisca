@@ -25,6 +25,7 @@ def test_direction_match_requires_community_stocks_not_temperature_alone():
     common = dict(case_id="first", fraction=.5, warm_fraction=.5, contrast_k=0., dispersal_yr=.001,
                   direction="A_into_M", activity="fixed", seed_origin="both", census_yr=10., years=100000.,
                   settling_status="census_stationary", attempt_status="completed", base_case_id="first",
+                  endpoint_class="spatial_coexistence",
                   global_temperature_k=281.5, methane_ratio=.195,
                   pressure_cold_pa=30., pressure_warm_pa=30., acetate_cold_mol_l=.001, acetate_warm_mol_l=.001,
                   cells_cold_a=1e25, cells_cold_m=1e25, cells_warm_a=1e25, cells_warm_m=1e25,

@@ -92,6 +92,9 @@ def diagnose(record, base_record):
         return clean(row)
     y = physical_state(row, p)
     f = model.fluxes(y, p)
+    linearization=experiments.equilibria.describe(y,p)
+    row["terminal_linearization_max_real_yr"]=linearization["max_real_yr"]
+    row["terminal_scaled_rhs_residual"]=linearization["max_scaled_residual"]
     for i, guild in enumerate(("a", "m")):
         growth = np.array([local["net_growth_yr"][i] for local in f["local"]])
         migration = p.dispersal_yr * np.array([[-p.weights[1], p.weights[1]], [p.weights[0], -p.weights[0]]])
@@ -123,7 +126,9 @@ def direction_pairs(rows):
         first, second = pair["A_into_M"], pair["M_into_A"]
         qualified = all(r["settling_status"] == "census_stationary" for r in (first,second))
         item = dict(key, both_stationary=qualified, case_a=first["base_case_id"], case_m=second["base_case_id"],
-                    status_a=first["attempt_status"], status_m=second["attempt_status"])
+                    status_a=first["attempt_status"], status_m=second["attempt_status"],
+                    class_a=first["endpoint_class"],class_m=second["endpoint_class"],
+                    both_initially_favorable=all(r.get("resident_favorable_patch_initially",False) for r in (first,second)))
         if qualified:
             p = experiments.parameters(experiments.Case(**{name:first[name] for name in experiments.Case.__dataclass_fields__}))
             a,b = physical_state(first,p),physical_state(second,p)
@@ -133,6 +138,38 @@ def direction_pairs(rows):
             item.update(global_temperature_difference_k=abs(first["global_temperature_k"]-second["global_temperature_k"]),
                         maximum_relative_stock_difference=difference, identical_occupancy=occupancy,
                         matching_endpoint=bool(occupancy and difference<.001))
+        result.append(clean(item))
+    return result
+
+
+def zero_contrast_checks(rows, path):
+    with path.open() as stream:
+        legacy=list(csv.DictReader(stream))
+    result=[]
+    for row in rows:
+        if row["contrast_k"]!=0 or row["settling_status"]!="census_stationary":
+            continue
+        matches=[old for old in legacy if old["activity"]==row["activity"]
+                 and float(old["fraction"])==row["fraction"] and old["direction"]==row["direction"]
+                 and float(old["minimum_cells"])==1 and float(old["relative_immigration_yr"])==0
+                 and float(old["census_yr"])==row["census_yr"]]
+        if len(matches)!=1:
+            raise RuntimeError("Zero-contrast check needs a unique single-habitat control")
+        old=matches[0]
+        item=dict(case_id=row["base_case_id"],single_case_id=old["selected_case_id"],
+                  temperature_difference_k=abs(row["global_temperature_k"]-float(old["temperature_k"])),
+                  methane_ratio_difference=abs(row["methane_ratio"]-float(old["methane_ratio"])))
+        cell_errors=[]
+        for guild in ("a","m"):
+            cells=sum(row[f"cells_{patch}_{guild}"] for patch in ("cold","warm"))
+            previous=float(old[f"cells_{guild}"])
+            cell_errors.append(abs(cells-previous)/max((cells+previous)/2,1.))
+            first=[row[f"first_cull_{patch}_{guild}_yr"] for patch in ("cold","warm")]
+            item[f"first_cull_{guild}_yr_single"]=float(old[f"first_cull_{guild}_yr"]) if old[f"first_cull_{guild}_yr"] else None
+            item[f"first_cull_{guild}_yr_cold"],item[f"first_cull_{guild}_yr_warm"]=first
+        item["maximum_relative_cell_difference"]=max(cell_errors)
+        item["matching_endpoint"]=(item["temperature_difference_k"]<.001 and item["methane_ratio_difference"]<1e-6
+                                    and max(cell_errors)<.001)
         result.append(clean(item))
     return result
 
@@ -191,12 +228,62 @@ def plots(rows, equilibrium_rows, output):
                         scatter=ax.scatter([r["warm_fraction"] for r in group],[r["contrast_k"] for r in group],
                             c=[r["global_temperature_k"] for r in group],cmap="viridis",vmin=273,vmax=297,marker=marker,s=32)
                 ax.set_title(f"f={fraction:g}; exchange={d:g}/yr",fontsize=10)
+                ax.set_ylim(-1,31);ax.set_yticks((0,5,10,15,20,30))
                 if i==2:ax.set_xlabel("Warm area fraction")
                 if j==0:ax.set_ylabel("Contrast (K)")
                 ax.grid(alpha=.15)
         if scatter is not None:fig.colorbar(scatter,ax=axes,label="Global temperature (K)",shrink=.8)
         fig.suptitle("Detected locally stable equilibria: circles measured; triangles cold continuation")
         fig.savefig(output/"stable_equilibria.png",dpi=145);plt.close(fig)
+
+
+def rescue_plot(records, raw_dir, output):
+    import gzip
+    import matplotlib.pyplot as plt
+    from scipy.special import logsumexp
+    fig,axes=plt.subplots(3,2,figsize=(10,8),layout="constrained")
+    for i,fraction in enumerate((0.,.5,.9)):
+        for contrast,color in ((8.4,"#777777"),(8.6,"#336b9d")):
+            selected=[r for r in records if all(r["protocol"]["case"][k]==v for k,v in
+                dict(fraction=fraction,warm_fraction=.05,contrast_k=contrast,dispersal_yr=.001,
+                     direction="A_into_M",activity="fixed",seed_origin="both",census_yr=10.).items())]
+            if len(selected)!=1:
+                raise RuntimeError("Rescue figure requires one qualified record per frozen comparison")
+            record=selected[0]
+            with gzip.open(raw_dir/record["raw_file"],"rt") as stream:
+                result=json.load(stream)["result"]
+            if result is None:
+                continue
+            t=np.asarray(result["t"])
+            y=np.asarray(result["y"])
+            p=experiments.parameters(experiments.Case(**record["protocol"]["case"]))
+            temperature=np.array([model.core.temperature_k(r,p.base.climate) for r in y[8]])
+            logs=np.asarray(result["log_biomass"],dtype=float)[:,1,:]
+            logs=np.where(np.isnan(logs),-np.inf,logs)
+            total=logsumexp(logs+np.log(p.weights[:,None]),axis=0)
+            log_cells=(total+result["metadata"]["global_log_cell_conversion"])/np.log(10.)
+            axes[i,0].plot(t,temperature,color=color,label=f"contrast {contrast:g} K")
+            axes[i,1].plot(t,np.where(np.isfinite(log_cells),log_cells,np.nan),color=color)
+            minimum=record["summary"].get("global_pre_extinction_min_log_cells_m")
+            if minimum is not None:
+                axes[i,1].scatter(record["summary"]["global_pre_extinction_min_time_m_yr"],
+                                  minimum/np.log(10.),marker="D",s=20,color=color,zorder=4)
+            if result["status"]=="domain_exit":
+                axes[i,0].plot(t[-1],temperature[-1],marker="x",color=color)
+            if np.isneginf(total[-1]):
+                axes[i,1].text(.98,.08 if contrast==8.4 else .17,f"{contrast:g} K: M removed",
+                               transform=axes[i,1].transAxes,ha="right",color=color,fontsize=8)
+        for ax in axes[i]:
+            ax.set_xscale("symlog",linthresh=20)
+            ax.set_title(f"Acetate fraction {fraction:g}",fontsize=10)
+            ax.grid(alpha=.15)
+            if i==2:ax.set_xlabel("Years after acetogen inoculation")
+        axes[i,0].set_ylabel("Global temperature (K)")
+        axes[i,1].set_ylabel("log₁₀ global methanogen cells")
+        axes[i,1].axhline(0,color=".6",linewidth=.7,linestyle=":")
+    axes[0,0].legend(frameon=False,fontsize=8)
+    fig.suptitle("A small warm refuge: 5% warm area; exchange 0.001/year")
+    fig.savefig(output/"warm_refuge_rescue.png",dpi=145);plt.close(fig)
 
 
 def main():
@@ -218,7 +305,23 @@ def main():
     for stage in ("main","subsets"):
         ids={r["protocol"]["case"]["case_id"] for r in stages[stage]}
         experiments.public_table(args.output,f"selected_{stage}.csv",[r for r in rows if r["base_case_id"] in ids])
+    subset_ids={r["protocol"]["case"]["case_id"] for r in stages["subsets"]}
+    fields=[*experiments.Case.__dataclass_fields__,"selected_case_id","selected_horizon_yr",
+            "attempt_status","settling_status","endpoint_class","global_temperature_k","climate_domain",
+            "temperature_cold_k","temperature_warm_k","physiology_cold","physiology_warm",
+            "occupancy_cold","occupancy_warm","global_catabolic_share_a","global_catabolic_share_m",
+            "global_pre_extinction_min_log_cells_a","global_pre_extinction_min_log_cells_m",
+            "global_after_census_min_zero_a","global_after_census_min_zero_m",
+            "path_min_temperature_cold_k","path_max_temperature_warm_k","domain_exit_time_yr",
+            "resident_favorable_patch_initially","surviving_subcellular_excursion_a","surviving_subcellular_excursion_m"]
+    fields += ["protected_partition","terminal_linearization_max_real_yr","terminal_scaled_rhs_residual"]
+    experiments.public_table(args.output,"sensitivity_overview.csv",
+                             [{k:r.get(k) for k in fields} for r in rows if r["base_case_id"] in subset_ids])
     pairs=direction_pairs(rows);experiments.public_table(args.output,"direction_comparisons.csv",pairs)
+    legacy=experiments.ROOT/"models/haze_world/figures/finite_populations/attained_endpoints.csv"
+    controls=zero_contrast_checks(rows,legacy)
+    experiments.public_table(args.output,"zero_contrast_checks.csv",controls)
+    provenance["single_habitat_controls"]=dict(file=str(legacy.relative_to(experiments.ROOT)),sha256=sha256(legacy.read_bytes()).hexdigest())
     equilibrium_rows=[]
     for record in stages["equilibria"]:
         with __import__("gzip").open(args.raw_dir/record["raw_file"],"rt") as stream:
@@ -226,11 +329,17 @@ def main():
         equilibrium_rows.extend(dict(**record["protocol"]["case"],**{k:v for k,v in e.items() if k!="y"}) for e in payload["candidates"])
     main_ids={r["protocol"]["case"]["case_id"] for r in stages["main"]}
     plots([r for r in rows if r["base_case_id"] in main_ids],equilibrium_rows,args.output)
+    rescue_plot(list(selected.values()),args.raw_dir,args.output)
     summary=dict(inputs=provenance,selected=len(rows),later_horizons=sum(r["later_horizon"] for r in rows),
         statuses=dict(Counter(r["attempt_status"] for r in rows)),settling=dict(Counter(r["settling_status"] for r in rows)),
         classes=dict(Counter(r["endpoint_class"] or "no_qualified_endpoint" for r in rows)),
         qualified_direction_pairs=sum(r["both_stationary"] for r in pairs),
         matching_direction_pairs=sum(bool(r.get("matching_endpoint")) for r in pairs),
+        qualified_zero_contrast_controls=len(controls),matching_zero_contrast_controls=sum(r["matching_endpoint"] for r in controls),
+        initially_favorable_pairs_f_le_half=sum(r["fraction"]<=.5 and r["both_initially_favorable"] for r in pairs),
+        surviving_subcellular_excursions=sum(bool(r.get("surviving_subcellular_excursion_"+g)) for r in rows for g in ("a","m")),
+        stationary_by_fraction={str(f):dict(Counter(r["endpoint_class"] for r in rows
+            if r["fraction"]==f and r["settling_status"]=="census_stationary")) for f in (0.,.5,.9)},
         source_sha256=sha256(Path(__file__).read_bytes()).hexdigest())
     (args.output/"reporting_manifest.json").write_text(dumps(summary)+"\n")
     print(dumps(summary))

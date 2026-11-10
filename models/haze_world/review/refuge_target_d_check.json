@@ -1,0 +1,1482 @@
+{
+  "source_sha256": {
+    "src/terra_prisca/haze_world/refuge_coupling.py": "d5bf3240c998da7597c017b95c97a4070b405f2bf31313b0886bb9a2c41d1b4a",
+    "src/terra_prisca/haze_world/refuge_equilibria.py": "33cf4b539e33e59db1a7052a8b75bc1326e770b857a3d086e8cef4dd71c38994",
+    "src/terra_prisca/haze_world/population_coupling.py": "17a433957e94845595f6d7fd160ffe593c01c4e74550707b0814c95ab67ae663",
+    "src/terra_prisca/haze_world/two_guilds.py": "eff6a9027c5b28d154f03462d926591ebee3408eb2c80ec0df5c38929f169f83",
+    "src/terra_prisca/haze_world/methane_budget.py": "70dc47659e4738d07809e8d23844af79bf69e5dabcc87793eac3f5e560011721"
+  },
+  "checker_sha256": "572576feab44fddd0ad22112eeda8ce4f71f2c956f5eb369eaac40528d5a9ad4",
+  "scope": "Four-case bounded target-d challenge; finite seeds and bounded variables do not establish absence",
+  "variables": "pressure in(0,p0), biomass .001*exp(logX), logX in[-80,10], ratio separately bounded within supported intervals",
+  "method": "Direct target-d pressure balances and local per-capita growth plus exchange, with acetate eliminated algebraically",
+  "scientific_scope": "Challenges unsupported-start classifications for three M-only geometries at d=1/year and one supported A-only positive control; uptake, climate primitives and final stability evaluator are shared with the production model. M-only steady equations also apply at f=0.5 because acetate is absent. No trajectory or full-grid inference is made.",
+  "completeness": "Four configurations, finite generic seeds and bounded variables; no missed root found does not establish nonexistence or global completeness",
+  "cases": [
+    {
+      "parameters": {
+        "base": {
+          "climate": {
+            "case": "B",
+            "lifetime_yr": 10000.0,
+            "abiotic_flux": 680000000.0,
+            "donor_flux": 375157520114.00323,
+            "maintenance_flux": 10000000000.0,
+            "growth_ratio_max": 10.0,
+            "t_opt_k": 300.0,
+            "t_halfwidth_k": 20.0,
+            "thermal": true,
+            "t_zero_k": 283.0,
+            "bridge_scale": 0.01
+          },
+          "biology": {
+            "methanogen": "methanogenic strain MSB",
+            "capacity_ratio": 0.74,
+            "yield_m": 0.78,
+            "maintenance_m30": 0.001,
+            "loss_h": 0.001,
+            "threshold_a30": 20.0,
+            "threshold_shape": "fixed_energy",
+            "msp_threshold_4c": 20.0,
+            "maintenance_energy_j": 69000.0,
+            "kinetics": "saturating",
+            "assimilation_m": 0.0824,
+            "km_scale_a": 1.0,
+            "km_scale_m": 1.0,
+            "cessation_energy_a_j": -24000.0,
+            "cessation_energy_m_j": -28000.0,
+            "threshold_m30": 1.0,
+            "exchange_mol_l_h_pa": 3.333333333333333e-09,
+            "atmosphere_pa": 0.0,
+            "low_temperature_variant": "constant_shape"
+          },
+          "loss": {
+            "anchor_ratio": 0.3,
+            "lifetime_yr": 10000.0,
+            "kind": "power",
+            "elasticity": 1.0,
+            "log_scale": 0.001
+          },
+          "habitat_l_cm2": 0.008970677546304392,
+          "acetate_lifetime_yr": 1.0,
+          "acetate_fraction": 0.0,
+          "recycling_variant": "constant",
+          "recycling_midpoint_k": 280.0,
+          "width_k": 2.0,
+          "enabled": [
+            false,
+            true
+          ],
+          "activity_feedback": "fixed",
+          "acetate_reference_mol_l": 0.0005,
+          "methane_reference_pa": 350.0
+        },
+        "warm_fraction": 0.5,
+        "contrast_k": 5.0,
+        "dispersal_yr": 1.0
+      },
+      "resident": "methanogen",
+      "coverage": {
+        "n_grid": 201,
+        "ratio_grid_size": 323,
+        "ratio_ceiling": 0.30354920930263474,
+        "global_temperature_bounds_k": [
+          275.5,
+          300.65
+        ],
+        "supported_ratio_intervals": [
+          [
+            0.0,
+            0.20347395344495814
+          ]
+        ],
+        "status": "supported_search_interval",
+        "completeness": "Finite branch/root search; no root found is not a global nonexistence proof",
+        "biomass_root_numerical_zero_gdw_l": 1e-14
+      },
+      "existing_candidate_count": 1,
+      "existing_qualifying_count": 0,
+      "existing_qualifying": [],
+      "independent_fits": [
+        {
+          "interval": [
+            0.0,
+            0.20347395344495814
+          ],
+          "position": 0.2,
+          "biomass_multiplier": 0.3,
+          "max_scaled_residual": 0.05257878216637231,
+          "nfev": 72,
+          "success": true,
+          "active_bounds": [
+            0,
+            0,
+            0,
+            0,
+            1
+          ],
+          "ratio": 0.20347395141021857
+        },
+        {
+          "interval": [
+            0.0,
+            0.20347395344495814
+          ],
+          "position": 0.2,
+          "biomass_multiplier": 1.0,
+          "max_scaled_residual": 0.0525787821829143,
+          "nfev": 41,
+          "success": true,
+          "active_bounds": [
+            0,
+            0,
+            0,
+            0,
+            1
+          ],
+          "ratio": 0.20347395141021857
+        },
+        {
+          "interval": [
+            0.0,
+            0.20347395344495814
+          ],
+          "position": 0.2,
+          "biomass_multiplier": 3.0,
+          "max_scaled_residual": 0.05257878208319051,
+          "nfev": 41,
+          "success": true,
+          "active_bounds": [
+            0,
+            0,
+            0,
+            0,
+            1
+          ],
+          "ratio": 0.20347395141021857
+        },
+        {
+          "interval": [
+            0.0,
+            0.20347395344495814
+          ],
+          "position": 0.5,
+          "biomass_multiplier": 0.3,
+          "max_scaled_residual": 0.05257878233332566,
+          "nfev": 11,
+          "success": true,
+          "active_bounds": [
+            0,
+            0,
+            0,
+            0,
+            1
+          ],
+          "ratio": 0.20347395141021857
+        },
+        {
+          "interval": [
+            0.0,
+            0.20347395344495814
+          ],
+          "position": 0.5,
+          "biomass_multiplier": 1.0,
+          "max_scaled_residual": 0.052578782225013304,
+          "nfev": 55,
+          "success": true,
+          "active_bounds": [
+            0,
+            0,
+            0,
+            0,
+            1
+          ],
+          "ratio": 0.20347395141021857
+        },
+        {
+          "interval": [
+            0.0,
+            0.20347395344495814
+          ],
+          "position": 0.5,
+          "biomass_multiplier": 3.0,
+          "max_scaled_residual": 0.052578782074202246,
+          "nfev": 42,
+          "success": true,
+          "active_bounds": [
+            0,
+            0,
+            0,
+            0,
+            1
+          ],
+          "ratio": 0.20347395141021857
+        },
+        {
+          "interval": [
+            0.0,
+            0.20347395344495814
+          ],
+          "position": 0.8,
+          "biomass_multiplier": 0.3,
+          "max_scaled_residual": 0.052578782308194426,
+          "nfev": 14,
+          "success": true,
+          "active_bounds": [
+            0,
+            0,
+            0,
+            0,
+            1
+          ],
+          "ratio": 0.20347395141021857
+        },
+        {
+          "interval": [
+            0.0,
+            0.20347395344495814
+          ],
+          "position": 0.8,
+          "biomass_multiplier": 1.0,
+          "max_scaled_residual": 0.05257878229416327,
+          "nfev": 43,
+          "success": true,
+          "active_bounds": [
+            0,
+            0,
+            0,
+            0,
+            1
+          ],
+          "ratio": 0.20347395141021857
+        },
+        {
+          "interval": [
+            0.0,
+            0.20347395344495814
+          ],
+          "position": 0.8,
+          "biomass_multiplier": 3.0,
+          "max_scaled_residual": 0.052578782074882584,
+          "nfev": 41,
+          "success": true,
+          "active_bounds": [
+            0,
+            0,
+            0,
+            0,
+            1
+          ],
+          "ratio": 0.20347395141021857
+        }
+      ],
+      "independent_roots": [],
+      "missed_supported_stable": []
+    },
+    {
+      "parameters": {
+        "base": {
+          "climate": {
+            "case": "B",
+            "lifetime_yr": 10000.0,
+            "abiotic_flux": 680000000.0,
+            "donor_flux": 375157520114.00323,
+            "maintenance_flux": 10000000000.0,
+            "growth_ratio_max": 10.0,
+            "t_opt_k": 300.0,
+            "t_halfwidth_k": 20.0,
+            "thermal": true,
+            "t_zero_k": 283.0,
+            "bridge_scale": 0.01
+          },
+          "biology": {
+            "methanogen": "methanogenic strain MSB",
+            "capacity_ratio": 0.74,
+            "yield_m": 0.78,
+            "maintenance_m30": 0.001,
+            "loss_h": 0.001,
+            "threshold_a30": 20.0,
+            "threshold_shape": "fixed_energy",
+            "msp_threshold_4c": 20.0,
+            "maintenance_energy_j": 69000.0,
+            "kinetics": "saturating",
+            "assimilation_m": 0.0824,
+            "km_scale_a": 1.0,
+            "km_scale_m": 1.0,
+            "cessation_energy_a_j": -24000.0,
+            "cessation_energy_m_j": -28000.0,
+            "threshold_m30": 1.0,
+            "exchange_mol_l_h_pa": 3.333333333333333e-09,
+            "atmosphere_pa": 0.0,
+            "low_temperature_variant": "constant_shape"
+          },
+          "loss": {
+            "anchor_ratio": 0.3,
+            "lifetime_yr": 10000.0,
+            "kind": "power",
+            "elasticity": 1.0,
+            "log_scale": 0.001
+          },
+          "habitat_l_cm2": 0.008970677546304392,
+          "acetate_lifetime_yr": 1.0,
+          "acetate_fraction": 0.0,
+          "recycling_variant": "constant",
+          "recycling_midpoint_k": 280.0,
+          "width_k": 2.0,
+          "enabled": [
+            false,
+            true
+          ],
+          "activity_feedback": "fixed",
+          "acetate_reference_mol_l": 0.0005,
+          "methane_reference_pa": 350.0
+        },
+        "warm_fraction": 0.5,
+        "contrast_k": 10.0,
+        "dispersal_yr": 1.0
+      },
+      "resident": "methanogen",
+      "coverage": {
+        "n_grid": 201,
+        "ratio_grid_size": 322,
+        "ratio_ceiling": 0.30354920930263474,
+        "global_temperature_bounds_k": [
+          278.0,
+          298.15
+        ],
+        "supported_ratio_intervals": [
+          [
+            0.0,
+            0.20000778763213795
+          ]
+        ],
+        "status": "supported_search_interval",
+        "completeness": "Finite branch/root search; no root found is not a global nonexistence proof",
+        "biomass_root_numerical_zero_gdw_l": 1e-14
+      },
+      "existing_candidate_count": 1,
+      "existing_qualifying_count": 0,
+      "existing_qualifying": [],
+      "independent_fits": [
+        {
+          "interval": [
+            0.0,
+            0.20000778763213795
+          ],
+          "position": 0.2,
+          "biomass_multiplier": 0.3,
+          "max_scaled_residual": 0.09135538661607663,
+          "nfev": 36,
+          "success": true,
+          "active_bounds": [
+            0,
+            0,
+            0,
+            0,
+            1
+          ],
+          "ratio": 0.20000778563206004
+        },
+        {
+          "interval": [
+            0.0,
+            0.20000778763213795
+          ],
+          "position": 0.2,
+          "biomass_multiplier": 1.0,
+          "max_scaled_residual": 0.09135538807060341,
+          "nfev": 43,
+          "success": true,
+          "active_bounds": [
+            0,
+            0,
+            0,
+            0,
+            1
+          ],
+          "ratio": 0.20000778563206004
+        },
+        {
+          "interval": [
+            0.0,
+            0.20000778763213795
+          ],
+          "position": 0.2,
+          "biomass_multiplier": 3.0,
+          "max_scaled_residual": 0.09135538760957546,
+          "nfev": 56,
+          "success": true,
+          "active_bounds": [
+            0,
+            0,
+            0,
+            0,
+            1
+          ],
+          "ratio": 0.20000778563206004
+        },
+        {
+          "interval": [
+            0.0,
+            0.20000778763213795
+          ],
+          "position": 0.5,
+          "biomass_multiplier": 0.3,
+          "max_scaled_residual": 0.09135538745523092,
+          "nfev": 44,
+          "success": true,
+          "active_bounds": [
+            0,
+            0,
+            0,
+            0,
+            1
+          ],
+          "ratio": 0.20000778563206004
+        },
+        {
+          "interval": [
+            0.0,
+            0.20000778763213795
+          ],
+          "position": 0.5,
+          "biomass_multiplier": 1.0,
+          "max_scaled_residual": 0.09135538735962508,
+          "nfev": 50,
+          "success": true,
+          "active_bounds": [
+            0,
+            0,
+            0,
+            0,
+            1
+          ],
+          "ratio": 0.20000778563206004
+        },
+        {
+          "interval": [
+            0.0,
+            0.20000778763213795
+          ],
+          "position": 0.5,
+          "biomass_multiplier": 3.0,
+          "max_scaled_residual": 0.09135538711879598,
+          "nfev": 48,
+          "success": true,
+          "active_bounds": [
+            0,
+            0,
+            0,
+            0,
+            1
+          ],
+          "ratio": 0.20000778563206004
+        },
+        {
+          "interval": [
+            0.0,
+            0.20000778763213795
+          ],
+          "position": 0.8,
+          "biomass_multiplier": 0.3,
+          "max_scaled_residual": 0.09135538736533012,
+          "nfev": 44,
+          "success": true,
+          "active_bounds": [
+            0,
+            0,
+            0,
+            0,
+            1
+          ],
+          "ratio": 0.20000778563206004
+        },
+        {
+          "interval": [
+            0.0,
+            0.20000778763213795
+          ],
+          "position": 0.8,
+          "biomass_multiplier": 1.0,
+          "max_scaled_residual": 0.09135538716484883,
+          "nfev": 41,
+          "success": true,
+          "active_bounds": [
+            0,
+            0,
+            0,
+            0,
+            1
+          ],
+          "ratio": 0.20000778563206004
+        },
+        {
+          "interval": [
+            0.0,
+            0.20000778763213795
+          ],
+          "position": 0.8,
+          "biomass_multiplier": 3.0,
+          "max_scaled_residual": 0.0913553870989665,
+          "nfev": 31,
+          "success": true,
+          "active_bounds": [
+            0,
+            0,
+            0,
+            0,
+            1
+          ],
+          "ratio": 0.20000778563206004
+        }
+      ],
+      "independent_roots": [],
+      "missed_supported_stable": []
+    },
+    {
+      "parameters": {
+        "base": {
+          "climate": {
+            "case": "B",
+            "lifetime_yr": 10000.0,
+            "abiotic_flux": 680000000.0,
+            "donor_flux": 375157520114.00323,
+            "maintenance_flux": 10000000000.0,
+            "growth_ratio_max": 10.0,
+            "t_opt_k": 300.0,
+            "t_halfwidth_k": 20.0,
+            "thermal": true,
+            "t_zero_k": 283.0,
+            "bridge_scale": 0.01
+          },
+          "biology": {
+            "methanogen": "methanogenic strain MSB",
+            "capacity_ratio": 0.74,
+            "yield_m": 0.78,
+            "maintenance_m30": 0.001,
+            "loss_h": 0.001,
+            "threshold_a30": 20.0,
+            "threshold_shape": "fixed_energy",
+            "msp_threshold_4c": 20.0,
+            "maintenance_energy_j": 69000.0,
+            "kinetics": "saturating",
+            "assimilation_m": 0.0824,
+            "km_scale_a": 1.0,
+            "km_scale_m": 1.0,
+            "cessation_energy_a_j": -24000.0,
+            "cessation_energy_m_j": -28000.0,
+            "threshold_m30": 1.0,
+            "exchange_mol_l_h_pa": 3.333333333333333e-09,
+            "atmosphere_pa": 0.0,
+            "low_temperature_variant": "constant_shape"
+          },
+          "loss": {
+            "anchor_ratio": 0.3,
+            "lifetime_yr": 10000.0,
+            "kind": "power",
+            "elasticity": 1.0,
+            "log_scale": 0.001
+          },
+          "habitat_l_cm2": 0.008970677546304392,
+          "acetate_lifetime_yr": 1.0,
+          "acetate_fraction": 0.0,
+          "recycling_variant": "constant",
+          "recycling_midpoint_k": 280.0,
+          "width_k": 2.0,
+          "enabled": [
+            false,
+            true
+          ],
+          "activity_feedback": "fixed",
+          "acetate_reference_mol_l": 0.0005,
+          "methane_reference_pa": 350.0
+        },
+        "warm_fraction": 0.1,
+        "contrast_k": 10.0,
+        "dispersal_yr": 1.0
+      },
+      "resident": "methanogen",
+      "coverage": {
+        "n_grid": 201,
+        "ratio_grid_size": 322,
+        "ratio_ceiling": 0.30354920930263474,
+        "global_temperature_bounds_k": [
+          274.0,
+          294.15
+        ],
+        "supported_ratio_intervals": [
+          [
+            0.0,
+            0.11394358787516592
+          ],
+          [
+            0.17301915834198967,
+            0.20559456467583517
+          ],
+          [
+            0.23329998598684193,
+            0.30354920930263474
+          ]
+        ],
+        "status": "supported_search_interval",
+        "completeness": "Finite branch/root search; no root found is not a global nonexistence proof",
+        "biomass_root_numerical_zero_gdw_l": 1e-14
+      },
+      "existing_candidate_count": 1,
+      "existing_qualifying_count": 0,
+      "existing_qualifying": [],
+      "independent_fits": [
+        {
+          "interval": [
+            0.0,
+            0.11394358787516592
+          ],
+          "position": 0.2,
+          "biomass_multiplier": 0.3,
+          "max_scaled_residual": 0.2833669961380009,
+          "nfev": 9,
+          "success": true,
+          "active_bounds": [
+            0,
+            0,
+            0,
+            0,
+            1
+          ],
+          "ratio": 0.11394358673573003
+        },
+        {
+          "interval": [
+            0.0,
+            0.11394358787516592
+          ],
+          "position": 0.2,
+          "biomass_multiplier": 1.0,
+          "max_scaled_residual": 0.2833669961388947,
+          "nfev": 10,
+          "success": true,
+          "active_bounds": [
+            0,
+            0,
+            0,
+            0,
+            1
+          ],
+          "ratio": 0.11394358673573003
+        },
+        {
+          "interval": [
+            0.0,
+            0.11394358787516592
+          ],
+          "position": 0.2,
+          "biomass_multiplier": 3.0,
+          "max_scaled_residual": 0.2833669961400102,
+          "nfev": 15,
+          "success": true,
+          "active_bounds": [
+            0,
+            0,
+            0,
+            0,
+            1
+          ],
+          "ratio": 0.11394358673573003
+        },
+        {
+          "interval": [
+            0.0,
+            0.11394358787516592
+          ],
+          "position": 0.5,
+          "biomass_multiplier": 0.3,
+          "max_scaled_residual": 0.28336699613590766,
+          "nfev": 13,
+          "success": true,
+          "active_bounds": [
+            0,
+            0,
+            0,
+            0,
+            1
+          ],
+          "ratio": 0.11394358673573003
+        },
+        {
+          "interval": [
+            0.0,
+            0.11394358787516592
+          ],
+          "position": 0.5,
+          "biomass_multiplier": 1.0,
+          "max_scaled_residual": 0.2833669961239514,
+          "nfev": 9,
+          "success": true,
+          "active_bounds": [
+            0,
+            0,
+            0,
+            0,
+            1
+          ],
+          "ratio": 0.11394358673573003
+        },
+        {
+          "interval": [
+            0.0,
+            0.11394358787516592
+          ],
+          "position": 0.5,
+          "biomass_multiplier": 3.0,
+          "max_scaled_residual": 0.28336699519033043,
+          "nfev": 20,
+          "success": true,
+          "active_bounds": [
+            0,
+            0,
+            0,
+            0,
+            1
+          ],
+          "ratio": 0.11394358673573002
+        },
+        {
+          "interval": [
+            0.0,
+            0.11394358787516592
+          ],
+          "position": 0.8,
+          "biomass_multiplier": 0.3,
+          "max_scaled_residual": 0.2833669961389671,
+          "nfev": 8,
+          "success": true,
+          "active_bounds": [
+            0,
+            0,
+            0,
+            0,
+            1
+          ],
+          "ratio": 0.11394358673573003
+        },
+        {
+          "interval": [
+            0.0,
+            0.11394358787516592
+          ],
+          "position": 0.8,
+          "biomass_multiplier": 1.0,
+          "max_scaled_residual": 0.28336699614024546,
+          "nfev": 7,
+          "success": true,
+          "active_bounds": [
+            0,
+            0,
+            0,
+            0,
+            1
+          ],
+          "ratio": 0.11394358673573003
+        },
+        {
+          "interval": [
+            0.0,
+            0.11394358787516592
+          ],
+          "position": 0.8,
+          "biomass_multiplier": 3.0,
+          "max_scaled_residual": 0.2833669961546795,
+          "nfev": 9,
+          "success": true,
+          "active_bounds": [
+            0,
+            0,
+            0,
+            0,
+            1
+          ],
+          "ratio": 0.11394358673573003
+        },
+        {
+          "interval": [
+            0.17301915834198967,
+            0.20559456467583517
+          ],
+          "position": 0.2,
+          "biomass_multiplier": 0.3,
+          "max_scaled_residual": 0.02755212781785045,
+          "nfev": 39,
+          "success": true,
+          "active_bounds": [
+            0,
+            0,
+            0,
+            0,
+            1
+          ],
+          "ratio": 0.20559456435008108
+        },
+        {
+          "interval": [
+            0.17301915834198967,
+            0.20559456467583517
+          ],
+          "position": 0.2,
+          "biomass_multiplier": 1.0,
+          "max_scaled_residual": 0.027552127883024215,
+          "nfev": 32,
+          "success": true,
+          "active_bounds": [
+            0,
+            0,
+            0,
+            0,
+            1
+          ],
+          "ratio": 0.20559456435008108
+        },
+        {
+          "interval": [
+            0.17301915834198967,
+            0.20559456467583517
+          ],
+          "position": 0.2,
+          "biomass_multiplier": 3.0,
+          "max_scaled_residual": 0.027552127951394004,
+          "nfev": 50,
+          "success": true,
+          "active_bounds": [
+            0,
+            0,
+            0,
+            0,
+            1
+          ],
+          "ratio": 0.20559456435008108
+        },
+        {
+          "interval": [
+            0.17301915834198967,
+            0.20559456467583517
+          ],
+          "position": 0.5,
+          "biomass_multiplier": 0.3,
+          "max_scaled_residual": 0.027552127830573224,
+          "nfev": 31,
+          "success": true,
+          "active_bounds": [
+            0,
+            0,
+            0,
+            0,
+            1
+          ],
+          "ratio": 0.20559456435008108
+        },
+        {
+          "interval": [
+            0.17301915834198967,
+            0.20559456467583517
+          ],
+          "position": 0.5,
+          "biomass_multiplier": 1.0,
+          "max_scaled_residual": 0.027552127829281216,
+          "nfev": 36,
+          "success": true,
+          "active_bounds": [
+            0,
+            0,
+            0,
+            0,
+            1
+          ],
+          "ratio": 0.20559456435008108
+        },
+        {
+          "interval": [
+            0.17301915834198967,
+            0.20559456467583517
+          ],
+          "position": 0.5,
+          "biomass_multiplier": 3.0,
+          "max_scaled_residual": 0.02755212778337327,
+          "nfev": 26,
+          "success": true,
+          "active_bounds": [
+            0,
+            0,
+            0,
+            0,
+            1
+          ],
+          "ratio": 0.20559456435008108
+        },
+        {
+          "interval": [
+            0.17301915834198967,
+            0.20559456467583517
+          ],
+          "position": 0.8,
+          "biomass_multiplier": 0.3,
+          "max_scaled_residual": 0.027552127831727787,
+          "nfev": 23,
+          "success": true,
+          "active_bounds": [
+            0,
+            0,
+            0,
+            0,
+            1
+          ],
+          "ratio": 0.20559456435008108
+        },
+        {
+          "interval": [
+            0.17301915834198967,
+            0.20559456467583517
+          ],
+          "position": 0.8,
+          "biomass_multiplier": 1.0,
+          "max_scaled_residual": 0.027552127806186807,
+          "nfev": 22,
+          "success": true,
+          "active_bounds": [
+            0,
+            0,
+            0,
+            0,
+            1
+          ],
+          "ratio": 0.20559456435008108
+        },
+        {
+          "interval": [
+            0.17301915834198967,
+            0.20559456467583517
+          ],
+          "position": 0.8,
+          "biomass_multiplier": 3.0,
+          "max_scaled_residual": 0.027552127837361006,
+          "nfev": 18,
+          "success": true,
+          "active_bounds": [
+            0,
+            0,
+            0,
+            0,
+            1
+          ],
+          "ratio": 0.20559456435008108
+        },
+        {
+          "interval": [
+            0.23329998598684193,
+            0.30354920930263474
+          ],
+          "position": 0.2,
+          "biomass_multiplier": 0.3,
+          "max_scaled_residual": 0.020720653175951086,
+          "nfev": 10,
+          "success": true,
+          "active_bounds": [
+            0,
+            0,
+            0,
+            0,
+            -1
+          ],
+          "ratio": 0.2332999866893342
+        },
+        {
+          "interval": [
+            0.23329998598684193,
+            0.30354920930263474
+          ],
+          "position": 0.2,
+          "biomass_multiplier": 1.0,
+          "max_scaled_residual": 0.02072065318360962,
+          "nfev": 9,
+          "success": true,
+          "active_bounds": [
+            0,
+            0,
+            0,
+            0,
+            -1
+          ],
+          "ratio": 0.2332999866893342
+        },
+        {
+          "interval": [
+            0.23329998598684193,
+            0.30354920930263474
+          ],
+          "position": 0.2,
+          "biomass_multiplier": 3.0,
+          "max_scaled_residual": 0.02072065317242438,
+          "nfev": 10,
+          "success": true,
+          "active_bounds": [
+            0,
+            0,
+            0,
+            0,
+            -1
+          ],
+          "ratio": 0.2332999866893342
+        },
+        {
+          "interval": [
+            0.23329998598684193,
+            0.30354920930263474
+          ],
+          "position": 0.5,
+          "biomass_multiplier": 0.3,
+          "max_scaled_residual": 0.02072065318533045,
+          "nfev": 15,
+          "success": true,
+          "active_bounds": [
+            0,
+            0,
+            0,
+            0,
+            -1
+          ],
+          "ratio": 0.2332999866893342
+        },
+        {
+          "interval": [
+            0.23329998598684193,
+            0.30354920930263474
+          ],
+          "position": 0.5,
+          "biomass_multiplier": 1.0,
+          "max_scaled_residual": 0.020720653232141784,
+          "nfev": 17,
+          "success": true,
+          "active_bounds": [
+            0,
+            0,
+            0,
+            0,
+            -1
+          ],
+          "ratio": 0.2332999866893342
+        },
+        {
+          "interval": [
+            0.23329998598684193,
+            0.30354920930263474
+          ],
+          "position": 0.5,
+          "biomass_multiplier": 3.0,
+          "max_scaled_residual": 0.020720653163138755,
+          "nfev": 9,
+          "success": true,
+          "active_bounds": [
+            0,
+            0,
+            0,
+            0,
+            -1
+          ],
+          "ratio": 0.2332999866893342
+        },
+        {
+          "interval": [
+            0.23329998598684193,
+            0.30354920930263474
+          ],
+          "position": 0.8,
+          "biomass_multiplier": 0.3,
+          "max_scaled_residual": 0.020720653178573162,
+          "nfev": 12,
+          "success": true,
+          "active_bounds": [
+            0,
+            0,
+            0,
+            0,
+            -1
+          ],
+          "ratio": 0.2332999866893342
+        },
+        {
+          "interval": [
+            0.23329998598684193,
+            0.30354920930263474
+          ],
+          "position": 0.8,
+          "biomass_multiplier": 1.0,
+          "max_scaled_residual": 0.020720653178419906,
+          "nfev": 10,
+          "success": true,
+          "active_bounds": [
+            0,
+            0,
+            0,
+            0,
+            -1
+          ],
+          "ratio": 0.2332999866893342
+        },
+        {
+          "interval": [
+            0.23329998598684193,
+            0.30354920930263474
+          ],
+          "position": 0.8,
+          "biomass_multiplier": 3.0,
+          "max_scaled_residual": 0.020720653183548973,
+          "nfev": 11,
+          "success": true,
+          "active_bounds": [
+            0,
+            0,
+            0,
+            0,
+            -1
+          ],
+          "ratio": 0.2332999866893342
+        }
+      ],
+      "independent_roots": [],
+      "missed_supported_stable": []
+    },
+    {
+      "parameters": {
+        "base": {
+          "climate": {
+            "case": "B",
+            "lifetime_yr": 10000.0,
+            "abiotic_flux": 680000000.0,
+            "donor_flux": 375157520114.00323,
+            "maintenance_flux": 10000000000.0,
+            "growth_ratio_max": 10.0,
+            "t_opt_k": 300.0,
+            "t_halfwidth_k": 20.0,
+            "thermal": true,
+            "t_zero_k": 283.0,
+            "bridge_scale": 0.01
+          },
+          "biology": {
+            "methanogen": "methanogenic strain MSB",
+            "capacity_ratio": 0.74,
+            "yield_m": 0.78,
+            "maintenance_m30": 0.001,
+            "loss_h": 0.001,
+            "threshold_a30": 20.0,
+            "threshold_shape": "fixed_energy",
+            "msp_threshold_4c": 20.0,
+            "maintenance_energy_j": 69000.0,
+            "kinetics": "saturating",
+            "assimilation_m": 0.0824,
+            "km_scale_a": 1.0,
+            "km_scale_m": 1.0,
+            "cessation_energy_a_j": -24000.0,
+            "cessation_energy_m_j": -28000.0,
+            "threshold_m30": 1.0,
+            "exchange_mol_l_h_pa": 3.333333333333333e-09,
+            "atmosphere_pa": 0.0,
+            "low_temperature_variant": "constant_shape"
+          },
+          "loss": {
+            "anchor_ratio": 0.3,
+            "lifetime_yr": 10000.0,
+            "kind": "power",
+            "elasticity": 1.0,
+            "log_scale": 0.001
+          },
+          "habitat_l_cm2": 0.008970677546304392,
+          "acetate_lifetime_yr": 1.0,
+          "acetate_fraction": 0.5,
+          "recycling_variant": "constant",
+          "recycling_midpoint_k": 280.0,
+          "width_k": 2.0,
+          "enabled": [
+            true,
+            false
+          ],
+          "activity_feedback": "fixed",
+          "acetate_reference_mol_l": 0.0005,
+          "methane_reference_pa": 350.0
+        },
+        "warm_fraction": 0.5,
+        "contrast_k": 10.0,
+        "dispersal_yr": 1.0
+      },
+      "resident": "acetogen",
+      "coverage": {
+        "n_grid": 201,
+        "ratio_grid_size": 322,
+        "ratio_ceiling": 0.30354920930263474,
+        "global_temperature_bounds_k": [
+          278.0,
+          298.15
+        ],
+        "supported_ratio_intervals": [
+          [
+            0.0,
+            0.20000778763213795
+          ]
+        ],
+        "status": "supported_search_interval",
+        "completeness": "Finite branch/root search; no root found is not a global nonexistence proof",
+        "biomass_root_numerical_zero_gdw_l": 1e-14
+      },
+      "existing_candidate_count": 2,
+      "existing_qualifying_count": 1,
+      "existing_qualifying": [
+        {
+          "r": 0.11609036460925437,
+          "temperatures_k": [
+            289.2663659692679,
+            299.2663659692679
+          ],
+          "stability": "stable"
+        }
+      ],
+      "independent_fits": [
+        {
+          "interval": [
+            0.0,
+            0.20000778763213795
+          ],
+          "position": 0.2,
+          "biomass_multiplier": 0.3,
+          "max_scaled_residual": 3.0776202941354444e-14,
+          "nfev": 33,
+          "success": true,
+          "active_bounds": [
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "ratio": 0.11609036460924974
+        },
+        {
+          "interval": [
+            0.0,
+            0.20000778763213795
+          ],
+          "position": 0.2,
+          "biomass_multiplier": 1.0,
+          "max_scaled_residual": 6.902481729645338e-16,
+          "nfev": 34,
+          "success": true,
+          "active_bounds": [
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "ratio": 0.11609036460925441
+        },
+        {
+          "interval": [
+            0.0,
+            0.20000778763213795
+          ],
+          "position": 0.2,
+          "biomass_multiplier": 3.0,
+          "max_scaled_residual": 3.653882530280147e-15,
+          "nfev": 26,
+          "success": true,
+          "active_bounds": [
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "ratio": 0.11609036460925443
+        },
+        {
+          "interval": [
+            0.0,
+            0.20000778763213795
+          ],
+          "position": 0.5,
+          "biomass_multiplier": 0.3,
+          "max_scaled_residual": 2.792655452085866e-15,
+          "nfev": 12,
+          "success": true,
+          "active_bounds": [
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "ratio": 0.11609036460925443
+        },
+        {
+          "interval": [
+            0.0,
+            0.20000778763213795
+          ],
+          "position": 0.5,
+          "biomass_multiplier": 1.0,
+          "max_scaled_residual": 2.1486349090538194e-14,
+          "nfev": 20,
+          "success": true,
+          "active_bounds": [
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "ratio": 0.11609036460925252
+        },
+        {
+          "interval": [
+            0.0,
+            0.20000778763213795
+          ],
+          "position": 0.5,
+          "biomass_multiplier": 3.0,
+          "max_scaled_residual": 5.832280433948033e-15,
+          "nfev": 11,
+          "success": true,
+          "active_bounds": [
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "ratio": 0.1160903646092544
+        },
+        {
+          "interval": [
+            0.0,
+            0.20000778763213795
+          ],
+          "position": 0.8,
+          "biomass_multiplier": 0.3,
+          "max_scaled_residual": 7.736234251589277e-15,
+          "nfev": 10,
+          "success": true,
+          "active_bounds": [
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "ratio": 0.11609036460925681
+        },
+        {
+          "interval": [
+            0.0,
+            0.20000778763213795
+          ],
+          "position": 0.8,
+          "biomass_multiplier": 1.0,
+          "max_scaled_residual": 1.1911530397672367e-14,
+          "nfev": 8,
+          "success": true,
+          "active_bounds": [
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "ratio": 0.11609036460925437
+        },
+        {
+          "interval": [
+            0.0,
+            0.20000778763213795
+          ],
+          "position": 0.8,
+          "biomass_multiplier": 3.0,
+          "max_scaled_residual": 9.074547081267679e-15,
+          "nfev": 9,
+          "success": true,
+          "active_bounds": [
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "ratio": 0.1160903646092544
+        }
+      ],
+      "independent_roots": [
+        {
+          "y": [
+            34.28018469132637,
+            0.0008566067866253517,
+            0.0,
+            0.0017822515489505958,
+            71.13318207155159,
+            0.0004540833892310394,
+            0.0,
+            0.0015940198991664673,
+            0.11609036460924974
+          ],
+          "r": 0.11609036460924974,
+          "kind": "acetogen",
+          "global_temperature_k": 294.2663659692676,
+          "temperatures_k": [
+            289.2663659692676,
+            299.2663659692676
+          ],
+          "climate_domain": "arney",
+          "physiology_domains": [
+            "measured",
+            "measured"
+          ],
+          "measured": true,
+          "stable": true,
+          "stability": "stable",
+          "max_real_yr": -0.00010878426020803027,
+          "eigenvalues": [
+            [
+              -37027.74965807821,
+              0.0
+            ],
+            [
+              -17649.259347928608,
+              0.0
+            ],
+            [
+              -20.628727631702326,
+              0.0
+            ],
+            [
+              -14.051996257760528,
+              0.0
+            ],
+            [
+              -0.00010878426020803027,
+              0.0
+            ],
+            [
+              -0.999999999998831,
+              0.0
+            ],
+            [
+              -0.999990604053701,
+              0.0
+            ]
+          ],
+          "nonisolated": false,
+          "max_scaled_residual": 1.3973048190343358e-14,
+          "redox_residual": -5.532954736736777e-19,
+          "direct_scaled_residual": 3.0776202941354444e-14,
+          "matches_existing": true
+        }
+      ],
+      "missed_supported_stable": []
+    }
+  ],
+  "wall_seconds": 2.522891958942637
+}

@@ -1,0 +1,16 @@
+{
+  "source_commit": "99a514676aec4d9a6267ce3757d2d0da78e0a4ee",
+  "profiles": 954,
+  "main": 432,
+  "subsets": 78,
+  "equilibria": 432,
+  "extensions": 12,
+  "files": 1908,
+  "bytes": 170324887,
+  "manifest_sha256": "667534c15be5f98d76807c6270369b3c2d4d7ae40f4bdecc554770bf0bd795f6",
+  "all_receipt_hashes_verified": true,
+  "local_copy_verified": true,
+  "archived_copy_verified": true,
+  "archive_key": "refuge-coupling-99a5146-20261110",
+  "scope": "954 canonical raw records and their completion receipts retained in shared project storage; numerical pilots and scratch reviews excluded"
+}
