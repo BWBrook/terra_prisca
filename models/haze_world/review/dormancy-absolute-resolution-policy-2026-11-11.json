@@ -1,0 +1,1532 @@
+{
+  "control": {
+    "accepted_steps": 17,
+    "actual_qualification_events": [
+      {
+        "accepted_native_iterations": 3,
+        "coordinate_update": {
+          "absolute_update": 7.105427357601002e-15,
+          "finite": true,
+          "maximum_update_spacings": 1.0,
+          "new_value": 36.62959805529758,
+          "old_value": 36.62959805529757,
+          "unit_scaled_machine_spacing": 7.105427357601002e-15,
+          "worst_index": 0,
+          "worst_stage": 0
+        },
+        "correction_norm": 6.588942937801558e-09,
+        "current_and_proposed_macro_certificates": [
+          {
+            "active_habitats": 1,
+            "biomass_lower_exact": {
+              "d": "0x2000000000000000000000",
+              "n": "0x4189374bc6a7f"
+            },
+            "biomass_scale": 0.001,
+            "cell_mass_gdw": 3e-13,
+            "census_yr": 10.0,
+            "encoded_total_lower": -0.14545861497522863,
+            "encoded_total_lower_exact": {
+              "d": "0x2aaaaaaaaaaa4000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000",
+              "n": "-0x634cbc45f9365ef82fadd4d125fe0b31db56cef00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000355555555554d"
+            },
+            "encoded_total_polynomial_exact": [
+              {
+                "d": "0x80000000000000",
+                "n": "-0x129e634d1eba03"
+              },
+              {
+                "d": "0x8000000000000000000000000000",
+                "n": "0x12b0cab6d7d64b"
+              },
+              {
+                "d": "0x2000000000000000000000000000",
+                "n": "-0x49877a36fcf15"
+              },
+              {
+                "d": "0x8000000000000000000000000000",
+                "n": "0x9a00f66c4a2fd"
+              }
+            ],
+            "encoded_total_rounding_margin_exact": {
+              "d": "0x2aaaaaaaaaaa4000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000",
+              "n": "0x1f0e9a283dc98328204d01d72ef100000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000355555555554d"
+            },
+            "habitat_l_cm2": 0.008970677546304392,
+            "minimum_cells": 1.0,
+            "minimum_required_cells": 10000000000000000,
+            "present_guilds": 1,
+            "softplus_lower_bound": "z>=-16 implies softplus(z)>=1/2^25: log(1+x)>=x/2 for0<=x<=1 and exp(16)<2^24.",
+            "surface_cm2": 5.1e+18,
+            "total_cells_lower": 4.544899412607392e+18,
+            "total_cells_lower_exact": {
+              "d": "0x1b05876e5b01200000000",
+              "n": "0x6a85657f6d8625852c1f0124493758160a23"
+            },
+            "total_coordinate_index": 19,
+            "volume_conversion_exact": {
+              "d": "0xd82c3b72d809",
+              "n": "0x1a0191479c3d400200eba65d0000000000000"
+            },
+            "volume_fraction_exact": {
+              "d": "0x1",
+              "n": "0x1"
+            }
+          },
+          {
+            "active_habitats": 1,
+            "biomass_lower_exact": {
+              "d": "0x2000000000000000000000",
+              "n": "0x4189374bc6a7f"
+            },
+            "biomass_scale": 0.001,
+            "cell_mass_gdw": 3e-13,
+            "census_yr": 10.0,
+            "encoded_total_lower": -0.14545861497522863,
+            "encoded_total_lower_exact": {
+              "d": "0x7ffffffffffec000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000",
+              "n": "-0x129e634d1eba31a29dc6e7bdb35c984814d4b262a00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000009ffffffffffe7"
+            },
+            "encoded_total_polynomial_exact": [
+              {
+                "d": "0x80000000000000",
+                "n": "-0x129e634d1eba03"
+              },
+              {
+                "d": "0x10000000000000000000000000000",
+                "n": "-0xb467b48e05133"
+              },
+              {
+                "d": "0x20000000000000000000000000000",
+                "n": "0x1e1e1b11524591"
+              },
+              {
+                "d": "0x4000000000000000000000000000",
+                "n": "-0x235e352fd75e5"
+              }
+            ],
+            "encoded_total_rounding_margin_exact": {
+              "d": "0x7ffffffffffec000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000",
+              "n": "0x5d1cff7ca5cf1540d0a3b9b3d0d6000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000009ffffffffffe7"
+            },
+            "habitat_l_cm2": 0.008970677546304392,
+            "minimum_cells": 1.0,
+            "minimum_required_cells": 10000000000000000,
+            "present_guilds": 1,
+            "softplus_lower_bound": "z>=-16 implies softplus(z)>=1/2^25: log(1+x)>=x/2 for0<=x<=1 and exp(16)<2^24.",
+            "surface_cm2": 5.1e+18,
+            "total_cells_lower": 4.544899412607392e+18,
+            "total_cells_lower_exact": {
+              "d": "0x1b05876e5b01200000000",
+              "n": "0x6a85657f6d8625852c1f0124493758160a23"
+            },
+            "total_coordinate_index": 19,
+            "volume_conversion_exact": {
+              "d": "0xd82c3b72d809",
+              "n": "0x1a0191479c3d400200eba65d0000000000000"
+            },
+            "volume_fraction_exact": {
+              "d": "0x1",
+              "n": "0x1"
+            }
+          }
+        ],
+        "dormant_composition_exemptions": [
+          {
+            "abundance_and_own_stage_log_precision": "unresolved_absolute_composition",
+            "allocation_correction_exact": [
+              {
+                "d": "0x1000000000000000000000000000000000000",
+                "n": "0x13e8d89c3f"
+              },
+              {
+                "d": "0x4000000000000000000000000000000000000",
+                "n": "0x14b3f8e4379"
+              },
+              {
+                "d": "0x2000000000000000000000000000000000000",
+                "n": "0x100cb3e936f"
+              }
+            ],
+            "allocation_correction_upper": [
+              3.834440856112479e-33,
+              1.594902379162133e-32,
+              2.4728355348225556e-32
+            ],
+            "conservatively_converted_physical_atol_exact": [
+              {
+                "d": "0x400000000000000000000001efbd74034b4a4000000000000000000000000000",
+                "n": "0x1cbbcc45c685bca6d2f05e0cc3d18e98c65a15a6097e046a79"
+              },
+              {
+                "d": "0x200000000000000000000000f7d946d9ff49a800000000000000000000000000",
+                "n": "0xe5de622e342de5369782f0661e654ed2d8b814d51762a83c7"
+              },
+              {
+                "d": "0x800000000000000000000003df9581fdd2862000000000000000000000000000",
+                "n": "0x3977988b8d0b794da5e0bc1987af0e9c7d15a058e732a7d999"
+              }
+            ],
+            "frozen_root_atol_squared_exact": {
+              "d": "0x1000000000000000000000000000000000",
+              "n": "0x1357c299a88ea7"
+            },
+            "guild": 0,
+            "index": 4,
+            "native_component_atol_numeric": 1e-14,
+            "native_component_atol_units": "normalized allocation coordinate",
+            "new_raw_allocations": [
+              9.77713208792764e-29,
+              9.77750386791975e-29,
+              9.777773293605653e-29
+            ],
+            "old_raw_allocations": [
+              9.776748643842029e-29,
+              9.775908965540587e-29,
+              9.77530045807083e-29
+            ],
+            "patch": 0,
+            "pool": "dormant",
+            "represented_physical_cell_change_exact": [
+              {
+                "d": "0x360b0edcb60240000000000000000000000000",
+                "n": "0x14a583832346565c316bae8e9a0dcbc51"
+              },
+              {
+                "d": "0xd82c3b72d80900000000000000000000000000",
+                "n": "0x157828a9e474c483ff56fcae5212ad0fdb"
+              },
+              {
+                "d": "0xd82c3b72d80900000000000000000000000000",
+                "n": "0x214995df4f4087bf30e439b293fa2eff8b"
+              }
+            ],
+            "represented_physical_cell_change_upper": [
+              3.6433953969695577e-07,
+              1.5154386793019322e-06,
+              2.3496300876977962e-06
+            ],
+            "requested_numeric_physical_bound_exact": {
+              "d": "0x8000000000000000000000000",
+              "n": "0x16849b86a12b9b"
+            },
+            "root_cap_composition_cell_scale_upper": [
+              95.01764491049181,
+              95.01764491049181,
+              95.01764491049181
+            ]
+          }
+        ],
+        "global_biomass_update": {
+          "absolute_update": 0.0,
+          "finite": true,
+          "machine_spacing": 1.0842021724855044e-19,
+          "maximum_update_spacings": 0.0,
+          "new_value": 0.000623060320826214,
+          "old_value": 0.000623060320826214,
+          "worst_index": 0,
+          "worst_stage": 0
+        },
+        "global_log_update": {
+          "absolute_update": 0.0,
+          "finite": true,
+          "finite_mask_unchanged": true,
+          "machine_spacing": 8.881784197001252e-16,
+          "maximum_update_spacings": 0.0,
+          "new_value": -7.380867220707838,
+          "old_value": -7.380867220707838,
+          "worst_index": 0,
+          "worst_location": [
+            0,
+            0
+          ],
+          "worst_stage": 0
+        },
+        "local_represented_cell_change_bound_exact": {
+          "d": "0xd82c3b72d80900000000000000000000000000",
+          "n": "0x214995df4f4087bf30e439b293fa2eff8b"
+        },
+        "local_represented_cell_change_bound_upper": 2.3496300876977962e-06,
+        "native_newton_tolerance": 0.0001414213562373095,
+        "newton_qualification": "strict037_then_certified_terminal_dormant_absolute_v1",
+        "original_native_iterations": 2,
+        "original_native_rate": 1.2697955725526122,
+        "original_strict037_decline": "coordinate_spacing",
+        "physical_update": {
+          "absolute_update": 7.105427357601002e-15,
+          "finite": true,
+          "machine_spacing": 7.105427357601002e-15,
+          "maximum_update_spacings": 1.0,
+          "new_value": 36.62959805529758,
+          "old_value": 36.62959805529757,
+          "worst_index": 0,
+          "worst_resolved_physical_index": 0,
+          "worst_stage": 0
+        },
+        "retained_log_update": {
+          "absolute_update": 0.0,
+          "finite": true,
+          "machine_spacing": 8.881784197001252e-16,
+          "maximum_update_spacings": 0.0,
+          "new_value": -7.380867220707838,
+          "old_value": -7.380867220707838,
+          "worst_index": 0,
+          "worst_location": [
+            0,
+            0,
+            0,
+            0
+          ],
+          "worst_stage": 0
+        },
+        "step_yr": 0.0010000001111620804,
+        "time_yr": 1801.9956555764754
+      },
+      {
+        "accepted_native_iterations": 3,
+        "coordinate_update": {
+          "absolute_update": 7.105427357601002e-15,
+          "finite": true,
+          "maximum_update_spacings": 1.0,
+          "new_value": 36.62959805529758,
+          "old_value": 36.62959805529757,
+          "unit_scaled_machine_spacing": 7.105427357601002e-15,
+          "worst_index": 0,
+          "worst_stage": 0
+        },
+        "correction_norm": 6.779546065184508e-09,
+        "current_and_proposed_macro_certificates": [
+          {
+            "active_habitats": 1,
+            "biomass_lower_exact": {
+              "d": "0x2000000000000000000000",
+              "n": "0x4189374bc6a7f"
+            },
+            "biomass_scale": 0.001,
+            "cell_mass_gdw": 3e-13,
+            "census_yr": 10.0,
+            "encoded_total_lower": -0.14545861497522866,
+            "encoded_total_lower_exact": {
+              "d": "0x2aaaaaaaaaaa4000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000",
+              "n": "-0x634cbc45f93663f76892fb8d06c5859e9c1bb9e40000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000355555555554d"
+            },
+            "encoded_total_polynomial_exact": [
+              {
+                "d": "0x80000000000000",
+                "n": "-0x129e634d1eba03"
+              },
+              {
+                "d": "0x2000000000000000000000000000",
+                "n": "0x18d754cf3001d5"
+              },
+              {
+                "d": "0x8000000000000000000000000000",
+                "n": "-0x1ec0f8e1a3d677"
+              },
+              {
+                "d": "0x10000000000000000000000000000",
+                "n": "0x1a0d914928c741"
+              }
+            ],
+            "encoded_total_rounding_margin_exact": {
+              "d": "0x2aaaaaaaaaaa4000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000",
+              "n": "0x1f3e6797ddabbd9521eb36e5f22280000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000355555555554d"
+            },
+            "habitat_l_cm2": 0.008970677546304392,
+            "minimum_cells": 1.0,
+            "minimum_required_cells": 10000000000000000,
+            "present_guilds": 1,
+            "softplus_lower_bound": "z>=-16 implies softplus(z)>=1/2^25: log(1+x)>=x/2 for0<=x<=1 and exp(16)<2^24.",
+            "surface_cm2": 5.1e+18,
+            "total_cells_lower": 4.544899412607392e+18,
+            "total_cells_lower_exact": {
+              "d": "0x1b05876e5b01200000000",
+              "n": "0x6a85657f6d8625852c1f0124493758160a23"
+            },
+            "total_coordinate_index": 19,
+            "volume_conversion_exact": {
+              "d": "0xd82c3b72d809",
+              "n": "0x1a0191479c3d400200eba65d0000000000000"
+            },
+            "volume_fraction_exact": {
+              "d": "0x1",
+              "n": "0x1"
+            }
+          },
+          {
+            "active_habitats": 1,
+            "biomass_lower_exact": {
+              "d": "0x2000000000000000000000",
+              "n": "0x4189374bc6a7f"
+            },
+            "biomass_scale": 0.001,
+            "cell_mass_gdw": 3e-13,
+            "census_yr": 10.0,
+            "encoded_total_lower": -0.14545861497522863,
+            "encoded_total_lower_exact": {
+              "d": "0x2aaaaaaaaaaa4000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000",
+              "n": "-0x634cbc45f9365f1f9aefe0f046460246f05357a30000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000355555555554d"
+            },
+            "encoded_total_polynomial_exact": [
+              {
+                "d": "0x80000000000000",
+                "n": "-0x129e634d1eba03"
+              },
+              {
+                "d": "0x2000000000000000000000000000",
+                "n": "-0x682f44c1f8435"
+              },
+              {
+                "d": "0x10000000000000000000000000000",
+                "n": "0x1cf54f56a1f98b"
+              },
+              {
+                "d": "0x40000000000000000000000000000",
+                "n": "-0x1b755613322af5"
+              }
+            ],
+            "encoded_total_rounding_margin_exact": {
+              "d": "0x2aaaaaaaaaaa4000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000",
+              "n": "0x1f11fab8b842eb60f71772dc4ff3a0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000355555555554d"
+            },
+            "habitat_l_cm2": 0.008970677546304392,
+            "minimum_cells": 1.0,
+            "minimum_required_cells": 10000000000000000,
+            "present_guilds": 1,
+            "softplus_lower_bound": "z>=-16 implies softplus(z)>=1/2^25: log(1+x)>=x/2 for0<=x<=1 and exp(16)<2^24.",
+            "surface_cm2": 5.1e+18,
+            "total_cells_lower": 4.544899412607392e+18,
+            "total_cells_lower_exact": {
+              "d": "0x1b05876e5b01200000000",
+              "n": "0x6a85657f6d8625852c1f0124493758160a23"
+            },
+            "total_coordinate_index": 19,
+            "volume_conversion_exact": {
+              "d": "0xd82c3b72d809",
+              "n": "0x1a0191479c3d400200eba65d0000000000000"
+            },
+            "volume_fraction_exact": {
+              "d": "0x1",
+              "n": "0x1"
+            }
+          }
+        ],
+        "dormant_composition_exemptions": [
+          {
+            "abundance_and_own_stage_log_precision": "unresolved_absolute_composition",
+            "allocation_correction_exact": [
+              {
+                "d": "0x200000000000000000000000000000000000",
+                "n": "0x18e247447b"
+              },
+              {
+                "d": "0x2000000000000000000000000000000000000",
+                "n": "0x677661d5baf"
+              },
+              {
+                "d": "0x4000000000000000000000000000000000000",
+                "n": "0x140bd42d8983"
+              }
+            ],
+            "allocation_correction_upper": [
+              3.833971844637441e-32,
+              1.5940911417156287e-31,
+              2.470885698400705e-31
+            ],
+            "conservatively_converted_physical_atol_exact": [
+              {
+                "d": "0x200000000000000000000000f7d420d401120800000000000000000000000000",
+                "n": "0xe5de622e342de5369782f0661e4052f06004e8ca2249e251d"
+              },
+              {
+                "d": "0x155555555555555555555555fa691b553d32a000000000000000000000000000",
+                "n": "0x993eec1ecd73ee246501f599687b5f42854415f55772ed715"
+              },
+              {
+                "d": "0x400000000000000000000001eeec6d86f8e93000000000000000000000000000",
+                "n": "0x1cbbcc45c685bca6d2f05e0cc373b668467f42c5144b43821b"
+              }
+            ],
+            "frozen_root_atol_squared_exact": {
+              "d": "0x1000000000000000000000000000000000",
+              "n": "0x1357c299a88ea7"
+            },
+            "guild": 0,
+            "index": 4,
+            "native_component_atol_numeric": 1e-14,
+            "native_component_atol_units": "normalized allocation coordinate",
+            "new_raw_allocations": [
+              9.77894968089982e-29,
+              9.782664483840868e-29,
+              9.78535477479207e-29
+            ],
+            "old_raw_allocations": [
+              9.775115709055182e-29,
+              9.766723572423712e-29,
+              9.760645917808062e-29
+            ],
+            "patch": 0,
+            "pool": "dormant",
+            "represented_physical_cell_change_exact": [
+              {
+                "d": "0xd82c3b72d80900000000000000000000000000",
+                "n": "0x339c2b054246f7c038f681864079047257"
+              },
+              {
+                "d": "0xd82c3b72d80900000000000000000000000000",
+                "n": "0xd695a1ee6822027e1094b7e260e794805b"
+              },
+              {
+                "d": "0x6c161db96c0480000000000000000000000000",
+                "n": "0xa64e54abca16d9512678bf7e5b8faff393"
+              }
+            ],
+            "represented_physical_cell_change_upper": [
+              3.642949753306903e-06,
+              1.5146678605849687e-05,
+              2.347777399050554e-05
+            ],
+            "requested_numeric_physical_bound_exact": {
+              "d": "0x8000000000000000000000000",
+              "n": "0x16849b86a12b9b"
+            },
+            "root_cap_composition_cell_scale_upper": [
+              95.01764491049181,
+              95.01764491049181,
+              95.01764491049181
+            ]
+          }
+        ],
+        "global_biomass_update": {
+          "absolute_update": 0.0,
+          "finite": true,
+          "machine_spacing": 1.0842021724855044e-19,
+          "maximum_update_spacings": 0.0,
+          "new_value": 0.000623060320826214,
+          "old_value": 0.000623060320826214,
+          "worst_index": 0,
+          "worst_stage": 0
+        },
+        "global_log_update": {
+          "absolute_update": 0.0,
+          "finite": true,
+          "finite_mask_unchanged": true,
+          "machine_spacing": 8.881784197001252e-16,
+          "maximum_update_spacings": 0.0,
+          "new_value": -7.380867220707838,
+          "old_value": -7.380867220707838,
+          "worst_index": 0,
+          "worst_location": [
+            0,
+            0
+          ],
+          "worst_stage": 0
+        },
+        "local_represented_cell_change_bound_exact": {
+          "d": "0x6c161db96c0480000000000000000000000000",
+          "n": "0xa64e54abca16d9512678bf7e5b8faff393"
+        },
+        "local_represented_cell_change_bound_upper": 2.347777399050554e-05,
+        "native_newton_tolerance": 0.0001414213562373095,
+        "newton_qualification": "strict037_then_certified_terminal_dormant_absolute_v1",
+        "original_native_iterations": 2,
+        "original_native_rate": 1.1781266947756572,
+        "original_strict037_decline": "coordinate_spacing",
+        "physical_update": {
+          "absolute_update": 7.105427357601002e-15,
+          "finite": true,
+          "machine_spacing": 7.105427357601002e-15,
+          "maximum_update_spacings": 1.0,
+          "new_value": 36.62959805529758,
+          "old_value": 36.62959805529757,
+          "worst_index": 0,
+          "worst_resolved_physical_index": 0,
+          "worst_stage": 0
+        },
+        "retained_log_update": {
+          "absolute_update": 0.0,
+          "finite": true,
+          "machine_spacing": 8.881784197001252e-16,
+          "maximum_update_spacings": 0.0,
+          "new_value": -7.380867220707838,
+          "old_value": -7.380867220707838,
+          "worst_index": 0,
+          "worst_location": [
+            0,
+            0,
+            0,
+            0
+          ],
+          "worst_stage": 0
+        },
+        "step_yr": 0.010000001111620804,
+        "time_yr": 1801.9966555765866
+      },
+      {
+        "accepted_native_iterations": 3,
+        "coordinate_update": {
+          "absolute_update": 7.105427357601002e-15,
+          "finite": true,
+          "maximum_update_spacings": 1.0,
+          "new_value": 36.62959805529758,
+          "old_value": 36.62959805529757,
+          "unit_scaled_machine_spacing": 7.105427357601002e-15,
+          "worst_index": 0,
+          "worst_stage": 0
+        },
+        "correction_norm": 7.22888226374931e-09,
+        "current_and_proposed_macro_certificates": [
+          {
+            "active_habitats": 1,
+            "biomass_lower_exact": {
+              "d": "0x2000000000000000000000",
+              "n": "0x4189374bc6a7f"
+            },
+            "biomass_scale": 0.001,
+            "cell_mass_gdw": 3e-13,
+            "census_yr": 10.0,
+            "encoded_total_lower": -0.14545861497522886,
+            "encoded_total_lower_exact": {
+              "d": "0x2aaaaaaaaaaa4000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000",
+              "n": "-0x634cbc45f936863e60addb260a2ade5063c40c800000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000355555555554d"
+            },
+            "encoded_total_polynomial_exact": [
+              {
+                "d": "0x80000000000000",
+                "n": "-0x129e634d1eba03"
+              },
+              {
+                "d": "0x100000000000000000000000000",
+                "n": "0x6b2fe743b6db9"
+              },
+              {
+                "d": "0x400000000000000000000000000",
+                "n": "-0x14253e67132a69"
+              },
+              {
+                "d": "0x800000000000000000000000000",
+                "n": "0xc192d8cc29f1b"
+              }
+            ],
+            "encoded_total_rounding_margin_exact": {
+              "d": "0x2aaaaaaaaaaa4000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000",
+              "n": "0x1f5d502b33360a37c8ca3076ace000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000355555555554d"
+            },
+            "habitat_l_cm2": 0.008970677546304392,
+            "minimum_cells": 1.0,
+            "minimum_required_cells": 10000000000000000,
+            "present_guilds": 1,
+            "softplus_lower_bound": "z>=-16 implies softplus(z)>=1/2^25: log(1+x)>=x/2 for0<=x<=1 and exp(16)<2^24.",
+            "surface_cm2": 5.1e+18,
+            "total_cells_lower": 4.544899412607392e+18,
+            "total_cells_lower_exact": {
+              "d": "0x1b05876e5b01200000000",
+              "n": "0x6a85657f6d8625852c1f0124493758160a23"
+            },
+            "total_coordinate_index": 19,
+            "volume_conversion_exact": {
+              "d": "0xd82c3b72d809",
+              "n": "0x1a0191479c3d400200eba65d0000000000000"
+            },
+            "volume_fraction_exact": {
+              "d": "0x1",
+              "n": "0x1"
+            }
+          },
+          {
+            "active_habitats": 1,
+            "biomass_lower_exact": {
+              "d": "0x2000000000000000000000",
+              "n": "0x4189374bc6a7f"
+            },
+            "biomass_scale": 0.001,
+            "cell_mass_gdw": 3e-13,
+            "census_yr": 10.0,
+            "encoded_total_lower": -0.14545861497522877,
+            "encoded_total_lower_exact": {
+              "d": "0x2aaaaaaaaaaa4000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000",
+              "n": "-0x634cbc45f9367770b709e7e062dcdf1e3ff864000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000355555555554d"
+            },
+            "encoded_total_polynomial_exact": [
+              {
+                "d": "0x80000000000000",
+                "n": "-0x129e634d1eba03"
+              },
+              {
+                "d": "0x1000000000000000000000000000",
+                "n": "-0x1456621fd0fff9"
+              },
+              {
+                "d": "0x40000000000000000000000000",
+                "n": "0x11cd7eaabc017"
+              },
+              {
+                "d": "0x1000000000000000000000000000",
+                "n": "-0x1f98e557141b29"
+              }
+            ],
+            "encoded_total_rounding_margin_exact": {
+              "d": "0x2aaaaaaaaaaa4000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000",
+              "n": "0x1f5d502b333609881baac58c617800000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000355555555554d"
+            },
+            "habitat_l_cm2": 0.008970677546304392,
+            "minimum_cells": 1.0,
+            "minimum_required_cells": 10000000000000000,
+            "present_guilds": 1,
+            "softplus_lower_bound": "z>=-16 implies softplus(z)>=1/2^25: log(1+x)>=x/2 for0<=x<=1 and exp(16)<2^24.",
+            "surface_cm2": 5.1e+18,
+            "total_cells_lower": 4.544899412607392e+18,
+            "total_cells_lower_exact": {
+              "d": "0x1b05876e5b01200000000",
+              "n": "0x6a85657f6d8625852c1f0124493758160a23"
+            },
+            "total_coordinate_index": 19,
+            "volume_conversion_exact": {
+              "d": "0xd82c3b72d809",
+              "n": "0x1a0191479c3d400200eba65d0000000000000"
+            },
+            "volume_fraction_exact": {
+              "d": "0x1",
+              "n": "0x1"
+            }
+          }
+        ],
+        "dormant_composition_exemptions": [
+          {
+            "abundance_and_own_stage_log_precision": "unresolved_absolute_composition",
+            "allocation_correction_exact": [
+              {
+                "d": "0x4000000000000000000000000000000000000",
+                "n": "0x1f111d8c8a6b"
+              },
+              {
+                "d": "0x4000000000000000000000000000000000000",
+                "n": "0x80ac1e14099f"
+              },
+              {
+                "d": "0x1000000000000000000000000000000000000",
+                "n": "0x31b8e9fdae99"
+              }
+            ],
+            "allocation_correction_upper": [
+              3.829285787395758e-31,
+              1.5860089662970636e-30,
+              2.4514996684381285e-30
+            ],
+            "conservatively_converted_physical_atol_exact": [
+              {
+                "d": "0x800000000000000000000003dda8b1e22d06000000000000000000000000000",
+                "n": "0x3977988b8d0b794da5e0bc1986d1cd7b6344cabad378b8299"
+              },
+              {
+                "d": "0x800000000000000000000003d531fe78b683e000000000000000000000000000",
+                "n": "0x3977988b8d0b794da5e0bc1983050925712b1921b04b6a452b"
+              },
+              {
+                "d": "0x155555555555555555555555fbfe9f67c84f4000000000000000000000000000",
+                "n": "0x993eec1ecd73ee246501f59973dc5a87a769d81e69604e963"
+              }
+            ],
+            "frozen_root_atol_squared_exact": {
+              "d": "0x1000000000000000000000000000000000",
+              "n": "0x1357c299a88ea7"
+            },
+            "guild": 0,
+            "index": 4,
+            "native_component_atol_numeric": 1e-14,
+            "native_component_atol_units": "normalized allocation coordinate",
+            "new_raw_allocations": [
+              9.7970836882161e-29,
+              9.833933446868892e-29,
+              9.860443000029246e-29
+            ],
+            "old_raw_allocations": [
+              9.758790830342142e-29,
+              9.675332550239186e-29,
+              9.615293033185433e-29
+            ],
+            "patch": 0,
+            "pool": "dormant",
+            "represented_physical_cell_change_exact": [
+              {
+                "d": "0x360b0edcb60240000000000000000000000000",
+                "n": "0x80de0c7f6d41dffd8e22acbb44635c5615"
+              },
+              {
+                "d": "0x1b05876e5b0120000000000000000000000000",
+                "n": "0x10adee49e4d3076746268afa0838733a52b"
+              },
+              {
+                "d": "0x1b05876e5b0120000000000000000000000000",
+                "n": "0x19c80c12d32401917d541e0688a8e6c6901"
+              }
+            ],
+            "represented_physical_cell_change_upper": [
+              3.638497172075702e-05,
+              0.00015069883678447176,
+              0.00023293572499384215
+            ],
+            "requested_numeric_physical_bound_exact": {
+              "d": "0x8000000000000000000000000",
+              "n": "0x16849b86a12b9b"
+            },
+            "root_cap_composition_cell_scale_upper": [
+              95.01764491049181,
+              95.01764491049181,
+              95.01764491049181
+            ]
+          }
+        ],
+        "global_biomass_update": {
+          "absolute_update": 0.0,
+          "finite": true,
+          "machine_spacing": 1.0842021724855044e-19,
+          "maximum_update_spacings": 0.0,
+          "new_value": 0.000623060320826214,
+          "old_value": 0.000623060320826214,
+          "worst_index": 0,
+          "worst_stage": 0
+        },
+        "global_log_update": {
+          "absolute_update": 0.0,
+          "finite": true,
+          "finite_mask_unchanged": true,
+          "machine_spacing": 8.881784197001252e-16,
+          "maximum_update_spacings": 0.0,
+          "new_value": -7.380867220707838,
+          "old_value": -7.380867220707838,
+          "worst_index": 0,
+          "worst_location": [
+            0,
+            0
+          ],
+          "worst_stage": 0
+        },
+        "local_represented_cell_change_bound_exact": {
+          "d": "0x1b05876e5b0120000000000000000000000000",
+          "n": "0x19c80c12d32401917d541e0688a8e6c6901"
+        },
+        "local_represented_cell_change_bound_upper": 0.00023293572499384215,
+        "native_newton_tolerance": 0.0001414213562373095,
+        "newton_qualification": "strict037_then_certified_terminal_dormant_absolute_v1",
+        "original_native_iterations": 2,
+        "original_native_rate": 1.145514054835352,
+        "original_strict037_decline": "coordinate_spacing",
+        "physical_update": {
+          "absolute_update": 7.105427357601002e-15,
+          "finite": true,
+          "machine_spacing": 7.105427357601002e-15,
+          "maximum_update_spacings": 1.0,
+          "new_value": 36.62959805529758,
+          "old_value": 36.62959805529757,
+          "worst_index": 0,
+          "worst_resolved_physical_index": 0,
+          "worst_stage": 0
+        },
+        "retained_log_update": {
+          "absolute_update": 0.0,
+          "finite": true,
+          "machine_spacing": 8.881784197001252e-16,
+          "maximum_update_spacings": 0.0,
+          "new_value": -7.380867220707838,
+          "old_value": -7.380867220707838,
+          "worst_index": 0,
+          "worst_location": [
+            0,
+            0,
+            0,
+            0
+          ],
+          "worst_stage": 0
+        },
+        "step_yr": 0.10000001111620804,
+        "time_yr": 1802.0066555776982
+      },
+      {
+        "accepted_native_iterations": 3,
+        "coordinate_update": {
+          "absolute_update": 1.7763568394002505e-13,
+          "finite": true,
+          "maximum_update_spacings": 25.0,
+          "new_value": 36.62959805529739,
+          "old_value": 36.62959805529757,
+          "unit_scaled_machine_spacing": 7.105427357601002e-15,
+          "worst_index": 0,
+          "worst_stage": 2
+        },
+        "correction_norm": 7.155422784587737e-08,
+        "current_and_proposed_macro_certificates": [
+          {
+            "active_habitats": 1,
+            "biomass_lower_exact": {
+              "d": "0x2000000000000000000000",
+              "n": "0x4189374bc6a7f"
+            },
+            "biomass_scale": 0.001,
+            "cell_mass_gdw": 3e-13,
+            "census_yr": 10.0,
+            "encoded_total_lower": -0.14545861497522994,
+            "encoded_total_lower_exact": {
+              "d": "0x2aaaaaaaaaaa4000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000",
+              "n": "-0x634cbc45f937578a35bfba4a89670340d94c70000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000355555555554d"
+            },
+            "encoded_total_polynomial_exact": [
+              {
+                "d": "0x40000000000000",
+                "n": "-0x94f31a68f5d01"
+              },
+              {
+                "d": "0x80000000000000000000000000",
+                "n": "0xd2410238d2987"
+              },
+              {
+                "d": "0x80000000000000000000000000",
+                "n": "-0x16e3870cce1a89"
+              },
+              {
+                "d": "0x20000000000000000000000000",
+                "n": "0x2ea24cbedc257"
+              }
+            ],
+            "encoded_total_rounding_margin_exact": {
+              "d": "0x2aaaaaaaaaaa4000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000",
+              "n": "0x1f173d518f260353e8d9722aa10000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000355555555554d"
+            },
+            "habitat_l_cm2": 0.008970677546304392,
+            "minimum_cells": 1.0,
+            "minimum_required_cells": 10000000000000000,
+            "present_guilds": 1,
+            "softplus_lower_bound": "z>=-16 implies softplus(z)>=1/2^25: log(1+x)>=x/2 for0<=x<=1 and exp(16)<2^24.",
+            "surface_cm2": 5.1e+18,
+            "total_cells_lower": 4.544899412607392e+18,
+            "total_cells_lower_exact": {
+              "d": "0x1b05876e5b01200000000",
+              "n": "0x6a85657f6d8625852c1f0124493758160a23"
+            },
+            "total_coordinate_index": 19,
+            "volume_conversion_exact": {
+              "d": "0xd82c3b72d809",
+              "n": "0x1a0191479c3d400200eba65d0000000000000"
+            },
+            "volume_fraction_exact": {
+              "d": "0x1",
+              "n": "0x1"
+            }
+          },
+          {
+            "active_habitats": 1,
+            "biomass_lower_exact": {
+              "d": "0x2000000000000000000000",
+              "n": "0x4189374bc6a7f"
+            },
+            "biomass_scale": 0.001,
+            "cell_mass_gdw": 3e-13,
+            "census_yr": 10.0,
+            "encoded_total_lower": -0.14545861497526483,
+            "encoded_total_lower_exact": {
+              "d": "0x7ffffffffffec000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000",
+              "n": "-0x129e634d1ebf49691afe4f9933e5256a167c8600000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000009ffffffffffe7"
+            },
+            "encoded_total_polynomial_exact": [
+              {
+                "d": "0x40000000000000",
+                "n": "-0x94f31a68f5d01"
+              },
+              {
+                "d": "0x20000000000000000000000000",
+                "n": "-0x1ce33679fccfcd"
+              },
+              {
+                "d": "0x4000000000000000000000000",
+                "n": "0x1611af57393635"
+              },
+              {
+                "d": "0x4000000000000000000000000",
+                "n": "-0xf11be207ff2c9"
+              }
+            ],
+            "encoded_total_rounding_margin_exact": {
+              "d": "0x7ffffffffffec000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000",
+              "n": "0x5dfa8a60041800d77b97d369e800000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000009ffffffffffe7"
+            },
+            "habitat_l_cm2": 0.008970677546304392,
+            "minimum_cells": 1.0,
+            "minimum_required_cells": 10000000000000000,
+            "present_guilds": 1,
+            "softplus_lower_bound": "z>=-16 implies softplus(z)>=1/2^25: log(1+x)>=x/2 for0<=x<=1 and exp(16)<2^24.",
+            "surface_cm2": 5.1e+18,
+            "total_cells_lower": 4.544899412607392e+18,
+            "total_cells_lower_exact": {
+              "d": "0x1b05876e5b01200000000",
+              "n": "0x6a85657f6d8625852c1f0124493758160a23"
+            },
+            "total_coordinate_index": 19,
+            "volume_conversion_exact": {
+              "d": "0xd82c3b72d809",
+              "n": "0x1a0191479c3d400200eba65d0000000000000"
+            },
+            "volume_fraction_exact": {
+              "d": "0x1",
+              "n": "0x1"
+            }
+          }
+        ],
+        "dormant_composition_exemptions": [
+          {
+            "abundance_and_own_stage_log_precision": "unresolved_absolute_composition",
+            "allocation_correction_exact": [
+              {
+                "d": "0x2000000000000000000000000000000000000",
+                "n": "0xc19c24d0a18b"
+              },
+              {
+                "d": "0x4000000000000000000000000000000000000",
+                "n": "0x2dbdb2146dec3"
+              },
+              {
+                "d": "0x4000000000000000000000000000000000000",
+                "n": "0x28b36384e5c95"
+              }
+            ],
+            "allocation_correction_upper": [
+              4.7728534364311124e-30,
+              9.020821376944111e-30,
+              8.026805115720334e-30
+            ],
+            "conservatively_converted_physical_atol_exact": [
+              {
+                "d": "0x1000000000000000000000007fb1bf602fae9000000000000000000000000000",
+                "n": "0x72ef31171a16e758fdfe279d5cc76a70ba5557e7df2a4ff73"
+              },
+              {
+                "d": "0x1000000000000000000000006fa1cde2e754a800000000000000000000000000",
+                "n": "0x72ef31171a16f29b4bc17832b6e5b264d2c09789389f1f547"
+              },
+              {
+                "d": "0x400000000000000000000001a394a69ca41ad000000000000000000000000000",
+                "n": "0x1cbbcc45c685bca6d2f05e0ca1a03a6e9e52d2e31e1382f6bd"
+              }
+            ],
+            "frozen_root_atol_squared_exact": {
+              "d": "0x1000000000000000000000000000000000",
+              "n": "0x1357c299a88ea7"
+            },
+            "guild": 0,
+            "index": 4,
+            "native_component_atol_numeric": 1e-14,
+            "native_component_atol_units": "normalized allocation coordinate",
+            "new_raw_allocations": [
+              1.0073306192484616e-28,
+              9.708297967684949e-29,
+              9.077450136971488e-29
+            ],
+            "old_raw_allocations": [
+              9.596020848841505e-29,
+              8.806215829990538e-29,
+              8.274769625399454e-29
+            ],
+            "patch": 0,
+            "pool": "dormant",
+            "represented_physical_cell_change_exact": [
+              {
+                "d": "0x6c161db96c0480000000000000000000000000",
+                "n": "0xc8c6d631a33c890fe5ed8f26dd550fa92a5"
+              },
+              {
+                "d": "0x6c161db96c0480000000000000000000000000",
+                "n": "0x17b792f1409d598cc2d123ea2190e7b719db"
+              },
+              {
+                "d": "0xd82c3b72d80900000000000000000000000000",
+                "n": "0x2a3514134d869dacbc6b9071d325aa6fcc51"
+              }
+            ],
+            "represented_physical_cell_change_upper": [
+              0.0004535052930326289,
+              0.0008571372023954649,
+              0.0007626881182512518
+            ],
+            "requested_numeric_physical_bound_exact": {
+              "d": "0x8000000000000000000000000",
+              "n": "0x16849b86a12b9b"
+            },
+            "root_cap_composition_cell_scale_upper": [
+              95.01764491049181,
+              95.01764491049198,
+              95.01764491049201
+            ]
+          }
+        ],
+        "global_biomass_update": {
+          "absolute_update": 1.3010426069826053e-18,
+          "finite": true,
+          "machine_spacing": 1.0842021724855044e-19,
+          "maximum_update_spacings": 12.0,
+          "new_value": 0.0006230603208262154,
+          "old_value": 0.000623060320826214,
+          "worst_index": 0,
+          "worst_stage": 2
+        },
+        "global_log_update": {
+          "absolute_update": 1.7763568394002505e-15,
+          "finite": true,
+          "finite_mask_unchanged": true,
+          "machine_spacing": 8.881784197001252e-16,
+          "maximum_update_spacings": 2.0,
+          "new_value": -7.380867220707836,
+          "old_value": -7.380867220707838,
+          "worst_index": 1,
+          "worst_location": [
+            1,
+            0
+          ],
+          "worst_stage": 0
+        },
+        "local_represented_cell_change_bound_exact": {
+          "d": "0x6c161db96c0480000000000000000000000000",
+          "n": "0x17b792f1409d598cc2d123ea2190e7b719db"
+        },
+        "local_represented_cell_change_bound_upper": 0.0008571372023954649,
+        "native_newton_tolerance": 0.0001414213562373095,
+        "newton_qualification": "strict037_then_certified_terminal_dormant_absolute_v1",
+        "original_native_iterations": 2,
+        "original_native_rate": 8.219626003621144,
+        "original_strict037_decline": "coordinate_spacing",
+        "physical_update": {
+          "absolute_update": 1.7763568394002505e-13,
+          "finite": true,
+          "machine_spacing": 7.105427357601002e-15,
+          "maximum_update_spacings": 25.0,
+          "new_value": 36.62959805529739,
+          "old_value": 36.62959805529757,
+          "worst_index": 0,
+          "worst_resolved_physical_index": 0,
+          "worst_stage": 2
+        },
+        "retained_log_update": {
+          "absolute_update": 1.7763568394002505e-15,
+          "finite": true,
+          "machine_spacing": 8.881784197001252e-16,
+          "maximum_update_spacings": 2.0,
+          "new_value": -7.380867220707836,
+          "old_value": -7.380867220707838,
+          "worst_index": 1,
+          "worst_location": [
+            1,
+            0,
+            0,
+            0
+          ],
+          "worst_stage": 0
+        },
+        "step_yr": 1.0000001111620804,
+        "time_yr": 1802.1066555888144
+      }
+    ],
+    "all_exact_raw_corrections_within_frozen_root_atol_squared": true,
+    "approved_private_policy_endpoint_bits_identical": true,
+    "broad_qualifications": 4,
+    "controller": "local/haze/dormancy_trial_review/production_absolute_resolution0125_probe.py",
+    "controller_sha256": "2688376b4175b16690eda6345eeb200af861eb90af7c54af51ada3cb0a11331c",
+    "current_and_proposed_macro_proofs": 8,
+    "initial_comparison": {
+      "final_temperature_k": 283.1987767857949,
+      "initial_temperature_k": 283.19877678579496,
+      "per_stock_absolute_difference": [
+        1.7053025658242404e-13,
+        1.1926223897340549e-18,
+        0.0,
+        6.505213034913027e-19,
+        6.091690748767936e-32,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        3.252606517456513e-17
+      ]
+    },
+    "input_snapshot": "local/haze/dormancy_absolute_policy_review/accepted_input_snapshot.json",
+    "input_snapshot_sha256": "c35e816b01a12d760fd6fd51fc59c91e182f3476470c1b3427899a314ccce4ce",
+    "input_source_changes": {
+      "src/terra_prisca/haze_world/dormancy_roundoff_integration.py": {
+        "current": "f4861dbe9806eebf4e56dde1279801ce82cbb13af438e661e205213f1ba63ee4",
+        "snapshot": "037761c4293b103eb44dee0a798a02d2c91b48faf53a03fdde47fb5b0f8f2369"
+      }
+    },
+    "maximum_actual_raw_allocation_correction_upper": 9.020821376944111e-30,
+    "maximum_actual_represented_cell_change_upper": 0.0008571372023954649,
+    "maximum_global_biomass_spacings": 12.0,
+    "maximum_global_log_spacings": 2.0,
+    "maximum_resolved_physical_spacings": 25.0,
+    "maximum_resolved_stage_log_spacings": 2.0,
+    "maximum_root_cap_composition_cell_scale": 95.01764491049201,
+    "minimum_certified_cells": 4.544899412607392e+18,
+    "native_failures": 0,
+    "native_work": [
+      {
+        "constructor_failures": 0,
+        "constructor_jacobian_attempts": 1,
+        "constructors": 1,
+        "factorizations": 34,
+        "jacobian_attempts": 5,
+        "rhs_evaluations": 132
+      }
+    ],
+    "positive_dense": {
+      "declined_defect": 0,
+      "extended_pieces": 0,
+      "native_dense_pieces": 17,
+      "negative_native_endpoint_pieces": 0,
+      "negative_native_endpoint_rejections": 0
+    },
+    "positivity_retries": 0,
+    "protocol": {
+      "census_yr": 10.0,
+      "initial_recensus": false,
+      "max_step_yr": 10.0,
+      "minimum_cells": 1.0,
+      "native_newton_maxiter": 6,
+      "retained_charts": true,
+      "rtol": 2e-08
+    },
+    "raw_file": "local/haze/dormancy_absolute_policy_review/absolute_policy0125_1802_100.npz",
+    "raw_sha256": "c2caab128e212a6f1ef6425dba7a6cbdb1db917360611d1c4c92d05e47bbc21f",
+    "receipt": "local/haze/dormancy_absolute_policy_review/absolute_policy0125_1802_100.json",
+    "receipt_sha256": "fefe3fa16f1453e4135977bcb42c50b6e94307729230ff4f1baebe4bc3384520",
+    "resets": 0,
+    "source_sha256": {
+      "models/haze_response/arney2016/cases.csv": "e3d77d275052a8875991a751868f857bffc964295bfd47591944d86bc58ab07a",
+      "models/haze_response/arney2016/figure4.csv": "c0ef5f3d17ee7c6085ad36247f0f7814726dbbe3273842b01f2c6c4e046856f8",
+      "models/haze_world/evidence/kotsyurbenko2001_table2.csv": "c95b4be023e5502fbb30eb322621e5612bbbf850f99d1b6669e98b95eb370480",
+      "models/haze_world/evidence/peters1998_chemostat.csv": "b0b00bf03eaeaabf45fb571330773c5158b53b088436aaee942188f8e9498320",
+      "src/terra_prisca/haze_response/arney2016.py": "a1b8b52f4c929a0518a17542fb323588699433b038949b38ee6ad74679cd0da6",
+      "src/terra_prisca/haze_world/bottleneck_integration.py": "ce56becb23ca53c6bfb48dffc054d8ecc90839bf5dd0ffd716dbf22635dd435f",
+      "src/terra_prisca/haze_world/buffered_experiments.py": "c8603febb0167be3fc944b60672d9e11957aabf4ca7654dc6efb20639176336a",
+      "src/terra_prisca/haze_world/darwinian.py": "e965035d5dfbfafcb695dc3738b23d8a445c4c1e7e246ab4688d67b33482f1aa",
+      "src/terra_prisca/haze_world/dormancy.py": "bf0a0e02c621dae1ba13c421ff75f8d0233e2c88bac1e54a42036c7f21797645",
+      "src/terra_prisca/haze_world/dormancy_chemical_experiments.py": "840f3a46172930e3c1bfd0a7a3a45227b6ea43b666f14f7fc38faf714175c258",
+      "src/terra_prisca/haze_world/dormancy_chemical_integration.py": "75c538cb2bfabf0e8b497d6f7b60e8714ab2a69880d8836ec5201ac05b626cd1",
+      "src/terra_prisca/haze_world/dormancy_conditioned_experiments.py": "3373ee7b1d9aa0d46b3455b6be93f620fee7942861a8c59932efce0e8f35c7fb",
+      "src/terra_prisca/haze_world/dormancy_conditioned_integration.py": "39024878c87ed3ddbd385bbe586e5e872f85855f30010aca0a502671e5b64bbe",
+      "src/terra_prisca/haze_world/dormancy_experiments.py": "91a6aaf01702f357b076761ca650918bbc5d0a18af7f53bf542ed30fe2e2db9c",
+      "src/terra_prisca/haze_world/dormancy_face_experiments.py": "305e44d7f7ccb498dc8898ecb58c1e8cdb3ce79fe1c61a3a3b26c1d21f388865",
+      "src/terra_prisca/haze_world/dormancy_face_integration.py": "6a758528247493428459d250a0cd000ae678c9e59c05a09947f94628ed1672ce",
+      "src/terra_prisca/haze_world/dormancy_integration.py": "0a1cc282057a4187288ae77c8ef69e77830a3cb741d729d1877fe7a0c15dcd01",
+      "src/terra_prisca/haze_world/dormancy_jacobian_integration.py": "7046fc9baa47022fff7e700ea79f8e72e2c3195a77b9bd5f71e272d6a1c34310",
+      "src/terra_prisca/haze_world/dormancy_predictor_experiments.py": "a937fca22f8b13a75d817841757f2588da9c4d778c44028c3385b75459703722",
+      "src/terra_prisca/haze_world/dormancy_predictor_integration.py": "c2cf311336cfc24e8683c4b8e10d4c89cd1af60929b81935363de1948e2d5af8",
+      "src/terra_prisca/haze_world/dormancy_progress_integration.py": "ee65a5d01009bb376146f64b883d3d6ec52670fb2bb2326bb2a4331e63d589a4",
+      "src/terra_prisca/haze_world/dormancy_radau_experiments.py": "26a050bc24fb7a000bf929ca27db96fc04bbbdf538083ee70b5674a67f607c08",
+      "src/terra_prisca/haze_world/dormancy_radau_integration.py": "09be346c90c0fcb65ed6409f2de47ea1e4d3e2d542f3d6291eb7ae85a0bf6d2b",
+      "src/terra_prisca/haze_world/dormancy_roundoff_experiments.py": "0a17bef1aa376fa66e343ab88667140e12a037c755250c657b3ec376c41c96a7",
+      "src/terra_prisca/haze_world/dormancy_roundoff_integration.py": "f4861dbe9806eebf4e56dde1279801ce82cbb13af438e661e205213f1ba63ee4",
+      "src/terra_prisca/haze_world/dormancy_stage_experiments.py": "c77bbdf499a16d501104f98b7d0f421c018fb4c36a098850d0bd742c91c644ef",
+      "src/terra_prisca/haze_world/dormancy_stage_integration.py": "19b7909fda2feb47b767ec7a81050fd8c935f59b1aa25149b8159722597130eb",
+      "src/terra_prisca/haze_world/dormancy_starts.py": "67af0622f6243983569777f4d4368c12894ceed0351d05b2a89bd942ec439a3f",
+      "src/terra_prisca/haze_world/dormancy_terminal_experiments.py": "62c5c68d5ec81a327eeb6e7508c385d8dfcb0ee4b3efc4fba4e49d1a4219a597",
+      "src/terra_prisca/haze_world/dormancy_terminal_integration.py": "8a6672dc11b5152da733f2a8d2a24393e297c5b45caf3aa340c2894ec98a33b4",
+      "src/terra_prisca/haze_world/dormancy_trial_integration.py": "b5c0d208454c8f55b4da865a387ea592f117e28700bb13d1025efe4a4e92ef18",
+      "src/terra_prisca/haze_world/finite_experiments.py": "285d5f4ab46997920559ee0ac68657b0405eee39b38f97520e248faba4db631c",
+      "src/terra_prisca/haze_world/finite_populations.py": "4644088974706aa5f012fb3335a6b1cc8bfd90da88d0b99f9f9e2b64356890df",
+      "src/terra_prisca/haze_world/habitat_coupling.py": "34f611d3f9046bf7d96f8caeffb452f2a2206bab4abc45e630a09980a067c4d0",
+      "src/terra_prisca/haze_world/habitat_equilibria.py": "90ec06dbce07e6625878ece2e97b55604ed4708b8aad9f66b0dd06dd8aa50a9a",
+      "src/terra_prisca/haze_world/habitat_integration.py": "3a115c22ee4b4a6b2c3f4585385927a7e32d68712cfb3d0073f0e52089a1b214",
+      "src/terra_prisca/haze_world/hydrogen_uptake.py": "c48d8231ef726605ab07be22438f3e2fd97f23b310773ac748d1b2bf5c36fafd",
+      "src/terra_prisca/haze_world/methane_budget.py": "70dc47659e4738d07809e8d23844af79bf69e5dabcc87793eac3f5e560011721",
+      "src/terra_prisca/haze_world/population_coupling.py": "17a433957e94845595f6d7fd160ffe593c01c4e74550707b0814c95ab67ae663",
+      "src/terra_prisca/haze_world/turnover_starts.py": "d980d85dd6910d82828e9dbddbcf4588f62fd8bf870ce8af6a06a76ffb512bd5",
+      "src/terra_prisca/haze_world/two_guilds.py": "eff6a9027c5b28d154f03462d926591ebee3408eb2c80ec0df5c38929f169f83",
+      "src/terra_prisca/haze_world/woodii1998.py": "b0130f4f8ea15aa64245133f79dc8b35883a414031a8b49262c6657350cad0b0",
+      "uv.lock": "02bf429b2ec474f03280ec550d5fd847b573ece24ab9043e0b5998370fd4d2b4"
+    },
+    "start_time_yr": 1801.995544576463,
+    "status": "completed",
+    "summed_local_cell_bounds": [
+      {
+        "attempts": 4,
+        "declined": {},
+        "qualified": 4,
+        "summed_local_represented_cell_change_exact": {
+          "d": "0xd82c3b72d80900000000000000000000000000",
+          "n": "0x3dc1122b21b0221ca5ca2c9036c15c60626f"
+        },
+        "summed_local_represented_cell_change_upper": 0.0011159003314675105
+      }
+    ],
+    "terminal_time_yr": 1901.995544576463,
+    "wall_seconds": 0.107540583005175
+  },
+  "date": "2026-11-11",
+  "helper": {
+    "newton_qualification": "strict037_then_certified_terminal_dormant_absolute_v1",
+    "path": "src/terra_prisca/haze_world/dormancy_roundoff_integration.py",
+    "sha256": "f4861dbe9806eebf4e56dde1279801ce82cbb13af438e661e205213f1ba63ee4",
+    "solver_flag": "radau_dormancy_roundoff_stagnation"
+  },
+  "independent_review": {
+    "evidence_type": "Direct agent verdict relayed to parent; independent of implementation author.",
+    "helper_sha256": "f4861dbe9806eebf4e56dde1279801ce82cbb13af438e661e205213f1ba63ee4",
+    "reviewer": "Codex independent agent turnover_regimes",
+    "source_bytes_independently_compared_to_git0455d15": true,
+    "test_wall_seconds": 1.45,
+    "tests_passed": 50,
+    "verdict": "Scoped implementation clear: strict-first exclusions, exact Dorm bounds, converted component-atol/masks, dual macro certificates, resolved and global strict gates, cell metadata match approved new policy."
+  },
+  "inherited_control_scope": "037 uncensored/multihabitat/two-guild results may be inherited only via pinned source/function identity and early-exclusion tests/provenance; parent selected-receipt reconciliation remains separate.",
+  "limitations": [
+    "This is a NEW Newton source epoch, not a claim of unchanged037 qualification.",
+    "Private100yr pinned replay is not a canonical original-start100kyr receipt.",
+    "Component atol originates in normalized allocation coordinates; physical check also uses a conservative stage-wise units conversion.",
+    "Approximately95cell composition scale is unresolved pool resolution, not an accuracy bound.",
+    "Actual/summed represented local cell bounds include collocation trials that may later be rejected/truncated; no global/accumulated ODE or lineage guarantee."
+  ],
+  "next_gate": "Parent canonical125 selection and aggregate assessment/branching-probability reconciliation; physical qualification passes. Inherited0010 remains explicitly scoped via strict037 early-exclusion identity.",
+  "original_start_qualification": {
+    "absolute_resolution_stats": [
+      {
+        "attempts": 219,
+        "declined": {},
+        "qualified": 219,
+        "summed_local_represented_cell_change_exact": {
+          "d": "0xd82c3b72d8090000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000",
+          "n": "0x1cca4a7fcdbd46ffbc4852bbdd80c9310feefd4f56f042a1397ff20fda0190b877ef135fc58ddafa8dd39d16f0ca3cf771e35df06b11ac734705fc7898628198b459a18577389b1806e111821a6673e372e9b307dd79a0a000000000000196247adc5a048db6d54b74b41673b93a35da303925544b52e013fd"
+        },
+        "summed_local_represented_cell_change_upper": 2.1309028073981344
+      }
+    ],
+    "actual_terminal_time_yr": 100000.0,
+    "fingerprint": "82ff0e890311359e17652267f99026e48d1422e18e15fa5d51b2b0c267485a0e",
+    "finite_nonnegative_physical": true,
+    "native_counters": {
+      "accepted_steps": 17007,
+      "allocation_positivity_retries": 29,
+      "nfev": 313410,
+      "solver_failure_retries": 0,
+      "solver_resets": 54
+    },
+    "raw_file": "local/haze/dormancy_absolute_qualification/dormancy_0125_census_t100000-82ff0e890311359e.npz",
+    "raw_sha256": "df98c2aa275f87aef5fa58987d84b8dc29d48ff7ca11d539a91d4d4f29ca9170",
+    "receipt": "local/haze/dormancy_absolute_qualification/dormancy_0125_census_t100000-82ff0e890311359e.receipt.json",
+    "receipt_sha256": "58567e19ba06a3274da6508e3edfbb32d046498ded745ff41a65ab9d8daf136d",
+    "source_sha256": {
+      "models/haze_response/arney2016/cases.csv": "e3d77d275052a8875991a751868f857bffc964295bfd47591944d86bc58ab07a",
+      "models/haze_response/arney2016/figure4.csv": "c0ef5f3d17ee7c6085ad36247f0f7814726dbbe3273842b01f2c6c4e046856f8",
+      "models/haze_world/evidence/kotsyurbenko2001_table2.csv": "c95b4be023e5502fbb30eb322621e5612bbbf850f99d1b6669e98b95eb370480",
+      "models/haze_world/evidence/peters1998_chemostat.csv": "b0b00bf03eaeaabf45fb571330773c5158b53b088436aaee942188f8e9498320",
+      "src/terra_prisca/haze_response/arney2016.py": "a1b8b52f4c929a0518a17542fb323588699433b038949b38ee6ad74679cd0da6",
+      "src/terra_prisca/haze_world/bottleneck_integration.py": "ce56becb23ca53c6bfb48dffc054d8ecc90839bf5dd0ffd716dbf22635dd435f",
+      "src/terra_prisca/haze_world/buffered_experiments.py": "c8603febb0167be3fc944b60672d9e11957aabf4ca7654dc6efb20639176336a",
+      "src/terra_prisca/haze_world/darwinian.py": "e965035d5dfbfafcb695dc3738b23d8a445c4c1e7e246ab4688d67b33482f1aa",
+      "src/terra_prisca/haze_world/dormancy.py": "bf0a0e02c621dae1ba13c421ff75f8d0233e2c88bac1e54a42036c7f21797645",
+      "src/terra_prisca/haze_world/dormancy_chemical_experiments.py": "840f3a46172930e3c1bfd0a7a3a45227b6ea43b666f14f7fc38faf714175c258",
+      "src/terra_prisca/haze_world/dormancy_chemical_integration.py": "75c538cb2bfabf0e8b497d6f7b60e8714ab2a69880d8836ec5201ac05b626cd1",
+      "src/terra_prisca/haze_world/dormancy_conditioned_experiments.py": "3373ee7b1d9aa0d46b3455b6be93f620fee7942861a8c59932efce0e8f35c7fb",
+      "src/terra_prisca/haze_world/dormancy_conditioned_integration.py": "39024878c87ed3ddbd385bbe586e5e872f85855f30010aca0a502671e5b64bbe",
+      "src/terra_prisca/haze_world/dormancy_experiments.py": "91a6aaf01702f357b076761ca650918bbc5d0a18af7f53bf542ed30fe2e2db9c",
+      "src/terra_prisca/haze_world/dormancy_face_experiments.py": "305e44d7f7ccb498dc8898ecb58c1e8cdb3ce79fe1c61a3a3b26c1d21f388865",
+      "src/terra_prisca/haze_world/dormancy_face_integration.py": "6a758528247493428459d250a0cd000ae678c9e59c05a09947f94628ed1672ce",
+      "src/terra_prisca/haze_world/dormancy_integration.py": "0a1cc282057a4187288ae77c8ef69e77830a3cb741d729d1877fe7a0c15dcd01",
+      "src/terra_prisca/haze_world/dormancy_jacobian_integration.py": "7046fc9baa47022fff7e700ea79f8e72e2c3195a77b9bd5f71e272d6a1c34310",
+      "src/terra_prisca/haze_world/dormancy_predictor_experiments.py": "a937fca22f8b13a75d817841757f2588da9c4d778c44028c3385b75459703722",
+      "src/terra_prisca/haze_world/dormancy_predictor_integration.py": "c2cf311336cfc24e8683c4b8e10d4c89cd1af60929b81935363de1948e2d5af8",
+      "src/terra_prisca/haze_world/dormancy_progress_integration.py": "ee65a5d01009bb376146f64b883d3d6ec52670fb2bb2326bb2a4331e63d589a4",
+      "src/terra_prisca/haze_world/dormancy_radau_experiments.py": "26a050bc24fb7a000bf929ca27db96fc04bbbdf538083ee70b5674a67f607c08",
+      "src/terra_prisca/haze_world/dormancy_radau_integration.py": "09be346c90c0fcb65ed6409f2de47ea1e4d3e2d542f3d6291eb7ae85a0bf6d2b",
+      "src/terra_prisca/haze_world/dormancy_roundoff_experiments.py": "0a17bef1aa376fa66e343ab88667140e12a037c755250c657b3ec376c41c96a7",
+      "src/terra_prisca/haze_world/dormancy_roundoff_integration.py": "f4861dbe9806eebf4e56dde1279801ce82cbb13af438e661e205213f1ba63ee4",
+      "src/terra_prisca/haze_world/dormancy_stage_experiments.py": "c77bbdf499a16d501104f98b7d0f421c018fb4c36a098850d0bd742c91c644ef",
+      "src/terra_prisca/haze_world/dormancy_stage_integration.py": "19b7909fda2feb47b767ec7a81050fd8c935f59b1aa25149b8159722597130eb",
+      "src/terra_prisca/haze_world/dormancy_starts.py": "67af0622f6243983569777f4d4368c12894ceed0351d05b2a89bd942ec439a3f",
+      "src/terra_prisca/haze_world/dormancy_terminal_experiments.py": "62c5c68d5ec81a327eeb6e7508c385d8dfcb0ee4b3efc4fba4e49d1a4219a597",
+      "src/terra_prisca/haze_world/dormancy_terminal_integration.py": "8a6672dc11b5152da733f2a8d2a24393e297c5b45caf3aa340c2894ec98a33b4",
+      "src/terra_prisca/haze_world/dormancy_trial_integration.py": "b5c0d208454c8f55b4da865a387ea592f117e28700bb13d1025efe4a4e92ef18",
+      "src/terra_prisca/haze_world/finite_experiments.py": "285d5f4ab46997920559ee0ac68657b0405eee39b38f97520e248faba4db631c",
+      "src/terra_prisca/haze_world/finite_populations.py": "4644088974706aa5f012fb3335a6b1cc8bfd90da88d0b99f9f9e2b64356890df",
+      "src/terra_prisca/haze_world/habitat_coupling.py": "34f611d3f9046bf7d96f8caeffb452f2a2206bab4abc45e630a09980a067c4d0",
+      "src/terra_prisca/haze_world/habitat_equilibria.py": "90ec06dbce07e6625878ece2e97b55604ed4708b8aad9f66b0dd06dd8aa50a9a",
+      "src/terra_prisca/haze_world/habitat_integration.py": "3a115c22ee4b4a6b2c3f4585385927a7e32d68712cfb3d0073f0e52089a1b214",
+      "src/terra_prisca/haze_world/hydrogen_uptake.py": "c48d8231ef726605ab07be22438f3e2fd97f23b310773ac748d1b2bf5c36fafd",
+      "src/terra_prisca/haze_world/methane_budget.py": "70dc47659e4738d07809e8d23844af79bf69e5dabcc87793eac3f5e560011721",
+      "src/terra_prisca/haze_world/population_coupling.py": "17a433957e94845595f6d7fd160ffe593c01c4e74550707b0814c95ab67ae663",
+      "src/terra_prisca/haze_world/turnover_starts.py": "d980d85dd6910d82828e9dbddbcf4588f62fd8bf870ce8af6a06a76ffb512bd5",
+      "src/terra_prisca/haze_world/two_guilds.py": "eff6a9027c5b28d154f03462d926591ebee3408eb2c80ec0df5c38929f169f83",
+      "src/terra_prisca/haze_world/woodii1998.py": "b0130f4f8ea15aa64245133f79dc8b35883a414031a8b49262c6657350cad0b0",
+      "uv.lock": "02bf429b2ec474f03280ec550d5fd847b573ece24ab9043e0b5998370fd4d2b4"
+    },
+    "summary": {
+      "accepted_steps": 17007,
+      "active_bulk_a_gdw_l": 0.0006230603208262336,
+      "active_bulk_m_gdw_l": 0.0,
+      "attempt_status": "completed",
+      "case_id": "dormancy_0125",
+      "cells_bulk_a": 9.50176449104948e+25,
+      "cells_bulk_m": 0.0,
+      "census_yr": 10.0,
+      "configuration": "none",
+      "culls_bulk_a": 0,
+      "culls_bulk_m": 1,
+      "direction": "M_into_A",
+      "dispersal_yr": 0.0,
+      "dormant_bulk_a_gdw_l": 0.0,
+      "dormant_bulk_m_gdw_l": 0.0,
+      "endpoint_class": "acetogen_only",
+      "epsilon": 0.01,
+      "fraction": 0.0,
+      "global_after_census_min_log_cells_a": 59.816104842110775,
+      "global_after_census_min_log_cells_m": null,
+      "global_after_census_min_zero_a": false,
+      "global_after_census_min_zero_m": true,
+      "global_catabolic_share_a": 1.0,
+      "global_catabolic_share_m": 0.0,
+      "global_continuous_min_log_cells_a": 59.816104841099836,
+      "global_continuous_min_log_cells_m": null,
+      "global_continuous_min_zero_a": false,
+      "global_continuous_min_zero_m": true,
+      "global_pre_extinction_min_log_cells_a": 59.816104841099836,
+      "global_pre_extinction_min_log_cells_m": -0.9477409170349063,
+      "global_pre_extinction_min_zero_a": false,
+      "global_pre_extinction_min_zero_m": false,
+      "global_present_a": true,
+      "global_present_m": false,
+      "group": "bistable",
+      "late_max_relative_span": 1.276360235939176e-16,
+      "late_occupancy_changes": 0,
+      "late_temperature_span_k": 0.0,
+      "loss_h": 0.002,
+      "max_scaled_derivative": 1.0819522412193602e-13,
+      "max_step_yr": 10.0,
+      "methane_ratio": 0.0005437715867672035,
+      "ramp": "cubic",
+      "rtol": 2e-08,
+      "settling_status": "census_stationary",
+      "switching_factor": 10.0,
+      "temperature_bulk_k": 283.1987767857938,
+      "temperature_k": 283.1987767857938,
+      "terminal_time_yr": 100000.0,
+      "wall_seconds": 146.576023915899,
+      "years": 100000.0
+    }
+  },
+  "policy": {
+    "absolute_gate": [
+      "Exact Fraction allocation correction<=frozen root_atol\u00b2 at all3stages",
+      "Actual physical correction<=existing numeric native component atol",
+      "Actual physical correction<=conservative stage-wise physical conversion of that same allocation atol"
+    ],
+    "additional_work_exclusions": [
+      "No actual census",
+      "minimum_cells!=1",
+      "census_yr!=10",
+      "More than one active habitat",
+      "Present guild count!=1",
+      "No old/new positive LINEAR dormant stage<=existing root_atol\u00b2"
+    ],
+    "eligibility": [
+      "Only a037 strict coordinate/physical relative-spacing decline",
+      "At least one eligible positive LINEAR dormant pool",
+      "Finite stage-log masks unchanged",
+      "Current AND proposed Q=Z.T@nativeP full-piece macro certificates>=1e16cells"
+    ],
+    "new_rule": true,
+    "preserved_precision": [
+      "Unchanged native Newton norm/tolerance",
+      "Unit-scaled64spacing represented ODE coordinate bound",
+      "All nonexempt physical stocks64actual spacings",
+      "All nonexempt retained stage logs64actual spacings",
+      "Global biomass and retained global logs64actual spacings",
+      "No finite-log mask changes"
+    ],
+    "strict_first": true,
+    "strict_fn_source_unchanged": true,
+    "uncertainty": "Only the exempt dormant abundance and own stage log are unresolved absolute composition. No floor, clipping, seed or native-state reset.",
+    "unchanged_downstream": [
+      "Local error control",
+      "Positive native endpoints",
+      "Domain prefix",
+      "Census/absence accounting",
+      "Physical RHS/parameter units",
+      "Predictor/root conditioning",
+      "Existing certified terminal dense budget",
+      "Every strict rare/uncensored/two-guild/multihabitat path"
+    ]
+  },
+  "rare_original_start_qualification": {
+    "comparison_sha256": "97b9ce19f21d4a737c2a8a5889f3b47a612a1efcae7cafb2adea43d3b30b5551",
+    "independent_raw_comparison": "local/haze/dormancy_absolute_policy_review/independent_rare_identity.json",
+    "parent_comparison": "local/haze/dormancy_absolute_qualification/uncensored_trajectory_comparison_f486.json",
+    "parent_comparison_sha256": "cd556bd15899f582c0f045f75107ca057163e73dd93eff7c969d7c408c86db29",
+    "rows": [
+      {
+        "new_raw_sha256": "9a37110383784802ed651771e5fe8c86df58a96afad431838b032493dc898b3e",
+        "new_receipt": "local/haze/dormancy_absolute_qualification/dormancy_0000_uncensored_t1600-e274486099e50fdf.receipt.json",
+        "old_raw_sha256": "f84d4a4f18e4be7087b6f6cba523b247fe38e778657e572c9d2a0d40d371ac63",
+        "old_receipt": "local/haze/dormancy_roundoff_qualification/dormancy_0000_uncensored_t1600-5c306a47106bbd02.receipt.json",
+        "scientific_fields_bitwise": {
+          "extinction_events": true,
+          "initial": true,
+          "log_active": true,
+          "log_biomass": true,
+          "log_dormant": true,
+          "min_log_biomass": true,
+          "min_times": true,
+          "t": true,
+          "temperatures_k": true,
+          "y": true
+        }
+      },
+      {
+        "new_raw_sha256": "9dc299efc9eb63ced3444aac58d2e62fef1963d2427b8e7a5630c96c1b5dcd17",
+        "new_receipt": "local/haze/dormancy_absolute_qualification/dormancy_0000_eps0.006_uncensored_t3000-aed6fc5568d8cbae.receipt.json",
+        "old_raw_sha256": "71ad360fa0cd867d790f1bf8a430bf769be602885a952bb1a23280f726551e18",
+        "old_receipt": "local/haze/dormancy_roundoff_qualification/dormancy_0000_eps0.006_uncensored_t3000-39a63ab9a077d569.receipt.json",
+        "scientific_fields_bitwise": {
+          "extinction_events": true,
+          "initial": true,
+          "log_active": true,
+          "log_biomass": true,
+          "log_dormant": true,
+          "min_log_biomass": true,
+          "min_times": true,
+          "t": true,
+          "temperatures_k": true,
+          "y": true
+        }
+      }
+    ],
+    "scope": "Independent read-only raw/hash/byte comparison, no reruns; metadata intentionally differs and branching probabilities are a separate source epoch."
+  },
+  "status": "bounded_replay_tests_independent_review_original100k_and_required_rare_physical_controls_passed_canonical_selection_parent_owned",
+  "strict037_identity": {
+    "new_helper_sha256": "f4861dbe9806eebf4e56dde1279801ce82cbb13af438e661e205213f1ba63ee4",
+    "old_helper_sha256": "037761c4293b103eb44dee0a798a02d2c91b48faf53a03fdde47fb5b0f8f2369",
+    "receipt": "local/haze/dormancy_absolute_policy_review/strict037_identity.json",
+    "sha256": "c52b4ebd66931602acacb5e9f0729f4a0afad0ebf2947d5bc23244a9732315a0",
+    "source_epoch": "0455d15",
+    "strict_source": {
+      "_qualify_update": {
+        "byte_identical": true,
+        "sha256": "415ae2c8bd1681bf61eb358de82ea9c72c5b3b1a25212183a061cdf48335573b"
+      },
+      "_spacing_report": {
+        "byte_identical": true,
+        "sha256": "0f59eda1636a4a12b990412559c0a4f990a739fce1c70b2d1a4afe9ff42abfbc"
+      }
+    }
+  },
+  "tests": {
+    "command": "UV_CACHE_DIR=/tmp/terra-prisca-uv-cache MPLCONFIGDIR=/tmp/terra-prisca-mpl OPENBLAS_NUM_THREADS=1 OMP_NUM_THREADS=1 uv run pytest -q tests/test_dormancy_roundoff_integration.py",
+    "passed": 50,
+    "path": "tests/test_dormancy_roundoff_integration.py",
+    "sha256": "8e5be2be624bf2a5bc0b17913b7d1833b60f65cf1ce7d6d419ca3f5f5e20b239",
+    "wall_seconds": 1.48
+  }
+}

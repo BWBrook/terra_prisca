@@ -1,4 +1,7 @@
 from types import SimpleNamespace
+from fractions import Fraction
+from hashlib import sha256
+import inspect
 
 import numpy as np
 import pytest
@@ -190,6 +193,8 @@ def test_strict_budget_outside_terminal_face_and_ordinary_physical_composition(m
     assert result.status=='completed' and np.all(np.isfinite(result.y)) and np.all(result.y>=0.)
     assert result.metadata['terminal_dense_stats'][0]['broader_budget_pieces']==0
     assert result.metadata['numerical_variant']=='radau_dormancy_roundoff_stagnation'
+    assert result.metadata['newton_qualification']==numerical.NEWTON_QUALIFICATION
+    assert result.metadata['strict037_source_identity']['source_commit']=='0455d15'
     assert 'zero_stage_predictor_stats' in result.metadata and 'roundoff_stagnation_stats' in result.metadata
     for event in result.metadata['positive_dense_stats'][0]['extensions']:
         assert 'terminal_macro_certificate' not in event
@@ -197,3 +202,139 @@ def test_strict_budget_outside_terminal_face_and_ordinary_physical_composition(m
     fresh=numerical._Coordinates(y,p);new=fresh.encode(y)
     assert fresh.derivative(0.,new).tobytes()==frozen.derivative(0.,original).tobytes()
     assert max(abs(model.redox_residual(value,p)) for value in result.y.T)<1e-16
+
+
+def test_pinned037_strict_qualifier_and_spacing_code_are_source_identical():
+    assert sha256(inspect.getsource(numerical._qualify_update).encode()).hexdigest()=='415ae2c8bd1681bf61eb358de82ea9c72c5b3b1a25212183a061cdf48335573b'
+    assert sha256(inspect.getsource(numerical._spacing_report).encode()).hexdigest()=='0f59eda1636a4a12b990412559c0a4f990a739fce1c70b2d1a4afe9ff42abfbc'
+
+
+@pytest.mark.parametrize('kind',['uncensored','zero_census','short_census','multihabitat','two_guilds','strict_pass','other_strict_failure'])
+def test_static_exclusions_return_strict_identity_before_any_additional_state_work(monkeypatch,kind):
+    strict=(kind=='strict_pass','native_absolute_norm' if kind=='other_strict_failure' else 'coordinate_spacing',{'evidence':object()})
+    monkeypatch.setattr(numerical,'_qualify_update',lambda *args:strict)
+    monkeypatch.setattr(numerical,'_absolute_qualification',lambda *args:pytest.fail('Additional qualification'))
+    class Forbidden:
+        def __add__(self,other):pytest.fail('Additional state arithmetic')
+    coords=SimpleNamespace(terminal_census_active=kind!='uncensored',
+        dense_census=numerical.Census(minimum_cells=0. if kind=='zero_census' else 1.,census_yr=1. if kind=='short_census' else 10.),
+        p=SimpleNamespace(weights=np.array([.5,.5]) if kind=='multihabitat' else np.array([1.])) ,
+        groups=[{'present':True}]* (2 if kind=='two_guilds' else 1),
+        decode=lambda *args:pytest.fail('Additional decode'))
+    result=numerical._qualified_update(Forbidden(),None,None,None,None,1e-4,coords,0.,1.,None)
+    assert result is strict
+
+
+def absolute_case(old=None,new=None):
+    p=model.Dormancy(habitat.Habitats(),epsilon=.03)
+    initial=model.reference_state([30.,3e-4,0.,1e-4,.195],p)
+    coords=numerical._Coordinates(initial,p);y=coords.encode(initial)
+    coords.terminal_census_active=True;coords.dense_census=numerical.Census()
+    cap=numerical.ABSOLUTE_DORMANT_CAP
+    old=.1*cap if old is None else old;new=.9*cap if new is None else new
+    y[4]=old;Z=np.zeros((3,len(y)));proposed=Z.copy();proposed[:,4]=new-old
+    dW=np.zeros_like(Z);scale=np.ones(len(y));atol=np.full(len(y),1e-8);atol[4]=1e-14
+    return coords,y,Z,proposed,dW,scale,atol
+
+
+def policy_call(case,time=0.,h=1.):
+    coords,y,Z,proposed,dW,scale,atol=case
+    return numerical._qualified_update(y,Z,proposed,dW,scale,1e-4,coords,time,h,atol)
+
+
+def exact_ratio(value):return Fraction(int(value['n'],16),int(value['d'],16))
+
+
+@pytest.mark.parametrize('old,new',[(.1*numerical.ABSOLUTE_DORMANT_CAP,.9*numerical.ABSOLUTE_DORMANT_CAP),
+                                  (np.nextafter(0.,1.),numerical.ABSOLUTE_DORMANT_CAP)])
+def test_new_absolute_rule_real_space_boundary_and_exact_local_cell_accounting(old,new):
+    case=absolute_case(old,new);coords=case[0]
+    strict=numerical._qualify_update(case[1],case[2],case[3],case[4],case[5],1e-4,coords)
+    assert not strict[0]
+    result=policy_call(case)
+    assert result[0] and result[1]=='accepted_terminal_dormant_absolute_resolution'
+    event=result[2];pool=event['dormant_composition_exemptions'][0]
+    cap=Fraction.from_float(numerical.ABSOLUTE_DORMANT_CAP)
+    assert pool['index']==4 and all(exact_ratio(value)<=cap for value in pool['allocation_correction_exact'])
+    assert pool['abundance_and_own_stage_log_precision']=='unresolved_absolute_composition'
+    assert all(exact_ratio(proof['total_cells_lower_exact'])>=10**16 for proof in event['current_and_proposed_macro_certificates'])
+    local=max(map(exact_ratio,pool['represented_physical_cell_change_exact']))
+    assert exact_ratio(event['local_represented_cell_change_bound_exact'])==local
+    assert exact_ratio(coords.absolute_resolution_stats['summed_local_represented_cell_change_exact'])==local
+    assert pool['native_component_atol_units']=='normalized allocation coordinate'
+    assert len(pool['conservatively_converted_physical_atol_exact'])==3
+    assert event['physical_update']['maximum_update_spacings']<=64
+    assert event['global_biomass_update']['maximum_update_spacings']<=64
+
+
+@pytest.mark.parametrize('kind',['zero_old','zero_new','negative','above_cap','root','active_only'])
+def test_absolute_exception_never_applies_to_zero_crossing_or_other_compartments(monkeypatch,kind):
+    case=list(absolute_case());coords,y,Z,proposed,dW,scale,atol=case
+    if kind=='zero_old':y[4]=0.
+    elif kind=='zero_new':proposed[:,4]=-y[4]
+    elif kind=='negative':proposed[:,4]=-2*y[4]
+    elif kind=='above_cap':proposed[:,4]=2*numerical.ABSOLUTE_DORMANT_CAP
+    elif kind=='root':coords.stage_positive[4]=True
+    else:
+        coords.stage_positive[4]=True
+        coords.stage_positive[1]=False;y[1]=.1*numerical.ABSOLUTE_DORMANT_CAP;proposed[:,1]=.8*numerical.ABSOLUTE_DORMANT_CAP
+    strict=(False,'coordinate_spacing',{})
+    monkeypatch.setattr(numerical,'_qualify_update',lambda *args:strict)
+    monkeypatch.setattr(numerical,'_absolute_qualification',lambda *args:pytest.fail('Ineligible pool decoded/proved'))
+    assert policy_call(case) is strict
+
+
+def test_both_current_and_proposed_macro_proofs_required(monkeypatch):
+    case=absolute_case();original=numerical.terminal._terminal_certificate;calls=[]
+    def proof(*args):
+        calls.append(True)
+        return original(*args) if len(calls)==1 else (None,'encoded_total_lower')
+    monkeypatch.setattr(numerical.terminal,'_terminal_certificate',proof)
+    assert not policy_call(case)[0] and len(calls)==2
+    assert case[0].absolute_resolution_stats['declined']['macro_certificate_encoded_total_lower']==1
+
+
+def test_interior_total_dip_and_low_volume_do_not_use_absolute_rule():
+    case=list(absolute_case());coords,y,Z,proposed,dW,scale,atol=case
+    y[coords.m]=0.;c=numerical._NATIVE['C'];Z[:,coords.m]=-80*c+80*c*c;proposed[:,coords.m]=Z[:,coords.m]
+    assert not policy_call(case)[0]
+    assert any(key.startswith('macro_certificate_') for key in coords.absolute_resolution_stats['declined'])
+    case=absolute_case();case[0].dense_census=numerical.Census(surface_cm2=1.)
+    assert not policy_call(case)[0]
+    assert case[0].absolute_resolution_stats['declined']['macro_certificate_total_cells_lower']==1
+
+
+def test_existing_numeric_and_units_converted_component_atol_are_both_enforced():
+    case=list(absolute_case());case[-1][4]=1e-40
+    assert not policy_call(case)[0]
+    assert case[0].absolute_resolution_stats['declined']['no_dormant_pool_passes_physical_atol']==1
+    case=list(absolute_case());case[-1][4]=1e-26
+    assert not policy_call(case)[0]
+    assert case[0].absolute_resolution_stats['declined']['no_dormant_pool_passes_physical_atol']==1
+
+
+@pytest.mark.parametrize('kind',['resolved_physical','active_stage_log','global_biomass','global_log','global_mask'])
+def test_all_nonexempt_physical_and_log_global_gates_remain_strict(monkeypatch,kind):
+    case=list(absolute_case());coords,y,Z,proposed,dW,scale,atol=case
+    if kind=='resolved_physical':
+        proposed[:,-3]=0.
+        proposed[:,coords.m-1]=65*np.spacing(y[coords.m-1])
+    elif kind=='active_stage_log':
+        decode=coords.decode
+        def changed(value):
+            physical,logs=decode(value)
+            if value[4]>.5*numerical.ABSOLUTE_DORMANT_CAP:logs[0,0,0]+=1.
+            return physical,logs
+        monkeypatch.setattr(coords,'decode',changed)
+    elif kind=='global_biomass':
+        original=numerical._spacing_report
+        def report(a,b):
+            if a.shape==(3,2):return False,{'finite':True}
+            return original(a,b)
+        monkeypatch.setattr(numerical,'_spacing_report',report)
+    else:
+        def logs(value):return np.array([-7. if value[4]<.5*numerical.ABSOLUTE_DORMANT_CAP else (-6. if kind=='global_log' else -np.inf),-np.inf])
+        monkeypatch.setattr(coords,'global_logs',logs)
+    assert not policy_call(case)[0]
+    reason=next(iter(coords.absolute_resolution_stats['declined']))
+    assert reason in ('resolved_physical_spacing','resolved_stage_log_spacing','global_biomass_spacing','global_log_spacing_or_mask')
