@@ -1,7 +1,7 @@
 # Finite-process audit
 
-Codex, 10 November 2026. The short independent checks support the shifted
-population coordinate, deterministic census rule and immigrant/cull ledgers.
+Codex, 10 November 2026. The short independent checks support the repaired, scaled-linear immigrant
+coordinate, deterministic census rule and immigrant/cull ledgers.
 The process must be described as a **deterministic census with continuous mean
 immigration**, not an individual-based population process or an estimate of
 extinction probability. This audit does not qualify the long-tail batch.
@@ -9,22 +9,21 @@ extinction probability. This audit does not qualify the long-tail batch.
 ## Boundary and process definitions
 
 For a guild receiving immigrant biomass density I per year, let o be one
-year's input, let s be the biomass scale, and choose anchor a so that
-`s softplus(a) = o`. The coordinate is
+year's input and use the scaled linear coordinate
 
-`X = s [softplus(z) − softplus(a)]`.
+`X = o Z`, `Zdot = g Z + I/o = g Z + 1/year`.
 
-Thus z=a represents exactly X=0. The transformed equation is
+Here time is measured in years. This is exactly `Xdot = g X + I`; there is no
+model approximation and no offset biomass. At Z=0 the derivative points into
+the physical domain. A census removal resets Z to zero while retaining the
+same positive immigration rate.
 
-`zdot = (g X + I) / [s sigmoid(z)]`.
-
-It points into positive biomass at the zero boundary when I>0. The offset is
-a coordinate choice, not extra biomass, a numerical survival floor or an
-immigrant pulse. The stable decoder using log1p/expm1 is algebraically the
-same difference of softplus values. Its very-negative-tail expression has
-`zdot ≈ g + (I/o − g) exp(a−z)`, the appropriate exponential limit. At the
-boundary that limit gives I/o, a positive rate. The tail evaluation is a
-numerical approximation to softplus, not an ecological timescale reduction.
+The earlier shifted-softplus immigrant coordinate was mathematically equivalent
+but caused an observed LSODA failure during unphysical Newton trials. The new
+coordinate removes that nonlinear transformation from immigrant guilds only.
+It does not clip stocks, alter growth/loss rates or change immigration into
+random arrivals. Negative accepted physical stocks raise an error. Solver
+trial states are not interpreted as accepted populations.
 
 With I=0, an initially positive guild uses the ordinary positive coordinate;
 an exactly absent guild remains exactly absent. Following a census removal,
@@ -50,14 +49,14 @@ added for that discarded biomass.
 The implemented ledgers use global quantities: imported or culled cells times
 cell mass give gDW, and multiplying by a_i gives mol H₂-equivalent. Immigration
 is external imported biomass, not biomass synthesized from the local donor
-pool. The shift offset must not enter those ledgers, and does not.
+pool. The coordinate scale must not enter those ledgers as extra biomass, and does not.
 
 A frozen-growth control isolates this ledger. At two immigrants/year, a
 five-cell census floor, one-year censuses and a 2.5-year run, approximately four
 cells are culled at years 1 and 2 and one remains after the final half-year.
-The exact input is five cells. Its global mass discrepancy is 5.3e-7 relative
-to imported mass, consistent with numerical integration in the transformed
-coordinate. It is not machine-precision trajectory conservation. The ledger's
+The exact input is five cells. Its global mass discrepancy is 2.1e-16 relative
+to imported mass in this frozen-growth linear control. This does not establish
+long-tail trajectory conservation for the biological model. The ledger's
 H₂-equivalent entries agree with the mass entries times a_i.
 
 ## Timing and interpretation of returned fields
@@ -99,19 +98,42 @@ controls below.
 - Exact zero initial stocks with I=0 remained zero even under positive
   synthetic growth, with no extinction or arrival events.
 - Zero initial stock with I>0 and no floor recovered the analytic five-cell
-  endpoint after 2.5 years within 1.7e-6 relative error, exercising the rare
-  shifted coordinate. Its first retained census was year 1, despite input
+  endpoint after 2.5 years to reported floating-point precision, exercising
+  a very small physical immigrant density. Its first retained census was year 1, despite input
   beginning continuously at year 0.
 - The repeated-removal control retained approximately one cell in the final
   partial interval while every census flag was absent. This distinguishes
   final stock from census retention and absorbing extinction.
 - A 0.5-cell initial stock was removed at t=0, with the corresponding mass and
   H₂-equivalent exports.
-- A dense immigrant control exercised the non-rare coordinate and agreed with
-  its analytic endpoint within 1.4e-8 relative error.
+- A dense immigrant control agreed with its analytic endpoint to reported
+  floating-point precision.
 - In the actual product-feedback model, the Nmin=0,I=0 control agreed with the
   existing continuum integrator within 2.2e-10 maximum relative state error
   over two years. Unchanged censuses caused no solver resets.
+
+
+## Formerly failing protocol: first-census comparison
+
+The products, f=0.9, Nmin=1, relative immigration=0.1/year, methanogen-into-
+acetogen protocol was integrated through its first scheduled census at year 10.
+A separate Radau solve of the physical equations plus the same mean immigration,
+using the scaled linear immigrant variable, supplies an independent numerical
+comparison to LSODA. This checks the previously failing interval, not the full
+100000-year tail.
+
+Both solves complete. Radau gives about 65.405964 methanogen cells before the
+census; LSODA gives 65.406350, a relative difference of 5.9e-6. Both are safely
+above the one-cell floor, and neither removes the guild. The resident biomass
+agrees within 1.8e-15 relative error. The maximum remaining state difference is
+2.6e-8 under the stated relative/scaled metric. This explicitly separates
+rare-population relative error from errors in the larger physical stocks.
+
+The Nmin=0,I=0 continuum control is unchanged by the immigrant-only coordinate
+repair. So are the deterministic census schedule, per-cell mass, physical
+immigration density, gross synthesis/loss equations and imported/culled
+reducing-equivalent ledgers. The log-of-cell-conversion rewrite is algebraically
+equivalent and avoids overflow in an intermediate volume/mass ratio.
 
 ```sh
 uv run python models/haze_world/review/finite_process_check.py
@@ -120,4 +142,4 @@ uv run python models/haze_world/review/finite_process_check.py
 [Check script](finite_process_check.py) and [results](finite_process_check.json)
 retain the audited source hash and explicit controls. Synthetic controls freeze
 nonpopulation states to test the process mechanics; they are not biological
-forecasts. The bounded review found no core defect requiring a change.
+forecasts. The scaled-linear repair passes these bounded checks; the long-tail batch was not duplicated.

@@ -9,9 +9,11 @@ from pathlib import Path
 from unittest.mock import patch
 
 import numpy as np
+from scipy.integrate import solve_ivp
 
 from terra_prisca.haze_world import finite_populations as finite
 from terra_prisca.haze_world import population_coupling as core
+from terra_prisca.haze_world.finite_experiments import Case, parameters, initial_state
 
 
 def toy_run(initial_cells, immigration, minimum, years, *, area=5.1e18, stride=1, growth=(0.,0.)):
@@ -63,7 +65,7 @@ def main():
         first_extinction_yr=r.first_extinction_yr,min_cells_field=r.min_cells.tolist())
     r,n=toy_run((0.,0.),(1e8,0.),0.,2.5,area=1.)
     assert np.isclose(n[0,-1],2.5e8,rtol=2e-6)
-    out['dense_shifted_boundary']=dict(final_cells=n[:,-1].tolist())
+    out['dense_scaled_linear_boundary']=dict(final_cells=n[:,-1].tolist())
     p=replace(core.reference(),activity_feedback='products')
     y=next(e['y'] for e in core.equilibrium_states(p) if e['kind']=='mixed').copy()
     y*=np.array([1.01,.99,1.01,1.01,1.0001])
@@ -74,6 +76,33 @@ def main():
     assert error<3e-5 and not r.extinction_events and r.metadata['solver_resets']==0
     out['Nmin_zero_continuum_control']=dict(maximum_relative_state_difference=error,
         duration_yr=2.,solver_resets=r.metadata['solver_resets'])
+    case=Case('independent_first_census_0123','products',.9,1.,.1,'M_into_A',years=10.)
+    p,proc=parameters(case);y0=initial_state(case)
+    run=finite.integrate_finite(y0,p,10.,proc,sample_every_censuses=1)
+    volume=p.habitat_l_cm2*proc.surface_cm2
+    immigration=np.array(proc.immigration_cells_yr)*proc.cell_mass_gdw/volume
+    initial=y0.copy();initial[1:3]/=immigration
+    def independent_rhs(t,state):
+        physical=state.copy();physical[1:3]*=immigration
+        rates=core.rhs(physical,p)
+        rates[1:3]=core.fluxes(physical,p)['net_growth_yr']*state[1:3]+1.
+        return rates
+    reference=solve_ivp(independent_rhs,(0.,10.),initial,method='Radau',rtol=2e-9,
+        atol=[1e-8,1e-9,1e-9,1e-12,1e-12])
+    assert reference.success
+    expected=reference.y[:,-1].copy();expected[1:3]*=immigration
+    pre_census=expected[1:3]*volume/proc.cell_mass_gdw
+    expected[1:3][pre_census<proc.minimum_cells]=0.
+    metric=np.maximum(np.abs(expected),[1.,1e-25,1e-25,1e-9,.001])
+    error=float(np.max(np.abs(run.y[:,-1]-expected)/metric))
+    population_error=np.abs(run.y[1:3,-1]-expected[1:3])/expected[1:3]
+    assert error<3e-5 and np.max(population_error)<1e-4
+    out['case0123_first_census_comparison']=dict(duration_yr=10.,
+        maximum_relative_or_scaled_state_difference=error,independent_pre_census_cells=pre_census.tolist(),
+        relative_population_differences=population_error.tolist(),
+        lsoda_final_cells=(run.y[1:3,-1]*volume/proc.cell_mass_gdw).tolist(),
+        removal_times=[e['time_yr'] for e in run.extinction_events],
+        final_state=run.y[:,-1].tolist(),lsoda_nfev=run.metadata['nfev'],radau_nfev=reference.nfev)
     out['scope']='Short boundary/census/ledger checks; toy controls use frozen nonpopulation states, not biological forecasts.'
     out['core_sha256']=sha256(Path(finite.__file__).read_bytes()).hexdigest()
     Path(__file__).with_suffix('.json').write_text(json.dumps(out,indent=2)+'\n')

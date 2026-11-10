@@ -1,0 +1,370 @@
+{
+  "historical_commit": "2b8b0709ba73fbc8d31a7da71932c5826b2d7191",
+  "historical_finite_source_sha256": "7b1b436da0f9dc45a8ba6ecb7090754ed494887e3a7c2026360aa0efbc403b82",
+  "packages": {
+    "numpy": "2.5.4",
+    "scipy": "1.18.1"
+  },
+  "live_source_sha256": {
+    "models/haze_world/review/check_finite_warning.py": "856a51c3ac9bd31760e6d76c744ddb30eb42360a662ca6d3ea23145b7d3669d0",
+    "src/terra_prisca/haze_world/finite_populations.py": "4644088974706aa5f012fb3335a6b1cc8bfd90da88d0b99f9f9e2b64356890df",
+    "src/terra_prisca/haze_world/population_coupling.py": "015323fcb7da78461023578e2db22fef19c98680e80965c60ce9b11caf404529",
+    "src/terra_prisca/haze_world/finite_experiments.py": "285d5f4ab46997920559ee0ac68657b0405eee39b38f97520e248faba4db631c"
+  },
+  "affected_case": {
+    "index": 123,
+    "activity": "products",
+    "fraction": 0.9,
+    "minimum_cells": 1.0,
+    "relative_immigration_yr": 0.1,
+    "direction": "M_into_A",
+    "census_yr": 10.0
+  },
+  "historical_100yr": {
+    "years": 100.0,
+    "numerical_controls": {},
+    "success": false,
+    "error": "Finite population integration failed before census 1",
+    "warnings": [
+      {
+        "category": "RuntimeWarning",
+        "message": "overflow encountered in exp",
+        "trial": {
+          "time_yr": 21.587496757528605,
+          "guild_index": 1,
+          "z": -952.4655713030264,
+          "anchor": -62.59180187683052,
+          "exponent_argument": 889.8737694261958,
+          "physical_trial": [
+            26479.88626728285,
+            0.9045827194628853,
+            -6.557311764705872e-31,
+            1.1009994447099813,
+            0.12156065682006946
+          ],
+          "growth_yr": [
+            209.25782901046952,
+            66.4564235247123
+          ]
+        }
+      }
+    ]
+  },
+  "repaired_100yr": {
+    "years": 100.0,
+    "numerical_controls": {},
+    "success": true,
+    "endpoint": [
+      27.884377199491997,
+      0.001351846697363835,
+      0.0,
+      0.0017436886886864288,
+      0.21537194678427168
+    ],
+    "first_extinction_by_guild_yr": [
+      null,
+      20.0
+    ],
+    "cull_events": 9,
+    "nfev": 4523,
+    "wall_seconds": 0.3072954999515787,
+    "warnings": []
+  },
+  "repaired_1000yr": {
+    "years": 1000.0,
+    "numerical_controls": {},
+    "success": true,
+    "endpoint": [
+      27.884377199491997,
+      0.0013518466973638352,
+      0.0,
+      0.0017436886886864284,
+      0.21537194678427168
+    ],
+    "first_extinction_by_guild_yr": [
+      null,
+      20.0
+    ],
+    "cull_events": 99,
+    "nfev": 34500,
+    "wall_seconds": 2.3791150000179186,
+    "warnings": []
+  },
+  "tighter_100yr": {
+    "years": 100.0,
+    "numerical_controls": {
+      "rtol": 2e-09,
+      "atol_scale": 0.1,
+      "max_step": 0.1
+    },
+    "success": true,
+    "endpoint": [
+      27.884377199491993,
+      0.001351846697363835,
+      0.0,
+      0.0017436886886864284,
+      0.21537194678427146
+    ],
+    "first_extinction_by_guild_yr": [
+      null,
+      20.0
+    ],
+    "cull_events": 9,
+    "nfev": 6317,
+    "wall_seconds": 0.4319497080286965,
+    "warnings": []
+  },
+  "repaired_numerical_concordance": {
+    "max_scaled_physical_difference": 4.922455763879018e-06,
+    "max_abs_difference_by_state": [
+      1.580957587066223e-12,
+      6.505213034913027e-19,
+      2.111191212260572e-33,
+      4.336808689942018e-19,
+      2.220446049250313e-16
+    ],
+    "max_macro_solver_tolerance_ratio": 2.4038125725712725e-06,
+    "max_log_biomass_difference": 4.92246788041939e-06,
+    "same_log_presence": true,
+    "same_cull_topology": true,
+    "max_log_culled_cells_difference": 1.062491605807736e-08,
+    "same_census_activity": true,
+    "max_abs_culled_quantity_difference": {
+      "removed_cells": 3.0025957414858695e-10,
+      "removed_gdw": 9.007796310705928e-23,
+      "removed_h2_mol": 7.422424107483548e-24
+    },
+    "retained_and_macro_concordant": true,
+    "topology_concordant": true,
+    "culled_log_concordant": true,
+    "concordant": true
+  },
+  "selected_successful_original_concordance": [
+    {
+      "case_index": 3,
+      "max_scaled_physical_difference": 0.003767250590101478,
+      "max_abs_difference_by_state": [
+        2.602558346609385e-07,
+        3.935570229082752e-11,
+        2.1114782983850094e-11,
+        3.976342063775895e-11,
+        2.0030801128022302e-11
+      ],
+      "max_macro_solver_tolerance_ratio": 2.49879170263142,
+      "max_log_biomass_difference": 3.8877177956919695e-06,
+      "same_log_presence": true,
+      "same_cull_topology": true,
+      "max_log_culled_cells_difference": 1.5747379649155846e-06,
+      "same_census_activity": true,
+      "max_abs_culled_quantity_difference": {
+        "removed_cells": 9.042330935404852e-08,
+        "removed_gdw": 2.7126992707461206e-20,
+        "removed_h2_mol": 2.235264199172743e-21
+      },
+      "retained_and_macro_concordant": true,
+      "topology_concordant": true,
+      "culled_log_concordant": true,
+      "concordant": true
+    },
+    {
+      "case_index": 35,
+      "max_scaled_physical_difference": 0.002765203820048865,
+      "max_abs_difference_by_state": [
+        1.9120738414812877e-07,
+        0.0,
+        4.717629065176254e-12,
+        7.387651878153273e-12,
+        6.0894566750180346e-09
+      ],
+      "max_macro_solver_tolerance_ratio": 2.5262606538658883,
+      "max_log_biomass_difference": 8.86455353565907e-09,
+      "same_log_presence": true,
+      "same_cull_topology": true,
+      "max_log_culled_cells_difference": 2.608027145356573e-07,
+      "same_census_activity": true,
+      "max_abs_culled_quantity_difference": {
+        "removed_cells": 0.002217051664047176,
+        "removed_gdw": 6.651155078781559e-16,
+        "removed_h2_mol": 5.480551785623244e-17
+      },
+      "retained_and_macro_concordant": true,
+      "topology_concordant": true,
+      "culled_log_concordant": true,
+      "concordant": true
+    },
+    {
+      "case_index": 50,
+      "max_scaled_physical_difference": 4.2734080523685275e-06,
+      "max_abs_difference_by_state": [
+        2.4377122542773577e-08,
+        2.576476358651103e-14,
+        3.180162125849539e-22,
+        3.72997060755359e-11,
+        2.6599472624511122e-11
+      ],
+      "max_macro_solver_tolerance_ratio": 0.8301756143724739,
+      "max_log_biomass_difference": 4.2733989147336615e-06,
+      "same_log_presence": true,
+      "same_cull_topology": true,
+      "max_log_culled_cells_difference": 1.4218370566254634e-05,
+      "same_census_activity": true,
+      "max_abs_culled_quantity_difference": {
+        "removed_cells": 4.291757418409259e-07,
+        "removed_gdw": 1.2875272256772871e-19,
+        "removed_h2_mol": 1.0609224339560651e-20
+      },
+      "retained_and_macro_concordant": true,
+      "topology_concordant": true,
+      "culled_log_concordant": true,
+      "concordant": true
+    },
+    {
+      "case_index": 75,
+      "max_scaled_physical_difference": 3.527766856147871e-06,
+      "max_abs_difference_by_state": [
+        1.960826558899953e-07,
+        1.1580445439458614e-12,
+        1.7109005976787982e-12,
+        2.3562910303476237e-11,
+        2.1191113317234334e-11
+      ],
+      "max_macro_solver_tolerance_ratio": 0.886626846484309,
+      "max_log_biomass_difference": 1.4130015077995495e-06,
+      "same_log_presence": true,
+      "same_cull_topology": true,
+      "max_log_culled_cells_difference": 0.0,
+      "same_census_activity": true,
+      "max_abs_culled_quantity_difference": {
+        "removed_cells": 0.0,
+        "removed_gdw": 0.0,
+        "removed_h2_mol": 0.0
+      },
+      "retained_and_macro_concordant": true,
+      "topology_concordant": true,
+      "culled_log_concordant": true,
+      "concordant": true
+    },
+    {
+      "case_index": 83,
+      "max_scaled_physical_difference": 2.163148453886574e-06,
+      "max_abs_difference_by_state": [
+        7.773649457476495e-08,
+        1.0180576000273778e-12,
+        1.7102050362453696e-12,
+        2.841328858120811e-11,
+        2.4339075459928194e-11
+      ],
+      "max_macro_solver_tolerance_ratio": 2.7252903109036755,
+      "max_log_biomass_difference": 1.921523239190037e-06,
+      "same_log_presence": true,
+      "same_cull_topology": true,
+      "max_log_culled_cells_difference": 0.0,
+      "same_census_activity": true,
+      "max_abs_culled_quantity_difference": {
+        "removed_cells": 0.0,
+        "removed_gdw": 0.0,
+        "removed_h2_mol": 0.0
+      },
+      "retained_and_macro_concordant": true,
+      "topology_concordant": true,
+      "culled_log_concordant": true,
+      "concordant": true
+    },
+    {
+      "case_index": 107,
+      "max_scaled_physical_difference": 0.001178774213221483,
+      "max_abs_difference_by_state": [
+        2.2931805077064382e-07,
+        0.0,
+        5.715086173405104e-12,
+        2.7683362218757442e-12,
+        7.523013989541028e-09
+      ],
+      "max_macro_solver_tolerance_ratio": 3.1597448997521953,
+      "max_log_biomass_difference": 1.0713479881019339e-08,
+      "same_log_presence": true,
+      "same_cull_topology": true,
+      "max_log_culled_cells_difference": 0.00012960056798050346,
+      "same_census_activity": true,
+      "max_abs_culled_quantity_difference": {
+        "removed_cells": 1.8900639992243669,
+        "removed_gdw": 5.67019199772334e-13,
+        "removed_h2_mol": 4.6722382061254547e-14
+      },
+      "retained_and_macro_concordant": true,
+      "topology_concordant": true,
+      "culled_log_concordant": false,
+      "concordant": false
+    },
+    {
+      "case_index": 127,
+      "max_scaled_physical_difference": 1.989688045885887e-05,
+      "max_abs_difference_by_state": [
+        4.973799150320701e-13,
+        2.3852447794681098e-18,
+        1.2217181373560182e-32,
+        8.088148206741863e-17,
+        9.992007221626409e-16
+      ],
+      "max_macro_solver_tolerance_ratio": 1.8024221113040145e-06,
+      "max_log_biomass_difference": 1.989707840976962e-05,
+      "same_log_presence": true,
+      "same_cull_topology": true,
+      "max_log_culled_cells_difference": 0.0,
+      "same_census_activity": true,
+      "max_abs_culled_quantity_difference": {
+        "removed_cells": 0.0,
+        "removed_gdw": 0.0,
+        "removed_h2_mol": 0.0
+      },
+      "retained_and_macro_concordant": true,
+      "topology_concordant": true,
+      "culled_log_concordant": true,
+      "concordant": true
+    },
+    {
+      "case_index": 141,
+      "max_scaled_physical_difference": 3.5288687454272154e-15,
+      "max_abs_difference_by_state": [
+        2.1316282072803006e-14,
+        4.7704895589362195e-18,
+        0.0,
+        1.3010426069826053e-18,
+        4.440892098500626e-16
+      ],
+      "max_macro_solver_tolerance_ratio": 1.0285940727024091e-07,
+      "max_log_biomass_difference": 3.552713678800501e-15,
+      "same_log_presence": true,
+      "same_cull_topology": true,
+      "max_log_culled_cells_difference": 4.0022058556132833e-08,
+      "same_census_activity": true,
+      "max_abs_culled_quantity_difference": {
+        "removed_cells": 11310.213073730469,
+        "removed_gdw": 3.3930640519486133e-09,
+        "removed_h2_mol": 2.795884782372249e-10
+      },
+      "retained_and_macro_concordant": true,
+      "topology_concordant": true,
+      "culled_log_concordant": true,
+      "concordant": true
+    }
+  ],
+  "comparison_tolerances": {
+    "macro_multiple_of_reference_local_tolerances": 10,
+    "retained_and_culled_log_stock_difference": 0.0001,
+    "cull_times_guilds_and_census_activity": "exact match"
+  },
+  "scope": "Local 100/1000-year repair checks; no tighter-control 100000-year rerun or phase-map qualification",
+  "historical_prefix_scan": {
+    "reports": 108,
+    "horizon_yr": 100,
+    "warning_case_ids": [
+      "main_0123_t100000"
+    ],
+    "failed_case_ids": [
+      "main_0123_t100000"
+    ],
+    "successful_cases": 107,
+    "report_set_sha256": "7d679cc841e330c5d8e160b6e24486a200c0ad5244dfb8546b091d36d5107fbf"
+  }
+}

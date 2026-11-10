@@ -8,7 +8,7 @@
   },
   "rare_zero_initial_immigration": {
     "final_cells": [
-      4.999991665326104,
+      5.0,
       0.0
     ],
     "times": [
@@ -26,7 +26,7 @@
   },
   "immigration_and_repeated_culls": {
     "final_cells": [
-      1.0000002315140228,
+      0.9999999999999994,
       0.0
     ],
     "times": [
@@ -44,7 +44,7 @@
       0.0
     ],
     "culled_cells": [
-      3.9999971451198397,
+      4.000000000000007,
       0.0
     ],
     "census_flags": [
@@ -53,7 +53,7 @@
       0
     ],
     "last_census_yr": 2.0,
-    "relative_global_mass_ledger_error": 5.246732333322664e-07
+    "relative_global_mass_ledger_error": 2.0194839173657905e-16
   },
   "initial_census_removal": {
     "removed_cells": [
@@ -66,9 +66,9 @@
       0.0
     ]
   },
-  "dense_shifted_boundary": {
+  "dense_scaled_linear_boundary": {
     "final_cells": [
-      250000003.4975435,
+      250000000.0,
       0.0
     ]
   },
@@ -77,6 +77,32 @@
     "duration_yr": 2.0,
     "solver_resets": 0
   },
+  "case0123_first_census_comparison": {
+    "duration_yr": 10.0,
+    "maximum_relative_or_scaled_state_difference": 2.5301952796500184e-08,
+    "independent_pre_census_cells": [
+      2.06158673839488e+26,
+      65.40596428612102
+    ],
+    "relative_population_differences": [
+      1.764434372713596e-15,
+      5.899440913701942e-06
+    ],
+    "lsoda_final_cells": [
+      2.0615867383948763e+26,
+      65.40635014474273
+    ],
+    "removal_times": [],
+    "final_state": [
+      27.884377199491976,
+      0.0013518466973638354,
+      4.288898292905939e-28,
+      0.0017436886886864006,
+      0.21537194678427168
+    ],
+    "lsoda_nfev": 1445,
+    "radau_nfev": 9439
+  },
   "scope": "Short boundary/census/ledger checks; toy controls use frozen nonpopulation states, not biological forecasts.",
-  "core_sha256": "7b1b436da0f9dc45a8ba6ecb7090754ed494887e3a7c2026360aa0efbc403b82"
+  "core_sha256": "4644088974706aa5f012fb3335a6b1cc8bfd90da88d0b99f9f9e2b64356890df"
 }
