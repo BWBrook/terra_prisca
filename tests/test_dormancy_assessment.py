@@ -724,3 +724,54 @@ def test_finite_agreement_does_not_require_stationarity_but_does_require_local_o
     assert result["asymptotic_endpoint_clause_status"] == "unresolved"
     result = a.kd1_endpoint_clauses([row|dict(same_local_occupancy=False)])
     assert result["literal_100k_clause_status"] == "refuted"
+
+
+def face_prefix(prefix, native, root):
+    face = stage_prefix(prefix, native, root)
+    for name in a.FACE_SOURCES-a.STAGE_SOURCES:
+        path = root/name
+        path.parent.mkdir(parents=True, exist_ok=True)
+        path.write_text(name)
+        face["protocol"]["source_sha256"][name] = a.sha256(path.read_bytes()).hexdigest()
+    face["protocol"]["solver"] = "analytic_dormancy_zero_face_newton"
+    face["fingerprint"] = a.sha256(a.e.dumps(face["protocol"]).encode()).hexdigest()
+    return face
+
+
+def test_exact_nine_file_face_variant_preserves_both_recording_contracts(tmp_path, monkeypatch):
+    prefix, native = profile_contract(tmp_path, monkeypatch)
+    face = face_prefix(prefix, native, tmp_path)
+    census = guarded_census(face, native)
+    assert len(set(face["protocol"]["source_sha256"])-set(native["protocol"]["source_sha256"])) == 9
+    assert a.validate_probability_protocol(face, native, tmp_path) == "zero_linear_face_newton_uncensored_unchanged_physics"
+    assert a.validate_probability_protocol(face, census, tmp_path) == "zero_linear_face_newton_uncensored_unchanged_physics"
+    assert a.validate_probability_protocol(census, census, tmp_path) == "zero_linear_face_newton_census_unchanged_physics"
+
+
+@pytest.mark.parametrize("missing", sorted(a.FACE_SOURCES))
+def test_face_variant_rejects_each_incomplete_source_graph(tmp_path, monkeypatch, missing):
+    prefix, native = profile_contract(tmp_path, monkeypatch)
+    face = face_prefix(prefix, native, tmp_path)
+    del face["protocol"]["source_sha256"][missing]
+    with pytest.raises(RuntimeError, match="Unapproved"):
+        a.validate_probability_protocol(face, native, tmp_path)
+
+
+@pytest.mark.parametrize("changed", ("extra", "stale_helper", "flag", "platform", "parameters", "census"))
+def test_face_variant_retains_all_physical_and_provenance_guards(tmp_path, monkeypatch, changed):
+    prefix, native = profile_contract(tmp_path, monkeypatch)
+    face = face_prefix(prefix, native, tmp_path)
+    if changed == "extra":
+        face["protocol"]["source_sha256"]["unrelated.py"] = "unrelated"
+    elif changed == "stale_helper":
+        (tmp_path/"src/terra_prisca/haze_world/dormancy_face_integration.py").write_text("changed")
+    elif changed == "flag":
+        face["protocol"]["solver"] = "analytic_dormancy_stage_conditioning"
+    elif changed == "platform":
+        del face["protocol"]["architecture"]
+    elif changed == "parameters":
+        face["protocol"]["parameters"]["biology"]["loss_h"] = .002
+    else:
+        face["protocol"]["census"]["census_yr"] = 10.
+    with pytest.raises(RuntimeError):
+        a.validate_probability_protocol(face, native, tmp_path)

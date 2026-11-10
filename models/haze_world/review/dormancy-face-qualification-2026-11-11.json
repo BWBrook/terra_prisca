@@ -1,0 +1,294 @@
+{
+  "status": "bounded_and_3000_year_original_start_qualified_full_endpoint_pending",
+  "helper_sha256": "6a758528247493428459d250a0cd000ae678c9e59c05a09947f94628ed1672ce",
+  "source_sha256": {
+    "src/terra_prisca/haze_world/buffered_experiments.py": "c8603febb0167be3fc944b60672d9e11957aabf4ca7654dc6efb20639176336a",
+    "src/terra_prisca/haze_world/habitat_coupling.py": "34f611d3f9046bf7d96f8caeffb452f2a2206bab4abc45e630a09980a067c4d0",
+    "src/terra_prisca/haze_world/habitat_integration.py": "3a115c22ee4b4a6b2c3f4585385927a7e32d68712cfb3d0073f0e52089a1b214",
+    "src/terra_prisca/haze_world/habitat_equilibria.py": "90ec06dbce07e6625878ece2e97b55604ed4708b8aad9f66b0dd06dd8aa50a9a",
+    "src/terra_prisca/haze_world/population_coupling.py": "17a433957e94845595f6d7fd160ffe593c01c4e74550707b0814c95ab67ae663",
+    "src/terra_prisca/haze_world/methane_budget.py": "70dc47659e4738d07809e8d23844af79bf69e5dabcc87793eac3f5e560011721",
+    "src/terra_prisca/haze_world/darwinian.py": "e965035d5dfbfafcb695dc3738b23d8a445c4c1e7e246ab4688d67b33482f1aa",
+    "src/terra_prisca/haze_world/two_guilds.py": "eff6a9027c5b28d154f03462d926591ebee3408eb2c80ec0df5c38929f169f83",
+    "src/terra_prisca/haze_world/hydrogen_uptake.py": "c48d8231ef726605ab07be22438f3e2fd97f23b310773ac748d1b2bf5c36fafd",
+    "src/terra_prisca/haze_world/woodii1998.py": "b0130f4f8ea15aa64245133f79dc8b35883a414031a8b49262c6657350cad0b0",
+    "src/terra_prisca/haze_world/finite_experiments.py": "285d5f4ab46997920559ee0ac68657b0405eee39b38f97520e248faba4db631c",
+    "src/terra_prisca/haze_world/finite_populations.py": "4644088974706aa5f012fb3335a6b1cc8bfd90da88d0b99f9f9e2b64356890df",
+    "src/terra_prisca/haze_response/arney2016.py": "a1b8b52f4c929a0518a17542fb323588699433b038949b38ee6ad74679cd0da6",
+    "models/haze_response/arney2016/cases.csv": "e3d77d275052a8875991a751868f857bffc964295bfd47591944d86bc58ab07a",
+    "models/haze_response/arney2016/figure4.csv": "c0ef5f3d17ee7c6085ad36247f0f7814726dbbe3273842b01f2c6c4e046856f8",
+    "models/haze_world/evidence/kotsyurbenko2001_table2.csv": "c95b4be023e5502fbb30eb322621e5612bbbf850f99d1b6669e98b95eb370480",
+    "models/haze_world/evidence/peters1998_chemostat.csv": "b0b00bf03eaeaabf45fb571330773c5158b53b088436aaee942188f8e9498320",
+    "uv.lock": "02bf429b2ec474f03280ec550d5fd847b573ece24ab9043e0b5998370fd4d2b4",
+    "src/terra_prisca/haze_world/dormancy.py": "bf0a0e02c621dae1ba13c421ff75f8d0233e2c88bac1e54a42036c7f21797645",
+    "src/terra_prisca/haze_world/dormancy_integration.py": "0a1cc282057a4187288ae77c8ef69e77830a3cb741d729d1877fe7a0c15dcd01",
+    "src/terra_prisca/haze_world/dormancy_starts.py": "67af0622f6243983569777f4d4368c12894ceed0351d05b2a89bd942ec439a3f",
+    "src/terra_prisca/haze_world/dormancy_experiments.py": "91a6aaf01702f357b076761ca650918bbc5d0a18af7f53bf542ed30fe2e2db9c",
+    "src/terra_prisca/haze_world/turnover_starts.py": "d980d85dd6910d82828e9dbddbcf4588f62fd8bf870ce8af6a06a76ffb512bd5",
+    "src/terra_prisca/haze_world/bottleneck_integration.py": "ce56becb23ca53c6bfb48dffc054d8ecc90839bf5dd0ffd716dbf22635dd435f",
+    "src/terra_prisca/haze_world/dormancy_face_experiments.py": "305e44d7f7ccb498dc8898ecb58c1e8cdb3ce79fe1c61a3a3b26c1d21f388865",
+    "src/terra_prisca/haze_world/dormancy_face_integration.py": "6a758528247493428459d250a0cd000ae678c9e59c05a09947f94628ed1672ce",
+    "src/terra_prisca/haze_world/dormancy_trial_integration.py": "b5c0d208454c8f55b4da865a387ea592f117e28700bb13d1025efe4a4e92ef18",
+    "src/terra_prisca/haze_world/dormancy_jacobian_integration.py": "7046fc9baa47022fff7e700ea79f8e72e2c3195a77b9bd5f71e272d6a1c34310",
+    "src/terra_prisca/haze_world/dormancy_progress_integration.py": "ee65a5d01009bb376146f64b883d3d6ec52670fb2bb2326bb2a4331e63d589a4",
+    "src/terra_prisca/haze_world/dormancy_chemical_experiments.py": "840f3a46172930e3c1bfd0a7a3a45227b6ea43b666f14f7fc38faf714175c258",
+    "src/terra_prisca/haze_world/dormancy_chemical_integration.py": "75c538cb2bfabf0e8b497d6f7b60e8714ab2a69880d8836ec5201ac05b626cd1",
+    "src/terra_prisca/haze_world/dormancy_stage_experiments.py": "c77bbdf499a16d501104f98b7d0f421c018fb4c36a098850d0bd742c91c644ef",
+    "src/terra_prisca/haze_world/dormancy_stage_integration.py": "19b7909fda2feb47b767ec7a81050fd8c935f59b1aa25149b8159722597130eb"
+  },
+  "focused_tests": {
+    "passed": 12,
+    "command": "uv run pytest -q tests/test_dormancy_face_integration.py",
+    "test_source_sha256": "43b70b80577e522ff9723404d8d15b69a7f013025e1eb2b716f582195b37683b"
+  },
+  "saved_state": {
+    "path": "models/haze_world/review/dormancy_2241_regression.json",
+    "sha256": "728edd97cc3710f4059c58ac2bd7d4773d7971bf61990b84a808a078b427f7a1",
+    "time_yr": 2241.490415939368
+  },
+  "scratch_control": {
+    "actual_phase": {
+      "accepted_time": 2241.590415939368,
+      "acetate_events": [],
+      "advanced_yr": 0.09999999999990905,
+      "dense_positivity": true,
+      "final_coordinates": [
+        24.949213567086353,
+        -1.0440402810373785e-193,
+        0.9875828547915482,
+        -266.2402222697103,
+        0.9999999840958047,
+        0.00020922265711730917,
+        19.976919872685006,
+        0.0,
+        0.15709892280855794,
+        -243.93451489629538,
+        0.0001783488644197193,
+        1.8295064382694277e-07,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.1477149915432687,
+        -59.60714098036977,
+        -0.40110606953330974
+      ],
+      "final_physical": [
+        24.949213567086353,
+        0.0,
+        0.0005101236692961956,
+        2.3623302302664762e-119,
+        1.3234925491124938e-29,
+        2.2895272572059982e-11,
+        19.976919872685006,
+        0.0,
+        0.0006325150827689374,
+        1.1497045094724427e-109,
+        2.0628055510523803e-35,
+        8.578124713736573e-16,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.1477149915432687
+      ],
+      "jac_calls": {
+        "face_freeze_calls": 6,
+        "jacobian_calls": 6
+      },
+      "message": null,
+      "minimum_accepted_physical": 0.0,
+      "nfev": 65,
+      "status": "finished",
+      "steps": 38,
+      "wall_seconds": 0.09943020797800273
+    },
+    "counts": {
+      "face_freeze_calls": 8,
+      "jacobian_calls": 8
+    },
+    "entry_flow": {
+      "chemical_requests": 0,
+      "initial_active": 0.0,
+      "maximum_absolute_stock_error": 0.0,
+      "maximum_active": 5.878986283292851e-05,
+      "maximum_redox_residual": 2.3852447794681098e-18,
+      "maximum_relative_stock_error": 0.0,
+      "nonnegative": true,
+      "status": "completed",
+      "wall_seconds": 0.9795775410020724
+    },
+    "entry_static": {
+      "initial_active_rate": 0.0,
+      "positive_source_column_preserved": true,
+      "positive_source_row_preserved": true,
+      "positive_waking_active_rate": 38.0617549177737
+    },
+    "faces": [
+      {
+        "indices": [
+          7
+        ],
+        "time": 2241.4911556646575
+      },
+      {
+        "indices": [
+          7
+        ],
+        "time": 2241.4914968559215
+      },
+      {
+        "indices": [
+          7
+        ],
+        "time": 2241.494908768563
+      },
+      {
+        "indices": [
+          7
+        ],
+        "time": 2241.509094546671
+      },
+      {
+        "indices": [
+          7
+        ],
+        "time": 2241.551741486966
+      },
+      {
+        "indices": [
+          7
+        ],
+        "time": 2241.590415939368
+      },
+      {
+        "indices": [
+          1
+        ],
+        "time": 0.0
+      },
+      {
+        "indices": [
+          5
+        ],
+        "time": 0.0
+      }
+    ],
+    "underflow_scope": "Returned float derivative is zero, but retained incoming logsource is finite and below floating range. This is a Newton approximation, not a claim of algebraic source absence.",
+    "warm_linear_incoming_log_rate": -897.8461311734387,
+    "warm_linear_returned_rate": 0.0
+  },
+  "independent_review": {
+    "status": "cleared",
+    "helper_sha256": "6a758528247493428459d250a0cd000ae678c9e59c05a09947f94628ed1672ce",
+    "tests_passed": 12,
+    "wall_seconds": 4.29,
+    "finding": "Frozen linear RHS expression and operation order match; no added chart/request mutation, correct nonzero/subnormal gate exclusion, unchanged accepted driver/accounting and physical/source-entry controls. Production endpoints remain separate qualification."
+  },
+  "original_start_control": {
+    "status": "completed",
+    "case_id": "dormancy_0085",
+    "mode": "census",
+    "years": 3000,
+    "fingerprint": "3d581d3e2ae5109952681ce5954f58fb00d976ddebc10f7a7cd93ca4bc5b8d96",
+    "raw_file": "local/haze/dormancy/dormancy_0085_census_t3000-3d581d3e2ae51099.npz",
+    "raw_sha256": "35028c1a43e97c65fe0fb5807cadb90f9f2048f5ce68cf3233643ea1a0c80dbd",
+    "receipt": "local/haze/dormancy/dormancy_0085_census_t3000-3d581d3e2ae51099.receipt.json",
+    "receipt_sha256": "3813e5444613b950a1fe19c0261e7ab1a5194808e69f2216b5ee44f2c40a2e3c",
+    "execution_sidecar": "local/haze/dormancy_trial_review/face_acceptance_dormancy_0085_census_3000_3d581d3e2ae51099.execution.json",
+    "execution_sidecar_sha256": "c3dbed71b4c4ac6937d26d1c5f0df708dafa43c3bc5cb09d805808a87bfcbb3e",
+    "result_sidecar": "local/haze/dormancy_trial_review/face_acceptance_dormancy_0085_census_3000_3d581d3e2ae51099.result.json",
+    "result_sidecar_sha256": "5ff0803ccf0448e2021182be490a59eecd066e8cef195814c571e162c9ba6730",
+    "observer_controller_sha256": "20ef50cc7cf1f8c82e751cdc777f4bf37edc01871240c15b9c80e83888da4abf",
+    "controller_wall_seconds": 96.8870077499887,
+    "wall_seconds": 96.82335695798974,
+    "accepted_steps": 15599,
+    "nfev": 30487,
+    "newton_evaluations": 8696,
+    "solver_failure_retries": 1,
+    "allocation_positivity_retries": 0,
+    "native_zero_time_retries": 0,
+    "acetate_trial_retries": 1,
+    "census_removals": 15,
+    "last_census_removal_yr": 2270.0,
+    "zero_face_newton_stats": [
+      {
+        "1": {
+          "calls": 5962,
+          "first_log_incoming_allocation_rate_yr": null,
+          "first_retained_incoming_log_source": false,
+          "first_time_yr": 417.09022013011673,
+          "last_log_incoming_allocation_rate_yr": null,
+          "last_retained_incoming_log_source": false,
+          "last_time_yr": 2267.7214553404433
+        },
+        "11": {
+          "calls": 100,
+          "first_log_incoming_allocation_rate_yr": null,
+          "first_retained_incoming_log_source": false,
+          "first_time_yr": 0.000554160896064668,
+          "last_log_incoming_allocation_rate_yr": null,
+          "last_retained_incoming_log_source": false,
+          "last_time_yr": 3.143658993743798
+        },
+        "5": {
+          "calls": 100,
+          "first_log_incoming_allocation_rate_yr": null,
+          "first_retained_incoming_log_source": false,
+          "first_time_yr": 0.000554160896064668,
+          "last_log_incoming_allocation_rate_yr": null,
+          "last_retained_incoming_log_source": false,
+          "last_time_yr": 3.143658993743798
+        },
+        "7": {
+          "calls": 5962,
+          "first_log_incoming_allocation_rate_yr": null,
+          "first_retained_incoming_log_source": false,
+          "first_time_yr": 417.09022013011673,
+          "last_log_incoming_allocation_rate_yr": null,
+          "last_retained_incoming_log_source": false,
+          "last_time_yr": 2267.7214553404433
+        }
+      }
+    ],
+    "nonnegative_finite_stocks": true,
+    "dense_minima_bound_samples": true,
+    "maximum_sampled_redox_residual": 2.6020852139652106e-18,
+    "settling_status": "pilot_only",
+    "global_present_a": false,
+    "global_present_m": true,
+    "overlap_comparison": {
+      "source_epoch": "stage19 Linux bounded control before2241yr chatter",
+      "old_partial_path": "local/haze/dormancy_trial_review/stage_acceptance_dormancy_0085_census_100000_e40545bf2eee7e21.partial.npz",
+      "old_partial_sha256": "545ad90aaf212b9b643737c6f44a06fda0ac1587df170bf3e10ca9d778d2f784",
+      "shared_sample_count": 225,
+      "last_shared_time_yr": 2240.0,
+      "maximum_temperature_difference_k": 1.4952659910250077e-05,
+      "maximum_pressure_difference_pa": 9.930341626329664e-06,
+      "maximum_biomass_difference_gdw_l": 2.2424046885842486e-10,
+      "maximum_acetate_difference_mol_l": 3.95759164643298e-12,
+      "maximum_methane_ratio_difference": 2.7585403730712166e-07,
+      "scope": "Cross-platform/variant accepted physical samples; not identical step sequences or retained subfloat tails."
+    },
+    "execution_platform": {
+      "architecture": "arm64",
+      "operating_system": "Darwin",
+      "python": "3.14.4",
+      "packages": {
+        "numpy": "2.5.4",
+        "scipy": "1.18.1"
+      }
+    }
+  },
+  "full_case_control": {
+    "status": "pending",
+    "case_id": "dormancy_0085",
+    "mode": "census",
+    "years": 100000
+  },
+  "scope": "Numerical controls and completed original-start3000yr flow; full100000yr census endpoint remains pending."
+}
