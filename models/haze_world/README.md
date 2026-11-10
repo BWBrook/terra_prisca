@@ -70,7 +70,15 @@ agree with the backward survival calculation. The exchange sweep confirms
 the steep population response and a roughly 3.4-fold change in the critical
 exchange when a one-cell floor is replaced by 50% survival. These are
 conditional per-guild diagnostics: an uncensored recovery after a likely
-loss can create later hazards that do not occur in the finite world.
+loss can create later hazards that do not occur in the finite world. Its
+[review](review/bottleneck-test-claude-review-2026-11-10.md) accepts the test.
+It also maps the well-mixed equilibria across cell turnover `L`. The
+mixed-state thermostat exists only for turnover of about 11 to 171 days.
+Over that range its set point rises from 274.5 to 295 K. At `f=0`, an
+acetogen-only world becomes a second stable state above
+`L = 1.24×10⁻³ h⁻¹`, which is 24% above the reference rate. The
+[turnover and dormancy specification](turnover-dormancy-spec.md) is the
+next stage.
 
 **Code.** [`src/terra_prisca/haze_world/methane_budget.py`](../../src/terra_prisca/haze_world/methane_budget.py)
 (model) and [`experiments.py`](../../src/terra_prisca/haze_world/experiments.py)

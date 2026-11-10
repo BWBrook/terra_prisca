@@ -1,0 +1,3467 @@
+{
+ "scope": "Preview. Well-mixed equilibria with full local stability across loss rate; no basins, refuges or transients",
+ "loss_rate_at_switch_temperature": {
+  "methanogen_haze_274.0K": 0.00024363023341219942,
+  "cold_refuge_278K": 0.00043439631705204085,
+  "f0_acetogen_world_283.2K": 0.0012381920206043788,
+  "warm_refuge_286K": 0.001881792184174426
+ },
+ "rows": [
+  {
+   "fraction": 0.0,
+   "loss_h": 0.0002,
+   "turnover_days": 208.33333333333334,
+   "switch_k": [],
+   "states": [
+    {
+     "kind": "acetogen",
+     "temperature_k": 283.19877678579377,
+     "r": 0.0005437715867670953,
+     "stable": false
+    },
+    {
+     "kind": "methanogen",
+     "temperature_k": 274.002,
+     "r": 0.27709201540686634,
+     "stable": true
+    }
+   ]
+  },
+  {
+   "fraction": 0.0,
+   "loss_h": 0.00021593064477947255,
+   "turnover_days": 192.96319292345163,
+   "switch_k": [],
+   "states": [
+    {
+     "kind": "acetogen",
+     "temperature_k": 283.19877678579377,
+     "r": 0.0005437715867670953,
+     "stable": false
+    },
+    {
+     "kind": "methanogen",
+     "temperature_k": 274.002,
+     "r": 0.276317024441864,
+     "stable": true
+    }
+   ]
+  },
+  {
+   "fraction": 0.0,
+   "loss_h": 0.00023313021677439375,
+   "turnover_days": 178.72701035142347,
+   "switch_k": [
+    273.3766668343283
+   ],
+   "states": [
+    {
+     "kind": "acetogen",
+     "temperature_k": 283.19877678579377,
+     "r": 0.0005437715867670953,
+     "stable": false
+    },
+    {
+     "kind": "methanogen",
+     "temperature_k": 274.002,
+     "r": 0.27549382861445965,
+     "stable": true
+    }
+   ]
+  },
+  {
+   "fraction": 0.0,
+   "loss_h": 0.0002516997901283655,
+   "turnover_days": 165.54112597955245,
+   "switch_k": [
+    274.47021434718613
+   ],
+   "states": [
+    {
+     "kind": "acetogen",
+     "temperature_k": 283.19877678579377,
+     "r": 0.0005437715867670953,
+     "stable": false
+    },
+    {
+     "kind": "mixed",
+     "temperature_k": 274.47021434718613,
+     "r": 0.20490171657468462,
+     "stable": true
+    },
+    {
+     "kind": "methanogen",
+     "temperature_k": 274.002,
+     "r": 0.2746147528192463,
+     "stable": false
+    }
+   ]
+  },
+  {
+   "fraction": 0.0,
+   "loss_h": 0.0002717484898663794,
+   "turnover_days": 153.32805229995742,
+   "switch_k": [
+    275.60959711142556
+   ],
+   "states": [
+    {
+     "kind": "acetogen",
+     "temperature_k": 283.19877678579377,
+     "r": 0.0005437715867670953,
+     "stable": false
+    },
+    {
+     "kind": "mixed",
+     "temperature_k": 275.60959711142556,
+     "r": 0.2033220007406353,
+     "stable": true
+    },
+    {
+     "kind": "methanogen",
+     "temperature_k": 274.002,
+     "r": 0.2736708607857753,
+     "stable": false
+    }
+   ]
+  },
+  {
+   "fraction": 0.0,
+   "loss_h": 0.00029339413317347625,
+   "turnover_days": 142.0160185753621,
+   "switch_k": [
+    276.8014804706833
+   ],
+   "states": [
+    {
+     "kind": "acetogen",
+     "temperature_k": 283.19877678579377,
+     "r": 0.0005437715867670953,
+     "stable": false
+    },
+    {
+     "kind": "mixed",
+     "temperature_k": 276.8014804706833,
+     "r": 0.2016694945995439,
+     "stable": true
+    },
+    {
+     "kind": "methanogen",
+     "temperature_k": 274.002,
+     "r": 0.2726516977846868,
+     "stable": false
+    }
+   ]
+  },
+  {
+   "fraction": 0.0,
+   "loss_h": 0.0003167639217533158,
+   "turnover_days": 131.53854907477483,
+   "switch_k": [
+    277.26020161855365
+   ],
+   "states": [
+    {
+     "kind": "acetogen",
+     "temperature_k": 283.19877678579377,
+     "r": 0.0005437715867670953,
+     "stable": false
+    },
+    {
+     "kind": "mixed",
+     "temperature_k": 277.26020161855365,
+     "r": 0.20103349317539754,
+     "stable": true
+    },
+    {
+     "kind": "methanogen",
+     "temperature_k": 274.002,
+     "r": 0.27154496208477136,
+     "stable": false
+    }
+   ]
+  },
+  {
+   "fraction": 0.0,
+   "loss_h": 0.00034199518933533934,
+   "turnover_days": 121.83407242553612,
+   "switch_k": [
+    277.42231610070024
+   ],
+   "states": [
+    {
+     "kind": "acetogen",
+     "temperature_k": 283.19877678579377,
+     "r": 0.0005437715867670953,
+     "stable": false
+    },
+    {
+     "kind": "mixed",
+     "temperature_k": 277.42231610070024,
+     "r": 0.20080872690508572,
+     "stable": true
+    },
+    {
+     "kind": "methanogen",
+     "temperature_k": 274.002,
+     "r": 0.27033608170979173,
+     "stable": false
+    }
+   ]
+  },
+  {
+   "fraction": 0.0,
+   "loss_h": 0.0003692362087232884,
+   "turnover_days": 112.84555978607273,
+   "switch_k": [
+    277.59489075150464
+   ],
+   "states": [
+    {
+     "kind": "acetogen",
+     "temperature_k": 283.19877678579377,
+     "r": 0.0005437715867670953,
+     "stable": false
+    },
+    {
+     "kind": "mixed",
+     "temperature_k": 277.59489075150464,
+     "r": 0.20056945796317469,
+     "stable": true
+    },
+    {
+     "kind": "methanogen",
+     "temperature_k": 274.002,
+     "r": 0.26900766380236163,
+     "stable": false
+    }
+   ]
+  },
+  {
+   "fraction": 0.0,
+   "loss_h": 0.0003986470631277378,
+   "turnover_days": 104.52018971306326,
+   "switch_k": [
+    277.7788857348342
+   ],
+   "states": [
+    {
+     "kind": "acetogen",
+     "temperature_k": 283.19877678579377,
+     "r": 0.0005437715867670953,
+     "stable": false
+    },
+    {
+     "kind": "mixed",
+     "temperature_k": 277.7788857348342,
+     "r": 0.20031435511479576,
+     "stable": true
+    },
+    {
+     "kind": "methanogen",
+     "temperature_k": 274.002,
+     "r": 0.26753877032491796,
+     "stable": false
+    }
+   ]
+  },
+  {
+   "fraction": 0.0,
+   "loss_h": 0.00043040058690307757,
+   "turnover_days": 96.80903775358847,
+   "switch_k": [
+    277.9754007518524
+   ],
+   "states": [
+    {
+     "kind": "acetogen",
+     "temperature_k": 283.19877678579377,
+     "r": 0.0005437715867670953,
+     "stable": false
+    },
+    {
+     "kind": "mixed",
+     "temperature_k": 277.9754007518524,
+     "r": 0.20004189366131805,
+     "stable": true
+    },
+    {
+     "kind": "methanogen",
+     "temperature_k": 274.002,
+     "r": 0.26590395353667123,
+     "stable": false
+    }
+   ]
+  },
+  {
+   "fraction": 0.0,
+   "loss_h": 0.0004646833812172247,
+   "turnover_days": 89.66678893814115,
+   "switch_k": [
+    278.1857004742057
+   ],
+   "states": [
+    {
+     "kind": "acetogen",
+     "temperature_k": 283.19877678579377,
+     "r": 0.0005437715867670953,
+     "stable": false
+    },
+    {
+     "kind": "mixed",
+     "temperature_k": 278.1857004742057,
+     "r": 0.19975032017809144,
+     "stable": true
+    },
+    {
+     "kind": "methanogen",
+     "temperature_k": 274.002,
+     "r": 0.26407195378363196,
+     "stable": false
+    }
+   ]
+  },
+  {
+   "fraction": 0.0,
+   "loss_h": 0.0005016969106227038,
+   "turnover_days": 83.05147148494537,
+   "switch_k": [
+    278.41124554534167
+   ],
+   "states": [
+    {
+     "kind": "acetogen",
+     "temperature_k": 283.19877678579377,
+     "r": 0.0005437715867670953,
+     "stable": false
+    },
+    {
+     "kind": "mixed",
+     "temperature_k": 278.41124554534167,
+     "r": 0.1994376095321628,
+     "stable": true
+    },
+    {
+     "kind": "methanogen",
+     "temperature_k": 274.002,
+     "r": 0.2620039140878128,
+     "stable": false
+    }
+   ]
+  },
+  {
+   "fraction": 0.0,
+   "loss_h": 0.0005416586869731491,
+   "turnover_days": 76.92421015068507,
+   "switch_k": [
+    278.65373063859556
+   ],
+   "states": [
+    {
+     "kind": "acetogen",
+     "temperature_k": 283.19877678579377,
+     "r": 0.0005437715867670953,
+     "stable": false
+    },
+    {
+     "kind": "mixed",
+     "temperature_k": 278.65373063859556,
+     "r": 0.19910141211602073,
+     "stable": true
+    },
+    {
+     "kind": "methanogen",
+     "temperature_k": 274.002,
+     "r": 0.25965088955869553,
+     "stable": false
+    }
+   ]
+  },
+  {
+   "fraction": 0.0,
+   "loss_h": 0.0005848035476425735,
+   "turnover_days": 71.24899777819567,
+   "switch_k": [
+    278.9151315028324
+   ],
+   "states": [
+    {
+     "kind": "acetogen",
+     "temperature_k": 283.19877678579377,
+     "r": 0.0005437715867670953,
+     "stable": false
+    },
+    {
+     "kind": "mixed",
+     "temperature_k": 278.9151315028324,
+     "r": 0.19873898862039693,
+     "stable": true
+    },
+    {
+     "kind": "methanogen",
+     "temperature_k": 274.002,
+     "r": 0.25695030480244724,
+     "stable": false
+    }
+   ]
+  },
+  {
+   "fraction": 0.0,
+   "loss_h": 0.0006313850355589193,
+   "turnover_days": 65.99248369860744,
+   "switch_k": [
+    279.1977634911416
+   ],
+   "states": [
+    {
+     "kind": "acetogen",
+     "temperature_k": 283.19877678579377,
+     "r": 0.0005437715867670953,
+     "stable": false
+    },
+    {
+     "kind": "mixed",
+     "temperature_k": 279.1977634911416,
+     "r": 0.1983471288862023,
+     "stable": true
+    },
+    {
+     "kind": "methanogen",
+     "temperature_k": 274.002,
+     "r": 0.2538208026865458,
+     "stable": false
+    }
+   ]
+  },
+  {
+   "fraction": 0.0,
+   "loss_h": 0.0006816768891617381,
+   "turnover_days": 61.12377774447422,
+   "switch_k": [
+    279.5043547673757
+   ],
+   "states": [
+    {
+     "kind": "acetogen",
+     "temperature_k": 283.19877678579377,
+     "r": 0.0005437715867670953,
+     "stable": false
+    },
+    {
+     "kind": "mixed",
+     "temperature_k": 279.5043547673757,
+     "r": 0.19792205040612565,
+     "stable": true
+    },
+    {
+     "kind": "methanogen",
+     "temperature_k": 274.002,
+     "r": 0.25015456352262455,
+     "stable": false
+    }
+   ]
+  },
+  {
+   "fraction": 0.0,
+   "loss_h": 0.0007359746510397958,
+   "turnover_days": 56.61426872216236,
+   "switch_k": [
+    279.8381381995056
+   ],
+   "states": [
+    {
+     "kind": "acetogen",
+     "temperature_k": 283.19877678579377,
+     "r": 0.0005437715867670953,
+     "stable": false
+    },
+    {
+     "kind": "mixed",
+     "temperature_k": 279.8381381995056,
+     "r": 0.19745927091759188,
+     "stable": true
+    },
+    {
+     "kind": "methanogen",
+     "temperature_k": 274.002,
+     "r": 0.24580551733490041,
+     "stable": false
+    }
+   ]
+  },
+  {
+   "fraction": 0.0,
+   "loss_h": 0.0007945974047018527,
+   "turnover_days": 52.43745627674275,
+   "switch_k": [
+    280.2029667737219
+   ],
+   "states": [
+    {
+     "kind": "acetogen",
+     "temperature_k": 283.19877678579377,
+     "r": 0.0005437715867670953,
+     "stable": false
+    },
+    {
+     "kind": "mixed",
+     "temperature_k": 280.2029667737219,
+     "r": 0.19695344838499643,
+     "stable": true
+    },
+    {
+     "kind": "methanogen",
+     "temperature_k": 274.002,
+     "r": 0.24057063769960252,
+     "stable": false
+    }
+   ]
+  },
+  {
+   "fraction": 0.0,
+   "loss_h": 0.0008578896496868327,
+   "turnover_days": 48.56879516133203,
+   "switch_k": [
+    280.6034578928937
+   ],
+   "states": [
+    {
+     "kind": "acetogen",
+     "temperature_k": 283.19877678579377,
+     "r": 0.0005437715867670953,
+     "stable": false
+    },
+    {
+     "kind": "mixed",
+     "temperature_k": 280.6034578928937,
+     "r": 0.19639818093475192,
+     "stable": true
+    },
+    {
+     "kind": "methanogen",
+     "temperature_k": 274.002,
+     "r": 0.2341590673123781,
+     "stable": false
+    }
+   ]
+  },
+  {
+   "fraction": 0.0,
+   "loss_h": 0.0009262233260325679,
+   "turnover_days": 44.98555099572345,
+   "switch_k": [
+    281.04517139570896
+   ],
+   "states": [
+    {
+     "kind": "acetogen",
+     "temperature_k": 283.19877678579377,
+     "r": 0.0005437715867670953,
+     "stable": false
+    },
+    {
+     "kind": "mixed",
+     "temperature_k": 281.04517139570896,
+     "r": 0.1957857600377442,
+     "stable": true
+    },
+    {
+     "kind": "methanogen",
+     "temperature_k": 273.61783723220435,
+     "r": 0.22633729523504312,
+     "stable": false
+    }
+   ]
+  },
+  {
+   "fraction": 0.0,
+   "loss_h": 0.001,
+   "turnover_days": 41.666666666666664,
+   "switch_k": [
+    281.53482280508206
+   ],
+   "states": [
+    {
+     "kind": "acetogen",
+     "temperature_k": 283.19877678579377,
+     "r": 0.0005437715867670953,
+     "stable": false
+    },
+    {
+     "kind": "mixed",
+     "temperature_k": 281.53482280508206,
+     "r": 0.1951068748475969,
+     "stable": true
+    },
+    {
+     "kind": "methanogen",
+     "temperature_k": 273.51674403884846,
+     "r": 0.21615000467994547,
+     "stable": false
+    }
+   ]
+  },
+  {
+   "fraction": 0.0,
+   "loss_h": 0.0010796532238973625,
+   "turnover_days": 38.592638584690334,
+   "switch_k": [
+    282.0805234361579
+   ],
+   "states": [
+    {
+     "kind": "acetogen",
+     "temperature_k": 283.19877678579377,
+     "r": 0.0005437715867670953,
+     "stable": false
+    },
+    {
+     "kind": "mixed",
+     "temperature_k": 282.0805234361579,
+     "r": 0.1943291037562852,
+     "stable": true
+    },
+    {
+     "kind": "methanogen",
+     "temperature_k": 277.1846379121775,
+     "r": 0.20113825970968996,
+     "stable": false
+    }
+   ]
+  },
+  {
+   "fraction": 0.0,
+   "loss_h": 0.0011656510838719686,
+   "turnover_days": 35.7454020702847,
+   "switch_k": [
+    282.69201504843437
+   ],
+   "states": [
+    {
+     "kind": "acetogen",
+     "temperature_k": 283.19877678579377,
+     "r": 0.0005437715867670953,
+     "stable": false
+    },
+    {
+     "kind": "mixed",
+     "temperature_k": 282.69201504843437,
+     "r": 0.19330983892871995,
+     "stable": true
+    },
+    {
+     "kind": "methanogen",
+     "temperature_k": 277.4458969322797,
+     "r": 0.2007760328761823,
+     "stable": false
+    }
+   ]
+  },
+  {
+   "fraction": 0.0,
+   "loss_h": 0.001258498950641826,
+   "turnover_days": 33.10822519591053,
+   "switch_k": [
+    283.29471111774114
+   ],
+   "states": [
+    {
+     "kind": "acetogen",
+     "temperature_k": 283.19877678579377,
+     "r": 0.0005437715867670953,
+     "stable": true
+    },
+    {
+     "kind": "mixed",
+     "temperature_k": 283.29471111774114,
+     "r": 0.0008166902166323782,
+     "stable": false
+    },
+    {
+     "kind": "mixed",
+     "temperature_k": 283.29471111774114,
+     "r": 0.1923052349524378,
+     "stable": true
+    },
+    {
+     "kind": "methanogen",
+     "temperature_k": 277.73077379832955,
+     "r": 0.20038106069459616,
+     "stable": false
+    }
+   ]
+  },
+  {
+   "fraction": 0.0,
+   "loss_h": 0.0013587424493318966,
+   "turnover_days": 30.665610459991495,
+   "switch_k": [
+    283.7585077935643
+   ],
+   "states": [
+    {
+     "kind": "acetogen",
+     "temperature_k": 283.19877678579377,
+     "r": 0.0005437715867670953,
+     "stable": true
+    },
+    {
+     "kind": "mixed",
+     "temperature_k": 283.7585077935643,
+     "r": 0.0022391108760342676,
+     "stable": false
+    },
+    {
+     "kind": "mixed",
+     "temperature_k": 283.7585077935643,
+     "r": 0.19153215543782542,
+     "stable": true
+    },
+    {
+     "kind": "methanogen",
+     "temperature_k": 278.04162825323965,
+     "r": 0.19995007146084728,
+     "stable": false
+    }
+   ]
+  },
+  {
+   "fraction": 0.0,
+   "loss_h": 0.0014669706658673811,
+   "turnover_days": 28.403203715072422,
+   "switch_k": [
+    284.24470531641515
+   ],
+   "states": [
+    {
+     "kind": "acetogen",
+     "temperature_k": 283.19877678579377,
+     "r": 0.0005437715867670953,
+     "stable": true
+    },
+    {
+     "kind": "mixed",
+     "temperature_k": 284.24470531641515,
+     "r": 0.003931466798848986,
+     "stable": false
+    },
+    {
+     "kind": "mixed",
+     "temperature_k": 284.24470531641515,
+     "r": 0.19072173707011264,
+     "stable": true
+    },
+    {
+     "kind": "methanogen",
+     "temperature_k": 278.3810908499231,
+     "r": 0.19947941800190508,
+     "stable": false
+    }
+   ]
+  },
+  {
+   "fraction": 0.0,
+   "loss_h": 0.0015838196087665788,
+   "turnover_days": 26.307709814954972,
+   "switch_k": [
+    284.75496605621026
+   ],
+   "states": [
+    {
+     "kind": "acetogen",
+     "temperature_k": 283.19877678579377,
+     "r": 0.0005437715867670953,
+     "stable": true
+    },
+    {
+     "kind": "mixed",
+     "temperature_k": 284.75496605621026,
+     "r": 0.005959806912585627,
+     "stable": false
+    },
+    {
+     "kind": "mixed",
+     "temperature_k": 284.75496605621026,
+     "r": 0.1898712089279124,
+     "stable": true
+    },
+    {
+     "kind": "methanogen",
+     "temperature_k": 278.7520993009896,
+     "r": 0.1989650272781635,
+     "stable": false
+    }
+   ]
+  },
+  {
+   "fraction": 0.0,
+   "loss_h": 0.0017099759466766963,
+   "turnover_days": 24.366814485107227,
+   "switch_k": [
+    285.29106579620225
+   ],
+   "states": [
+    {
+     "kind": "acetogen",
+     "temperature_k": 283.19877678579377,
+     "r": 0.0005437715867670953,
+     "stable": true
+    },
+    {
+     "kind": "mixed",
+     "temperature_k": 285.2910657962023,
+     "r": 0.008409740660396105,
+     "stable": false
+    },
+    {
+     "kind": "mixed",
+     "temperature_k": 285.29106579620225,
+     "r": 0.18897761104681246,
+     "stable": true
+    },
+    {
+     "kind": "methanogen",
+     "temperature_k": 279.1579405551105,
+     "r": 0.19840234204597715,
+     "stable": false
+    }
+   ]
+  },
+  {
+   "fraction": 0.0,
+   "loss_h": 0.0018461810436164417,
+   "turnover_days": 22.569111957214545,
+   "switch_k": [
+    285.85489441427535
+   ],
+   "states": [
+    {
+     "kind": "acetogen",
+     "temperature_k": 283.19877678579377,
+     "r": 0.0005437715867670953,
+     "stable": true
+    },
+    {
+     "kind": "mixed",
+     "temperature_k": 285.85489441427535,
+     "r": 0.011393192199427318,
+     "stable": false
+    },
+    {
+     "kind": "mixed",
+     "temperature_k": 285.85489441427535,
+     "r": 0.18803779328375742,
+     "stable": true
+    },
+    {
+     "kind": "methanogen",
+     "temperature_k": 279.6022997023338,
+     "r": 0.19778625305208933,
+     "stable": false
+    }
+   ]
+  },
+  {
+   "fraction": 0.0,
+   "loss_h": 0.0019932353156386887,
+   "turnover_days": 20.904037942612657,
+   "switch_k": [
+    286.44845551867695
+   ],
+   "states": [
+    {
+     "kind": "acetogen",
+     "temperature_k": 283.19877678579377,
+     "r": 0.0005437715867670953,
+     "stable": true
+    },
+    {
+     "kind": "mixed",
+     "temperature_k": 286.448455518677,
+     "r": 0.01505781463688085,
+     "stable": false
+    },
+    {
+     "kind": "mixed",
+     "temperature_k": 286.44845551867695,
+     "r": 0.1870484159242299,
+     "stable": true
+    },
+    {
+     "kind": "methanogen",
+     "temperature_k": 280.0893171036301,
+     "r": 0.1971110198254407,
+     "stable": false
+    }
+   ]
+  },
+  {
+   "fraction": 0.0,
+   "loss_h": 0.0021520029345153875,
+   "turnover_days": 19.361807550717696,
+   "switch_k": [
+    287.07386502401977
+   ],
+   "states": [
+    {
+     "kind": "acetogen",
+     "temperature_k": 283.19877678579377,
+     "r": 0.0005437715867670953,
+     "stable": true
+    },
+    {
+     "kind": "mixed",
+     "temperature_k": 287.07386502401977,
+     "r": 0.019600241434365433,
+     "stable": false
+    },
+    {
+     "kind": "mixed",
+     "temperature_k": 287.07386502401977,
+     "r": 0.18600595205584142,
+     "stable": true
+    },
+    {
+     "kind": "methanogen",
+     "temperature_k": 280.62365555177524,
+     "r": 0.19637017756086625,
+     "stable": false
+    }
+   ]
+  },
+  {
+   "fraction": 0.0,
+   "loss_h": 0.0023234169060861233,
+   "turnover_days": 17.93335778762823,
+   "switch_k": [
+    287.7333487155832
+   ],
+   "states": [
+    {
+     "kind": "acetogen",
+     "temperature_k": 283.19877678579377,
+     "r": 0.0005437715867670953,
+     "stable": true
+    },
+    {
+     "kind": "mixed",
+     "temperature_k": 287.7333487155832,
+     "r": 0.02528493095094602,
+     "stable": false
+    },
+    {
+     "kind": "mixed",
+     "temperature_k": 287.7333487155832,
+     "r": 0.18490669162827644,
+     "stable": true
+    },
+    {
+     "kind": "methanogen",
+     "temperature_k": 281.21057986431316,
+     "r": 0.19555642676613344,
+     "stable": false
+    }
+   ]
+  },
+  {
+   "fraction": 0.0,
+   "loss_h": 0.0025084845531135186,
+   "turnover_days": 16.610294296989075,
+   "switch_k": [
+    288.65062168652344
+   ],
+   "states": [
+    {
+     "kind": "acetogen",
+     "temperature_k": 283.19877678579377,
+     "r": 0.0005437715867670953,
+     "stable": true
+    },
+    {
+     "kind": "mixed",
+     "temperature_k": 288.65062168652344,
+     "r": 0.03505119209060873,
+     "stable": false
+    },
+    {
+     "kind": "mixed",
+     "temperature_k": 288.65062168652344,
+     "r": 0.1833777351261995,
+     "stable": true
+    },
+    {
+     "kind": "methanogen",
+     "temperature_k": 281.8560521938567,
+     "r": 0.19466150111741934,
+     "stable": false
+    }
+   ]
+  },
+  {
+   "fraction": 0.0,
+   "loss_h": 0.0027082934348657455,
+   "turnover_days": 15.384842030137015,
+   "switch_k": [
+    289.9866446428671
+   ],
+   "states": [
+    {
+     "kind": "acetogen",
+     "temperature_k": 283.19877678579377,
+     "r": 0.0005437715867670953,
+     "stable": true
+    },
+    {
+     "kind": "mixed",
+     "temperature_k": 289.9866446428671,
+     "r": 0.054308360971886,
+     "stable": false
+    },
+    {
+     "kind": "mixed",
+     "temperature_k": 289.9866446428671,
+     "r": 0.18115078518791483,
+     "stable": true
+    },
+    {
+     "kind": "methanogen",
+     "temperature_k": 282.5593849229479,
+     "r": 0.19353091346068396,
+     "stable": false
+    }
+   ]
+  },
+  {
+   "fraction": 0.0,
+   "loss_h": 0.0029240177382128638,
+   "turnover_days": 14.249799555639152,
+   "switch_k": [
+    291.41956382548824
+   ],
+   "states": [
+    {
+     "kind": "acetogen",
+     "temperature_k": 283.19877678579377,
+     "r": 0.0005437715867670953,
+     "stable": true
+    },
+    {
+     "kind": "mixed",
+     "temperature_k": 291.41956382548824,
+     "r": 0.08419726134875183,
+     "stable": false
+    },
+    {
+     "kind": "mixed",
+     "temperature_k": 291.41956382548824,
+     "r": 0.17876232376952852,
+     "stable": true
+    },
+    {
+     "kind": "methanogen",
+     "temperature_k": 283.49454090771854,
+     "r": 0.19197214865602003,
+     "stable": false
+    }
+   ]
+  },
+  {
+   "fraction": 0.0,
+   "loss_h": 0.003156925177794596,
+   "turnover_days": 13.198496739721492,
+   "switch_k": [
+    292.94896148580796
+   ],
+   "states": [
+    {
+     "kind": "acetogen",
+     "temperature_k": 283.19877678579377,
+     "r": 0.0005437715867670953,
+     "stable": true
+    },
+    {
+     "kind": "mixed",
+     "temperature_k": 292.94896148580796,
+     "r": 0.10527612873659062,
+     "stable": false
+    },
+    {
+     "kind": "mixed",
+     "temperature_k": 292.94896148580796,
+     "r": 0.17568757273852986,
+     "stable": true
+    },
+    {
+     "kind": "methanogen",
+     "temperature_k": 285.1928204255353,
+     "r": 0.18914137134831382,
+     "stable": false
+    }
+   ]
+  },
+  {
+   "fraction": 0.0,
+   "loss_h": 0.0034083844458086903,
+   "turnover_days": 12.224755548894846,
+   "switch_k": [
+    294.0071186175119
+   ],
+   "states": [
+    {
+     "kind": "acetogen",
+     "temperature_k": 283.19877678579377,
+     "r": 0.0005437715867670953,
+     "stable": true
+    },
+    {
+     "kind": "mixed",
+     "temperature_k": 294.0071186175119,
+     "r": 0.11130764173395659,
+     "stable": false
+    },
+    {
+     "kind": "mixed",
+     "temperature_k": 294.0071186175119,
+     "r": 0.17333660589552236,
+     "stable": true
+    },
+    {
+     "kind": "methanogen",
+     "temperature_k": 287.2256665088302,
+     "r": 0.1857529217425335,
+     "stable": false
+    }
+   ]
+  },
+  {
+   "fraction": 0.0,
+   "loss_h": 0.0036798732551989784,
+   "turnover_days": 11.322853744432473,
+   "switch_k": [
+    295.0721435486628
+   ],
+   "states": [
+    {
+     "kind": "acetogen",
+     "temperature_k": 283.19877678579377,
+     "r": 0.0005437715867670953,
+     "stable": true
+    },
+    {
+     "kind": "mixed",
+     "temperature_k": 295.0721435486628,
+     "r": 0.13095574639722732,
+     "stable": false
+    },
+    {
+     "kind": "mixed",
+     "temperature_k": 295.0721435486628,
+     "r": 0.1709703804786221,
+     "stable": true
+    },
+    {
+     "kind": "methanogen",
+     "temperature_k": 291.33194638094903,
+     "r": 0.17890836891177916,
+     "stable": false
+    }
+   ]
+  },
+  {
+   "fraction": 0.0,
+   "loss_h": 0.003972987023509263,
+   "turnover_days": 10.487491255348552,
+   "switch_k": [
+    296.23910384383345
+   ],
+   "states": [
+    {
+     "kind": "acetogen",
+     "temperature_k": 283.19877678579377,
+     "r": 0.0005437715867670953,
+     "stable": true
+    },
+    {
+     "kind": "mixed",
+     "temperature_k": 296.23910384383345,
+     "r": 0.15248440487906934,
+     "stable": false
+    },
+    {
+     "kind": "methanogen",
+     "temperature_k": 296.85481583457903,
+     "r": 0.16700971782222737,
+     "stable": true
+    }
+   ]
+  },
+  {
+   "fraction": 0.0,
+   "loss_h": 0.0042894482484341625,
+   "turnover_days": 9.713759032266408,
+   "switch_k": [
+    297.5241572566648
+   ],
+   "states": [
+    {
+     "kind": "acetogen",
+     "temperature_k": 283.19877678579377,
+     "r": 0.0005437715867670953,
+     "stable": true
+    },
+    {
+     "kind": "methanogen",
+     "temperature_k": 283.869602935684,
+     "r": 0.0026067223548318654,
+     "stable": false
+    },
+    {
+     "kind": "methanogen",
+     "temperature_k": 296.092154866626,
+     "r": 0.14977341774639016,
+     "stable": false
+    }
+   ]
+  },
+  {
+   "fraction": 0.0,
+   "loss_h": 0.004631116630162839,
+   "turnover_days": 8.997110199144691,
+   "switch_k": [],
+   "states": [
+    {
+     "kind": "acetogen",
+     "temperature_k": 283.19877678579377,
+     "r": 0.0005437715867670953,
+     "stable": true
+    },
+    {
+     "kind": "methanogen",
+     "temperature_k": 285.20708178299907,
+     "r": 0.008002456500782167,
+     "stable": false
+    },
+    {
+     "kind": "methanogen",
+     "temperature_k": 294.84800358671356,
+     "r": 0.12682070194635153,
+     "stable": false
+    }
+   ]
+  },
+  {
+   "fraction": 0.0,
+   "loss_h": 0.005,
+   "turnover_days": 8.333333333333334,
+   "switch_k": [],
+   "states": [
+    {
+     "kind": "acetogen",
+     "temperature_k": 283.19877678579377,
+     "r": 0.0005437715867670953,
+     "stable": true
+    },
+    {
+     "kind": "methanogen",
+     "temperature_k": 286.8930177409611,
+     "r": 0.018208077206040313,
+     "stable": false
+    },
+    {
+     "kind": "methanogen",
+     "temperature_k": 291.48866817416206,
+     "r": 0.08594730612106753,
+     "stable": false
+    }
+   ]
+  },
+  {
+   "fraction": 0.5,
+   "loss_h": 0.0002,
+   "turnover_days": 208.33333333333334,
+   "switch_k": [],
+   "states": [
+    {
+     "kind": "acetogen",
+     "temperature_k": 295.03645209131776,
+     "r": 0.1302972928070927,
+     "stable": false
+    },
+    {
+     "kind": "methanogen",
+     "temperature_k": 274.002,
+     "r": 0.27709201540686634,
+     "stable": true
+    }
+   ]
+  },
+  {
+   "fraction": 0.5,
+   "loss_h": 0.00021593064477947255,
+   "turnover_days": 192.96319292345163,
+   "switch_k": [],
+   "states": [
+    {
+     "kind": "acetogen",
+     "temperature_k": 295.02089117534405,
+     "r": 0.13001021736241034,
+     "stable": false
+    },
+    {
+     "kind": "methanogen",
+     "temperature_k": 274.002,
+     "r": 0.276317024441864,
+     "stable": true
+    }
+   ]
+  },
+  {
+   "fraction": 0.5,
+   "loss_h": 0.00023313021677439375,
+   "turnover_days": 178.72701035142347,
+   "switch_k": [
+    273.3766668343283
+   ],
+   "states": [
+    {
+     "kind": "acetogen",
+     "temperature_k": 295.0042844841127,
+     "r": 0.1297038489405259,
+     "stable": false
+    },
+    {
+     "kind": "methanogen",
+     "temperature_k": 274.002,
+     "r": 0.27549382861445965,
+     "stable": true
+    }
+   ]
+  },
+  {
+   "fraction": 0.5,
+   "loss_h": 0.0002516997901283655,
+   "turnover_days": 165.54112597955245,
+   "switch_k": [
+    274.47021434718613
+   ],
+   "states": [
+    {
+     "kind": "acetogen",
+     "temperature_k": 294.98657439019473,
+     "r": 0.12937712440223642,
+     "stable": false
+    },
+    {
+     "kind": "mixed",
+     "temperature_k": 274.47021434718613,
+     "r": 0.20490171657468462,
+     "stable": true
+    },
+    {
+     "kind": "methanogen",
+     "temperature_k": 274.002,
+     "r": 0.2746147528192463,
+     "stable": false
+    }
+   ]
+  },
+  {
+   "fraction": 0.5,
+   "loss_h": 0.0002717484898663794,
+   "turnover_days": 153.32805229995742,
+   "switch_k": [
+    275.60959711142556
+   ],
+   "states": [
+    {
+     "kind": "acetogen",
+     "temperature_k": 294.96770154159935,
+     "r": 0.1290289487927747,
+     "stable": false
+    },
+    {
+     "kind": "mixed",
+     "temperature_k": 275.60959711142556,
+     "r": 0.2033220007406353,
+     "stable": true
+    },
+    {
+     "kind": "methanogen",
+     "temperature_k": 274.002,
+     "r": 0.2736708607857753,
+     "stable": false
+    }
+   ]
+  },
+  {
+   "fraction": 0.5,
+   "loss_h": 0.00029339413317347625,
+   "turnover_days": 142.0160185753621,
+   "switch_k": [
+    276.8014804706833
+   ],
+   "states": [
+    {
+     "kind": "acetogen",
+     "temperature_k": 294.9476049243858,
+     "r": 0.12865819649689827,
+     "stable": false
+    },
+    {
+     "kind": "mixed",
+     "temperature_k": 276.8014804706833,
+     "r": 0.2016694945995439,
+     "stable": true
+    },
+    {
+     "kind": "methanogen",
+     "temperature_k": 274.002,
+     "r": 0.2726516977846868,
+     "stable": false
+    }
+   ]
+  },
+  {
+   "fraction": 0.5,
+   "loss_h": 0.0003167639217533158,
+   "turnover_days": 131.53854907477483,
+   "switch_k": [
+    277.26020161855365
+   ],
+   "states": [
+    {
+     "kind": "acetogen",
+     "temperature_k": 294.92622191675775,
+     "r": 0.12826371223685654,
+     "stable": false
+    },
+    {
+     "kind": "mixed",
+     "temperature_k": 277.26020161855365,
+     "r": 0.20103349317539754,
+     "stable": true
+    },
+    {
+     "kind": "methanogen",
+     "temperature_k": 274.002,
+     "r": 0.27154496208477136,
+     "stable": false
+    }
+   ]
+  },
+  {
+   "fraction": 0.5,
+   "loss_h": 0.00034199518933533934,
+   "turnover_days": 121.83407242553612,
+   "switch_k": [
+    277.42231610070024
+   ],
+   "states": [
+    {
+     "kind": "acetogen",
+     "temperature_k": 294.90348832614245,
+     "r": 0.1278443117564389,
+     "stable": false
+    },
+    {
+     "kind": "mixed",
+     "temperature_k": 277.42231610070024,
+     "r": 0.20080872690508572,
+     "stable": true
+    },
+    {
+     "kind": "methanogen",
+     "temperature_k": 274.002,
+     "r": 0.27033608170979173,
+     "stable": false
+    }
+   ]
+  },
+  {
+   "fraction": 0.5,
+   "loss_h": 0.0003692362087232884,
+   "turnover_days": 112.84555978607273,
+   "switch_k": [
+    277.59489075150464
+   ],
+   "states": [
+    {
+     "kind": "acetogen",
+     "temperature_k": 294.87933839880446,
+     "r": 0.12739878199833796,
+     "stable": false
+    },
+    {
+     "kind": "mixed",
+     "temperature_k": 277.59489075150464,
+     "r": 0.20056945796317469,
+     "stable": true
+    },
+    {
+     "kind": "methanogen",
+     "temperature_k": 274.002,
+     "r": 0.26900766380236163,
+     "stable": false
+    }
+   ]
+  },
+  {
+   "fraction": 0.5,
+   "loss_h": 0.0003986470631277378,
+   "turnover_days": 104.52018971306326,
+   "switch_k": [
+    277.7788857348342
+   ],
+   "states": [
+    {
+     "kind": "acetogen",
+     "temperature_k": 294.85370478947374,
+     "r": 0.12692588054383097,
+     "stable": false
+    },
+    {
+     "kind": "mixed",
+     "temperature_k": 277.7788857348342,
+     "r": 0.20031435511479576,
+     "stable": true
+    },
+    {
+     "kind": "methanogen",
+     "temperature_k": 274.002,
+     "r": 0.26753877032491796,
+     "stable": false
+    }
+   ]
+  },
+  {
+   "fraction": 0.5,
+   "loss_h": 0.00043040058690307757,
+   "turnover_days": 96.80903775358847,
+   "switch_k": [
+    277.9754007518524
+   ],
+   "states": [
+    {
+     "kind": "acetogen",
+     "temperature_k": 294.8265184763262,
+     "r": 0.1264243340443001,
+     "stable": false
+    },
+    {
+     "kind": "mixed",
+     "temperature_k": 277.9754007518524,
+     "r": 0.20004189366131805,
+     "stable": true
+    },
+    {
+     "kind": "methanogen",
+     "temperature_k": 274.002,
+     "r": 0.26590395353667123,
+     "stable": false
+    }
+   ]
+  },
+  {
+   "fraction": 0.5,
+   "loss_h": 0.0004646833812172247,
+   "turnover_days": 89.66678893814115,
+   "switch_k": [
+    278.1857004742057
+   ],
+   "states": [
+    {
+     "kind": "acetogen",
+     "temperature_k": 294.7977086045296,
+     "r": 0.1258928353348913,
+     "stable": false
+    },
+    {
+     "kind": "mixed",
+     "temperature_k": 278.1857004742057,
+     "r": 0.19975032017809144,
+     "stable": true
+    },
+    {
+     "kind": "methanogen",
+     "temperature_k": 274.002,
+     "r": 0.26407195378363196,
+     "stable": false
+    }
+   ]
+  },
+  {
+   "fraction": 0.5,
+   "loss_h": 0.0005016969106227038,
+   "turnover_days": 83.05147148494537,
+   "switch_k": [
+    278.41124554534167
+   ],
+   "states": [
+    {
+     "kind": "acetogen",
+     "temperature_k": 294.7672022395402,
+     "r": 0.1253300388832069,
+     "stable": false
+    },
+    {
+     "kind": "mixed",
+     "temperature_k": 278.41124554534167,
+     "r": 0.1994376095321628,
+     "stable": true
+    },
+    {
+     "kind": "methanogen",
+     "temperature_k": 274.002,
+     "r": 0.2620039140878128,
+     "stable": false
+    }
+   ]
+  },
+  {
+   "fraction": 0.5,
+   "loss_h": 0.0005416586869731491,
+   "turnover_days": 76.92421015068507,
+   "switch_k": [
+    278.65373063859556
+   ],
+   "states": [
+    {
+     "kind": "acetogen",
+     "temperature_k": 294.73492400950926,
+     "r": 0.1247345541922446,
+     "stable": false
+    },
+    {
+     "kind": "mixed",
+     "temperature_k": 278.65373063859556,
+     "r": 0.19910141211602073,
+     "stable": true
+    },
+    {
+     "kind": "methanogen",
+     "temperature_k": 274.002,
+     "r": 0.25965088955869553,
+     "stable": false
+    }
+   ]
+  },
+  {
+   "fraction": 0.5,
+   "loss_h": 0.0005848035476425735,
+   "turnover_days": 71.24899777819567,
+   "switch_k": [
+    278.9151315028324
+   ],
+   "states": [
+    {
+     "kind": "acetogen",
+     "temperature_k": 294.7007956146327,
+     "r": 0.12410493674864187,
+     "stable": false
+    },
+    {
+     "kind": "mixed",
+     "temperature_k": 278.9151315028324,
+     "r": 0.19873898862039693,
+     "stable": true
+    },
+    {
+     "kind": "methanogen",
+     "temperature_k": 274.002,
+     "r": 0.25695030480244724,
+     "stable": false
+    }
+   ]
+  },
+  {
+   "fraction": 0.5,
+   "loss_h": 0.0006313850355589193,
+   "turnover_days": 65.99248369860744,
+   "switch_k": [
+    279.1977634911416
+   ],
+   "states": [
+    {
+     "kind": "acetogen",
+     "temperature_k": 294.6647351801444,
+     "r": 0.12343967608637452,
+     "stable": false
+    },
+    {
+     "kind": "mixed",
+     "temperature_k": 279.1977634911416,
+     "r": 0.1983471288862023,
+     "stable": true
+    },
+    {
+     "kind": "methanogen",
+     "temperature_k": 274.002,
+     "r": 0.2538208026865458,
+     "stable": false
+    }
+   ]
+  },
+  {
+   "fraction": 0.5,
+   "loss_h": 0.0006816768891617381,
+   "turnover_days": 61.12377774447422,
+   "switch_k": [
+    279.5043547673757
+   ],
+   "states": [
+    {
+     "kind": "acetogen",
+     "temperature_k": 294.62665642897804,
+     "r": 0.12273718052361365,
+     "stable": false
+    },
+    {
+     "kind": "mixed",
+     "temperature_k": 279.5043547673757,
+     "r": 0.19792205040612565,
+     "stable": true
+    },
+    {
+     "kind": "methanogen",
+     "temperature_k": 274.002,
+     "r": 0.25015456352262455,
+     "stable": false
+    }
+   ]
+  },
+  {
+   "fraction": 0.5,
+   "loss_h": 0.0007359746510397958,
+   "turnover_days": 56.61426872216236,
+   "switch_k": [
+    279.8381381995056
+   ],
+   "states": [
+    {
+     "kind": "acetogen",
+     "temperature_k": 294.58646764993745,
+     "r": 0.12199575812702679,
+     "stable": false
+    },
+    {
+     "kind": "mixed",
+     "temperature_k": 279.8381381995056,
+     "r": 0.19745927091759188,
+     "stable": true
+    },
+    {
+     "kind": "methanogen",
+     "temperature_k": 274.002,
+     "r": 0.24580551733490041,
+     "stable": false
+    }
+   ]
+  },
+  {
+   "fraction": 0.5,
+   "loss_h": 0.0007945974047018527,
+   "turnover_days": 52.43745627674275,
+   "switch_k": [
+    280.2029667737219
+   ],
+   "states": [
+    {
+     "kind": "acetogen",
+     "temperature_k": 294.54407043748614,
+     "r": 0.1212135934627928,
+     "stable": false
+    },
+    {
+     "kind": "mixed",
+     "temperature_k": 280.2029667737219,
+     "r": 0.19695344838499643,
+     "stable": true
+    },
+    {
+     "kind": "methanogen",
+     "temperature_k": 274.002,
+     "r": 0.24057063769960252,
+     "stable": false
+    }
+   ]
+  },
+  {
+   "fraction": 0.5,
+   "loss_h": 0.0008578896496868327,
+   "turnover_days": 48.56879516133203,
+   "switch_k": [
+    280.6034578928937
+   ],
+   "states": [
+    {
+     "kind": "acetogen",
+     "temperature_k": 294.4993581799214,
+     "r": 0.12038871970569276,
+     "stable": false
+    },
+    {
+     "kind": "mixed",
+     "temperature_k": 280.6034578928937,
+     "r": 0.19639818093475192,
+     "stable": true
+    },
+    {
+     "kind": "methanogen",
+     "temperature_k": 274.002,
+     "r": 0.2341590673123781,
+     "stable": false
+    }
+   ]
+  },
+  {
+   "fraction": 0.5,
+   "loss_h": 0.0009262233260325679,
+   "turnover_days": 44.98555099572345,
+   "switch_k": [
+    281.04517139570896
+   ],
+   "states": [
+    {
+     "kind": "acetogen",
+     "temperature_k": 294.45221427348207,
+     "r": 0.11951898569209214,
+     "stable": false
+    },
+    {
+     "kind": "mixed",
+     "temperature_k": 281.04517139570896,
+     "r": 0.1957857600377442,
+     "stable": true
+    },
+    {
+     "kind": "methanogen",
+     "temperature_k": 273.61783723220435,
+     "r": 0.22633729523504312,
+     "stable": false
+    }
+   ]
+  },
+  {
+   "fraction": 0.5,
+   "loss_h": 0.001,
+   "turnover_days": 41.666666666666664,
+   "switch_k": [
+    281.53482280508206
+   ],
+   "states": [
+    {
+     "kind": "acetogen",
+     "temperature_k": 294.40251004070655,
+     "r": 0.11860201751677815,
+     "stable": false
+    },
+    {
+     "kind": "mixed",
+     "temperature_k": 281.53482280508206,
+     "r": 0.1951068748475969,
+     "stable": true
+    },
+    {
+     "kind": "methanogen",
+     "temperature_k": 273.51674403884846,
+     "r": 0.21615000467994547,
+     "stable": false
+    }
+   ]
+  },
+  {
+   "fraction": 0.5,
+   "loss_h": 0.0010796532238973625,
+   "turnover_days": 38.592638584690334,
+   "switch_k": [
+    282.0805234361579
+   ],
+   "states": [
+    {
+     "kind": "acetogen",
+     "temperature_k": 294.3501023315813,
+     "r": 0.11763517427777309,
+     "stable": false
+    },
+    {
+     "kind": "mixed",
+     "temperature_k": 282.0805234361579,
+     "r": 0.1943291037562852,
+     "stable": true
+    },
+    {
+     "kind": "methanogen",
+     "temperature_k": 277.1846379121775,
+     "r": 0.20113825970968996,
+     "stable": false
+    }
+   ]
+  },
+  {
+   "fraction": 0.5,
+   "loss_h": 0.0011656510838719686,
+   "turnover_days": 35.7454020702847,
+   "switch_k": [
+    282.69201504843437
+   ],
+   "states": [
+    {
+     "kind": "acetogen",
+     "temperature_k": 294.29483078537004,
+     "r": 0.11661549756120466,
+     "stable": false
+    },
+    {
+     "kind": "mixed",
+     "temperature_k": 282.69201504843437,
+     "r": 0.19330983892871995,
+     "stable": true
+    },
+    {
+     "kind": "methanogen",
+     "temperature_k": 277.4458969322797,
+     "r": 0.2007760328761823,
+     "stable": false
+    }
+   ]
+  },
+  {
+   "fraction": 0.5,
+   "loss_h": 0.001258498950641826,
+   "turnover_days": 33.10822519591053,
+   "switch_k": [
+    283.29471111774114
+   ],
+   "states": [
+    {
+     "kind": "acetogen",
+     "temperature_k": 294.23651472887326,
+     "r": 0.11553965421887127,
+     "stable": false
+    },
+    {
+     "kind": "mixed",
+     "temperature_k": 283.29471111774114,
+     "r": 0.1923052349524378,
+     "stable": true
+    },
+    {
+     "kind": "methanogen",
+     "temperature_k": 277.73077379832955,
+     "r": 0.20038106069459616,
+     "stable": false
+    }
+   ]
+  },
+  {
+   "fraction": 0.5,
+   "loss_h": 0.0013587424493318966,
+   "turnover_days": 30.665610459991495,
+   "switch_k": [
+    283.7585077935643
+   ],
+   "states": [
+    {
+     "kind": "acetogen",
+     "temperature_k": 294.17494968264657,
+     "r": 0.11440387191323645,
+     "stable": false
+    },
+    {
+     "kind": "mixed",
+     "temperature_k": 283.7585077935643,
+     "r": 0.19153215543782542,
+     "stable": true
+    },
+    {
+     "kind": "methanogen",
+     "temperature_k": 278.04162825323965,
+     "r": 0.19995007146084728,
+     "stable": false
+    }
+   ]
+  },
+  {
+   "fraction": 0.5,
+   "loss_h": 0.0014669706658673811,
+   "turnover_days": 28.403203715072422,
+   "switch_k": [
+    284.24470531641515
+   ],
+   "states": [
+    {
+     "kind": "acetogen",
+     "temperature_k": 294.1099034397272,
+     "r": 0.11320386677584374,
+     "stable": false
+    },
+    {
+     "kind": "mixed",
+     "temperature_k": 284.24470531641515,
+     "r": 0.19072173707011264,
+     "stable": true
+    },
+    {
+     "kind": "methanogen",
+     "temperature_k": 278.3810908499231,
+     "r": 0.19947941800190508,
+     "stable": false
+    }
+   ]
+  },
+  {
+   "fraction": 0.5,
+   "loss_h": 0.0015838196087665788,
+   "turnover_days": 26.307709814954972,
+   "switch_k": [
+    284.75496605621026
+   ],
+   "states": [
+    {
+     "kind": "acetogen",
+     "temperature_k": 294.04111167094084,
+     "r": 0.11193476233185136,
+     "stable": false
+    },
+    {
+     "kind": "mixed",
+     "temperature_k": 284.75496605621026,
+     "r": 0.1898712089279124,
+     "stable": true
+    },
+    {
+     "kind": "methanogen",
+     "temperature_k": 278.7520993009896,
+     "r": 0.1989650272781635,
+     "stable": false
+    }
+   ]
+  },
+  {
+   "fraction": 0.5,
+   "loss_h": 0.0017099759466766963,
+   "turnover_days": 24.366814485107227,
+   "switch_k": [
+    285.29106579620225
+   ],
+   "states": [
+    {
+     "kind": "acetogen",
+     "temperature_k": 293.9179182713862,
+     "r": 0.1106680233742687,
+     "stable": false
+    },
+    {
+     "kind": "mixed",
+     "temperature_k": 285.29106579620225,
+     "r": 0.18897761104681246,
+     "stable": true
+    },
+    {
+     "kind": "methanogen",
+     "temperature_k": 279.1579405551105,
+     "r": 0.19840234204597715,
+     "stable": false
+    }
+   ]
+  },
+  {
+   "fraction": 0.5,
+   "loss_h": 0.0018461810436164417,
+   "turnover_days": 22.569111957214545,
+   "switch_k": [
+    285.85489441427535
+   ],
+   "states": [
+    {
+     "kind": "acetogen",
+     "temperature_k": 293.70097960138463,
+     "r": 0.10946083800862969,
+     "stable": false
+    },
+    {
+     "kind": "mixed",
+     "temperature_k": 285.85489441427535,
+     "r": 0.18803779328375742,
+     "stable": true
+    },
+    {
+     "kind": "methanogen",
+     "temperature_k": 279.6022997023338,
+     "r": 0.19778625305208933,
+     "stable": false
+    }
+   ]
+  },
+  {
+   "fraction": 0.5,
+   "loss_h": 0.0019932353156386887,
+   "turnover_days": 20.904037942612657,
+   "switch_k": [
+    286.44845551867695
+   ],
+   "states": [
+    {
+     "kind": "acetogen",
+     "temperature_k": 293.47160323343144,
+     "r": 0.10818444134493471,
+     "stable": false
+    },
+    {
+     "kind": "mixed",
+     "temperature_k": 286.44845551867695,
+     "r": 0.1870484159242299,
+     "stable": true
+    },
+    {
+     "kind": "methanogen",
+     "temperature_k": 280.0893171036301,
+     "r": 0.1971110198254407,
+     "stable": false
+    }
+   ]
+  },
+  {
+   "fraction": 0.5,
+   "loss_h": 0.0021520029345153875,
+   "turnover_days": 19.361807550717696,
+   "switch_k": [
+    287.07386502401977
+   ],
+   "states": [
+    {
+     "kind": "acetogen",
+     "temperature_k": 293.2288636495143,
+     "r": 0.10683368320963367,
+     "stable": false
+    },
+    {
+     "kind": "mixed",
+     "temperature_k": 287.07386502401977,
+     "r": 0.18600595205584142,
+     "stable": true
+    },
+    {
+     "kind": "methanogen",
+     "temperature_k": 280.62365555177524,
+     "r": 0.19637017756086625,
+     "stable": false
+    }
+   ]
+  },
+  {
+   "fraction": 0.5,
+   "loss_h": 0.0023234169060861233,
+   "turnover_days": 17.93335778762823,
+   "switch_k": [
+    287.7333487155832
+   ],
+   "states": [
+    {
+     "kind": "acetogen",
+     "temperature_k": 292.9563289896083,
+     "r": 0.10531712623495751,
+     "stable": false
+    },
+    {
+     "kind": "mixed",
+     "temperature_k": 287.7333487155832,
+     "r": 0.18490669162827644,
+     "stable": true
+    },
+    {
+     "kind": "methanogen",
+     "temperature_k": 281.21057986431316,
+     "r": 0.19555642676613344,
+     "stable": false
+    }
+   ]
+  },
+  {
+   "fraction": 0.5,
+   "loss_h": 0.0025084845531135186,
+   "turnover_days": 16.610294296989075,
+   "switch_k": [
+    288.65062168652344
+   ],
+   "states": [
+    {
+     "kind": "acetogen",
+     "temperature_k": 292.6574645659327,
+     "r": 0.10365405363213984,
+     "stable": false
+    },
+    {
+     "kind": "mixed",
+     "temperature_k": 288.65062168652344,
+     "r": 0.1833777351261995,
+     "stable": true
+    },
+    {
+     "kind": "methanogen",
+     "temperature_k": 281.8560521938567,
+     "r": 0.19466150111741934,
+     "stable": false
+    }
+   ]
+  },
+  {
+   "fraction": 0.5,
+   "loss_h": 0.0027082934348657455,
+   "turnover_days": 15.384842030137015,
+   "switch_k": [
+    289.9866446428671
+   ],
+   "states": [
+    {
+     "kind": "acetogen",
+     "temperature_k": 292.33628472618716,
+     "r": 0.10186680379661628,
+     "stable": false
+    },
+    {
+     "kind": "mixed",
+     "temperature_k": 289.9866446428671,
+     "r": 0.18115078518791483,
+     "stable": true
+    },
+    {
+     "kind": "methanogen",
+     "temperature_k": 282.5593849229479,
+     "r": 0.19353091346068396,
+     "stable": false
+    }
+   ]
+  },
+  {
+   "fraction": 0.5,
+   "loss_h": 0.0029240177382128638,
+   "turnover_days": 14.249799555639152,
+   "switch_k": [
+    291.41956382548824
+   ],
+   "states": [
+    {
+     "kind": "acetogen",
+     "temperature_k": 291.9993827394697,
+     "r": 0.09992996157322609,
+     "stable": false
+    },
+    {
+     "kind": "mixed",
+     "temperature_k": 291.41956382548824,
+     "r": 0.17876232376952852,
+     "stable": true
+    },
+    {
+     "kind": "methanogen",
+     "temperature_k": 283.49454090771854,
+     "r": 0.19197214865602003,
+     "stable": false
+    }
+   ]
+  },
+  {
+   "fraction": 0.5,
+   "loss_h": 0.003156925177794596,
+   "turnover_days": 13.198496739721492,
+   "switch_k": [
+    292.94896148580796
+   ],
+   "states": [
+    {
+     "kind": "acetogen",
+     "temperature_k": 291.9172540842493,
+     "r": 0.09755109032008379,
+     "stable": true
+    },
+    {
+     "kind": "mixed",
+     "temperature_k": 292.94896148580796,
+     "r": 0.10527612873659062,
+     "stable": false
+    },
+    {
+     "kind": "mixed",
+     "temperature_k": 292.94896148580796,
+     "r": 0.17568757273852986,
+     "stable": true
+    },
+    {
+     "kind": "methanogen",
+     "temperature_k": 285.1928204255353,
+     "r": 0.18914137134831382,
+     "stable": false
+    }
+   ]
+  },
+  {
+   "fraction": 0.5,
+   "loss_h": 0.0034083844458086903,
+   "turnover_days": 12.224755548894846,
+   "switch_k": [
+    294.0071186175119
+   ],
+   "states": [
+    {
+     "kind": "acetogen",
+     "temperature_k": 291.8259426752204,
+     "r": 0.09496662390819752,
+     "stable": true
+    },
+    {
+     "kind": "mixed",
+     "temperature_k": 294.0071186175119,
+     "r": 0.11130764173395659,
+     "stable": false
+    },
+    {
+     "kind": "mixed",
+     "temperature_k": 294.0071186175119,
+     "r": 0.17333660589552236,
+     "stable": true
+    },
+    {
+     "kind": "methanogen",
+     "temperature_k": 287.2256665088302,
+     "r": 0.1857529217425335,
+     "stable": false
+    }
+   ]
+  },
+  {
+   "fraction": 0.5,
+   "loss_h": 0.0036798732551989784,
+   "turnover_days": 11.322853744432473,
+   "switch_k": [
+    295.0721435486628
+   ],
+   "states": [
+    {
+     "kind": "acetogen",
+     "temperature_k": 291.72376121222214,
+     "r": 0.09214805723896784,
+     "stable": true
+    },
+    {
+     "kind": "mixed",
+     "temperature_k": 295.0721435486628,
+     "r": 0.13095574639722732,
+     "stable": false
+    },
+    {
+     "kind": "mixed",
+     "temperature_k": 295.0721435486628,
+     "r": 0.1709703804786221,
+     "stable": true
+    },
+    {
+     "kind": "methanogen",
+     "temperature_k": 291.33194638094903,
+     "r": 0.17890836891177916,
+     "stable": false
+    }
+   ]
+  },
+  {
+   "fraction": 0.5,
+   "loss_h": 0.003972987023509263,
+   "turnover_days": 10.487491255348552,
+   "switch_k": [
+    296.23910384383345
+   ],
+   "states": [
+    {
+     "kind": "acetogen",
+     "temperature_k": 291.6085799565825,
+     "r": 0.08906154106062318,
+     "stable": true
+    },
+    {
+     "kind": "mixed",
+     "temperature_k": 296.23910384383345,
+     "r": 0.15248440487906934,
+     "stable": false
+    },
+    {
+     "kind": "methanogen",
+     "temperature_k": 296.85481583457903,
+     "r": 0.16700971782222737,
+     "stable": true
+    }
+   ]
+  },
+  {
+   "fraction": 0.5,
+   "loss_h": 0.0042894482484341625,
+   "turnover_days": 9.713759032266408,
+   "switch_k": [
+    297.5241572566648
+   ],
+   "states": [
+    {
+     "kind": "methanogen",
+     "temperature_k": 283.869602935684,
+     "r": 0.0026067223548318654,
+     "stable": false
+    },
+    {
+     "kind": "acetogen",
+     "temperature_k": 291.4776646310679,
+     "r": 0.08566648412472622,
+     "stable": true
+    },
+    {
+     "kind": "methanogen",
+     "temperature_k": 296.092154866626,
+     "r": 0.14977341774639016,
+     "stable": false
+    }
+   ]
+  },
+  {
+   "fraction": 0.5,
+   "loss_h": 0.004631116630162839,
+   "turnover_days": 8.997110199144691,
+   "switch_k": [],
+   "states": [
+    {
+     "kind": "methanogen",
+     "temperature_k": 285.20708178299907,
+     "r": 0.008002456500782167,
+     "stable": false
+    },
+    {
+     "kind": "acetogen",
+     "temperature_k": 291.3274323778759,
+     "r": 0.08191360915173095,
+     "stable": true
+    },
+    {
+     "kind": "methanogen",
+     "temperature_k": 294.84800358671356,
+     "r": 0.12682070194635153,
+     "stable": false
+    }
+   ]
+  },
+  {
+   "fraction": 0.5,
+   "loss_h": 0.005,
+   "turnover_days": 8.333333333333334,
+   "switch_k": [],
+   "states": [
+    {
+     "kind": "methanogen",
+     "temperature_k": 286.8930177409611,
+     "r": 0.018208077206040313,
+     "stable": false
+    },
+    {
+     "kind": "acetogen",
+     "temperature_k": 291.15307015039485,
+     "r": 0.0777421536144635,
+     "stable": true
+    },
+    {
+     "kind": "methanogen",
+     "temperature_k": 291.48866817416206,
+     "r": 0.08594730612106753,
+     "stable": false
+    }
+   ]
+  },
+  {
+   "fraction": 0.9,
+   "loss_h": 0.0002,
+   "turnover_days": 208.33333333333334,
+   "switch_k": [],
+   "states": [
+    {
+     "kind": "acetogen",
+     "temperature_k": 274.002,
+     "r": 0.24159108770314774,
+     "stable": false
+    },
+    {
+     "kind": "methanogen",
+     "temperature_k": 274.002,
+     "r": 0.27709201540686634,
+     "stable": true
+    }
+   ]
+  },
+  {
+   "fraction": 0.9,
+   "loss_h": 0.00021593064477947255,
+   "turnover_days": 192.96319292345163,
+   "switch_k": [],
+   "states": [
+    {
+     "kind": "acetogen",
+     "temperature_k": 274.002,
+     "r": 0.24062354736630795,
+     "stable": false
+    },
+    {
+     "kind": "methanogen",
+     "temperature_k": 274.002,
+     "r": 0.276317024441864,
+     "stable": true
+    }
+   ]
+  },
+  {
+   "fraction": 0.9,
+   "loss_h": 0.00023313021677439375,
+   "turnover_days": 178.72701035142347,
+   "switch_k": [
+    273.3766668343283
+   ],
+   "states": [
+    {
+     "kind": "acetogen",
+     "temperature_k": 274.002,
+     "r": 0.23964366147393834,
+     "stable": false
+    },
+    {
+     "kind": "methanogen",
+     "temperature_k": 274.002,
+     "r": 0.27549382861445965,
+     "stable": true
+    }
+   ]
+  },
+  {
+   "fraction": 0.9,
+   "loss_h": 0.0002516997901283655,
+   "turnover_days": 165.54112597955245,
+   "switch_k": [
+    274.47021434718613
+   ],
+   "states": [
+    {
+     "kind": "acetogen",
+     "temperature_k": 274.002,
+     "r": 0.23865124046066444,
+     "stable": true
+    },
+    {
+     "kind": "methanogen",
+     "temperature_k": 274.002,
+     "r": 0.2746147528192463,
+     "stable": false
+    }
+   ]
+  },
+  {
+   "fraction": 0.9,
+   "loss_h": 0.0002717484898663794,
+   "turnover_days": 153.32805229995742,
+   "switch_k": [
+    275.60959711142556
+   ],
+   "states": [
+    {
+     "kind": "acetogen",
+     "temperature_k": 274.002,
+     "r": 0.2376457797743796,
+     "stable": true
+    },
+    {
+     "kind": "methanogen",
+     "temperature_k": 274.002,
+     "r": 0.2736708607857753,
+     "stable": false
+    }
+   ]
+  },
+  {
+   "fraction": 0.9,
+   "loss_h": 0.00029339413317347625,
+   "turnover_days": 142.0160185753621,
+   "switch_k": [
+    276.8014804706833
+   ],
+   "states": [
+    {
+     "kind": "acetogen",
+     "temperature_k": 274.002,
+     "r": 0.2366264254494639,
+     "stable": true
+    },
+    {
+     "kind": "methanogen",
+     "temperature_k": 274.002,
+     "r": 0.2726516977846868,
+     "stable": false
+    }
+   ]
+  },
+  {
+   "fraction": 0.9,
+   "loss_h": 0.0003167639217533158,
+   "turnover_days": 131.53854907477483,
+   "switch_k": [
+    277.26020161855365
+   ],
+   "states": [
+    {
+     "kind": "acetogen",
+     "temperature_k": 274.002,
+     "r": 0.23559193994391936,
+     "stable": true
+    },
+    {
+     "kind": "methanogen",
+     "temperature_k": 274.002,
+     "r": 0.27154496208477136,
+     "stable": false
+    }
+   ]
+  },
+  {
+   "fraction": 0.9,
+   "loss_h": 0.00034199518933533934,
+   "turnover_days": 121.83407242553612,
+   "switch_k": [
+    277.42231610070024
+   ],
+   "states": [
+    {
+     "kind": "acetogen",
+     "temperature_k": 274.002,
+     "r": 0.23454066787382086,
+     "stable": true
+    },
+    {
+     "kind": "methanogen",
+     "temperature_k": 274.002,
+     "r": 0.27033608170979173,
+     "stable": false
+    }
+   ]
+  },
+  {
+   "fraction": 0.9,
+   "loss_h": 0.0003692362087232884,
+   "turnover_days": 112.84555978607273,
+   "switch_k": [
+    277.59489075150464
+   ],
+   "states": [
+    {
+     "kind": "acetogen",
+     "temperature_k": 274.002,
+     "r": 0.23347050109481118,
+     "stable": true
+    },
+    {
+     "kind": "methanogen",
+     "temperature_k": 274.002,
+     "r": 0.26900766380236163,
+     "stable": false
+    }
+   ]
+  },
+  {
+   "fraction": 0.9,
+   "loss_h": 0.0003986470631277378,
+   "turnover_days": 104.52018971306326,
+   "switch_k": [
+    277.7788857348342
+   ],
+   "states": [
+    {
+     "kind": "acetogen",
+     "temperature_k": 273.9484500746338,
+     "r": 0.232358838660287,
+     "stable": true
+    },
+    {
+     "kind": "methanogen",
+     "temperature_k": 274.002,
+     "r": 0.26753877032491796,
+     "stable": false
+    }
+   ]
+  },
+  {
+   "fraction": 0.9,
+   "loss_h": 0.00043040058690307757,
+   "turnover_days": 96.80903775358847,
+   "switch_k": [
+    277.9754007518524
+   ],
+   "states": [
+    {
+     "kind": "acetogen",
+     "temperature_k": 273.8862308669629,
+     "r": 0.23122290217650204,
+     "stable": true
+    },
+    {
+     "kind": "methanogen",
+     "temperature_k": 274.002,
+     "r": 0.26590395353667123,
+     "stable": false
+    }
+   ]
+  },
+  {
+   "fraction": 0.9,
+   "loss_h": 0.0004646833812172247,
+   "turnover_days": 89.66678893814115,
+   "switch_k": [
+    278.1857004742057
+   ],
+   "states": [
+    {
+     "kind": "acetogen",
+     "temperature_k": 273.82265762824244,
+     "r": 0.23006224513893825,
+     "stable": true
+    },
+    {
+     "kind": "methanogen",
+     "temperature_k": 274.002,
+     "r": 0.26407195378363196,
+     "stable": false
+    }
+   ]
+  },
+  {
+   "fraction": 0.9,
+   "loss_h": 0.0005016969106227038,
+   "turnover_days": 83.05147148494537,
+   "switch_k": [
+    278.41124554534167
+   ],
+   "states": [
+    {
+     "kind": "acetogen",
+     "temperature_k": 273.7575043117875,
+     "r": 0.22887274061178,
+     "stable": true
+    },
+    {
+     "kind": "methanogen",
+     "temperature_k": 274.002,
+     "r": 0.2620039140878128,
+     "stable": false
+    }
+   ]
+  },
+  {
+   "fraction": 0.9,
+   "loss_h": 0.0005416586869731491,
+   "turnover_days": 76.92421015068507,
+   "switch_k": [
+    278.65373063859556
+   ],
+   "states": [
+    {
+     "kind": "acetogen",
+     "temperature_k": 273.6904308233211,
+     "r": 0.22764954459815198,
+     "stable": true
+    },
+    {
+     "kind": "methanogen",
+     "temperature_k": 274.002,
+     "r": 0.25965088955869553,
+     "stable": false
+    }
+   ]
+  },
+  {
+   "fraction": 0.9,
+   "loss_h": 0.0005848035476425735,
+   "turnover_days": 71.24899777819567,
+   "switch_k": [
+    278.9151315028324
+   ],
+   "states": [
+    {
+     "kind": "acetogen",
+     "temperature_k": 273.62058532868696,
+     "r": 0.22638697162938623,
+     "stable": true
+    },
+    {
+     "kind": "methanogen",
+     "temperature_k": 274.002,
+     "r": 0.25695030480244724,
+     "stable": false
+    }
+   ]
+  },
+  {
+   "fraction": 0.9,
+   "loss_h": 0.0006313850355589193,
+   "turnover_days": 65.99248369860744,
+   "switch_k": [
+    279.1977634911416
+   ],
+   "states": [
+    {
+     "kind": "acetogen",
+     "temperature_k": 273.54821738812177,
+     "r": 0.22507880127363902,
+     "stable": true
+    },
+    {
+     "kind": "methanogen",
+     "temperature_k": 274.002,
+     "r": 0.2538208026865458,
+     "stable": false
+    }
+   ]
+  },
+  {
+   "fraction": 0.9,
+   "loss_h": 0.0006816768891617381,
+   "turnover_days": 61.12377774447422,
+   "switch_k": [
+    279.5043547673757
+   ],
+   "states": [
+    {
+     "kind": "acetogen",
+     "temperature_k": 273.4729243519799,
+     "r": 0.22371775497184032,
+     "stable": true
+    },
+    {
+     "kind": "methanogen",
+     "temperature_k": 274.002,
+     "r": 0.25015456352262455,
+     "stable": false
+    }
+   ]
+  },
+  {
+   "fraction": 0.9,
+   "loss_h": 0.0007359746510397958,
+   "turnover_days": 56.61426872216236,
+   "switch_k": [
+    279.8381381995056
+   ],
+   "states": [
+    {
+     "kind": "acetogen",
+     "temperature_k": 273.39424925315996,
+     "r": 0.22229557228696767,
+     "stable": true
+    },
+    {
+     "kind": "methanogen",
+     "temperature_k": 274.002,
+     "r": 0.24580551733490041,
+     "stable": false
+    }
+   ]
+  },
+  {
+   "fraction": 0.9,
+   "loss_h": 0.0007945974047018527,
+   "turnover_days": 52.43745627674275,
+   "switch_k": [
+    280.2029667737219
+   ],
+   "states": [
+    {
+     "kind": "acetogen",
+     "temperature_k": 273.4161164715165,
+     "r": 0.22081148027128322,
+     "stable": true
+    },
+    {
+     "kind": "methanogen",
+     "temperature_k": 274.002,
+     "r": 0.24057063769960252,
+     "stable": false
+    }
+   ]
+  },
+  {
+   "fraction": 0.9,
+   "loss_h": 0.0008578896496868327,
+   "turnover_days": 48.56879516133203,
+   "switch_k": [
+    280.6034578928937
+   ],
+   "states": [
+    {
+     "kind": "acetogen",
+     "temperature_k": 273.44527723436966,
+     "r": 0.2192401596427938,
+     "stable": true
+    },
+    {
+     "kind": "methanogen",
+     "temperature_k": 274.002,
+     "r": 0.2341590673123781,
+     "stable": false
+    }
+   ]
+  },
+  {
+   "fraction": 0.9,
+   "loss_h": 0.0009262233260325679,
+   "turnover_days": 44.98555099572345,
+   "switch_k": [
+    281.04517139570896
+   ],
+   "states": [
+    {
+     "kind": "acetogen",
+     "temperature_k": 273.4762992036048,
+     "r": 0.2175685483601638,
+     "stable": true
+    },
+    {
+     "kind": "methanogen",
+     "temperature_k": 273.61783723220435,
+     "r": 0.22633729523504312,
+     "stable": false
+    }
+   ]
+  },
+  {
+   "fraction": 0.9,
+   "loss_h": 0.001,
+   "turnover_days": 41.666666666666664,
+   "switch_k": [
+    281.53482280508206
+   ],
+   "states": [
+    {
+     "kind": "acetogen",
+     "temperature_k": 273.5335860608286,
+     "r": 0.21578213554464123,
+     "stable": true
+    },
+    {
+     "kind": "methanogen",
+     "temperature_k": 273.51674403884846,
+     "r": 0.21615000467994547,
+     "stable": false
+    }
+   ]
+  },
+  {
+   "fraction": 0.9,
+   "loss_h": 0.0010796532238973625,
+   "turnover_days": 38.592638584690334,
+   "switch_k": [
+    282.0805234361579
+   ],
+   "states": [
+    {
+     "kind": "methanogen",
+     "temperature_k": 277.1846379121775,
+     "r": 0.20113825970968996,
+     "stable": false
+    },
+    {
+     "kind": "acetogen",
+     "temperature_k": 273.62148336368335,
+     "r": 0.2138622529536534,
+     "stable": true
+    }
+   ]
+  },
+  {
+   "fraction": 0.9,
+   "loss_h": 0.0011656510838719686,
+   "turnover_days": 35.7454020702847,
+   "switch_k": [
+    282.69201504843437
+   ],
+   "states": [
+    {
+     "kind": "methanogen",
+     "temperature_k": 277.4458969322797,
+     "r": 0.2007760328761823,
+     "stable": false
+    },
+    {
+     "kind": "acetogen",
+     "temperature_k": 273.716371780329,
+     "r": 0.21178966809282354,
+     "stable": true
+    }
+   ]
+  },
+  {
+   "fraction": 0.9,
+   "loss_h": 0.001258498950641826,
+   "turnover_days": 33.10822519591053,
+   "switch_k": [
+    283.29471111774114
+   ],
+   "states": [
+    {
+     "kind": "methanogen",
+     "temperature_k": 277.73077379832955,
+     "r": 0.20038106069459616,
+     "stable": false
+    },
+    {
+     "kind": "acetogen",
+     "temperature_k": 273.8192452259988,
+     "r": 0.2095426715297679,
+     "stable": true
+    }
+   ]
+  },
+  {
+   "fraction": 0.9,
+   "loss_h": 0.0013587424493318966,
+   "turnover_days": 30.665610459991495,
+   "switch_k": [
+    283.7585077935643
+   ],
+   "states": [
+    {
+     "kind": "methanogen",
+     "temperature_k": 278.04162825323965,
+     "r": 0.19995007146084728,
+     "stable": false
+    },
+    {
+     "kind": "acetogen",
+     "temperature_k": 273.93125545873517,
+     "r": 0.20709610617612462,
+     "stable": true
+    }
+   ]
+  },
+  {
+   "fraction": 0.9,
+   "loss_h": 0.0014669706658673811,
+   "turnover_days": 28.403203715072422,
+   "switch_k": [
+    284.24470531641515
+   ],
+   "states": [
+    {
+     "kind": "methanogen",
+     "temperature_k": 278.3810908499231,
+     "r": 0.19947941800190508,
+     "stable": false
+    },
+    {
+     "kind": "acetogen",
+     "temperature_k": 274.94684558268403,
+     "r": 0.2042408834171626,
+     "stable": true
+    }
+   ]
+  },
+  {
+   "fraction": 0.9,
+   "loss_h": 0.0015838196087665788,
+   "turnover_days": 26.307709814954972,
+   "switch_k": [
+    284.75496605621026
+   ],
+   "states": [
+    {
+     "kind": "methanogen",
+     "temperature_k": 278.7520993009896,
+     "r": 0.1989650272781635,
+     "stable": false
+    },
+    {
+     "kind": "acetogen",
+     "temperature_k": 277.2407552403656,
+     "r": 0.201060454923901,
+     "stable": true
+    }
+   ]
+  },
+  {
+   "fraction": 0.9,
+   "loss_h": 0.0017099759466766963,
+   "turnover_days": 24.366814485107227,
+   "switch_k": [
+    285.29106579620225
+   ],
+   "states": [
+    {
+     "kind": "methanogen",
+     "temperature_k": 279.1579405551105,
+     "r": 0.19840234204597715,
+     "stable": false
+    },
+    {
+     "kind": "acetogen",
+     "temperature_k": 277.7960728165887,
+     "r": 0.2002905258047159,
+     "stable": true
+    }
+   ]
+  },
+  {
+   "fraction": 0.9,
+   "loss_h": 0.0018461810436164417,
+   "turnover_days": 22.569111957214545,
+   "switch_k": [
+    285.85489441427535
+   ],
+   "states": [
+    {
+     "kind": "methanogen",
+     "temperature_k": 279.6022997023338,
+     "r": 0.19778625305208933,
+     "stable": false
+    },
+    {
+     "kind": "acetogen",
+     "temperature_k": 278.37896098593615,
+     "r": 0.19948237098660015,
+     "stable": true
+    }
+   ]
+  },
+  {
+   "fraction": 0.9,
+   "loss_h": 0.0019932353156386887,
+   "turnover_days": 20.904037942612657,
+   "switch_k": [
+    286.44845551867695
+   ],
+   "states": [
+    {
+     "kind": "methanogen",
+     "temperature_k": 280.0893171036301,
+     "r": 0.1971110198254407,
+     "stable": false
+    },
+    {
+     "kind": "acetogen",
+     "temperature_k": 278.9907789122228,
+     "r": 0.198634106034694,
+     "stable": true
+    }
+   ]
+  },
+  {
+   "fraction": 0.9,
+   "loss_h": 0.0021520029345153875,
+   "turnover_days": 19.361807550717696,
+   "switch_k": [
+    287.07386502401977
+   ],
+   "states": [
+    {
+     "kind": "methanogen",
+     "temperature_k": 280.62365555177524,
+     "r": 0.19637017756086625,
+     "stable": false
+    },
+    {
+     "kind": "acetogen",
+     "temperature_k": 279.6330049007377,
+     "r": 0.19774368132849596,
+     "stable": true
+    }
+   ]
+  },
+  {
+   "fraction": 0.9,
+   "loss_h": 0.0023234169060861233,
+   "turnover_days": 17.93335778762823,
+   "switch_k": [
+    287.7333487155832
+   ],
+   "states": [
+    {
+     "kind": "methanogen",
+     "temperature_k": 281.21057986431316,
+     "r": 0.19555642676613344,
+     "stable": false
+    },
+    {
+     "kind": "acetogen",
+     "temperature_k": 280.3072552226659,
+     "r": 0.1968088559624358,
+     "stable": true
+    }
+   ]
+  },
+  {
+   "fraction": 0.9,
+   "loss_h": 0.0025084845531135186,
+   "turnover_days": 16.610294296989075,
+   "switch_k": [
+    288.65062168652344
+   ],
+   "states": [
+    {
+     "kind": "methanogen",
+     "temperature_k": 281.8560521938567,
+     "r": 0.19466150111741934,
+     "stable": false
+    },
+    {
+     "kind": "acetogen",
+     "temperature_k": 281.0153072702827,
+     "r": 0.1958271656419771,
+     "stable": true
+    }
+   ]
+  },
+  {
+   "fraction": 0.9,
+   "loss_h": 0.0027082934348657455,
+   "turnover_days": 15.384842030137015,
+   "switch_k": [
+    289.9866446428671
+   ],
+   "states": [
+    {
+     "kind": "methanogen",
+     "temperature_k": 282.5593849229479,
+     "r": 0.19353091346068396,
+     "stable": false
+    },
+    {
+     "kind": "acetogen",
+     "temperature_k": 281.7591283878805,
+     "r": 0.19479588271050863,
+     "stable": true
+    }
+   ]
+  },
+  {
+   "fraction": 0.9,
+   "loss_h": 0.0029240177382128638,
+   "turnover_days": 14.249799555639152,
+   "switch_k": [
+    291.41956382548824
+   ],
+   "states": [
+    {
+     "kind": "acetogen",
+     "temperature_k": 296.8180563305258,
+     "r": 0.16316520560107656,
+     "stable": false
+    },
+    {
+     "kind": "acetogen",
+     "temperature_k": 294.7306265982966,
+     "r": 0.171729147775633,
+     "stable": false
+    },
+    {
+     "kind": "methanogen",
+     "temperature_k": 283.49454090771854,
+     "r": 0.19197214865602003,
+     "stable": false
+    },
+    {
+     "kind": "acetogen",
+     "temperature_k": 282.51092959482713,
+     "r": 0.19361168122702793,
+     "stable": true
+    }
+   ]
+  },
+  {
+   "fraction": 0.9,
+   "loss_h": 0.003156925177794596,
+   "turnover_days": 13.198496739721492,
+   "switch_k": [
+    292.94896148580796
+   ],
+   "states": [
+    {
+     "kind": "acetogen",
+     "temperature_k": 296.60029344680265,
+     "r": 0.15914780863127492,
+     "stable": false
+    },
+    {
+     "kind": "mixed",
+     "temperature_k": 292.94896148580796,
+     "r": 0.17568757273852986,
+     "stable": true
+    },
+    {
+     "kind": "methanogen",
+     "temperature_k": 285.1928204255353,
+     "r": 0.18914137134831382,
+     "stable": false
+    }
+   ]
+  },
+  {
+   "fraction": 0.9,
+   "loss_h": 0.0034083844458086903,
+   "turnover_days": 12.224755548894846,
+   "switch_k": [
+    294.0071186175119
+   ],
+   "states": [
+    {
+     "kind": "acetogen",
+     "temperature_k": 296.36585015520836,
+     "r": 0.15482268327869939,
+     "stable": false
+    },
+    {
+     "kind": "mixed",
+     "temperature_k": 294.0071186175119,
+     "r": 0.17333660589552236,
+     "stable": true
+    },
+    {
+     "kind": "methanogen",
+     "temperature_k": 287.2256665088302,
+     "r": 0.1857529217425335,
+     "stable": false
+    }
+   ]
+  },
+  {
+   "fraction": 0.9,
+   "loss_h": 0.0036798732551989784,
+   "turnover_days": 11.322853744432473,
+   "switch_k": [
+    295.0721435486628
+   ],
+   "states": [
+    {
+     "kind": "acetogen",
+     "temperature_k": 296.1129235606023,
+     "r": 0.15015656884551504,
+     "stable": false
+    },
+    {
+     "kind": "mixed",
+     "temperature_k": 295.0721435486628,
+     "r": 0.1709703804786221,
+     "stable": true
+    },
+    {
+     "kind": "methanogen",
+     "temperature_k": 291.33194638094903,
+     "r": 0.17890836891177916,
+     "stable": false
+    }
+   ]
+  },
+  {
+   "fraction": 0.9,
+   "loss_h": 0.003972987023509263,
+   "turnover_days": 10.487491255348552,
+   "switch_k": [
+    296.23910384383345
+   ],
+   "states": [
+    {
+     "kind": "acetogen",
+     "temperature_k": 295.83943604985694,
+     "r": 0.14511113650111426,
+     "stable": true
+    },
+    {
+     "kind": "mixed",
+     "temperature_k": 296.23910384383345,
+     "r": 0.15248440487906934,
+     "stable": false
+    },
+    {
+     "kind": "methanogen",
+     "temperature_k": 296.85481583457903,
+     "r": 0.16700971782222737,
+     "stable": true
+    }
+   ]
+  },
+  {
+   "fraction": 0.9,
+   "loss_h": 0.0042894482484341625,
+   "turnover_days": 9.713759032266408,
+   "switch_k": [
+    297.5241572566648
+   ],
+   "states": [
+    {
+     "kind": "methanogen",
+     "temperature_k": 283.869602935684,
+     "r": 0.0026067223548318654,
+     "stable": false
+    },
+    {
+     "kind": "acetogen",
+     "temperature_k": 295.54298453715177,
+     "r": 0.13964205293428913,
+     "stable": true
+    },
+    {
+     "kind": "methanogen",
+     "temperature_k": 296.092154866626,
+     "r": 0.14977341774639016,
+     "stable": false
+    }
+   ]
+  },
+  {
+   "fraction": 0.9,
+   "loss_h": 0.004631116630162839,
+   "turnover_days": 8.997110199144691,
+   "switch_k": [],
+   "states": [
+    {
+     "kind": "methanogen",
+     "temperature_k": 285.20708178299907,
+     "r": 0.008002456500782167,
+     "stable": false
+    },
+    {
+     "kind": "methanogen",
+     "temperature_k": 294.84800358671356,
+     "r": 0.12682070194635153,
+     "stable": false
+    },
+    {
+     "kind": "acetogen",
+     "temperature_k": 295.2207774387328,
+     "r": 0.13369781763254515,
+     "stable": true
+    }
+   ]
+  },
+  {
+   "fraction": 0.9,
+   "loss_h": 0.005,
+   "turnover_days": 8.333333333333334,
+   "switch_k": [],
+   "states": [
+    {
+     "kind": "methanogen",
+     "temperature_k": 286.8930177409611,
+     "r": 0.018208077206040313,
+     "stable": false
+    },
+    {
+     "kind": "methanogen",
+     "temperature_k": 291.48866817416206,
+     "r": 0.08594730612106753,
+     "stable": false
+    },
+    {
+     "kind": "acetogen",
+     "temperature_k": 294.86955533439897,
+     "r": 0.12721829920610903,
+     "stable": true
+    }
+   ]
+  }
+ ]
+}
