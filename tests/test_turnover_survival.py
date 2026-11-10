@@ -88,3 +88,28 @@ def test_select_longest_profile_before_rejecting_obsolete_pilot_source(tmp_path,
     physical.write_text("changed\n")
     with pytest.raises(RuntimeError,match="Physical source differs"):
         s.records(tmp_path,"census")
+
+
+def test_explicit_receipt_selection_resolves_numeric_repeat_and_still_checks_sources(tmp_path,monkeypatch):
+    monkeypatch.setattr(s.e,"ROOT",tmp_path)
+    physical=tmp_path/"physical.py";physical.write_text("frozen\n")
+    records=[]
+    for solver in ("native","guarded"):
+        protocol=dict(case=dict(case_id="case",years=100000.,max_step_yr=10.),mode="census",
+                      solver=solver,source_sha256={"physical.py":sha256(physical.read_bytes()).hexdigest()})
+        record=dict(execution_status="complete",protocol=protocol,
+                    fingerprint=sha256(s.e.dumps(protocol).encode()).hexdigest())
+        records.append(record)
+        (tmp_path/f"{solver}.receipt.json").write_text(json.dumps(record))
+    with pytest.raises(RuntimeError,match="Ambiguous protocol"):
+        s.records(tmp_path,"census")
+    plan=dict(schema="turnover_dormancy_receipt_selection_v1",selections={"census":{"case":records[1]["fingerprint"]}})
+    (tmp_path/"receipt_selection.json").write_text(json.dumps(plan))
+    assert s.records(tmp_path,"census")["case"]==records[1]
+    physical.write_text("changed\n")
+    with pytest.raises(RuntimeError,match="Physical source differs"):
+        s.records(tmp_path,"census")
+    plan["selections"]["census"]["case"]="missing"
+    (tmp_path/"receipt_selection.json").write_text(json.dumps(plan))
+    with pytest.raises(RuntimeError,match="Selected receipts are missing"):
+        s.records(tmp_path,"census")

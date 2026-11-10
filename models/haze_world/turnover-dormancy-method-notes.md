@@ -92,3 +92,30 @@ required for cases with a census removal or any dense-flow minimum below
 Gaussian estimate only at rare, resolved interior first minima with positive
 curvature; that candidate check does not establish a scalar reduction or a
 Gaussian shape. Check rate-grid and horizon effects for borderline classes.
+
+## Uncensored numerical trials
+
+The full uncensored T3 experiment exposed failures absent from the short
+controls: squared stage-allocation trials overflowed, and nonfinite dense
+coefficients then reached the minimum finder. The affected prefixes are
+unqualified; their failure ledger is retained outside Git. The source-frozen
+census experiment remains separate.
+
+A named trial-integration variant is qualified through the first loss window
+of `dormancy_0000`; its longer conditional tail remains unqualified. The
+[review](review/dormancy-trial-integration-review-2026-11-11.md) records both
+the successful and bounded failed controls. It reuses the frozen
+physical equations, census rule and accepted-flow bookkeeping. Invalid
+numerical trials must return to the last valid coordinates, and any exact
+change from a positive coordinate to a linear coordinate must preserve the
+represented stocks. No population seed, clipping or chemical inventory reset
+is authorized by this numerical amendment. Its final controls and source
+hashes accompany the qualified prefix protocol.
+
+Prefix horizons follow the first-window question. A closed first window can
+be scored immediately. A terminal survival probability below 0.5 is already
+a one-sided loss bound for every later horizon; a protected terminal window
+requires extension. This does not turn later continuum recovery into a real
+finite population. Prefix horizons and their selected receipt fingerprints
+remain explicit, rather than requiring an arbitrary long ghost-conditioned
+tail after the first loss is decisive.

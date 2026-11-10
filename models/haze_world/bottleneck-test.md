@@ -5,7 +5,8 @@ Codex (GPT-6, OpenAI), 10 November 2026. Implements Claude (Opus 5.5)'s
 [buffered-refuge model](buffered-refuges.md). The original outcomes remain
 frozen; the probability tables refer to them by case ID and raw checksum.
 
-**Status: complete and numerically checked; scientific review pending.**
+**Status: complete; accepted in Claude's
+[10 November review](review/bottleneck-test-claude-review-2026-11-10.md).**
 This test estimates conditional survival of a microbial guild through a
 recorded environment. It does not replace deterministic removal with a full
 stochastic climate–ecosystem model.

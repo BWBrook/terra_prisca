@@ -191,7 +191,13 @@ def main():
         pair_counts=dict(Counter("same" if v["same_endpoint"] else "unsettled" if not v["both_stationary"] else "different" for v in paired)),
         receipts=[dict(case_id=c.case_id,**{k:records[c.case_id][k] for k in ("fingerprint","raw_file","raw_sha256")}) for c in designed],
         pair_comparisons=paired,endpoint_states=endpoint_details,
-        physical_source_sha256=records[designed[0].case_id]["protocol"]["source_sha256"],
+        physical_source_sha256=runner.sources(),
+        selected_numerical_protocols=[dict(case_id=c.case_id,fingerprint=records[c.case_id]["fingerprint"],
+            solver=records[c.case_id]["protocol"].get("solver","native_frozen"),
+            numerical_source_sha256={k:v for k,v in records[c.case_id]["protocol"]["source_sha256"].items()
+                                    if k not in runner.sources()}) for c in designed],
+        receipt_selection_sha256=sha256((raw/"receipt_selection.json").read_bytes()).hexdigest()
+            if (raw/"receipt_selection.json").exists() else None,
         source_sha256={str(Path(__file__).relative_to(e.ROOT)):sha256(Path(__file__).read_bytes()).hexdigest()},
         agreement="Both census-stationary; same local and global guild occupancy at the actual one-cell floor, delta T<0.01K, every stock relative difference<0.001. Biomass floors are the larger actual one-cell density of the two profiles; pressure1Pa, acetate1e-9M, methane ratio0.001. Same temperature alone does not imply the same community.")
     (output/"endpoint_assessment.json").write_text(e.dumps(manifest)+"\n")

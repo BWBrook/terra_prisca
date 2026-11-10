@@ -211,6 +211,15 @@ competing guild; it certifies a stable resident preparation, not resistance
 to invasion. A linear-ramp switching corner is labeled unqualified instead
 of being silently averaged into a smooth Jacobian.
 
+If the initial finite-difference pair disagrees, the gate tries at most three
+successively finer pairs, retaining every coarse spectrum and the refinement
+history. This changes the stencil, not the agreement tolerance. The two
+one-habitat bistable methanogen starts that failed the first pair qualify at
+relative steps 10⁻⁶ and 10⁻⁷: their leading eigenvalues are −0.002213302 and
+−0.002212733/year. Further checks at 10⁻⁸ and 10⁻⁹ converge toward
+−0.00221267/year; the coarse discrepancy is finite-difference bias at the
+cubic switching boundary.
+
 The highest-r qualifying root is still a selection rule, not a global root
 count. Its seeded search inherits qualifying roots found by the old-model
 start search; failure to find a candidate is not a proof of nonexistence.

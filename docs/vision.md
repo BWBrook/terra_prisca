@@ -159,8 +159,13 @@ Fidelity is measured against the published figures, digitised.
    maps the exchange transition. The steep exchange response persists, while
    the probabilities must remain conditional on the recorded environment:
    one guild's improbable uncensored recovery can create a later hazard for
-   the other. Fixed turnover and prescribed heat baths remain assumptions;
-   turnover and dormancy are separate proposed stages.
+   the other. The [turnover stage](../models/haze_world/turnover.md) now
+   resolves the equilibrium map and 196 refuge outcomes. Refuges can shift
+   establishment thresholds through methane as well as retain cells; that
+   effect depends on the assumed low-methane climate branch. A named
+   [dormancy variant](../models/haze_world/dormancy.md) is undergoing full
+   numerical and demographic qualification. Fixed turnover, dormant mortality
+   and prescribed heat baths remain assumptions.
    A [solar-response search](../models/haze_response/solar-responses.md) found
    a second Sun-age checkpoint, but no matched hazy luminosity grid.
    This direction may lead to a paper.

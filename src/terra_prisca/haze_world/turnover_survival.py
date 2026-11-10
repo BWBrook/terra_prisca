@@ -138,17 +138,27 @@ def load(record,raw):
 
 
 def records(raw,mode):
+    selection_path=raw/"receipt_selection.json"
+    overrides={}
+    if selection_path.exists():
+        plan=json.loads(selection_path.read_text())
+        if plan.get("schema")!="turnover_dormancy_receipt_selection_v1":
+            raise RuntimeError("Unknown receipt selection schema")
+        overrides=plan["selections"].get(mode,{})
     selected={}
     for path in raw.glob("*.receipt.json"):
         record=json.loads(path.read_text());protocol=record["protocol"]
         if record["execution_status"]!="complete" or protocol["mode"]!=mode:continue
         if sha256(e.dumps(protocol).encode()).hexdigest()!=record["fingerprint"]:raise RuntimeError("Changed protocol")
         case=protocol["case"];key=case["case_id"]
+        if key in overrides and record["fingerprint"]!=overrides[key]:continue
         priority=(case["years"],-case["max_step_yr"],-case.get("rtol",2e-8))
         if key not in selected or priority>selected[key][0]:selected[key]=(priority,record)
         elif priority==selected[key][0] and protocol!=selected[key][1]["protocol"]:
             raise RuntimeError("Ambiguous protocol for "+key)
     result={key:v[1] for key,v in selected.items()}
+    if missing:=set(overrides)-set(result):
+        raise RuntimeError("Selected receipts are missing: "+", ".join(sorted(missing)))
     for record in result.values():
         for name,digest in record["protocol"]["source_sha256"].items():
             if sha256((e.ROOT/name).read_bytes()).hexdigest()!=digest:raise RuntimeError("Physical source differs: "+name)
@@ -219,6 +229,8 @@ def main():
         sources.append(Path(dormancy_branching.__file__))
     (output/(name+"_manifest.json")).write_text(e.dumps(dict(profiles=len(tasks),rows=len(rows),
         source_sha256={str(v.relative_to(e.ROOT)):sha256(v.read_bytes()).hexdigest() for v in sources},
+        receipt_selection_sha256=sha256((raw/"receipt_selection.json").read_bytes()).hexdigest()
+            if (raw/"receipt_selection.json").exists() else None,
         rate_stride_yr=args.rate_stride,
         gaussian_scope="Local curvature estimate; scalar reduction, Gaussian shape and slow mortality not assumed valid",
         interpretation="Each guild's first bottleneck only; later windows excluded; per-guild conditional diagnostics, not local occupancy or joint community survival probabilities"))+"\n")
