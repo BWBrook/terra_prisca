@@ -28,6 +28,11 @@ PROGRESS_SOURCES = frozenset(("src/terra_prisca/haze_world/dormancy_progress_exp
                               "src/terra_prisca/haze_world/dormancy_progress_integration.py",
                               "src/terra_prisca/haze_world/dormancy_jacobian_integration.py",
                               "src/terra_prisca/haze_world/dormancy_trial_integration.py"))
+CHEMICAL_SOURCES = frozenset(("src/terra_prisca/haze_world/dormancy_chemical_experiments.py",
+                              "src/terra_prisca/haze_world/dormancy_chemical_integration.py",
+                              "src/terra_prisca/haze_world/dormancy_progress_integration.py",
+                              "src/terra_prisca/haze_world/dormancy_jacobian_integration.py",
+                              "src/terra_prisca/haze_world/dormancy_trial_integration.py"))
 
 
 def require_gate(path):
@@ -161,6 +166,8 @@ def _numerical_protocol(protocol, physical, root):
             variant = "analytic_jacobian"
         elif extras == PROGRESS_SOURCES and protocol.get("solver") == "analytic_dormancy_jacobian_progress_restart":
             variant = "analytic_jacobian_progress_restart"
+        elif extras == CHEMICAL_SOURCES and protocol.get("solver") == "analytic_dormancy_chemical_jacobian":
+            variant = "analytic_chemical_jacobian"
         else:
             raise RuntimeError("Unapproved probability source superset or solver protocol")
         if (protocol.get("mode") not in ("census", "uncensored")

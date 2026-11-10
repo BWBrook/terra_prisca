@@ -321,6 +321,54 @@ def test_progress_restart_rejects_partial_mixed_or_unverified_sources(tmp_path, 
         a.validate_probability_protocol(progress, native, tmp_path)
 
 
+def chemical_prefix(prefix, native, root):
+    chemical = deepcopy(prefix)
+    sources = dict(native["protocol"]["source_sha256"])
+    for name in a.CHEMICAL_SOURCES:
+        path = root/name
+        path.parent.mkdir(parents=True, exist_ok=True)
+        if not path.exists():
+            path.write_text(name)
+        sources[name] = a.sha256(path.read_bytes()).hexdigest()
+    chemical["protocol"].update(source_sha256=sources, solver="analytic_dormancy_chemical_jacobian")
+    chemical["fingerprint"] = a.sha256(a.e.dumps(chemical["protocol"]).encode()).hexdigest()
+    return chemical
+
+
+def test_exact_chemical_jacobian_variant_accepts_census_and_uncensored_modes(tmp_path, monkeypatch):
+    guard, native = profile_contract(tmp_path, monkeypatch)
+    chemical = chemical_prefix(guard, native, tmp_path)
+    census = guarded_census(chemical, native)
+    assert a.validate_probability_protocol(chemical, native, tmp_path) == "analytic_chemical_jacobian_uncensored_unchanged_physics"
+    assert a.validate_probability_protocol(chemical, census, tmp_path) == "analytic_chemical_jacobian_uncensored_unchanged_physics"
+    assert a.validate_probability_protocol(census, census, tmp_path) == "analytic_chemical_jacobian_census_unchanged_physics"
+
+
+@pytest.mark.parametrize("changed", ("missing_parent_helper", "missing_chemical_helper", "missing_runner", "mixed_partial_set", "wrong_solver", "new_file_hash"))
+def test_chemical_jacobian_rejects_partial_mixed_or_unverified_sources(tmp_path, monkeypatch, changed):
+    guard, native = profile_contract(tmp_path, monkeypatch)
+    chemical = chemical_prefix(guard, native, tmp_path)
+    sources = chemical["protocol"]["source_sha256"]
+    parent = "src/terra_prisca/haze_world/dormancy_progress_integration.py"
+    helper = "src/terra_prisca/haze_world/dormancy_chemical_integration.py"
+    runner = "src/terra_prisca/haze_world/dormancy_chemical_experiments.py"
+    if changed == "missing_parent_helper":
+        del sources[parent]
+    elif changed == "missing_chemical_helper":
+        del sources[helper]
+    elif changed == "missing_runner":
+        del sources[runner]
+    elif changed == "mixed_partial_set":
+        del sources[runner]
+        sources["src/terra_prisca/haze_world/dormancy_progress_experiments.py"] = "wrong-runner"
+    elif changed == "wrong_solver":
+        chemical["protocol"]["solver"] = "analytic_dormancy_jacobian_progress_restart"
+    else:
+        (tmp_path/helper).write_text("changed")
+    with pytest.raises(RuntimeError):
+        a.validate_probability_protocol(chemical, native, tmp_path)
+
+
 def test_guarded_baseline_and_guarded_unculled_census_reuse_share_native_physics(tmp_path, monkeypatch):
     prefix, native = profile_contract(tmp_path, monkeypatch)
     census = guarded_census(prefix, native)
