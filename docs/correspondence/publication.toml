@@ -1,6 +1,7 @@
 project = "terra-prisca"
 flag_terms = ["password", "token", "credential", "student", "ssh", "hostname", "private", "email"]
-cleared = []
+# Message 3196 uses "privately" for isolated Python globals, not confidential material.
+cleared = [3196]
 redact = [['\bmini\b', '[host]']]
 
 [withheld]
