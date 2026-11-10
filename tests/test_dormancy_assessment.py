@@ -273,6 +273,54 @@ def test_jacobian_declaration_rejects_partial_mixed_or_unverified_sources(tmp_pa
         a.validate_probability_protocol(jacobian, native, tmp_path)
 
 
+def progress_prefix(prefix, native, root):
+    progress = deepcopy(prefix)
+    sources = dict(native["protocol"]["source_sha256"])
+    for name in a.PROGRESS_SOURCES:
+        path = root/name
+        path.parent.mkdir(parents=True, exist_ok=True)
+        if not path.exists():
+            path.write_text(name)
+        sources[name] = a.sha256(path.read_bytes()).hexdigest()
+    progress["protocol"].update(source_sha256=sources, solver="analytic_dormancy_jacobian_progress_restart")
+    progress["fingerprint"] = a.sha256(a.e.dumps(progress["protocol"]).encode()).hexdigest()
+    return progress
+
+
+def test_exact_progress_restart_variant_accepts_census_and_uncensored_modes(tmp_path, monkeypatch):
+    guard, native = profile_contract(tmp_path, monkeypatch)
+    progress = progress_prefix(guard, native, tmp_path)
+    census = guarded_census(progress, native)
+    assert a.validate_probability_protocol(progress, native, tmp_path) == "analytic_jacobian_progress_restart_uncensored_unchanged_physics"
+    assert a.validate_probability_protocol(progress, census, tmp_path) == "analytic_jacobian_progress_restart_uncensored_unchanged_physics"
+    assert a.validate_probability_protocol(census, census, tmp_path) == "analytic_jacobian_progress_restart_census_unchanged_physics"
+
+
+@pytest.mark.parametrize("changed", ("missing_parent_helper", "missing_progress_helper", "missing_runner", "mixed_partial_set", "wrong_solver", "new_file_hash"))
+def test_progress_restart_rejects_partial_mixed_or_unverified_sources(tmp_path, monkeypatch, changed):
+    guard, native = profile_contract(tmp_path, monkeypatch)
+    progress = progress_prefix(guard, native, tmp_path)
+    sources = progress["protocol"]["source_sha256"]
+    parent = "src/terra_prisca/haze_world/dormancy_jacobian_integration.py"
+    helper = "src/terra_prisca/haze_world/dormancy_progress_integration.py"
+    runner = "src/terra_prisca/haze_world/dormancy_progress_experiments.py"
+    if changed == "missing_parent_helper":
+        del sources[parent]
+    elif changed == "missing_progress_helper":
+        del sources[helper]
+    elif changed == "missing_runner":
+        del sources[runner]
+    elif changed == "mixed_partial_set":
+        del sources[runner]
+        sources["src/terra_prisca/haze_world/dormancy_jacobian_experiments.py"] = "wrong-runner"
+    elif changed == "wrong_solver":
+        progress["protocol"]["solver"] = "analytic_dormancy_switching_jacobian"
+    else:
+        (tmp_path/helper).write_text("changed")
+    with pytest.raises(RuntimeError):
+        a.validate_probability_protocol(progress, native, tmp_path)
+
+
 def test_guarded_baseline_and_guarded_unculled_census_reuse_share_native_physics(tmp_path, monkeypatch):
     prefix, native = profile_contract(tmp_path, monkeypatch)
     census = guarded_census(prefix, native)
