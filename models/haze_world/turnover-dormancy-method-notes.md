@@ -119,3 +119,20 @@ requires extension. This does not turn later continuum recovery into a real
 finite population. Prefix horizons and their selected receipt fingerprints
 remain explicit, rather than requiring an arbitrary long ghost-conditioned
 tail after the first loss is decisive.
+
+## Qualified switching matrix and chemical charts
+
+The later [Jacobian variant](review/dormancy-jacobian-review-2026-11-11.md)
+retains the physical function, census and error tolerances. It differentiates
+switching and allocation algebraically, avoiding a false waking source from
+finite perturbations across the zero-growth boundary. A producer's linear
+allocation and tiny acetate pool are conditioned together, preserving every
+decoded stock and inventory exactly. Final original first-window controls and
+a formal 100,000-year census pilot qualify this numerical source.
+
+The [platform audit](review/check_dormancy_platform_precision.json) qualifies
+that result: microscopic dormant-bank stationarity is not reproducible on a
+one-cell comparison scale at the adopted tolerance, although the matched
+climate and community are. Preserve those strict flags and distinguish them
+from the independently controlled, macroscopic spatial cycles. No endpoint
+or probability threshold is changed by this numerical qualification.

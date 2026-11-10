@@ -55,7 +55,11 @@ The implementation is
 [`dormancy.py`](../../src/terra_prisca/haze_world/dormancy.py), with the
 positive-coordinate integration in
 [`dormancy_integration.py`](../../src/terra_prisca/haze_world/dormancy_integration.py).
-The active model and its frozen earlier outputs are unchanged.
+The qualified production numerical variant is
+[`dormancy_jacobian_integration.py`](../../src/terra_prisca/haze_world/dormancy_jacobian_integration.py).
+It retains the physical equations and accepted-flow rules while correcting
+the Newton matrix and coordinating chemical charts. The active model and
+its frozen earlier outputs are unchanged.
 
 ## Stationary locations and resident preparation
 
@@ -199,11 +203,12 @@ Run the physical experiment, generic endpoint comparison, first-window
 scoring and final T3 assessment in that order:
 
 ```sh
-uv run python -m terra_prisca.haze_world.dormancy_experiments --workers 4
+uv run python -m terra_prisca.haze_world.dormancy_jacobian_experiments --mode census --workers 4
 uv run python -m terra_prisca.haze_world.turnover_assessment --variant dormancy
-# After numerical controls qualify, run the required guarded prefixes;
-# this shows one selected case rather than launching the whole grid.
-uv run python -m terra_prisca.haze_world.dormancy_prefixes --case-id dormancy_0000 --workers 4
+# Run the required first-window prefixes at their recorded horizons;
+# this is one selected example.
+uv run python -m terra_prisca.haze_world.dormancy_jacobian_experiments \
+  --mode uncensored --years 3000 --case-id dormancy_0010 --workers 4
 uv run python -m terra_prisca.haze_world.turnover_survival --variant dormancy
 uv run python -m terra_prisca.haze_world.dormancy_assessment
 ```
@@ -215,8 +220,7 @@ under gitignored `local/haze/dormancy/`; receipts pin the source graph,
 protocol, environment and payload checksum. Derived summaries, assessment
 JSON and figures belong under `figures/dormancy/`.
 
-The guarded runner has a **bounded first-window qualification**, with other
-required profiles still being checked. Its
+The earlier guarded runner has a **bounded first-window qualification**. Its
 [numerical review](review/dormancy-trial-integration-review-2026-11-11.md)
 records the successful 3,000-year control and the unqualified longer tail.
 It rejects
@@ -226,14 +230,31 @@ accepted for assessment only when every census physical source and parameter
 matches, the source graph adds exactly `dormancy_prefixes.py` and
 `dormancy_trial_integration.py`, both added hashes match current files, and
 the protocol records `solver="nonfinite_stage_trial_rejection"`, architecture
-and operating system. Census and prefix recording rules retain their original
+and operating system.
+
+The production Jacobian variant has a separate
+[qualification](review/dormancy-jacobian-review-2026-11-11.md), covering both
+original 3,000-year first-window controls and a formal 100,000-year census
+pilot. Its source graph adds exactly `dormancy_jacobian_experiments.py`,
+`dormancy_jacobian_integration.py` and the frozen trial helper, with solver
+flag `analytic_dormancy_switching_jacobian`. Current file hashes and platform
+provenance must match. Neither allowlist accepts partial or mixed variants.
+Census and prefix recording rules retain their original
 one-cell/ten-year and zero-floor/annual definitions, respectively. This
 declared numerical change does not alter the ongoing frozen census batch.
 Any numerical repeat is selected by an explicit receipt fingerprint shared
 by the endpoint and probability consumers. Reused census evidence requires
 the canonical physical graph, an approved numerical graph and no removals.
-A guarded trial-control pass is not by itself
+A numerical trial-control pass is not by itself
 a scientific endpoint or survival result.
+
+The [platform check](review/check_dormancy_platform_precision.json) records a
+real precision limit. Matched Mac and Linux runs agree in climate and final
+stocks, yet a transient Linux dormant bank of about 996 cells changes the
+strict stationarity flag. It represents about `10^-23` of total biomass and
+does not resemble the macroscopic cycles above. Both original flags remain;
+criteria are not relaxed. Tiny-stage stationarity is therefore assessed
+separately from material ecological or climate oscillations.
 
 No decisive T3 result is stated here until the T1 basin gate passes and the
 full receipts, stationarity checks and required first-window evidence have

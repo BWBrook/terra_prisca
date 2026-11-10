@@ -136,3 +136,34 @@ def test_zero_root_with_real_incoming_source_requests_existing_linear_chart():
         numerical.coordinate_jacobian(0.,z,c)
     assert error.value.index==2
     assert np.array_equal(c.decode(z)[0],before)
+
+
+def test_captured_1399_year_waking_pole_advances_without_stock_reset():
+    import json
+    from pathlib import Path
+    from terra_prisca.haze_world import dormancy_experiments as runner
+
+    fixture=json.loads((Path(__file__).parents[1]/"models/haze_world/review/dormancy_1399_regression.json").read_text())
+    case=next(c for c in runner.design() if c.case_id==fixture["case_id"])
+    p=runner.parameters(case)
+    initial=np.zeros(p.state_size)
+    initial[p.biomass_indices[p.weights>0]]=1e-4
+    c=numerical._Coordinates(initial,p)
+    c.stage_positive[:]=fixture["stage_positive"]
+    c.acetate_positive[:]=fixture["acetate_positive"]
+    internal=np.asarray(fixture["state"])
+    time=fixture["time_yr"]
+    atol=np.r_[np.tile([1e-7,1e-14,1e-14,1e-11,1e-14,1e-14],p.n_patches),1e-11,np.full(len(c.groups),1e-8)]
+    atol[np.r_[p.biomass_indices.ravel(),p.dormant_indices.ravel()]]=min(1e-14,p.dispersal_yr*min(p.weights[p.weights>0])*1e-7)
+    atol[:c.m][c.stage_positive]=1e-12
+    solver=numerical._GuardedLSODA(c.derivative,time,internal,time+1.,nominal_max_step=10.,events=[],max_step=10.,first_step=1e-6,rtol=case.rtol,atol=atol)
+    steps=0
+    while solver.status=="running" and steps<500:
+        start=solver.y.copy();left=solver.t
+        solver.step();steps+=1
+        assert solver.t>left
+        assert frozen._positive_piece(solver.dense_output(),left,solver.t,c,start)
+        assert np.all(c.decode(solver.y)[0]>=0.)
+    assert solver.status=="finished" and steps<500
+    assert c.rejected==[] and c.chemical_events==[]
+    assert np.all(np.isfinite(c.global_logs(solver.y)))

@@ -158,8 +158,12 @@ def test_native_source_graph_does_not_hide_an_undeclared_uncensored_solver(tmp_p
         a.validate_probability_protocol(prefix, census, tmp_path)
 
 
-def test_probability_rows_consume_receipted_guarded_superset(tmp_path, monkeypatch):
+@pytest.mark.parametrize("jacobian", (False, True))
+def test_probability_rows_consume_receipted_guarded_superset(tmp_path, monkeypatch, jacobian):
     prefix, census = profile_contract(tmp_path, monkeypatch)
+    if jacobian:
+        prefix = jacobian_prefix(prefix, census, tmp_path)
+        census = guarded_census(prefix, census)
     monkeypatch.setattr(a.e, "ROOT", tmp_path)
     payload = tmp_path/"guarded.npz"; payload.write_bytes(b"payload hash is checked; arrays are loaded later")
     digest = a.sha256(payload.read_bytes()).hexdigest()
@@ -172,7 +176,8 @@ def test_probability_rows_consume_receipted_guarded_superset(tmp_path, monkeypat
     path = tmp_path/"first_survival.json"; path.write_text(a.e.dumps(rows))
     accepted = a.probability_rows(path, {"case": census}, tmp_path, {"case": prefix})
     assert len(accepted) == 2
-    assert all(v["numerical_profile_contract"] == "guarded_uncensored_unchanged_physics" for v in accepted.values())
+    expected = "analytic_jacobian_uncensored_unchanged_physics" if jacobian else "guarded_uncensored_unchanged_physics"
+    assert all(v["numerical_profile_contract"] == expected for v in accepted.values())
     rows[0]["census_fingerprint"] = "superseded-census-receipt"
     path.write_text(a.e.dumps(rows))
     with pytest.raises(RuntimeError, match="census baseline differs"):
@@ -211,6 +216,61 @@ def guarded_census(prefix, census):
                                census=deepcopy(census["protocol"]["census"]))
     guarded["fingerprint"] = a.sha256(a.e.dumps(guarded["protocol"]).encode()).hexdigest()
     return guarded
+
+
+def jacobian_prefix(prefix, native, root):
+    jacobian = deepcopy(prefix)
+    sources = dict(native["protocol"]["source_sha256"])
+    for name in a.JACOBIAN_SOURCES:
+        path = root/name
+        path.parent.mkdir(parents=True, exist_ok=True)
+        if not path.exists():
+            path.write_text(name)
+        sources[name] = a.sha256(path.read_bytes()).hexdigest()
+    jacobian["protocol"].update(source_sha256=sources, solver="analytic_dormancy_switching_jacobian")
+    jacobian["fingerprint"] = a.sha256(a.e.dumps(jacobian["protocol"]).encode()).hexdigest()
+    return jacobian
+
+
+def test_exact_jacobian_source_variant_accepts_both_modes_and_cross_variant_baseline(tmp_path, monkeypatch):
+    guard, native = profile_contract(tmp_path, monkeypatch)
+    jacobian = jacobian_prefix(guard, native, tmp_path)
+    census = guarded_census(jacobian, native)
+    assert a.validate_probability_protocol(jacobian, native, tmp_path) == "analytic_jacobian_uncensored_unchanged_physics"
+    assert a.validate_probability_protocol(jacobian, census, tmp_path) == "analytic_jacobian_uncensored_unchanged_physics"
+    assert a.validate_probability_protocol(census, census, tmp_path) == "analytic_jacobian_census_unchanged_physics"
+    assert a.validate_probability_protocol(guard, census, tmp_path) == "guarded_uncensored_unchanged_physics"
+    assert a.validate_probability_protocol(jacobian, guarded_census(guard, native), tmp_path) == "analytic_jacobian_uncensored_unchanged_physics"
+
+
+@pytest.mark.parametrize("changed", ("missing_trial", "missing_runner", "old_prefix_extra", "old_flag", "new_flag_old_set", "mixed_partial_set", "provenance", "new_file_hash"))
+def test_jacobian_declaration_rejects_partial_mixed_or_unverified_sources(tmp_path, monkeypatch, changed):
+    guard, native = profile_contract(tmp_path, monkeypatch)
+    jacobian = jacobian_prefix(guard, native, tmp_path)
+    sources = jacobian["protocol"]["source_sha256"]
+    old_runner = "src/terra_prisca/haze_world/dormancy_prefixes.py"
+    new_runner = "src/terra_prisca/haze_world/dormancy_jacobian_experiments.py"
+    new_helper = "src/terra_prisca/haze_world/dormancy_jacobian_integration.py"
+    trial = "src/terra_prisca/haze_world/dormancy_trial_integration.py"
+    if changed == "missing_trial":
+        del sources[trial]
+    elif changed == "missing_runner":
+        del sources[new_runner]
+    elif changed == "old_prefix_extra":
+        sources[old_runner] = guard["protocol"]["source_sha256"][old_runner]
+    elif changed == "old_flag":
+        jacobian["protocol"]["solver"] = "nonfinite_stage_trial_rejection"
+    elif changed == "new_flag_old_set":
+        jacobian["protocol"]["source_sha256"] = dict(guard["protocol"]["source_sha256"])
+    elif changed == "mixed_partial_set":
+        del sources[new_helper]
+        sources[old_runner] = guard["protocol"]["source_sha256"][old_runner]
+    elif changed == "provenance":
+        del jacobian["protocol"]["operating_system"]
+    else:
+        (tmp_path/new_helper).write_text("changed")
+    with pytest.raises(RuntimeError):
+        a.validate_probability_protocol(jacobian, native, tmp_path)
 
 
 def test_guarded_baseline_and_guarded_unculled_census_reuse_share_native_physics(tmp_path, monkeypatch):
@@ -259,3 +319,43 @@ def test_current_selection_plan_must_match_both_derived_manifests(tmp_path):
     path.write_text(path.read_text().replace("selected-fingerprint", "another-fingerprint"))
     with pytest.raises(RuntimeError, match="selection differs"):
         a.validate_selection_manifest(dict(receipt_selection_sha256=digest), tmp_path)
+
+
+def kd1_comparison(**changes):
+    return dict(dormancy_horizon_yr=100000., reference_horizon_yr=100000.,
+                dormancy_terminal_time_yr=100000., reference_terminal_time_yr=100000.,
+                both_stationary=False, same_global_occupancy=True, same_local_occupancy=True,
+                temperature_difference_k=0., maximum_relative_stock_difference=.2, same_endpoint=False)|changes
+
+
+def test_nonstationary_matched_100k_state_refutes_literal_clause():
+    result = a.kd1_endpoint_clauses([kd1_comparison()])
+    assert result["literal_100k_clause_status"] == "refuted"
+    assert result["asymptotic_endpoint_clause_status"] == "unresolved"
+    assert result["literal_100k_verified_comparisons"] == 1
+    assert result["no_reference_removal_endpoint_comparisons"][0]["literal_100k_agreement"] is False
+
+
+@pytest.mark.parametrize("changed", ("dormancy_horizon_yr", "reference_horizon_yr", "dormancy_terminal_time_yr", "reference_terminal_time_yr"))
+def test_declared_and_actual_horizons_are_all_required_for_literal_refutation(changed):
+    row = kd1_comparison(**{changed: 200000.})
+    result = a.kd1_endpoint_clauses([row])
+    assert result["literal_100k_clause_status"] == "unresolved"
+    assert result["literal_100k_verified_comparisons"] == 0
+    assert result["no_reference_removal_endpoint_comparisons"][0]["literal_100k_agreement"] is None
+
+
+def test_stationary_extended_difference_does_not_masquerade_as_literal_100k():
+    row = kd1_comparison(dormancy_horizon_yr=200000., dormancy_terminal_time_yr=200000., both_stationary=True)
+    result = a.kd1_endpoint_clauses([row])
+    assert result["literal_100k_clause_status"] == "unresolved"
+    assert result["asymptotic_endpoint_clause_status"] == "refuted"
+
+
+def test_finite_agreement_does_not_require_stationarity_but_does_require_local_occupancy():
+    row = kd1_comparison(maximum_relative_stock_difference=0.)
+    result = a.kd1_endpoint_clauses([row])
+    assert result["literal_100k_clause_status"] == "supported_verified_100k_comparisons"
+    assert result["asymptotic_endpoint_clause_status"] == "unresolved"
+    result = a.kd1_endpoint_clauses([row|dict(same_local_occupancy=False)])
+    assert result["literal_100k_clause_status"] == "refuted"

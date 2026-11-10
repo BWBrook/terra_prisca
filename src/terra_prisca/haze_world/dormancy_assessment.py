@@ -21,6 +21,9 @@ PREDICTED_EPSILON = {("A_into_M", 0.): .006, ("A_into_M", .5): .0025,
                      ("M_into_A", 0.): .00046, ("M_into_A", .5): .00082}
 GUARDED_PREFIX_SOURCES = frozenset(("src/terra_prisca/haze_world/dormancy_prefixes.py",
                                   "src/terra_prisca/haze_world/dormancy_trial_integration.py"))
+JACOBIAN_SOURCES = frozenset(("src/terra_prisca/haze_world/dormancy_jacobian_experiments.py",
+                              "src/terra_prisca/haze_world/dormancy_jacobian_integration.py",
+                              "src/terra_prisca/haze_world/dormancy_trial_integration.py"))
 
 
 def require_gate(path):
@@ -148,15 +151,19 @@ def _numerical_protocol(protocol, physical, root):
         raise RuntimeError("Probability physical source graph differs from native freeze")
     extras = set(sources)-set(physical)
     if extras:
-        if (extras != GUARDED_PREFIX_SOURCES or protocol.get("mode") not in ("census", "uncensored")
-                or protocol.get("solver") != "nonfinite_stage_trial_rejection"
+        if extras == GUARDED_PREFIX_SOURCES and protocol.get("solver") == "nonfinite_stage_trial_rejection":
+            variant = "guarded"
+        elif extras == JACOBIAN_SOURCES and protocol.get("solver") == "analytic_dormancy_switching_jacobian":
+            variant = "analytic_jacobian"
+        else:
+            raise RuntimeError("Unapproved probability source superset or solver protocol")
+        if (protocol.get("mode") not in ("census", "uncensored")
                 or not protocol.get("architecture") or not protocol.get("operating_system")):
             raise RuntimeError("Unapproved probability source superset or solver protocol")
-        guarded = True
     else:
         if protocol.get("solver") is not None or protocol.get("mode") != "census":
             raise RuntimeError("An uncensored probability profile requires the declared guarded source superset")
-        guarded = False
+        variant = "native"
     for name, digest in sources.items():
         path = root/name
         if not path.is_file() or sha256(path.read_bytes()).hexdigest() != digest:
@@ -167,7 +174,7 @@ def _numerical_protocol(protocol, physical, root):
             raise RuntimeError("Probability census must retain its native one-cell ten-year process")
     elif process["minimum_cells"] != 0. or process["census_yr"] != 1.:
         raise RuntimeError("Probability prefix must be annual and uncensored")
-    return guarded
+    return variant
 
 
 def validate_probability_protocol(receipt, census, root=None):
@@ -178,7 +185,7 @@ def validate_probability_protocol(receipt, census, root=None):
         raise RuntimeError("The selected probability baseline must be a census")
     physical = runner.sources()
     _numerical_protocol(reference, physical, root)
-    guarded = _numerical_protocol(prefix, physical, root)
+    variant = _numerical_protocol(prefix, physical, root)
     if prefix["parameters"] != reference["parameters"]:
         raise RuntimeError("Probability physical parameters differ from census")
     excluded = ("years", "max_step_yr", "rtol")
@@ -195,7 +202,7 @@ def validate_probability_protocol(receipt, census, root=None):
             raise RuntimeError("Only an unculled census can supply probability evidence")
         if prefix["census"] != reference["census"]:
             raise RuntimeError("Reused census convention differs")
-    return "guarded_"+prefix["mode"]+"_unchanged_physics" if guarded else "exact_source_graph"
+    return variant+"_"+prefix["mode"]+"_unchanged_physics" if variant != "native" else "exact_source_graph"
 
 
 def validate_selection_manifest(manifest, raw):
@@ -307,11 +314,41 @@ def reference_comparisons(records, raw, reference_table, reference_raw):
         comparisons.append(dict(case_id=case_id, reference_case_id=baseline["protocol"]["case"]["case_id"],
             reference_raw_file=baseline["raw_file"], reference_raw_sha256=baseline["raw_sha256"],
             dormancy_horizon_yr=case["years"], reference_horizon_yr=baseline["protocol"]["case"]["years"],
-            literal_100k_comparison=case["years"] == baseline["protocol"]["case"]["years"] == 100000.,
+            dormancy_terminal_time_yr=float(new["t"][-1]), reference_terminal_time_yr=float(old["t"][-1]),
             dormant_fraction_a=float(dormant[0]/(active[0]+dormant[0])) if active[0]+dormant[0] else 0.,
             dormant_fraction_m=float(dormant[1]/(active[1]+dormant[1])) if active[1]+dormant[1] else 0.,
             **result))
     return comparisons
+
+
+def kd1_endpoint_clauses(comparisons):
+    evidence = []
+    horizons = ("dormancy_horizon_yr", "reference_horizon_yr", "dormancy_terminal_time_yr", "reference_terminal_time_yr")
+    for row in comparisons:
+        literal = all(row.get(name) == 100000. for name in horizons)
+        same_state = bool(row["same_global_occupancy"] and row["same_local_occupancy"]
+                          and row["temperature_difference_k"] < .01
+                          and row["maximum_relative_stock_difference"] < .001)
+        evidence.append(row|dict(literal_100k_comparison=literal, same_finite_state=same_state,
+                                  literal_100k_agreement=same_state if literal else None))
+    literal = [row for row in evidence if row["literal_100k_comparison"]]
+    stationary = [row for row in evidence if row["both_stationary"]]
+    if any(not row["same_finite_state"] for row in literal):
+        finite_status = "refuted"
+    elif evidence and len(literal) == len(evidence):
+        finite_status = "supported_verified_100k_comparisons"
+    else:
+        finite_status = "unresolved"
+    if any(not row["same_endpoint"] for row in stationary):
+        stationary_status = "refuted"
+    elif evidence and len(stationary) == len(evidence):
+        stationary_status = "supported_selected_stationary_comparisons"
+    else:
+        stationary_status = "unresolved"
+    return dict(no_reference_removal_endpoint_comparisons=evidence,
+                literal_100k_clause_status=finite_status, literal_100k_verified_comparisons=len(literal),
+                asymptotic_endpoint_clause_status=stationary_status, stationary_endpoint_comparisons=len(stationary),
+                comparison_scope="Literal finite-time agreement uses both declared and actual 100kyr horizons, common chemical/total-guild stocks, occupancy and temperature; stationarity is tested separately")
 
 
 def assess(records, rows, pairs, raw, reference_comparison):
@@ -359,8 +396,7 @@ def assess(records, rows, pairs, raw, reference_comparison):
     return dict(KD1=dict(status="refuted_as_stated_for_spatial_equilibria",
             well_mixed_stationary_locations="Preserved analytically for epsilon>0; zero dormant resident bank at g=L",
             spatial_stationary_claim="Refuted by the source-sink counterexample in the design review; local growth can sustain dormancy",
-            no_reference_removal_endpoint_comparisons=reference_comparison,
-            endpoint_clause_status="refuted" if any(r["both_stationary"] and not r["same_endpoint"] for r in reference_comparison) else "supported_selected_stationary_comparisons" if reference_comparison and all(r["same_endpoint"] for r in reference_comparison) else "unresolved"),
+            **kd1_endpoint_clauses(reference_comparison)),
         KD2=dict(status=kd2, overshoot_cases=overshoot),
         KD3=dict(curves=curves, prediction_scope="Measured first-window P=1/2 brackets; no monotonicity or lower-bound theorem assumed"),
         KD4=dict(comparisons=speed), KD5=dict(status=kd5, finite_dose_cases=bistable,
