@@ -58,7 +58,14 @@ support the paired invasion test within the defined physiology. The
 both refuges recover the same mixed state near 281.535 K in the key cases.
 All 192 planned runs reach stationary outcomes. One-refuge failures include
 an invader lost during a small warming overshoot; the corresponding uncensored
-ODE recovers from less than one global cell. Scientific review is pending.
+ODE recovers from less than one global cell. The
+[review](review/buffered-refuges-claude-review-2026-11-10.md) traces that
+overshoot to slow regrowth of the resident in the bulk. Its depth is
+log-linear in exchange, about `d^4.4`. Treating the rare guild as a
+birth–death process, 50% survival needs about 230 cells at the minimum. That
+moves the critical exchange rate only from about 2×10⁻⁶ to 6×10⁻⁶/yr. The
+[bottleneck test](bottleneck-test-spec.md) applies this survival calculation
+to every run.
 
 **Code.** [`src/terra_prisca/haze_world/methane_budget.py`](../../src/terra_prisca/haze_world/methane_budget.py)
 (model) and [`experiments.py`](../../src/terra_prisca/haze_world/experiments.py)
