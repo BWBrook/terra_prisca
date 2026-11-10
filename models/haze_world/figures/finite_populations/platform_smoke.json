@@ -1,0 +1,103 @@
+{
+  "source_commit": "331bb150d3c4991f05d63edf78ec53d4cd6fd85e",
+  "scope": "Five1000-year pilots including formerly failing0123; final batch has separate receipts",
+  "tolerances_absolute_relative": {
+    "temperature_k": [
+      1e-05,
+      0
+    ],
+    "pressure_pa": [
+      1e-05,
+      0
+    ],
+    "acetate_mol_l": [
+      1e-11,
+      1e-05
+    ],
+    "methane_ratio": [
+      1e-08,
+      1e-05
+    ],
+    "cells_a": [
+      0.0001,
+      1e-05
+    ],
+    "cells_m": [
+      0.0001,
+      1e-05
+    ]
+  },
+  "all_pass": true,
+  "checks": [
+    {
+      "case_id": "pilot_0000_t1000",
+      "occupancy": "acetogen_only",
+      "absolute_differences": {
+        "temperature_k": 9.999996564147295e-08,
+        "pressure_pa": 0.0,
+        "acetate_mol_l": 0.0,
+        "methane_ratio": 1.9999998879249858e-10,
+        "cells_a": 0.0,
+        "cells_m": 0.0
+      },
+      "local_wall_seconds": 0.51874725,
+      "linux_wall_seconds": 2.09944643
+    },
+    {
+      "case_id": "pilot_0001_t1000",
+      "occupancy": "acetogen_only",
+      "absolute_differences": {
+        "temperature_k": 0.0,
+        "pressure_pa": 0.0,
+        "acetate_mol_l": 0.0,
+        "methane_ratio": 0.0,
+        "cells_a": 0.0,
+        "cells_m": 0.0
+      },
+      "local_wall_seconds": 2.2498005,
+      "linux_wall_seconds": 9.556636706
+    },
+    {
+      "case_id": "pilot_0002_t1000",
+      "occupancy": "acetogen_only",
+      "absolute_differences": {
+        "temperature_k": 2.0000004496978363e-07,
+        "pressure_pa": 1.1000000199601345e-07,
+        "acetate_mol_l": 0.0,
+        "methane_ratio": 3.999999997894577e-09,
+        "cells_a": 5.999999905840497e+17,
+        "cells_m": 0.0
+      },
+      "local_wall_seconds": 2.673454125,
+      "linux_wall_seconds": 11.08171544
+    },
+    {
+      "case_id": "pilot_0003_t1000",
+      "occupancy": "both",
+      "absolute_differences": {
+        "temperature_k": 3.9999997625272954e-07,
+        "pressure_pa": 2.9999999995311555e-07,
+        "acetate_mol_l": 1.1699999985524776e-35,
+        "methane_ratio": 8.800000006470299e-09,
+        "cells_a": 1.0499999998359044e-06,
+        "cells_m": 1.0600000074169713e+18
+      },
+      "local_wall_seconds": 0.3070101669,
+      "linux_wall_seconds": 1.266137974
+    },
+    {
+      "case_id": "main_0123_t1000",
+      "occupancy": "acetogen_only",
+      "absolute_differences": {
+        "temperature_k": 0.0,
+        "pressure_pa": 0.0,
+        "acetate_mol_l": 0.0,
+        "methane_ratio": 0.0,
+        "cells_a": 0.0,
+        "cells_m": 0.0
+      },
+      "local_wall_seconds": 2.398112292,
+      "linux_wall_seconds": 10.66589282
+    }
+  ]
+}

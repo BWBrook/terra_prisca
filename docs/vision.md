@@ -136,8 +136,12 @@ Fidelity is measured against the published figures, digitised.
    now evolves hydrogen, both guilds, acetate and methane together. It tests
    the mechanism with consistent units and full local stability, rather than
    imposing a frequency response. Habitat size, recycling kinetics and
-   fixed product activities still limit its interpretation; very small
+   product activities still limit its interpretation; very small
    deterministic populations are not evidence of physical survival.
+   The [finite-population variant](../models/haze_world/finite-populations.md)
+   tests removal floors, mean immigration and product-dependent thresholds.
+   It separates locally stable mixed communities from the communities
+   attained after an invasion, with both invasion directions tested.
    A [solar-response search](../models/haze_response/solar-responses.md) found
    a second Sun-age checkpoint, but no matched hazy luminosity grid.
    This direction may lead to a paper.

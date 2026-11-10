@@ -5,11 +5,20 @@ experiment pipeline and report; separate Codex agents independently reviewed
 the reduced-model interpretation, physical budgets and Jacobians. Claude (Opus 5.5)'s
 reduced coupling is the precursor linked below.
 
-The hydrogen outlet, two microbial populations, an acetate inventory and
-atmospheric methane now evolve together. At the reference supply, the full
-system admits a locally stable mixed community at **281.535 K**, without an
-imposed switch temperature in the differential equations. The guilds share
-their break-even hydrogen pressure and adjust their relative abundances.
+Acetogens can warm this model world by diverting hydrogen from methane
+production and thinning its cooling haze. At the reference supply, the
+methanogen-only control is **273.517 K**, while a locally stable mixed community
+is **281.535 K**: a contrast of **8.02 K**. Changing the assumed physiology below
+4 °C reduces that contrast to **4.73 K**. The hydrogen outlet, both populations,
+acetate and atmospheric methane evolve together, without an imposed switch
+temperature in the differential equations.
+
+Local stability does not establish that an invasion reaches this community.
+The continuum invasion recovers from populations far below one cell worldwide.
+The separate [finite-population variant](finite-populations.md) adds explicit
+censuses and mean immigration, and solves product-dependent thresholds
+self-consistently. The results and figures on this page retain the original
+**fixed-product, uncensored** model, so its historical comparisons stay explicit.
 
 This is a conditional model, not an Archean calibration. Its physical budget
 replaces the capture approximation in the [reduced coupling](switch-coupling.md).
@@ -186,21 +195,33 @@ The time horizon and endpoint diagnostics are retained in the
 
 These trajectories are deterministic continua. Biomass can fall to roughly
 10⁻³³⁰⁰ gDW/L before recovering mathematically. That cannot establish survival
-of a finite biosphere. There is no demographic extinction threshold or
-stochastic rescue in this model. Positive-coordinate integration preserves the
-equations; it does not supply missing individuals.
+of a finite biosphere. The fixed-product continuum has no demographic extinction
+threshold or stochastic rescue. Positive-coordinate integration preserves the
+equations; it does not supply missing individuals. An
+[independent finite-count check](review/finite-invasion-review.md) locates the
+reference methanogen decline below one assumed global cell at 18.335 years.
+Near the mixed equilibrium, both populations instead exceed 10²⁵ cells under
+the same volume and cell-mass assumptions. Immigration is therefore a question
+about invasion history and the basin of persistence, not a universal condition
+for the mixed state's existence.
 
 ## Limits that affect interpretation
 
-The explicit acetate inventory does **not** yet change uptake cessation
-thresholds through product activity. Thresholds retain their reference chemical
-conditions. This assumption applies even to small pools. A diagnostic flag at
+In this page's fixed-product model, the acetate inventory does not change uptake
+cessation thresholds. Thresholds retain their reference chemical conditions.
+This assumption applies even to small pools. A diagnostic flag at
 10 mM highlights especially strained cases; it is not a measured toxicity or
 validity boundary. Long-lag stress cases reach about 37 M acetate with constant
 recycling and 773 M with cold-limited recycling. Those inventories fall outside
 a credible dilute-solution interpretation. Even the one-year cold-limited
 extremes can reach about 77 mM. Numerical stability does not validate that
-chemistry.
+chemistry. The new product-feedback variant applies the normalized quarter
+powers of acetate concentration and methane pressure. It moves the reference
+mixed state to **281.285 K**, but does not eliminate the large-pool problem:
+two stress equilibria still hold about **35 M** and **406 M** acetate. The
+[independent activity audit](review/product-activity-audit.md) derives the laws
+and checks these counterexamples. They remain mathematical stress cases under
+an invalid dilute-solution approximation.
 
 The current warm methane-free bridge keeps the climate above the 273 K
 physiology-continuation floor. It does not test cold traps under the older,

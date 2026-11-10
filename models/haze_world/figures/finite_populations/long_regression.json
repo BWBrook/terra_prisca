@@ -1,0 +1,114 @@
+{
+  "source_commit": "331bb150d3c4991f05d63edf78ec53d4cd6fd85e",
+  "fingerprint": "3424175828906e902f87a7f8e9c02ae42f3b1d3ccb25414af28d56ff43af6ca6",
+  "raw_sha256": "244a988eb40f3c49382993075cb87fddfb56d8f5ad4e809a182b7ca5732a700a",
+  "summary": {
+    "acetate_mol_l": 0.0017436886886864288,
+    "activity": "products",
+    "analysis_year": 100000.0,
+    "case_id": "main_0123_t100000",
+    "cells_a": 2.0615867383948763e+26,
+    "cells_m": 0.0,
+    "census_yr": 10.0,
+    "climate_domain": "arney",
+    "culled_cells_a": 0.0,
+    "culled_cells_m": 282.57121696064127,
+    "culled_gdw_a": 0.0,
+    "culled_gdw_m": 8.477136508819162e-11,
+    "culled_h2_mol_a": 0.0,
+    "culled_h2_mol_m": 6.985160483266946e-12,
+    "culls_a": 0,
+    "culls_m": 9999,
+    "direction": "M_into_A",
+    "endpoint_status": "after_last_scheduled_census",
+    "first_cull_a_yr": null,
+    "first_cull_m_yr": 20.0,
+    "fraction": 0.9,
+    "immigrant_cells_a": 10000.0,
+    "immigrant_cells_m": 10000.0,
+    "immigrant_gdw_a": 3e-09,
+    "immigrant_gdw_m": 3e-09,
+    "immigrant_h2_mol_a": 2.472e-10,
+    "immigrant_h2_mol_m": 2.472e-10,
+    "immigration_replacement_a_yr": 4.850632677131919e-28,
+    "immigration_replacement_m_yr": null,
+    "late_culls": 2001,
+    "late_occupancy_changes": 0,
+    "late_temperature_span_k": 0.0,
+    "max_late_relative_span": 4.926668349768995e-10,
+    "max_scaled_derivative": 9.43892230981486e-15,
+    "methane_ratio": 0.21537194678427168,
+    "methane_tendency_ratio_yr": 2.0328790734103208e-19,
+    "min_pre_census_cells_a": 2.061586738394842e+26,
+    "min_pre_census_cells_m": 0.028259946758424373,
+    "minimum_cells": 1.0,
+    "minimum_scope": "Pre-census samples including initial stocks, not continuous extrema",
+    "net_growth_a_yr": 1.9008232488015864e-15,
+    "net_growth_m_yr": -3.5385769658652415,
+    "occupancy": "acetogen_only",
+    "phase_category": "acetogen_only",
+    "pressure_pa": 27.884377199491997,
+    "relative_immigration_yr": 0.1,
+    "retained_returns_a": 0,
+    "retained_returns_m": 0,
+    "settling_status": "census_stationary",
+    "solver_nfev": 3335222,
+    "solver_resets": 9999,
+    "temperature_k": 273.55236558717417,
+    "wall_seconds": 237.12964520801324,
+    "years": 100000.0
+  },
+  "scope": "Full100000-year cross-platform verification of formerly failing0123; identical census counts and final occupancy",
+  "physical_source_sha256": {
+    "models/haze_response/arney2016/cases.csv": "e3d77d275052a8875991a751868f857bffc964295bfd47591944d86bc58ab07a",
+    "models/haze_response/arney2016/figure4.csv": "c0ef5f3d17ee7c6085ad36247f0f7814726dbbe3273842b01f2c6c4e046856f8",
+    "models/haze_world/evidence/kotsyurbenko2001_table2.csv": "c95b4be023e5502fbb30eb322621e5612bbbf850f99d1b6669e98b95eb370480",
+    "models/haze_world/evidence/peters1998_chemostat.csv": "b0b00bf03eaeaabf45fb571330773c5158b53b088436aaee942188f8e9498320",
+    "src/terra_prisca/haze_response/arney2016.py": "a1b8b52f4c929a0518a17542fb323588699433b038949b38ee6ad74679cd0da6",
+    "src/terra_prisca/haze_world/darwinian.py": "e965035d5dfbfafcb695dc3738b23d8a445c4c1e7e246ab4688d67b33482f1aa",
+    "src/terra_prisca/haze_world/finite_experiments.py": "285d5f4ab46997920559ee0ac68657b0405eee39b38f97520e248faba4db631c",
+    "src/terra_prisca/haze_world/finite_populations.py": "4644088974706aa5f012fb3335a6b1cc8bfd90da88d0b99f9f9e2b64356890df",
+    "src/terra_prisca/haze_world/hydrogen_uptake.py": "c48d8231ef726605ab07be22438f3e2fd97f23b310773ac748d1b2bf5c36fafd",
+    "src/terra_prisca/haze_world/methane_budget.py": "70dc47659e4738d07809e8d23844af79bf69e5dabcc87793eac3f5e560011721",
+    "src/terra_prisca/haze_world/population_coupling.py": "015323fcb7da78461023578e2db22fef19c98680e80965c60ce9b11caf404529",
+    "src/terra_prisca/haze_world/two_guilds.py": "eff6a9027c5b28d154f03462d926591ebee3408eb2c80ec0df5c38929f169f83",
+    "src/terra_prisca/haze_world/woodii1998.py": "b0130f4f8ea15aa64245133f79dc8b35883a414031a8b49262c6657350cad0b0"
+  },
+  "linux_raw_sha256": "a36056db5fe20c9d32eb37ea87535c12ca7636b18ef359724e1e90ba698eaa51",
+  "cross_platform_absolute_differences": {
+    "temperature_k": 0.0,
+    "pressure_pa": 0.0,
+    "acetate_mol_l": 2.168404344971009e-19,
+    "methane_ratio": 2.7755575615628914e-17,
+    "cells_a": 0.0,
+    "cells_m": 0.0
+  },
+  "tolerances_absolute_relative": {
+    "temperature_k": [
+      1e-05,
+      0
+    ],
+    "pressure_pa": [
+      1e-05,
+      0
+    ],
+    "acetate_mol_l": [
+      1e-11,
+      1e-05
+    ],
+    "methane_ratio": [
+      1e-08,
+      1e-05
+    ],
+    "cells_a": [
+      0.0001,
+      1e-05
+    ],
+    "cells_m": [
+      0.0001,
+      1e-05
+    ]
+  },
+  "all_pass": true,
+  "linux_wall_seconds": 1003.009611198
+}

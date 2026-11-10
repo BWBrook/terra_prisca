@@ -1,0 +1,123 @@
+{
+  "parameters": {
+    "climate": {
+      "case": "B",
+      "lifetime_yr": 10000.0,
+      "abiotic_flux": 680000000.0,
+      "donor_flux": 375157520114.00323,
+      "maintenance_flux": 10000000000.0,
+      "growth_ratio_max": 10.0,
+      "t_opt_k": 300.0,
+      "t_halfwidth_k": 20.0,
+      "thermal": true,
+      "t_zero_k": 283.0,
+      "bridge_scale": 0.01
+    },
+    "biology": {
+      "methanogen": "methanogenic strain MSB",
+      "capacity_ratio": 0.74,
+      "yield_m": 0.78,
+      "maintenance_m30": 0.001,
+      "loss_h": 0.001,
+      "threshold_a30": 20.0,
+      "threshold_shape": "fixed_energy",
+      "msp_threshold_4c": 20.0,
+      "maintenance_energy_j": 69000.0,
+      "kinetics": "saturating",
+      "assimilation_m": 0.0824,
+      "km_scale_a": 1.0,
+      "km_scale_m": 1.0,
+      "cessation_energy_a_j": -24000.0,
+      "cessation_energy_m_j": -28000.0,
+      "threshold_m30": 1.0,
+      "exchange_mol_l_h_pa": 3.333333333333333e-09,
+      "atmosphere_pa": 0.0,
+      "low_temperature_variant": "constant_shape"
+    },
+    "loss": {
+      "anchor_ratio": 0.3,
+      "lifetime_yr": 10000.0,
+      "kind": "power",
+      "elasticity": 1.0,
+      "log_scale": 0.001
+    },
+    "habitat_l_cm2": 0.008970677546304392,
+    "acetate_lifetime_yr": 1.0,
+    "acetate_fraction": 0.0,
+    "recycling_variant": "constant",
+    "recycling_midpoint_k": 280.0,
+    "width_k": 2.0,
+    "enabled": [
+      true,
+      true
+    ],
+    "activity_feedback": "fixed",
+    "acetate_reference_mol_l": 0.0005,
+    "methane_reference_pa": 350.0
+  },
+  "initial_y": [
+    21.46330109675326,
+    0.001131187397748392,
+    0.0,
+    0.0018304412176777718,
+    0.0005437715867670953
+  ],
+  "initial_methanogen_growth_yr": 0.8284235077348562,
+  "duration_yr": 100.0,
+  "results": [
+    {
+      "census_yr": 1.0,
+      "fixed_environment_first_count": 0.15568198841466527,
+      "integrated_first_pre_removal_count": 0.15568199800794696,
+      "first_retained_methanogen_yr": null,
+      "methanogen_removals": 100,
+      "final_cells_m": 0.0,
+      "cell_process": {
+        "minimum_cells": 1.0,
+        "census_yr": 1.0,
+        "immigration_cells_yr": [
+          0.1,
+          0.1
+        ],
+        "cell_mass_gdw": 3e-13,
+        "surface_cm2": 5.1e+18
+      }
+    },
+    {
+      "census_yr": 10.0,
+      "fixed_environment_first_count": 478.0083779102913,
+      "integrated_first_pre_removal_count": 478.00866458894694,
+      "first_retained_methanogen_yr": 10.0,
+      "methanogen_removals": 0,
+      "final_cells_m": 9.968559109614285e+25,
+      "cell_process": {
+        "minimum_cells": 1.0,
+        "census_yr": 10.0,
+        "immigration_cells_yr": [
+          0.1,
+          0.1
+        ],
+        "cell_mass_gdw": 3e-13,
+        "surface_cm2": 5.1e+18
+      }
+    }
+  ],
+  "source_sha256": {
+    "src/terra_prisca/haze_world/finite_experiments.py": "285d5f4ab46997920559ee0ac68657b0405eee39b38f97520e248faba4db631c",
+    "src/terra_prisca/haze_world/finite_populations.py": "4644088974706aa5f012fb3335a6b1cc8bfd90da88d0b99f9f9e2b64356890df",
+    "src/terra_prisca/haze_world/population_coupling.py": "015323fcb7da78461023578e2db22fef19c98680e80965c60ce9b11caf404529",
+    "src/terra_prisca/haze_world/two_guilds.py": "eff6a9027c5b28d154f03462d926591ebee3408eb2c80ec0df5c38929f169f83",
+    "src/terra_prisca/haze_world/hydrogen_uptake.py": "c48d8231ef726605ab07be22438f3e2fd97f23b310773ac748d1b2bf5c36fafd",
+    "src/terra_prisca/haze_world/woodii1998.py": "b0130f4f8ea15aa64245133f79dc8b35883a414031a8b49262c6657350cad0b0",
+    "src/terra_prisca/haze_world/methane_budget.py": "70dc47659e4738d07809e8d23844af79bf69e5dabcc87793eac3f5e560011721",
+    "src/terra_prisca/haze_world/darwinian.py": "e965035d5dfbfafcb695dc3738b23d8a445c4c1e7e246ab4688d67b33482f1aa",
+    "src/terra_prisca/haze_response/arney2016.py": "a1b8b52f4c929a0518a17542fb323588699433b038949b38ee6ad74679cd0da6",
+    "models/haze_response/arney2016/figure4.csv": "c0ef5f3d17ee7c6085ad36247f0f7814726dbbe3273842b01f2c6c4e046856f8",
+    "models/haze_response/arney2016/cases.csv": "e3d77d275052a8875991a751868f857bffc964295bfd47591944d86bc58ab07a",
+    "models/haze_world/evidence/kotsyurbenko2001_table2.csv": "c95b4be023e5502fbb30eb322621e5612bbbf850f99d1b6669e98b95eb370480",
+    "models/haze_world/evidence/peters1998_chemostat.csv": "b0b00bf03eaeaabf45fb571330773c5158b53b088436aaee942188f8e9498320"
+  },
+  "checker_sha256": "5cc6a4a6b9701fa6137835f96417f125bc4c52e2adbadf23c80be5dd9e126cdf",
+  "protocol": "Pure acetogen equilibrium; methanogens exactly absent; both guilds receive mean immigration from t=0",
+  "scope": "Full coupled short check of a census-induced establishment barrier; different initial protocol from the main seeded invasions, not a 100000-year endpoint or stochastic probability"
+}

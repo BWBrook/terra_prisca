@@ -1,0 +1,14 @@
+{
+  "source_commit": "331bb150d3c4991f05d63edf78ec53d4cd6fd85e",
+  "profiles": 164,
+  "main": 144,
+  "census": 9,
+  "extensions": 6,
+  "pilots": 5,
+  "files": 328,
+  "bytes": 61874229,
+  "manifest_sha256": "6bbdd95a74a296e066716c7bbdd3a372565b1c97209bcc8b2a3186f06c49ea78",
+  "all_receipt_hashes_verified": true,
+  "local_copy_verified": true,
+  "scope": "164 canonical trajectories and their completion receipts; raw files are ignored and retained in shared project storage"
+}

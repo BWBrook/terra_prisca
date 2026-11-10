@@ -38,6 +38,9 @@ open-boundary budget; the [population review](review/population-coupling-review.
 checks equilibria, Jacobians and rare-population integration. These remain
 conditional models: habitat volume, product activities, biomass export and
 recycling kinetics are not Archean calibrations.
+The [finite-population and product-feedback variant](finite-populations.md)
+separates invasion outcomes from local stability, with explicit extinction
+censuses, mean immigration and normalized chemical product corrections.
 
 **Code.** [`src/terra_prisca/haze_world/methane_budget.py`](../../src/terra_prisca/haze_world/methane_budget.py)
 (model) and [`experiments.py`](../../src/terra_prisca/haze_world/experiments.py)
@@ -493,8 +496,9 @@ and gets rarer the further the seed's optimum lies from it.
   activities and colder physiology; transients also need acetate residence
   times. The new [population coupling](population-coupling.md) now supplies
   the resource, biomass, acetate and methane dynamics for a declared mapping.
-  It does not solve substrate/product activities, local habitat temperature,
-  photochemistry, spatial refugia or finite-population survival. The decisive
+  Its [finite-population extension](finite-populations.md) adds product feedback
+  and deterministic extinction/immigration, while local habitat temperature,
+  photochemistry, spatial refugia and stochastic survival remain unresolved. The decisive
   empirical inputs are:
   - the elasticity of photochemical methane loss near r ≈ 0.2
     ([evidence](evidence/loss-elasticity.md));
