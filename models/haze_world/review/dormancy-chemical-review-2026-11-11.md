@@ -4,8 +4,9 @@ Codex, 11 November 2026. The named helper is
 [`dormancy_chemical_integration.py`](../../../src/terra_prisca/haze_world/dormancy_chemical_integration.py),
 SHA256 `75c538cb2bfabf0e8b497d6f7b60e8714ab2a69880d8836ec5201ac05b626cd1`.
 The [verified snapshot](dormancy-chemical-qualification-2026-11-11.json)
-qualifies the numerical controls and two uncensored prefixes below. Its
-`census_pilot` slot remains **pending** for the full 100,000-year case 0012.
+qualifies the bounded controls, two uncensored prefixes and two completed
+100,000-year census flows. The full census records both retain their strict
+**unsettled** labels; numerical completion does not establish an equilibrium.
 
 ## The defect
 
@@ -85,21 +86,56 @@ hashes. These prefixes supply numerical inputs to the first-window analysis;
 they do not by themselves determine finite-population survival probabilities
 or long-run climate outcomes.
 
-## Open full-case control
+## Completed full-flow controls
 
-The formal case-0012 100,000-year census pilot continues with accepted-time
-telemetry. Its endpoint is not yet qualified. The other source epochs and
-completed data remain intact; unfinished old work can be replaced by clean
-new-epoch runs without treating elapsed compute as evidence of completion.
-The pending JSON slot is reserved for the final reconciled receipt.
+| Case and platform | Wall time | Accepted pieces | Strict settling status |
+|---|---:|---:|---|
+| 0012, Mac; warm refuge, exchange `1e-6/yr` | 4,155 s | 1,257,989 | unsettled |
+| 0010, Linux; warm refuge, exchange `1e-9/yr` | 250 s | 20,806 | unsettled |
+
+Both use epsilon 0.03, no acetate recycling and acetogens invading methanogens.
+Their receipts and payload hashes verify against the unchanged chemical source
+graph. Both have finite nonnegative sampled physical stocks, dense minima
+bounded by samples, sampled redox residual below `1e-16` and bitwise stock and
+inventory preservation at every recorded chemical conversion. The JSON keeps
+compact event counts and archive hashes rather than copying the large event
+histories into the repository.
+
+Case 0012 completes all 100,000 years. Its climate is **281.744 K** at the end,
+but its last 20,000 years span **1.482 K**, with 90 changes in census occupancy.
+Both guilds remain represented, with ongoing loss and re-establishment of
+local warm-refuge acetogens. The run records 1,301 such culls, 1,773 chemical
+chart conversions, 18 failed-step retries and four native zero-time recoveries.
+These observations qualify full numerical flow and preserve a materially
+unsettled ecological state; they do not support calling that endpoint a
+stable mixed equilibrium.
+
+The independent Linux case 0010 ends at **273.484171207 K**, with only
+methanogens present. Its final stocks differ from the previously selected
+`7046fc9b` Mac case by at most `1.28e-10` in absolute model units, and the
+maximum shared-time temperature difference is `1.43e-6 K`. The strict
+all-stock label differs despite this close physical agreement, so both labels
+and source epochs are retained. The Linux control does not replace the
+historically selected Mac receipt.
+
+Completed census fingerprints:
+
+- 0012 Mac: `14f5c49a3088e852d97f80363fccb5c42ba6988ea03778e4ebf7c140c0430d2a`
+- 0010 Linux: `02158faa467fa03b43b8361b339e0d35a15e23982c22da44373746160eef71ed`
+
+These controls establish neither completion of the remaining experimental grid
+nor convergence of the nonstationary cases. The earlier source epochs and
+valid completed records remain intact.
 
 ```sh
 uv run pytest -q tests/test_dormancy_chemical_integration.py
 uv run python models/haze_world/review/dormancy_chemical_qualification_check.py
 ```
 
-The checker verifies the two archived canonical receipts, payloads and recorded
-execution sidecars and reruns only the bounded synthetic counterexample. It
+The checker verifies the two prefix receipts, both completed full-flow receipts,
+payloads and available recorded execution sidecars. It also compares the separate
+Linux case 0010 with the retained selected Mac record and reruns only the
+bounded synthetic counterexample. It
 starts no new trajectories. New trajectories use
 `python -m terra_prisca.haze_world.dormancy_chemical_experiments`; their protocol
 fingerprints record platform and numerical provenance separately.

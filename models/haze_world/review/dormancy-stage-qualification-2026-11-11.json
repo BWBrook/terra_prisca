@@ -1,0 +1,224 @@
+{
+  "bounded_linux_100k_requests": [
+    {
+      "accepted_time_yr": 2241.490415939368,
+      "error": "Limit('Bounded stage-helper acceptance reached its wall guard')",
+      "execution_file": "local/haze/dormancy_stage_linux_controls/stage_acceptance_dormancy_0085_census_100000_e40545bf2eee7e21.execution.json",
+      "execution_sha256": "a85d7dfcee20746bbf232e86bf9f88bce8231915298b1152a9078ca4b957adb3",
+      "fingerprint": "e40545bf2eee7e21d44d8e2def4e3d2e3d35adb1b50112886f788e8ca7b9aa64",
+      "groups_present": [
+        true,
+        true
+      ],
+      "partial_file": "local/haze/dormancy_stage_linux_controls/stage_acceptance_dormancy_0085_census_100000_e40545bf2eee7e21.partial.npz",
+      "partial_sha256": "545ad90aaf212b9b643737c6f44a06fda0ac1587df170bf3e10ca9d778d2f784",
+      "result_file": "local/haze/dormancy_stage_linux_controls/stage_acceptance_dormancy_0085_census_100000_e40545bf2eee7e21.result.json",
+      "result_sha256": "e96583cafe5f75e5871c453bf751f93e33cc109f91e496a1cb03d5f05cf0322a",
+      "scope": "Crosses original failure or stall but supplies no complete100k receipt or ecological endpoint",
+      "status": "incomplete_at_observational_wall_guard",
+      "wall_seconds": 300.00330775299994
+    },
+    {
+      "accepted_time_yr": 92298.14018829391,
+      "error": "Limit('Bounded stage-helper acceptance reached its wall guard')",
+      "execution_file": "local/haze/dormancy_stage_linux_controls/stage_acceptance_dormancy_0107_census_100000_a278fa60f5cb38a2.execution.json",
+      "execution_sha256": "ec350057bb2cb6180eddca52d80ae2a477e69e77d91a5e34964aaa04f8dcb2fd",
+      "fingerprint": "a278fa60f5cb38a2bcd2000536ca53aa4ef4cb5f6ab640ba94cb969f597cfbe1",
+      "groups_present": [
+        true,
+        true
+      ],
+      "partial_file": "local/haze/dormancy_stage_linux_controls/stage_acceptance_dormancy_0107_census_100000_a278fa60f5cb38a2.partial.npz",
+      "partial_sha256": "ab1247e679d8c08bbbdc753b4f0e664ea0762bb8fcd4f5f800dad23545a42fec",
+      "result_file": "local/haze/dormancy_stage_linux_controls/stage_acceptance_dormancy_0107_census_100000_a278fa60f5cb38a2.result.json",
+      "result_sha256": "0d8cfb69a859b08571ecdee6341eb9cddc2f8d93b9ccb004d348ef450d37979d",
+      "scope": "Crosses original failure or stall but supplies no complete100k receipt or ecological endpoint",
+      "status": "incomplete_at_observational_wall_guard",
+      "wall_seconds": 300.086508935
+    }
+  ],
+  "focused_tests": {
+    "command": "uv run pytest -q tests/test_dormancy_stage_integration.py",
+    "passed": 10,
+    "source_sha256": "abc65fe9712f42927b6b2905c20232046dd13e13c9d5a5fce2d61f029aac2991"
+  },
+  "helper_sha256": "19b7909fda2feb47b767ec7a81050fd8c935f59b1aa25149b8159722597130eb",
+  "independent_review": {
+    "accepted_interval_control": {
+      "census_and_sample_times_yr": [
+        0.0,
+        0.1,
+        0.2
+      ],
+      "each_interval_counted_once": true,
+      "end_yr": 0.2,
+      "intervals": 250,
+      "positive_contiguous": true,
+      "start_yr": 0.0
+    },
+    "finding": "No consequential source, chart-preservation, accepted-versus-trial, dense-flow/census accounting or restart defect found. Long original-start runs are separate qualification.",
+    "helper_sha256": "19b7909fda2feb47b767ec7a81050fd8c935f59b1aa25149b8159722597130eb",
+    "static_maps": {
+      "count": 300,
+      "derived_global_log_roundoff_cases": 5,
+      "encoded_total_coordinate_failures": 0,
+      "maximum_derived_global_log_absolute_difference": 1.776e-15,
+      "whole_physical_vector_failures": 0
+    },
+    "status": "cleared",
+    "tests_passed": 32,
+    "wall_seconds": 10.55
+  },
+  "limits": [
+    "Derived global-guild log diagnostics may differ by roundoff; equality is recorded, not universally asserted.",
+    "A finite retained stage log can be lost when its already decoded squared allocation underflows to zero. The prior log is recorded; future replenishment is physical migration or conversion only."
+  ],
+  "long_run_control": {
+    "case_id": "dormancy_0107",
+    "status": "pending_parent_run",
+    "years": 100000
+  },
+  "original_start_control": {
+    "accepted_steps": 3234,
+    "allocation_positivity_retries": 0,
+    "case_id": "dormancy_0107",
+    "census_removals": 0,
+    "controller_wall_seconds": 13.41190279100556,
+    "dense_minima_bound_samples": true,
+    "execution_platform": {
+      "architecture": "arm64",
+      "operating_system": "Darwin",
+      "packages": {
+        "numpy": "2.5.4",
+        "scipy": "1.18.1"
+      },
+      "python": "3.14.4"
+    },
+    "execution_sidecar": "local/haze/dormancy_trial_review/stage_acceptance_dormancy_0107_census_5000_344273173197598f.execution.json",
+    "execution_sidecar_sha256": "3ac24f65a4b9476a828a51381fe576965685106583cd4d46b65ee4d0bcfb1fda",
+    "fingerprint": "344273173197598f81160da5cb0168fa978d911d2fd22c186ea7325040570335",
+    "finite_present_guild_total_logs": true,
+    "maximum_sampled_redox_residual": 2.6020852139652106e-18,
+    "mode": "census",
+    "native_zero_time_retries": 0,
+    "newton_evaluations": 602,
+    "nfev": 5361,
+    "nonnegative_stocks": true,
+    "observer_controller_sha256": "db1dfa61cf3a757b21c1fe8bec0b5fbea7c749a1acddd3f86bac7b6300bf2c0a",
+    "overlap_comparison": {
+      "last_shared_time_yr": 4550.0,
+      "maximum_acetate_difference_mol_l": 1.3796286026579105e-11,
+      "maximum_biomass_difference_gdw_l": 1.4345287354918315e-11,
+      "maximum_methane_ratio_difference": 1.4495357691934885e-10,
+      "maximum_pressure_difference_pa": 4.095448247198874e-08,
+      "maximum_temperature_difference_k": 5.1665665523614734e-08,
+      "old_partial_path": "local/haze/dormancy_trial_review/stage0107/chemical_stage_diagnostic_dormancy_0107_census_100000_6a14829d146de3bd.partial.npz",
+      "old_partial_sha256": "1520a3338d091f20e378811dcae11a5ab36e1f42d1964350e2c064d376ac0778",
+      "per_state_maximum_absolute_difference": [
+        4.095448247198874e-08,
+        1.3916473723602841e-45,
+        8.130719405044506e-13,
+        2.3384351977039954e-15,
+        7.500585981305707e-12,
+        3.7756341608743366e-16,
+        2.5495694444543915e-10,
+        4.315853054158542e-36,
+        3.4498987867837005e-14,
+        1.3796286026579105e-11,
+        1.4345287354918315e-11,
+        1.051473247742732e-21,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        1.4495357691934885e-10
+      ],
+      "scope": "Accepted physical samples only; retained subfloat stage tails are not asserted equal across platform/variant.",
+      "shared_sample_count": 456,
+      "source_epoch": "75c538cb Linux failed-run accepted samples"
+    },
+    "raw_file": "local/haze/dormancy/dormancy_0107_census_t5000-344273173197598f.npz",
+    "raw_sha256": "d16e0a39df4941289731e5317d3879f226d65f46b190d42939c5fa05f3d55c1c",
+    "receipt": "local/haze/dormancy/dormancy_0107_census_t5000-344273173197598f.receipt.json",
+    "receipt_sha256": "f507a936844521741a377b400da67065a4bd1552b67557011470a917650c9131",
+    "result_sidecar": "local/haze/dormancy_trial_review/stage_acceptance_dormancy_0107_census_5000_344273173197598f.result.json",
+    "result_sidecar_sha256": "ec60de4ae2e76d6e8ef0701d7c57d569557d91752bab673cfd4cb415bf9f85b7",
+    "settling_status": "pilot_only",
+    "solver_failure_retries": 3,
+    "stage_conditioning_events": [
+      {
+        "accepted_coordinate_sha256": "85462b1149fb0ac50d53a1e9042e7ebd4777fcc5ec4f610e83d9a7b399770186",
+        "cause": null,
+        "global_guild_logs_bitwise_preserved": true,
+        "inventory_after": 40.41131327070061,
+        "inventory_before": 40.41131327070061,
+        "linear_allocation": 0.0,
+        "linear_log_allocation": null,
+        "log_allocation": -1481.8871287198297,
+        "log_incoming_allocation_rate_yr": -1484.6382766318568,
+        "phase": "native_step",
+        "physical_state_bitwise_preserved": true,
+        "prior_root": -1.63e-322,
+        "retained_stage_log_lost": true,
+        "scope": "Saved accepted root squared into its decoded linear allocation; no seed or stock reset. Global total logarithms retained; subfloat stage logarithms may be lost.",
+        "state_index": 1,
+        "time_yr": 1457.174722727196,
+        "total_coordinates_bitwise_preserved": true
+      }
+    ],
+    "status": "completed",
+    "wall_seconds": 13.34130174992606,
+    "years": 5000
+  },
+  "regression_set": {
+    "parent_full_suite_passed": 494,
+    "stage_chemical_progress_passed": 32
+  },
+  "saved_state": {
+    "additional_newton_conditioning_index": 1,
+    "forward_years": 10,
+    "initial_failure_index": 7,
+    "path": "models/haze_world/review/dormancy_4550_regression.json",
+    "sha256": "4f257eb014d31ff73be9b66475ee4279ade61333d74742c27e8e920f3161a949",
+    "stock_preservation": "Whole decoded physical vector and encoded total-guild coordinates checked bitwise at every conversion; inventory unchanged.",
+    "time_yr": 4550.071294205805
+  },
+  "scope": "Targeted numerical repair and completed original-start5000-year control; full100000-year ecological endpoint/grid remain pending.",
+  "source_commit": "b7e39c8",
+  "source_sha256": {
+    "models/haze_response/arney2016/cases.csv": "e3d77d275052a8875991a751868f857bffc964295bfd47591944d86bc58ab07a",
+    "models/haze_response/arney2016/figure4.csv": "c0ef5f3d17ee7c6085ad36247f0f7814726dbbe3273842b01f2c6c4e046856f8",
+    "models/haze_world/evidence/kotsyurbenko2001_table2.csv": "c95b4be023e5502fbb30eb322621e5612bbbf850f99d1b6669e98b95eb370480",
+    "models/haze_world/evidence/peters1998_chemostat.csv": "b0b00bf03eaeaabf45fb571330773c5158b53b088436aaee942188f8e9498320",
+    "src/terra_prisca/haze_response/arney2016.py": "a1b8b52f4c929a0518a17542fb323588699433b038949b38ee6ad74679cd0da6",
+    "src/terra_prisca/haze_world/bottleneck_integration.py": "ce56becb23ca53c6bfb48dffc054d8ecc90839bf5dd0ffd716dbf22635dd435f",
+    "src/terra_prisca/haze_world/buffered_experiments.py": "c8603febb0167be3fc944b60672d9e11957aabf4ca7654dc6efb20639176336a",
+    "src/terra_prisca/haze_world/darwinian.py": "e965035d5dfbfafcb695dc3738b23d8a445c4c1e7e246ab4688d67b33482f1aa",
+    "src/terra_prisca/haze_world/dormancy.py": "bf0a0e02c621dae1ba13c421ff75f8d0233e2c88bac1e54a42036c7f21797645",
+    "src/terra_prisca/haze_world/dormancy_chemical_experiments.py": "840f3a46172930e3c1bfd0a7a3a45227b6ea43b666f14f7fc38faf714175c258",
+    "src/terra_prisca/haze_world/dormancy_chemical_integration.py": "75c538cb2bfabf0e8b497d6f7b60e8714ab2a69880d8836ec5201ac05b626cd1",
+    "src/terra_prisca/haze_world/dormancy_experiments.py": "91a6aaf01702f357b076761ca650918bbc5d0a18af7f53bf542ed30fe2e2db9c",
+    "src/terra_prisca/haze_world/dormancy_integration.py": "0a1cc282057a4187288ae77c8ef69e77830a3cb741d729d1877fe7a0c15dcd01",
+    "src/terra_prisca/haze_world/dormancy_jacobian_integration.py": "7046fc9baa47022fff7e700ea79f8e72e2c3195a77b9bd5f71e272d6a1c34310",
+    "src/terra_prisca/haze_world/dormancy_progress_integration.py": "ee65a5d01009bb376146f64b883d3d6ec52670fb2bb2326bb2a4331e63d589a4",
+    "src/terra_prisca/haze_world/dormancy_stage_experiments.py": "c77bbdf499a16d501104f98b7d0f421c018fb4c36a098850d0bd742c91c644ef",
+    "src/terra_prisca/haze_world/dormancy_stage_integration.py": "19b7909fda2feb47b767ec7a81050fd8c935f59b1aa25149b8159722597130eb",
+    "src/terra_prisca/haze_world/dormancy_starts.py": "67af0622f6243983569777f4d4368c12894ceed0351d05b2a89bd942ec439a3f",
+    "src/terra_prisca/haze_world/dormancy_trial_integration.py": "b5c0d208454c8f55b4da865a387ea592f117e28700bb13d1025efe4a4e92ef18",
+    "src/terra_prisca/haze_world/finite_experiments.py": "285d5f4ab46997920559ee0ac68657b0405eee39b38f97520e248faba4db631c",
+    "src/terra_prisca/haze_world/finite_populations.py": "4644088974706aa5f012fb3335a6b1cc8bfd90da88d0b99f9f9e2b64356890df",
+    "src/terra_prisca/haze_world/habitat_coupling.py": "34f611d3f9046bf7d96f8caeffb452f2a2206bab4abc45e630a09980a067c4d0",
+    "src/terra_prisca/haze_world/habitat_equilibria.py": "90ec06dbce07e6625878ece2e97b55604ed4708b8aad9f66b0dd06dd8aa50a9a",
+    "src/terra_prisca/haze_world/habitat_integration.py": "3a115c22ee4b4a6b2c3f4585385927a7e32d68712cfb3d0073f0e52089a1b214",
+    "src/terra_prisca/haze_world/hydrogen_uptake.py": "c48d8231ef726605ab07be22438f3e2fd97f23b310773ac748d1b2bf5c36fafd",
+    "src/terra_prisca/haze_world/methane_budget.py": "70dc47659e4738d07809e8d23844af79bf69e5dabcc87793eac3f5e560011721",
+    "src/terra_prisca/haze_world/population_coupling.py": "17a433957e94845595f6d7fd160ffe593c01c4e74550707b0814c95ab67ae663",
+    "src/terra_prisca/haze_world/turnover_starts.py": "d980d85dd6910d82828e9dbddbcf4588f62fd8bf870ce8af6a06a76ffb512bd5",
+    "src/terra_prisca/haze_world/two_guilds.py": "eff6a9027c5b28d154f03462d926591ebee3408eb2c80ec0df5c38929f169f83",
+    "src/terra_prisca/haze_world/woodii1998.py": "b0130f4f8ea15aa64245133f79dc8b35883a414031a8b49262c6657350cad0b0",
+    "uv.lock": "02bf429b2ec474f03280ec550d5fd847b573ece24ab9043e0b5998370fd4d2b4"
+  },
+  "status": "bounded_and_5000_year_original_start_controls_qualified_full_endpoint_pending"
+}
