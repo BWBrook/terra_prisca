@@ -6,10 +6,13 @@ Codex (GPT-6, OpenAI), 10 November 2026. Implements Claude (Opus 5.5)'s
 `87103f7`. The [implementation notes](buffered-implementation-notes.md) record
 the interpretation of the design before the main matrix.
 
-**Status: implementation and numerical controls are built; scientific results
-await qualification.** The Results section below is reserved for the main
-experiment, the B2 assessment and the permitted sensitivity comparisons.
-Predictions B1–B5 are hypotheses, not requirements for accepting the code.
+**Status: built and numerically checked; scientific review pending.** Both
+refuges restore the same mixed community from both invasion directions in the
+key comparisons. One-refuge outcomes also reveal a census-dependent bottleneck:
+a transient warming overshoot can eliminate the unprotected guild. All 192
+planned cases reached stationary outcomes, with 13 extended to 200,000 years.
+Predictions B1–B5 remain tests of this conditional model, not requirements for
+accepting the code or evidence of Archean refuge geography.
 
 ## Question and thermal assumptions
 
@@ -189,11 +192,162 @@ span below 0.01 K, and census occupancy unchanged. A 1% catabolic-share rule
 marks material contributions independently of occupancy. Keep longer horizons
 in separate output directories so the original outcomes remain available.
 
-## Results — pending qualified experiments
+### Longer runs and reporting
 
-**Parent integration placeholder.** Add main/control/sensitivity qualification,
-the B2 gate and any basin investigation, paired endpoint and climate contrasts,
-global/local population minima, physiological/radiative domains, exact
-habitat-mean temperature departures, figures, source hashes and archive receipt.
-Then resolve B1–B5 with mechanisms. The numerical controls above do not supply
-those outcomes or establish which refuges existed on early Earth.
+The 100,000-year horizon left eight main cases, four zero-exchange controls and
+one sensitivity case unsettled. Rerun these IDs with `--years 200000` and a
+separate `--output` directory: main 0000, 0002, 0004, 0006, 0016, 0018, 0020,
+0022; controls 0000, 0002, 0004, 0006; sensitivity 0050. IDs retain the stage
+prefix and change the suffix to `_t200000`. Then select the longer records:
+
+```sh
+uv run python -m terra_prisca.haze_world.buffered_reporting \
+  --extension-manifest models/haze_world/figures/buffered_refuges/extensions/main_selection_742f6395_manifest.json \
+  --extension-manifest models/haze_world/figures/buffered_refuges/extensions/controls_selection_0dc1f4ea_manifest.json \
+  --extension-manifest models/haze_world/figures/buffered_refuges/extensions/sensitivity_selection_6369b0c7_manifest.json
+uv run python models/haze_world/review/check_buffered_high_exchange.py
+uv run python models/haze_world/review/check_buffered_overshoot.py
+```
+
+The last two commands reproduce explicitly post-main mechanism checks, outside
+the 96/72 designs. Their short trajectories are not classified as settled.
+Physical source hashes match `87103f7`; analysis is identified separately in
+the [reporting manifest](figures/buffered_refuges/reporting_manifest.json).
+The [raw manifest](figures/buffered_refuges/raw_manifest.json) and
+[archive receipt](figures/buffered_refuges/payload_receipt.json) identify the
+checksummed trajectory payload, including original and extended horizons.
+
+## Results
+
+### Both refuges restore the mixed community (B1 and B2)
+
+All 12 key runs with both refuges, `f=0/0.5` and
+`d=10⁻⁹/10⁻⁶/10⁻³ per year`, preserve both guilds globally. The six pairs of
+opposing histories match in community stocks, methane and occupancy, and
+settle near **281.535 K**. The
+[main gate](figures/buffered_refuges/main_gate.json) was recorded before the
+sensitivity runs. A one/year exchange also preserves both guilds, although
+the equilibrium shifts slightly (281.587 K at `f=0`, 281.539 K at `f=0.5`).
+
+![Paired invasions with both refuges](figures/buffered_refuges/paired_trajectories.png)
+
+The two histories take different paths to the same community. In the
+`f=0.5` methanogen-into-acetogen comparisons at low positive exchange, the
+bulk remains between 281.10–281.30 K at its minimum and 297.008 K at its
+maximum. These complete paths lie inside both the measured physiological
+window and Arney's radiative range; the buffered habitats do too. In the
+opposite direction the bulk starts near 273.48 K, retaining the earlier
+model's cold continuation. The `f=0` low-methane starts retain its assumed
+climate bridge. These support distinctions are recorded per run, rather than
+describing every trajectory as source-supported.
+
+### One refuge does not guarantee history dependence (B3)
+
+At `f=0.5`, the predicted asymmetry holds across the main exchange grid:
+a warm refuge lets acetogens invade to coexistence, while the reverse
+invasion ends with methanogens alone. A cold refuge gives the complementary
+pattern. At `f=0`, however, the warm-only layout at `d=10⁻⁹` and `10⁻⁶/year`
+ends with **methanogens alone from both directions**. Agreement here means
+lost diversity, not successful rescue.
+
+In those acetogen invasions, climate initially warms toward the switch but
+overshoots it to 282.50 or 282.32 K. Acetogens have no cold refuge and are
+globally removed at 1,280 or 1,320 years. At `d=10⁻³/year` they survive; their
+minimum global abundance is about 2.4×10¹² cells. A refuge for the original
+resident can therefore prevent its loss without protecting the invader from
+its own later climate transient.
+
+The [uncensored mechanism check](review/buffered_overshoot_check.json)
+repeats the `d=10⁻⁶/year` invasion with the removal floor set to zero. The
+continuous acetogen stock drops to **0.088 cells worldwide**, then recovers
+to 1.8×10²⁶ cells by year 2,000. That is fractional-cell recovery in the ODE,
+not finite-world survival. An independently refined mixed equilibrium at
+281.535 K has a negative leading eigenvalue (−2.04×10⁻⁴/year), whereas the
+methanogen-only boundary has a positive acetogen invasion eigenvalue
+(+12.12/year). The observed failure is an absorbing census state; it does
+not establish two stable equilibria of the continuous equations.
+
+At `f=0.9`, acetogen-only starts are already hazy. A warm refuge preserves
+both guilds from either direction, while cold-only and no-refuge layouts
+end acetogen-only. B3's literal claim fails here too; the greenhouse-peak
+argument does not apply to every invasion.
+
+![Endpoints with no acetate becoming methane](figures/buffered_refuges/main_f0.png)
+
+![Endpoints with half the acetate becoming methane](figures/buffered_refuges/main_f0.5.png)
+
+Filled markers indicate coexistence; open markers indicate a single guild.
+Lines connect the discrete exchange settings, not a continuation calculation.
+
+### Exchange can rescue or erase protection (B4)
+
+Both refuges rescue the guilds down to the tested `10⁻⁹/year`, and still work
+at one/year. This does not define a minimum viable migration flux or an upper
+mixing threshold. A separate
+[100/year check](review/buffered_high_exchange_check.json) uses a 100-year
+prefix in each direction at `f=0.5`. Methanogens are globally removed after
+20 years in the acetogen invasion; acetogens after ten years in the reverse.
+Climate has changed by less than 0.007 K when removal occurs.
+
+Each lost guild could grow in its own refuge (+0.81 and +9.54/year locally),
+but the full rare-guild migration/growth operators have negative dominant
+eigenvalues (−3.47 and −11.03/year). Rapid exchange exposes too much biomass
+to unfavorable habitat before the atmosphere responds. This is a bounded
+mechanism test, not a settled endpoint or a calibrated Earth dispersal rate.
+
+### Warm refuges preserve methanogens with little climate effect at f=0.9 (B5)
+
+At the main settings, warm or paired refuges preserve methanogens using about
+1.8–2.2% of catabolic hydrogen. Their ecological temperature contrast relative
+to the matched conditional acetogen-only world is only **0.029–0.035 K of
+cooling**. Across all planned cases the largest absolute matched contrast is
+0.0404 K. The secondary contrast against a no-refuge invasion is about
+0.043 K at the default paired-refuge settings; it includes the habitat change.
+Both comparisons support B5's sub-0.1 K prediction. Smaller refuges can retain
+a guild below the separate 1% material-contribution threshold.
+
+![Endpoints with 90% of acetate becoming methane](figures/buffered_refuges/main_f0.9.png)
+
+The common scale exposes the departure from the 281.5 K switch; the small
+temperature contrasts are resolved in the tables. Their numerical precision
+does not imply a comparably precise climate reconstruction.
+
+### Sensitivity, qualification and limits
+
+All 48 crossed-temperature cases and all six product-feedback cases retain
+both guilds. Among the 18 cases with 0.5% refuges, 11 coexist, four end with
+acetogens alone and three with methanogens alone. Fixed-activity paired-refuge
+sensitivity cases at `f≤0.5` remain within 281.53482–281.53491 K. Product
+activities shift the paired-refuge endpoints to 281.587 K (`f=0`),
+281.286 K (`f=0.5`) and 273.505 K (`f=0.9`): the chemical correction changes
+the switch, even in fixed-temperature refuges.
+
+The [selected tables](figures/buffered_refuges/reporting_manifest.json) contain
+192 stationary outcomes: 123 coexisting, 44 acetogen-only and 25
+methanogen-only. All starts were found, and there were no physiological domain
+exits. Across 96 paired histories, 63 match; 49 are matching mixed communities.
+All 30 zero-refuge comparisons recover the earlier single-habitat results.
+The maximum absolute habitat-mean temperature departure is 0.67732 K across
+the sensitivity design (0.60032 K in the main matrix).
+
+Stationary under censuses does not mean stable to an arbitrarily small
+continuous invasion. All 192 endpoints admit a nearby refined equilibrium;
+137 are locally stable in the full active system and 55 have an unstable
+direction, including the 25 methanogen-only boundaries. Eight unstable mixed
+states occur in isolated zero-exchange controls. No surviving guild in the
+planned finite-census runs dips below one global cell between censuses.
+
+All **241 tests pass**. The independent numerical controls reconstruct fluxes,
+redox accounting and the full stability spectrum, and compare three short
+trajectories against an independently formulated Radau solver. Its largest
+scaled endpoint difference is 7.9×10⁻⁹ and inventory residual 1.9×10⁻¹³ mol
+H₂-equivalent/L. The shared empirical inputs still require scientific review.
+
+This experiment establishes conditional rescue by prescribed thermal habitats
+at a fixed hydrogen supply. It does not establish climate buffering against a
+supply sweep, global uniqueness, actual Archean refuge temperatures or areas,
+or stochastic survival of rare lineages. Methane loss is still linear, the
+hydrogen boundary and recycling law are prescribed, cell counts are censused
+deterministic densities, and physiology does not evolve. The highest-value
+next check is the finite-population bottleneck and its dependence on census
+rules, before interpreting one-refuge history as a historical Earth outcome.

@@ -7,8 +7,8 @@ equilibrium solver and experiment pipeline from Claude (Opus 5.5)'s
 and supplemental comparisons chosen before the full invasion matrix.
 
 **Status:** implementation, full experiment and twelve 200,000-year settling
-extensions are complete. All 199 tests pass. Claude's scientific review of
-this build remains pending. The numerical and ecological claims remain
+extensions are complete. The build was [reviewed and accepted by Claude](review/refuge-coupling-claude-review-2026-11-10.md).
+The numerical and ecological claims remain
 conditional on the named physiology, habitat and climate assumptions.
 
 The question is whether a biosphere can supply its own rescue. The
@@ -279,6 +279,11 @@ acetogens invade. At contrast 8.4 K, the initial warm temperature is
 methanogen minimum is about 2.8×10²³ cells at `f=0` and 4.6×10²⁰ at `f=0.5`.
 The changing climate reverses the competitive disadvantage before global loss.
 Thus P1's instantaneous threshold is not a necessary survival boundary.
+The subsequent review restates protection over the whole recorded path.
+All 38 completed path-protected cases retain the resident, as do eight
+path-protected prefixes censored by domain exit. That observed result motivates
+the buffered-refuge test; it is not a general sufficiency theorem for arbitrary
+exchange rates or population sizes.
 Nor is initial protection sufficient. In main case 0267 (`f=0.5`, warm area
 90%, contrast 15 K, `d=10⁻⁶/year`, M into A), the 13.5 K cold offset exceeds
 the proposed 12.87 K threshold. The cold refuge initially favors acetogens.

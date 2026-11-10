@@ -148,6 +148,14 @@ Fidelity is measured against the published figures, digitised.
    thresholds fail to account for the transient climate path. Physiological
    domain limits keep many reverse invasions unresolved, and measured
    equilibrium feasibility is distinguished from attainable trajectories.
+   The [temperature-buffered variant](../models/haze_world/buffered-refuges.md)
+   completes the paired invasion test using warm and cold habitats maintained
+   independently of surface climate. Both refuges restore the same mixed
+   community in the key comparisons. A one-refuge exception exposes a
+   finite-census bottleneck during a warming overshoot, rather than a second
+   stable continuum climate. All 192 planned cases are stationary; independent
+   scientific review is the next step, with the prescribed heat baths and
+   census rules kept explicit.
    A [solar-response search](../models/haze_response/solar-responses.md) found
    a second Sun-age checkpoint, but no matched hazy luminosity grid.
    This direction may lead to a paper.

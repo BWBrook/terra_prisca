@@ -1,0 +1,18 @@
+{
+  "all_receipt_hashes_verified": true,
+  "archive_directory": "buffered-refuges-87103f7-20261110",
+  "archived_copy_verified": true,
+  "bytes": 177306466,
+  "files": 428,
+  "groups": {
+    "high_exchange": 2,
+    "overshoot": 1,
+    "pilot": 6,
+    "planned": 205
+  },
+  "local_copy_verified": true,
+  "manifest_sha256": "781350e422fd50f040a031dcc5d522a23b3449923933fb52d74adbf04e0ad074",
+  "profiles": 214,
+  "scope": "205 planned original/extended trajectories, six frozen-source pilots and three post-main mechanism trajectories, each with its completion receipt; scratch stress runs excluded",
+  "source_commit": "87103f745d8a1d78fb1eeb99bd11e0e467d305e0"
+}

@@ -16,7 +16,8 @@ lineage of models and the agreed order of work are in
 | Methane–haze climate responses | Arney (2016) responses and separate Eager-Nash (2023) low-methane checkpoints recovered | [`models/haze_response`](models/haze_response/README.md) |
 | Haze-world: methanogens, finite methane budget and haze climate | Reviewed conditional model: stable equilibria near a net-growth threshold; reduced dynamics and cold-trap claims have explicit limits | [`models/haze_world`](models/haze_world/README.md) |
 | Hydrogen competition and climate | Matched A. woodii benchmark, two-guild sensitivities and explicit population–acetate–methane coupling; conditional mixed equilibria | [Population coupling](models/haze_world/population-coupling.md) |
-| Two-habitat refuges | Finite populations and conservative cell exchange under one atmosphere; conditional endogenous rescue, with trajectory support distinguished from equilibrium feasibility; scientific review pending | [Refuge coupling](models/haze_world/refuge-coupling.md) |
+| Two-habitat refuges | Reviewed model of endogenous rescue; physiology limits prevent the paired invasion test in this geometry | [Refuge coupling](models/haze_world/refuge-coupling.md) |
+| Temperature-buffered refuges | Both refuge types restore a mixed community from opposing invasions; one-refuge outcomes expose census-dependent bottlenecks; scientific review pending | [Buffered refuges](models/haze_world/buffered-refuges.md) |
 
 ## Getting started
 

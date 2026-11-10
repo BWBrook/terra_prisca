@@ -120,6 +120,26 @@ def climate_comparisons(rows):
             row["total_refuge_temperature_contrast_k"]=row["global_temperature_k"]-none["global_temperature_k"]
 
 
+def zero_refuge_checks(rows,path):
+    with path.open() as stream:old=list(csv.DictReader(stream))
+    results=[]
+    for r in rows:
+        if r["configuration"]!="none" or r["settling_status"]!="census_stationary":continue
+        matches=[x for x in old if float(x["fraction"])==r["fraction"] and x["activity"]==r["activity"]
+            and x["direction"]==r["direction"] and float(x["minimum_cells"])==1
+            and float(x["relative_immigration_yr"])==0 and float(x["census_yr"])==r["census_yr"]]
+        if len(matches)!=1:raise RuntimeError("Need unique single-habitat comparison")
+        x=matches[0]
+        dt=abs(r["global_temperature_k"]-float(x["temperature_k"]))
+        dr=abs(r["methane_ratio"]-float(x["methane_ratio"]))
+        difference=max(abs(r[f"cells_bulk_{g}"]-float(x[f"cells_{g}"]))/
+            max((r[f"cells_bulk_{g}"]+float(x[f"cells_{g}"]))/2,1.) for g in e.GUILDS)
+        results.append(dict(case_id=r["base_case_id"],single_case_id=x["selected_case_id"],
+            temperature_difference_k=dt,methane_ratio_difference=dr,maximum_relative_cell_difference=difference,
+            matching_endpoint=bool(dt<.001 and dr<1e-6 and difference<.001)))
+    return results
+
+
 def plots(rows,raw,output):
     import matplotlib
     matplotlib.use("Agg")
@@ -155,7 +175,7 @@ def plots(rows,raw,output):
         from scipy.special import logsumexp
         for i,g in enumerate(e.GUILDS):
             values=(logsumexp(logs[:,i,:]+np.log(p.weights[:,None]),axis=0)+data["metadata"]["global_log_cell_conversion"])/np.log(10.)
-            axes[1,col].plot(t,values,label=g)
+            axes[1,col].plot(t,values,label="acetogens" if g=="a" else "methanogens")
         for ax in axes[:,col]:ax.set_xscale("symlog",linthresh=20);ax.grid(alpha=.15)
         axes[0,col].set_title(row["direction"].replace("_"," "));axes[1,col].set_xlabel("Years after inoculation")
     axes[0,0].set_ylabel("Global temperature (K)");axes[1,0].set_ylabel("log₁₀ global cells");axes[1,0].legend(frameon=False)
@@ -180,6 +200,10 @@ def main():
     main_ids={c.case_id for c in e.design("main")}
     main_rows=[r for r in rows if r["base_case_id"] in main_ids]
     main_comp=pairs(main_rows);gate=assess_main(main_rows,main_comp)
+    legacy=e.ROOT/"models/haze_world/figures/finite_populations/attained_endpoints.csv"
+    checks=zero_refuge_checks(rows,legacy)
+    e.table(args.input/"zero_refuge_checks.csv",checks)
+    proof["single_habitat_controls"]=dict(file=str(legacy.relative_to(e.ROOT)),sha256=sha256(legacy.read_bytes()).hexdigest())
     for stage in stages:
         ids={c.case_id for c in e.design(stage)}
         e.table(args.input/f"selected_{stage}.csv",[{k:v for k,v in r.items() if k!="final_y"} for r in rows if r["base_case_id"] in ids])
@@ -189,8 +213,11 @@ def main():
         matching_pairs=sum(bool(r.get("matching_endpoint")) for r in comp),
         coexisting_matching_pairs=sum(bool(r.get("matching_endpoint")) and bool(r.get("both_coexist")) for r in comp),
         domain_exits=sum(r["attempt_status"]!="completed" for r in rows),
+        zero_refuge_controls=len(checks),matching_zero_refuge_controls=sum(r["matching_endpoint"] for r in checks),
         maximum_abs_temperature_mean_departure_k=max(r["maximum_abs_temperature_mean_departure_k"] for r in rows),
         surviving_subcellular_excursions=sum(bool(r.get("surviving_subcellular_"+g)) for r in rows for g in e.GUILDS),
+        B5_max_abs_matched_community_contrast_k=max(abs(r["community_temperature_contrast_k"]) for r in rows
+            if r["fraction"]==.9 and r["configuration"] in ("warm","both") and r["settling_status"]=="census_stationary"),
         source_sha256=sha256(Path(__file__).read_bytes()).hexdigest())
     (args.input/"reporting_manifest.json").write_text(e.dumps(summary)+"\n")
     plots(main_rows,args.raw_dir,args.input)

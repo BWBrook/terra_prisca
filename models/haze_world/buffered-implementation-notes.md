@@ -47,3 +47,11 @@ With exchange, each guild uses total biomass and all N explicit allocations;
 no last fraction is reconstructed by subtracting nearly equal numbers.
 Dense minima describe accepted numerical flows and explicit census jumps,
 not solver trials. Their numerical searches are not interval-certified.
+
+Two bounded mechanisms were added after the main results, outside the declared
+96/72 grids. A d=100/year, 100-year prefix in each direction tests rapid
+exchange, because one/year does not overwhelm every local growth advantage.
+A warm-only f=0, d=10⁻⁶/year run with removal disabled tests whether a failed
+acetogen invasion reflects an absorbing census state or a distinct stable
+continuum attractor. Both controls retain their own protocols and are not
+classified as settled endpoints.

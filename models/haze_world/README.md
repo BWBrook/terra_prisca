@@ -50,11 +50,15 @@ structure supplies the rescue without outside immigration. Its
 the runs; the [design audit](review/refuge-design-review.md) distinguishes
 stable partition equilibria from the supported invasion paths that might
 reach them. Its [review](review/refuge-coupling-claude-review-2026-11-10.md)
-shows that a refuge staying on the loser's side of the switch along the whole
-climate path, including the 297 K greenhouse peak, was sufficient in every
-tested run. Climate-tracking refuges cannot meet that in both directions within
-supported physiology, so the next build uses
-[temperature-buffered refuges](buffered-refuge-spec.md).
+shows why the whole climate path, including the 297 K greenhouse peak,
+matters: 38 protected completed runs preserve the losing guild, while eight
+protected prefixes remain domain-censored. Climate-tracking refuges cannot
+support the paired invasion test within the defined physiology. The
+[temperature-buffered variant](buffered-refuges.md) now completes that test:
+both refuges recover the same mixed state near 281.535 K in the key cases.
+All 192 planned runs reach stationary outcomes. One-refuge failures include
+an invader lost during a small warming overshoot; the corresponding uncensored
+ODE recovers from less than one global cell. Scientific review is pending.
 
 **Code.** [`src/terra_prisca/haze_world/methane_budget.py`](../../src/terra_prisca/haze_world/methane_budget.py)
 (model) and [`experiments.py`](../../src/terra_prisca/haze_world/experiments.py)
