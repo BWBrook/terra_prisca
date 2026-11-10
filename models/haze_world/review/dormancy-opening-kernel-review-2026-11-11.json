@@ -1,0 +1,169 @@
+{
+  "captured_opening": {
+    "duration_yr": 0.00023433473756995227,
+    "maximum_fine_log_difference": 1.7763568394002505e-15,
+    "old_and_repaired": {
+      "old": {
+        "error": 0.14905295516934403,
+        "fine": [
+          -27.547263392748647,
+          -61.17586878107706,
+          -34.393363350350356,
+          -61.17586878107706,
+          -12.945437799277164,
+          -43.65272646138476
+        ],
+        "maximum_fine": -12.945437799277164
+      },
+      "repaired": {
+        "error": 0.14905295516934403,
+        "fine": [
+          -27.547263392748647,
+          -61.17586878107706,
+          -34.393363350350356,
+          -61.17586878107706,
+          -12.945437799277165,
+          -43.65272646138476
+        ],
+        "maximum_fine": -12.945437799277165
+      }
+    },
+    "physical_raw_sha256": "3fec2764dd5086c8b256d95d33814162f4cad86bcd62186570e7bb9366492382",
+    "qualification": "The 60-second old-source probe did not reach the later terminal failure. This replay uses its captured affine rate arrays only, not a physical reintegration.",
+    "report_sha256": "1eded46b3ffb9cec2068ae0df7b3ad02b211cec032b3f1c08876d8c3f58e0af8",
+    "start_yr": 52230.0074987116,
+    "status": "captured_resolved_opening_only"
+  },
+  "five_hop_controls": [
+    {
+      "affine": false,
+      "duration_yr": 1e-06,
+      "old": {
+        "analytic_log_survival": -73.86504536593674,
+        "coarse_absolute_log_error": 926.1349546340632,
+        "coarse_log_survival": -1000.0,
+        "fine_absolute_log_error": 0.4700037125790857,
+        "fine_log_survival": -74.33504907851582
+      },
+      "repaired": {
+        "analytic_log_survival": -73.86504536593674,
+        "coarse_absolute_log_error": 1.666666804567285e-07,
+        "coarse_log_survival": -73.86504553260342,
+        "fine_absolute_log_error": 5.208335096540395e-09,
+        "fine_log_survival": -73.86504537114507
+      }
+    },
+    {
+      "affine": false,
+      "duration_yr": 1e-08,
+      "old": {
+        "analytic_log_survival": -96.89089547087723,
+        "coarse_absolute_log_error": 903.1091045291228,
+        "coarse_log_survival": -1000.0,
+        "fine_absolute_log_error": 0.47000363007904866,
+        "fine_log_survival": -97.36089910095627
+      },
+      "repaired": {
+        "analytic_log_survival": -96.89089547087723,
+        "coarse_absolute_log_error": 1.666649040998891e-09,
+        "coarse_log_survival": -96.89089547254387,
+        "fine_absolute_log_error": 5.205436082178494e-11,
+        "fine_log_survival": -96.89089547092928
+      }
+    },
+    {
+      "affine": false,
+      "duration_yr": 1e-10,
+      "old": {
+        "analytic_log_survival": -119.91674639256767,
+        "coarse_absolute_log_error": 880.0832536074323,
+        "coarse_log_survival": -1000.0,
+        "fine_absolute_log_error": 880.0832536074323,
+        "fine_log_survival": -1000.0
+      },
+      "repaired": {
+        "analytic_log_survival": -119.91674639256767,
+        "coarse_absolute_log_error": 1.6655121726216748e-11,
+        "coarse_log_survival": -119.91674639258433,
+        "fine_absolute_log_error": 5.115907697472721e-13,
+        "fine_log_survival": -119.91674639256819
+      }
+    },
+    {
+      "affine": true,
+      "duration_yr": 1e-06,
+      "old": {
+        "analytic_log_survival": -75.30345551986231,
+        "coarse_absolute_log_error": 924.6965444801377,
+        "coarse_log_survival": -1000.0,
+        "fine_absolute_log_error": 0.5263455099152594,
+        "fine_log_survival": -75.82980102977757
+      },
+      "repaired": {
+        "analytic_log_survival": -75.30345551986231,
+        "coarse_absolute_log_error": 3.7500001326407073e-07,
+        "coarse_log_survival": -75.30345589486232,
+        "fine_absolute_log_error": 1.0585537779661536e-08,
+        "fine_log_survival": -75.30345553044785
+      }
+    },
+    {
+      "affine": true,
+      "duration_yr": 1e-08,
+      "old": {
+        "analytic_log_survival": -98.32930583105279,
+        "coarse_absolute_log_error": 901.6706941689472,
+        "coarse_log_survival": -1000.0,
+        "fine_absolute_log_error": 0.526345384446472,
+        "fine_log_survival": -98.85565121549926
+      },
+      "repaired": {
+        "analytic_log_survival": -98.32930583105279,
+        "coarse_absolute_log_error": 3.749988763956935e-09,
+        "coarse_log_survival": -98.32930583480278,
+        "fine_absolute_log_error": 1.0584244591882452e-10,
+        "fine_log_survival": -98.32930583115863
+      }
+    },
+    {
+      "affine": true,
+      "duration_yr": 1e-10,
+      "old": {
+        "analytic_log_survival": -121.35515675480573,
+        "coarse_absolute_log_error": 878.6448432451942,
+        "coarse_log_survival": -1000.0,
+        "fine_absolute_log_error": 878.6448432451942,
+        "fine_log_survival": -1000.0
+      },
+      "repaired": {
+        "analytic_log_survival": -121.35515675480573,
+        "coarse_absolute_log_error": 3.750244559341809e-11,
+        "coarse_log_survival": -121.35515675484324,
+        "fine_absolute_log_error": 1.0516032489249483e-12,
+        "fine_log_survival": -121.35515675480679
+      }
+    }
+  ],
+  "old_source_commit": "0455d15",
+  "old_source_sha256": "3e423ee451d46b1f5ec269047513751d109cb365b97d34b174898fce405f6405",
+  "scope": "Positive scalar odds and normalized probability mixtures preserve exact survival boundaries; at least n-1 Poisson terms preserve representable leading simple paths. The absolute tail criterion is not an entrywise relative-error or global survival-probability guarantee. Adaptive coarse/fine refinement and rare-window scope are unchanged. Full expanded-grid rescoring remains separate.",
+  "source_sha256": {
+    "models/haze_world/review/dormancy-opening-kernel-review-2026-11-11.py": "b978634c5496ef0dc8728c4a07a7b80e1149c48f1e2b6968cea10e8f4da6034a",
+    "src/terra_prisca/haze_world/dormancy_branching.py": "c754e3feac7baf81feb8bf2ffb353f488e06632586b06bb82f96c7969f6293df",
+    "tests/test_dormancy_branching.py": "1c4a3df6065f749c99f6b603220aaebf3bcf097cccd5b26c4c4b3015517ce1a8"
+  },
+  "survival_one_boundary": {
+    "old": {
+      "analytic_common_death_log_survival": -8.22299869644537e-22,
+      "maximum_log_survival": 1.1102189131258084e-16,
+      "minimum_log_survival": -1.9428944045933721e-16,
+      "scalar_zero_death_log_survival": 9.183549615799121e-39
+    },
+    "repaired": {
+      "analytic_common_death_log_survival": -8.22299869644537e-22,
+      "maximum_log_survival": -8.2229986964453625e-22,
+      "minimum_log_survival": -8.2229986964453625e-22,
+      "scalar_zero_death_log_survival": -0.0
+    }
+  }
+}

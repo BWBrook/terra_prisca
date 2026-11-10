@@ -2,6 +2,7 @@ import numpy as np
 import pytest
 from scipy.integrate import quad, solve_ivp
 from scipy.linalg import expm
+from scipy.special import gammainc
 
 from terra_prisca.haze_world import branching as old
 from terra_prisca.haze_world import dormancy_branching as d
@@ -126,6 +127,61 @@ def test_stiff_conversion_kernel_keeps_positive_rare_migration_and_probability_m
     assert actual.sum(axis=1) == pytest.approx(np.ones(4), abs=3e-16)
     assert actual == pytest.approx(expected, rel=1e-9, abs=5e-12)
     assert actual[0, 2] > 0
+
+
+@pytest.mark.parametrize("duration", [1e-6, 1e-8, 1e-10])
+@pytest.mark.parametrize("affine", [False, True])
+def test_five_hop_leading_path_survives_absolute_poisson_truncation(duration, affine):
+    transition = np.zeros((6, 6))
+    for index in range(1, 6):
+        transition[index, index-1] = 1.
+    factor = (lambda time: .5+.5*time/duration) if affine else (lambda time: 1.)
+    interpolate = lambda time: (np.zeros(6), np.zeros(6), transition*factor(time))
+    initial = np.r_[0., np.full(5, -1000.)]
+    coarse = d._positive_step(initial, duration, duration, interpolate)
+    half = d._positive_step(initial, duration, duration/2, interpolate)
+    fine = d._positive_step(half, duration/2, duration/2, interpolate)
+    integrated_rate = duration*(.75 if affine else 1.)
+    probability = gammainc(np.arange(1, 6), integrated_rate)
+    expected = np.r_[0., np.logaddexp(np.log(probability), np.log1p(-probability)-1000.)]
+    assert np.all(np.isfinite(coarse)) and np.all(coarse <= 0.)
+    assert coarse[-1] > -200. and fine[-1] > -200.
+    assert coarse == pytest.approx(expected, abs=2*duration)
+    assert fine == pytest.approx(expected, abs=2*duration)
+    kernel = d._timevarying_kernel(interpolate(duration)[2], interpolate(0.)[2], duration)
+    assert kernel[-1, 0] > 0.
+    assert kernel[-1, 0] == pytest.approx(probability[-1], rel=2*duration)
+
+
+@pytest.mark.parametrize("death", [0., 1e-20, 1e-8, .1])
+def test_conversion_mixture_preserves_tiny_common_death_without_positive_log_roundoff(death):
+    random = np.random.default_rng(831)
+    for _ in range(2):
+        start, end = random.random((6, 6)), random.random((6, 6))
+        np.fill_diagonal(start, 0.); np.fill_diagonal(end, 0.)
+    duration = .3/max(start.sum(axis=1).max(), end.sum(axis=1).max())
+    interpolate = lambda time: (np.zeros(6), np.full(6, death),
+                               start+(time/duration)*(end-start))
+    actual = d._positive_step(np.zeros(6), duration, duration, interpolate)
+    assert np.all(actual <= 0.)
+    assert actual == pytest.approx(np.full(6, -death*duration), rel=2e-14, abs=0.)
+    if death == 0.:
+        assert np.array_equal(actual, np.zeros(6))
+
+
+@pytest.mark.parametrize("birth,duration", [(3.1622776601683794e-12, 1e-12),
+                                             (1., 1e-12), (1., 1.), (1e6, .001)])
+def test_scalar_survival_one_is_exact_for_zero_death(birth, duration):
+    actual = d._birth_death_step(np.zeros(1), np.array([birth]), np.zeros(1), duration)
+    assert np.array_equal(actual, np.zeros(1))
+
+
+def test_scalar_pure_death_retains_tiny_decay_and_deep_probability_tail():
+    death = np.array([0., 1e-20, 1e-8, .01, 1000.])
+    for initial in (np.zeros(5), np.full(5, -1000.)):
+        actual = d._birth_death_step(initial, np.zeros(5), death, .01)
+        assert np.all(np.isfinite(actual)) and np.all(actual <= 0.)
+        assert actual == pytest.approx(initial-death*.01, rel=2e-14, abs=1e-13 if initial[0] else 0.)
 
 
 def test_invalid_transition_rates_are_rejected():

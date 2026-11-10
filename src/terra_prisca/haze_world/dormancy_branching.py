@@ -66,18 +66,21 @@ class _RatioOverflow(ArithmeticError):
 
 
 def _birth_death_step(logu, birth, death, duration):
+    """Advance nonnegative extinction odds, then return log survival."""
     growth = birth-death
-    z = growth*duration
+    z = -growth*duration
     integral = np.full_like(z, np.log(duration))
     positive = z > 1e-7
     negative = z < -1e-7
     small = ~(positive | negative)
-    integral[positive] = z[positive]+np.log(-np.expm1(-z[positive]))-np.log(growth[positive])
-    integral[negative] = np.log(-np.expm1(z[negative]))-np.log(-growth[negative])
+    integral[positive] = z[positive]+np.log(-np.expm1(-z[positive]))-np.log(-growth[positive])
+    integral[negative] = np.log(-np.expm1(z[negative]))-np.log(growth[negative])
     integral[small] += np.log1p(z[small]/2+z[small]**2/6+z[small]**3/24)
-    log_birth = np.full_like(birth, -np.inf)
-    np.log(birth, out=log_birth, where=birth > 0)
-    return logu+z-np.logaddexp(0., log_birth+logu+integral)
+    log_death = np.full_like(death, -np.inf)
+    np.log(death, out=log_death, where=death > 0)
+    with np.errstate(divide="ignore"):
+        log_odds = -logu+np.log(-np.expm1(logu))
+    return -np.logaddexp(0., np.logaddexp(log_odds+z, log_death+integral))
 
 
 def _positive_step(logu, time, duration, interpolate):
@@ -86,7 +89,13 @@ def _positive_step(logu, time, duration, interpolate):
     kernel = _timevarying_kernel(interpolate(time)[2], interpolate(time-duration)[2], duration)
     log_kernel = np.full_like(kernel, -np.inf)
     np.log(kernel, out=log_kernel, where=kernel > 0)
-    value = logsumexp(log_kernel+value[None, :], axis=1)
+    deficit = (kernel@(-np.expm1(value)))/kernel.sum(axis=1)
+    near_one = deficit < .5
+    mixed = np.empty_like(value)
+    mixed[near_one] = np.log1p(-deficit[near_one])
+    mixed[~near_one] = (logsumexp(log_kernel[~near_one]+value[None, :], axis=1)
+                        -logsumexp(log_kernel[~near_one], axis=1))
+    value = mixed
     return _birth_death_step(value, birth, death, duration/2)
 
 
@@ -95,7 +104,9 @@ def _timevarying_kernel(start, end, duration):
 
     Uniformization jump matrices are affine Bernstein polynomials. Their
     ordered integrals retain nonnegative Bernstein coefficients, including
-    the leading coefficients of newly opened multi-hop paths.
+    the leading coefficients of newly opened multi-hop paths. The simple-path
+    floor preserves reachability; absolute tail truncation is not an
+    entrywise relative-error bound.
     """
     if np.array_equal(start, end): return _conversion_kernel(start, duration)
     exit_start, exit_end = start.sum(axis=1), end.sum(axis=1)
@@ -120,7 +131,7 @@ def _timevarying_kernel(start, end, duration):
                                         k/(degree+2)*np.cumsum(product, axis=0)))
         weight *= mean/k
         kernel += weight*coefficients[-1]
-        if weight < np.finfo(float).eps*1e-3: break
+        if k >= len(start)-1 and weight < np.finfo(float).eps*1e-3: break
     else: raise ArithmeticError("Time-ordered conversion uniformization failed")
     kernel /= kernel.sum(axis=1, keepdims=True)
     return kernel
@@ -142,7 +153,7 @@ def _conversion_kernel(transition, duration):
     target = np.ldexp(np.finfo(float).eps*1e-3, -squares)
     for k in range(1, 101):
         power = power@jump; weight *= mean/k; kernel += weight*power
-        if weight < target: break
+        if k >= len(transition)-1 and weight < target: break
     else: raise ArithmeticError("Conversion uniformization failed to converge")
     # Row normalization enforces the known stochastic invariant after roundoff;
     # the Poisson truncation tail is below scaled machine precision.
