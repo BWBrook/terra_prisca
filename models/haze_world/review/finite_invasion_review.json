@@ -1,0 +1,128 @@
+{
+  "reviewed_commit": "c9bbac62b1c798d7b718fe7c0ca781cbfcb460e7",
+  "historical_source_sha256": {
+    "population_coupling.py": "c58925709f6c9786cc2a72b5065dc2f14ddfa7143966ee65d26c309a43757068",
+    "two_guilds.py": "eff6a9027c5b28d154f03462d926591ebee3408eb2c80ec0df5c38929f169f83"
+  },
+  "script_sha256": "0d533782523276a6ceb7bcd33ae94d2a608281255b8fa0cc5161ae291da48204",
+  "habitat_l_cm2": 0.008970677546304392,
+  "assumed_total_habitat_l": 4.57504554861524e+16,
+  "one_global_cell_gdw_l": 6.557311764705883e-30,
+  "ln_one_global_cell": -67.19697206281862,
+  "initial_acetogen_global_cells": 1.525015182871747e+17,
+  "initial_acetogen_global_gdw": 45750.4554861524,
+  "early_event_horizon_yr": 30.0,
+  "event_tolerance_refinement_max_difference_yr": 2.2644162100959875e-09,
+  "refined_methanogen_crossings": [
+    {
+      "scenario": "reference",
+      "threshold_cells": 1.0,
+      "cell_gdw": 3e-13,
+      "area_fraction": 1.0,
+      "first_downcrossing_yr": 18.334736690263316,
+      "historical_five_year_sample_yr": 20.0,
+      "temperature_k": 273.52452060376487,
+      "pressure_pa": 27.350071106672374,
+      "methanogen_net_growth_yr": -3.606592247673829
+    },
+    {
+      "scenario": "reference",
+      "threshold_cells": 1000000.0,
+      "cell_gdw": 3e-13,
+      "area_fraction": 1.0,
+      "first_downcrossing_yr": 14.504136926484666,
+      "historical_five_year_sample_yr": 15.0,
+      "temperature_k": 273.52283914585894,
+      "pressure_pa": 27.34915951932004,
+      "methanogen_net_growth_yr": -3.606644015214546
+    },
+    {
+      "scenario": "reference",
+      "threshold_cells": 1000000000000.0,
+      "cell_gdw": 3e-13,
+      "area_fraction": 1.0,
+      "first_downcrossing_yr": 10.673592151929826,
+      "historical_five_year_sample_yr": 15.0,
+      "temperature_k": 273.5211569878274,
+      "pressure_pa": 27.34824770672221,
+      "methanogen_net_growth_yr": -3.6066957985581234
+    },
+    {
+      "scenario": "cell_mass_div10",
+      "threshold_cells": 1.0,
+      "cell_gdw": 3e-14,
+      "area_fraction": 1.0,
+      "first_downcrossing_yr": 18.97317532947985,
+      "historical_five_year_sample_yr": 20.0,
+      "temperature_k": 273.52480078622796,
+      "pressure_pa": 27.35022302046885,
+      "methanogen_net_growth_yr": -3.606583621003879
+    },
+    {
+      "scenario": "cell_mass_times10",
+      "threshold_cells": 1.0,
+      "cell_gdw": 2.9999999999999997e-12,
+      "area_fraction": 1.0,
+      "first_downcrossing_yr": 17.69629957816878,
+      "historical_five_year_sample_yr": 20.0,
+      "temperature_k": 273.52424040407453,
+      "pressure_pa": 27.349919187933285,
+      "methanogen_net_growth_yr": -3.6066008746995633
+    },
+    {
+      "scenario": "one_percent_area",
+      "threshold_cells": 1.0,
+      "cell_gdw": 3e-13,
+      "area_fraction": 0.01,
+      "first_downcrossing_yr": 17.057863993251974,
+      "historical_five_year_sample_yr": 20.0,
+      "temperature_k": 273.52396018714103,
+      "pressure_pa": 27.3497672642429,
+      "methanogen_net_growth_yr": -3.6066095020816373
+    }
+  ],
+  "acetogen_only_reinvasion": [
+    {
+      "acetate_fraction": 0.0,
+      "temperature_k": 283.19877678579377,
+      "pressure_pa": 21.46330109675326,
+      "methanogen_net_growth_yr": 0.8284235077348562,
+      "could_reinvade": true,
+      "methanogen_rstar_pa": 19.34802755094729,
+      "protocol": "A-only equilibria after post-extinction f intervention; not constant-f invasions"
+    },
+    {
+      "acetate_fraction": 0.5,
+      "temperature_k": 294.40251004070655,
+      "pressure_pa": 47.87253669114604,
+      "methanogen_net_growth_yr": 8.862522232210333,
+      "could_reinvade": true,
+      "methanogen_rstar_pa": 23.962625011169685,
+      "protocol": "A-only equilibria after post-extinction f intervention; not constant-f invasions"
+    },
+    {
+      "acetate_fraction": 0.9,
+      "temperature_k": 273.5335860608286,
+      "pressure_pa": 27.355008799394195,
+      "methanogen_net_growth_yr": -3.6063103946952997,
+      "could_reinvade": false,
+      "methanogen_rstar_pa": 70.20646049739771,
+      "protocol": "A-only equilibria after post-extinction f intervention; not constant-f invasions"
+    }
+  ],
+  "mixed_equilibrium_global_cells": [
+    8.75448558167073e+25,
+    5.159481769136053e+25
+  ],
+  "mixed_equilibrium_stable": true,
+  "scope": "One reference invasion; threshold/habitat/cell-mass readouts are assumptions, not calibrated stochastic extinction",
+  "live_dependency_sha256": {
+    "src/terra_prisca/haze_world/methane_budget.py": "70dc47659e4738d07809e8d23844af79bf69e5dabcc87793eac3f5e560011721",
+    "src/terra_prisca/haze_world/darwinian.py": "e965035d5dfbfafcb695dc3738b23d8a445c4c1e7e246ab4688d67b33482f1aa",
+    "src/terra_prisca/haze_world/hydrogen_uptake.py": "c48d8231ef726605ab07be22438f3e2fd97f23b310773ac748d1b2bf5c36fafd",
+    "src/terra_prisca/haze_world/woodii1998.py": "b0130f4f8ea15aa64245133f79dc8b35883a414031a8b49262c6657350cad0b0",
+    "models/haze_world/evidence/kotsyurbenko2001_table2.csv": "c95b4be023e5502fbb30eb322621e5612bbbf850f99d1b6669e98b95eb370480",
+    "models/haze_response/arney2016/cases.csv": "e3d77d275052a8875991a751868f857bffc964295bfd47591944d86bc58ab07a",
+    "models/haze_response/arney2016/figure4.csv": "c0ef5f3d17ee7c6085ad36247f0f7814726dbbe3273842b01f2c6c4e046856f8"
+  }
+}

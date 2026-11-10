@@ -1,0 +1,165 @@
+{
+  "scope": "Conditional product-law and numerical root audit; not an exhaustive root census or chemical plausibility bound",
+  "source_sha256": "015323fcb7da78461023578e2db22fef19c98680e80965c60ce9b11caf404529",
+  "methane_reference_ratio_case_B": 0.19444444444444445,
+  "reference_multiplier_checks": [
+    {
+      "acetate_reference_multiple": 0,
+      "methane_pressure_reference_multiple": 0,
+      "threshold_factors": [
+        0.0,
+        0.0
+      ],
+      "redox_residual": 0.0
+    },
+    {
+      "acetate_reference_multiple": 1,
+      "methane_pressure_reference_multiple": 1,
+      "threshold_factors": [
+        1.0,
+        1.0
+      ],
+      "redox_residual": -7.589415207398531e-19
+    },
+    {
+      "acetate_reference_multiple": 16,
+      "methane_pressure_reference_multiple": 1,
+      "threshold_factors": [
+        2.0,
+        1.0
+      ],
+      "redox_residual": 1.734723475976807e-18
+    },
+    {
+      "acetate_reference_multiple": 1,
+      "methane_pressure_reference_multiple": 16,
+      "threshold_factors": [
+        1.0,
+        2.0
+      ],
+      "redox_residual": 1.3877787807814457e-17
+    },
+    {
+      "acetate_reference_multiple": 0.0625,
+      "methane_pressure_reference_multiple": 0.0625,
+      "threshold_factors": [
+        0.5,
+        0.5
+      ],
+      "redox_residual": 0.0
+    }
+  ],
+  "independent_reference_state": [
+    23.15415205182796,
+    0.0005687760381834856,
+    0.000342505841395645,
+    0.0008679690763541133,
+    0.1954534859991822
+  ],
+  "independent_reference_temperature_k": 281.28482672129456,
+  "maximum_scaled_root_residual": 2.818925648462311e-15,
+  "maximum_relative_difference_from_model_reference": 4.441451278361138e-14,
+  "long_lag_scenarios": [
+    {
+      "label": "old_37M_case",
+      "former_fixed_activity_stock_mol_l": 36.70992652,
+      "scenario": "potential.6,tau10000yr,originalfractionandvariant",
+      "returned_states": [
+        {
+          "kind": "lifeless",
+          "stable": false,
+          "temperature_k": 283.19877678579377,
+          "acetate_mol_l": 0.0,
+          "pressure_pa": 600.0,
+          "ratio": 0.0005437715867670953,
+          "independent_rhs_max_other": 0.0,
+          "redox_residual": 0.0,
+          "independent_jacobian_check": null
+        },
+        {
+          "kind": "acetogen",
+          "stable": true,
+          "temperature_k": 274.002,
+          "acetate_mol_l": 35.25726485015528,
+          "pressure_pa": 50.26549641741353,
+          "ratio": 0.2418665973920736,
+          "independent_rhs_max_other": 5.1587398690831454e-18,
+          "redox_residual": 9.701525055048321e-19,
+          "independent_jacobian_check": {
+            "relative_matrix_difference": 5.235833205867653e-12,
+            "independent_max_real_per_yr": -0.00010000000000004187
+          }
+        },
+        {
+          "kind": "methanogen",
+          "stable": false,
+          "temperature_k": 274.002,
+          "acetate_mol_l": 0.0,
+          "pressure_pa": 70.58293827067862,
+          "ratio": 0.49731797933417576,
+          "independent_rhs_max_other": 2.5100443267012556e-18,
+          "redox_residual": -1.0942149544624218e-18,
+          "independent_jacobian_check": null
+        }
+      ]
+    },
+    {
+      "label": "old_773M_case",
+      "former_fixed_activity_stock_mol_l": 773.311541,
+      "scenario": "potential.6,tau10000yr,originalfractionandvariant",
+      "returned_states": [
+        {
+          "kind": "lifeless",
+          "stable": false,
+          "temperature_k": 283.19877678579377,
+          "acetate_mol_l": 0.0,
+          "pressure_pa": 600.0,
+          "ratio": 0.0005437715867670953,
+          "independent_rhs_max_other": 0.0,
+          "redox_residual": 0.0,
+          "independent_jacobian_check": null
+        },
+        {
+          "kind": "acetogen",
+          "stable": false,
+          "temperature_k": 274.002,
+          "acetate_mol_l": 706.3389687247885,
+          "pressure_pa": 77.18677089771501,
+          "ratio": 0.4595535844805889,
+          "independent_rhs_max_other": 4.336808689942018e-19,
+          "redox_residual": 0.0,
+          "independent_jacobian_check": null
+        },
+        {
+          "kind": "mixed",
+          "stable": true,
+          "temperature_k": 274.002,
+          "acetate_mol_l": 405.82209651489705,
+          "pressure_pa": 70.5818499690551,
+          "ratio": 0.47918197592174755,
+          "independent_rhs_max_other": 1.0859099307963492e-18,
+          "redox_residual": 9.568407162860227e-19,
+          "independent_jacobian_check": {
+            "relative_matrix_difference": 1.9383424188896866e-11,
+            "independent_max_real_per_yr": -4.1094959373267355e-06
+          }
+        },
+        {
+          "kind": "methanogen",
+          "stable": false,
+          "temperature_k": 274.002,
+          "acetate_mol_l": 0.0,
+          "pressure_pa": 70.58293827067862,
+          "ratio": 0.49731797933417576,
+          "independent_rhs_max_other": 2.5100443267012556e-18,
+          "redox_residual": -1.0942149544624218e-18,
+          "independent_jacobian_check": null
+        }
+      ]
+    }
+  ],
+  "independent_reference_jacobian_check": {
+    "relative_matrix_difference": 9.248696920967717e-10,
+    "independent_max_real_per_yr": -0.011335997551902503
+  }
+}

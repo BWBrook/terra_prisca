@@ -1,0 +1,82 @@
+{
+  "exact_absence_no_immigration": {
+    "final_cells": [
+      0.0,
+      0.0
+    ],
+    "events": 0
+  },
+  "rare_zero_initial_immigration": {
+    "final_cells": [
+      4.999991665326104,
+      0.0
+    ],
+    "times": [
+      0.0,
+      1.0,
+      2.0,
+      2.5
+    ],
+    "first_retained_census_yr": 1.0,
+    "census_flags": [
+      0,
+      1,
+      1
+    ]
+  },
+  "immigration_and_repeated_culls": {
+    "final_cells": [
+      1.0000002315140228,
+      0.0
+    ],
+    "times": [
+      0.0,
+      2.0,
+      2.5
+    ],
+    "removal_times": [
+      1.0,
+      2.0
+    ],
+    "first_extinction_field": 1.0,
+    "immigrant_cells": [
+      5.0,
+      0.0
+    ],
+    "culled_cells": [
+      3.9999971451198397,
+      0.0
+    ],
+    "census_flags": [
+      0,
+      0,
+      0
+    ],
+    "last_census_yr": 2.0,
+    "relative_global_mass_ledger_error": 5.246732333322664e-07
+  },
+  "initial_census_removal": {
+    "removed_cells": [
+      0.49999999999999906,
+      0.0
+    ],
+    "first_extinction_yr": 0.0,
+    "min_cells_field": [
+      0.49999999999999906,
+      0.0
+    ]
+  },
+  "dense_shifted_boundary": {
+    "final_cells": [
+      250000003.4975435,
+      0.0
+    ]
+  },
+  "Nmin_zero_continuum_control": {
+    "maximum_relative_state_difference": 2.1911399351612757e-10,
+    "duration_yr": 2.0,
+    "solver_resets": 0
+  },
+  "scope": "Short boundary/census/ledger checks; toy controls use frozen nonpopulation states, not biological forecasts.",
+  "core_sha256": "7b1b436da0f9dc45a8ba6ecb7090754ed494887e3a7c2026360aa0efbc403b82"
+}

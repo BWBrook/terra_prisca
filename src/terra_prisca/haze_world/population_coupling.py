@@ -7,6 +7,7 @@ This is a named conditional model, not an Archean calibration.
 
 from dataclasses import dataclass, replace
 from functools import lru_cache
+import csv
 
 import numpy as np
 from scipy.integrate import solve_ivp
@@ -14,7 +15,7 @@ from scipy.optimize import brentq
 from scipy.special import expit
 
 from .darwinian import Loss
-from .methane_budget import (AVOGADRO, SECONDS_PER_YEAR, Params, atmosphere,
+from .methane_budget import (ARNEY_DIR, AVOGADRO, SECONDS_PER_YEAR, Params, atmosphere,
                              domain, response, temperature_k)
 from .two_guilds import (ASSIMILATION_A, Competition, FIRST_ORDER_LIMIT_MOL_L,
                          HENRY_30C_MOL_L_PA, guilds)
@@ -34,6 +35,9 @@ class Coupled:
     recycling_midpoint_k: float = 280.
     width_k: float = 2.
     enabled: tuple[bool, bool] = (True, True)
+    activity_feedback: str = "fixed"
+    acetate_reference_mol_l: float = .5e-3
+    methane_reference_pa: float = 350.
 
     def __post_init__(self):
         if not all(np.isfinite(v) and v > 0 for v in (self.habitat_l_cm2, self.acetate_lifetime_yr, self.width_k)):
@@ -46,6 +50,10 @@ class Coupled:
             raise ValueError("Population coupling requires a finite hydrogen outlet")
         if len(self.enabled) != 2 or any(not isinstance(v, (bool, np.bool_)) for v in self.enabled):
             raise ValueError("Explicitly enable or disable the two guilds")
+        if self.activity_feedback not in ("fixed", "products"):
+            raise ValueError("Unknown product-activity variant")
+        if not all(np.isfinite(v) and v > 0 for v in (self.acetate_reference_mol_l, self.methane_reference_pa)):
+            raise ValueError("Product reference activities must be positive")
 
 
 def reference(potential=.3):
@@ -78,6 +86,25 @@ def recycling_rates(t_k, p):
     return p.acetate_fraction * inhibition / p.acetate_lifetime_yr, (1 - p.acetate_fraction) / p.acetate_lifetime_yr
 
 
+@lru_cache(maxsize=None)
+def co2_pressure_pa(case):
+    with (ARNEY_DIR / "cases.csv").open() as handle:
+        row = next(row for row in csv.DictReader(handle) if row["case"] == case)
+    return float(row["p_co2_bar"]) * 1e5
+
+
+def activity_guilds(y, p):
+    """Normalized ideal-product correction; reference pH and CO2 stay fixed."""
+    temperature = float(temperature_k(y[4], p.climate))
+    pair = guilds(temperature - 273.15, p.biology)
+    if p.activity_feedback == "fixed":
+        return pair
+    methane_pa = max(float(y[4]), 0.) * co2_pressure_pa(p.climate.case)
+    factors = ((max(float(y[3]), 0.) / p.acetate_reference_mol_l) ** .25,
+               (methane_pa / p.methane_reference_pa) ** .25)
+    return tuple(replace(g, threshold_pa=g.threshold_pa * factor) for g, factor in zip(pair, factors))
+
+
 def fluxes(y, p):
     """Local flows in mol/L/year; atmospheric source/loss in ratio/year.
 
@@ -86,7 +113,7 @@ def fluxes(y, p):
     """
     pressure, xa, xm, acetate, r = np.asarray(y, dtype=float)
     temperature = float(temperature_k(r, p.climate))
-    pair = guilds(temperature - 273.15, p.biology)
+    pair = activity_guilds(y, p)
     if p.biology.kinetics == "first_order" and p.enabled[0] and pressure * HENRY_30C_MOL_L_PA > FIRST_ORDER_LIMIT_MOL_L:
         raise ValueError("Outside the declared first-order H2 concentration domain")
     biomass = np.array([xa, xm]) * np.array(p.enabled)
@@ -191,6 +218,8 @@ def _ratio_grid(p, n):
 
 
 def _resident(r, p, index):
+    if p.activity_feedback == "products":
+        return _product_resident(r, p, index)
     t = float(temperature_k(r, p.climate))
     pair = guilds(t - 273.15, p.biology)
     g = pair[index]
@@ -204,6 +233,62 @@ def _resident(r, p, index):
     f = fluxes(y, p)
     y[3] = f["acetate_production_mol_l_yr"] / (f["k_rec_yr"] + f["k_other_yr"])
     return y
+
+
+def _product_resident(r, p, index):
+    t = float(temperature_k(r, p.climate))
+    base = guilds(t - 273.15, p.biology)[index]
+    required = base.maintenance + p.biology.loss_h / base.yield_g_mol
+    kinetic = base.rstar(p.biology.loss_h) - base.threshold_pa
+    if not np.isfinite(kinetic):
+        return None
+    p0 = p.biology.atmosphere_pa + supply_h2(p) / p.biology.exchange_mol_l_h_pa
+    krec, kother = recycling_rates(t, p)
+    if index == 1:
+        actual = activity_guilds([0., 0., 0., 0., r], p)[1]
+        pressure = actual.rstar(p.biology.loss_h)
+    else:
+        if kinetic >= p0:
+            return None
+        b = 1 - base.assimilation_mol_g * p.biology.loss_h / required
+
+        def stock(pressure):
+            captured = max(0., supply_h2(p) - p.biology.exchange_mol_l_h_pa * (pressure - p.biology.atmosphere_pa))
+            return HOURS_PER_YEAR * captured * b / (4 * (krec + kother))
+
+        def balance(pressure):
+            return pressure - kinetic - base.threshold_pa * (stock(pressure) / p.acetate_reference_mol_l) ** .25
+
+        pressure = brentq(balance, kinetic, p0, xtol=1e-12) if base.threshold_pa else kinetic
+    captured = supply_h2(p) - p.biology.exchange_mol_l_h_pa * (pressure - p.biology.atmosphere_pa)
+    if not np.isfinite(pressure) or captured <= 0:
+        return None
+    biomass = np.zeros(2)
+    biomass[index] = captured / required
+    y = np.r_[pressure, biomass, 0., r]
+    if index == 0:
+        y[3] = HOURS_PER_YEAR * captured * (1 - base.assimilation_mol_g * p.biology.loss_h / required) / (4 * (krec + kother))
+    return y
+
+
+def _product_mixture(r, p):
+    t = float(temperature_k(r, p.climate))
+    base_a, _ = guilds(t - 273.15, p.biology)
+    m = activity_guilds([0., 0., 0., 0., r], p)[1]
+    qa = base_a.maintenance + p.biology.loss_h / base_a.yield_g_mol
+    qm = m.maintenance + p.biology.loss_h / m.yield_g_mol
+    pressure = m.rstar(p.biology.loss_h)
+    kinetic_a = base_a.rstar(p.biology.loss_h) - base_a.threshold_pa
+    if not np.isfinite(pressure) or not np.isfinite(kinetic_a):
+        return None
+    if base_a.threshold_pa <= 0:
+        raise ValueError("Product-mixture roots require a positive acetogen reference threshold")
+    acetate = p.acetate_reference_mol_l * (max(pressure - kinetic_a, 0.) / base_a.threshold_pa) ** 4
+    krec, kother = recycling_rates(t, p)
+    xa = 4 * (krec + kother) * acetate / (HOURS_PER_YEAR * (qa - base_a.assimilation_mol_g * p.biology.loss_h))
+    captured = supply_h2(p) - p.biology.exchange_mol_l_h_pa * (pressure - p.biology.atmosphere_pa)
+    xm = (captured - qa * xa) / qm
+    return np.array([pressure, xa, xm, acetate, r])
 
 
 @lru_cache(maxsize=None)
@@ -247,7 +332,19 @@ def equilibrium_states(p, n_grid=501):
             y = _resident(r, p, index)
             if y is not None:
                 result.append(_describe(name, y, p))
-    if all(p.enabled):
+    if all(p.enabled) and p.activity_feedback == "products":
+        def product_balance(r):
+            try:
+                y = _product_mixture(r, p)
+                return rhs(y, p)[4] if y is not None else np.nan
+            except ValueError:
+                return np.nan
+
+        for r in _roots(product_balance, grid, 1e-14):
+            y = _product_mixture(r, p)
+            if y is not None and np.all(y[1:4] > 0) and np.max(np.abs(rhs(y, p)[1:])) < 1e-9:
+                result.append(_describe("mixed", y, p))
+    elif all(p.enabled):
         for ts in switch_temperatures(p.biology):
             def t_difference(r):
                 return float(temperature_k(r, p.climate)) - ts
