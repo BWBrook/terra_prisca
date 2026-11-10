@@ -1,0 +1,142 @@
+{
+  "scope": "Independent algebraic three-patch equilibrium, perturbed RHS, redox and full13D spectra; common source kinetics, constants and radiative interpolation; no independent empirical calibration",
+  "parameters": {
+    "base": {
+      "climate": {
+        "case": "B",
+        "lifetime_yr": 10000.0,
+        "abiotic_flux": 680000000.0,
+        "donor_flux": 375157520114.00323,
+        "maintenance_flux": 10000000000.0,
+        "growth_ratio_max": 10.0,
+        "t_opt_k": 300.0,
+        "t_halfwidth_k": 20.0,
+        "thermal": true,
+        "t_zero_k": 283.0,
+        "bridge_scale": 0.01
+      },
+      "biology": {
+        "methanogen": "methanogenic strain MSB",
+        "capacity_ratio": 0.74,
+        "yield_m": 0.78,
+        "maintenance_m30": 0.001,
+        "loss_h": 0.001,
+        "threshold_a30": 20.0,
+        "threshold_shape": "fixed_energy",
+        "msp_threshold_4c": 20.0,
+        "maintenance_energy_j": 69000.0,
+        "kinetics": "saturating",
+        "assimilation_m": 0.0824,
+        "km_scale_a": 1.0,
+        "km_scale_m": 1.0,
+        "cessation_energy_a_j": -24000.0,
+        "cessation_energy_m_j": -28000.0,
+        "threshold_m30": 1.0,
+        "exchange_mol_l_h_pa": 3.333333333333333e-09,
+        "atmosphere_pa": 0.0,
+        "low_temperature_variant": "constant_shape"
+      },
+      "loss": {
+        "anchor_ratio": 0.3,
+        "lifetime_yr": 10000.0,
+        "kind": "power",
+        "elasticity": 1.0,
+        "log_scale": 0.001
+      },
+      "habitat_l_cm2": 0.008970677546304392,
+      "acetate_lifetime_yr": 1.0,
+      "acetate_fraction": 0.5,
+      "recycling_variant": "constant",
+      "recycling_midpoint_k": 280.0,
+      "width_k": 2.0,
+      "enabled": [
+        true,
+        true
+      ],
+      "activity_feedback": "fixed",
+      "acetate_reference_mol_l": 0.0005,
+      "methane_reference_pa": 350.0
+    },
+    "patches": [
+      {
+        "name": "bulk",
+        "weight": 0.96,
+        "rule": "tracking",
+        "value": 0.0
+      },
+      {
+        "name": "warm",
+        "weight": 0.02,
+        "rule": "buffered",
+        "value": 286.0
+      },
+      {
+        "name": "cold",
+        "weight": 0.02,
+        "rule": "buffered",
+        "value": 278.0
+      }
+    ],
+    "dispersal_yr": 0.001
+  },
+  "state_y": [
+    22.486284925419913,
+    0.0005733289267584172,
+    0.0003387306888040407,
+    0.0008812708744682377,
+    19.978022906024876,
+    1.4574557068651612e-07,
+    0.0006324208729959125,
+    1.8777211349836823e-07,
+    27.616383756231844,
+    0.001256137259106304,
+    1.324680283098673e-07,
+    0.001762627194022004,
+    0.19510686213952005
+  ],
+  "global_temperature_k": 281.5348319708848,
+  "temperatures_k": [
+    281.5348319708848,
+    286.0,
+    278.0
+  ],
+  "root_scaled_residual": 1.4065863312840959e-15,
+  "root_nfev": 7,
+  "maximum_real_eigenvalue_yr": -0.0009111369028069348,
+  "matched_spectral_error": 1.2856658673598753e-10,
+  "checks": [
+    {
+      "activity": "fixed",
+      "maximum_scaled_rhs_difference": 1.3100962459860396e-16,
+      "redox_residual": -8.173867941003998e-19,
+      "maximum_weighted_exchange_residual": 3.5487886768735345e-23
+    },
+    {
+      "activity": "products",
+      "maximum_scaled_rhs_difference": 5.293955920339376e-18,
+      "redox_residual": -2.99002630380768e-19,
+      "maximum_weighted_exchange_residual": 3.5487886768735345e-23
+    }
+  ],
+  "source_sha256": {
+    "models/haze_world/review/check_buffered_design.py": "825e68916ebd3eb96ecf80a2d10396d63c1a60938e03d49dbe691ba96e76b109",
+    "src/terra_prisca/haze_world/habitat_coupling.py": "34f611d3f9046bf7d96f8caeffb452f2a2206bab4abc45e630a09980a067c4d0",
+    "src/terra_prisca/haze_world/population_coupling.py": "17a433957e94845595f6d7fd160ffe593c01c4e74550707b0814c95ab67ae663",
+    "src/terra_prisca/haze_world/two_guilds.py": "eff6a9027c5b28d154f03462d926591ebee3408eb2c80ec0df5c38929f169f83",
+    "src/terra_prisca/haze_world/hydrogen_uptake.py": "c48d8231ef726605ab07be22438f3e2fd97f23b310773ac748d1b2bf5c36fafd",
+    "src/terra_prisca/haze_world/woodii1998.py": "b0130f4f8ea15aa64245133f79dc8b35883a414031a8b49262c6657350cad0b0",
+    "src/terra_prisca/haze_world/methane_budget.py": "70dc47659e4738d07809e8d23844af79bf69e5dabcc87793eac3f5e560011721",
+    "src/terra_prisca/haze_world/darwinian.py": "e965035d5dfbfafcb695dc3738b23d8a445c4c1e7e246ab4688d67b33482f1aa",
+    "src/terra_prisca/haze_response/arney2016.py": "a1b8b52f4c929a0518a17542fb323588699433b038949b38ee6ad74679cd0da6",
+    "models/haze_response/arney2016/cases.csv": "e3d77d275052a8875991a751868f857bffc964295bfd47591944d86bc58ab07a",
+    "models/haze_response/arney2016/figure4.csv": "c0ef5f3d17ee7c6085ad36247f0f7814726dbbe3273842b01f2c6c4e046856f8",
+    "models/haze_world/evidence/peters1998_chemostat.csv": "b0b00bf03eaeaabf45fb571330773c5158b53b088436aaee942188f8e9498320",
+    "models/haze_world/evidence/kotsyurbenko2001_table2.csv": "c95b4be023e5502fbb30eb322621e5612bbbf850f99d1b6669e98b95eb370480",
+    "uv.lock": "02bf429b2ec474f03280ec550d5fd847b573ece24ab9043e0b5998370fd4d2b4"
+  },
+  "versions": {
+    "python": "3.14.4",
+    "numpy": "2.5.4",
+    "scipy": "1.18.1"
+  }
+}
