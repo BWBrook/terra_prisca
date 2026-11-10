@@ -87,6 +87,16 @@ with longer dormant lifetimes needed by displaced acetogens. Some paths keep
 cycling even where the mixed equilibrium is locally stable. These results
 are conditional on the cubic switching law and the reference physiology;
 strict unsettled flags and first-window probability limits remain explicit.
+The [review](review/turnover-dormancy-claude-review-2026-11-11.md) accepts
+the build. It reports three findings:
+- The seed-bank threshold follows `ε* = ln(N₀/N₅₀)/(Lτ)` within the measured
+  brackets. A dormant half-life of about 1.3% of the unfavourable period is
+  enough.
+- Dormancy protects only when dormant mortality is below the active
+  deficit, so short-lived dormancy deepens the mild warm-refuge overshoot.
+- The thermostat is an underdamped oscillator: a period of about 120 years
+  and a quality factor of about 130 at `f=0`. That oscillation is the mode
+  the dormancy cycles sustain.
 
 **Code.** [`src/terra_prisca/haze_world/methane_budget.py`](../../src/terra_prisca/haze_world/methane_budget.py)
 (model) and [`experiments.py`](../../src/terra_prisca/haze_world/experiments.py)
