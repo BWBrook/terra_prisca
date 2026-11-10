@@ -168,6 +168,23 @@ law. Two cheap checks would settle the mechanism:
    linearisation. Report whether the cycles survive, vanish, or whether the
    equilibrium itself destabilises.
 
+**Climate corners and repeated bottlenecks.** These address Codex's other
+two questions.
+
+- **Corners.** The no-refuge cycles span only 0.2–0.33 K about the switch,
+  on the smooth part of the extracted curve. The linear mode they resemble
+  exists without any corner, so corners are not needed to explain them.
+- **Repeated bottlenecks.** Case 0012 dips to about 14,500 cells once every
+  443 years. The repeated-bottleneck risk is negligible:
+  - With the integrated rule and `δ ≈ 6.6/yr`, `W ≈ 15` yr,
+    `N₅₀ ≈ ln 2 · 6.6 · 15 ≈ 70` cells.
+  - The expected number of surviving lineages per trough is therefore about
+    140.
+  - The loss probability per cycle is about `e⁻¹⁴⁰`, so even millions of
+    cycles do not matter at the reference cell count.
+  - Repeated-cycle survival becomes a question only if the cell count is
+    about 100 times smaller.
+
 ## 5. The unsettled endpoints
 
 Of 128 runs, 72 remain unsettled, and 45 of the 64 invasion pairs include an
