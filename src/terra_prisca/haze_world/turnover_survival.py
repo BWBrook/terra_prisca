@@ -1,0 +1,192 @@
+"""First-bottleneck diagnostics for turnover and active/dormant variants."""
+
+import argparse
+from concurrent.futures import ProcessPoolExecutor
+from hashlib import sha256
+import json
+from pathlib import Path
+
+import numpy as np
+from scipy.special import logsumexp
+
+from . import branching, bottleneck
+from . import buffered_experiments as e
+from . import habitat_coupling as habitat
+from . import turnover_experiments as turnover
+
+
+def counts(data,p,guild,dormant=False):
+    active=np.flatnonzero(p.weights>0)
+    conversion=data["metadata"]["global_log_cell_conversion"]
+    local=data["log_biomass"][active,guild,:].T
+    totals=logsumexp(local+np.log(p.weights[active])[None,:]+conversion,axis=1)
+    if dormant:
+        stages=np.stack((data["log_active"][active,guild,:].T,
+                         data["log_dormant"][active,guild,:].T),axis=-1)
+        types=(stages+np.log(p.weights[active])[None,:,None]+conversion).reshape(len(totals),-1)
+    else:types=local+np.log(p.weights[active])[None,:]+conversion
+    return totals,types
+
+
+def uptake_shares(y,p,guild,indices,dormant=False):
+    if dormant:
+        from . import dormancy as model
+    largest_local=largest_global=0.
+    for k in indices:
+        f=model.fluxes(y[:,k],p) if dormant else habitat.fluxes(y[:,k],p)
+        used=np.zeros(2)
+        for j,w in enumerate(p.weights):
+            if not w:continue
+            value=np.asarray(f["local"][j]["uptake_h2_mol_l_yr"])
+            largest_local=max(largest_local,value[guild]/sum(value) if sum(value)>0 else 0.)
+            used+=w*value
+        largest_global=max(largest_global,used[guild]/sum(used) if sum(used)>0 else 0.)
+    return float(largest_local),float(largest_global)
+
+
+def first_window(t,y,total,p,guild,dormant=False):
+    threshold=np.log(1e16)
+    for reductions in range(1001):
+        windows=bottleneck.excursions(total,threshold)
+        if not windows:
+            return dict(lo=0,hi=len(t)-1,terminal=False,rare=False,
+                        threshold=threshold,reductions=reductions,local=None,global_=None)
+        lo,hi,terminal=windows[0]
+        local,global_=uptake_shares(y,p,guild,range(lo,hi+1),dormant)
+        if max(local,global_)<=1e-10:
+            return dict(lo=lo,hi=hi,terminal=terminal,rare=True,
+                        threshold=threshold,reductions=reductions,local=local,global_=global_)
+        threshold-=np.log(10.)
+    raise ArithmeticError("No resolved first linear window")
+
+
+def analyze(data,p,guild,dormant=False,rate_stride=1.,max_step=1.):
+    t,y=data["t"],data["y"]
+    total,types=counts(data,p,guild,dormant)
+    window=first_window(t,y,total,p,guild,dormant)
+    lo,hi=window["lo"],window["hi"]
+    stride=max(1,int(np.ceil(rate_stride/np.median(np.diff(t)))))
+    indices=np.unique(np.r_[np.arange(lo,hi+1,stride),hi]).astype(int)
+    if len(indices)<2:raise ArithmeticError("Unresolved probability window")
+    if dormant:
+        from . import dormancy_branching as db
+        _,birth,death,q=db.trajectory_rates(t[indices],y[:,indices],p,guild)
+        logu=db.backward_survival(t[indices],birth,death,q,max_step=max_step)
+    else:
+        pairs=[branching.per_cell_rates(y[:,i],p,guild) for i in indices]
+        birth=np.array([v[1] for v in pairs]);death=np.array([v[2] for v in pairs])
+        logu=branching.backward_survival(t[indices],birth,death,branching.migration_matrix(p),max_step=max_step)
+    probability=branching.lineages(types[lo],logu)
+    k=lo+int(np.argmin(total[lo:hi+1]))
+    curvature=bottleneck._curvature(t[lo:hi+1],total[lo:hi+1],k-lo)
+    interior=lo+2<=k<=hi-2 and curvature is not None
+    width=float(np.sqrt(2*np.pi/curvature)) if interior else None
+    weights=np.exp(types[k]-total[k])
+    if dormant:
+        from . import dormancy_branching as db
+        _,bmin,dmin,_=db.per_cell_rates(y[:,k],p,guild)
+    else:_,bmin,dmin=branching.per_cell_rates(y[:,k],p,guild)
+    mortality=float(weights@dmin)
+    exact_log=total[k]+probability["log_scale_for_half_survival"]
+    approx=np.log(2.)*mortality*width if width is not None else None
+    row=dict(guild=e.GUILDS[guild],start_yr=float(t[lo]),end_yr=float(t[hi]),
+        terminal_window=bool(window["terminal"]),rare_window=window["rare"],
+        probability_scope="first_linear_excursion" if window["rare"] else "nonrare_recorded_environment_prefix",
+        minimum_time_yr=float(t[k]),log_min_cells=float(total[k]),log10_min_cells=float(total[k]/np.log(10.)),
+        log_threshold_cells=window["threshold"],threshold_reductions=window["reductions"],
+        maximum_local_uptake_fraction=window["local"],maximum_global_uptake_fraction=window["global_"],
+        rate_max_spacing_yr=float(max(np.diff(t[indices]))),rate_samples=len(indices),
+        interior_minimum=bool(interior),curvature_yr2=curvature if interior else None,
+        bottleneck_width_yr=width,weighted_death_at_min_yr=mortality,
+        log_cells_for_half_survival_at_min=float(exact_log),
+        cells_for_half_survival_at_min=bottleneck._exp(exact_log),
+        gaussian_cells_for_half_survival=approx,
+        gaussian_relative_error=None if approx is None else float(np.expm1(np.log(approx)-exact_log)),
+        log_entry_cells=types[lo].tolist(),log_type_survival=logu.tolist(),**probability)
+    return row
+
+
+def load(record,raw):
+    path=raw/record["raw_file"]
+    if sha256(path.read_bytes()).hexdigest()!=record["raw_sha256"]:raise RuntimeError("Changed profile checksum")
+    with np.load(path,allow_pickle=False) as source:data={k:source[k] for k in source.files}
+    data["metadata"]=json.loads(str(data["metadata"]))
+    return data
+
+
+def records(raw,mode):
+    selected={}
+    for path in raw.glob("*.receipt.json"):
+        record=json.loads(path.read_text());protocol=record["protocol"]
+        if record["execution_status"]!="complete" or protocol["mode"]!=mode:continue
+        if sha256(e.dumps(protocol).encode()).hexdigest()!=record["fingerprint"]:raise RuntimeError("Changed protocol")
+        for name,digest in protocol["source_sha256"].items():
+            if sha256((e.ROOT/name).read_bytes()).hexdigest()!=digest:raise RuntimeError("Physical source differs: "+name)
+        case=protocol["case"];key=case["case_id"]
+        priority=(case["years"],-case["max_step_yr"],-case.get("rtol",2e-8))
+        if key not in selected or priority>selected[key][0]:selected[key]=(priority,record)
+        elif priority==selected[key][0] and protocol!=selected[key][1]["protocol"]:
+            raise RuntimeError("Ambiguous protocol for "+key)
+    return {key:v[1] for key,v in selected.items()}
+
+
+def _task(task):
+    record,census,raw,dormant,stride=task
+    if dormant:
+        from . import dormancy_experiments as runner
+    else:runner=turnover
+    case=runner.Case(**record["protocol"]["case"]);p=runner.parameters(case);data=load(record,raw)
+    results=[analyze(data,p,g,dormant,stride) for g in (0,1)]
+    events=json.loads(str(load(census,raw)["extinction_events"]))
+    for g,row in enumerate(results):
+        removals=[v for v in events if v["guild"]==("acetogen" if g==0 else "methanogen")]
+        other=results[1-g]
+        row.update(case_id=case.case_id,**{k:v for k,v in record["protocol"]["case"].items() if k!="case_id"},
+            source_raw_file=record["raw_file"],source_raw_sha256=record["raw_sha256"],
+            census_fingerprint=census["fingerprint"],local_census_removals=len(removals),
+            first_local_census_removal_yr=min((v["time_yr"] for v in removals),default=None),
+            downstream_of_other_guild_likely_loss=bool(other["survival_probability"]<.5 and other["minimum_time_yr"]<row["start_yr"]),
+            community_probability_warning="Per-guild conditional diagnostic; survival anywhere is not local occupancy or a joint endpoint probability")
+    return results
+
+
+def main():
+    parser=argparse.ArgumentParser(description=__doc__)
+    parser.add_argument("--variant",choices=("turnover","dormancy"),required=True)
+    parser.add_argument("--raw-dir",type=Path)
+    parser.add_argument("--workers",type=int,default=4)
+    parser.add_argument("--rate-stride",type=float,default=1.)
+    parser.add_argument("--case-id",action="append")
+    parser.add_argument("--output",type=Path)
+    args=parser.parse_args();dormant=args.variant=="dormancy"
+    if dormant:
+        from . import dormancy_experiments as runner
+    else:runner=turnover
+    raw=args.raw_dir or runner.RAW;output=args.output or runner.OUTPUT
+    census=records(raw,"census");uncensored=records(raw,"uncensored")
+    tasks=[]
+    for key,baseline in sorted(census.items()):
+        if args.case_id and key not in args.case_id:continue
+        events=json.loads(str(load(baseline,raw)["extinction_events"]))
+        profile=uncensored.get(key) if events else baseline
+        if profile is None:raise RuntimeError("Missing uncensored profile for "+key)
+        tasks.append((profile,baseline,raw,dormant,args.rate_stride))
+    if args.case_id and len(tasks)!=len(args.case_id):raise RuntimeError("Missing selected case")
+    rows=[]
+    with ProcessPoolExecutor(max_workers=args.workers) as pool:
+        for i,result in enumerate(pool.map(_task,tasks),1):
+            rows.extend(result);print(i,len(tasks),result[0]["case_id"],flush=True)
+    output.mkdir(parents=True,exist_ok=True)
+    name="first_survival"+("_selection" if args.case_id else "")
+    e.table(output/(name+".csv"),[e.clean({k:v for k,v in row.items() if k not in ("log_entry_cells","log_type_survival")}) for row in rows])
+    (output/(name+".json")).write_text(e.dumps(rows)+"\n")
+    sources=[Path(__file__),Path(branching.__file__),Path(bottleneck.__file__)]
+    if dormant:
+        from . import dormancy_branching
+        sources.append(Path(dormancy_branching.__file__))
+    (output/(name+"_manifest.json")).write_text(e.dumps(dict(profiles=len(tasks),rows=len(rows),
+        source_sha256={str(v.relative_to(e.ROOT)):sha256(v.read_bytes()).hexdigest() for v in sources},
+        rate_stride_yr=args.rate_stride,interpretation="Each guild's first qualifying excursion only; later windows excluded; no joint community survival probability"))+"\n")
+
+
+if __name__=="__main__":main()

@@ -47,3 +47,40 @@ Codex (GPT-6), 10 November 2026. The original
   bistable after a refuge is added; KT2/KT3 are numerical predictions for
   the coupled model. Turnover and dormancy remain assumptions rather than
   Archean calibrations.
+
+## Dormancy switching law
+
+Before the full T3 grid, clipped-linear switching caused excessive numerical
+work near break-even growth in pure-resident pilots. The specification
+explicitly permits a documented smooth ramp. T3 therefore uses
+`c(x)=x²(3−2x)` for `0<x<1`, with zero below and one above. This has zero
+derivative at both ends and preserves the prescribed direction of dormancy
+entry and waking. It is a declared response-law choice, not a threshold on
+small growth rates or a seed inserted into an empty pool.
+
+A matched 100-year linear/cubic control at `f=0`, no refuges,
+`epsilon=0.003`, acetogens invading methanogens, measures the entry-law
+difference. It does not establish equal long-term outcomes under both laws.
+The full-grid conclusions remain conditional on the cubic switching law;
+the unmodified linear ramp remains a named control rather than an implicit
+fallback.
+
+## First-window scoring
+
+Before scoring T2/T3, define a guild's first window as its earliest globally
+rare excursion below 10¹⁶ cells. Lower that boundary by decades until both
+local and global hydrogen-uptake shares remain below 10⁻¹⁰ throughout the
+window. Retain the earliest qualifying excursion rather than choosing a
+threshold from the global minimum of a later, biologically impossible
+recovery. An excursion open at the trajectory horizon is terminal and keeps
+its finite horizon explicit. A trajectory that never qualifies receives a
+nonrare, recorded-environment diagnostic, not a claim that the guild had
+negligible environmental effects.
+
+Each local census removal links to this guild-level diagnostic; survival
+anywhere is different from presence in a particular patch. Flag a window
+that starts after another guild's likely first loss as conditional on that
+guild's continuous survival. Do not multiply these probabilities into a
+community forecast. Evaluate the Gaussian approximation only at resolved
+interior first minima with positive curvature. Check rate-grid and horizon
+effects for borderline classifications.
