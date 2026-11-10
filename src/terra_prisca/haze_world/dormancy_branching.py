@@ -164,6 +164,28 @@ def _conversion_kernel(transition, duration):
     return kernel
 
 
+def _backward_interval(start, duration):
+    endpoint = float(start-duration)
+    if start-endpoint > duration:
+        endpoint = float(np.nextafter(endpoint, start))
+    actual = start-endpoint
+    if actual <= 0:
+        raise ArithmeticError("Conversion probability refinement lost time resolution")
+    return endpoint, actual
+
+
+def _local_rates(times, arrays, knot, start):
+    width = times[knot+1]-times[knot]
+    distance_left, distance_right = start-times[knot], times[knot+1]-start
+
+    def interpolate(offset):
+        left_weight = (distance_right-offset)/width
+        right_weight = (distance_left+offset)/width
+        return tuple(left_weight*a[knot]+right_weight*a[knot+1] for a in arrays)
+
+    return interpolate
+
+
 def _dynamic_survival(times, birth, death, transition, rtol, atol, max_step):
     n = birth.shape[1]
 
@@ -198,18 +220,17 @@ def _dynamic_survival(times, birth, death, transition, rtol, atol, max_step):
             endpoint_rates = (interpolate(start)[2], interpolate(times[knot])[2])
             rate = max(float(max(q.sum(axis=1))) for q in endpoint_rates)
             if rate: duration = min(duration, 1/rate)
+            local = _local_rates(times, (birth, death, transition), knot, start)
             for attempt in range(30):
-                coarse = _positive_step(accepted, start, duration, interpolate)
-                half = _positive_step(accepted, start, duration/2, interpolate)
-                fine = _positive_step(half, start-duration/2, duration/2, interpolate)
+                next_time, duration = _backward_interval(start, duration)
+                coarse = _positive_step(accepted, 0., duration, local)
+                half = _positive_step(accepted, 0., duration/2, local)
+                fine = _positive_step(half, -duration/2, duration/2, local)
                 error = np.max(abs(fine-coarse)/(atol+rtol*np.maximum(1., abs(fine))))
                 if error <= 1. and np.all(fine <= 0): break
                 duration /= 2
             else:
                 raise ArithmeticError("Cannot resolve conversion-opening probability step")
-            next_time = start-duration
-            if next_time == start:
-                raise ArithmeticError("Conversion probability refinement lost time resolution")
             repairs += 1
             recorded_t.append(next_time); recorded_y.append(fine.copy())
             if next_time <= t0:

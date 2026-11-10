@@ -184,6 +184,75 @@ def test_scalar_pure_death_retains_tiny_decay_and_deep_probability_tail():
         assert actual == pytest.approx(initial-death*.01, rel=2e-14, abs=1e-13 if initial[0] else 0.)
 
 
+def failed_opening_fixture():
+    """Captured0006 methanogen opening at95130yr; no physical rerun."""
+    birth = np.array([[8.766000506555727, 0., 8.765999980207246, 0., 6.216469585132422, 0.],
+                      [8.765999651891617, 0., 8.765999980206562, 0., 6.216469585132852, 0.]])
+    death = np.tile([8.766, .8766, 8.766, .8766, 8.766, .8766], (2, 1))
+    transition = np.zeros((2, 6, 6))
+    for origin, destination in [(0, 2), (0, 4), (1, 3), (1, 5),
+                                (2, 4), (3, 5), (4, 2), (5, 3)]:
+        transition[:, origin, destination] = 2e-8
+    for origin, destination in [(2, 0), (3, 1), (4, 0), (5, 1)]:
+        transition[:, origin, destination] = 9.6e-7
+    transition[0, 1, 0] = 8.781611726785461e-13
+    transition[1, 0, 1] = 4.1471404295948384e-13
+    transition[:, 2, 3] = [1.3407018928681627e-15, 1.3407945988470027e-15]
+    transition[:, 4, 5] = [17.932118106913848, 17.932118106908522]
+    accepted = np.array([-12.427758354585496, -111.53647417567319, -10.661280941617102,
+                         -102.994634949518, -29.188612368692255, -116.43466013090202])
+    return np.array([95120., 95130.]), (birth, death, transition), accepted
+
+
+def test_local_affine_rates_and_probability_step_are_clock_translation_invariant():
+    times, arrays, accepted = failed_opening_fixture()
+    start = times[-1]
+    endpoint, duration = d._backward_interval(start, 1.0387200420669981e-10)
+    assert start-endpoint == duration and duration == 7*np.spacing(start)
+    absolute = d._local_rates(times, arrays, 0, start)
+    translated = d._local_rates(times-start, arrays, 0, 0.)
+    for offset in (0., -duration/4, -duration/2, -3*duration/4, -duration):
+        for actual, expected in zip(absolute(offset), translated(offset)):
+            assert np.array_equal(actual, expected)
+    assert np.array_equal(d._positive_step(accepted, 0., duration, absolute),
+                          d._positive_step(accepted, 0., duration, translated))
+    opening = absolute(-duration/2)[2][1, 0]
+    assert opening == pytest.approx(arrays[2][0, 1, 0]*duration/20., rel=2e-16)
+
+
+def test_actual_failed_opening_resolves_without_changing_adaptive_criteria():
+    times, arrays, accepted = failed_opening_fixture()
+    start = times[-1]
+    interpolate = d._local_rates(times, arrays, 0, start)
+    rate = max(q.sum(axis=1).max() for q in arrays[2])
+    duration = min(10., 1/rate)
+    for _ in range(30):
+        endpoint, duration = d._backward_interval(start, duration)
+        coarse = d._positive_step(accepted, 0., duration, interpolate)
+        half = d._positive_step(accepted, 0., duration/2, interpolate)
+        fine = d._positive_step(half, -duration/2, duration/2, interpolate)
+        error = max(abs(fine-coarse)/(1e-11+1e-9*np.maximum(1., abs(fine))))
+        if error <= 1. and np.all(fine <= 0.):
+            break
+        duration /= 2
+    else:
+        pytest.fail('Captured opening failed the unchanged30-attempt bootstrap')
+    assert np.all(np.isfinite(fine)) and duration > 100*np.spacing(start)
+    assert start-endpoint == duration
+
+
+@pytest.mark.parametrize("duration", [1.0387200420669981e-10, .055765853, 1., 10.])
+def test_backward_endpoint_is_representable_without_exceeding_requested_step(duration):
+    start = 95130.
+    endpoint, actual = d._backward_interval(start, duration)
+    assert actual == start-endpoint and 0. < actual <= duration
+
+
+def test_unrepresentable_backward_interval_fails_explicitly():
+    with pytest.raises(ArithmeticError, match="lost time resolution"):
+        d._backward_interval(95130., np.spacing(95130.)/4)
+
+
 def test_invalid_transition_rates_are_rejected():
     with pytest.raises(ValueError, match="zero diagonal"):
         d.backward_survival([0., 1.], np.zeros((2, 2)), np.zeros((2, 2)), np.eye(2))

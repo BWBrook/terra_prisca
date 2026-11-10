@@ -1,0 +1,99 @@
+{
+  "aligned_duration_yr": 1.0186340659856796e-10,
+  "aligned_endpoint_yr": 95129.9999999999,
+  "captured_case": "dormancy_0006",
+  "clock_translation_bitwise": true,
+  "guild": "methanogen",
+  "input_sha256": {
+    "official0006_failure.json": "49c1cc7d19ba737f2fe4742c93d9cd804b9d9e2afdcccae3ceddf0de9b66cb25",
+    "recovered_failure_rates_and_state.npz": "73275a79445983e5454a9cc2e8d58de7e2e3f154d212e1b07a898931f5793ba8"
+  },
+  "official_complete_task": {
+    "status": "pending"
+  },
+  "old_endpoint_clock_steps": {
+    "coarse": 7.0,
+    "fine": 8.0,
+    "half_start": 4.0
+  },
+  "predecessor_commit": "c5568cf81b53156cac7dc5aa1f8d6649ca697e8c",
+  "predecessor_sha256": "c754e3feac7baf81feb8bf2ffb353f488e06632586b06bb82f96c7969f6293df",
+  "replay": {
+    "local_clock": {
+      "all_finite": true,
+      "attempt": 17,
+      "coarse": [
+        -12.427758354600552,
+        -72.52465344624912,
+        -10.66128094170486,
+        -101.79232023991298,
+        -29.188612368714914,
+        -102.14970585278903
+      ],
+      "duration_yr": 4.2545434553176165e-07,
+      "endpoint_yr": 95129.99999957455,
+      "error": 0.6426898816336699,
+      "fine": [
+        -12.427758354600556,
+        -72.52465339963183,
+        -10.661280941704856,
+        -101.79232023991297,
+        -29.18861236871492,
+        -102.14970585278901
+      ],
+      "maximum_fine": -10.661280941704856,
+      "resolved": true
+    },
+    "predecessor": {
+      "all_finite": true,
+      "attempt": 29,
+      "coarse": [
+        -12.4277583545855,
+        -89.17969205522157,
+        -10.661280941617123,
+        -102.99463494957584,
+        -29.18861236869226,
+        -116.43463731045915
+      ],
+      "duration_yr": 1.0387200420669981e-10,
+      "endpoint_yr": 95129.9999999999,
+      "error": 1499509.7127049793,
+      "fine": [
+        -12.427758354585503,
+        -89.04615149108456,
+        -10.661280941617123,
+        -102.9946349495711,
+        -29.188612368692255,
+        -116.434634050122
+      ],
+      "maximum_fine": -10.661280941617123,
+      "resolved": false
+    }
+  },
+  "scope": "Same recorded piecewise-affine rates, original30-attempt coarse/fine tolerance and probability bounds. A representable whole-step endpoint fixes actual duration before local-offset quadrature. No probability clipping, time fabrication, rate/window change, physical reintegration or general global-tail accuracy claim.",
+  "source_sha256": {
+    "models/haze_world/review/dormancy-opening-clock-review-2026-11-11.py": "4b153f2cbb7ab80da9ef0d6013d6f6e560a9f904efc53f07ad831266ab1b744c",
+    "src/terra_prisca/haze_world/dormancy_branching.py": "93f5c2bd47824186ad24d12400f63218e2ff1c16edc4c3e9627914dc98226f62",
+    "tests/test_dormancy_branching.py": "fe6b9cf951d5a7da8174efc088cc73c8ab83b512d0ceeb3115f1fd694d11bfe0"
+  },
+  "start_yr": 95130.0,
+  "time_ulp_yr": 1.4551915228366852e-11,
+  "window_scope": {
+    "guild": 1,
+    "hi": 10000,
+    "lo": 0,
+    "rate_stride": 1.0,
+    "window": {
+      "anchor": 90,
+      "global_": null,
+      "hi": 10000,
+      "lo": 0,
+      "local": null,
+      "rare": false,
+      "reductions": 0,
+      "status": "never_globally_rare",
+      "terminal": false,
+      "threshold": 36.841361487904734
+    }
+  }
+}
