@@ -89,6 +89,16 @@ def reviewed_paths():
         raw_sha256=data["original_raw_sha256"], kind="finite_census_hybrid_cycle_candidate",
         interpretation=data["interpretation"])
     evidence[str(path.relative_to(ROOT))] = digest(path)
+    for name in ("dormancy126_cycle_0024.json", "dormancy126_cycle_0126.json"):
+        path = REVIEW/name
+        data = json.loads(path.read_text())
+        if data["status"] != "completed" or data["control_culls"]:
+            raise RuntimeError("Unqualified nonspatial continuation")
+        protocol = data["protocol"]
+        paths[protocol["native_fingerprint"]] = dict(path=str(path.relative_to(ROOT)),
+            raw_sha256=protocol["native_raw_sha256"], kind="unculled_cycle_candidate",
+            interpretation="Persistent nonspatial recurrence reproduced by an independent maintained Radau continuation; no periodic-orbit or global-basin proof.")
+        evidence[str(path.relative_to(ROOT))] = digest(path)
     return paths, evidence
 
 

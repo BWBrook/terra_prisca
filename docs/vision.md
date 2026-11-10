@@ -163,8 +163,10 @@ Fidelity is measured against the published figures, digitised.
    resolves the equilibrium map and 196 refuge outcomes. Refuges can shift
    establishment thresholds through methane as well as retain cells; that
    effect depends on the assumed low-methane climate branch. A named
-   [dormancy variant](../models/haze_world/dormancy.md) is undergoing full
-   numerical and demographic qualification. Fixed turnover, dormant mortality
+   [dormancy variant](../models/haze_world/dormancy.md) completes 128 long flows
+   and 143 first-window profiles. Seed banks can retain both guilds without
+   refuges, while recurring paths qualify the picture of a static thermostat.
+   Fixed turnover, dormant mortality
    and prescribed heat baths remain assumptions.
    A [solar-response search](../models/haze_response/solar-responses.md) found
    a second Sun-age checkpoint, but no matched hazy luminosity grid.

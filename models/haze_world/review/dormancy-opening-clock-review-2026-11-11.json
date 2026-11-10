@@ -9,7 +9,14 @@
     "recovered_failure_rates_and_state.npz": "73275a79445983e5454a9cc2e8d58de7e2e3f154d212e1b07a898931f5793ba8"
   },
   "official_complete_task": {
-    "status": "pending"
+    "inputs_unchanged": true,
+    "official_rows_sha256": "6b8e5d5d157aa7e2b59b51cd65f283370892df21719fd949db54862f9dc2c94d",
+    "path": "local/haze/dormancy_opening_clock_review/official0006_qualification.json",
+    "selected_profile_fingerprint": "645c14d259c21dae7bf2f53bce51eacf68da59c5abc8a9c2b0b2be852719ad5a",
+    "sha256": "eb137c7a228966199a29ef13dd74ab9b07d98f8e9f1fce9b15ea999847af5b83",
+    "sources_unchanged": true,
+    "status": "completed",
+    "wall_seconds": 254.23553933296353
   },
   "old_endpoint_clock_steps": {
     "coarse": 7.0,

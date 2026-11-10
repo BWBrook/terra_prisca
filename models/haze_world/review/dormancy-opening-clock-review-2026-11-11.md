@@ -51,9 +51,13 @@ read-only review cleared the same source and test hashes and reran those
 tests. The [control JSON](dormancy-opening-clock-review-2026-11-11.json)
 retains source, controller, actual-failure and rate-archive identities.
 
-One complete official case-0006 task is being qualified separately. It uses
-the selected physical profile without a new physical simulation, and retains
-both complete guild rows and the four scoring-source hashes. Full expanded-grid
+One complete official case-0006 task finished in 254.24 seconds. It used the
+selected physical profile without a new physical simulation. Both complete
+guild rows, four scoring-source hashes, profile and census identities, and
+the unchanged receipt selector are retained. Both guilds are classified as
+never globally rare over the recorded 0–100,000-year window, with represented
+conditional probabilities rounding to one. These are conditional recorded-
+environment diagnostics, not joint endpoint probabilities. Full expanded-grid
 rescoring under the repaired source remains a separate completion gate.
 This clock correction supplies no general entrywise-tail or global survival
 accuracy guarantee beyond the stated controls.

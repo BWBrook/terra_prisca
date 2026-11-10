@@ -5,8 +5,8 @@ unresolved dormant compartment after the competing guild is absent. The
 original strict qualifier remains byte-identical and runs first. The new rule
 passes 50 targeted tests, independent implementation review, a bounded replay,
 the original-start 100,000-year case 125 and the two required rare physical
-controls. Canonical selection and aggregate probability reconciliation remain
-the parent's separate work.
+controls. The full125 receipt is selected in the completed128-case physical
+grid; probability reconciliation is recorded separately.
 
 The helper is `src/terra_prisca/haze_world/dormancy_roundoff_integration.py`,
 SHA-256
@@ -123,7 +123,8 @@ The [policy receipt](dormancy-absolute-resolution-policy-2026-11-11.json)
 records source, input, controller and raw hashes, strict-037 identity,
 independent review, exact protocol, both macro proofs and every qualified
 correction/cell bound, plus the full-horizon and rare-control receipt hashes.
-Canonical promotion remains parent-owned. Raw evidence is in the ignored
+The aggregate selector pins this producer and its qualified annual prefix.
+Raw evidence is in the ignored
 `local/haze/dormancy_absolute_policy_review/`. The ignored controller
 `local/haze/dormancy_trial_review/production_absolute_resolution0125_probe.py`
 accepts a fresh `--output-dir` and refuses to overwrite an existing receipt.

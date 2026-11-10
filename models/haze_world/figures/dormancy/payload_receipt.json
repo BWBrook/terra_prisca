@@ -1,0 +1,22 @@
+{
+  "all_canonical_receipt_hashes_verified": true,
+  "archive_directory": "turnover-dormancy-3add1f4-20261110",
+  "archived_copy_verified": true,
+  "bytes": 698120413,
+  "files": 2302,
+  "inventory": {
+    "dormancy_first_window_profiles": 143,
+    "dormancy_guild_diagnostics": 286,
+    "dormancy_planned_cases": 128,
+    "dormancy_refinement_cases": 15,
+    "frozen_buffered_reference_profiles": 64,
+    "turnover_parameter_settings": 245,
+    "turnover_refuge_cases": 196
+  },
+  "local_copy_verified": true,
+  "manifest_excludes_itself": true,
+  "manifest_sha256": "bf4eaff77c256387cb5274393492ce1c173c090da4d678f79602ba54d97af8b4",
+  "scope": "Complete prescribed T1/T2/T3 evidence and frozen analysis inputs, plus qualified and superseded controls whose individual statuses remain explicit. No global-attractor or joint stochastic-persistence claim.",
+  "source_code_commit": "09ba70e134274d9e11643c55350b6a557e9569cb",
+  "unexpected_files": 0
+}

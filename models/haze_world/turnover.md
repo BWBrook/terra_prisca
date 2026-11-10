@@ -437,3 +437,9 @@ The [map manifest](figures/turnover/regimes_manifest.json),
 the outputs to that source and the unchanged climate, uptake and physical
 model inputs. Twelve targeted tests cover the new regimes, continuum contact,
 corner stability, positive-coordinate fidelity and exact absence of a guild.
+
+The [raw-payload receipt](figures/turnover/payload_receipt.json) pins the
+shared T1–T3 archive. Its `source_epochs/t2_analysis/` directory retains the
+exact T2 endpoint and survival producers from commit `b759291`, as recorded
+by their manifests. The common analysis helpers were subsequently extended
+for T3; exact historical replication uses those retained source versions.

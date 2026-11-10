@@ -81,8 +81,12 @@ boundary; that establishment mechanism depends on the low-methane climate
 bridge. Global coexistence and material competition in the bulk are distinct.
 The [dormancy variant](dormancy.md) adds active and dormant pools, with the
 [specification](turnover-dormancy-spec.md) retaining the predictions made
-before the experiments. Its full numerical and demographic qualification is
-in progress.
+before the experiments. The completed build has 128 long physical flows and
+143 first-window profiles. Seed banks can retain both guilds without refuges,
+with longer dormant lifetimes needed by displaced acetogens. Some paths keep
+cycling even where the mixed equilibrium is locally stable. These results
+are conditional on the cubic switching law and the reference physiology;
+strict unsettled flags and first-window probability limits remain explicit.
 
 **Code.** [`src/terra_prisca/haze_world/methane_budget.py`](../../src/terra_prisca/haze_world/methane_budget.py)
 (model) and [`experiments.py`](../../src/terra_prisca/haze_world/experiments.py)
