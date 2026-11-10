@@ -1,0 +1,230 @@
+{
+  "bounded_original_comparison": {
+    "accepted_steps": 13180,
+    "accepted_time_yr": 13365.279824656074,
+    "error": "Wall('Sixty-second single saved-state predictor replay bound')",
+    "native_work": [
+      {
+        "constructor_failures": 0,
+        "constructor_jacobian_attempts": 5273,
+        "constructors": 5273,
+        "factorizations": 31634,
+        "jacobian_attempts": 5273,
+        "rhs_evaluations": 115992
+      }
+    ],
+    "negative_endpoint_indices": {
+      "4": 2636
+    },
+    "note": "Original predictor uses the terminal parent; zero-predictor terminal and strict-parent endpoints are bitwise identical, with zero chord extensions in both. Original replay stopped at60sec rather than completing100yr; no original endpoint comparison or extrapolated total runtime is claimed. Timeout interrupted one dense audit annotation after native work counters incremented.",
+    "positivity_rejections": 2636,
+    "progress_yr": 2.9312329923268408,
+    "receipt": "local/haze/dormancy_zero_predictor_review/original_13362_100.json",
+    "receipt_sha256": "fdf236a94a5cd27f2f26ea4fb85725493b926ddb55d49d53b3e3db67e8bf81df",
+    "start_time_yr": 13362.348591663747,
+    "status": "failed",
+    "wall_seconds": 60.00143070810009
+  },
+  "control": {
+    "accepted_steps": 21,
+    "controller": "local/haze/dormancy_trial_review/production_predictor0125_probe.py",
+    "controller_sha256": "65fc07bd3e0d8705ea0327e9169076375ef71aafa5934e30455fc412ed6ba827",
+    "initial_comparison": {
+      "final_temperature_k": 283.1987767857941,
+      "initial_temperature_k": 283.1987767857941,
+      "per_stock_absolute_difference": [
+        0.0,
+        0.0,
+        0.0,
+        4.336808689942018e-19,
+        6.356472938627583e-51,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        1.0733601507606494e-17
+      ]
+    },
+    "input_snapshot": "local/haze/dormancy_predictor_review/accepted_input_snapshot.json",
+    "input_snapshot_sha256": "92fe1e7e7c3847d028869361cfe32eeae43b90de2a48fcdd70defb1f68151e1a",
+    "native_failures": 0,
+    "native_work": [
+      {
+        "constructor_failures": 0,
+        "constructor_jacobian_attempts": 1,
+        "constructors": 1,
+        "factorizations": 66,
+        "jacobian_attempts": 4,
+        "rhs_evaluations": 226
+      }
+    ],
+    "omitted_terminal_snapshot_sources": [
+      "src/terra_prisca/haze_world/dormancy_terminal_experiments.py",
+      "src/terra_prisca/haze_world/dormancy_terminal_integration.py"
+    ],
+    "positive_dense": {
+      "declined_defect": 0,
+      "extended_pieces": 0,
+      "native_dense_pieces": 21,
+      "negative_native_endpoint_pieces": 0,
+      "negative_native_endpoint_rejections": 0
+    },
+    "positivity_retries": 0,
+    "predictor_statistics": [
+      {
+        "native_exceptions": 0,
+        "native_failures": 0,
+        "native_step_calls": 21,
+        "native_successes": 21,
+        "prior_dense_predictors_suppressed": 20,
+        "restored_prior_dense_on_failure": 0,
+        "tiny_indices": {
+          "4": 21
+        },
+        "tiny_linear_step_calls": 21
+      }
+    ],
+    "protocol": {
+      "census_yr": 10.0,
+      "initial_recensus": false,
+      "max_step_yr": 10.0,
+      "minimum_cells": 1.0,
+      "native_newton_maxiter": 6,
+      "retained_charts": true,
+      "rtol": 2e-08
+    },
+    "raw_file": "local/haze/dormancy_predictor_review/predictor0125_13362_100.npz",
+    "raw_sha256": "8eb86df0916c99cd6e8700be405c9762f80903532b4948126b6123ee62a94659",
+    "receipt": "local/haze/dormancy_predictor_review/predictor0125_13362_100.json",
+    "receipt_sha256": "c1a13a70a077b595acf6ac548d843a07e713525c2409d751638f24920c6d4d94",
+    "resets": 0,
+    "scratch_endpoint_physical_bits_identical": true,
+    "source_sha256": {
+      "models/haze_response/arney2016/cases.csv": "e3d77d275052a8875991a751868f857bffc964295bfd47591944d86bc58ab07a",
+      "models/haze_response/arney2016/figure4.csv": "c0ef5f3d17ee7c6085ad36247f0f7814726dbbe3273842b01f2c6c4e046856f8",
+      "models/haze_world/evidence/kotsyurbenko2001_table2.csv": "c95b4be023e5502fbb30eb322621e5612bbbf850f99d1b6669e98b95eb370480",
+      "models/haze_world/evidence/peters1998_chemostat.csv": "b0b00bf03eaeaabf45fb571330773c5158b53b088436aaee942188f8e9498320",
+      "src/terra_prisca/haze_response/arney2016.py": "a1b8b52f4c929a0518a17542fb323588699433b038949b38ee6ad74679cd0da6",
+      "src/terra_prisca/haze_world/bottleneck_integration.py": "ce56becb23ca53c6bfb48dffc054d8ecc90839bf5dd0ffd716dbf22635dd435f",
+      "src/terra_prisca/haze_world/buffered_experiments.py": "c8603febb0167be3fc944b60672d9e11957aabf4ca7654dc6efb20639176336a",
+      "src/terra_prisca/haze_world/darwinian.py": "e965035d5dfbfafcb695dc3738b23d8a445c4c1e7e246ab4688d67b33482f1aa",
+      "src/terra_prisca/haze_world/dormancy.py": "bf0a0e02c621dae1ba13c421ff75f8d0233e2c88bac1e54a42036c7f21797645",
+      "src/terra_prisca/haze_world/dormancy_chemical_experiments.py": "840f3a46172930e3c1bfd0a7a3a45227b6ea43b666f14f7fc38faf714175c258",
+      "src/terra_prisca/haze_world/dormancy_chemical_integration.py": "75c538cb2bfabf0e8b497d6f7b60e8714ab2a69880d8836ec5201ac05b626cd1",
+      "src/terra_prisca/haze_world/dormancy_conditioned_experiments.py": "3373ee7b1d9aa0d46b3455b6be93f620fee7942861a8c59932efce0e8f35c7fb",
+      "src/terra_prisca/haze_world/dormancy_conditioned_integration.py": "39024878c87ed3ddbd385bbe586e5e872f85855f30010aca0a502671e5b64bbe",
+      "src/terra_prisca/haze_world/dormancy_experiments.py": "91a6aaf01702f357b076761ca650918bbc5d0a18af7f53bf542ed30fe2e2db9c",
+      "src/terra_prisca/haze_world/dormancy_face_experiments.py": "305e44d7f7ccb498dc8898ecb58c1e8cdb3ce79fe1c61a3a3b26c1d21f388865",
+      "src/terra_prisca/haze_world/dormancy_face_integration.py": "6a758528247493428459d250a0cd000ae678c9e59c05a09947f94628ed1672ce",
+      "src/terra_prisca/haze_world/dormancy_integration.py": "0a1cc282057a4187288ae77c8ef69e77830a3cb741d729d1877fe7a0c15dcd01",
+      "src/terra_prisca/haze_world/dormancy_jacobian_integration.py": "7046fc9baa47022fff7e700ea79f8e72e2c3195a77b9bd5f71e272d6a1c34310",
+      "src/terra_prisca/haze_world/dormancy_predictor_experiments.py": "a937fca22f8b13a75d817841757f2588da9c4d778c44028c3385b75459703722",
+      "src/terra_prisca/haze_world/dormancy_predictor_integration.py": "c2cf311336cfc24e8683c4b8e10d4c89cd1af60929b81935363de1948e2d5af8",
+      "src/terra_prisca/haze_world/dormancy_progress_integration.py": "ee65a5d01009bb376146f64b883d3d6ec52670fb2bb2326bb2a4331e63d589a4",
+      "src/terra_prisca/haze_world/dormancy_radau_experiments.py": "26a050bc24fb7a000bf929ca27db96fc04bbbdf538083ee70b5674a67f607c08",
+      "src/terra_prisca/haze_world/dormancy_radau_integration.py": "09be346c90c0fcb65ed6409f2de47ea1e4d3e2d542f3d6291eb7ae85a0bf6d2b",
+      "src/terra_prisca/haze_world/dormancy_stage_experiments.py": "c77bbdf499a16d501104f98b7d0f421c018fb4c36a098850d0bd742c91c644ef",
+      "src/terra_prisca/haze_world/dormancy_stage_integration.py": "19b7909fda2feb47b767ec7a81050fd8c935f59b1aa25149b8159722597130eb",
+      "src/terra_prisca/haze_world/dormancy_starts.py": "67af0622f6243983569777f4d4368c12894ceed0351d05b2a89bd942ec439a3f",
+      "src/terra_prisca/haze_world/dormancy_trial_integration.py": "b5c0d208454c8f55b4da865a387ea592f117e28700bb13d1025efe4a4e92ef18",
+      "src/terra_prisca/haze_world/finite_experiments.py": "285d5f4ab46997920559ee0ac68657b0405eee39b38f97520e248faba4db631c",
+      "src/terra_prisca/haze_world/finite_populations.py": "4644088974706aa5f012fb3335a6b1cc8bfd90da88d0b99f9f9e2b64356890df",
+      "src/terra_prisca/haze_world/habitat_coupling.py": "34f611d3f9046bf7d96f8caeffb452f2a2206bab4abc45e630a09980a067c4d0",
+      "src/terra_prisca/haze_world/habitat_equilibria.py": "90ec06dbce07e6625878ece2e97b55604ed4708b8aad9f66b0dd06dd8aa50a9a",
+      "src/terra_prisca/haze_world/habitat_integration.py": "3a115c22ee4b4a6b2c3f4585385927a7e32d68712cfb3d0073f0e52089a1b214",
+      "src/terra_prisca/haze_world/hydrogen_uptake.py": "c48d8231ef726605ab07be22438f3e2fd97f23b310773ac748d1b2bf5c36fafd",
+      "src/terra_prisca/haze_world/methane_budget.py": "70dc47659e4738d07809e8d23844af79bf69e5dabcc87793eac3f5e560011721",
+      "src/terra_prisca/haze_world/population_coupling.py": "17a433957e94845595f6d7fd160ffe593c01c4e74550707b0814c95ab67ae663",
+      "src/terra_prisca/haze_world/turnover_starts.py": "d980d85dd6910d82828e9dbddbcf4588f62fd8bf870ce8af6a06a76ffb512bd5",
+      "src/terra_prisca/haze_world/two_guilds.py": "eff6a9027c5b28d154f03462d926591ebee3408eb2c80ec0df5c38929f169f83",
+      "src/terra_prisca/haze_world/woodii1998.py": "b0130f4f8ea15aa64245133f79dc8b35883a414031a8b49262c6657350cad0b0",
+      "uv.lock": "02bf429b2ec474f03280ec550d5fd847b573ece24ab9043e0b5998370fd4d2b4"
+    },
+    "start_time_yr": 13362.348591663747,
+    "status": "completed",
+    "terminal_time_yr": 13462.348591663747,
+    "wall_seconds": 0.11949287494644523
+  },
+  "date": "2026-11-11",
+  "helper": {
+    "path": "src/terra_prisca/haze_world/dormancy_predictor_integration.py",
+    "sha256": "c2cf311336cfc24e8683c4b8e10d4c89cd1af60929b81935363de1948e2d5af8",
+    "solver_flag": "radau_dormancy_zero_stage_predictor"
+  },
+  "independent_review": {
+    "error_history_and_jacobian_equal": true,
+    "helper_sha256": "c2cf311336cfc24e8683c4b8e10d4c89cd1af60929b81935363de1948e2d5af8",
+    "linear_ode_steps_bitwise_equal_to_manual_standard_zero_guess": 6,
+    "native_sol_access_count": 3,
+    "path": "local/haze/dormancy_predictor_review/independent_review_checks.json",
+    "reviewer": "Codex independent subagent turnover_regimes",
+    "scipy_native_step_source_sha256": "2b6d2c3dc3153d0264ae14586f8848e613909b3c8df38a07ff9e5c1423cba611",
+    "scipy_version": "1.18.1",
+    "scope": "Read-only source review plus a small synthetic linear-ODE predictor contract; no scientific trajectories",
+    "sha256": "bf8e9f2241d851e0a03fd769f255d96b01ff4412c63010fc2b825ed4a18afb14",
+    "sol_used_only_for_initial_guess_and_final_dense_output": true,
+    "strict09be_dense_inherited": true,
+    "test_wall_seconds": 3.87,
+    "tests_passed": 17
+  },
+  "limitations": [
+    "Private100yr pinned accepted-state replay, not a canonical full-horizon producer receipt.",
+    "Source input was generated by the earlier terminal epoch; both terminal source files are explicitly excluded from the new producer graph.",
+    "No exact-flow, global-trajectory, extinction-probability or rare-lineage accuracy guarantee.",
+    "The incomplete original comparison has no final endpoint or normalized full-run timing.",
+    "Parent original-start and first-window/rare qualification remains separate."
+  ],
+  "next_gate": "Parent original-start and required first-window/rare controls plus source/receipt reconciliation; independent helper review passed.",
+  "predecessor_sources": {
+    "src/terra_prisca/haze_world/dormancy_conditioned_integration.py": "39024878c87ed3ddbd385bbe586e5e872f85855f30010aca0a502671e5b64bbe",
+    "src/terra_prisca/haze_world/dormancy_radau_integration.py": "09be346c90c0fcb65ed6409f2de47ea1e4d3e2d542f3d6291eb7ae85a0bf6d2b"
+  },
+  "rule": {
+    "failure_or_exception": "Restore the prior native dense object.",
+    "implementation": "Explicit verified MRO retains conditioned390 accepted-root guard before private constructor injection into a copied09be step namespace. Constructor closure supplies coordinates directly; no module globals mutated.",
+    "operation": "Temporarily set native sol=None so maintained Radau uses its standard zero-increment collocation guess.",
+    "predicate": "At native accepted-step start, any present LINEAR allocation0<=h<=1e-24.",
+    "preserved": [
+      "Native states",
+      "Error history",
+      "Jacobian and LU handling",
+      "Error tolerances/Newton6",
+      "Actual physical RHS/parameter units",
+      "Native endpoint/domain/census guards",
+      "Conditioned root/matrix rules",
+      "Inherited native counters/failed-state rollback",
+      "09be epsilon-squared dense certificates"
+    ],
+    "strict_dense_budget_everywhere": true,
+    "success": "Retain newly computed native dense output.",
+    "terminal_sources_imported": false
+  },
+  "status": "targeted_tests_bounded_control_and_independent_review_passed_original_qualification_separate",
+  "test_scope": [
+    "Only predictor sol changes at native super-call; y/time/error-history/J/LU identities retained",
+    "Prior sol restored on failure/exception and new dense retained on success",
+    "Present/linear/nonnegative/cap predicate exclusions and boundaries",
+    "Verified390 root-conditioning MRO before native construction",
+    "Private injection preserves module globals and wrapper failure rollback/counters",
+    "Strict epsilon-squared certificate and domain-prefix composition",
+    "Census inventory ledger and stock-preserving conditioning",
+    "Absent versus retained rare logarithms",
+    "Ordinary physical RHS identity and short-flow agreement"
+  ],
+  "tests": {
+    "command": "UV_CACHE_DIR=/tmp/terra-prisca-uv-cache MPLCONFIGDIR=/tmp/terra-prisca-mpl OPENBLAS_NUM_THREADS=1 OMP_NUM_THREADS=1 uv run pytest -q tests/test_dormancy_predictor_integration.py",
+    "passed": 17,
+    "path": "tests/test_dormancy_predictor_integration.py",
+    "sha256": "bf8012c6f8f57a3877540bbdfd587e2756764c01c4c4440c92ac8ee5569482fe",
+    "wall_seconds": 3.86
+  }
+}
