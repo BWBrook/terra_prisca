@@ -586,6 +586,58 @@ def test_chemical_jacobian_rejects_partial_mixed_or_unverified_sources(tmp_path,
         a.validate_probability_protocol(chemical, native, tmp_path)
 
 
+def stage_prefix(prefix, native, root):
+    stage = chemical_prefix(prefix, native, root)
+    for name in a.STAGE_SOURCES-a.CHEMICAL_SOURCES:
+        path = root/name
+        path.parent.mkdir(parents=True, exist_ok=True)
+        path.write_text(name)
+        stage["protocol"]["source_sha256"][name] = a.sha256(path.read_bytes()).hexdigest()
+    stage["protocol"]["solver"] = "analytic_dormancy_stage_conditioning"
+    stage["fingerprint"] = a.sha256(a.e.dumps(stage["protocol"]).encode()).hexdigest()
+    return stage
+
+
+def test_exact_seven_file_stage_variant_accepts_both_modes_and_shared_native_physics(tmp_path, monkeypatch):
+    guard, native = profile_contract(tmp_path, monkeypatch)
+    stage = stage_prefix(guard, native, tmp_path)
+    census = guarded_census(stage, native)
+    assert len(set(stage["protocol"]["source_sha256"])-set(native["protocol"]["source_sha256"])) == 7
+    assert a.validate_probability_protocol(stage, native, tmp_path) == "analytic_stage_conditioning_uncensored_unchanged_physics"
+    assert a.validate_probability_protocol(stage, census, tmp_path) == "analytic_stage_conditioning_uncensored_unchanged_physics"
+    assert a.validate_probability_protocol(census, census, tmp_path) == "analytic_stage_conditioning_census_unchanged_physics"
+
+
+@pytest.mark.parametrize("missing", sorted(a.STAGE_SOURCES))
+def test_stage_variant_rejects_each_incomplete_seven_file_source_set(tmp_path, monkeypatch, missing):
+    guard, native = profile_contract(tmp_path, monkeypatch)
+    stage = stage_prefix(guard, native, tmp_path)
+    del stage["protocol"]["source_sha256"][missing]
+    with pytest.raises(RuntimeError, match="Unapproved"):
+        a.validate_probability_protocol(stage, native, tmp_path)
+
+
+@pytest.mark.parametrize("changed", ("unrelated_extra", "stale_stage", "wrong_flag", "missing_platform", "parameters", "census_process"))
+def test_stage_variant_retains_source_parameter_platform_and_census_contracts(tmp_path, monkeypatch, changed):
+    guard, native = profile_contract(tmp_path, monkeypatch)
+    stage = stage_prefix(guard, native, tmp_path)
+    if changed == "unrelated_extra":
+        path = tmp_path/"unrelated.py"; path.write_text("unrelated")
+        stage["protocol"]["source_sha256"]["unrelated.py"] = a.sha256(path.read_bytes()).hexdigest()
+    elif changed == "stale_stage":
+        (tmp_path/"src/terra_prisca/haze_world/dormancy_stage_integration.py").write_text("changed")
+    elif changed == "wrong_flag":
+        stage["protocol"]["solver"] = "analytic_dormancy_chemical_jacobian"
+    elif changed == "missing_platform":
+        del stage["protocol"]["operating_system"]
+    elif changed == "parameters":
+        stage["protocol"]["parameters"]["biology"]["loss_h"] = .002
+    else:
+        stage["protocol"]["census"]["census_yr"] = 10.
+    with pytest.raises(RuntimeError):
+        a.validate_probability_protocol(stage, native, tmp_path)
+
+
 def test_guarded_baseline_and_guarded_unculled_census_reuse_share_native_physics(tmp_path, monkeypatch):
     prefix, native = profile_contract(tmp_path, monkeypatch)
     census = guarded_census(prefix, native)
