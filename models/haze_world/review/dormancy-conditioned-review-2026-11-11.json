@@ -1,0 +1,441 @@
+{
+  "control_script": {
+    "path": "local/haze/dormancy_trial_review/production_conditioned0125_probe.py",
+    "sha256": "be861178feccd452b75623c3f9a8d590dd34615abb255242c240d46fdc88aba6"
+  },
+  "controls": {
+    "live": {
+      "accepted_chart_maps": [
+        [
+          {
+            "accepted_coordinate_sha256": "70a0e33df26a3a57e7def41365b21c824d8116f6e7cb18d599f9d9520ea80f8e",
+            "cause": {
+              "accepted_coordinate_sha256": "70a0e33df26a3a57e7def41365b21c824d8116f6e7cb18d599f9d9520ea80f8e",
+              "accepted_root": 6.3797488539918104e-21,
+              "accepted_time_yr": 2724.4826918590293,
+              "frozen_root_absolute_tolerance": 1e-12,
+              "handler": "unchanged_accepted_driver_condition_stage",
+              "immutable_accepted_snapshot": true,
+              "kind": "accepted_root_at_or_below_frozen_root_atol",
+              "state_index": 4
+            },
+            "global_guild_logs_bitwise_preserved": true,
+            "inventory_after": 0.16573726531783264,
+            "inventory_before": 0.16573726531783264,
+            "linear_allocation": 4.0701195440009817e-41,
+            "linear_log_allocation": -93.00231644174231,
+            "log_allocation": -93.00231644174231,
+            "log_incoming_allocation_rate_yr": null,
+            "phase": "native_step",
+            "physical_state_bitwise_preserved": true,
+            "prior_root": 6.3797488539918104e-21,
+            "retained_stage_log_lost": false,
+            "scope": "Saved accepted root squared into its decoded linear allocation; no seed or stock reset. Global total logarithms retained; subfloat stage logarithms may be lost.",
+            "state_index": 4,
+            "time_yr": 2724.4826918590293,
+            "total_coordinates_bitwise_preserved": true
+          }
+        ]
+      ],
+      "accepted_steps": 30,
+      "canonical_helper_ast": {
+        "conditioned_ast_sha256": "1fcb5a23424b970fc1dec6892d370b66b4fbecf704632073634bbf70829062bd",
+        "conditioned_predicate": "BoolOp(op=And(), values=[Compare(left=Name(id='age', ctx=Load()), ops=[GtE()], comparators=[Call(func=Name(id='max', ctx=Load()), args=[Name(id='STAGE_POSITIVE_ENTRY_AGE_YR', ctx=Load()), BinOp(left=Constant(value=100), op=Mult(), right=Call(func=Attribute(value=Name(id='np', ctx=Load()), attr='spacing', ctx=Load()), args=[Call(func=Name(id='max', ctx=Load()), args=[Name(id='end', ctx=Load()), Constant(value=1.0)])]))])]), Call(func=Name(id='_promotion_allowed', ctx=Load()), args=[Name(id='coords', ctx=Load()), Name(id='accepted', ctx=Load()), Name(id='index', ctx=Load()), Name(id='end', ctx=Load())])])",
+        "frozen_ast_sha256": "499aa39f551953f1f59e900c9bdb9c1138e0e13874e6f389775e3ccdff0a5ec0",
+        "frozen_source_sha256": "9d1b08ffc3f09470316f106e196c064e49454ffc5b85d8b170f40b165934e983",
+        "old_predicate": "Compare(left=Name(id='age', ctx=Load()), ops=[GtE()], comparators=[Call(func=Name(id='max', ctx=Load()), args=[Name(id='STAGE_POSITIVE_ENTRY_AGE_YR', ctx=Load()), BinOp(left=Constant(value=100), op=Mult(), right=Call(func=Attribute(value=Name(id='np', ctx=Load()), attr='spacing', ctx=Load()), args=[Call(func=Name(id='max', ctx=Load()), args=[Name(id='end', ctx=Load()), Constant(value=1.0)])]))])])",
+        "restored_ast_identical": true,
+        "target_count": 1,
+        "transformation": "one_stage_promotion_predicate_and_linear_cap"
+      },
+      "comparison": {
+        "conditioned_temperature_k": 283.19877678579485,
+        "max_absolute_stock_difference": 3.0249240612345574e-17,
+        "per_stock_absolute_difference": [
+          0.0,
+          2.168404344971009e-19,
+          0.0,
+          4.336808689942018e-19,
+          2.3400098250422034e-42,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          3.0249240612345574e-17
+        ],
+        "per_stock_symmetric_relative_difference": [
+          0.0,
+          3.480247854807333e-16,
+          0.0,
+          2.55272047187846e-16,
+          0.9892789249586564,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          5.5628578889195994e-14
+        ],
+        "reference": "saved_live_initial_state",
+        "reference_temperature_k": 283.19877678579485
+      },
+      "input_snapshot": "local/haze/dormancy_conditioned_review/live_input_snapshot.json",
+      "input_snapshot_sha256": "f8f89f764eb9f452e7958ab3702a559e3b6114a27f04214ce0dec76b0a12a0dd",
+      "native_failures": 0,
+      "positive_dense": {
+        "declined_defect": 2,
+        "extended_pieces": 1,
+        "native_dense_pieces": 32,
+        "negative_native_endpoint_pieces": 0,
+        "negative_native_endpoint_rejections": 0
+      },
+      "positivity_retries": 2,
+      "protocol": {
+        "census_yr": 10.0,
+        "initial_recensus": false,
+        "max_step_yr": 10.0,
+        "minimum_cells": 1.0,
+        "native_newton_maxiter": 6,
+        "retained_allocation_and_chemical_charts": true,
+        "rtol": 2e-08
+      },
+      "radau_work": [
+        {
+          "constructor_failures": 0,
+          "constructor_jacobian_attempts": 5,
+          "constructors": 5,
+          "factorizations": 64,
+          "jacobian_attempts": 5,
+          "rhs_evaluations": 229
+        }
+      ],
+      "raw_file": "local/haze/dormancy_conditioned_review/conditioned0125_live_100.npz",
+      "raw_sha256": "f0c6e13aec35e9535776592dd1cfcdd6323f49795c418f0f853c50c0c8eef703",
+      "receipt": "local/haze/dormancy_conditioned_review/conditioned0125_live_100.json",
+      "receipt_sha256": "d7e36c2c4990a0fbafaafc5d4ee3686e9a6328c035bef549c279ad034ffec8ba",
+      "root_promotions": [],
+      "scratch_final_physical_bitwise_identical": true,
+      "solver_resets": 5,
+      "source_sha256": {
+        "models/haze_response/arney2016/cases.csv": "e3d77d275052a8875991a751868f857bffc964295bfd47591944d86bc58ab07a",
+        "models/haze_response/arney2016/figure4.csv": "c0ef5f3d17ee7c6085ad36247f0f7814726dbbe3273842b01f2c6c4e046856f8",
+        "models/haze_world/evidence/kotsyurbenko2001_table2.csv": "c95b4be023e5502fbb30eb322621e5612bbbf850f99d1b6669e98b95eb370480",
+        "models/haze_world/evidence/peters1998_chemostat.csv": "b0b00bf03eaeaabf45fb571330773c5158b53b088436aaee942188f8e9498320",
+        "src/terra_prisca/haze_response/arney2016.py": "a1b8b52f4c929a0518a17542fb323588699433b038949b38ee6ad74679cd0da6",
+        "src/terra_prisca/haze_world/bottleneck_integration.py": "ce56becb23ca53c6bfb48dffc054d8ecc90839bf5dd0ffd716dbf22635dd435f",
+        "src/terra_prisca/haze_world/buffered_experiments.py": "c8603febb0167be3fc944b60672d9e11957aabf4ca7654dc6efb20639176336a",
+        "src/terra_prisca/haze_world/darwinian.py": "e965035d5dfbfafcb695dc3738b23d8a445c4c1e7e246ab4688d67b33482f1aa",
+        "src/terra_prisca/haze_world/dormancy.py": "bf0a0e02c621dae1ba13c421ff75f8d0233e2c88bac1e54a42036c7f21797645",
+        "src/terra_prisca/haze_world/dormancy_chemical_experiments.py": "840f3a46172930e3c1bfd0a7a3a45227b6ea43b666f14f7fc38faf714175c258",
+        "src/terra_prisca/haze_world/dormancy_chemical_integration.py": "75c538cb2bfabf0e8b497d6f7b60e8714ab2a69880d8836ec5201ac05b626cd1",
+        "src/terra_prisca/haze_world/dormancy_conditioned_experiments.py": "3373ee7b1d9aa0d46b3455b6be93f620fee7942861a8c59932efce0e8f35c7fb",
+        "src/terra_prisca/haze_world/dormancy_conditioned_integration.py": "39024878c87ed3ddbd385bbe586e5e872f85855f30010aca0a502671e5b64bbe",
+        "src/terra_prisca/haze_world/dormancy_experiments.py": "91a6aaf01702f357b076761ca650918bbc5d0a18af7f53bf542ed30fe2e2db9c",
+        "src/terra_prisca/haze_world/dormancy_face_experiments.py": "305e44d7f7ccb498dc8898ecb58c1e8cdb3ce79fe1c61a3a3b26c1d21f388865",
+        "src/terra_prisca/haze_world/dormancy_face_integration.py": "6a758528247493428459d250a0cd000ae678c9e59c05a09947f94628ed1672ce",
+        "src/terra_prisca/haze_world/dormancy_integration.py": "0a1cc282057a4187288ae77c8ef69e77830a3cb741d729d1877fe7a0c15dcd01",
+        "src/terra_prisca/haze_world/dormancy_jacobian_integration.py": "7046fc9baa47022fff7e700ea79f8e72e2c3195a77b9bd5f71e272d6a1c34310",
+        "src/terra_prisca/haze_world/dormancy_progress_integration.py": "ee65a5d01009bb376146f64b883d3d6ec52670fb2bb2326bb2a4331e63d589a4",
+        "src/terra_prisca/haze_world/dormancy_radau_experiments.py": "26a050bc24fb7a000bf929ca27db96fc04bbbdf538083ee70b5674a67f607c08",
+        "src/terra_prisca/haze_world/dormancy_radau_integration.py": "09be346c90c0fcb65ed6409f2de47ea1e4d3e2d542f3d6291eb7ae85a0bf6d2b",
+        "src/terra_prisca/haze_world/dormancy_stage_experiments.py": "c77bbdf499a16d501104f98b7d0f421c018fb4c36a098850d0bd742c91c644ef",
+        "src/terra_prisca/haze_world/dormancy_stage_integration.py": "19b7909fda2feb47b767ec7a81050fd8c935f59b1aa25149b8159722597130eb",
+        "src/terra_prisca/haze_world/dormancy_starts.py": "67af0622f6243983569777f4d4368c12894ceed0351d05b2a89bd942ec439a3f",
+        "src/terra_prisca/haze_world/dormancy_trial_integration.py": "b5c0d208454c8f55b4da865a387ea592f117e28700bb13d1025efe4a4e92ef18",
+        "src/terra_prisca/haze_world/finite_experiments.py": "285d5f4ab46997920559ee0ac68657b0405eee39b38f97520e248faba4db631c",
+        "src/terra_prisca/haze_world/finite_populations.py": "4644088974706aa5f012fb3335a6b1cc8bfd90da88d0b99f9f9e2b64356890df",
+        "src/terra_prisca/haze_world/habitat_coupling.py": "34f611d3f9046bf7d96f8caeffb452f2a2206bab4abc45e630a09980a067c4d0",
+        "src/terra_prisca/haze_world/habitat_equilibria.py": "90ec06dbce07e6625878ece2e97b55604ed4708b8aad9f66b0dd06dd8aa50a9a",
+        "src/terra_prisca/haze_world/habitat_integration.py": "3a115c22ee4b4a6b2c3f4585385927a7e32d68712cfb3d0073f0e52089a1b214",
+        "src/terra_prisca/haze_world/hydrogen_uptake.py": "c48d8231ef726605ab07be22438f3e2fd97f23b310773ac748d1b2bf5c36fafd",
+        "src/terra_prisca/haze_world/methane_budget.py": "70dc47659e4738d07809e8d23844af79bf69e5dabcc87793eac3f5e560011721",
+        "src/terra_prisca/haze_world/population_coupling.py": "17a433957e94845595f6d7fd160ffe593c01c4e74550707b0814c95ab67ae663",
+        "src/terra_prisca/haze_world/turnover_starts.py": "d980d85dd6910d82828e9dbddbcf4588f62fd8bf870ce8af6a06a76ffb512bd5",
+        "src/terra_prisca/haze_world/two_guilds.py": "eff6a9027c5b28d154f03462d926591ebee3408eb2c80ec0df5c38929f169f83",
+        "src/terra_prisca/haze_world/woodii1998.py": "b0130f4f8ea15aa64245133f79dc8b35883a414031a8b49262c6657350cad0b0",
+        "uv.lock": "02bf429b2ec474f03280ec550d5fd847b573ece24ab9043e0b5998370fd4d2b4"
+      },
+      "start_time_yr": 2724.4826918590293,
+      "status": "completed",
+      "terminal_time_yr": 2824.4826918590293,
+      "tolerance_conditioning_stats": [
+        {
+          "face_visits": 5,
+          "faces": {
+            "4": {
+              "calls": 5,
+              "first_time_yr": 2724.4826918590293,
+              "last_linear_allocation": 3.1172064491108174e-32,
+              "last_pure_linear_rate_yr": -5.465086346581085e-33,
+              "last_retained_diagonal": -0.17532,
+              "last_time_yr": 2724.6049158448254,
+              "maximum_removed_offdiagonal": 997749.4502350263
+            }
+          },
+          "jacobian_calls": 5,
+          "promotion_gate_calls": 30,
+          "suppressed_by_index": {
+            "4": {
+              "calls": 30,
+              "first_time_yr": 2724.482692859029,
+              "last_linear_allocation": 3.79637259165283e-39,
+              "last_time_yr": 2824.4826918590293
+            }
+          },
+          "suppressed_promotions": 30
+        }
+      ],
+      "wall_seconds": 0.16671466594561934
+    },
+    "saved": {
+      "accepted_chart_maps": [
+        []
+      ],
+      "accepted_steps": 48,
+      "canonical_helper_ast": {
+        "conditioned_ast_sha256": "1fcb5a23424b970fc1dec6892d370b66b4fbecf704632073634bbf70829062bd",
+        "conditioned_predicate": "BoolOp(op=And(), values=[Compare(left=Name(id='age', ctx=Load()), ops=[GtE()], comparators=[Call(func=Name(id='max', ctx=Load()), args=[Name(id='STAGE_POSITIVE_ENTRY_AGE_YR', ctx=Load()), BinOp(left=Constant(value=100), op=Mult(), right=Call(func=Attribute(value=Name(id='np', ctx=Load()), attr='spacing', ctx=Load()), args=[Call(func=Name(id='max', ctx=Load()), args=[Name(id='end', ctx=Load()), Constant(value=1.0)])]))])]), Call(func=Name(id='_promotion_allowed', ctx=Load()), args=[Name(id='coords', ctx=Load()), Name(id='accepted', ctx=Load()), Name(id='index', ctx=Load()), Name(id='end', ctx=Load())])])",
+        "frozen_ast_sha256": "499aa39f551953f1f59e900c9bdb9c1138e0e13874e6f389775e3ccdff0a5ec0",
+        "frozen_source_sha256": "9d1b08ffc3f09470316f106e196c064e49454ffc5b85d8b170f40b165934e983",
+        "old_predicate": "Compare(left=Name(id='age', ctx=Load()), ops=[GtE()], comparators=[Call(func=Name(id='max', ctx=Load()), args=[Name(id='STAGE_POSITIVE_ENTRY_AGE_YR', ctx=Load()), BinOp(left=Constant(value=100), op=Mult(), right=Call(func=Attribute(value=Name(id='np', ctx=Load()), attr='spacing', ctx=Load()), args=[Call(func=Name(id='max', ctx=Load()), args=[Name(id='end', ctx=Load()), Constant(value=1.0)])]))])])",
+        "restored_ast_identical": true,
+        "target_count": 1,
+        "transformation": "one_stage_promotion_predicate_and_linear_cap"
+      },
+      "comparison": {
+        "conditioned_temperature_k": 283.19877678579377,
+        "max_absolute_stock_difference": 3.2526065174565133e-19,
+        "per_stock_absolute_difference": [
+          0.0,
+          0.0,
+          0.0,
+          2.168404344971009e-19,
+          3.8591652396359494e-32,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          3.2526065174565133e-19
+        ],
+        "per_stock_symmetric_relative_difference": [
+          0.0,
+          0.0,
+          0.0,
+          1.2763602359392194e-16,
+          0.35981422154423337,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          5.981567622526417e-16
+        ],
+        "reference": "matched_frozen_saved_100yr_endpoint",
+        "reference_temperature_k": 283.19877678579377
+      },
+      "input_snapshot": "local/haze/dormancy_conditioned_review/saved_input_snapshot.json",
+      "input_snapshot_sha256": "da35f3ddba89a258b18e3f049168d1e4c9a9386103f6822bf13d0c207ba4b01f",
+      "native_failures": 0,
+      "positive_dense": {
+        "declined_defect": 5,
+        "extended_pieces": 1,
+        "native_dense_pieces": 53,
+        "negative_native_endpoint_pieces": 0,
+        "negative_native_endpoint_rejections": 0
+      },
+      "positivity_retries": 5,
+      "protocol": {
+        "census_yr": 10.0,
+        "initial_recensus": false,
+        "max_step_yr": 10.0,
+        "minimum_cells": 1.0,
+        "native_newton_maxiter": 6,
+        "retained_allocation_and_chemical_charts": true,
+        "rtol": 2e-08
+      },
+      "radau_work": [
+        {
+          "constructor_failures": 0,
+          "constructor_jacobian_attempts": 11,
+          "constructors": 11,
+          "factorizations": 106,
+          "jacobian_attempts": 11,
+          "rhs_evaluations": 382
+        }
+      ],
+      "raw_file": "local/haze/dormancy_conditioned_review/conditioned0125_saved_100.npz",
+      "raw_sha256": "bf7243550973657cda34e1ef6eef59b6368e843c79af438cf9a60422dbc700e1",
+      "receipt": "local/haze/dormancy_conditioned_review/conditioned0125_saved_100.json",
+      "receipt_sha256": "c9af3b63486a6bd2a6e05d2808775bb43d166086ddb9667b424ab58ace85124e",
+      "root_promotions": [],
+      "scratch_final_physical_bitwise_identical": true,
+      "solver_resets": 10,
+      "source_sha256": {
+        "models/haze_response/arney2016/cases.csv": "e3d77d275052a8875991a751868f857bffc964295bfd47591944d86bc58ab07a",
+        "models/haze_response/arney2016/figure4.csv": "c0ef5f3d17ee7c6085ad36247f0f7814726dbbe3273842b01f2c6c4e046856f8",
+        "models/haze_world/evidence/kotsyurbenko2001_table2.csv": "c95b4be023e5502fbb30eb322621e5612bbbf850f99d1b6669e98b95eb370480",
+        "models/haze_world/evidence/peters1998_chemostat.csv": "b0b00bf03eaeaabf45fb571330773c5158b53b088436aaee942188f8e9498320",
+        "src/terra_prisca/haze_response/arney2016.py": "a1b8b52f4c929a0518a17542fb323588699433b038949b38ee6ad74679cd0da6",
+        "src/terra_prisca/haze_world/bottleneck_integration.py": "ce56becb23ca53c6bfb48dffc054d8ecc90839bf5dd0ffd716dbf22635dd435f",
+        "src/terra_prisca/haze_world/buffered_experiments.py": "c8603febb0167be3fc944b60672d9e11957aabf4ca7654dc6efb20639176336a",
+        "src/terra_prisca/haze_world/darwinian.py": "e965035d5dfbfafcb695dc3738b23d8a445c4c1e7e246ab4688d67b33482f1aa",
+        "src/terra_prisca/haze_world/dormancy.py": "bf0a0e02c621dae1ba13c421ff75f8d0233e2c88bac1e54a42036c7f21797645",
+        "src/terra_prisca/haze_world/dormancy_chemical_experiments.py": "840f3a46172930e3c1bfd0a7a3a45227b6ea43b666f14f7fc38faf714175c258",
+        "src/terra_prisca/haze_world/dormancy_chemical_integration.py": "75c538cb2bfabf0e8b497d6f7b60e8714ab2a69880d8836ec5201ac05b626cd1",
+        "src/terra_prisca/haze_world/dormancy_conditioned_experiments.py": "3373ee7b1d9aa0d46b3455b6be93f620fee7942861a8c59932efce0e8f35c7fb",
+        "src/terra_prisca/haze_world/dormancy_conditioned_integration.py": "39024878c87ed3ddbd385bbe586e5e872f85855f30010aca0a502671e5b64bbe",
+        "src/terra_prisca/haze_world/dormancy_experiments.py": "91a6aaf01702f357b076761ca650918bbc5d0a18af7f53bf542ed30fe2e2db9c",
+        "src/terra_prisca/haze_world/dormancy_face_experiments.py": "305e44d7f7ccb498dc8898ecb58c1e8cdb3ce79fe1c61a3a3b26c1d21f388865",
+        "src/terra_prisca/haze_world/dormancy_face_integration.py": "6a758528247493428459d250a0cd000ae678c9e59c05a09947f94628ed1672ce",
+        "src/terra_prisca/haze_world/dormancy_integration.py": "0a1cc282057a4187288ae77c8ef69e77830a3cb741d729d1877fe7a0c15dcd01",
+        "src/terra_prisca/haze_world/dormancy_jacobian_integration.py": "7046fc9baa47022fff7e700ea79f8e72e2c3195a77b9bd5f71e272d6a1c34310",
+        "src/terra_prisca/haze_world/dormancy_progress_integration.py": "ee65a5d01009bb376146f64b883d3d6ec52670fb2bb2326bb2a4331e63d589a4",
+        "src/terra_prisca/haze_world/dormancy_radau_experiments.py": "26a050bc24fb7a000bf929ca27db96fc04bbbdf538083ee70b5674a67f607c08",
+        "src/terra_prisca/haze_world/dormancy_radau_integration.py": "09be346c90c0fcb65ed6409f2de47ea1e4d3e2d542f3d6291eb7ae85a0bf6d2b",
+        "src/terra_prisca/haze_world/dormancy_stage_experiments.py": "c77bbdf499a16d501104f98b7d0f421c018fb4c36a098850d0bd742c91c644ef",
+        "src/terra_prisca/haze_world/dormancy_stage_integration.py": "19b7909fda2feb47b767ec7a81050fd8c935f59b1aa25149b8159722597130eb",
+        "src/terra_prisca/haze_world/dormancy_starts.py": "67af0622f6243983569777f4d4368c12894ceed0351d05b2a89bd942ec439a3f",
+        "src/terra_prisca/haze_world/dormancy_trial_integration.py": "b5c0d208454c8f55b4da865a387ea592f117e28700bb13d1025efe4a4e92ef18",
+        "src/terra_prisca/haze_world/finite_experiments.py": "285d5f4ab46997920559ee0ac68657b0405eee39b38f97520e248faba4db631c",
+        "src/terra_prisca/haze_world/finite_populations.py": "4644088974706aa5f012fb3335a6b1cc8bfd90da88d0b99f9f9e2b64356890df",
+        "src/terra_prisca/haze_world/habitat_coupling.py": "34f611d3f9046bf7d96f8caeffb452f2a2206bab4abc45e630a09980a067c4d0",
+        "src/terra_prisca/haze_world/habitat_equilibria.py": "90ec06dbce07e6625878ece2e97b55604ed4708b8aad9f66b0dd06dd8aa50a9a",
+        "src/terra_prisca/haze_world/habitat_integration.py": "3a115c22ee4b4a6b2c3f4585385927a7e32d68712cfb3d0073f0e52089a1b214",
+        "src/terra_prisca/haze_world/hydrogen_uptake.py": "c48d8231ef726605ab07be22438f3e2fd97f23b310773ac748d1b2bf5c36fafd",
+        "src/terra_prisca/haze_world/methane_budget.py": "70dc47659e4738d07809e8d23844af79bf69e5dabcc87793eac3f5e560011721",
+        "src/terra_prisca/haze_world/population_coupling.py": "17a433957e94845595f6d7fd160ffe593c01c4e74550707b0814c95ab67ae663",
+        "src/terra_prisca/haze_world/turnover_starts.py": "d980d85dd6910d82828e9dbddbcf4588f62fd8bf870ce8af6a06a76ffb512bd5",
+        "src/terra_prisca/haze_world/two_guilds.py": "eff6a9027c5b28d154f03462d926591ebee3408eb2c80ec0df5c38929f169f83",
+        "src/terra_prisca/haze_world/woodii1998.py": "b0130f4f8ea15aa64245133f79dc8b35883a414031a8b49262c6657350cad0b0",
+        "uv.lock": "02bf429b2ec474f03280ec550d5fd847b573ece24ab9043e0b5998370fd4d2b4"
+      },
+      "start_time_yr": 36731.52182910712,
+      "status": "completed",
+      "terminal_time_yr": 36831.52182910712,
+      "tolerance_conditioning_stats": [
+        {
+          "face_visits": 11,
+          "faces": {
+            "4": {
+              "calls": 11,
+              "first_time_yr": 36731.52182910712,
+              "last_linear_allocation": 8.758840037918193e-31,
+              "last_pure_linear_rate_yr": 2.4576960366794828e-29,
+              "last_retained_diagonal": -0.1753199999999962,
+              "last_time_yr": 36732.667389494934,
+              "maximum_removed_offdiagonal": 997749.4502350261
+            }
+          },
+          "jacobian_calls": 11,
+          "promotion_gate_calls": 44,
+          "suppressed_by_index": {
+            "4": {
+              "calls": 44,
+              "first_time_yr": 36731.5229411075,
+              "last_linear_allocation": 1.1020238089813354e-28,
+              "last_time_yr": 36831.52182910712
+            }
+          },
+          "suppressed_promotions": 44
+        }
+      ],
+      "wall_seconds": 0.2684879170265049
+    }
+  },
+  "date": "2026-11-11",
+  "exact_rule": {
+    "allocation_cap": 1e-24,
+    "demotion": "Present positive-chart abs(root)<=root_atol: request inherited typed condition_stage from immutable accepted pre-step copy, before native work.",
+    "fixed_constants": "Caps refer to frozen root-atol and original10yr grid step, not the requested max_step of a later precision control.",
+    "matrix": "Present LINEAR0<=h<=allocation_cap and abs(pure returned linear float rate)<=rate_cap: zero row/column offdiagonals; preserve own diagonal.",
+    "native_newton_maxiter": 6,
+    "original_grid_max_step_yr": 10.0,
+    "promotion": "Original age test AND h>allocation_cap; exactly one AST predicate changed.",
+    "pure_linear_rate_cap_yr": 1e-25,
+    "root_atol": 1e-12
+  },
+  "frozen_baseline": {
+    "accepted_steps": 1434,
+    "path": "local/haze/dormancy_trial_review/production_radau0125_saved_100.json",
+    "rhs_evaluations": 39695,
+    "sha256": "a4b778c324446c488b5c010c98ad8eeb6c2d75ca9c577e79e002101a3134a681",
+    "wall_seconds": 14.938721708022058
+  },
+  "helper": {
+    "path": "src/terra_prisca/haze_world/dormancy_conditioned_integration.py",
+    "sha256": "39024878c87ed3ddbd385bbe586e5e872f85855f30010aca0a502671e5b64bbe",
+    "solver_flag": "radau_dormancy_tolerance_conditioning"
+  },
+  "limitations": [
+    "Bounded accepted-state replays, not canonical full-horizon producer receipts.",
+    "No universal reliability or rare-lineage/log-probability accuracy claim.",
+    "Matched saved microscopic DormA differs36percent relative; large stocks agree to rounding.",
+    "Live comparison is against its initial state, not a matched frozen100yr continuation.",
+    "Private absolute-clock wrapper retains exact saved allocation/chemical charts and omits initial recensus.",
+    "Two final controls ran concurrently; their wall timings are not a controlled benchmark."
+  ],
+  "next_gate": "Independent read-only helper review plus parent original-start0125 and ordinary/rare qualification controls.",
+  "predecessor_helper": {
+    "path": "src/terra_prisca/haze_world/dormancy_radau_integration.py",
+    "sha256": "09be346c90c0fcb65ed6409f2de47ea1e4d3e2d542f3d6291eb7ae85a0bf6d2b"
+  },
+  "source_unchanged_scope": [
+    "Physical equations and float RHS",
+    "Error tolerances",
+    "Native endpoint positivity guards",
+    "Census and stock ledgers",
+    "Predecessor numerical producers"
+  ],
+  "status": "bounded_controls_passed_pending_independent_review",
+  "test_scope": [
+    "Bitwise physical RHS and ordinary Jacobian identity in one and three habitats",
+    "Bitwise active/dormant chart conversion of all physical/global/total stocks",
+    "Ineligible absent/negative/root/above-allocation/above-source coordinates",
+    "Own diagonal retained; only gated matrix rows/columns changed; no derivative called inside matrix gate",
+    "Verified one-node AST mutation and fail-closed0/2target drift",
+    "Accepted immutable snapshot before native work; native trial stocks not adopted/conditioned",
+    "Negative native endpoints rejected in composed driver",
+    "Census removal/inventory ledger and absent versus retained rare global logs"
+  ],
+  "tests": {
+    "command": "UV_CACHE_DIR=/tmp/terra-prisca-uv-cache MPLCONFIGDIR=/tmp/terra-prisca-mpl OPENBLAS_NUM_THREADS=1 OMP_NUM_THREADS=1 uv run pytest -q tests/test_dormancy_conditioned_integration.py",
+    "passed": 34,
+    "path": "tests/test_dormancy_conditioned_integration.py",
+    "sha256": "dd66327057a308c3375f89d10dd2be8038a8e03740183c2c9d95ba9f146cb667",
+    "wall_seconds": 2.49
+  }
+}
