@@ -1,0 +1,106 @@
+{
+  "status": "bounded_controls_reviewed_original_path_limitation_retained",
+  "helper_sha256": "09be346c90c0fcb65ed6409f2de47ea1e4d3e2d542f3d6291eb7ae85a0bf6d2b",
+  "source_sha256": {
+    "src/terra_prisca/haze_world/buffered_experiments.py": "c8603febb0167be3fc944b60672d9e11957aabf4ca7654dc6efb20639176336a",
+    "src/terra_prisca/haze_world/habitat_coupling.py": "34f611d3f9046bf7d96f8caeffb452f2a2206bab4abc45e630a09980a067c4d0",
+    "src/terra_prisca/haze_world/habitat_integration.py": "3a115c22ee4b4a6b2c3f4585385927a7e32d68712cfb3d0073f0e52089a1b214",
+    "src/terra_prisca/haze_world/habitat_equilibria.py": "90ec06dbce07e6625878ece2e97b55604ed4708b8aad9f66b0dd06dd8aa50a9a",
+    "src/terra_prisca/haze_world/population_coupling.py": "17a433957e94845595f6d7fd160ffe593c01c4e74550707b0814c95ab67ae663",
+    "src/terra_prisca/haze_world/methane_budget.py": "70dc47659e4738d07809e8d23844af79bf69e5dabcc87793eac3f5e560011721",
+    "src/terra_prisca/haze_world/darwinian.py": "e965035d5dfbfafcb695dc3738b23d8a445c4c1e7e246ab4688d67b33482f1aa",
+    "src/terra_prisca/haze_world/two_guilds.py": "eff6a9027c5b28d154f03462d926591ebee3408eb2c80ec0df5c38929f169f83",
+    "src/terra_prisca/haze_world/hydrogen_uptake.py": "c48d8231ef726605ab07be22438f3e2fd97f23b310773ac748d1b2bf5c36fafd",
+    "src/terra_prisca/haze_world/woodii1998.py": "b0130f4f8ea15aa64245133f79dc8b35883a414031a8b49262c6657350cad0b0",
+    "src/terra_prisca/haze_world/finite_experiments.py": "285d5f4ab46997920559ee0ac68657b0405eee39b38f97520e248faba4db631c",
+    "src/terra_prisca/haze_world/finite_populations.py": "4644088974706aa5f012fb3335a6b1cc8bfd90da88d0b99f9f9e2b64356890df",
+    "src/terra_prisca/haze_response/arney2016.py": "a1b8b52f4c929a0518a17542fb323588699433b038949b38ee6ad74679cd0da6",
+    "models/haze_response/arney2016/cases.csv": "e3d77d275052a8875991a751868f857bffc964295bfd47591944d86bc58ab07a",
+    "models/haze_response/arney2016/figure4.csv": "c0ef5f3d17ee7c6085ad36247f0f7814726dbbe3273842b01f2c6c4e046856f8",
+    "models/haze_world/evidence/kotsyurbenko2001_table2.csv": "c95b4be023e5502fbb30eb322621e5612bbbf850f99d1b6669e98b95eb370480",
+    "models/haze_world/evidence/peters1998_chemostat.csv": "b0b00bf03eaeaabf45fb571330773c5158b53b088436aaee942188f8e9498320",
+    "uv.lock": "02bf429b2ec474f03280ec550d5fd847b573ece24ab9043e0b5998370fd4d2b4",
+    "src/terra_prisca/haze_world/dormancy.py": "bf0a0e02c621dae1ba13c421ff75f8d0233e2c88bac1e54a42036c7f21797645",
+    "src/terra_prisca/haze_world/dormancy_integration.py": "0a1cc282057a4187288ae77c8ef69e77830a3cb741d729d1877fe7a0c15dcd01",
+    "src/terra_prisca/haze_world/dormancy_starts.py": "67af0622f6243983569777f4d4368c12894ceed0351d05b2a89bd942ec439a3f",
+    "src/terra_prisca/haze_world/dormancy_experiments.py": "91a6aaf01702f357b076761ca650918bbc5d0a18af7f53bf542ed30fe2e2db9c",
+    "src/terra_prisca/haze_world/turnover_starts.py": "d980d85dd6910d82828e9dbddbcf4588f62fd8bf870ce8af6a06a76ffb512bd5",
+    "src/terra_prisca/haze_world/bottleneck_integration.py": "ce56becb23ca53c6bfb48dffc054d8ecc90839bf5dd0ffd716dbf22635dd435f",
+    "src/terra_prisca/haze_world/dormancy_radau_experiments.py": "26a050bc24fb7a000bf929ca27db96fc04bbbdf538083ee70b5674a67f607c08",
+    "src/terra_prisca/haze_world/dormancy_radau_integration.py": "09be346c90c0fcb65ed6409f2de47ea1e4d3e2d542f3d6291eb7ae85a0bf6d2b",
+    "src/terra_prisca/haze_world/dormancy_trial_integration.py": "b5c0d208454c8f55b4da865a387ea592f117e28700bb13d1025efe4a4e92ef18",
+    "src/terra_prisca/haze_world/dormancy_jacobian_integration.py": "7046fc9baa47022fff7e700ea79f8e72e2c3195a77b9bd5f71e272d6a1c34310",
+    "src/terra_prisca/haze_world/dormancy_progress_integration.py": "ee65a5d01009bb376146f64b883d3d6ec52670fb2bb2326bb2a4331e63d589a4",
+    "src/terra_prisca/haze_world/dormancy_chemical_experiments.py": "840f3a46172930e3c1bfd0a7a3a45227b6ea43b666f14f7fc38faf714175c258",
+    "src/terra_prisca/haze_world/dormancy_chemical_integration.py": "75c538cb2bfabf0e8b497d6f7b60e8714ab2a69880d8836ec5201ac05b626cd1",
+    "src/terra_prisca/haze_world/dormancy_stage_experiments.py": "c77bbdf499a16d501104f98b7d0f421c018fb4c36a098850d0bd742c91c644ef",
+    "src/terra_prisca/haze_world/dormancy_stage_integration.py": "19b7909fda2feb47b767ec7a81050fd8c935f59b1aa25149b8159722597130eb",
+    "src/terra_prisca/haze_world/dormancy_face_experiments.py": "305e44d7f7ccb498dc8898ecb58c1e8cdb3ce79fe1c61a3a3b26c1d21f388865",
+    "src/terra_prisca/haze_world/dormancy_face_integration.py": "6a758528247493428459d250a0cd000ae678c9e59c05a09947f94628ed1672ce"
+  },
+  "tests": {
+    "passed": 23,
+    "command": "uv run pytest -q tests/test_dormancy_radau_integration.py",
+    "sha256": "3c525e1a3b3f3df8e6b5efc9808cd3b5ad2043b4b466cc6f88e40c23134fc0e8"
+  },
+  "independent_review": {
+    "status": "cleared_with_declared_scope",
+    "tests_passed": 23,
+    "wall_seconds": 6.58,
+    "reconstructed_certificate": true
+  },
+  "production_saved_control": {
+    "result": "local/haze/dormancy_trial_review/production_radau0125_saved_100.json",
+    "sha256": "a4b778c324446c488b5c010c98ad8eeb6c2d75ca9c577e79e002101a3134a681",
+    "wall_seconds": 14.938721708022058,
+    "accepted_steps": 1434,
+    "native_rhs": 39695,
+    "native_work": [
+      {
+        "constructor_failures": 0,
+        "constructor_jacobian_attempts": 4,
+        "constructors": 4,
+        "factorizations": 12470,
+        "jacobian_attempts": 1120,
+        "rhs_evaluations": 39695
+      }
+    ],
+    "extended_pieces": 1,
+    "declined_defect": 1,
+    "negative_native_endpoint_pieces": 0,
+    "maximum_defect_upper": 1.0453006880802919e-48,
+    "minimum_normalizer_lower": 0.9999999999999615,
+    "maximum_cell_curve_redistribution_upper": 3.1881988399776986e-22,
+    "complete_inputs_archived": true
+  },
+  "native_iteration_profile": {
+    "result": "local/haze/dormancy_trial_review/production_radau0125_profile_100.json",
+    "sha256": "3db68fffea7573a1505d8d67ccced85e8fb5423c2259e3f11294d16f79bf62f5",
+    "same_final_physical": true,
+    "collocation_calls": 6360,
+    "newton_nonconvergence": 4925,
+    "accuracy_rejections": 0
+  },
+  "original_controls": {
+    "case0000": {
+      "status": "completed",
+      "receipt": "local/haze/dormancy_radau_qualification/dormancy_0000_uncensored_t3000-f6ccec81834c1e01.receipt.json",
+      "receipt_sha256": "5475d38b5154a3b1e328c0aecc4c293332ec6fac27a8ecf76578c413f4f47eb9",
+      "fingerprint": "f6ccec81834c1e01a4989f7c4f136f98481cb0e409506ec6557e7c8584bc33b4",
+      "raw_sha256": "70f242d1af202e04bc3d4ec91f9b1568fe5a62d405f1683c22f39980579951da",
+      "wall_seconds": 17.612431083922274
+    },
+    "case0010": {
+      "status": "failed",
+      "failure_ledger": "local/haze/dormancy_radau_qualification/prefix_batch_cf973821b476af11.json",
+      "failure_ledger_sha256": "a57ad04c6f19d0b385d8abfec711a9f912b398c5e77b16e3a89c67fdc0fc091f",
+      "error": "RuntimeError('Dormancy integration failed at 1399.07: Required step size is less than spacing between numbers.')",
+      "failed_state_retained": false,
+      "canonical_face_record_preserved": true
+    },
+    "case0125_full": {
+      "status": "pending_parent_run"
+    }
+  },
+  "scope": "New numerical method only. Local interpolation/normalization certificates do not prove exact-ODE, decoded-float, future-trajectory or lineage/log-probability accuracy. Earlier sources and completed valid receipts retained."
+}
