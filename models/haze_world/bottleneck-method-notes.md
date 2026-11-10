@@ -36,3 +36,19 @@ results and retain the original [specification](bottleneck-test-spec.md).
 - Turnover and dormancy remain outside this test. The accepted 278/286 K
   refuges straddle the switch only around the reference loss rate; numerical
   robustness to counting cannot establish robustness to turnover physiology.
+
+## Numerical amendment before E1 interpretation
+
+An uncensored no-refuge run exposed a rejected LSODA trial in which biomass
+jumped from an unrepresentably small stock to 10³⁹ gDW/L. This overflowed the
+acetate coordinate's source term; it was not an accepted inventory. A ten-year
+step cap resolved that case but not the reverse invasion. The named
+`bottleneck_integration` numerical variant therefore reuses the frozen
+accepted-flow algorithm with a private solver constructor. It retries only
+this explicit trial overflow from the last accepted state with a smaller
+step, at most twenty refinements. It does not clip stocks, add seeds or
+change the biological equations. All retries are reported separately.
+No-retry trajectories, retained logarithms, dense minima and ledgers are
+bitwise identical in the regression control. The previously failing reverse
+invasion completes 30,000 years with two trial retries. E1 is rerun using
+this explicit protocol; E2 retains its original frozen numerical source.

@@ -1,0 +1,99 @@
+{
+  "scope": "Independent forward demographic process in the recorded deterministic environment; finite-time survival, not establishment or coupled stochastic climate",
+  "method": "Exact homogeneous birth/death transitions with midpoint rates; Strang split exact CTMC migration; two step sizes and fixed/Poisson initial counts",
+  "input_sha256": "d3d7e3c92b9d984d8500a6bec532a70b12fcf56b9bca513765055989ce59a92b",
+  "checker_sha256": "9eeaef57485763de499de7227b8fafd4417c90aa58215570ccd0739159aab670",
+  "source_raw_sha256": "7b07925c6efb54467396db2cfffc67149c3bfa3df49bb8a034694186cceba247",
+  "backward_source_sha256": "a49b14b06a7dcef9b7894e8604b7ede998544e3b865336f1ed6cb604603eb27d",
+  "numpy_version": "2.5.4",
+  "full_window_yr": [
+    1251.0,
+    1436.0
+  ],
+  "full_window_log_lambda_reference": -8.23739106665572,
+  "scale_for_full_window_lambda_one": 3779.666535708739,
+  "full_window_scaled_probability": 0.6321205588285577,
+  "simulation_window_yr": [
+    1293.055930060918,
+    1436.0
+  ],
+  "initial_expected_cells_by_habitat": [
+    99999.9994633429,
+    0.0005366556690444983
+  ],
+  "initial_integer_cells_by_habitat": [
+    100000,
+    0
+  ],
+  "later_window_poisson_probability": 0.6322901573407151,
+  "later_window_fixed_probability": 0.6322919995678429,
+  "change_from_later_poisson_initialization": 0.00016959851215747612,
+  "results": [
+    {
+      "survivors": 6341,
+      "replicates": 10000,
+      "seed": 20261110,
+      "maximum_step_yr": 0.5,
+      "time_intervals": 286,
+      "initialization": "independent Poisson counts",
+      "mean_initial_cells": 99998.2227,
+      "mean_terminal_cells": 47780488358.0697,
+      "predicted_probability": 0.6322901573407151,
+      "observed_probability": 0.6341,
+      "wilson_99_interval": [
+        0.6216075838371542,
+        0.6464145862243318
+      ],
+      "prediction_in_interval": true,
+      "binomial_z": 0.37534443606395784
+    },
+    {
+      "survivors": 6323,
+      "replicates": 10000,
+      "seed": 20261111,
+      "maximum_step_yr": 0.25,
+      "time_intervals": 572,
+      "initialization": "independent Poisson counts",
+      "mean_initial_cells": 100003.213,
+      "mean_terminal_cells": 47219867716.3007,
+      "predicted_probability": 0.6322901573407151,
+      "observed_probability": 0.6323,
+      "wilson_99_interval": [
+        0.6197959756625767,
+        0.6446285813779499
+      ],
+      "prediction_in_interval": true,
+      "binomial_z": 0.002041275455455563
+    },
+    {
+      "survivors": 6285,
+      "replicates": 10000,
+      "seed": 20261112,
+      "maximum_step_yr": 0.25,
+      "time_intervals": 572,
+      "initialization": "fixed integer counts",
+      "mean_initial_cells": 100000.0,
+      "mean_terminal_cells": 46777805736.7855,
+      "predicted_probability": 0.6322919995678429,
+      "observed_probability": 0.6285,
+      "wilson_99_interval": [
+        0.6159720793643046,
+        0.6408575168541961
+      ],
+      "prediction_in_interval": true,
+      "binomial_z": -0.7864260597371209
+    }
+  ],
+  "convergence": [
+    {
+      "steps_yr": [
+        0.5,
+        0.25
+      ],
+      "probability_difference": -0.0018000000000000238,
+      "monte_carlo_standard_error": 0.00681908079246417,
+      "difference_in_standard_errors": -0.2639651963046428
+    }
+  ],
+  "all_predictions_within_99_intervals": true
+}

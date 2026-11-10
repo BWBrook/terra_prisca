@@ -16,18 +16,21 @@ import numpy as np
 
 from . import bottleneck_runs as r
 from . import buffered_experiments as e
-from .habitat_integration import Census, integrate_finite
+from . import bottleneck_integration as numerical
+from .bottleneck_integration import Census, integrate_finite
 
 
 def sources():
-    return r.source_hashes() | {str(Path(__file__).relative_to(e.ROOT)): sha256(Path(__file__).read_bytes()).hexdigest()}
+    paths = (Path(__file__), Path(numerical.__file__))
+    return r.source_hashes() | {str(path.relative_to(e.ROOT)): sha256(path.read_bytes()).hexdigest() for path in paths}
 
 
 def run(task):
     case, baseline, years, expected = task
+    _, environment = e.identity(case)
     protocol = dict(case=asdict(case), years=years, census=asdict(Census(minimum_cells=0., census_yr=1.)),
-        max_step_yr=10., source_sha256=sources(), baseline_fingerprint=baseline["fingerprint"],
-        python=baseline["protocol"]["python"], packages=baseline["protocol"]["packages"],
+        max_step_yr=10., solver="accepted_state_trial_retry_v1", source_sha256=sources(), baseline_fingerprint=baseline["fingerprint"],
+        python=environment["python"], packages=environment["packages"],
         scope="Uncensored E1 physical trajectory with bounded solver trials; one-year sampling")
     if protocol["source_sha256"] != expected:
         raise RuntimeError("Bounded-run source changed")
