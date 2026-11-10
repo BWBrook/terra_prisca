@@ -1,4 +1,5 @@
 from dataclasses import replace
+import warnings
 
 import numpy as np
 import pytest
@@ -64,6 +65,17 @@ def test_repeated_culls_export_the_continuous_immigrant_input(monkeypatch):
     assert result.arrival_events == []
 
 
+def test_immigrant_decay_spans_large_abundance_ratios_without_a_shift_boundary(monkeypatch):
+    p = toy_model(monkeypatch, [-3.5, 0.])
+    result = finite.integrate_finite([30., 1e18, 0., 0., .19], p, 20.,
+                                   process(minimum_cells=0., immigration_cells_yr=(1., 0.)),
+                                   sample_every_censuses=1)
+    expected = 1e18 * np.exp(-3.5 * result.t) + (1 - np.exp(-3.5 * result.t)) / 3.5
+    assert result.y[1] == pytest.approx(expected, rel=3e-6, abs=1e-8)
+    assert np.min(result.y[1]) > 0
+    assert result.extinction_events == []
+
+
 def test_initial_floor_and_partial_interval_are_explicit(monkeypatch):
     p = toy_model(monkeypatch, [0., 0.])
     result = finite.integrate_finite([30., .5, 1., 0., .19], p, .5,
@@ -103,6 +115,24 @@ def test_reference_invasion_hits_the_first_scheduled_census_after_one_cell():
     assert np.all(result.y[2, result.t >= 19.] == 0)
     assert result.ledger["culled_h2_mol"][1] > 0
     assert result.ledger["immigrant_gdw"].sum() == 0
+
+
+def test_product_case_0123_rejects_no_physical_stock_and_has_finite_immigration():
+    p = replace(finite.core.reference(), activity_feedback="products", acetate_fraction=.9)
+    control = next(e for e in finite.core.equilibrium_states(replace(p, enabled=(True, False)))
+                   if e["kind"] == "acetogen" and e["stable"])
+    y0 = control["y"].copy()
+    y0[2] = 1e-12
+    with warnings.catch_warnings(record=True) as caught:
+        warnings.simplefilter("always")
+        result = finite.integrate_finite(y0, p, 100.,
+            finite.CellProcess(census_yr=10., immigration_cells_yr=(.1, .1)),
+            sample_every_censuses=1)
+    assert caught == []
+    assert np.all(np.isfinite(result.y)) and np.all(result.y >= 0)
+    assert result.first_extinction_by_guild_yr == (None, 20.)
+    assert len(result.extinction_events) == 9
+    assert np.all(result.census_activity[2:] == 1)
 
 
 def test_invalid_process_and_disabled_immigration_are_rejected():

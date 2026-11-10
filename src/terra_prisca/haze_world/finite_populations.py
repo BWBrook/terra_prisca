@@ -82,11 +82,6 @@ def integrate_finite(y0, p, years, process=CellProcess(), *, sample_every_census
     allocation = np.array([g.assimilation_mol_g for g in core.activity_guilds(initial, p)])
     cell_log_conversion = np.log(volume) - np.log(process.cell_mass_gdw)
     floor_log_density = np.log(process.minimum_cells) - cell_log_conversion if process.minimum_cells else -np.inf
-    offsets = immigration.copy()  # one year's input; units gDW/L
-    anchors = np.zeros(2)
-    for i in range(2):
-        if offsets[i] > 0:
-            anchors[i] = _inverse_softplus(offsets[i] / BIOMASS_SCALE)
     modes = np.where(immigration > 0, 2, np.where(initial[1:3] > 0, 1, 0))
     events, arrivals, flags = [], [], []
     minimum_logs = np.full(2, np.inf)
@@ -108,11 +103,7 @@ def integrate_finite(y0, p, years, process=CellProcess(), *, sample_every_census
                 physical[i + 1] = BIOMASS_SCALE * np.logaddexp(0., z)
                 logs[i] = np.log(BIOMASS_SCALE) + (z if z < -30 else np.log(np.logaddexp(0., z)))
             else:
-                difference = z - anchors[i]
-                if abs(difference) < 50:
-                    stock = BIOMASS_SCALE * np.log1p(expit(anchors[i]) * np.expm1(difference))
-                else:
-                    stock = BIOMASS_SCALE * (np.logaddexp(0., z) - np.logaddexp(0., anchors[i]))
+                stock = immigration[i] * z
                 physical[i + 1] = stock
                 if stock > 0:
                     logs[i] = np.log(stock)
@@ -125,10 +116,10 @@ def integrate_finite(y0, p, years, process=CellProcess(), *, sample_every_census
                 internal[i + 1] = 0.
             elif mode == 1:
                 internal[i + 1] = _inverse_softplus(physical[i + 1] / BIOMASS_SCALE)
-            elif physical[i + 1] == 0:
-                internal[i + 1] = anchors[i]
             else:
-                internal[i + 1] = _inverse_softplus((physical[i + 1] + offsets[i]) / BIOMASS_SCALE)
+                internal[i + 1] = physical[i + 1] / immigration[i]
+                if not np.isfinite(internal[i + 1]):
+                    raise ValueError("Immigration is too small to represent the initial stock in scaled coordinates")
         return internal
 
     def derivatives(_, internal):
@@ -143,11 +134,8 @@ def integrate_finite(y0, p, years, process=CellProcess(), *, sample_every_census
                 rates[i + 1] = 0.
             elif mode == 1:
                 rates[i + 1] = growth[i] * (1. if z < -30 else np.logaddexp(0., z) / expit(z))
-            elif z < -30:
-                inverse = np.exp(anchors[i] - z)
-                rates[i + 1] = growth[i] + (immigration[i] / offsets[i] - growth[i]) * inverse
             else:
-                rates[i + 1] = (physical[i + 1] * growth[i] + immigration[i]) / (BIOMASS_SCALE * expit(z))
+                rates[i + 1] = growth[i] * z + 1.
         return rates
 
     def census(time, physical, logs, *, initial_census=False):
@@ -211,7 +199,7 @@ def integrate_finite(y0, p, years, process=CellProcess(), *, sample_every_census
             raise RuntimeError(f"Finite population integration failed before census {k}")
         physical, logs = decode(internal)
         if np.any(physical[1:3] < 0):
-            raise RuntimeError("Shifted population coordinate crossed its physical boundary")
+            raise RuntimeError("Immigrant population coordinate crossed its physical boundary")
         changed = census(time, physical, logs)
         if changed:
             internal = encode(physical)
@@ -228,7 +216,7 @@ def integrate_finite(y0, p, years, process=CellProcess(), *, sample_every_census
             raise RuntimeError("Finite population integration failed in final partial interval")
         physical, logs = decode(internal)
         if np.any(physical[1:3] < 0):
-            raise RuntimeError("Shifted population coordinate crossed its physical boundary")
+            raise RuntimeError("Immigrant population coordinate crossed its physical boundary")
         times.append(float(years))
         samples.append(physical.copy())
         sample_logs.append(logs.copy())
@@ -255,5 +243,6 @@ def integrate_finite(y0, p, years, process=CellProcess(), *, sample_every_census
              census_order="Continuous mean immigration; at t=0 and scheduled censuses remove below-floor guilds; then report",
              minimum_scope="Pre-census samples including initial stocks, not continuous extrema",
              arrival_scope="First retained-at-census stock following census absence; not stochastic arrivals",
+             immigration_coordinate="Linear biomass divided by one year's mean immigration density; no stock clipping",
              cell_process="Assumed deterministic census and mean immigration, not empirical extinction probabilities"),
     )
