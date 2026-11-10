@@ -11,6 +11,6 @@
   "all_receipt_hashes_verified": true,
   "local_copy_verified": true,
   "archived_copy_verified": true,
-  "archive_key": "refuge-coupling-99a5146-20261110",
+  "archive_directory": "refuge-coupling-99a5146-20261110",
   "scope": "954 canonical raw records and their completion receipts retained in shared project storage; numerical pilots and scratch reviews excluded"
 }
