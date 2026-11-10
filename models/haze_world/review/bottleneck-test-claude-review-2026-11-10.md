@@ -85,7 +85,7 @@ At `f=0` the acetogen-only world has almost no biological methane and sits
 at 283.2 K. Once `T_sw` rises above that, at `L = 1.24×10⁻³ h⁻¹`, the
 acetogen-only state is stable as well. History dependence then returns
 **without any spatial structure**, through the climate itself. The reference
-`L = 10⁻³ h⁻¹` sits only 24% below that bifurcation. The refuge results
+`L = 10⁻³ h⁻¹` is only 24% below the bifurcation value. The refuge results
 were obtained close to a regime boundary.
 
 At `f=0.9` the acetogen-only state is the stable outcome from
