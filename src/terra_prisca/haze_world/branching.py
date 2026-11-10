@@ -63,7 +63,7 @@ def per_cell_rates(y, p, guild):
 
 
 def backward_survival(times, birth, death, migration, *, rtol=1e-9, atol=1e-11,
-                      return_solution=False):
+                      max_step=np.inf, return_solution=False):
     """Log probability that one cell alive at the start has living descendants.
 
     Sampled birth/death arrays have shape (time, type); rates between samples
@@ -83,6 +83,8 @@ def backward_survival(times, birth, death, migration, *, rtol=1e-9, atol=1e-11,
         raise ValueError("Migration must have shape (type,type) and a zero diagonal")
     if any(np.any(~np.isfinite(v)) or np.any(v < 0) for v in (birth, death, migration)):
         raise ValueError("All event rates must be finite and nonnegative")
+    if np.isnan(max_step) or max_step <= 0:
+        raise ValueError("Maximum step must be positive")
 
     def rhs(t, logu):
         k = min(max(int(np.searchsorted(times, t)) - 1, 0), times.size - 2)
@@ -96,7 +98,8 @@ def backward_survival(times, birth, death, migration, *, rtol=1e-9, atol=1e-11,
         coupled[positive] = -migration[positive] * np.expm1(differences[positive])
         return b * np.expm1(logu) + delta + coupled.sum(axis=1)
 
-    solution = solve_ivp(rhs, (times[-1], times[0]), np.zeros(n), method="LSODA", rtol=rtol, atol=atol)
+    solution = solve_ivp(rhs, (times[-1], times[0]), np.zeros(n), method="LSODA", rtol=rtol, atol=atol,
+                         max_step=max_step)
     if not solution.success or np.any(~np.isfinite(solution.y)):
         raise ArithmeticError("Backward branching integration failed: " + solution.message)
     if np.any(solution.y > 0):

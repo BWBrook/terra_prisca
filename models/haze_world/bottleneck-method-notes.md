@@ -22,6 +22,14 @@ results and retain the original [specification](bottleneck-test-spec.md).
   describe survival conditional on rejoining the prescribed large-population
   path between windows; they do not reproduce correlated, climate-coupled
   demographic histories.
+- Each guild's probability is conditional on the uncensored community path.
+  If another guild would already have disappeared, its missing resource and
+  methane feedback can invalidate the later environment. Per-guild values
+  must not be multiplied into a joint stochastic community or climate forecast.
+- The specified split into cell birth and death is an event-model assumption
+  beyond net biomass growth. In particular, representing maintenance deficits
+  as cell death differs from shrinkage or dormancy. Probability classes remain
+  conditional on this split and the fixed turnover rate.
 - The E2 one-cell floor diagnostics apply after the fact to the uncensored
   **global** count, as specified. They are not reruns of the earlier local
   removal model and do not establish its counterfactual final climate.
