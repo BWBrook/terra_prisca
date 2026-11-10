@@ -1,0 +1,643 @@
+{
+  "duration_yr": 10.0,
+  "census": "none; ten-year uncensored prefix before any scheduled intervention",
+  "cases": [
+    {
+      "case": {
+        "case_id": "radau_default",
+        "fraction": 0.5,
+        "configuration": "both",
+        "dispersal_yr": 0.001,
+        "direction": "A_into_M",
+        "warm_k": 286.0,
+        "cold_k": 278.0,
+        "refuge_fraction": 0.02,
+        "activity": "fixed",
+        "years": 10.0,
+        "census_yr": 10.0
+      },
+      "parameters": {
+        "base": {
+          "climate": {
+            "case": "B",
+            "lifetime_yr": 10000.0,
+            "abiotic_flux": 680000000.0,
+            "donor_flux": 375157520114.00323,
+            "maintenance_flux": 10000000000.0,
+            "growth_ratio_max": 10.0,
+            "t_opt_k": 300.0,
+            "t_halfwidth_k": 20.0,
+            "thermal": true,
+            "t_zero_k": 283.0,
+            "bridge_scale": 0.01
+          },
+          "biology": {
+            "methanogen": "methanogenic strain MSB",
+            "capacity_ratio": 0.74,
+            "yield_m": 0.78,
+            "maintenance_m30": 0.001,
+            "loss_h": 0.001,
+            "threshold_a30": 20.0,
+            "threshold_shape": "fixed_energy",
+            "msp_threshold_4c": 20.0,
+            "maintenance_energy_j": 69000.0,
+            "kinetics": "saturating",
+            "assimilation_m": 0.0824,
+            "km_scale_a": 1.0,
+            "km_scale_m": 1.0,
+            "cessation_energy_a_j": -24000.0,
+            "cessation_energy_m_j": -28000.0,
+            "threshold_m30": 1.0,
+            "exchange_mol_l_h_pa": 3.333333333333333e-09,
+            "atmosphere_pa": 0.0,
+            "low_temperature_variant": "constant_shape"
+          },
+          "loss": {
+            "anchor_ratio": 0.3,
+            "lifetime_yr": 10000.0,
+            "kind": "power",
+            "elasticity": 1.0,
+            "log_scale": 0.001
+          },
+          "habitat_l_cm2": 0.008970677546304392,
+          "acetate_lifetime_yr": 1.0,
+          "acetate_fraction": 0.5,
+          "recycling_variant": "constant",
+          "recycling_midpoint_k": 280.0,
+          "width_k": 2.0,
+          "enabled": [
+            true,
+            true
+          ],
+          "activity_feedback": "fixed",
+          "acetate_reference_mol_l": 0.0005,
+          "methane_reference_pa": 350.0
+        },
+        "patches": [
+          {
+            "name": "bulk",
+            "weight": 0.96,
+            "rule": "tracking",
+            "value": 0.0
+          },
+          {
+            "name": "warm",
+            "weight": 0.02,
+            "rule": "buffered",
+            "value": 286.0
+          },
+          {
+            "name": "cold",
+            "weight": 0.02,
+            "rule": "buffered",
+            "value": 278.0
+          }
+        ],
+        "dispersal_yr": 0.001
+      },
+      "initial_y": [
+        70.16435673984228,
+        1e-12,
+        0.0005745928272895943,
+        0.0,
+        19.977128816168307,
+        1e-12,
+        0.0006325090818261017,
+        0.0,
+        47.106391341875806,
+        1e-12,
+        0.0006170784393524141,
+        0.0,
+        0.21759074533991216
+      ],
+      "start": {
+        "selected_ratio": 0.21759074533991216,
+        "qualifying_ratios": [
+          0.21759074533991216
+        ],
+        "protocol": "Highest-r stable conditional resident; invader1e-12gDW/L in every active habitat"
+      },
+      "independent_method": "Radau; six independent local log biomasses, physical pressure/acetate/methane and external-redox observer",
+      "independent_rtol": 2e-10,
+      "independent_max_step_yr": 0.05,
+      "independent_first_step_yr": 1e-06,
+      "independent_nfev": 13511,
+      "independent_njev": 259,
+      "independent_nlu": 586,
+      "production_nfev": 4702,
+      "production_accepted_steps": 1540,
+      "independent_final_y": [
+        27.324727496025332,
+        0.0013560027713097444,
+        3.504973690111586e-09,
+        0.0017464945115665562,
+        19.979241009204348,
+        3.360848234633528e-07,
+        0.0006323042264026211,
+        4.328238270854663e-07,
+        27.61478154388011,
+        0.0012563896241301205,
+        4.970141719116759e-09,
+        0.0017607963649734716,
+        0.21750254958123907
+      ],
+      "production_final_y": [
+        27.32472749602698,
+        0.00135600277130968,
+        3.5049736901267462e-09,
+        0.0017464945115357854,
+        19.979241009204333,
+        3.360848234633314e-07,
+        0.0006323042264026218,
+        4.328238270643355e-07,
+        27.614781543881946,
+        0.0012563896241297862,
+        4.970141898499204e-09,
+        0.0017607963649923328,
+        0.2175025495810747
+      ],
+      "absolute_endpoint_difference": [
+        1.6484591469634324e-12,
+        6.440160904563896e-17,
+        1.5160152676565615e-20,
+        3.07707418573111e-14,
+        1.4210854715202004e-14,
+        2.1387581918171084e-20,
+        6.505213034913027e-19,
+        2.1130825056034624e-17,
+        1.836752971939859e-12,
+        3.3436794999452957e-16,
+        1.7938244471371185e-16,
+        1.886121467342683e-14,
+        1.6436851879575443e-13
+      ],
+      "endpoint_scales": [
+        70.16435673984228,
+        0.0013560027713097444,
+        0.0005745928272895943,
+        0.0017464945115665562,
+        19.979241009204348,
+        3.360848234633528e-07,
+        0.0006325090818261017,
+        4.328238270854663e-07,
+        47.106391341875806,
+        0.0012563896241301205,
+        0.0006170784393524141,
+        0.0017607963649734716,
+        0.21759074533991216
+      ],
+      "max_scaled_endpoint_difference": 4.882084518850226e-11,
+      "log_biomass_difference": [
+        4.707345624410664e-14,
+        4.32365254710021e-12,
+        6.217248937900877e-14,
+        0.0,
+        2.646771690706373e-13,
+        3.609201826293429e-08
+      ],
+      "max_log_biomass_difference": 3.609201826293429e-08,
+      "nonnegative_accepted_physical_stocks": true,
+      "strictly_positive_accepted_biomasses": true,
+      "supported_sampled_physiology": true,
+      "maximum_instantaneous_redox_residual_mol_l_yr": 3.903127820947816e-18,
+      "integrated_external_inventory_mol_l": -0.01886081428238705,
+      "physical_inventory_change_mol_l": -0.018860814282206206,
+      "integrated_redox_error_mol_l": 1.8084492237058214e-13
+    },
+    {
+      "case": {
+        "case_id": "radau_tiny_exchange",
+        "fraction": 0.5,
+        "configuration": "both",
+        "dispersal_yr": 1e-09,
+        "direction": "M_into_A",
+        "warm_k": 286.0,
+        "cold_k": 278.0,
+        "refuge_fraction": 0.02,
+        "activity": "fixed",
+        "years": 10.0,
+        "census_yr": 10.0
+      },
+      "parameters": {
+        "base": {
+          "climate": {
+            "case": "B",
+            "lifetime_yr": 10000.0,
+            "abiotic_flux": 680000000.0,
+            "donor_flux": 375157520114.00323,
+            "maintenance_flux": 10000000000.0,
+            "growth_ratio_max": 10.0,
+            "t_opt_k": 300.0,
+            "t_halfwidth_k": 20.0,
+            "thermal": true,
+            "t_zero_k": 283.0,
+            "bridge_scale": 0.01
+          },
+          "biology": {
+            "methanogen": "methanogenic strain MSB",
+            "capacity_ratio": 0.74,
+            "yield_m": 0.78,
+            "maintenance_m30": 0.001,
+            "loss_h": 0.001,
+            "threshold_a30": 20.0,
+            "threshold_shape": "fixed_energy",
+            "msp_threshold_4c": 20.0,
+            "maintenance_energy_j": 69000.0,
+            "kinetics": "saturating",
+            "assimilation_m": 0.0824,
+            "km_scale_a": 1.0,
+            "km_scale_m": 1.0,
+            "cessation_energy_a_j": -24000.0,
+            "cessation_energy_m_j": -28000.0,
+            "threshold_m30": 1.0,
+            "exchange_mol_l_h_pa": 3.333333333333333e-09,
+            "atmosphere_pa": 0.0,
+            "low_temperature_variant": "constant_shape"
+          },
+          "loss": {
+            "anchor_ratio": 0.3,
+            "lifetime_yr": 10000.0,
+            "kind": "power",
+            "elasticity": 1.0,
+            "log_scale": 0.001
+          },
+          "habitat_l_cm2": 0.008970677546304392,
+          "acetate_lifetime_yr": 1.0,
+          "acetate_fraction": 0.5,
+          "recycling_variant": "constant",
+          "recycling_midpoint_k": 280.0,
+          "width_k": 2.0,
+          "enabled": [
+            true,
+            true
+          ],
+          "activity_feedback": "fixed",
+          "acetate_reference_mol_l": 0.0005,
+          "methane_reference_pa": 350.0
+        },
+        "patches": [
+          {
+            "name": "bulk",
+            "weight": 0.96,
+            "rule": "tracking",
+            "value": 0.0
+          },
+          {
+            "name": "warm",
+            "weight": 0.02,
+            "rule": "buffered",
+            "value": 286.0
+          },
+          {
+            "name": "cold",
+            "weight": 0.02,
+            "rule": "buffered",
+            "value": 278.0
+          }
+        ],
+        "dispersal_yr": 1e-09
+      },
+      "initial_y": [
+        47.90623267095345,
+        0.0006473144967854476,
+        1e-12,
+        0.0017246531774353694,
+        26.98674754784997,
+        0.0010133074753783577,
+        1e-12,
+        0.0018113791505749845,
+        27.61493181885486,
+        0.0012563892191731502,
+        1e-12,
+        0.0017628946604085198,
+        0.11876091919509182
+      ],
+      "start": {
+        "selected_ratio": 0.11876091919509182,
+        "qualifying_ratios": [
+          0.11876091919509182
+        ],
+        "protocol": "Highest-r stable conditional resident; invader1e-12gDW/L in every active habitat"
+      },
+      "independent_method": "Radau; six independent local log biomasses, physical pressure/acetate/methane and external-redox observer",
+      "independent_rtol": 2e-10,
+      "independent_max_step_yr": 0.05,
+      "independent_first_step_yr": 1e-06,
+      "independent_nfev": 7772,
+      "independent_njev": 189,
+      "independent_nlu": 498,
+      "production_nfev": 4260,
+      "production_accepted_steps": 1492,
+      "independent_final_y": [
+        23.971290065130155,
+        2.1435502981395317e-15,
+        0.0005330720335654951,
+        6.949717311950674e-07,
+        19.977147186376808,
+        2.0654619235408826e-08,
+        0.000632499693123977,
+        0.00011306820583310299,
+        27.6149318202234,
+        0.0012563892188245864,
+        2.0567579236227978e-13,
+        0.001762894660001902,
+        0.11888200178916875
+      ],
+      "production_final_y": [
+        23.971290065136476,
+        2.143550298154029e-15,
+        0.0005330720335653381,
+        6.949717305387582e-07,
+        19.977147186450104,
+        2.0654625919057808e-08,
+        0.000632499693119005,
+        0.0001130681915678295,
+        27.614931820223266,
+        0.0012563892188245914,
+        2.0567579236536045e-13,
+        0.0017628946599725474,
+        0.1188820017893718
+      ],
+      "absolute_endpoint_difference": [
+        6.320277634586091e-12,
+        1.4497291285699144e-26,
+        1.5699247457590104e-16,
+        6.563091854990097e-16,
+        7.329603590733313e-11,
+        6.683648982346728e-15,
+        4.971934322584026e-15,
+        1.4265273492086901e-11,
+        1.3500311979441904e-13,
+        4.9873299934333204e-18,
+        3.080672228843579e-24,
+        2.9354556979610535e-14,
+        2.0305979120394113e-13
+      ],
+      "endpoint_scales": [
+        47.90623267095345,
+        0.0006473144967854476,
+        0.0005330720335654951,
+        0.0017246531774353694,
+        26.98674754784997,
+        0.0010133074753783577,
+        0.000632499693123977,
+        0.0018113791505749845,
+        27.6149318202234,
+        0.0012563892191731502,
+        1e-12,
+        0.0017628946604085198,
+        0.11888200178916875
+      ],
+      "max_scaled_endpoint_difference": 7.875365843511386e-09,
+      "log_biomass_difference": [
+        6.764366844436154e-12,
+        2.9398705692074145e-13,
+        3.235909531440484e-07,
+        7.859490835926408e-12,
+        5.329070518200751e-15,
+        1.4978240869822912e-11
+      ],
+      "max_log_biomass_difference": 3.235909531440484e-07,
+      "nonnegative_accepted_physical_stocks": true,
+      "strictly_positive_accepted_biomasses": true,
+      "supported_sampled_physiology": true,
+      "maximum_instantaneous_redox_residual_mol_l_yr": 4.7704895589362195e-18,
+      "integrated_external_inventory_mol_l": 0.02861462817999876,
+      "physical_inventory_change_mol_l": 0.028614628179980173,
+      "integrated_redox_error_mol_l": 1.858582732161551e-14
+    },
+    {
+      "case": {
+        "case_id": "radau_products",
+        "fraction": 0.5,
+        "configuration": "both",
+        "dispersal_yr": 1e-06,
+        "direction": "A_into_M",
+        "warm_k": 286.0,
+        "cold_k": 278.0,
+        "refuge_fraction": 0.02,
+        "activity": "products",
+        "years": 10.0,
+        "census_yr": 10.0
+      },
+      "parameters": {
+        "base": {
+          "climate": {
+            "case": "B",
+            "lifetime_yr": 10000.0,
+            "abiotic_flux": 680000000.0,
+            "donor_flux": 375157520114.00323,
+            "maintenance_flux": 10000000000.0,
+            "growth_ratio_max": 10.0,
+            "t_opt_k": 300.0,
+            "t_halfwidth_k": 20.0,
+            "thermal": true,
+            "t_zero_k": 283.0,
+            "bridge_scale": 0.01
+          },
+          "biology": {
+            "methanogen": "methanogenic strain MSB",
+            "capacity_ratio": 0.74,
+            "yield_m": 0.78,
+            "maintenance_m30": 0.001,
+            "loss_h": 0.001,
+            "threshold_a30": 20.0,
+            "threshold_shape": "fixed_energy",
+            "msp_threshold_4c": 20.0,
+            "maintenance_energy_j": 69000.0,
+            "kinetics": "saturating",
+            "assimilation_m": 0.0824,
+            "km_scale_a": 1.0,
+            "km_scale_m": 1.0,
+            "cessation_energy_a_j": -24000.0,
+            "cessation_energy_m_j": -28000.0,
+            "threshold_m30": 1.0,
+            "exchange_mol_l_h_pa": 3.333333333333333e-09,
+            "atmosphere_pa": 0.0,
+            "low_temperature_variant": "constant_shape"
+          },
+          "loss": {
+            "anchor_ratio": 0.3,
+            "lifetime_yr": 10000.0,
+            "kind": "power",
+            "elasticity": 1.0,
+            "log_scale": 0.001
+          },
+          "habitat_l_cm2": 0.008970677546304392,
+          "acetate_lifetime_yr": 1.0,
+          "acetate_fraction": 0.5,
+          "recycling_variant": "constant",
+          "recycling_midpoint_k": 280.0,
+          "width_k": 2.0,
+          "enabled": [
+            true,
+            true
+          ],
+          "activity_feedback": "products",
+          "acetate_reference_mol_l": 0.0005,
+          "methane_reference_pa": 350.0
+        },
+        "patches": [
+          {
+            "name": "bulk",
+            "weight": 0.96,
+            "rule": "tracking",
+            "value": 0.0
+          },
+          {
+            "name": "warm",
+            "weight": 0.02,
+            "rule": "buffered",
+            "value": 286.0
+          },
+          {
+            "name": "cold",
+            "weight": 0.02,
+            "rule": "buffered",
+            "value": 278.0
+          }
+        ],
+        "dispersal_yr": 1e-06
+      },
+      "initial_y": [
+        70.16698697472079,
+        1e-12,
+        0.0005745859150117869,
+        0.0,
+        19.984398448784273,
+        1e-12,
+        0.0006324981965356027,
+        0.0,
+        47.10955482697434,
+        1e-12,
+        0.0006170750493992583,
+        0.0,
+        0.2175881827464021
+      ],
+      "start": {
+        "selected_ratio": 0.2175881827464021,
+        "qualifying_ratios": [
+          0.2175881827464021
+        ],
+        "protocol": "Highest-r stable conditional resident; invader1e-12gDW/L in every active habitat"
+      },
+      "independent_method": "Radau; six independent local log biomasses, physical pressure/acetate/methane and external-redox observer",
+      "independent_rtol": 2e-10,
+      "independent_max_step_yr": 0.05,
+      "independent_first_step_yr": 1e-06,
+      "independent_nfev": 14002,
+      "independent_njev": 297,
+      "independent_nlu": 698,
+      "production_nfev": 5011,
+      "production_accepted_steps": 1666,
+      "independent_final_y": [
+        27.839897677162377,
+        0.0013534469891244765,
+        3.5721646238640228e-12,
+        0.001743228095797987,
+        19.984373085303506,
+        9.254925833383523e-10,
+        0.000632497694262959,
+        1.4856850523727109e-09,
+        28.42124776331162,
+        0.0012526704048656406,
+        2.3981245713367697e-11,
+        0.001755746481058961,
+        0.21749947194631114
+      ],
+      "production_final_y": [
+        27.83989767715842,
+        0.0013534469891246057,
+        3.572164624881718e-12,
+        0.0017432280957964039,
+        19.984373085303645,
+        9.254925833385754e-10,
+        0.0006324976942629578,
+        1.4856850523256331e-09,
+        28.42124776336723,
+        0.0012526704048653322,
+        2.3981259787826058e-11,
+        0.0017557464811877878,
+        0.217499471946632
+      ],
+      "absolute_endpoint_difference": [
+        3.957723038183758e-12,
+        1.2923689896027213e-16,
+        1.017695090246265e-21,
+        1.5831520122633336e-15,
+        1.3855583347321954e-13,
+        2.231319702361792e-22,
+        1.1926223897340549e-18,
+        4.707774379253674e-20,
+        5.561062721426424e-11,
+        3.0834709785487746e-16,
+        1.4074458360727944e-17,
+        1.288268536986381e-13,
+        3.2085445411667024e-13
+      ],
+      "endpoint_scales": [
+        70.16698697472079,
+        0.0013534469891244765,
+        0.0005745859150117869,
+        0.001743228095797987,
+        19.984398448784273,
+        9.254925833383523e-10,
+        0.0006324981965356027,
+        1.4856850523727109e-09,
+        47.10955482697434,
+        0.0012526704048656406,
+        0.0006170750493992583,
+        0.001755746481058961,
+        0.2175881827464021
+      ],
+      "max_scaled_endpoint_difference": 7.337440518231167e-11,
+      "log_biomass_difference": [
+        9.592326932761353e-14,
+        2.8489210990301217e-10,
+        2.4158453015843406e-13,
+        1.7763568394002505e-15,
+        2.4513724383723456e-13,
+        5.86894206122679e-07
+      ],
+      "max_log_biomass_difference": 5.86894206122679e-07,
+      "nonnegative_accepted_physical_stocks": true,
+      "strictly_positive_accepted_biomasses": true,
+      "supported_sampled_physiology": true,
+      "maximum_instantaneous_redox_residual_mol_l_yr": 3.0357660829594124e-18,
+      "integrated_external_inventory_mol_l": -0.019024495282379622,
+      "physical_inventory_change_mol_l": -0.019024495282330633,
+      "integrated_redox_error_mol_l": 4.898859096158503e-14
+    }
+  ],
+  "tolerances": {
+    "max_scaled_endpoint_difference": 0.0001,
+    "max_log_biomass_difference": 0.001,
+    "max_instantaneous_redox_residual_mol_l_yr": 1e-12,
+    "max_integrated_redox_error_mol_l": 1e-09
+  },
+  "source_sha256": {
+    "models/haze_world/review/check_buffered_trajectory.py": "3342a171ee25e4416a625a7ad8339b319233e0a8374da295c016351d1795504b",
+    "src/terra_prisca/haze_world/buffered_experiments.py": "c8603febb0167be3fc944b60672d9e11957aabf4ca7654dc6efb20639176336a",
+    "src/terra_prisca/haze_world/habitat_coupling.py": "34f611d3f9046bf7d96f8caeffb452f2a2206bab4abc45e630a09980a067c4d0",
+    "src/terra_prisca/haze_world/habitat_equilibria.py": "90ec06dbce07e6625878ece2e97b55604ed4708b8aad9f66b0dd06dd8aa50a9a",
+    "src/terra_prisca/haze_world/habitat_integration.py": "3a115c22ee4b4a6b2c3f4585385927a7e32d68712cfb3d0073f0e52089a1b214",
+    "src/terra_prisca/haze_world/population_coupling.py": "17a433957e94845595f6d7fd160ffe593c01c4e74550707b0814c95ab67ae663",
+    "src/terra_prisca/haze_world/two_guilds.py": "eff6a9027c5b28d154f03462d926591ebee3408eb2c80ec0df5c38929f169f83",
+    "src/terra_prisca/haze_world/hydrogen_uptake.py": "c48d8231ef726605ab07be22438f3e2fd97f23b310773ac748d1b2bf5c36fafd",
+    "src/terra_prisca/haze_world/woodii1998.py": "b0130f4f8ea15aa64245133f79dc8b35883a414031a8b49262c6657350cad0b0",
+    "src/terra_prisca/haze_world/methane_budget.py": "70dc47659e4738d07809e8d23844af79bf69e5dabcc87793eac3f5e560011721",
+    "src/terra_prisca/haze_world/darwinian.py": "e965035d5dfbfafcb695dc3738b23d8a445c4c1e7e246ab4688d67b33482f1aa",
+    "src/terra_prisca/haze_response/arney2016.py": "a1b8b52f4c929a0518a17542fb323588699433b038949b38ee6ad74679cd0da6",
+    "models/haze_response/arney2016/cases.csv": "e3d77d275052a8875991a751868f857bffc964295bfd47591944d86bc58ab07a",
+    "models/haze_response/arney2016/figure4.csv": "c0ef5f3d17ee7c6085ad36247f0f7814726dbbe3273842b01f2c6c4e046856f8",
+    "models/haze_world/evidence/peters1998_chemostat.csv": "b0b00bf03eaeaabf45fb571330773c5158b53b088436aaee942188f8e9498320",
+    "models/haze_world/evidence/kotsyurbenko2001_table2.csv": "c95b4be023e5502fbb30eb322621e5612bbbf850f99d1b6669e98b95eb370480",
+    "uv.lock": "02bf429b2ec474f03280ec550d5fd847b573ece24ab9043e0b5998370fd4d2b4"
+  },
+  "environment": {
+    "python": "3.14.4",
+    "numpy": "2.5.4",
+    "scipy": "1.18.1"
+  },
+  "scope": "Independent numerical method and coordinates for three bounded continuum prefixes; shares physical RHS and start construction; not empirical validation or long-time/full-grid qualification"
+}

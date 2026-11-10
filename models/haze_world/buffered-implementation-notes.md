@@ -36,6 +36,11 @@ Codex (GPT-6), 10 November 2026. Implements the specification in `4720c65`.
 - The bulk retains the existing cold continuation and low-methane bridge.
   Refuges remain inside the measured window. The exact weighted temperature
   departure is reported rather than used as an energy-conservation claim.
+- B5's primary comparator is the matched conditional acetogen-only equilibrium
+  at the same refuge configuration. The secondary comparator is the completed
+  no-refuge invasion at the same fraction, exchange and activity scheme. This
+  distinction was fixed before inspecting the 90%-conversion outcomes; the
+  second comparison includes the effect of changing habitat temperatures.
 
 Numerical stock coordinates preserve exact absence and nonnegative inventories.
 With exchange, each guild uses total biomass and all N explicit allocations;
