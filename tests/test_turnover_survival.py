@@ -65,7 +65,7 @@ def test_terminal_first_window_has_finite_horizon_survival_and_no_gaussian_width
     monkeypatch.setattr(s.branching,"per_cell_rates",
                         lambda *args:(np.array([0]),np.array([0.]),np.array([.1])))
     monkeypatch.setattr(s.branching,"migration_matrix",lambda p:np.zeros((1,1)))
-    p=SimpleNamespace(weights=np.array([1.]))
+    p=SimpleNamespace(weights=np.array([1.]),base=SimpleNamespace(climate=s.core.reference().climate))
     t=np.arange(101.)
     data=dict(t=t,y=np.zeros((5,len(t))),metadata={"global_log_cell_conversion":0.},
               log_biomass=np.stack((np.log(100.)-.1*t,np.zeros_like(t)))[None,:,:])

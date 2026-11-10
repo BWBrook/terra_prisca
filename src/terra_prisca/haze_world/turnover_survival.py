@@ -12,6 +12,7 @@ from scipy.special import logsumexp
 from . import branching, bottleneck
 from . import buffered_experiments as e
 from . import habitat_coupling as habitat
+from . import population_coupling as core
 from . import turnover_experiments as turnover
 
 
@@ -82,15 +83,18 @@ def analyze(data,p,guild,dormant=False,rate_stride=1.,max_step=1.):
     stride=max(1,int(np.ceil(rate_stride/np.median(np.diff(t)))))
     indices=np.unique(np.r_[np.arange(lo,hi+1,stride),hi]).astype(int)
     if len(indices)<2:raise ArithmeticError("Unresolved probability window")
+    probability_step=max_step if window["rare"] else max(10.,max_step)
     if dormant:
         from . import dormancy_branching as db
         _,birth,death,q=db.trajectory_rates(t[indices],y[:,indices],p,guild)
-        logu=db.backward_survival(t[indices],birth,death,q,max_step=max_step)
+        logu=db.backward_survival(t[indices],birth,death,q,max_step=probability_step)
     else:
         pairs=[branching.per_cell_rates(y[:,i],p,guild) for i in indices]
         birth=np.array([v[1] for v in pairs]);death=np.array([v[2] for v in pairs])
-        logu=branching.backward_survival(t[indices],birth,death,branching.migration_matrix(p),max_step=max_step)
+        logu=branching.backward_survival(t[indices],birth,death,branching.migration_matrix(p),max_step=probability_step)
     probability=branching.lineages(types[lo],logu)
+    climate=(p.coupled if dormant else p.base).climate
+    temperatures=core.temperature_k(y[-1,lo:hi+1],climate)
     k=window["anchor"]
     curvature=bottleneck._curvature(t[lo:hi+1],total[lo:hi+1],k-lo)
     interior=lo+2<=k<=hi-2 and curvature is not None
@@ -111,9 +115,11 @@ def analyze(data,p,guild,dormant=False,rate_stride=1.,max_step=1.):
         log_threshold_cells=window["threshold"],threshold_reductions=window["reductions"],
         maximum_local_uptake_fraction=window["local"],maximum_global_uptake_fraction=window["global_"],
         rate_max_spacing_yr=float(max(np.diff(t[indices]))),rate_samples=len(indices),
+        probability_max_step_yr=float(probability_step),
+        sampled_window_climate_domains="|".join(sorted(set(core.domain(y[-1,lo:hi+1],climate)))),
+        sampled_window_min_temperature_k=float(min(temperatures)),sampled_window_max_temperature_k=float(max(temperatures)),
         interior_minimum=bool(interior),curvature_yr2=curvature if interior else None,
         gaussian_candidate=bool(interior and window["rare"]),
-        gaussian_scope="Local curvature estimate; scalar reduction, Gaussian shape and slow mortality not assumed valid",
         bottleneck_width_yr=width,weighted_death_at_min_yr=mortality,
         log_cells_for_half_survival_at_min=float(exact_log),
         cells_for_half_survival_at_min=bottleneck._exp(exact_log),
@@ -168,8 +174,7 @@ def _task(task):
             first_local_census_removal_yr=min((v["time_yr"] for v in removals),default=None),
             other_guild_first_sampled_subcell_yr=float(data["t"][subcell[0]]) if subcell.size else None,
             overlaps_other_guild_likely_loss_window=bool(other["survival_probability"]<.5 and other["start_yr"]<row["end_yr"]),
-            downstream_of_other_guild_subcell_bound=bool(subcell.size and data["t"][subcell[0]]<row["start_yr"]),
-            community_probability_warning="Per-guild conditional diagnostic; survival anywhere is not local occupancy or a joint endpoint probability")
+            downstream_of_other_guild_subcell_bound=bool(subcell.size and data["t"][subcell[0]]<row["start_yr"]))
     return results
 
 
@@ -205,14 +210,18 @@ def main():
     output.mkdir(parents=True,exist_ok=True)
     name="first_survival"+("_selection" if args.case_id else "")
     e.table(output/(name+".csv"),[e.clean({k:v for k,v in row.items() if k not in ("log_entry_cells","log_type_survival")}) for row in rows])
-    (output/(name+".json")).write_text(e.dumps(rows)+"\n")
+    payload=json.dumps(e.clean(rows),sort_keys=True,separators=(",",":"),allow_nan=False)+"\n"
+    if len(payload.encode())>=1000000:raise RuntimeError("Public survival table exceeds size boundary")
+    (output/(name+".json")).write_text(payload)
     sources=[Path(__file__),Path(branching.__file__),Path(bottleneck.__file__)]
     if dormant:
         from . import dormancy_branching
         sources.append(Path(dormancy_branching.__file__))
     (output/(name+"_manifest.json")).write_text(e.dumps(dict(profiles=len(tasks),rows=len(rows),
         source_sha256={str(v.relative_to(e.ROOT)):sha256(v.read_bytes()).hexdigest() for v in sources},
-        rate_stride_yr=args.rate_stride,interpretation="Each guild's first qualifying excursion only; later windows excluded; no joint community survival probability"))+"\n")
+        rate_stride_yr=args.rate_stride,
+        gaussian_scope="Local curvature estimate; scalar reduction, Gaussian shape and slow mortality not assumed valid",
+        interpretation="Each guild's first bottleneck only; later windows excluded; per-guild conditional diagnostics, not local occupancy or joint community survival probabilities"))+"\n")
 
 
 if __name__=="__main__":main()

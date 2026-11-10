@@ -175,9 +175,244 @@ of `0.001 h^-1`.
 
 ## T2: refuges across turnover
 
-T2 results and interpretation are being integrated separately. The T1 gate
-permits that assessment at its `f = 0, 0.5` settings; it does not remove the
-global-basin qualifications above.
+Refuges let the two planned invasion histories reach the same material bulk
+mixture over a wider range than KT2 and KT3 predicted. A warm refuge can also
+sustain methanogens while they contribute almost nothing in the bulk. Global
+coexistence, a shared endpoint and a functioning bulk thermostat are therefore
+reported separately.
+
+The **196 census runs** cover seven loss rates, `L = 3, 5, 7, 10, 15, 20, 30
+times 10^-4 h^-1`, `f = 0, 0.5`, and both invasion directions. There are 28
+unrefuged runs and 56 each with two absolute refuges, two relative refuges,
+or a relative warm refuge alone. The absolute refuges remain at 278 and
+286 K; relative refuges remain at `T_sw - 3.535 K` and `T_sw + 4.465 K`.
+Each refuge occupies 2% of the effective habitat volume, and the bulk follows
+the shared case-B climate response. Cell exchange is `10^-6` or `10^-3 yr^-1`.
+Hydrogen and acetate remain local; atmospheric methane is shared.
+The lowest relative cold refuge is 273.616 K. Its physiology uses the named
+`constant_shape` continuation below the measured 4 °C limit. Numerical support
+for that continuation does not supply a measurement of cold growth.
+
+Each guild is removed locally if fewer than one cell remains at a ten-year
+census. Global absence is absorbing. The initial invader density is
+`10^-12 gDW/L` in each active habitat. These are outcomes of that finite census
+protocol, not joint stochastic endpoint probabilities.
+
+Of the original 100,000-year runs, **178 meet the stationarity rule**. Eleven
+acetogen-only paths still have an abiotic methane tail, and seven mixtures
+are approaching equilibrium through slowly damped oscillations. The 18
+selected runs were extended to 200,000 years; **all 196 selected endpoints
+then pass**. No stationarity threshold was relaxed.
+
+Stationarity requires less than 0.1% change in every stock over the final
+20,000 years, less than 0.01 K temperature change, small scaled derivatives
+and unchanged census occupancy. Opposite histories count as the same endpoint
+only when both qualify, their local and global guild occupancies agree, their
+temperatures differ by less than 0.01 K, and every physical stock agrees within
+0.1%. Biomass comparisons use each habitat's actual one-cell density as the
+near-zero scale. The other floors are 1 Pa for hydrogen, `10^-9 M` for acetate
+and 0.001 for the methane ratio.
+
+![Complete endpoint comparisons](figures/turnover/endpoint_pairs.png)
+
+Across the **98 paired histories**, 52 pairs match in the complete state and
+46 differ. Forty matching pairs have a material bulk mixture: both guilds
+provide at least 1% of bulk hydrogen catabolism and the climate lies close to
+their thermal switch. The other twelve matching pairs contain only one guild.
+The [pair table](figures/turnover/endpoint_pairs.csv) and
+[assessment record](figures/turnover/endpoint_assessment.json) retain local
+occupancy, both global and bulk catabolic shares, `T - T_sw`, every final stock,
+the selected horizons and the source receipt hashes.
+
+### KT2 and KT3: the common mixed window
+
+The following categories hold at both tested exchange rates. **Mix** means the
+same complete endpoint with material bulk competition; **A** means the same
+acetogen-only endpoint; **different** means the two histories retain distinct
+complete states.
+
+| `L`, `10^-4 h^-1` | `T_sw`, K | Absolute, `f = 0` | Absolute, `f = 0.5` | Relative, `f = 0` | Relative, `f = 0.5` |
+|---:|---:|---|---|---|---|
+| 3 | 277.151 | different | different | Mix | Mix |
+| 5 | 278.401 | Mix | Mix | Mix | Mix |
+| 7 | 279.617 | Mix | Mix | Mix | Mix |
+| 10 | 281.535 | Mix | Mix | Mix | Mix |
+| 15 | 284.390 | Mix | Mix | Mix | Mix |
+| 20 | 286.475 | A | different | different | Mix |
+| 30 | 291.921 | A | different | different | Mix |
+
+KT2 correctly anticipated failure of the absolute cold refuge at the lowest
+loss rate: both fixed refuges favour methanogens there. It also anticipated
+loss of the common thermostat after the switch rises above the warm refuge.
+Its proposed upper limit at the well-mixed `f = 0` bistability boundary was
+too restrictive. At `L = 0.0015 h^-1`, both histories still reach the same
+mixed state with absolute refuges, although the corresponding unrefuged
+equations have a stable acetogen world as well.
+
+KT3 holds throughout the tested `f = 0.5` relative-refuge grid. At `f = 0`,
+its predicted return of history dependence starts at `L = 0.002`, rather
+than at `0.0015 h^-1`. The warm refuge changes establishment as well as
+preserving cells. At `L = 0.0015`, holding the recorded refuge methane flux
+fixed while omitting bulk methane gives a low-methane climate near 284.670 K,
+above `T_sw = 284.390 K`. A methanogen introduced to the corresponding local
+acetogen resident grows at about `0.224 yr^-1`. This forcing diagnostic
+explains how a warm source can enable establishment from the acetogen start;
+it does not enumerate spatial equilibria or prove global basin uniqueness.
+
+At larger loss, the same refuge forcing is too weak to bring the low-methane
+bulk across the switch. The histories then reach two globally coexisting
+communities with very different functions. For the `f = 0`, two-relative-refuge
+runs at `d = 10^-3 yr^-1`:
+
+| `L`, `h^-1` | Invasion | Temperature, K | `T - T_sw`, K | Methanogen global catabolism | Methanogen bulk catabolism |
+|---:|---|---:|---:|---:|---:|
+| 0.002 | A into M | 286.475 | +0.00006 | 78.708% | 79.866% |
+| 0.002 | M into A | 284.606 | -1.86948 | 2.082% | 0.001080% |
+| 0.003 | A into M | 291.921 | +0.00015 | 85.945% | 87.415% |
+| 0.003 | M into A | 284.444 | -7.47697 | 1.957% | 0.000230% |
+
+In the lower states, bulk methanogens have negative local net growth and are
+maintained by immigration from the warm patch. Their many cells do not make
+them competitive bulk residents. The supplied methane affects climate, but
+the bulk mixture does not hold temperature at its switch.
+
+A warm refuge alone never gives the same material bulk mixture from both
+starts on this grid. Some opposite histories agree because both finish as
+methanogen-only worlds. Elsewhere one history reaches a mixture or a
+source–sink community while the other loses acetogens.
+
+Finite extinction also creates absorbing outcomes where a missing guild
+could grow if reintroduced. Such census-stationary worlds are distinct from
+the stable equilibria of the continuum equations in T1. At `f = 0.5`,
+`L = 0.003` with absolute refuges, the two endpoint temperatures differ by
+only about 0.052 K, but one has no methanogens and the other assigns about
+76% of bulk hydrogen catabolism to them. The methane ratios are about
+0.0991 and 0.1779.
+
+The lower basin and the refuge-establishment diagnostic use the adopted
+**low-methane bridge**, including its 283 K methane-free anchor. The forcing
+ratios above are around 0.005, below the extracted Arney curves. These history
+results are conditional on that climate closure. The thermostat endpoints in
+the table lie on the extracted cooling branch; their existence alone does
+not establish the history by which a finite biosphere reaches them.
+This climate qualification is separate from the below-4 °C physiology
+continuation. The closure choices and threshold geometry are sensitivities
+of the specified model, not an empirical calibration of Archean communities.
+
+### Convergence and numerical checks
+
+With no methanogens and `f = 0`, methane obeys the exact forced linear loss
+equation. The eleven late abiotic tails approach
+`r = 0.0005437715868` with a 10,000-year time constant. Their last 20,000 years
+agree with that exponential to better than `10^-14` in methane ratio.
+
+The slowly relaxing mixtures have a stable oscillatory mode. Four difficult
+examples have observed periods of 114–171 years and amplitude damping times
+of 8–19 thousand years. Independently refined spatial equilibria predict
+their periods within 0.01% and damping times within 2.1%. The
+[transient checker](review/turnover_endpoint_transients.py) and
+[control record](review/turnover_endpoint_transients.json) record the
+raw-trajectory hashes, source inputs, root continuation and fits. This is a local
+relaxation check on the recorded paths.
+
+The endpoint comparator has five targeted tests, including local occupancy
+and symmetric one-cell scaling, and received an independent read-only audit.
+The complete 196-profile postprocessing pipeline was also checked against
+the checksum-verified raw records.
+
+### T2 replication
+
+The census equations, accepted-flow integrator, starts and source inputs stay
+at the frozen `eb41adb` T2 epoch. Every original and extended receipt is retained
+under `local/haze/turnover/`. The assessment selects the longest recorded
+protocol for each design ID and records that choice explicitly.
+
+```sh
+uv run python -m terra_prisca.haze_world.turnover_experiments --workers 4
+uv run python -m terra_prisca.haze_world.turnover_experiments --workers 4 --years 200000 \
+  --case-id refuges_0000 --case-id refuges_0028 --case-id refuges_0056 \
+  --case-id refuges_0084 --case-id refuges_0112 --case-id refuges_0115 \
+  --case-id refuges_0117 --case-id refuges_0119 --case-id refuges_0121 \
+  --case-id refuges_0140 --case-id refuges_0142 --case-id refuges_0144 \
+  --case-id refuges_0146 --case-id refuges_0152 --case-id refuges_0168 \
+  --case-id refuges_0170 --case-id refuges_0172 --case-id refuges_0174
+uv run python -m terra_prisca.haze_world.turnover_assessment --variant turnover
+uv run python models/haze_world/review/turnover_endpoint_transients.py
+uv run pytest tests/test_turnover_assessment.py
+```
+
+### KT4: first-bottleneck survival
+
+The 87 cases with a local removal or a dense-flow global minimum below
+10¹⁶ cells have annual, uncensored prefixes. Other cases reuse their census
+trajectories. Every selected protocol and raw checksum is verified. One
+prefix completed natively on a second architecture after the remote run's
+accepted-step refinement left a persistent small step ceiling; its physical
+source and protocol are unchanged, and its execution provenance is retained.
+
+The [first-window table](figures/turnover/first_survival.csv) has 392 guild
+diagnostics. Each first minimum is anchored before lowering the rarity
+boundary, so a later impossible recovery cannot replace it. A rare window
+requires negligible hydrogen uptake locally as well as globally. Terminal
+values retain their finite horizon; survival to that time is an upper bound
+on survival to any later time without outside immigration.
+
+There are 78 case–guild combinations with at least one local census removal.
+Their first windows give 72 robust-loss and six contingent classifications
+over the thousandfold range in either direction in cell count. None overlaps
+the other guild's likely first loss. These are conditional probabilities of
+the guild surviving somewhere, not probabilities of individual local removals
+or of a community endpoint. Later ghost-conditioned hazards are flagged in
+the complete table rather than treated as hazards of the finite census world.
+
+All six contingent classes survive the rate-grid and window-boundary checks.
+Using two-year rather than annual rates changes log surviving-lineage
+intensity by at most 0.00042; trimming 10% from each end of the first window
+changes it by at most 0.000042. The
+[first-window control](review/check_turnover_first_window.json) records these
+checks and their source profiles.
+
+![Bottleneck widths and Gaussian errors across turnover](figures/turnover/bottleneck_widths.png)
+
+The width panel includes interior minima in terminal windows; the error panel
+uses the 58 resolved, nonterminal first windows.
+
+KT4 is **refuted as a universal 10% rule**. Among the 58 resolved interior
+rare first minima linked to removals, 51 satisfy that accuracy, while seven
+underestimate the required population by 32–69%. A single minimum does not
+ensure a Gaussian shape.
+
+The independently checked counterexample is `refuges_0002`, acetogens at
+`L=0.0003/hour`, with two absolute refuges and exchange `10⁻⁶/year`.
+Its minimum is about 40 cells, with conditional first-window survival near
+0.229 at the default count scale. The exact multitype calculation needs
+**105.65 cells** at that minimum for 50% survival. The local Gaussian width
+is 36.52 years, giving only **66.57 cells** at the effectively constant death rate
+2.6298/year: 37% too low.
+
+![The non-Gaussian counterexample](figures/turnover/gaussian_counterexample.png)
+
+The inverse-population profile has an integrated width of 57.95 years,
+broader than the local quadratic predicts. The scalar hazard identity on
+that recorded path gives 105.64 cells, within 0.01% of the multitype result;
+varying mortality or strong spatial mixing is therefore unnecessary to
+explain this failure. An independent half-year sampled physical integration
+changes the exact threshold by only 0.022%. The
+[checker](review/check_turnover_gaussian.py) and
+[evidence](review/check_turnover_gaussian.json) retain rate-grid controls,
+curvature sensitivity, source hashes and the scalar comparison. The earlier
+accepted pilot is also recovered by the
+[first-window control](review/check_turnover_first_window.json).
+
+The counterexample's climate window stays within the extracted Arney curve;
+part of its microbial response uses the named below-4 °C continuation.
+
+```sh
+uv run python -m terra_prisca.haze_world.turnover_survival --variant turnover --workers 4
+uv run python models/haze_world/review/check_turnover_first_window.py
+uv run python models/haze_world/review/check_turnover_gaussian.py
+```
+
 
 ## Reproduction and source identity
 
