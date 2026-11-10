@@ -877,3 +877,54 @@ def test_conditioned_variant_retains_all_physical_and_provenance_guards(tmp_path
         radau["protocol"]["census"]["census_yr"] = 10.
     with pytest.raises(RuntimeError):
         a.validate_probability_protocol(radau, native, tmp_path)
+
+
+def terminal_prefix(prefix, native, root):
+    radau = conditioned_prefix(prefix, native, root)
+    for name in a.TERMINAL_SOURCES-a.CONDITIONED_SOURCES:
+        path = root/name
+        path.parent.mkdir(parents=True, exist_ok=True)
+        path.write_text(name)
+        radau["protocol"]["source_sha256"][name] = a.sha256(path.read_bytes()).hexdigest()
+    radau["protocol"]["solver"] = "radau_dormancy_terminal_dense_budget"
+    radau["fingerprint"] = a.sha256(a.e.dumps(radau["protocol"]).encode()).hexdigest()
+    return radau
+
+
+def test_exact_fifteen_file_terminal_variant_preserves_both_recording_contracts(tmp_path, monkeypatch):
+    prefix, native = profile_contract(tmp_path, monkeypatch)
+    radau = terminal_prefix(prefix, native, tmp_path)
+    census = guarded_census(radau, native)
+    assert len(set(radau["protocol"]["source_sha256"])-set(native["protocol"]["source_sha256"])) == 15
+    assert a.validate_probability_protocol(radau, native, tmp_path) == "radau_terminal_dense_budget_uncensored_unchanged_physics"
+    assert a.validate_probability_protocol(radau, census, tmp_path) == "radau_terminal_dense_budget_uncensored_unchanged_physics"
+    assert a.validate_probability_protocol(census, census, tmp_path) == "radau_terminal_dense_budget_census_unchanged_physics"
+
+
+@pytest.mark.parametrize("missing", sorted(a.TERMINAL_SOURCES))
+def test_terminal_variant_rejects_each_incomplete_source_graph(tmp_path, monkeypatch, missing):
+    prefix, native = profile_contract(tmp_path, monkeypatch)
+    radau = terminal_prefix(prefix, native, tmp_path)
+    del radau["protocol"]["source_sha256"][missing]
+    with pytest.raises(RuntimeError, match="Unapproved"):
+        a.validate_probability_protocol(radau, native, tmp_path)
+
+
+@pytest.mark.parametrize("changed", ("extra", "stale_helper", "flag", "platform", "parameters", "census"))
+def test_terminal_variant_retains_all_physical_and_provenance_guards(tmp_path, monkeypatch, changed):
+    prefix, native = profile_contract(tmp_path, monkeypatch)
+    radau = terminal_prefix(prefix, native, tmp_path)
+    if changed == "extra":
+        radau["protocol"]["source_sha256"]["unrelated.py"] = "unrelated"
+    elif changed == "stale_helper":
+        (tmp_path/"src/terra_prisca/haze_world/dormancy_terminal_integration.py").write_text("changed")
+    elif changed == "flag":
+        radau["protocol"]["solver"] = "analytic_dormancy_zero_face_newton"
+    elif changed == "platform":
+        del radau["protocol"]["architecture"]
+    elif changed == "parameters":
+        radau["protocol"]["parameters"]["biology"]["loss_h"] = .002
+    else:
+        radau["protocol"]["census"]["census_yr"] = 10.
+    with pytest.raises(RuntimeError):
+        a.validate_probability_protocol(radau, native, tmp_path)
