@@ -1,0 +1,158 @@
+{
+ "t_switch_k": 281.534823,
+ "counts": {
+  "M_into_A|unprotected|lost": 88,
+  "M_into_A|unprotected|survived": 8,
+  "M_into_A|protected|survived": 19,
+  "A_into_M|unprotected|survived": 4,
+  "A_into_M|protected|survived": 27,
+  "A_into_M|unprotected|lost": 2
+ },
+ "protected_but_lost": [],
+ "unprotected_survivors": [
+  {
+   "source": "selected_main.csv",
+   "case_id": "main_0057_t100000",
+   "direction": "M_into_A",
+   "fraction": "0.0",
+   "contrast_k": "5.0",
+   "dispersal_yr": "0.0",
+   "status": "completed",
+   "margin_k": -11.065,
+   "protected": false,
+   "lost": false
+  },
+  {
+   "source": "selected_main.csv",
+   "case_id": "main_0065_t100000",
+   "direction": "M_into_A",
+   "fraction": "0.0",
+   "contrast_k": "10.0",
+   "dispersal_yr": "0.0",
+   "status": "completed",
+   "margin_k": -8.469,
+   "protected": false,
+   "lost": false
+  },
+  {
+   "source": "selected_main.csv",
+   "case_id": "main_0073_t100000",
+   "direction": "M_into_A",
+   "fraction": "0.0",
+   "contrast_k": "15.0",
+   "dispersal_yr": "0.0",
+   "status": "completed",
+   "margin_k": -5.82,
+   "protected": false,
+   "lost": false
+  },
+  {
+   "source": "selected_main.csv",
+   "case_id": "main_0081_t100000",
+   "direction": "M_into_A",
+   "fraction": "0.0",
+   "contrast_k": "20.0",
+   "dispersal_yr": "0.0",
+   "status": "domain_exit",
+   "margin_k": -1.615,
+   "protected": false,
+   "lost": false
+  },
+  {
+   "source": "selected_main.csv",
+   "case_id": "main_0105_t100000",
+   "direction": "M_into_A",
+   "fraction": "0.0",
+   "contrast_k": "5.0",
+   "dispersal_yr": "0.0",
+   "status": "domain_exit",
+   "margin_k": -10.973,
+   "protected": false,
+   "lost": false
+  },
+  {
+   "source": "selected_main.csv",
+   "case_id": "main_0113_t100000",
+   "direction": "M_into_A",
+   "fraction": "0.0",
+   "contrast_k": "10.0",
+   "dispersal_yr": "0.0",
+   "status": "domain_exit",
+   "margin_k": -6.473,
+   "protected": false,
+   "lost": false
+  },
+  {
+   "source": "selected_main.csv",
+   "case_id": "main_0265_t100000",
+   "direction": "M_into_A",
+   "fraction": "0.5",
+   "contrast_k": "15.0",
+   "dispersal_yr": "0.0",
+   "status": "domain_exit",
+   "margin_k": -1.973,
+   "protected": false,
+   "lost": false
+  },
+  {
+   "source": "selected_subsets.csv",
+   "case_id": "subsets_0000_t100000",
+   "direction": "A_into_M",
+   "fraction": "0.0",
+   "contrast_k": "8.4",
+   "dispersal_yr": "0.0",
+   "status": "domain_exit",
+   "margin_k": -0.099,
+   "protected": false,
+   "lost": false
+  },
+  {
+   "source": "selected_subsets.csv",
+   "case_id": "subsets_0002_t100000",
+   "direction": "A_into_M",
+   "fraction": "0.0",
+   "contrast_k": "8.4",
+   "dispersal_yr": "0.001",
+   "status": "completed",
+   "margin_k": -0.099,
+   "protected": false,
+   "lost": false
+  },
+  {
+   "source": "selected_subsets.csv",
+   "case_id": "subsets_0012_t100000",
+   "direction": "A_into_M",
+   "fraction": "0.5",
+   "contrast_k": "8.4",
+   "dispersal_yr": "0.0",
+   "status": "domain_exit",
+   "margin_k": -0.099,
+   "protected": false,
+   "lost": false
+  },
+  {
+   "source": "selected_subsets.csv",
+   "case_id": "subsets_0014_t100000",
+   "direction": "A_into_M",
+   "fraction": "0.5",
+   "contrast_k": "8.4",
+   "dispersal_yr": "0.001",
+   "status": "completed",
+   "margin_k": -0.099,
+   "protected": false,
+   "lost": false
+  },
+  {
+   "source": "selected_subsets.csv",
+   "case_id": "subsets_0075_t100000",
+   "direction": "M_into_A",
+   "fraction": "0.5",
+   "contrast_k": "15.0",
+   "dispersal_yr": "0.0",
+   "status": "domain_exit",
+   "margin_k": -0.623,
+   "protected": false,
+   "lost": false
+  }
+ ]
+}
