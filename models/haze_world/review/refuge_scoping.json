@@ -1,0 +1,86 @@
+{
+ "switch_temperatures_k": [
+  281.535
+ ],
+ "starts": [
+  {
+   "acetate_fraction": 0.0,
+   "resident": "acetogen",
+   "t_k": 283.199,
+   "invader_growth_yr": 0.828,
+   "rstar_resident_pa": 21.463,
+   "rstar_invader_pa": 19.348,
+   "climate_time_yr": 10000.0,
+   "resident_cells": 1.73e+26,
+   "pi_one_cell": 137.1,
+   "refuge_offset_k": 1.66,
+   "refuge_side": "colder"
+  },
+  {
+   "acetate_fraction": 0.0,
+   "resident": "methanogen",
+   "t_k": 273.517,
+   "invader_growth_yr": 12.123,
+   "rstar_resident_pa": 70.194,
+   "rstar_invader_pa": 27.346,
+   "climate_time_yr": 10293.9,
+   "resident_cells": 8.76e+25,
+   "pi_one_cell": 2089.2,
+   "refuge_offset_k": 8.02,
+   "refuge_side": "warmer"
+  },
+  {
+   "acetate_fraction": 0.5,
+   "resident": "acetogen",
+   "t_k": 294.403,
+   "invader_growth_yr": 8.863,
+   "rstar_resident_pa": 47.873,
+   "rstar_invader_pa": 23.963,
+   "climate_time_yr": 9288.9,
+   "resident_cells": 9.88e+25,
+   "pi_one_cell": 1375.4,
+   "refuge_offset_k": 12.87,
+   "refuge_side": "colder"
+  },
+  {
+   "acetate_fraction": 0.5,
+   "resident": "methanogen",
+   "t_k": 273.517,
+   "invader_growth_yr": 12.123,
+   "rstar_resident_pa": 70.194,
+   "rstar_invader_pa": 27.346,
+   "climate_time_yr": 10293.9,
+   "resident_cells": 8.76e+25,
+   "pi_one_cell": 2089.2,
+   "refuge_offset_k": 8.02,
+   "refuge_side": "warmer"
+  },
+  {
+   "acetate_fraction": 0.9,
+   "resident": "acetogen",
+   "t_k": 273.534,
+   "invader_growth_yr": -3.606,
+   "rstar_resident_pa": 27.355,
+   "rstar_invader_pa": 70.206,
+   "climate_time_yr": 10007.7,
+   "resident_cells": 2.07e+26,
+   "pi_one_cell": null,
+   "refuge_offset_k": null,
+   "refuge_side": null
+  },
+  {
+   "acetate_fraction": 0.9,
+   "resident": "methanogen",
+   "t_k": 273.517,
+   "invader_growth_yr": 12.123,
+   "rstar_resident_pa": 70.194,
+   "rstar_invader_pa": 27.346,
+   "climate_time_yr": 10293.9,
+   "resident_cells": 8.76e+25,
+   "pi_one_cell": 2089.2,
+   "refuge_offset_k": 8.02,
+   "refuge_side": "warmer"
+  }
+ ],
+ "notes": "Fixed activities. invader_growth at the resident's own state; Pi uses the invader's initial growth as a proxy for the resident's decline rate once displaced. refuge_offset is |T_start - T_sw|."
+}

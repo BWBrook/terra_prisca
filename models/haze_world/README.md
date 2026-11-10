@@ -41,6 +41,11 @@ recycling kinetics are not Archean calibrations.
 The [finite-population and product-feedback variant](finite-populations.md)
 separates invasion outcomes from local stability, with explicit extinction
 censuses, mean immigration and normalized chemical product corrections.
+Its [review](review/finite-populations-claude-review-2026-11-10.md) traces the
+history dependence to mutual invasibility plus a 10²–10³-fold gap between
+exclusion and climate timescales. The next build, a
+[two-habitat refuge model](refuge-coupling-spec.md), tests whether spatial
+structure supplies the rescue.
 
 **Code.** [`src/terra_prisca/haze_world/methane_budget.py`](../../src/terra_prisca/haze_world/methane_budget.py)
 (model) and [`experiments.py`](../../src/terra_prisca/haze_world/experiments.py)
