@@ -1,6 +1,7 @@
 from hashlib import sha256
 
 import numpy as np
+import pytest
 
 from terra_prisca.haze_world import dormancy as model
 from terra_prisca.haze_world import dormancy_jacobian_integration as frozen
@@ -28,7 +29,8 @@ def test_ordinary_flow_census_and_minima_match_frozen_bitwise():
     assert b.metadata["native_zero_time_events"]==[]
 
 
-def test_injected_zero_time_uses_rollback_refinement_and_restores_ceiling(monkeypatch):
+@pytest.mark.parametrize("changed_native_state",[False,True])
+def test_injected_zero_time_uses_rollback_refinement_and_restores_ceiling(monkeypatch,changed_native_state):
     original=frozen._GuardedLSODA.step
     fired=[];ceilings=[]
     def stalled(self):
@@ -37,6 +39,7 @@ def test_injected_zero_time_uses_rollback_refinement_and_restores_ceiling(monkey
             self.fun(self.t+.25,self.y)
             fired.append((float(self.t),sha256(initial.tobytes()).hexdigest(),float(self._last_trial_time)))
             self.t_old=float(self.t)
+            if changed_native_state:self.y=self.y*1.01
             return None
         return original(self)
     class Observed(progress._ProgressLSODA):
@@ -53,7 +56,7 @@ def test_injected_zero_time_uses_rollback_refinement_and_restores_ceiling(monkey
     assert event["accepted_time_yr"]==fired[0][0]
     assert event["accepted_coordinate_sha256"]==fired[0][1]
     assert event["actual_rhs_trial_time_yr"]==fired[0][2]
-    assert event["accepted_coordinate_sha256"]==event["returned_coordinate_sha256"]
+    assert (event["accepted_coordinate_sha256"]!=event["returned_coordinate_sha256"])==changed_native_state
     assert event["native_reported_step_size_yr"]==0.
     assert event["driver_retry_representable"]
     reduced=next(i for i,value in enumerate(ceilings) if value<1.)

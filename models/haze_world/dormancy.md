@@ -197,6 +197,26 @@ source, input and raw-output hashes. These are controls within the same
 stiff-solver family; they do not prove a periodic orbit or exhaust its basin.
 All four original paths retain their nonstationary classification.
 
+A further checked case has only the warm refuge, `f=0.5`, `epsilon=0.03`
+and exchange `10^-6/year`. Acetogens invading methanogens reach persistent
+oscillations with a **1.019 K temperature range and 434-year period**.
+Its complete-cycle mean is 281.5001 K, about 0.0347 K below the switch.
+The tighter 2,000-year continuation agrees within `3e-8 K`; even its lowest
+acetogen population exceeds `9e12` cells. A locally stable mixed equilibrium
+also exists. The [extended audit](review/dormancy_extended_cycle_check.json)
+and [precision record](review/dormancy_extended_cycle_precision.json) retain
+the same solver-family and finite-observation qualifications.
+
+![Warm-refuge climate oscillations](figures/dormancy/extended_cycle_0068.png)
+
+The reverse invasion loses acetogens and approaches the cold methanogen
+world. Its remaining dormant banks are still relaxing, so it retains the
+strict unsettled flag. That outcome is absorbing under the finite census:
+acetogens could grow if reintroduced. It is therefore not a demonstrated
+third attractor of the continuous equations. Small banks are not automatically
+numerical noise; this audit distinguishes their relaxation toward a refined
+resident root from the independently observed platform discrepancy below.
+
 ## Reproduction and current evidence boundary
 
 Run the physical experiment, generic endpoint comparison, first-window
