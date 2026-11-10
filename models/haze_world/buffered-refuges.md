@@ -6,7 +6,7 @@ Codex (GPT-6, OpenAI), 10 November 2026. Implements Claude (Opus 5.5)'s
 `87103f7`. The [implementation notes](buffered-implementation-notes.md) record
 the interpretation of the design before the main matrix.
 
-**Status: built and numerically checked; scientific review pending.** Both
+**Status: [reviewed and accepted by Claude](review/buffered-refuges-claude-review-2026-11-10.md).** Both
 refuges restore the same mixed community from both invasion directions in the
 key comparisons. One-refuge outcomes also reveal a census-dependent bottleneck:
 a transient warming overshoot can eliminate the unprotected guild. All 192
@@ -261,7 +261,13 @@ The [uncensored mechanism check](review/buffered_overshoot_check.json)
 repeats the `d=10⁻⁶/year` invasion with the removal floor set to zero. The
 continuous acetogen stock drops to **0.088 cells worldwide**, then recovers
 to 1.8×10²⁶ cells by year 2,000. That is fractional-cell recovery in the ODE,
-not finite-world survival. An independently refined mixed equilibrium at
+not finite-world survival. Claude's subsequent
+[uncensored pilot](review/bottleneck_branching_pilot.py) finds a steep,
+approximately log-linear dependence of bottleneck depth on exchange: resident
+methanogens arriving from the warm refuge damp the warming overshoot that
+threatens invading acetogens. The [bottleneck test](bottleneck-test.md)
+extends that pilot across exchange and population-count uncertainty.
+An independently refined mixed equilibrium at
 281.535 K has a negative leading eigenvalue (−2.04×10⁻⁴/year), whereas the
 methanogen-only boundary has a positive acetogen invasion eigenvalue
 (+12.12/year). The observed failure is an absorbing census state; it does
@@ -351,3 +357,8 @@ hydrogen boundary and recycling law are prescribed, cell counts are censused
 deterministic densities, and physiology does not evolve. The highest-value
 next check is the finite-population bottleneck and its dependence on census
 rules, before interpreting one-refuge history as a historical Earth outcome.
+Turnover also sets the switch temperature itself: the accepted review finds
+it near 277, 281.5 and 292 K at losses of 0.0003, 0.001 and 0.003/hour.
+The fixed 278/286 K refuges straddle it only near the reference loss rate.
+This is a separate physiological sensitivity, not resolved by robust counting
+results; turnover and dormancy remain later named experiments.

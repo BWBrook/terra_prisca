@@ -115,7 +115,7 @@ def analyze_arrays(t, y, log_biomass, metadata, p, guild, dense_min_log=None, de
     inactive habitats remain excluded; active retained logarithms can be far
     below physical floating-point range.
     """
-    t, y, logs = np.asarray(t), np.asarray(y), np.asarray(log_biomass)
+    t, y, logs = (np.asarray(v, dtype=float) for v in (t, y, log_biomass))
     if t.ndim != 1 or t.size < 2 or np.any(np.diff(t) <= 0):
         raise ValueError("Provide increasing sampled times")
     if y.shape != (p.state_size, t.size) or logs.shape != (p.n_patches, 2, t.size):
@@ -249,7 +249,7 @@ def load_original(record):
     with gzip.open(path, "rt") as stream:
         payload = json.load(stream)
     r = payload["result"]
-    return dict(t=np.asarray(r["t"]), y=np.asarray(r["y"]), log_biomass=np.asarray(r["log_biomass"]),
+    return dict(t=np.asarray(r["t"], dtype=float), y=np.asarray(r["y"], dtype=float), log_biomass=np.asarray(r["log_biomass"], dtype=float),
                 metadata=r["metadata"], min_log_biomass=np.asarray(r["global_continuous_min_log_biomass"]),
                 min_times=np.asarray(r["global_continuous_min_times_yr"]))
 

@@ -153,9 +153,14 @@ Fidelity is measured against the published figures, digitised.
    independently of surface climate. Both refuges restore the same mixed
    community in the key comparisons. A one-refuge exception exposes a
    finite-census bottleneck during a warming overshoot, rather than a second
-   stable continuum climate. All 192 planned cases are stationary; independent
-   scientific review is the next step, with the prescribed heat baths and
-   census rules kept explicit.
+   stable continuum climate. All 192 planned cases are stationary and the
+   build is reviewed. The [bottleneck test](../models/haze_world/bottleneck-test.md)
+   checks demographic survival against independent stochastic simulations and
+   maps the exchange transition. The steep exchange response persists, while
+   the probabilities must remain conditional on the recorded environment:
+   one guild's improbable uncensored recovery can create a later hazard for
+   the other. Fixed turnover and prescribed heat baths remain assumptions;
+   turnover and dormancy are separate proposed stages.
    A [solar-response search](../models/haze_response/solar-responses.md) found
    a second Sun-age checkpoint, but no matched hazy luminosity grid.
    This direction may lead to a paper.

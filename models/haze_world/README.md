@@ -64,8 +64,13 @@ overshoot to slow regrowth of the resident in the bulk. Its depth is
 log-linear in exchange, about `d^4.4`. Treating the rare guild as a
 birth–death process, 50% survival needs about 230 cells at the minimum. That
 moves the critical exchange rate only from about 2×10⁻⁶ to 6×10⁻⁶/yr. The
-[bottleneck test](bottleneck-test-spec.md) applies this survival calculation
-to every run.
+[bottleneck test](bottleneck-test.md) extends the calculation to the planned
+runs and a 196-case exchange continuation. Independent stochastic simulations
+agree with the backward survival calculation. The exchange sweep confirms
+the steep population response and a roughly 3.4-fold change in the critical
+exchange when a one-cell floor is replaced by 50% survival. These are
+conditional per-guild diagnostics: an uncensored recovery after a likely
+loss can create later hazards that do not occur in the finite world.
 
 **Code.** [`src/terra_prisca/haze_world/methane_budget.py`](../../src/terra_prisca/haze_world/methane_budget.py)
 (model) and [`experiments.py`](../../src/terra_prisca/haze_world/experiments.py)

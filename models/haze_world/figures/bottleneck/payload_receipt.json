@@ -1,0 +1,20 @@
+{
+  "all_receipt_hashes_verified": true,
+  "archive_directory": "bottleneck-66c46a2-20261110",
+  "archived_copy_verified": true,
+  "bytes": 243406626,
+  "files": 556,
+  "groups": {
+    "e3_pilot": 1,
+    "exchange": 196,
+    "planned": 81
+  },
+  "inherited_archive_directory": "buffered-refuges-87103f7-20261110",
+  "inherited_manifest_sha256": "781350e422fd50f040a031dcc5d522a23b3449923933fb52d74adbf04e0ad074",
+  "local_copy_verified": true,
+  "manifest_sha256": "daf619ab534e156fa655aacaa5ebaa4ed303cc7219a2a6e193a67ba38c9b04d9",
+  "profiles": 278,
+  "reused_original_profiles": 111,
+  "scope": "81 qualified E1 reruns, 196 E2 continuations and one E3 pilot, each with a completion receipt; 111 untouched original E1 trajectories remain in the inherited buffered-refuge archive; discarded numerical trials and superseded protocols excluded",
+  "source_commit": "66c46a2b3ca27aff47cb978247bc3c3d2cc2262f"
+}

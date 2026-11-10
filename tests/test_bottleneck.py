@@ -50,17 +50,20 @@ def test_record_selection_prefers_declared_numerical_variant_and_checks_current_
         b._records()
 
 
-def test_nonreturning_rare_guild_reports_positive_finite_horizon_survival(monkeypatch):
-    p = SimpleNamespace(weights=np.array([1.]), n_patches=1, state_size=5,
+@pytest.mark.parametrize("inactive", (0, 1))
+def test_nonreturning_rare_guild_reports_positive_finite_horizon_survival(monkeypatch, inactive):
+    n = 1+inactive
+    p = SimpleNamespace(weights=np.r_[1., np.zeros(inactive)], n_patches=n, state_size=4*n+1,
                         base=SimpleNamespace(climate=None, activity_feedback="fixed"))
     monkeypatch.setattr(b.branching, "per_cell_rates", lambda y, p, guild: (np.array([0]), np.array([0.]), np.array([.001])))
     monkeypatch.setattr(b.branching, "migration_matrix", lambda p: np.zeros((1, 1)))
-    monkeypatch.setattr(b.habitat, "temperatures", lambda y, p: np.array([280.]))
+    monkeypatch.setattr(b.habitat, "temperatures", lambda y, p: np.full(n, 280.))
     monkeypatch.setattr(b, "_uptake_fraction", lambda *args: (0., 0.))
     monkeypatch.setattr(b.core, "temperature_k", lambda r, p: np.full(np.shape(r), 280.))
     t = np.arange(0., 6001., 10.)
-    y = np.zeros((5, t.size)); y[0] = 10.
-    logs = np.zeros((1, 2, t.size)); logs[0, 0] = -t*.001
+    y = np.zeros((p.state_size, t.size)); y[0] = 10.
+    logs = np.zeros((n, 2, t.size), dtype=object if inactive else float); logs[0, 0] = -t*.001
+    if inactive: logs[1] = None
     row, windows = b.analyze_arrays(t, y, logs, {"global_log_cell_conversion": 0.}, p, 0)
     assert row["terminal_rare_excursion"]
     assert row["exclusion_supported"]
