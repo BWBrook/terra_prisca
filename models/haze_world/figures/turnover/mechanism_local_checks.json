@@ -1,0 +1,38 @@
+{
+  "formula": "dRstar/dL=K*V/[Y*(V-m-L/Y)^2]",
+  "inputs": "mechanism.csv",
+  "interpretation": "The lower methanogen yield increases its direct loss sensitivity; maintenance and both kinetic parameters also modify saturation and sensitivity. Thermodynamic threshold has zero direct derivative in L but influences the crossing temperature and its temperature derivative.",
+  "rows": [
+    {
+      "equal_methanogen_affinity_to_acetogen": -144960.17352271982,
+      "equal_methanogen_capacity_to_acetogen": 8703.032177059666,
+      "equal_methanogen_maintenance_to_acetogen": -23995.788658649384,
+      "equal_methanogen_yield_to_acetogen": 6066.700886619301,
+      "loss_h": 0.0003,
+      "reference_difference_dRstar_dL": -21687.88879221872,
+      "reference_temperature_k": 277.1510631155208,
+      "thresholds_do_not_enter_this_direct_derivative": true
+    },
+    {
+      "equal_methanogen_affinity_to_acetogen": -61320.46688393185,
+      "equal_methanogen_capacity_to_acetogen": 1304.939302981984,
+      "equal_methanogen_maintenance_to_acetogen": -12276.14394148699,
+      "equal_methanogen_yield_to_acetogen": 6960.296505922139,
+      "loss_h": 0.001,
+      "reference_difference_dRstar_dL": -11261.041904163103,
+      "reference_temperature_k": 281.53482280508206,
+      "thresholds_do_not_enter_this_direct_derivative": true
+    },
+    {
+      "equal_methanogen_affinity_to_acetogen": -96198.92809915544,
+      "equal_methanogen_capacity_to_acetogen": -274.19821210577356,
+      "equal_methanogen_maintenance_to_acetogen": -20294.348304223953,
+      "equal_methanogen_yield_to_acetogen": 11061.913805324864,
+      "loss_h": 0.003,
+      "reference_difference_dRstar_dL": -17709.192691446406,
+      "reference_temperature_k": 291.92075488442543,
+      "thresholds_do_not_enter_this_direct_derivative": true
+    }
+  ],
+  "scope": "Local derivative checks at the reference temperature, holding it fixed; these are not recomputed switch temperatures or calibrated interventions"
+}

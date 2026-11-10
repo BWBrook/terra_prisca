@@ -1,0 +1,264 @@
+{
+  "baseline": {
+    "late_ratio_range": [
+      0.16092747216172945,
+      0.18755722269287325
+    ],
+    "late_temperature_range_k": [
+      286.1432050451193,
+      297.0037196672177
+    ],
+    "log_minima": [
+      [
+        {
+          "log_biomass": -23005.906152065298,
+          "time_yr": 5000.0
+        },
+        {
+          "log_biomass": -22647.228250912158,
+          "time_yr": 179000.0
+        },
+        {
+          "log_biomass": -22564.127819004825,
+          "time_yr": 352000.0
+        },
+        {
+          "log_biomass": -22446.7597531463,
+          "time_yr": 524000.0
+        },
+        {
+          "log_biomass": -22581.03169952993,
+          "time_yr": 697000.0
+        },
+        {
+          "log_biomass": -22611.746762328767,
+          "time_yr": 870000.0
+        }
+      ],
+      [
+        {
+          "log_biomass": -172822.3024766698,
+          "time_yr": 99000.0
+        },
+        {
+          "log_biomass": -169755.4498258258,
+          "time_yr": 273000.0
+        },
+        {
+          "log_biomass": -169473.02890076753,
+          "time_yr": 446000.0
+        },
+        {
+          "log_biomass": -169443.63423394307,
+          "time_yr": 619000.0
+        },
+        {
+          "log_biomass": -169442.3518398223,
+          "time_yr": 791000.0
+        },
+        {
+          "log_biomass": -169443.37760765885,
+          "time_yr": 964000.0
+        }
+      ]
+    ],
+    "upward_ratio_018_crossings": [
+      {
+        "log_biomass": [
+          -21355.161946407065,
+          -8.673866668558306
+        ],
+        "stocks": [
+          82.06414472621405,
+          0.0,
+          0.000170999040962912,
+          7.1263620930918e-98,
+          0.18
+        ],
+        "time_yr": 525623.4767638831
+      },
+      {
+        "log_biomass": [
+          -21363.709912994207,
+          -8.673839506665859
+        ],
+        "stocks": [
+          82.06158175639482,
+          0.0,
+          0.00017100320989881532,
+          1.5686585268342004e-101,
+          0.18
+        ],
+        "time_yr": 698360.2923560523
+      },
+      {
+        "log_biomass": [
+          -21501.66384912022,
+          -8.673621793220967
+        ],
+        "stocks": [
+          82.03714938139179,
+          0.0,
+          0.00017103905822500237,
+          -4.037901727139906e-93,
+          0.18
+        ],
+        "time_yr": 871087.8909057794
+      }
+    ]
+  },
+  "baseline_fingerprint": "45bb2b5414f1d9595e29f422a95e7a7bf8f51e3b19a490b8b48f804775709b21",
+  "baseline_raw_sha256": "7e21d785e22200991e91ebe33c967db254f33d38d93841bf9129818692c3e79c",
+  "control": {
+    "late_ratio_range": [
+      0.16092746989844586,
+      0.18759775002751924
+    ],
+    "late_temperature_range_k": [
+      286.11889131964415,
+      297.00779387145644
+    ],
+    "log_minima": [
+      [
+        {
+          "log_biomass": -23171.428828766322,
+          "time_yr": 4500.0
+        },
+        {
+          "log_biomass": -22663.860333977635,
+          "time_yr": 178800.0
+        },
+        {
+          "log_biomass": -22618.306314159814,
+          "time_yr": 351700.0
+        },
+        {
+          "log_biomass": -22613.76979072786,
+          "time_yr": 524500.0
+        },
+        {
+          "log_biomass": -22613.737560655703,
+          "time_yr": 697200.0
+        },
+        {
+          "log_biomass": -22612.181142148835,
+          "time_yr": 869900.0
+        }
+      ],
+      [
+        {
+          "log_biomass": -172824.79110899597,
+          "time_yr": 99400.0
+        },
+        {
+          "log_biomass": -169755.4414711563,
+          "time_yr": 273000.0
+        },
+        {
+          "log_biomass": -169473.44237513692,
+          "time_yr": 445800.0
+        },
+        {
+          "log_biomass": -169446.2566774553,
+          "time_yr": 618600.0
+        },
+        {
+          "log_biomass": -169443.636448629,
+          "time_yr": 791300.0
+        },
+        {
+          "log_biomass": -169443.36454412775,
+          "time_yr": 964000.0
+        }
+      ]
+    ],
+    "upward_ratio_018_crossings": [
+      {
+        "log_biomass": [
+          -21572.262480321082,
+          -8.673517604971481
+        ],
+        "stocks": [
+          82.02522757050293,
+          0.0,
+          0.00017105634466346557,
+          1.550914959708711e-52,
+          0.18
+        ],
+        "time_yr": 525610.5978874281
+      },
+      {
+        "log_biomass": [
+          -21570.404538662646,
+          -8.673519864121989
+        ],
+        "stocks": [
+          82.02548066640118,
+          0.0,
+          0.00017105597289830072,
+          -9.910855292839128e-50,
+          0.18
+        ],
+        "time_yr": 698347.7315446715
+      },
+      {
+        "log_biomass": [
+          -21571.38399903386,
+          -8.673518260200877
+        ],
+        "stocks": [
+          82.02530038352998,
+          0.0,
+          0.00017105623720899268,
+          -4.458556742651889e-50,
+          0.18
+        ],
+        "time_yr": 871083.4866772275
+      }
+    ]
+  },
+  "minimum_chemical_stock": -7.900225033134242e-15,
+  "nfev": 27648,
+  "protocol": {
+    "case_id": "basin_resolved_f0.9_08_M_into_A_res0",
+    "fraction": 0.9,
+    "initial": [
+      103.6593978787487,
+      0.0002434927608281918,
+      1e-12,
+      0.0012991840441520257,
+      0.16060751419276603
+    ],
+    "loss_h": 0.0030721990196335563,
+    "method": "BDF, explicit scaled central-difference Newton matrix, exact invariant initial face; all rtol and atol10x tighter than qualified Radau; max_step1000yr; original positive initial stocks;120s wall guard",
+    "sample_every_years": 100,
+    "source_sha256": {
+      "models/haze_response/arney2016/cases.csv": "e3d77d275052a8875991a751868f857bffc964295bfd47591944d86bc58ab07a",
+      "models/haze_response/arney2016/figure4.csv": "c0ef5f3d17ee7c6085ad36247f0f7814726dbbe3273842b01f2c6c4e046856f8",
+      "models/haze_world/evidence/kotsyurbenko2001_table2.csv": "c95b4be023e5502fbb30eb322621e5612bbbf850f99d1b6669e98b95eb370480",
+      "models/haze_world/evidence/peters1998_chemostat.csv": "b0b00bf03eaeaabf45fb571330773c5158b53b088436aaee942188f8e9498320",
+      "src/terra_prisca/haze_response/arney2016.py": "a1b8b52f4c929a0518a17542fb323588699433b038949b38ee6ad74679cd0da6",
+      "src/terra_prisca/haze_world/buffered_experiments.py": "c8603febb0167be3fc944b60672d9e11957aabf4ca7654dc6efb20639176336a",
+      "src/terra_prisca/haze_world/darwinian.py": "e965035d5dfbfafcb695dc3738b23d8a445c4c1e7e246ab4688d67b33482f1aa",
+      "src/terra_prisca/haze_world/finite_experiments.py": "285d5f4ab46997920559ee0ac68657b0405eee39b38f97520e248faba4db631c",
+      "src/terra_prisca/haze_world/finite_populations.py": "4644088974706aa5f012fb3335a6b1cc8bfd90da88d0b99f9f9e2b64356890df",
+      "src/terra_prisca/haze_world/habitat_coupling.py": "34f611d3f9046bf7d96f8caeffb452f2a2206bab4abc45e630a09980a067c4d0",
+      "src/terra_prisca/haze_world/habitat_equilibria.py": "90ec06dbce07e6625878ece2e97b55604ed4708b8aad9f66b0dd06dd8aa50a9a",
+      "src/terra_prisca/haze_world/habitat_integration.py": "3a115c22ee4b4a6b2c3f4585385927a7e32d68712cfb3d0073f0e52089a1b214",
+      "src/terra_prisca/haze_world/hydrogen_uptake.py": "c48d8231ef726605ab07be22438f3e2fd97f23b310773ac748d1b2bf5c36fafd",
+      "src/terra_prisca/haze_world/methane_budget.py": "70dc47659e4738d07809e8d23844af79bf69e5dabcc87793eac3f5e560011721",
+      "src/terra_prisca/haze_world/population_coupling.py": "17a433957e94845595f6d7fd160ffe593c01c4e74550707b0814c95ab67ae663",
+      "src/terra_prisca/haze_world/turnover.py": "9d964b8cbf6f81a848be43707e0625fa6be05771a857a061593bfa91e9605de3",
+      "src/terra_prisca/haze_world/two_guilds.py": "eff6a9027c5b28d154f03462d926591ebee3408eb2c80ec0df5c38929f169f83",
+      "src/terra_prisca/haze_world/woodii1998.py": "b0130f4f8ea15aa64245133f79dc8b35883a414031a8b49262c6657350cad0b0",
+      "uv.lock": "02bf429b2ec474f03280ec550d5fd847b573ece24ab9043e0b5998370fd4d2b4"
+    },
+    "years": 1000000
+  },
+  "qualification": "Independent stiff solver and tighter tolerances test the recurring path; no claim of mathematical periodic-orbit proof or global attractor completeness",
+  "raw_file": "local/haze/turnover/cycle_control/basins_cycle_control_BDF.npz",
+  "raw_sha256": "47b2f601377e953f0bfa78b9d2032ec2b68ab6668cc234c61d49f2e00e904b4d",
+  "review_script": "from pathlib import Path\nfrom hashlib import sha256\nfrom time import perf_counter\nfrom types import FunctionType\nimport json\nimport numpy as np\nfrom scipy.signal import find_peaks\nfrom terra_prisca.haze_world import turnover as t\n\ncase='basin_resolved_f0.9_08_M_into_A_res0'\nsource=t.sources();raw=t.RAW\nrecord=next(json.loads(p.read_text()) for p in raw.glob(case+'_t1e+06-*.receipt.json') if json.loads(p.read_text())['protocol']['source_sha256']==source)\nitem=record['protocol'];p=t.params(item['fraction'],item['loss_h'])\nbaseline=np.load(raw/record['raw_file'])\nprotocol=dict(source_sha256=source,case_id=case,years=1000000,initial=item['initial'],sample_every_years=100,\n method='BDF, explicit scaled central-difference Newton matrix, exact invariant initial face; all rtol and atol10x tighter than qualified Radau; max_step1000yr; original positive initial stocks;120s wall guard')\nstarted=perf_counter();original=t.solve_ivp\n\ndef backend(fun,*args,**kwargs):\n    def bounded(time,state):\n        if perf_counter()-started>120:raise TimeoutError('Bounded cycle control exceeded120 seconds')\n        return fun(time,state)\n    kwargs.update(method='BDF',rtol=kwargs['rtol']/10,atol=np.asarray(kwargs['atol'])/10)\n    return original(bounded,*args,**kwargs)\n\nnamespace=t.integrate_basin.__globals__.copy();namespace['solve_ivp']=backend\nfunction=FunctionType(t.integrate_basin.__code__,namespace,t.integrate_basin.__name__,t.integrate_basin.__defaults__,t.integrate_basin.__closure__)\nresult=function(item['initial'],p,1000000,sample_times=np.arange(0.,1000001.,100.))\nif t.sources()!=source:raise RuntimeError('T1 sources changed during cycle control')\ndestination=t.RAW.parent/'cycle_control';destination.mkdir(exist_ok=True)\nfile=destination/'basins_cycle_control_BDF.npz';np.savez_compressed(file,t=result.t,y=result.y,log_biomass=result.log_biomass)\n\ndef diagnostics(time,stocks,logs):\n    minima=[]\n    for guild in (0,1):\n        indices,_=find_peaks(-logs[guild],prominence=5)\n        minima.append([dict(time_yr=float(time[i]),log_biomass=float(logs[guild,i])) for i in indices])\n    late=time>500000;temperature=t.core.temperature_k(stocks[4],p.climate)\n    crossings=[]\n    for i in range(len(time)-1):\n        if stocks[4,i]<.18<=stocks[4,i+1]:\n            fraction=(.18-stocks[4,i])/(stocks[4,i+1]-stocks[4,i]);when=time[i]+fraction*(time[i+1]-time[i])\n            if when>400000:crossings.append(dict(time_yr=float(when),stocks=(stocks[:,i]+fraction*(stocks[:,i+1]-stocks[:,i])).tolist(),log_biomass=(logs[:,i]+fraction*(logs[:,i+1]-logs[:,i])).tolist()))\n    return dict(log_minima=minima,late_temperature_range_k=[float(min(temperature[late])),float(max(temperature[late]))],\n                late_ratio_range=[float(min(stocks[4,late])),float(max(stocks[4,late]))],upward_ratio_018_crossings=crossings)\n\nanswer=dict(protocol=protocol,baseline_fingerprint=record['fingerprint'],baseline_raw_sha256=record['raw_sha256'],\n raw_file=str(file.relative_to(t.e.ROOT)),raw_sha256=sha256(file.read_bytes()).hexdigest(),wall_seconds=perf_counter()-started,nfev=result.nfev,\n minimum_chemical_stock=float(np.min(result.y[[0,3,4]])),\n baseline=diagnostics(baseline['t'],baseline['y'],baseline['log_biomass']),control=diagnostics(result.t,result.y,result.log_biomass),\n qualification='Independent stiff solver and tighter tolerances test the recurring path; no claim of mathematical periodic-orbit proof or global attractor completeness',\n review_script_sha256=sha256(Path(__file__).read_bytes()).hexdigest(),review_script=Path(__file__).read_text())\n(t.OUTPUT/'basins_cycle_control.json').write_text(json.dumps(answer,indent=2,sort_keys=True)+'\\n')\nprint(json.dumps({k:answer[k] for k in ['wall_seconds','nfev','minimum_chemical_stock','raw_sha256']},indent=2),flush=True)\nprint(json.dumps(dict(baseline=answer['baseline'],control=answer['control']),indent=2),flush=True)\n",
+  "review_script_sha256": "92b1433b58c423e606951845538010f537c4e70e9d347f4725d717e2bb0cf252",
+  "wall_seconds": 2.8267440830823034
+}

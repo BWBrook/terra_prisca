@@ -18,8 +18,10 @@ import json
 from pathlib import Path
 import platform
 from time import perf_counter
+from types import FunctionType
 
 import numpy as np
+from scipy.integrate import solve_ivp
 from scipy.optimize import brentq
 
 from . import buffered_experiments as e
@@ -393,7 +395,7 @@ def basin_tasks(events=None):
 def basin_case(item, years=100000., raw=RAW, expected_sources=None):
     protocol=dict(**item,years=years,source_sha256=sources(),python=platform.python_version(),
                   packages={name:importlib.metadata.version(name) for name in ("numpy","scipy")},
-                  method="Frozen core positive-biomass coordinates; uncensored well-mixed ODE; 1001 sampled states")
+                  method="Radau, scaled numerical Jacobian, invariant initial face, acetate atol1e-13, max_step1000yr; frozen positive-biomass equations; uncensored; 1001 full-span samples plus10yr late-window samples")
     if expected_sources is not None and protocol["source_sha256"]!=expected_sources:raise RuntimeError("T1 source changed")
     fingerprint=sha256(e.dumps(protocol).encode()).hexdigest();stem=f"{item['case_id']}_t{years:g}-{fingerprint[:16]}"
     data,receipt=raw/(stem+".npz"),raw/(stem+".receipt.json")
@@ -402,7 +404,8 @@ def basin_case(item, years=100000., raw=RAW, expected_sources=None):
         if sha256(data.read_bytes()).hexdigest()!=record["raw_sha256"]:raise RuntimeError("Changed T1 basin record")
         return record
     p=params(item["fraction"],item["loss_h"]);initial=np.array(item["initial"])
-    started=perf_counter(); result=core.integrate(initial,p,years,sample_times=np.linspace(0,years,1001))
+    sample_times=np.unique(np.r_[np.linspace(0,years,1001),np.arange(max(0.,years-20000.),years+1.,10.),years])
+    started=perf_counter(); result=integrate_basin(initial,p,years,sample_times=sample_times)
     if np.any(~np.isfinite(result.y)) or np.any(result.y[1:3]<0):raise RuntimeError("Invalid basin stocks")
     if np.min(result.y[[0,3,4]]) < -1e-10:raise RuntimeError("Material negative donor/product stock")
     final=result.y[:,-1]; states=equilibria(item["fraction"],item["loss_h"])
@@ -428,12 +431,44 @@ def basin_case(item, years=100000., raw=RAW, expected_sources=None):
     temporary.replace(data)
     if sources()!=protocol["source_sha256"]:raise RuntimeError("T1 source changed while integrating")
     record=dict(protocol=protocol,fingerprint=fingerprint,summary=summary,raw_file=data.name,raw_sha256=sha256(data.read_bytes()).hexdigest())
-    receipt.write_text(e.dumps(record)+"\n");return record
+    temporary=receipt.with_suffix(".tmp");temporary.write_text(e.dumps(record)+"\n");temporary.replace(receipt)
+    return record
 
 
 def _basin_worker(arg):
     item,years,raw,frozen=arg
     return basin_case(item,years,raw,frozen)
+
+
+def integrate_basin(initial,p,years,sample_times=None):
+    """Use the frozen positive coordinates with a bounded stiff endpoint solver.
+
+    The private namespace changes only solve_ivp's numerical backend. The scaled
+    Newton matrix avoids pathological automatic differencing of rare stocks.
+    Exactly absent guilds stay on their invariant face; every initially present
+    guild retains its coordinate even below floating-point biomass underflow.
+    """
+    active=np.array([0,*[i for i in (1,2) if initial[i]>0],3,4])
+    def solver(fun,span,state,**kwargs):
+        def reduced(time,z):
+            full=np.zeros(5);full[active]=z
+            return fun(time,full)[active]
+        def jacobian(time,z):
+            steps=1e-5*np.maximum(abs(z),np.array([10.,1.,1.,1e-3,.01])[active])
+            matrix=np.empty((len(active),len(active)))
+            for i,step in enumerate(steps):
+                a=z.copy();b=z.copy();a[i]+=step;b[i]-=step
+                matrix[:,i]=(reduced(time,a)-reduced(time,b))/(2*step)
+            return matrix
+        tolerance=np.asarray(kwargs["atol"]).copy();tolerance[3]=1e-13
+        kwargs.update(method="Radau",max_step=1000.,jac=jacobian,atol=tolerance[active])
+        result=solve_ivp(reduced,span,state[active],**kwargs)
+        expanded=np.zeros((5,len(result.t)));expanded[active]=result.y;result.y=expanded
+        return result
+    namespace=core.integrate.__globals__.copy();namespace["solve_ivp"]=solver
+    function=FunctionType(core.integrate.__code__,namespace,core.integrate.__name__,core.integrate.__defaults__,core.integrate.__closure__)
+    function.__kwdefaults__=core.integrate.__kwdefaults__
+    return function(initial,p,years,sample_times=sample_times)
 
 
 def mechanism(output):

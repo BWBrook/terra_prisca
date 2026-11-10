@@ -59,3 +59,32 @@ def test_near_vertex_stability_does_not_mix_two_radiative_slopes():
         values=[max(t.stability_spectrum(state["y"],p,step)[0].real) for step in (1e-4,1e-5,1e-6)]
         assert all(sign*value>0 for value in values)
         assert max(values)-min(values)<1e-10
+
+
+def test_radau_basin_solver_preserves_the_frozen_positive_equations():
+    p=t.params(0.,.002)
+    state=next(s for s in t.equilibria(0.,.002) if s["kind"]=="mixed" and s["stable"])
+    initial=state["y"].copy();initial[1]*=1.01
+    times=np.linspace(0,100,21)
+    reference=core.integrate(initial,p,100,sample_times=times)
+    observed=t.integrate_basin(initial,p,100,sample_times=times)
+    assert np.allclose(observed.y,reference.y,rtol=1e-6,atol=1e-10)
+    assert np.allclose(observed.log_biomass,reference.log_biomass,rtol=0,atol=1e-5)
+
+
+def test_basin_solver_preserves_an_exactly_absent_guild():
+    p=t.params(0.,.004011586604836605)
+    initial=next(s["y"].copy() for s in t.equilibria(0.,p.biology.loss_h) if s["kind"]=="methanogen")
+    initial[2]*=.99
+    result=t.integrate_basin(initial,p,100000.,sample_times=np.linspace(0,100000,21))
+    assert np.all(result.y[1]==0)
+    assert np.all(np.isneginf(result.log_biomass[0]))
+
+
+def test_basin_solver_retains_a_present_guild_below_biomass_underflow():
+    p=t.params(0.,.0026101572156825357)
+    initial=next(s["y"].copy() for s in t.equilibria(0.,p.biology.loss_h) if s["kind"]=="methanogen")
+    initial[1]=1e-12
+    result=t.integrate_basin(initial,p,1000.,sample_times=np.linspace(0,1000,21))
+    assert np.min(result.log_biomass[1]) < -745
+    assert np.all(np.isfinite(result.log_biomass))
