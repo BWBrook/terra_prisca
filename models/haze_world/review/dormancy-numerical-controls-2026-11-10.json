@@ -1,0 +1,689 @@
+{
+  "execution_status": "complete",
+  "protocol": {
+    "source_sha256": {
+      "src/terra_prisca/haze_world/buffered_experiments.py": "c8603febb0167be3fc944b60672d9e11957aabf4ca7654dc6efb20639176336a",
+      "src/terra_prisca/haze_world/habitat_coupling.py": "34f611d3f9046bf7d96f8caeffb452f2a2206bab4abc45e630a09980a067c4d0",
+      "src/terra_prisca/haze_world/habitat_integration.py": "3a115c22ee4b4a6b2c3f4585385927a7e32d68712cfb3d0073f0e52089a1b214",
+      "src/terra_prisca/haze_world/habitat_equilibria.py": "90ec06dbce07e6625878ece2e97b55604ed4708b8aad9f66b0dd06dd8aa50a9a",
+      "src/terra_prisca/haze_world/population_coupling.py": "17a433957e94845595f6d7fd160ffe593c01c4e74550707b0814c95ab67ae663",
+      "src/terra_prisca/haze_world/methane_budget.py": "70dc47659e4738d07809e8d23844af79bf69e5dabcc87793eac3f5e560011721",
+      "src/terra_prisca/haze_world/darwinian.py": "e965035d5dfbfafcb695dc3738b23d8a445c4c1e7e246ab4688d67b33482f1aa",
+      "src/terra_prisca/haze_world/two_guilds.py": "eff6a9027c5b28d154f03462d926591ebee3408eb2c80ec0df5c38929f169f83",
+      "src/terra_prisca/haze_world/hydrogen_uptake.py": "c48d8231ef726605ab07be22438f3e2fd97f23b310773ac748d1b2bf5c36fafd",
+      "src/terra_prisca/haze_world/woodii1998.py": "b0130f4f8ea15aa64245133f79dc8b35883a414031a8b49262c6657350cad0b0",
+      "src/terra_prisca/haze_world/finite_experiments.py": "285d5f4ab46997920559ee0ac68657b0405eee39b38f97520e248faba4db631c",
+      "src/terra_prisca/haze_world/finite_populations.py": "4644088974706aa5f012fb3335a6b1cc8bfd90da88d0b99f9f9e2b64356890df",
+      "src/terra_prisca/haze_response/arney2016.py": "a1b8b52f4c929a0518a17542fb323588699433b038949b38ee6ad74679cd0da6",
+      "models/haze_response/arney2016/cases.csv": "e3d77d275052a8875991a751868f857bffc964295bfd47591944d86bc58ab07a",
+      "models/haze_response/arney2016/figure4.csv": "c0ef5f3d17ee7c6085ad36247f0f7814726dbbe3273842b01f2c6c4e046856f8",
+      "models/haze_world/evidence/kotsyurbenko2001_table2.csv": "c95b4be023e5502fbb30eb322621e5612bbbf850f99d1b6669e98b95eb370480",
+      "models/haze_world/evidence/peters1998_chemostat.csv": "b0b00bf03eaeaabf45fb571330773c5158b53b088436aaee942188f8e9498320",
+      "uv.lock": "02bf429b2ec474f03280ec550d5fd847b573ece24ab9043e0b5998370fd4d2b4",
+      "src/terra_prisca/haze_world/dormancy.py": "bf0a0e02c621dae1ba13c421ff75f8d0233e2c88bac1e54a42036c7f21797645",
+      "src/terra_prisca/haze_world/dormancy_integration.py": "0a1cc282057a4187288ae77c8ef69e77830a3cb741d729d1877fe7a0c15dcd01",
+      "src/terra_prisca/haze_world/bottleneck_integration.py": "ce56becb23ca53c6bfb48dffc054d8ecc90839bf5dd0ffd716dbf22635dd435f"
+    },
+    "checker_sha256": "a7b7e1bfd994bee8d6917b7ed8894d05f6071810a96256591fd767a570c7a4dd",
+    "python": "3.14.4",
+    "packages": {
+      "numpy": "2.5.4",
+      "scipy": "1.18.1"
+    },
+    "ramp_initial_active_state": [
+      70.19416051685708,
+      1e-12,
+      0.0005744177342218681,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.21615000467994544
+    ],
+    "warm_initial_dormancy_state": [
+      70.17042432859772,
+      1e-12,
+      0.0005745571702505062,
+      0.0,
+      0.0,
+      9.12359101891857e-27,
+      19.976919423682602,
+      1e-12,
+      0.0006325150956646063,
+      0.0,
+      0.0,
+      1.0199770920082618e-35,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.2171455097093504
+    ],
+    "ramp_parameters": {
+      "linear": {
+        "base": {
+          "base": {
+            "climate": {
+              "case": "B",
+              "lifetime_yr": 10000.0,
+              "abiotic_flux": 680000000.0,
+              "donor_flux": 375157520114.00323,
+              "maintenance_flux": 10000000000.0,
+              "growth_ratio_max": 10.0,
+              "t_opt_k": 300.0,
+              "t_halfwidth_k": 20.0,
+              "thermal": true,
+              "t_zero_k": 283.0,
+              "bridge_scale": 0.01
+            },
+            "biology": {
+              "methanogen": "methanogenic strain MSB",
+              "capacity_ratio": 0.74,
+              "yield_m": 0.78,
+              "maintenance_m30": 0.001,
+              "loss_h": 0.001,
+              "threshold_a30": 20.0,
+              "threshold_shape": "fixed_energy",
+              "msp_threshold_4c": 20.0,
+              "maintenance_energy_j": 69000.0,
+              "kinetics": "saturating",
+              "assimilation_m": 0.0824,
+              "km_scale_a": 1.0,
+              "km_scale_m": 1.0,
+              "cessation_energy_a_j": -24000.0,
+              "cessation_energy_m_j": -28000.0,
+              "threshold_m30": 1.0,
+              "exchange_mol_l_h_pa": 3.333333333333333e-09,
+              "atmosphere_pa": 0.0,
+              "low_temperature_variant": "constant_shape"
+            },
+            "loss": {
+              "anchor_ratio": 0.3,
+              "lifetime_yr": 10000.0,
+              "kind": "power",
+              "elasticity": 1.0,
+              "log_scale": 0.001
+            },
+            "habitat_l_cm2": 0.008970677546304392,
+            "acetate_lifetime_yr": 1.0,
+            "acetate_fraction": 0.0,
+            "recycling_variant": "constant",
+            "recycling_midpoint_k": 280.0,
+            "width_k": 2.0,
+            "enabled": [
+              true,
+              true
+            ],
+            "activity_feedback": "fixed",
+            "acetate_reference_mol_l": 0.0005,
+            "methane_reference_pa": 350.0
+          },
+          "patches": [
+            {
+              "name": "bulk",
+              "weight": 1.0,
+              "rule": "tracking",
+              "value": 0.0
+            },
+            {
+              "name": "warm",
+              "weight": 0.0,
+              "rule": "buffered",
+              "value": 286.0
+            },
+            {
+              "name": "cold",
+              "weight": 0.0,
+              "rule": "buffered",
+              "value": 278.0
+            }
+          ],
+          "dispersal_yr": 0.0
+        },
+        "epsilon": 0.003,
+        "switching_factor": 10.0,
+        "ramp": "linear"
+      },
+      "cubic": {
+        "base": {
+          "base": {
+            "climate": {
+              "case": "B",
+              "lifetime_yr": 10000.0,
+              "abiotic_flux": 680000000.0,
+              "donor_flux": 375157520114.00323,
+              "maintenance_flux": 10000000000.0,
+              "growth_ratio_max": 10.0,
+              "t_opt_k": 300.0,
+              "t_halfwidth_k": 20.0,
+              "thermal": true,
+              "t_zero_k": 283.0,
+              "bridge_scale": 0.01
+            },
+            "biology": {
+              "methanogen": "methanogenic strain MSB",
+              "capacity_ratio": 0.74,
+              "yield_m": 0.78,
+              "maintenance_m30": 0.001,
+              "loss_h": 0.001,
+              "threshold_a30": 20.0,
+              "threshold_shape": "fixed_energy",
+              "msp_threshold_4c": 20.0,
+              "maintenance_energy_j": 69000.0,
+              "kinetics": "saturating",
+              "assimilation_m": 0.0824,
+              "km_scale_a": 1.0,
+              "km_scale_m": 1.0,
+              "cessation_energy_a_j": -24000.0,
+              "cessation_energy_m_j": -28000.0,
+              "threshold_m30": 1.0,
+              "exchange_mol_l_h_pa": 3.333333333333333e-09,
+              "atmosphere_pa": 0.0,
+              "low_temperature_variant": "constant_shape"
+            },
+            "loss": {
+              "anchor_ratio": 0.3,
+              "lifetime_yr": 10000.0,
+              "kind": "power",
+              "elasticity": 1.0,
+              "log_scale": 0.001
+            },
+            "habitat_l_cm2": 0.008970677546304392,
+            "acetate_lifetime_yr": 1.0,
+            "acetate_fraction": 0.0,
+            "recycling_variant": "constant",
+            "recycling_midpoint_k": 280.0,
+            "width_k": 2.0,
+            "enabled": [
+              true,
+              true
+            ],
+            "activity_feedback": "fixed",
+            "acetate_reference_mol_l": 0.0005,
+            "methane_reference_pa": 350.0
+          },
+          "patches": [
+            {
+              "name": "bulk",
+              "weight": 1.0,
+              "rule": "tracking",
+              "value": 0.0
+            },
+            {
+              "name": "warm",
+              "weight": 0.0,
+              "rule": "buffered",
+              "value": 286.0
+            },
+            {
+              "name": "cold",
+              "weight": 0.0,
+              "rule": "buffered",
+              "value": 278.0
+            }
+          ],
+          "dispersal_yr": 0.0
+        },
+        "epsilon": 0.003,
+        "switching_factor": 10.0,
+        "ramp": "cubic"
+      }
+    },
+    "warm_parameters": {
+      "base": {
+        "base": {
+          "climate": {
+            "case": "B",
+            "lifetime_yr": 10000.0,
+            "abiotic_flux": 680000000.0,
+            "donor_flux": 375157520114.00323,
+            "maintenance_flux": 10000000000.0,
+            "growth_ratio_max": 10.0,
+            "t_opt_k": 300.0,
+            "t_halfwidth_k": 20.0,
+            "thermal": true,
+            "t_zero_k": 283.0,
+            "bridge_scale": 0.01
+          },
+          "biology": {
+            "methanogen": "methanogenic strain MSB",
+            "capacity_ratio": 0.74,
+            "yield_m": 0.78,
+            "maintenance_m30": 0.001,
+            "loss_h": 0.001,
+            "threshold_a30": 20.0,
+            "threshold_shape": "fixed_energy",
+            "msp_threshold_4c": 20.0,
+            "maintenance_energy_j": 69000.0,
+            "kinetics": "saturating",
+            "assimilation_m": 0.0824,
+            "km_scale_a": 1.0,
+            "km_scale_m": 1.0,
+            "cessation_energy_a_j": -24000.0,
+            "cessation_energy_m_j": -28000.0,
+            "threshold_m30": 1.0,
+            "exchange_mol_l_h_pa": 3.333333333333333e-09,
+            "atmosphere_pa": 0.0,
+            "low_temperature_variant": "constant_shape"
+          },
+          "loss": {
+            "anchor_ratio": 0.3,
+            "lifetime_yr": 10000.0,
+            "kind": "power",
+            "elasticity": 1.0,
+            "log_scale": 0.001
+          },
+          "habitat_l_cm2": 0.008970677546304392,
+          "acetate_lifetime_yr": 1.0,
+          "acetate_fraction": 0.0,
+          "recycling_variant": "constant",
+          "recycling_midpoint_k": 280.0,
+          "width_k": 2.0,
+          "enabled": [
+            true,
+            true
+          ],
+          "activity_feedback": "fixed",
+          "acetate_reference_mol_l": 0.0005,
+          "methane_reference_pa": 350.0
+        },
+        "patches": [
+          {
+            "name": "bulk",
+            "weight": 0.98,
+            "rule": "tracking",
+            "value": 0.0
+          },
+          {
+            "name": "warm",
+            "weight": 0.02,
+            "rule": "buffered",
+            "value": 286.0
+          },
+          {
+            "name": "cold",
+            "weight": 0.0,
+            "rule": "buffered",
+            "value": 278.0
+          }
+        ],
+        "dispersal_yr": 1e-09
+      },
+      "epsilon": 0.1,
+      "switching_factor": 10.0,
+      "ramp": "cubic"
+    },
+    "census": {
+      "minimum_cells": 1.0,
+      "census_yr": 10.0,
+      "cell_mass_gdw": 3e-13,
+      "surface_cm2": 5.1e+18
+    },
+    "census_sampling_stride": 100,
+    "tolerance_horizon_yr": 100.0,
+    "tolerance_rtol": [
+      2e-08,
+      2e-09
+    ],
+    "physical_horizon_yr": 1800.0,
+    "physical_event_global_gdw_l": 1e-21,
+    "physical_atol": [
+      1e-09,
+      1e-25,
+      1e-25,
+      1e-18,
+      1e-25,
+      1e-25,
+      1e-09,
+      1e-25,
+      1e-25,
+      1e-18,
+      1e-25,
+      1e-25,
+      1e-09,
+      1e-25,
+      1e-25,
+      1e-18,
+      1e-25,
+      1e-25,
+      1e-13
+    ],
+    "physical_rtol": 2e-09,
+    "physical_max_step_yr": 5.0,
+    "positive_max_step_yr": 10.0,
+    "initialization": "Exact recorded qualification arrays; active invader1e-12gDW/L, dormant invader0; resident bank stationary"
+  },
+  "controls": {
+    "ramp_linear": {
+      "status": "completed",
+      "wall_seconds": 2.1529455420095474,
+      "accepted_steps": 1634,
+      "nfev": 6659,
+      "positivity_retries": 0,
+      "solver_failure_retries": 0,
+      "stage_coordinate_promotions": 2,
+      "stage_source_restarts": 0,
+      "minimum_global_pre_extinction_log10_cells": [
+        17.183274167489095,
+        24.777637080550683
+      ],
+      "final_y": [
+        27.398485971765332,
+        0.0013531281388422635,
+        4.9324420690512123e-126,
+        0.0017470069032046078,
+        6.64545585307865e-07,
+        3.92973181637327e-05,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.21403930347291525
+      ],
+      "final_temperatures_k": [
+        273.613377522636,
+        286.0,
+        278.0
+      ],
+      "extinction_events": []
+    },
+    "ramp_cubic": {
+      "status": "completed",
+      "wall_seconds": 1.749587875092402,
+      "accepted_steps": 1451,
+      "nfev": 5224,
+      "positivity_retries": 0,
+      "solver_failure_retries": 0,
+      "stage_coordinate_promotions": 2,
+      "stage_source_restarts": 0,
+      "minimum_global_pre_extinction_log10_cells": [
+        17.183274167489095,
+        24.704871258292368
+      ],
+      "final_y": [
+        27.398415426924558,
+        0.0013531313764133016,
+        2.227093998811684e-46,
+        0.0017470072241804718,
+        3.852187816684888e-11,
+        3.323510772588265e-05,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.21404047050936212
+      ],
+      "final_temperatures_k": [
+        273.61332409262076,
+        286.0,
+        278.0
+      ],
+      "extinction_events": []
+    },
+    "ramp_difference": {
+      "temperature_cubic_minus_linear_k": [
+        -5.343001521396218e-05,
+        0.0,
+        0.0
+      ],
+      "scope": "One matched 100-year comparison; no claim of long-term ramp invariance"
+    },
+    "tolerance_2e-08": {
+      "status": "completed",
+      "wall_seconds": 10.386574874981306,
+      "accepted_steps": 2574,
+      "nfev": 12624,
+      "positivity_retries": 0,
+      "solver_failure_retries": 0,
+      "stage_coordinate_promotions": 2,
+      "stage_source_restarts": 0,
+      "minimum_global_pre_extinction_log10_cells": [
+        17.183274167489095,
+        24.285375058435015
+      ],
+      "final_y": [
+        27.37248925034013,
+        0.0013541423259797634,
+        3.5244899854717594e-16,
+        0.0017470140397064426,
+        1.1942719030702826e-12,
+        1.2981533195639218e-14,
+        19.97691942579142,
+        3.214659304016611e-14,
+        0.000632515095590247,
+        4.1414269815418165e-14,
+        1.3690981265993772e-12,
+        1.451278796370238e-23,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.21507797194833703
+      ],
+      "final_temperatures_k": [
+        273.5658245326884,
+        286.0,
+        278.0
+      ],
+      "extinction_events": []
+    },
+    "tolerance_2e-09": {
+      "status": "completed",
+      "wall_seconds": 9.225338874966837,
+      "accepted_steps": 2612,
+      "nfev": 9721,
+      "positivity_retries": 0,
+      "solver_failure_retries": 0,
+      "stage_coordinate_promotions": 2,
+      "stage_source_restarts": 0,
+      "minimum_global_pre_extinction_log10_cells": [
+        17.183274167489095,
+        24.285375058435015
+      ],
+      "final_y": [
+        27.372489250338948,
+        0.0013541423259798098,
+        3.5244899854716653e-16,
+        0.0017470140397064426,
+        1.1942719020905017e-12,
+        1.298153319649606e-14,
+        19.976919425791422,
+        3.2146593040167303e-14,
+        0.000632515095590247,
+        4.1414269815419787e-14,
+        1.3690981265994279e-12,
+        1.4512788017755532e-23,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.2150779719483853
+      ],
+      "final_temperatures_k": [
+        273.5658245326862,
+        286.0,
+        278.0
+      ],
+      "extinction_events": []
+    },
+    "tolerance_difference": {
+      "maximum_combined_stock_relative": 5.03980609600307e-07,
+      "maximum_temperature_k": 3.353761712787673e-12,
+      "maximum_methane_ratio": 7.366329768387914e-14,
+      "global_minimum_log_stock_difference": [
+        0.0,
+        -1.7763568394002505e-15
+      ]
+    },
+    "censused_100k": {
+      "status": "completed",
+      "wall_seconds": 100.76780554198194,
+      "accepted_steps": 25466,
+      "nfev": 185838,
+      "positivity_retries": 0,
+      "solver_failure_retries": 0,
+      "stage_coordinate_promotions": 8,
+      "stage_source_restarts": 0,
+      "minimum_global_pre_extinction_log10_cells": [
+        -3.056603404287356,
+        24.285375058432496
+      ],
+      "final_y": [
+        70.17043973871243,
+        0.0,
+        0.0005745570797027402,
+        0.0,
+        0.0,
+        1.3068127635637082e-58,
+        19.976919423682595,
+        0.0,
+        0.0006325150956646064,
+        0.0,
+        0.0,
+        4.570190055620579e-58,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.2171443673404805
+      ],
+      "final_temperatures_k": [
+        273.4841712075087,
+        286.0,
+        278.0
+      ],
+      "extinction_events": [
+        {
+          "time_yr": 1230.0,
+          "patch": "warm",
+          "guild": "acetogen",
+          "removed_cells": 0.21752653678812628,
+          "log_removed_cells": -1.5254344276745258,
+          "removed_gdw": 6.525796103643838e-14,
+          "removed_h2_mol": 5.377255989402522e-15,
+          "inventory_jump_h2_mol_l": 1.1753447987048115e-31
+        },
+        {
+          "time_yr": 1240.0,
+          "patch": "warm",
+          "guild": "acetogen",
+          "removed_cells": 7.219002784246127e-06,
+          "log_removed_cells": -11.838793733124248,
+          "removed_gdw": 2.165700835273856e-18,
+          "removed_h2_mol": 1.7845374882656572e-19,
+          "inventory_jump_h2_mol_l": 3.9005895554543616e-36
+        },
+        {
+          "time_yr": 1250.0,
+          "patch": "warm",
+          "guild": "acetogen",
+          "removed_cells": 1.125774985379773e-09,
+          "log_removed_cells": -20.604794162562982,
+          "removed_gdw": 3.377324956139364e-22,
+          "removed_h2_mol": 2.782915763858836e-23,
+          "inventory_jump_h2_mol_l": 6.082815426179003e-40
+        },
+        {
+          "time_yr": 1260.0,
+          "patch": "bulk",
+          "guild": "acetogen",
+          "removed_cells": 0.0008778020598507218,
+          "log_removed_cells": -7.038089434106922,
+          "removed_gdw": 2.633406179552163e-16,
+          "removed_h2_mol": 2.1699266919509824e-17,
+          "inventory_jump_h2_mol_l": 4.742961941893166e-34
+        },
+        {
+          "time_yr": 1260.0,
+          "patch": "warm",
+          "guild": "acetogen",
+          "removed_cells": 1.755602847308763e-13,
+          "log_removed_cells": -29.370793908248288,
+          "removed_gdw": 5.266808541926372e-26,
+          "removed_h2_mol": 4.339850238547331e-27,
+          "inventory_jump_h2_mol_l": 9.485917008762684e-44
+        }
+      ]
+    },
+    "physical_radau": {
+      "success": true,
+      "terminal_time_yr": 1230.4758290756808,
+      "terminal_global_acetogen_cells": 152501518.28717464,
+      "wall_seconds": 15.469254291965626,
+      "accepted_steps": 9134,
+      "nfev": 84898,
+      "comparisons": [
+        {
+          "time_yr": 1000.0,
+          "temperature_difference_k": -1.6983219666144578e-06,
+          "positive_global_acetogen_gdw_l": 0.001191459562511887,
+          "physical_global_acetogen_gdw_l": 0.0011914595242567695,
+          "global_acetogen_relative_difference": 3.2107777769851964e-08
+        },
+        {
+          "time_yr": 1230.0,
+          "temperature_difference_k": 4.523043344306643e-07,
+          "positive_global_acetogen_gdw_l": 1.5177446598391726e-21,
+          "physical_global_acetogen_gdw_l": 1.517588219384992e-21,
+          "global_acetogen_relative_difference": 0.0001030849160412739
+        }
+      ],
+      "scope": "Independent direct physical-coordinate integration; tiny negative active components within absolute tolerance do not decide the combined-stock result"
+    }
+  },
+  "payloads": {
+    "ramp_linear": {
+      "path": "local/haze/dormancy_numerical_controls/ramp_linear.npz",
+      "sha256": "c6cfcf1234e2038d52c60eb5385da023d05bb327fbe705e4a57f40373c3b5256"
+    },
+    "ramp_cubic": {
+      "path": "local/haze/dormancy_numerical_controls/ramp_cubic.npz",
+      "sha256": "bb02d8d07dbba566a08c2789a8a038f26595763ae0710c7577f5b1daf3e77eb4"
+    },
+    "tolerance_2e-08": {
+      "path": "local/haze/dormancy_numerical_controls/tolerance_2e-08.npz",
+      "sha256": "2187556dfd3129ce79f758aa46434c1853ecba8f8c78dff6ee9b3f31513ef8e5"
+    },
+    "tolerance_2e-09": {
+      "path": "local/haze/dormancy_numerical_controls/tolerance_2e-09.npz",
+      "sha256": "da6f1245f8c64532cfe065297e40508e1948a887758935d475e18211a0d01da8"
+    },
+    "censused_100k": {
+      "path": "local/haze/dormancy_numerical_controls/censused_100k.npz",
+      "sha256": "8a2e77e5a60fc3b8955cf92c9aaa7f1373c5dd20ae9b8f777da9f015e5a05bbc"
+    },
+    "physical_radau": {
+      "path": "local/haze/dormancy_numerical_controls/physical_radau.npz",
+      "sha256": "78fc674d1e5675393af4952c2fa0bb05b07a76082bd837eb3ceeb3f6a193a394"
+    }
+  }
+}
