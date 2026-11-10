@@ -1,0 +1,557 @@
+{
+  "checker_sha256": "930cfb0e1781d758bf8bd78db0655a679dab6e455e916333c30bd1a86e5902a8",
+  "equilibrium_review_sha256": "be89bdb6bd4b5f229343ce5c0eba6265ac4761f156b8f31856f60f9693687ce7",
+  "figure": "models/haze_world/figures/dormancy/spatial_cycles.png",
+  "figure_sha256": "a0da3c3b9a86de121105457d6a40be505ce4e9bbdb0b6baa84c62b7156188a4d",
+  "rows": [
+    {
+      "case_id": "dormancy_0030",
+      "epsilon": 0.003,
+      "receipt_file": "local/haze/dormancy_spatial_cycle_precision/dormancy_0030_precision2000-5d348154a797e4fd.receipt.json",
+      "receipt_sha256": "569baea722c110e7a3d738132c0ee69e31c4d2ef7a71ecfa44b947a08f52d3ef",
+      "raw_file": "local/haze/dormancy_spatial_cycle_precision/dormancy_0030_precision2000-5d348154a797e4fd.npz",
+      "raw_sha256": "e90b626cbfd4374af0de7777f8ab068d43f6a2ce3070907786878552b930b8d7",
+      "native_fingerprint": "7513dfdb8fc9b83fcd4e945c362ac71fbce6f5324db6b4c71d2f8d0b5da41891",
+      "native_raw_file": "dormancy_0030_census_t100000-7513dfdb8fc9b83f.npz",
+      "native_raw_sha256": "62e63aa1dfbe4e7e32f783ec957783ff6b55b93e7481843e408ed46437009a20",
+      "verified_protocol": {
+        "absolute_start_yr": 80000.0,
+        "architecture": "arm64",
+        "case": {
+          "case_id": "dormancy_0030",
+          "census_yr": 10.0,
+          "configuration": "both",
+          "direction": "A_into_M",
+          "dispersal_yr": 1e-06,
+          "epsilon": 0.003,
+          "fraction": 0.0,
+          "group": "main",
+          "loss_h": 0.001,
+          "max_step_yr": 10.0,
+          "ramp": "cubic",
+          "rtol": 2e-08,
+          "switching_factor": 10.0,
+          "years": 100000.0
+        },
+        "census": {
+          "cell_mass_gdw": 3e-13,
+          "census_yr": 10.0,
+          "minimum_cells": 1.0,
+          "surface_cm2": 5.1e+18
+        },
+        "checker_sha256": "2100a9d7b3a7cb522cf66082940c17f15a4124c62f6e2f85fbc0e09e0ae5818d",
+        "duration_yr": 2000.0,
+        "initial_y": [
+          22.530969605316443,
+          5.172273573144997e-06,
+          0.0006558505617645373,
+          7.825699600452575e-06,
+          4.2410736468801676e-05,
+          2.975878493289717e-06,
+          19.976919386944218,
+          7.289081240264281e-13,
+          0.0006325150964077081,
+          9.365379672447104e-13,
+          8.458251907226015e-09,
+          3.0294893016419283e-10,
+          27.61493451540848,
+          0.001256389050037546,
+          3.135830598581526e-11,
+          0.0017628945783112265,
+          1.9532791170271467e-09,
+          1.8719331924023964e-08,
+          0.19513128322839024
+        ],
+        "max_step_yr": 1.0,
+        "operating_system": "Darwin",
+        "original_fingerprint": "7513dfdb8fc9b83fcd4e945c362ac71fbce6f5324db6b4c71d2f8d0b5da41891",
+        "original_raw_file": "dormancy_0030_census_t100000-7513dfdb8fc9b83f.npz",
+        "original_raw_sha256": "62e63aa1dfbe4e7e32f783ec957783ff6b55b93e7481843e408ed46437009a20",
+        "output_stride_yr": 1.0,
+        "rtol": 2e-09,
+        "sampling": "Observe only accepted dense pieces; official post-census snapshots override their annual observations",
+        "source_sha256": {
+          "models/haze_response/arney2016/cases.csv": "e3d77d275052a8875991a751868f857bffc964295bfd47591944d86bc58ab07a",
+          "models/haze_response/arney2016/figure4.csv": "c0ef5f3d17ee7c6085ad36247f0f7814726dbbe3273842b01f2c6c4e046856f8",
+          "models/haze_world/evidence/kotsyurbenko2001_table2.csv": "c95b4be023e5502fbb30eb322621e5612bbbf850f99d1b6669e98b95eb370480",
+          "models/haze_world/evidence/peters1998_chemostat.csv": "b0b00bf03eaeaabf45fb571330773c5158b53b088436aaee942188f8e9498320",
+          "src/terra_prisca/haze_response/arney2016.py": "a1b8b52f4c929a0518a17542fb323588699433b038949b38ee6ad74679cd0da6",
+          "src/terra_prisca/haze_world/bottleneck_integration.py": "ce56becb23ca53c6bfb48dffc054d8ecc90839bf5dd0ffd716dbf22635dd435f",
+          "src/terra_prisca/haze_world/buffered_experiments.py": "c8603febb0167be3fc944b60672d9e11957aabf4ca7654dc6efb20639176336a",
+          "src/terra_prisca/haze_world/darwinian.py": "e965035d5dfbfafcb695dc3738b23d8a445c4c1e7e246ab4688d67b33482f1aa",
+          "src/terra_prisca/haze_world/dormancy.py": "bf0a0e02c621dae1ba13c421ff75f8d0233e2c88bac1e54a42036c7f21797645",
+          "src/terra_prisca/haze_world/dormancy_experiments.py": "91a6aaf01702f357b076761ca650918bbc5d0a18af7f53bf542ed30fe2e2db9c",
+          "src/terra_prisca/haze_world/dormancy_integration.py": "0a1cc282057a4187288ae77c8ef69e77830a3cb741d729d1877fe7a0c15dcd01",
+          "src/terra_prisca/haze_world/dormancy_starts.py": "67af0622f6243983569777f4d4368c12894ceed0351d05b2a89bd942ec439a3f",
+          "src/terra_prisca/haze_world/dormancy_trial_integration.py": "b5c0d208454c8f55b4da865a387ea592f117e28700bb13d1025efe4a4e92ef18",
+          "src/terra_prisca/haze_world/finite_experiments.py": "285d5f4ab46997920559ee0ac68657b0405eee39b38f97520e248faba4db631c",
+          "src/terra_prisca/haze_world/finite_populations.py": "4644088974706aa5f012fb3335a6b1cc8bfd90da88d0b99f9f9e2b64356890df",
+          "src/terra_prisca/haze_world/habitat_coupling.py": "34f611d3f9046bf7d96f8caeffb452f2a2206bab4abc45e630a09980a067c4d0",
+          "src/terra_prisca/haze_world/habitat_equilibria.py": "90ec06dbce07e6625878ece2e97b55604ed4708b8aad9f66b0dd06dd8aa50a9a",
+          "src/terra_prisca/haze_world/habitat_integration.py": "3a115c22ee4b4a6b2c3f4585385927a7e32d68712cfb3d0073f0e52089a1b214",
+          "src/terra_prisca/haze_world/hydrogen_uptake.py": "c48d8231ef726605ab07be22438f3e2fd97f23b310773ac748d1b2bf5c36fafd",
+          "src/terra_prisca/haze_world/methane_budget.py": "70dc47659e4738d07809e8d23844af79bf69e5dabcc87793eac3f5e560011721",
+          "src/terra_prisca/haze_world/population_coupling.py": "17a433957e94845595f6d7fd160ffe593c01c4e74550707b0814c95ab67ae663",
+          "src/terra_prisca/haze_world/turnover_starts.py": "d980d85dd6910d82828e9dbddbcf4588f62fd8bf870ce8af6a06a76ffb512bd5",
+          "src/terra_prisca/haze_world/two_guilds.py": "eff6a9027c5b28d154f03462d926591ebee3408eb2c80ec0df5c38929f169f83",
+          "src/terra_prisca/haze_world/woodii1998.py": "b0130f4f8ea15aa64245133f79dc8b35883a414031a8b49262c6657350cad0b0",
+          "uv.lock": "02bf429b2ec474f03280ec550d5fd847b573ece24ab9043e0b5998370fd4d2b4"
+        },
+        "summary_checker_sha256": "cd0deaf02e44cabbb1c0fccfc11a1aec732010a36f4749d57469d667a6d8688c",
+        "wall_limit_seconds": 120.0
+      },
+      "wall_seconds": 97.34389766701497,
+      "accepted_steps": 13545,
+      "nonnegative_stocks": true,
+      "numerical_events": {
+        "trial_guard_rejections": 0,
+        "trial_guard_stage_conditionings": 0,
+        "trial_guard_chemical_conditionings": 0
+      },
+      "initial_coordinate_roundtrip_maximum_relative_error": 3.41303653104465e-16,
+      "first_peak_absolute_yr": {
+        "Native: 10-year samples": 80100.0,
+        "Precision: annual samples": 80097.0
+      },
+      "plotted_duration_yr": 500.0,
+      "control": {
+        "interval_yr": [
+          0.0,
+          2000.0
+        ],
+        "maximum_temperature_k": 281.69654170658805,
+        "mean_temperature_k": 281.533236592294,
+        "minimum_temperature_k": 281.3755851497628,
+        "negative_peak_slope_k_yr": 2.2720471405737717e-09,
+        "peaks": 13,
+        "period_yr": 145.50000000000003,
+        "positive_peak_slope_k_yr": 3.6877775746029644e-09,
+        "sampled_range_k": 0.3209565568252515,
+        "samples": 2001
+      },
+      "native": {
+        "interval_yr": [
+          80000.0,
+          100000.0
+        ],
+        "maximum_temperature_k": 281.69654179148995,
+        "mean_temperature_k": 281.5340158710621,
+        "minimum_temperature_k": 281.37558547146006,
+        "negative_peak_slope_k_yr": 3.558186526663482e-09,
+        "peaks": 137,
+        "period_yr": 145.49587432561134,
+        "positive_peak_slope_k_yr": -3.87607914626515e-09,
+        "sampled_range_k": 0.32095632002989305,
+        "samples": 2001
+      },
+      "period_relative_difference": 2.8355954475145495e-05,
+      "sampled_range_relative_difference": 7.377806376940299e-07,
+      "common_unaligned_times": 201,
+      "common_time_maximum_temperature_difference_k": 1.9622740410341066e-07,
+      "control_dense_global_min_log10_cells": [
+        24.98613210422461,
+        25.510375542018018
+      ],
+      "native_sampled_global_min_log10_cells": [
+        24.986132181324766,
+        25.510375674021667
+      ],
+      "census_removals": 0,
+      "mixed_equilibrium": {
+        "y": [
+          22.486299825525958,
+          0.0002894526904016829,
+          0.0004971762298542328,
+          0.0004449212751741442,
+          8.006681460714118e-15,
+          1.2404439369718412e-14,
+          19.97691995745189,
+          7.339905427550513e-12,
+          0.0006325150771852795,
+          9.455815849785588e-12,
+          1.0419458513911235e-08,
+          1.2404439369636733e-14,
+          27.614933851009088,
+          0.001256389088450808,
+          2.392089813560127e-11,
+          0.0017628945974758911,
+          7.924142178776942e-15,
+          1.631060973168256e-08,
+          0.19510687473843066
+        ],
+        "temperature_k": 281.53482288381906,
+        "max_scaled_residual": 2.7997108907212228e-14,
+        "max_absolute_dormant_balance": 4.7361631027659107e-26,
+        "reference_max_real_yr": -0.00019860564368454558,
+        "spectra": [
+          {
+            "scaled_difference_step": 1e-05,
+            "leading_eigenvalues_yr": [
+              {
+                "real": -0.02629800000048836,
+                "imag": 0.0
+              },
+              {
+                "real": -0.02629800000000421,
+                "imag": 0.0
+              },
+              {
+                "real": -0.00019863116935154275,
+                "imag": 0.05103387670328364
+              },
+              {
+                "real": -0.00019863116935154275,
+                "imag": -0.05103387670328364
+              }
+            ],
+            "max_real_yr": -0.00019863116935154275
+          },
+          {
+            "scaled_difference_step": 1e-06,
+            "leading_eigenvalues_yr": [
+              {
+                "real": -0.026298000000576593,
+                "imag": 0.0
+              },
+              {
+                "real": -0.026298000000004196,
+                "imag": 0.0
+              },
+              {
+                "real": -0.00019860820718440737,
+                "imag": 0.05096749656019342
+              },
+              {
+                "real": -0.00019860820718440737,
+                "imag": -0.05096749656019342
+              }
+            ],
+            "max_real_yr": -0.00019860820718440737
+          },
+          {
+            "scaled_difference_step": 1e-07,
+            "leading_eigenvalues_yr": [
+              {
+                "real": -0.02629800000060448,
+                "imag": 0.0
+              },
+              {
+                "real": -0.026298000000004203,
+                "imag": 0.0
+              },
+              {
+                "real": -0.00019860590336406576,
+                "imag": 0.0509608551495382
+              },
+              {
+                "real": -0.00019860590336406576,
+                "imag": -0.0509608551495382
+              }
+            ],
+            "max_real_yr": -0.00019860590336406576
+          },
+          {
+            "scaled_difference_step": 1e-08,
+            "leading_eigenvalues_yr": [
+              {
+                "real": -0.026298000000737076,
+                "imag": 0.0
+              },
+              {
+                "real": -0.0262980000000042,
+                "imag": 0.0
+              },
+              {
+                "real": -0.00019860567011545905,
+                "imag": 0.050960191004395264
+              },
+              {
+                "real": -0.00019860567011545905,
+                "imag": -0.050960191004395264
+              }
+            ],
+            "max_real_yr": -0.00019860567011545905
+          }
+        ],
+        "spectrum_scope": "Central differences of the physical RHS in scaled stocks. Negative biomass/dormant perturbations use its linear mathematical extension; no trajectory is altered."
+      }
+    },
+    {
+      "case_id": "dormancy_0038",
+      "epsilon": 0.001,
+      "receipt_file": "local/haze/dormancy_spatial_cycle_precision/dormancy_0038_precision2000-6bcf840d661eb22f.receipt.json",
+      "receipt_sha256": "2e8028ddf88a3f63a2b665bc702b90e05190860f8e80faec5bfeba4f2eeb2f7b",
+      "raw_file": "local/haze/dormancy_spatial_cycle_precision/dormancy_0038_precision2000-6bcf840d661eb22f.npz",
+      "raw_sha256": "a2869cd31287db92405c3ee71184dfd5821e2edf467886295b9a97aa8c02801a",
+      "native_fingerprint": "26d807bb6ee4368d7ef1d39103284b911d9429262e005dcd7f0b468043c5fc3d",
+      "native_raw_file": "dormancy_0038_census_t100000-26d807bb6ee4368d.npz",
+      "native_raw_sha256": "a6b7e3bbf8f651d9f2093b4a122a23813be4e1d49b494abe36f723ad5205ac36",
+      "verified_protocol": {
+        "absolute_start_yr": 80000.0,
+        "architecture": "arm64",
+        "case": {
+          "case_id": "dormancy_0038",
+          "census_yr": 10.0,
+          "configuration": "both",
+          "direction": "A_into_M",
+          "dispersal_yr": 1e-06,
+          "epsilon": 0.001,
+          "fraction": 0.0,
+          "group": "main",
+          "loss_h": 0.001,
+          "max_step_yr": 10.0,
+          "ramp": "cubic",
+          "rtol": 2e-08,
+          "switching_factor": 10.0,
+          "years": 100000.0
+        },
+        "census": {
+          "cell_mass_gdw": 3e-13,
+          "census_yr": 10.0,
+          "minimum_cells": 1.0,
+          "surface_cm2": 5.1e+18
+        },
+        "checker_sha256": "2100a9d7b3a7cb522cf66082940c17f15a4124c62f6e2f85fbc0e09e0ae5818d",
+        "duration_yr": 2000.0,
+        "initial_y": [
+          22.677695715670453,
+          0.0001715634767125468,
+          0.0005632997030637749,
+          0.00024833170921466813,
+          4.3068772968984624e-05,
+          9.527041966667648e-06,
+          19.976919711104323,
+          4.592134238443061e-12,
+          0.0006325150854788915,
+          5.604326011076612e-12,
+          3.181954459404067e-08,
+          1.426413135513242e-09,
+          27.61493415510795,
+          0.0012563890687941044,
+          2.70343121519987e-11,
+          0.001762894588308255,
+          5.512634098313619e-09,
+          5.302238940027194e-08,
+          0.19522740548338688
+        ],
+        "max_step_yr": 1.0,
+        "operating_system": "Darwin",
+        "original_fingerprint": "26d807bb6ee4368d7ef1d39103284b911d9429262e005dcd7f0b468043c5fc3d",
+        "original_raw_file": "dormancy_0038_census_t100000-26d807bb6ee4368d.npz",
+        "original_raw_sha256": "a6b7e3bbf8f651d9f2093b4a122a23813be4e1d49b494abe36f723ad5205ac36",
+        "output_stride_yr": 1.0,
+        "rtol": 2e-09,
+        "sampling": "Observe only accepted dense pieces; official post-census snapshots override their annual observations",
+        "source_sha256": {
+          "models/haze_response/arney2016/cases.csv": "e3d77d275052a8875991a751868f857bffc964295bfd47591944d86bc58ab07a",
+          "models/haze_response/arney2016/figure4.csv": "c0ef5f3d17ee7c6085ad36247f0f7814726dbbe3273842b01f2c6c4e046856f8",
+          "models/haze_world/evidence/kotsyurbenko2001_table2.csv": "c95b4be023e5502fbb30eb322621e5612bbbf850f99d1b6669e98b95eb370480",
+          "models/haze_world/evidence/peters1998_chemostat.csv": "b0b00bf03eaeaabf45fb571330773c5158b53b088436aaee942188f8e9498320",
+          "src/terra_prisca/haze_response/arney2016.py": "a1b8b52f4c929a0518a17542fb323588699433b038949b38ee6ad74679cd0da6",
+          "src/terra_prisca/haze_world/bottleneck_integration.py": "ce56becb23ca53c6bfb48dffc054d8ecc90839bf5dd0ffd716dbf22635dd435f",
+          "src/terra_prisca/haze_world/buffered_experiments.py": "c8603febb0167be3fc944b60672d9e11957aabf4ca7654dc6efb20639176336a",
+          "src/terra_prisca/haze_world/darwinian.py": "e965035d5dfbfafcb695dc3738b23d8a445c4c1e7e246ab4688d67b33482f1aa",
+          "src/terra_prisca/haze_world/dormancy.py": "bf0a0e02c621dae1ba13c421ff75f8d0233e2c88bac1e54a42036c7f21797645",
+          "src/terra_prisca/haze_world/dormancy_experiments.py": "91a6aaf01702f357b076761ca650918bbc5d0a18af7f53bf542ed30fe2e2db9c",
+          "src/terra_prisca/haze_world/dormancy_integration.py": "0a1cc282057a4187288ae77c8ef69e77830a3cb741d729d1877fe7a0c15dcd01",
+          "src/terra_prisca/haze_world/dormancy_starts.py": "67af0622f6243983569777f4d4368c12894ceed0351d05b2a89bd942ec439a3f",
+          "src/terra_prisca/haze_world/dormancy_trial_integration.py": "b5c0d208454c8f55b4da865a387ea592f117e28700bb13d1025efe4a4e92ef18",
+          "src/terra_prisca/haze_world/finite_experiments.py": "285d5f4ab46997920559ee0ac68657b0405eee39b38f97520e248faba4db631c",
+          "src/terra_prisca/haze_world/finite_populations.py": "4644088974706aa5f012fb3335a6b1cc8bfd90da88d0b99f9f9e2b64356890df",
+          "src/terra_prisca/haze_world/habitat_coupling.py": "34f611d3f9046bf7d96f8caeffb452f2a2206bab4abc45e630a09980a067c4d0",
+          "src/terra_prisca/haze_world/habitat_equilibria.py": "90ec06dbce07e6625878ece2e97b55604ed4708b8aad9f66b0dd06dd8aa50a9a",
+          "src/terra_prisca/haze_world/habitat_integration.py": "3a115c22ee4b4a6b2c3f4585385927a7e32d68712cfb3d0073f0e52089a1b214",
+          "src/terra_prisca/haze_world/hydrogen_uptake.py": "c48d8231ef726605ab07be22438f3e2fd97f23b310773ac748d1b2bf5c36fafd",
+          "src/terra_prisca/haze_world/methane_budget.py": "70dc47659e4738d07809e8d23844af79bf69e5dabcc87793eac3f5e560011721",
+          "src/terra_prisca/haze_world/population_coupling.py": "17a433957e94845595f6d7fd160ffe593c01c4e74550707b0814c95ab67ae663",
+          "src/terra_prisca/haze_world/turnover_starts.py": "d980d85dd6910d82828e9dbddbcf4588f62fd8bf870ce8af6a06a76ffb512bd5",
+          "src/terra_prisca/haze_world/two_guilds.py": "eff6a9027c5b28d154f03462d926591ebee3408eb2c80ec0df5c38929f169f83",
+          "src/terra_prisca/haze_world/woodii1998.py": "b0130f4f8ea15aa64245133f79dc8b35883a414031a8b49262c6657350cad0b0",
+          "uv.lock": "02bf429b2ec474f03280ec550d5fd847b573ece24ab9043e0b5998370fd4d2b4"
+        },
+        "summary_checker_sha256": "cd0deaf02e44cabbb1c0fccfc11a1aec732010a36f4749d57469d667a6d8688c",
+        "wall_limit_seconds": 120.0
+      },
+      "wall_seconds": 69.75843058398459,
+      "accepted_steps": 9439,
+      "nonnegative_stocks": true,
+      "numerical_events": {
+        "trial_guard_rejections": 0,
+        "trial_guard_stage_conditionings": 0,
+        "trial_guard_chemical_conditionings": 0
+      },
+      "initial_coordinate_roundtrip_maximum_relative_error": 5.334497004743902e-16,
+      "first_peak_absolute_yr": {
+        "Native: 10-year samples": 80060.0,
+        "Precision: annual samples": 80065.0
+      },
+      "plotted_duration_yr": 500.0,
+      "control": {
+        "interval_yr": [
+          0.0,
+          2000.0
+        ],
+        "maximum_temperature_k": 281.6288368191696,
+        "mean_temperature_k": 281.53389094695416,
+        "minimum_temperature_k": 281.4400996567927,
+        "negative_peak_slope_k_yr": 8.698103720474672e-10,
+        "peaks": 15,
+        "period_yr": 128.66071428571422,
+        "positive_peak_slope_k_yr": 2.4385455678606193e-09,
+        "sampled_range_k": 0.18873716237686722,
+        "samples": 2001
+      },
+      "native": {
+        "interval_yr": [
+          80000.0,
+          100000.0
+        ],
+        "maximum_temperature_k": 281.62883668039814,
+        "mean_temperature_k": 281.5339354732605,
+        "minimum_temperature_k": 281.4400984334368,
+        "negative_peak_slope_k_yr": -1.879786738108102e-09,
+        "peaks": 155,
+        "period_yr": 128.6673004414942,
+        "positive_peak_slope_k_yr": 3.511527325307091e-09,
+        "sampled_range_k": 0.1887382469613499,
+        "samples": 2001
+      },
+      "period_relative_difference": -5.1187487087878125e-05,
+      "sampled_range_relative_difference": -5.746500776226959e-06,
+      "common_unaligned_times": 201,
+      "common_time_maximum_temperature_difference_k": 6.924399826857552e-07,
+      "control_dense_global_min_log10_cells": [
+        25.329141448586736,
+        25.692998969357777
+      ],
+      "native_sampled_global_min_log10_cells": [
+        25.32914677412714,
+        25.692999874406972
+      ],
+      "census_removals": 0,
+      "mixed_equilibrium": {
+        "y": [
+          22.48629982552607,
+          0.0002894526904016824,
+          0.0004971762298542377,
+          0.0004449212751741415,
+          7.155945544765105e-14,
+          1.1163146491988466e-13,
+          19.97691995745131,
+          7.339905427549549e-12,
+          0.000632515077185296,
+          9.45581584978401e-12,
+          3.125604611057176e-08,
+          1.1163146491767977e-13,
+          27.614933851009077,
+          0.0012563890884508086,
+          2.3920898135601438e-11,
+          0.0017628945974758911,
+          7.131185643723771e-14,
+          4.892818270585441e-08,
+          0.19510687473843086
+        ],
+        "temperature_k": 281.53482288381895,
+        "max_scaled_residual": 2.410514167992571e-15,
+        "max_absolute_dormant_balance": 6.29195458004279e-27,
+        "reference_max_real_yr": -0.00019860564020507995,
+        "spectra": [
+          {
+            "scaled_difference_step": 1e-05,
+            "leading_eigenvalues_yr": [
+              {
+                "real": -0.00876600000000547,
+                "imag": 0.0
+              },
+              {
+                "real": -0.008765999999996473,
+                "imag": 0.0
+              },
+              {
+                "real": -0.00019863116903779684,
+                "imag": 0.05103387670347761
+              },
+              {
+                "real": -0.00019863116903779684,
+                "imag": -0.05103387670347761
+              }
+            ],
+            "max_real_yr": -0.00019863116903779684
+          },
+          {
+            "scaled_difference_step": 1e-06,
+            "leading_eigenvalues_yr": [
+              {
+                "real": -0.008766000000265868,
+                "imag": 0.0
+              },
+              {
+                "real": -0.00876600000000417,
+                "imag": 0.0
+              },
+              {
+                "real": -0.00019860820412260697,
+                "imag": 0.050967496559626235
+              },
+              {
+                "real": -0.00019860820412260697,
+                "imag": -0.050967496559626235
+              }
+            ],
+            "max_real_yr": -0.00019860820412260697
+          },
+          {
+            "scaled_difference_step": 1e-07,
+            "leading_eigenvalues_yr": [
+              {
+                "real": -0.008766000000004194,
+                "imag": 0.0
+              },
+              {
+                "real": -0.008765999999978917,
+                "imag": 0.0
+              },
+              {
+                "real": -0.0001986058977575356,
+                "imag": 0.050960855080203094
+              },
+              {
+                "real": -0.0001986058977575356,
+                "imag": -0.050960855080203094
+              }
+            ],
+            "max_real_yr": -0.0001986058977575356
+          },
+          {
+            "scaled_difference_step": 1e-08,
+            "leading_eigenvalues_yr": [
+              {
+                "real": -0.008766000000013686,
+                "imag": 0.0
+              },
+              {
+                "real": -0.008766000000003936,
+                "imag": 0.0
+              },
+              {
+                "real": -0.00019860567236732043,
+                "imag": 0.05096019122762035
+              },
+              {
+                "real": -0.00019860567236732043,
+                "imag": -0.05096019122762035
+              }
+            ],
+            "max_real_yr": -0.00019860567236732043
+          }
+        ],
+        "spectrum_scope": "Central differences of the physical RHS in scaled stocks. Negative biomass/dormant perturbations use its linear mathematical extension; no trajectory is altered."
+      }
+    }
+  ],
+  "source_verification": "All selected source, checker, original-payload and precision-payload hashes verified live. Inputs exactly equal the recorded 80k-year states; initial coordinate round-trip errors are recorded separately.",
+  "interpretation": "Finite-amplitude persistent-cycle / multiple-attractor candidates alongside locally stable mixed equilibria, not linear destabilization of those roots.",
+  "physical_population_scope": "Both whole-guild minima exceed 10^24 cells in the continued windows; neither control has a census removal. Active\u2013dormant phase loops are material biomass, not ghost recovery.",
+  "solver_scope": "Both resolution controls use the named b5c guarded LSODA variant, rtol2e-9 and max_step1yr; no independent-solver or rigorous periodic-orbit proof.",
+  "caption": "Persistent finite-amplitude cycle candidates coexist with a locally stable mixed root; no Hopf claim.\nTighter continuation uses the same stiff-solver family. All four recorded paths remain classified as unsettled."
+}

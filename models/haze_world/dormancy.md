@@ -162,6 +162,37 @@ guide a targeted refinement between protection and a measured loss. It is
 not assigned an exact rare-lineage probability of one and does not by
 itself close a stochastic threshold bracket.
 
+## A checked nonstationary outcome
+
+Four completed census trajectories have persistent finite-amplitude cycles:
+both invasion directions at `f=0`, with both fixed refuges, exchange
+`10^-6/year`, active loss `0.001/hour`, and `epsilon=0.003` or `0.001`.
+Their 40,000–100,000-year envelopes remain constant within the sampling
+resolution. The respective periods are about 145.5 and 128.7 years, with
+temperature ranges of 0.321 and 0.189 K. Both guilds remain above `10^24`
+cells during the late cycles. No late census removal or stage-chart change
+occurs.
+
+![Persistent spatial dormancy cycles](figures/dormancy/spatial_cycles.png)
+
+The mixed equilibrium near 281.535 K is still locally stable: its leading
+real eigenvalue converges to approximately `-1.986e-4/year` at four numerical
+difference scales. Thus these paths are candidates for an additional
+finite-amplitude attractor, not evidence that the equilibrium loses linear
+stability. Their phases differ, so equal endpoint stocks are not claimed.
+
+Two 2,000-year continuations from the exact recorded 80,000-year states use
+tenfold tighter relative tolerance, a one-year maximum step and annual
+observation while retaining the ten-year census. They agree with the
+original temperatures within `7e-7 K` at common times. Period estimates
+change by less than 0.006% and temperature ranges by less than 0.001%.
+Neither control needs numerical recovery or removes a guild. The
+[root and envelope audit](review/dormancy_spatial_cycle_check.json) and
+[precision evidence](review/dormancy_spatial_cycle_precision.json) retain
+source, input and raw-output hashes. These are controls within the same
+stiff-solver family; they do not prove a periodic orbit or exhaust its basin.
+All four original paths retain their nonstationary classification.
+
 ## Reproduction and current evidence boundary
 
 Run the physical experiment, generic endpoint comparison, first-window
