@@ -979,3 +979,54 @@ def test_predictor_variant_retains_all_physical_and_provenance_guards(tmp_path, 
         radau["protocol"]["census"]["census_yr"] = 10.
     with pytest.raises(RuntimeError):
         a.validate_probability_protocol(radau, native, tmp_path)
+
+
+def roundoff_prefix(prefix, native, root):
+    radau = terminal_prefix(prefix, native, root)
+    for name in a.ROUNDOFF_SOURCES-a.TERMINAL_SOURCES:
+        path = root/name
+        path.parent.mkdir(parents=True, exist_ok=True)
+        path.write_text(name)
+        radau["protocol"]["source_sha256"][name] = a.sha256(path.read_bytes()).hexdigest()
+    radau["protocol"]["solver"] = "radau_dormancy_roundoff_stagnation"
+    radau["fingerprint"] = a.sha256(a.e.dumps(radau["protocol"]).encode()).hexdigest()
+    return radau
+
+
+def test_exact_nineteen_file_roundoff_variant_preserves_both_recording_contracts(tmp_path, monkeypatch):
+    prefix, native = profile_contract(tmp_path, monkeypatch)
+    radau = roundoff_prefix(prefix, native, tmp_path)
+    census = guarded_census(radau, native)
+    assert len(set(radau["protocol"]["source_sha256"])-set(native["protocol"]["source_sha256"])) == 19
+    assert a.validate_probability_protocol(radau, native, tmp_path) == "radau_roundoff_stagnation_uncensored_unchanged_physics"
+    assert a.validate_probability_protocol(radau, census, tmp_path) == "radau_roundoff_stagnation_uncensored_unchanged_physics"
+    assert a.validate_probability_protocol(census, census, tmp_path) == "radau_roundoff_stagnation_census_unchanged_physics"
+
+
+@pytest.mark.parametrize("missing", sorted(a.ROUNDOFF_SOURCES))
+def test_roundoff_variant_rejects_each_incomplete_source_graph(tmp_path, monkeypatch, missing):
+    prefix, native = profile_contract(tmp_path, monkeypatch)
+    radau = roundoff_prefix(prefix, native, tmp_path)
+    del radau["protocol"]["source_sha256"][missing]
+    with pytest.raises(RuntimeError, match="Unapproved"):
+        a.validate_probability_protocol(radau, native, tmp_path)
+
+
+@pytest.mark.parametrize("changed", ("extra", "stale_helper", "flag", "platform", "parameters", "census"))
+def test_roundoff_variant_retains_all_physical_and_provenance_guards(tmp_path, monkeypatch, changed):
+    prefix, native = profile_contract(tmp_path, monkeypatch)
+    radau = roundoff_prefix(prefix, native, tmp_path)
+    if changed == "extra":
+        radau["protocol"]["source_sha256"]["unrelated.py"] = "unrelated"
+    elif changed == "stale_helper":
+        (tmp_path/"src/terra_prisca/haze_world/dormancy_roundoff_integration.py").write_text("changed")
+    elif changed == "flag":
+        radau["protocol"]["solver"] = "analytic_dormancy_zero_face_newton"
+    elif changed == "platform":
+        del radau["protocol"]["architecture"]
+    elif changed == "parameters":
+        radau["protocol"]["parameters"]["biology"]["loss_h"] = .002
+    else:
+        radau["protocol"]["census"]["census_yr"] = 10.
+    with pytest.raises(RuntimeError):
+        a.validate_probability_protocol(radau, native, tmp_path)

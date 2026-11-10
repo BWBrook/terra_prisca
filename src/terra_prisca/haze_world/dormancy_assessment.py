@@ -45,6 +45,8 @@ TERMINAL_SOURCES = CONDITIONED_SOURCES | frozenset(("src/terra_prisca/haze_world
                                                   "src/terra_prisca/haze_world/dormancy_terminal_integration.py"))
 PREDICTOR_SOURCES = CONDITIONED_SOURCES | frozenset(("src/terra_prisca/haze_world/dormancy_predictor_experiments.py",
                                                    "src/terra_prisca/haze_world/dormancy_predictor_integration.py"))
+ROUNDOFF_SOURCES = PREDICTOR_SOURCES | TERMINAL_SOURCES | frozenset(("src/terra_prisca/haze_world/dormancy_roundoff_experiments.py",
+                                                                 "src/terra_prisca/haze_world/dormancy_roundoff_integration.py"))
 
 
 def require_gate(path):
@@ -195,6 +197,8 @@ def _numerical_protocol(protocol, physical, root):
             variant = "radau_terminal_dense_budget"
         elif extras == PREDICTOR_SOURCES and protocol.get("solver") == "radau_dormancy_zero_stage_predictor":
             variant = "radau_zero_stage_predictor"
+        elif extras == ROUNDOFF_SOURCES and protocol.get("solver") == "radau_dormancy_roundoff_stagnation":
+            variant = "radau_roundoff_stagnation"
         else:
             raise RuntimeError("Unapproved probability source superset or solver protocol")
         if (protocol.get("mode") not in ("census", "uncensored")
