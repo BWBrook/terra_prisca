@@ -120,6 +120,25 @@ finite population. Prefix horizons and their selected receipt fingerprints
 remain explicit, rather than requiring an arbitrary long ghost-conditioned
 tail after the first loss is decisive.
 
+## Supplemental threshold refinements
+
+All 128 planned T3 cases retain their declared and recorded 100,000-year
+minimum horizon. Additional epsilon settings answer a narrower question:
+where the displaced resident's first-window survival crosses one half.
+An independent review permits shorter paired census and annual uncensored
+records for those settings. Their declared and actual horizons must agree,
+and their first locally linear rare resident window must close strictly
+inside that horizon. A short unresolved, terminal or nonrare record cannot
+supply an exact crossing.
+
+Each supplemental ID identifies a planned parent. The scientific design
+must match that parent except for epsilon and ID; numerical tolerance,
+maximum step and horizon remain explicit controls. These records enter only
+KD3/KD4, never the planned endpoint pairs, the reference endpoint comparisons
+or long-horizon macroscopic-protection claims. Completed longer refinements
+remain available. This qualification changes neither the planned experiment
+nor a probability, extinction threshold or stationarity criterion.
+
 ## Qualified switching matrix and chemical charts
 
 The later [Jacobian variant](review/dormancy-jacobian-review-2026-11-11.md)

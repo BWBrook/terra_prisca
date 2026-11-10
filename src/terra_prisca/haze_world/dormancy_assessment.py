@@ -131,10 +131,13 @@ def probability_points(records, rows, fraction, direction, switching_factor):
         eligible = bool(row["rare_window"] and (not row["terminal_window"] or terminal_loss_bound))
         summary = record.get("summary", {})
         minimum = summary.get("global_pre_extinction_min_log_cells_"+resident)
-        protected = bool(minimum is not None and minimum > np.log(1e16)
+        refinement = record.get("assessment_role") == "first_window_refinement_only"
+        protected = bool(not refinement and minimum is not None and minimum > np.log(1e16)
                          and not summary.get("global_pre_extinction_min_zero_"+resident, True)
                          and summary.get("global_present_"+resident, False))
         points.append(dict(case_id=case_id, epsilon=case["epsilon"],
+            evidence_scope=record.get("assessment_role", "planned_100k"),
+            refinement_parent_case_id=record.get("refinement_parent_case_id"),
             log_probability=log_probability, probability=row["survival_probability"],
             eligible=eligible, terminal=bool(row["terminal_window"]),
             probability_bound="finite_horizon_upper" if row["terminal_window"] else "resolved_first_bottleneck" if row["rare_window"] else "nonrare_conditional_diagnostic",
@@ -226,6 +229,61 @@ def validate_selection_manifest(manifest, raw):
     return digest
 
 
+def assessment_records(all_records):
+    expected = {case.case_id: case for case in runner.design()}
+    planned, refinements = {}, {}
+    for key, case in expected.items():
+        record = all_records.get(key)
+        if (record is None or record["execution_status"] != "complete"
+                or record["protocol"]["case"]["years"] < case.years
+                or record["summary"].get("terminal_time_yr", 0.) < case.years):
+            raise RuntimeError("Missing full planned T3 horizon: "+key)
+        actual = record["protocol"]["case"]
+        if any(actual[k] != v for k, v in asdict(case).items() if k not in ("years", "max_step_yr", "rtol")):
+            raise RuntimeError("Planned T3 protocol differs: "+key)
+        planned[key] = record|dict(assessment_role="planned_100k")
+    for key, record in all_records.items():
+        if key in expected or "_eps" not in key:
+            continue
+        parent, _ = key.split("_eps", 1)
+        case = record["protocol"]["case"]
+        if parent not in expected or key != case["case_id"] or key != f"{parent}_eps{case['epsilon']:g}":
+            raise RuntimeError("Refinement lacks a canonical planned parent: "+key)
+        base = expected[parent]
+        if base.configuration != "none" or base.loss_h != .001 or base.group not in ("main", "slow"):
+            raise RuntimeError("Refinement parent is outside the KD3/KD4 design: "+key)
+        excluded = ("case_id", "epsilon", "years", "max_step_yr", "rtol")
+        if any(case[k] != v for k, v in asdict(base).items() if k not in excluded):
+            raise RuntimeError("Refinement scientific design differs from parent: "+key)
+        if (not np.isfinite(case["epsilon"]) or case["epsilon"] <= 0 or case["years"] <= 0
+                or record["execution_status"] != "complete" or record["protocol"]["mode"] != "census"
+                or record["summary"].get("terminal_time_yr") != case["years"]):
+            raise RuntimeError("Incomplete refinement census: "+key)
+        if e.dumps(record["protocol"]["parameters"]) != e.dumps(asdict(runner.parameters(runner.Case(**case)))):
+            raise RuntimeError("Refinement physical parameters differ from its case: "+key)
+        refinements[key] = record|dict(assessment_role="first_window_refinement_only", refinement_parent_case_id=parent)
+    return planned, refinements
+
+
+def validate_refinement_window(row, receipt, census, raw):
+    if receipt["protocol"]["mode"] != "uncensored":
+        raise RuntimeError("A first-window refinement requires its annual uncensored prefix")
+    horizon = census["protocol"]["case"]["years"]
+    if horizon >= 100000.:
+        return "full_horizon_refinement_first_window_evidence"
+    prefix_horizon = receipt["protocol"]["case"]["years"]
+    if prefix_horizon != horizon:
+        raise RuntimeError("Short refinement census and prefix horizons differ")
+    for record in (receipt, census):
+        data = survival.load(record, raw)
+        if data["t"][-1] != horizon:
+            raise RuntimeError("Short refinement actual horizon differs from its declaration")
+    if (not row["rare_window"] or row["terminal_window"] or row["window_status"] != "first_minimum_linear"
+            or not 0. <= row["start_yr"] < row["minimum_time_yr"] < row["end_yr"] < horizon):
+        raise RuntimeError("Short refinement lacks a closed first rare resident window")
+    return "matching_short_horizons_closed_first_resident_window"
+
+
 def probability_rows(path, records, raw, uncensored_records):
     rows = json.loads(path.read_text())
     selected = {}
@@ -253,10 +311,16 @@ def probability_rows(path, records, raw, uncensored_records):
                      "loss_h", "switching_factor", "ramp"):
             if row[name] != case[name] or receipt["protocol"]["case"][name] != case[name]:
                 raise RuntimeError("First-window protocol differs: "+case_id+"/"+name)
+        refinement_contract = None
+        if records[case_id].get("assessment_role") == "first_window_refinement_only":
+            resident = "m" if case["direction"] == "A_into_M" else "a"
+            if row["guild"] == resident:
+                refinement_contract = validate_refinement_window(row, receipt, records[case_id], raw)
         key = (case_id, row["guild"])
         if key in selected:
             raise RuntimeError("Duplicate first-window evidence: "+str(key))
         selected[key] = row|dict(numerical_profile_contract=contract,
+                                 refinement_horizon_contract=refinement_contract,
                                  scoring_profile_source_sha256=receipt["protocol"]["source_sha256"])
     missing = [(c, g) for c in records for g in e.GUILDS if (c, g) not in selected]
     if missing:
@@ -482,7 +546,8 @@ def assess(records, rows, pairs, raw, reference_comparison):
         KD4=dict(comparisons=speed), KD5=dict(**kd5_clauses(bistable), finite_dose_cases=bistable,
             scope="Specified active methanogen doses with zero dormant invader. Absorbing finite-dose exclusion is assessed separately from stationary endpoints; neither proves continuous bistability or the prediction for untested epsilon."),
         opposite_invasion_pairs=pairs,
-        stationary_counts=dict(Counter(r["summary"]["settling_status"] for r in records.values())))
+        stationary_counts=dict(Counter(r["summary"]["settling_status"] for r in records.values()
+                                       if r.get("assessment_role") != "first_window_refinement_only")))
 
 
 def refinement_requests(assessment):
@@ -508,6 +573,8 @@ def refinement_requests(assessment):
             if not any(np.isclose(epsilon, v, rtol=1e-10, atol=0.) for v in measured):
                 requests.append(dict(base_case_id=base, epsilon=epsilon,
                     switching_factor=curve["switching_factor"], fraction=curve["fraction"], direction=curve["direction"],
+                    assessment_role="first_window_refinement_only",
+                    horizon_requirement="Matching short census and annual uncensored horizons containing a closed first rare resident window; no100k endpoint requirement",
                     reason="Resolve KD3 predicted band or KD4 threshold-ratio bracket; run both census and uncensored protocols"))
         horizons += [dict(case_id=p["case_id"], current_uncensored_horizon_yr=p["end_yr"],
                          reason="First bottleneck remains terminal; no infinite-horizon threshold assigned")
@@ -577,16 +644,8 @@ def main():
     gate = require_gate(args.gate)
     all_records = survival.records(args.raw_dir, "census")
     expected = {c.case_id: c for c in runner.design()}
-    missing = [c for c, case in expected.items() if c not in all_records
-               or all_records[c]["protocol"]["case"]["years"] < case.years]
-    if missing:
-        raise RuntimeError("Missing full T3 horizons: "+", ".join(missing))
-    records = {c: r for c, r in all_records.items() if r["protocol"]["case"]["ramp"] == "cubic"
-               and r["protocol"]["case"]["years"] >= 100000.}
-    for c, case in expected.items():
-        actual = records[c]["protocol"]["case"]
-        if any(actual[k] != v for k, v in asdict(case).items() if k not in ("years", "max_step_yr", "rtol")):
-            raise RuntimeError("Planned T3 protocol differs: "+c)
+    planned, refinements = assessment_records(all_records)
+    records = planned|refinements
     probability_file = args.output/"first_survival.json"
     probability_manifest = args.output/"first_survival_manifest.json"
     probability_metadata = json.loads(probability_manifest.read_text())
@@ -607,13 +666,24 @@ def main():
         if sha256((e.ROOT/name).read_bytes()).hexdigest() != digest:
             raise RuntimeError("Endpoint comparator source changed")
     for item in endpoint_manifest["receipts"]:
-        record = records[item["case_id"]]
+        if item["case_id"] not in planned:
+            raise RuntimeError("Endpoint manifest contains a nonplanned refinement")
+        record = planned[item["case_id"]]
         if any(item[k] != record[k] for k in ("fingerprint", "raw_file", "raw_sha256")):
             raise RuntimeError("Endpoint-pair profile differs from selected T3 receipt")
-    reference = reference_comparisons(records, args.raw_dir, args.reference_table, args.reference_raw)
+    if (len(endpoint_manifest["receipts"]) != len(planned)
+            or {item["case_id"] for item in endpoint_manifest["receipts"]} != set(planned)):
+        raise RuntimeError("Endpoint manifest lacks the128 planned cases")
+    reference = reference_comparisons(planned, args.raw_dir, args.reference_table, args.reference_raw)
     assessment = assess(records, rows, pairs, args.raw_dir, reference)
     assessment["refinement_requests"] = refinement_requests(assessment)
-    assessment.update(t1_gate=gate, physical_cases=len(records), planned_cases=len(expected),
+    assessment.update(t1_gate=gate, physical_cases=len(planned), planned_cases=len(expected),
+        first_window_refinement_cases=len(refinements),
+        first_window_refinements=[dict(case_id=c, parent_case_id=r["refinement_parent_case_id"],
+            census_horizon_yr=r["protocol"]["case"]["years"],
+            resident_horizon_contract=rows[(c, "m" if r["protocol"]["case"]["direction"] == "A_into_M" else "a")]["refinement_horizon_contract"],
+            scope="KD3/KD4 first-window evidence only; excluded from endpoint pairs, reference endpoint comparisons and long-horizon macroscopic-protection claims")
+            for c, r in refinements.items()],
         receipt_selection_sha256=selection_digest,
         condition="Cubic switching; measured microbial kinetics plus named extrapolations; not an Archean calibration",
         probability_scope="First resolved global guild bottleneck in a recorded environment; conditional on other guild; not local occupancy or joint endpoint probability",
@@ -621,10 +691,11 @@ def main():
                        (Path(__file__), Path(endpoints.__file__), Path(survival.__file__))},
         inputs={str(p.relative_to(e.ROOT)): sha256(p.read_bytes()).hexdigest() for p in
                 (probability_file, probability_manifest, args.output/"endpoint_pairs.csv", args.output/"endpoint_assessment.json", args.reference_table)},
-        receipts=[dict(case_id=c, **{k: r[k] for k in ("fingerprint", "raw_file", "raw_sha256")}) for c, r in records.items()])
+        receipts=[dict(case_id=c, assessment_role=r["assessment_role"],
+                       **{k: r[k] for k in ("fingerprint", "raw_file", "raw_sha256")}) for c, r in records.items()])
     args.output.mkdir(parents=True, exist_ok=True)
     (args.output/"prediction_assessment.json").write_text(e.dumps(assessment)+"\n")
-    figures(assessment, records, args.output)
+    figures(assessment, planned, args.output)
 
 
 if __name__ == "__main__":

@@ -1,6 +1,6 @@
 import json
 from copy import deepcopy
-from dataclasses import asdict
+from dataclasses import asdict, replace
 
 import numpy as np
 import pytest
@@ -107,6 +107,98 @@ def test_kd5_requires_both_prescribed_doses_and_retains_a_stationary_counterexam
     row = a.kd5_case(record, None)
     assert row["methanogen_invasion_stays_acetogen"] is False
     assert a.kd5_clauses([row])["status"] == "refuted_finite_dose"
+
+
+def refinement_profiles(monkeypatch):
+    parent = a.runner.design()[0]
+    child = replace(parent, case_id=parent.case_id+"_eps0.006", epsilon=.006, years=3000.)
+    def receipt(case):
+        return json.loads(a.e.dumps(dict(execution_status="complete",
+            protocol=dict(case=asdict(case), mode="census", parameters=asdict(a.runner.parameters(case))),
+            summary=dict(terminal_time_yr=case.years, settling_status="pilot_only" if case.years<100000 else "census_stationary"))))
+    monkeypatch.setattr(a.runner, "design", lambda: [parent])
+    return parent, child, {parent.case_id: receipt(parent), child.case_id: receipt(child)}
+
+
+def test_short_refinement_is_separate_from_complete_planned_endpoints(monkeypatch):
+    parent, child, records = refinement_profiles(monkeypatch)
+    before = deepcopy(records)
+    planned, refinements = a.assessment_records(records)
+    assert set(planned) == {parent.case_id} and set(refinements) == {child.case_id}
+    assert planned[parent.case_id]["assessment_role"] == "planned_100k"
+    assert refinements[child.case_id]["assessment_role"] == "first_window_refinement_only"
+    assert refinements[child.case_id]["refinement_parent_case_id"] == parent.case_id
+    assert records == before
+
+
+@pytest.mark.parametrize("actual", (3000., 99999.))
+def test_a_short_planned_profile_cannot_be_replaced_by_a_refinement(monkeypatch, actual):
+    parent, child, records = refinement_profiles(monkeypatch)
+    records[parent.case_id]["summary"]["terminal_time_yr"] = actual
+    with pytest.raises(RuntimeError, match="full planned T3 horizon"):
+        a.assessment_records(records)
+
+
+@pytest.mark.parametrize("change", ("loss_h", "fraction", "switching_factor", "parameters", "parent"))
+def test_refinements_require_the_parent_scientific_design_except_epsilon_and_id(monkeypatch, change):
+    parent, child, records = refinement_profiles(monkeypatch)
+    record = records[child.case_id]
+    if change == "parameters":
+        record["protocol"]["parameters"]["epsilon"] = .1
+    elif change == "parent":
+        records["unknown_eps0.006"] = records.pop(child.case_id)
+    else:
+        record["protocol"]["case"][change] = {"loss_h": .002, "fraction": .5, "switching_factor": 1.}[change]
+    with pytest.raises(RuntimeError, match="Refinement"):
+        a.assessment_records(records)
+
+
+def refinement_window():
+    census = dict(protocol=dict(mode="census", case=dict(years=3000.)))
+    prefix = dict(protocol=dict(mode="uncensored", case=dict(years=3000.)))
+    row = dict(rare_window=True, terminal_window=False, window_status="first_minimum_linear",
+               start_yr=100., minimum_time_yr=900., end_yr=2000.)
+    return row, prefix, census
+
+
+def test_matching_short_refinement_requires_a_closed_linear_first_window(monkeypatch):
+    row, prefix, census = refinement_window()
+    monkeypatch.setattr(a.survival, "load", lambda *args: dict(t=np.array([0., 3000.])))
+    assert a.validate_refinement_window(row, prefix, census, None) == "matching_short_horizons_closed_first_resident_window"
+
+
+@pytest.mark.parametrize("change", ("terminal", "nonlinear", "boundary", "mismatched_horizons", "actual_horizon", "censored_prefix"))
+def test_short_refinement_does_not_supply_an_unresolved_or_mismatched_crossing(monkeypatch, change):
+    row, prefix, census = refinement_window()
+    actual = 3000.
+    if change == "terminal": row["terminal_window"] = True
+    elif change == "nonlinear": row["rare_window"] = False
+    elif change == "boundary": row["end_yr"] = 3000.
+    elif change == "mismatched_horizons": prefix["protocol"]["case"]["years"] = 5000.
+    elif change == "actual_horizon": actual = 2999.
+    else: prefix["protocol"]["mode"] = "census"
+    monkeypatch.setattr(a.survival, "load", lambda *args: dict(t=np.array([0., actual])))
+    with pytest.raises(RuntimeError):
+        a.validate_refinement_window(row, prefix, census, None)
+
+
+def test_existing_full_horizon_refinement_keeps_its_terminal_bound_contract():
+    row, prefix, census = refinement_window()
+    census["protocol"]["case"]["years"] = 100000.
+    row["terminal_window"] = True
+    assert a.validate_refinement_window(row, prefix, census, None) == "full_horizon_refinement_first_window_evidence"
+
+
+def test_refinement_probability_has_no_long_horizon_macroscopic_protection_claim():
+    case = dict(configuration="none", loss_h=.001, fraction=0., direction="A_into_M", switching_factor=10., ramp="cubic", epsilon=.006, years=3000.)
+    record = dict(protocol=dict(case=case), assessment_role="first_window_refinement_only",
+        refinement_parent_case_id="dormancy_0000", summary=dict(global_pre_extinction_min_log_cells_m=np.log(1e20),
+        global_pre_extinction_min_zero_m=False, global_present_m=True))
+    row = dict(rare_window=True, terminal_window=False, log_lambda=1., survival_probability=.9,
+        window_status="first_minimum_linear", classification="contingent", minimum_time_yr=900., end_yr=2000., log_min_cells=20.)
+    point = a.probability_points({"refinement": record}, {("refinement", "m"): row}, 0., "A_into_M", 10.)[0]
+    assert point["eligible"] and not point["macroscopic_protection"]
+    assert point["evidence_scope"] == "first_window_refinement_only"
 
 
 def point(epsilon, probability, eligible=True):
@@ -289,6 +381,29 @@ def test_probability_rows_consume_receipted_guarded_superset(tmp_path, monkeypat
     with pytest.raises(RuntimeError, match="uncensored profile is not the selected"):
         a.probability_rows(path, {"case": census}, tmp_path,
                            {"case": dict(fingerprint="a-newer-selected-prefix")})
+
+
+def test_probability_reader_labels_closed_short_refinement_without_changing_its_score(tmp_path, monkeypatch):
+    prefix, census = profile_contract(tmp_path, monkeypatch)
+    for record in (prefix, census):
+        record["protocol"]["case"]["years"] = 3000.
+        record["fingerprint"] = a.sha256(a.e.dumps(record["protocol"]).encode()).hexdigest()
+    census["assessment_role"] = "first_window_refinement_only"
+    monkeypatch.setattr(a.e, "ROOT", tmp_path)
+    monkeypatch.setattr(a.survival, "load", lambda *args: dict(t=np.array([0., 3000.])))
+    payload = tmp_path/"short.npz"; payload.write_bytes(b"separately hashed short refinement")
+    digest = a.sha256(payload.read_bytes()).hexdigest()
+    prefix.update(execution_status="complete", raw_sha256=digest)
+    payload.with_suffix(".receipt.json").write_text(a.e.dumps(prefix))
+    rows = [prefix["protocol"]["case"]|dict(guild=g, source_raw_file=payload.name, source_raw_sha256=digest,
+        census_fingerprint=census["fingerprint"], rare_window=True, terminal_window=False,
+        window_status="first_minimum_linear", start_yr=100., minimum_time_yr=900., end_yr=2000., survival_probability=.7869)
+        for g in ("a", "m")]
+    path = tmp_path/"first_survival.json"; path.write_text(a.e.dumps(rows))
+    accepted = a.probability_rows(path, {"case": census}, tmp_path, {"case": prefix})
+    assert accepted[("case", "m")]["refinement_horizon_contract"] == "matching_short_horizons_closed_first_resident_window"
+    assert accepted[("case", "m")]["survival_probability"] == .7869
+    assert accepted[("case", "a")]["refinement_horizon_contract"] is None
 
 
 @pytest.mark.parametrize("changed", ("physical_hash", "unexpected_extra", "parameters", "solver_flag", "new_file_hash", "count_convention", "censoring"))
