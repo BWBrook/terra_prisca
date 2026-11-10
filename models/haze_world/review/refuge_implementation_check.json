@@ -1,0 +1,72 @@
+{
+  "scope": "Independent algebraic RHS and numerical spectra at four measured fixed-product reference equilibria; not independent empirical validation",
+  "checks": [
+    {
+      "fraction": 0.0,
+      "warm_fraction": 0.74,
+      "contrast_k": 1.0,
+      "dispersal_yr": 0.0,
+      "global_temperature_k": 281.79264102252347,
+      "temperatures_k": [
+        281.05264102252346,
+        282.05264102252346
+      ],
+      "maximum_scaled_rhs_difference": 1.2215784391711406e-13,
+      "matched_spectral_error": 7.984129006751652e-13,
+      "redox_residual": -1.0215217343886862e-18,
+      "maximum_real_eigenvalue_yr": -0.0002145616069239782
+    },
+    {
+      "fraction": 0.0,
+      "warm_fraction": 0.74,
+      "contrast_k": 1.0,
+      "dispersal_yr": 0.001,
+      "global_temperature_k": 281.7728559981443,
+      "temperatures_k": [
+        281.03285599814427,
+        282.03285599814427
+      ],
+      "maximum_scaled_rhs_difference": 1.231001104274113e-13,
+      "matched_spectral_error": 2.3329171340854746e-11,
+      "redox_residual": -4.0488174878755556e-19,
+      "maximum_real_eigenvalue_yr": -0.00025862924134290217
+    },
+    {
+      "fraction": 0.5,
+      "warm_fraction": 0.51,
+      "contrast_k": 8.0,
+      "dispersal_yr": 0.0,
+      "global_temperature_k": 282.00230379367355,
+      "temperatures_k": [
+        277.92230379367356,
+        285.92230379367356
+      ],
+      "maximum_scaled_rhs_difference": 5.151911936752436e-12,
+      "matched_spectral_error": 9.873119760533622e-12,
+      "redox_residual": -6.013933925505532e-19,
+      "maximum_real_eigenvalue_yr": -0.0001446563585183469
+    },
+    {
+      "fraction": 0.5,
+      "warm_fraction": 0.51,
+      "contrast_k": 8.0,
+      "dispersal_yr": 0.001,
+      "global_temperature_k": 282.00209499009185,
+      "temperatures_k": [
+        277.92209499009186,
+        285.92209499009186
+      ],
+      "maximum_scaled_rhs_difference": 2.646977960169688e-18,
+      "matched_spectral_error": 1.0909331928476856e-11,
+      "redox_residual": 1.3247595295057257e-18,
+      "maximum_real_eigenvalue_yr": -0.00014515143916204063
+    }
+  ],
+  "source_sha256": {
+    "models/haze_world/review/check_refuge_design.py": "81b39c8dcbfa9a53a467d6f90b9156aaebd383a28eef73639df52c40ab0eb4da",
+    "models/haze_world/review/check_refuge_implementation.py": "fae341321320f9c76edbae3261604ca3da3ebbb099828eecbf4ca09885abc6b8",
+    "src/terra_prisca/haze_world/population_coupling.py": "17a433957e94845595f6d7fd160ffe593c01c4e74550707b0814c95ab67ae663",
+    "src/terra_prisca/haze_world/refuge_coupling.py": "d5bf3240c998da7597c017b95c97a4070b405f2bf31313b0886bb9a2c41d1b4a",
+    "src/terra_prisca/haze_world/refuge_equilibria.py": "33cf4b539e33e59db1a7052a8b75bc1326e770b857a3d086e8cef4dd71c38994"
+  }
+}

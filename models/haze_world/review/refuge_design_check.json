@@ -1,0 +1,141 @@
+{
+  "switch_k": 281.53482280508206,
+  "detected_measured_protected_partitions": {
+    "0.0": 93,
+    "0.5": 222,
+    "0.9": 0
+  },
+  "detected_on_coarse_invasion_grid": {
+    "0.0": 0,
+    "0.5": 2,
+    "0.9": 0
+  },
+  "examples": {
+    "0.0": {
+      "fraction": 0.0,
+      "warm_fraction": 0.74,
+      "contrast_k": 1.0,
+      "ratio": 0.19474941857110956,
+      "global_k": 281.79264102252364,
+      "cold_k": 281.05264102252363,
+      "warm_k": 282.05264102252363,
+      "state": [
+        22.937830774334614,
+        0.0011929692754458646,
+        0.0,
+        0.0018085132316211815,
+        21.284273252995735,
+        0.0,
+        0.0006584006170974433,
+        0.0,
+        0.19474941857110956
+      ],
+      "max_real_eigenvalue_yr": -0.0002145616069243324,
+      "max_absolute_rhs": 2.8345154836222335e-11,
+      "dispersal_1e3": {
+        "success": true,
+        "positive_state": true,
+        "max_scaled_residual": 1.3877787807814457e-14,
+        "state": [
+          22.959098820369825,
+          0.001190321235846933,
+          1.7529438399369606e-06,
+          0.0018036030119468612,
+          21.327005234684098,
+          7.199386646817647e-07,
+          0.0006580155327985492,
+          1.084000218047681e-06,
+          0.194776849841157
+        ],
+        "max_real_eigenvalue_yr": -0.00025862924134701694
+      },
+      "independent_redox_residual": -6.505213034913027e-19
+    },
+    "0.5": {
+      "fraction": 0.5,
+      "warm_fraction": 0.51,
+      "contrast_k": 8.0,
+      "ratio": 0.1944587281992772,
+      "global_k": 282.00230379367355,
+      "cold_k": 277.92230379367356,
+      "warm_k": 285.92230379367356,
+      "state": [
+        27.789104387755316,
+        0.0012575300349913306,
+        0.0,
+        0.0017614163217407267,
+        19.955957027061714,
+        0.0,
+        0.000633215133000737,
+        0.0,
+        0.1944587281992772
+      ],
+      "max_real_eigenvalue_yr": -0.00014465635867799698,
+      "max_absolute_rhs": 4.25177322543335e-11,
+      "dispersal_1e3": {
+        "success": true,
+        "positive_state": true,
+        "max_scaled_residual": 7.741000382107565e-15,
+        "state": [
+          27.790957281602886,
+          0.0012572999984313397,
+          1.2286604916866816e-07,
+          0.0017611669476709133,
+          19.957062762225696,
+          1.587759385152403e-07,
+          0.0006331151854252952,
+          2.050787692007713e-07,
+          0.19445901769841267
+        ],
+        "max_real_eigenvalue_yr": -0.00014515143939404507
+      },
+      "independent_redox_residual": -3.2526065174565133e-19
+    },
+    "0.9": null
+  },
+  "scan": {
+    "warm_fraction": "0.01:0.01:0.99",
+    "contrast_k": "0.5:0.5:30",
+    "ratio_bracket_points": 1011,
+    "scope": "Detected exact-refined roots after interpolated screening; not an exhaustive root census"
+  },
+  "f09_measured_exclusion_bound": {
+    "dispersal_yr": 0.0,
+    "scope": "Pure protected partition at zero dispersal; not a general exclusion theorem for finite-d coexistence",
+    "acetogen_cold_ratio_source_lower": 0.23892381607777666,
+    "methanogen_warm_ratio_source_lower": 0.2505530238823388,
+    "global_ratio_lower": 0.2155752060567661,
+    "global_temperature_upper_k": 274.002,
+    "measured_minimum_k": 277.15,
+    "protected_partition_inside_measured_range_impossible": true
+  },
+  "large_d_counterexample": {
+    "global_temperature_k": 290.0,
+    "local_temperatures_k": [
+      285.0,
+      295.0
+    ],
+    "same_pressure_pa": 30.0,
+    "mean_local_growth_yr": [
+      -3.4196415085418796,
+      3.1179566364065954
+    ],
+    "growth_at_mean_temperature_yr": [
+      -2.7364152427054393,
+      3.452699389594526
+    ]
+  },
+  "source_sha256": {
+    "models/haze_world/review/check_refuge_design.py": "81b39c8dcbfa9a53a467d6f90b9156aaebd383a28eef73639df52c40ab0eb4da",
+    "src/terra_prisca/haze_world/two_guilds.py": "eff6a9027c5b28d154f03462d926591ebee3408eb2c80ec0df5c38929f169f83",
+    "src/terra_prisca/haze_world/methane_budget.py": "70dc47659e4738d07809e8d23844af79bf69e5dabcc87793eac3f5e560011721",
+    "src/terra_prisca/haze_world/population_coupling.py": "17a433957e94845595f6d7fd160ffe593c01c4e74550707b0814c95ab67ae663",
+    "src/terra_prisca/haze_world/hydrogen_uptake.py": "c48d8231ef726605ab07be22438f3e2fd97f23b310773ac748d1b2bf5c36fafd",
+    "src/terra_prisca/haze_world/woodii1998.py": "b0130f4f8ea15aa64245133f79dc8b35883a414031a8b49262c6657350cad0b0",
+    "src/terra_prisca/haze_response/arney2016.py": "a1b8b52f4c929a0518a17542fb323588699433b038949b38ee6ad74679cd0da6",
+    "models/haze_response/arney2016/cases.csv": "e3d77d275052a8875991a751868f857bffc964295bfd47591944d86bc58ab07a",
+    "models/haze_response/arney2016/figure4.csv": "c0ef5f3d17ee7c6085ad36247f0f7814726dbbe3273842b01f2c6c4e046856f8",
+    "models/haze_world/evidence/peters1998_chemostat.csv": "b0b00bf03eaeaabf45fb571330773c5158b53b088436aaee942188f8e9498320",
+    "models/haze_world/evidence/kotsyurbenko2001_table2.csv": "c95b4be023e5502fbb30eb322621e5612bbbf850f99d1b6669e98b95eb370480"
+  }
+}

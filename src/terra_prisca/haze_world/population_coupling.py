@@ -95,8 +95,12 @@ def co2_pressure_pa(case):
 
 def activity_guilds(y, p):
     """Normalized ideal-product correction; reference pH and CO2 stay fixed."""
-    temperature = float(temperature_k(y[4], p.climate))
-    pair = guilds(temperature - 273.15, p.biology)
+    return activity_guilds_at_temperature(y, p, float(temperature_k(y[4], p.climate)))
+
+
+def activity_guilds_at_temperature(y, p, t_k):
+    """Evaluate local physiology with products from local acetate and shared r."""
+    pair = guilds(float(t_k) - 273.15, p.biology)
     if p.activity_feedback == "fixed":
         return pair
     methane_pa = max(float(y[4]), 0.) * co2_pressure_pa(p.climate.case)
@@ -111,9 +115,14 @@ def fluxes(y, p):
     The algebra also extends linearly to small negative biomasses for Jacobians.
     Physical trajectories use positive coordinates for initially present populations.
     """
+    return fluxes_at_temperature(y, p, float(temperature_k(y[4], p.climate)))
+
+
+def fluxes_at_temperature(y, p, t_k):
+    """Use a supplied local temperature and the shared atmospheric methane r."""
     pressure, xa, xm, acetate, r = np.asarray(y, dtype=float)
-    temperature = float(temperature_k(r, p.climate))
-    pair = activity_guilds(y, p)
+    temperature = float(t_k)
+    pair = activity_guilds_at_temperature(y, p, temperature)
     if p.biology.kinetics == "first_order" and p.enabled[0] and pressure * HENRY_30C_MOL_L_PA > FIRST_ORDER_LIMIT_MOL_L:
         raise ValueError("Outside the declared first-order H2 concentration domain")
     biomass = np.array([xa, xm]) * np.array(p.enabled)
@@ -134,6 +143,7 @@ def fluxes(y, p):
         catabolic_h2_mol_l_yr=catabolic,
         outlet_h2_mol_l_yr=p.biology.exchange_mol_l_h_pa * (pressure - p.biology.atmosphere_pa) * HOURS_PER_YEAR,
         acetate_production_mol_l_yr=catabolic[0] / 4,
+        acetate_production_per_gdw_yr=HOURS_PER_YEAR * (uptake[0] - coefficients[0] * max(synthesis_h[0], 0.)) / 4,
         acetate_recycling_mol_l_yr=recycled, acetate_export_mol_l_yr=exported,
         biomass_export_h2_mol_l_yr=coefficients * (p.biology.loss_h + np.maximum(-synthesis_h, 0)) * biomass * HOURS_PER_YEAR,
         methane_local_mol_l_yr=methane, methane_source_ratio_yr=conversion * methane + abiotic,
