@@ -1,10 +1,112 @@
 import json
 from copy import deepcopy
+from dataclasses import asdict
 
 import numpy as np
 import pytest
 
 from terra_prisca.haze_world import dormancy_assessment as a
+
+
+def kd5_profile(case_id="dormancy_0125"):
+    case = next(case for case in a.runner.design() if case.case_id == case_id)
+    p = a.runner.parameters(case)
+    record = dict(execution_status="complete", protocol=dict(case=asdict(case), mode="census",
+        census=asdict(a.runner.Census())), summary=dict(settling_status="unsettled", endpoint_class=None))
+    values = np.zeros((p.state_size, 3))
+    values[1] = 1e-3
+    values[2, 0], values[5, 0] = 1e-12, 1e-13
+    active = np.full((p.n_patches, 2, 3), -np.inf)
+    dormant = active.copy()
+    active[0, 0] = np.log(values[1])
+    active[0, 1, 0], dormant[0, 1, 0] = np.log(1e-12), np.log(1e-13)
+    conversion = np.log(p.coupled.habitat_l_cm2*5.1e18/3e-13)
+    profile = dict(t=np.array([0., 10., 100000.]), y=values, log_active=active, log_dormant=dormant,
+        log_biomass=np.logaddexp(active, dormant),
+        metadata=dict(external_immigration="none", global_log_cell_conversion=conversion),
+        extinction_events=np.array(json.dumps([dict(time_yr=10., patch="bulk", guild="methanogen")])) )
+    return record, profile
+
+
+def test_kd5_exact_absorbing_exclusion_does_not_relabel_slow_resident_tails(monkeypatch):
+    records, profiles = {}, {}
+    for key in ("dormancy_0125", "dormancy_0127"):
+        records[key], profiles[key] = kd5_profile(key)
+    monkeypatch.setattr(a.survival, "load", lambda record, raw: profiles[record["protocol"]["case"]["case_id"]])
+    monkeypatch.setattr(a, "probability_points", lambda *args: [])
+    result = a.assess(records, {}, [], None, [])
+    assert result["KD5"]["status"] == "supported_finite_dose_exclusion"
+    assert result["KD5"]["stationary_endpoint_clause_status"] == "unresolved"
+    assert result["stationary_counts"] == {"unsettled": 2}
+    for row in result["KD5"]["finite_dose_cases"]:
+        assert not row["stationary"] and row["endpoint"] is None
+        assert row["methanogen_invasion_stays_acetogen"] is True
+        evidence = row["finite_dose_exclusion_evidence"]
+        assert evidence["verified_absorbing_methanogen_exclusion"]
+        assert evidence["global_methanogen_removal_yr"] == 10.
+
+
+def test_kd5_float_zero_with_a_retained_dormant_log_is_not_global_extinction(monkeypatch):
+    record, data = kd5_profile()
+    data["log_dormant"][0, 1, -1] = -1000.
+    data["log_biomass"] = np.logaddexp(data["log_active"], data["log_dormant"])
+    monkeypatch.setattr(a.survival, "load", lambda *args: data)
+    row = a.kd5_case(record, None)
+    assert data["y"][5, -1] == 0.
+    assert not row["finite_dose_exclusion_evidence"]["both_stages_absent_after_global_loss"]
+    assert row["finite_dose_exclusion_evidence"]["closed_absence_reversed"]
+    assert row["methanogen_invasion_stays_acetogen"] is None
+
+
+@pytest.mark.parametrize("change", ("immigration", "no_removal_event", "no_initial_dose", "uncensored", "short_horizon"))
+def test_kd5_absorbing_gate_requires_the_logged_closed_census_protocol(monkeypatch, change):
+    record, data = kd5_profile()
+    if change == "immigration":
+        data["metadata"]["external_immigration"] = "positive"
+    elif change == "no_removal_event":
+        data["extinction_events"] = np.array("[]")
+    elif change == "no_initial_dose":
+        data["y"][[2, 5], 0] = 0.
+        data["log_active"][0, 1, 0] = data["log_dormant"][0, 1, 0] = -np.inf
+        data["log_biomass"] = np.logaddexp(data["log_active"], data["log_dormant"])
+    elif change == "uncensored":
+        record["protocol"]["mode"] = "uncensored"
+    else:
+        record["protocol"]["case"]["years"] = 30000.
+        data["t"][-1] = 30000.
+    monkeypatch.setattr(a.survival, "load", lambda *args: data)
+    row = a.kd5_case(record, None)
+    assert not row["finite_dose_exclusion_evidence"]["verified_absorbing_methanogen_exclusion"]
+    assert row["methanogen_invasion_stays_acetogen"] is None
+
+
+def test_kd5_methanogen_exclusion_alone_does_not_prove_acetogen_bulk(monkeypatch):
+    record, data = kd5_profile()
+    data["y"][1, -1] = 0.
+    data["log_active"][0, 0, -1] = -np.inf
+    data["log_biomass"] = np.logaddexp(data["log_active"], data["log_dormant"])
+    monkeypatch.setattr(a.survival, "load", lambda *args: data)
+    row = a.kd5_case(record, None)
+    assert row["finite_dose_exclusion_evidence"]["verified_absorbing_methanogen_exclusion"]
+    assert not row["finite_dose_exclusion_evidence"]["observed_final_bulk_acetogen_present"]
+    assert row["methanogen_invasion_stays_acetogen"] is None
+
+
+def test_kd5_requires_both_prescribed_doses_and_retains_a_stationary_counterexample(monkeypatch):
+    record, data = kd5_profile()
+    monkeypatch.setattr(a.survival, "load", lambda *args: data)
+    row = a.kd5_case(record, None)
+    assert a.kd5_clauses([row, row])["status"] == "unresolved"
+    record["summary"].update(settling_status="census_stationary", endpoint_class="methanogen_only")
+    data["y"][2] = 1e-3
+    data["y"][1, 1:] = 0.
+    data["log_active"][0, 1] = np.log(1e-3)
+    data["log_active"][0, 0, 1:] = -np.inf
+    data["log_biomass"] = np.logaddexp(data["log_active"], data["log_dormant"])
+    data["extinction_events"] = np.array("[]")
+    row = a.kd5_case(record, None)
+    assert row["methanogen_invasion_stays_acetogen"] is False
+    assert a.kd5_clauses([row])["status"] == "refuted_finite_dose"
 
 
 def point(epsilon, probability, eligible=True):

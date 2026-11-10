@@ -364,6 +364,80 @@ def kd1_endpoint_clauses(comparisons):
                 comparison_scope="Literal finite-time agreement uses both declared and actual 100kyr horizons, common chemical/total-guild stocks, occupancy and temperature; stationarity is tested separately")
 
 
+def kd5_case(record, raw):
+    case, summary = record["protocol"]["case"], record["summary"]
+    stationary = summary["settling_status"] == "census_stationary"
+    row = dict(case_id=case["case_id"], direction=case["direction"], epsilon=case["epsilon"],
+               stationary=stationary, endpoint=summary["endpoint_class"],
+               methanogen_invasion_stays_acetogen=None)
+    if case["direction"] != "M_into_A":
+        return row
+    data = survival.load(record, raw)
+    p = runner.parameters(runner.Case(**case))
+    active = p.weights > 0
+    stages = np.stack((data["log_active"][active, 1], data["log_dormant"][active, 1]))
+    indices = np.r_[p.biomass_indices[active, 1], p.dormant_indices[active, 1]]
+    absent = (np.all(np.isneginf(stages), axis=(0, 1))
+              & np.all(np.isneginf(data["log_biomass"][active, 1]), axis=0)
+              & np.all(data["y"][indices] == 0., axis=0))
+    missing = np.flatnonzero(absent)
+    first = int(missing[0]) if missing.size else None
+    removal_time = float(data["t"][first]) if first is not None else None
+    events = json.loads(str(data["extinction_events"]))
+    removal_logged = any(ev["guild"] == "methanogen" and ev["patch"] in np.asarray(p.patch_names)[active]
+                         and ev["time_yr"] == removal_time for ev in events)
+    census = record["protocol"]["census"]
+    complete = (record["execution_status"] == "complete" and record["protocol"]["mode"] == "census"
+                and census["minimum_cells"] == 1. and case["years"] >= 100000.
+                and data["t"][-1] == case["years"])
+    specified = (case["group"] == "bistable" and case["loss_h"] == .002 and case["fraction"] == 0.
+                 and case["configuration"] == "none" and case["dispersal_yr"] == 0.)
+    closed = data["metadata"].get("external_immigration") == "none"
+    initial_dose = bool(np.any(np.isfinite(stages[:, :, 0])))
+    retained_absence = bool(first is not None and np.all(absent[first:]))
+    reversed_absence = bool(closed and first is not None and not retained_absence)
+    absorbing = bool(complete and specified and closed and initial_dose and removal_logged and retained_absence)
+    bulk = p.patch_names.index("bulk")
+    log_cells = float(np.logaddexp(data["log_active"][bulk, 0, -1], data["log_dormant"][bulk, 0, -1])
+                      + data["metadata"]["global_log_cell_conversion"]+np.log(p.weights[bulk]))
+    acetogen_bulk = bool(log_cells >= -1e-10)
+    evidence = dict(protocol_complete=bool(complete), specified_bistable_parameters=bool(specified),
+        no_external_immigration=closed, initial_methanogen_dose_present=initial_dose,
+        global_methanogen_removal_yr=removal_time, removal_event_at_global_loss=removal_logged,
+        both_stages_absent_after_global_loss=retained_absence,
+        closed_absence_reversed=reversed_absence,
+        verified_absorbing_methanogen_exclusion=absorbing,
+        observed_final_bulk_acetogen_present=acetogen_bulk, observed_final_bulk_acetogen_log_cells=log_cells,
+        scope="Exact census removal of both methanogen stages everywhere is absorbing in the closed model. Acetogen occupancy is observed at the recorded horizon; neither eternal acetogen persistence nor continuous-attractor stability is inferred.")
+    row["finite_dose_exclusion_evidence"] = evidence
+    if absorbing and acetogen_bulk:
+        row["methanogen_invasion_stays_acetogen"] = True
+    elif complete and specified and closed and not reversed_absence and stationary and summary["endpoint_class"] != "acetogen_only":
+        row["methanogen_invasion_stays_acetogen"] = False
+    return row
+
+
+def kd5_clauses(cases):
+    required = {case.case_id for case in runner.design() if case.group == "bistable" and case.direction == "M_into_A"}
+    selected = [row for row in cases if row["direction"] == "M_into_A"]
+    covered = required <= {row["case_id"] for row in selected}
+    if any(row["methanogen_invasion_stays_acetogen"] is False for row in selected):
+        finite = "refuted_finite_dose"
+    elif covered and all(row["methanogen_invasion_stays_acetogen"] is True for row in selected):
+        finite = "supported_finite_dose_exclusion"
+    else:
+        finite = "unresolved"
+    stationary = [row for row in selected if row["stationary"]]
+    if any(row["endpoint"] != "acetogen_only" for row in stationary):
+        settled = "refuted_stationary_endpoint"
+    elif covered and len(stationary) == len(selected):
+        settled = "supported_tested_stationary_endpoints"
+    else:
+        settled = "unresolved"
+    return dict(status=finite, stationary_endpoint_clause_status=settled,
+                required_methanogen_invasion_cases=sorted(required))
+
+
 def assess(records, rows, pairs, raw, reference_comparison):
     curves = []
     for fraction in (0., .5):
@@ -397,23 +471,16 @@ def assess(records, rows, pairs, raw, reference_comparison):
                 conditional_on_other_guild=bool(row.get("downstream_of_other_guild_subcell_bound")
                                               or row.get("overlaps_other_guild_likely_loss_window"))))
         if case["group"] == "bistable":
-            summary = record["summary"]
-            stationary = summary["settling_status"] == "census_stationary"
-            bistable.append(dict(case_id=case_id, direction=case["direction"], epsilon=case["epsilon"],
-                stationary=stationary, endpoint=summary["endpoint_class"],
-                methanogen_invasion_stays_acetogen=bool(stationary and summary["endpoint_class"] == "acetogen_only")
-                    if case["direction"] == "M_into_A" else None))
+            bistable.append(kd5_case(record, raw))
     kd2 = "refuted" if any(not r["threshold_1e13_pass"] for r in overshoot) else "supported_grid" if len(overshoot) >= 7 and all(r["robust_persistence"] for r in overshoot) else "unresolved"
-    m_into_a = [r for r in bistable if r["direction"] == "M_into_A"]
-    kd5 = "unresolved" if len(m_into_a) < 2 or not all(r["stationary"] for r in m_into_a) else "supported_finite_doses" if all(r["methanogen_invasion_stays_acetogen"] for r in m_into_a) else "refuted_finite_dose"
     return dict(KD1=dict(status="refuted_as_stated_for_spatial_equilibria",
             well_mixed_stationary_locations="Preserved analytically for epsilon>0; zero dormant resident bank at g=L",
             spatial_stationary_claim="Refuted by the source-sink counterexample in the design review; local growth can sustain dormancy",
             **kd1_endpoint_clauses(reference_comparison)),
         KD2=dict(status=kd2, overshoot_cases=overshoot),
         KD3=dict(curves=curves, prediction_scope="Measured first-window P=1/2 brackets; no monotonicity or lower-bound theorem assumed"),
-        KD4=dict(comparisons=speed), KD5=dict(status=kd5, finite_dose_cases=bistable,
-            scope="Existing active invader dose, cubic switching and zero dormant invader; equilibrium locations do not determine finite-dose basins"),
+        KD4=dict(comparisons=speed), KD5=dict(**kd5_clauses(bistable), finite_dose_cases=bistable,
+            scope="Specified active methanogen doses with zero dormant invader. Absorbing finite-dose exclusion is assessed separately from stationary endpoints; neither proves continuous bistability or the prediction for untested epsilon."),
         opposite_invasion_pairs=pairs,
         stationary_counts=dict(Counter(r["summary"]["settling_status"] for r in records.values())))
 
