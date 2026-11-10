@@ -85,9 +85,23 @@ retained subfloat stages are not asserted equal. The
 [qualification JSON](dormancy-face-qualification-2026-11-11.json) records these
 comparisons and all source, protocol, payload, receipt and controller hashes.
 
-The full 100,000-year control remains pending. These completed bounded checks
-do not establish an ecological endpoint or completion of the experimental
-grid.
+The full original-start **100,000-year case 0085 also completes**, in 145.43 s
+with 29,796 accepted pieces and 49,937 RHS evaluations. Its fingerprint is
+`e0d1a9d799eee95eaa2c8caa3af4450a1d046d88b006028cc5631243828c1d10`.
+The shared prefix samples before its shorter run's terminal bound are bitwise
+identical. At the end, acetogens are absent and methanogens remain; temperature
+is **273.484189 K**. The strict label remains **unsettled**: the last 20,000-year
+all-stock span is 0.1823, temperature span is `2.41e-4 K`, and the scaled
+derivative is `9.51e-6`, with no late occupancy changes. Numerical completion
+is separate from this convergence criterion.
+
+The full run retains one acetate/failure retry, no positivity or zero-time
+retries, three stock/inventory-preserving chemical maps and six stock/encoded-
+total-preserving stage maps. Sampled stocks are finite and nonnegative, dense
+minima bound samples and sampled redox residual is at most `2.61e-18`. The
+helper/runner source snapshot is committed as `720f833`. These controls qualify
+full numerical flow for this case; they do not establish equilibrium
+convergence or completion of the remaining experimental grid.
 
 ```sh
 uv run pytest -q tests/test_dormancy_face_integration.py
