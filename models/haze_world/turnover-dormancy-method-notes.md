@@ -68,19 +68,27 @@ fallback.
 ## First-window scoring
 
 Before scoring T2/T3, define a guild's first window as its earliest globally
-rare excursion below 10¹⁶ cells. Lower that boundary by decades until both
-local and global hydrogen-uptake shares remain below 10⁻¹⁰ throughout the
-window. Retain the earliest qualifying excursion rather than choosing a
-threshold from the global minimum of a later, biologically impossible
-recovery. An excursion open at the trajectory horizon is terminal and keeps
+rare excursion below 10¹⁶ cells, anchored to its first sampled minimum and
+ending no later than the next sampled recovery peak. Lower that boundary
+by decades around the same minimum until both local and global hydrogen
+uptake shares remain below 10⁻¹⁰ throughout the window. If the original
+minimum cannot qualify, retain its nonrare diagnostic instead of skipping
+to a later dip. This additional anchoring follows independent review of the
+first implementation, before result scoring. It avoids choosing a threshold
+from a later, biologically impossible recovery. An excursion open at the
+trajectory horizon is terminal and keeps
 its finite horizon explicit. A trajectory that never qualifies receives a
 nonrare, recorded-environment diagnostic, not a claim that the guild had
 negligible environmental effects.
 
 Each local census removal links to this guild-level diagnostic; survival
 anywhere is different from presence in a particular patch. Flag a window
-that starts after another guild's likely first loss as conditional on that
-guild's continuous survival. Do not multiply these probabilities into a
-community forecast. Evaluate the Gaussian approximation only at resolved
-interior first minima with positive curvature. Check rate-grid and horizon
-effects for borderline classifications.
+that overlaps another guild's unlikely first window, and separately record
+whether it starts after that guild's first sampled subcell count. These are
+conditioning warnings, not exact extinction times. Do not multiply guild
+probabilities into a community forecast. Annual uncensored prefixes are
+required for cases with a census removal or any dense-flow minimum below
+10¹⁶ cells, even if a ten-year census missed the dip. Evaluate the local
+Gaussian estimate only at rare, resolved interior first minima with positive
+curvature; that candidate check does not establish a scalar reduction or a
+Gaussian shape. Check rate-grid and horizon effects for borderline classes.

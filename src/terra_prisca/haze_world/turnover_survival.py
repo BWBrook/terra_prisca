@@ -46,16 +46,30 @@ def uptake_shares(y,p,guild,indices,dormant=False):
 
 def first_window(t,y,total,p,guild,dormant=False):
     threshold=np.log(1e16)
+    episodes=bottleneck.excursions(total,threshold)
+    if not episodes:
+        return dict(lo=0,hi=len(t)-1,anchor=int(np.argmin(total)),terminal=False,rare=False,
+                    threshold=threshold,reductions=0,local=None,global_=None,
+                    status="never_globally_rare")
+    first_lo,first_hi,terminal=episodes[0]
+    minima=[k for k in range(first_lo+1,first_hi) if total[k]<total[k-1] and total[k]<=total[k+1]]
+    anchor=first_lo if total[first_lo]<=total[first_lo+1] else minima[0] if minima else first_hi
+    maxima=[k for k in range(anchor+1,first_hi) if total[k]>total[k-1] and total[k]>=total[k+1]]
+    if maxima:first_hi=maxima[0];terminal=False
     for reductions in range(1001):
-        windows=bottleneck.excursions(total,threshold)
+        windows=bottleneck.excursions(total[first_lo:first_hi+1],threshold)
+        windows=[(first_lo+a,first_lo+b,open_) for a,b,open_ in windows
+                 if first_lo+a<=anchor<=first_lo+b and total[anchor]<threshold]
         if not windows:
-            return dict(lo=0,hi=len(t)-1,terminal=False,rare=False,
-                        threshold=threshold,reductions=reductions,local=None,global_=None)
-        lo,hi,terminal=windows[0]
+            return dict(lo=first_lo,hi=first_hi,anchor=anchor,terminal=terminal,rare=False,
+                        threshold=threshold,reductions=reductions,local=None,global_=None,
+                        status="first_minimum_not_locally_linear")
+        lo,hi,_=windows[0]
         local,global_=uptake_shares(y,p,guild,range(lo,hi+1),dormant)
         if max(local,global_)<=1e-10:
-            return dict(lo=lo,hi=hi,terminal=terminal,rare=True,
-                        threshold=threshold,reductions=reductions,local=local,global_=global_)
+            return dict(lo=lo,hi=hi,anchor=anchor,terminal=terminal and hi==len(t)-1,rare=True,
+                        threshold=threshold,reductions=reductions,local=local,global_=global_,
+                        status="first_minimum_linear")
         threshold-=np.log(10.)
     raise ArithmeticError("No resolved first linear window")
 
@@ -77,7 +91,7 @@ def analyze(data,p,guild,dormant=False,rate_stride=1.,max_step=1.):
         birth=np.array([v[1] for v in pairs]);death=np.array([v[2] for v in pairs])
         logu=branching.backward_survival(t[indices],birth,death,branching.migration_matrix(p),max_step=max_step)
     probability=branching.lineages(types[lo],logu)
-    k=lo+int(np.argmin(total[lo:hi+1]))
+    k=window["anchor"]
     curvature=bottleneck._curvature(t[lo:hi+1],total[lo:hi+1],k-lo)
     interior=lo+2<=k<=hi-2 and curvature is not None
     width=float(np.sqrt(2*np.pi/curvature)) if interior else None
@@ -88,15 +102,18 @@ def analyze(data,p,guild,dormant=False,rate_stride=1.,max_step=1.):
     else:_,bmin,dmin=branching.per_cell_rates(y[:,k],p,guild)
     mortality=float(weights@dmin)
     exact_log=total[k]+probability["log_scale_for_half_survival"]
-    approx=np.log(2.)*mortality*width if width is not None else None
+    approx=np.log(2.)*mortality*width if width is not None and window["rare"] else None
     row=dict(guild=e.GUILDS[guild],start_yr=float(t[lo]),end_yr=float(t[hi]),
         terminal_window=bool(window["terminal"]),rare_window=window["rare"],
         probability_scope="first_linear_excursion" if window["rare"] else "nonrare_recorded_environment_prefix",
+        window_status=window["status"],
         minimum_time_yr=float(t[k]),log_min_cells=float(total[k]),log10_min_cells=float(total[k]/np.log(10.)),
         log_threshold_cells=window["threshold"],threshold_reductions=window["reductions"],
         maximum_local_uptake_fraction=window["local"],maximum_global_uptake_fraction=window["global_"],
         rate_max_spacing_yr=float(max(np.diff(t[indices]))),rate_samples=len(indices),
         interior_minimum=bool(interior),curvature_yr2=curvature if interior else None,
+        gaussian_candidate=bool(interior and window["rare"]),
+        gaussian_scope="Local curvature estimate; scalar reduction, Gaussian shape and slow mortality not assumed valid",
         bottleneck_width_yr=width,weighted_death_at_min_yr=mortality,
         log_cells_for_half_survival_at_min=float(exact_log),
         cells_for_half_survival_at_min=bottleneck._exp(exact_log),
@@ -120,14 +137,16 @@ def records(raw,mode):
         record=json.loads(path.read_text());protocol=record["protocol"]
         if record["execution_status"]!="complete" or protocol["mode"]!=mode:continue
         if sha256(e.dumps(protocol).encode()).hexdigest()!=record["fingerprint"]:raise RuntimeError("Changed protocol")
-        for name,digest in protocol["source_sha256"].items():
-            if sha256((e.ROOT/name).read_bytes()).hexdigest()!=digest:raise RuntimeError("Physical source differs: "+name)
         case=protocol["case"];key=case["case_id"]
         priority=(case["years"],-case["max_step_yr"],-case.get("rtol",2e-8))
         if key not in selected or priority>selected[key][0]:selected[key]=(priority,record)
         elif priority==selected[key][0] and protocol!=selected[key][1]["protocol"]:
             raise RuntimeError("Ambiguous protocol for "+key)
-    return {key:v[1] for key,v in selected.items()}
+    result={key:v[1] for key,v in selected.items()}
+    for record in result.values():
+        for name,digest in record["protocol"]["source_sha256"].items():
+            if sha256((e.ROOT/name).read_bytes()).hexdigest()!=digest:raise RuntimeError("Physical source differs: "+name)
+    return result
 
 
 def _task(task):
@@ -141,11 +160,15 @@ def _task(task):
     for g,row in enumerate(results):
         removals=[v for v in events if v["guild"]==("acetogen" if g==0 else "methanogen")]
         other=results[1-g]
+        other_total,_=counts(data,p,1-g,dormant)
+        subcell=np.flatnonzero(other_total<0.)
         row.update(case_id=case.case_id,**{k:v for k,v in record["protocol"]["case"].items() if k!="case_id"},
             source_raw_file=record["raw_file"],source_raw_sha256=record["raw_sha256"],
             census_fingerprint=census["fingerprint"],local_census_removals=len(removals),
             first_local_census_removal_yr=min((v["time_yr"] for v in removals),default=None),
-            downstream_of_other_guild_likely_loss=bool(other["survival_probability"]<.5 and other["minimum_time_yr"]<row["start_yr"]),
+            other_guild_first_sampled_subcell_yr=float(data["t"][subcell[0]]) if subcell.size else None,
+            overlaps_other_guild_likely_loss_window=bool(other["survival_probability"]<.5 and other["start_yr"]<row["end_yr"]),
+            downstream_of_other_guild_subcell_bound=bool(subcell.size and data["t"][subcell[0]]<row["start_yr"]),
             community_probability_warning="Per-guild conditional diagnostic; survival anywhere is not local occupancy or a joint endpoint probability")
     return results
 
@@ -167,8 +190,11 @@ def main():
     tasks=[]
     for key,baseline in sorted(census.items()):
         if args.case_id and key not in args.case_id:continue
-        events=json.loads(str(load(baseline,raw)["extinction_events"]))
-        profile=uncensored.get(key) if events else baseline
+        baseline_data=load(baseline,raw)
+        events=json.loads(str(baseline_data["extinction_events"]))
+        dense=baseline_data["min_log_biomass"]+baseline_data["metadata"]["global_log_cell_conversion"]
+        requires_annual=bool(events or np.any(dense<np.log(1e16)))
+        profile=uncensored.get(key, None if requires_annual else baseline)
         if profile is None:raise RuntimeError("Missing uncensored profile for "+key)
         tasks.append((profile,baseline,raw,dormant,args.rate_stride))
     if args.case_id and len(tasks)!=len(args.case_id):raise RuntimeError("Missing selected case")

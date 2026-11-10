@@ -1,4 +1,6 @@
 from types import SimpleNamespace
+from hashlib import sha256
+import json
 
 import numpy as np
 import pytest
@@ -28,6 +30,24 @@ def test_first_window_checks_local_linearity_and_keeps_terminal_horizon(monkeypa
     assert result["threshold"]==pytest.approx(np.log(1e15))
 
 
+def test_linearity_reduction_does_not_skip_first_shallow_dip(monkeypatch):
+    monkeypatch.setattr(s,"uptake_shares",lambda *args:(1e-3,0.))
+    t=np.arange(8.)
+    total=np.log(1e16)+np.array([1.,-.2,1.,2.,-10.,-20.,-40.,1.])
+    result=s.first_window(t,np.zeros((1,len(t))),total,None,0)
+    assert (result["lo"],result["hi"],result["anchor"])==(0,2,1)
+    assert result["status"]=="first_minimum_not_locally_linear"
+    assert not result["rare"]
+
+
+def test_first_minimum_stops_at_recovery_peak_inside_one_rare_episode(monkeypatch):
+    monkeypatch.setattr(s,"uptake_shares",lambda *args:(0.,0.))
+    t=np.arange(8.)
+    total=np.log(1e16)+np.array([1.,-1.,-5.,-2.,-3.,-10.,-20.,1.])
+    result=s.first_window(t,np.zeros((1,len(t))),total,None,0)
+    assert result["anchor"]==2 and result["hi"]==3
+
+
 def test_dormant_stage_counts_use_habitat_volumes_without_double_counting():
     p=SimpleNamespace(weights=np.array([.75,.25]))
     active=np.array([[[2.,3.],[5.,7.]],[[11.,13.],[17.,19.]]])
@@ -53,3 +73,18 @@ def test_terminal_first_window_has_finite_horizon_survival_and_no_gaussian_width
     assert row["terminal_window"]
     assert row["survival_probability"]==pytest.approx(-np.expm1(-100*np.exp(-10.)),rel=1e-7)
     assert row["gaussian_cells_for_half_survival"] is None
+
+
+def test_select_longest_profile_before_rejecting_obsolete_pilot_source(tmp_path,monkeypatch):
+    monkeypatch.setattr(s.e,"ROOT",tmp_path)
+    physical=tmp_path/"physical.py";physical.write_text("frozen\n")
+    for horizon,digest in ((1000.,"obsolete"),(100000.,sha256(physical.read_bytes()).hexdigest())):
+        protocol=dict(case=dict(case_id="case",years=horizon,max_step_yr=10.),mode="census",
+                      source_sha256={"physical.py":digest})
+        record=dict(execution_status="complete",protocol=protocol,
+                    fingerprint=sha256(s.e.dumps(protocol).encode()).hexdigest())
+        (tmp_path/f"{horizon:g}.receipt.json").write_text(json.dumps(record))
+    assert s.records(tmp_path,"census")["case"]["protocol"]["case"]["years"]==100000.
+    physical.write_text("changed\n")
+    with pytest.raises(RuntimeError,match="Physical source differs"):
+        s.records(tmp_path,"census")
