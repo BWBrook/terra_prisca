@@ -42,7 +42,8 @@ def supply_limits(base, temperature):
     t = np.array([float(r['temperature_k']) for r in curve])
     r = np.array([float(r['ch4_co2_ratio']) for r in curve])
     ratio = float(np.interp(temperature, t[::-1], r[::-1]))
-    methane = float(base.loss.rate(ratio) / pc.inventory_to_ratio(base) / pc.HOURS_PER_YEAR)
+    abiotic = pc.atmosphere(base.climate.case)['flux_to_ratio_per_yr'] * base.climate.abiotic_flux
+    methane = float((base.loss.rate(ratio)-abiotic) / pc.inventory_to_ratio(base) / pc.HOURS_PER_YEAR)
     outlet = base.biology.exchange_mol_l_h_pa * (pressure - base.biology.atmosphere_pa)
     eta = [1 - g.assimilation_mol_g * base.biology.loss_h / float(g.uptake(pressure)) for g in (a, m)]
     scale = .3 / pc.supply_h2(base)
@@ -54,6 +55,7 @@ def supply_limits(base, temperature):
                          endpoint_ratio=upper / lower if upper else None,
                          ideal_no_assimilation_no_outlet_ratio=1/f if f else None))
     return dict(temperature_k=temperature, ratio=ratio, eta_a=eta[0], eta_m=eta[1],
+                abiotic_ratio_yr=abiotic,
                 outlet_h2=outlet, rows=rows)
 
 

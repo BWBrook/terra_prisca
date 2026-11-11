@@ -1,0 +1,2956 @@
+{
+  "scope": "B4 directional derivative diagnostic, not a smooth Hopf or nonsmooth stability certificate",
+  "status_pb7": "refuted_local_epsilon_Hopf_mechanism_and_matched_period_clause",
+  "local_mechanism": "Active directional subsystem is independent of epsilon; banks have no first-order return coupling at zero bank equilibrium",
+  "matched_period_tests": 2,
+  "matched_period_failures": 1,
+  "reference_state": [
+    22.486299980548377,
+    0.00030119347927979185,
+    0.0004906231105327009,
+    0.00046296818626002874,
+    0.1951068748475969
+  ],
+  "temperature_k": 281.53482280508206,
+  "source_sha256": {
+    "src/terra_prisca/haze_world/dormancy_lag.py": "f276970926381bd541127b876518c74c02cd220925a9b40d8e37dff7a7727f89",
+    "src/terra_prisca/haze_world/dormancy.py": "bf0a0e02c621dae1ba13c421ff75f8d0233e2c88bac1e54a42036c7f21797645",
+    "src/terra_prisca/haze_world/population_coupling.py": "17a433957e94845595f6d7fd160ffe593c01c4e74550707b0814c95ab67ae663",
+    "src/terra_prisca/haze_world/habitat_coupling.py": "34f611d3f9046bf7d96f8caeffb452f2a2206bab4abc45e630a09980a067c4d0",
+    "src/terra_prisca/haze_world/two_guilds.py": "eff6a9027c5b28d154f03462d926591ebee3408eb2c80ec0df5c38929f169f83",
+    "src/terra_prisca/haze_world/methane_budget.py": "f2374cfcb658102cc9919c61108379560922fc787c2cd85e089e878a9fa25fa8",
+    "src/terra_prisca/haze_world/darwinian.py": "e965035d5dfbfafcb695dc3738b23d8a445c4c1e7e246ab4688d67b33482f1aa",
+    "src/terra_prisca/haze_world/hydrogen_uptake.py": "c48d8231ef726605ab07be22438f3e2fd97f23b310773ac748d1b2bf5c36fafd",
+    "src/terra_prisca/haze_world/woodii1998.py": "b0130f4f8ea15aa64245133f79dc8b35883a414031a8b49262c6657350cad0b0",
+    "models/haze_world/dynamic-realisation-spec.md": "28221690cd451aefe55e9fcdc32548f964f57d76de355a36e5601bc5498b2a95",
+    "models/haze_world/dynamic-realisation-methods.md": "cb8d1ee300a922d894d11db350995f433e0092787417ec3b70f347ea886242c8",
+    "uv.lock": "02bf429b2ec474f03280ec550d5fd847b573ece24ab9043e0b5998370fd4d2b4",
+    "models/haze_response/arney2016/figure4.csv": "c0ef5f3d17ee7c6085ad36247f0f7814726dbbe3273842b01f2c6c4e046856f8",
+    "models/haze_response/arney2016/cases.csv": "e3d77d275052a8875991a751868f857bffc964295bfd47591944d86bc58ab07a",
+    "models/haze_world/evidence/kotsyurbenko2001_table2.csv": "c95b4be023e5502fbb30eb322621e5612bbbf850f99d1b6669e98b95eb370480",
+    "models/haze_world/evidence/peters1998_chemostat.csv": "b0b00bf03eaeaabf45fb571330773c5158b53b088436aaee942188f8e9498320"
+  },
+  "rows": 65,
+  "spectra": [
+    {
+      "epsilon": 0.0001,
+      "loss_h": 0.001,
+      "loss_yr": 8.766,
+      "bank_lifetime_yr": 1140.7711613050421,
+      "ramp": "cubic",
+      "entry_a": false,
+      "entry_m": false,
+      "interpretation": "ordinary_jacobian",
+      "leading_real_yr": -0.00020601947194542132,
+      "leading_imag_yr": 0.05254893946747431,
+      "complex_leading_real_yr": -0.00020601947194542132,
+      "complex_period_yr": 119.56826095545898,
+      "eigenvalues": [
+        [
+          -0.9999999999990344,
+          0.0
+        ],
+        [
+          -42704.330960888794,
+          0.0
+        ],
+        [
+          -9.357513592241693,
+          0.0
+        ],
+        [
+          -0.00020601947194542132,
+          0.05254893946747431
+        ],
+        [
+          -0.00020601947194542132,
+          -0.05254893946747431
+        ],
+        [
+          -0.0008766000000000001,
+          0.0
+        ],
+        [
+          -0.0008766000000000001,
+          0.0
+        ]
+      ]
+    },
+    {
+      "epsilon": 0.0001,
+      "loss_h": 0.001,
+      "loss_yr": 8.766,
+      "bank_lifetime_yr": 1140.7711613050421,
+      "ramp": "linear",
+      "entry_a": false,
+      "entry_m": false,
+      "interpretation": "directional_sector_not_stability_certificate",
+      "leading_real_yr": -0.00020601947194542132,
+      "leading_imag_yr": 0.05254893946747431,
+      "complex_leading_real_yr": -0.00020601947194542132,
+      "complex_period_yr": 119.56826095545898,
+      "eigenvalues": [
+        [
+          -0.9999999999990344,
+          0.0
+        ],
+        [
+          -42704.330960888794,
+          0.0
+        ],
+        [
+          -9.357513592241693,
+          0.0
+        ],
+        [
+          -0.00020601947194542132,
+          0.05254893946747431
+        ],
+        [
+          -0.00020601947194542132,
+          -0.05254893946747431
+        ],
+        [
+          -0.0008766000000000001,
+          0.0
+        ],
+        [
+          -0.0008766000000000001,
+          0.0
+        ]
+      ]
+    },
+    {
+      "epsilon": 0.0001,
+      "loss_h": 0.001,
+      "loss_yr": 8.766,
+      "bank_lifetime_yr": 1140.7711613050421,
+      "ramp": "linear",
+      "entry_a": false,
+      "entry_m": true,
+      "interpretation": "directional_sector_not_stability_certificate",
+      "leading_real_yr": -0.0002464820242966781,
+      "leading_imag_yr": 0.06440951195716625,
+      "complex_leading_real_yr": -0.0002464820242966781,
+      "complex_period_yr": 97.5505809042311,
+      "eigenvalues": [
+        [
+          -0.9999999999990344,
+          0.0
+        ],
+        [
+          -0.0008766000000000001,
+          0.0
+        ],
+        [
+          -42645.07887659648,
+          0.0
+        ],
+        [
+          -68.6095169594719,
+          0.0
+        ],
+        [
+          -0.0002464820242966781,
+          0.06440951195716625
+        ],
+        [
+          -0.0002464820242966781,
+          -0.06440951195716625
+        ],
+        [
+          -0.0008766000000000001,
+          0.0
+        ]
+      ]
+    },
+    {
+      "epsilon": 0.0001,
+      "loss_h": 0.001,
+      "loss_yr": 8.766,
+      "bank_lifetime_yr": 1140.7711613050421,
+      "ramp": "linear",
+      "entry_a": true,
+      "entry_m": false,
+      "interpretation": "directional_sector_not_stability_certificate",
+      "leading_real_yr": -0.0003996898372326058,
+      "leading_imag_yr": 0.08057935123746095,
+      "complex_leading_real_yr": -0.0003996898372326058,
+      "complex_period_yr": 77.975128996305,
+      "eigenvalues": [
+        [
+          -0.9999999999990344,
+          0.0
+        ],
+        [
+          -0.0008766000000000001,
+          0.0
+        ],
+        [
+          -42669.87740175173,
+          0.0
+        ],
+        [
+          -43.81068538860158,
+          0.0
+        ],
+        [
+          -0.0003996898372326058,
+          0.08057935123746095
+        ],
+        [
+          -0.0003996898372326058,
+          -0.08057935123746095
+        ],
+        [
+          -0.0008766000000000001,
+          0.0
+        ]
+      ]
+    },
+    {
+      "epsilon": 0.0001,
+      "loss_h": 0.001,
+      "loss_yr": 8.766,
+      "bank_lifetime_yr": 1140.7711613050421,
+      "ramp": "linear",
+      "entry_a": true,
+      "entry_m": true,
+      "interpretation": "directional_sector_not_stability_certificate",
+      "leading_real_yr": -0.00020601949151958268,
+      "leading_imag_yr": 0.17428636220821025,
+      "complex_leading_real_yr": -0.00020601949151958268,
+      "complex_period_yr": 36.05092921541051,
+      "eigenvalues": [
+        [
+          -0.9999999999990344,
+          0.0
+        ],
+        [
+          -0.0008766000000000001,
+          0.0
+        ],
+        [
+          -0.0008766000000000001,
+          0.0
+        ],
+        [
+          -42610.52926632339,
+          0.0
+        ],
+        [
+          -103.15920815758933,
+          0.0
+        ],
+        [
+          -0.00020601949151958268,
+          0.17428636220821025
+        ],
+        [
+          -0.00020601949151958268,
+          -0.17428636220821025
+        ]
+      ]
+    },
+    {
+      "epsilon": 0.00017782794100389227,
+      "loss_h": 0.001,
+      "loss_yr": 8.766,
+      "bank_lifetime_yr": 641.502766587211,
+      "ramp": "cubic",
+      "entry_a": false,
+      "entry_m": false,
+      "interpretation": "ordinary_jacobian",
+      "leading_real_yr": -0.00020601947194542132,
+      "leading_imag_yr": 0.05254893946747431,
+      "complex_leading_real_yr": -0.00020601947194542132,
+      "complex_period_yr": 119.56826095545898,
+      "eigenvalues": [
+        [
+          -0.9999999999990344,
+          0.0
+        ],
+        [
+          -42704.330960888794,
+          0.0
+        ],
+        [
+          -9.357513592241693,
+          0.0
+        ],
+        [
+          -0.00020601947194542132,
+          0.05254893946747431
+        ],
+        [
+          -0.00020601947194542132,
+          -0.05254893946747431
+        ],
+        [
+          -0.0015588397308401196,
+          0.0
+        ],
+        [
+          -0.0015588397308401196,
+          0.0
+        ]
+      ]
+    },
+    {
+      "epsilon": 0.00017782794100389227,
+      "loss_h": 0.001,
+      "loss_yr": 8.766,
+      "bank_lifetime_yr": 641.502766587211,
+      "ramp": "linear",
+      "entry_a": false,
+      "entry_m": false,
+      "interpretation": "directional_sector_not_stability_certificate",
+      "leading_real_yr": -0.00020601947194542132,
+      "leading_imag_yr": 0.05254893946747431,
+      "complex_leading_real_yr": -0.00020601947194542132,
+      "complex_period_yr": 119.56826095545898,
+      "eigenvalues": [
+        [
+          -0.9999999999990344,
+          0.0
+        ],
+        [
+          -42704.330960888794,
+          0.0
+        ],
+        [
+          -9.357513592241693,
+          0.0
+        ],
+        [
+          -0.00020601947194542132,
+          0.05254893946747431
+        ],
+        [
+          -0.00020601947194542132,
+          -0.05254893946747431
+        ],
+        [
+          -0.0015588397308401196,
+          0.0
+        ],
+        [
+          -0.0015588397308401196,
+          0.0
+        ]
+      ]
+    },
+    {
+      "epsilon": 0.00017782794100389227,
+      "loss_h": 0.001,
+      "loss_yr": 8.766,
+      "bank_lifetime_yr": 641.502766587211,
+      "ramp": "linear",
+      "entry_a": false,
+      "entry_m": true,
+      "interpretation": "directional_sector_not_stability_certificate",
+      "leading_real_yr": -0.0002464820242966781,
+      "leading_imag_yr": 0.06440951195716625,
+      "complex_leading_real_yr": -0.0002464820242966781,
+      "complex_period_yr": 97.5505809042311,
+      "eigenvalues": [
+        [
+          -0.9999999999990344,
+          0.0
+        ],
+        [
+          -0.0015588397308401196,
+          0.0
+        ],
+        [
+          -42645.07887659648,
+          0.0
+        ],
+        [
+          -68.6095169594719,
+          0.0
+        ],
+        [
+          -0.0002464820242966781,
+          0.06440951195716625
+        ],
+        [
+          -0.0002464820242966781,
+          -0.06440951195716625
+        ],
+        [
+          -0.0015588397308401196,
+          0.0
+        ]
+      ]
+    },
+    {
+      "epsilon": 0.00017782794100389227,
+      "loss_h": 0.001,
+      "loss_yr": 8.766,
+      "bank_lifetime_yr": 641.502766587211,
+      "ramp": "linear",
+      "entry_a": true,
+      "entry_m": false,
+      "interpretation": "directional_sector_not_stability_certificate",
+      "leading_real_yr": -0.0003996898372326058,
+      "leading_imag_yr": 0.08057935123746095,
+      "complex_leading_real_yr": -0.0003996898372326058,
+      "complex_period_yr": 77.975128996305,
+      "eigenvalues": [
+        [
+          -0.9999999999990344,
+          0.0
+        ],
+        [
+          -0.0015588397308401196,
+          0.0
+        ],
+        [
+          -42669.87740175173,
+          0.0
+        ],
+        [
+          -43.81068538860158,
+          0.0
+        ],
+        [
+          -0.0003996898372326058,
+          0.08057935123746095
+        ],
+        [
+          -0.0003996898372326058,
+          -0.08057935123746095
+        ],
+        [
+          -0.0015588397308401196,
+          0.0
+        ]
+      ]
+    },
+    {
+      "epsilon": 0.00017782794100389227,
+      "loss_h": 0.001,
+      "loss_yr": 8.766,
+      "bank_lifetime_yr": 641.502766587211,
+      "ramp": "linear",
+      "entry_a": true,
+      "entry_m": true,
+      "interpretation": "directional_sector_not_stability_certificate",
+      "leading_real_yr": -0.00020601949151958268,
+      "leading_imag_yr": 0.17428636220821025,
+      "complex_leading_real_yr": -0.00020601949151958268,
+      "complex_period_yr": 36.05092921541051,
+      "eigenvalues": [
+        [
+          -0.9999999999990344,
+          0.0
+        ],
+        [
+          -0.0015588397308401196,
+          0.0
+        ],
+        [
+          -0.0015588397308401196,
+          0.0
+        ],
+        [
+          -42610.52926632339,
+          0.0
+        ],
+        [
+          -103.15920815758933,
+          0.0
+        ],
+        [
+          -0.00020601949151958268,
+          0.17428636220821025
+        ],
+        [
+          -0.00020601949151958268,
+          -0.17428636220821025
+        ]
+      ]
+    },
+    {
+      "epsilon": 0.00031622776601683794,
+      "loss_h": 0.001,
+      "loss_yr": 8.766,
+      "bank_lifetime_yr": 360.7435158759273,
+      "ramp": "cubic",
+      "entry_a": false,
+      "entry_m": false,
+      "interpretation": "ordinary_jacobian",
+      "leading_real_yr": -0.00020601947194542132,
+      "leading_imag_yr": 0.05254893946747431,
+      "complex_leading_real_yr": -0.00020601947194542132,
+      "complex_period_yr": 119.56826095545898,
+      "eigenvalues": [
+        [
+          -0.9999999999990344,
+          0.0
+        ],
+        [
+          -42704.330960888794,
+          0.0
+        ],
+        [
+          -9.357513592241693,
+          0.0
+        ],
+        [
+          -0.00020601947194542132,
+          0.05254893946747431
+        ],
+        [
+          -0.00020601947194542132,
+          -0.05254893946747431
+        ],
+        [
+          -0.0027720525969036017,
+          0.0
+        ],
+        [
+          -0.0027720525969036017,
+          0.0
+        ]
+      ]
+    },
+    {
+      "epsilon": 0.00031622776601683794,
+      "loss_h": 0.001,
+      "loss_yr": 8.766,
+      "bank_lifetime_yr": 360.7435158759273,
+      "ramp": "linear",
+      "entry_a": false,
+      "entry_m": false,
+      "interpretation": "directional_sector_not_stability_certificate",
+      "leading_real_yr": -0.00020601947194542132,
+      "leading_imag_yr": 0.05254893946747431,
+      "complex_leading_real_yr": -0.00020601947194542132,
+      "complex_period_yr": 119.56826095545898,
+      "eigenvalues": [
+        [
+          -0.9999999999990344,
+          0.0
+        ],
+        [
+          -42704.330960888794,
+          0.0
+        ],
+        [
+          -9.357513592241693,
+          0.0
+        ],
+        [
+          -0.00020601947194542132,
+          0.05254893946747431
+        ],
+        [
+          -0.00020601947194542132,
+          -0.05254893946747431
+        ],
+        [
+          -0.0027720525969036017,
+          0.0
+        ],
+        [
+          -0.0027720525969036017,
+          0.0
+        ]
+      ]
+    },
+    {
+      "epsilon": 0.00031622776601683794,
+      "loss_h": 0.001,
+      "loss_yr": 8.766,
+      "bank_lifetime_yr": 360.7435158759273,
+      "ramp": "linear",
+      "entry_a": false,
+      "entry_m": true,
+      "interpretation": "directional_sector_not_stability_certificate",
+      "leading_real_yr": -0.0002464820242966781,
+      "leading_imag_yr": 0.06440951195716625,
+      "complex_leading_real_yr": -0.0002464820242966781,
+      "complex_period_yr": 97.5505809042311,
+      "eigenvalues": [
+        [
+          -0.9999999999990344,
+          0.0
+        ],
+        [
+          -0.0027720525969036017,
+          0.0
+        ],
+        [
+          -42645.07887659648,
+          0.0
+        ],
+        [
+          -68.6095169594719,
+          0.0
+        ],
+        [
+          -0.0002464820242966781,
+          0.06440951195716625
+        ],
+        [
+          -0.0002464820242966781,
+          -0.06440951195716625
+        ],
+        [
+          -0.0027720525969036017,
+          0.0
+        ]
+      ]
+    },
+    {
+      "epsilon": 0.00031622776601683794,
+      "loss_h": 0.001,
+      "loss_yr": 8.766,
+      "bank_lifetime_yr": 360.7435158759273,
+      "ramp": "linear",
+      "entry_a": true,
+      "entry_m": false,
+      "interpretation": "directional_sector_not_stability_certificate",
+      "leading_real_yr": -0.0003996898372326058,
+      "leading_imag_yr": 0.08057935123746095,
+      "complex_leading_real_yr": -0.0003996898372326058,
+      "complex_period_yr": 77.975128996305,
+      "eigenvalues": [
+        [
+          -0.9999999999990344,
+          0.0
+        ],
+        [
+          -0.0027720525969036017,
+          0.0
+        ],
+        [
+          -42669.87740175173,
+          0.0
+        ],
+        [
+          -43.81068538860158,
+          0.0
+        ],
+        [
+          -0.0003996898372326058,
+          0.08057935123746095
+        ],
+        [
+          -0.0003996898372326058,
+          -0.08057935123746095
+        ],
+        [
+          -0.0027720525969036017,
+          0.0
+        ]
+      ]
+    },
+    {
+      "epsilon": 0.00031622776601683794,
+      "loss_h": 0.001,
+      "loss_yr": 8.766,
+      "bank_lifetime_yr": 360.7435158759273,
+      "ramp": "linear",
+      "entry_a": true,
+      "entry_m": true,
+      "interpretation": "directional_sector_not_stability_certificate",
+      "leading_real_yr": -0.00020601949151958268,
+      "leading_imag_yr": 0.17428636220821025,
+      "complex_leading_real_yr": -0.00020601949151958268,
+      "complex_period_yr": 36.05092921541051,
+      "eigenvalues": [
+        [
+          -0.9999999999990344,
+          0.0
+        ],
+        [
+          -0.0027720525969036017,
+          0.0
+        ],
+        [
+          -0.0027720525969036017,
+          0.0
+        ],
+        [
+          -42610.52926632339,
+          0.0
+        ],
+        [
+          -103.15920815758933,
+          0.0
+        ],
+        [
+          -0.00020601949151958268,
+          0.17428636220821025
+        ],
+        [
+          -0.00020601949151958268,
+          -0.17428636220821025
+        ]
+      ]
+    },
+    {
+      "epsilon": 0.0005623413251903491,
+      "loss_h": 0.001,
+      "loss_yr": 8.766,
+      "bank_lifetime_yr": 202.86098677149468,
+      "ramp": "cubic",
+      "entry_a": false,
+      "entry_m": false,
+      "interpretation": "ordinary_jacobian",
+      "leading_real_yr": -0.00020601947194542132,
+      "leading_imag_yr": 0.05254893946747431,
+      "complex_leading_real_yr": -0.00020601947194542132,
+      "complex_period_yr": 119.56826095545898,
+      "eigenvalues": [
+        [
+          -0.9999999999990344,
+          0.0
+        ],
+        [
+          -42704.330960888794,
+          0.0
+        ],
+        [
+          -9.357513592241693,
+          0.0
+        ],
+        [
+          -0.00020601947194542132,
+          0.05254893946747431
+        ],
+        [
+          -0.00020601947194542132,
+          -0.05254893946747431
+        ],
+        [
+          -0.004929484056618601,
+          0.0
+        ],
+        [
+          -0.004929484056618601,
+          0.0
+        ]
+      ]
+    },
+    {
+      "epsilon": 0.0005623413251903491,
+      "loss_h": 0.001,
+      "loss_yr": 8.766,
+      "bank_lifetime_yr": 202.86098677149468,
+      "ramp": "linear",
+      "entry_a": false,
+      "entry_m": false,
+      "interpretation": "directional_sector_not_stability_certificate",
+      "leading_real_yr": -0.00020601947194542132,
+      "leading_imag_yr": 0.05254893946747431,
+      "complex_leading_real_yr": -0.00020601947194542132,
+      "complex_period_yr": 119.56826095545898,
+      "eigenvalues": [
+        [
+          -0.9999999999990344,
+          0.0
+        ],
+        [
+          -42704.330960888794,
+          0.0
+        ],
+        [
+          -9.357513592241693,
+          0.0
+        ],
+        [
+          -0.00020601947194542132,
+          0.05254893946747431
+        ],
+        [
+          -0.00020601947194542132,
+          -0.05254893946747431
+        ],
+        [
+          -0.004929484056618601,
+          0.0
+        ],
+        [
+          -0.004929484056618601,
+          0.0
+        ]
+      ]
+    },
+    {
+      "epsilon": 0.0005623413251903491,
+      "loss_h": 0.001,
+      "loss_yr": 8.766,
+      "bank_lifetime_yr": 202.86098677149468,
+      "ramp": "linear",
+      "entry_a": false,
+      "entry_m": true,
+      "interpretation": "directional_sector_not_stability_certificate",
+      "leading_real_yr": -0.0002464820242966781,
+      "leading_imag_yr": 0.06440951195716625,
+      "complex_leading_real_yr": -0.0002464820242966781,
+      "complex_period_yr": 97.5505809042311,
+      "eigenvalues": [
+        [
+          -0.9999999999990344,
+          0.0
+        ],
+        [
+          -0.004929484056618601,
+          0.0
+        ],
+        [
+          -42645.07887659648,
+          0.0
+        ],
+        [
+          -68.6095169594719,
+          0.0
+        ],
+        [
+          -0.0002464820242966781,
+          0.06440951195716625
+        ],
+        [
+          -0.0002464820242966781,
+          -0.06440951195716625
+        ],
+        [
+          -0.004929484056618601,
+          0.0
+        ]
+      ]
+    },
+    {
+      "epsilon": 0.0005623413251903491,
+      "loss_h": 0.001,
+      "loss_yr": 8.766,
+      "bank_lifetime_yr": 202.86098677149468,
+      "ramp": "linear",
+      "entry_a": true,
+      "entry_m": false,
+      "interpretation": "directional_sector_not_stability_certificate",
+      "leading_real_yr": -0.0003996898372326058,
+      "leading_imag_yr": 0.08057935123746095,
+      "complex_leading_real_yr": -0.0003996898372326058,
+      "complex_period_yr": 77.975128996305,
+      "eigenvalues": [
+        [
+          -0.9999999999990344,
+          0.0
+        ],
+        [
+          -0.004929484056618601,
+          0.0
+        ],
+        [
+          -42669.87740175173,
+          0.0
+        ],
+        [
+          -43.81068538860158,
+          0.0
+        ],
+        [
+          -0.0003996898372326058,
+          0.08057935123746095
+        ],
+        [
+          -0.0003996898372326058,
+          -0.08057935123746095
+        ],
+        [
+          -0.004929484056618601,
+          0.0
+        ]
+      ]
+    },
+    {
+      "epsilon": 0.0005623413251903491,
+      "loss_h": 0.001,
+      "loss_yr": 8.766,
+      "bank_lifetime_yr": 202.86098677149468,
+      "ramp": "linear",
+      "entry_a": true,
+      "entry_m": true,
+      "interpretation": "directional_sector_not_stability_certificate",
+      "leading_real_yr": -0.00020601949151958268,
+      "leading_imag_yr": 0.17428636220821025,
+      "complex_leading_real_yr": -0.00020601949151958268,
+      "complex_period_yr": 36.05092921541051,
+      "eigenvalues": [
+        [
+          -0.9999999999990344,
+          0.0
+        ],
+        [
+          -0.004929484056618601,
+          0.0
+        ],
+        [
+          -0.004929484056618601,
+          0.0
+        ],
+        [
+          -42610.52926632339,
+          0.0
+        ],
+        [
+          -103.15920815758933,
+          0.0
+        ],
+        [
+          -0.00020601949151958268,
+          0.17428636220821025
+        ],
+        [
+          -0.00020601949151958268,
+          -0.17428636220821025
+        ]
+      ]
+    },
+    {
+      "epsilon": 0.001,
+      "loss_h": 0.001,
+      "loss_yr": 8.766,
+      "bank_lifetime_yr": 114.07711613050422,
+      "ramp": "cubic",
+      "entry_a": false,
+      "entry_m": false,
+      "interpretation": "ordinary_jacobian",
+      "leading_real_yr": -0.00020601947194542132,
+      "leading_imag_yr": 0.05254893946747431,
+      "complex_leading_real_yr": -0.00020601947194542132,
+      "complex_period_yr": 119.56826095545898,
+      "eigenvalues": [
+        [
+          -0.9999999999990344,
+          0.0
+        ],
+        [
+          -42704.330960888794,
+          0.0
+        ],
+        [
+          -9.357513592241693,
+          0.0
+        ],
+        [
+          -0.00020601947194542132,
+          0.05254893946747431
+        ],
+        [
+          -0.00020601947194542132,
+          -0.05254893946747431
+        ],
+        [
+          -0.008766,
+          0.0
+        ],
+        [
+          -0.008766,
+          0.0
+        ]
+      ]
+    },
+    {
+      "epsilon": 0.001,
+      "loss_h": 0.001,
+      "loss_yr": 8.766,
+      "bank_lifetime_yr": 114.07711613050422,
+      "ramp": "linear",
+      "entry_a": false,
+      "entry_m": false,
+      "interpretation": "directional_sector_not_stability_certificate",
+      "leading_real_yr": -0.00020601947194542132,
+      "leading_imag_yr": 0.05254893946747431,
+      "complex_leading_real_yr": -0.00020601947194542132,
+      "complex_period_yr": 119.56826095545898,
+      "eigenvalues": [
+        [
+          -0.9999999999990344,
+          0.0
+        ],
+        [
+          -42704.330960888794,
+          0.0
+        ],
+        [
+          -9.357513592241693,
+          0.0
+        ],
+        [
+          -0.00020601947194542132,
+          0.05254893946747431
+        ],
+        [
+          -0.00020601947194542132,
+          -0.05254893946747431
+        ],
+        [
+          -0.008766,
+          0.0
+        ],
+        [
+          -0.008766,
+          0.0
+        ]
+      ]
+    },
+    {
+      "epsilon": 0.001,
+      "loss_h": 0.001,
+      "loss_yr": 8.766,
+      "bank_lifetime_yr": 114.07711613050422,
+      "ramp": "linear",
+      "entry_a": false,
+      "entry_m": true,
+      "interpretation": "directional_sector_not_stability_certificate",
+      "leading_real_yr": -0.0002464820242966781,
+      "leading_imag_yr": 0.06440951195716625,
+      "complex_leading_real_yr": -0.0002464820242966781,
+      "complex_period_yr": 97.5505809042311,
+      "eigenvalues": [
+        [
+          -0.9999999999990344,
+          0.0
+        ],
+        [
+          -0.008766,
+          0.0
+        ],
+        [
+          -42645.07887659648,
+          0.0
+        ],
+        [
+          -68.6095169594719,
+          0.0
+        ],
+        [
+          -0.0002464820242966781,
+          0.06440951195716625
+        ],
+        [
+          -0.0002464820242966781,
+          -0.06440951195716625
+        ],
+        [
+          -0.008766,
+          0.0
+        ]
+      ]
+    },
+    {
+      "epsilon": 0.001,
+      "loss_h": 0.001,
+      "loss_yr": 8.766,
+      "bank_lifetime_yr": 114.07711613050422,
+      "ramp": "linear",
+      "entry_a": true,
+      "entry_m": false,
+      "interpretation": "directional_sector_not_stability_certificate",
+      "leading_real_yr": -0.0003996898372326058,
+      "leading_imag_yr": 0.08057935123746095,
+      "complex_leading_real_yr": -0.0003996898372326058,
+      "complex_period_yr": 77.975128996305,
+      "eigenvalues": [
+        [
+          -0.9999999999990344,
+          0.0
+        ],
+        [
+          -0.008766,
+          0.0
+        ],
+        [
+          -42669.87740175173,
+          0.0
+        ],
+        [
+          -43.81068538860158,
+          0.0
+        ],
+        [
+          -0.0003996898372326058,
+          0.08057935123746095
+        ],
+        [
+          -0.0003996898372326058,
+          -0.08057935123746095
+        ],
+        [
+          -0.008766,
+          0.0
+        ]
+      ]
+    },
+    {
+      "epsilon": 0.001,
+      "loss_h": 0.001,
+      "loss_yr": 8.766,
+      "bank_lifetime_yr": 114.07711613050422,
+      "ramp": "linear",
+      "entry_a": true,
+      "entry_m": true,
+      "interpretation": "directional_sector_not_stability_certificate",
+      "leading_real_yr": -0.00020601949151958268,
+      "leading_imag_yr": 0.17428636220821025,
+      "complex_leading_real_yr": -0.00020601949151958268,
+      "complex_period_yr": 36.05092921541051,
+      "eigenvalues": [
+        [
+          -0.9999999999990344,
+          0.0
+        ],
+        [
+          -0.008766,
+          0.0
+        ],
+        [
+          -0.008766,
+          0.0
+        ],
+        [
+          -42610.52926632339,
+          0.0
+        ],
+        [
+          -103.15920815758933,
+          0.0
+        ],
+        [
+          -0.00020601949151958268,
+          0.17428636220821025
+        ],
+        [
+          -0.00020601949151958268,
+          -0.17428636220821025
+        ]
+      ]
+    },
+    {
+      "epsilon": 0.0017782794100389228,
+      "loss_h": 0.001,
+      "loss_yr": 8.766,
+      "bank_lifetime_yr": 64.1502766587211,
+      "ramp": "cubic",
+      "entry_a": false,
+      "entry_m": false,
+      "interpretation": "ordinary_jacobian",
+      "leading_real_yr": -0.00020601947194542132,
+      "leading_imag_yr": 0.05254893946747431,
+      "complex_leading_real_yr": -0.00020601947194542132,
+      "complex_period_yr": 119.56826095545898,
+      "eigenvalues": [
+        [
+          -0.9999999999990344,
+          0.0
+        ],
+        [
+          -42704.330960888794,
+          0.0
+        ],
+        [
+          -9.357513592241693,
+          0.0
+        ],
+        [
+          -0.00020601947194542132,
+          0.05254893946747431
+        ],
+        [
+          -0.00020601947194542132,
+          -0.05254893946747431
+        ],
+        [
+          -0.015588397308401196,
+          0.0
+        ],
+        [
+          -0.015588397308401196,
+          0.0
+        ]
+      ]
+    },
+    {
+      "epsilon": 0.0017782794100389228,
+      "loss_h": 0.001,
+      "loss_yr": 8.766,
+      "bank_lifetime_yr": 64.1502766587211,
+      "ramp": "linear",
+      "entry_a": false,
+      "entry_m": false,
+      "interpretation": "directional_sector_not_stability_certificate",
+      "leading_real_yr": -0.00020601947194542132,
+      "leading_imag_yr": 0.05254893946747431,
+      "complex_leading_real_yr": -0.00020601947194542132,
+      "complex_period_yr": 119.56826095545898,
+      "eigenvalues": [
+        [
+          -0.9999999999990344,
+          0.0
+        ],
+        [
+          -42704.330960888794,
+          0.0
+        ],
+        [
+          -9.357513592241693,
+          0.0
+        ],
+        [
+          -0.00020601947194542132,
+          0.05254893946747431
+        ],
+        [
+          -0.00020601947194542132,
+          -0.05254893946747431
+        ],
+        [
+          -0.015588397308401196,
+          0.0
+        ],
+        [
+          -0.015588397308401196,
+          0.0
+        ]
+      ]
+    },
+    {
+      "epsilon": 0.0017782794100389228,
+      "loss_h": 0.001,
+      "loss_yr": 8.766,
+      "bank_lifetime_yr": 64.1502766587211,
+      "ramp": "linear",
+      "entry_a": false,
+      "entry_m": true,
+      "interpretation": "directional_sector_not_stability_certificate",
+      "leading_real_yr": -0.0002464820242966781,
+      "leading_imag_yr": 0.06440951195716625,
+      "complex_leading_real_yr": -0.0002464820242966781,
+      "complex_period_yr": 97.5505809042311,
+      "eigenvalues": [
+        [
+          -0.9999999999990344,
+          0.0
+        ],
+        [
+          -0.015588397308401196,
+          0.0
+        ],
+        [
+          -42645.07887659648,
+          0.0
+        ],
+        [
+          -68.6095169594719,
+          0.0
+        ],
+        [
+          -0.0002464820242966781,
+          0.06440951195716625
+        ],
+        [
+          -0.0002464820242966781,
+          -0.06440951195716625
+        ],
+        [
+          -0.015588397308401196,
+          0.0
+        ]
+      ]
+    },
+    {
+      "epsilon": 0.0017782794100389228,
+      "loss_h": 0.001,
+      "loss_yr": 8.766,
+      "bank_lifetime_yr": 64.1502766587211,
+      "ramp": "linear",
+      "entry_a": true,
+      "entry_m": false,
+      "interpretation": "directional_sector_not_stability_certificate",
+      "leading_real_yr": -0.0003996898372326058,
+      "leading_imag_yr": 0.08057935123746095,
+      "complex_leading_real_yr": -0.0003996898372326058,
+      "complex_period_yr": 77.975128996305,
+      "eigenvalues": [
+        [
+          -0.9999999999990344,
+          0.0
+        ],
+        [
+          -0.015588397308401196,
+          0.0
+        ],
+        [
+          -42669.87740175173,
+          0.0
+        ],
+        [
+          -43.81068538860158,
+          0.0
+        ],
+        [
+          -0.0003996898372326058,
+          0.08057935123746095
+        ],
+        [
+          -0.0003996898372326058,
+          -0.08057935123746095
+        ],
+        [
+          -0.015588397308401196,
+          0.0
+        ]
+      ]
+    },
+    {
+      "epsilon": 0.0017782794100389228,
+      "loss_h": 0.001,
+      "loss_yr": 8.766,
+      "bank_lifetime_yr": 64.1502766587211,
+      "ramp": "linear",
+      "entry_a": true,
+      "entry_m": true,
+      "interpretation": "directional_sector_not_stability_certificate",
+      "leading_real_yr": -0.00020601949151958268,
+      "leading_imag_yr": 0.17428636220821025,
+      "complex_leading_real_yr": -0.00020601949151958268,
+      "complex_period_yr": 36.05092921541051,
+      "eigenvalues": [
+        [
+          -0.9999999999990344,
+          0.0
+        ],
+        [
+          -0.015588397308401196,
+          0.0
+        ],
+        [
+          -0.015588397308401196,
+          0.0
+        ],
+        [
+          -42610.52926632339,
+          0.0
+        ],
+        [
+          -103.15920815758933,
+          0.0
+        ],
+        [
+          -0.00020601949151958268,
+          0.17428636220821025
+        ],
+        [
+          -0.00020601949151958268,
+          -0.17428636220821025
+        ]
+      ]
+    },
+    {
+      "epsilon": 0.0031622776601683794,
+      "loss_h": 0.001,
+      "loss_yr": 8.766,
+      "bank_lifetime_yr": 36.07435158759273,
+      "ramp": "cubic",
+      "entry_a": false,
+      "entry_m": false,
+      "interpretation": "ordinary_jacobian",
+      "leading_real_yr": -0.00020601947194542132,
+      "leading_imag_yr": 0.05254893946747431,
+      "complex_leading_real_yr": -0.00020601947194542132,
+      "complex_period_yr": 119.56826095545898,
+      "eigenvalues": [
+        [
+          -0.9999999999990344,
+          0.0
+        ],
+        [
+          -42704.330960888794,
+          0.0
+        ],
+        [
+          -9.357513592241693,
+          0.0
+        ],
+        [
+          -0.00020601947194542132,
+          0.05254893946747431
+        ],
+        [
+          -0.00020601947194542132,
+          -0.05254893946747431
+        ],
+        [
+          -0.027720525969036017,
+          0.0
+        ],
+        [
+          -0.027720525969036017,
+          0.0
+        ]
+      ]
+    },
+    {
+      "epsilon": 0.0031622776601683794,
+      "loss_h": 0.001,
+      "loss_yr": 8.766,
+      "bank_lifetime_yr": 36.07435158759273,
+      "ramp": "linear",
+      "entry_a": false,
+      "entry_m": false,
+      "interpretation": "directional_sector_not_stability_certificate",
+      "leading_real_yr": -0.00020601947194542132,
+      "leading_imag_yr": 0.05254893946747431,
+      "complex_leading_real_yr": -0.00020601947194542132,
+      "complex_period_yr": 119.56826095545898,
+      "eigenvalues": [
+        [
+          -0.9999999999990344,
+          0.0
+        ],
+        [
+          -42704.330960888794,
+          0.0
+        ],
+        [
+          -9.357513592241693,
+          0.0
+        ],
+        [
+          -0.00020601947194542132,
+          0.05254893946747431
+        ],
+        [
+          -0.00020601947194542132,
+          -0.05254893946747431
+        ],
+        [
+          -0.027720525969036017,
+          0.0
+        ],
+        [
+          -0.027720525969036017,
+          0.0
+        ]
+      ]
+    },
+    {
+      "epsilon": 0.0031622776601683794,
+      "loss_h": 0.001,
+      "loss_yr": 8.766,
+      "bank_lifetime_yr": 36.07435158759273,
+      "ramp": "linear",
+      "entry_a": false,
+      "entry_m": true,
+      "interpretation": "directional_sector_not_stability_certificate",
+      "leading_real_yr": -0.0002464820242966781,
+      "leading_imag_yr": 0.06440951195716625,
+      "complex_leading_real_yr": -0.0002464820242966781,
+      "complex_period_yr": 97.5505809042311,
+      "eigenvalues": [
+        [
+          -0.9999999999990344,
+          0.0
+        ],
+        [
+          -0.027720525969036017,
+          0.0
+        ],
+        [
+          -42645.07887659648,
+          0.0
+        ],
+        [
+          -68.6095169594719,
+          0.0
+        ],
+        [
+          -0.0002464820242966781,
+          0.06440951195716625
+        ],
+        [
+          -0.0002464820242966781,
+          -0.06440951195716625
+        ],
+        [
+          -0.027720525969036017,
+          0.0
+        ]
+      ]
+    },
+    {
+      "epsilon": 0.0031622776601683794,
+      "loss_h": 0.001,
+      "loss_yr": 8.766,
+      "bank_lifetime_yr": 36.07435158759273,
+      "ramp": "linear",
+      "entry_a": true,
+      "entry_m": false,
+      "interpretation": "directional_sector_not_stability_certificate",
+      "leading_real_yr": -0.0003996898372326058,
+      "leading_imag_yr": 0.08057935123746095,
+      "complex_leading_real_yr": -0.0003996898372326058,
+      "complex_period_yr": 77.975128996305,
+      "eigenvalues": [
+        [
+          -0.9999999999990344,
+          0.0
+        ],
+        [
+          -0.027720525969036017,
+          0.0
+        ],
+        [
+          -42669.87740175173,
+          0.0
+        ],
+        [
+          -43.81068538860158,
+          0.0
+        ],
+        [
+          -0.0003996898372326058,
+          0.08057935123746095
+        ],
+        [
+          -0.0003996898372326058,
+          -0.08057935123746095
+        ],
+        [
+          -0.027720525969036017,
+          0.0
+        ]
+      ]
+    },
+    {
+      "epsilon": 0.0031622776601683794,
+      "loss_h": 0.001,
+      "loss_yr": 8.766,
+      "bank_lifetime_yr": 36.07435158759273,
+      "ramp": "linear",
+      "entry_a": true,
+      "entry_m": true,
+      "interpretation": "directional_sector_not_stability_certificate",
+      "leading_real_yr": -0.00020601949151958268,
+      "leading_imag_yr": 0.17428636220821025,
+      "complex_leading_real_yr": -0.00020601949151958268,
+      "complex_period_yr": 36.05092921541051,
+      "eigenvalues": [
+        [
+          -0.9999999999990344,
+          0.0
+        ],
+        [
+          -0.027720525969036017,
+          0.0
+        ],
+        [
+          -0.027720525969036017,
+          0.0
+        ],
+        [
+          -42610.52926632339,
+          0.0
+        ],
+        [
+          -103.15920815758933,
+          0.0
+        ],
+        [
+          -0.00020601949151958268,
+          0.17428636220821025
+        ],
+        [
+          -0.00020601949151958268,
+          -0.17428636220821025
+        ]
+      ]
+    },
+    {
+      "epsilon": 0.005623413251903491,
+      "loss_h": 0.001,
+      "loss_yr": 8.766,
+      "bank_lifetime_yr": 20.28609867714947,
+      "ramp": "cubic",
+      "entry_a": false,
+      "entry_m": false,
+      "interpretation": "ordinary_jacobian",
+      "leading_real_yr": -0.00020601947194542132,
+      "leading_imag_yr": 0.05254893946747431,
+      "complex_leading_real_yr": -0.00020601947194542132,
+      "complex_period_yr": 119.56826095545898,
+      "eigenvalues": [
+        [
+          -0.9999999999990344,
+          0.0
+        ],
+        [
+          -42704.330960888794,
+          0.0
+        ],
+        [
+          -9.357513592241693,
+          0.0
+        ],
+        [
+          -0.00020601947194542132,
+          0.05254893946747431
+        ],
+        [
+          -0.00020601947194542132,
+          -0.05254893946747431
+        ],
+        [
+          -0.04929484056618601,
+          0.0
+        ],
+        [
+          -0.04929484056618601,
+          0.0
+        ]
+      ]
+    },
+    {
+      "epsilon": 0.005623413251903491,
+      "loss_h": 0.001,
+      "loss_yr": 8.766,
+      "bank_lifetime_yr": 20.28609867714947,
+      "ramp": "linear",
+      "entry_a": false,
+      "entry_m": false,
+      "interpretation": "directional_sector_not_stability_certificate",
+      "leading_real_yr": -0.00020601947194542132,
+      "leading_imag_yr": 0.05254893946747431,
+      "complex_leading_real_yr": -0.00020601947194542132,
+      "complex_period_yr": 119.56826095545898,
+      "eigenvalues": [
+        [
+          -0.9999999999990344,
+          0.0
+        ],
+        [
+          -42704.330960888794,
+          0.0
+        ],
+        [
+          -9.357513592241693,
+          0.0
+        ],
+        [
+          -0.00020601947194542132,
+          0.05254893946747431
+        ],
+        [
+          -0.00020601947194542132,
+          -0.05254893946747431
+        ],
+        [
+          -0.04929484056618601,
+          0.0
+        ],
+        [
+          -0.04929484056618601,
+          0.0
+        ]
+      ]
+    },
+    {
+      "epsilon": 0.005623413251903491,
+      "loss_h": 0.001,
+      "loss_yr": 8.766,
+      "bank_lifetime_yr": 20.28609867714947,
+      "ramp": "linear",
+      "entry_a": false,
+      "entry_m": true,
+      "interpretation": "directional_sector_not_stability_certificate",
+      "leading_real_yr": -0.0002464820242966781,
+      "leading_imag_yr": 0.06440951195716625,
+      "complex_leading_real_yr": -0.0002464820242966781,
+      "complex_period_yr": 97.5505809042311,
+      "eigenvalues": [
+        [
+          -0.9999999999990344,
+          0.0
+        ],
+        [
+          -0.04929484056618601,
+          0.0
+        ],
+        [
+          -42645.07887659648,
+          0.0
+        ],
+        [
+          -68.6095169594719,
+          0.0
+        ],
+        [
+          -0.0002464820242966781,
+          0.06440951195716625
+        ],
+        [
+          -0.0002464820242966781,
+          -0.06440951195716625
+        ],
+        [
+          -0.04929484056618601,
+          0.0
+        ]
+      ]
+    },
+    {
+      "epsilon": 0.005623413251903491,
+      "loss_h": 0.001,
+      "loss_yr": 8.766,
+      "bank_lifetime_yr": 20.28609867714947,
+      "ramp": "linear",
+      "entry_a": true,
+      "entry_m": false,
+      "interpretation": "directional_sector_not_stability_certificate",
+      "leading_real_yr": -0.0003996898372326058,
+      "leading_imag_yr": 0.08057935123746095,
+      "complex_leading_real_yr": -0.0003996898372326058,
+      "complex_period_yr": 77.975128996305,
+      "eigenvalues": [
+        [
+          -0.9999999999990344,
+          0.0
+        ],
+        [
+          -0.04929484056618601,
+          0.0
+        ],
+        [
+          -42669.87740175173,
+          0.0
+        ],
+        [
+          -43.81068538860158,
+          0.0
+        ],
+        [
+          -0.0003996898372326058,
+          0.08057935123746095
+        ],
+        [
+          -0.0003996898372326058,
+          -0.08057935123746095
+        ],
+        [
+          -0.04929484056618601,
+          0.0
+        ]
+      ]
+    },
+    {
+      "epsilon": 0.005623413251903491,
+      "loss_h": 0.001,
+      "loss_yr": 8.766,
+      "bank_lifetime_yr": 20.28609867714947,
+      "ramp": "linear",
+      "entry_a": true,
+      "entry_m": true,
+      "interpretation": "directional_sector_not_stability_certificate",
+      "leading_real_yr": -0.00020601949151958268,
+      "leading_imag_yr": 0.17428636220821025,
+      "complex_leading_real_yr": -0.00020601949151958268,
+      "complex_period_yr": 36.05092921541051,
+      "eigenvalues": [
+        [
+          -0.9999999999990344,
+          0.0
+        ],
+        [
+          -0.04929484056618601,
+          0.0
+        ],
+        [
+          -0.04929484056618601,
+          0.0
+        ],
+        [
+          -42610.52926632339,
+          0.0
+        ],
+        [
+          -103.15920815758933,
+          0.0
+        ],
+        [
+          -0.00020601949151958268,
+          0.17428636220821025
+        ],
+        [
+          -0.00020601949151958268,
+          -0.17428636220821025
+        ]
+      ]
+    },
+    {
+      "epsilon": 0.01,
+      "loss_h": 0.001,
+      "loss_yr": 8.766,
+      "bank_lifetime_yr": 11.407711613050422,
+      "ramp": "cubic",
+      "entry_a": false,
+      "entry_m": false,
+      "interpretation": "ordinary_jacobian",
+      "leading_real_yr": -0.00020601947194542132,
+      "leading_imag_yr": 0.05254893946747431,
+      "complex_leading_real_yr": -0.00020601947194542132,
+      "complex_period_yr": 119.56826095545898,
+      "eigenvalues": [
+        [
+          -0.9999999999990344,
+          0.0
+        ],
+        [
+          -42704.330960888794,
+          0.0
+        ],
+        [
+          -9.357513592241693,
+          0.0
+        ],
+        [
+          -0.00020601947194542132,
+          0.05254893946747431
+        ],
+        [
+          -0.00020601947194542132,
+          -0.05254893946747431
+        ],
+        [
+          -0.08766,
+          0.0
+        ],
+        [
+          -0.08766,
+          0.0
+        ]
+      ]
+    },
+    {
+      "epsilon": 0.01,
+      "loss_h": 0.001,
+      "loss_yr": 8.766,
+      "bank_lifetime_yr": 11.407711613050422,
+      "ramp": "linear",
+      "entry_a": false,
+      "entry_m": false,
+      "interpretation": "directional_sector_not_stability_certificate",
+      "leading_real_yr": -0.00020601947194542132,
+      "leading_imag_yr": 0.05254893946747431,
+      "complex_leading_real_yr": -0.00020601947194542132,
+      "complex_period_yr": 119.56826095545898,
+      "eigenvalues": [
+        [
+          -0.9999999999990344,
+          0.0
+        ],
+        [
+          -42704.330960888794,
+          0.0
+        ],
+        [
+          -9.357513592241693,
+          0.0
+        ],
+        [
+          -0.00020601947194542132,
+          0.05254893946747431
+        ],
+        [
+          -0.00020601947194542132,
+          -0.05254893946747431
+        ],
+        [
+          -0.08766,
+          0.0
+        ],
+        [
+          -0.08766,
+          0.0
+        ]
+      ]
+    },
+    {
+      "epsilon": 0.01,
+      "loss_h": 0.001,
+      "loss_yr": 8.766,
+      "bank_lifetime_yr": 11.407711613050422,
+      "ramp": "linear",
+      "entry_a": false,
+      "entry_m": true,
+      "interpretation": "directional_sector_not_stability_certificate",
+      "leading_real_yr": -0.0002464820242966781,
+      "leading_imag_yr": 0.06440951195716625,
+      "complex_leading_real_yr": -0.0002464820242966781,
+      "complex_period_yr": 97.5505809042311,
+      "eigenvalues": [
+        [
+          -0.9999999999990344,
+          0.0
+        ],
+        [
+          -0.08766,
+          0.0
+        ],
+        [
+          -42645.07887659648,
+          0.0
+        ],
+        [
+          -68.6095169594719,
+          0.0
+        ],
+        [
+          -0.0002464820242966781,
+          0.06440951195716625
+        ],
+        [
+          -0.0002464820242966781,
+          -0.06440951195716625
+        ],
+        [
+          -0.08766,
+          0.0
+        ]
+      ]
+    },
+    {
+      "epsilon": 0.01,
+      "loss_h": 0.001,
+      "loss_yr": 8.766,
+      "bank_lifetime_yr": 11.407711613050422,
+      "ramp": "linear",
+      "entry_a": true,
+      "entry_m": false,
+      "interpretation": "directional_sector_not_stability_certificate",
+      "leading_real_yr": -0.0003996898372326058,
+      "leading_imag_yr": 0.08057935123746095,
+      "complex_leading_real_yr": -0.0003996898372326058,
+      "complex_period_yr": 77.975128996305,
+      "eigenvalues": [
+        [
+          -0.9999999999990344,
+          0.0
+        ],
+        [
+          -0.08766,
+          0.0
+        ],
+        [
+          -42669.87740175173,
+          0.0
+        ],
+        [
+          -43.81068538860158,
+          0.0
+        ],
+        [
+          -0.0003996898372326058,
+          0.08057935123746095
+        ],
+        [
+          -0.0003996898372326058,
+          -0.08057935123746095
+        ],
+        [
+          -0.08766,
+          0.0
+        ]
+      ]
+    },
+    {
+      "epsilon": 0.01,
+      "loss_h": 0.001,
+      "loss_yr": 8.766,
+      "bank_lifetime_yr": 11.407711613050422,
+      "ramp": "linear",
+      "entry_a": true,
+      "entry_m": true,
+      "interpretation": "directional_sector_not_stability_certificate",
+      "leading_real_yr": -0.00020601949151958268,
+      "leading_imag_yr": 0.17428636220821025,
+      "complex_leading_real_yr": -0.00020601949151958268,
+      "complex_period_yr": 36.05092921541051,
+      "eigenvalues": [
+        [
+          -0.9999999999990344,
+          0.0
+        ],
+        [
+          -0.08766,
+          0.0
+        ],
+        [
+          -0.08766,
+          0.0
+        ],
+        [
+          -42610.52926632339,
+          0.0
+        ],
+        [
+          -103.15920815758933,
+          0.0
+        ],
+        [
+          -0.00020601949151958268,
+          0.17428636220821025
+        ],
+        [
+          -0.00020601949151958268,
+          -0.17428636220821025
+        ]
+      ]
+    },
+    {
+      "epsilon": 0.01778279410038923,
+      "loss_h": 0.001,
+      "loss_yr": 8.766,
+      "bank_lifetime_yr": 6.415027665872109,
+      "ramp": "cubic",
+      "entry_a": false,
+      "entry_m": false,
+      "interpretation": "ordinary_jacobian",
+      "leading_real_yr": -0.00020601947194542132,
+      "leading_imag_yr": 0.05254893946747431,
+      "complex_leading_real_yr": -0.00020601947194542132,
+      "complex_period_yr": 119.56826095545898,
+      "eigenvalues": [
+        [
+          -0.9999999999990344,
+          0.0
+        ],
+        [
+          -42704.330960888794,
+          0.0
+        ],
+        [
+          -9.357513592241693,
+          0.0
+        ],
+        [
+          -0.00020601947194542132,
+          0.05254893946747431
+        ],
+        [
+          -0.00020601947194542132,
+          -0.05254893946747431
+        ],
+        [
+          -0.15588397308401197,
+          0.0
+        ],
+        [
+          -0.15588397308401197,
+          0.0
+        ]
+      ]
+    },
+    {
+      "epsilon": 0.01778279410038923,
+      "loss_h": 0.001,
+      "loss_yr": 8.766,
+      "bank_lifetime_yr": 6.415027665872109,
+      "ramp": "linear",
+      "entry_a": false,
+      "entry_m": false,
+      "interpretation": "directional_sector_not_stability_certificate",
+      "leading_real_yr": -0.00020601947194542132,
+      "leading_imag_yr": 0.05254893946747431,
+      "complex_leading_real_yr": -0.00020601947194542132,
+      "complex_period_yr": 119.56826095545898,
+      "eigenvalues": [
+        [
+          -0.9999999999990344,
+          0.0
+        ],
+        [
+          -42704.330960888794,
+          0.0
+        ],
+        [
+          -9.357513592241693,
+          0.0
+        ],
+        [
+          -0.00020601947194542132,
+          0.05254893946747431
+        ],
+        [
+          -0.00020601947194542132,
+          -0.05254893946747431
+        ],
+        [
+          -0.15588397308401197,
+          0.0
+        ],
+        [
+          -0.15588397308401197,
+          0.0
+        ]
+      ]
+    },
+    {
+      "epsilon": 0.01778279410038923,
+      "loss_h": 0.001,
+      "loss_yr": 8.766,
+      "bank_lifetime_yr": 6.415027665872109,
+      "ramp": "linear",
+      "entry_a": false,
+      "entry_m": true,
+      "interpretation": "directional_sector_not_stability_certificate",
+      "leading_real_yr": -0.0002464820242966781,
+      "leading_imag_yr": 0.06440951195716625,
+      "complex_leading_real_yr": -0.0002464820242966781,
+      "complex_period_yr": 97.5505809042311,
+      "eigenvalues": [
+        [
+          -0.9999999999990344,
+          0.0
+        ],
+        [
+          -0.15588397308401197,
+          0.0
+        ],
+        [
+          -42645.07887659648,
+          0.0
+        ],
+        [
+          -68.6095169594719,
+          0.0
+        ],
+        [
+          -0.0002464820242966781,
+          0.06440951195716625
+        ],
+        [
+          -0.0002464820242966781,
+          -0.06440951195716625
+        ],
+        [
+          -0.15588397308401197,
+          0.0
+        ]
+      ]
+    },
+    {
+      "epsilon": 0.01778279410038923,
+      "loss_h": 0.001,
+      "loss_yr": 8.766,
+      "bank_lifetime_yr": 6.415027665872109,
+      "ramp": "linear",
+      "entry_a": true,
+      "entry_m": false,
+      "interpretation": "directional_sector_not_stability_certificate",
+      "leading_real_yr": -0.0003996898372326058,
+      "leading_imag_yr": 0.08057935123746095,
+      "complex_leading_real_yr": -0.0003996898372326058,
+      "complex_period_yr": 77.975128996305,
+      "eigenvalues": [
+        [
+          -0.9999999999990344,
+          0.0
+        ],
+        [
+          -0.15588397308401197,
+          0.0
+        ],
+        [
+          -42669.87740175173,
+          0.0
+        ],
+        [
+          -43.81068538860158,
+          0.0
+        ],
+        [
+          -0.0003996898372326058,
+          0.08057935123746095
+        ],
+        [
+          -0.0003996898372326058,
+          -0.08057935123746095
+        ],
+        [
+          -0.15588397308401197,
+          0.0
+        ]
+      ]
+    },
+    {
+      "epsilon": 0.01778279410038923,
+      "loss_h": 0.001,
+      "loss_yr": 8.766,
+      "bank_lifetime_yr": 6.415027665872109,
+      "ramp": "linear",
+      "entry_a": true,
+      "entry_m": true,
+      "interpretation": "directional_sector_not_stability_certificate",
+      "leading_real_yr": -0.00020601949151958268,
+      "leading_imag_yr": 0.17428636220821025,
+      "complex_leading_real_yr": -0.00020601949151958268,
+      "complex_period_yr": 36.05092921541051,
+      "eigenvalues": [
+        [
+          -0.9999999999990344,
+          0.0
+        ],
+        [
+          -0.15588397308401197,
+          0.0
+        ],
+        [
+          -0.15588397308401197,
+          0.0
+        ],
+        [
+          -42610.52926632339,
+          0.0
+        ],
+        [
+          -103.15920815758933,
+          0.0
+        ],
+        [
+          -0.00020601949151958268,
+          0.17428636220821025
+        ],
+        [
+          -0.00020601949151958268,
+          -0.17428636220821025
+        ]
+      ]
+    },
+    {
+      "epsilon": 0.03162277660168379,
+      "loss_h": 0.001,
+      "loss_yr": 8.766,
+      "bank_lifetime_yr": 3.6074351587592735,
+      "ramp": "cubic",
+      "entry_a": false,
+      "entry_m": false,
+      "interpretation": "ordinary_jacobian",
+      "leading_real_yr": -0.00020601947194542132,
+      "leading_imag_yr": 0.05254893946747431,
+      "complex_leading_real_yr": -0.00020601947194542132,
+      "complex_period_yr": 119.56826095545898,
+      "eigenvalues": [
+        [
+          -0.9999999999990344,
+          0.0
+        ],
+        [
+          -42704.330960888794,
+          0.0
+        ],
+        [
+          -9.357513592241693,
+          0.0
+        ],
+        [
+          -0.00020601947194542132,
+          0.05254893946747431
+        ],
+        [
+          -0.00020601947194542132,
+          -0.05254893946747431
+        ],
+        [
+          -0.27720525969036014,
+          0.0
+        ],
+        [
+          -0.27720525969036014,
+          0.0
+        ]
+      ]
+    },
+    {
+      "epsilon": 0.03162277660168379,
+      "loss_h": 0.001,
+      "loss_yr": 8.766,
+      "bank_lifetime_yr": 3.6074351587592735,
+      "ramp": "linear",
+      "entry_a": false,
+      "entry_m": false,
+      "interpretation": "directional_sector_not_stability_certificate",
+      "leading_real_yr": -0.00020601947194542132,
+      "leading_imag_yr": 0.05254893946747431,
+      "complex_leading_real_yr": -0.00020601947194542132,
+      "complex_period_yr": 119.56826095545898,
+      "eigenvalues": [
+        [
+          -0.9999999999990344,
+          0.0
+        ],
+        [
+          -42704.330960888794,
+          0.0
+        ],
+        [
+          -9.357513592241693,
+          0.0
+        ],
+        [
+          -0.00020601947194542132,
+          0.05254893946747431
+        ],
+        [
+          -0.00020601947194542132,
+          -0.05254893946747431
+        ],
+        [
+          -0.27720525969036014,
+          0.0
+        ],
+        [
+          -0.27720525969036014,
+          0.0
+        ]
+      ]
+    },
+    {
+      "epsilon": 0.03162277660168379,
+      "loss_h": 0.001,
+      "loss_yr": 8.766,
+      "bank_lifetime_yr": 3.6074351587592735,
+      "ramp": "linear",
+      "entry_a": false,
+      "entry_m": true,
+      "interpretation": "directional_sector_not_stability_certificate",
+      "leading_real_yr": -0.0002464820242966781,
+      "leading_imag_yr": 0.06440951195716625,
+      "complex_leading_real_yr": -0.0002464820242966781,
+      "complex_period_yr": 97.5505809042311,
+      "eigenvalues": [
+        [
+          -0.9999999999990344,
+          0.0
+        ],
+        [
+          -0.27720525969036014,
+          0.0
+        ],
+        [
+          -42645.07887659648,
+          0.0
+        ],
+        [
+          -68.6095169594719,
+          0.0
+        ],
+        [
+          -0.0002464820242966781,
+          0.06440951195716625
+        ],
+        [
+          -0.0002464820242966781,
+          -0.06440951195716625
+        ],
+        [
+          -0.27720525969036014,
+          0.0
+        ]
+      ]
+    },
+    {
+      "epsilon": 0.03162277660168379,
+      "loss_h": 0.001,
+      "loss_yr": 8.766,
+      "bank_lifetime_yr": 3.6074351587592735,
+      "ramp": "linear",
+      "entry_a": true,
+      "entry_m": false,
+      "interpretation": "directional_sector_not_stability_certificate",
+      "leading_real_yr": -0.0003996898372326058,
+      "leading_imag_yr": 0.08057935123746095,
+      "complex_leading_real_yr": -0.0003996898372326058,
+      "complex_period_yr": 77.975128996305,
+      "eigenvalues": [
+        [
+          -0.9999999999990344,
+          0.0
+        ],
+        [
+          -0.27720525969036014,
+          0.0
+        ],
+        [
+          -42669.87740175173,
+          0.0
+        ],
+        [
+          -43.81068538860158,
+          0.0
+        ],
+        [
+          -0.0003996898372326058,
+          0.08057935123746095
+        ],
+        [
+          -0.0003996898372326058,
+          -0.08057935123746095
+        ],
+        [
+          -0.27720525969036014,
+          0.0
+        ]
+      ]
+    },
+    {
+      "epsilon": 0.03162277660168379,
+      "loss_h": 0.001,
+      "loss_yr": 8.766,
+      "bank_lifetime_yr": 3.6074351587592735,
+      "ramp": "linear",
+      "entry_a": true,
+      "entry_m": true,
+      "interpretation": "directional_sector_not_stability_certificate",
+      "leading_real_yr": -0.00020601949151958268,
+      "leading_imag_yr": 0.17428636220821025,
+      "complex_leading_real_yr": -0.00020601949151958268,
+      "complex_period_yr": 36.05092921541051,
+      "eigenvalues": [
+        [
+          -0.9999999999990344,
+          0.0
+        ],
+        [
+          -0.27720525969036014,
+          0.0
+        ],
+        [
+          -0.27720525969036014,
+          0.0
+        ],
+        [
+          -42610.52926632339,
+          0.0
+        ],
+        [
+          -103.15920815758933,
+          0.0
+        ],
+        [
+          -0.00020601949151958268,
+          0.17428636220821025
+        ],
+        [
+          -0.00020601949151958268,
+          -0.17428636220821025
+        ]
+      ]
+    },
+    {
+      "epsilon": 0.05623413251903491,
+      "loss_h": 0.001,
+      "loss_yr": 8.766,
+      "bank_lifetime_yr": 2.0286098677149473,
+      "ramp": "cubic",
+      "entry_a": false,
+      "entry_m": false,
+      "interpretation": "ordinary_jacobian",
+      "leading_real_yr": -0.00020601947194542132,
+      "leading_imag_yr": 0.05254893946747431,
+      "complex_leading_real_yr": -0.00020601947194542132,
+      "complex_period_yr": 119.56826095545898,
+      "eigenvalues": [
+        [
+          -0.9999999999990344,
+          0.0
+        ],
+        [
+          -42704.330960888794,
+          0.0
+        ],
+        [
+          -9.357513592241693,
+          0.0
+        ],
+        [
+          -0.00020601947194542132,
+          0.05254893946747431
+        ],
+        [
+          -0.00020601947194542132,
+          -0.05254893946747431
+        ],
+        [
+          -0.49294840566186005,
+          0.0
+        ],
+        [
+          -0.49294840566186005,
+          0.0
+        ]
+      ]
+    },
+    {
+      "epsilon": 0.05623413251903491,
+      "loss_h": 0.001,
+      "loss_yr": 8.766,
+      "bank_lifetime_yr": 2.0286098677149473,
+      "ramp": "linear",
+      "entry_a": false,
+      "entry_m": false,
+      "interpretation": "directional_sector_not_stability_certificate",
+      "leading_real_yr": -0.00020601947194542132,
+      "leading_imag_yr": 0.05254893946747431,
+      "complex_leading_real_yr": -0.00020601947194542132,
+      "complex_period_yr": 119.56826095545898,
+      "eigenvalues": [
+        [
+          -0.9999999999990344,
+          0.0
+        ],
+        [
+          -42704.330960888794,
+          0.0
+        ],
+        [
+          -9.357513592241693,
+          0.0
+        ],
+        [
+          -0.00020601947194542132,
+          0.05254893946747431
+        ],
+        [
+          -0.00020601947194542132,
+          -0.05254893946747431
+        ],
+        [
+          -0.49294840566186005,
+          0.0
+        ],
+        [
+          -0.49294840566186005,
+          0.0
+        ]
+      ]
+    },
+    {
+      "epsilon": 0.05623413251903491,
+      "loss_h": 0.001,
+      "loss_yr": 8.766,
+      "bank_lifetime_yr": 2.0286098677149473,
+      "ramp": "linear",
+      "entry_a": false,
+      "entry_m": true,
+      "interpretation": "directional_sector_not_stability_certificate",
+      "leading_real_yr": -0.0002464820242966781,
+      "leading_imag_yr": 0.06440951195716625,
+      "complex_leading_real_yr": -0.0002464820242966781,
+      "complex_period_yr": 97.5505809042311,
+      "eigenvalues": [
+        [
+          -0.9999999999990344,
+          0.0
+        ],
+        [
+          -0.49294840566186005,
+          0.0
+        ],
+        [
+          -42645.07887659648,
+          0.0
+        ],
+        [
+          -68.6095169594719,
+          0.0
+        ],
+        [
+          -0.0002464820242966781,
+          0.06440951195716625
+        ],
+        [
+          -0.0002464820242966781,
+          -0.06440951195716625
+        ],
+        [
+          -0.49294840566186005,
+          0.0
+        ]
+      ]
+    },
+    {
+      "epsilon": 0.05623413251903491,
+      "loss_h": 0.001,
+      "loss_yr": 8.766,
+      "bank_lifetime_yr": 2.0286098677149473,
+      "ramp": "linear",
+      "entry_a": true,
+      "entry_m": false,
+      "interpretation": "directional_sector_not_stability_certificate",
+      "leading_real_yr": -0.0003996898372326058,
+      "leading_imag_yr": 0.08057935123746095,
+      "complex_leading_real_yr": -0.0003996898372326058,
+      "complex_period_yr": 77.975128996305,
+      "eigenvalues": [
+        [
+          -0.9999999999990344,
+          0.0
+        ],
+        [
+          -0.49294840566186005,
+          0.0
+        ],
+        [
+          -42669.87740175173,
+          0.0
+        ],
+        [
+          -43.81068538860158,
+          0.0
+        ],
+        [
+          -0.0003996898372326058,
+          0.08057935123746095
+        ],
+        [
+          -0.0003996898372326058,
+          -0.08057935123746095
+        ],
+        [
+          -0.49294840566186005,
+          0.0
+        ]
+      ]
+    },
+    {
+      "epsilon": 0.05623413251903491,
+      "loss_h": 0.001,
+      "loss_yr": 8.766,
+      "bank_lifetime_yr": 2.0286098677149473,
+      "ramp": "linear",
+      "entry_a": true,
+      "entry_m": true,
+      "interpretation": "directional_sector_not_stability_certificate",
+      "leading_real_yr": -0.00020601949151958268,
+      "leading_imag_yr": 0.17428636220821025,
+      "complex_leading_real_yr": -0.00020601949151958268,
+      "complex_period_yr": 36.05092921541051,
+      "eigenvalues": [
+        [
+          -0.9999999999990344,
+          0.0
+        ],
+        [
+          -0.49294840566186005,
+          0.0
+        ],
+        [
+          -0.49294840566186005,
+          0.0
+        ],
+        [
+          -42610.52926632339,
+          0.0
+        ],
+        [
+          -103.15920815758933,
+          0.0
+        ],
+        [
+          -0.00020601949151958268,
+          0.17428636220821025
+        ],
+        [
+          -0.00020601949151958268,
+          -0.17428636220821025
+        ]
+      ]
+    },
+    {
+      "epsilon": 0.1,
+      "loss_h": 0.001,
+      "loss_yr": 8.766,
+      "bank_lifetime_yr": 1.1407711613050422,
+      "ramp": "cubic",
+      "entry_a": false,
+      "entry_m": false,
+      "interpretation": "ordinary_jacobian",
+      "leading_real_yr": -0.00020601947194542132,
+      "leading_imag_yr": 0.05254893946747431,
+      "complex_leading_real_yr": -0.00020601947194542132,
+      "complex_period_yr": 119.56826095545898,
+      "eigenvalues": [
+        [
+          -0.9999999999990344,
+          0.0
+        ],
+        [
+          -42704.330960888794,
+          0.0
+        ],
+        [
+          -9.357513592241693,
+          0.0
+        ],
+        [
+          -0.00020601947194542132,
+          0.05254893946747431
+        ],
+        [
+          -0.00020601947194542132,
+          -0.05254893946747431
+        ],
+        [
+          -0.8766,
+          0.0
+        ],
+        [
+          -0.8766,
+          0.0
+        ]
+      ]
+    },
+    {
+      "epsilon": 0.1,
+      "loss_h": 0.001,
+      "loss_yr": 8.766,
+      "bank_lifetime_yr": 1.1407711613050422,
+      "ramp": "linear",
+      "entry_a": false,
+      "entry_m": false,
+      "interpretation": "directional_sector_not_stability_certificate",
+      "leading_real_yr": -0.00020601947194542132,
+      "leading_imag_yr": 0.05254893946747431,
+      "complex_leading_real_yr": -0.00020601947194542132,
+      "complex_period_yr": 119.56826095545898,
+      "eigenvalues": [
+        [
+          -0.9999999999990344,
+          0.0
+        ],
+        [
+          -42704.330960888794,
+          0.0
+        ],
+        [
+          -9.357513592241693,
+          0.0
+        ],
+        [
+          -0.00020601947194542132,
+          0.05254893946747431
+        ],
+        [
+          -0.00020601947194542132,
+          -0.05254893946747431
+        ],
+        [
+          -0.8766,
+          0.0
+        ],
+        [
+          -0.8766,
+          0.0
+        ]
+      ]
+    },
+    {
+      "epsilon": 0.1,
+      "loss_h": 0.001,
+      "loss_yr": 8.766,
+      "bank_lifetime_yr": 1.1407711613050422,
+      "ramp": "linear",
+      "entry_a": false,
+      "entry_m": true,
+      "interpretation": "directional_sector_not_stability_certificate",
+      "leading_real_yr": -0.0002464820242966781,
+      "leading_imag_yr": 0.06440951195716625,
+      "complex_leading_real_yr": -0.0002464820242966781,
+      "complex_period_yr": 97.5505809042311,
+      "eigenvalues": [
+        [
+          -0.9999999999990344,
+          0.0
+        ],
+        [
+          -0.8766,
+          0.0
+        ],
+        [
+          -42645.07887659648,
+          0.0
+        ],
+        [
+          -68.6095169594719,
+          0.0
+        ],
+        [
+          -0.0002464820242966781,
+          0.06440951195716625
+        ],
+        [
+          -0.0002464820242966781,
+          -0.06440951195716625
+        ],
+        [
+          -0.8766,
+          0.0
+        ]
+      ]
+    },
+    {
+      "epsilon": 0.1,
+      "loss_h": 0.001,
+      "loss_yr": 8.766,
+      "bank_lifetime_yr": 1.1407711613050422,
+      "ramp": "linear",
+      "entry_a": true,
+      "entry_m": false,
+      "interpretation": "directional_sector_not_stability_certificate",
+      "leading_real_yr": -0.0003996898372326058,
+      "leading_imag_yr": 0.08057935123746095,
+      "complex_leading_real_yr": -0.0003996898372326058,
+      "complex_period_yr": 77.975128996305,
+      "eigenvalues": [
+        [
+          -0.9999999999990344,
+          0.0
+        ],
+        [
+          -0.8766,
+          0.0
+        ],
+        [
+          -42669.87740175173,
+          0.0
+        ],
+        [
+          -43.81068538860158,
+          0.0
+        ],
+        [
+          -0.0003996898372326058,
+          0.08057935123746095
+        ],
+        [
+          -0.0003996898372326058,
+          -0.08057935123746095
+        ],
+        [
+          -0.8766,
+          0.0
+        ]
+      ]
+    },
+    {
+      "epsilon": 0.1,
+      "loss_h": 0.001,
+      "loss_yr": 8.766,
+      "bank_lifetime_yr": 1.1407711613050422,
+      "ramp": "linear",
+      "entry_a": true,
+      "entry_m": true,
+      "interpretation": "directional_sector_not_stability_certificate",
+      "leading_real_yr": -0.00020601949151958268,
+      "leading_imag_yr": 0.17428636220821025,
+      "complex_leading_real_yr": -0.00020601949151958268,
+      "complex_period_yr": 36.05092921541051,
+      "eigenvalues": [
+        [
+          -0.9999999999990344,
+          0.0
+        ],
+        [
+          -0.8766,
+          0.0
+        ],
+        [
+          -0.8766,
+          0.0
+        ],
+        [
+          -42610.52926632339,
+          0.0
+        ],
+        [
+          -103.15920815758933,
+          0.0
+        ],
+        [
+          -0.00020601949151958268,
+          0.17428636220821025
+        ],
+        [
+          -0.00020601949151958268,
+          -0.17428636220821025
+        ]
+      ]
+    }
+  ],
+  "cycle_comparisons": [
+    {
+      "case_id": "dormancy_0024",
+      "configuration": "none",
+      "loss_h": 0.001,
+      "epsilon": 0.003,
+      "switching_factor": 10.0,
+      "fraction": 0.0,
+      "matched_well_mixed_geometry": true,
+      "bank_lifetime_yr": 38.025705376834736,
+      "recorded_period_yr": 140.4307692307709,
+      "thermal_period_yr": 180.46909956708458,
+      "ratio_recorded_to_thermal": 0.7781430148853239,
+      "within_30_percent": true,
+      "thermal_leading_real_yr": 0.01306076884599422,
+      "source": "models/haze_world/review/dormancy126_cycle_0024.json",
+      "source_sha256": "2b2df60a25bee575293711cd10615d50ced0ae34a33f9562a2b238f11815c87d",
+      "comparison_scope": "Recorded cubic finite trajectory versus linear thermal mode; warm-refuge case is not a matched well-mixed geometry"
+    },
+    {
+      "case_id": "dormancy_0126",
+      "configuration": "none",
+      "loss_h": 0.002,
+      "epsilon": 0.001,
+      "switching_factor": 10.0,
+      "fraction": 0.0,
+      "matched_well_mixed_geometry": true,
+      "bank_lifetime_yr": 57.03855806525211,
+      "recorded_period_yr": 130.6142857142846,
+      "thermal_period_yr": 193.91664430584407,
+      "ratio_recorded_to_thermal": 0.6735589210603324,
+      "within_30_percent": false,
+      "thermal_leading_real_yr": 0.013699207633665871,
+      "source": "models/haze_world/review/dormancy126_cycle_0126.json",
+      "source_sha256": "0f7ff66c7cd2a76291533e9043cfdf31797540dfcbb162476fd300eefd06e4b2",
+      "comparison_scope": "Recorded cubic finite trajectory versus linear thermal mode; warm-refuge case is not a matched well-mixed geometry"
+    },
+    {
+      "case_id": "dormancy_0012",
+      "configuration": "warm",
+      "loss_h": 0.001,
+      "epsilon": 0.03,
+      "switching_factor": 10.0,
+      "fraction": 0.0,
+      "matched_well_mixed_geometry": false,
+      "bank_lifetime_yr": 3.802570537683474,
+      "recorded_period_yr": 442.59999999999997,
+      "thermal_period_yr": 122.21019239915306,
+      "ratio_recorded_to_thermal": 3.621629189113913,
+      "within_30_percent": null,
+      "thermal_leading_real_yr": 0.004692259920404798,
+      "source": "models/haze_world/review/dormancy0012_cycle_check.json",
+      "source_sha256": "c3f52ccf2443669114669b1eb9aa8797133815d6567b9da68385e136bafcd50d",
+      "comparison_scope": "Recorded cubic finite trajectory versus linear thermal mode; warm-refuge case is not a matched well-mixed geometry"
+    }
+  ],
+  "output_sha256": {
+    "dormancy_lag.csv": "dcf1f5af55c45e5a992e536c77c74e162bc695a8b22d30c6be967c0603f57494",
+    "dormancy_cycle_comparison.csv": "7ffd4e1f7cd0156fe8bd14de72fcf4060fd53164731822f8b8b928d78796ba3f"
+  }
+}

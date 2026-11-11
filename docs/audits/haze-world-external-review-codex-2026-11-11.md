@@ -56,18 +56,24 @@ strains remain unidentified. No new empirical parameter distribution is inferred
 
 ### Supply-band derivation
 
+**Correction, 12 November:** the Stage B independent audit found the reference
+contains a small nonzero abiotic methane source, omitted from this diagnostic
+in `242a30d`. The equations, regenerated receipt and exact endpoints below now
+subtract it. The qualitative sink conclusion and rounded band ratios stand.
+Accepted raw trajectories and the prepared Stage A archive are unchanged.
+
 At a fixed-product crossing, write q_i=m_i+L/Y_i and
 η_i=1−a_iL/q_i. With J in mol H₂/L/hour, outlet k(p*−p_atm), atmospheric
 loss ℓ in ratio/year, and inventory conversion C in ratio/(mol/L),
 
-    J_M = k(p*−p_atm) + 4ℓ/(C H η_M)
-    J_A = k(p*−p_atm) + 4ℓ/(C H f η_A),
+    J_M = k(p*−p_atm) + 4(ℓ−b)/(C H η_M)
+    J_A = k(p*−p_atm) + 4(ℓ−b)/(C H f η_A),
 
-where H is hours/year and there is no abiotic source in the reference.
+where H is hours/year and b is the abiotic methane source in ratio/year.
 The mixed interval lies between these two pure-guild endpoints, with positivity
 and stability checked separately. Exact 1/f requires equal efficiencies and
 negligible outlet. The full-budget endpoints at reference T* are potential
-0.229755 to 0.458542 for f=.5, and 0.229755 to 0.240514 for f=1.
+0.229178 to 0.457327 for f=.5, and 0.229178 to 0.239907 for f=1.
 The residual at f=1 is a consequence of assumed exported biomass, not acetate
 diversion. Recycling biomass would require an additional budget.
 

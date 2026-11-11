@@ -156,48 +156,49 @@
     "ratio": 0.1951068748475969,
     "eta_a": 0.8948707824828852,
     "eta_m": 0.9413221412423226,
+    "abiotic_ratio_yr": 5.4377158676709526e-08,
     "outlet_h2": 7.495433326849458e-08,
     "rows": [
       {
         "f": 0.0,
-        "lower_potential": 0.22975527443609656,
+        "lower_potential": 0.22917760653374653,
         "upper_potential": null,
         "endpoint_ratio": null,
         "ideal_no_assimilation_no_outlet_ratio": null
       },
       {
         "f": 0.5,
-        "lower_potential": 0.22975527443609656,
-        "upper_potential": 0.45854227290271354,
-        "endpoint_ratio": 1.9957856202785504,
+        "lower_potential": 0.22917760653374653,
+        "upper_potential": 0.4573269654026556,
+        "endpoint_ratio": 1.9955133152824596,
         "ideal_no_assimilation_no_outlet_ratio": 2.0
       },
       {
         "f": 0.9,
-        "lower_potential": 0.22975527443609656,
-        "upper_potential": 0.26473961827064013,
-        "endpoint_ratio": 1.1522678594448286,
+        "lower_potential": 0.22917760653374653,
+        "upper_potential": 0.2640644474372746,
+        "endpoint_ratio": 1.1522262206643255,
         "ideal_no_assimilation_no_outlet_ratio": 1.1111111111111112
       },
       {
         "f": 0.95,
-        "lower_potential": 0.22975527443609656,
-        "upper_potential": 0.2519894436237932,
-        "endpoint_ratio": 1.0967732699162944,
+        "lower_potential": 0.22917760653374653,
+        "upper_potential": 0.25134980809744695,
+        "endpoint_ratio": 1.0967468065447117,
         "ideal_no_assimilation_no_outlet_ratio": 1.0526315789473684
       },
       {
         "f": 0.98,
-        "lower_potential": 0.22975527443609656,
-        "upper_potential": 0.2449638371857347,
-        "endpoint_ratio": 1.0661946185434286,
+        "lower_potential": 0.22917760653374653,
+        "upper_potential": 0.24434378233876636,
+        "endpoint_ratio": 1.066176517131863,
         "ideal_no_assimilation_no_outlet_ratio": 1.0204081632653061
       },
       {
         "f": 1.0,
-        "lower_potential": 0.22975527443609656,
-        "upper_potential": 0.24051428644163095,
-        "endpoint_ratio": 1.0468281393406134,
+        "lower_potential": 0.22917760653374653,
+        "upper_potential": 0.239906632691602,
+        "endpoint_ratio": 1.046815333837059,
         "ideal_no_assimilation_no_outlet_ratio": 1.0
       }
     ]
@@ -253,6 +254,6 @@
     "src/terra_prisca/haze_world/population_coupling.py": "17a433957e94845595f6d7fd160ffe593c01c4e74550707b0814c95ab67ae663",
     "models/haze_response/arney2016/figure4.csv": "c0ef5f3d17ee7c6085ad36247f0f7814726dbbe3273842b01f2c6c4e046856f8",
     "models/haze_world/figures/bottleneck/main_0010_environment.npz": "d3d7e3c92b9d984d8500a6bec532a70b12fcf56b9bca513765055989ce59a92b",
-    "docs/audits/external-review-static-2026-11-11.py": "bb1497b1cfa095405471dc6dfe8f2aa74309254450ed034f0b329039a0732ffe"
+    "docs/audits/external-review-static-2026-11-11.py": "96f96fc56e8abe5820a2e7ec4dab09deb31b5fbfdf4d699dbbbb9bce8f37dd2e"
   }
 }

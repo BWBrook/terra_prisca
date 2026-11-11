@@ -1,0 +1,3027 @@
+{
+  "scope": "Selected homogeneous algebra and finite-difference check; no B2/B3 claims and no interval certificate.",
+  "rows": [
+    {
+      "chemistry": "fixed",
+      "fraction": 0.0,
+      "step": 0.0001,
+      "state": [
+        22.48629998054835,
+        0.00030119347927979196,
+        0.0004906231105327009,
+        0.00046296818626002885,
+        0.19510687484759687
+      ],
+      "temperature_k": 281.53482280508206,
+      "max_flow_scaled": 1.5512085741884777e-11,
+      "instantaneous_leading_real_yr": -0.00020601947100381846,
+      "community_slope_k_per_log_supply": -7.92690836255493e-14,
+      "finite_difference_slope_k_per_log_supply": 0.0,
+      "critical_lags_yr": [
+        0.14921426009655273
+      ],
+      "lag_rows": [
+        {
+          "lag_yr": 0.03,
+          "leading_real_yr": -0.00016459883217789418,
+          "leading_imag_yr": 0.052549266011421514
+        },
+        {
+          "lag_yr": 0.1,
+          "leading_real_yr": -6.794760001123084e-05,
+          "leading_imag_yr": 0.05254939351662819
+        },
+        {
+          "lag_yr": 0.3,
+          "leading_real_yr": 0.00020809902566567396,
+          "leading_imag_yr": 0.052544862649479294
+        },
+        {
+          "lag_yr": 1.0,
+          "leading_real_yr": 0.001168492521095399,
+          "leading_imag_yr": 0.0524724201809837
+        },
+        {
+          "lag_yr": 3.0,
+          "leading_real_yr": 0.0037577573904628058,
+          "leading_imag_yr": 0.05182309051885675
+        },
+        {
+          "lag_yr": 10.0,
+          "leading_real_yr": 0.00954592433486837,
+          "leading_imag_yr": 0.04717703592267575
+        },
+        {
+          "lag_yr": 30.0,
+          "leading_real_yr": 0.012954035911669767,
+          "leading_imag_yr": 0.03719340414541396
+        },
+        {
+          "lag_yr": 100.0,
+          "leading_real_yr": 0.011922276702162567,
+          "leading_imag_yr": 0.02591085714132423
+        },
+        {
+          "lag_yr": 300.0,
+          "leading_real_yr": 0.009355130858412594,
+          "leading_imag_yr": 0.018115393261888123
+        },
+        {
+          "lag_yr": 1000.0,
+          "leading_real_yr": 0.006647979342988214,
+          "leading_imag_yr": 0.012150081760003461
+        },
+        {
+          "lag_yr": 10000.0,
+          "leading_real_yr": 0.0031885904849304246,
+          "leading_imag_yr": 0.005640741811519623
+        }
+      ],
+      "selected_control": {
+        "temperature_k": 273.51674403884846,
+        "ratio": 0.2161500046799454,
+        "state": [
+          70.19416051685708,
+          0.0,
+          0.0005744177342218682,
+          0.0,
+          0.2161500046799454
+        ],
+        "derivative_k_per_log_supply": -13.264889806375916,
+        "leading_real_yr": -9.714455896239674e-05
+      },
+      "stable_controls": [
+        {
+          "temperature_k": 273.51674403884846,
+          "ratio": 0.2161500046799454,
+          "state": [
+            70.19416051685708,
+            0.0,
+            0.0005744177342218682,
+            0.0,
+            0.2161500046799454
+          ],
+          "derivative_k_per_log_supply": -13.264889806375916,
+          "leading_real_yr": -9.714455896239674e-05
+        }
+      ],
+      "gain": 5.975856926263175e-15,
+      "two_layer": null
+    },
+    {
+      "chemistry": "fixed",
+      "fraction": 0.0,
+      "step": 1e-05,
+      "state": [
+        22.48629998054835,
+        0.00030119347927979196,
+        0.0004906231105327009,
+        0.00046296818626002885,
+        0.19510687484759687
+      ],
+      "temperature_k": 281.53482280508206,
+      "max_flow_scaled": 1.5512085741884777e-11,
+      "instantaneous_leading_real_yr": -0.0002060194709989761,
+      "community_slope_k_per_log_supply": -7.914182006158953e-14,
+      "finite_difference_slope_k_per_log_supply": 0.0,
+      "critical_lags_yr": [
+        0.14921426009154073
+      ],
+      "lag_rows": [
+        {
+          "lag_yr": 0.03,
+          "leading_real_yr": -0.00016459883217206974,
+          "leading_imag_yr": 0.052549266011692075
+        },
+        {
+          "lag_yr": 0.1,
+          "leading_real_yr": -6.794760000558583e-05,
+          "leading_imag_yr": 0.05254939351689929
+        },
+        {
+          "lag_yr": 0.3,
+          "leading_real_yr": 0.00020809902567451351,
+          "leading_imag_yr": 0.052544862649749634
+        },
+        {
+          "lag_yr": 1.0,
+          "leading_real_yr": 0.001168492521114188,
+          "leading_imag_yr": 0.05247242018125245
+        },
+        {
+          "lag_yr": 3.0,
+          "leading_real_yr": 0.0037577573905069822,
+          "leading_imag_yr": 0.05182309051911478
+        },
+        {
+          "lag_yr": 10.0,
+          "leading_real_yr": 0.009545924334946491,
+          "leading_imag_yr": 0.04717703592288053
+        },
+        {
+          "lag_yr": 30.0,
+          "leading_real_yr": 0.012954035911743097,
+          "leading_imag_yr": 0.03719340414555121
+        },
+        {
+          "lag_yr": 100.0,
+          "leading_real_yr": 0.011922276702214265,
+          "leading_imag_yr": 0.02591085714141401
+        },
+        {
+          "lag_yr": 300.0,
+          "leading_real_yr": 0.009355130858448465,
+          "leading_imag_yr": 0.01811539326195064
+        },
+        {
+          "lag_yr": 1000.0,
+          "leading_real_yr": 0.006647979343012278,
+          "leading_imag_yr": 0.012150081760044883
+        },
+        {
+          "lag_yr": 10000.0,
+          "leading_real_yr": 0.0031885904849415243,
+          "leading_imag_yr": 0.005640741811538932
+        }
+      ],
+      "selected_control": {
+        "temperature_k": 273.51674403884846,
+        "ratio": 0.2161500046799454,
+        "state": [
+          70.19416051685708,
+          0.0,
+          0.0005744177342218682,
+          0.0,
+          0.2161500046799454
+        ],
+        "derivative_k_per_log_supply": -13.26488980640089,
+        "leading_real_yr": -9.714455896207638e-05
+      },
+      "stable_controls": [
+        {
+          "temperature_k": 273.51674403884846,
+          "ratio": 0.2161500046799454,
+          "state": [
+            70.19416051685708,
+            0.0,
+            0.0005744177342218682,
+            0.0,
+            0.2161500046799454
+          ],
+          "derivative_k_per_log_supply": -13.26488980640089,
+          "leading_real_yr": -9.714455896207638e-05
+        }
+      ],
+      "gain": 5.9662629103334234e-15,
+      "two_layer": null
+    },
+    {
+      "chemistry": "fixed",
+      "fraction": 0.0,
+      "step": 1e-06,
+      "state": [
+        22.48629998054835,
+        0.00030119347927979196,
+        0.0004906231105327009,
+        0.00046296818626002885,
+        0.19510687484759687
+      ],
+      "temperature_k": 281.53482280508206,
+      "max_flow_scaled": 1.5512085741884777e-11,
+      "instantaneous_leading_real_yr": -0.00020601947110059353,
+      "community_slope_k_per_log_supply": -7.867732543228052e-14,
+      "finite_difference_slope_k_per_log_supply": 0.0,
+      "critical_lags_yr": [
+        0.14921426020364115
+      ],
+      "lag_rows": [
+        {
+          "lag_yr": 0.03,
+          "leading_real_yr": -0.00016459883228337705,
+          "leading_imag_yr": 0.052549266004883084
+        },
+        {
+          "lag_yr": 0.1,
+          "leading_real_yr": -6.7947600142456e-05,
+          "leading_imag_yr": 0.05254939351009057
+        },
+        {
+          "lag_yr": 0.3,
+          "leading_real_yr": 0.0002080990254662183,
+          "leading_imag_yr": 0.05254486264294527
+        },
+        {
+          "lag_yr": 1.0,
+          "leading_real_yr": 0.0011684925206588174,
+          "leading_imag_yr": 0.05247242017448385
+        },
+        {
+          "lag_yr": 3.0,
+          "leading_real_yr": 0.0037577573894307277,
+          "leading_imag_yr": 0.051823090512606286
+        },
+        {
+          "lag_yr": 10.0,
+          "leading_real_yr": 0.009545924332979416,
+          "leading_imag_yr": 0.047177035917724326
+        },
+        {
+          "lag_yr": 30.0,
+          "leading_real_yr": 0.012954035909906573,
+          "leading_imag_yr": 0.03719340414207571
+        },
+        {
+          "lag_yr": 100.0,
+          "leading_real_yr": 0.011922276700910964,
+          "leading_imag_yr": 0.0259108571391481
+        },
+        {
+          "lag_yr": 300.0,
+          "leading_real_yr": 0.00935513085753802,
+          "leading_imag_yr": 0.018115393260387778
+        },
+        {
+          "lag_yr": 1000.0,
+          "leading_real_yr": 0.006647979342402046,
+          "leading_imag_yr": 0.012150081758999141
+        },
+        {
+          "lag_yr": 10000.0,
+          "leading_real_yr": 0.0031885904846578046,
+          "leading_imag_yr": 0.005640741811052727
+        }
+      ],
+      "selected_control": {
+        "temperature_k": 273.51674403884846,
+        "ratio": 0.2161500046799454,
+        "state": [
+          70.19416051685708,
+          0.0,
+          0.0005744177342218682,
+          0.0,
+          0.2161500046799454
+        ],
+        "derivative_k_per_log_supply": -13.264889809728876,
+        "leading_real_yr": -9.71445589444315e-05
+      },
+      "stable_controls": [
+        {
+          "temperature_k": 273.51674403884846,
+          "ratio": 0.2161500046799454,
+          "state": [
+            70.19416051685708,
+            0.0,
+            0.0005744177342218682,
+            0.0,
+            0.2161500046799454
+          ],
+          "derivative_k_per_log_supply": -13.264889809728876,
+          "leading_real_yr": -9.71445589444315e-05
+        }
+      ],
+      "gain": 5.931246060904039e-15,
+      "two_layer": null
+    },
+    {
+      "chemistry": "products",
+      "fraction": 0.0,
+      "step": 0.0001,
+      "state": [
+        22.399597208751896,
+        0.0003015235408585935,
+        0.0004903399145597231,
+        0.0004639406922892485,
+        0.19505929028173835
+      ],
+      "temperature_k": 281.5691435563301,
+      "max_flow_scaled": 5.41639263405609e-12,
+      "instantaneous_leading_real_yr": -0.011171782784890134,
+      "community_slope_k_per_log_supply": -1.8826396492518727,
+      "finite_difference_slope_k_per_log_supply": -1.8826397177917897,
+      "critical_lags_yr": [],
+      "lag_rows": [
+        {
+          "lag_yr": 0.03,
+          "leading_real_yr": -0.011175620184615603,
+          "leading_imag_yr": 0.0
+        },
+        {
+          "lag_yr": 0.1,
+          "leading_real_yr": -0.011184594774971779,
+          "leading_imag_yr": 0.0
+        },
+        {
+          "lag_yr": 0.3,
+          "leading_real_yr": -0.011210397209669336,
+          "leading_imag_yr": 0.0
+        },
+        {
+          "lag_yr": 1.0,
+          "leading_real_yr": -0.011302635264238912,
+          "leading_imag_yr": 0.0
+        },
+        {
+          "lag_yr": 3.0,
+          "leading_real_yr": -0.011584247497530802,
+          "leading_imag_yr": 0.0
+        },
+        {
+          "lag_yr": 10.0,
+          "leading_real_yr": -0.012870694108697912,
+          "leading_imag_yr": 0.0
+        },
+        {
+          "lag_yr": 30.0,
+          "leading_real_yr": -0.01616117985775819,
+          "leading_imag_yr": 0.009919834737127617
+        },
+        {
+          "lag_yr": 100.0,
+          "leading_real_yr": -0.004893932737136062,
+          "leading_imag_yr": 0.009173415122417483
+        },
+        {
+          "lag_yr": 300.0,
+          "leading_real_yr": -0.0016662122415598368,
+          "leading_imag_yr": 0.005768694979945058
+        },
+        {
+          "lag_yr": 1000.0,
+          "leading_real_yr": -0.0005356821541602052,
+          "leading_imag_yr": 0.0032452025845914074
+        },
+        {
+          "lag_yr": 10000.0,
+          "leading_real_yr": -9.950840243336633e-05,
+          "leading_imag_yr": 0.0010353775212361214
+        }
+      ],
+      "selected_control": {
+        "temperature_k": 273.516849653236,
+        "ratio": 0.21614769781480403,
+        "state": [
+          70.19662615868864,
+          0.0,
+          0.0005744113112166041,
+          0.0,
+          0.21614769781480403
+        ],
+        "derivative_k_per_log_supply": -13.263666572274268,
+        "leading_real_yr": -9.715352096861288e-05
+      },
+      "stable_controls": [
+        {
+          "temperature_k": 273.516849653236,
+          "ratio": 0.21614769781480403,
+          "state": [
+            70.19662615868864,
+            0.0,
+            0.0005744113112166041,
+            0.0,
+            0.21614769781480403
+          ],
+          "derivative_k_per_log_supply": -13.263666572274268,
+          "leading_real_yr": -9.715352096861288e-05
+        }
+      ],
+      "gain": 0.14193960915658513,
+      "two_layer": null
+    },
+    {
+      "chemistry": "products",
+      "fraction": 0.0,
+      "step": 1e-05,
+      "state": [
+        22.399597208751896,
+        0.0003015235408585935,
+        0.0004903399145597231,
+        0.0004639406922892485,
+        0.19505929028173835
+      ],
+      "temperature_k": 281.5691435563301,
+      "max_flow_scaled": 5.41639263405609e-12,
+      "instantaneous_leading_real_yr": -0.011171782788890847,
+      "community_slope_k_per_log_supply": -1.8826396486273889,
+      "finite_difference_slope_k_per_log_supply": -1.8826397177917897,
+      "critical_lags_yr": [],
+      "lag_rows": [
+        {
+          "lag_yr": 0.03,
+          "leading_real_yr": -0.011175620188619279,
+          "leading_imag_yr": 0.0
+        },
+        {
+          "lag_yr": 0.1,
+          "leading_real_yr": -0.011184594778981361,
+          "leading_imag_yr": 0.0
+        },
+        {
+          "lag_yr": 0.3,
+          "leading_real_yr": -0.011210397213699106,
+          "leading_imag_yr": 0.0
+        },
+        {
+          "lag_yr": 1.0,
+          "leading_real_yr": -0.01130263526833681,
+          "leading_imag_yr": 0.0
+        },
+        {
+          "lag_yr": 3.0,
+          "leading_real_yr": -0.011584247501850138,
+          "leading_imag_yr": 0.0
+        },
+        {
+          "lag_yr": 10.0,
+          "leading_real_yr": -0.012870694114199957,
+          "leading_imag_yr": 0.0
+        },
+        {
+          "lag_yr": 30.0,
+          "leading_real_yr": -0.016161179857327537,
+          "leading_imag_yr": 0.009919834743783293
+        },
+        {
+          "lag_yr": 100.0,
+          "leading_real_yr": -0.004893932737031791,
+          "leading_imag_yr": 0.009173415124426538
+        },
+        {
+          "lag_yr": 300.0,
+          "leading_real_yr": -0.0016662122415377666,
+          "leading_imag_yr": 0.005768694980989208
+        },
+        {
+          "lag_yr": 1000.0,
+          "leading_real_yr": -0.0005356821541660783,
+          "leading_imag_yr": 0.0032452025851454898
+        },
+        {
+          "lag_yr": 10000.0,
+          "leading_real_yr": -9.950840244982181e-05,
+          "leading_imag_yr": 0.0010353775214084445
+        }
+      ],
+      "selected_control": {
+        "temperature_k": 273.516849653236,
+        "ratio": 0.21614769781480403,
+        "state": [
+          70.19662615868864,
+          0.0,
+          0.0005744113112166041,
+          0.0,
+          0.21614769781480403
+        ],
+        "derivative_k_per_log_supply": -13.263666572183675,
+        "leading_real_yr": -9.71535209692188e-05
+      },
+      "stable_controls": [
+        {
+          "temperature_k": 273.516849653236,
+          "ratio": 0.21614769781480403,
+          "state": [
+            70.19662615868864,
+            0.0,
+            0.0005744113112166041,
+            0.0,
+            0.21614769781480403
+          ],
+          "derivative_k_per_log_supply": -13.263666572183675,
+          "leading_real_yr": -9.71535209692188e-05
+        }
+      ],
+      "gain": 0.1419396091104723,
+      "two_layer": null
+    },
+    {
+      "chemistry": "products",
+      "fraction": 0.0,
+      "step": 1e-06,
+      "state": [
+        22.399597208751896,
+        0.0003015235408585935,
+        0.0004903399145597231,
+        0.0004639406922892485,
+        0.19505929028173835
+      ],
+      "temperature_k": 281.5691435563301,
+      "max_flow_scaled": 5.41639263405609e-12,
+      "instantaneous_leading_real_yr": -0.011171782787536607,
+      "community_slope_k_per_log_supply": -1.882639648697874,
+      "finite_difference_slope_k_per_log_supply": -1.8826397177917897,
+      "critical_lags_yr": [],
+      "lag_rows": [
+        {
+          "lag_yr": 0.03,
+          "leading_real_yr": -0.011175620187263974,
+          "leading_imag_yr": 0.0
+        },
+        {
+          "lag_yr": 0.1,
+          "leading_real_yr": -0.011184594777624339,
+          "leading_imag_yr": 0.0
+        },
+        {
+          "lag_yr": 0.3,
+          "leading_real_yr": -0.01121039721233637,
+          "leading_imag_yr": 0.0
+        },
+        {
+          "lag_yr": 1.0,
+          "leading_real_yr": -0.011302635266950136,
+          "leading_imag_yr": 0.0
+        },
+        {
+          "lag_yr": 3.0,
+          "leading_real_yr": -0.01158424750039307,
+          "leading_imag_yr": 0.0
+        },
+        {
+          "lag_yr": 10.0,
+          "leading_real_yr": -0.01287069411235902,
+          "leading_imag_yr": 0.0
+        },
+        {
+          "lag_yr": 30.0,
+          "leading_real_yr": -0.016161179857429292,
+          "leading_imag_yr": 0.009919834741625371
+        },
+        {
+          "lag_yr": 100.0,
+          "leading_real_yr": -0.004893932737008018,
+          "leading_imag_yr": 0.009173415123781475
+        },
+        {
+          "lag_yr": 300.0,
+          "leading_real_yr": -0.001666212241483151,
+          "leading_imag_yr": 0.005768694980658296
+        },
+        {
+          "lag_yr": 1000.0,
+          "leading_real_yr": -0.0005356821541011095,
+          "leading_imag_yr": 0.0032452025849690255
+        },
+        {
+          "lag_yr": 10000.0,
+          "leading_real_yr": -9.950840238087504e-05,
+          "leading_imag_yr": 0.0010353775213564147
+        }
+      ],
+      "selected_control": {
+        "temperature_k": 273.516849653236,
+        "ratio": 0.21614769781480403,
+        "state": [
+          70.19662615868864,
+          0.0,
+          0.0005744113112166041,
+          0.0,
+          0.21614769781480403
+        ],
+        "derivative_k_per_log_supply": -13.263666572996764,
+        "leading_real_yr": -9.715352094627463e-05
+      },
+      "stable_controls": [
+        {
+          "temperature_k": 273.516849653236,
+          "ratio": 0.21614769781480403,
+          "state": [
+            70.19662615868864,
+            0.0,
+            0.0005744113112166041,
+            0.0,
+            0.21614769781480403
+          ],
+          "derivative_k_per_log_supply": -13.263666572996764,
+          "leading_real_yr": -9.715352094627463e-05
+        }
+      ],
+      "gain": 0.14193960910708528,
+      "two_layer": null
+    },
+    {
+      "chemistry": "acetate_only",
+      "fraction": 0.0,
+      "step": 0.0001,
+      "state": [
+        22.39966924541444,
+        0.00030152333200204526,
+        0.0004903406198024887,
+        0.00046393921132894823,
+        0.19505940870683436
+      ],
+      "temperature_k": 281.5690581412761,
+      "max_flow_scaled": 1.354093803775074e-12,
+      "instantaneous_leading_real_yr": -0.011170123786316865,
+      "community_slope_k_per_log_supply": -1.8829114514039664,
+      "finite_difference_slope_k_per_log_supply": -1.8829115202834146,
+      "critical_lags_yr": [],
+      "lag_rows": [
+        {
+          "lag_yr": 0.03,
+          "leading_real_yr": -0.01117396076935762,
+          "leading_imag_yr": 0.0
+        },
+        {
+          "lag_yr": 0.1,
+          "leading_real_yr": -0.011182934384089904,
+          "leading_imag_yr": 0.0
+        },
+        {
+          "lag_yr": 0.3,
+          "leading_real_yr": -0.011208734005089588,
+          "leading_imag_yr": 0.0
+        },
+        {
+          "lag_yr": 1.0,
+          "leading_real_yr": -0.011300961894165918,
+          "leading_imag_yr": 0.0
+        },
+        {
+          "lag_yr": 3.0,
+          "leading_real_yr": -0.01158254201681563,
+          "leading_imag_yr": 0.0
+        },
+        {
+          "lag_yr": 10.0,
+          "leading_real_yr": -0.012868817745630949,
+          "leading_imag_yr": 0.0
+        },
+        {
+          "lag_yr": 30.0,
+          "leading_real_yr": -0.016160107481805713,
+          "leading_imag_yr": 0.009918852562323242
+        },
+        {
+          "lag_yr": 100.0,
+          "leading_real_yr": -0.004892883203145449,
+          "leading_imag_yr": 0.009173088743992076
+        },
+        {
+          "lag_yr": 300.0,
+          "leading_real_yr": -0.0016651685776503467,
+          "leading_imag_yr": 0.0057685264447973955
+        },
+        {
+          "lag_yr": 1000.0,
+          "leading_real_yr": -0.0005346404823857836,
+          "leading_imag_yr": 0.0032451237588840293
+        },
+        {
+          "lag_yr": 10000.0,
+          "leading_real_yr": -9.846749065993646e-05,
+          "leading_imag_yr": 0.0010353984876692278
+        }
+      ],
+      "selected_control": {
+        "temperature_k": 273.51674403884846,
+        "ratio": 0.2161500046799454,
+        "state": [
+          70.19416051685708,
+          0.0,
+          0.0005744177342218682,
+          0.0,
+          0.2161500046799454
+        ],
+        "derivative_k_per_log_supply": -13.264889806375916,
+        "leading_real_yr": -9.714455896239674e-05
+      },
+      "stable_controls": [
+        {
+          "temperature_k": 273.51674403884846,
+          "ratio": 0.2161500046799454,
+          "state": [
+            70.19416051685708,
+            0.0,
+            0.0005744177342218682,
+            0.0,
+            0.2161500046799454
+          ],
+          "derivative_k_per_log_supply": -13.264889806375916,
+          "leading_real_yr": -9.714455896239674e-05
+        }
+      ],
+      "gain": 0.1419470104078003,
+      "two_layer": null
+    },
+    {
+      "chemistry": "acetate_only",
+      "fraction": 0.0,
+      "step": 1e-05,
+      "state": [
+        22.39966924541444,
+        0.00030152333200204526,
+        0.0004903406198024887,
+        0.00046393921132894823,
+        0.19505940870683436
+      ],
+      "temperature_k": 281.5690581412761,
+      "max_flow_scaled": 1.354093803775074e-12,
+      "instantaneous_leading_real_yr": -0.011170123796189176,
+      "community_slope_k_per_log_supply": -1.8829114498506565,
+      "finite_difference_slope_k_per_log_supply": -1.8829115202834146,
+      "critical_lags_yr": [],
+      "lag_rows": [
+        {
+          "lag_yr": 0.03,
+          "leading_real_yr": -0.011173960779236327,
+          "leading_imag_yr": 0.0
+        },
+        {
+          "lag_yr": 0.1,
+          "leading_real_yr": -0.011182934393985626,
+          "leading_imag_yr": 0.0
+        },
+        {
+          "lag_yr": 0.3,
+          "leading_real_yr": -0.011208734015032933,
+          "leading_imag_yr": 0.0
+        },
+        {
+          "lag_yr": 1.0,
+          "leading_real_yr": -0.011300961904282576,
+          "leading_imag_yr": 0.0
+        },
+        {
+          "lag_yr": 3.0,
+          "leading_real_yr": -0.01158254202747979,
+          "leading_imag_yr": 0.0
+        },
+        {
+          "lag_yr": 10.0,
+          "leading_real_yr": -0.012868817759226717,
+          "leading_imag_yr": 0.0
+        },
+        {
+          "lag_yr": 30.0,
+          "leading_real_yr": -0.016160107480666357,
+          "leading_imag_yr": 0.00991885257883563
+        },
+        {
+          "lag_yr": 100.0,
+          "leading_real_yr": -0.0048928832028354435,
+          "leading_imag_yr": 0.009173088748960893
+        },
+        {
+          "lag_yr": 300.0,
+          "leading_real_yr": -0.0016651685775491312,
+          "leading_imag_yr": 0.005768526447383129
+        },
+        {
+          "lag_yr": 1000.0,
+          "leading_real_yr": -0.0005346404823550264,
+          "leading_imag_yr": 0.003245123760252532
+        },
+        {
+          "lag_yr": 10000.0,
+          "leading_real_yr": -9.846749065600961e-05,
+          "leading_imag_yr": 0.0010353984880973742
+        }
+      ],
+      "selected_control": {
+        "temperature_k": 273.51674403884846,
+        "ratio": 0.2161500046799454,
+        "state": [
+          70.19416051685708,
+          0.0,
+          0.0005744177342218682,
+          0.0,
+          0.2161500046799454
+        ],
+        "derivative_k_per_log_supply": -13.26488980640089,
+        "leading_real_yr": -9.714455896207638e-05
+      },
+      "stable_controls": [
+        {
+          "temperature_k": 273.51674403884846,
+          "ratio": 0.2161500046799454,
+          "state": [
+            70.19416051685708,
+            0.0,
+            0.0005744177342218682,
+            0.0,
+            0.2161500046799454
+          ],
+          "derivative_k_per_log_supply": -13.26488980640089,
+          "leading_real_yr": -9.714455896207638e-05
+        }
+      ],
+      "gain": 0.14194701029043372,
+      "two_layer": null
+    },
+    {
+      "chemistry": "acetate_only",
+      "fraction": 0.0,
+      "step": 1e-06,
+      "state": [
+        22.39966924541444,
+        0.00030152333200204526,
+        0.0004903406198024887,
+        0.00046393921132894823,
+        0.19505940870683436
+      ],
+      "temperature_k": 281.5690581412761,
+      "max_flow_scaled": 1.354093803775074e-12,
+      "instantaneous_leading_real_yr": -0.011170123801786754,
+      "community_slope_k_per_log_supply": -1.8829114491732981,
+      "finite_difference_slope_k_per_log_supply": -1.8829115202834146,
+      "critical_lags_yr": [],
+      "lag_rows": [
+        {
+          "lag_yr": 0.03,
+          "leading_real_yr": -0.01117396078483771,
+          "leading_imag_yr": 0.0
+        },
+        {
+          "lag_yr": 0.1,
+          "leading_real_yr": -0.011182934399596233,
+          "leading_imag_yr": 0.0
+        },
+        {
+          "lag_yr": 0.3,
+          "leading_real_yr": -0.01120873402066987,
+          "leading_imag_yr": 0.0
+        },
+        {
+          "lag_yr": 1.0,
+          "leading_real_yr": -0.01130096191001626,
+          "leading_imag_yr": 0.0
+        },
+        {
+          "lag_yr": 3.0,
+          "leading_real_yr": -0.01158254203351422,
+          "leading_imag_yr": 0.0
+        },
+        {
+          "lag_yr": 10.0,
+          "leading_real_yr": -0.012868817766879056,
+          "leading_imag_yr": 0.0
+        },
+        {
+          "lag_yr": 30.0,
+          "leading_real_yr": -0.016160107480416307,
+          "leading_imag_yr": 0.009918852588016508
+        },
+        {
+          "lag_yr": 100.0,
+          "leading_real_yr": -0.004892883202768596,
+          "leading_imag_yr": 0.009173088751856955
+        },
+        {
+          "lag_yr": 300.0,
+          "leading_real_yr": -0.0016651685775310138,
+          "leading_imag_yr": 0.005768526448905433
+        },
+        {
+          "lag_yr": 1000.0,
+          "leading_real_yr": -0.0005346404823536337,
+          "leading_imag_yr": 0.003245123761062012
+        },
+        {
+          "lag_yr": 10000.0,
+          "leading_real_yr": -9.846749066101413e-05,
+          "leading_imag_yr": 0.0010353984883503535
+        }
+      ],
+      "selected_control": {
+        "temperature_k": 273.51674403884846,
+        "ratio": 0.2161500046799454,
+        "state": [
+          70.19416051685708,
+          0.0,
+          0.0005744177342218682,
+          0.0,
+          0.2161500046799454
+        ],
+        "derivative_k_per_log_supply": -13.264889809728876,
+        "leading_real_yr": -9.71445589444315e-05
+      },
+      "stable_controls": [
+        {
+          "temperature_k": 273.51674403884846,
+          "ratio": 0.2161500046799454,
+          "state": [
+            70.19416051685708,
+            0.0,
+            0.0005744177342218682,
+            0.0,
+            0.2161500046799454
+          ],
+          "derivative_k_per_log_supply": -13.264889809728876,
+          "leading_real_yr": -9.71445589444315e-05
+        }
+      ],
+      "gain": 0.14194701020375708,
+      "two_layer": null
+    },
+    {
+      "chemistry": "methane_only",
+      "fraction": 0.0,
+      "step": 0.0001,
+      "state": [
+        22.486219792466095,
+        0.0003011937189571248,
+        0.0004906223545065728,
+        0.0004629697938361629,
+        0.1951067477346421
+      ],
+      "temperature_k": 281.53491448632417,
+      "max_flow_scaled": 3.3722045781555875e-11,
+      "instantaneous_leading_real_yr": -0.00020604187984545164,
+      "community_slope_k_per_log_supply": -1.7043819671471394e-13,
+      "finite_difference_slope_k_per_log_supply": 0.0,
+      "critical_lags_yr": [
+        0.14923549474968364
+      ],
+      "lag_rows": [
+        {
+          "lag_yr": 0.03,
+          "leading_real_yr": -0.00016462262959154682,
+          "leading_imag_yr": 0.05255342137363028
+        },
+        {
+          "lag_yr": 0.1,
+          "leading_real_yr": -6.797463719324483e-05,
+          "leading_imag_yr": 0.05255354889386318
+        },
+        {
+          "lag_yr": 0.3,
+          "leading_real_yr": 0.00020806273026034423,
+          "leading_imag_yr": 0.05254901803435945
+        },
+        {
+          "lag_yr": 1.0,
+          "leading_real_yr": 0.0011684236706270982,
+          "leading_imag_yr": 0.052476575204195144
+        },
+        {
+          "lag_yr": 3.0,
+          "leading_real_yr": 0.0037575916354459582,
+          "leading_imag_yr": 0.05182724301416376
+        },
+        {
+          "lag_yr": 10.0,
+          "leading_real_yr": 0.009545386752948666,
+          "leading_imag_yr": 0.047181237711617564
+        },
+        {
+          "lag_yr": 30.0,
+          "leading_real_yr": 0.01295274111919705,
+          "leading_imag_yr": 0.03719804284169055
+        },
+        {
+          "lag_yr": 100.0,
+          "leading_real_yr": 0.011919806988190236,
+          "leading_imag_yr": 0.02591673408418432
+        },
+        {
+          "lag_yr": 300.0,
+          "leading_real_yr": 0.009351224431278591,
+          "leading_imag_yr": 0.01812324353299143
+        },
+        {
+          "lag_yr": 1000.0,
+          "leading_real_yr": 0.0066418777828431835,
+          "leading_imag_yr": 0.012161328629324815
+        },
+        {
+          "lag_yr": 10000.0,
+          "leading_real_yr": 0.0031750574256725287,
+          "leading_imag_yr": 0.005664263039631957
+        }
+      ],
+      "selected_control": {
+        "temperature_k": 273.516849653236,
+        "ratio": 0.21614769781480403,
+        "state": [
+          70.19662615868864,
+          0.0,
+          0.0005744113112166041,
+          0.0,
+          0.21614769781480403
+        ],
+        "derivative_k_per_log_supply": -13.263666572274268,
+        "leading_real_yr": -9.715352096861288e-05
+      },
+      "stable_controls": [
+        {
+          "temperature_k": 273.516849653236,
+          "ratio": 0.21614769781480403,
+          "state": [
+            70.19662615868864,
+            0.0,
+            0.0005744113112166041,
+            0.0,
+            0.21614769781480403
+          ],
+          "derivative_k_per_log_supply": -13.263666572274268,
+          "leading_real_yr": -9.715352096861288e-05
+        }
+      ],
+      "gain": 1.2850006126585673e-14,
+      "two_layer": null
+    },
+    {
+      "chemistry": "methane_only",
+      "fraction": 0.0,
+      "step": 1e-05,
+      "state": [
+        22.486219792466095,
+        0.0003011937189571248,
+        0.0004906223545065728,
+        0.0004629697938361629,
+        0.1951067477346421
+      ],
+      "temperature_k": 281.53491448632417,
+      "max_flow_scaled": 3.3722045781555875e-11,
+      "instantaneous_leading_real_yr": -0.00020604187984586458,
+      "community_slope_k_per_log_supply": -1.6840578681877903e-13,
+      "finite_difference_slope_k_per_log_supply": 0.0,
+      "critical_lags_yr": [
+        0.14923549474793385
+      ],
+      "lag_rows": [
+        {
+          "lag_yr": 0.03,
+          "leading_real_yr": -0.0001646226295928807,
+          "leading_imag_yr": 0.052553421374009535
+        },
+        {
+          "lag_yr": 0.1,
+          "leading_real_yr": -6.797463719163246e-05,
+          "leading_imag_yr": 0.05255354889424221
+        },
+        {
+          "lag_yr": 0.3,
+          "leading_real_yr": 0.00020806273026546929,
+          "leading_imag_yr": 0.05254901803473819
+        },
+        {
+          "lag_yr": 1.0,
+          "leading_real_yr": 0.0011684236706442658,
+          "leading_imag_yr": 0.0524765752045727
+        },
+        {
+          "lag_yr": 3.0,
+          "leading_real_yr": 0.0037575916354942035,
+          "leading_imag_yr": 0.05182724301452829
+        },
+        {
+          "lag_yr": 10.0,
+          "leading_real_yr": 0.009545386753040824,
+          "leading_imag_yr": 0.047181237711914736
+        },
+        {
+          "lag_yr": 30.0,
+          "leading_real_yr": 0.012952741119279344,
+          "leading_imag_yr": 0.0371980428419049
+        },
+        {
+          "lag_yr": 100.0,
+          "leading_real_yr": 0.011919806988236184,
+          "leading_imag_yr": 0.025916734084347033
+        },
+        {
+          "lag_yr": 300.0,
+          "leading_real_yr": 0.00935122443129371,
+          "leading_imag_yr": 0.018123243533132903
+        },
+        {
+          "lag_yr": 1000.0,
+          "leading_real_yr": 0.006641877782826232,
+          "leading_imag_yr": 0.012161328629466115
+        },
+        {
+          "lag_yr": 10000.0,
+          "leading_real_yr": 0.0031750574255810797,
+          "leading_imag_yr": 0.005664263039840302
+        }
+      ],
+      "selected_control": {
+        "temperature_k": 273.516849653236,
+        "ratio": 0.21614769781480403,
+        "state": [
+          70.19662615868864,
+          0.0,
+          0.0005744113112166041,
+          0.0,
+          0.21614769781480403
+        ],
+        "derivative_k_per_log_supply": -13.263666572183675,
+        "leading_real_yr": -9.71535209692188e-05
+      },
+      "stable_controls": [
+        {
+          "temperature_k": 273.516849653236,
+          "ratio": 0.21614769781480403,
+          "state": [
+            70.19662615868864,
+            0.0,
+            0.0005744113112166041,
+            0.0,
+            0.21614769781480403
+          ],
+          "derivative_k_per_log_supply": -13.263666572183675,
+          "leading_real_yr": -9.71535209692188e-05
+        }
+      ],
+      "gain": 1.2696774749446479e-14,
+      "two_layer": null
+    },
+    {
+      "chemistry": "methane_only",
+      "fraction": 0.0,
+      "step": 1e-06,
+      "state": [
+        22.486219792466095,
+        0.0003011937189571248,
+        0.0004906223545065728,
+        0.0004629697938361629,
+        0.1951067477346421
+      ],
+      "temperature_k": 281.53491448632417,
+      "max_flow_scaled": 3.3722045781555875e-11,
+      "instantaneous_leading_real_yr": -0.0002060418799097295,
+      "community_slope_k_per_log_supply": -1.672061095211123e-13,
+      "finite_difference_slope_k_per_log_supply": 0.0,
+      "critical_lags_yr": [
+        0.14923549481568812
+      ],
+      "lag_rows": [
+        {
+          "lag_yr": 0.03,
+          "leading_real_yr": -0.0001646226296618188,
+          "leading_imag_yr": 0.05255342137029173
+        },
+        {
+          "lag_yr": 0.1,
+          "leading_real_yr": -6.797463727556089e-05,
+          "leading_imag_yr": 0.052553548890525104
+        },
+        {
+          "lag_yr": 0.3,
+          "leading_real_yr": 0.00020806273014240196,
+          "leading_imag_yr": 0.052549018031023444
+        },
+        {
+          "lag_yr": 1.0,
+          "leading_real_yr": 0.0011684236703839294,
+          "leading_imag_yr": 0.05247657520087877
+        },
+        {
+          "lag_yr": 3.0,
+          "leading_real_yr": 0.00375759163489084,
+          "leading_imag_yr": 0.051827243010979865
+        },
+        {
+          "lag_yr": 10.0,
+          "leading_real_yr": 0.009545386751944624,
+          "leading_imag_yr": 0.04718123770911638
+        },
+        {
+          "lag_yr": 30.0,
+          "leading_real_yr": 0.012952741118251463,
+          "leading_imag_yr": 0.03719804284003821
+        },
+        {
+          "lag_yr": 100.0,
+          "leading_real_yr": 0.011919806987492544,
+          "leading_imag_yr": 0.02591673408316056
+        },
+        {
+          "lag_yr": 300.0,
+          "leading_real_yr": 0.009351224430752043,
+          "leading_imag_yr": 0.018123243532355914
+        },
+        {
+          "lag_yr": 1000.0,
+          "leading_real_yr": 0.0066418777824273165,
+          "leading_imag_yr": 0.012161328629010692
+        },
+        {
+          "lag_yr": 10000.0,
+          "leading_real_yr": 0.003175057425282293,
+          "leading_imag_yr": 0.005664263039826634
+        }
+      ],
+      "selected_control": {
+        "temperature_k": 273.516849653236,
+        "ratio": 0.21614769781480403,
+        "state": [
+          70.19662615868864,
+          0.0,
+          0.0005744113112166041,
+          0.0,
+          0.21614769781480403
+        ],
+        "derivative_k_per_log_supply": -13.263666572996764,
+        "leading_real_yr": -9.715352094627463e-05
+      },
+      "stable_controls": [
+        {
+          "temperature_k": 273.516849653236,
+          "ratio": 0.21614769781480403,
+          "state": [
+            70.19662615868864,
+            0.0,
+            0.0005744113112166041,
+            0.0,
+            0.21614769781480403
+          ],
+          "derivative_k_per_log_supply": -13.263666572996764,
+          "leading_real_yr": -9.715352094627463e-05
+        }
+      ],
+      "gain": 1.2606326357865773e-14,
+      "two_layer": null
+    },
+    {
+      "chemistry": "fixed",
+      "fraction": 0.5,
+      "step": 0.0001,
+      "state": [
+        22.48629998054835,
+        0.0005740589129863751,
+        0.00033832330504541375,
+        0.0008823929866848788,
+        0.19510687484759687
+      ],
+      "temperature_k": 281.53482280508206,
+      "max_flow_scaled": 3.709411807842012e-11,
+      "instantaneous_leading_real_yr": -0.0009260103681800665,
+      "community_slope_k_per_log_supply": -7.822128737379289e-14,
+      "finite_difference_slope_k_per_log_supply": 0.0,
+      "critical_lags_yr": [
+        1.1027600778535027
+      ],
+      "lag_rows": [
+        {
+          "lag_yr": 0.03,
+          "leading_real_yr": -0.000900860540704663,
+          "leading_imag_yr": 0.04094506835882637
+        },
+        {
+          "lag_yr": 0.1,
+          "leading_real_yr": -0.000842148711290396,
+          "leading_imag_yr": 0.04094851729346067
+        },
+        {
+          "lag_yr": 0.3,
+          "leading_real_yr": -0.0006742232516727558,
+          "leading_imag_yr": 0.04095605041203089
+        },
+        {
+          "lag_yr": 1.0,
+          "leading_real_yr": -8.614183971725378e-05,
+          "leading_imag_yr": 0.04095527434660358
+        },
+        {
+          "lag_yr": 3.0,
+          "leading_real_yr": 0.0015543573740977913,
+          "leading_imag_yr": 0.040728157836561876
+        },
+        {
+          "lag_yr": 10.0,
+          "leading_real_yr": 0.005881349560069572,
+          "leading_imag_yr": 0.03826899072079181
+        },
+        {
+          "lag_yr": 30.0,
+          "leading_real_yr": 0.009547190198520222,
+          "leading_imag_yr": 0.031186787221417395
+        },
+        {
+          "lag_yr": 100.0,
+          "leading_real_yr": 0.009534421856549867,
+          "leading_imag_yr": 0.02198981901678938
+        },
+        {
+          "lag_yr": 300.0,
+          "leading_real_yr": 0.007703701514910424,
+          "leading_imag_yr": 0.015396051579683061
+        },
+        {
+          "lag_yr": 1000.0,
+          "leading_real_yr": 0.005550582277588997,
+          "leading_imag_yr": 0.010318623541340496
+        },
+        {
+          "lag_yr": 10000.0,
+          "leading_real_yr": 0.00268420414769633,
+          "leading_imag_yr": 0.0047825666446314015
+        }
+      ],
+      "selected_control": {
+        "temperature_k": 273.51674403884846,
+        "ratio": 0.2161500046799454,
+        "state": [
+          70.19416051685708,
+          0.0,
+          0.0005744177342218682,
+          0.0,
+          0.2161500046799454
+        ],
+        "derivative_k_per_log_supply": -13.264889806375916,
+        "leading_real_yr": -9.714455896239674e-05
+      },
+      "stable_controls": [
+        {
+          "temperature_k": 273.51674403884846,
+          "ratio": 0.2161500046799454,
+          "state": [
+            70.19416051685708,
+            0.0,
+            0.0005744177342218682,
+            0.0,
+            0.2161500046799454
+          ],
+          "derivative_k_per_log_supply": -13.264889806375916,
+          "leading_real_yr": -9.714455896239674e-05
+        }
+      ],
+      "gain": 5.896866729808412e-15,
+      "two_layer": {
+        "critical_fast_coefficients_yr": [
+          0.01096337710612403
+        ],
+        "first_to_one_layer_ratio": 0.00994176097439435,
+        "effective_low_frequency_lag_factor": 101,
+        "scope": "Named coupled two-layer diagnostic: Ts receives Teq\u22122Ts+Td; tau_s=100tau_f. Equation coefficients are not calibrated ocean response times."
+      }
+    },
+    {
+      "chemistry": "fixed",
+      "fraction": 0.5,
+      "step": 1e-05,
+      "state": [
+        22.48629998054835,
+        0.0005740589129863751,
+        0.00033832330504541375,
+        0.0008823929866848788,
+        0.19510687484759687
+      ],
+      "temperature_k": 281.53482280508206,
+      "max_flow_scaled": 3.709411807842012e-11,
+      "instantaneous_leading_real_yr": -0.0009260103681475463,
+      "community_slope_k_per_log_supply": -7.51010181030035e-14,
+      "finite_difference_slope_k_per_log_supply": 0.0,
+      "critical_lags_yr": [
+        1.1027600778035258
+      ],
+      "lag_rows": [
+        {
+          "lag_yr": 0.03,
+          "leading_real_yr": -0.0009008605406693904,
+          "leading_imag_yr": 0.040945068359034914
+        },
+        {
+          "lag_yr": 0.1,
+          "leading_real_yr": -0.0008421487112561101,
+          "leading_imag_yr": 0.0409485172936694
+        },
+        {
+          "lag_yr": 0.3,
+          "leading_real_yr": -0.000674223251639624,
+          "leading_imag_yr": 0.04095605041223985
+        },
+        {
+          "lag_yr": 1.0,
+          "leading_real_yr": -8.61418396745686e-05,
+          "leading_imag_yr": 0.040955274346810976
+        },
+        {
+          "lag_yr": 3.0,
+          "leading_real_yr": 0.0015543573741551775,
+          "leading_imag_yr": 0.04072815783676035
+        },
+        {
+          "lag_yr": 10.0,
+          "leading_real_yr": 0.005881349560148858,
+          "leading_imag_yr": 0.03826899072095078
+        },
+        {
+          "lag_yr": 30.0,
+          "leading_real_yr": 0.009547190198591456,
+          "leading_imag_yr": 0.031186787221523515
+        },
+        {
+          "lag_yr": 100.0,
+          "leading_real_yr": 0.009534421856597804,
+          "leading_imag_yr": 0.021989819016859355
+        },
+        {
+          "lag_yr": 300.0,
+          "leading_real_yr": 0.007703701514942587,
+          "leading_imag_yr": 0.015396051579732218
+        },
+        {
+          "lag_yr": 1000.0,
+          "leading_real_yr": 0.005550582277610417,
+          "leading_imag_yr": 0.010318623541373747
+        },
+        {
+          "lag_yr": 10000.0,
+          "leading_real_yr": 0.002684204147705863,
+          "leading_imag_yr": 0.00478256664464732
+        }
+      ],
+      "selected_control": {
+        "temperature_k": 273.51674403884846,
+        "ratio": 0.2161500046799454,
+        "state": [
+          70.19416051685708,
+          0.0,
+          0.0005744177342218682,
+          0.0,
+          0.2161500046799454
+        ],
+        "derivative_k_per_log_supply": -13.26488980640089,
+        "leading_real_yr": -9.714455896207638e-05
+      },
+      "stable_controls": [
+        {
+          "temperature_k": 273.51674403884846,
+          "ratio": 0.2161500046799454,
+          "state": [
+            70.19416051685708,
+            0.0,
+            0.0005744177342218682,
+            0.0,
+            0.2161500046799454
+          ],
+          "derivative_k_per_log_supply": -13.26488980640089,
+          "leading_real_yr": -9.714455896207638e-05
+        }
+      ],
+      "gain": 5.6616390485779966e-15,
+      "two_layer": {
+        "critical_fast_coefficients_yr": [
+          0.010963377105579031
+        ],
+        "first_to_one_layer_ratio": 0.009941760974350696,
+        "effective_low_frequency_lag_factor": 101,
+        "scope": "Named coupled two-layer diagnostic: Ts receives Teq\u22122Ts+Td; tau_s=100tau_f. Equation coefficients are not calibrated ocean response times."
+      }
+    },
+    {
+      "chemistry": "fixed",
+      "fraction": 0.5,
+      "step": 1e-06,
+      "state": [
+        22.48629998054835,
+        0.0005740589129863751,
+        0.00033832330504541375,
+        0.0008823929866848788,
+        0.19510687484759687
+      ],
+      "temperature_k": 281.53482280508206,
+      "max_flow_scaled": 3.709411807842012e-11,
+      "instantaneous_leading_real_yr": -0.0009260103682328228,
+      "community_slope_k_per_log_supply": -7.818882045715055e-14,
+      "finite_difference_slope_k_per_log_supply": 0.0,
+      "critical_lags_yr": [
+        1.1027600779741573
+      ],
+      "lag_rows": [
+        {
+          "lag_yr": 0.03,
+          "leading_real_yr": -0.0009008605407523001,
+          "leading_imag_yr": 0.040945068357711153
+        },
+        {
+          "lag_yr": 0.1,
+          "leading_real_yr": -0.00084214871134689,
+          "leading_imag_yr": 0.040948517292347206
+        },
+        {
+          "lag_yr": 0.3,
+          "leading_real_yr": -0.0006742232517389021,
+          "leading_imag_yr": 0.04095605041091784
+        },
+        {
+          "lag_yr": 1.0,
+          "leading_real_yr": -8.614183981373448e-05,
+          "leading_imag_yr": 0.04095527434549513
+        },
+        {
+          "lag_yr": 3.0,
+          "leading_real_yr": 0.0015543573739166556,
+          "leading_imag_yr": 0.040728157835482864
+        },
+        {
+          "lag_yr": 10.0,
+          "leading_real_yr": 0.005881349559733956,
+          "leading_imag_yr": 0.0382689907198952
+        },
+        {
+          "lag_yr": 30.0,
+          "leading_real_yr": 0.009547190198186594,
+          "leading_imag_yr": 0.031186787220807134
+        },
+        {
+          "lag_yr": 100.0,
+          "leading_real_yr": 0.009534421856310206,
+          "leading_imag_yr": 0.021989819016393953
+        },
+        {
+          "lag_yr": 300.0,
+          "leading_real_yr": 0.007703701514743333,
+          "leading_imag_yr": 0.015396051579409858
+        },
+        {
+          "lag_yr": 1000.0,
+          "leading_real_yr": 0.005550582277477267,
+          "leading_imag_yr": 0.010318623541156372
+        },
+        {
+          "lag_yr": 10000.0,
+          "leading_real_yr": 0.002684204147643804,
+          "leading_imag_yr": 0.004782566644545204
+        }
+      ],
+      "selected_control": {
+        "temperature_k": 273.51674403884846,
+        "ratio": 0.2161500046799454,
+        "state": [
+          70.19416051685708,
+          0.0,
+          0.0005744177342218682,
+          0.0,
+          0.2161500046799454
+        ],
+        "derivative_k_per_log_supply": -13.264889809728876,
+        "leading_real_yr": -9.71445589444315e-05
+      },
+      "stable_controls": [
+        {
+          "temperature_k": 273.51674403884846,
+          "ratio": 0.2161500046799454,
+          "state": [
+            70.19416051685708,
+            0.0,
+            0.0005744177342218682,
+            0.0,
+            0.2161500046799454
+          ],
+          "derivative_k_per_log_supply": -13.264889809728876,
+          "leading_real_yr": -9.71445589444315e-05
+        }
+      ],
+      "gain": 5.894419145480159e-15,
+      "two_layer": {
+        "critical_fast_coefficients_yr": [
+          0.010963377107867645
+        ],
+        "first_to_one_layer_ratio": 0.009941760974887746,
+        "effective_low_frequency_lag_factor": 101,
+        "scope": "Named coupled two-layer diagnostic: Ts receives Teq\u22122Ts+Td; tau_s=100tau_f. Equation coefficients are not calibrated ocean response times."
+      }
+    },
+    {
+      "chemistry": "products",
+      "fraction": 0.5,
+      "step": 0.0001,
+      "state": [
+        23.154152051827882,
+        0.0005687760381834438,
+        0.00034250584139566825,
+        0.0008679690763540503,
+        0.19545348599918216
+      ],
+      "temperature_k": 281.28482672129456,
+      "max_flow_scaled": 2.4961999276928652e-18,
+      "instantaneous_leading_real_yr": -0.011335997550532327,
+      "community_slope_k_per_log_supply": -1.8775671511094807,
+      "finite_difference_slope_k_per_log_supply": -1.877567221697518,
+      "critical_lags_yr": [],
+      "lag_rows": [
+        {
+          "lag_yr": 0.03,
+          "leading_real_yr": -0.011340002744757478,
+          "leading_imag_yr": 0.0
+        },
+        {
+          "lag_yr": 0.1,
+          "leading_real_yr": -0.011349370391741758,
+          "leading_imag_yr": 0.0
+        },
+        {
+          "lag_yr": 0.3,
+          "leading_real_yr": -0.011376307843385452,
+          "leading_imag_yr": 0.0
+        },
+        {
+          "lag_yr": 1.0,
+          "leading_real_yr": -0.011472664258764377,
+          "leading_imag_yr": 0.0
+        },
+        {
+          "lag_yr": 3.0,
+          "leading_real_yr": -0.011767463739477674,
+          "leading_imag_yr": 0.0
+        },
+        {
+          "lag_yr": 10.0,
+          "leading_real_yr": -0.013128240109780115,
+          "leading_imag_yr": 0.0
+        },
+        {
+          "lag_yr": 30.0,
+          "leading_real_yr": -0.01592911110276339,
+          "leading_imag_yr": 0.010263105915547048
+        },
+        {
+          "lag_yr": 100.0,
+          "leading_real_yr": -0.004837171644608368,
+          "leading_imag_yr": 0.009212264223706457
+        },
+        {
+          "lag_yr": 300.0,
+          "leading_real_yr": -0.0016482240454726228,
+          "leading_imag_yr": 0.005780744827156986
+        },
+        {
+          "lag_yr": 1000.0,
+          "leading_real_yr": -0.0005302750688986207,
+          "leading_imag_yr": 0.003250157944193425
+        },
+        {
+          "lag_yr": 10000.0,
+          "leading_real_yr": -9.882414965750027e-05,
+          "leading_imag_yr": 0.0010367649895776732
+        }
+      ],
+      "selected_control": {
+        "temperature_k": 273.516849653236,
+        "ratio": 0.21614769781480403,
+        "state": [
+          70.19662615868864,
+          0.0,
+          0.0005744113112166041,
+          0.0,
+          0.21614769781480403
+        ],
+        "derivative_k_per_log_supply": -13.263666572274268,
+        "leading_real_yr": -9.715352096861288e-05
+      },
+      "stable_controls": [
+        {
+          "temperature_k": 273.516849653236,
+          "ratio": 0.21614769781480403,
+          "state": [
+            70.19662615868864,
+            0.0,
+            0.0005744113112166041,
+            0.0,
+            0.21614769781480403
+          ],
+          "derivative_k_per_log_supply": -13.263666572274268,
+          "leading_real_yr": -9.715352096861288e-05
+        }
+      ],
+      "gain": 0.14155717356724398,
+      "two_layer": null
+    },
+    {
+      "chemistry": "products",
+      "fraction": 0.5,
+      "step": 1e-05,
+      "state": [
+        23.154152051827882,
+        0.0005687760381834438,
+        0.00034250584139566825,
+        0.0008679690763540503,
+        0.19545348599918216
+      ],
+      "temperature_k": 281.28482672129456,
+      "max_flow_scaled": 2.4961999276928652e-18,
+      "instantaneous_leading_real_yr": -0.011335997552363912,
+      "community_slope_k_per_log_supply": -1.877567150826934,
+      "finite_difference_slope_k_per_log_supply": -1.877567221697518,
+      "critical_lags_yr": [],
+      "lag_rows": [
+        {
+          "lag_yr": 0.03,
+          "leading_real_yr": -0.011340002746590527,
+          "leading_imag_yr": 0.0
+        },
+        {
+          "lag_yr": 0.1,
+          "leading_real_yr": -0.01134937039357684,
+          "leading_imag_yr": 0.0
+        },
+        {
+          "lag_yr": 0.3,
+          "leading_real_yr": -0.011376307845230934,
+          "leading_imag_yr": 0.0
+        },
+        {
+          "lag_yr": 1.0,
+          "leading_real_yr": -0.011472664260643113,
+          "leading_imag_yr": 0.0
+        },
+        {
+          "lag_yr": 3.0,
+          "leading_real_yr": -0.011767463741463853,
+          "leading_imag_yr": 0.0
+        },
+        {
+          "lag_yr": 10.0,
+          "leading_real_yr": -0.013128240112352828,
+          "leading_imag_yr": 0.0
+        },
+        {
+          "lag_yr": 30.0,
+          "leading_real_yr": -0.015929111102435188,
+          "leading_imag_yr": 0.010263105918475669
+        },
+        {
+          "lag_yr": 100.0,
+          "leading_real_yr": -0.004837171644529953,
+          "leading_imag_yr": 0.009212264224579048
+        },
+        {
+          "lag_yr": 300.0,
+          "leading_real_yr": -0.0016482240454528455,
+          "leading_imag_yr": 0.005780744827609992
+        },
+        {
+          "lag_yr": 1000.0,
+          "leading_real_yr": -0.0005302750688981377,
+          "leading_imag_yr": 0.0032501579444315014
+        },
+        {
+          "lag_yr": 10000.0,
+          "leading_real_yr": -9.88241496644226e-05,
+          "leading_imag_yr": 0.0010367649896517916
+        }
+      ],
+      "selected_control": {
+        "temperature_k": 273.516849653236,
+        "ratio": 0.21614769781480403,
+        "state": [
+          70.19662615868864,
+          0.0,
+          0.0005744113112166041,
+          0.0,
+          0.21614769781480403
+        ],
+        "derivative_k_per_log_supply": -13.263666572183675,
+        "leading_real_yr": -9.71535209692188e-05
+      },
+      "stable_controls": [
+        {
+          "temperature_k": 273.516849653236,
+          "ratio": 0.21614769781480403,
+          "state": [
+            70.19662615868864,
+            0.0,
+            0.0005744113112166041,
+            0.0,
+            0.21614769781480403
+          ],
+          "derivative_k_per_log_supply": -13.263666572183675,
+          "leading_real_yr": -9.71535209692188e-05
+        }
+      ],
+      "gain": 0.14155717354690853,
+      "two_layer": null
+    },
+    {
+      "chemistry": "products",
+      "fraction": 0.5,
+      "step": 1e-06,
+      "state": [
+        23.154152051827882,
+        0.0005687760381834438,
+        0.00034250584139566825,
+        0.0008679690763540503,
+        0.19545348599918216
+      ],
+      "temperature_k": 281.28482672129456,
+      "max_flow_scaled": 2.4961999276928652e-18,
+      "instantaneous_leading_real_yr": -0.011335997547085419,
+      "community_slope_k_per_log_supply": -1.8775671510016383,
+      "finite_difference_slope_k_per_log_supply": -1.877567221697518,
+      "critical_lags_yr": [],
+      "lag_rows": [
+        {
+          "lag_yr": 0.03,
+          "leading_real_yr": -0.01134000274130914,
+          "leading_imag_yr": 0.0
+        },
+        {
+          "lag_yr": 0.1,
+          "leading_real_yr": -0.011349370388286548,
+          "leading_imag_yr": 0.0
+        },
+        {
+          "lag_yr": 0.3,
+          "leading_real_yr": -0.011376307839914696,
+          "leading_imag_yr": 0.0
+        },
+        {
+          "lag_yr": 1.0,
+          "leading_real_yr": -0.01147266425523417,
+          "leading_imag_yr": 0.0
+        },
+        {
+          "lag_yr": 3.0,
+          "leading_real_yr": -0.011767463735761811,
+          "leading_imag_yr": 0.0
+        },
+        {
+          "lag_yr": 10.0,
+          "leading_real_yr": -0.013128240105055507,
+          "leading_imag_yr": 0.0
+        },
+        {
+          "lag_yr": 30.0,
+          "leading_real_yr": -0.015929111102646984,
+          "leading_imag_yr": 0.010263105910330776
+        },
+        {
+          "lag_yr": 100.0,
+          "leading_real_yr": -0.004837171644546489,
+          "leading_imag_yr": 0.009212264221944431
+        },
+        {
+          "lag_yr": 300.0,
+          "leading_real_yr": -0.0016482240454145447,
+          "leading_imag_yr": 0.0057807448262210265
+        },
+        {
+          "lag_yr": 1000.0,
+          "leading_real_yr": -0.0005302750688410331,
+          "leading_imag_yr": 0.0032501579436933995
+        },
+        {
+          "lag_yr": 10000.0,
+          "leading_real_yr": -9.882414959993871e-05,
+          "leading_imag_yr": 0.0010367649894242829
+        }
+      ],
+      "selected_control": {
+        "temperature_k": 273.516849653236,
+        "ratio": 0.21614769781480403,
+        "state": [
+          70.19662615868864,
+          0.0,
+          0.0005744113112166041,
+          0.0,
+          0.21614769781480403
+        ],
+        "derivative_k_per_log_supply": -13.263666572996764,
+        "leading_real_yr": -9.715352094627463e-05
+      },
+      "stable_controls": [
+        {
+          "temperature_k": 273.516849653236,
+          "ratio": 0.21614769781480403,
+          "state": [
+            70.19662615868864,
+            0.0,
+            0.0005744113112166041,
+            0.0,
+            0.21614769781480403
+          ],
+          "derivative_k_per_log_supply": -13.263666572996764,
+          "leading_real_yr": -9.715352094627463e-05
+        }
+      ],
+      "gain": 0.14155717355140246,
+      "two_layer": null
+    },
+    {
+      "chemistry": "acetate_only",
+      "fraction": 0.5,
+      "step": 0.0001,
+      "state": [
+        23.154253697771317,
+        0.0005687752526709587,
+        0.0003425073522649778,
+        0.0008679649415302643,
+        0.19545364943568833
+      ],
+      "temperature_k": 281.2847088413986,
+      "max_flow_scaled": 3.2749115700008806e-12,
+      "instantaneous_leading_real_yr": -0.01133490134500241,
+      "community_slope_k_per_log_supply": -1.8777433905168692,
+      "finite_difference_slope_k_per_log_supply": -1.877743461307091,
+      "critical_lags_yr": [],
+      "lag_rows": [
+        {
+          "lag_yr": 0.03,
+          "leading_real_yr": -0.011338906402243734,
+          "leading_imag_yr": 0.0
+        },
+        {
+          "lag_yr": 0.1,
+          "leading_real_yr": -0.011348273728500958,
+          "leading_imag_yr": 0.0
+        },
+        {
+          "lag_yr": 0.3,
+          "leading_real_yr": -0.011375210255191802,
+          "leading_imag_yr": 0.0
+        },
+        {
+          "lag_yr": 1.0,
+          "leading_real_yr": -0.011471563329097741,
+          "leading_imag_yr": 0.0
+        },
+        {
+          "lag_yr": 3.0,
+          "leading_real_yr": -0.011766352255599636,
+          "leading_imag_yr": 0.0
+        },
+        {
+          "lag_yr": 10.0,
+          "leading_real_yr": -0.01312707227049522,
+          "leading_imag_yr": 0.0
+        },
+        {
+          "lag_yr": 30.0,
+          "leading_real_yr": -0.01592816632704246,
+          "leading_imag_yr": 0.01026279812191019
+        },
+        {
+          "lag_yr": 100.0,
+          "leading_real_yr": -0.0048362767869132295,
+          "leading_imag_yr": 0.009212141517658413
+        },
+        {
+          "lag_yr": 300.0,
+          "leading_real_yr": -0.0016473413266823037,
+          "leading_imag_yr": 0.005780681733970063
+        },
+        {
+          "lag_yr": 1000.0,
+          "leading_real_yr": -0.0005293964080657767,
+          "leading_imag_yr": 0.003250133267270595
+        },
+        {
+          "lag_yr": 10000.0,
+          "leading_real_yr": -9.794702880189718e-05,
+          "leading_imag_yr": 0.0010367955863033222
+        }
+      ],
+      "selected_control": {
+        "temperature_k": 273.51674403884846,
+        "ratio": 0.2161500046799454,
+        "state": [
+          70.19416051685708,
+          0.0,
+          0.0005744177342218682,
+          0.0,
+          0.2161500046799454
+        ],
+        "derivative_k_per_log_supply": -13.264889806375916,
+        "leading_real_yr": -9.714455896239674e-05
+      },
+      "stable_controls": [
+        {
+          "temperature_k": 273.51674403884846,
+          "ratio": 0.2161500046799454,
+          "state": [
+            70.19416051685708,
+            0.0,
+            0.0005744177342218682,
+            0.0,
+            0.2161500046799454
+          ],
+          "derivative_k_per_log_supply": -13.264889806375916,
+          "leading_real_yr": -9.714455896239674e-05
+        }
+      ],
+      "gain": 0.14155740589826168,
+      "two_layer": null
+    },
+    {
+      "chemistry": "acetate_only",
+      "fraction": 0.5,
+      "step": 1e-05,
+      "state": [
+        23.154253697771317,
+        0.0005687752526709587,
+        0.0003425073522649778,
+        0.0008679649415302643,
+        0.19545364943568833
+      ],
+      "temperature_k": 281.2847088413986,
+      "max_flow_scaled": 3.2749115700008806e-12,
+      "instantaneous_leading_real_yr": -0.011334901335885264,
+      "community_slope_k_per_log_supply": -1.877743391899269,
+      "finite_difference_slope_k_per_log_supply": -1.877743461307091,
+      "critical_lags_yr": [],
+      "lag_rows": [
+        {
+          "lag_yr": 0.03,
+          "leading_real_yr": -0.011338906393120199,
+          "leading_imag_yr": 0.0
+        },
+        {
+          "lag_yr": 0.1,
+          "leading_real_yr": -0.011348273719360372,
+          "leading_imag_yr": 0.0
+        },
+        {
+          "lag_yr": 0.3,
+          "leading_real_yr": -0.011375210246004805,
+          "leading_imag_yr": 0.0
+        },
+        {
+          "lag_yr": 1.0,
+          "leading_real_yr": -0.011471563319743373,
+          "leading_imag_yr": 0.0
+        },
+        {
+          "lag_yr": 3.0,
+          "leading_real_yr": -0.011766352245711077,
+          "leading_imag_yr": 0.0
+        },
+        {
+          "lag_yr": 10.0,
+          "leading_real_yr": -0.013127072257683543,
+          "leading_imag_yr": 0.0
+        },
+        {
+          "lag_yr": 30.0,
+          "leading_real_yr": -0.015928166328648442,
+          "leading_imag_yr": 0.010262798107306324
+        },
+        {
+          "lag_yr": 100.0,
+          "leading_real_yr": -0.004836276787325899,
+          "leading_imag_yr": 0.009212141513278397
+        },
+        {
+          "lag_yr": 300.0,
+          "leading_real_yr": -0.0016473413268142901,
+          "leading_imag_yr": 0.005780681731704541
+        },
+        {
+          "lag_yr": 1000.0,
+          "leading_real_yr": -0.0005293964081046864,
+          "leading_imag_yr": 0.0032501332660744273
+        },
+        {
+          "lag_yr": 10000.0,
+          "leading_real_yr": -9.794702880570495e-05,
+          "leading_imag_yr": 0.001036795585928767
+        }
+      ],
+      "selected_control": {
+        "temperature_k": 273.51674403884846,
+        "ratio": 0.2161500046799454,
+        "state": [
+          70.19416051685708,
+          0.0,
+          0.0005744177342218682,
+          0.0,
+          0.2161500046799454
+        ],
+        "derivative_k_per_log_supply": -13.26488980640089,
+        "leading_real_yr": -9.714455896207638e-05
+      },
+      "stable_controls": [
+        {
+          "temperature_k": 273.51674403884846,
+          "ratio": 0.2161500046799454,
+          "state": [
+            70.19416051685708,
+            0.0,
+            0.0005744177342218682,
+            0.0,
+            0.2161500046799454
+          ],
+          "derivative_k_per_log_supply": -13.26488980640089,
+          "leading_real_yr": -9.714455896207638e-05
+        }
+      ],
+      "gain": 0.14155740600221012,
+      "two_layer": null
+    },
+    {
+      "chemistry": "acetate_only",
+      "fraction": 0.5,
+      "step": 1e-06,
+      "state": [
+        23.154253697771317,
+        0.0005687752526709587,
+        0.0003425073522649778,
+        0.0008679649415302643,
+        0.19545364943568833
+      ],
+      "temperature_k": 281.2847088413986,
+      "max_flow_scaled": 3.2749115700008806e-12,
+      "instantaneous_leading_real_yr": -0.011334901343239416,
+      "community_slope_k_per_log_supply": -1.8777433909460632,
+      "finite_difference_slope_k_per_log_supply": -1.877743461307091,
+      "critical_lags_yr": [],
+      "lag_rows": [
+        {
+          "lag_yr": 0.03,
+          "leading_real_yr": -0.011338906400480514,
+          "leading_imag_yr": 0.0
+        },
+        {
+          "lag_yr": 0.1,
+          "leading_real_yr": -0.011348273726733263,
+          "leading_imag_yr": 0.0
+        },
+        {
+          "lag_yr": 0.3,
+          "leading_real_yr": -0.011375210253414612,
+          "leading_imag_yr": 0.0
+        },
+        {
+          "lag_yr": 1.0,
+          "leading_real_yr": -0.011471563327284202,
+          "leading_imag_yr": 0.0
+        },
+        {
+          "lag_yr": 3.0,
+          "leading_real_yr": -0.01176635225367126,
+          "leading_imag_yr": 0.0
+        },
+        {
+          "lag_yr": 10.0,
+          "leading_real_yr": -0.013127072267939058,
+          "leading_imag_yr": 0.0
+        },
+        {
+          "lag_yr": 30.0,
+          "leading_real_yr": -0.015928166327891465,
+          "leading_imag_yr": 0.010262798118906968
+        },
+        {
+          "lag_yr": 100.0,
+          "leading_real_yr": -0.004836276787124267,
+          "leading_imag_yr": 0.00921214151692363
+        },
+        {
+          "lag_yr": 300.0,
+          "leading_real_yr": -0.001647341326749383,
+          "leading_imag_yr": 0.005780681733608107
+        },
+        {
+          "lag_yr": 1000.0,
+          "leading_real_yr": -0.0005293964080856986,
+          "leading_imag_yr": 0.0032501332670843842
+        },
+        {
+          "lag_yr": 10000.0,
+          "leading_real_yr": -9.794702880412911e-05,
+          "leading_imag_yr": 0.0010367955862450747
+        }
+      ],
+      "selected_control": {
+        "temperature_k": 273.51674403884846,
+        "ratio": 0.2161500046799454,
+        "state": [
+          70.19416051685708,
+          0.0,
+          0.0005744177342218682,
+          0.0,
+          0.2161500046799454
+        ],
+        "derivative_k_per_log_supply": -13.264889809728876,
+        "leading_real_yr": -9.71445589444315e-05
+      },
+      "stable_controls": [
+        {
+          "temperature_k": 273.51674403884846,
+          "ratio": 0.2161500046799454,
+          "state": [
+            70.19416051685708,
+            0.0,
+            0.0005744177342218682,
+            0.0,
+            0.2161500046799454
+          ],
+          "derivative_k_per_log_supply": -13.264889809728876,
+          "leading_real_yr": -9.71445589444315e-05
+        }
+      ],
+      "gain": 0.14155740589483592,
+      "two_layer": null
+    },
+    {
+      "chemistry": "methane_only",
+      "fraction": 0.5,
+      "step": 0.0001,
+      "state": [
+        22.486219792466095,
+        0.0005740594890504876,
+        0.00033832212373266827,
+        0.0008823962339441421,
+        0.1951067477346421
+      ],
+      "temperature_k": 281.53491448632417,
+      "max_flow_scaled": 7.149073705689845e-11,
+      "instantaneous_leading_real_yr": -0.0009261447414398874,
+      "community_slope_k_per_log_supply": -1.6227309059376246e-13,
+      "finite_difference_slope_k_per_log_supply": 0.0,
+      "critical_lags_yr": [
+        1.1029576497231595
+      ],
+      "lag_rows": [
+        {
+          "lag_yr": 0.03,
+          "leading_real_yr": -0.0009009957666872036,
+          "leading_imag_yr": 0.04094829757230381
+        },
+        {
+          "lag_yr": 0.1,
+          "leading_real_yr": -0.0008422859252664463,
+          "leading_imag_yr": 0.04095174666025666
+        },
+        {
+          "lag_yr": 0.3,
+          "leading_real_yr": -0.0006743661336527315,
+          "leading_imag_yr": 0.040959280201453126
+        },
+        {
+          "lag_yr": 1.0,
+          "leading_real_yr": -8.630446900194213e-05,
+          "leading_imag_yr": 0.040958505425958885
+        },
+        {
+          "lag_yr": 3.0,
+          "leading_real_yr": 0.00155413790627966,
+          "leading_imag_yr": 0.040731391172868524
+        },
+        {
+          "lag_yr": 10.0,
+          "leading_real_yr": 0.005880912719311492,
+          "leading_imag_yr": 0.03827224442691885
+        },
+        {
+          "lag_yr": 30.0,
+          "leading_real_yr": 0.009546237335873169,
+          "leading_imag_yr": 0.03119028318472547
+        },
+        {
+          "lag_yr": 100.0,
+          "leading_real_yr": 0.009532612796649948,
+          "leading_imag_yr": 0.021994138950561612
+        },
+        {
+          "lag_yr": 300.0,
+          "leading_real_yr": 0.007700846715399692,
+          "leading_imag_yr": 0.01540174921672601
+        },
+        {
+          "lag_yr": 1000.0,
+          "leading_real_yr": 0.005546140545245182,
+          "leading_imag_yr": 0.010326727710499493
+        },
+        {
+          "lag_yr": 10000.0,
+          "leading_real_yr": 0.002674416050239581,
+          "leading_imag_yr": 0.004799426051932012
+        }
+      ],
+      "selected_control": {
+        "temperature_k": 273.516849653236,
+        "ratio": 0.21614769781480403,
+        "state": [
+          70.19662615868864,
+          0.0,
+          0.0005744113112166041,
+          0.0,
+          0.21614769781480403
+        ],
+        "derivative_k_per_log_supply": -13.263666572274268,
+        "leading_real_yr": -9.715352096861288e-05
+      },
+      "stable_controls": [
+        {
+          "temperature_k": 273.516849653236,
+          "ratio": 0.21614769781480403,
+          "state": [
+            70.19662615868864,
+            0.0,
+            0.0005744113112166041,
+            0.0,
+            0.21614769781480403
+          ],
+          "derivative_k_per_log_supply": -13.263666572274268,
+          "leading_real_yr": -9.715352096861288e-05
+        }
+      ],
+      "gain": 1.2234406655922001e-14,
+      "two_layer": null
+    },
+    {
+      "chemistry": "methane_only",
+      "fraction": 0.5,
+      "step": 1e-05,
+      "state": [
+        22.486219792466095,
+        0.0005740594890504876,
+        0.00033832212373266827,
+        0.0008823962339441421,
+        0.1951067477346421
+      ],
+      "temperature_k": 281.53491448632417,
+      "max_flow_scaled": 7.149073705689845e-11,
+      "instantaneous_leading_real_yr": -0.0009261447414446415,
+      "community_slope_k_per_log_supply": -1.613663481605426e-13,
+      "finite_difference_slope_k_per_log_supply": 0.0,
+      "critical_lags_yr": [
+        1.1029576497167286
+      ],
+      "lag_rows": [
+        {
+          "lag_yr": 0.03,
+          "leading_real_yr": -0.0009009957666972364,
+          "leading_imag_yr": 0.040948297572508806
+        },
+        {
+          "lag_yr": 0.1,
+          "leading_real_yr": -0.0008422859252711476,
+          "leading_imag_yr": 0.04095174666046068
+        },
+        {
+          "lag_yr": 0.3,
+          "leading_real_yr": -0.000674366133656423,
+          "leading_imag_yr": 0.04095928020165775
+        },
+        {
+          "lag_yr": 1.0,
+          "leading_real_yr": -8.630446899788631e-05,
+          "leading_imag_yr": 0.04095850542616353
+        },
+        {
+          "lag_yr": 3.0,
+          "leading_real_yr": 0.0015541379062963905,
+          "leading_imag_yr": 0.04073139117306893
+        },
+        {
+          "lag_yr": 10.0,
+          "leading_real_yr": 0.005880912719352618,
+          "leading_imag_yr": 0.038272244427093406
+        },
+        {
+          "lag_yr": 30.0,
+          "leading_real_yr": 0.0095462373359138,
+          "leading_imag_yr": 0.031190283184856057
+        },
+        {
+          "lag_yr": 100.0,
+          "leading_real_yr": 0.009532612796672509,
+          "leading_imag_yr": 0.02199413895066065
+        },
+        {
+          "lag_yr": 300.0,
+          "leading_real_yr": 0.007700846715402573,
+          "leading_imag_yr": 0.015401749216815735
+        },
+        {
+          "lag_yr": 1000.0,
+          "leading_real_yr": 0.0055461405452273144,
+          "leading_imag_yr": 0.01032672771059291
+        },
+        {
+          "lag_yr": 10000.0,
+          "leading_real_yr": 0.002674416050170942,
+          "leading_imag_yr": 0.004799426052077383
+        }
+      ],
+      "selected_control": {
+        "temperature_k": 273.516849653236,
+        "ratio": 0.21614769781480403,
+        "state": [
+          70.19662615868864,
+          0.0,
+          0.0005744113112166041,
+          0.0,
+          0.21614769781480403
+        ],
+        "derivative_k_per_log_supply": -13.263666572183675,
+        "leading_real_yr": -9.71535209692188e-05
+      },
+      "stable_controls": [
+        {
+          "temperature_k": 273.516849653236,
+          "ratio": 0.21614769781480403,
+          "state": [
+            70.19662615868864,
+            0.0,
+            0.0005744113112166041,
+            0.0,
+            0.21614769781480403
+          ],
+          "derivative_k_per_log_supply": -13.263666572183675,
+          "leading_real_yr": -9.71535209692188e-05
+        }
+      ],
+      "gain": 1.2166043776986767e-14,
+      "two_layer": null
+    },
+    {
+      "chemistry": "methane_only",
+      "fraction": 0.5,
+      "step": 1e-06,
+      "state": [
+        22.486219792466095,
+        0.0005740594890504876,
+        0.00033832212373266827,
+        0.0008823962339441421,
+        0.1951067477346421
+      ],
+      "temperature_k": 281.53491448632417,
+      "max_flow_scaled": 7.149073705689845e-11,
+      "instantaneous_leading_real_yr": -0.0009261447415330976,
+      "community_slope_k_per_log_supply": -1.6389881041068163e-13,
+      "finite_difference_slope_k_per_log_supply": 0.0,
+      "critical_lags_yr": [
+        1.1029576499447786
+      ],
+      "lag_rows": [
+        {
+          "lag_yr": 0.03,
+          "leading_real_yr": -0.0009009957667898108,
+          "leading_imag_yr": 0.04094829757027162
+        },
+        {
+          "lag_yr": 0.1,
+          "leading_real_yr": -0.0008422859253689608,
+          "leading_imag_yr": 0.04095174665822237
+        },
+        {
+          "lag_yr": 0.3,
+          "leading_real_yr": -0.0006743661337703553,
+          "leading_imag_yr": 0.040959280199420446
+        },
+        {
+          "lag_yr": 1.0,
+          "leading_real_yr": -8.630446917866336e-05,
+          "leading_imag_yr": 0.040958505423934734
+        },
+        {
+          "lag_yr": 3.0,
+          "leading_real_yr": 0.0015541379059409257,
+          "leading_imag_yr": 0.04073139117089854
+        },
+        {
+          "lag_yr": 10.0,
+          "leading_real_yr": 0.00588091271867876,
+          "leading_imag_yr": 0.038272244425294595
+        },
+        {
+          "lag_yr": 30.0,
+          "leading_real_yr": 0.009546237335233217,
+          "leading_imag_yr": 0.031190283183645
+        },
+        {
+          "lag_yr": 100.0,
+          "leading_real_yr": 0.009532612796173429,
+          "leading_imag_yr": 0.021994138949899298
+        },
+        {
+          "lag_yr": 300.0,
+          "leading_real_yr": 0.007700846715039274,
+          "leading_imag_yr": 0.01540174921631945
+        },
+        {
+          "lag_yr": 1000.0,
+          "leading_real_yr": 0.005546140544958591,
+          "leading_imag_yr": 0.010326727710306042
+        },
+        {
+          "lag_yr": 10000.0,
+          "leading_real_yr": 0.0026744160499644013,
+          "leading_imag_yr": 0.004799426052085212
+        }
+      ],
+      "selected_control": {
+        "temperature_k": 273.516849653236,
+        "ratio": 0.21614769781480403,
+        "state": [
+          70.19662615868864,
+          0.0,
+          0.0005744113112166041,
+          0.0,
+          0.21614769781480403
+        ],
+        "derivative_k_per_log_supply": -13.263666572996764,
+        "leading_real_yr": -9.715352094627463e-05
+      },
+      "stable_controls": [
+        {
+          "temperature_k": 273.516849653236,
+          "ratio": 0.21614769781480403,
+          "state": [
+            70.19662615868864,
+            0.0,
+            0.0005744113112166041,
+            0.0,
+            0.21614769781480403
+          ],
+          "derivative_k_per_log_supply": -13.263666572996764,
+          "leading_real_yr": -9.715352094627463e-05
+        }
+      ],
+      "gain": 1.2356976067564905e-14,
+      "two_layer": null
+    }
+  ],
+  "fixed_supply_endpoints": {
+    "abiotic_ratio_per_year": 5.4377158676709526e-08,
+    "lower_potential": 0.22917760653374644,
+    "endpoints": [
+      {
+        "fraction": 0.5,
+        "upper_potential": 0.45732696540265555,
+        "ratio": 1.99551331528246
+      },
+      {
+        "fraction": 0.9,
+        "upper_potential": 0.26406444743727453,
+        "ratio": 1.1522262206643257
+      },
+      {
+        "fraction": 0.98,
+        "upper_potential": 0.2443437823387663,
+        "ratio": 1.0661765171318631
+      },
+      {
+        "fraction": 1.0,
+        "upper_potential": 0.23990663269160192,
+        "ratio": 1.046815333837059
+      }
+    ]
+  },
+  "source_sha256": {
+    "docs/audits/dynamic-realisation-review-2026-11-12.py": "64189cb6b2adc83b1806edd04fec7068c272c77f04d6a9f313fb06091d351d74",
+    "src/terra_prisca/haze_world/population_coupling.py": "17a433957e94845595f6d7fd160ffe593c01c4e74550707b0814c95ab67ae663",
+    "src/terra_prisca/haze_world/two_guilds.py": "eff6a9027c5b28d154f03462d926591ebee3408eb2c80ec0df5c38929f169f83",
+    "src/terra_prisca/haze_world/methane_budget.py": "f2374cfcb658102cc9919c61108379560922fc787c2cd85e089e878a9fa25fa8",
+    "src/terra_prisca/haze_world/darwinian.py": "e965035d5dfbfafcb695dc3738b23d8a445c4c1e7e246ab4688d67b33482f1aa",
+    "src/terra_prisca/haze_world/hydrogen_uptake.py": "c48d8231ef726605ab07be22438f3e2fd97f23b310773ac748d1b2bf5c36fafd",
+    "src/terra_prisca/haze_world/woodii1998.py": "b0130f4f8ea15aa64245133f79dc8b35883a414031a8b49262c6657350cad0b0",
+    "models/haze_world/dynamic-realisation-spec.md": "28221690cd451aefe55e9fcdc32548f964f57d76de355a36e5601bc5498b2a95",
+    "models/haze_world/dynamic-realisation-methods.md": "cb8d1ee300a922d894d11db350995f433e0092787417ec3b70f347ea886242c8",
+    "models/haze_world/evidence/kotsyurbenko2001_table2.csv": "c95b4be023e5502fbb30eb322621e5612bbbf850f99d1b6669e98b95eb370480",
+    "models/haze_response/arney2016/figure4.csv": "c0ef5f3d17ee7c6085ad36247f0f7814726dbbe3273842b01f2c6c4e046856f8",
+    "models/haze_response/arney2016/cases.csv": "e3d77d275052a8875991a751868f857bffc964295bfd47591944d86bc58ab07a",
+    "src/terra_prisca/haze_world/dynamic_core.py": "a359406f79444380f5554e6d27b478e2b70d624398cd1f2f853e1e25cbc88be6"
+  },
+  "production_comparison": [
+    {
+      "chemistry": "fixed",
+      "fraction": 0.0,
+      "state_max_scaled_difference": 0.0,
+      "fixed_temperature_matrix_max_scaled_difference": 2.929373295046389e-07,
+      "implicit_slope_difference": -1.47455181428954e-15
+    },
+    {
+      "chemistry": "products",
+      "fraction": 0.0,
+      "state_max_scaled_difference": 5.034044894662315e-15,
+      "fixed_temperature_matrix_max_scaled_difference": 6.838454282842575e-07,
+      "implicit_slope_difference": -1.3239855878310891e-09
+    },
+    {
+      "chemistry": "acetate_only",
+      "fraction": 0.0,
+      "state_max_scaled_difference": 1.5605549982961755e-13,
+      "fixed_temperature_matrix_max_scaled_difference": 6.54721558285014e-07,
+      "implicit_slope_difference": -2.1775241609844898e-09
+    },
+    {
+      "chemistry": "methane_only",
+      "fraction": 0.0,
+      "state_max_scaled_difference": 0.0,
+      "fixed_temperature_matrix_max_scaled_difference": 2.9654701535539164e-07,
+      "implicit_slope_difference": -1.0168796561608113e-15
+    },
+    {
+      "chemistry": "fixed",
+      "fraction": 0.5,
+      "state_max_scaled_difference": 0.0,
+      "fixed_temperature_matrix_max_scaled_difference": 2.1750190585901596e-07,
+      "implicit_slope_difference": -4.278227549890797e-15,
+      "production_two_layer_leading_at_independent_crossing": -7.225882912626721e-14
+    },
+    {
+      "chemistry": "products",
+      "fraction": 0.5,
+      "state_max_scaled_difference": 1.2491253456168653e-16,
+      "fixed_temperature_matrix_max_scaled_difference": 5.986221367493272e-07,
+      "implicit_slope_difference": -7.348108788107766e-10
+    },
+    {
+      "chemistry": "acetate_only",
+      "fraction": 0.5,
+      "state_max_scaled_difference": 1.4200592158685454e-16,
+      "fixed_temperature_matrix_max_scaled_difference": 5.881956894882023e-07,
+      "implicit_slope_difference": 8.320597544297925e-10
+    },
+    {
+      "chemistry": "methane_only",
+      "fraction": 0.5,
+      "state_max_scaled_difference": 0.0,
+      "fixed_temperature_matrix_max_scaled_difference": 1.9028811948373916e-07,
+      "implicit_slope_difference": -1.4203370363732193e-15
+    }
+  ],
+  "selected_spread_comparison": {
+    "scope": "Selected midpoint habitat mixture. Production seed independently checked/refined by reassembled flows and finite-difference matrices, not an independent completeness search.",
+    "chemistry": "fixed",
+    "fraction": 0.5,
+    "sigma_k": 3.0,
+    "n_habitats": 9,
+    "temperature_k": 281.53532190305464,
+    "local_temperature_range_k": [
+      278.86865523638795,
+      284.2019885697213
+    ],
+    "scaled_flow_residual": 3.4509398633480595e-11,
+    "independent_refinement": null,
+    "steps": [
+      {
+        "step": 0.0001,
+        "raw_slope_k_per_log_supply": -0.07353136131618547,
+        "production_slope_difference": -2.860811587623857e-11,
+        "lags": [
+          {
+            "lag_yr": 0.0,
+            "leading_real_yr": -0.00063936107904982,
+            "production_difference": 5.980998682431071e-12
+          },
+          {
+            "lag_yr": 3.0,
+            "leading_real_yr": -0.0003571198542403132,
+            "production_difference": 4.9618492908160006e-12
+          },
+          {
+            "lag_yr": 30.0,
+            "leading_real_yr": 0.0016463710554302767,
+            "production_difference": -6.001912725497882e-12
+          },
+          {
+            "lag_yr": 100.0,
+            "leading_real_yr": 0.0029255925073071462,
+            "production_difference": 3.0021683923575626e-12
+          },
+          {
+            "lag_yr": 300.0,
+            "leading_real_yr": 0.002867825400006681,
+            "production_difference": -1.4291792575782392e-12
+          }
+        ],
+        "detected_critical_lags_yr": []
+      },
+      {
+        "step": 1e-05,
+        "raw_slope_k_per_log_supply": -0.07353136131842176,
+        "production_slope_difference": -2.6371821393311734e-11,
+        "lags": [
+          {
+            "lag_yr": 0.0,
+            "leading_real_yr": -0.0006393610760847645,
+            "production_difference": 3.015943180958991e-12
+          },
+          {
+            "lag_yr": 3.0,
+            "leading_real_yr": -0.00035711984455339134,
+            "production_difference": -4.725072546771236e-12
+          },
+          {
+            "lag_yr": 30.0,
+            "leading_real_yr": 0.0016463710502459057,
+            "production_difference": -8.175417808009566e-13
+          },
+          {
+            "lag_yr": 100.0,
+            "leading_real_yr": 0.0029255925097397316,
+            "production_difference": 5.695830092300458e-13
+          },
+          {
+            "lag_yr": 300.0,
+            "leading_real_yr": 0.002867825399042522,
+            "production_difference": -4.650203833111988e-13
+          }
+        ],
+        "detected_critical_lags_yr": []
+      }
+    ]
+  },
+  "sigma1_resolution_checks": [
+    {
+      "scope": "Selected midpoint habitat mixture. Production seed independently checked/refined by reassembled flows and finite-difference matrices, not an independent completeness search.",
+      "chemistry": "fixed",
+      "fraction": 0.5,
+      "sigma_k": 1.0,
+      "n_habitats": 9,
+      "temperature_k": 281.53533158216317,
+      "local_temperature_range_k": [
+        280.64644269327425,
+        282.4242204710521
+      ],
+      "scaled_flow_residual": 1.0255767403605221e-10,
+      "independent_refinement": {
+        "solver_success": true,
+        "scaled_equation_residual": 1.9967650091462786e-14,
+        "evaluations": 41,
+        "maximum_relative_stock_shift": 8.255333718025615e-16
+      },
+      "steps": [
+        {
+          "step": 0.0001,
+          "raw_slope_k_per_log_supply": -0.07357063671378358,
+          "production_slope_difference": -2.6942073572122638e-11,
+          "lags": [
+            {
+              "lag_yr": 0.0,
+              "leading_real_yr": -0.0006759555700548365,
+              "production_difference": -9.08168939356413e-13
+            },
+            {
+              "lag_yr": 3.0,
+              "leading_real_yr": -0.0003933970630636641,
+              "production_difference": -1.297609437435343e-11
+            },
+            {
+              "lag_yr": 30.0,
+              "leading_real_yr": 0.0016213949977943363,
+              "production_difference": 6.18406367780544e-13
+            },
+            {
+              "lag_yr": 100.0,
+              "leading_real_yr": 0.0029149278889788067,
+              "production_difference": -3.986654756316099e-13
+            },
+            {
+              "lag_yr": 300.0,
+              "leading_real_yr": 0.0028635156361085465,
+              "production_difference": 9.725293487194975e-13
+            }
+          ],
+          "detected_critical_lags_yr": [
+            7.231507311642797
+          ]
+        },
+        {
+          "step": 1e-05,
+          "raw_slope_k_per_log_supply": -0.07357063671667195,
+          "production_slope_difference": -2.4053703473470023e-11,
+          "lags": [
+            {
+              "lag_yr": 0.0,
+              "leading_real_yr": -0.0006759555726408744,
+              "production_difference": 1.6778689982538397e-12
+            },
+            {
+              "lag_yr": 3.0,
+              "leading_real_yr": -0.0003933970621789066,
+              "production_difference": -1.3860851865148821e-11
+            },
+            {
+              "lag_yr": 30.0,
+              "leading_real_yr": 0.0016213949964259831,
+              "production_difference": 1.986759498237567e-12
+            },
+            {
+              "lag_yr": 100.0,
+              "leading_real_yr": 0.0029149278900051498,
+              "production_difference": -1.425008548661122e-12
+            },
+            {
+              "lag_yr": 300.0,
+              "leading_real_yr": 0.0028635156371789113,
+              "production_difference": -9.783536827900896e-14
+            }
+          ],
+          "detected_critical_lags_yr": [
+            7.23150736009609
+          ]
+        }
+      ]
+    },
+    {
+      "scope": "Selected midpoint habitat mixture. Production seed independently checked/refined by reassembled flows and finite-difference matrices, not an independent completeness search.",
+      "chemistry": "fixed",
+      "fraction": 0.5,
+      "sigma_k": 1.0,
+      "n_habitats": 17,
+      "temperature_k": 281.5358652948874,
+      "local_temperature_range_k": [
+        280.59468882429917,
+        282.47704176547563
+      ],
+      "scaled_flow_residual": 1.1071711459245662e-10,
+      "independent_refinement": {
+        "solver_success": true,
+        "scaled_equation_residual": 2.34195503604119e-14,
+        "evaluations": 73,
+        "maximum_relative_stock_shift": 5.0731265242758175e-14
+      },
+      "steps": [
+        {
+          "step": 0.0001,
+          "raw_slope_k_per_log_supply": -0.1790204608871089,
+          "production_slope_difference": -6.645103911573358e-11,
+          "lags": [
+            {
+              "lag_yr": 0.0,
+              "leading_real_yr": -0.0007585578472018351,
+              "production_difference": 1.0793239132306232e-12
+            },
+            {
+              "lag_yr": 3.0,
+              "leading_real_yr": -0.0006159514103747979,
+              "production_difference": -1.2329552960196888e-11
+            },
+            {
+              "lag_yr": 30.0,
+              "leading_real_yr": 0.0005381170245114238,
+              "production_difference": -1.1713829559112376e-11
+            },
+            {
+              "lag_yr": 100.0,
+              "leading_real_yr": 0.0017010367219246836,
+              "production_difference": 2.923601031407097e-11
+            },
+            {
+              "lag_yr": 300.0,
+              "leading_real_yr": 0.001929808101159039,
+              "production_difference": 3.31056332521229e-11
+            }
+          ],
+          "detected_critical_lags_yr": [
+            16.275553867352524
+          ]
+        },
+        {
+          "step": 1e-05,
+          "raw_slope_k_per_log_supply": -0.17902046087624865,
+          "production_slope_difference": -7.731129625376809e-11,
+          "lags": [
+            {
+              "lag_yr": 0.0,
+              "leading_real_yr": -0.0007585578470114135,
+              "production_difference": 8.889022330704766e-13
+            },
+            {
+              "lag_yr": 3.0,
+              "leading_real_yr": -0.0006159514241320488,
+              "production_difference": 1.4276979121499722e-12
+            },
+            {
+              "lag_yr": 30.0,
+              "leading_real_yr": 0.0005381170190042676,
+              "production_difference": -6.2066734130700185e-12
+            },
+            {
+              "lag_yr": 100.0,
+              "leading_real_yr": 0.0017010367413110034,
+              "production_difference": 9.849690507657272e-12
+            },
+            {
+              "lag_yr": 300.0,
+              "leading_real_yr": 0.0019298081057927577,
+              "production_difference": 2.847191449620312e-11
+            }
+          ],
+          "detected_critical_lags_yr": [
+            16.275554042633633
+          ]
+        }
+      ]
+    },
+    {
+      "scope": "Selected midpoint habitat mixture. Production seed independently checked/refined by reassembled flows and finite-difference matrices, not an independent completeness search.",
+      "chemistry": "fixed",
+      "fraction": 0.5,
+      "sigma_k": 1.0,
+      "n_habitats": 33,
+      "temperature_k": 281.53776654172464,
+      "local_temperature_range_k": [
+        280.56806957202764,
+        282.50746351142163
+      ],
+      "scaled_flow_residual": 1.429280151463173e-10,
+      "independent_refinement": {
+        "solver_success": true,
+        "scaled_equation_residual": 2.943138044242483e-14,
+        "evaluations": 137,
+        "maximum_relative_stock_shift": 2.1535205386066468e-13
+      },
+      "steps": [
+        {
+          "step": 0.0001,
+          "raw_slope_k_per_log_supply": -1.040953691402467,
+          "production_slope_difference": -3.4571989715459495e-10,
+          "lags": [
+            {
+              "lag_yr": 0.0,
+              "leading_real_yr": -0.0014068939229833044,
+              "production_difference": -8.318413232538679e-13
+            },
+            {
+              "lag_yr": 3.0,
+              "leading_real_yr": -0.0013558126628309512,
+              "production_difference": -3.7621034759682814e-13
+            },
+            {
+              "lag_yr": 30.0,
+              "leading_real_yr": -0.0008791981713814165,
+              "production_difference": -6.705896927160226e-11
+            },
+            {
+              "lag_yr": 100.0,
+              "leading_real_yr": -1.560392397239808e-05,
+              "production_difference": -4.822948569243582e-12
+            },
+            {
+              "lag_yr": 300.0,
+              "leading_real_yr": 0.0005277925046336493,
+              "production_difference": 6.108374830254837e-11
+            }
+          ],
+          "detected_critical_lags_yr": [
+            102.08536076223719
+          ]
+        },
+        {
+          "step": 1e-05,
+          "raw_slope_k_per_log_supply": -1.0409536912286033,
+          "production_slope_difference": -5.195837093907585e-10,
+          "lags": [
+            {
+              "lag_yr": 0.0,
+              "leading_real_yr": -0.0014068939226422434,
+              "production_difference": -1.172902270099585e-12
+            },
+            {
+              "lag_yr": 3.0,
+              "leading_real_yr": -0.0013558126449925312,
+              "production_difference": -1.8214630324864256e-11
+            },
+            {
+              "lag_yr": 30.0,
+              "leading_real_yr": -0.000879198289532674,
+              "production_difference": 5.1092288169338196e-11
+            },
+            {
+              "lag_yr": 100.0,
+              "leading_real_yr": -1.560395642513289e-05,
+              "production_difference": 2.762978624240792e-11
+            },
+            {
+              "lag_yr": 300.0,
+              "leading_real_yr": 0.0005277924872361369,
+              "production_difference": 7.848126076966111e-11
+            }
+          ],
+          "detected_critical_lags_yr": [
+            102.08535970837112
+          ]
+        }
+      ]
+    }
+  ]
+}

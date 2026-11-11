@@ -1,0 +1,36 @@
+{
+  "source_sha256": {
+    "src/terra_prisca/haze_world/dynamic_realisation.py": "974b355ba9d0f50185772e7f680698d0c7011be7126093b276826e434b451327",
+    "src/terra_prisca/haze_world/dynamic_core.py": "a359406f79444380f5554e6d27b478e2b70d624398cd1f2f853e1e25cbc88be6",
+    "src/terra_prisca/haze_world/population_coupling.py": "17a433957e94845595f6d7fd160ffe593c01c4e74550707b0814c95ab67ae663",
+    "src/terra_prisca/haze_world/two_guilds.py": "eff6a9027c5b28d154f03462d926591ebee3408eb2c80ec0df5c38929f169f83",
+    "src/terra_prisca/haze_world/methane_budget.py": "f2374cfcb658102cc9919c61108379560922fc787c2cd85e089e878a9fa25fa8",
+    "src/terra_prisca/haze_world/darwinian.py": "e965035d5dfbfafcb695dc3738b23d8a445c4c1e7e246ab4688d67b33482f1aa",
+    "src/terra_prisca/haze_world/hydrogen_uptake.py": "c48d8231ef726605ab07be22438f3e2fd97f23b310773ac748d1b2bf5c36fafd",
+    "src/terra_prisca/haze_world/woodii1998.py": "b0130f4f8ea15aa64245133f79dc8b35883a414031a8b49262c6657350cad0b0",
+    "models/haze_world/dynamic-realisation-spec.md": "28221690cd451aefe55e9fcdc32548f964f57d76de355a36e5601bc5498b2a95",
+    "models/haze_world/dynamic-realisation-methods.md": "cb8d1ee300a922d894d11db350995f433e0092787417ec3b70f347ea886242c8",
+    "models/haze_response/arney2016/figure4.csv": "c0ef5f3d17ee7c6085ad36247f0f7814726dbbe3273842b01f2c6c4e046856f8",
+    "models/haze_response/arney2016/cases.csv": "e3d77d275052a8875991a751868f857bffc964295bfd47591944d86bc58ab07a",
+    "models/haze_world/evidence/kotsyurbenko2001_table2.csv": "c95b4be023e5502fbb30eb322621e5612bbbf850f99d1b6669e98b95eb370480",
+    "models/haze_world/evidence/peters1998_chemostat.csv": "b0b00bf03eaeaabf45fb571330773c5158b53b088436aaee942188f8e9498320",
+    "uv.lock": "02bf429b2ec474f03280ec550d5fd847b573ece24ab9043e0b5998370fd4d2b4"
+  },
+  "method_freeze_commit": "db09eea",
+  "families": 108,
+  "rows": 1135,
+  "accepted_rows": 795,
+  "state_records": 795,
+  "missing_rows": 340,
+  "workers": 2,
+  "definition": "All roots found by algebra and declared homotopy; finite searches are not complete certificates.",
+  "outputs_sha256": {
+    "stability_gain.csv": "49d5752980375df5d5282a33246c7fa3e1b886069fa15c5983f5b19bf446666b",
+    "resolution_17.csv": "33d4a19dda34a492a68f46ec5a376f2ca67011317cc1792b48b163b1275507be",
+    "resolution_33.csv": "15131c056b437455ff6d902bd844114acae370d6022c8fad1c0a4ca00279c6a8",
+    "closure_sensitivity.csv": "59178dea7e1cba50fb09b54df4be1f1bd39c6fde072dde614cfd26a6bf633ab9",
+    "two_layer.csv": "3b40542c7a5d2a96219337e985493ff72b1d0428107a8ea5a825c24eb2f8ff5a",
+    "supply_bands.csv": "0ebe5eb25848e178a8099ed1afe5719763080ba32c5876973692242b960a3cf5",
+    "control_inventory.csv": "2447094e2c0171d3b3d2981896a7f0b8654d377eb1bc113ea9f6ecc649e67e2b"
+  }
+}
