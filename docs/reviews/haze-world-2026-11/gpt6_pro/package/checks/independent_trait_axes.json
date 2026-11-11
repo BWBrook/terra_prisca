@@ -1,0 +1,492 @@
+[
+  {
+    "ea": 0.0,
+    "em": 0.0,
+    "roots": [
+      {
+        "temperature_k": 277.96022105788137,
+        "slope_pa_k": 0.4029994859653385,
+        "cooling_range": true,
+        "acetogen_u": 10.0,
+        "methanogen_u": 25.0
+      }
+    ],
+    "difference_273_15": -1.5460245554468486,
+    "difference_303_15": 43.9516824477352
+  },
+  {
+    "ea": 0.0,
+    "em": 0.1,
+    "roots": [
+      {
+        "temperature_k": 280.94279025744856,
+        "slope_pa_k": 0.8635203304248051,
+        "cooling_range": true,
+        "acetogen_u": 10.0,
+        "methanogen_u": 10.0
+      }
+    ],
+    "difference_273_15": -5.716647875830052,
+    "difference_303_15": 51.137590923461204
+  },
+  {
+    "ea": 0.0,
+    "em": 0.2,
+    "roots": [
+      {
+        "temperature_k": 281.5905608744705,
+        "slope_pa_k": 1.27314703421888,
+        "cooling_range": true,
+        "acetogen_u": 10.0,
+        "methanogen_u": 10.0
+      }
+    ],
+    "difference_273_15": -10.428972113220414,
+    "difference_303_15": 58.496808321458104
+  },
+  {
+    "ea": 0.0,
+    "em": 0.3,
+    "roots": [
+      {
+        "temperature_k": 281.9420859185394,
+        "slope_pa_k": 1.6776230286357219,
+        "cooling_range": true,
+        "acetogen_u": 10.0,
+        "methanogen_u": 10.0
+      }
+    ],
+    "difference_273_15": -16.554519276887543,
+    "difference_303_15": 63.387278982122574
+  },
+  {
+    "ea": 0.0,
+    "em": 0.45,
+    "roots": [
+      {
+        "temperature_k": 282.2463776611134,
+        "slope_pa_k": 2.2806406678608226,
+        "cooling_range": true,
+        "acetogen_u": 10.0,
+        "methanogen_u": 10.0
+      }
+    ],
+    "difference_273_15": -29.90360203420911,
+    "difference_303_15": 68.0647653424183
+  },
+  {
+    "ea": 0.0,
+    "em": 0.65,
+    "roots": [
+      {
+        "temperature_k": 282.3012489146694,
+        "slope_pa_k": 3.1011401609095657,
+        "cooling_range": true,
+        "acetogen_u": 10.0,
+        "methanogen_u": 8.288350456522231
+      }
+    ],
+    "difference_273_15": -63.445839940382385,
+    "difference_303_15": 71.7549924781387
+  },
+  {
+    "ea": 0.1,
+    "em": 0.0,
+    "roots": [],
+    "difference_273_15": 0.9748948095695482,
+    "difference_303_15": 27.415564484795
+  },
+  {
+    "ea": 0.1,
+    "em": 0.1,
+    "roots": [
+      {
+        "temperature_k": 279.9176547707349,
+        "slope_pa_k": 0.5654496740330472,
+        "cooling_range": true,
+        "acetogen_u": 10.0,
+        "methanogen_u": 10.0
+      }
+    ],
+    "difference_273_15": -3.1957285108136553,
+    "difference_303_15": 34.601472960520994
+  },
+  {
+    "ea": 0.1,
+    "em": 0.2,
+    "roots": [
+      {
+        "temperature_k": 281.16372017387954,
+        "slope_pa_k": 0.9979739491079442,
+        "cooling_range": true,
+        "acetogen_u": 10.0,
+        "methanogen_u": 10.0
+      }
+    ],
+    "difference_273_15": -7.9080527482040175,
+    "difference_303_15": 41.960690358517894
+  },
+  {
+    "ea": 0.1,
+    "em": 0.3,
+    "roots": [
+      {
+        "temperature_k": 281.70536442982905,
+        "slope_pa_k": 1.4111062360075977,
+        "cooling_range": true,
+        "acetogen_u": 10.0,
+        "methanogen_u": 10.0
+      }
+    ],
+    "difference_273_15": -14.033599911871146,
+    "difference_303_15": 46.85116101918237
+  },
+  {
+    "ea": 0.1,
+    "em": 0.45,
+    "roots": [
+      {
+        "temperature_k": 282.12167976962843,
+        "slope_pa_k": 2.020182264514503,
+        "cooling_range": true,
+        "acetogen_u": 10.0,
+        "methanogen_u": 10.0
+      }
+    ],
+    "difference_273_15": -27.382682669192715,
+    "difference_303_15": 51.52864737947809
+  },
+  {
+    "ea": 0.1,
+    "em": 0.65,
+    "roots": [
+      {
+        "temperature_k": 282.21809156023227,
+        "slope_pa_k": 2.8520708527608463,
+        "cooling_range": true,
+        "acetogen_u": 10.0,
+        "methanogen_u": 8.29393544431589
+      }
+    ],
+    "difference_273_15": -60.92492057536599,
+    "difference_303_15": 55.2188745151985
+  },
+  {
+    "ea": 0.2,
+    "em": 0.0,
+    "roots": [],
+    "difference_273_15": 3.9873417853482884,
+    "difference_303_15": 16.270948072740232
+  },
+  {
+    "ea": 0.2,
+    "em": 0.1,
+    "roots": [
+      {
+        "temperature_k": 275.3157296542413,
+        "slope_pa_k": 0.1194559495090175,
+        "cooling_range": true,
+        "acetogen_u": 10.0,
+        "methanogen_u": 10.0
+      }
+    ],
+    "difference_273_15": -0.18328153503491507,
+    "difference_303_15": 23.45685654846623
+  },
+  {
+    "ea": 0.2,
+    "em": 0.2,
+    "roots": [
+      {
+        "temperature_k": 280.3740922637999,
+        "slope_pa_k": 0.7015362168125705,
+        "cooling_range": true,
+        "acetogen_u": 10.0,
+        "methanogen_u": 10.0
+      }
+    ],
+    "difference_273_15": -4.895605772425277,
+    "difference_303_15": 30.81607394646313
+  },
+  {
+    "ea": 0.2,
+    "em": 0.3,
+    "roots": [
+      {
+        "temperature_k": 281.34578557353433,
+        "slope_pa_k": 1.1357541253449455,
+        "cooling_range": true,
+        "acetogen_u": 10.0,
+        "methanogen_u": 10.0
+      }
+    ],
+    "difference_273_15": -11.021152936092406,
+    "difference_303_15": 35.706544607127604
+  },
+  {
+    "ea": 0.2,
+    "em": 0.45,
+    "roots": [
+      {
+        "temperature_k": 281.9555942340991,
+        "slope_pa_k": 1.7559880278525952,
+        "cooling_range": true,
+        "acetogen_u": 10.0,
+        "methanogen_u": 10.0
+      }
+    ],
+    "difference_273_15": -24.370235693413974,
+    "difference_303_15": 40.38403096742333
+  },
+  {
+    "ea": 0.2,
+    "em": 0.65,
+    "roots": [
+      {
+        "temperature_k": 282.1163541462032,
+        "slope_pa_k": 2.601146408460764,
+        "cooling_range": true,
+        "acetogen_u": 10.0,
+        "methanogen_u": 8.30083903846311
+      }
+    ],
+    "difference_273_15": -57.912473599587244,
+    "difference_303_15": 44.074258103143734
+  },
+  {
+    "ea": 0.3,
+    "em": 0.0,
+    "roots": [],
+    "difference_273_15": 7.605392685627244,
+    "difference_303_15": 8.496482141054052
+  },
+  {
+    "ea": 0.3,
+    "em": 0.1,
+    "roots": [],
+    "difference_273_15": 3.4347693652440405,
+    "difference_303_15": 15.68239061678005
+  },
+  {
+    "ea": 0.3,
+    "em": 0.2,
+    "roots": [
+      {
+        "temperature_k": 278.0632304979486,
+        "slope_pa_k": 0.32249085098179364,
+        "cooling_range": true,
+        "acetogen_u": 10.0,
+        "methanogen_u": 10.0
+      }
+    ],
+    "difference_273_15": -1.2775548721463217,
+    "difference_303_15": 23.04160801477695
+  },
+  {
+    "ea": 0.3,
+    "em": 0.3,
+    "roots": [
+      {
+        "temperature_k": 280.72024597888435,
+        "slope_pa_k": 0.8419248081814601,
+        "cooling_range": true,
+        "acetogen_u": 10.0,
+        "methanogen_u": 10.0
+      }
+    ],
+    "difference_273_15": -7.4031020358134505,
+    "difference_303_15": 27.932078675441424
+  },
+  {
+    "ea": 0.3,
+    "em": 0.45,
+    "roots": [
+      {
+        "temperature_k": 281.72224028373114,
+        "slope_pa_k": 1.4858652093661107,
+        "cooling_range": true,
+        "acetogen_u": 10.0,
+        "methanogen_u": 10.0
+      }
+    ],
+    "difference_273_15": -20.75218479313502,
+    "difference_303_15": 32.60956503573715
+  },
+  {
+    "ea": 0.3,
+    "em": 0.65,
+    "roots": [
+      {
+        "temperature_k": 281.98880338224046,
+        "slope_pa_k": 2.347724992533884,
+        "cooling_range": true,
+        "acetogen_u": 10.0,
+        "methanogen_u": 8.30960603697401
+      }
+    ],
+    "difference_273_15": -54.294422699308285,
+    "difference_303_15": 36.299792171457554
+  },
+  {
+    "ea": 0.45,
+    "em": 0.0,
+    "roots": [
+      {
+        "temperature_k": 291.2144591555204,
+        "slope_pa_k": -0.11182762169426042,
+        "cooling_range": true,
+        "acetogen_u": 10.0,
+        "methanogen_u": 25.0
+      },
+      {
+        "temperature_k": 297.0761163429727,
+        "slope_pa_k": 0.09042444814788553,
+        "cooling_range": false,
+        "acetogen_u": 10.0,
+        "methanogen_u": 25.0
+      }
+    ],
+    "difference_273_15": 14.504759496064104,
+    "difference_303_15": 0.7660498981793467
+  },
+  {
+    "ea": 0.45,
+    "em": 0.1,
+    "roots": [],
+    "difference_273_15": 10.3341361756809,
+    "difference_303_15": 7.951958373905345
+  },
+  {
+    "ea": 0.45,
+    "em": 0.2,
+    "roots": [],
+    "difference_273_15": 5.621811938290538,
+    "difference_303_15": 15.311175771902246
+  },
+  {
+    "ea": 0.45,
+    "em": 0.3,
+    "roots": [
+      {
+        "temperature_k": 276.44693543800787,
+        "slope_pa_k": 0.20044598269031155,
+        "cooling_range": true,
+        "acetogen_u": 10.0,
+        "methanogen_u": 10.0
+      }
+    ],
+    "difference_273_15": -0.503735225376591,
+    "difference_303_15": 20.20164643256672
+  },
+  {
+    "ea": 0.45,
+    "em": 0.45,
+    "roots": [
+      {
+        "temperature_k": 281.1054948861385,
+        "slope_pa_k": 1.0582363640168069,
+        "cooling_range": true,
+        "acetogen_u": 10.0,
+        "methanogen_u": 10.0
+      }
+    ],
+    "difference_273_15": -13.85281798269816,
+    "difference_303_15": 24.87913279286244
+  },
+  {
+    "ea": 0.45,
+    "em": 0.65,
+    "roots": [
+      {
+        "temperature_k": 281.7213099788831,
+        "slope_pa_k": 1.9606015039457247,
+        "cooling_range": true,
+        "acetogen_u": 10.0,
+        "methanogen_u": 8.32840272339508
+      }
+    ],
+    "difference_273_15": -47.395055888871426,
+    "difference_303_15": 28.569359928582845
+  },
+  {
+    "ea": 0.65,
+    "em": 0.0,
+    "roots": [
+      {
+        "temperature_k": 284.93620317240726,
+        "slope_pa_k": -0.8678089564462255,
+        "cooling_range": true,
+        "acetogen_u": 5.740995524227365,
+        "methanogen_u": 25.0
+      }
+    ],
+    "difference_273_15": 24.83435654740762,
+    "difference_303_15": -5.637894987772778
+  },
+  {
+    "ea": 0.65,
+    "em": 0.1,
+    "roots": [
+      {
+        "temperature_k": 284.71527745025276,
+        "slope_pa_k": -0.581583430442123,
+        "cooling_range": true,
+        "acetogen_u": 5.739752010053981,
+        "methanogen_u": 10.0
+      },
+      {
+        "temperature_k": 299.7696324190549,
+        "slope_pa_k": 0.3997650846212508,
+        "cooling_range": false,
+        "acetogen_u": 5.782936147908984,
+        "methanogen_u": 10.0
+      }
+    ],
+    "difference_273_15": 20.663733227024416,
+    "difference_303_15": 1.5480134879532201
+  },
+  {
+    "ea": 0.65,
+    "em": 0.2,
+    "roots": [],
+    "difference_273_15": 15.951408989634054,
+    "difference_303_15": 8.90723088595012
+  },
+  {
+    "ea": 0.65,
+    "em": 0.3,
+    "roots": [],
+    "difference_273_15": 9.825861825966925,
+    "difference_303_15": 13.797701546614594
+  },
+  {
+    "ea": 0.65,
+    "em": 0.45,
+    "roots": [
+      {
+        "temperature_k": 280.6717870534896,
+        "slope_pa_k": 0.4113969600769707,
+        "cooling_range": true,
+        "acetogen_u": 5.711139958319351,
+        "methanogen_u": 10.0
+      }
+    ],
+    "difference_273_15": -3.5232209313546434,
+    "difference_303_15": 18.475187906910314
+  },
+  {
+    "ea": 0.65,
+    "em": 0.65,
+    "roots": [
+      {
+        "temperature_k": 281.86824668440715,
+        "slope_pa_k": 1.3411968552894393,
+        "cooling_range": true,
+        "acetogen_u": 5.720891253355004,
+        "methanogen_u": 8.318007889963834
+      }
+    ],
+    "difference_273_15": -37.06545883752791,
+    "difference_303_15": 22.16541504263072
+  }
+]

@@ -1,0 +1,1781 @@
+[
+  {
+    "review_reference": "L01",
+    "doi": "10.1089/ast.2015.1422",
+    "checked_on": "2026-11-11",
+    "registry": "Crossref registered work metadata",
+    "registered_metadata": {
+      "DOI": "10.1089/ast.2015.1422",
+      "title": [
+        "The Pale Orange Dot: The Spectrum and Habitability of Hazy Archean Earth"
+      ],
+      "author": [
+        {
+          "given": "Giada",
+          "family": "Arney",
+          "sequence": "first",
+          "affiliation": [
+            {
+              "name": "University of Washington",
+              "place": [
+                "USA"
+              ]
+            },
+            {
+              "name": "University of Washington",
+              "place": [
+                "USA"
+              ]
+            },
+            {
+              "name": "University of Washington",
+              "place": [
+                "USA"
+              ]
+            },
+            {
+              "name": "NASA Goddard Space Flight Center",
+              "place": [
+                "USA"
+              ]
+            },
+            {
+              "name": "Universities Space Research Association",
+              "place": [
+                "USA"
+              ]
+            }
+          ],
+          "role": [
+            {
+              "vocabulary": "crossref",
+              "role": "author"
+            }
+          ]
+        },
+        {
+          "given": "Shawn D.",
+          "family": "Domagal-Goldman",
+          "sequence": "additional",
+          "affiliation": [
+            {
+              "name": "University of Washington",
+              "place": [
+                "USA"
+              ]
+            },
+            {
+              "name": "NASA Goddard Space Flight Center",
+              "place": [
+                "USA"
+              ]
+            }
+          ],
+          "role": [
+            {
+              "vocabulary": "crossref",
+              "role": "author"
+            }
+          ]
+        },
+        {
+          "given": "Victoria S.",
+          "family": "Meadows",
+          "sequence": "additional",
+          "affiliation": [
+            {
+              "name": "University of Washington",
+              "place": [
+                "USA"
+              ]
+            },
+            {
+              "name": "University of Washington",
+              "place": [
+                "USA"
+              ]
+            },
+            {
+              "name": "University of Washington",
+              "place": [
+                "USA"
+              ]
+            }
+          ],
+          "role": [
+            {
+              "vocabulary": "crossref",
+              "role": "author"
+            }
+          ]
+        },
+        {
+          "given": "Eric T.",
+          "family": "Wolf",
+          "sequence": "additional",
+          "affiliation": [
+            {
+              "name": "University of Colorado at Boulder",
+              "place": [
+                "USA"
+              ]
+            }
+          ],
+          "role": [
+            {
+              "vocabulary": "crossref",
+              "role": "author"
+            }
+          ]
+        },
+        {
+          "given": "Edward",
+          "family": "Schwieterman",
+          "sequence": "additional",
+          "affiliation": [
+            {
+              "name": "University of Washington",
+              "place": [
+                "USA"
+              ]
+            },
+            {
+              "name": "University of Washington",
+              "place": [
+                "USA"
+              ]
+            },
+            {
+              "name": "University of Washington",
+              "place": [
+                "USA"
+              ]
+            },
+            {
+              "name": "Universities Space Research Association",
+              "place": [
+                "USA"
+              ]
+            },
+            {
+              "name": "University of California at Riverside",
+              "place": [
+                "USA"
+              ]
+            },
+            {
+              "name": "Blue Marble Institute of Science",
+              "place": [
+                "USA"
+              ]
+            }
+          ],
+          "role": [
+            {
+              "vocabulary": "crossref",
+              "role": "author"
+            }
+          ]
+        },
+        {
+          "given": "Benjamin",
+          "family": "Charnay",
+          "sequence": "additional",
+          "affiliation": [
+            {
+              "name": "University of Washington",
+              "place": [
+                "USA"
+              ]
+            },
+            {
+              "name": "University of Washington",
+              "place": [
+                "USA"
+              ]
+            },
+            {
+              "name": "University of Washington",
+              "place": [
+                "USA"
+              ]
+            },
+            {
+              "name": "Paris-Meudon Observatory",
+              "place": [
+                "France"
+              ]
+            }
+          ],
+          "role": [
+            {
+              "vocabulary": "crossref",
+              "role": "author"
+            }
+          ]
+        },
+        {
+          "given": "Mark",
+          "family": "Claire",
+          "sequence": "additional",
+          "affiliation": [
+            {
+              "name": "University of Washington",
+              "place": [
+                "USA"
+              ]
+            },
+            {
+              "name": "Blue Marble Institute of Science",
+              "place": [
+                "USA"
+              ]
+            },
+            {
+              "name": "University of St Andrews",
+              "place": [
+                "UK"
+              ]
+            }
+          ],
+          "role": [
+            {
+              "vocabulary": "crossref",
+              "role": "author"
+            }
+          ]
+        },
+        {
+          "given": "Eric",
+          "family": "Hébrard",
+          "sequence": "additional",
+          "affiliation": [
+            {
+              "name": "NASA Goddard Space Flight Center",
+              "place": [
+                "USA"
+              ]
+            },
+            {
+              "name": "University of Exeter",
+              "place": [
+                "UK"
+              ]
+            }
+          ],
+          "role": [
+            {
+              "vocabulary": "crossref",
+              "role": "author"
+            }
+          ]
+        },
+        {
+          "given": "Melissa G.",
+          "family": "Trainer",
+          "sequence": "additional",
+          "affiliation": [
+            {
+              "name": "NASA Goddard Space Flight Center",
+              "place": [
+                "USA"
+              ]
+            }
+          ],
+          "role": [
+            {
+              "vocabulary": "crossref",
+              "role": "author"
+            }
+          ]
+        }
+      ],
+      "published": {
+        "date-parts": [
+          [
+            2016,
+            11
+          ]
+        ]
+      },
+      "container-title": [
+        "Astrobiology"
+      ],
+      "volume": "16",
+      "issue": "11",
+      "page": "873-899",
+      "URL": "https://doi.org/10.1089/ast.2015.1422",
+      "requested_doi": "10.1089/ast.2015.1422",
+      "verification_source": "https://api.crossref.org/works/10.1089%2Fast.2015.1422"
+    }
+  },
+  {
+    "review_reference": "L02",
+    "doi": "10.1175/JCLI-D-12-00195.1",
+    "checked_on": "2026-11-11",
+    "registry": "Crossref registered work metadata",
+    "registered_metadata": {
+      "DOI": "10.1175/jcli-d-12-00195.1",
+      "title": [
+        "Transient Climate Response in a Two-Layer Energy-Balance Model. Part I: Analytical Solution and Parameter Calibration Using CMIP5 AOGCM Experiments"
+      ],
+      "author": [
+        {
+          "given": "O.",
+          "family": "Geoffroy",
+          "sequence": "first",
+          "affiliation": [],
+          "role": [
+            {
+              "vocabulary": "crossref",
+              "role": "author"
+            }
+          ]
+        },
+        {
+          "given": "D.",
+          "family": "Saint-Martin",
+          "sequence": "additional",
+          "affiliation": [],
+          "role": [
+            {
+              "vocabulary": "crossref",
+              "role": "author"
+            }
+          ]
+        },
+        {
+          "given": "D. J. L.",
+          "family": "Olivié",
+          "sequence": "additional",
+          "affiliation": [],
+          "role": [
+            {
+              "vocabulary": "crossref",
+              "role": "author"
+            }
+          ]
+        },
+        {
+          "given": "A.",
+          "family": "Voldoire",
+          "sequence": "additional",
+          "affiliation": [],
+          "role": [
+            {
+              "vocabulary": "crossref",
+              "role": "author"
+            }
+          ]
+        },
+        {
+          "given": "G.",
+          "family": "Bellon",
+          "sequence": "additional",
+          "affiliation": [],
+          "role": [
+            {
+              "vocabulary": "crossref",
+              "role": "author"
+            }
+          ]
+        },
+        {
+          "given": "S.",
+          "family": "Tytéca",
+          "sequence": "additional",
+          "affiliation": [],
+          "role": [
+            {
+              "vocabulary": "crossref",
+              "role": "author"
+            }
+          ]
+        }
+      ],
+      "container-title": [
+        "Journal of Climate"
+      ],
+      "published": {
+        "date-parts": [
+          [
+            2013,
+            3,
+            15
+          ]
+        ]
+      },
+      "publisher": "American Meteorological Society",
+      "URL": "https://doi.org/10.1175/jcli-d-12-00195.1",
+      "type": "journal-article",
+      "requested_doi": "10.1175/JCLI-D-12-00195.1",
+      "verified_against": "Crossref registered metadata API"
+    }
+  },
+  {
+    "review_reference": "L03",
+    "doi": "10.1111/j.1574-6941.2001.tb00893.x",
+    "checked_on": "2026-11-11",
+    "registry": "Crossref registered work metadata",
+    "registered_metadata": {
+      "DOI": "10.1111/j.1574-6941.2001.tb00893.x",
+      "title": [
+        "Competition between homoacetogenic bacteria and methanogenic archaea for hydrogen at low temperature"
+      ],
+      "author": [
+        {
+          "given": "Oleg R.",
+          "family": "Kotsyurbenko",
+          "sequence": "first",
+          "affiliation": [],
+          "role": [
+            {
+              "vocabulary": "crossref",
+              "role": "author"
+            }
+          ]
+        },
+        {
+          "given": "Michail V.",
+          "family": "Glagolev",
+          "sequence": "additional",
+          "affiliation": [],
+          "role": [
+            {
+              "vocabulary": "crossref",
+              "role": "author"
+            }
+          ]
+        },
+        {
+          "given": "Alla N.",
+          "family": "Nozhevnikova",
+          "sequence": "additional",
+          "affiliation": [],
+          "role": [
+            {
+              "vocabulary": "crossref",
+              "role": "author"
+            }
+          ]
+        },
+        {
+          "given": "Ralf",
+          "family": "Conrad",
+          "sequence": "additional",
+          "affiliation": [],
+          "role": [
+            {
+              "vocabulary": "crossref",
+              "role": "author"
+            }
+          ]
+        }
+      ],
+      "published": {
+        "date-parts": [
+          [
+            2001,
+            12
+          ]
+        ]
+      },
+      "container-title": [
+        "FEMS Microbiology Ecology"
+      ],
+      "volume": "38",
+      "issue": "2-3",
+      "page": "153-159",
+      "URL": "https://doi.org/10.1111/j.1574-6941.2001.tb00893.x",
+      "requested_doi": "10.1111/j.1574-6941.2001.tb00893.x",
+      "verification_source": "https://api.crossref.org/works/10.1111%2Fj.1574-6941.2001.tb00893.x"
+    }
+  },
+  {
+    "review_reference": "L04",
+    "doi": "10.1111/j.1574-6941.1998.tb00516.x",
+    "checked_on": "2026-11-11",
+    "registry": "Crossref registered work metadata",
+    "registered_metadata": {
+      "DOI": "10.1111/j.1574-6941.1998.tb00516.x",
+      "title": [
+        "Efficiency of hydrogen utilization during unitrophic and mixotrophic growth of Acetobacterium woodii on hydrogen and lactate in the chemostat"
+      ],
+      "author": [
+        {
+          "given": "V",
+          "family": "Peters",
+          "sequence": "first",
+          "affiliation": [],
+          "role": [
+            {
+              "vocabulary": "crossref",
+              "role": "author"
+            }
+          ]
+        },
+        {
+          "given": "P.H",
+          "family": "Janssen",
+          "sequence": "additional",
+          "affiliation": [],
+          "role": [
+            {
+              "vocabulary": "crossref",
+              "role": "author"
+            }
+          ]
+        },
+        {
+          "given": "R",
+          "family": "Conrad",
+          "sequence": "additional",
+          "affiliation": [],
+          "role": [
+            {
+              "vocabulary": "crossref",
+              "role": "author"
+            }
+          ]
+        }
+      ],
+      "container-title": [
+        "FEMS Microbiology Ecology"
+      ],
+      "published": {
+        "date-parts": [
+          [
+            1998,
+            8
+          ]
+        ]
+      },
+      "publisher": "Oxford University Press (OUP)",
+      "URL": "https://doi.org/10.1111/j.1574-6941.1998.tb00516.x",
+      "type": "journal-article",
+      "requested_doi": "10.1111/j.1574-6941.1998.tb00516.x",
+      "verified_against": "Crossref registered metadata API"
+    }
+  },
+  {
+    "review_reference": "L05",
+    "doi": "10.1002/bit.260420415",
+    "checked_on": "2026-11-11",
+    "registry": "Crossref registered work metadata",
+    "registered_metadata": {
+      "DOI": "10.1002/bit.260420415",
+      "title": [
+        "A thermodynamically based correlation for maintenance gibbs energy requirements in aerobic and anaerobic chemotrophic growth"
+      ],
+      "author": [
+        {
+          "given": "L.",
+          "family": "Tijhuis",
+          "sequence": "first",
+          "affiliation": [],
+          "role": [
+            {
+              "vocabulary": "crossref",
+              "role": "author"
+            }
+          ]
+        },
+        {
+          "given": "M. C. M.",
+          "family": "Van Loosdrecht",
+          "sequence": "additional",
+          "affiliation": [],
+          "role": [
+            {
+              "vocabulary": "crossref",
+              "role": "author"
+            }
+          ]
+        },
+        {
+          "given": "J. J.",
+          "family": "Heijnen",
+          "sequence": "additional",
+          "affiliation": [],
+          "role": [
+            {
+              "vocabulary": "crossref",
+              "role": "author"
+            }
+          ]
+        }
+      ],
+      "published": {
+        "date-parts": [
+          [
+            1993,
+            8,
+            5
+          ]
+        ]
+      },
+      "container-title": [
+        "Biotechnology and Bioengineering"
+      ],
+      "volume": "42",
+      "issue": "4",
+      "page": "509-519",
+      "URL": "https://doi.org/10.1002/bit.260420415",
+      "requested_doi": "10.1002/bit.260420415",
+      "verification_source": "https://api.crossref.org/works/10.1002%2Fbit.260420415"
+    }
+  },
+  {
+    "review_reference": "L06",
+    "doi": "10.1111/1462-2920.16429",
+    "checked_on": "2026-11-11",
+    "registry": "Crossref registered work metadata",
+    "registered_metadata": {
+      "DOI": "10.1111/1462-2920.16429",
+      "title": [
+        "No acetogen is equal: Strongly different\n                    <scp>\n                      H\n                      <sub>2</sub>\n                    </scp>\n                    thresholds reflect diverse bioenergetics in acetogenic bacteria"
+      ],
+      "author": [
+        {
+          "given": "Munoz",
+          "family": "Laura",
+          "sequence": "first",
+          "affiliation": [
+            {
+              "name": "Department of Biological and Chemical Engineering Aarhus University  Aarhus Denmark"
+            }
+          ],
+          "role": [
+            {
+              "vocabulary": "crossref",
+              "role": "author"
+            }
+          ]
+        },
+        {
+          "ORCID": "https://orcid.org/0000-0003-0471-7802",
+          "authenticated-orcid": false,
+          "given": "Philips",
+          "family": "Jo",
+          "sequence": "additional",
+          "affiliation": [
+            {
+              "name": "Department of Biological and Chemical Engineering Aarhus University  Aarhus Denmark"
+            }
+          ],
+          "role": [
+            {
+              "vocabulary": "crossref",
+              "role": "author"
+            }
+          ]
+        }
+      ],
+      "published": {
+        "date-parts": [
+          [
+            2023,
+            5,
+            20
+          ]
+        ]
+      },
+      "container-title": [
+        "Environmental Microbiology"
+      ],
+      "volume": "25",
+      "issue": "10",
+      "page": "2032-2040",
+      "URL": "https://doi.org/10.1111/1462-2920.16429",
+      "requested_doi": "10.1111/1462-2920.16429",
+      "verification_source": "https://api.crossref.org/works/10.1111%2F1462-2920.16429"
+    }
+  },
+  {
+    "review_reference": "L07",
+    "doi": "10.1016/j.jtbi.2007.05.013",
+    "checked_on": "2026-11-11",
+    "registry": "Crossref registered work metadata",
+    "registered_metadata": {
+      "DOI": "10.1016/j.jtbi.2007.05.013",
+      "title": [
+        "Coexistence introducing regulation of environmental conditions"
+      ],
+      "author": [
+        {
+          "given": "Mayumi",
+          "family": "Seto",
+          "sequence": "first",
+          "affiliation": [],
+          "role": [
+            {
+              "role": "author",
+              "vocabulary": "crossref"
+            }
+          ]
+        },
+        {
+          "given": "Tasuku",
+          "family": "Akagi",
+          "sequence": "additional",
+          "affiliation": [],
+          "role": [
+            {
+              "role": "author",
+              "vocabulary": "crossref"
+            }
+          ]
+        }
+      ],
+      "published": {
+        "date-parts": [
+          [
+            2007,
+            9
+          ]
+        ]
+      },
+      "container-title": [
+        "Journal of Theoretical Biology"
+      ],
+      "volume": "248",
+      "issue": "2",
+      "page": "267-274",
+      "URL": "https://doi.org/10.1016/j.jtbi.2007.05.013",
+      "requested_doi": "10.1016/j.jtbi.2007.05.013"
+    }
+  },
+  {
+    "review_reference": "L08",
+    "doi": "10.1111/j.1600-0889.1983.tb00031.x",
+    "checked_on": "2026-11-11",
+    "registry": "Crossref registered work metadata",
+    "registered_metadata": {
+      "DOI": "10.1111/j.1600-0889.1983.tb00031.x",
+      "title": [
+        "Biological homeostasis of the global environment: the parable of Daisyworld"
+      ],
+      "author": [
+        {
+          "given": "ANDREW J.",
+          "family": "WATSON",
+          "sequence": "first",
+          "affiliation": [],
+          "role": [
+            {
+              "vocabulary": "crossref",
+              "role": "author"
+            }
+          ]
+        },
+        {
+          "given": "JAMES E.",
+          "family": "LOVELOCK",
+          "sequence": "additional",
+          "affiliation": [],
+          "role": [
+            {
+              "vocabulary": "crossref",
+              "role": "author"
+            }
+          ]
+        }
+      ],
+      "published": {
+        "date-parts": [
+          [
+            1983,
+            9
+          ]
+        ]
+      },
+      "container-title": [
+        "Tellus B"
+      ],
+      "volume": "35B",
+      "issue": "4",
+      "page": "284-289",
+      "URL": "https://doi.org/10.1111/j.1600-0889.1983.tb00031.x",
+      "requested_doi": "10.1111/j.1600-0889.1983.tb00031.x"
+    }
+  },
+  {
+    "review_reference": "L09",
+    "doi": "10.1006/jtbi.1998.0799",
+    "checked_on": "2026-11-11",
+    "registry": "Crossref registered work metadata",
+    "registered_metadata": {
+      "queried_doi": "10.1006/jtbi.1998.0799",
+      "registered_doi": "10.1006/jtbi.1998.0799",
+      "title": [
+        "Darwinian Daisyworld"
+      ],
+      "authors": [
+        {
+          "family": "Roberston",
+          "given": "David"
+        },
+        {
+          "family": "Robinson",
+          "given": "Jennifer"
+        }
+      ],
+      "published": {
+        "date-parts": [
+          [
+            1998,
+            11
+          ]
+        ]
+      },
+      "journal": [
+        "Journal of Theoretical Biology"
+      ],
+      "URL": "https://doi.org/10.1006/jtbi.1998.0799",
+      "verification": "Crossref registered work metadata retrieved 2026-11-11"
+    }
+  },
+  {
+    "review_reference": "L10",
+    "doi": "10.1006/jtbi.2000.2105",
+    "checked_on": "2026-11-11",
+    "registry": "Crossref registered work metadata",
+    "registered_metadata": {
+      "queried_doi": "10.1006/jtbi.2000.2105",
+      "registered_doi": "10.1006/jtbi.2000.2105",
+      "title": [
+        "Daisyworld is Darwinian: Constraints on Adaptation are Important for Planetary Self-Regulation"
+      ],
+      "authors": [
+        {
+          "family": "LENTON",
+          "given": "TIMOTHY M"
+        },
+        {
+          "family": "LOVELOCK",
+          "given": "JAMES E"
+        }
+      ],
+      "published": {
+        "date-parts": [
+          [
+            2000,
+            9
+          ]
+        ]
+      },
+      "journal": [
+        "Journal of Theoretical Biology"
+      ],
+      "URL": "https://doi.org/10.1006/jtbi.2000.2105",
+      "verification": "Crossref registered work metadata retrieved 2026-11-11"
+    }
+  },
+  {
+    "review_reference": "L11",
+    "doi": "10.1006/jtbi.2002.3091",
+    "checked_on": "2026-11-11",
+    "registry": "Crossref registered work metadata",
+    "registered_metadata": {
+      "queried_doi": "10.1006/jtbi.2002.3091",
+      "registered_doi": "10.1006/jtbi.2002.3091",
+      "title": [
+        "Darwinian Evolution Does Not Rule Out the Gaia Hypothesis"
+      ],
+      "authors": [
+        {
+          "family": "SUGIMOTO",
+          "given": "TAKESHI"
+        }
+      ],
+      "published": {
+        "date-parts": [
+          [
+            2002,
+            10
+          ]
+        ]
+      },
+      "journal": [
+        "Journal of Theoretical Biology"
+      ],
+      "URL": "https://doi.org/10.1006/jtbi.2002.3091",
+      "verification": "Crossref registered work metadata retrieved 2026-11-11"
+    }
+  },
+  {
+    "review_reference": "L12",
+    "doi": "10.2307/1935608",
+    "checked_on": "2026-11-11",
+    "registry": "Crossref registered work metadata",
+    "registered_metadata": {
+      "queried_doi": "10.2307/1935608",
+      "registered_doi": "10.2307/1935608",
+      "title": [
+        "Resource Competition between Plankton Algae: An Experimental and Theoretical Approach"
+      ],
+      "authors": [
+        {
+          "family": "Tilman",
+          "given": "David"
+        }
+      ],
+      "published": {
+        "date-parts": [
+          [
+            1977,
+            3
+          ]
+        ]
+      },
+      "journal": [
+        "Ecology"
+      ],
+      "URL": "https://doi.org/10.2307/1935608",
+      "verification": "Crossref registered work metadata retrieved 2026-11-11"
+    }
+  },
+  {
+    "review_reference": "L13",
+    "doi": "10.4319/lo.1981.26.6.1020",
+    "checked_on": "2026-11-11",
+    "registry": "Crossref registered work metadata",
+    "registered_metadata": {
+      "DOI": "10.4319/lo.1981.26.6.1020",
+      "title": [
+        "Competition and nutrient kinetics along a temperature gradient: An experimental test of a mechanistic approach to niche theory1"
+      ],
+      "author": [
+        {
+          "given": "David",
+          "family": "Tilman",
+          "sequence": "first",
+          "affiliation": [],
+          "role": [
+            {
+              "vocabulary": "crossref",
+              "role": "author"
+            }
+          ]
+        },
+        {
+          "given": "Mark",
+          "family": "Mattson",
+          "sequence": "additional",
+          "affiliation": [],
+          "role": [
+            {
+              "vocabulary": "crossref",
+              "role": "author"
+            }
+          ]
+        },
+        {
+          "given": "Sara",
+          "family": "Langer",
+          "sequence": "additional",
+          "affiliation": [],
+          "role": [
+            {
+              "vocabulary": "crossref",
+              "role": "author"
+            }
+          ]
+        }
+      ],
+      "published": {
+        "date-parts": [
+          [
+            1981,
+            11
+          ]
+        ]
+      },
+      "container-title": [
+        "Limnology and Oceanography"
+      ],
+      "volume": "26",
+      "issue": "6",
+      "page": "1020-1033",
+      "URL": "https://doi.org/10.4319/lo.1981.26.6.1020",
+      "requested_doi": "10.4319/lo.1981.26.6.1020"
+    }
+  },
+  {
+    "review_reference": "L14",
+    "doi": "10.1038/s41467-020-16374-7",
+    "checked_on": "2026-11-11",
+    "registry": "Crossref registered work metadata",
+    "registered_metadata": {
+      "DOI": "10.1038/s41467-020-16374-7",
+      "title": [
+        "Co-evolution of primitive methane-cycling ecosystems and early Earth’s atmosphere and climate"
+      ],
+      "author": [
+        {
+          "ORCID": "https://orcid.org/0000-0001-6164-756X",
+          "authenticated-orcid": false,
+          "given": "Boris",
+          "family": "Sauterey",
+          "sequence": "first",
+          "affiliation": [],
+          "role": [
+            {
+              "vocabulary": "crossref",
+              "role": "author"
+            }
+          ]
+        },
+        {
+          "given": "Benjamin",
+          "family": "Charnay",
+          "sequence": "additional",
+          "affiliation": [],
+          "role": [
+            {
+              "vocabulary": "crossref",
+              "role": "author"
+            }
+          ]
+        },
+        {
+          "ORCID": "https://orcid.org/0000-0003-3481-0952",
+          "authenticated-orcid": false,
+          "given": "Antonin",
+          "family": "Affholder",
+          "sequence": "additional",
+          "affiliation": [],
+          "role": [
+            {
+              "vocabulary": "crossref",
+              "role": "author"
+            }
+          ]
+        },
+        {
+          "given": "Stéphane",
+          "family": "Mazevet",
+          "sequence": "additional",
+          "affiliation": [],
+          "role": [
+            {
+              "vocabulary": "crossref",
+              "role": "author"
+            }
+          ]
+        },
+        {
+          "ORCID": "https://orcid.org/0000-0002-5806-5566",
+          "authenticated-orcid": false,
+          "given": "Régis",
+          "family": "Ferrière",
+          "sequence": "additional",
+          "affiliation": [],
+          "role": [
+            {
+              "vocabulary": "crossref",
+              "role": "author"
+            }
+          ]
+        }
+      ],
+      "published": {
+        "date-parts": [
+          [
+            2020,
+            6,
+            1
+          ]
+        ]
+      },
+      "container-title": [
+        "Nature Communications"
+      ],
+      "volume": "11",
+      "issue": "1",
+      "page": null,
+      "URL": "https://doi.org/10.1038/s41467-020-16374-7",
+      "requested_doi": "10.1038/s41467-020-16374-7",
+      "verification_source": "https://api.crossref.org/works/10.1038%2Fs41467-020-16374-7"
+    }
+  },
+  {
+    "review_reference": "L15",
+    "doi": "10.1038/nrmicro2504",
+    "checked_on": "2026-11-11",
+    "registry": "Crossref registered work metadata",
+    "registered_metadata": {
+      "doi": "10.1038/nrmicro2504",
+      "title": [
+        "Microbial seed banks: the ecological and evolutionary implications of dormancy"
+      ],
+      "author": [
+        "Lennon",
+        "Jones"
+      ],
+      "year": {
+        "date-parts": [
+          [
+            2011,
+            1,
+            13
+          ]
+        ]
+      },
+      "journal": [
+        "Nature Reviews Microbiology"
+      ],
+      "registration_verified": true
+    }
+  },
+  {
+    "review_reference": "L16",
+    "doi": "10.1073/pnas.0912765107",
+    "checked_on": "2026-11-11",
+    "registry": "Crossref registered work metadata",
+    "registered_metadata": {
+      "doi": "10.1073/pnas.0912765107",
+      "title": [
+        "Dormancy contributes to the maintenance of microbial diversity"
+      ],
+      "author": [
+        "Jones",
+        "Lennon"
+      ],
+      "year": {
+        "date-parts": [
+          [
+            2010,
+            3,
+            15
+          ]
+        ]
+      },
+      "journal": [
+        "Proceedings of the National Academy of Sciences"
+      ],
+      "registration_verified": true
+    }
+  },
+  {
+    "review_reference": "L17",
+    "doi": "10.1038/s41467-021-24733-1",
+    "checked_on": "2026-11-11",
+    "registry": "Crossref registered work metadata",
+    "registered_metadata": {
+      "doi": "10.1038/s41467-021-24733-1",
+      "title": [
+        "Principles of seed banks and the emergence of complexity from dormancy"
+      ],
+      "author": [
+        "Lennon",
+        "den Hollander",
+        "Wilke-Berenguer",
+        "Blath"
+      ],
+      "year": {
+        "date-parts": [
+          [
+            2021,
+            8,
+            10
+          ]
+        ]
+      },
+      "journal": [
+        "Nature Communications"
+      ],
+      "registration_verified": true
+    }
+  },
+  {
+    "review_reference": "L18",
+    "doi": "10.1093/mnras/stac2086",
+    "checked_on": "2026-11-11",
+    "registry": "Crossref registered work metadata",
+    "registered_metadata": {
+      "queried_doi": "10.1093/mnras/stac2086",
+      "registered_doi": "10.1093/mnras/stac2086",
+      "title": [
+        "Predicting biosignatures for nutrient-limited biospheres"
+      ],
+      "authors": [
+        {
+          "family": "Nicholson",
+          "given": "A E"
+        },
+        {
+          "family": "Daines",
+          "given": "S J"
+        },
+        {
+          "family": "Mayne",
+          "given": "N J"
+        },
+        {
+          "family": "Eager-Nash",
+          "given": "J K"
+        },
+        {
+          "family": "Lenton",
+          "given": "T M"
+        },
+        {
+          "family": "Kohary",
+          "given": "K"
+        }
+      ],
+      "published": {
+        "date-parts": [
+          [
+            2022,
+            7,
+            29
+          ]
+        ]
+      },
+      "journal": [
+        "Monthly Notices of the Royal Astronomical Society"
+      ],
+      "URL": "https://doi.org/10.1093/mnras/stac2086",
+      "verification": "Crossref registered work metadata retrieved 2026-11-11"
+    }
+  },
+  {
+    "review_reference": "L19",
+    "doi": "10.3847/1538-4357/ad47f3",
+    "checked_on": "2026-11-11",
+    "registry": "Crossref registered work metadata",
+    "registered_metadata": {
+      "DOI": "10.3847/1538-4357/ad47f3",
+      "title": [
+        "Controls of Atmospheric Methane on Early Earth and Inhabited Earth-like Terrestrial Exoplanets"
+      ],
+      "author": [
+        {
+          "given": "Aika",
+          "family": "Akahori",
+          "sequence": "first",
+          "affiliation": [],
+          "role": [
+            {
+              "vocabulary": "crossref",
+              "role": "author"
+            }
+          ]
+        },
+        {
+          "ORCID": "https://orcid.org/0000-0003-2580-8973",
+          "authenticated-orcid": true,
+          "given": "Yasuto",
+          "family": "Watanabe",
+          "sequence": "additional",
+          "affiliation": [],
+          "role": [
+            {
+              "vocabulary": "crossref",
+              "role": "author"
+            }
+          ]
+        },
+        {
+          "ORCID": "https://orcid.org/0000-0001-6674-3147",
+          "authenticated-orcid": false,
+          "given": "Eiichi",
+          "family": "Tajika",
+          "sequence": "additional",
+          "affiliation": [],
+          "role": [
+            {
+              "vocabulary": "crossref",
+              "role": "author"
+            }
+          ]
+        }
+      ],
+      "published": {
+        "date-parts": [
+          [
+            2024,
+            7,
+            1
+          ]
+        ]
+      },
+      "container-title": [
+        "The Astrophysical Journal"
+      ],
+      "volume": "970",
+      "issue": "1",
+      "page": "20",
+      "URL": "https://doi.org/10.3847/1538-4357/ad47f3",
+      "requested_doi": "10.3847/1538-4357/ad47f3",
+      "verification_source": "https://api.crossref.org/works/10.3847%2F1538-4357%2Fad47f3"
+    }
+  },
+  {
+    "review_reference": "L20",
+    "doi": "10.1029/2022JD037544",
+    "checked_on": "2026-11-11",
+    "registry": "Crossref registered work metadata",
+    "registered_metadata": {
+      "DOI": "10.1029/2022jd037544",
+      "title": [
+        "3D Climate Simulations of the Archean Find That Methane has a Strong Cooling Effect at High Concentrations"
+      ],
+      "author": [
+        {
+          "ORCID": "https://orcid.org/0000-0001-5460-8159",
+          "authenticated-orcid": false,
+          "given": "J. K.",
+          "family": "Eager‐Nash",
+          "sequence": "first",
+          "affiliation": [
+            {
+              "name": "Department of Physics and Astronomy University of Exeter  Exeter UK"
+            }
+          ],
+          "role": [
+            {
+              "vocabulary": "crossref",
+              "role": "author"
+            }
+          ]
+        },
+        {
+          "ORCID": "https://orcid.org/0000-0001-6707-4563",
+          "authenticated-orcid": false,
+          "given": "N. J.",
+          "family": "Mayne",
+          "sequence": "additional",
+          "affiliation": [
+            {
+              "name": "Department of Physics and Astronomy University of Exeter  Exeter UK"
+            }
+          ],
+          "role": [
+            {
+              "vocabulary": "crossref",
+              "role": "author"
+            }
+          ]
+        },
+        {
+          "given": "A. E.",
+          "family": "Nicholson",
+          "sequence": "additional",
+          "affiliation": [
+            {
+              "name": "Department of Physics and Astronomy University of Exeter  Exeter UK"
+            }
+          ],
+          "role": [
+            {
+              "vocabulary": "crossref",
+              "role": "author"
+            }
+          ]
+        },
+        {
+          "given": "J. E.",
+          "family": "Prins",
+          "sequence": "additional",
+          "affiliation": [
+            {
+              "name": "Department of Physics and Astronomy University of Exeter  Exeter UK"
+            },
+            {
+              "name": "Kapteyn Astronomical Institute University of Groningen  Groningen The Netherlands"
+            }
+          ],
+          "role": [
+            {
+              "vocabulary": "crossref",
+              "role": "author"
+            }
+          ]
+        },
+        {
+          "given": "O. C. F.",
+          "family": "Young",
+          "sequence": "additional",
+          "affiliation": [
+            {
+              "name": "Department of Physics and Astronomy University of Exeter  Exeter UK"
+            }
+          ],
+          "role": [
+            {
+              "vocabulary": "crossref",
+              "role": "author"
+            }
+          ]
+        },
+        {
+          "given": "S. J.",
+          "family": "Daines",
+          "sequence": "additional",
+          "affiliation": [
+            {
+              "name": "Global Systems Institute University of Exeter  Exeter UK"
+            }
+          ],
+          "role": [
+            {
+              "vocabulary": "crossref",
+              "role": "author"
+            }
+          ]
+        },
+        {
+          "ORCID": "https://orcid.org/0000-0001-8832-5288",
+          "authenticated-orcid": false,
+          "given": "D. E.",
+          "family": "Sergeev",
+          "sequence": "additional",
+          "affiliation": [
+            {
+              "name": "Department of Physics and Astronomy University of Exeter  Exeter UK"
+            },
+            {
+              "name": "Department of Mathematics and Statistics University of Exeter  Exeter UK"
+            }
+          ],
+          "role": [
+            {
+              "vocabulary": "crossref",
+              "role": "author"
+            }
+          ]
+        },
+        {
+          "ORCID": "https://orcid.org/0000-0002-4664-1327",
+          "authenticated-orcid": false,
+          "given": "F. H.",
+          "family": "Lambert",
+          "sequence": "additional",
+          "affiliation": [
+            {
+              "name": "Department of Mathematics and Statistics University of Exeter  Exeter UK"
+            }
+          ],
+          "role": [
+            {
+              "vocabulary": "crossref",
+              "role": "author"
+            }
+          ]
+        },
+        {
+          "ORCID": "https://orcid.org/0000-0003-4402-6811",
+          "authenticated-orcid": false,
+          "given": "J.",
+          "family": "Manners",
+          "sequence": "additional",
+          "affiliation": [
+            {
+              "name": "Department of Physics and Astronomy University of Exeter  Exeter UK"
+            },
+            {
+              "name": "Met Office  Exeter UK"
+            }
+          ],
+          "role": [
+            {
+              "vocabulary": "crossref",
+              "role": "author"
+            }
+          ]
+        },
+        {
+          "ORCID": "https://orcid.org/0000-0002-1485-4475",
+          "authenticated-orcid": false,
+          "given": "I. A.",
+          "family": "Boutle",
+          "sequence": "additional",
+          "affiliation": [
+            {
+              "name": "Department of Physics and Astronomy University of Exeter  Exeter UK"
+            },
+            {
+              "name": "Met Office  Exeter UK"
+            }
+          ],
+          "role": [
+            {
+              "vocabulary": "crossref",
+              "role": "author"
+            }
+          ]
+        },
+        {
+          "ORCID": "https://orcid.org/0000-0002-7188-1648",
+          "authenticated-orcid": false,
+          "given": "E. T.",
+          "family": "Wolf",
+          "sequence": "additional",
+          "affiliation": [
+            {
+              "name": "Laboratory for Atmospheric and Space Physics University of Colorado Boulder  Boulder CO USA"
+            },
+            {
+              "name": "NASA NExSS Virtual Planetary Laboratory  Seattle WA USA"
+            },
+            {
+              "name": "NASA GSFC Sellers Exoplanet Environments Collaboration  Greenbelt MD USA"
+            }
+          ],
+          "role": [
+            {
+              "vocabulary": "crossref",
+              "role": "author"
+            }
+          ]
+        },
+        {
+          "given": "I. E. E.",
+          "family": "Kamp",
+          "sequence": "additional",
+          "affiliation": [
+            {
+              "name": "Kapteyn Astronomical Institute University of Groningen  Groningen The Netherlands"
+            }
+          ],
+          "role": [
+            {
+              "vocabulary": "crossref",
+              "role": "author"
+            }
+          ]
+        },
+        {
+          "given": "K.",
+          "family": "Kohary",
+          "sequence": "additional",
+          "affiliation": [
+            {
+              "name": "Department of Physics and Astronomy University of Exeter  Exeter UK"
+            }
+          ],
+          "role": [
+            {
+              "vocabulary": "crossref",
+              "role": "author"
+            }
+          ]
+        },
+        {
+          "given": "T. M.",
+          "family": "Lenton",
+          "sequence": "additional",
+          "affiliation": [
+            {
+              "name": "Global Systems Institute University of Exeter  Exeter UK"
+            }
+          ],
+          "role": [
+            {
+              "vocabulary": "crossref",
+              "role": "author"
+            }
+          ]
+        }
+      ],
+      "container-title": [
+        "Journal of Geophysical Research: Atmospheres"
+      ],
+      "published": {
+        "date-parts": [
+          [
+            2023,
+            3,
+            11
+          ]
+        ]
+      },
+      "publisher": "American Geophysical Union (AGU)",
+      "URL": "https://doi.org/10.1029/2022jd037544",
+      "type": "journal-article",
+      "requested_doi": "10.1029/2022JD037544",
+      "verified_against": "Crossref registered metadata API"
+    }
+  },
+  {
+    "review_reference": "L21",
+    "doi": "10.1098/rsif.2023.0585",
+    "checked_on": "2026-11-11",
+    "registry": "Crossref registered work metadata",
+    "registered_metadata": {
+      "DOI": "10.1098/rsif.2023.0585",
+      "title": [
+        "A synthetic microbial Daisyworld: planetary regulation in the test tube"
+      ],
+      "author": [
+        {
+          "given": "Victor",
+          "family": "Maull",
+          "sequence": "first",
+          "affiliation": [
+            {
+              "name": "Institució Catalana de Recerca i Estudis Avançats, Psg Lluis Companys, Barcelona, Spain"
+            },
+            {
+              "name": "Complex Systems Lab, Universitat Pompeu Fabra, Barcelona 08003, Spain"
+            }
+          ],
+          "role": [
+            {
+              "vocabulary": "crossref",
+              "role": "author"
+            }
+          ]
+        },
+        {
+          "given": "Jordi",
+          "family": "Pla Mauri",
+          "sequence": "additional",
+          "affiliation": [
+            {
+              "name": "Institució Catalana de Recerca i Estudis Avançats, Psg Lluis Companys, Barcelona, Spain"
+            },
+            {
+              "name": "Complex Systems Lab, Universitat Pompeu Fabra, Barcelona 08003, Spain"
+            }
+          ],
+          "role": [
+            {
+              "vocabulary": "crossref",
+              "role": "author"
+            }
+          ]
+        },
+        {
+          "given": "Nuria",
+          "family": "Conde Pueyo",
+          "sequence": "additional",
+          "affiliation": [
+            {
+              "name": "Complex Systems Lab, Universitat Pompeu Fabra, Barcelona 08003, Spain"
+            },
+            {
+              "name": "EMBL Barcelona, European Molecular Biology Laboratory (EMBL), Barcelona 08003, Spain"
+            }
+          ],
+          "role": [
+            {
+              "vocabulary": "crossref",
+              "role": "author"
+            }
+          ]
+        },
+        {
+          "ORCID": "https://orcid.org/0000-0001-6974-1008",
+          "authenticated-orcid": true,
+          "given": "Ricard",
+          "family": "Solé",
+          "sequence": "additional",
+          "affiliation": [
+            {
+              "name": "Institució Catalana de Recerca i Estudis Avançats, Psg Lluis Companys, Barcelona, Spain"
+            },
+            {
+              "name": "Complex Systems Lab, Universitat Pompeu Fabra, Barcelona 08003, Spain"
+            },
+            {
+              "name": "Santa Fe Institute, 1399 Hyde Park Road, Santa Fe, NM 87501, USA"
+            }
+          ],
+          "role": [
+            {
+              "vocabulary": "crossref",
+              "role": "author"
+            }
+          ]
+        }
+      ],
+      "published": {
+        "date-parts": [
+          [
+            2024,
+            2
+          ]
+        ]
+      },
+      "container-title": [
+        "Journal of The Royal Society Interface"
+      ],
+      "volume": "21",
+      "issue": "211",
+      "page": null,
+      "URL": "https://doi.org/10.1098/rsif.2023.0585",
+      "requested_doi": "10.1098/rsif.2023.0585"
+    }
+  },
+  {
+    "review_reference": "L22",
+    "doi": "10.1111/j.1472-4669.2005.00049.x",
+    "checked_on": "2026-11-11",
+    "registry": "Crossref registered work metadata",
+    "registered_metadata": {
+      "DOI": "10.1111/j.1472-4669.2005.00049.x",
+      "title": [
+        "A coupled atmosphere–ecosystem model of the early Archean Earth"
+      ],
+      "author": [
+        {
+          "given": "P.",
+          "family": "KHARECHA",
+          "sequence": "first",
+          "affiliation": [],
+          "role": [
+            {
+              "vocabulary": "crossref",
+              "role": "author"
+            }
+          ]
+        },
+        {
+          "given": "J.",
+          "family": "KASTING",
+          "sequence": "additional",
+          "affiliation": [],
+          "role": [
+            {
+              "vocabulary": "crossref",
+              "role": "author"
+            }
+          ]
+        },
+        {
+          "given": "J.",
+          "family": "SIEFERT",
+          "sequence": "additional",
+          "affiliation": [],
+          "role": [
+            {
+              "vocabulary": "crossref",
+              "role": "author"
+            }
+          ]
+        }
+      ],
+      "published": {
+        "date-parts": [
+          [
+            2005,
+            4
+          ]
+        ]
+      },
+      "container-title": [
+        "Geobiology"
+      ],
+      "volume": "3",
+      "issue": "2",
+      "page": "53-76",
+      "URL": "https://doi.org/10.1111/j.1472-4669.2005.00049.x",
+      "requested_doi": "10.1111/j.1472-4669.2005.00049.x",
+      "verification_source": "https://api.crossref.org/works/10.1111%2Fj.1472-4669.2005.00049.x"
+    }
+  }
+]

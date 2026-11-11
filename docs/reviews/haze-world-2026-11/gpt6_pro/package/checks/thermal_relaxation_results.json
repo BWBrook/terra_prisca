@@ -1,0 +1,1754 @@
+[
+  {
+    "f": 0.0,
+    "activity_feedback": "fixed",
+    "stencil_step": 0.0001,
+    "equilibrium": [
+      22.486299980548377,
+      0.00030119347927979185,
+      0.0004906231105327009,
+      0.00046296818626002874,
+      0.1951068748475969
+    ],
+    "temperature_k": 281.53482280508206,
+    "residual_six_at_tau_1": [
+      -7.794917579961143e-10,
+      -5.725155678024673e-19,
+      4.662939074499541e-18,
+      -1.0842021724855044e-19,
+      1.6940658945086007e-20,
+      0.0
+    ],
+    "original_eigenvalues": [
+      {
+        "real": -0.00020601947100300916,
+        "imag": 0.05254893928165045
+      },
+      {
+        "real": -0.00020601947100300916,
+        "imag": -0.05254893928165045
+      },
+      {
+        "real": -1.0000000000002052,
+        "imag": 0.0
+      },
+      {
+        "real": -9.357513592273316,
+        "imag": 0.0
+      },
+      {
+        "real": -42704.33096045701,
+        "imag": 0.0
+      }
+    ],
+    "tau_critical_years": 0.14921426002942936,
+    "all_detected_critical_times": [
+      0.14921426002942936
+    ],
+    "block_vs_direct_eigenvalue_max_abs_difference": 3.4398217607645165e-10,
+    "chain_rule_jacobian_max_abs_difference": 0.00020455115009099245,
+    "thermal_relaxation_rows": [
+      {
+        "tau_temperature_years": 1e-05,
+        "max_real_per_year": -0.00020600566658313457,
+        "imag_per_year": 0.05254893939560712,
+        "period_years": 119.56826111898341
+      },
+      {
+        "tau_temperature_years": 0.01,
+        "max_real_per_year": -0.00019221281650017366,
+        "imag_per_year": 0.05254906633063985,
+        "period_years": 119.56797229556183
+      },
+      {
+        "tau_temperature_years": 0.05,
+        "max_real_per_year": -0.00013698425237568864,
+        "imag_per_year": 0.052549393140108036,
+        "period_years": 119.5672286914381
+      },
+      {
+        "tau_temperature_years": 0.1,
+        "max_real_per_year": -6.794759995376425e-05,
+        "imag_per_year": 0.052549393518363664,
+        "period_years": 119.5672278307816
+      },
+      {
+        "tau_temperature_years": 0.15,
+        "max_real_per_year": 1.084767419574223e-06,
+        "imag_per_year": 0.05254894045667575,
+        "period_years": 119.56825870466012
+      },
+      {
+        "tau_temperature_years": 0.2,
+        "max_real_per_year": 7.010713346600368e-05,
+        "imag_per_year": 0.05254803410284392,
+        "period_years": 119.57032103013607
+      },
+      {
+        "tau_temperature_years": 0.5,
+        "max_real_per_year": 0.0004837122069009424,
+        "imag_per_year": 0.05253309873203032,
+        "period_years": 119.6043153523061
+      },
+      {
+        "tau_temperature_years": 1.0,
+        "max_real_per_year": 0.0011684925216585958,
+        "imag_per_year": 0.05247242018265324,
+        "period_years": 119.74262451223343
+      },
+      {
+        "tau_temperature_years": 2.0,
+        "max_real_per_year": 0.002501969606287995,
+        "imag_per_year": 0.05222327146069028,
+        "period_years": 120.31389706998904
+      },
+      {
+        "tau_temperature_years": 5.0,
+        "max_real_per_year": 0.0059498247613691295,
+        "imag_per_year": 0.05069250299584347,
+        "period_years": 123.9470323194492
+      },
+      {
+        "tau_temperature_years": 10.0,
+        "max_real_per_year": 0.009545924337084923,
+        "imag_per_year": 0.047177035921571214,
+        "period_years": 133.1831299792759
+      },
+      {
+        "tau_temperature_years": 30.0,
+        "max_real_per_year": 0.012954035912439696,
+        "imag_per_year": 0.03719340414282641,
+        "period_years": 168.9327839702847
+      },
+      {
+        "tau_temperature_years": 100.0,
+        "max_real_per_year": 0.011922276701794632,
+        "imag_per_year": 0.02591085713904783,
+        "period_years": 242.4923758199718
+      },
+      {
+        "tau_temperature_years": 300.0,
+        "max_real_per_year": 0.009355130857807956,
+        "imag_per_year": 0.018115393260221588,
+        "period_years": 346.84233551674663
+      },
+      {
+        "tau_temperature_years": 1000.0,
+        "max_real_per_year": 0.006647979342452349,
+        "imag_per_year": 0.012150081758873074,
+        "period_years": 517.131113343418
+      },
+      {
+        "tau_temperature_years": 10000.0,
+        "max_real_per_year": 0.0031885904846429,
+        "imag_per_year": 0.005640741810993508,
+        "period_years": 1113.8934412729172
+      }
+    ]
+  },
+  {
+    "f": 0.0,
+    "activity_feedback": "fixed",
+    "stencil_step": 1e-05,
+    "equilibrium": [
+      22.486299980548377,
+      0.00030119347927979185,
+      0.0004906231105327009,
+      0.00046296818626002874,
+      0.1951068748475969
+    ],
+    "temperature_k": 281.53482280508206,
+    "residual_six_at_tau_1": [
+      -7.794917579961143e-10,
+      -5.725155678024673e-19,
+      4.662939074499541e-18,
+      -1.0842021724855044e-19,
+      1.6940658945086007e-20,
+      0.0
+    ],
+    "original_eigenvalues": [
+      {
+        "real": -0.00020601947100870772,
+        "imag": 0.05254893928128671
+      },
+      {
+        "real": -0.00020601947100870772,
+        "imag": -0.05254893928128671
+      },
+      {
+        "real": -0.9999999999990342,
+        "imag": 0.0
+      },
+      {
+        "real": -9.35751359222822,
+        "imag": 0.0
+      },
+      {
+        "real": -42704.33096071021,
+        "imag": 0.0
+      }
+    ],
+    "tau_critical_years": 0.1492142594978292,
+    "all_detected_critical_times": [
+      0.1492142594978292
+    ],
+    "block_vs_direct_eigenvalue_max_abs_difference": 3.454265096181075e-09,
+    "chain_rule_jacobian_max_abs_difference": 0.0019628709414973855,
+    "thermal_relaxation_rows": [
+      {
+        "tau_temperature_years": 1e-05,
+        "max_real_per_year": -0.00020600566554769106,
+        "imag_per_year": 0.052548939425319324,
+        "period_years": 119.56826105137716
+      },
+      {
+        "tau_temperature_years": 0.01,
+        "max_real_per_year": -0.00019221281638198522,
+        "imag_per_year": 0.05254906633322758,
+        "period_years": 119.5679722896738
+      },
+      {
+        "tau_temperature_years": 0.05,
+        "max_real_per_year": -0.00013698425208257068,
+        "imag_per_year": 0.05254939314269507,
+        "period_years": 119.56722868555174
+      },
+      {
+        "tau_temperature_years": 0.1,
+        "max_real_per_year": -6.794759943887837e-05,
+        "imag_per_year": 0.05254939352094903,
+        "period_years": 119.56722782489905
+      },
+      {
+        "tau_temperature_years": 0.15,
+        "max_real_per_year": 1.0847681562098019e-06,
+        "imag_per_year": 0.05254894045925572,
+        "period_years": 119.56825869878973
+      },
+      {
+        "tau_temperature_years": 0.2,
+        "max_real_per_year": 7.010713442538036e-05,
+        "imag_per_year": 0.052548034105415774,
+        "period_years": 119.57032102428396
+      },
+      {
+        "tau_temperature_years": 0.5,
+        "max_real_per_year": 0.00048371220918930376,
+        "imag_per_year": 0.05253309873449183,
+        "period_years": 119.60431534670188
+      },
+      {
+        "tau_temperature_years": 1.0,
+        "max_real_per_year": 0.0011684925261146797,
+        "imag_per_year": 0.05247242018470582,
+        "period_years": 119.74262450754942
+      },
+      {
+        "tau_temperature_years": 2.0,
+        "max_real_per_year": 0.0025019696147430084,
+        "imag_per_year": 0.052223271461159404,
+        "period_years": 120.31389706890825
+      },
+      {
+        "tau_temperature_years": 5.0,
+        "max_real_per_year": 0.005949824777290834,
+        "imag_per_year": 0.0506925029880983,
+        "period_years": 123.94703233838673
+      },
+      {
+        "tau_temperature_years": 10.0,
+        "max_real_per_year": 0.009545924353484708,
+        "imag_per_year": 0.04717703590155331,
+        "period_years": 133.18313003578743
+      },
+      {
+        "tau_temperature_years": 30.0,
+        "max_real_per_year": 0.012954035915917508,
+        "imag_per_year": 0.03719340411265133,
+        "period_years": 168.93278410734018
+      },
+      {
+        "tau_temperature_years": 100.0,
+        "max_real_per_year": 0.011922276695958056,
+        "imag_per_year": 0.025910857114056888,
+        "period_years": 242.49237605385497
+      },
+      {
+        "tau_temperature_years": 300.0,
+        "max_real_per_year": 0.009355130850568747,
+        "imag_per_year": 0.018115393242121157,
+        "period_years": 346.8423358633025
+      },
+      {
+        "tau_temperature_years": 1000.0,
+        "max_real_per_year": 0.006647979336403858,
+        "imag_per_year": 0.01215008174662818,
+        "period_years": 517.1311138645844
+      },
+      {
+        "tau_temperature_years": 10000.0,
+        "max_real_per_year": 0.0031885904814626343,
+        "imag_per_year": 0.005640741805298277,
+        "period_years": 1113.8934423975709
+      }
+    ]
+  },
+  {
+    "f": 0.0,
+    "activity_feedback": "fixed",
+    "stencil_step": 1e-06,
+    "equilibrium": [
+      22.486299980548377,
+      0.00030119347927979185,
+      0.0004906231105327009,
+      0.00046296818626002874,
+      0.1951068748475969
+    ],
+    "temperature_k": 281.53482280508206,
+    "residual_six_at_tau_1": [
+      -7.794917579961143e-10,
+      -5.725155678024673e-19,
+      4.662939074499541e-18,
+      -1.0842021724855044e-19,
+      1.6940658945086007e-20,
+      0.0
+    ],
+    "original_eigenvalues": [
+      {
+        "real": -0.00020601947108398432,
+        "imag": 0.05254893927442147
+      },
+      {
+        "real": -0.00020601947108398432,
+        "imag": -0.05254893927442147
+      },
+      {
+        "real": -0.9999999999756163,
+        "imag": 0.0
+      },
+      {
+        "real": -9.357513589455216,
+        "imag": 0.0
+      },
+      {
+        "real": -42704.330958433486,
+        "imag": 0.0
+      }
+    ],
+    "tau_critical_years": 0.1492142600316889,
+    "all_detected_critical_times": [
+      0.1492142600316889
+    ],
+    "block_vs_direct_eigenvalue_max_abs_difference": 2.5119275548490805e-09,
+    "chain_rule_jacobian_max_abs_difference": 0.0014294938882812858,
+    "thermal_relaxation_rows": [
+      {
+        "tau_temperature_years": 1e-05,
+        "max_real_per_year": -0.00020600566609901705,
+        "imag_per_year": 0.05254893944438762,
+        "period_years": 119.56826100798973
+      },
+      {
+        "tau_temperature_years": 0.01,
+        "max_real_per_year": -0.00019221281712110232,
+        "imag_per_year": 0.052549066356963214,
+        "period_years": 119.56797223566673
+      },
+      {
+        "tau_temperature_years": 0.05,
+        "max_real_per_year": -0.00013698425281376964,
+        "imag_per_year": 0.0525493931664309,
+        "period_years": 119.5672286315449
+      },
+      {
+        "tau_temperature_years": 0.1,
+        "max_real_per_year": -6.794760017316513e-05,
+        "imag_per_year": 0.05254939354468721,
+        "period_years": 119.56722777088683
+      },
+      {
+        "tau_temperature_years": 0.15,
+        "max_real_per_year": 1.0847674193868728e-06,
+        "imag_per_year": 0.052548940482997034,
+        "period_years": 119.56825864476947
+      },
+      {
+        "tau_temperature_years": 0.2,
+        "max_real_per_year": 7.010713368550605e-05,
+        "imag_per_year": 0.05254803412916063,
+        "period_years": 119.57032097025377
+      },
+      {
+        "tau_temperature_years": 0.5,
+        "max_real_per_year": 0.00048371220843266855,
+        "imag_per_year": 0.05253309875826225,
+        "period_years": 119.60431529258275
+      },
+      {
+        "tau_temperature_years": 1.0,
+        "max_real_per_year": 0.0011684925253386122,
+        "imag_per_year": 0.05247242020853637,
+        "period_years": 119.74262445316786
+      },
+      {
+        "tau_temperature_years": 2.0,
+        "max_real_per_year": 0.002501969613969589,
+        "imag_per_year": 0.05222327148516883,
+        "period_years": 120.31389701359444
+      },
+      {
+        "tau_temperature_years": 5.0,
+        "max_real_per_year": 0.0059498247770135605,
+        "imag_per_year": 0.05069250301278766,
+        "period_years": 123.94703227801936
+      },
+      {
+        "tau_temperature_years": 10.0,
+        "max_real_per_year": 0.009545924354920358,
+        "imag_per_year": 0.047177035926596875,
+        "period_years": 133.1831299650882
+      },
+      {
+        "tau_temperature_years": 30.0,
+        "max_real_per_year": 0.01295403592114923,
+        "imag_per_year": 0.03719340413464609,
+        "period_years": 168.93278400743978
+      },
+      {
+        "tau_temperature_years": 100.0,
+        "max_real_per_year": 0.011922276702282238,
+        "imag_per_year": 0.02591085712996735,
+        "period_years": 242.4923759049535
+      },
+      {
+        "tau_temperature_years": 300.0,
+        "max_real_per_year": 0.009355130855974576,
+        "imag_per_year": 0.018115393253323293,
+        "period_years": 346.8423356488233
+      },
+      {
+        "tau_temperature_years": 1000.0,
+        "max_real_per_year": 0.006647979340400287,
+        "imag_per_year": 0.012150081754145937,
+        "period_years": 517.1311135446141
+      },
+      {
+        "tau_temperature_years": 10000.0,
+        "max_real_per_year": 0.0031885904834342855,
+        "imag_per_year": 0.00564074180878416,
+        "period_years": 1113.8934417092037
+      }
+    ]
+  },
+  {
+    "f": 0.5,
+    "activity_feedback": "fixed",
+    "stencil_step": 0.0001,
+    "equilibrium": [
+      22.486299980548377,
+      0.0005740589129863751,
+      0.0003383233050454137,
+      0.000882392986684879,
+      0.1951068748475969
+    ],
+    "temperature_k": 281.53482280508206,
+    "residual_six_at_tau_1": [
+      -3.2596928061655686e-10,
+      -1.0911845279862688e-18,
+      3.215464019208567e-18,
+      -2.168404344971009e-19,
+      1.0164395367051604e-20,
+      0.0
+    ],
+    "original_eigenvalues": [
+      {
+        "real": -0.0009260103682004629,
+        "imag": 0.04094346158355562
+      },
+      {
+        "real": -0.0009260103682004629,
+        "imag": -0.04094346158355562
+      },
+      {
+        "real": -0.9985650552072896,
+        "imag": 0.0
+      },
+      {
+        "real": -9.890644295845245,
+        "imag": 0.0
+      },
+      {
+        "real": -45936.587530405166,
+        "imag": 0.0
+      }
+    ],
+    "tau_critical_years": 1.1027600776771043,
+    "all_detected_critical_times": [
+      1.1027600776771043
+    ],
+    "block_vs_direct_eigenvalue_max_abs_difference": 1.7270895824594845e-10,
+    "chain_rule_jacobian_max_abs_difference": 0.00019020389299839735,
+    "thermal_relaxation_rows": [
+      {
+        "tau_temperature_years": 1e-05,
+        "max_real_per_year": -0.0009260019856265267,
+        "imag_per_year": 0.04094346213053841,
+        "period_years": 153.46003928898725
+      },
+      {
+        "tau_temperature_years": 0.01,
+        "max_real_per_year": -0.0009176279685285695,
+        "imag_per_year": 0.04094400574698062,
+        "period_years": 153.45800178925907
+      },
+      {
+        "tau_temperature_years": 0.05,
+        "max_real_per_year": -0.0008840897204557636,
+        "imag_per_year": 0.04094609667561863,
+        "period_years": 153.45016539564102
+      },
+      {
+        "tau_temperature_years": 0.1,
+        "max_real_per_year": -0.0008421487112894062,
+        "imag_per_year": 0.04094851729500313,
+        "period_years": 153.44109438478523
+      },
+      {
+        "tau_temperature_years": 0.15,
+        "max_real_per_year": -0.0008001894471376111,
+        "imag_per_year": 0.0409507231870745,
+        "period_years": 153.43282897535695
+      },
+      {
+        "tau_temperature_years": 0.2,
+        "max_real_per_year": -0.0007582140388461217,
+        "imag_per_year": 0.040952714127633946,
+        "period_years": 153.4253697471015
+      },
+      {
+        "tau_temperature_years": 0.5,
+        "max_real_per_year": -0.0005061411700852184,
+        "imag_per_year": 0.04096013717629651,
+        "period_years": 153.39756505541303
+      },
+      {
+        "tau_temperature_years": 1.0,
+        "max_real_per_year": -8.61418393981452e-05,
+        "imag_per_year": 0.04095527434813345,
+        "period_years": 153.41577872902087
+      },
+      {
+        "tau_temperature_years": 2.0,
+        "max_real_per_year": 0.0007458898080883654,
+        "imag_per_year": 0.04088190301850558,
+        "period_years": 153.6911161971947
+      },
+      {
+        "tau_temperature_years": 5.0,
+        "max_real_per_year": 0.003051665642358151,
+        "imag_per_year": 0.04021649981539922,
+        "period_years": 156.23401678466567
+      },
+      {
+        "tau_temperature_years": 10.0,
+        "max_real_per_year": 0.005881349561974126,
+        "imag_per_year": 0.038268990720587426,
+        "period_years": 164.18476653996115
+      },
+      {
+        "tau_temperature_years": 30.0,
+        "max_real_per_year": 0.009547190199527348,
+        "imag_per_year": 0.0311867872195838,
+        "period_years": 201.46946406951622
+      },
+      {
+        "tau_temperature_years": 100.0,
+        "max_real_per_year": 0.00953442185643658,
+        "imag_per_year": 0.021989819014958282,
+        "period_years": 285.7315607238756
+      },
+      {
+        "tau_temperature_years": 300.0,
+        "max_real_per_year": 0.007703701514489021,
+        "imag_per_year": 0.015396051578314068,
+        "period_years": 408.1036800389585
+      },
+      {
+        "tau_temperature_years": 1000.0,
+        "max_real_per_year": 0.005550582277175161,
+        "imag_per_year": 0.010318623540409086,
+        "period_years": 608.9170016304797
+      },
+      {
+        "tau_temperature_years": 10000.0,
+        "max_real_per_year": 0.0026842041474642534,
+        "imag_per_year": 0.004782566644198909,
+        "period_years": 1313.7684792748005
+      }
+    ]
+  },
+  {
+    "f": 0.5,
+    "activity_feedback": "fixed",
+    "stencil_step": 1e-05,
+    "equilibrium": [
+      22.486299980548377,
+      0.0005740589129863751,
+      0.0003383233050454137,
+      0.000882392986684879,
+      0.1951068748475969
+    ],
+    "temperature_k": 281.53482280508206,
+    "residual_six_at_tau_1": [
+      -3.2596928061655686e-10,
+      -1.0911845279862688e-18,
+      3.215464019208567e-18,
+      -2.168404344971009e-19,
+      1.0164395367051604e-20,
+      0.0
+    ],
+    "original_eigenvalues": [
+      {
+        "real": -0.0009260103682020493,
+        "imag": 0.040943461582610266
+      },
+      {
+        "real": -0.0009260103682020493,
+        "imag": -0.040943461582610266
+      },
+      {
+        "real": -0.9985650552058428,
+        "imag": 0.0
+      },
+      {
+        "real": -9.890644295679525,
+        "imag": 0.0
+      },
+      {
+        "real": -45936.58752971727,
+        "imag": 0.0
+      }
+    ],
+    "tau_critical_years": 1.1027600743422226,
+    "all_detected_critical_times": [
+      1.1027600743422226
+    ],
+    "block_vs_direct_eigenvalue_max_abs_difference": 1.7348440461972814e-09,
+    "chain_rule_jacobian_max_abs_difference": 0.0019231694750487804,
+    "thermal_relaxation_rows": [
+      {
+        "tau_temperature_years": 1e-05,
+        "max_real_per_year": -0.0009260019999673781,
+        "imag_per_year": 0.04094346213071264,
+        "period_years": 153.46003928833423
+      },
+      {
+        "tau_temperature_years": 0.01,
+        "max_real_per_year": -0.0009176279686421191,
+        "imag_per_year": 0.04094400574833556,
+        "period_years": 153.45800178418077
+      },
+      {
+        "tau_temperature_years": 0.05,
+        "max_real_per_year": -0.000884089720480537,
+        "imag_per_year": 0.040946096676979946,
+        "period_years": 153.45016539053935
+      },
+      {
+        "tau_temperature_years": 0.1,
+        "max_real_per_year": -0.0008421487111781364,
+        "imag_per_year": 0.04094851729637069,
+        "period_years": 153.44109437966077
+      },
+      {
+        "tau_temperature_years": 0.15,
+        "max_real_per_year": -0.0008001894468920259,
+        "imag_per_year": 0.04095072318844857,
+        "period_years": 153.43282897020862
+      },
+      {
+        "tau_temperature_years": 0.2,
+        "max_real_per_year": -0.0007582140384663162,
+        "imag_per_year": 0.04095271412901209,
+        "period_years": 153.42536974193845
+      },
+      {
+        "tau_temperature_years": 0.5,
+        "max_real_per_year": -0.0005061411689004612,
+        "imag_per_year": 0.0409601371776738,
+        "period_years": 153.39756505025503
+      },
+      {
+        "tau_temperature_years": 1.0,
+        "max_real_per_year": -8.614183687478299e-05,
+        "imag_per_year": 0.040955274349395145,
+        "period_years": 153.41577872429465
+      },
+      {
+        "tau_temperature_years": 2.0,
+        "max_real_per_year": 0.000745889813187396,
+        "imag_per_year": 0.04088190301914643,
+        "period_years": 153.6911161947855
+      },
+      {
+        "tau_temperature_years": 5.0,
+        "max_real_per_year": 0.003051665653406041,
+        "imag_per_year": 0.04021649981182467,
+        "period_years": 156.23401679855218
+      },
+      {
+        "tau_temperature_years": 10.0,
+        "max_real_per_year": 0.005881349575927445,
+        "imag_per_year": 0.03826899070834484,
+        "period_years": 164.18476659248532
+      },
+      {
+        "tau_temperature_years": 30.0,
+        "max_real_per_year": 0.009547190205099636,
+        "imag_per_year": 0.03118678719588387,
+        "period_years": 201.46946422261993
+      },
+      {
+        "tau_temperature_years": 100.0,
+        "max_real_per_year": 0.009534421852809088,
+        "imag_per_year": 0.02198981899379589,
+        "period_years": 285.7315609988557
+      },
+      {
+        "tau_temperature_years": 300.0,
+        "max_real_per_year": 0.007703701508839906,
+        "imag_per_year": 0.015396051562775771,
+        "period_years": 408.10368045083266
+      },
+      {
+        "tau_temperature_years": 1000.0,
+        "max_real_per_year": 0.0055505822721850385,
+        "imag_per_year": 0.01031862352988002,
+        "period_years": 608.9170022518152
+      },
+      {
+        "tau_temperature_years": 10000.0,
+        "max_real_per_year": 0.0026842041447669596,
+        "imag_per_year": 0.004782566639312353,
+        "period_years": 1313.7684806171346
+      }
+    ]
+  },
+  {
+    "f": 0.5,
+    "activity_feedback": "fixed",
+    "stencil_step": 1e-06,
+    "equilibrium": [
+      22.486299980548377,
+      0.0005740589129863751,
+      0.0003383233050454137,
+      0.000882392986684879,
+      0.1951068748475969
+    ],
+    "temperature_k": 281.53482280508206,
+    "residual_six_at_tau_1": [
+      -3.2596928061655686e-10,
+      -1.0911845279862688e-18,
+      3.215464019208567e-18,
+      -2.168404344971009e-19,
+      1.0164395367051604e-20,
+      0.0
+    ],
+    "original_eigenvalues": [
+      {
+        "real": -0.0009260103680339485,
+        "imag": 0.040943461589169845
+      },
+      {
+        "real": -0.0009260103680339485,
+        "imag": -0.040943461589169845
+      },
+      {
+        "real": -0.9985650552185078,
+        "imag": 0.0
+      },
+      {
+        "real": -9.890644296870937,
+        "imag": 0.0
+      },
+      {
+        "real": -45936.58752541971,
+        "imag": 0.0
+      }
+    ],
+    "tau_critical_years": 1.102760073182481,
+    "all_detected_critical_times": [
+      1.102760073182481
+    ],
+    "block_vs_direct_eigenvalue_max_abs_difference": 1.2605725352443642e-09,
+    "chain_rule_jacobian_max_abs_difference": 0.0015511683886870742,
+    "thermal_relaxation_rows": [
+      {
+        "tau_temperature_years": 1e-05,
+        "max_real_per_year": -0.0009260019847502927,
+        "imag_per_year": 0.040943462156032354,
+        "period_years": 153.4600391934335
+      },
+      {
+        "tau_temperature_years": 0.01,
+        "max_real_per_year": -0.000917627968175771,
+        "imag_per_year": 0.04094400577878215,
+        "period_years": 153.45800167006706
+      },
+      {
+        "tau_temperature_years": 0.05,
+        "max_real_per_year": -0.0008840897199822774,
+        "imag_per_year": 0.040946096707424565,
+        "period_years": 153.45016527644466
+      },
+      {
+        "tau_temperature_years": 0.1,
+        "max_real_per_year": -0.0008421487106602401,
+        "imag_per_year": 0.04094851732681375,
+        "period_years": 153.4410942655854
+      },
+      {
+        "tau_temperature_years": 0.15,
+        "max_real_per_year": -0.0008001894463513388,
+        "imag_per_year": 0.040950723218890005,
+        "period_years": 153.43282885615167
+      },
+      {
+        "tau_temperature_years": 0.2,
+        "max_real_per_year": -0.0007582140379009815,
+        "imag_per_year": 0.04095271415945069,
+        "period_years": 153.42536962790317
+      },
+      {
+        "tau_temperature_years": 0.5,
+        "max_real_per_year": -0.0005061411682010658,
+        "imag_per_year": 0.04096013720809448,
+        "period_years": 153.39756493632822
+      },
+      {
+        "tau_temperature_years": 1.0,
+        "max_real_per_year": -8.614183595410962e-05,
+        "imag_per_year": 0.04095527437978771,
+        "period_years": 153.4157786104461
+      },
+      {
+        "tau_temperature_years": 2.0,
+        "max_real_per_year": 0.0007458898145526255,
+        "imag_per_year": 0.04088190304945697,
+        "period_years": 153.69111608083628
+      },
+      {
+        "tau_temperature_years": 5.0,
+        "max_real_per_year": 0.003051665656016242,
+        "imag_per_year": 0.04021649984174292,
+        "period_years": 156.23401668232506
+      },
+      {
+        "tau_temperature_years": 10.0,
+        "max_real_per_year": 0.00588134958025755,
+        "imag_per_year": 0.03826899073723296,
+        "period_years": 164.1847664685471
+      },
+      {
+        "tau_temperature_years": 30.0,
+        "max_real_per_year": 0.00954719021228577,
+        "imag_per_year": 0.031186787220259554,
+        "period_years": 201.4694640651508
+      },
+      {
+        "tau_temperature_years": 100.0,
+        "max_real_per_year": 0.009534421860336515,
+        "imag_per_year": 0.02198981901132339,
+        "period_years": 285.7315607711067
+      },
+      {
+        "tau_temperature_years": 300.0,
+        "max_real_per_year": 0.007703701515042382,
+        "imag_per_year": 0.015396051575134623,
+        "period_years": 408.10368012323613
+      },
+      {
+        "tau_temperature_years": 1000.0,
+        "max_real_per_year": 0.005550582276698291,
+        "imag_per_year": 0.010318623538194174,
+        "period_years": 608.9170017611849
+      },
+      {
+        "tau_temperature_years": 10000.0,
+        "max_real_per_year": 0.002684204146970952,
+        "imag_per_year": 0.004782566643179311,
+        "period_years": 1313.7684795548835
+      }
+    ]
+  },
+  {
+    "f": 0.0,
+    "activity_feedback": "products",
+    "stencil_step": 0.0001,
+    "equilibrium": [
+      22.39959720875219,
+      0.0003015235408586704,
+      0.0004903399145596803,
+      0.0004639406922893654,
+      0.1950592902817385
+    ],
+    "temperature_k": 281.56914355633,
+    "residual_six_at_tau_1": [
+      5.669030967244467e-11,
+      -5.731429565251357e-19,
+      0.0,
+      0.0,
+      -1.7787691892340307e-18,
+      0.0
+    ],
+    "original_eigenvalues": [
+      {
+        "real": -0.01117178278504552,
+        "imag": 0.0
+      },
+      {
+        "real": -0.4299227182196445,
+        "imag": 0.0
+      },
+      {
+        "real": -0.5839075833598695,
+        "imag": 0.0
+      },
+      {
+        "real": -9.365276164644577,
+        "imag": 0.0
+      },
+      {
+        "real": -42892.374045448305,
+        "imag": 0.0
+      }
+    ],
+    "tau_critical_years": null,
+    "all_detected_critical_times": [],
+    "block_vs_direct_eigenvalue_max_abs_difference": 3.497339085001272e-10,
+    "chain_rule_jacobian_max_abs_difference": 0.00017886166460812092,
+    "thermal_relaxation_rows": [
+      {
+        "tau_temperature_years": 1e-05,
+        "max_real_per_year": -0.011171784072091104,
+        "imag_per_year": 0.0,
+        "period_years": null
+      },
+      {
+        "tau_temperature_years": 0.01,
+        "max_real_per_year": -0.01117306132987783,
+        "imag_per_year": 0.0,
+        "period_years": null
+      },
+      {
+        "tau_temperature_years": 0.05,
+        "max_real_per_year": -0.011178181398379405,
+        "imag_per_year": 0.0,
+        "period_years": null
+      },
+      {
+        "tau_temperature_years": 0.1,
+        "max_real_per_year": -0.011184594775412367,
+        "imag_per_year": 0.0,
+        "period_years": null
+      },
+      {
+        "tau_temperature_years": 0.15,
+        "max_real_per_year": -0.011191022980448904,
+        "imag_per_year": 0.0,
+        "period_years": null
+      },
+      {
+        "tau_temperature_years": 0.2,
+        "max_real_per_year": -0.011197466077934225,
+        "imag_per_year": 0.0,
+        "period_years": null
+      },
+      {
+        "tau_temperature_years": 0.5,
+        "max_real_per_year": -0.011236441066346258,
+        "imag_per_year": 0.0,
+        "period_years": null
+      },
+      {
+        "tau_temperature_years": 1.0,
+        "max_real_per_year": -0.011302635264731341,
+        "imag_per_year": 0.0,
+        "period_years": null
+      },
+      {
+        "tau_temperature_years": 2.0,
+        "max_real_per_year": -0.011439916330346803,
+        "imag_per_year": 0.0,
+        "period_years": null
+      },
+      {
+        "tau_temperature_years": 5.0,
+        "max_real_per_year": -0.011897039207250971,
+        "imag_per_year": 0.0,
+        "period_years": null
+      },
+      {
+        "tau_temperature_years": 10.0,
+        "max_real_per_year": -0.012870694110092533,
+        "imag_per_year": 0.0,
+        "period_years": null
+      },
+      {
+        "tau_temperature_years": 30.0,
+        "max_real_per_year": -0.016161179852190077,
+        "imag_per_year": 0.009919834740638065,
+        "period_years": 633.3961675227906
+      },
+      {
+        "tau_temperature_years": 100.0,
+        "max_real_per_year": -0.00489393273545983,
+        "imag_per_year": 0.00917341512149997,
+        "period_years": 684.9341519990219
+      },
+      {
+        "tau_temperature_years": 300.0,
+        "max_real_per_year": -0.001666212241001505,
+        "imag_per_year": 0.005768694979146975,
+        "period_years": 1089.1866063108591
+      },
+      {
+        "tau_temperature_years": 1000.0,
+        "max_real_per_year": -0.0005356821539939233,
+        "imag_per_year": 0.0032452025841073168,
+        "period_years": 1936.1457857670082
+      },
+      {
+        "tau_temperature_years": 10000.0,
+        "max_real_per_year": -9.950840241829107e-05,
+        "imag_per_year": 0.0010353775210764856,
+        "period_years": 6068.496929165447
+      }
+    ]
+  },
+  {
+    "f": 0.0,
+    "activity_feedback": "products",
+    "stencil_step": 1e-05,
+    "equilibrium": [
+      22.39959720875219,
+      0.0003015235408586704,
+      0.0004903399145596803,
+      0.0004639406922893654,
+      0.1950592902817385
+    ],
+    "temperature_k": 281.56914355633,
+    "residual_six_at_tau_1": [
+      5.669030967244467e-11,
+      -5.731429565251357e-19,
+      0.0,
+      0.0,
+      -1.7787691892340307e-18,
+      0.0
+    ],
+    "original_eigenvalues": [
+      {
+        "real": -0.011171782781774532,
+        "imag": 0.0
+      },
+      {
+        "real": -0.42992271874336346,
+        "imag": 0.0
+      },
+      {
+        "real": -0.5839075828474052,
+        "imag": 0.0
+      },
+      {
+        "real": -9.36527616444666,
+        "imag": 0.0
+      },
+      {
+        "real": -42892.3740459051,
+        "imag": 0.0
+      }
+    ],
+    "tau_critical_years": null,
+    "all_detected_critical_times": [],
+    "block_vs_direct_eigenvalue_max_abs_difference": 3.5120500951890676e-09,
+    "chain_rule_jacobian_max_abs_difference": 0.002032759366557002,
+    "thermal_relaxation_rows": [
+      {
+        "tau_temperature_years": 1e-05,
+        "max_real_per_year": -0.011171784038517978,
+        "imag_per_year": 0.0,
+        "period_years": null
+      },
+      {
+        "tau_temperature_years": 0.01,
+        "max_real_per_year": -0.011173061327289293,
+        "imag_per_year": 0.0,
+        "period_years": null
+      },
+      {
+        "tau_temperature_years": 0.05,
+        "max_real_per_year": -0.011178181395805337,
+        "imag_per_year": 0.0,
+        "period_years": null
+      },
+      {
+        "tau_temperature_years": 0.1,
+        "max_real_per_year": -0.01118459477285526,
+        "imag_per_year": 0.0,
+        "period_years": null
+      },
+      {
+        "tau_temperature_years": 0.15,
+        "max_real_per_year": -0.011191022977909078,
+        "imag_per_year": 0.0,
+        "period_years": null
+      },
+      {
+        "tau_temperature_years": 0.2,
+        "max_real_per_year": -0.011197466075412776,
+        "imag_per_year": 0.0,
+        "period_years": null
+      },
+      {
+        "tau_temperature_years": 0.5,
+        "max_real_per_year": -0.011236441063928713,
+        "imag_per_year": 0.0,
+        "period_years": null
+      },
+      {
+        "tau_temperature_years": 1.0,
+        "max_real_per_year": -0.011302635262491695,
+        "imag_per_year": 0.0,
+        "period_years": null
+      },
+      {
+        "tau_temperature_years": 2.0,
+        "max_real_per_year": -0.011439916328501243,
+        "imag_per_year": 0.0,
+        "period_years": null
+      },
+      {
+        "tau_temperature_years": 5.0,
+        "max_real_per_year": -0.011897039206864527,
+        "imag_per_year": 0.0,
+        "period_years": null
+      },
+      {
+        "tau_temperature_years": 10.0,
+        "max_real_per_year": -0.012870694113742191,
+        "imag_per_year": 0.0,
+        "period_years": null
+      },
+      {
+        "tau_temperature_years": 30.0,
+        "max_real_per_year": -0.016161179802343096,
+        "imag_per_year": 0.00991983476159614,
+        "period_years": 633.3961661845865
+      },
+      {
+        "tau_temperature_years": 100.0,
+        "max_real_per_year": -0.004893932720428526,
+        "imag_per_year": 0.009173415109873847,
+        "period_years": 684.9341528670877
+      },
+      {
+        "tau_temperature_years": 300.0,
+        "max_real_per_year": -0.0016662122359833637,
+        "imag_per_year": 0.0057686949701666705,
+        "period_years": 1089.1866080064294
+      },
+      {
+        "tau_temperature_years": 1000.0,
+        "max_real_per_year": -0.000535682152486535,
+        "imag_per_year": 0.0032452025787935456,
+        "period_years": 1936.145788937299
+      },
+      {
+        "tau_temperature_years": 10000.0,
+        "max_real_per_year": -9.95084022658852e-05,
+        "imag_per_year": 0.0010353775193477448,
+        "period_years": 6068.496939297846
+      }
+    ]
+  },
+  {
+    "f": 0.0,
+    "activity_feedback": "products",
+    "stencil_step": 1e-06,
+    "equilibrium": [
+      22.39959720875219,
+      0.0003015235408586704,
+      0.0004903399145596803,
+      0.0004639406922893654,
+      0.1950592902817385
+    ],
+    "temperature_k": 281.56914355633,
+    "residual_six_at_tau_1": [
+      5.669030967244467e-11,
+      -5.731429565251357e-19,
+      0.0,
+      0.0,
+      -1.7787691892340307e-18,
+      0.0
+    ],
+    "original_eigenvalues": [
+      {
+        "real": -0.011171782797840556,
+        "imag": 0.0
+      },
+      {
+        "real": -0.4299227167480776,
+        "imag": 0.0
+      },
+      {
+        "real": -0.5839075849559527,
+        "imag": 0.0
+      },
+      {
+        "real": -9.365276163885781,
+        "imag": 0.0
+      },
+      {
+        "real": -42892.374047276535,
+        "imag": 0.0
+      }
+    ],
+    "tau_critical_years": null,
+    "all_detected_critical_times": [],
+    "block_vs_direct_eigenvalue_max_abs_difference": 2.5537799652752824e-09,
+    "chain_rule_jacobian_max_abs_difference": 0.0014297155430540442,
+    "thermal_relaxation_rows": [
+      {
+        "tau_temperature_years": 1e-05,
+        "max_real_per_year": -0.011171784010411743,
+        "imag_per_year": 0.0,
+        "period_years": null
+      },
+      {
+        "tau_temperature_years": 0.01,
+        "max_real_per_year": -0.011173061272436247,
+        "imag_per_year": 0.0,
+        "period_years": null
+      },
+      {
+        "tau_temperature_years": 0.05,
+        "max_real_per_year": -0.011178181340896294,
+        "imag_per_year": 0.0,
+        "period_years": null
+      },
+      {
+        "tau_temperature_years": 0.1,
+        "max_real_per_year": -0.011184594717875904,
+        "imag_per_year": 0.0,
+        "period_years": null
+      },
+      {
+        "tau_temperature_years": 0.15,
+        "max_real_per_year": -0.011191022922859133,
+        "imag_per_year": 0.0,
+        "period_years": null
+      },
+      {
+        "tau_temperature_years": 0.2,
+        "max_real_per_year": -0.01119746602029079,
+        "imag_per_year": 0.0,
+        "period_years": null
+      },
+      {
+        "tau_temperature_years": 0.5,
+        "max_real_per_year": -0.011236441008378286,
+        "imag_per_year": 0.0,
+        "period_years": null
+      },
+      {
+        "tau_temperature_years": 1.0,
+        "max_real_per_year": -0.011302635206205532,
+        "imag_per_year": 0.0,
+        "period_years": null
+      },
+      {
+        "tau_temperature_years": 2.0,
+        "max_real_per_year": -0.011439916270652155,
+        "imag_per_year": 0.0,
+        "period_years": null
+      },
+      {
+        "tau_temperature_years": 5.0,
+        "max_real_per_year": -0.011897039143492279,
+        "imag_per_year": 0.0,
+        "period_years": null
+      },
+      {
+        "tau_temperature_years": 10.0,
+        "max_real_per_year": -0.012870694036657996,
+        "imag_per_year": 0.0,
+        "period_years": null
+      },
+      {
+        "tau_temperature_years": 30.0,
+        "max_real_per_year": -0.016161179819383198,
+        "imag_per_year": 0.009919834664214162,
+        "period_years": 633.3961724025703
+      },
+      {
+        "tau_temperature_years": 100.0,
+        "max_real_per_year": -0.004893932725516932,
+        "imag_per_year": 0.009173415084518806,
+        "period_years": 684.9341547602249
+      },
+      {
+        "tau_temperature_years": 300.0,
+        "max_real_per_year": -0.0016662122376502803,
+        "imag_per_year": 0.005768694957679798,
+        "period_years": 1089.1866103640743
+      },
+      {
+        "tau_temperature_years": 1000.0,
+        "max_real_per_year": -0.0005356821529555145,
+        "imag_per_year": 0.0032452025723119257,
+        "period_years": 1936.145792804349
+      },
+      {
+        "tau_temperature_years": 10000.0,
+        "max_real_per_year": -9.950840227282792e-05,
+        "imag_per_year": 0.0010353775173390888,
+        "period_years": 6068.49695107087
+      }
+    ]
+  },
+  {
+    "f": 0.5,
+    "activity_feedback": "products",
+    "stencil_step": 0.0001,
+    "equilibrium": [
+      23.15415205182806,
+      0.0005687760381835108,
+      0.00034250584139563085,
+      0.0008679690763541516,
+      0.19545348599918222
+    ],
+    "temperature_k": 281.2848267212945,
+    "residual_six_at_tau_1": [
+      -2.1258866127166752e-10,
+      0.0,
+      6.510430661751639e-19,
+      1.0842021724855044e-19,
+      -3.049318610115481e-19,
+      0.0
+    ],
+    "original_eigenvalues": [
+      {
+        "real": -0.011335997550837229,
+        "imag": 0.0
+      },
+      {
+        "real": -0.20977117192443864,
+        "imag": 0.0
+      },
+      {
+        "real": -0.7983429583477785,
+        "imag": 0.0
+      },
+      {
+        "real": -9.815103828996746,
+        "imag": 0.0
+      },
+      {
+        "real": -44628.65612735294,
+        "imag": 0.0
+      }
+    ],
+    "tau_critical_years": null,
+    "all_detected_critical_times": [],
+    "block_vs_direct_eigenvalue_max_abs_difference": 3.300324458166415e-10,
+    "chain_rule_jacobian_max_abs_difference": 0.000188866863027215,
+    "thermal_relaxation_rows": [
+      {
+        "tau_temperature_years": 1e-05,
+        "max_real_per_year": -0.011335998877391958,
+        "imag_per_year": 0.0,
+        "period_years": null
+      },
+      {
+        "tau_temperature_years": 0.01,
+        "max_real_per_year": -0.011337331983120726,
+        "imag_per_year": 0.0,
+        "period_years": null
+      },
+      {
+        "tau_temperature_years": 0.05,
+        "max_real_per_year": -0.011342676040343398,
+        "imag_per_year": 0.0,
+        "period_years": null
+      },
+      {
+        "tau_temperature_years": 0.1,
+        "max_real_per_year": -0.011349370392009282,
+        "imag_per_year": 0.0,
+        "period_years": null
+      },
+      {
+        "tau_temperature_years": 0.15,
+        "max_real_per_year": -0.011356080676624901,
+        "imag_per_year": 0.0,
+        "period_years": null
+      },
+      {
+        "tau_temperature_years": 0.2,
+        "max_real_per_year": -0.011362806965499333,
+        "imag_per_year": 0.0,
+        "period_years": null
+      },
+      {
+        "tau_temperature_years": 0.5,
+        "max_real_per_year": -0.011403504842313793,
+        "imag_per_year": 0.0,
+        "period_years": null
+      },
+      {
+        "tau_temperature_years": 1.0,
+        "max_real_per_year": -0.011472664259082093,
+        "imag_per_year": 0.0,
+        "period_years": null
+      },
+      {
+        "tau_temperature_years": 2.0,
+        "max_real_per_year": -0.011616255720832943,
+        "imag_per_year": 0.0,
+        "period_years": null
+      },
+      {
+        "tau_temperature_years": 5.0,
+        "max_real_per_year": -0.012096065730910082,
+        "imag_per_year": 0.0,
+        "period_years": null
+      },
+      {
+        "tau_temperature_years": 10.0,
+        "max_real_per_year": -0.013128240110999912,
+        "imag_per_year": 0.0,
+        "period_years": null
+      },
+      {
+        "tau_temperature_years": 30.0,
+        "max_real_per_year": -0.015929111097296528,
+        "imag_per_year": 0.010263105918420203,
+        "period_years": 612.2108996169022
+      },
+      {
+        "tau_temperature_years": 100.0,
+        "max_real_per_year": -0.004837171642949756,
+        "imag_per_year": 0.0092122642226808,
+        "period_years": 682.0457115971819
+      },
+      {
+        "tau_temperature_years": 300.0,
+        "max_real_per_year": -0.0016482240449170434,
+        "imag_per_year": 0.005780744826305146,
+        "period_years": 1086.916218579325
+      },
+      {
+        "tau_temperature_years": 1000.0,
+        "max_real_per_year": -0.0005302750687302364,
+        "imag_per_year": 0.0032501579436812304,
+        "period_years": 1933.1938373625787
+      },
+      {
+        "tau_temperature_years": 10000.0,
+        "max_real_per_year": -9.882414963864593e-05,
+        "imag_per_year": 0.0010367649894071041,
+        "period_years": 6060.375660228224
+      }
+    ]
+  },
+  {
+    "f": 0.5,
+    "activity_feedback": "products",
+    "stencil_step": 1e-05,
+    "equilibrium": [
+      23.15415205182806,
+      0.0005687760381835108,
+      0.00034250584139563085,
+      0.0008679690763541516,
+      0.19545348599918222
+    ],
+    "temperature_k": 281.2848267212945,
+    "residual_six_at_tau_1": [
+      -2.1258866127166752e-10,
+      0.0,
+      6.510430661751639e-19,
+      1.0842021724855044e-19,
+      -3.049318610115481e-19,
+      0.0
+    ],
+    "original_eigenvalues": [
+      {
+        "real": -0.011335997550171072,
+        "imag": 0.0
+      },
+      {
+        "real": -0.20977117194427933,
+        "imag": 0.0
+      },
+      {
+        "real": -0.7983429583194265,
+        "imag": 0.0
+      },
+      {
+        "real": -9.815103828987164,
+        "imag": 0.0
+      },
+      {
+        "real": -44628.65612666639,
+        "imag": 0.0
+      }
+    ],
+    "tau_critical_years": null,
+    "all_detected_critical_times": [],
+    "block_vs_direct_eigenvalue_max_abs_difference": 3.3141809296921565e-09,
+    "chain_rule_jacobian_max_abs_difference": 0.0018942547030746937,
+    "thermal_relaxation_rows": [
+      {
+        "tau_temperature_years": 1e-05,
+        "max_real_per_year": -0.011335998878957794,
+        "imag_per_year": 0.0,
+        "period_years": null
+      },
+      {
+        "tau_temperature_years": 0.01,
+        "max_real_per_year": -0.011337331979093366,
+        "imag_per_year": 0.0,
+        "period_years": null
+      },
+      {
+        "tau_temperature_years": 0.05,
+        "max_real_per_year": -0.011342676036330596,
+        "imag_per_year": 0.0,
+        "period_years": null
+      },
+      {
+        "tau_temperature_years": 0.1,
+        "max_real_per_year": -0.01134937038801117,
+        "imag_per_year": 0.0,
+        "period_years": null
+      },
+      {
+        "tau_temperature_years": 0.15,
+        "max_real_per_year": -0.01135608067264242,
+        "imag_per_year": 0.0,
+        "period_years": null
+      },
+      {
+        "tau_temperature_years": 0.2,
+        "max_real_per_year": -0.011362806961535254,
+        "imag_per_year": 0.0,
+        "period_years": null
+      },
+      {
+        "tau_temperature_years": 0.5,
+        "max_real_per_year": -0.011403504838447605,
+        "imag_per_year": 0.0,
+        "period_years": null
+      },
+      {
+        "tau_temperature_years": 1.0,
+        "max_real_per_year": -0.011472664255388208,
+        "imag_per_year": 0.0,
+        "period_years": null
+      },
+      {
+        "tau_temperature_years": 2.0,
+        "max_real_per_year": -0.011616255717511131,
+        "imag_per_year": 0.0,
+        "period_years": null
+      },
+      {
+        "tau_temperature_years": 5.0,
+        "max_real_per_year": -0.012096065728996323,
+        "imag_per_year": 0.0,
+        "period_years": null
+      },
+      {
+        "tau_temperature_years": 10.0,
+        "max_real_per_year": -0.013128240113108683,
+        "imag_per_year": 0.0,
+        "period_years": null
+      },
+      {
+        "tau_temperature_years": 30.0,
+        "max_real_per_year": -0.015929111048403225,
+        "imag_per_year": 0.010263105934275141,
+        "period_years": 612.2108986711295
+      },
+      {
+        "tau_temperature_years": 100.0,
+        "max_real_per_year": -0.004837171628118368,
+        "imag_per_year": 0.009212264210177278,
+        "period_years": 682.0457125229016
+      },
+      {
+        "tau_temperature_years": 300.0,
+        "max_real_per_year": -0.001648224039964241,
+        "imag_per_year": 0.005780744816913301,
+        "period_years": 1086.916220345213
+      },
+      {
+        "tau_temperature_years": 1000.0,
+        "max_real_per_year": -0.0005302750672477572,
+        "imag_per_year": 0.0032501579381525115,
+        "period_years": 1933.1938406510608
+      },
+      {
+        "tau_temperature_years": 10000.0,
+        "max_real_per_year": -9.882414949632058e-05,
+        "imag_per_year": 0.0010367649876149036,
+        "period_years": 6060.375670704473
+      }
+    ]
+  },
+  {
+    "f": 0.5,
+    "activity_feedback": "products",
+    "stencil_step": 1e-06,
+    "equilibrium": [
+      23.15415205182806,
+      0.0005687760381835108,
+      0.00034250584139563085,
+      0.0008679690763541516,
+      0.19545348599918222
+    ],
+    "temperature_k": 281.2848267212945,
+    "residual_six_at_tau_1": [
+      -2.1258866127166752e-10,
+      0.0,
+      6.510430661751639e-19,
+      1.0842021724855044e-19,
+      -3.049318610115481e-19,
+      0.0
+    ],
+    "original_eigenvalues": [
+      {
+        "real": -0.011335997551410617,
+        "imag": 0.0
+      },
+      {
+        "real": -0.20977117181519164,
+        "imag": 0.0
+      },
+      {
+        "real": -0.7983429584977967,
+        "imag": 0.0
+      },
+      {
+        "real": -9.815103829861307,
+        "imag": 0.0
+      },
+      {
+        "real": -44628.65613302627,
+        "imag": 0.0
+      }
+    ],
+    "tau_critical_years": null,
+    "all_detected_critical_times": [],
+    "block_vs_direct_eigenvalue_max_abs_difference": 2.4096142858809344e-09,
+    "chain_rule_jacobian_max_abs_difference": 0.0011372219305485487,
+    "thermal_relaxation_rows": [
+      {
+        "tau_temperature_years": 1e-05,
+        "max_real_per_year": -0.011335998899328391,
+        "imag_per_year": 0.0,
+        "period_years": null
+      },
+      {
+        "tau_temperature_years": 0.01,
+        "max_real_per_year": -0.011337331994235787,
+        "imag_per_year": 0.0,
+        "period_years": null
+      },
+      {
+        "tau_temperature_years": 0.05,
+        "max_real_per_year": -0.011342676051481853,
+        "imag_per_year": 0.0,
+        "period_years": null
+      },
+      {
+        "tau_temperature_years": 0.1,
+        "max_real_per_year": -0.011349370403175517,
+        "imag_per_year": 0.0,
+        "period_years": null
+      },
+      {
+        "tau_temperature_years": 0.15,
+        "max_real_per_year": -0.011356080687818893,
+        "imag_per_year": 0.0,
+        "period_years": null
+      },
+      {
+        "tau_temperature_years": 0.2,
+        "max_real_per_year": -0.011362806976724173,
+        "imag_per_year": 0.0,
+        "period_years": null
+      },
+      {
+        "tau_temperature_years": 0.5,
+        "max_real_per_year": -0.011403504853710366,
+        "imag_per_year": 0.0,
+        "period_years": null
+      },
+      {
+        "tau_temperature_years": 1.0,
+        "max_real_per_year": -0.011472664270778291,
+        "imag_per_year": 0.0,
+        "period_years": null
+      },
+      {
+        "tau_temperature_years": 2.0,
+        "max_real_per_year": -0.011616255733167512,
+        "imag_per_year": 0.0,
+        "period_years": null
+      },
+      {
+        "tau_temperature_years": 5.0,
+        "max_real_per_year": -0.012096065745571918,
+        "imag_per_year": 0.0,
+        "period_years": null
+      },
+      {
+        "tau_temperature_years": 10.0,
+        "max_real_per_year": -0.013128240131839327,
+        "imag_per_year": 0.0,
+        "period_years": null
+      },
+      {
+        "tau_temperature_years": 30.0,
+        "max_real_per_year": -0.0159291110619535,
+        "imag_per_year": 0.010263105951291871,
+        "period_years": 612.2108976560539
+      },
+      {
+        "tau_temperature_years": 100.0,
+        "max_real_per_year": -0.004837171632321927,
+        "imag_per_year": 0.009212264220854475,
+        "period_years": 682.0457117323971
+      },
+      {
+        "tau_temperature_years": 300.0,
+        "max_real_per_year": -0.0016482240414115012,
+        "imag_per_year": 0.005780744823364887,
+        "period_years": 1086.916219132163
+      },
+      {
+        "tau_temperature_years": 1000.0,
+        "max_real_per_year": -0.0005302750677226369,
+        "imag_per_year": 0.0032501579417399612,
+        "period_years": 1933.1938385172457
+      },
+      {
+        "tau_temperature_years": 10000.0,
+        "max_real_per_year": -9.882414959527382e-05,
+        "imag_per_year": 0.0010367649887546393,
+        "period_years": 6060.375664042186
+      }
+    ]
+  }
+]

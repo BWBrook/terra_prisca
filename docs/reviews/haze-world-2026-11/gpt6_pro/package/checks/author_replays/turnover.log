@@ -1,0 +1,22 @@
+Traceback (most recent call last):
+  File "/workspace/scratch/41a0aed136ce/review_work/root_checks/replay_author_audits.py", line 22, in <module>
+    module.main()
+  File "/workspace/scratch/41a0aed136ce/terra_prisca/models/haze_world/review/synthesis-turnover-audit-2026-11-11.py", line 181, in main
+    result=dict(C12_C13=inventory(),C14_C15=refuge_checks(),C21_C22=cycle_checks(),C23=tail_checks())
+                                                                    ^^^^^^^^^^^^^^
+  File "/workspace/scratch/41a0aed136ce/terra_prisca/models/haze_world/review/synthesis-turnover-audit-2026-11-11.py", line 115, in cycle_checks
+    receipt=read(receipt_path);raw=ROOT/receipt['raw_file'];assert digest(raw)==receipt['raw_sha256']
+            ^^^^^^^^^^^^^^^^^^
+  File "/workspace/scratch/41a0aed136ce/terra_prisca/models/haze_world/review/synthesis-turnover-audit-2026-11-11.py", line 29, in read
+    INPUTS[name] = digest(path)
+                   ^^^^^^^^^^^^
+  File "/workspace/scratch/41a0aed136ce/terra_prisca/models/haze_world/review/synthesis-turnover-audit-2026-11-11.py", line 24, in digest
+    return sha256(p.read_bytes()).hexdigest()
+                  ^^^^^^^^^^^^^^
+  File "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/pathlib.py", line 1019, in read_bytes
+    with self.open(mode='rb') as f:
+         ^^^^^^^^^^^^^^^^^^^^
+  File "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/pathlib.py", line 1013, in open
+    return io.open(self, mode, buffering, encoding, errors, newline)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+FileNotFoundError: [Errno 2] No such file or directory: '/workspace/scratch/41a0aed136ce/terra_prisca/local/haze/dormancy_nonspatial_cycle_precision/dormancy0024-bbfe1cad901c9f85.receipt.json'

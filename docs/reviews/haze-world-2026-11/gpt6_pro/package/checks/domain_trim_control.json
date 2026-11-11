@@ -1,0 +1,10 @@
+[
+  {
+    "selector": "tests/test_habitat_integration.py::test_exit_is_detected_on_a_nonmonotone_climate_path_and_fixed_refuge_is_constant",
+    "temporary_root_control": "passes"
+  },
+  {
+    "selector": "tests/test_refuge_integration.py::test_domain_exit_is_found_even_if_temperature_reenters_before_step_endpoint",
+    "temporary_root_control": "passes"
+  }
+]

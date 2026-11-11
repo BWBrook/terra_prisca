@@ -1,0 +1,72 @@
+FFF                                                                      [100%]
+=================================== FAILURES ===================================
+_ test_exit_is_detected_on_a_nonmonotone_climate_path_and_fixed_refuge_is_constant _
+
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x7f9fdcce89b0>
+
+    def test_exit_is_detected_on_a_nonmonotone_climate_path_and_fixed_refuge_is_constant(monkeypatch):
+        p=model.Habitats(single.reference(),(model.Patch('bulk',.96),model.Patch('warm',.02,'tracking',10.),
+                                            model.Patch('cold',.02,'buffered',278.)),0.)
+        p=toy(monkeypatch,p,[[0.,0.]]*3,ratio_rate=.01)
+        initial=model.embed_single(mixed(),p);initial[-1]=.01
+        root=brentq(lambda r:single.temperature_k(r,p.base.climate)+10.-303.15,.01,.166)
+        result=solver.integrate(initial,p,18.5)
+        assert result.status=='domain_exit'
+>       assert result.t[-1]==pytest.approx((root-.01)/.01,abs=1e-7)
+E       assert np.float64(4.447911372605897) == 9.639483547642923 ± 1.0e-07
+E         
+E         comparison failed
+E         Obtained: 4.447911372605897
+E         Expected: 9.639483547642923 ± 1.0e-07
+
+tests/test_habitat_integration.py:194: AssertionError
+__________ test_positive_biomass_recovers_after_a_long_cold_interval ___________
+
+    def test_positive_biomass_recovers_after_a_long_cold_interval():
+        warm = [e for e in equilibria(HIGH) if e["stable"] and e["eta"] > 0][-1]
+        c = atmosphere("B")["flux_to_ratio_per_yr"]
+        y = integrate_full(np.array([c * HIGH.donor_flux / 0.1, 1e-6, response("B").ratios[-1]]), HIGH, 3e5)
+>       assert y[1] > 0
+E       assert np.float64(nan) > 0
+
+tests/test_methane_budget.py:69: AssertionError
+_ test_domain_exit_is_found_even_if_temperature_reenters_before_step_endpoint __
+
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x7f9fa70c6390>
+
+    def test_domain_exit_is_found_even_if_temperature_reenters_before_step_endpoint(monkeypatch):
+        p = toy(monkeypatch, model.Refuge(warm_fraction=.1, contrast_k=10.), [[0., 0.], [0., 0.]], ratio_rate=.01)
+        start = np.array([30., .001, 0., .001, 30., .001, 0., .001, .01])
+        root = brentq(lambda r: single.temperature_k(r, p.base.climate)+p.offsets[1]-303.15, .01, .12)
+        assert all(flag != "unsupported" for flag in model.temperature_flags(start, p))
+        unbounded_end = start.copy(); unbounded_end[8] += .01 * 18.5
+        assert all(flag != "unsupported" for flag in model.temperature_flags(unbounded_end, p))
+        result = integrate(start, p, 18.5)
+        assert not result.success and result.status == "domain_exit"
+>       assert result.t[-1] == pytest.approx((root-.01)/.01, abs=1e-7)
+E       assert np.float64(4.447911372605897) == 10.394358787516616 ± 1.0e-07
+E         
+E         comparison failed
+E         Obtained: 4.447911372605897
+E         Expected: 10.394358787516616 ± 1.0e-07
+
+tests/test_refuge_integration.py:173: AssertionError
+=============================== warnings summary ===============================
+tests/test_methane_budget.py::test_positive_biomass_recovers_after_a_long_cold_interval
+  /workspace/scratch/41a0aed136ce/terra_prisca/src/terra_prisca/haze_world/methane_budget.py:211: RuntimeWarning: overflow encountered in exp
+    physical = np.array([d, np.exp(log_b), m])
+
+tests/test_methane_budget.py::test_positive_biomass_recovers_after_a_long_cold_interval
+  /workspace/scratch/41a0aed136ce/terra_prisca/src/terra_prisca/haze_world/methane_budget.py:186: RuntimeWarning: invalid value encountered in scalar subtract
+    uptake - death * b,
+
+tests/test_methane_budget.py::test_positive_biomass_recovers_after_a_long_cold_interval
+  /workspace/scratch/41a0aed136ce/terra_prisca/src/terra_prisca/haze_world/methane_budget.py:113: RuntimeWarning: overflow encountered in scalar power
+    return p.growth_ratio_max * np.maximum(0.0, 1.0 - ((np.asarray(t_k) - p.t_opt_k) / p.t_halfwidth_k) ** 2)
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+=========================== short test summary info ============================
+FAILED tests/test_habitat_integration.py::test_exit_is_detected_on_a_nonmonotone_climate_path_and_fixed_refuge_is_constant
+FAILED tests/test_methane_budget.py::test_positive_biomass_recovers_after_a_long_cold_interval
+FAILED tests/test_refuge_integration.py::test_domain_exit_is_found_even_if_temperature_reenters_before_step_endpoint
+3 failed, 3 warnings in 1.30s

@@ -1,0 +1,20 @@
+[
+  {
+    "script_result": "crossings.json",
+    "locked_environment_exit_code": 0,
+    "max_absolute_numeric_difference": 0.0,
+    "at": ".turnover[9].roots_k[0]"
+  },
+  {
+    "script_result": "counterfactual_equilibria.json",
+    "locked_environment_exit_code": 0,
+    "max_absolute_numeric_difference": 3.5301622736128024e-16,
+    "at": "[10].leading_eigenvalue_real"
+  },
+  {
+    "script_result": "supply_buffering.json",
+    "locked_environment_exit_code": 0,
+    "max_absolute_numeric_difference": 1.339206523454095e-15,
+    "at": ".rows[36].leading_eigenvalue_real"
+  }
+]

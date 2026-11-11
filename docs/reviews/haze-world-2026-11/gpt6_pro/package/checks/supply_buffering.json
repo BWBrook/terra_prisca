@@ -1,0 +1,500 @@
+{
+  "rows": [
+    {
+      "f": 0.0,
+      "potential": 0.24,
+      "activity": "fixed",
+      "control": "community",
+      "kind": "mixed",
+      "temperature_k": 281.53482280508206,
+      "r": 0.1951068748475969,
+      "leading_eigenvalue_real": -0.00015204150801578125,
+      "acetate_mol_l": 7.074632229777963e-05
+    },
+    {
+      "f": 0.0,
+      "potential": 0.24,
+      "activity": "products",
+      "control": "community",
+      "kind": "mixed",
+      "temperature_k": 282.328465436617,
+      "r": 0.19391582161917897,
+      "leading_eigenvalue_real": -0.0018792032782344768,
+      "acetate_mol_l": 9.136499348776894e-05
+    },
+    {
+      "f": 0.0,
+      "potential": 0.27,
+      "activity": "fixed",
+      "control": "community",
+      "kind": "mixed",
+      "temperature_k": 281.53482280508206,
+      "r": 0.19510687484759692,
+      "leading_eigenvalue_real": -0.0001815132993680545,
+      "acetate_mol_l": 0.0002668572542789045
+    },
+    {
+      "f": 0.0,
+      "potential": 0.27,
+      "activity": "products",
+      "control": "community",
+      "kind": "mixed",
+      "temperature_k": 281.8112928667534,
+      "r": 0.19472355841718353,
+      "leading_eigenvalue_real": -0.0065156103152126015,
+      "acetate_mol_l": 0.00027434327477885985
+    },
+    {
+      "f": 0.0,
+      "potential": 0.2999,
+      "activity": "fixed",
+      "control": "community",
+      "kind": "mixed",
+      "temperature_k": 281.53482280508206,
+      "r": 0.1951068748475969,
+      "leading_eigenvalue_real": -0.0002059456478154067,
+      "acetate_mol_l": 0.00046231448315342484
+    },
+    {
+      "f": 0.0,
+      "potential": 0.2999,
+      "activity": "products",
+      "control": "community",
+      "kind": "mixed",
+      "temperature_k": 281.569771535176,
+      "r": 0.19505841961021567,
+      "leading_eigenvalue_real": -0.011155735091275714,
+      "acetate_mol_l": 0.00046330466747191806
+    },
+    {
+      "f": 0.0,
+      "potential": 0.3,
+      "activity": "fixed",
+      "control": "community",
+      "kind": "mixed",
+      "temperature_k": 281.53482280508206,
+      "r": 0.1951068748475969,
+      "leading_eigenvalue_real": -0.00020601947194439046,
+      "acetate_mol_l": 0.00046296818626002874
+    },
+    {
+      "f": 0.0,
+      "potential": 0.3,
+      "activity": "products",
+      "control": "community",
+      "kind": "mixed",
+      "temperature_k": 281.56914355633,
+      "r": 0.1950592902817385,
+      "leading_eigenvalue_real": -0.011171782862726255,
+      "acetate_mol_l": 0.0004639406922893654
+    },
+    {
+      "f": 0.0,
+      "potential": 0.3001,
+      "activity": "fixed",
+      "control": "community",
+      "kind": "mixed",
+      "temperature_k": 281.53482280508206,
+      "r": 0.1951068748475969,
+      "leading_eigenvalue_real": -0.00020609324666629163,
+      "acetate_mol_l": 0.00046362188936663226
+    },
+    {
+      "f": 0.0,
+      "potential": 0.3001,
+      "activity": "products",
+      "control": "community",
+      "kind": "mixed",
+      "temperature_k": 281.56851644130444,
+      "r": 0.19506015975560348,
+      "leading_eigenvalue_real": -0.011187834257894031,
+      "acetate_mol_l": 0.0004645767367120727
+    },
+    {
+      "f": 0.0,
+      "potential": 0.33,
+      "activity": "fixed",
+      "control": "community",
+      "kind": "mixed",
+      "temperature_k": 281.53482280508206,
+      "r": 0.19510687484759692,
+      "leading_eigenvalue_real": -0.0002260922786006446,
+      "acetate_mol_l": 0.0006590791182411525
+    },
+    {
+      "f": 0.0,
+      "potential": 0.33,
+      "activity": "products",
+      "control": "community",
+      "kind": "mixed",
+      "temperature_k": 281.41168999978987,
+      "r": 0.1952775943356531,
+      "leading_eigenvalue_real": -0.016159986427448748,
+      "acetate_mol_l": 0.0006554532232897569
+    },
+    {
+      "f": 0.0,
+      "potential": 0.4,
+      "activity": "fixed",
+      "control": "community",
+      "kind": "mixed",
+      "temperature_k": 281.53482280508206,
+      "r": 0.19510687484759692,
+      "leading_eigenvalue_real": -0.0002604918695837845,
+      "acetate_mol_l": 0.0011166712928637763
+    },
+    {
+      "f": 0.0,
+      "potential": 0.4,
+      "activity": "products",
+      "control": "community",
+      "kind": "mixed",
+      "temperature_k": 281.17641326487274,
+      "r": 0.1956037976057018,
+      "leading_eigenvalue_real": -0.029674434390875994,
+      "acetate_mol_l": 0.0011053482349775707
+    },
+    {
+      "f": 0.0,
+      "potential": 0.44,
+      "activity": "fixed",
+      "control": "community",
+      "kind": "mixed",
+      "temperature_k": 281.53482280508206,
+      "r": 0.1951068748475969,
+      "leading_eigenvalue_real": -0.0002747906313698066,
+      "acetate_mol_l": 0.001378152535505275
+    },
+    {
+      "f": 0.0,
+      "potential": 0.44,
+      "activity": "products",
+      "control": "community",
+      "kind": "mixed",
+      "temperature_k": 281.0829414491477,
+      "r": 0.19573339313055307,
+      "leading_eigenvalue_real": -0.039533952384777485,
+      "acetate_mol_l": 0.0013633743697514832
+    },
+    {
+      "f": 0.0,
+      "potential": 0.6,
+      "activity": "fixed",
+      "control": "community",
+      "kind": "mixed",
+      "temperature_k": 281.53482280508206,
+      "r": 0.1951068748475969,
+      "leading_eigenvalue_real": -0.00031129952047043597,
+      "acetate_mol_l": 0.0024240775060712706
+    },
+    {
+      "f": 0.0,
+      "potential": 0.6,
+      "activity": "products",
+      "control": "community",
+      "kind": "mixed",
+      "temperature_k": 280.8342012082326,
+      "r": 0.19607826309828608,
+      "leading_eigenvalue_real": -0.07374760112303475,
+      "acetate_mol_l": 0.0023983216219569826
+    },
+    {
+      "f": 0.5,
+      "potential": 0.24,
+      "activity": "fixed",
+      "control": "community",
+      "kind": "mixed",
+      "temperature_k": 281.53482280508206,
+      "r": 0.1951068748475969,
+      "leading_eigenvalue_real": -0.0004055282371342086,
+      "acetate_mol_l": 0.0001348387653449839
+    },
+    {
+      "f": 0.5,
+      "potential": 0.24,
+      "activity": "products",
+      "control": "community",
+      "kind": "mixed",
+      "temperature_k": 282.0600063733504,
+      "r": 0.1943633026235546,
+      "leading_eigenvalue_real": -0.0017836394528704233,
+      "acetate_mol_l": 0.00016108770523880014
+    },
+    {
+      "f": 0.5,
+      "potential": 0.27,
+      "activity": "fixed",
+      "control": "community",
+      "kind": "mixed",
+      "temperature_k": 281.53482280508206,
+      "r": 0.19510687484759692,
+      "leading_eigenvalue_real": -0.0008053304317920847,
+      "acetate_mol_l": 0.0005086158760149321
+    },
+    {
+      "f": 0.5,
+      "potential": 0.27,
+      "activity": "products",
+      "control": "community",
+      "kind": "mixed",
+      "temperature_k": 281.527471453542,
+      "r": 0.19511706724895142,
+      "leading_eigenvalue_real": -0.006458413840397549,
+      "acetate_mol_l": 0.000508214783491301
+    },
+    {
+      "f": 0.5,
+      "potential": 0.2999,
+      "activity": "fixed",
+      "control": "community",
+      "kind": "mixed",
+      "temperature_k": 281.53482280508206,
+      "r": 0.1951068748475969,
+      "leading_eigenvalue_real": -0.0009259017149964048,
+      "acetate_mol_l": 0.0008811470629826457
+    },
+    {
+      "f": 0.5,
+      "potential": 0.2999,
+      "activity": "fixed",
+      "control": "methanogen_only",
+      "kind": "methanogen",
+      "temperature_k": 273.52116570817526,
+      "r": 0.21605342508435066,
+      "leading_eigenvalue_real": -9.714294904996149e-05,
+      "acetate_mol_l": 0.0
+    },
+    {
+      "f": 0.5,
+      "potential": 0.2999,
+      "activity": "products",
+      "control": "community",
+      "kind": "mixed",
+      "temperature_k": 281.28545301489953,
+      "r": 0.19545261766418925,
+      "leading_eigenvalue_real": -0.011318564294568312,
+      "acetate_mol_l": 0.0008667618700047443
+    },
+    {
+      "f": 0.5,
+      "potential": 0.2999,
+      "activity": "products",
+      "control": "methanogen_only",
+      "kind": "methanogen",
+      "temperature_k": 273.5212709145618,
+      "r": 0.21605112713090532,
+      "leading_eigenvalue_real": -9.715192212427645e-05,
+      "acetate_mol_l": 0.0
+    },
+    {
+      "f": 0.5,
+      "potential": 0.3,
+      "activity": "fixed",
+      "control": "community",
+      "kind": "mixed",
+      "temperature_k": 281.53482280508206,
+      "r": 0.1951068748475969,
+      "leading_eigenvalue_real": -0.0009260103741656469,
+      "acetate_mol_l": 0.000882392986684879
+    },
+    {
+      "f": 0.5,
+      "potential": 0.3,
+      "activity": "fixed",
+      "control": "methanogen_only",
+      "kind": "methanogen",
+      "temperature_k": 273.51674403884846,
+      "r": 0.21615000467994547,
+      "leading_eigenvalue_real": -9.714455896280568e-05,
+      "acetate_mol_l": 0.0
+    },
+    {
+      "f": 0.5,
+      "potential": 0.3,
+      "activity": "products",
+      "control": "community",
+      "kind": "mixed",
+      "temperature_k": 281.2848267212945,
+      "r": 0.19545348599918222,
+      "leading_eigenvalue_real": -0.011335997629692176,
+      "acetate_mol_l": 0.0008679690763541516
+    },
+    {
+      "f": 0.5,
+      "potential": 0.3,
+      "activity": "products",
+      "control": "methanogen_only",
+      "kind": "methanogen",
+      "temperature_k": 273.516849653236,
+      "r": 0.21614769781480403,
+      "leading_eigenvalue_real": -9.715352096876347e-05,
+      "acetate_mol_l": 0.0
+    },
+    {
+      "f": 0.5,
+      "potential": 0.3001,
+      "activity": "fixed",
+      "control": "community",
+      "kind": "mixed",
+      "temperature_k": 281.53482280508206,
+      "r": 0.1951068748475969,
+      "leading_eigenvalue_real": -0.0009261174310062747,
+      "acetate_mol_l": 0.0008836389103871117
+    },
+    {
+      "f": 0.5,
+      "potential": 0.3001,
+      "activity": "fixed",
+      "control": "methanogen_only",
+      "kind": "methanogen",
+      "temperature_k": 273.5123224482921,
+      "r": 0.21624658255501084,
+      "leading_eigenvalue_real": -9.714616792903236e-05,
+      "acetate_mol_l": 0.0
+    },
+    {
+      "f": 0.5,
+      "potential": 0.3001,
+      "activity": "products",
+      "control": "community",
+      "kind": "mixed",
+      "temperature_k": 281.28420130267193,
+      "r": 0.19545435312104154,
+      "leading_eigenvalue_real": -0.011353441098615092,
+      "acetate_mol_l": 0.0008691763213354568
+    },
+    {
+      "f": 0.5,
+      "potential": 0.3001,
+      "activity": "products",
+      "control": "methanogen_only",
+      "kind": "methanogen",
+      "temperature_k": 273.5124284701627,
+      "r": 0.2162442667894858,
+      "leading_eigenvalue_real": -9.715511888005153e-05,
+      "acetate_mol_l": 0.0
+    },
+    {
+      "f": 0.5,
+      "potential": 0.33,
+      "activity": "fixed",
+      "control": "community",
+      "kind": "mixed",
+      "temperature_k": 281.53482280508206,
+      "r": 0.19510687484759692,
+      "leading_eigenvalue_real": -0.0008974508768179869,
+      "acetate_mol_l": 0.001256170097354825
+    },
+    {
+      "f": 0.5,
+      "potential": 0.33,
+      "activity": "products",
+      "control": "community",
+      "kind": "mixed",
+      "temperature_k": 281.1281886699133,
+      "r": 0.195670659382656,
+      "leading_eigenvalue_real": -0.017239491437182897,
+      "acetate_mol_l": 0.0012315118304373454
+    },
+    {
+      "f": 0.5,
+      "potential": 0.4,
+      "activity": "fixed",
+      "control": "community",
+      "kind": "mixed",
+      "temperature_k": 281.53482280508206,
+      "r": 0.19510687484759692,
+      "leading_eigenvalue_real": -0.0005369482653491923,
+      "acetate_mol_l": 0.002128316688918036
+    },
+    {
+      "f": 0.5,
+      "potential": 0.4,
+      "activity": "products",
+      "control": "community",
+      "kind": "mixed",
+      "temperature_k": 280.89532751541253,
+      "r": 0.1959935135318017,
+      "leading_eigenvalue_real": -0.02510981793078053,
+      "acetate_mol_l": 0.0020856175741485006
+    },
+    {
+      "f": 0.5,
+      "potential": 0.44,
+      "activity": "fixed",
+      "control": "community",
+      "kind": "mixed",
+      "temperature_k": 281.53482280508206,
+      "r": 0.1951068748475969,
+      "leading_eigenvalue_real": -0.00023149953097010935,
+      "acetate_mol_l": 0.002626686169811298
+    },
+    {
+      "f": 0.5,
+      "potential": 0.44,
+      "activity": "products",
+      "control": "community",
+      "kind": "mixed",
+      "temperature_k": 280.80312740252333,
+      "r": 0.1961213458834956,
+      "leading_eigenvalue_real": -0.008008641006878717,
+      "acetate_mol_l": 0.0025754471325639735
+    },
+    {
+      "f": 0.5,
+      "potential": 0.6,
+      "activity": "fixed",
+      "control": "community",
+      "kind": "acetogen",
+      "temperature_k": 274.002,
+      "r": 0.251809524608961,
+      "leading_eigenvalue_real": -9.999999999926866e-05,
+      "acetate_mol_l": 0.003670992651654253
+    },
+    {
+      "f": 0.5,
+      "potential": 0.6,
+      "activity": "products",
+      "control": "community",
+      "kind": "acetogen",
+      "temperature_k": 274.002,
+      "r": 0.25138997957351383,
+      "leading_eigenvalue_real": -9.999999999972653e-05,
+      "acetate_mol_l": 0.00366486309868637
+    }
+  ],
+  "local_summary": [
+    {
+      "f": 0.0,
+      "activity": "fixed",
+      "community_slope_k_per_potential": 0.0,
+      "control_slope_k_per_potential": null,
+      "signed_gain": null,
+      "absolute_gain": null
+    },
+    {
+      "f": 0.0,
+      "activity": "products",
+      "community_slope_k_per_potential": -6.2754693578881415,
+      "control_slope_k_per_potential": null,
+      "signed_gain": null,
+      "absolute_gain": null
+    },
+    {
+      "f": 0.5,
+      "activity": "fixed",
+      "community_slope_k_per_potential": 0.0,
+      "control_slope_k_per_potential": -44.216299415893445,
+      "signed_gain": -0.0,
+      "absolute_gain": 0.0
+    },
+    {
+      "f": 0.5,
+      "activity": "products",
+      "community_slope_k_per_potential": -6.258561137997276,
+      "control_slope_k_per_potential": -44.21222199539443,
+      "signed_gain": 0.14155726302670849,
+      "absolute_gain": 0.14155726302670849
+    }
+  ]
+}

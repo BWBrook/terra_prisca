@@ -1,0 +1,13 @@
+Traceback (most recent call last):
+  File "/workspace/scratch/41a0aed136ce/review_work/root_checks/replay_author_audits.py", line 22, in <module>
+    module.main()
+  File "/workspace/scratch/41a0aed136ce/terra_prisca/models/haze_world/review/synthesis-communities-audit-2026-11-11.py", line 120, in main
+    digest = sha256(raw.read_bytes()).hexdigest()
+                    ^^^^^^^^^^^^^^^^
+  File "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/pathlib.py", line 1019, in read_bytes
+    with self.open(mode='rb') as f:
+         ^^^^^^^^^^^^^^^^^^^^
+  File "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/pathlib.py", line 1013, in open
+    return io.open(self, mode, buffering, encoding, errors, newline)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+FileNotFoundError: [Errno 2] No such file or directory: '/workspace/scratch/41a0aed136ce/terra_prisca/local/haze/finite_populations/final_raw/main_0024_t100000-ce9c0899cdf042d0.json.gz'

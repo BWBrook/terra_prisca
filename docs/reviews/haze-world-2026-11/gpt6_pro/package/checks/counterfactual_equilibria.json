@@ -1,0 +1,222 @@
+[
+  {
+    "variant": "baseline",
+    "kind": "lifeless",
+    "temperature_k": 283.19877678579377,
+    "r": 0.0005437715867670953,
+    "stable": false,
+    "leading_eigenvalue_real": 72.21430823903617,
+    "biomass_A": 0.0,
+    "biomass_M": 0.0
+  },
+  {
+    "variant": "baseline",
+    "kind": "acetogen",
+    "temperature_k": 294.40251004070655,
+    "r": 0.11860201751677815,
+    "stable": false,
+    "leading_eigenvalue_real": 8.862522232210333,
+    "biomass_A": 0.0006476930197746953,
+    "biomass_M": 0.0
+  },
+  {
+    "variant": "baseline",
+    "kind": "mixed",
+    "temperature_k": 281.53482280508206,
+    "r": 0.1951068748475969,
+    "stable": true,
+    "leading_eigenvalue_real": -0.0009260103741656469,
+    "biomass_A": 0.0005740589129863751,
+    "biomass_M": 0.0003383233050454137
+  },
+  {
+    "variant": "baseline",
+    "kind": "methanogen",
+    "temperature_k": 273.51674403884846,
+    "r": 0.21615000467994547,
+    "stable": false,
+    "leading_eigenvalue_real": 12.123212273307269,
+    "biomass_A": 0.0,
+    "biomass_M": 0.0005744177342218681
+  },
+  {
+    "variant": "products",
+    "kind": "lifeless",
+    "temperature_k": 283.19877678579377,
+    "r": 0.0005437715867670953,
+    "stable": false,
+    "leading_eigenvalue_real": 72.59693629306355,
+    "biomass_A": 0.0,
+    "biomass_M": 0.0
+  },
+  {
+    "variant": "products",
+    "kind": "acetogen",
+    "temperature_k": 294.32136672497734,
+    "r": 0.11710504564922827,
+    "stable": false,
+    "leading_eigenvalue_real": 9.880550273233991,
+    "biomass_A": 0.0006423833257572358,
+    "biomass_M": 0.0
+  },
+  {
+    "variant": "products",
+    "kind": "mixed",
+    "temperature_k": 281.2848267212945,
+    "r": 0.19545348599918222,
+    "stable": true,
+    "leading_eigenvalue_real": -0.011335997629692176,
+    "biomass_A": 0.0005687760381835108,
+    "biomass_M": 0.00034250584139563085
+  },
+  {
+    "variant": "products",
+    "kind": "methanogen",
+    "temperature_k": 273.516849653236,
+    "r": 0.21614769781480403,
+    "stable": false,
+    "leading_eigenvalue_real": 12.455173100574818,
+    "biomass_A": 0.0,
+    "biomass_M": 0.0005744113112166041
+  },
+  {
+    "variant": "co2matched",
+    "kind": "lifeless",
+    "temperature_k": 283.19877678579377,
+    "r": 0.0005437715867670953,
+    "stable": false,
+    "leading_eigenvalue_real": 71.59718174838642,
+    "biomass_A": 0.0,
+    "biomass_M": 0.0
+  },
+  {
+    "variant": "co2matched",
+    "kind": "acetogen",
+    "temperature_k": 294.05250061167635,
+    "r": 0.11214487112182395,
+    "stable": false,
+    "leading_eigenvalue_real": 12.848585739499926,
+    "biomass_A": 0.0006242928060669635,
+    "biomass_M": 0.0
+  },
+  {
+    "variant": "co2matched",
+    "kind": "mixed",
+    "temperature_k": 279.9209788655888,
+    "r": 0.19734441512371637,
+    "stable": true,
+    "leading_eigenvalue_real": -0.0016889725579403332,
+    "biomass_A": 0.0005239513516073118,
+    "biomass_M": 0.0003686445997861745
+  },
+  {
+    "variant": "co2matched",
+    "kind": "methanogen",
+    "temperature_k": 273.5191354535081,
+    "r": 0.21609777059284851,
+    "stable": false,
+    "leading_eigenvalue_real": 11.60436975752913,
+    "biomass_A": 0.0,
+    "biomass_M": 0.0005742722996137994
+  },
+  {
+    "variant": "co2matched_products",
+    "kind": "lifeless",
+    "temperature_k": 283.19877678579377,
+    "r": 0.0005437715867670953,
+    "stable": false,
+    "leading_eigenvalue_real": 72.59693629306355,
+    "biomass_A": 0.0,
+    "biomass_M": 0.0
+  },
+  {
+    "variant": "co2matched_products",
+    "kind": "acetogen",
+    "temperature_k": 293.6605540979579,
+    "r": 0.10923588467903225,
+    "stable": false,
+    "leading_eigenvalue_real": 14.495032377006948,
+    "biomass_A": 0.0006212386902858833,
+    "biomass_M": 0.0
+  },
+  {
+    "variant": "co2matched_products",
+    "kind": "mixed",
+    "temperature_k": 279.7536691422237,
+    "r": 0.19757638442102854,
+    "stable": true,
+    "leading_eigenvalue_real": -0.010964370978885387,
+    "biomass_A": 0.0005160548330897717,
+    "biomass_M": 0.00037236356619858743
+  },
+  {
+    "variant": "co2matched_products",
+    "kind": "methanogen",
+    "temperature_k": 273.51930483335815,
+    "r": 0.21609407094092817,
+    "stable": false,
+    "leading_eigenvalue_real": 12.468220921929673,
+    "biomass_A": 0.0,
+    "biomass_M": 0.0005742619987883683
+  },
+  {
+    "variant": "capacity0.5",
+    "kind": "lifeless",
+    "temperature_k": 283.19877678579377,
+    "r": 0.0005437715867670953,
+    "stable": false,
+    "leading_eigenvalue_real": 72.21430823903617,
+    "biomass_A": 0.0,
+    "biomass_M": 0.0
+  },
+  {
+    "variant": "capacity0.5",
+    "kind": "acetogen",
+    "temperature_k": 294.40251004070655,
+    "r": 0.11860201751677815,
+    "stable": true,
+    "leading_eigenvalue_real": -0.00010765505682833246,
+    "biomass_A": 0.0006476930197746953,
+    "biomass_M": 0.0
+  },
+  {
+    "variant": "capacity0.5",
+    "kind": "methanogen",
+    "temperature_k": 280.37729339562003,
+    "r": 0.1967117503941614,
+    "stable": false,
+    "leading_eigenvalue_real": 24.812701514906365,
+    "biomass_A": 0.0,
+    "biomass_M": 0.000499967338213038
+  },
+  {
+    "variant": "capacity2",
+    "kind": "lifeless",
+    "temperature_k": 283.19877678579377,
+    "r": 0.0005437715867670953,
+    "stable": false,
+    "leading_eigenvalue_real": 72.21430823903617,
+    "biomass_A": 0.0,
+    "biomass_M": 0.0
+  },
+  {
+    "variant": "capacity2",
+    "kind": "acetogen",
+    "temperature_k": 294.40251004070655,
+    "r": 0.11860201751677815,
+    "stable": false,
+    "leading_eigenvalue_real": 29.522318918171024,
+    "biomass_A": 0.0006476930197746953,
+    "biomass_M": 0.0
+  },
+  {
+    "variant": "capacity2",
+    "kind": "methanogen",
+    "temperature_k": 274.002,
+    "r": 0.26256486531098,
+    "stable": true,
+    "leading_eigenvalue_real": -0.00010000000000034237,
+    "biomass_A": 0.0,
+    "biomass_M": 0.000696493185502822
+  }
+]

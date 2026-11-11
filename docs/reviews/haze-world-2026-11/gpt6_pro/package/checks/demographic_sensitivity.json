@@ -1,0 +1,81 @@
+{
+  "scope": "Recorded external environment; balanced birth/death addition preserves mean dynamics exactly but changes demographic variance. It is a structural sensitivity, not an asserted alternative Archean rate calibration.",
+  "first_window_years": [
+    1251.0,
+    1436.0
+  ],
+  "reference_minimum_cells": 0.08796158056074978,
+  "sensitivity": [
+    {
+      "extra_balanced_birth_death_yr": 0.0,
+      "log_lambda": -8.237391103198737,
+      "P": 0.00026453859854664685,
+      "half_survival_count_scale": 2619.86529842107,
+      "N_min_at_half_survival": 230.44749250537768,
+      "max_deterministic_growth_difference": 0.0
+    },
+    {
+      "extra_balanced_birth_death_yr": 0.8766,
+      "log_lambda": -8.332701281978375,
+      "P": 0.00024049252733024842,
+      "half_survival_count_scale": 2881.8518253101806,
+      "N_min_at_half_survival": 253.49224149616524,
+      "max_deterministic_growth_difference": 0.0
+    },
+    {
+      "extra_balanced_birth_death_yr": 8.766,
+      "log_lambda": -8.930538269459847,
+      "P": 0.00013227804990561365,
+      "half_survival_count_scale": 5239.7305219200925,
+      "N_min_at_half_survival": 460.8949784204937,
+      "max_deterministic_growth_difference": 1.7763568394002505e-15
+    },
+    {
+      "extra_balanced_birth_death_yr": 87.66,
+      "log_lambda": -10.635286366691927,
+      "P": 2.405185597817397e-05,
+      "half_survival_count_scale": 28818.518014470254,
+      "N_min_at_half_survival": 2534.9223939712438,
+      "max_deterministic_growth_difference": 1.2434497875801753e-14
+    }
+  ],
+  "independent_probability_ODE": {
+    "success": true,
+    "evaluations": 25730,
+    "logu": [
+      -24.474071699773013,
+      -39.57801779860425
+    ],
+    "logu_reference": [
+      -24.474071682565604,
+      -39.57801778140743
+    ],
+    "max_abs_log_difference": 1.720740883115468e-08
+  },
+  "bank_half_life_fraction": [
+    {
+      "entry_to_required_survivor_ratio": 100.0,
+      "fraction": 0.15051499783199057
+    },
+    {
+      "entry_to_required_survivor_ratio": 10000.0,
+      "fraction": 0.07525749891599529
+    },
+    {
+      "entry_to_required_survivor_ratio": 1000000.0,
+      "fraction": 0.050171665943996864
+    },
+    {
+      "entry_to_required_survivor_ratio": 100000000.0,
+      "fraction": 0.03762874945799764
+    },
+    {
+      "entry_to_required_survivor_ratio": 1000000000000.0,
+      "fraction": 0.025085832971998432
+    },
+    {
+      "entry_to_required_survivor_ratio": 4.013817811736628e+23,
+      "fraction": 0.012753585711656202
+    }
+  ]
+}

@@ -1,0 +1,591 @@
+{
+  "reference": [
+    281.53482280508206
+  ],
+  "co2_assay_pa": 12000.0,
+  "co2_climate_pa": 1800.0,
+  "turnover": [
+    {
+      "loss_a_h": 0.0005,
+      "loss_m_h": 0.0005,
+      "roots_k": [
+        278.4009302212459
+      ]
+    },
+    {
+      "loss_a_h": 0.0005,
+      "loss_m_h": 0.00075,
+      "roots_k": [
+        282.7367641565812
+      ]
+    },
+    {
+      "loss_a_h": 0.0005,
+      "loss_m_h": 0.001,
+      "roots_k": [
+        286.4995960568494
+      ]
+    },
+    {
+      "loss_a_h": 0.0005,
+      "loss_m_h": 0.00125,
+      "roots_k": [
+        289.95972259329193
+      ]
+    },
+    {
+      "loss_a_h": 0.0005,
+      "loss_m_h": 0.0015,
+      "roots_k": [
+        293.12472886376776
+      ]
+    },
+    {
+      "loss_a_h": 0.0005,
+      "loss_m_h": 0.002,
+      "roots_k": [
+        296.96980045221744
+      ]
+    },
+    {
+      "loss_a_h": 0.00075,
+      "loss_m_h": 0.0005,
+      "roots_k": [
+        276.1794108866509
+      ]
+    },
+    {
+      "loss_a_h": 0.00075,
+      "loss_m_h": 0.00075,
+      "roots_k": [
+        279.9249552485771
+      ]
+    },
+    {
+      "loss_a_h": 0.00075,
+      "loss_m_h": 0.001,
+      "roots_k": [
+        284.06226696178527
+      ]
+    },
+    {
+      "loss_a_h": 0.00075,
+      "loss_m_h": 0.00125,
+      "roots_k": [
+        287.3492288680578
+      ]
+    },
+    {
+      "loss_a_h": 0.00075,
+      "loss_m_h": 0.0015,
+      "roots_k": [
+        290.83407698062393
+      ]
+    },
+    {
+      "loss_a_h": 0.00075,
+      "loss_m_h": 0.002,
+      "roots_k": [
+        295.67416818024515
+      ]
+    },
+    {
+      "loss_a_h": 0.001,
+      "loss_m_h": 0.0005,
+      "roots_k": []
+    },
+    {
+      "loss_a_h": 0.001,
+      "loss_m_h": 0.00075,
+      "roots_k": [
+        278.37464659304885
+      ]
+    },
+    {
+      "loss_a_h": 0.001,
+      "loss_m_h": 0.001,
+      "roots_k": [
+        281.53482280508206
+      ]
+    },
+    {
+      "loss_a_h": 0.001,
+      "loss_m_h": 0.00125,
+      "roots_k": [
+        285.1582664062023
+      ]
+    },
+    {
+      "loss_a_h": 0.001,
+      "loss_m_h": 0.0015,
+      "roots_k": [
+        288.17944781776026
+      ]
+    },
+    {
+      "loss_a_h": 0.001,
+      "loss_m_h": 0.002,
+      "roots_k": [
+        294.31438820180347
+      ]
+    },
+    {
+      "loss_a_h": 0.00125,
+      "loss_m_h": 0.0005,
+      "roots_k": []
+    },
+    {
+      "loss_a_h": 0.00125,
+      "loss_m_h": 0.00075,
+      "roots_k": [
+        277.5406636055833
+      ]
+    },
+    {
+      "loss_a_h": 0.00125,
+      "loss_m_h": 0.001,
+      "roots_k": [
+        279.70043647956845
+      ]
+    },
+    {
+      "loss_a_h": 0.00125,
+      "loss_m_h": 0.00125,
+      "roots_k": [
+        283.2547293969551
+      ]
+    },
+    {
+      "loss_a_h": 0.00125,
+      "loss_m_h": 0.0015,
+      "roots_k": [
+        286.17319512854493
+      ]
+    },
+    {
+      "loss_a_h": 0.00125,
+      "loss_m_h": 0.002,
+      "roots_k": [
+        292.78435447252366
+      ]
+    },
+    {
+      "loss_a_h": 0.0015,
+      "loss_m_h": 0.0005,
+      "roots_k": []
+    },
+    {
+      "loss_a_h": 0.0015,
+      "loss_m_h": 0.00075,
+      "roots_k": []
+    },
+    {
+      "loss_a_h": 0.0015,
+      "loss_m_h": 0.001,
+      "roots_k": [
+        278.66170881278595
+      ]
+    },
+    {
+      "loss_a_h": 0.0015,
+      "loss_m_h": 0.00125,
+      "roots_k": [
+        281.14491988684307
+      ]
+    },
+    {
+      "loss_a_h": 0.0015,
+      "loss_m_h": 0.0015,
+      "roots_k": [
+        284.3903909605378
+      ]
+    },
+    {
+      "loss_a_h": 0.0015,
+      "loss_m_h": 0.002,
+      "roots_k": [
+        290.52799818938905
+      ]
+    },
+    {
+      "loss_a_h": 0.002,
+      "loss_m_h": 0.0005,
+      "roots_k": []
+    },
+    {
+      "loss_a_h": 0.002,
+      "loss_m_h": 0.00075,
+      "roots_k": []
+    },
+    {
+      "loss_a_h": 0.002,
+      "loss_m_h": 0.001,
+      "roots_k": [
+        277.5914729409803
+      ]
+    },
+    {
+      "loss_a_h": 0.002,
+      "loss_m_h": 0.00125,
+      "roots_k": [
+        279.0599701087419
+      ]
+    },
+    {
+      "loss_a_h": 0.002,
+      "loss_m_h": 0.0015,
+      "roots_k": [
+        281.17941363249156
+      ]
+    },
+    {
+      "loss_a_h": 0.002,
+      "loss_m_h": 0.002,
+      "roots_k": [
+        286.4754146184371
+      ]
+    }
+  ],
+  "physiology": [
+    {
+      "parameter": "capacity_ratio",
+      "factor": 0.5,
+      "roots_k": [
+        297.8210223297754,
+        302.9239601962696
+      ]
+    },
+    {
+      "parameter": "capacity_ratio",
+      "factor": 0.75,
+      "roots_k": [
+        286.858049576585
+      ]
+    },
+    {
+      "parameter": "capacity_ratio",
+      "factor": 1,
+      "roots_k": [
+        281.53482280508206
+      ]
+    },
+    {
+      "parameter": "capacity_ratio",
+      "factor": 1.25,
+      "roots_k": [
+        278.7295295338606
+      ]
+    },
+    {
+      "parameter": "capacity_ratio",
+      "factor": 1.5,
+      "roots_k": [
+        277.4751558528185
+      ]
+    },
+    {
+      "parameter": "capacity_ratio",
+      "factor": 2,
+      "roots_k": []
+    },
+    {
+      "parameter": "yield_m",
+      "factor": 0.5,
+      "roots_k": [
+        294.31438820180347
+      ]
+    },
+    {
+      "parameter": "yield_m",
+      "factor": 0.75,
+      "roots_k": [
+        286.191234490077
+      ]
+    },
+    {
+      "parameter": "yield_m",
+      "factor": 1,
+      "roots_k": [
+        281.53482280508206
+      ]
+    },
+    {
+      "parameter": "yield_m",
+      "factor": 1.25,
+      "roots_k": [
+        278.8773428189429
+      ]
+    },
+    {
+      "parameter": "yield_m",
+      "factor": 1.5,
+      "roots_k": [
+        277.6401340744852
+      ]
+    },
+    {
+      "parameter": "yield_m",
+      "factor": 2,
+      "roots_k": []
+    },
+    {
+      "parameter": "maintenance_m30",
+      "factor": 0.5,
+      "roots_k": [
+        280.84123564537026
+      ]
+    },
+    {
+      "parameter": "maintenance_m30",
+      "factor": 0.75,
+      "roots_k": [
+        281.1677929990638
+      ]
+    },
+    {
+      "parameter": "maintenance_m30",
+      "factor": 1,
+      "roots_k": [
+        281.53482280508206
+      ]
+    },
+    {
+      "parameter": "maintenance_m30",
+      "factor": 1.25,
+      "roots_k": [
+        281.9530433732563
+      ]
+    },
+    {
+      "parameter": "maintenance_m30",
+      "factor": 1.5,
+      "roots_k": [
+        282.4378503496319
+      ]
+    },
+    {
+      "parameter": "maintenance_m30",
+      "factor": 2,
+      "roots_k": [
+        283.4782033659093
+      ]
+    },
+    {
+      "parameter": "threshold_a30",
+      "factor": 0.5,
+      "roots_k": [
+        282.8465629656275
+      ]
+    },
+    {
+      "parameter": "threshold_a30",
+      "factor": 0.75,
+      "roots_k": [
+        282.06852212114524
+      ]
+    },
+    {
+      "parameter": "threshold_a30",
+      "factor": 1,
+      "roots_k": [
+        281.53482280508206
+      ]
+    },
+    {
+      "parameter": "threshold_a30",
+      "factor": 1.25,
+      "roots_k": [
+        281.13198419093516
+      ]
+    },
+    {
+      "parameter": "threshold_a30",
+      "factor": 1.5,
+      "roots_k": [
+        280.8105225202454
+      ]
+    },
+    {
+      "parameter": "threshold_a30",
+      "factor": 2,
+      "roots_k": [
+        280.3183694510306
+      ]
+    },
+    {
+      "parameter": "threshold_m30",
+      "factor": 0.5,
+      "roots_k": [
+        281.48176222687493
+      ]
+    },
+    {
+      "parameter": "threshold_m30",
+      "factor": 0.75,
+      "roots_k": [
+        281.5080846110968
+      ]
+    },
+    {
+      "parameter": "threshold_m30",
+      "factor": 1,
+      "roots_k": [
+        281.53482280508206
+      ]
+    },
+    {
+      "parameter": "threshold_m30",
+      "factor": 1.25,
+      "roots_k": [
+        281.56198912741803
+      ]
+    },
+    {
+      "parameter": "threshold_m30",
+      "factor": 1.5,
+      "roots_k": [
+        281.5895964416917
+      ]
+    },
+    {
+      "parameter": "threshold_m30",
+      "factor": 2,
+      "roots_k": [
+        281.6461884218013
+      ]
+    },
+    {
+      "parameter": "km_scale_a",
+      "factor": 0.5,
+      "roots_k": [
+        290.55690960519337
+      ]
+    },
+    {
+      "parameter": "km_scale_a",
+      "factor": 0.75,
+      "roots_k": [
+        284.9524739708701
+      ]
+    },
+    {
+      "parameter": "km_scale_a",
+      "factor": 1,
+      "roots_k": [
+        281.53482280508206
+      ]
+    },
+    {
+      "parameter": "km_scale_a",
+      "factor": 1.25,
+      "roots_k": [
+        279.56310819834994
+      ]
+    },
+    {
+      "parameter": "km_scale_a",
+      "factor": 1.5,
+      "roots_k": [
+        278.59502502946197
+      ]
+    },
+    {
+      "parameter": "km_scale_a",
+      "factor": 2,
+      "roots_k": [
+        277.658308536513
+      ]
+    },
+    {
+      "parameter": "km_scale_m",
+      "factor": 0.5,
+      "roots_k": [
+        277.5715669499463
+      ]
+    },
+    {
+      "parameter": "km_scale_m",
+      "factor": 0.75,
+      "roots_k": [
+        279.040950012559
+      ]
+    },
+    {
+      "parameter": "km_scale_m",
+      "factor": 1,
+      "roots_k": [
+        281.53482280508206
+      ]
+    },
+    {
+      "parameter": "km_scale_m",
+      "factor": 1.25,
+      "roots_k": [
+        284.7712422671595
+      ]
+    },
+    {
+      "parameter": "km_scale_m",
+      "factor": 1.5,
+      "roots_k": [
+        287.6965847323063
+      ]
+    },
+    {
+      "parameter": "km_scale_m",
+      "factor": 2,
+      "roots_k": [
+        294.23640963454505
+      ]
+    },
+    {
+      "parameter": "maintenance_energy_j",
+      "factor": 0.5,
+      "roots_k": [
+        279.7765933101163
+      ]
+    },
+    {
+      "parameter": "maintenance_energy_j",
+      "factor": 0.75,
+      "roots_k": [
+        280.63558705998196
+      ]
+    },
+    {
+      "parameter": "maintenance_energy_j",
+      "factor": 1,
+      "roots_k": [
+        281.53482280508206
+      ]
+    },
+    {
+      "parameter": "maintenance_energy_j",
+      "factor": 1.25,
+      "roots_k": [
+        282.3333243860809
+      ]
+    },
+    {
+      "parameter": "maintenance_energy_j",
+      "factor": 1.5,
+      "roots_k": [
+        282.9735074284087
+      ]
+    },
+    {
+      "parameter": "maintenance_energy_j",
+      "factor": 2,
+      "roots_k": [
+        283.5805478702969
+      ]
+    }
+  ],
+  "co2_matched_factors": [
+    2.581988897471611,
+    1.6068568378893036
+  ],
+  "co2_matched_crossing": [
+    279.9209788655888
+  ]
+}

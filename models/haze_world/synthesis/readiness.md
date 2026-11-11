@@ -161,3 +161,17 @@ not like-for-like.
 
 **All four readiness conditions hold.** Claude reports "ready to write" to
 Barry in chat. Nothing is scaffolded or drafted until he starts his process.
+
+## Readiness withdrawn after external review (11 November 2026)
+
+Two independent external reviews, from Fable 5.2 and GPT-6 Pro, found the
+same thing. The reference thermostat loses stability at thermal lags of
+0.149 yr (`f = 0`) and 1.10 yr (`f = 0.5`), so its stability depends on
+temperature following methane instantly. The reviews also found that
+habitat-temperature spread, product chemistry, acetate fate and physiology
+normalisation each change what the thermostat is.
+
+**Readiness is withdrawn.** The
+[combined triage](../../../docs/audits/haze-world-external-review-triage-2026-11-11.md)
+sets out four revision stages, A to D. After them come a revised synthesis
+and a fresh readiness check.

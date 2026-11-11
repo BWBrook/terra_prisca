@@ -1,0 +1,34 @@
+Saunders 1994 Evolution without natural selection: further implications of the Daisyworld parable
+Lenton Lovelock 2000 Daisyworld is Darwinian: constraints on adaptation are important for planetary self-regulation
+Robertson Robinson 1998 Darwinian Daisyworld Journal of Theoretical Biology
+Lenton 1998 Gaia and natural selection Nature
+McDonald-Gibson Dyke Di Paolo Harvey 2008 Environmental regulation can arise under minimal assumptions
+Williams Lenton 2008 Environmental regulation in a network of simulated microbial ecosystems
+Nevison Gupta Klinger 1999 Self-sustained temperature oscillations on Daisyworld Tellus
+Weaver Dyke 2012 The importance of timescales for the emergence of environmental self-regulation
+Hsu Hubbell Waltman 1977 A mathematical theory for single-nutrient competition in continuous cultures of micro-organisms
+Veldkamp Jannasch 1972 Mixed culture studies with the chemostat
+Cord-Ruwisch Seitz Conrad 1988 The capacity of hydrogenotrophic anaerobic bacteria to compete for traces of hydrogen depends on the redox potential
+Lovley Goodwin 1988 Hydrogen concentrations as an indicator of the predominant terminal electron-accepting reactions in aquatic sediments
+Hoehler Alperin Albert Martens 1998 Thermodynamic control on hydrogen concentrations in anoxic sediments
+Schulz Conrad 1996 Influence of temperature on pathways to methane production in the permanently cold profundal sediment of Lake Constance
+Conrad Schütz Babbel 1987 Temperature limitation of hydrogen turnover and methanogenesis in anoxic paddy soil
+Kotsyurbenko 2005 Trophic interactions in the methanogenic microbial community of low-temperature terrestrial ecosystems
+Conrad 2023 Complexity of temperature dependence in methanogenic microbial environments
+Pavlov Kasting Eigenbrode Freeman 2001 Organic haze in Earth's early atmosphere: Source of low-13C Late Archean kerogens
+Wolf Toon 2010 Fractal organic hazes provided an ultraviolet shield for early Earth
+Trainer Pavlov DeWitt 2006 Organic haze on Titan and the early Earth PNAS
+Thompson Krissansen-Totton 2022 The case and context for atmospheric methane as an exoplanet biosignature
+Held Winton Takahashi 2010 Probing the fast and slow components of global warming by returning abruptly to preindustrial forcing
+Lenton Daines Dyke Nicholson 2018 Selection for Gaia across multiple scales
+Nicholson Wilkinson Williams Lenton 2018 Gaian bottlenecks and planetary habitability maintained by evolving model biospheres: the ExoGaia model
+Chopra Lineweaver 2016 The case for a Gaian bottleneck: the biology of habitability
+Wolfe Fournier 2018 Horizontal gene transfer constrains the timing of methanogen evolution
+Laakso Schrag 2019 Methane in the Precambrian atmosphere
+Briat Gupta Khammash 2016 Antithetic integral feedback ensures robust perfect adaptation in noisy biomolecular networks
+Charnay Wolf Marty Forget 2020 Is the faint young Sun problem for Earth solved
+Morono 2020 Aerobic microbial life persists in oxic marine sediment as old as 101.5 million years
+Kharecha Kasting Siefert 2005 coupled atmosphere-ecosystem model early Archean Earth
+Alcabes Olson Abbot 2020 Robustness of Gaian feedbacks to climate perturbations
+Stewart Levin 1973 Partitioning of resources and the outcome of interspecific competition: a model and some general considerations
+Lever 2012 Acetogenesis in the energy-starved deep biosphere - a paradox?

@@ -1,0 +1,71 @@
+{
+  "C01": {
+    "cases": 78,
+    "by_atmosphere": {
+      "A": 19,
+      "B": 18,
+      "C": 19,
+      "D": 22
+    },
+    "minimum_offset_k": 0.014948307864415256,
+    "maximum_offset_k": 0.03693958716871748,
+    "displayed_offset_k": [
+      0.015,
+      0.037
+    ],
+    "scope": "High-supply scalar equilibria across A-D, not case B alone; no dynamical elimination theorem"
+  },
+  "C02": {
+    "loss_shapes": 5,
+    "fixed_peak_growth": 10.0,
+    "regulation_ratio": 1.0,
+    "methane_ratio_from_constant_capture": 0.219655255922115,
+    "temperature_from_constant_capture_k": 273.43757382620265,
+    "maximum_recorded_control_contrast_k": 0.0,
+    "argument": "At E=0 and an interior singularity theta=T, rho=10 and rho_T=0. Both source and local response equal the temperature-independent control.",
+    "scope": "Fixed-peak U scenario at a feasible interior singularity; not a theorem for H trade-offs or an arbitrary two-guild evolutionary model"
+  },
+  "C03": {
+    "first_floor_range_k": [
+      291.0,
+      293.0
+    ],
+    "minimum_edge_offset_k": 0.14400000000000546,
+    "maximum_edge_offset_k": 2.394399999999962,
+    "displayed_offset_range_k": [
+      0.14,
+      2.4
+    ],
+    "hotter_is_better_rows_below_half_response": 12,
+    "minimum_hotter_is_better_ratio": 0.295431,
+    "scope": "The 291-293 K threshold concerns sampled F floors only. H trade-offs retain regulation without an optimum floor under shallow loss."
+  },
+  "C04": {
+    "frozen_unconstrained_cases": 18,
+    "extinct_cases": 18,
+    "minimum_death_after_decline_yr": 2910.0,
+    "maximum_death_after_decline_yr": 4200.0,
+    "warming_peak_k": 297.008,
+    "independently_minimized_viability": [
+      {
+        "t_zero_k": 265.0,
+        "independently_minimized_supply": 0.001075068943996669,
+        "frozen_optimum_k": 273.5
+      },
+      {
+        "t_zero_k": 283.0,
+        "independently_minimized_supply": 0.0012028031002627266,
+        "frozen_optimum_k": 273.5
+      }
+    ],
+    "example_last_living_sample": {
+      "time_yr": 4570.0,
+      "temperature_k": 288.1876169531671
+    },
+    "example_first_dead_sample": {
+      "time_yr": 5080.0,
+      "temperature_k": 292.8005936171959
+    },
+    "scope": "Deaths in the warming excursion toward the 297 K maximum, for fixed-optimum U/no-mutation runs; not all methanogens and not death exactly at the peak. Census timing and extinction law are uncalibrated."
+  }
+}

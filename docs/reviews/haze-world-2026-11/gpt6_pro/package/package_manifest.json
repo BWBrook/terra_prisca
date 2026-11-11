@@ -1,0 +1,44 @@
+{
+  "report": "haze_world_independent_review_2026-11-11.md",
+  "reviewer": "GPT-6 Astra Pro (OpenAI)",
+  "review_date": "2026-11-11",
+  "repository": "https://github.com/BWBrook/terra_prisca",
+  "tag": "haze-world-review-1",
+  "commit": "729402325eab870e9b829e7db45231d89c83eca5",
+  "tracked_checkout_clean": true,
+  "full_test_result": {
+    "passed": 840,
+    "failed": 3,
+    "warnings": 3,
+    "seconds": 329.25
+  },
+  "locked_numerical_environment": {
+    "python": "3.12.14",
+    "numpy": "2.5.4",
+    "scipy": "1.18.1"
+  },
+  "initial_physiology_environment": {
+    "numpy": "2.3.5",
+    "scipy": "1.17.0",
+    "repeated_in_locked_environment": true
+  },
+  "claims_check": {
+    "claims": 37,
+    "errors": 0,
+    "warnings": 0
+  },
+  "doi_verifications": 22,
+  "python_scripts": 15,
+  "author_audits": {
+    "precursors": "passed",
+    "core": "passed",
+    "communities": "blocked: missing raw input",
+    "turnover": "blocked: missing receipt"
+  },
+  "limits": [
+    "Original approximately 2 GB raw trajectory archive not included or rerun.",
+    "Counterfactual parameters are structural sensitivities, not empirical Archean calibrations.",
+    "Diagnostic monkeypatches only locate failures; no production fixes were made.",
+    "No repository correspondence was read and no remote mutation was made."
+  ]
+}

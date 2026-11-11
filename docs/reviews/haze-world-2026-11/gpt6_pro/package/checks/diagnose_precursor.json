@@ -1,0 +1,98 @@
+{
+  "scope": "Only the original single-guild three-stock integrate_full routine; no claim about the later population/refuge/dormancy integrators.",
+  "expected_reduced_warm_ratio": 0.195700171319507,
+  "results": [
+    {
+      "success": true,
+      "status": 0,
+      "message": "The solver successfully reached the end of the integration interval.",
+      "nfev": 423,
+      "accepted_points": 178,
+      "first_nonfinite_accepted_time": 2395.592972512247,
+      "final_internal": [
+        null,
+        null,
+        null
+      ],
+      "returned": [
+        null,
+        null,
+        null
+      ],
+      "warnings": [
+        "invalid value encountered in scalar subtract",
+        "overflow encountered in exp",
+        "overflow encountered in scalar power"
+      ],
+      "method": "LSODA",
+      "max_step": null
+    },
+    {
+      "success": true,
+      "status": 0,
+      "message": "The solver successfully reached the end of the integration interval.",
+      "nfev": 742,
+      "accepted_points": 461,
+      "first_nonfinite_accepted_time": 2395.592972512247,
+      "final_internal": [
+        null,
+        null,
+        null
+      ],
+      "returned": [
+        null,
+        null,
+        null
+      ],
+      "warnings": [
+        "invalid value encountered in scalar subtract",
+        "overflow encountered in exp",
+        "overflow encountered in scalar power"
+      ],
+      "method": "LSODA",
+      "max_step": 1000.0
+    },
+    {
+      "success": true,
+      "status": 0,
+      "message": "The solver successfully reached the end of the integration interval.",
+      "nfev": 6190,
+      "accepted_points": 4385,
+      "first_nonfinite_accepted_time": null,
+      "final_internal": [
+        0.00010484360026724815,
+        -10.844294363953148,
+        0.19570017131950695
+      ],
+      "returned": [
+        0.00010484360026724815,
+        1.9515639973275744e-05,
+        0.19570017131950695
+      ],
+      "warnings": [],
+      "method": "LSODA",
+      "max_step": 100.0
+    },
+    {
+      "success": true,
+      "status": 0,
+      "message": "The solver successfully reached the end of the integration interval.",
+      "nfev": 9396,
+      "accepted_points": 1075,
+      "first_nonfinite_accepted_time": null,
+      "final_internal": [
+        0.00010484360026726012,
+        -10.844294363953239,
+        0.19570017131950698
+      ],
+      "returned": [
+        0.00010484360026726012,
+        1.9515639973273975e-05,
+        0.19570017131950698
+      ],
+      "warnings": [],
+      "method": "Radau",
+      "max_step": null
+    }
+  ]
+}
