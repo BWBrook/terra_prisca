@@ -45,7 +45,7 @@ and open for two; it does not establish universal removal of the cycles.
 Optional small-direction screens of the nonsmooth linear root likewise
 return no completed long flow. Its stability remains unqualified. Further
 work on the warm controls needs a formulation that handles the linear
-switching boundary efficiently; this follow-up adds no new solver variant.
+switching boundary efficiently; the existing positive-coordinate solvers remain unchanged.
 
 The [fixed design](cycle-closure-design-2026-11-11.md),
 [results](cycle-closure-results-2026-11-11.json), raw receipts and controllers
@@ -150,6 +150,12 @@ verifies the matched Radau/LSODA control, and reconciles final tail hashes.
 The [tail report](dormancy-tail-assessment-2026-11-11.md) explains source-driven
 counterexamples. All old physical producers and accepted result files stay
 unchanged.
+
+The [incremental payload receipt](../figures/dormancy/closure_payload_receipt.json)
+pins 163 files (10,334,884 bytes), verified locally and by archived readback.
+Its manifest is `51e2777e5554bf639fb6147d6813bcba8eb2fe5ebf0c90f1fcd409ba90bdce1d`.
+It inherits the unchanged accepted parent archive and retains failed controls,
+raw snapshots, producer bytes and both test logs. All new workers are stopped.
 
 ## Presentation and stopping point
 

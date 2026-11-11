@@ -1,0 +1,22 @@
+{
+  "archive_directory": "dormancy-closure-0104b58-20261111",
+  "archived_copy_verified": true,
+  "bytes": 10334884,
+  "files": 163,
+  "inventory": {
+    "bank_only_macrostationary_cases": 41,
+    "cubic_perturbations_30000_yr": 8,
+    "linear_original_start_controls_20000_yr": 3,
+    "linear_original_start_warm_unresolved": 2,
+    "tests_passed": 820,
+    "verified_frozen_root_bank_relaxations": 0
+  },
+  "local_copy_verified": true,
+  "manifest_excludes_itself": true,
+  "manifest_sha256": "51e2777e5554bf639fb6147d6813bcba8eb2fe5ebf0c90f1fcd409ba90bdce1d",
+  "parent_archive_directory": "turnover-dormancy-3add1f4-20261110",
+  "parent_manifest_sha256": "bf4eaff77c256387cb5274393492ce1c173c090da4d678f79602ba54d97af8b4",
+  "scope": "Incremental review evidence; old physical outputs and strict labels unchanged. Two warm linear-law controls remain unresolved. No basin, global-attractor or joint stochastic-persistence claim.",
+  "source_code_commit": "fd1e7b443615ee12a91fdf13262ece40303324f6",
+  "unexpected_files": 0
+}

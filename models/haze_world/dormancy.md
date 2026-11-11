@@ -470,6 +470,18 @@ uv run python -m terra_prisca.haze_world.turnover_survival --variant dormancy --
 uv run python -m terra_prisca.haze_world.dormancy_assessment
 ```
 
+The new review controls use a separate
+[incremental payload](figures/dormancy/closure_payload_receipt.json); they do
+not overwrite the accepted original archive. After restoring both payloads,
+reproduce their derived diagnostics with:
+
+```sh
+uv run python -m terra_prisca.haze_world.dormancy_tail_assessment
+uv run python models/haze_world/review/dormancy_cycle_closure_analysis.py
+uv run python models/haze_world/review/dormancy-deficit-check-2026-11-11.py
+uv run python models/haze_world/review/dormancy-interpretation-math-check-2026-11-11.py
+```
+
 Physical replication uses each selected receipt's producing module, recorded
 case and horizon, source graph and environment. Earlier completed numerical
 epochs are retained. First-window horizons follow the closed-window question;
