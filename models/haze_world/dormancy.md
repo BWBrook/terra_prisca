@@ -1,16 +1,38 @@
 # Dormancy in haze-world
 
-**Status: build complete; ready for independent review.** All 128 planned
-cases completed their required 100,000-year horizon. The final first-window
-assessment covers 143 profiles (128 planned plus 15 refinements), with 286
-guild diagnostics. All 806 tests pass. Completion preserves the unsettled
-flags and the limits of the probability calculation.
+Dormancy can retain the microbial group displaced during a climate swing,
+but it does not always protect it. The completed experiment and its
+[independent review](review/turnover-dormancy-claude-review-2026-11-11.md)
+support four results:
+
+- **A seed bank can replace a refuge.** In the four no-refuge tests, half
+  survival requires dormant half-lives of about 12–32 years for displaced
+  methanogens and 90–170 years for displaced acetogens. The longer acetogen
+  requirement spans the greenhouse warming excursion. These are conditional
+  first-bottleneck probabilities, not guarantees of a common endpoint.
+- **Short-lived dormancy can deepen a bottleneck.** During mild competitive
+  disadvantage, dormant death can exceed the active net loss. The model's
+  growth-triggered switching law then transfers cells into the less viable
+  state.
+- **Some climate paths keep oscillating.** Checked ranges are 0.2–1.5 K,
+  alongside a locally stable mixed equilibrium. Switching-law and amplitude
+  controls distinguish these finite trajectories from the reference model's
+  weakly damped ringing; no global-attractor claim follows.
+- **Macrostate stationarity differs from dormant-bank stationarity.** The
+  original strict labels remain: 56 stationary and 72 unsettled. In 41 of the
+  latter, climate, chemistry, active stocks and total guild biomass meet the
+  existing tolerances, while the dormant bank remains unresolved.
+
+**Status: original build accepted; review closure reported below.** All 128
+planned cases completed at least 100,000 years. The first-window assessment
+covers 143 profiles and 286 guild diagnostics. Earlier outputs, strict flags
+and probability calculations remain unchanged.
 
 The preceding [T1 gate and T2 experiment](turnover.md) are complete within
 their stated scopes. The original
 [specification](turnover-dormancy-spec.md) records KD1–KD5 before the runs;
 the [method notes](turnover-dormancy-method-notes.md) record qualifications
-made before full-grid scoring. The
+made before full-grid scoring and the later numerical record. The
 [prediction assessment](figures/dormancy/prediction_assessment.json) binds the
 final inputs and outcomes.
 
@@ -58,22 +80,11 @@ enters the same turnover accounting as active death. The census counts
 `X+Z` in each habitat and removes a guild there below one cell. A surviving
 population elsewhere can rescue a local loss; global removal is absorbing.
 
-The implementation is
-[`dormancy.py`](../../src/terra_prisca/haze_world/dormancy.py), with the
-positive-coordinate integration in
-[`dormancy_integration.py`](../../src/terra_prisca/haze_world/dormancy_integration.py).
-The current qualified numerical route uses
-[`dormancy_face_integration.py`](../../src/terra_prisca/haze_world/dormancy_face_integration.py),
-with the frozen accepted-step driver and physical equations. It modifies
-only approximate Newton couplings for a present linear allocation whose
-coordinate and returned floating-point rate are both exactly zero. A retained
-incoming log source can still exist below floating range; this approximation
-does not remove that source or establish biological extinction. The
-[review](review/dormancy-face-review-2026-11-11.md) and
-[qualification](review/dormancy-face-qualification-2026-11-11.json) distinguish
-completed numerical flow from strict endpoint convergence. Earlier qualified
-native, Jacobian, chemical and stage receipts retain their own source epochs.
-The active model and its frozen earlier outputs are unchanged.
+The physical model is [`dormancy.py`](../../src/terra_prisca/haze_world/dormancy.py).
+The [method notes](turnover-dormancy-method-notes.md#numerical-provenance-and-source-epochs)
+retain the numerical qualifications, source epochs and platform comparison.
+They distinguish completed trajectories from endpoint convergence and from
+rare-lineage accuracy; no physical equation or census rule changes here.
 
 ## Stationary locations and resident preparation
 
@@ -137,6 +148,24 @@ envelopes. Eight oscillating paths have the bounded checks described below;
 23 remain unreviewed oscillation candidates. This triage preserves every
 original settling flag. The checked dormant tails include cell counts of order `10^18`; their small
 biomass fractions do not establish numerical noise.
+
+The post-review [bank assessment](review/dormancy-tail-assessment-2026-11-11.json)
+adds a description alongside those flags. All 41 bank-only cases satisfy the
+unchanged macrostate criteria, including total guild biomass and census
+occupancy. They also agree with nearby present-guild roots at those
+tolerances. **None passes a resolved frozen-root bank forecast**, which must
+explain each failing bank's variation within 0.1%. They are therefore
+**macrostate stationary; dormant bank unresolved**, rather than verified
+settled up to dormant decay. Small entry or waking sources can dominate
+such banks, even while the active community is nearly stationary.
+
+Under the additional macro comparison, 41 of the 64 invasion pairs have two
+qualifying endpoints and 25 agree. The original strict counts remain 19
+pairs with two stationary endpoints and ten identical pairs. This expands
+finite-record macrostate agreement; it establishes neither identical
+unresolved banks nor a common full-state attractor or joint survival. The
+[fixed criteria](review/dormancy-tail-classification-design-2026-11-11.md)
+and [closure](review/dormancy-closure-2026-11-11.md) preserve those distinctions.
 
 KD1's no-removal reference clause additionally compares matching frozen
 buffered-refuge endpoints. It projects active plus dormant biomass into the
@@ -223,8 +252,20 @@ dormancy changes the climate path. Three measured fast brackets lie within
 their proposed bands. The `f=0.5` methanogen bracket lies just below the
 proposed 0.0025 lower bound, refuting that strict bound in the specified model.
 These first-window results do not establish common long-term endpoints
-from both invasion histories; the separate endpoint comparison retains 45
+from both invasion histories; the strict endpoint comparison retains 45
 unsettled pairs.
+
+The review's useful approximation is
+`ε* ≈ ln(N₀/N₅₀)/(Lτ)`: an isolated bank must retain enough viable cells over
+an unfavourable interval `τ`. Its half-life is then
+`ln(2) τ / ln(N₀/N₅₀)`, about **1.3% of the interval for the assumed population
+ratio here**. The measured epsilon brackets are 0.992–1.167 times the
+review's approximate predictions. They support the approximation, not exact
+equality or a universal 1.3% coefficient. Entry and waking can indirectly
+change the climate through active populations, so the suppression duration
+is not generally fixed by the no-dormancy path. The
+[mathematical check](review/dormancy-interpretation-math-check-2026-11-11.md)
+states the assumptions and retains the original failed lower-bound test.
 
 KD4's factor-of-three prediction is supported conservatively by the current
 slow-switching (`k=1`) brackets. In the table's row order, the slow epsilon
@@ -281,7 +322,40 @@ outcome for untested dormant losses.
 
 ![Warm-refuge first acetogen minima](figures/dormancy/overshoot_minima.png)
 
+The [deficit check](review/dormancy-deficit-check-2026-11-11.json) compares
+the active acetogen deficit `(L−g)/L` on the frozen no-dormancy overshoot with
+`ε`. At a fixed environment, converting active biomass into a dormant bank
+changes the total-biomass derivative by `[(L−g)−εL] Z`. Thus dormant
+allocation helps locally when `ε < (L−g)/L`. The deficit varies through the
+overshoot: its year-1200–1400 mean is about 0.046 at exchange `10⁻⁹/year`
+and 0.021 at `10⁻⁶/year`, rather than a constant 3% of loss. This local
+condition explains why short-lived banks can deepen the measured continuum
+bottleneck; it is not a universal threshold for the coupled climate path.
+Both the original bottleneck and the added dormant loss can already imply
+very poor survival.
+
+![Active decline compared with dormant mortality](figures/dormancy/active_deficit.png)
+
 ## Cycles with and without census removals
+
+The [review-closure controls](review/dormancy-closure-2026-11-11.md)
+refute the predicted amplitude split: all eight ±0.1% and ±10% single-guild
+perturbations of the case-0024 mixed root decay through 30,000 years. The
+fitted period is about 119.6 years and damping time about 4,900 years. The
+larger kicks were not increased to seek a cycling start. These tests do not
+locate the basin of the previously observed cycling invasion path.
+
+With the named linear switching law, cases 0024, 0032 and 0126 show decaying
+oscillations through 20,000 years, reaching final 5,000-year temperature
+ranges below `4.1×10⁻⁵ K`. Thus their sustained cubic-law paths are sensitive
+to the switching law. The linear law is nonsmooth at break-even growth;
+these trajectories do not supply a general stability certificate. The two
+warm-refuge linear controls (0012 and 0068) remain computationally unresolved:
+0068 returns only its 2,000-year startup, and 0012 no completed original-start
+flow. Bounded continuations from the recorded cycles also return no flow.
+Their timeouts do not indicate whether the cycles persist or vanish.
+
+![Amplitude and switching-law controls](review/cycle-closure-2026-11-11.png)
 
 **The dormancy variant exhibits recurrence without any refuge.** No-refuge cases
 0024 and 0032 at the reference active loss, and case 0126 at twice that
@@ -408,61 +482,6 @@ under gitignored `local/haze/dormancy/`; receipts pin the source graph,
 protocol, environment and payload checksum. Derived summaries, assessment
 JSON and figures belong under `figures/dormancy/`.
 
-The Face helper is frozen at SHA-256
-`6a758528247493428459d250a0cd000ae678c9e59c05a09947f94628ed1672ce`.
-Its [qualification](review/dormancy-face-qualification-2026-11-11.json)
-includes the completed original-start 100,000-year case 0085 flow, whose strict
-all-stock settling label remains unresolved. Its runner
-records solver `analytic_dormancy_zero_face_newton`, architecture, operating
-system and an exact nine-file numerical extension to the unchanged canonical
-physical source graph. Its frozen trial, switching-Jacobian, progress,
-chemical and accepted-stage dependencies remain explicit in that graph.
-
-Earlier variants retain their separate
-[trial](review/dormancy-trial-integration-review-2026-11-11.md),
-[Jacobian](review/dormancy-jacobian-review-2026-11-11.md) and
-[stage](review/dormancy-stage-review-2026-11-11.md) qualifications. Every
-numerical repeat has a distinct protocol fingerprint; the endpoint and
-probability consumers share explicit selected fingerprints where needed.
-Source hashes and physical parameters must match the approved declaration;
-partial or mixed numerical graphs are rejected. Census and prefix recording
-remain one-cell/ten-year and zero-floor/annual, respectively. Reused census
-evidence additionally requires no removals and dense global minima outside
-the rare-population range. The physical grid combines qualified source
-epochs; the final probability calculation uses one checked analysis epoch.
-
-Case 125 uses the separately qualified
-[terminal dormant-resolution rule](review/dormancy-absolute-resolution-policy-2026-11-11.md),
-helper SHA-256 `f4861dbe9806eebf4e56dde1279801ce82cbb13af438e661e205213f1ba63ee4`.
-It preserves the physical equations and census. Only a positive, unresolved
-dormant compartment on a certified abundant single-guild, single-habitat
-census piece can use the declared absolute composition resolution. Its own
-relative abundance accuracy remains unresolved. The original-start 100,000-year
-flow completes, and two required uncensored physical controls are bitwise
-identical to the preceding strict producer. Qualified local corrections are
-not global trajectory or rare-lineage error bounds.
-
-The final probability helper is SHA-256
-`93f5c2bd47824186ad24d12400f63218e2ff1c16edc4c3e9627914dc98226f62`.
-The [kernel review](review/dormancy-opening-kernel-review-2026-11-11.md)
-records the preservation of leading multihop conversion paths and stable
-survival-boundary arithmetic. The
-[clock review](review/dormancy-opening-clock-review-2026-11-11.md)
-records the captured conversion-opening failure, its local-time repair and
-the completed 100,000-year official task. The adaptive error criterion,
-rate arrays and probability-window definitions are unchanged. All 143
-profiles now score successfully. Shared probabilities, classifications and
-threshold brackets agree with the preceding epoch; small changes in nonrare
-log-scale diagnostics are preserved in the archive.
-
-The [platform check](review/check_dormancy_platform_precision.json) records a
-real precision limit. Matched Mac and Linux runs agree in climate and final
-stocks, yet a transient Linux dormant bank of about 996 cells changes the
-strict stationarity flag. It represents about `10^-23` of total biomass and
-does not resemble the macroscopic cycles above. Both original flags remain;
-criteria are not relaxed. Tiny-stage stationarity is therefore assessed
-separately from material ecological or climate oscillations.
-
 The climate response, assumed methane loss, low-methane bridge, cold
 physiology continuation, strain transfer, homogeneous habitat mapping and
 cell-count conversion remain separate model assumptions. None of these
@@ -474,5 +493,6 @@ are present, with no outstanding epsilon or first-window horizon requests.
 Strict endpoint flags, recurrent paths and dormant-stock drift remain in the
 results. The prediction assessment supports finite-dose exclusion separately
 from stationary-state claims and per-guild survival separately from joint
-community persistence. Independent review of the ecological interpretation
-and the cubic switching law remains the next scientific step.
+community persistence. The original independent review accepts that build. The subsequent
+closure checks preserve its evidence boundary and separately test the
+switching-law and endpoint interpretations.

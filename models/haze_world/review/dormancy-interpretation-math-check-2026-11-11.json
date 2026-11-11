@@ -1,0 +1,138 @@
+{
+  "checker_sha256": "7e5bfdcc5c9fee66d1e3e022bfc0fa5883949eb22c30d2df11a73a57de2bcebe",
+  "gaussian_check_sha256": "f1e786bbe2aff91288041c5b2e008193cae05890609cdab3c296be387546a868",
+  "indirect_dormant_feedback": {
+    "active_derivative_change_gdw_l_yr": 0.008766,
+    "climate_flags": [
+      "measured",
+      "inactive",
+      "inactive"
+    ],
+    "dormant_methanogen_change_gdw_l": 0.0001,
+    "implied_methane_source_time_derivative_change": 0.001206171220309864,
+    "instantaneous_methane_source_equal": true,
+    "methane_source_gradient_per_active_gdw_l": 0.13759653437256034,
+    "scope": "Synthetic positive in-domain state, not a new trajectory or a measured threshold effect",
+    "waking_rate_yr": 87.66
+  },
+  "review_sha256": "32d79576a2a49a233a28767134e69baf5d00e69aba300a8a38416bf92ed42b84",
+  "scalar_integrated_check": {
+    "exact_multitype_cells_for_half_survival": 105.64675561170715,
+    "inverse_population_width_yr": 57.95152328832689,
+    "local_gaussian_width_yr": 36.52082463453211,
+    "scalar_hazard_cells_for_half_survival": 105.63626562979913,
+    "scalar_relative_difference": -9.92929867773551e-05,
+    "scope": "Scalar hazard identity on the recorded mean path is a diagnostic; agreement with the multitype result must be checked rather than assumed",
+    "weighted_death_range_yr": [
+      2.629800010269793,
+      2.629800011975259
+    ]
+  },
+  "scalar_periodic_counterexample": {
+    "active_years_per_cycle": 15.0,
+    "birth_yr": 6.6,
+    "cycles_to_half_survival_poisson": 211.2937181099997,
+    "death_yr": 6.6,
+    "initial_count": 14500,
+    "no_events_between_active_intervals": true,
+    "no_population_reset": true,
+    "period_yr": 443.0,
+    "restoration_scenario_million_cycle_union_bound": 1.0648786602415064e-57,
+    "results": [
+      {
+        "cycles": 1,
+        "fixed_initial_extinction": 5.132413805195796e-64,
+        "poisson_initial_extinction": 1.0648786602415064e-63,
+        "poisson_log_extinction": -145.0,
+        "single_lineage_survival": 0.01
+      },
+      {
+        "cycles": 100,
+        "fixed_initial_extinction": 0.2311767989957619,
+        "poisson_initial_extinction": 0.23119389794550954,
+        "poisson_log_extinction": -1.4644985355014646,
+        "single_lineage_survival": 0.000100999899000101
+      },
+      {
+        "cycles": 1000,
+        "fixed_initial_extinction": 0.863756907566854,
+        "poisson_initial_extinction": 0.863757546497122,
+        "poisson_log_extinction": -0.14646316703871678,
+        "single_lineage_survival": 1.010090807163564e-05
+      },
+      {
+        "cycles": 1000000,
+        "fixed_initial_extinction": 0.9998535460796977,
+        "poisson_initial_extinction": 0.9998535460804373,
+        "poisson_log_extinction": -0.00014646464498520558,
+        "single_lineage_survival": 1.0101009998979696e-08
+      }
+    ]
+  },
+  "scope": "Algebra, a scalar counterexample and an instantaneous model-dependency check; no repeated-cycle prediction for case0012",
+  "seed_bank": {
+    "half_life_fraction_given_coefficient": 0.012753585711656202,
+    "implied_log_population_ratio": 54.3492,
+    "original_f05_methanogen_lower_bound": 0.0025,
+    "review_approximation_comparisons": [
+      {
+        "fraction": 0.0,
+        "guild": "methanogens",
+        "measured_bracket": [
+          0.006,
+          0.007
+        ],
+        "measured_over_review": [
+          1.0,
+          1.1666666666666667
+        ],
+        "review_approximation": 0.006
+      },
+      {
+        "fraction": 0.5,
+        "guild": "methanogens",
+        "measured_bracket": [
+          0.00245,
+          0.002499
+        ],
+        "measured_over_review": [
+          0.9919028340080971,
+          1.011740890688259
+        ],
+        "review_approximation": 0.00247
+      },
+      {
+        "fraction": 0.0,
+        "guild": "acetogens",
+        "measured_bracket": [
+          0.00046,
+          0.0005
+        ],
+        "measured_over_review": [
+          1.0,
+          1.0869565217391304
+        ],
+        "review_approximation": 0.00046
+      },
+      {
+        "fraction": 0.5,
+        "guild": "acetogens",
+        "measured_bracket": [
+          0.00082,
+          0.0009
+        ],
+        "measured_over_review": [
+          1.0,
+          1.0975609756097562
+        ],
+        "review_approximation": 0.00082
+      }
+    ],
+    "scope": "Approximate agreement of four brackets, not exact or general path invariance"
+  },
+  "source_sha256": {
+    "src/terra_prisca/haze_world/branching.py": "a49b14b06a7dcef9b7894e8604b7ede998544e3b865336f1ed6cb604603eb27d",
+    "src/terra_prisca/haze_world/dormancy.py": "bf0a0e02c621dae1ba13c421ff75f8d0233e2c88bac1e54a42036c7f21797645",
+    "src/terra_prisca/haze_world/dormancy_experiments.py": "91a6aaf01702f357b076761ca650918bbc5d0a18af7f53bf542ed30fe2e2db9c"
+  }
+}

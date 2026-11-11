@@ -1,6 +1,6 @@
-# Turnover/dormancy: qualifications before the full experiment
+# Turnover and dormancy: methods and numerical provenance
 
-Codex (GPT-6), 10 November 2026. The original
+Codex (GPT-6), 10–11 November 2026. The original
 [specification](turnover-dormancy-spec.md) remains the prediction record.
 
 - A thermal `R*` crossing, a reachable mixed climate and a stable mixed
@@ -155,3 +155,107 @@ one-cell comparison scale at the adopted tolerance, although the matched
 climate and community are. Preserve those strict flags and distinguish them
 from the independently controlled, macroscopic spatial cycles. No endpoint
 or probability threshold is changed by this numerical qualification.
+
+## Numerical provenance and source epochs
+
+The following records describe the completed original build. The physical
+producer files and their earlier outputs remain frozen during the subsequent
+review closure.
+
+The implementation is
+[`dormancy.py`](../../src/terra_prisca/haze_world/dormancy.py), with the
+positive-coordinate integration in
+[`dormancy_integration.py`](../../src/terra_prisca/haze_world/dormancy_integration.py).
+The current qualified numerical route uses
+[`dormancy_face_integration.py`](../../src/terra_prisca/haze_world/dormancy_face_integration.py),
+with the frozen accepted-step driver and physical equations. It modifies
+only approximate Newton couplings for a present linear allocation whose
+coordinate and returned floating-point rate are both exactly zero. A retained
+incoming log source can still exist below floating range; this approximation
+does not remove that source or establish biological extinction. The
+[review](review/dormancy-face-review-2026-11-11.md) and
+[qualification](review/dormancy-face-qualification-2026-11-11.json) distinguish
+completed numerical flow from strict endpoint convergence. Earlier qualified
+native, Jacobian, chemical and stage receipts retain their own source epochs.
+The active model and its frozen earlier outputs are unchanged.
+
+The Face helper is frozen at SHA-256
+`6a758528247493428459d250a0cd000ae678c9e59c05a09947f94628ed1672ce`.
+Its [qualification](review/dormancy-face-qualification-2026-11-11.json)
+includes the completed original-start 100,000-year case 0085 flow, whose strict
+all-stock settling label remains unresolved. Its runner
+records solver `analytic_dormancy_zero_face_newton`, architecture, operating
+system and an exact nine-file numerical extension to the unchanged canonical
+physical source graph. Its frozen trial, switching-Jacobian, progress,
+chemical and accepted-stage dependencies remain explicit in that graph.
+
+Earlier variants retain their separate
+[trial](review/dormancy-trial-integration-review-2026-11-11.md),
+[Jacobian](review/dormancy-jacobian-review-2026-11-11.md) and
+[stage](review/dormancy-stage-review-2026-11-11.md) qualifications. Every
+numerical repeat has a distinct protocol fingerprint; the endpoint and
+probability consumers share explicit selected fingerprints where needed.
+Source hashes and physical parameters must match the approved declaration;
+partial or mixed numerical graphs are rejected. Census and prefix recording
+remain one-cell/ten-year and zero-floor/annual, respectively. Reused census
+evidence additionally requires no removals and dense global minima outside
+the rare-population range. The physical grid combines qualified source
+epochs; the final probability calculation uses one checked analysis epoch.
+
+Case 125 uses the separately qualified
+[terminal dormant-resolution rule](review/dormancy-absolute-resolution-policy-2026-11-11.md),
+helper SHA-256 `f4861dbe9806eebf4e56dde1279801ce82cbb13af438e661e205213f1ba63ee4`.
+It preserves the physical equations and census. Only a positive, unresolved
+dormant compartment on a certified abundant single-guild, single-habitat
+census piece can use the declared absolute composition resolution. Its own
+relative abundance accuracy remains unresolved. The original-start 100,000-year
+flow completes, and two required uncensored physical controls are bitwise
+identical to the preceding strict producer. Qualified local corrections are
+not global trajectory or rare-lineage error bounds.
+
+The final probability helper is SHA-256
+`93f5c2bd47824186ad24d12400f63218e2ff1c16edc4c3e9627914dc98226f62`.
+The [kernel review](review/dormancy-opening-kernel-review-2026-11-11.md)
+records the preservation of leading multihop conversion paths and stable
+survival-boundary arithmetic. The
+[clock review](review/dormancy-opening-clock-review-2026-11-11.md)
+records the captured conversion-opening failure, its local-time repair and
+the completed 100,000-year official task. The adaptive error criterion,
+rate arrays and probability-window definitions are unchanged. All 143
+profiles now score successfully. Shared probabilities, classifications and
+threshold brackets agree with the preceding epoch; small changes in nonrare
+log-scale diagnostics are preserved in the archive.
+
+The [platform check](review/check_dormancy_platform_precision.json) records a
+real precision limit. Matched Mac and Linux runs agree in climate and final
+stocks, yet a transient Linux dormant bank of about 996 cells changes the
+strict stationarity flag. It represents about `10^-23` of total biomass and
+does not resemble the macroscopic cycles above. Both original flags remain;
+criteria are not relaxed. Tiny-stage stationarity is therefore assessed
+separately from material ecological or climate oscillations.
+
+## Turnover numerical source identity
+
+The numerical variant retains the frozen physical equations and the
+softplus/log coordinates of every initially present guild. It uses Radau,
+an explicitly scaled numerical Newton matrix and a 1000-year maximum step.
+Guilds absent initially stay on their exact invariant face. This prevents
+implicit-solver rounding from creating immigrants. Acetate absolute tolerance
+is `10^-13 mol/L`; stocks are not clipped. Automatic Jacobian differencing
+in the initial LSODA and Radau trials could stall near underflowed rare stocks;
+those trial receipts remain separate from the qualified numerical epoch.
+
+The qualified `turnover.py` SHA256 is
+`9d964b8cbf6f81a848be43707e0625fa6be05771a857a061593bfa91e9605de3`.
+The [map manifest](figures/turnover/regimes_manifest.json),
+[thermal-root audit](figures/turnover/regimes_thermal_audit.json),
+[basin manifest](figures/turnover/basins_manifest.json) and gate record bind
+the outputs to that source and the unchanged climate, uptake and physical
+model inputs. Twelve targeted tests cover the new regimes, continuum contact,
+corner stability, positive-coordinate fidelity and exact absence of a guild.
+
+The [raw-payload receipt](figures/turnover/payload_receipt.json) pins the
+shared T1–T3 archive. Its `source_epochs/t2_analysis/` directory retains the
+exact T2 endpoint and survival producers from commit `b759291`, as recorded
+by their manifests. The common analysis helpers were subsequently extended
+for T3; exact historical replication uses those retained source versions.

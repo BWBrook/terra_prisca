@@ -88,15 +88,21 @@ cycling even where the mixed equilibrium is locally stable. These results
 are conditional on the cubic switching law and the reference physiology;
 strict unsettled flags and first-window probability limits remain explicit.
 The [review](review/turnover-dormancy-claude-review-2026-11-11.md) accepts
-the build. It reports three findings:
-- The seed-bank threshold follows `ε* = ln(N₀/N₅₀)/(Lτ)` within the measured
-  brackets. A dormant half-life of about 1.3% of the unfavourable period is
-  enough.
-- Dormancy protects only when dormant mortality is below the active
-  deficit, so short-lived dormancy deepens the mild warm-refuge overshoot.
-- The thermostat is an underdamped oscillator: a period of about 120 years
-  and a quality factor of about 130 at `f=0`. That oscillation is the mode
-  the dormancy cycles sustain.
+the build. Its seed-bank approximation relates dormant half-life to the
+unfavourable interval and entering population; the coefficient of about 1.3%
+applies to the population ratio assumed here. Short-lived dormancy can
+deepen a mild competitive bottleneck. The reference thermostat has a weakly
+damped oscillatory mode; the persistent dormancy paths require separate
+amplitude and switching-law checks. The
+[mathematical audit](review/dormancy-interpretation-math-check-2026-11-11.md)
+qualifies the formula and the proposed extrapolation from one trough to
+millions of cycles.
+The [follow-up](review/dormancy-closure-2026-11-11.md) finds decay from every
+prescribed ±0.1% and ±10% root perturbation, and damping under linear switching
+in three completed 20,000-year controls. Two warm-refuge linear comparisons
+remain unresolved. All 41 bank-only failures are macrostate stationary, but
+none supports verified frozen-root bank relaxation; original strict labels
+remain alongside this additional description.
 
 **Code.** [`src/terra_prisca/haze_world/methane_budget.py`](../../src/terra_prisca/haze_world/methane_budget.py)
 (model) and [`experiments.py`](../../src/terra_prisca/haze_world/experiments.py)

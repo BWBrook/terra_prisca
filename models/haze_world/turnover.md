@@ -79,14 +79,9 @@ both directions wherever the resident exists. Stable mixed states receive
 also check the narrow intervals without a stable mixture. A resident that
 cannot exist is not supplied as an invented start.
 
-The numerical variant retains the frozen physical equations and the
-softplus/log coordinates of every initially present guild. It uses Radau,
-an explicitly scaled numerical Newton matrix and a 1000-year maximum step.
-Guilds absent initially stay on their exact invariant face. This prevents
-implicit-solver rounding from creating immigrants. Acetate absolute tolerance
-is `10^-13 mol/L`; stocks are not clipped. Automatic Jacobian differencing
-in the initial LSODA and Radau trials could stall near underflowed rare stocks;
-those trial receipts remain separate from the qualified numerical epoch.
+The numerical controls retain the frozen physical equations and preserve
+exact absence of a guild. The [method notes](turnover-dormancy-method-notes.md#turnover-numerical-source-identity)
+record their coordinate choices, tolerances and source epochs.
 
 An equilibrium endpoint must match an actual stable equilibrium within
 `0.1%` in scaled stocks, change by less than `0.1%` over the final 20,000 years,
@@ -429,17 +424,7 @@ IDs and horizons for the longer runs; `--years` and repeated `--case-id`
 arguments reproduce those selections. Raw profiles and receipts live under
 `local/haze/turnover/`, outside Git. Their hashes are retained in the manifests.
 
-The qualified `turnover.py` SHA256 is
-`9d964b8cbf6f81a848be43707e0625fa6be05771a857a061593bfa91e9605de3`.
-The [map manifest](figures/turnover/regimes_manifest.json),
-[thermal-root audit](figures/turnover/regimes_thermal_audit.json),
-[basin manifest](figures/turnover/basins_manifest.json) and gate record bind
-the outputs to that source and the unchanged climate, uptake and physical
-model inputs. Twelve targeted tests cover the new regimes, continuum contact,
-corner stability, positive-coordinate fidelity and exact absence of a guild.
-
 The [raw-payload receipt](figures/turnover/payload_receipt.json) pins the
-shared T1–T3 archive. Its `source_epochs/t2_analysis/` directory retains the
-exact T2 endpoint and survival producers from commit `b759291`, as recorded
-by their manifests. The common analysis helpers were subsequently extended
-for T3; exact historical replication uses those retained source versions.
+shared T1–T3 archive. Source identities, exact historical T2 analysis files
+and their manifests are retained in the
+[method notes](turnover-dormancy-method-notes.md#turnover-numerical-source-identity).
