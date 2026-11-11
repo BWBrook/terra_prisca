@@ -45,8 +45,8 @@ The corrected acceptance evaluates true per-capita growth plus migration,
 without a biomass denominator floor. It rejects that state and retains the
 valid 287.03 K mixed branch with residual about 3.3e-14/year. Tiny balanced
 sink populations remain permitted; this adds no ecological extinction floor.
-Two regressions cover rejection of the false state and acceptance of a tiny
-balanced sink. The provisional source and outputs were preserved under
+Two regressions cover rejection of the false state and scale invariance of
+the per-capita balance for a tiny guild. The provisional source and outputs were preserved under
 ignored `local/haze/dynamic_realisation/pre_percapita_guard/`. All 108 families
 were rerun with the corrected, separately hashed source; provisional records
 are not used in the reported claims.

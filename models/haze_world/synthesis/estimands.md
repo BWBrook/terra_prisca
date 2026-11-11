@@ -227,3 +227,31 @@ smooth, corner and projected boundary cases.
 - **Not allowed:** "evolution cannot break the thermostat"; "thermodynamics
   makes the Archean set point evolutionarily stable"; generalizing this
   trait family to selection on maintenance, yields or cessation energetics.
+
+## E14. Dynamic realisation (B1 and B4)
+
+**Estimands.** Local equilibrium stability under specified thermal-response
+equations; community and matched methanogen-only supply derivatives; their
+signed ratio where defined; finite-resolution habitat quadrature comparisons;
+and directional dormancy-sector spectra. The
+[pre-run methods](../dynamic-realisation-methods.md) fix chemistry, support,
+branch matching, gain validity and censoring conventions.
+
+- **Allowed:** "the sampled setting retains near-zero supply gain and is
+  stable through the tested lag range", with control validity and resolution
+  stated; "no lag crossing was detected through 10,000 years".
+- **Not allowed:** mathematical stability for all lags from a finite scan;
+  treating a missing/flat/out-of-domain control as G=0; treating positive
+  immigrant-supported stocks as autonomous coexistence in every habitat.
+- The matched control has the same geometry and chemistry but generally a
+  different operating temperature. Its gain ratio is a treatment comparison,
+  not a universal control-system transfer gain. Raw slopes and control states
+  must accompany it. A failed ordering is separate from PB1's proposed
+  near-pinning/long-lag counterexample.
+- The clipped linear dormancy rule is non-differentiable at the zero-bank
+  mixed equilibrium. Its sector eigenvalues are directional diagnostics,
+  not an ordinary Jacobian or a proof of nonlinear stability. Matching a
+  recorded period to a bank-death lifetime does not identify a mechanism.
+- B1/B4 alone do not estimate invasion minima, finite-population recovery,
+  bounded nonlinear oscillations or a physical Archean ocean response. PB5
+  and PB6 remain pending B2/B3.

@@ -8,6 +8,13 @@ transferred physiology are now the decisive checks. The
 sets out the revision; the older stage descriptions below are conditional
 results and a research history, not a validated physical climate regulator.
 
+The [B1/B4 dynamic-realisation build](dynamic-realisation.md) reverses the
+proposed chemical attribution: acetate feedback supplies the reference
+damping, not the direct atmospheric-methane loop. The habitat quadrature
+fails its prescribed convergence test, leaving the continuum frontier open.
+B4 rejects the proposed local bank-as-thermal-lag mechanism. Nonlinear B2/B3
+runs remain pending.
+
 This is a new
 model, not a reconstruction. It couples methanogens and a finite methane budget
 to the [Arney et al. (2016) climate responses](../haze_response/README.md).

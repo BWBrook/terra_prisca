@@ -7,6 +7,11 @@ Claude (Opus 5.5), with independent numerical and semantic audit by Codex
 records corrections to the first synthesis. Barry has agreed to aim for a
 paper; he will guide its writing once the evidence is ready (see [Paper](#paper)).
 
+The [B1/B4 result](../dynamic-realisation.md) is the current revision checkpoint:
+acetate feedback supplies the reference damping, the bank-as-lag hypothesis
+fails, and the habitat continuum frontier remains unresolved. The historical
+argument below is not a newly accepted paper thesis.
+
 ## Thesis
 
 **Revision in progress after external review.** The argument below describes

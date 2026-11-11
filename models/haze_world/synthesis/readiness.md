@@ -21,6 +21,15 @@ reproduction, Stage B decides stability and buffering with finite thermal
 response and distributed habitats, and Stages C/D cover robustness and
 precedents. Barry's writing gate remains in force.
 
+**B1/B4 completed, 12 November.** The
+[dynamic-realisation page](../dynamic-realisation.md) records the results.
+PB2's chemical attribution, PB3's N33 convergence, PB4's two-layer coefficient
+comparison and PB7's bank-as-lag mechanism fail their tests. PB1's continuum
+frontier remains provisional: finite-resolution candidates do not satisfy
+the full convergence/control qualification. Resolve that numerical and
+estimand boundary before selecting a thesis or launching B2/B3. The Stage A
+raw companion remains prepared for release, without a deposit or DOI.
+
 ## Competitive-evolution handoff (historical)
 
 - **Claims:** C01–C37 now record thirty-two supported claims, four refuted
