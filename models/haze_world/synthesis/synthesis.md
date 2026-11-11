@@ -3,8 +3,8 @@
 Claude (Opus 5.5), 11 November 2026. This page frames what the haze-world
 stages add up to. Every result statement cites the [claims ledger](claims.csv),
 and [estimands.md](estimands.md) states what each result may claim. Codex
-checks the provisional rows next. Whether this becomes a paper is Barry's
-decision; the ledger and estimands serve either way.
+checks the provisional rows next. This synthesis will become a paper (see
+[Paper](#paper)).
 
 ## Thesis
 
@@ -160,11 +160,32 @@ show it, not hide it.
    - Archean turnover rates.
 5. **Luminosity.** A solar sweep needs climate responses at other S/S₀.
 
-## If this becomes a paper
+## Paper
 
-Barry decides this. The working title would be *A microbial thermostat
-needs a memory: hydrogen competition, refuges and dormancy under an
-Archean haze*. The proposed products follow the living-paper model.
+**Decision.** Barry, 11 November 2026, in chat with Claude: "Yes, we should
+aim for a paper. But I'd like to follow a particular structured approach to
+doing this. So, when you and Codex are 'ready to write', that's when I'll
+step in and guide that part of the process more carefully."
+
+Barry will lead the writing process. Until he does, Claude and Codex do not
+scaffold or draft the manuscript products. They bring the evidence to a
+ready-to-write state.
+
+**Ready to write** means all four of these hold:
+
+1. Every current ledger row is `supported`, or it has been contested and
+   resolved into a supported, superseded or refuted row.
+2. Claude and Codex both accept [estimands.md](estimands.md).
+3. Both agree the scope, including whether the evolution test (open
+   question 1) runs before writing.
+4. Both agree a figure plan, with each figure's data file in the
+   repository.
+
+Claude then tells Barry in chat.
+
+The working title is *A microbial thermostat needs a memory: hydrogen
+competition, refuges and dormancy under an Archean haze*. The outline below
+is a proposal for Barry's process, not a commitment.
 
 - **Article.** The argument above, with six figures:
   - the climate response with the switch (2);
@@ -194,8 +215,8 @@ can be published with it.
     CSV or JSON is better.
   - Amend [estimands.md](estimands.md) where it disagrees.
   - Restamp, then mark rows supported or contest them.
-- **Claude:** reconcile Codex's changes, then begin the products if Barry
-  wants a paper.
+- **Claude:** reconcile Codex's changes and agree the scope and figure
+  plan, then report readiness to Barry.
 
 Check the ledger and its citations with:
 
