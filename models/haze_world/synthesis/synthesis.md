@@ -1,82 +1,126 @@
 # Haze-world synthesis
 
-Claude (Opus 5.5), 11 November 2026. This page frames what the haze-world
-stages add up to. Every result statement cites the [claims ledger](claims.csv),
-and [estimands.md](estimands.md) states what each result may claim. Codex
-checks the provisional rows next. This synthesis will become a paper (see
-[Paper](#paper)).
+Claude (Opus 5.5), with independent numerical and semantic audit by Codex
+(GPT-6), 11 November 2026. The [claims ledger](claims.csv) binds the results;
+[estimands.md](estimands.md) states their interpretation limits. The
+[audit](../../../docs/audits/haze-world-synthesis-review-2026-11-11.md)
+records corrections to the first synthesis. Whether this becomes a paper is
+Barry's decision; these records serve either way.
 
 ## Thesis
 
-**A thermostat built from competitive exclusion needs a memory.** Under an
-Archean organic haze, two microbial guilds competing for hydrogen can
-regulate climate. The regulation works because the competitive winner
-switches with temperature, on the branch where more methane cools. But
-exclusion is fast and the climate response is slow, so the guild that is
-losing now is gone before the climate turns in its favour. The thermostat
-persists only if something stores the loser across that gap. Biology offers
-two stores: space, as refuges, and time, as dormancy. Each works through its
-own mechanism, and each has a simple quantitative threshold.
+**A competitive climate thermostat can need biological memory during an
+invasion.** In this model, a locally stable microbial mixture can regulate
+climate, yet a resident–invader transient can eliminate a participant before
+the climate turns in its favour. Refuges and dormant banks can retain the
+losing guild across that interval []{.C07} []{.C09} []{.C17}.
+
+This is a claim about recovery through the studied displacement events.
+An already established mixed community has a stable positive neighbourhood
+without an extra store; memory is not necessary for every initial state
+[]{.C06}. Nor does a refuge or seed bank guarantee a common endpoint or joint
+demographic survival. The useful distinction is between an equilibrium's
+existence and a finite community's ability to reach it.
+
+The precursor and competition stages use different physiology. The former
+has an assumed thermal growth curve; the latter transfers measured uptake,
+yield and maintenance parameters between strains. Most competition results
+use Arney's case-B climate response. `f` denotes the fraction of acetate
+subsequently converted to methane. Model versions, climate extensions,
+budget assumptions and the cell-count convention remain explicit in the
+[estimands](estimands.md).
 
 ## The argument
 
-1. **A single guild regulates only at its tolerance edge, and evolution
-   erases that.**
-   - On Arney's haze-cooling branch, one methanogen guild holds the climate
-     [0.015–0.037]{.C01} K above its cold net-growth threshold.
-   - Once the thermal optimum can evolve, the signature disappears: the
-     regulation ratio is [1]{.C02} under every loss shape.
-   - Regulation returns only when an imposed floor becomes the set point
-     []{.C03}.
-   - The danger in losing supply is heat, not cold: methanogens die in the
-     [297]{.C04} K warm peak as the haze collapses.
+1. **Unconstrained optimum evolution removes the single-guild signature
+   when peak growth is held fixed.**
+   - In the high-supply scalar experiment across Arney A–D, stable
+     equilibria lie [0.015–0.037]{.C01} K above the resource-dependent cold
+     net-growth edge. These are model offsets, not climate measurement
+     accuracy.
+   - In the fixed-peak, unconstrained adaptive-dynamics family, the optimum
+     tracks temperature and the local regulation ratio is [1]{.C02} under
+     every tested loss shape.
+   - A hard optimum floor can restore buffering; a growth-rate trade-off
+     also retains buffering under sufficiently shallow methane loss
+     []{.C03}. A floor is not the only route.
+   - During the specified supply decline, fixed-optimum populations without
+     mutation die during warming on the way toward the [297]{.C04} K
+     greenhouse peak, despite viable final supplies. This is not the fate
+     of all methanogen populations []{.C04}.
 
-2. **Hydrogen competition supplies a second thermostat, with an ecological
-   set point.**
-   - Acetogens win in the cold and methanogens in the warm.
-   - Both central switches, [281.5]{.C05} and [282.8]{.C05} K, lie on the
-     haze-cooling branch, so the feedback restores the climate rather than
-     trapping it.
-   - With explicit populations, the mixed community holds the climate at
-     [281.535]{.C06} K, against [273.517]{.C06} K for methanogens alone.
-     Acetogens warm the world by diverting hydrogen from methane.
-   - The warming falls from [8.02]{.C06} K to [4.73]{.C06} K under the
-     alternative cold physiology.
+2. **Hydrogen competition supplies a restoring feedback and an ecological
+   equilibrium temperature.**
+   - At the two central break-even crossings, acetogens win on the cold
+     side and methanogens on the warm side. The crossings,
+     [281.5]{.C05} and [282.8]{.C05} K, lie on the haze-cooling branch.
+     If acetogen routing delivers less methane, its warming effect reverses
+     the competitive advantage. This sign alone is not a stability proof
+     []{.C05}.
+   - With explicit populations, the reference mixed state is locally stable
+     at [281.535]{.C06} K. Disabling acetogens gives a methanogen-only
+     control at [273.517]{.C06} K: a contrast of [8.02]{.C06} K.
+   - The contrast falls to [4.73]{.C06} K under the alternative cold
+     physiology. These are matched model controls, not evidence for two
+     simultaneously stable full-community climates or an Archean warming.
 
-3. **Turnover, not tolerance, sets the set point.**
-   - The switch sits where the guilds' break-even hydrogen pressures cross,
-     and the required uptake `m + L/Y` moves that crossing.
-   - Across the turnover range, stable set points span
-     [273.4]{.C12}–[296.1]{.C12} K.
-   - At `f = 0` an acetogen-only world becomes stable above
-     [0.001238145]{.C13} h⁻¹, and the planet is then bistable.
+3. **Turnover moves the competitive set point under fixed physiology.**
+   - The guilds' break-even hydrogen pressures cross at the equilibrium
+     temperature. Their required uptake `m + L/Y` depends on turnover,
+     maintenance and yield; affinity and capacity also enter the crossing.
+   - The root-delimited branch spans about [273.4]{.C12}–[296.1]{.C12} K.
+     This is a branch-limit range, not the extrema of the original sampled
+     grid. Its cold end depends on the digitized climate minimum and the
+     named physiological continuation []{.C12}.
+   - At `f=0`, stable acetogen and mixed equilibria coexist between
+     [0.001238145]{.C13} and [0.003936106]{.C13} h⁻¹. A separate interval
+     of pure-guild bistability follows; bistability does not persist at
+     every higher turnover []{.C13}.
 
-4. **In finite worlds, exclusion outruns the climate.**
-   - With a census and no immigration, methanogens are removed after
-     [20]{.C07} years, while the climate has moved only from
+4. **Competitive exclusion can outrun the climate response.**
+   - In the focal closed, single-habitat `f=0.5` invasion, the census removes
+     methanogens after [20]{.C07} years while temperature moves only from
      [273.517]{.C07} to [273.525]{.C07} K.
-   - Invasion history therefore picks a single guild, even though the
-     continuum equations have one stable mixed state.
+   - The tested closed `f=0/0.5` invasion histories select different
+     single-guild outcomes even though a stable mixed state exists.
+     Higher recycling does not show the same history dependence
+     []{.C07}. These are finite-census outcomes, not a new proof of
+     continuum climate bistability.
 
-5. **Space can store the loser, if the refuges are buffered.**
-   - Refuges that track global temperature fail. The cold refuge must also
-     survive the [297]{.C08} K greenhouse peak.
-   - Temperature-buffered warm and cold refuges restore the same mixed state
-     from both invasion directions, in all [192]{.C09} planned cases.
-   - One refuge leaves an overshoot bottleneck whose depth scales as
-     exchange to the power [4.423]{.C10}.
-   - A demographic criterion of [230]{.C10} cells moves the critical
-     exchange only about [3.4]{.C10}-fold.
-   - Refuge methane can extend the mixed window, by [0.28]{.C14} K at one
-     setting.
-   - Coexistence is not regulation. Source–sink methanogens can carry
-     [2.082]{.C15}% of global catabolism but only [0.001080]{.C15}% of bulk
-     catabolism.
+5. **Buffered refuges can retain both participants through those invasions.**
+   - In the tested lower-recycling, mean-preserving climate-tracking
+     geometry, paired rescue cannot be demonstrated within the declared
+     physiological domain; the cold refuge must remain favourable while
+     the global climate crosses the [297]{.C08} K greenhouse peak. This is
+     a design-specific limitation.
+     Higher-recycling cases do include matching coexisting outcomes
+     []{.C08}.
+   - With both temperature-buffered refuges at the reference temperatures
+     and the three tested positive exchange rates, [12]{.C09} key runs form
+     [6]{.C09} matching mixed pairs near [281.535]{.C09} K. The entire [192]{.C09}-run design
+     also includes single-guild outcomes and different endpoints; it is
+     not a universal rescue result.
+   - Along the specified warm-refuge exchange cut, the global minimum
+     scales approximately as exchange to the power [4.423]{.C10}.
+     About [230]{.C10} cells at that bottleneck correspond to half
+     survival. The corresponding exchange crossing is about
+     [3.4]{.C10} times the posthoc global one-cell crossing. This is not
+     a counterfactual rerun of the local census rule. The exact single-type
+     integrated survival identity avoids assuming a Gaussian bottleneck;
+     a multitype population still needs its own calculation []{.C16}.
+   - Refuge methane can also aid establishment. Holding its flux fixed
+     while omitting bulk methane puts the diagnostic climate
+     [0.28]{.C14} K above the switch at one setting. The actual mixed
+     endpoint remains at the switch; the diagnostic uses the assumed
+     low-methane bridge and does not measure a temperature-window extension.
+   - Coexistence, methane forcing and regulation must be reported
+     separately. A source–sink example gives methanogens
+     [2.082]{.C15}% of global catabolism but only [0.001080]{.C15}% of
+     bulk catabolism. This shows negligible autonomous bulk participation,
+     while refuge methane can still affect climate.
 
-6. **Time can store the loser, if dormant cells outlast about 1.3% of the
-   unfavourable interval.**
-   - Without refuges, 50% first-window survival needs these dormant
-     half-lives:
+6. **Dormant banks can retain a guild through its first bottleneck.**
+   - Without refuges, half first-window survival is bracketed by:
 
      | Displaced guild | f = 0 | f = 0.5 |
      |---|---|---|
@@ -84,142 +128,115 @@ own mechanism, and each has a simple quantitative threshold.
      | Acetogens | [158]{.C17}–[172]{.C17} yr | [88]{.C17}–[96]{.C17} yr |
 
    - Acetogens need longer because their suppression spans the greenhouse
-     peak.
-   - The approximation `ε* ≈ ln(N₀/N₅₀)/(Lτ)` predicts these within a factor
-     of [0.992]{.C18}–[1.167]{.C18}. Its coefficient of [1.275]{.C18}%
-     belongs to this population ratio.
-   - **Dormancy can also hurt.** Under a growth-triggered switch, cells
-     enter dormancy during a mild disadvantage and then die faster than they
-     would have while active. At `ε = 0.1` the acetogen minimum reaches
-     10^[−59.5]{.C19}, against 10^[−14.25]{.C19} without dormancy.
+     excursion. These conditional per-guild probabilities do not establish
+     joint persistence or a common endpoint []{.C17}.
+   - The isolated-bank approximation `ε* ≈ ln(N₀/N₅₀)/(Lτ)` agrees within
+     [0.992]{.C18}–[1.167]{.C18} of the prediction. A half-life of about
+     [1.275]{.C18}% of the suppression interval belongs to the assumed
+     population ratio here; the coupled path and waking can change it.
+   - Growth-triggered dormancy can also deepen a mild bottleneck. At
+     `ε=0.1`, the continuum acetogen minimum reaches
+     10^[−59.5]{.C19} cells, against 10^[−14.25]{.C19} without dormancy.
+     The fixed-environment allocation argument explains the mortality cost;
+     both paths can already imply very poor finite survival []{.C19}.
 
-7. **The thermostat rings.**
-   - The reference mixed state is a weakly damped oscillator: period
-     [119.6]{.C20} yr, damping time [4,854]{.C20} yr, quality factor
-     [127]{.C20}. The competitive switch supplies a stiff restoring force,
-     while slow methane removal supplies weak damping.
-   - Kicks of ±10% decay as that linear mode predicts []{.C20}. They do not
-     reach the dormancy cycles []{.C27 .superseded}.
-   - Some invasion paths under cubic switching keep cycling, with ranges of
-     [0.2]{.C21}–[1.5]{.C21} K, beside a stable equilibrium.
-   - Linear switching damps three of these controls. The two warm-refuge
-     controls remain unresolved []{.C22}.
+7. **The reference thermostat has a weakly damped oscillatory mode.**
+   - At the reference loss and `f=0`, its period is [119.6]{.C20} years,
+     damping time [4,854]{.C20} years and quality factor about
+     [128]{.C20}. The coupled feedback can therefore oscillate through
+     many periods while approaching equilibrium.
+   - All prescribed small and ±10% single-guild kicks decay with that
+     mode []{.C20}; the predicted large-kick transition was refuted
+     []{.C27 .superseded}.
+   - Some cubic-switching invasion paths keep recurring over their recorded
+     horizons, with ranges of [0.2]{.C21}–[1.5]{.C21} K, beside locally
+     stable roots. One spatial case has repeated local census removals,
+     unlike the unculled nonspatial paths []{.C21}.
+   - Linear switching damps the three completed controls. The two warm
+     comparisons remain unresolved []{.C22}. None establishes a periodic
+     attractor or a general stability theorem for the nonsmooth law.
 
-## What is robust and what is conditional
+## What the checks establish
 
-| Result | Robust to | Conditional on |
+| Result | Checked variation or contrast | Remaining condition |
 |---|---|---|
-| Restoring switch (2) | uptake law and phenotype choices tested in the switch maps | Arney case B's haze-cooling branch |
-| Turnover sets the set point (3) | `f` and refuge geometry | uniform `L` for both guilds |
-| Exclusion outruns climate (4) | census floor and activity scheme | methane lifetime; quasi-static climate |
-| Buffered refuges rescue (5) | invasion direction | refuge temperatures fixed outside the model |
-| Seed-bank rule (6) | switching speed (slow switching moves `ε*` by less than 3×) | entering population; climate path |
-| Harmful dormancy (6) | refuge exchange | growth-triggered switching law |
-| Ringing (7) | `f` and `L` (`Q` from 22 to 263) | reference physiology |
+| Restoring switch | Both central uptake laws, where the crossing exists | Less methane from acetogen routing; haze-cooling branch; local sign is not full stability (C05) |
+| Turnover-dependent set point | Equilibrium inventory and independently rooted boundaries | Fixed transferred physiology; a supported branch is required (C12–C13) |
+| Exclusion before climatic recovery | Specified closed resident–invader starts | Census, count scale, loss and initial state (C07) |
+| Buffered refuge rescue | Both histories in the key paired subset | Prescribed heat baths, exchange and low-methane closure (C09) |
+| Seed-bank thresholds | Fast and slow switching brackets | Entering population, recovery, climate path and first-window scope (C17–C18) |
+| Deeper dormant bottleneck | Two warm-refuge exchange settings | Growth-triggered cubic entry and dormant mortality (C19) |
+| Damped oscillatory mode | Four combinations of recycling and turnover | Reference physiology and budget; not an Earth-period prediction (C20) |
 
-Every row is also conditional on the four shared assumptions in
-[estimands.md](estimands.md).
+Each row is conditional on its named model version in
+[estimands.md](estimands.md). Independent calculation validates these
+model-scoped results; it is not independent empirical calibration.
 
 ## Corrections recorded along the way
 
-The record of failed predictions is part of the result. Products should
-show it, not hide it.
-
-- Claude proposed a cold trap from the switch. Codex's sign check showed
-  the switch restores instead.
-- KD2 predicted that dormancy removes the overshoot loss. It fails, and C19
-  gives the mechanism (C28).
-- Claude's "exact" seed-bank formula is superseded by approximate agreement
+- The proposed switch-induced cold trap had its feedback sign reversed
+  (C05).
+- KD2's universal overshoot protection fails (C28); the deeper-bottleneck
+  mechanism is retained in C19.
+- Exact seed-bank equality was superseded by approximate agreement
   (C25 → C18).
-- The predicted 10¹² minimum for robust persistence was refuted at
-  1.16×10¹¹ cells (C11).
-- Bank-only endpoints decaying at `εL` (C26) and 10% kicks reaching the
-  cycle (C27) are refuted.
+- The predicted global minimum was refuted by a smaller, still protected
+  first bottleneck in the smaller-refuge run (C11).
+- Source-free decay of every bank-only endpoint and the predicted large-kick
+  transition were refuted (C26, C27). The classification remains
+  [56]{.C23} strictly stationary, [41]{.C23} macrostate stationary with
+  bank unresolved, and [31]{.C23} otherwise unsettled; no bank passes the
+  verified frozen-root relaxation criterion []{.C23}.
+- The first synthesis overgeneralized the buffered-refuge inventory, tracking
+  refuge failures, precursor evolutionary result and turnover boundary.
+  The [review record](../../../docs/audits/haze-world-synthesis-review-2026-11-11.md)
+  preserves these corrections.
 
 ## Open questions, in order of value
 
-1. **Does selection erase the competitive set point?** C02 showed that
-   evolution removes a tolerance-edge thermostat. The two-guild switch
-   differs: it is the crossing of two break-even pressures. Selection on
-   affinity or maintenance moves each guild's curve, not the fact that they
-   cross.
-   - *Hypothesis:* selection can shift a competition-set point but cannot
-     remove it, wherever the crossing rests on hydrogen thresholds that
-     differ in temperature dependence.
-   - This is the natural bridge between the two halves of the haze world,
-     and the most interesting next experiment.
-2. **Coupled stochastic demography.** A coupled calculation would replace
-   per-guild first-window probabilities with joint endpoint probabilities.
-   It would also decide the many-cycle question (C24).
-3. **The two unresolved warm-refuge linear controls (C22).** Pursue them
-   only if a claim depends on them. None in this synthesis does.
-4. **External inputs that bind the conditionality.** In order:
-   - the photochemical loss elasticity near `r ≈ 0.2`;
-   - a matched methane-free climate, to replace the bridge;
-   - cold-strain physiology;
-   - Archean turnover rates.
-5. **Luminosity.** A solar sweep needs climate responses at other S/S₀.
+1. **Does selection move or remove the competitive set point?** Evolution
+   removes the fixed-peak single-guild signature (C02), but competition
+   involves a crossing of break-even pressures. Selection could shift that
+   crossing, move it outside the climate branch or remove it. Preservation
+   and loss of regulation are competing hypotheses, not consequences of
+   the present reference curves.
+2. **Coupled stochastic demography.** This would replace conditional
+   per-guild first-window probabilities with joint endpoint probabilities
+   and address repeated-cycle survival (C24).
+3. **Warm-refuge linear controls (C22).** Revisit only if a claim needs their
+   outcome. The present conclusions leave them unresolved.
+4. **External constraints.** Photochemical loss near the operating methane
+   ratio, a matched low-methane climate, cold-strain physiology and plausible
+   turnover remain the most useful inputs to constrain.
+5. **Luminosity.** A solar sweep needs matched climate responses at other
+   solar forcings.
 
-## Paper
+## If this becomes a paper
 
-**Decision.** Barry, 11 November 2026, in chat with Claude: "Yes, we should
-aim for a paper. But I'd like to follow a particular structured approach to
-doing this. So, when you and Codex are 'ready to write', that's when I'll
-step in and guide that part of the process more carefully."
+Barry decides this. A working framing is *Maintaining a microbial climate
+thermostat through competitive displacement*. The three living-paper
+products would share this ledger: an article and supplement, a two-page
+plain-language brief, and an agent replication guide. The article could
+connect the climate/switch diagram, turnover map, invasion timescales,
+refuge bottleneck scaling, dormant thresholds and oscillatory mode. The
+single-guild stages provide the evolutionary contrast.
 
-Barry will lead the writing process. Until he does, Claude and Codex do not
-scaffold or draft the manuscript products. They bring the evidence to a
-ready-to-write state.
+Claude (Opus 5.5) designed stages and predictions, reviewed builds and drafted
+the synthesis. Codex (GPT-6) implemented models, ran experiments, archived
+evidence and independently audited calculations and interpretation. Barry is
+the scientific facilitator.
 
-**Ready to write** means all four of these hold:
+## Reproduction and next step
 
-1. Every current ledger row is `supported`, or it has been contested and
-   resolved into a supported, superseded or refuted row.
-2. Claude and Codex both accept [estimands.md](estimands.md).
-3. Both agree the scope, including whether the evolution test (open
-   question 1) runs before writing.
-4. Both agree a figure plan, with each figure's data file in the
-   repository.
+The ledger now records specific CSV/JSON inputs, independent checks and
+reproduction commands. Retained model-page and source commands explain how
+the original experiments were produced. Raw-input dependencies are identified
+by their existing payload receipts. Check the ledger with:
 
-Claude then tells Barry in chat.
-
-The working title is *A microbial thermostat needs a memory: hydrogen
-competition, refuges and dormancy under an Archean haze*. The outline below
-is a proposal for Barry's process, not a commitment.
-
-- **Article.** The argument above, with six figures:
-  - the climate response with the switch (2);
-  - the turnover regime map (3);
-  - an exclusion-versus-climate timeline (4);
-  - refuge rescue and the bottleneck scaling (5);
-  - seed-bank thresholds and the harmful-dormancy traces (6);
-  - the damped mode with the cycling paths (7).
-
-  The stage-1 and stage-2 single-guild results enter as the motivating
-  contrast.
-- **Brief.** Two pages on "why a living thermostat needs a memory".
-- **Agent guide.** Module map, frozen archives and manifests, the estimands
-  and their traps, and the reproduce commands from the ledger.
-
-The roles section would name Claude (Opus 5.5) for design, specifications,
-reviews and this synthesis. It would name Codex (GPT-6) for the
-implementations, experiments, archives, qualification checks and
-mathematical audits. Barry is the scientific facilitator. The board record
-can be published with it.
-
-## Next steps
-
-- **Codex:**
-  - Check each provisional row by a separate route, and tighten evidence to
-    the most specific output file. Several rows cite model pages; a frozen
-    CSV or JSON is better.
-  - Amend [estimands.md](estimands.md) where it disagrees.
-  - Restamp, then mark rows supported or contest them.
-- **Claude:** reconcile Codex's changes and agree the scope and figure
-  plan, then report readiness to Barry.
-
-Check the ledger and its citations with:
-
-```bash
+```sh
 python3 tools/claims.py check models/haze_world/synthesis/claims.csv models/haze_world/synthesis/synthesis.md
 ```
+
+Claude reconciles the revised scopes before any paper products are drafted.
+The next scientific design can test competitive evolution without assuming
+that its crossing survives.

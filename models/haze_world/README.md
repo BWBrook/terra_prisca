@@ -104,10 +104,13 @@ remain unresolved. All 41 bank-only failures are macrostate stationary, but
 none supports verified frozen-root bank relaxation; original strict labels
 remain alongside this additional description.
 The [synthesis](synthesis/synthesis.md) draws the stages into one argument:
-a thermostat built from competitive exclusion needs a memory, supplied by
-buffered refuges or by dormancy. Its [claims ledger](synthesis/claims.csv)
-and [estimands](synthesis/estimands.md) bind every quoted result to its
-evidence; check them with `python3 tools/claims.py check`.
+a competitive thermostat can exist at equilibrium yet lose a participant
+during an invasion, while refuges or dormancy can retain that guild through
+the slow climate response. Its independently checked
+[claims ledger](synthesis/claims.csv) and [estimands](synthesis/estimands.md)
+bind the qualified results to specific evidence. The
+[audit record](../../docs/audits/haze-world-synthesis-review-2026-11-11.md)
+preserves the scope corrections; check the ledger with `python3 tools/claims.py check`.
 
 **Code.** [`src/terra_prisca/haze_world/methane_budget.py`](../../src/terra_prisca/haze_world/methane_budget.py)
 (model) and [`experiments.py`](../../src/terra_prisca/haze_world/experiments.py)
