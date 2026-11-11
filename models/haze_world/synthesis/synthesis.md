@@ -156,6 +156,34 @@ budget assumptions and the cell-count convention remain explicit in the
      comparisons remain unresolved []{.C22}. None establishes a periodic
      attractor or a general stability theorem for the nonsmooth law.
 
+8. **Kinetic adaptation can preserve a competitive set point, but it does
+   not make the thermostat evolution-proof.**
+   - At reference turnover, the no-constraint linear-shape crossing moves
+     to [277.960221]{.C29} K and remains a locally stable mixture.
+   - Across the S3 grid, [42]{.C34} settings retain stable cooling-branch
+     communities and [30]{.C34} have none. The additional [14]{.C34}
+     greenhouse roots are ecologically unstable even though their traits
+     pass the mutant assay.
+   - All detected crossings keep the restoring orientation []{.C30}. At
+     low turnover, the separately adapted methanogen-only state sits at
+     [274.002]{.C31} K on the imposed plateau; this is not a demonstrated
+     endpoint of the stopped canonical paths.
+   - At higher E, the reference crossing stays within
+     [0.490588614]{.C32} K of the frozen set point. E is a phenomenological
+     Arrhenius constraint, not measured evidence for a cold-adaptation cost.
+   - The exclusive thermodynamic-anchor prediction was refuted
+     []{.C33 .superseded}. Freezing maintenance at its warm value also
+     removes the reference crossing. A separate matched-level derivative
+     control finds positive contributions from both threshold and
+     maintenance temperature dependence []{.C36}.
+   - The largest specified interpolation shift is [1.231341464]{.C35} K,
+     yet a smaller shift can move a crossing across the climate maximum
+     and change whether a community exists.
+   - The [60]{.C37} conditional canonical tracks lose their supported mixed
+     branch. They do not demonstrate demographic extinction or arrival at
+     the separately checked pure states. Local evolutionary stability and
+     recovery through competitive displacement remain different questions.
+
 ## What the checks establish
 
 | Result | Checked variation or contrast | Remaining condition |
@@ -194,16 +222,12 @@ model-scoped results; it is not independent empirical calibration.
 
 ## Open questions, in order of value
 
-1. **Does selection move or remove the competitive set point?** Evolution
-   removes the fixed-peak single-guild signature (C02), but competition
-   involves a crossing of break-even pressures. Selection could shift that
-   crossing, move it outside the climate branch or remove it. Preservation
-   and loss of regulation are competing hypotheses, not consequences of
-   the present reference curves.
-   The [competitive-evolution specification](../competitive-evolution-spec.md)
-   tests this before writing. A static preview finds that kinetic adaptation
-   moves the switch by a few kelvin, anchored by the thermodynamic
-   thresholds, and removes it only at the lowest turnover.
+1. **Which additional physiological freedoms change the evolved result?**
+   The restricted kinetic-position stage now answers the planned question:
+   reference regulation survives locally, while other settings lose a feasible
+   crossing (C29–C37). Thresholds, maintenance and yields did not evolve.
+   Extending selection to those quantities is a separate question, not a
+   reason to describe the current thermostat as generally evolution-proof.
 2. **Coupled stochastic demography.** This would replace conditional
    per-guild first-window probabilities with joint endpoint probabilities
    and address repeated-cycle survival (C24).
@@ -256,6 +280,6 @@ by their existing payload receipts. Check the ledger with:
 python3 tools/claims.py check models/haze_world/synthesis/claims.csv models/haze_world/synthesis/synthesis.md
 ```
 
-Claude reconciles the revised scopes and proposed figure map. The next
-scientific design can test competitive evolution without assuming that its
-crossing survives. Barry leads the writing when the readiness conditions hold.
+Claude reconciles the revised scopes and proposed figure map. The competitive-evolution stage and C07 export are complete; Claude reviews
+these results and E13 before reporting readiness. Barry leads the writing
+when the readiness conditions hold.

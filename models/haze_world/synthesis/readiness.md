@@ -9,25 +9,29 @@ which also records the four readiness conditions. The source is his chat
 with Claude, relayed on the board in message3204 and recorded in `ae47a3d`.
 He guides the writing once those conditions hold.
 
-## Current status
+## Current status after the competitive-evolution build
 
-- **Claims:** checked. Twenty-four supported, three refuted and one
-  superseded, with specific evidence and verification stamps. Support is
-  conditional on each model, not empirical calibration.
-- **Estimands:** Codex accepts the amended file. Claude's reconciliation is
-  still needed, especially E3, E10–E12 and the narrowed memory thesis.
-- **Scope:** both agents have recommended testing competitive evolution
-  before writing; the actual design is still to be agreed. No new evolution
-  experiment was run in this audit.
-- **Figures:** the proposal below uses existing committed CSV/JSON data.
-  Claude must agree the final panel questions. Any added evolutionary panel
-  needs its new evidence before this condition can be complete.
+- **Claims:** C01–C37 now record thirty-two supported claims, four refuted
+  and one superseded. New numerical results have an independent mathematical
+  check; Claude's stage review is still needed before the writing handoff.
+- **Estimands:** the earlier E1–E12 reconciliation is retained below. E13
+  now states the measured trait bounds, fixed thermal functions, smooth/node
+  stability criteria, grid-mutant scope and canonical-path limitations.
+- **Scope:** the agreed S1–S4 experiment and conditional S5 are complete.
+  KE5 is refuted, KE3 has a temperature qualification, and the other five
+  predictions are supported at their stated scope. The original spec and
+  preview remain intact.
+- **Figures:** C07 has a committed compact transient and manifest; the
+  evolutionary communities, crossing maps, anchors, spectra and path data
+  are committed. The seven agreed main-figure questions now have data.
+  Phase-resolved cycle exports remain optional supplementary material.
 
-**Not ready to write yet.** The audit resolves the ledger; agreement and the
-recommended next scientific stage remain. Claude reports readiness to Barry
-once these are resolved.
+**Implementation complete; final review pending.** No further experiment
+is required by this stage. Claude reconciles the results and E13, then tells
+Barry whether the four readiness conditions hold. Barry guides the writing;
+no manuscript products have been scaffolded or drafted.
 
-## Recommendation: one bounded competitive-evolution stage
+## Agreed scope (retained planning record)
 
 Run this before writing. It is the most direct remaining test of whether
 the ecological set point survives the mechanism that erased the precursor's
@@ -75,15 +79,15 @@ for Barry's writing process.
 |---|---|---|
 | Where does competition restore temperature? | `../haze_response/arney2016/figure4.csv`; `review/synthesis-communities-audit-2026-11-11.json` (C05/C06); `figures/population_coupling/continuation_check.csv` | C05/C06: local sign, stable mixture and matched disabled-guild controls. |
 | How does turnover move or remove feasible mixed states? | `figures/turnover/regimes.csv`; `figures/turnover/boundaries.json` | C12/C13: sampled grid, separate branch limits and bounded bistability. |
-| How can exclusion precede environmental recovery? | `review/synthesis-communities-audit-2026-11-11.json` (C07 event and temperatures); `figures/finite_populations/attained_endpoints.csv` | C07: focal event/endpoints. A full transient curve would first need a compact export of its checksum-pinned raw record. |
+| How can exclusion precede environmental recovery? | `figures/finite_populations/c07_transient.csv`; `figures/finite_populations/c07_transient_manifest.json`; `figures/finite_populations/attained_endpoints.csv` | C07: 209 event-preserving sampled rows, post-census stocks and separate removed-cell count; no interpolation. |
 | What do refuges protect, and how does exchange change survival? | `figures/buffered_refuges/direction_comparisons.csv`; `figures/buffered_refuges/selected_main.csv`; `figures/bottleneck/exchange_continuation.csv` | C09–C11: key subset, actual counterexamples and conditional first-window probabilities. |
 | How long must dormant banks last, and when can entry deepen a crash? | `figures/dormancy/first_survival.csv`; `figures/dormancy/prediction_assessment.json`; `figures/bottleneck/survival.csv`; `review/dormancy-deficit-check-2026-11-11.json` | C17–C19: half-life brackets and continuum minima; no joint persistence assertion. |
 | Which oscillations decay, and which paths recur? | `review/synthesis-core-audit-2026-11-11.json`; `review/cycle-closure-results-2026-11-11.json`; `review/synthesis-turnover-audit-2026-11-11.json` (C21/C22) | C20–C22: spectra, envelopes/ranges and actual horizons. A phase-resolved trace panel would need a compact export from the existing precision-control raw data. |
-| Does evolution preserve the competitive set point? | Existing contrast: `figures/darwinian_endpoints.csv`; competitive data not yet generated | C02/C03 motivate the question. New panel and claims require the agreed experiment. |
+| Does evolution preserve the competitive set point? | `figures/darwinian_endpoints.csv`; `figures/competitive_evolution/communities.csv`; `best_response.csv`, `anchors.csv` and `prediction_assessment.json` in that same directory | C02/C03 versus C29–C37: show both retained and lost joint states; the exclusive-anchor prediction is refuted. |
 
-The current summary panels have data in Git. The two optional full-trace
-exports and the new evolutionary data are explicitly unfinished; neither an
-image nor a raw-archive pointer alone is a completed committed plot dataset.
+The main summary panels, C07 trace and evolutionary results now have compact
+data in Git. A phase-resolved cycle trace is still an optional supplement;
+an image or raw-archive pointer alone is not a committed plot dataset.
 Final figure count, selection, narrative and product formats remain for
 Barry's process once the scientific scope is ready.
 
@@ -129,3 +133,19 @@ Final figure count and layout are for Barry's process.
 
 **Status.** Ready to write once the evolution stage closes with ledger rows
 and E13, and its figure data and the C07 export are committed.
+
+## Codex completion (11 November 2026)
+
+The [stage page](../competitive-evolution.md), machine prediction assessment,
+C29–C37 and E13 are the review surfaces. At reference turnover the regulated
+joint state survives within the kinetic family. It does not survive at every
+setting. Both threshold and maintenance thermal terms contribute to the
+local restoring pressure slope; the exclusive thermodynamic explanation is
+not supported. Static crossings, stable communities, mutant noninvasibility
+and canonical branch tracks are kept separate.
+
+The earlier suggestion that the evolution figure should contrast an erased
+edge with a merely shifted competitive crossing must now include the missing
+joint states and the refuted anchor prediction. No extension to evolving
+maintenance, yield or cessation energy is needed to close this experiment.
+Those are future questions rather than new conditions on readiness.

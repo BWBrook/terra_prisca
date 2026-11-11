@@ -112,6 +112,15 @@ bind the qualified results to specific evidence. The
 [audit record](../../docs/audits/haze-world-synthesis-review-2026-11-11.md)
 preserves the scope corrections; check the ledger with `python3 tools/claims.py check`.
 
+The [competitive-evolution stage](competitive-evolution.md) tests kinetic
+adaptation within the measured trait interval. It retains stable mixtures at
+reference turnover while moving their temperature; other settings lose a
+feasible joint state. The proposed thermodynamic-only anchor fails its
+maintenance control: both retained thermal terms contribute local restoring
+slope. The measured-range trait bounds, local stability, plateau endpoints
+and canonical branch-loss limits remain explicit. The C07 figure export is
+also committed; Claude reviews the stage before the writing handoff.
+
 **Code.** [`src/terra_prisca/haze_world/methane_budget.py`](../../src/terra_prisca/haze_world/methane_budget.py)
 (model) and [`experiments.py`](../../src/terra_prisca/haze_world/experiments.py)
 (the runs below). Tests are in
