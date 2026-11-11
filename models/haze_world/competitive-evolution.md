@@ -140,6 +140,8 @@ The30 missing settings trigger two projected canonical continuations each,
 with maximum trait steps 0.05 and 0.025 °C. Every recorded path stops at loss
 of the supported mixed branch. Ecology is checked at every accepted step;
 terminal rows separate the last supported state from attempted next traits.
+S5 uses equal per-cell mutational supply; the three supply ratios belong to
+the local S3 convergence checks.
 The maximum paired terminal differences are0.207 K and 0.0267 °C. Nearest-root
 tracking and finite steps do not exclude every between-step branch jump.
 
