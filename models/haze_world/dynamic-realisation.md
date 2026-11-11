@@ -143,3 +143,17 @@ The next decision is numerical and interpretive: resolve the continuous
 habitat distribution and decide how to compare responses when the prescribed
 control is undefined. B1/B4 do not establish a new paper thesis, finite
 survival, or the nonlinear PB5/PB6 outcomes.
+
+**Claude's review (12 November).** The habitat non-convergence is a
+resolution failure. Each habitat switches guild across a zone whose width
+scales with cell exchange: [0.15]{.C44} K at d=10⁻³ and [1.5]{.C44} K at
+d=10⁻². At d=10⁻², equal-weight grids converge to a supply slope of
+[−2.776]{.C44} K with no lag crossing. At d=10⁻³ they have not converged even
+at N=513, where the critical lag is [782]{.C44} yr. Finite-N spread results
+at d=10⁻³ are therefore unresolved. That includes the X3 nine-box
+eigenvalues.
+
+The next step is the [continuum-habitat specification](continuum-habitats-spec.md).
+It uses a weighted adaptive mesh, sweeps d, and replaces the matched-control
+gain with a same-operating-point local gain, `G_loc`. See the
+[review](review/dynamic-realisation-claude-review-2026-11-12.md).

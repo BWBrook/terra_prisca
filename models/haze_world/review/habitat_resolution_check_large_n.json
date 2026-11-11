@@ -1,0 +1,29 @@
+{
+ "setting": "fixed chemistry, f=0.5, L=1e-3/h, supply 0.30, sigma=1 K, equal-weight midpoint habitats",
+ "rows": [
+  {
+   "dispersal_yr": 0.001,
+   "n": 385,
+   "temperature_k": 281.55393998606064,
+   "critical_lag_status": "finite_crossing",
+   "critical_lag_yr": 1547.2973919208098,
+   "leading_real_tau0_yr": -0.0016714908147747532,
+   "dT_dlog_supply_k": -3.374625724595834,
+   "mixed_habitats": 29,
+   "mixed_zone_width_k": 0.15064935064935064,
+   "seconds": 50.8
+  },
+  {
+   "dispersal_yr": 0.001,
+   "n": 513,
+   "temperature_k": 281.5538778608697,
+   "critical_lag_status": "finite_crossing",
+   "critical_lag_yr": 782.1003313411944,
+   "leading_real_tau0_yr": -0.001580488542563031,
+   "dT_dlog_supply_k": -2.7867584891917287,
+   "mixed_habitats": 39,
+   "mixed_zone_width_k": 0.15204678362573099,
+   "seconds": 104.0
+  }
+ ]
+}
