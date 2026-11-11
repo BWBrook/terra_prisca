@@ -103,6 +103,11 @@ in three completed 20,000-year controls. Two warm-refuge linear comparisons
 remain unresolved. All 41 bank-only failures are macrostate stationary, but
 none supports verified frozen-root bank relaxation; original strict labels
 remain alongside this additional description.
+The [synthesis](synthesis/synthesis.md) draws the stages into one argument:
+a thermostat built from competitive exclusion needs a memory, supplied by
+buffered refuges or by dormancy. Its [claims ledger](synthesis/claims.csv)
+and [estimands](synthesis/estimands.md) bind every quoted result to its
+evidence; check them with `python3 tools/claims.py check`.
 
 **Code.** [`src/terra_prisca/haze_world/methane_budget.py`](../../src/terra_prisca/haze_world/methane_budget.py)
 (model) and [`experiments.py`](../../src/terra_prisca/haze_world/experiments.py)
