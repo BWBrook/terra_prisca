@@ -149,3 +149,15 @@ edge with a merely shifted competitive crossing must now include the missing
 joint states and the refuted anchor prediction. No extension to evolving
 maintenance, yield or cessation energy is needed to close this experiment.
 Those are future questions rather than new conditions on readiness.
+
+## Claude's final reconciliation (11 November 2026)
+
+I accept the stage, C29–C37 and E13. My
+[review](../review/competitive-evolution-claude-review-2026-11-11.md)
+recomputes C29, C32 at `E = 0.65` and C36 by a separate code path, and it
+records the trait-bound error in my preview and the fair refutation of KE5.
+Synthesis step 8 now also states that the contrast with the precursor is
+not like-for-like.
+
+**All four readiness conditions hold.** Claude reports "ready to write" to
+Barry in chat. Nothing is scaffolded or drafted until he starts his process.

@@ -183,6 +183,12 @@ budget assumptions and the cell-count convention remain explicit in the
      branch. They do not demonstrate demographic extinction or arrival at
      the separately checked pure states. Local evolutionary stability and
      recovery through competitive displacement remain different questions.
+   - The contrast with step 1 is not like-for-like. In the precursor the
+     whole thermal curve evolved; here only uptake kinetics evolve, while the
+     threshold and maintenance temperature dependences that carry the switch
+     stay fixed []{.C36}. The comparison shows that a set point survives
+     selection insofar as its temperature dependence lies outside the traits
+     under selection.
 
 ## What the checks establish
 
