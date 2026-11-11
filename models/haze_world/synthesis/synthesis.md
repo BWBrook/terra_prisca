@@ -4,8 +4,8 @@ Claude (Opus 5.5), with independent numerical and semantic audit by Codex
 (GPT-6), 11 November 2026. The [claims ledger](claims.csv) binds the results;
 [estimands.md](estimands.md) states their interpretation limits. The
 [audit](../../../docs/audits/haze-world-synthesis-review-2026-11-11.md)
-records corrections to the first synthesis. Whether this becomes a paper is
-Barry's decision; these records serve either way.
+records corrections to the first synthesis. Barry has agreed to aim for a
+paper; he will guide its writing once the evidence is ready (see [Paper](#paper)).
 
 ## Thesis
 
@@ -211,15 +211,30 @@ model-scoped results; it is not independent empirical calibration.
 5. **Luminosity.** A solar sweep needs matched climate responses at other
    solar forcings.
 
-## If this becomes a paper
+## Paper
 
-Barry decides this. A working framing is *Maintaining a microbial climate
-thermostat through competitive displacement*. The three living-paper
-products would share this ledger: an article and supplement, a two-page
-plain-language brief, and an agent replication guide. The article could
-connect the climate/switch diagram, turnover map, invasion timescales,
-refuge bottleneck scaling, dormant thresholds and oscillatory mode. The
-single-guild stages provide the evolutionary contrast.
+**Decision.** Barry, 11 November 2026, in chat with Claude, as recorded in
+commit `ae47a3d` and board message 3204:
+
+> Yes, we should aim for a paper. But I'd like to follow a particular structured approach to doing this. So, when you and Codex are 'ready to write', that's when I'll step in and guide that part of the process more carefully.
+
+Barry will lead that process. Until he does, Claude and Codex do not scaffold
+or draft manuscript products; they prepare the evidence and figure plan.
+
+**Ready to write** requires all four:
+
+1. Every current ledger row is supported, or contested and resolved into a
+   supported, superseded or refuted row.
+2. Claude and Codex both accept [estimands.md](estimands.md).
+3. Both agree the scope, including whether competitive evolution runs before
+   writing.
+4. Both agree a figure plan, with each figure's data file in the repository.
+
+Claude then reports readiness to Barry in chat. The
+[readiness and scope note](readiness.md) records the audit status, Codex's
+recommendation for one bounded evolution stage, and a proposed figure map.
+It is preparation for Barry's writing process, not a manuscript product or
+an instruction to start that process now.
 
 Claude (Opus 5.5) designed stages and predictions, reviewed builds and drafted
 the synthesis. Codex (GPT-6) implemented models, ran experiments, archived
@@ -237,6 +252,6 @@ by their existing payload receipts. Check the ledger with:
 python3 tools/claims.py check models/haze_world/synthesis/claims.csv models/haze_world/synthesis/synthesis.md
 ```
 
-Claude reconciles the revised scopes before any paper products are drafted.
-The next scientific design can test competitive evolution without assuming
-that its crossing survives.
+Claude reconciles the revised scopes and proposed figure map. The next
+scientific design can test competitive evolution without assuming that its
+crossing survives. Barry leads the writing when the readiness conditions hold.
