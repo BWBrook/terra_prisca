@@ -37,8 +37,8 @@ ROOT = Path(__file__).resolve().parents[1]
 FIELDS = ["id", "status", "claim", "value", "basis", "evidence", "commit", "reproduce", "limit", "superseded_by"]
 BINDING_FIELDS = ["binding_id", "claim_id", "evidence", "selector", "value_column", "estimand", "display_values"]
 STATUS = {"supported", "provisional", "refuted", "superseded"}
-NUMBER = re.compile(r"(?<![\w.])(~?)([−-]?\d{1,3}(?:,\d{3})+(?:\.\d+)?(?!\d)|[−-]?\d+(?:\.\d+)?(?:e[−-]?\d+)?)")
-PLAIN = re.compile(r"(?<![\w.])(~?)([−-]?\d+(?:\.\d+)?(?:e[−-]?\d+)?)")
+NUMBER = re.compile(r"(?<![\w.])(~?)([−-]?\d{1,3}(?:,\d{3})+(?:\.\d+)?(?!\d)|[−-]?\d+(?:\.\d+)?(?:e[−-]?\d+)?)(?!\w|\.\d)")
+PLAIN = re.compile(r"(?<![\w.])(~?)([−-]?\d+(?:\.\d+)?(?:e[−-]?\d+)?)(?!\w|\.\d)")
 SPAN = re.compile(r"(?<!!)\[([^\[\]]*)\]\{([^}]*)\}")
 BARE = re.compile(r"(?<![\w.{-])C\d{2,3}\b")
 
@@ -52,8 +52,8 @@ def numbers(text, prose=True):
 
 def same(shown, canonical):
     exp = shown.as_tuple().exponent
-    step = Decimal(1).scaleb(exp) if isinstance(exp, int) and exp < 0 else Decimal(1)
-    if abs(canonical - shown) > step:
+    step = Decimal(1).scaleb(exp) if isinstance(exp, int) else Decimal(1)
+    if canonical < shown-step or canonical > shown+step:
         return False
     return canonical.quantize(step, ROUND_HALF_UP) == shown
 

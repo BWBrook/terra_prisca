@@ -1,0 +1,747 @@
+{
+  "C01": {
+    "by_atmosphere": {
+      "A": 19,
+      "B": 18,
+      "C": 19,
+      "D": 22
+    },
+    "cases": 78,
+    "displayed_offset_k": [
+      0.015,
+      0.037
+    ],
+    "maximum_offset_k": 0.03693958716871748,
+    "minimum_offset_k": 0.014948307864415256,
+    "roots": [
+      {
+        "case": "A",
+        "csv_temperature_error_k": -6.0412831260237e-05,
+        "edge_k": 264.0,
+        "stable_scalar_balance_slope": 291.7655807606502,
+        "temperature_k": 264.0369395871687,
+        "temperature_minus_edge_k": 0.03693958716871748
+      },
+      {
+        "case": "A",
+        "csv_temperature_error_k": -0.0002348960342715145,
+        "edge_k": 265.0,
+        "stable_scalar_balance_slope": 1902.9266587697718,
+        "temperature_k": 265.0337651039657,
+        "temperature_minus_edge_k": 0.0337651039657203
+      },
+      {
+        "case": "A",
+        "csv_temperature_error_k": 0.00024355642307227754,
+        "edge_k": 266.0,
+        "stable_scalar_balance_slope": 1931.9245235134501,
+        "temperature_k": 266.0332435564231,
+        "temperature_minus_edge_k": 0.03324355642308774
+      },
+      {
+        "case": "A",
+        "csv_temperature_error_k": -0.0002701918885463783,
+        "edge_k": 267.0,
+        "stable_scalar_balance_slope": 1961.1420046487292,
+        "temperature_k": 267.03272980811147,
+        "temperature_minus_edge_k": 0.03272980811146908
+      },
+      {
+        "case": "A",
+        "csv_temperature_error_k": 0.00022368547126916383,
+        "edge_k": 268.0,
+        "stable_scalar_balance_slope": 1990.579102177171,
+        "temperature_k": 268.03222368547125,
+        "temperature_minus_edge_k": 0.03222368547125143
+      },
+      {
+        "case": "A",
+        "csv_temperature_error_k": -0.00027497994801706227,
+        "edge_k": 269.0,
+        "stable_scalar_balance_slope": 2020.23581610906,
+        "temperature_k": 269.03172502005197,
+        "temperature_minus_edge_k": 0.0317250200519652
+      },
+      {
+        "case": "A",
+        "csv_temperature_error_k": 0.0002336483261160538,
+        "edge_k": 270.0,
+        "stable_scalar_balance_slope": 2050.1121464405946,
+        "temperature_k": 270.0312336483261,
+        "temperature_minus_edge_k": 0.031233648326121966
+      },
+      {
+        "case": "A",
+        "csv_temperature_error_k": -0.00024167681891640314,
+        "edge_k": 271.0,
+        "stable_scalar_balance_slope": 3813.4196656515865,
+        "temperature_k": 271.0307583231811,
+        "temperature_minus_edge_k": 0.03075832318108951
+      },
+      {
+        "case": "A",
+        "csv_temperature_error_k": 0.0004971259037347409,
+        "edge_k": 272.0,
+        "stable_scalar_balance_slope": 3843.6878265423543,
+        "temperature_k": 272.0304971259037,
+        "temperature_minus_edge_k": 0.030497125903707456
+      },
+      {
+        "case": "A",
+        "csv_temperature_error_k": 0.00023798146463605008,
+        "edge_k": 273.0,
+        "stable_scalar_balance_slope": 3874.075729117961,
+        "temperature_k": 273.0302379814646,
+        "temperature_minus_edge_k": 0.030237981464608765
+      },
+      {
+        "case": "A",
+        "csv_temperature_error_k": -1.913423608357334e-05,
+        "edge_k": 274.0,
+        "stable_scalar_balance_slope": 3904.583373355495,
+        "temperature_k": 274.0299808657639,
+        "temperature_minus_edge_k": 0.029980865763889142
+      },
+      {
+        "case": "A",
+        "csv_temperature_error_k": -0.00027424492293448566,
+        "edge_k": 275.0,
+        "stable_scalar_balance_slope": 3935.2107592652887,
+        "temperature_k": 275.02972575507704,
+        "temperature_minus_edge_k": 0.02972575507703823
+      },
+      {
+        "case": "A",
+        "csv_temperature_error_k": 0.00047262604800835106,
+        "edge_k": 276.0,
+        "stable_scalar_balance_slope": 3965.957886849635,
+        "temperature_k": 276.029472626048,
+        "temperature_minus_edge_k": 0.029472626048004713
+      },
+      {
+        "case": "A",
+        "csv_temperature_error_k": 0.00022145568203768562,
+        "edge_k": 277.0,
+        "stable_scalar_balance_slope": 3996.824756107822,
+        "temperature_k": 277.02922145568203,
+        "temperature_minus_edge_k": 0.029221455682034048
+      },
+      {
+        "case": "A",
+        "csv_temperature_error_k": -2.7778661205957178e-05,
+        "edge_k": 278.0,
+        "stable_scalar_balance_slope": 4027.8113670250777,
+        "temperature_k": 278.0289722213388,
+        "temperature_minus_edge_k": 0.028972221338790405
+      },
+      {
+        "case": "A",
+        "csv_temperature_error_k": -0.00027509927485880326,
+        "edge_k": 279.0,
+        "stable_scalar_balance_slope": 4058.917719625988,
+        "temperature_k": 279.02872490072514,
+        "temperature_minus_edge_k": 0.02872490072513756
+      },
+      {
+        "case": "A",
+        "csv_temperature_error_k": 0.0004794718890934746,
+        "edge_k": 280.0,
+        "stable_scalar_balance_slope": 4090.1438138977014,
+        "temperature_k": 280.0284794718891,
+        "temperature_minus_edge_k": 0.028479471889113483
+      },
+      {
+        "case": "A",
+        "csv_temperature_error_k": 0.0002359132129754471,
+        "edge_k": 281.0,
+        "stable_scalar_balance_slope": 4121.489649846048,
+        "temperature_k": 281.028235913213,
+        "temperature_minus_edge_k": 0.028235913212995456
+      },
+      {
+        "case": "A",
+        "csv_temperature_error_k": -3.080852610537477e-05,
+        "edge_k": 282.0,
+        "stable_scalar_balance_slope": 753.2037197483238,
+        "temperature_k": 282.0279691914739,
+        "temperature_minus_edge_k": 0.027969191473914634
+      },
+      {
+        "case": "B",
+        "csv_temperature_error_k": 0.00017607147941589574,
+        "edge_k": 274.0,
+        "stable_scalar_balance_slope": 3250.0313332336677,
+        "temperature_k": 274.0221760714794,
+        "temperature_minus_edge_k": 0.022176071479407256
+      },
+      {
+        "case": "B",
+        "csv_temperature_error_k": -0.00012944538968895358,
+        "edge_k": 275.0,
+        "stable_scalar_balance_slope": 3296.416423160843,
+        "temperature_k": 275.0218705546103,
+        "temperature_minus_edge_k": 0.021870554610302406
+      },
+      {
+        "case": "B",
+        "csv_temperature_error_k": -0.00043067822184639226,
+        "edge_k": 276.0,
+        "stable_scalar_balance_slope": 3343.1304804724396,
+        "temperature_k": 276.02156932177814,
+        "temperature_minus_edge_k": 0.021569321778144968
+      },
+      {
+        "case": "B",
+        "csv_temperature_error_k": 0.00027228352865904526,
+        "edge_k": 277.0,
+        "stable_scalar_balance_slope": 3390.1735051857127,
+        "temperature_k": 277.0212722835287,
+        "temperature_minus_edge_k": 0.021272283528674052
+      },
+      {
+        "case": "B",
+        "csv_temperature_error_k": -2.0647119697514427e-05,
+        "edge_k": 278.0,
+        "stable_scalar_balance_slope": 3437.54549729927,
+        "temperature_k": 278.0209793528803,
+        "temperature_minus_edge_k": 0.020979352880317492
+      },
+      {
+        "case": "B",
+        "csv_temperature_error_k": -0.00030955476080407607,
+        "edge_k": 279.0,
+        "stable_scalar_balance_slope": 3485.2464568177106,
+        "temperature_k": 279.0206904452392,
+        "temperature_minus_edge_k": 0.02069044523921093
+      },
+      {
+        "case": "B",
+        "csv_temperature_error_k": 0.0004054783179299193,
+        "edge_k": 280.0,
+        "stable_scalar_balance_slope": 3533.276383742577,
+        "temperature_k": 280.0204054783179,
+        "temperature_minus_edge_k": 0.02040547831791173
+      },
+      {
+        "case": "B",
+        "csv_temperature_error_k": 0.0001243720573711471,
+        "edge_k": 281.0,
+        "stable_scalar_balance_slope": 3581.635278070114,
+        "temperature_k": 281.02012437205735,
+        "temperature_minus_edge_k": 0.020124372057352957
+      },
+      {
+        "case": "B",
+        "csv_temperature_error_k": -0.00015377844783870387,
+        "edge_k": 282.0,
+        "stable_scalar_balance_slope": 3019.9504196476482,
+        "temperature_k": 282.01984622155214,
+        "temperature_minus_edge_k": 0.019846221552143106
+      },
+      {
+        "case": "B",
+        "csv_temperature_error_k": -0.0004822530084425125,
+        "edge_k": 283.0,
+        "stable_scalar_balance_slope": 3068.9987786917113,
+        "temperature_k": 283.01951774699154,
+        "temperature_minus_edge_k": 0.019517746991539298
+      },
+      {
+        "case": "B",
+        "csv_temperature_error_k": 0.00019450128348807993,
+        "edge_k": 284.0,
+        "stable_scalar_balance_slope": 3118.442631868409,
+        "temperature_k": 284.0191945012835,
+        "temperature_minus_edge_k": 0.019194501283493537
+      },
+      {
+        "case": "B",
+        "csv_temperature_error_k": -0.00012363940112436467,
+        "edge_k": 285.0,
+        "stable_scalar_balance_slope": 3168.281979187664,
+        "temperature_k": 285.0188763605989,
+        "temperature_minus_edge_k": 0.018876360598881092
+      },
+      {
+        "case": "B",
+        "csv_temperature_error_k": -0.000436795013115443,
+        "edge_k": 286.0,
+        "stable_scalar_balance_slope": 3218.5168206394287,
+        "temperature_k": 286.0185632049869,
+        "temperature_minus_edge_k": 0.018563204986890014
+      },
+      {
+        "case": "B",
+        "csv_temperature_error_k": 0.00025491822418644006,
+        "edge_k": 287.0,
+        "stable_scalar_balance_slope": 3269.1471562344045,
+        "temperature_k": 287.01825491822416,
+        "temperature_minus_edge_k": 0.0182549182241587
+      },
+      {
+        "case": "B",
+        "csv_temperature_error_k": -4.86123287259943e-05,
+        "edge_k": 288.0,
+        "stable_scalar_balance_slope": 3320.1729859868515,
+        "temperature_k": 288.01795138767125,
+        "temperature_minus_edge_k": 0.017951387671246266
+      },
+      {
+        "case": "B",
+        "csv_temperature_error_k": -0.00034749586421867207,
+        "edge_k": 289.0,
+        "stable_scalar_balance_slope": 3371.5943098874423,
+        "temperature_k": 289.01765250413575,
+        "temperature_minus_edge_k": 0.01765250413575359
+      },
+      {
+        "case": "B",
+        "csv_temperature_error_k": 0.0003581617412464766,
+        "edge_k": 290.0,
+        "stable_scalar_balance_slope": 3423.411127947213,
+        "temperature_k": 290.01735816174124,
+        "temperature_minus_edge_k": 0.017358161741242384
+      },
+      {
+        "case": "B",
+        "csv_temperature_error_k": 6.825780252484037e-05,
+        "edge_k": 291.0,
+        "stable_scalar_balance_slope": 3475.623440167314,
+        "temperature_k": 291.0170682578025,
+        "temperature_minus_edge_k": 0.017068257802520748
+      },
+      {
+        "case": "C",
+        "csv_temperature_error_k": 0.00022871440631888618,
+        "edge_k": 263.0,
+        "stable_scalar_balance_slope": 1990.947114269264,
+        "temperature_k": 263.0322287144063,
+        "temperature_minus_edge_k": 0.03222871440630115
+      },
+      {
+        "case": "C",
+        "csv_temperature_error_k": -0.0002698597897392574,
+        "edge_k": 264.0,
+        "stable_scalar_balance_slope": 2020.6015982145814,
+        "temperature_k": 264.03173014021024,
+        "temperature_minus_edge_k": 0.03173014021024301
+      },
+      {
+        "case": "C",
+        "csv_temperature_error_k": 0.00023885651154387233,
+        "edge_k": 265.0,
+        "stable_scalar_balance_slope": 2050.475625318937,
+        "temperature_k": 265.03123885651155,
+        "temperature_minus_edge_k": 0.031238856511549784
+      },
+      {
+        "case": "C",
+        "csv_temperature_error_k": -0.0002453608550467834,
+        "edge_k": 266.0,
+        "stable_scalar_balance_slope": 2071.0933858556423,
+        "temperature_k": 266.03075463914496,
+        "temperature_minus_edge_k": 0.03075463914495913
+      },
+      {
+        "case": "C",
+        "csv_temperature_error_k": 0.00027529758966693407,
+        "edge_k": 267.0,
+        "stable_scalar_balance_slope": 2101.406965401352,
+        "temperature_k": 267.03027529758964,
+        "temperature_minus_edge_k": 0.03027529758963965
+      },
+      {
+        "case": "C",
+        "csv_temperature_error_k": -0.00019715400708264497,
+        "edge_k": 268.0,
+        "stable_scalar_balance_slope": 2131.941093508697,
+        "temperature_k": 268.0298028459929,
+        "temperature_minus_edge_k": 0.02980284599289007
+      },
+      {
+        "case": "C",
+        "csv_temperature_error_k": 0.0003409342207305599,
+        "edge_k": 269.0,
+        "stable_scalar_balance_slope": 2898.052131212769,
+        "temperature_k": 269.0293409342207,
+        "temperature_minus_edge_k": 0.029340934220726922
+      },
+      {
+        "case": "C",
+        "csv_temperature_error_k": -2.297274932061555e-06,
+        "edge_k": 270.0,
+        "stable_scalar_balance_slope": 2929.0011692820126,
+        "temperature_k": 270.02899770272506,
+        "temperature_minus_edge_k": 0.0289977027250643
+      },
+      {
+        "case": "C",
+        "csv_temperature_error_k": -0.00034191156476026663,
+        "edge_k": 271.0,
+        "stable_scalar_balance_slope": 2960.1147550053265,
+        "temperature_k": 271.02865808843524,
+        "temperature_minus_edge_k": 0.028658088435236095
+      },
+      {
+        "case": "C",
+        "csv_temperature_error_k": 0.00032203448887457853,
+        "edge_k": 272.0,
+        "stable_scalar_balance_slope": 2991.3928883923954,
+        "temperature_k": 272.0283220344889,
+        "temperature_minus_edge_k": 0.028322034488894587
+      },
+      {
+        "case": "C",
+        "csv_temperature_error_k": -6.3149493598757545e-06,
+        "edge_k": 273.0,
+        "stable_scalar_balance_slope": 5118.488911212153,
+        "temperature_k": 273.02799368505066,
+        "temperature_minus_edge_k": 0.027993685050660133
+      },
+      {
+        "case": "C",
+        "csv_temperature_error_k": -0.00020108526933881876,
+        "edge_k": 274.0,
+        "stable_scalar_balance_slope": 5150.064625241273,
+        "temperature_k": 274.0277989147307,
+        "temperature_minus_edge_k": 0.02779891473068119
+      },
+      {
+        "case": "C",
+        "csv_temperature_error_k": -0.0003946632509155279,
+        "edge_k": 275.0,
+        "stable_scalar_balance_slope": 5181.737490469727,
+        "temperature_k": 275.0276053367491,
+        "temperature_minus_edge_k": 0.02760533674910448
+      },
+      {
+        "case": "C",
+        "csv_temperature_error_k": 0.0004129401925752063,
+        "edge_k": 276.0,
+        "stable_scalar_balance_slope": 5213.507506899726,
+        "temperature_k": 276.02741294019256,
+        "temperature_minus_edge_k": 0.02741294019256202
+      },
+      {
+        "case": "C",
+        "csv_temperature_error_k": 0.00022171428037154328,
+        "edge_k": 277.0,
+        "stable_scalar_balance_slope": 5245.374674548347,
+        "temperature_k": 277.02722171428036,
+        "temperature_minus_edge_k": 0.027221714280358356
+      },
+      {
+        "case": "C",
+        "csv_temperature_error_k": 3.1648362778469163e-05,
+        "edge_k": 278.0,
+        "stable_scalar_balance_slope": 5277.338993395212,
+        "temperature_k": 278.02703164836277,
+        "temperature_minus_edge_k": 0.02703164836276528
+      },
+      {
+        "case": "C",
+        "csv_temperature_error_k": -0.000157268081352413,
+        "edge_k": 279.0,
+        "stable_scalar_balance_slope": 5309.40046345073,
+        "temperature_k": 279.02684273191863,
+        "temperature_minus_edge_k": 0.0268427319186344
+      },
+      {
+        "case": "C",
+        "csv_temperature_error_k": 0.00043278429694737497,
+        "edge_k": 280.0,
+        "stable_scalar_balance_slope": 879.338489378333,
+        "temperature_k": 280.02643278429696,
+        "temperature_minus_edge_k": 0.026432784296957834
+      },
+      {
+        "case": "C",
+        "csv_temperature_error_k": 0.00033576644506183584,
+        "edge_k": 281.0,
+        "stable_scalar_balance_slope": 1064.9862718058946,
+        "temperature_k": 281.02533576644504,
+        "temperature_minus_edge_k": 0.0253357664450391
+      },
+      {
+        "case": "D",
+        "csv_temperature_error_k": -0.00033700317084139897,
+        "edge_k": 252.0,
+        "stable_scalar_balance_slope": 657.3458328809738,
+        "temperature_k": 252.02966299682916,
+        "temperature_minus_edge_k": 0.029662996829159738
+      },
+      {
+        "case": "D",
+        "csv_temperature_error_k": -0.00015699213071229678,
+        "edge_k": 253.0,
+        "stable_scalar_balance_slope": 4664.044204069865,
+        "temperature_k": 253.02884300786928,
+        "temperature_minus_edge_k": 0.028843007869284065
+      },
+      {
+        "case": "D",
+        "csv_temperature_error_k": -0.0003708215977553664,
+        "edge_k": 254.0,
+        "stable_scalar_balance_slope": 4689.2375653424815,
+        "temperature_k": 254.02862917840224,
+        "temperature_minus_edge_k": 0.028629178402240996
+      },
+      {
+        "case": "D",
+        "csv_temperature_error_k": 0.0004164962157346963,
+        "edge_k": 255.0,
+        "stable_scalar_balance_slope": 4714.498828507062,
+        "temperature_k": 255.02841649621573,
+        "temperature_minus_edge_k": 0.028416496215726283
+      },
+      {
+        "case": "D",
+        "csv_temperature_error_k": 0.00020495210299031896,
+        "edge_k": 256.0,
+        "stable_scalar_balance_slope": 4739.82799355341,
+        "temperature_k": 256.028204952103,
+        "temperature_minus_edge_k": 0.028204952103010328
+      },
+      {
+        "case": "D",
+        "csv_temperature_error_k": -5.4630444878966955e-06,
+        "edge_k": 257.0,
+        "stable_scalar_balance_slope": 4765.2250604776455,
+        "temperature_k": 257.02799453695553,
+        "temperature_minus_edge_k": 0.027994536955532112
+      },
+      {
+        "case": "D",
+        "csv_temperature_error_k": -0.00021475823842820319,
+        "edge_k": 258.0,
+        "stable_scalar_balance_slope": 4790.690029283004,
+        "temperature_k": 258.0277852417616,
+        "temperature_minus_edge_k": 0.027785241761591806
+      },
+      {
+        "case": "D",
+        "csv_temperature_error_k": -0.0004229423948913791,
+        "edge_k": 259.0,
+        "stable_scalar_balance_slope": 4816.22289997321,
+        "temperature_k": 259.02757705760513,
+        "temperature_minus_edge_k": 0.02757705760512863
+      },
+      {
+        "case": "D",
+        "csv_temperature_error_k": 0.0003699756644550689,
+        "edge_k": 260.0,
+        "stable_scalar_balance_slope": 4841.823672553284,
+        "temperature_k": 260.02736997566444,
+        "temperature_minus_edge_k": 0.02736997566444188
+      },
+      {
+        "case": "D",
+        "csv_temperature_error_k": 0.00016398721106725134,
+        "edge_k": 261.0,
+        "stable_scalar_balance_slope": 4867.492347016703,
+        "temperature_k": 261.02716398721105,
+        "temperature_minus_edge_k": 0.027163987211054064
+      },
+      {
+        "case": "D",
+        "csv_temperature_error_k": -4.0916391583323275e-05,
+        "edge_k": 262.0,
+        "stable_scalar_balance_slope": 4893.228923354387,
+        "temperature_k": 262.0269590836084,
+        "temperature_minus_edge_k": 0.02695908360840349
+      },
+      {
+        "case": "D",
+        "csv_temperature_error_k": -0.00024474368962046356,
+        "edge_k": 263.0,
+        "stable_scalar_balance_slope": 4919.033401589575,
+        "temperature_k": 263.02675525631037,
+        "temperature_minus_edge_k": 0.02675525631036635
+      },
+      {
+        "case": "D",
+        "csv_temperature_error_k": -0.0004475031392985329,
+        "edge_k": 264.0,
+        "stable_scalar_balance_slope": 4944.905781701129,
+        "temperature_k": 264.0265524968607,
+        "temperature_minus_edge_k": 0.02655249686068828
+      },
+      {
+        "case": "D",
+        "csv_temperature_error_k": 0.0003507968911549142,
+        "edge_k": 265.0,
+        "stable_scalar_balance_slope": 4970.846063703205,
+        "temperature_k": 265.02635079689117,
+        "temperature_minus_edge_k": 0.026350796891165373
+      },
+      {
+        "case": "D",
+        "csv_temperature_error_k": 0.0001501481210084421,
+        "edge_k": 266.0,
+        "stable_scalar_balance_slope": 4996.854247580757,
+        "temperature_k": 266.026150148121,
+        "temperature_minus_edge_k": 0.0261501481210189
+      },
+      {
+        "case": "D",
+        "csv_temperature_error_k": -4.945764464991953e-05,
+        "edge_k": 267.0,
+        "stable_scalar_balance_slope": 5022.930333339266,
+        "temperature_k": 267.02595054235536,
+        "temperature_minus_edge_k": 0.02595054235536054
+      },
+      {
+        "case": "D",
+        "csv_temperature_error_k": -0.00024802851584126984,
+        "edge_k": 268.0,
+        "stable_scalar_balance_slope": 5049.074320994684,
+        "temperature_k": 268.02575197148417,
+        "temperature_minus_edge_k": 0.02575197148416919
+      },
+      {
+        "case": "D",
+        "csv_temperature_error_k": -0.00044557251845844803,
+        "edge_k": 269.0,
+        "stable_scalar_balance_slope": 5075.286210526186,
+        "temperature_k": 269.02555442748155,
+        "temperature_minus_edge_k": 0.02555442748155201
+      },
+      {
+        "case": "D",
+        "csv_temperature_error_k": 0.0003579024041755474,
+        "edge_k": 270.0,
+        "stable_scalar_balance_slope": 5101.56600194174,
+        "temperature_k": 270.02535790240415,
+        "temperature_minus_edge_k": 0.02535790240415281
+      },
+      {
+        "case": "D",
+        "csv_temperature_error_k": 0.0001623883903789647,
+        "edge_k": 271.0,
+        "stable_scalar_balance_slope": 5127.9136952450535,
+        "temperature_k": 271.02516238839036,
+        "temperature_minus_edge_k": 0.025162388390356227
+      },
+      {
+        "case": "D",
+        "csv_temperature_error_k": -0.0003319729964914586,
+        "edge_k": 272.0,
+        "stable_scalar_balance_slope": 101.34121502297693,
+        "temperature_k": 272.0236680270035,
+        "temperature_minus_edge_k": 0.02366802700350945
+      },
+      {
+        "case": "D",
+        "csv_temperature_error_k": -5.169213557110197e-05,
+        "edge_k": 273.0,
+        "stable_scalar_balance_slope": 129.79783478796585,
+        "temperature_k": 273.0149483078644,
+        "temperature_minus_edge_k": 0.014948307864415256
+      }
+    ],
+    "scope": "High-supply scalar equilibria across A-D, not case B alone; no dynamical elimination theorem"
+  },
+  "C02": {
+    "argument": "At E=0 and an interior singularity theta=T, rho=10 and rho_T=0. Both source and local response equal the temperature-independent control.",
+    "fixed_peak_growth": 10.0,
+    "loss_shapes": 5,
+    "maximum_recorded_control_contrast_k": 0.0,
+    "methane_ratio_from_constant_capture": 0.219655255922115,
+    "regulation_ratio": 1.0,
+    "scope": "Fixed-peak U scenario at a feasible interior singularity; not a theorem for H trade-offs or an arbitrary two-guild evolutionary model",
+    "temperature_from_constant_capture_k": 273.43757382620265
+  },
+  "C03": {
+    "displayed_offset_range_k": [
+      0.14,
+      2.4
+    ],
+    "first_floor_range_k": [
+      291.0,
+      293.0
+    ],
+    "floors": [
+      {
+        "first_floor_k": 291.0,
+        "independently_recomputed_ratio": 0.15717346196685483,
+        "loss": "power n=0.2",
+        "maximum_strong_buffering_edge_offset_k": 2.2731999999999744,
+        "minimum_strong_buffering_edge_offset_k": 1.3444999999999823
+      },
+      {
+        "first_floor_k": 292.0,
+        "independently_recomputed_ratio": 0.088440050260425,
+        "loss": "power n=0.5",
+        "maximum_strong_buffering_edge_offset_k": 1.029299999999978,
+        "minimum_strong_buffering_edge_offset_k": 0.591199999999958
+      },
+      {
+        "first_floor_k": 293.0,
+        "independently_recomputed_ratio": 0.046097610161262854,
+        "loss": "power n=1",
+        "maximum_strong_buffering_edge_offset_k": 0.5036000000000058,
+        "minimum_strong_buffering_edge_offset_k": 0.2991000000000099
+      },
+      {
+        "first_floor_k": 293.0,
+        "independently_recomputed_ratio": 0.025658715238089738,
+        "loss": "power n=2",
+        "maximum_strong_buffering_edge_offset_k": 0.25439999999997553,
+        "minimum_strong_buffering_edge_offset_k": 0.14400000000000546
+      },
+      {
+        "first_floor_k": 291.0,
+        "independently_recomputed_ratio": 0.1620087114548556,
+        "loss": "log s=0.001",
+        "maximum_strong_buffering_edge_offset_k": 2.394399999999962,
+        "minimum_strong_buffering_edge_offset_k": 1.4244999999999663
+      }
+    ],
+    "hotter_is_better_rows_below_half_response": 12,
+    "maximum_edge_offset_k": 2.394399999999962,
+    "minimum_edge_offset_k": 0.14400000000000546,
+    "minimum_hotter_is_better_ratio": 0.295431,
+    "scope": "The 291-293 K threshold concerns sampled F floors only. H trade-offs retain regulation without an optimum floor under shallow loss."
+  },
+  "C04": {
+    "example_first_dead_sample": {
+      "temperature_k": 292.8005936171959,
+      "time_yr": 5080.0
+    },
+    "example_last_living_sample": {
+      "temperature_k": 288.1876169531671,
+      "time_yr": 4570.0
+    },
+    "extinct_cases": 18,
+    "frozen_unconstrained_cases": 18,
+    "independently_minimized_viability": [
+      {
+        "frozen_optimum_k": 273.5,
+        "independently_minimized_supply": 0.001075068943996669,
+        "t_zero_k": 265.0
+      },
+      {
+        "frozen_optimum_k": 273.5,
+        "independently_minimized_supply": 0.0012028031002627266,
+        "t_zero_k": 283.0
+      }
+    ],
+    "maximum_death_after_decline_yr": 4200.0,
+    "minimum_death_after_decline_yr": 2910.0,
+    "scope": "Deaths in the warming excursion toward the 297 K maximum, for fixed-optimum U/no-mutation runs; not all methanogens and not death exactly at the peak. Census timing and extinction law are uncalibrated.",
+    "warming_peak_k": 297.008
+  },
+  "checker_sha256": "9ecdcd8a63c15249668c081cc45f98060e24f23130ebda39978df8450d7ea2fa",
+  "input_sha256": {
+    "models/haze_response/arney2016/cases.csv": "e3d77d275052a8875991a751868f857bffc964295bfd47591944d86bc58ab07a",
+    "models/haze_response/arney2016/figure4.csv": "c0ef5f3d17ee7c6085ad36247f0f7814726dbbe3273842b01f2c6c4e046856f8",
+    "models/haze_world/figures/darwinian_endpoints.csv": "84aa5ea64d2a03bc52298cc0d3008c8986e1d039099e8befd113804ae1f50443",
+    "models/haze_world/figures/setpoint.csv": "28b8df26caefbbb0d6066be8d298c28d2ff5e854b4f446de4d31bbc0dc12b92e",
+    "models/haze_world/figures/strains_rescue.csv": "d6354e0ccd0461d395f244fd5fb5321fc5e0055b2d72d8bce51fc223e7fb91b8",
+    "models/haze_world/figures/strains_series.csv": "76162cd19236df69b00da1dcd8a6a7da097ea1e437dc7bc5ac132d4a09378bb3",
+    "src/terra_prisca/haze_world/darwinian.py": "e965035d5dfbfafcb695dc3738b23d8a445c4c1e7e246ab4688d67b33482f1aa",
+    "src/terra_prisca/haze_world/methane_budget.py": "70dc47659e4738d07809e8d23844af79bf69e5dabcc87793eac3f5e560011721",
+    "src/terra_prisca/haze_world/strains.py": "53845feba57abad0b09da56d83b0e84b6f4b5f59a2427144c03f8bf657969ef5"
+  },
+  "scope": "Independent algebra, selected-root recomputation and frozen-table recount; no new trajectories or calibration"
+}

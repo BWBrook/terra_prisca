@@ -6,17 +6,22 @@ result estimates, and which phrasings it supports. It sits upstream of
 it. Codex agrees or amends it before any product cites it. Claim IDs refer
 to [claims.csv](claims.csv).
 
-Every result below is conditional on four shared assumptions. Name them
-once in any product, and again wherever a result depends on one more than
-usual:
+Codex (GPT-6) amended the interpretation scopes after independent checks on
+11 November 2026. Each result is conditional on its **named model version**;
+the precursor and competition models do not share identical physiology.
 
-1. **Climate.** The quasi-static Arney et al. (2016) case-B response at
-   2.7 Ga. The low-methane bridge and the high-methane plateau are ours.
-2. **Physiology.** The reference acetogen and hydrogenotrophic methanogen
-   parameters, including the continuation below 4 °C.
-3. **Habitat.** Habitat volume, donor supply, product activities and the
-   10,000-year methane lifetime are normalisations, not Archean estimates.
-4. **Turnover.** Both guilds share one constant loss rate `L`.
+1. **Climate.** Quasi-static extracted Arney responses and the declared
+   low/high-methane closures. C01 pools cases A–D; later competition results
+   use case B. These are fixed-background experiments, not an evolving Earth.
+2. **Physiology.** The precursor uses an assumed thermal growth curve. The
+   competition model uses transferred acetogen/methanogen kinetics, yields
+   and maintenance, with named below-4 °C continuations.
+3. **Budgets and habitat.** Donor supply, habitat volume, product activities
+   and methane loss are scenario assumptions. The competition baseline has
+   a 10,000-year lifetime; precursor evolution also tests other loss shapes.
+4. **Turnover.** The competition experiments assign both guilds the same
+   constant loss rate `L`. Its effects do not establish that physiology or
+   adaptation cannot also move or remove the competitive crossing.
 
 ## E1. Set point (C01, C06, C12)
 
@@ -25,7 +30,7 @@ deterministic model, and its contrast with a matched control.
 
 - **Allowed:** "in the model, the mixed community holds the climate near
   281.5 K, 8 K warmer than a methanogen-only world"; "turnover sets the
-  set point".
+  competitive set point in the tested physiology".
 - **Not allowed:** "the Archean surface was 281 K"; "acetogens warmed the
   early Earth by 8 K"; "the model predicts Archean temperature".
 
@@ -34,20 +39,34 @@ deterministic model, and its contrast with a matched control.
 **Estimand.** The stable equilibria at each `(L, f)` and the root-located
 boundaries between regimes. Basins are known only for the checked starts.
 
-- **Allowed:** "bistable above `L = 1.24×10⁻³ h⁻¹` at `f = 0`".
+- **Allowed:** "at `f=0`, stable mixed and acetogen-only equilibria coexist
+  between the stated lower and upper boundaries". Report the separate
+  pure-guild bistability interval and the assumed climate branch.
+- **Not allowed:** treating the lower onset as bistability at every larger
+  turnover. The mixed set-point range refers to root-delimited branch
+  limits, not the extrema of the original sampled grid.
 - **Not allowed:** "the only attractors"; any statement about global
   attractors from the map alone. The `f = 0.9` continuum relaxation cycle
   stays out of every finite-population claim.
 
 ## E3. Finite outcomes (C07, C08, C09)
 
-**Estimand.** Endpoints of the deterministic model with a one-cell,
-ten-year census and no outside immigration.
+**Estimand.** Endpoints of the specified finite-census variant, with its
+stated removal threshold, census interval and immigration. C07's history
+contrast is the closed single-habitat `f=0/0.5` comparison, not every
+recycling fraction or immigration setting. C08's limitation concerns the
+tested mean-preserving, climate-tracking geometry at those fractions;
+other recycling settings include supported coexisting counterexamples.
 
 - **Allowed:** "invasion history selects the surviving guild under the
   census rule"; "competitive exclusion outruns the climate response".
-- **Not allowed:** "climate bistability" for C07, because the continuum
-  equations have one stable mixed state; "refuges existed in the Archean".
+- **Not allowed:** calling C07's distinct absorbing census outcomes
+  "climate bistability": absorption does not establish two stable continuum
+  climates. Assess continuous equilibria and invasion stability separately.
+  Also unsupported: "refuges existed in the Archean"; "all climate-tracking
+  refuges fail"; "all buffered-refuge runs reach the same mixed state". C09's key paired rescue result concerns its
+  specified subset, not the entire experiment. Refuges and dormancy are
+  sufficient to protect in some tested transients, not universally.
 
 ## E4. Survival probability (C10, C11, C16, C17)
 
@@ -56,7 +75,10 @@ a recorded, uncensored environment, under the stated birth–death split and
 cell-count conversion.
 
 - **Allowed:** "50% first-window survival needs about 230 cells at the
-  minimum".
+  minimum in the specified bottleneck". Distinguish the exact multitype
+  calculation from the single-type identity and its approximate reduction.
+  The minimum is global across habitats, including runs with a small refuge;
+  a global count must not be described as the count inside that refuge.
 - **Not allowed:** a joint probability for both guilds; probability of a
   common endpoint; survival over later windows or many cycles (see E9).
 
@@ -81,6 +103,8 @@ switching law, with dormant death `εL`.
   in this model"; "growth-triggered entry is a strong assumption".
 - **Not allowed:** "dormancy is harmful"; "the threshold is `ε = (L−g)/L`"
   as a coupled-system law. It is a fixed-environment allocation argument.
+  Subcell minima describe continuum expectations; a deeper minimum does not
+  show a change in finite fate when both paths already imply likely loss.
 
 ## E7. Oscillation (C20, C21, C22, C27)
 
@@ -107,16 +131,44 @@ trajectories observed from specific starts.
 
 ## E10. Coexistence versus regulation (C14, C15)
 
-Report global coexistence and bulk regulation as separate quantities in
-every refuge result. A guild that persists only as an immigrant-supported
-sink does not regulate the climate.
+Report global coexistence, methane supply, autonomous bulk competition and
+restorative regulation separately. A sink can emit methane and influence
+global temperature while contributing negligible bulk competitive activity.
+C14's 0.28 K is a refuge-only forcing diagnostic above the switch, not the
+width of a coexistence window or the temperature difference of two full
+endpoints. C15 establishes weak bulk participation and failure to pin the
+bulk at its switch; it does not establish zero climate effect.
 
 ## E11. Single-guild precursor (C01–C04)
 
 **Estimand.** Equilibria and adaptive-dynamics endpoints of the one-guild
-budget model.
+budget model, plus the specified strain-resolved supply-decline trajectories.
+Unconstrained fixed-peak adaptation, a hard optimum floor and a growth-rate
+trade-off are different scenarios.
 
-- **Allowed:** "evolution erases a tolerance-edge thermostat unless a
-  constraint sets the edge".
+- **Allowed:** "unconstrained optimum evolution with fixed peak growth
+  erases the tolerance-edge signature in these experiments". A hard floor
+  can restore buffering, while the growth-rate trade-off can retain it under
+  shallow methane loss without a floor. C04 concerns fixed-optimum,
+  no-mutation unconstrained strains dying during warming on the way to the
+  greenhouse peak; it is not mortality of all methanogens at the peak.
 - **Not allowed:** extending C02 to the two-guild switch. Whether selection
-  erases a competition-set point is untested (synthesis, open question 2).
+  erases a competition-set point is untested. A crossing can shift, leave
+  the supported temperature range or disappear; its existence after evolution
+  cannot be assumed from its existence in the reference strains.
+
+## E12. Persistence through displacement (C07, C09, C17)
+
+**Estimand.** Retention or rescue of a losing guild through the specified
+invasion transients. Refuges and dormancy are two mechanisms that can bridge
+rapid population decline and slow climate adjustment in this model.
+
+- **Allowed:** "a competitive climate thermostat can need biological memory
+  during an invasion"; "an equilibrium can exist while an invasion fails to
+  reach it in the finite-census variant".
+- **Not allowed:** a theorem that every competitive thermostat requires a
+  refuge or dormant bank, or that either mechanism guarantees a common
+  endpoint. The no-refuge/no-dormancy mixed equilibrium has a stable positive
+  neighbourhood under the reference dynamics and can persist without an
+  extra store when it starts there. Immigration is another rescue mechanism.
+  Per-guild first-bottleneck survival does not establish joint recovery.

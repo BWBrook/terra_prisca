@@ -1,0 +1,225 @@
+{
+  "C16": {
+    "independent_scalar_survival_ode": 0.3648059448429978,
+    "independent_scalar_survival_quadrature": 0.3648059448439635,
+    "multitype_n50": 105.64675561170715,
+    "relative_difference_percent": 0.00992929867773551,
+    "scalar_n50": 105.63626562979913,
+    "scope": "Exact single-type linear process with Poisson entry; multitype reduction separately checked in one recorded example"
+  },
+  "C17": [
+    {
+      "cases": [
+        "dormancy_0000_eps0.006",
+        "dormancy_0000_eps0.007"
+      ],
+      "epsilon": [
+        0.006,
+        0.007
+      ],
+      "evidence": "resolved_first_bottlenecks",
+      "fraction": 0.0,
+      "guild": "m",
+      "half_life_yr": [
+        11.296033058895494,
+        13.178705235378075
+      ],
+      "measured_over_approximation": [
+        1.0,
+        1.1666666666666667
+      ]
+    },
+    {
+      "cases": [
+        "dormancy_0001_eps0.00046",
+        "dormancy_0001_eps0.0005"
+      ],
+      "epsilon": [
+        0.00046,
+        0.0005
+      ],
+      "evidence": "resolved_first_bottlenecks",
+      "fraction": 0.0,
+      "guild": "a",
+      "half_life_yr": [
+        158.14446282453693,
+        171.89615524406184
+      ],
+      "measured_over_approximation": [
+        1.0,
+        1.0869565217391304
+      ]
+    },
+    {
+      "cases": [
+        "dormancy_0056_eps0.00245",
+        "dormancy_0056_eps0.002499"
+      ],
+      "epsilon": [
+        0.00245,
+        0.002499
+      ],
+      "evidence": "resolved_first_bottlenecks",
+      "fraction": 0.5,
+      "guild": "m",
+      "half_life_yr": [
+        31.641549184581216,
+        32.27438016827284
+      ],
+      "measured_over_approximation": [
+        0.9919028340080971,
+        1.011740890688259
+      ]
+    },
+    {
+      "cases": [
+        "dormancy_0057_eps0.00082",
+        "dormancy_0057_eps0.0009"
+      ],
+      "epsilon": [
+        0.00082,
+        0.0009
+      ],
+      "evidence": "resolved_first_bottlenecks",
+      "fraction": 0.5,
+      "guild": "a",
+      "half_life_yr": [
+        87.85803490252052,
+        96.4295505027664
+      ],
+      "measured_over_approximation": [
+        1.0,
+        1.0975609756097562
+      ]
+    }
+  ],
+  "C18": {
+    "half_life_fraction": 0.012753585711656202,
+    "half_life_percent": 1.2753585711656203,
+    "log_population_ratio": 54.3492
+  },
+  "C19": [
+    {
+      "dispersal_yr": 1e-09,
+      "dormant_log10_min": -59.54896794341423,
+      "no_dormancy_log10_min": -14.252331042906931
+    },
+    {
+      "dispersal_yr": 1e-06,
+      "dormant_log10_min": -40.190118116911925,
+      "no_dormancy_log10_min": -1.0559283869113587
+    }
+  ],
+  "C20": [
+    {
+      "fraction": 0.0,
+      "loss_h": 0.001,
+      "stencils": [
+        {
+          "damping_yr": 4853.907959075832,
+          "imaginary_yr": 0.05254895788805716,
+          "period_yr": 119.56821904183889,
+          "quality_factor": 127.53390246699068,
+          "real_yr": -0.000206019563706436
+        },
+        {
+          "damping_yr": 4853.910121005067,
+          "imaginary_yr": 0.05254893946747431,
+          "period_yr": 119.56826095545898,
+          "quality_factor": 127.53391456462809,
+          "real_yr": -0.00020601947194542132
+        }
+      ]
+    },
+    {
+      "fraction": 0.0,
+      "loss_h": 0.002,
+      "stencils": [
+        {
+          "damping_yr": 9322.56077722332,
+          "imaginary_yr": 0.0563784559061482,
+          "period_yr": 111.44656600101015,
+          "quality_factor": 262.7957908555358,
+          "real_yr": -0.00010726666458889478
+        },
+        {
+          "damping_yr": 9322.563473737058,
+          "imaginary_yr": 0.056378442556268595,
+          "period_yr": 111.44659239049825,
+          "quality_factor": 262.7958046406263,
+          "real_yr": -0.00010726663356244636
+        }
+      ]
+    },
+    {
+      "fraction": 0.5,
+      "loss_h": 0.001,
+      "stencils": [
+        {
+          "damping_yr": 1079.9008202843177,
+          "imaginary_yr": 0.04094347609763812,
+          "period_yr": 153.45998693897025,
+          "quality_factor": 22.10744671156538,
+          "real_yr": -0.000926010964355707
+        },
+        {
+          "damping_yr": 1079.901508556918,
+          "imaginary_yr": 0.040943461727872985,
+          "period_yr": 153.46004079821606,
+          "quality_factor": 22.10745304273624,
+          "real_yr": -0.0009260103741648706
+        }
+      ]
+    },
+    {
+      "fraction": 0.5,
+      "loss_h": 0.002,
+      "stencils": [
+        {
+          "damping_yr": 971.4138457205761,
+          "imaginary_yr": 0.0460544810501791,
+          "period_yr": 136.42940195838233,
+          "quality_factor": 22.36898027480994,
+          "real_yr": -0.0010294273696070486
+        },
+        {
+          "damping_yr": 971.4142854122409,
+          "imaginary_yr": 0.046054470125653474,
+          "period_yr": 136.42943432063714,
+          "quality_factor": 22.36898509357553,
+          "real_yr": -0.0010294269036568967
+        }
+      ]
+    }
+  ],
+  "C24": [
+    {
+      "cycles": 1,
+      "extinction": 1.0648786602415064e-63
+    },
+    {
+      "cycles": 100,
+      "extinction": 0.23119389794550954
+    },
+    {
+      "cycles": 1000000,
+      "extinction": 0.9998535460804373
+    }
+  ],
+  "checker_sha256": "8f211d0f0afc01b39f573c35202c9f001d3c4d929488d939d0b371c47fa4a5a8",
+  "inputs": {
+    "models/haze_world/figures/bottleneck/survival.csv": "ac84c3676a10a52f546e5291b29ad33beccd8c132fa85728ddea2aa34563aa21",
+    "models/haze_world/figures/dormancy/first_survival.csv": "9d60ed841ca50e9db06101fe9b31599b00f8be8f2a8c5ea310494bb40fa53953",
+    "models/haze_world/figures/dormancy/prediction_assessment.json": "d608e640d3a6a43091ebafa68f4ae122f8afadbda05b5608f849e6d35829920c",
+    "models/haze_world/review/check_turnover_gaussian.json": "f1e786bbe2aff91288041c5b2e008193cae05890609cdab3c296be387546a868",
+    "models/haze_world/review/cycle-closure-results-2026-11-11.json": "69bba83c73a06db5b6c5f791d532dceac4a1bd6c9ff16457217137d93bc81cad"
+  },
+  "kick_damping_kyr": [
+    4.8538528956366624,
+    4.874809380528533
+  ],
+  "scope": "Algebra, independent finite differences and frozen-table recounts; no new long trajectories or empirical calibration",
+  "source_sha256": {
+    "src/terra_prisca/haze_world/population_coupling.py": "17a433957e94845595f6d7fd160ffe593c01c4e74550707b0814c95ab67ae663"
+  }
+}

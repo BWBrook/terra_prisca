@@ -1,0 +1,401 @@
+{
+  "C12_C13": {
+    "acetogen_mixed_bistability_interval_loss_h": [
+      0.001238144949151178,
+      0.003936105771939604
+    ],
+    "equilibria": 859,
+    "high_loss_counterexamples": [
+      {
+        "loss_h": 0.0042,
+        "stable_kinds": [
+          "acetogen"
+        ]
+      },
+      {
+        "loss_h": 0.0095,
+        "stable_kinds": [
+          "lifeless"
+        ]
+      }
+    ],
+    "independently_rooted_acetogen_stability_loss_h": 0.001238144949151178,
+    "independently_rooted_onset_loss_h": 0.00023335239009622665,
+    "interpretation": "Root-delimited temperature limits are not the sampled grid range. Bistable above the first boundary is not an unbounded-in-loss theorem.",
+    "parameter_settings": 245,
+    "root_delimited_branch_temperature_limits_k": [
+      273.39,
+      296.09113682056204
+    ],
+    "sampled_stable_mixed_temperature_range_k": [
+      273.6161679640361,
+      295.6720559106718
+    ],
+    "two_pure_guild_bistability_interval_loss_h": [
+      0.003936105771939604,
+      0.004088514897854072
+    ]
+  },
+  "C14_C15": [
+    {
+      "bulk_methanogen_catabolism_percent": 77.19383969411832,
+      "bulk_methanogen_net_growth_yr": 4.196477899551243e-09,
+      "case_id": "refuges_0115",
+      "dispersal_yr": 1e-06,
+      "forcing_scope": "Fixed endpoint refuge flux, omit bulk methane; not a separately solved spatial endpoint",
+      "fraction": 0.0,
+      "global_methanogen_catabolism_percent": 76.24169066910046,
+      "layout": "both_absolute",
+      "loss_h": 0.0015,
+      "refuge_flux_only_margin_above_switch_k": 0.27940642515733316,
+      "refuge_flux_only_methane_ratio": 0.0056017991378453065,
+      "refuge_flux_only_temperature_k": 284.6697973857094,
+      "switch_k": 284.39039096055205,
+      "temperature_k": 284.39039097997363
+    },
+    {
+      "bulk_methanogen_catabolism_percent": 0.001079855539402741,
+      "bulk_methanogen_net_growth_yr": -1.6619122296353135,
+      "case_id": "refuges_0149",
+      "dispersal_yr": 0.001,
+      "forcing_scope": "Fixed endpoint refuge flux, omit bulk methane; not a separately solved spatial endpoint",
+      "fraction": 0.0,
+      "global_methanogen_catabolism_percent": 2.082381568000066,
+      "layout": "both_relative",
+      "loss_h": 0.002,
+      "refuge_flux_only_margin_above_switch_k": -1.8700068474255431,
+      "refuge_flux_only_methane_ratio": 0.005336477044933274,
+      "refuge_flux_only_temperature_k": 284.6054077709958,
+      "switch_k": 286.4754146184213,
+      "temperature_k": 284.60593796124596
+    }
+  ],
+  "C21_C22": {
+    "cubic": [
+      {
+        "case_id": "dormancy_0024",
+        "census_events": 0,
+        "interpretation": "Finite recurrence beside a local stable root; case0012 includes local census events, not a demonstrated continuous periodic orbit.",
+        "observed_interval_yr": [
+          80000.0,
+          82000.0
+        ],
+        "raw_file": "local/haze/dormancy_nonspatial_cycle_precision/dormancy0024-bbfe1cad901c9f85.npz",
+        "raw_sha256": "f818f3de0189b0cf2b2232002960d7cab0c84ca1ea4d134a801fd34fa6df5d63",
+        "recomputed_max_real_eigenvalues_yr": [
+          -0.00020601972007384595,
+          -0.00020601949892324435
+        ],
+        "temperature_range_k": 0.33070147235218883
+      },
+      {
+        "case_id": "dormancy_0126",
+        "census_events": 0,
+        "interpretation": "Finite recurrence beside a local stable root; case0012 includes local census events, not a demonstrated continuous periodic orbit.",
+        "observed_interval_yr": [
+          80000.0,
+          82000.0
+        ],
+        "raw_file": "local/haze/dormancy_nonspatial_cycle_precision/dormancy0126-8ada86f76302ca82.npz",
+        "raw_sha256": "61867c8cd6a27c93413fec74d0f9aa94ab3c0ce1f8529fa1281df26f2df4f3e2",
+        "recomputed_max_real_eigenvalues_yr": [
+          -0.00010726653754912453,
+          -0.00010726662286385844
+        ],
+        "temperature_range_k": 0.20247423324724423
+      },
+      {
+        "case_id": "dormancy_0012",
+        "census_events": 28,
+        "interpretation": "Finite recurrence beside a local stable root; case0012 includes local census events, not a demonstrated continuous periodic orbit.",
+        "observed_interval_yr": [
+          80000.0,
+          82000.0
+        ],
+        "raw_file": "local/haze/dormancy_0012_cycle_precision/dormancy0012-e7240385655ca266.npz",
+        "raw_sha256": "173fb6bad96b6c8238158671a2c27b085916f0cb2c70904bddd9215926809663",
+        "recomputed_max_real_eigenvalues_yr": [
+          -0.00020353701232289674,
+          -0.0002035368017972917
+        ],
+        "temperature_range_k": 1.4820033509583368
+      }
+    ],
+    "linear": [
+      {
+        "case_id": "dormancy_0024",
+        "horizon_yr": 20000.0,
+        "late_span_k": 2.432915488270737e-05,
+        "previous_span_k": 0.00012179884811303054,
+        "span_ratio": 0.1997486450785616
+      },
+      {
+        "case_id": "dormancy_0032",
+        "horizon_yr": 20000.0,
+        "late_span_k": 1.7193239443713537e-05,
+        "previous_span_k": 8.563131109440292e-05,
+        "span_ratio": 0.20078215811456063
+      },
+      {
+        "case_id": "dormancy_0126",
+        "horizon_yr": 20000.0,
+        "late_span_k": 4.0902094326611405e-05,
+        "previous_span_k": 0.00011202276874655581,
+        "span_ratio": 0.3651230440407139
+      }
+    ],
+    "unresolved_warm_cases": [
+      {
+        "case_id": "dormancy_0012",
+        "returned_horizon_yr": 0.0,
+        "status": "failed"
+      },
+      {
+        "case_id": "dormancy_0068",
+        "returned_horizon_yr": 2000.0,
+        "status": "completed"
+      }
+    ]
+  },
+  "C23": {
+    "independently_reforecast_failing_cases": [
+      {
+        "case_id": "dormancy_0004",
+        "worst_error_fraction_observed_range": 1.1602830939194757
+      },
+      {
+        "case_id": "dormancy_0005",
+        "worst_error_fraction_observed_range": 1.1761180436042615
+      },
+      {
+        "case_id": "dormancy_0011",
+        "worst_error_fraction_observed_range": 44874.829192783465
+      },
+      {
+        "case_id": "dormancy_0013",
+        "worst_error_fraction_observed_range": 1.1734563746011042
+      },
+      {
+        "case_id": "dormancy_0021",
+        "worst_error_fraction_observed_range": 1.1679058044713813
+      },
+      {
+        "case_id": "dormancy_0029",
+        "worst_error_fraction_observed_range": 1.1508943946420458
+      },
+      {
+        "case_id": "dormancy_0037",
+        "worst_error_fraction_observed_range": 1.1118554547446093
+      },
+      {
+        "case_id": "dormancy_0040",
+        "worst_error_fraction_observed_range": 0.6295401859788579
+      },
+      {
+        "case_id": "dormancy_0041",
+        "worst_error_fraction_observed_range": 0.6252926668264113
+      },
+      {
+        "case_id": "dormancy_0042",
+        "worst_error_fraction_observed_range": 0.6310510117173774
+      },
+      {
+        "case_id": "dormancy_0043",
+        "worst_error_fraction_observed_range": 0.6277036801117474
+      },
+      {
+        "case_id": "dormancy_0044",
+        "worst_error_fraction_observed_range": 0.6688283645788503
+      },
+      {
+        "case_id": "dormancy_0045",
+        "worst_error_fraction_observed_range": 0.6471759219973434
+      },
+      {
+        "case_id": "dormancy_0047",
+        "worst_error_fraction_observed_range": 0.6648014942436145
+      },
+      {
+        "case_id": "dormancy_0048",
+        "worst_error_fraction_observed_range": 0.28640500301241845
+      },
+      {
+        "case_id": "dormancy_0049",
+        "worst_error_fraction_observed_range": 0.28458497770876223
+      },
+      {
+        "case_id": "dormancy_0050",
+        "worst_error_fraction_observed_range": 0.29304230803985964
+      },
+      {
+        "case_id": "dormancy_0051",
+        "worst_error_fraction_observed_range": 0.2863421110096773
+      },
+      {
+        "case_id": "dormancy_0052",
+        "worst_error_fraction_observed_range": 0.3874597560656147
+      },
+      {
+        "case_id": "dormancy_0053",
+        "worst_error_fraction_observed_range": 0.34575679947235
+      },
+      {
+        "case_id": "dormancy_0055",
+        "worst_error_fraction_observed_range": 0.44950033714424437
+      },
+      {
+        "case_id": "dormancy_0056",
+        "worst_error_fraction_observed_range": 0.9999966772728949
+      },
+      {
+        "case_id": "dormancy_0058",
+        "worst_error_fraction_observed_range": 22790.70921839356
+      },
+      {
+        "case_id": "dormancy_0061",
+        "worst_error_fraction_observed_range": 1.1642935022869478
+      },
+      {
+        "case_id": "dormancy_0069",
+        "worst_error_fraction_observed_range": 1.1658265161038788
+      },
+      {
+        "case_id": "dormancy_0077",
+        "worst_error_fraction_observed_range": 1.1597555084460596
+      },
+      {
+        "case_id": "dormancy_0082",
+        "worst_error_fraction_observed_range": 0.5397883275133325
+      },
+      {
+        "case_id": "dormancy_0085",
+        "worst_error_fraction_observed_range": 1.142107694570866
+      },
+      {
+        "case_id": "dormancy_0088",
+        "worst_error_fraction_observed_range": 1.377705836404173
+      },
+      {
+        "case_id": "dormancy_0093",
+        "worst_error_fraction_observed_range": 1.1017309761470349
+      },
+      {
+        "case_id": "dormancy_0096",
+        "worst_error_fraction_observed_range": 2.4623643510782096
+      },
+      {
+        "case_id": "dormancy_0097",
+        "worst_error_fraction_observed_range": 2.5351439596604255
+      },
+      {
+        "case_id": "dormancy_0104",
+        "worst_error_fraction_observed_range": 3.555723768894782
+      },
+      {
+        "case_id": "dormancy_0105",
+        "worst_error_fraction_observed_range": 4.305276160417429
+      },
+      {
+        "case_id": "dormancy_0114",
+        "worst_error_fraction_observed_range": 0.8623956672892992
+      },
+      {
+        "case_id": "dormancy_0116",
+        "worst_error_fraction_observed_range": 0.2956908546143387
+      },
+      {
+        "case_id": "dormancy_0117",
+        "worst_error_fraction_observed_range": 0.2858726753644465
+      },
+      {
+        "case_id": "dormancy_0120",
+        "worst_error_fraction_observed_range": 1.2817867587585043
+      },
+      {
+        "case_id": "dormancy_0122",
+        "worst_error_fraction_observed_range": 4.671733925815955
+      },
+      {
+        "case_id": "dormancy_0123",
+        "worst_error_fraction_observed_range": 4.249705288711027
+      },
+      {
+        "case_id": "dormancy_0127",
+        "worst_error_fraction_observed_range": 2.040917057792351
+      }
+    ],
+    "minimum_case_worst_bank_range_error": 0.28458497770876223,
+    "recount": {
+      "macro_stationary_bank_unresolved": 41,
+      "other_unsettled": 31,
+      "strict_stationary": 56
+    },
+    "route": "Independent weighted-symmetric eigendecomposition of frozen bank matrix; differs from augmented-matrix interval exponential in original assessor",
+    "verified_relaxations": 0
+  },
+  "checker_sha256": "fd34317ccd9ac3b90d6d82ac27a70bf5e603ce3e169c88aa5c7e5569a743ba54",
+  "inputs_sha256": {
+    "local/haze/dormancy/dormancy_0004_census_t100000-01678b047d5c4872.receipt.json": "a7e815e40b3c0777cb73e763a1476746fb6a48302d54e6761acf0b4fa76d90d6",
+    "local/haze/dormancy/dormancy_0005_census_t100000-8696e46cc954fe6c.receipt.json": "49705ea33575bd232c97460668136af7c576584a0c19c60dd4047e58941c8d29",
+    "local/haze/dormancy/dormancy_0011_census_t100000-845e1e03e256af1b.receipt.json": "0d4266abda51f9bb89d507903d64784029cd2b88f8d88ac638af9654f16a4b4b",
+    "local/haze/dormancy/dormancy_0013_census_t100000-b46f7f2f86dcd6bd.receipt.json": "d1c7904979267fb3ff1c1132deee4b8b6d5455faad83d63a7f5344cb42f886d2",
+    "local/haze/dormancy/dormancy_0021_census_t100000-06af1cdc56454c2b.receipt.json": "3c4905dd9d028668771dd0997991054f9f3bcc0a397285619a585e7a8b41ea4f",
+    "local/haze/dormancy/dormancy_0029_census_t100000-80a87c4b17aa323f.receipt.json": "3e854e01df6d6dd7bc60ad1253d07b6bc0ed504affad6979ac5497373607660a",
+    "local/haze/dormancy/dormancy_0037_census_t100000-abae6fde26f84643.receipt.json": "c18303fd81ad3d17b491ad13da6e942ff5c07cdb55eef8b88c16f55cda70479d",
+    "local/haze/dormancy/dormancy_0040_census_t100000-879ad552691007d8.receipt.json": "8dfb186b8554fd3568cfba4e364aacd8c634daa1d220a16bb9db5a1187cdd844",
+    "local/haze/dormancy/dormancy_0041_census_t100000-e7504971f69992ed.receipt.json": "b9d79db0a48ce6f3b339888a09bec9275b8a054ba0ed6064ef4c1dca1217f782",
+    "local/haze/dormancy/dormancy_0042_census_t100000-4d1dfe469c41ccf3.receipt.json": "f3cf5e17eebc8794eafb50ec8f321320887664b32a8abdc03392a14a9dc547ad",
+    "local/haze/dormancy/dormancy_0043_census_t100000-37df1acb970d5256.receipt.json": "939615684ff41d43e03d15d30eef453eb2f515d6e96540f545d17623ecb8803c",
+    "local/haze/dormancy/dormancy_0044_census_t100000-78a0949ae1cea4b0.receipt.json": "310a277f556f9b413668761a1969006dbfa055a0a15172310353d8dcd82928b2",
+    "local/haze/dormancy/dormancy_0045_census_t100000-9a5d944f5c267b4c.receipt.json": "0ddeb8aa492d56ba19768ff4bae9a9d2b3e3634f9aa3624a709e99e2ddbce913",
+    "local/haze/dormancy/dormancy_0047_census_t100000-a1128a7e775da760.receipt.json": "2591113fbbe5494077663bb85c0bbe7056cac6eb6695ee78c80566e650f3fa7b",
+    "local/haze/dormancy/dormancy_0048_census_t100000-49ea6575a4660f1c.receipt.json": "43cfee9dccdd04926351c696f3a192c4118cc7e09d0eea9eed371e6bf4207bbc",
+    "local/haze/dormancy/dormancy_0049_census_t100000-1e1aaa8c146ee6b3.receipt.json": "6366f28d2a7b236a7bfe2a2a0f4be5d63d285d49afdd4e2f57d506418376dd0d",
+    "local/haze/dormancy/dormancy_0050_census_t100000-7db772d86e46a63b.receipt.json": "44e7be997cb2caec973d50a09ba011e873edd095e2583337d64833f2c08490ac",
+    "local/haze/dormancy/dormancy_0051_census_t100000-55580137893f3c39.receipt.json": "0d40e3a1c9294ef58bb0ef6afba5879f5c5b64fa5abf14843d9db7f80c86fb02",
+    "local/haze/dormancy/dormancy_0052_census_t100000-8e362bac2ebab71b.receipt.json": "919d976cf2801b7bcb7b3ab46ddc9bb06e6746c3bb16ba621bd4eb0a85f74c41",
+    "local/haze/dormancy/dormancy_0053_census_t100000-a6d77ec2df1b9588.receipt.json": "15ff3383c370e36ecc88fc33795f7b798a1a82e274d1ddb4c0e5b6d99f29c310",
+    "local/haze/dormancy/dormancy_0055_census_t100000-2bd6f435d4f50992.receipt.json": "b9a5dabca06b78b2f8d5ae716b1981f7a3e65382d139a574273b87f0ebc92434",
+    "local/haze/dormancy/dormancy_0056_census_t100000-df38665b55786598.receipt.json": "28c64d4836e805db8306cc6d626d9024eb294c9984a5712ffedc42fd2b137fd7",
+    "local/haze/dormancy/dormancy_0058_census_t100000-4cb6ae153cb90b07.receipt.json": "44f9994dba7ffd01cc0ba2ba22e18135d872078ba7d30ad50de50c1e67640fae",
+    "local/haze/dormancy/dormancy_0061_census_t100000-e47b2238c0fcc9d4.receipt.json": "dd6ece3a7082082cc095dd2eb5b6f77bb62f9f726ac55aa657d09495d90db496",
+    "local/haze/dormancy/dormancy_0069_census_t100000-31dfdf7d4dde4aff.receipt.json": "9bbb18e483608961df8b32488c919a20643a937bf0016821a665d603354bc580",
+    "local/haze/dormancy/dormancy_0077_census_t100000-0c9cb733072d04fd.receipt.json": "34fe14a951c2d7cfcb06d4cdcc8f2071d3aad819b1abd3cb4d86480c84ac8dc2",
+    "local/haze/dormancy/dormancy_0082_census_t100000-dc24241af3b0ad6e.receipt.json": "d71c6e885509fdfc93897a45c6b2df706f5b43d7f86adc653ff4f67bf27141cb",
+    "local/haze/dormancy/dormancy_0085_census_t100000-e0d1a9d799eee95e.receipt.json": "540dcd382c05cd20c72ba035d0e223ce0970f2aba060b7ffa58f1face87e9d23",
+    "local/haze/dormancy/dormancy_0088_census_t100000-671b187605b82e6f.receipt.json": "881cc9c017e669c41a727ec750d4174eb121695df49c3a4aab88e2f7a68175e7",
+    "local/haze/dormancy/dormancy_0093_census_t100000-d9e98d2943ba7192.receipt.json": "51e66cf93d4965f02245a0445c83c61ca683dcc32669d24b0de2a793d32535a3",
+    "local/haze/dormancy/dormancy_0096_census_t100000-2c8671f954ce458e.receipt.json": "a4426cee040b2d1e967e2168000ee94ad8669e6cce721bed5e1eb181cd6b69b8",
+    "local/haze/dormancy/dormancy_0097_census_t100000-667df406aa85934b.receipt.json": "8d8fb9dda49e5818edf70d288559af7047c63d1bb78fa4b36830b79f4aff6c0a",
+    "local/haze/dormancy/dormancy_0104_census_t100000-c9213c4937c64509.receipt.json": "8ff52ba3e050a37a7c43a90adeb290807652b9ff97bc975297b58539cd6ec118",
+    "local/haze/dormancy/dormancy_0105_census_t100000-2e33fd1e888d4ef8.receipt.json": "11b444252a5ca29811375e3246cdca1a7c9d8fe0edd0f5cadc566a995027b2d8",
+    "local/haze/dormancy/dormancy_0114_census_t100000-ecbb257c533204d4.receipt.json": "d0d1e354e3812bc2ff90ba0f382059556b22d9a11b6c9efbb49e3944a7d09a0c",
+    "local/haze/dormancy/dormancy_0116_census_t100000-def54ab4d4ff97e4.receipt.json": "a1299938f4212810ab5f86e931567b05c6c50b76a9482ba61ac8ed7e6d6755e9",
+    "local/haze/dormancy/dormancy_0117_census_t100000-ee1804859719e99a.receipt.json": "6a72dca8ad4588bf5d4fd9090f5915c5b0c1eb962e1c6db171a010a11241c1e3",
+    "local/haze/dormancy/dormancy_0120_census_t100000-26377161e6f898ed.receipt.json": "647fc4bad7295a453a84647d2362f85d2e64be7b9d334d0faf4f3694863b9528",
+    "local/haze/dormancy/dormancy_0122_census_t100000-5d483f8f8ab4121a.receipt.json": "9ec5b25ccaa3b3a56ae349a32de0f4e1b04f478c03405bdf6c89e06715418db7",
+    "local/haze/dormancy/dormancy_0123_census_t100000-9378d8b4a4f69a17.receipt.json": "ce0d4e6e16c06213e18a90255da5065f82fc29c82e217190b4ae51c8f7feeecf",
+    "local/haze/dormancy/dormancy_0127_census_t100000-47170826ff2ef90c.receipt.json": "03d6a87b8a50de27047e8a478dd10f632a9ea85770be93fcea7af84e3aeda9ea",
+    "local/haze/dormancy_0012_cycle_precision/dormancy0012-e7240385655ca266.receipt.json": "1d2ca223e378620f18758d0c8550e98d262be0b398c6837d9a5d32f4df467348",
+    "local/haze/dormancy_nonspatial_cycle_precision/dormancy0024-bbfe1cad901c9f85.receipt.json": "82e56e35dd4fcddf386f03c59df2e1ca8251b293fe0339c2b6b25b9d8f4b8658",
+    "local/haze/dormancy_nonspatial_cycle_precision/dormancy0126-8ada86f76302ca82.receipt.json": "75f398f1af10a03017b358982d2eee96be1fc765529a90546ff48f1d9ae05a39",
+    "models/haze_world/figures/turnover/boundaries.json": "f9b2a5e9cd277643b354e77e04319ce4ace2cd4055511f24a3a9336ab62c78e4",
+    "models/haze_world/figures/turnover/endpoint_assessment.json": "3b1174702910a4a86f99c97f4f11199bddc250256cd9f133732122beeceef8b0",
+    "models/haze_world/figures/turnover/refuges.csv": "cbc0cf6fd543bf7f6cd6ead0a958fa6d5ff8fe5bb3ee7de425658dddc349644c",
+    "models/haze_world/figures/turnover/regimes.csv": "ed0c10386e3ca3d3c85c1b7bd931a620e874c4280fe22754083055b5007999bb",
+    "models/haze_world/review/cycle-closure-results-2026-11-11.json": "69bba83c73a06db5b6c5f791d532dceac4a1bd6c9ff16457217137d93bc81cad",
+    "models/haze_world/review/dormancy-tail-assessment-2026-11-11.json": "663a28ba05feaf5b05a96ef2bf5a6ca93f1e1187ed614cf55487db015cdeea65",
+    "models/haze_world/review/dormancy0012_cycle_check.json": "c3f52ccf2443669114669b1eb9aa8797133815d6567b9da68385e136bafcd50d",
+    "models/haze_world/review/dormancy126_cycle_0024.json": "2b2df60a25bee575293711cd10615d50ced0ae34a33f9562a2b238f11815c87d",
+    "models/haze_world/review/dormancy126_cycle_0126.json": "0f7ff66c7cd2a76291533e9043cfdf31797540dfcbb162476fd300eefd06e4b2"
+  },
+  "scope": "Read-only frozen-output audit; no physical trajectories, original labels or model assumptions changed. Supported only at the amended finite-record and parameter-conditional scope.",
+  "source_sha256": {
+    "src/terra_prisca/haze_world/dormancy.py": "bf0a0e02c621dae1ba13c421ff75f8d0233e2c88bac1e54a42036c7f21797645",
+    "src/terra_prisca/haze_world/dormancy_experiments.py": "91a6aaf01702f357b076761ca650918bbc5d0a18af7f53bf542ed30fe2e2db9c",
+    "src/terra_prisca/haze_world/habitat_coupling.py": "34f611d3f9046bf7d96f8caeffb452f2a2206bab4abc45e630a09980a067c4d0",
+    "src/terra_prisca/haze_world/population_coupling.py": "17a433957e94845595f6d7fd160ffe593c01c4e74550707b0814c95ab67ae663",
+    "src/terra_prisca/haze_world/turnover.py": "9d964b8cbf6f81a848be43707e0625fa6be05771a857a061593bfa91e9605de3",
+    "src/terra_prisca/haze_world/turnover_experiments.py": "e22cd02f40b05482b89e131a4fdd5a95104b8c3d5f2d7652c27531775173c067"
+  }
+}

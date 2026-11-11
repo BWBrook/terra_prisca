@@ -1,0 +1,314 @@
+{
+  "C05": [
+    {
+      "kinetics": "saturating",
+      "local_climate_slope_k_per_ratio": -721.2580514046181,
+      "methane_ratio": 0.19510687484759698,
+      "pressure_pa": 22.486299980548424,
+      "switch_temperature_k": 281.534822805082
+    },
+    {
+      "kinetics": "first_order",
+      "local_climate_slope_k_per_ratio": -599.9339874576178,
+      "methane_ratio": 0.19316300475435427,
+      "pressure_pa": 19.91968364079169,
+      "switch_temperature_k": 282.78010586015665
+    }
+  ],
+  "C06": {
+    "controls": [
+      {
+        "contrast_k": 8.018078766233543,
+        "max_real_yr": -9.714455896205797e-05,
+        "temperature_k": 273.51674403884846,
+        "variant": "constant_shape",
+        "y": [
+          70.19416051685708,
+          0.0,
+          0.0005744177342218682,
+          0.0,
+          0.2161500046799455
+        ]
+      },
+      {
+        "contrast_k": 4.727346853911854,
+        "max_real_yr": -0.002887412930166357,
+        "temperature_k": 276.80747595117015,
+        "variant": "arrhenius_continuation",
+        "y": [
+          85.86988897796871,
+          0.0,
+          0.0005264037435669117,
+          0.0,
+          0.20166118206774594
+        ]
+      }
+    ],
+    "maximum_absolute_rhs_by_stock": [
+      1.3038771224662275e-09,
+      0.0,
+      7.07402084225887e-18,
+      0.0,
+      3.049318610115481e-20
+    ],
+    "mixed_max_real_yr": [
+      -0.0009260103682103566,
+      -0.0009260103682064032
+    ],
+    "mixed_temperature_k": 281.534822805082,
+    "mixed_y": [
+      22.486299980548424,
+      0.0005740589129863743,
+      0.00033832330504541473,
+      0.000882392986684876,
+      0.19510687484759698
+    ],
+    "no_special_memory_counterexample": {
+      "acetogen_cells": 8.754485581670717e+25,
+      "methanogen_cells": 5.1594817691360684e+25,
+      "setting": "No refuges, dormancy or external immigration; a stable positive mixed equilibrium is unchanged by the one-cell census. This does not establish joint stochastic permanence."
+    }
+  },
+  "C07": {
+    "first_extinction": {
+      "guild": "methanogen",
+      "log_removed_cells": -6.005907031850583,
+      "reason": "census_below_floor",
+      "removed_cells": 0.0024641532691648646,
+      "removed_gdw": 7.392459807494563e-16,
+      "removed_h2_mol": 6.09138688137552e-17,
+      "time_yr": 20.0
+    },
+    "focal_raw_file": "local/haze/finite_populations/final_raw/main_0024_t100000-ce9c0899cdf042d0.json.gz",
+    "focal_raw_sha256": "48f936931d3c5118d7a8e9effb1cce30a47e76e66d3ab566e739922b7498aea1",
+    "initial_temperature_k": 273.51674403884846,
+    "stationary_selected_endpoints": 144,
+    "temperature_at_20yr_k": 273.52525137665066,
+    "zero_immigration_cases": 36,
+    "zero_immigration_outcomes": [
+      {
+        "direction": "A_into_M",
+        "fraction": "0",
+        "occupancy": "acetogen_only",
+        "runs": 6
+      },
+      {
+        "direction": "M_into_A",
+        "fraction": "0",
+        "occupancy": "methanogen_only",
+        "runs": 6
+      },
+      {
+        "direction": "A_into_M",
+        "fraction": "0.5",
+        "occupancy": "acetogen_only",
+        "runs": 6
+      },
+      {
+        "direction": "M_into_A",
+        "fraction": "0.5",
+        "occupancy": "methanogen_only",
+        "runs": 6
+      },
+      {
+        "direction": "A_into_M",
+        "fraction": "0.9",
+        "occupancy": "acetogen_only",
+        "runs": 6
+      },
+      {
+        "direction": "M_into_A",
+        "fraction": "0.9",
+        "occupancy": "acetogen_only",
+        "runs": 6
+      }
+    ]
+  },
+  "C08": {
+    "counterexamples": [
+      {
+        "case_a": "subsets_0028_t100000",
+        "case_m": "subsets_0029_t100000",
+        "class_a": "pure_partition",
+        "class_m": "pure_partition",
+        "contrast_k": "8.6",
+        "dispersal_yr": "0.0",
+        "fraction": "0.9",
+        "warm_fraction": "0.05"
+      },
+      {
+        "case_a": "subsets_0030_t100000",
+        "case_m": "subsets_0031_t100000",
+        "class_a": "spatial_coexistence",
+        "class_m": "spatial_coexistence",
+        "contrast_k": "8.6",
+        "dispersal_yr": "0.001",
+        "fraction": "0.9",
+        "warm_fraction": "0.05"
+      },
+      {
+        "case_a": "subsets_0032_t100000",
+        "case_m": "subsets_0033_t100000",
+        "class_a": "pure_partition",
+        "class_m": "pure_partition",
+        "contrast_k": "9.0",
+        "dispersal_yr": "0.0",
+        "fraction": "0.9",
+        "warm_fraction": "0.05"
+      },
+      {
+        "case_a": "subsets_0034_t100000",
+        "case_m": "subsets_0035_t100000",
+        "class_a": "spatial_coexistence",
+        "class_m": "spatial_coexistence",
+        "contrast_k": "9.0",
+        "dispersal_yr": "0.001",
+        "fraction": "0.9",
+        "warm_fraction": "0.05"
+      },
+      {
+        "case_a": "subsets_0056_t100000",
+        "case_m": "subsets_0061_t100000",
+        "class_a": "spatial_coexistence",
+        "class_m": "spatial_coexistence",
+        "contrast_k": "8.6",
+        "dispersal_yr": "0.001",
+        "fraction": "0.9",
+        "warm_fraction": "0.05"
+      },
+      {
+        "case_a": "subsets_0057_t100000",
+        "case_m": "subsets_0062_t100000",
+        "class_a": "spatial_coexistence",
+        "class_m": "spatial_coexistence",
+        "contrast_k": "8.6",
+        "dispersal_yr": "0.001",
+        "fraction": "0.9",
+        "warm_fraction": "0.05"
+      },
+      {
+        "case_a": "subsets_0058_t100000",
+        "case_m": "subsets_0063_t100000",
+        "class_a": "spatial_coexistence",
+        "class_m": "spatial_coexistence",
+        "contrast_k": "8.6",
+        "dispersal_yr": "0.001",
+        "fraction": "0.9",
+        "warm_fraction": "0.05"
+      },
+      {
+        "case_a": "subsets_0059_t100000",
+        "case_m": "subsets_0064_t100000",
+        "class_a": "spatial_coexistence",
+        "class_m": "spatial_coexistence",
+        "contrast_k": "8.6",
+        "dispersal_yr": "0.001",
+        "fraction": "0.9",
+        "warm_fraction": "0.05"
+      },
+      {
+        "case_a": "subsets_0060_t100000",
+        "case_m": "subsets_0065_t100000",
+        "class_a": "spatial_coexistence",
+        "class_m": "spatial_coexistence",
+        "contrast_k": "8.8",
+        "dispersal_yr": "0.001",
+        "fraction": "0.9",
+        "warm_fraction": "0.01"
+      }
+    ],
+    "f_le_half_matching_coexisting_nonzero_contrast_pairs": 0,
+    "greenhouse_peak_k": 297.008,
+    "matching_coexisting_nonzero_contrast_pairs": 9,
+    "protected_completed_missing_guild": 0,
+    "protected_path_counts": {
+      "completed": 38,
+      "domain_exit": 8
+    },
+    "scope": "No paired supported rescue in the tested f=0/0.5 geometry; f=0.9 exceptions refute a universal tracking-refuge failure claim."
+  },
+  "C09": {
+    "extended_to_200000": 13,
+    "global_endpoint_classes": {
+      "acetogen_only": 44,
+      "coexistence": 123,
+      "methanogen_only": 25
+    },
+    "key_pair_maximum_direct_relative_stock_difference": 3.6519257531177417e-06,
+    "key_pair_maximum_reported_relative_stock_difference": 3.6519257531423907e-06,
+    "key_rescue_pairs": 6,
+    "key_rescue_runs": 12,
+    "key_temperature_range_k": [
+      281.53482276441963,
+      281.534901711576
+    ],
+    "matching_mixed_pairs": 49,
+    "matching_pairs": 63,
+    "paired_histories": 96,
+    "selected_total": 192,
+    "total_stationary": 192
+  },
+  "C10": {
+    "annual_one_cell": {
+      "bracket_yr": [
+        1.333521432163324e-06,
+        1.778279410038923e-06
+      ],
+      "interpolated_yr": 1.7295873952140298e-06
+    },
+    "exact_table_minimum_threshold_cell_range": [
+      230.32708369266902,
+      230.45483076848097
+    ],
+    "fit_log10_exchange_range": [
+      -9.0,
+      -4.0
+    ],
+    "fit_points": 41,
+    "gaussian_approximation_cells": 230.28525820348338,
+    "half_over_annual": 3.3974342330737244,
+    "half_over_ten_year": 3.398728628079877,
+    "half_survival": {
+      "bracket_yr": [
+        5.623413251903491e-06,
+        7.498942093324558e-06
+      ],
+      "interpolated_yr": 5.876159425592958e-06
+    },
+    "max_fit_residual_decades": 0.05279044936792143,
+    "scope": "First rare-window conditional diagnostic, f=0/2% warm refuge; count crossings are posthoc global counts, not local-census counterfactual reruns.",
+    "slope": 4.423187496068901,
+    "ten_year_one_cell": {
+      "bracket_yr": [
+        1.333521432163324e-06,
+        1.778279410038923e-06
+      ],
+      "interpolated_yr": 1.7289286873464545e-06
+    }
+  },
+  "C11": {
+    "all_robust_first_window_persistence": true,
+    "case_id": "exchange_0098",
+    "cases": 98,
+    "exchange_yr": 1e-09,
+    "minimum_global_acetogen_cells": 115536991713.86232,
+    "refuge_area_fraction": 0.005
+  },
+  "checker_sha256": "a2f272701135e3360c44cdb05d5205c193f19063fac1168d87fc12c22ca50944",
+  "inputs": {
+    "models/haze_response/arney2016/figure4.csv": "c0ef5f3d17ee7c6085ad36247f0f7814726dbbe3273842b01f2c6c4e046856f8",
+    "models/haze_world/figures/bottleneck/exchange_continuation.csv": "515ec05224b075079b804d579a64301841a269852ecfe4992026a0a3b4a3b86c",
+    "models/haze_world/figures/buffered_refuges/direction_comparisons.csv": "848b5bfc7b48b10d575cb2c056ee0d6662118a1942ad6478dba09d514e753c83",
+    "models/haze_world/figures/buffered_refuges/selected_controls.csv": "3176f92a20cd878515d4829de142d1b5afd3db0bdc938bf63631dfaa35b81350",
+    "models/haze_world/figures/buffered_refuges/selected_main.csv": "a9bd3e6a5128054b555ee7c0d924a974981f7e2aa47f9e1384e087c4fca662a0",
+    "models/haze_world/figures/buffered_refuges/selected_sensitivity.csv": "c36d76271349e14aacf504f3d4b66249a312bca6839bf828d7d114ac4b7ca333",
+    "models/haze_world/figures/finite_populations/attained_endpoints.csv": "c4325d8fd01259515a2615d308d74dfebcd0dc6b1884cff91644824ac328be84",
+    "models/haze_world/figures/refuge_coupling/direction_comparisons.csv": "f4960f14fe0107cb4a99b430eef354411ed88423d01a8bc536ec6793181d8be6",
+    "models/haze_world/figures/refuge_coupling/selected_main.csv": "be4cd4ba23ccc9f1b9d2617c191237e604262a769febf423207846538907966e",
+    "models/haze_world/figures/refuge_coupling/selected_subsets.csv": "5a44e0798636d0583a586dae163ee58f728076651d6cd0cf52c8476413da34b1"
+  },
+  "scope": "Independent algebra/finite-difference controls and table/raw recounts, with shared empirical inputs. No new trajectory or empirical validation.",
+  "source_sha256": {
+    "src/terra_prisca/haze_world/population_coupling.py": "17a433957e94845595f6d7fd160ffe593c01c4e74550707b0814c95ab67ae663"
+  }
+}
