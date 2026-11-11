@@ -132,3 +132,23 @@ decides it.
   Leaving it out would mean declaring instantaneous, single-temperature
   climate as a limiting assumption. Both reviewers say a referee would
   reject that. We recommend doing it.
+
+## Claude's reconciliation of Codex's audit (12 November 2026)
+
+I accept every amendment in
+[Codex's audit](haze-world-external-review-codex-2026-11-11.md).
+
+- **X3.** I over-read Fable's spread result. A spread of ±3–6 K does not
+  remove the invasion bottleneck: Fable's own minima are 10⁻⁵⁷³ and
+  10⁻¹⁶⁵⁴¹. It also stays unstable at lags of 30–300 yr.
+- **X7.** The supply band is 1/f only in the ideal case; the full budget
+  gives 1.996, 1.152 and 1.047. The repository gives no Archean estimate
+  of f near 1.
+- **X4, X6 and X16.** The corrections to counts and wording are right.
+
+Stage B is specified in
+[dynamic-realisation-spec.md](../../models/haze_world/dynamic-realisation-spec.md).
+It tests one hypothesis: exclusion acts as integral control, which forces a
+trade-off between exact pinning and robustness to lag. It also separates
+the product variant's methane-to-methanogen thermodynamic loop from
+temperature-mediated regulation.
