@@ -1,0 +1,614 @@
+{
+  "anchors_reference_loss_zero_energy": [
+    {
+      "freeze_maintenance": false,
+      "freeze_thresholds": false,
+      "roots": [
+        {
+          "positions_c": [
+            10.0,
+            25.0
+          ],
+          "temperature_k": 277.9602210577502
+        }
+      ]
+    },
+    {
+      "freeze_maintenance": false,
+      "freeze_thresholds": true,
+      "roots": []
+    },
+    {
+      "freeze_maintenance": true,
+      "freeze_thresholds": false,
+      "roots": []
+    },
+    {
+      "freeze_maintenance": true,
+      "freeze_thresholds": true,
+      "roots": []
+    }
+  ],
+  "canonical_smooth_control": {
+    "environment_derivatives": [
+      [
+        -5.7411853049416095e-08,
+        1.3988810110276972e-07
+      ],
+      [
+        5.6843418860808015e-08,
+        -6.210143510543276e-08
+      ]
+    ],
+    "matrices": [
+      {
+        "eigenvalues": [
+          -9.597311902356678e-06,
+          -9.943237999793778e-07
+        ],
+        "jacobian": [
+          [
+            -9.597311902356678e-06,
+            3.0856202924053132e-15
+          ],
+          [
+            3.775652353506783e-15,
+            -9.943237999793778e-07
+          ]
+        ],
+        "mutation_supply_ratio_m_to_a": 0.1,
+        "step_c": 0.001
+      },
+      {
+        "eigenvalues": [
+          -9.597311833315505e-06,
+          -9.943237793068423e-07
+        ],
+        "jacobian": [
+          [
+            -9.597311833315503e-06,
+            4.180393024517885e-15
+          ],
+          [
+            4.008382545320587e-15,
+            -9.943237793068423e-07
+          ]
+        ],
+        "mutation_supply_ratio_m_to_a": 0.1,
+        "step_c": 0.0001
+      },
+      {
+        "eigenvalues": [
+          -9.597311902356678e-06,
+          -9.943237999793777e-06
+        ],
+        "jacobian": [
+          [
+            -9.597311902356678e-06,
+            3.0856202924053132e-15
+          ],
+          [
+            3.775652353504258e-14,
+            -9.943237999793777e-06
+          ]
+        ],
+        "mutation_supply_ratio_m_to_a": 1.0,
+        "step_c": 0.001
+      },
+      {
+        "eigenvalues": [
+          -9.597311833315503e-06,
+          -9.943237793068423e-06
+        ],
+        "jacobian": [
+          [
+            -9.597311833315503e-06,
+            4.180393024517885e-15
+          ],
+          [
+            4.008382545421561e-14,
+            -9.943237793068423e-06
+          ]
+        ],
+        "mutation_supply_ratio_m_to_a": 1.0,
+        "step_c": 0.0001
+      },
+      {
+        "eigenvalues": [
+          -9.597311902356681e-06,
+          -9.943237999793777e-05
+        ],
+        "jacobian": [
+          [
+            -9.597311902356678e-06,
+            3.0856202924053132e-15
+          ],
+          [
+            3.7756523535002193e-13,
+            -9.943237999793777e-05
+          ]
+        ],
+        "mutation_supply_ratio_m_to_a": 10.0,
+        "step_c": 0.001
+      },
+      {
+        "eigenvalues": [
+          -9.5973118333155e-06,
+          -9.943237793068423e-05
+        ],
+        "jacobian": [
+          [
+            -9.597311833315503e-06,
+            4.180393024517885e-15
+          ],
+          [
+            4.008382545300392e-13,
+            -9.943237793068423e-05
+          ]
+        ],
+        "mutation_supply_ratio_m_to_a": 10.0,
+        "step_c": 0.0001
+      }
+    ],
+    "positions_c": [
+      5.720891379305566,
+      8.318007884392294
+    ],
+    "scope": "One smooth linear-interpolation ESS; arbitrary evolutionary-time normalization, not calibrated years",
+    "selection_gradient_h_per_c": [
+      -5.105578063726246e-12,
+      -2.9295125288923924e-12
+    ],
+    "state": [
+      21.652373930668965,
+      0.000580425815720214,
+      0.00033285272206542104,
+      0.000901006857276076,
+      0.19464459386691907
+    ],
+    "temperature_k": 281.86824668440715
+  },
+  "checker_sha256": "9067841960e68b42ad2d6ad1cbf6453c7962716abf613875d3975b4ca53c7b25",
+  "final_table_control": {
+    "independent_mutant_assays": 112,
+    "input_sha256": {
+      "communities.csv": "f96210ce0aa1f0add6266471d14ea219d9c695c0ddff8214744766d194b81c3f",
+      "communities_manifest.json": "97ea374b38c40d58cc3d6b02360c36436bb9a895095b36ad78903a8673f97b93"
+    },
+    "inventory_refinement_disagreements": 0,
+    "joint_rows": 56,
+    "maximum_mutant_growth_h": 7.068998164605489e-17,
+    "no_joint_settings": 30,
+    "scope": "Independent all-grid mutant growth; two selected high-turnover spectra; class and manifest recount",
+    "selected_branch_spectra": [
+      {
+        "community_id": "L0.003_E0_linear_shape_f0.5_T293.948164048_0",
+        "cooling": false,
+        "spectra": [
+          {
+            "eigenvalues": [
+              [
+                -13117.707751755548,
+                0.0
+              ],
+              [
+                -25.537822967488324,
+                0.0
+              ],
+              [
+                -1.0000552892556556,
+                0.0
+              ],
+              [
+                -0.009165190822421563,
+                0.0
+              ],
+              [
+                0.009121861615009382,
+                0.0
+              ]
+            ],
+            "max_real_yr": 0.009121861615009382,
+            "step": 0.0001
+          },
+          {
+            "eigenvalues": [
+              [
+                -13117.70775154585,
+                0.0
+              ],
+              [
+                -25.537822967238554,
+                0.0
+              ],
+              [
+                -1.0000552892540466,
+                0.0
+              ],
+              [
+                -0.009165190822128534,
+                0.0
+              ],
+              [
+                0.009121861614713291,
+                0.0
+              ]
+            ],
+            "max_real_yr": 0.009121861614713291,
+            "step": 1e-05
+          }
+        ]
+      },
+      {
+        "community_id": "L0.003_E0_linear_shape_f0.5_T293.948164048_1",
+        "cooling": true,
+        "spectra": [
+          {
+            "eigenvalues": [
+              [
+                -11971.537103493758,
+                0.0
+              ],
+              [
+                -21.938471404759937,
+                0.0
+              ],
+              [
+                -0.9993104764986455,
+                0.0
+              ],
+              [
+                -0.0003856227007580347,
+                0.028033270421488878
+              ],
+              [
+                -0.0003856227007580347,
+                -0.028033270421488878
+              ]
+            ],
+            "max_real_yr": -0.0003856227007580347,
+            "step": 0.0001
+          },
+          {
+            "eigenvalues": [
+              [
+                -11971.537103019515,
+                0.0
+              ],
+              [
+                -21.93847140524171,
+                0.0
+              ],
+              [
+                -0.9993104765003765,
+                0.0
+              ],
+              [
+                -0.0003856227007706525,
+                0.028033270419274694
+              ],
+              [
+                -0.0003856227007706525,
+                -0.028033270419274694
+              ]
+            ],
+            "max_real_yr": -0.0003856227007706525,
+            "step": 1e-05
+          }
+        ]
+      }
+    ],
+    "stable_cooling_rows": 42,
+    "unstable_greenhouse_rows": 14
+  },
+  "implementation_control": {
+    "ecological_five_point_spectra": [
+      {
+        "eigenvalues": [
+          [
+            -48449.992295726894,
+            0.0
+          ],
+          [
+            -10.0233336233151,
+            0.0
+          ],
+          [
+            -0.9987707845385533,
+            0.0
+          ],
+          [
+            -0.000800012650501212,
+            0.037679722586258964
+          ],
+          [
+            -0.000800012650501212,
+            -0.037679722586258964
+          ]
+        ],
+        "step": 0.0001
+      },
+      {
+        "eigenvalues": [
+          [
+            -48449.992296795535,
+            0.0
+          ],
+          [
+            -10.023333623250368,
+            0.0
+          ],
+          [
+            -0.9987707845375232,
+            0.0
+          ],
+          [
+            -0.0008000126505154328,
+            0.03767972258545191
+          ],
+          [
+            -0.0008000126505154328,
+            -0.03767972258545191
+          ]
+        ],
+        "step": 1e-05
+      }
+    ],
+    "inputs_sha256": {
+      "models/haze_world/figures/competitive_evolution/best_response.csv": "40a518ca1dfc15c46d2b45f44caddf323703fdc45457c088c83f1fd39eed44ca",
+      "src/terra_prisca/haze_world/competitive_evolution.py": "aae219248db0ea7294a042e058d129604659d0a862acf3c1ef8a5ffb1bd0e41b",
+      "src/terra_prisca/haze_world/evolved_kinetics.py": "c42fd4f3e1c07071e3e86f3a4499810bc72a68115c1200c6ab37d8e3b0afdd9f"
+    },
+    "maximum_temperature_difference_k": 2.580691216280684e-11,
+    "redox_residual": 1.4116321414417596e-18,
+    "rhs": [
+      -8.503546450866701e-10,
+      -1.103286884725608e-18,
+      6.3269419252884506e-18,
+      -1.0842021724855044e-19,
+      2.710505431213761e-20
+    ],
+    "scope": "Selected independent roots and one ecological state, not a full production inventory audit",
+    "selected_crossings": 8
+  },
+  "inputs_sha256": {
+    "models/haze_world/competitive-evolution-spec.md": "11f6dc825351553501b0c0144b43c5bcfa86da94f101da75dd9873a93c9797d2",
+    "models/haze_world/review/competitive_evolution_preview.py": "392ae195450f5ab1a9f938298d295c28c6a51a18773d94563de2bd06f8b06c22",
+    "src/terra_prisca/haze_world/population_coupling.py": "17a433957e94845595f6d7fd160ffe593c01c4e74550707b0814c95ab67ae663",
+    "src/terra_prisca/haze_world/two_guilds.py": "eff6a9027c5b28d154f03462d926591ebee3408eb2c80ec0df5c38929f169f83"
+  },
+  "matched_level_diagnostic": {
+    "controls": [
+      {
+        "difference_at_root_minus_point1k": -0.04010469087717894,
+        "difference_at_root_plus_point1k": 0.04049641967244,
+        "freeze_maintenance_at_root": false,
+        "freeze_thresholds_at_root": false,
+        "root_residual_pa": 1.4210854715202004e-14,
+        "slope_pa_k": 0.4029994859706676
+      },
+      {
+        "difference_at_root_minus_point1k": -0.020445271488387817,
+        "difference_at_root_plus_point1k": 0.02066062755167053,
+        "freeze_maintenance_at_root": false,
+        "freeze_thresholds_at_root": true,
+        "root_residual_pa": 1.4210854715202004e-14,
+        "slope_pa_k": 0.20552583212207765
+      },
+      {
+        "difference_at_root_minus_point1k": -0.019659419388780464,
+        "difference_at_root_plus_point1k": 0.01983579212078368,
+        "freeze_maintenance_at_root": true,
+        "freeze_thresholds_at_root": false,
+        "root_residual_pa": 1.4210854715202004e-14,
+        "slope_pa_k": 0.1974736538503663
+      },
+      {
+        "difference_at_root_minus_point1k": 1.4210854715202004e-14,
+        "difference_at_root_plus_point1k": 1.4210854715202004e-14,
+        "freeze_maintenance_at_root": true,
+        "freeze_thresholds_at_root": true,
+        "root_residual_pa": 1.4210854715202004e-14,
+        "slope_pa_k": 0.0
+      }
+    ],
+    "maintenance_contribution_pa_k": 0.20552583176022723,
+    "per_guild": [
+      {
+        "maintenance_pa_k": 0.33556615482903107,
+        "threshold_pa_k": 0.20906063246094836
+      },
+      {
+        "maintenance_pa_k": 0.13004032306880384,
+        "threshold_pa_k": 0.011586978849619829
+      }
+    ],
+    "positions_c": [
+      10.0,
+      25.0
+    ],
+    "post_prediction": true,
+    "scope": "Local matched-level diagnostic; distinct from prescribed30C freezes and does not redefine KE5",
+    "temperature_k": 277.9602210577502,
+    "threshold_contribution_pa_k": 0.19747365361132854
+  },
+  "scope": "Independent selected linear-shape algebra and finite differences, not a repeat of the full experiment or a general evolutionary theorem",
+  "trait_bound_comparison": [
+    {
+      "energy_ev": 0.0,
+      "explicit_measured_trait_range": [
+        {
+          "positions_c": [
+            10.0,
+            25.0
+          ],
+          "temperature_k": 277.9602210577502
+        }
+      ],
+      "loss_h": 0.001,
+      "preview_trait_range": [
+        {
+          "positions_c": [
+            10.0,
+            25.0
+          ],
+          "temperature_k": 277.9602210577502
+        }
+      ]
+    },
+    {
+      "energy_ev": 0.2,
+      "explicit_measured_trait_range": [
+        {
+          "positions_c": [
+            10.0,
+            10.0
+          ],
+          "temperature_k": 280.3740922638298
+        }
+      ],
+      "loss_h": 0.001,
+      "preview_trait_range": [
+        {
+          "positions_c": [
+            10.0,
+            10.0
+          ],
+          "temperature_k": 280.3740922638298
+        }
+      ]
+    },
+    {
+      "energy_ev": 0.45,
+      "explicit_measured_trait_range": [
+        {
+          "positions_c": [
+            10.0,
+            10.0
+          ],
+          "temperature_k": 281.1054948859872
+        }
+      ],
+      "loss_h": 0.001,
+      "preview_trait_range": [
+        {
+          "positions_c": [
+            -0.15,
+            10.0
+          ],
+          "temperature_k": 283.7449381184749
+        }
+      ]
+    },
+    {
+      "energy_ev": 0.65,
+      "explicit_measured_trait_range": [
+        {
+          "positions_c": [
+            5.720891379305566,
+            8.318007884392294
+          ],
+          "temperature_k": 281.86824668440715
+        }
+      ],
+      "loss_h": 0.001,
+      "preview_trait_range": [
+        {
+          "positions_c": [
+            -0.15,
+            -0.15
+          ],
+          "temperature_k": 283.839480770838
+        }
+      ]
+    },
+    {
+      "energy_ev": 0.0,
+      "explicit_measured_trait_range": [
+        {
+          "positions_c": [
+            10.0,
+            25.0
+          ],
+          "temperature_k": 293.94816404758393
+        }
+      ],
+      "loss_h": 0.003,
+      "preview_trait_range": [
+        {
+          "positions_c": [
+            10.0,
+            25.0
+          ],
+          "temperature_k": 293.94816404758393
+        }
+      ]
+    },
+    {
+      "energy_ev": 0.2,
+      "explicit_measured_trait_range": [
+        {
+          "positions_c": [
+            10.0,
+            10.435333830567707
+          ],
+          "temperature_k": 297.5090740685965
+        }
+      ],
+      "loss_h": 0.003,
+      "preview_trait_range": [
+        {
+          "positions_c": [
+            10.0,
+            10.435333830567707
+          ],
+          "temperature_k": 297.5090740685965
+        }
+      ]
+    },
+    {
+      "energy_ev": 0.45,
+      "explicit_measured_trait_range": [
+        {
+          "positions_c": [
+            10.0,
+            10.0
+          ],
+          "temperature_k": 292.52063765077867
+        }
+      ],
+      "loss_h": 0.003,
+      "preview_trait_range": [
+        {
+          "positions_c": [
+            -0.15,
+            10.0
+          ],
+          "temperature_k": 294.4343077957681
+        }
+      ]
+    },
+    {
+      "energy_ev": 0.65,
+      "explicit_measured_trait_range": [
+        {
+          "positions_c": [
+            5.693113729198519,
+            8.554762998645927
+          ],
+          "temperature_k": 290.9281623258242
+        }
+      ],
+      "loss_h": 0.003,
+      "preview_trait_range": [
+        {
+          "positions_c": [
+            -0.15,
+            -0.15
+          ],
+          "temperature_k": 292.1642333598679
+        }
+      ]
+    }
+  ]
+}

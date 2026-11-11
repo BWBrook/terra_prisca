@@ -172,3 +172,39 @@ rapid population decline and slow climate adjustment in this model.
   neighbourhood under the reference dynamics and can persist without an
   extra store when it starts there. Immigration is another rescue mechanism.
   Per-guild first-bottleneck survival does not establish joint recovery.
+
+## E13. Competitive kinetic evolution (KE1–KE7)
+
+**Estimand.** Best-response kinetic positions within the measured 4–30 °C
+trait interval, their feasible joint trait–climate equilibria, frozen-trait
+five-stock ecological stability, and evolutionary convergence under the
+specified per-cell mutational-supply ratios. S4 concerns rare-mutant growth
+in each fixed resident environment. The
+[implementation choices](../competitive-evolution-methods.md) distinguish
+smooth, corner and projected boundary cases.
+
+- **Allowed:** "within the stated kinetic family, adaptation shifted,
+  removed or preserved a feasible competitive crossing", according to the
+  recorded results; "no grid mutant had positive growth beyond the declared
+  tolerance at the checked community".
+- **Not allowed:** identifying a static pressure crossing with a feasible
+  or stable climate equilibrium; inferring a methanogen-only world without
+  checking its ecological state and invasion fitness; calling a numerical
+  centered derivative at a corner a canonical Jacobian.
+- Thresholds, maintenance, yields, turnover and the Arrhenius parameter E
+  do not evolve in this family. Their non-evolution is a model assumption,
+  not proof of a fundamental evolutionary constraint. The rate multiplier
+  is phenomenological and does not calibrate a biological cold-adaptation
+  cost. Actual temperatures below 4 °C use the named reference continuation;
+  traits below 4 °C are excluded.
+- The prescribed S2 controls freeze functions at 30 °C and change their
+  levels as well as their slopes. Disappearance in such a control does not
+  by itself establish which temperature dependence is necessary. Any extra
+  matched-value or slope decomposition is a separate diagnostic and does
+  not replace the fixed KE predictions.
+- Canonical time and relative mutational supply are uncalibrated. A branch
+  lost during continuation is not a measured extinction event. S5 must state
+  when the assumed ecological branch stops existing or being stable.
+- **Not allowed:** "evolution cannot break the thermostat"; "thermodynamics
+  makes the Archean set point evolutionarily stable"; generalizing this
+  trait family to selection on maintenance, yields or cessation energetics.

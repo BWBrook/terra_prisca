@@ -23,3 +23,6 @@ build-backend = "hatchling.build"
 
 [tool.hatch.build.targets.wheel]
 packages = ["src/terra_prisca"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]

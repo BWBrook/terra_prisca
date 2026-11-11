@@ -1,0 +1,450 @@
+{
+  "all_mutant_assays_pass": true,
+  "assessor_sha256": "25ff331688a393856d9c59c5326b0c18e67dcbf9865f365828f34754659586f4",
+  "cooling_joint_roots": 42,
+  "figure_sha256": {
+    "crossings.png": "93ffcdf89fb05bae38fefe76f84b9544393cbaf13a8ba6128884e24e81e9fc49",
+    "joint_communities.png": "2be3b770e170714e277c0b8ae2d68cebc77112b70e3dde421365afb987d2c2f3"
+  },
+  "input_sha256": {
+    "adapted_single.csv": "d76cbb3eb31fd698a2fa0a1a1207e7ed2a9603478672aa02e0ddde66699ba93b",
+    "anchors.csv": "80eb4d862525a6eafd2f492f68228a68eadf195182e626859010ee60b56d90cd",
+    "best_response.csv": "40a518ca1dfc15c46d2b45f44caddf323703fdc45457c088c83f1fd39eed44ca",
+    "best_response_manifest.json": "70ae32a6297f3aaf6afe47274b66c0cd5ff2f4b19ab38fbdd92f46d6fd59a376",
+    "communities.csv": "f96210ce0aa1f0add6266471d14ea219d9c695c0ddff8214744766d194b81c3f",
+    "communities_manifest.json": "97ea374b38c40d58cc3d6b02360c36436bb9a895095b36ad78903a8673f97b93",
+    "equilibria.csv": "09768f1707c051e44030ad38ef4f29acf01f2bde2d0cb2bda2b23433b01bf989",
+    "invasions.csv": "14b6f674eccad4068d2b43b25c7df894bc7571bdca717da83ce870f3c033f993",
+    "paths.csv": "30dc62522417f712fa78cc4a0893efff31ce93a08d3dcbf3d602476f7466fb99"
+  },
+  "joint_roots": 56,
+  "maximum_mutant_growth_h": 7.068998164605489e-17,
+  "maximum_path_terminal_temperature_difference_k": 0.20705359552141545,
+  "maximum_path_terminal_trait_difference_c": 0.02667734296557267,
+  "missing_settings": 30,
+  "mutant_assays": 112,
+  "mutants_per_assay": [
+    2601
+  ],
+  "path_pair_comparison": [
+    {
+      "setting_id": "L0.0003_E0.1_linear_shape_f0",
+      "statuses": [
+        "supported_mixed_branch_lost",
+        "supported_mixed_branch_lost"
+      ],
+      "temperature_difference_k": 0.16859753884091333,
+      "trait_difference_c": 0.025000000000009237
+    },
+    {
+      "setting_id": "L0.0003_E0.1_linear_shape_f0.5",
+      "statuses": [
+        "supported_mixed_branch_lost",
+        "supported_mixed_branch_lost"
+      ],
+      "temperature_difference_k": 0.12987696787581626,
+      "trait_difference_c": 0.0250000000000119
+    },
+    {
+      "setting_id": "L0.0003_E0.1_smooth_shape_f0",
+      "statuses": [
+        "supported_mixed_branch_lost",
+        "supported_mixed_branch_lost"
+      ],
+      "temperature_difference_k": 0.13614393717398343,
+      "trait_difference_c": 0.02500000000001279
+    },
+    {
+      "setting_id": "L0.0003_E0.1_smooth_shape_f0.5",
+      "statuses": [
+        "supported_mixed_branch_lost",
+        "supported_mixed_branch_lost"
+      ],
+      "temperature_difference_k": 0.023719845397124573,
+      "trait_difference_c": 0.0033798871202286307
+    },
+    {
+      "setting_id": "L0.0003_E0.2_linear_shape_f0",
+      "statuses": [
+        "supported_mixed_branch_lost",
+        "supported_mixed_branch_lost"
+      ],
+      "temperature_difference_k": 0.1365538574979155,
+      "trait_difference_c": 0.025000000000011013
+    },
+    {
+      "setting_id": "L0.0003_E0.2_linear_shape_f0.5",
+      "statuses": [
+        "supported_mixed_branch_lost",
+        "supported_mixed_branch_lost"
+      ],
+      "temperature_difference_k": 0.004411657953198755,
+      "trait_difference_c": 0.0023168557177930538
+    },
+    {
+      "setting_id": "L0.0003_E0.2_smooth_shape_f0",
+      "statuses": [
+        "supported_mixed_branch_lost",
+        "supported_mixed_branch_lost"
+      ],
+      "temperature_difference_k": 0.11197535090684596,
+      "trait_difference_c": 0.025000000000015454
+    },
+    {
+      "setting_id": "L0.0003_E0.2_smooth_shape_f0.5",
+      "statuses": [
+        "supported_mixed_branch_lost",
+        "supported_mixed_branch_lost"
+      ],
+      "temperature_difference_k": 0.09736328273038453,
+      "trait_difference_c": 0.02667734296557267
+    },
+    {
+      "setting_id": "L0.0003_E0.3_linear_shape_f0",
+      "statuses": [
+        "supported_mixed_branch_lost",
+        "supported_mixed_branch_lost"
+      ],
+      "temperature_difference_k": 0.11010147599267839,
+      "trait_difference_c": 0.025000000000013678
+    },
+    {
+      "setting_id": "L0.0003_E0.3_linear_shape_f0.5",
+      "statuses": [
+        "supported_mixed_branch_lost",
+        "supported_mixed_branch_lost"
+      ],
+      "temperature_difference_k": 0.09349234253926397,
+      "trait_difference_c": 0.025000000000016342
+    },
+    {
+      "setting_id": "L0.0003_E0.3_smooth_shape_f0",
+      "statuses": [
+        "supported_mixed_branch_lost",
+        "supported_mixed_branch_lost"
+      ],
+      "temperature_difference_k": 0.0016178897388954283,
+      "trait_difference_c": 0.001019196174603998
+    },
+    {
+      "setting_id": "L0.0003_E0.3_smooth_shape_f0.5",
+      "statuses": [
+        "supported_mixed_branch_lost",
+        "supported_mixed_branch_lost"
+      ],
+      "temperature_difference_k": 0.08161316637284699,
+      "trait_difference_c": 0.025703729582002843
+    },
+    {
+      "setting_id": "L0.0003_E0.45_linear_shape_f0",
+      "statuses": [
+        "supported_mixed_branch_lost",
+        "supported_mixed_branch_lost"
+      ],
+      "temperature_difference_k": 0.07610605870661402,
+      "trait_difference_c": 0.02500000000001812
+    },
+    {
+      "setting_id": "L0.0003_E0.45_linear_shape_f0.5",
+      "statuses": [
+        "supported_mixed_branch_lost",
+        "supported_mixed_branch_lost"
+      ],
+      "temperature_difference_k": 0.0006882387364157694,
+      "trait_difference_c": 0.0008765913056469898
+    },
+    {
+      "setting_id": "L0.0003_E0.45_smooth_shape_f0",
+      "statuses": [
+        "supported_mixed_branch_lost",
+        "supported_mixed_branch_lost"
+      ],
+      "temperature_difference_k": 0.0007759594420235771,
+      "trait_difference_c": 0.0008285411874267012
+    },
+    {
+      "setting_id": "L0.0003_E0.45_smooth_shape_f0.5",
+      "statuses": [
+        "supported_mixed_branch_lost",
+        "supported_mixed_branch_lost"
+      ],
+      "temperature_difference_k": 0.0033513760354253463,
+      "trait_difference_c": 0.004442116774483473
+    },
+    {
+      "setting_id": "L0.0003_E0.65_linear_shape_f0",
+      "statuses": [
+        "supported_mixed_branch_lost",
+        "supported_mixed_branch_lost"
+      ],
+      "temperature_difference_k": 9.11192989860865e-05,
+      "trait_difference_c": 0.0003936828985207086
+    },
+    {
+      "setting_id": "L0.0003_E0.65_linear_shape_f0.5",
+      "statuses": [
+        "supported_mixed_branch_lost",
+        "supported_mixed_branch_lost"
+      ],
+      "temperature_difference_k": 0.03282625995740318,
+      "trait_difference_c": 0.02500000000003144
+    },
+    {
+      "setting_id": "L0.0003_E0.65_smooth_shape_f0",
+      "statuses": [
+        "supported_mixed_branch_lost",
+        "supported_mixed_branch_lost"
+      ],
+      "temperature_difference_k": 0.032185759901778965,
+      "trait_difference_c": 0.025000000000040323
+    },
+    {
+      "setting_id": "L0.0003_E0.65_smooth_shape_f0.5",
+      "statuses": [
+        "supported_mixed_branch_lost",
+        "supported_mixed_branch_lost"
+      ],
+      "temperature_difference_k": 0.031101553564326423,
+      "trait_difference_c": 0.0250000000000421
+    },
+    {
+      "setting_id": "L0.0003_E0_linear_shape_f0",
+      "statuses": [
+        "supported_mixed_branch_lost",
+        "supported_mixed_branch_lost"
+      ],
+      "temperature_difference_k": 0.20705359552141545,
+      "trait_difference_c": 0.02500000000000746
+    },
+    {
+      "setting_id": "L0.0003_E0_linear_shape_f0.5",
+      "statuses": [
+        "supported_mixed_branch_lost",
+        "supported_mixed_branch_lost"
+      ],
+      "temperature_difference_k": 0.15454233502225634,
+      "trait_difference_c": 0.025000000000010125
+    },
+    {
+      "setting_id": "L0.0003_E0_smooth_shape_f0",
+      "statuses": [
+        "supported_mixed_branch_lost",
+        "supported_mixed_branch_lost"
+      ],
+      "temperature_difference_k": 0.1631595272189088,
+      "trait_difference_c": 0.025000000000010125
+    },
+    {
+      "setting_id": "L0.0003_E0_smooth_shape_f0.5",
+      "statuses": [
+        "supported_mixed_branch_lost",
+        "supported_mixed_branch_lost"
+      ],
+      "temperature_difference_k": 0.03474459048652534,
+      "trait_difference_c": 0.003988796472276235
+    },
+    {
+      "setting_id": "L0.003_E0.1_linear_shape_f0",
+      "statuses": [
+        "supported_mixed_branch_lost",
+        "supported_mixed_branch_lost"
+      ],
+      "temperature_difference_k": 0.01564925793331895,
+      "trait_difference_c": 0.012919907566818267
+    },
+    {
+      "setting_id": "L0.003_E0.1_linear_shape_f0.5",
+      "statuses": [
+        "supported_mixed_branch_lost",
+        "supported_mixed_branch_lost"
+      ],
+      "temperature_difference_k": 0.0009128120747732282,
+      "trait_difference_c": 0.0030805378854168453
+    },
+    {
+      "setting_id": "L0.003_E0.1_smooth_shape_f0",
+      "statuses": [
+        "supported_mixed_branch_lost",
+        "supported_mixed_branch_lost"
+      ],
+      "temperature_difference_k": 0.05277831176107384,
+      "trait_difference_c": 0.025000000000000355
+    },
+    {
+      "setting_id": "L0.003_E0.1_smooth_shape_f0.5",
+      "statuses": [
+        "supported_mixed_branch_lost",
+        "supported_mixed_branch_lost"
+      ],
+      "temperature_difference_k": 0.0014539524586894004,
+      "trait_difference_c": 0.004751237705956868
+    },
+    {
+      "setting_id": "L0.003_E0.2_linear_shape_f0",
+      "statuses": [
+        "supported_mixed_branch_lost",
+        "supported_mixed_branch_lost"
+      ],
+      "temperature_difference_k": 0.034474848022512106,
+      "trait_difference_c": 0.025000000000000355
+    },
+    {
+      "setting_id": "L0.003_E0.2_linear_shape_f0.5",
+      "statuses": [
+        "supported_mixed_branch_lost",
+        "supported_mixed_branch_lost"
+      ],
+      "temperature_difference_k": 0.03554105073550318,
+      "trait_difference_c": 0.025000000000000355
+    }
+  ],
+  "path_terminal_rows": 60,
+  "predictions": {
+    "KE1": {
+      "feasible_reference_communities": 2,
+      "linear_reference_temperature_k": 277.960221057776,
+      "status": "supported"
+    },
+    "KE2": {
+      "detected_crossings": 166,
+      "minimum_joint_frozen_trait_slope_pa_k": 0.39538014152107337,
+      "scope": "Detected crossings within the searched domain, not an interval proof",
+      "status": "supported"
+    },
+    "KE3": {
+      "climate_domains": [
+        "plateau"
+      ],
+      "endpoint_temperatures_k": [
+        274.002
+      ],
+      "no_crossing_low_energy": true,
+      "qualification": "No numerical tolerance for 'near273.5K' was prescribed. Actual endpoint274.002K is on the imposed high-methane plateau; S5 does not prove arrival there.",
+      "stable_low_loss_methanogen_endpoints": 24,
+      "status": "qualified_support"
+    },
+    "KE4": {
+      "maximum_reference_shift_k": 0.490588614107196,
+      "status": "supported"
+    },
+    "KE5": {
+      "maintenance_clause": false,
+      "mechanism": "At30C freezes both threshold and maintenance level/slope; both individually remove the crossing. The matched-level diagnostic is separate.",
+      "reference_control_crossing_counts": {
+        "baseline": 2,
+        "both_30c": 0,
+        "maintenance_30c": 0,
+        "thresholds_30c": 0
+      },
+      "status": "refuted",
+      "threshold_clause": true
+    },
+    "KE6": {
+      "convergence_checks": 126,
+      "quality_factor_range": [
+        16.297273178473848,
+        516.5336830670689
+      ],
+      "scope": "Smooth canonical matrices where defined; one-sided/projected attraction at nodes. Other greenhouse roots are not adiabatic convergence states.",
+      "stable_cooling_communities": 42,
+      "status": "supported"
+    },
+    "KE7": {
+      "comparisons": [
+        {
+          "energy_ev": 0.0,
+          "linear_on_branch": true,
+          "loss_h": 0.001,
+          "shift_k": 0.2862849192741237,
+          "smooth_on_branch": true
+        },
+        {
+          "energy_ev": 0.1,
+          "linear_on_branch": true,
+          "loss_h": 0.001,
+          "shift_k": 0.36927522460121054,
+          "smooth_on_branch": true
+        },
+        {
+          "energy_ev": 0.2,
+          "linear_on_branch": true,
+          "loss_h": 0.001,
+          "shift_k": 0.05287727437206513,
+          "smooth_on_branch": true
+        },
+        {
+          "energy_ev": 0.3,
+          "linear_on_branch": true,
+          "loss_h": 0.001,
+          "shift_k": 0.04421121226869218,
+          "smooth_on_branch": true
+        },
+        {
+          "energy_ev": 0.45,
+          "linear_on_branch": true,
+          "loss_h": 0.001,
+          "shift_k": 0.0610835000944121,
+          "smooth_on_branch": true
+        },
+        {
+          "energy_ev": 0.65,
+          "linear_on_branch": true,
+          "loss_h": 0.001,
+          "shift_k": 0.06697762819385389,
+          "smooth_on_branch": true
+        },
+        {
+          "energy_ev": 0.0,
+          "linear_on_branch": true,
+          "loss_h": 0.003,
+          "shift_k": 1.231341463580975,
+          "smooth_on_branch": true
+        },
+        {
+          "energy_ev": 0.1,
+          "linear_on_branch": false,
+          "loss_h": 0.003,
+          "shift_k": 0.24479855955848961,
+          "smooth_on_branch": false
+        },
+        {
+          "energy_ev": 0.2,
+          "linear_on_branch": false,
+          "loss_h": 0.003,
+          "shift_k": 0.8338851672273222,
+          "smooth_on_branch": true
+        },
+        {
+          "energy_ev": 0.3,
+          "linear_on_branch": true,
+          "loss_h": 0.003,
+          "shift_k": 0.1566638355207033,
+          "smooth_on_branch": true
+        },
+        {
+          "energy_ev": 0.45,
+          "linear_on_branch": true,
+          "loss_h": 0.003,
+          "shift_k": 0.006092201768751693,
+          "smooth_on_branch": true
+        },
+        {
+          "energy_ev": 0.65,
+          "linear_on_branch": true,
+          "loss_h": 0.003,
+          "shift_k": 0.06652923281717449,
+          "smooth_on_branch": true
+        }
+      ],
+      "maximum_interpolation_shift_k": 1.231341463580975,
+      "qualification": "A small shift can change feasibility at the climate peak.",
+      "status": "supported"
+    }
+  },
+  "scope": "Fixed predictions preserved; KE3 structurally supported with unresolved numerical meaning of near. Finite root/trait searches and uncalibrated canonical branch paths, not evolutionary or geological time forecasts.",
+  "settings": 72,
+  "spec_sha256": "11f6dc825351553501b0c0144b43c5bcfa86da94f101da75dd9873a93c9797d2",
+  "static_no_crossing": 86,
+  "static_settings": 252,
+  "unstable_greenhouse_roots": 14
+}

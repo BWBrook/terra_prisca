@@ -1,0 +1,338 @@
+{
+  "controller_sha256": "cca35ccbe87457f8c96da2f26ced3bc0725ab5afd249e0f2fcb93e4a303240fc",
+  "counts": {
+    "anchor_rows": 48,
+    "best_response_rows": 252,
+    "parameter_settings": 252
+  },
+  "input_tables_sha256": {
+    "models/haze_response/arney2016/cases.csv": "e3d77d275052a8875991a751868f857bffc964295bfd47591944d86bc58ab07a",
+    "models/haze_response/arney2016/figure4.csv": "c0ef5f3d17ee7c6085ad36247f0f7814726dbbe3273842b01f2c6c4e046856f8",
+    "models/haze_world/evidence/kotsyurbenko2001_table2.csv": "c95b4be023e5502fbb30eb322621e5612bbbf850f99d1b6669e98b95eb370480",
+    "models/haze_world/evidence/peters1998_chemostat.csv": "b0b00bf03eaeaabf45fb571330773c5158b53b088436aaee942188f8e9498320"
+  },
+  "inputs": {
+    "preview_sha256": "d217920df18cf07ce594629323f8b16dce18de61b806153e60d31659529c28b8",
+    "preview_source_sha256": "392ae195450f5ab1a9f938298d295c28c6a51a18773d94563de2bd06f8b06c22",
+    "spec_sha256": "11f6dc825351553501b0c0144b43c5bcfa86da94f101da75dd9873a93c9797d2"
+  },
+  "interpretation": "Preview code admitted heritable kinetic positions below measured4C, contrary to its prose/spec. Production enforces4\u201330C; preview and KE predictions remain unchanged. Independent audit resolves shared differences above0.5K as this bound error.",
+  "numerical_choices": {
+    "actual_temperature_grid_k": [
+      273.0,
+      303.15,
+      0.05
+    ],
+    "continuous_refinement": "Dense global0.01C grid; bounded refinement near every sampled local minimum competitive with the global grid minimum; measured nodes/endpoints explicit. Not an interval proof of all continuous global extrema.",
+    "energies": [
+      0.0,
+      0.1,
+      0.2,
+      0.3,
+      0.45,
+      0.65
+    ],
+    "interpolations": [
+      "linear_shape",
+      "smooth_shape"
+    ],
+    "loss_grid": [
+      0.0002,
+      0.0002423055317257177,
+      0.0002935598535244139,
+      0.0003,
+      0.0003556558820077846,
+      0.0004308869380063768,
+      0.0005220314431365074,
+      0.000632455532033676,
+      0.0007662373699114576,
+      0.0009283177667225557,
+      0.001,
+      0.0011246826503806982,
+      0.0013625841381159228,
+      0.0016508083705360367,
+      0.002,
+      0.0024230553172571766,
+      0.00293559853524414,
+      0.003,
+      0.003556558820077846,
+      0.004308869380063767,
+      0.005
+    ],
+    "temperature_roots": "Finite sign brackets plus near-zero local minima; infinities are never sign roots",
+    "trait_grid_c": [
+      4.0,
+      30.0,
+      0.01
+    ]
+  },
+  "outputs": {
+    "anchors.csv": "80eb4d862525a6eafd2f492f68228a68eadf195182e626859010ee60b56d90cd",
+    "best_response.csv": "40a518ca1dfc15c46d2b45f44caddf323703fdc45457c088c83f1fd39eed44ca"
+  },
+  "preview_comparison": [
+    {
+      "energy_ev": 0.0,
+      "historical_range_crossings_k": [],
+      "historical_range_positions_c": [],
+      "loss_h": 0.0003,
+      "measured_range_crossings_k": [],
+      "measured_range_positions_c": [],
+      "preview_crossings_k": []
+    },
+    {
+      "energy_ev": 0.2,
+      "historical_range_crossings_k": [],
+      "historical_range_positions_c": [],
+      "loss_h": 0.0003,
+      "measured_range_crossings_k": [],
+      "measured_range_positions_c": [],
+      "preview_crossings_k": []
+    },
+    {
+      "energy_ev": 0.45,
+      "historical_range_crossings_k": [
+        273.1781839439987
+      ],
+      "historical_range_positions_c": [
+        [
+          -0.15,
+          10.0
+        ]
+      ],
+      "loss_h": 0.0003,
+      "measured_range_crossings_k": [],
+      "measured_range_positions_c": [],
+      "preview_crossings_k": [
+        273.18
+      ]
+    },
+    {
+      "energy_ev": 0.65,
+      "historical_range_crossings_k": [
+        275.03301343050884
+      ],
+      "historical_range_positions_c": [
+        [
+          -0.15,
+          -0.15
+        ]
+      ],
+      "loss_h": 0.0003,
+      "measured_range_crossings_k": [],
+      "measured_range_positions_c": [],
+      "preview_crossings_k": [
+        275.04
+      ]
+    },
+    {
+      "energy_ev": 0.0,
+      "historical_range_crossings_k": [
+        277.960221057776
+      ],
+      "historical_range_positions_c": [
+        [
+          10.0,
+          25.0
+        ]
+      ],
+      "loss_h": 0.001,
+      "measured_range_crossings_k": [
+        277.960221057776
+      ],
+      "measured_range_positions_c": [
+        [
+          10.0,
+          25.0
+        ]
+      ],
+      "preview_crossings_k": [
+        277.96
+      ]
+    },
+    {
+      "energy_ev": 0.2,
+      "historical_range_crossings_k": [
+        280.3740922638263
+      ],
+      "historical_range_positions_c": [
+        [
+          10.0,
+          10.0
+        ]
+      ],
+      "loss_h": 0.001,
+      "measured_range_crossings_k": [
+        280.3740922638263
+      ],
+      "measured_range_positions_c": [
+        [
+          10.0,
+          10.0
+        ]
+      ],
+      "preview_crossings_k": [
+        280.37
+      ]
+    },
+    {
+      "energy_ev": 0.45,
+      "historical_range_crossings_k": [
+        283.74493811847657
+      ],
+      "historical_range_positions_c": [
+        [
+          -0.15,
+          10.0
+        ]
+      ],
+      "loss_h": 0.001,
+      "measured_range_crossings_k": [
+        281.10549488598724
+      ],
+      "measured_range_positions_c": [
+        [
+          10.0,
+          10.0
+        ]
+      ],
+      "preview_crossings_k": [
+        283.75
+      ]
+    },
+    {
+      "energy_ev": 0.65,
+      "historical_range_crossings_k": [
+        283.8394807708309
+      ],
+      "historical_range_positions_c": [
+        [
+          -0.15,
+          -0.15
+        ]
+      ],
+      "loss_h": 0.001,
+      "measured_range_crossings_k": [
+        281.86824668440715
+      ],
+      "measured_range_positions_c": [
+        [
+          5.720891253355004,
+          8.318007523624795
+        ]
+      ],
+      "preview_crossings_k": [
+        283.84
+      ]
+    },
+    {
+      "energy_ev": 0.0,
+      "historical_range_crossings_k": [
+        293.94816404758393
+      ],
+      "historical_range_positions_c": [
+        [
+          10.0,
+          25.0
+        ]
+      ],
+      "loss_h": 0.003,
+      "measured_range_crossings_k": [
+        293.94816404758393
+      ],
+      "measured_range_positions_c": [
+        [
+          10.0,
+          25.0
+        ]
+      ],
+      "preview_crossings_k": [
+        293.95
+      ]
+    },
+    {
+      "energy_ev": 0.2,
+      "historical_range_crossings_k": [
+        297.509075732357
+      ],
+      "historical_range_positions_c": [
+        [
+          10.0,
+          10.44
+        ]
+      ],
+      "loss_h": 0.003,
+      "measured_range_crossings_k": [
+        297.5090740685834
+      ],
+      "measured_range_positions_c": [
+        [
+          10.0,
+          10.435334238897397
+        ]
+      ],
+      "preview_crossings_k": [
+        297.51
+      ]
+    },
+    {
+      "energy_ev": 0.45,
+      "historical_range_crossings_k": [
+        294.43430779577915
+      ],
+      "historical_range_positions_c": [
+        [
+          -0.15,
+          10.0
+        ]
+      ],
+      "loss_h": 0.003,
+      "measured_range_crossings_k": [
+        292.52063765077867
+      ],
+      "measured_range_positions_c": [
+        [
+          10.0,
+          10.0
+        ]
+      ],
+      "preview_crossings_k": [
+        294.44
+      ]
+    },
+    {
+      "energy_ev": 0.65,
+      "historical_range_crossings_k": [
+        292.164233359871
+      ],
+      "historical_range_positions_c": [
+        [
+          -0.15,
+          -0.15
+        ]
+      ],
+      "loss_h": 0.003,
+      "measured_range_crossings_k": [
+        290.9281623258328
+      ],
+      "measured_range_positions_c": [
+        [
+          5.693113782337515,
+          8.55476284007409
+        ]
+      ],
+      "preview_crossings_k": [
+        292.16
+      ]
+    }
+  ],
+  "source_sha256": {
+    "src/terra_prisca/haze_world/darwinian.py": "e965035d5dfbfafcb695dc3738b23d8a445c4c1e7e246ab4688d67b33482f1aa",
+    "src/terra_prisca/haze_world/evolved_kinetics.py": "c42fd4f3e1c07071e3e86f3a4499810bc72a68115c1200c6ab37d8e3b0afdd9f",
+    "src/terra_prisca/haze_world/hydrogen_uptake.py": "c48d8231ef726605ab07be22438f3e2fd97f23b310773ac748d1b2bf5c36fafd",
+    "src/terra_prisca/haze_world/methane_budget.py": "70dc47659e4738d07809e8d23844af79bf69e5dabcc87793eac3f5e560011721",
+    "src/terra_prisca/haze_world/population_coupling.py": "17a433957e94845595f6d7fd160ffe593c01c4e74550707b0814c95ab67ae663",
+    "src/terra_prisca/haze_world/two_guilds.py": "eff6a9027c5b28d154f03462d926591ebee3408eb2c80ec0df5c38929f169f83",
+    "src/terra_prisca/haze_world/woodii1998.py": "b0130f4f8ea15aa64245133f79dc8b35883a414031a8b49262c6657350cad0b0"
+  }
+}

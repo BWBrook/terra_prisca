@@ -1,0 +1,49 @@
+{
+  "adapted_single_rows": 60,
+  "community_rows": 86,
+  "equilibrium_rows": 200,
+  "invasion_rows": 112,
+  "inventory_refinement_disagreements": 0,
+  "missing": 30,
+  "outputs": {
+    "adapted_single.csv": "d76cbb3eb31fd698a2fa0a1a1207e7ed2a9603478672aa02e0ddde66699ba93b",
+    "communities.csv": "f96210ce0aa1f0add6266471d14ea219d9c695c0ddff8214744766d194b81c3f",
+    "equilibria.csv": "09768f1707c051e44030ad38ef4f29acf01f2bde2d0cb2bda2b23433b01bf989",
+    "invasions.csv": "14b6f674eccad4068d2b43b25c7df894bc7571bdca717da83ce870f3c033f993",
+    "paths.csv": "30dc62522417f712fa78cc4a0893efff31ce93a08d3dcbf3d602476f7466fb99"
+  },
+  "path_rows": 522,
+  "prerequisite_manifest_sha256": "70ae32a6297f3aaf6afe47274b66c0cd5ff2f4b19ab38fbdd92f46d6fd59a376",
+  "protocol": {
+    "canonical_mutation_a_over_m": [
+      0.1,
+      1.0,
+      10.0
+    ],
+    "ecology_jacobian_steps": [
+      0.0001,
+      1e-05
+    ],
+    "mutant_grid_step_c": 0.01,
+    "mutant_growth_tolerance_h": 1e-08,
+    "path_max_steps": 2000,
+    "path_max_trait_steps_c": [
+      0.05,
+      0.025
+    ],
+    "path_start": "Both kinetic positions matched to the reference-switch local temperature",
+    "path_stop": "Loss of supported stable mixed branch, checked every step, not demographic extinction"
+  },
+  "scope": "Joint stationary points, fixed-trait ecological Jacobians and recorded mutant grid; 501/1001 bracketing agreement does not prove absence of every tangent root or global attractor; no evolutionary time calibration",
+  "settings": 72,
+  "source_sha256": {
+    "src/terra_prisca/haze_world/competitive_evolution.py": "aae219248db0ea7294a042e058d129604659d0a862acf3c1ef8a5ffb1bd0e41b",
+    "src/terra_prisca/haze_world/darwinian.py": "e965035d5dfbfafcb695dc3738b23d8a445c4c1e7e246ab4688d67b33482f1aa",
+    "src/terra_prisca/haze_world/evolved_kinetics.py": "c42fd4f3e1c07071e3e86f3a4499810bc72a68115c1200c6ab37d8e3b0afdd9f",
+    "src/terra_prisca/haze_world/hydrogen_uptake.py": "c48d8231ef726605ab07be22438f3e2fd97f23b310773ac748d1b2bf5c36fafd",
+    "src/terra_prisca/haze_world/methane_budget.py": "70dc47659e4738d07809e8d23844af79bf69e5dabcc87793eac3f5e560011721",
+    "src/terra_prisca/haze_world/population_coupling.py": "17a433957e94845595f6d7fd160ffe593c01c4e74550707b0814c95ab67ae663",
+    "src/terra_prisca/haze_world/two_guilds.py": "eff6a9027c5b28d154f03462d926591ebee3408eb2c80ec0df5c38929f169f83",
+    "src/terra_prisca/haze_world/woodii1998.py": "b0130f4f8ea15aa64245133f79dc8b35883a414031a8b49262c6657350cad0b0"
+  }
+}

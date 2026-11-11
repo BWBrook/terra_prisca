@@ -1,0 +1,44 @@
+{
+  "actual_horizon_yr": 100000.0,
+  "case": {
+    "activity": "fixed",
+    "case_id": "main_0024_t100000",
+    "census_yr": 10.0,
+    "direction": "A_into_M",
+    "fraction": 0.5,
+    "minimum_cells": 1.0,
+    "relative_immigration_yr": 0.0,
+    "years": 100000.0
+  },
+  "climate_sources_sha256": {
+    "models/haze_response/arney2016/cases.csv": "e3d77d275052a8875991a751868f857bffc964295bfd47591944d86bc58ab07a",
+    "models/haze_response/arney2016/figure4.csv": "c0ef5f3d17ee7c6085ad36247f0f7814726dbbe3273842b01f2c6c4e046856f8",
+    "src/terra_prisca/haze_response/arney2016.py": "a1b8b52f4c929a0518a17542fb323588699433b038949b38ee6ad74679cd0da6",
+    "src/terra_prisca/haze_world/methane_budget.py": "70dc47659e4738d07809e8d23844af79bf69e5dabcc87793eac3f5e560011721"
+  },
+  "counts_from": "Original source total_habitat_l / cell_mass_gdw metadata",
+  "exporter_sha256": "ad7b5070203bd20213defefe93ebc057d0e525689326d0273b864f402185aed3",
+  "extinction_events": [
+    {
+      "guild": "methanogen",
+      "log_removed_cells": -6.005907031850583,
+      "reason": "census_below_floor",
+      "removed_cells": 0.0024641532691648646,
+      "removed_gdw": 7.392459807494563e-16,
+      "removed_h2_mol": 6.09138688137552e-17,
+      "time_yr": 20.0
+    }
+  ],
+  "first_methanogen_removal_yr": 20.0,
+  "initial_temperature_k": 273.51674403884846,
+  "output_file": "models/haze_world/figures/finite_populations/c07_transient.csv",
+  "output_sha256": "1d2afc12f0611585aaf6d1a840f1caf2e3c735e9868ab8c44698b2feb794eef2",
+  "rows": 209,
+  "sampling": "All censuses through200yr; every100yr through5000; every250yr through20000; every1000yr thereafter; preserve events and adjacent censuses. No interpolation.",
+  "scope": "Post-census deterministic stocks and separate pre-removal counts; not continuous minima or stochastic survival. Only the temperature evaluation is recomputed, with verified original climate sources. No physical trajectory is rerun.",
+  "selected_table_sha256": "c4325d8fd01259515a2615d308d74dfebcd0dc6b1884cff91644824ac328be84",
+  "source_raw_file": "local/haze/finite_populations/final_raw/main_0024_t100000-ce9c0899cdf042d0.json.gz",
+  "source_raw_sha256": "48f936931d3c5118d7a8e9effb1cce30a47e76e66d3ab566e739922b7498aea1",
+  "source_rows": 10001,
+  "temperature_at_first_m_removal_k": 273.52525137665066
+}
