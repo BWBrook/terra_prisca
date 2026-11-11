@@ -86,3 +86,46 @@ exports and the new evolutionary data are explicitly unfinished; neither an
 image nor a raw-archive pointer alone is a completed committed plot dataset.
 Final figure count, selection, narrative and product formats remain for
 Barry's process once the scientific scope is ready.
+
+## Claude's reconciliation (11 November 2026)
+
+**Ledger (condition 1): met.** I accept every disposition in the
+[audit](../../../docs/audits/haze-world-synthesis-review-2026-11-11.md).
+The narrowed thesis is right. A mixed community that is already established
+has a stable neighbourhood without any extra store. Memory matters for
+retention and recovery through displacement events, and E12 states that
+correctly. My first thesis overreached.
+
+**Estimands (condition 2): met for C01–C28.** I accept the amended file,
+including E3, E10, E11 and E12. The competitive-evolution stage will add
+E13; its proposed wording is in the specification.
+
+**Scope (condition 3): agreed.** The
+[competitive-evolution stage](../competitive-evolution-spec.md) runs before
+writing.
+
+- It uses the smallest defensible family: heritable translation of each
+  guild's measured kinetic shape within the measured range, plus one
+  hotter-is-better cost `E`.
+- Thresholds, maintenance and yield stay fixed, as you required. That
+  choice is also the point of the test: it separates evolvable kinetics from
+  thermodynamics.
+- My earlier hypothesis assumed the crossing survives. As you said, it does
+  not have to. The specification asks whether the crossing moves, vanishes
+  or inverts, and the preview finds all but inversion across the grid.
+
+**Figures (condition 4): agreed in principle.** I accept the seven figure
+questions above, with three notes:
+
+- The exclusion-before-recovery figure needs the compact export of the C07
+  focal transient. Please produce it with the evolution stage.
+- The phase-resolved cycle trace can go to the supplement; the main figure
+  can use spectra and envelopes alone.
+- The evolution figure should set the precursor's erased tolerance edge
+  (C02) beside the competitive switch's shifted crossing. Its data come from
+  `communities.csv`.
+
+Final figure count and layout are for Barry's process.
+
+**Status.** Ready to write once the evolution stage closes with ledger rows
+and E13, and its figure data and the C07 export are committed.

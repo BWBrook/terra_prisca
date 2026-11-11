@@ -1,0 +1,252 @@
+{
+ "config": {
+  "threshold_shape": "fixed_energy",
+  "low_temperature_variant": "constant_shape"
+ },
+ "L=0.0003": {
+  "reference": {
+   "crossings": [
+    {
+     "t_c": 4.001,
+     "t_k": 277.151,
+     "cold_winner": "acetogen"
+    }
+   ],
+   "cold_end_winner": "acetogen",
+   "warm_end_winner": "methanogen",
+   "rstar_diff_a_minus_m_pa": {
+    "0.0": -1.3389186065887753,
+    "8.0": 4.8249027962454445,
+    "15.0": 12.22049934067376,
+    "30.0": 63.64059284058406
+   }
+  },
+  "kinetics_at_30C": {
+   "crossings": [],
+   "cold_end_winner": "methanogen",
+   "warm_end_winner": "methanogen",
+   "rstar_diff_a_minus_m_pa": {
+    "0.0": 3.6678368365813663,
+    "8.0": 7.894105234174139,
+    "15.0": 15.450206206378999,
+    "30.0": 63.64059284058406
+   }
+  },
+  "kinetics_at_15C": {
+   "crossings": [],
+   "cold_end_winner": "methanogen",
+   "warm_end_winner": "methanogen",
+   "rstar_diff_a_minus_m_pa": {
+    "0.0": 2.5743880786354687,
+    "8.0": 6.0419143191885665,
+    "15.0": 12.22049934067376,
+    "30.0": 51.93826745275858
+   }
+  },
+  "thresholds_at_30C": {
+   "crossings": [],
+   "cold_end_winner": "methanogen",
+   "warm_end_winner": "methanogen",
+   "rstar_diff_a_minus_m_pa": {
+    "0.0": 16.386366925665836,
+    "8.0": 21.05191591908053,
+    "15.0": 25.938307828305867,
+    "30.0": 63.64059284058406
+   }
+  },
+  "kinetics_and_thresholds_at_30C": {
+   "crossings": [],
+   "cold_end_winner": "methanogen",
+   "warm_end_winner": "methanogen",
+   "rstar_diff_a_minus_m_pa": {
+    "0.0": 21.39312236883598,
+    "8.0": 24.121118357009223,
+    "15.0": 29.168014694011106,
+    "30.0": 63.64059284058406
+   }
+  }
+ },
+ "L=0.001": {
+  "reference": {
+   "crossings": [
+    {
+     "t_c": 8.385,
+     "t_k": 281.535,
+     "cold_winner": "acetogen"
+    }
+   ],
+   "cold_end_winner": "acetogen",
+   "warm_end_winner": "methanogen",
+   "rstar_diff_a_minus_m_pa": {
+    "0.0": -42.781243347879624,
+    "8.0": -0.6998204364419927,
+    "15.0": 10.950827411875125,
+    "30.0": 64.04905735720406
+   }
+  },
+  "kinetics_at_30C": {
+   "crossings": [],
+   "cold_end_winner": "methanogen",
+   "warm_end_winner": "methanogen",
+   "rstar_diff_a_minus_m_pa": {
+    "0.0": 3.648014697805248,
+    "8.0": 7.897479651860792,
+    "15.0": 15.498075144691608,
+    "30.0": 64.04905735720406
+   }
+  },
+  "kinetics_at_15C": {
+   "crossings": [],
+   "cold_end_winner": "methanogen",
+   "warm_end_winner": "methanogen",
+   "rstar_diff_a_minus_m_pa": {
+    "0.0": 1.2582301212832512,
+    "8.0": 4.741021448832946,
+    "15.0": 10.950827411875125,
+    "30.0": 50.99696608135195
+   }
+  },
+  "thresholds_at_30C": {
+   "crossings": [
+    {
+     "t_c": 5.021,
+     "t_k": 278.171,
+     "cold_winner": "acetogen"
+    }
+   ],
+   "cold_end_winner": "acetogen",
+   "warm_end_winner": "methanogen",
+   "rstar_diff_a_minus_m_pa": {
+    "0.0": -25.055957815625014,
+    "8.0": 15.527192686393093,
+    "15.0": 24.668635899507233,
+    "30.0": 64.04905735720406
+   }
+  },
+  "kinetics_and_thresholds_at_30C": {
+   "crossings": [],
+   "cold_end_winner": "methanogen",
+   "warm_end_winner": "methanogen",
+   "rstar_diff_a_minus_m_pa": {
+    "0.0": 21.37330023005986,
+    "8.0": 24.124492774695874,
+    "15.0": 29.21588363232371,
+    "30.0": 64.04905735720406
+   }
+  }
+ },
+ "L=0.003": {
+  "reference": {
+   "crossings": [
+    {
+     "t_c": 18.771,
+     "t_k": 291.921,
+     "cold_winner": "acetogen"
+    }
+   ],
+   "cold_end_winner": "acetogen",
+   "warm_end_winner": "methanogen",
+   "rstar_diff_a_minus_m_pa": {
+    "0.0": -Infinity,
+    "8.0": -141.58822132222735,
+    "15.0": -9.779911045519242,
+    "30.0": 46.35725888590544
+   }
+  },
+  "kinetics_at_30C": {
+   "crossings": [
+    {
+     "t_c": 14.264,
+     "t_k": 287.414,
+     "cold_winner": "acetogen"
+    }
+   ],
+   "cold_end_winner": "acetogen",
+   "warm_end_winner": "methanogen",
+   "rstar_diff_a_minus_m_pa": {
+    "0.0": -10.194039763230876,
+    "8.0": -6.175158843076474,
+    "15.0": 0.992485770297975,
+    "30.0": 46.35725888590544
+   }
+  },
+  "kinetics_at_15C": {
+   "crossings": [
+    {
+     "t_c": 21.655,
+     "t_k": 294.805,
+     "cold_winner": "acetogen"
+    }
+   ],
+   "cold_end_winner": "acetogen",
+   "warm_end_winner": "methanogen",
+   "rstar_diff_a_minus_m_pa": {
+    "0.0": -18.37114291211035,
+    "8.0": -15.269489337956806,
+    "15.0": -9.779911045519242,
+    "30.0": 24.778312780950216
+   }
+  },
+  "thresholds_at_30C": {
+   "crossings": [
+    {
+     "t_c": 14.205,
+     "t_k": 287.355,
+     "cold_winner": "acetogen"
+    }
+   ],
+   "cold_end_winner": "acetogen",
+   "warm_end_winner": "methanogen",
+   "rstar_diff_a_minus_m_pa": {
+    "0.0": -Infinity,
+    "8.0": -125.36120819939225,
+    "15.0": 3.9378974421128703,
+    "30.0": 46.35725888590544
+   }
+  },
+  "kinetics_and_thresholds_at_30C": {
+   "crossings": [],
+   "cold_end_winner": "methanogen",
+   "warm_end_winner": "methanogen",
+   "rstar_diff_a_minus_m_pa": {
+    "0.0": 7.531245769023727,
+    "8.0": 10.051854279758615,
+    "15.0": 14.710294257930087,
+    "30.0": 46.35725888590544
+   }
+  }
+ },
+ "thresholds_pa": {
+  "0.0": [
+   1.3609063951341875,
+   0.08619192738879786
+  ],
+  "15.0": [
+   5.5951171091746,
+   0.31292559680670423
+  ],
+  "30.0": [
+   20.0,
+   1.0
+  ]
+ },
+ "peak_traits_30C": [
+  {
+   "guild": "acetogen",
+   "V": 0.01571764705882353,
+   "K_pa": 520.0,
+   "h_pa": 20.0,
+   "Y": 1.7,
+   "m30": 0.0016
+  },
+  {
+   "guild": "methanogen",
+   "V": 0.011631058823529413,
+   "K_pa": 160.0,
+   "h_pa": 1.0,
+   "Y": 0.78,
+   "m30": 0.001
+  }
+ ],
+ "maintenance_factor_4C_over_30C": 0.0766683910337543
+}

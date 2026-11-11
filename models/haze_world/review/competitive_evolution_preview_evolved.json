@@ -1,0 +1,376 @@
+{
+ "L=0.0003,E=0.0": {
+  "crossings": [],
+  "winner_at": {
+   "0.0": "methanogen",
+   "8.0": "methanogen",
+   "15.0": "methanogen",
+   "23.0": "methanogen"
+  },
+  "best_kinetic_temperature_c": {
+   "0.0": {
+    "acetogen": 10.0,
+    "methanogen": 10.0
+   },
+   "8.0": {
+    "acetogen": 10.0,
+    "methanogen": 10.0
+   },
+   "15.0": {
+    "acetogen": 10.0,
+    "methanogen": 10.0
+   },
+   "23.0": {
+    "acetogen": 10.0,
+    "methanogen": 10.0
+   }
+  }
+ },
+ "L=0.0003,E=0.2": {
+  "crossings": [],
+  "winner_at": {
+   "0.0": "methanogen",
+   "8.0": "methanogen",
+   "15.0": "methanogen",
+   "23.0": "methanogen"
+  },
+  "best_kinetic_temperature_c": {
+   "0.0": {
+    "acetogen": 10.0,
+    "methanogen": 10.0
+   },
+   "8.0": {
+    "acetogen": 10.0,
+    "methanogen": 10.0
+   },
+   "15.0": {
+    "acetogen": 10.0,
+    "methanogen": 10.0
+   },
+   "23.0": {
+    "acetogen": 10.0,
+    "methanogen": 10.0
+   }
+  }
+ },
+ "L=0.0003,E=0.45": {
+  "crossings": [
+   {
+    "t_k": 273.18,
+    "cold_winner": "acetogen"
+   }
+  ],
+  "winner_at": {
+   "0.0": "acetogen",
+   "8.0": "methanogen",
+   "15.0": "methanogen",
+   "23.0": "methanogen"
+  },
+  "best_kinetic_temperature_c": {
+   "0.0": {
+    "acetogen": -0.15,
+    "methanogen": 10.0
+   },
+   "8.0": {
+    "acetogen": -0.15,
+    "methanogen": 10.0
+   },
+   "15.0": {
+    "acetogen": -0.15,
+    "methanogen": 10.0
+   },
+   "23.0": {
+    "acetogen": -0.15,
+    "methanogen": 9.95
+   }
+  }
+ },
+ "L=0.0003,E=0.65": {
+  "crossings": [
+   {
+    "t_k": 275.04,
+    "cold_winner": "acetogen"
+   }
+  ],
+  "winner_at": {
+   "0.0": "acetogen",
+   "8.0": "methanogen",
+   "15.0": "methanogen",
+   "23.0": "methanogen"
+  },
+  "best_kinetic_temperature_c": {
+   "0.0": {
+    "acetogen": -0.15,
+    "methanogen": -0.15
+   },
+   "8.0": {
+    "acetogen": -0.15,
+    "methanogen": -0.15
+   },
+   "15.0": {
+    "acetogen": -0.15,
+    "methanogen": -0.15
+   },
+   "23.0": {
+    "acetogen": -0.15,
+    "methanogen": -0.15
+   }
+  }
+ },
+ "L=0.001,E=0.0": {
+  "crossings": [
+   {
+    "t_k": 277.96,
+    "cold_winner": "acetogen"
+   }
+  ],
+  "winner_at": {
+   "0.0": "acetogen",
+   "8.0": "methanogen",
+   "15.0": "methanogen",
+   "23.0": "methanogen"
+  },
+  "best_kinetic_temperature_c": {
+   "0.0": {
+    "acetogen": 10.0,
+    "methanogen": 25.0
+   },
+   "8.0": {
+    "acetogen": 10.0,
+    "methanogen": 25.0
+   },
+   "15.0": {
+    "acetogen": 10.0,
+    "methanogen": 25.0
+   },
+   "23.0": {
+    "acetogen": 10.0,
+    "methanogen": 25.0
+   }
+  }
+ },
+ "L=0.001,E=0.2": {
+  "crossings": [
+   {
+    "t_k": 280.37,
+    "cold_winner": "acetogen"
+   }
+  ],
+  "winner_at": {
+   "0.0": "acetogen",
+   "8.0": "methanogen",
+   "15.0": "methanogen",
+   "23.0": "methanogen"
+  },
+  "best_kinetic_temperature_c": {
+   "0.0": {
+    "acetogen": 10.0,
+    "methanogen": 10.0
+   },
+   "8.0": {
+    "acetogen": 10.0,
+    "methanogen": 10.0
+   },
+   "15.0": {
+    "acetogen": 10.0,
+    "methanogen": 10.0
+   },
+   "23.0": {
+    "acetogen": 10.0,
+    "methanogen": 10.0
+   }
+  }
+ },
+ "L=0.001,E=0.45": {
+  "crossings": [
+   {
+    "t_k": 283.75,
+    "cold_winner": "acetogen"
+   }
+  ],
+  "winner_at": {
+   "0.0": "acetogen",
+   "8.0": "acetogen",
+   "15.0": "methanogen",
+   "23.0": "methanogen"
+  },
+  "best_kinetic_temperature_c": {
+   "0.0": {
+    "acetogen": -0.15,
+    "methanogen": 10.0
+   },
+   "8.0": {
+    "acetogen": -0.15,
+    "methanogen": 10.0
+   },
+   "15.0": {
+    "acetogen": -0.15,
+    "methanogen": 10.0
+   },
+   "23.0": {
+    "acetogen": -0.15,
+    "methanogen": 10.0
+   }
+  }
+ },
+ "L=0.001,E=0.65": {
+  "crossings": [
+   {
+    "t_k": 283.84,
+    "cold_winner": "acetogen"
+   }
+  ],
+  "winner_at": {
+   "0.0": "acetogen",
+   "8.0": "acetogen",
+   "15.0": "methanogen",
+   "23.0": "methanogen"
+  },
+  "best_kinetic_temperature_c": {
+   "0.0": {
+    "acetogen": -0.15,
+    "methanogen": -0.15
+   },
+   "8.0": {
+    "acetogen": -0.15,
+    "methanogen": -0.15
+   },
+   "15.0": {
+    "acetogen": -0.15,
+    "methanogen": -0.15
+   },
+   "23.0": {
+    "acetogen": -0.15,
+    "methanogen": -0.15
+   }
+  }
+ },
+ "L=0.003,E=0.0": {
+  "crossings": [
+   {
+    "t_k": 293.95,
+    "cold_winner": "acetogen"
+   }
+  ],
+  "winner_at": {
+   "0.0": "acetogen",
+   "8.0": "acetogen",
+   "15.0": "acetogen",
+   "23.0": "methanogen"
+  },
+  "best_kinetic_temperature_c": {
+   "0.0": {
+    "acetogen": 10.0,
+    "methanogen": 25.0
+   },
+   "8.0": {
+    "acetogen": 10.0,
+    "methanogen": 25.0
+   },
+   "15.0": {
+    "acetogen": 10.0,
+    "methanogen": 25.0
+   },
+   "23.0": {
+    "acetogen": 10.0,
+    "methanogen": 25.0
+   }
+  }
+ },
+ "L=0.003,E=0.2": {
+  "crossings": [
+   {
+    "t_k": 297.51,
+    "cold_winner": "acetogen"
+   }
+  ],
+  "winner_at": {
+   "0.0": "acetogen",
+   "8.0": "acetogen",
+   "15.0": "acetogen",
+   "23.0": "acetogen"
+  },
+  "best_kinetic_temperature_c": {
+   "0.0": {
+    "acetogen": 10.0,
+    "methanogen": 15.0
+   },
+   "8.0": {
+    "acetogen": 10.0,
+    "methanogen": 14.7
+   },
+   "15.0": {
+    "acetogen": 10.0,
+    "methanogen": 12.45
+   },
+   "23.0": {
+    "acetogen": 10.0,
+    "methanogen": 10.65
+   }
+  }
+ },
+ "L=0.003,E=0.45": {
+  "crossings": [
+   {
+    "t_k": 294.44,
+    "cold_winner": "acetogen"
+   }
+  ],
+  "winner_at": {
+   "0.0": "acetogen",
+   "8.0": "acetogen",
+   "15.0": "acetogen",
+   "23.0": "methanogen"
+  },
+  "best_kinetic_temperature_c": {
+   "0.0": {
+    "acetogen": -0.15,
+    "methanogen": null
+   },
+   "8.0": {
+    "acetogen": -0.15,
+    "methanogen": 10.0
+   },
+   "15.0": {
+    "acetogen": -0.15,
+    "methanogen": 10.0
+   },
+   "23.0": {
+    "acetogen": -0.15,
+    "methanogen": 10.0
+   }
+  }
+ },
+ "L=0.003,E=0.65": {
+  "crossings": [
+   {
+    "t_k": 292.16,
+    "cold_winner": "acetogen"
+   }
+  ],
+  "winner_at": {
+   "0.0": "acetogen",
+   "8.0": "acetogen",
+   "15.0": "acetogen",
+   "23.0": "methanogen"
+  },
+  "best_kinetic_temperature_c": {
+   "0.0": {
+    "acetogen": -0.15,
+    "methanogen": null
+   },
+   "8.0": {
+    "acetogen": -0.15,
+    "methanogen": -0.15
+   },
+   "15.0": {
+    "acetogen": -0.15,
+    "methanogen": -0.15
+   },
+   "23.0": {
+    "acetogen": -0.15,
+    "methanogen": -0.15
+   }
+  }
+ }
+}

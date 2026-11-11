@@ -200,6 +200,10 @@ model-scoped results; it is not independent empirical calibration.
    crossing, move it outside the climate branch or remove it. Preservation
    and loss of regulation are competing hypotheses, not consequences of
    the present reference curves.
+   The [competitive-evolution specification](../competitive-evolution-spec.md)
+   tests this before writing. A static preview finds that kinetic adaptation
+   moves the switch by a few kelvin, anchored by the thermodynamic
+   thresholds, and removes it only at the lowest turnover.
 2. **Coupled stochastic demography.** This would replace conditional
    per-guild first-window probabilities with joint endpoint probabilities
    and address repeated-cycle survival (C24).
