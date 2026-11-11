@@ -1,6 +1,14 @@
 # Haze-world
 
-**Status: conditional model, updated 10 November 2026.** This is a new
+**Status: external-review revision, 11 November 2026; not ready to write.**
+The fixed-product reference's stability depends on instantaneous temperature.
+Finite thermal response, product chemistry, habitat temperature spread and
+transferred physiology are now the decisive checks. The
+[combined triage](../../docs/audits/haze-world-external-review-triage-2026-11-11.md)
+sets out the revision; the older stage descriptions below are conditional
+results and a research history, not a validated physical climate regulator.
+
+This is a new
 model, not a reconstruction. It couples methanogens and a finite methane budget
 to the [Arney et al. (2016) climate responses](../haze_response/README.md).
 Every quantity those curves do not supply is a named assumption with a default

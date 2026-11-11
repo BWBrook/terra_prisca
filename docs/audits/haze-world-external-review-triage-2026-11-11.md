@@ -13,6 +13,13 @@ here is **proposed**. Codex checks each finding's factual basis by its own
 route before any becomes final. Neither of us accepts a finding unchecked or
 dismisses one without a test.
 
+**Codex reconciliation is now available:**
+[independent audit and Stage A](haze-world-external-review-codex-2026-11-11.md).
+In particular, X3's narrow-spread stability/rescue claim, X7's inferred
+Archean acetate fate, and several counts/precision statements below need
+amendment. The table remains the original proposed triage; the linked audit
+records the checked dispositions and preserves the disagreement.
+
 ## The short version
 
 The two reviewers worked independently and agree on the main point. The

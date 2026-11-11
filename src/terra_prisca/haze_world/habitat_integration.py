@@ -14,6 +14,7 @@ from scipy.optimize import brentq, minimize_scalar
 from scipy.special import expit, logsumexp
 
 from . import habitat_coupling as model
+from .dense_roots import exit_time as _domain_exit_time, real_roots as _real_roots
 
 SCALE = 1e-3
 ACETATE_SCALE = 1e-3
@@ -223,11 +224,6 @@ def _global_logs(local_logs, weights):
     return logsumexp(local_logs[active] + np.log(weights[active, None]), axis=0)
 
 
-def _real_roots(poly, lo, hi):
-    roots = poly.roots()
-    return [float(z.real) for z in roots if abs(z.imag) < 1e-8 and lo <= z.real <= hi]
-
-
 def _accepted_state(dense, time, start_state):
     return start_state if time == dense.t_old else dense(time)
 
@@ -242,19 +238,7 @@ def _ratio_interval(initial,p):
 
 
 def _exit_time(dense, left, right, interval, p):
-    lo = (left - dense.t) / dense.h
-    hi = (right - dense.t) / dense.h
-    ratio = Polynomial(dense.yh[p.state_size-1])
-    points = [lo, hi]
-    for boundary in interval:
-        if np.isfinite(boundary):
-            points.extend(_real_roots(ratio - boundary, lo, hi))
-    points = np.unique(points)
-    for a, b in zip(points[:-1], points[1:]):
-        r = float(ratio((a + b) / 2))
-        if not interval[0] <= r <= interval[1]:
-            return float(dense.t + dense.h * a)
-    return None
+    return _domain_exit_time(dense, left, right, interval, p.state_size - 1)
 
 
 def _negative_allocations(dense,left,right,coordinates,start_state):

@@ -9,6 +9,15 @@ paper; he will guide its writing once the evidence is ready (see [Paper](#paper)
 
 ## Thesis
 
+**Revision in progress after external review.** The argument below describes
+the instantaneous-temperature model. Its fixed-product reference loses local
+stability when temperature responds with a finite lag. Product chemistry and
+habitat temperature spread are candidate routes to partial buffering, to be
+tested in Stage B. Memory during invasion remains a conditional model result,
+and is no longer the agreed paper thesis. See the
+[triage](../../../docs/audits/haze-world-external-review-triage-2026-11-11.md)
+and amended [estimands](estimands.md). Readiness is withdrawn.
+
 **A competitive climate thermostat can need biological memory during an
 invasion.** In this model, a locally stable microbial mixture can regulate
 climate, yet a resident–invader transient can eliminate a participant before
@@ -57,7 +66,7 @@ budget assumptions and the cell-count convention remain explicit in the
      If acetogen routing delivers less methane, its warming effect reverses
      the competitive advantage. This sign alone is not a stability proof
      []{.C05}.
-   - With explicit populations, the reference mixed state is locally stable
+   - With explicit populations and instantaneous temperature, the reference mixed state is locally stable
      at [281.535]{.C06} K. Disabling acetogens gives a methanogen-only
      control at [273.517]{.C06} K: a contrast of [8.02]{.C06} K.
    - The contrast falls to [4.73]{.C06} K under the alternative cold

@@ -9,7 +9,19 @@ which also records the four readiness conditions. The source is his chat
 with Claude, relayed on the board in message3204 and recorded in `ae47a3d`.
 He guides the writing once those conditions hold.
 
-## Current status after the competitive-evolution build
+## Current status after external review
+
+**Not ready to write.** The two external reviews expose a thermal-lag
+instability, conditional existence of the physiological crossing and
+insufficient raw-data accessibility. See the
+[combined triage](../../../docs/audits/haze-world-external-review-triage-2026-11-11.md).
+The stages below are retained as the planning record of the earlier review;
+they do not reinstate readiness. Stage A repairs numerical boundaries and
+reproduction, Stage B decides stability and buffering with finite thermal
+response and distributed habitats, and Stages C/D cover robustness and
+precedents. Barry's writing gate remains in force.
+
+## Competitive-evolution handoff (historical)
 
 - **Claims:** C01–C37 now record thirty-two supported claims, four refuted
   and one superseded. New numerical results have an independent mathematical
@@ -26,10 +38,9 @@ He guides the writing once those conditions hold.
   are committed. The seven agreed main-figure questions now have data.
   Phase-resolved cycle exports remain optional supplementary material.
 
-**Implementation complete; final review pending.** No further experiment
-is required by this stage. Claude reconciles the results and E13, then tells
-Barry whether the four readiness conditions hold. Barry guides the writing;
-no manuscript products have been scaffolded or drafted.
+**Implementation and Claude review complete at the earlier handoff.** The
+external reviews subsequently reopened scope. No manuscript products have
+been scaffolded or drafted.
 
 ## Agreed scope (retained planning record)
 

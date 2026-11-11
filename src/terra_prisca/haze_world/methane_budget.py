@@ -37,6 +37,7 @@ from pathlib import Path
 import numpy as np
 from scipy.integrate import solve_ivp
 from scipy.optimize import brentq
+from scipy.special import expit
 
 from terra_prisca.haze_response.arney2016 import Response
 
@@ -193,32 +194,41 @@ def integrate_full(
     """Integrate the deterministic ODE, preserving initially positive biomass.
 
     Biomass can fall below floating-point range before conditions improve.
-    Integrating its logarithm preserves the stated continuum equations; an
+    A softplus coordinate, logarithmic near zero and linear at large values,
+    preserves the continuum equations without overflowing on large trial values. An
     exactly absent initial population remains absent. Demographic extinction
     is not modelled and no automatic reseeding occurs.
     """
     initial = np.asarray(y0, dtype=float).copy()
     if initial.shape != (3,) or np.any(~np.isfinite(initial)) or np.any(initial < 0):
         raise ValueError("Initial donor, biomass and methane must be finite and nonnegative")
-    log_biomass = initial[1] > 0
-    if log_biomass:
-        initial[1] = np.log(initial[1])
+    positive_biomass = initial[1] > 0
+    biomass_scale = 1e-6
+    if positive_biomass:
+        value = initial[1] / biomass_scale
+        initial[1] = value + np.log(-np.expm1(-value))
 
     def rhs(_t, y):
-        if not log_biomass:
+        if not positive_biomass:
             return full_derivatives(y, p, k_donor, death)
-        d, log_b, m = y
-        physical = np.array([d, np.exp(log_b), m])
+        d, coordinate, m = y
+        physical = np.array([d, biomass_scale * np.logaddexp(0., coordinate), m])
         rates = full_derivatives(physical, p, k_donor, death)
         half_sat = atmosphere(p.case)["flux_to_ratio_per_yr"] * p.maintenance_flux / k_donor
         mu = death * growth_ratio(temperature_k(max(m, 0.0), p), p)
-        rates[1] = mu * max(d, 0.0) / (half_sat + max(d, 0.0)) - death
+        per_capita = mu * max(d, 0.0) / (half_sat + max(d, 0.0)) - death
+        factor = 1. if coordinate < -30 else np.logaddexp(0., coordinate) / expit(coordinate)
+        rates[1] = per_capita * factor
         return rates
 
     sol = solve_ivp(rhs, (0.0, years), initial, method="LSODA", rtol=1e-9, atol=1e-14)
     if not sol.success:
         raise RuntimeError(sol.message)
+    if not np.all(np.isfinite(sol.y)):
+        raise RuntimeError("Full-model solver accepted a nonfinite internal state")
     final = sol.y[:, -1].copy()
-    if log_biomass:
-        final[1] = np.exp(final[1])
+    if positive_biomass:
+        final[1] = biomass_scale * np.logaddexp(0., final[1])
+    if not np.all(np.isfinite(final)):
+        raise RuntimeError("Full-model solver returned a nonfinite physical state")
     return np.maximum(final, 0.0)

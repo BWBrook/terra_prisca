@@ -85,6 +85,12 @@ are:
 | Acetogen K ÷3 | none | none | none | none |
 | Acetogen K ÷7 | none | none | none | none |
 
+The reference MSP crossing is about **290.3 K**, just above this experiment's
+290 K ceiling. Its table entry therefore means **outside the searched window**,
+not absence of an intrinsic crossing. The full measured-temperature interval
+extends to 303.15 K. The external-review static check records this additional
+root; the original finite-window outputs remain unchanged.
+
 “None” means no living-winner exchange inside this window, not that either
 guild is absent at every temperature or in other parameter sets. All located
 controlled exchanges have acetogens on the colder side and methanogens on the

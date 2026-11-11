@@ -1,9 +1,10 @@
 # Competitive kinetic evolution
 
-Kinetic adaptation preserves a locally stable competitive thermostat at the
+Under instantaneous temperature and a common E for both guilds, kinetic
+adaptation preserves a locally stable competitive thermostat at the
 reference turnover, but it moves its temperature. With no Arrhenius constraint,
 the linear-shape equilibrium moves from 281.535 to **277.960 K**. Across the
-full72-setting community experiment, **42 settings retain stable cooling-branch
+full 72-setting community experiment, **42 settings retain stable cooling-branch
 communities and 30 have no joint community**. A pressure crossing outside the
 climate range cannot set a planetary equilibrium.
 
@@ -11,7 +12,10 @@ The proposed exclusive thermodynamic anchor fails its test. Freezing either
 thresholds or maintenance at 30 °C removes the reference crossing. A separate
 matched-level diagnostic shows that **both retained thermal terms supply
 local restoring slope**. Their non-evolution is part of this model family,
-not proof that evolution cannot alter a climate thermostat.
+not proof that evolution cannot alter a climate thermostat. External review
+found that unequal guild-specific E values can reverse the feedback; a finite
+thermal lag can also destabilize the fixed-product mixture. These restrictions
+apply to every stability statement below.
 
 The [specification](competitive-evolution-spec.md) and KE1–KE7 remain unchanged.
 The [implementation choices](competitive-evolution-methods.md) resolve the
@@ -21,7 +25,7 @@ checks the mapping, selected roots and spectra, and every recorded mutant assay.
 
 ## Model and comparison
 
-Each guild has a heritable kinetic position `u` within measured4–30 °C. At
+Each guild has a heritable kinetic position `u` within measured 4–30 °C. At
 actual temperature `T` in kelvin,
 
     V_i(T,u) = V_ref_i(u) exp[-E/k_B (1/T - 1/(u+273.15))]
@@ -38,7 +42,7 @@ variant retains the full hydrogen, two biomass, acetate and methane budgets.
 Its identity and inventory tests compare those budgets with the reference.
 
 The linear variant interpolates the measured V/K shapes; `smooth_shape` uses
-PCHIP on their logarithms. Both evaluate every0.01 °C trait position and refine
+PCHIP on their logarithms. Both evaluate every 0.01 °C trait position and refine
 candidate minima continuously. E is a phenomenological Arrhenius translation
 parameter, not a calibrated genetic cold-adaptation cost.
 
@@ -49,12 +53,12 @@ extensions; methane loss, habitat volume and reference supply stay fixed.
 
 ## S1: the crossing can move or disappear
 
-The252-setting map finds166 crossings, all acetogen-cold/methanogen-warm;
+The 252-setting map finds 166 crossings, all acetogen-cold/methanogen-warm;
 86 settings have no detected crossing within 273–303.15 K. Searches are finite
 grid/bracketing calculations, not interval certificates for every possible
 narrow or tangent root.
 
-At reference turnover0.001/hour, every tested E/interpolation retains a
+At reference turnover 0.001/hour, every tested E/interpolation retains a
 cooling-branch crossing. The linear values are:
 
 | E, eV | Crossing, K |
@@ -66,11 +70,11 @@ cooling-branch crossing. The linear values are:
 | 0.45 | 281.105 |
 | 0.65 | 281.868 |
 
-At the lowest S3 turnover0.0003/hour, no tested E retains the crossing under
+At the lowest S3 turnover 0.0003/hour, no tested E retains the crossing under
 either interpolation. At 0.003/hour some crossings instead exceed the
-297.008 K climate maximum. The largest specified interpolation shift is1.231 K,
+297.008 K climate maximum. The largest specified interpolation shift is 1.231 K,
 but even a smaller shift matters near that boundary: at E=.2, the linear
-crossing297.509 K lies outside the climate range while the smooth crossing
+crossing 297.509 K lies outside the climate range while the smooth crossing
 296.675 K lies inside it.
 
 ![Crossings under kinetic adaptation](figures/competitive_evolution/crossings.png)
@@ -81,8 +85,8 @@ crossing within the searched temperature range. Lines join sampled settings.
 
 ## S2: the anchor is not thermodynamics alone
 
-At reference turnover and E=0, the baseline crossing is277.960 K with kinetic
-positions10 °C and 25 °C. Holding either h(T) or m(T) at its30 °C value removes
+At reference turnover and E=0, the baseline crossing is 277.960 K with kinetic
+positions 10 °C and 25 °C. Holding either h(T) or m(T) at its 30 °C value removes
 the crossing and favours methanogens. This refutes KE5's maintenance clause.
 The prescribed controls change function levels as well as thermal slopes.
 
@@ -94,7 +98,7 @@ baseline root**, preserving the operating point. There,
 
 Either retained term supplies a positive local slope when the other is held
 at that matched level. Both fixed together give degenerate equality in this
-E=0 diagnostic. These local slopes do not replace the prescribed30 °C controls
+E=0 diagnostic. These local slopes do not replace the prescribed 30 °C controls
 or certify the full dynamics of a new control variant.
 
 The supported conclusion is that non-evolving thermal budgets preserve a
@@ -111,12 +115,12 @@ fixed-trait ecological states are retained in `equilibria.csv`; their
 agreement, not a global-attractor theorem. Other stable ecological states at
 frozen traits need not themselves be evolutionary optima.
 
-At all 56 joint roots, each guild's2601-mutant grid passes the growth tolerance
-of 1e-8/hour; the largest growth is7.07e-17/hour. The unstable greenhouse roots
+At all 56 joint roots, each guild's 2601-mutant grid passes the growth tolerance
+of 1e-8/hour; the largest growth is 7.07e-17/hour. The unstable greenhouse roots
 also pass: trait noninvasibility does not imply ecological stability.
 
 All 42 stable cooling communities are convergence-attracting under the three
-positive relative mutation supplies0.1,1 and 10. Twenty-six use smooth canonical
+positive relative mutation supplies 0.1, 1 and 10. Twenty-six use smooth canonical
 matrices; sixteen need one-sided node criteria. At smooth interior optima,
 first-order environmental responses vanish and the canonical matrix reduces
 to own fitness curvatures times positive population/supply weights. An
@@ -136,13 +140,13 @@ S3 grid. The dotted temperature is the frozen reference.
 
 ## Conditional S5: branch loss is not demographic extinction
 
-The30 missing settings trigger two projected canonical continuations each,
+The 30 missing settings trigger two projected canonical continuations each,
 with maximum trait steps 0.05 and 0.025 °C. Every recorded path stops at loss
 of the supported mixed branch. Ecology is checked at every accepted step;
 terminal rows separate the last supported state from attempted next traits.
 S5 uses equal per-cell mutational supply; the three supply ratios belong to
 the local S3 convergence checks.
-The maximum paired terminal differences are0.207 K and 0.0267 °C. Nearest-root
+The maximum paired terminal differences are 0.207 K and 0.0267 °C. Nearest-root
 tracking and finite steps do not exclude every between-step branch jump.
 
 Initial positions match the original reference-switch temperature. For the
@@ -164,12 +168,12 @@ are reported rather than forcing a numerical pass.
 | Prediction | Assessment | Evidence |
 |---|---|---|
 | KE1: reference E=0 crossing near 277.96 K and stable mixtures | Supported |277.960221 K; both f values locally stable on cooling branch. |
-| KE2: no inverted orientation | Supported on the searched domain |All 166 detected crossings retain acetogen-cold orientation; joint crossings agree. |
+| KE2: no inverted orientation | Supported on the searched domain |All 166 crossings in the common-E family retain acetogen-cold orientation; joint crossings agree. |
 | KE3: low-turnover loss and a cold methanogen world | Qualified support |No crossing; stable pure M at 274.002 K, with the plateau and path qualifications above. |
-| KE4: constrained reference shifts below 2.5 K | Supported |Largest shift0.491 K across both shapes for E≥.45. |
-| KE5: threshold dependence, but not maintenance, anchors it | Refuted |Either prescribed30 °C freeze removes the reference crossing. |
-| KE6: convergence-attracting cooling communities and Q>10 | Supported at stated local scope |42 states;126 supply-ratio checks; minimum Q16.30; nodes use one-sided tests. |
-| KE7: interpolation shifts below 2 K | Supported numerically |Maximum1.231 K; feasibility can nevertheless change. |
+| KE4: constrained reference shifts below 2.5 K | Supported |Largest shift 0.491 K across both shapes for E≥.45. |
+| KE5: threshold dependence, but not maintenance, anchors it | Refuted |Either prescribed 30 °C freeze removes the reference crossing. |
+| KE6: convergence-attracting cooling communities and Q>10 | Supported at stated local scope |42 states; 126 supply-ratio checks; minimum Q 16.30; nodes use one-sided tests. |
+| KE7: interpolation shifts below 2 K | Supported numerically |Maximum 1.231 K; feasibility can nevertheless change. |
 
 The [machine assessment](figures/competitive_evolution/prediction_assessment.json)
 preserves each prediction, its result and the qualifiers. The trait-bound
@@ -177,8 +181,8 @@ correction explains the preview discrepancy without rewriting the preview.
 
 ## C07 figure data and reproduction
 
-The compact [C07 export](figures/finite_populations/c07_transient.csv) has209
-sampled rows from the exact focal100,000-year trajectory. Its
+The compact [C07 export](figures/finite_populations/c07_transient.csv) has 209
+sampled rows from the exact focal 100,000-year trajectory. Its
 [manifest](figures/finite_populations/c07_transient_manifest.json) pins the
 selected raw hash, original cell-count conversion, verified climate sources
 and event-preserving sampling. Values are post-census stocks; the pre-removal

@@ -106,7 +106,7 @@ def equilibrium_design():
 
 
 def source_hashes():
-    names = ("refuge_experiments.py", "refuge_coupling.py", "refuge_equilibria.py", "refuge_integration.py",
+    names = ("refuge_experiments.py", "refuge_coupling.py", "refuge_equilibria.py", "refuge_integration.py", "dense_roots.py",
              "population_coupling.py", "methane_budget.py", "darwinian.py", "two_guilds.py",
              "hydrogen_uptake.py", "woodii1998.py", "finite_experiments.py")
     paths = [Path(__file__).with_name(name) for name in names]

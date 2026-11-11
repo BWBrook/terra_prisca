@@ -10,15 +10,28 @@ Codex (GPT-6) amended the interpretation scopes after independent checks on
 11 November 2026. Each result is conditional on its **named model version**;
 the precursor and competition models do not share identical physiology.
 
-1. **Climate.** Quasi-static extracted Arney responses and the declared
+1. **Climate.** Temperature follows the extracted Arney response **instantly**,
+   with the declared
    low/high-methane closures. C01 pools cases A–D; later competition results
    use case B. These are fixed-background experiments, not an evolving Earth.
+   Every old stability result is conditional on this closure. Temperature
+   response slower than the critical lag destabilizes the fixed-product reference;
+   the external-review revision tests its physical realisation separately.
 2. **Physiology.** The precursor uses an assumed thermal growth curve. The
    competition model uses transferred acetogen/methanogen kinetics, yields
-   and maintenance, with named below-4 °C continuations.
+   and maintenance, with named below-4 °C continuations. The reference
+   methanogen/acetogen capacity ratio is a transferred scenario, not a
+   dimensionally recovered calibration. Its alternative dry-mass value
+   can move the crossing off the extracted cooling branch.
 3. **Budgets and habitat.** Donor supply, habitat volume, product activities
    and methane loss are scenario assumptions. The competition baseline has
    a 10,000-year lifetime; precursor evolution also tests other loss shapes.
+   Local hydrogen exits to a prescribed zero-H₂ atmosphere, without
+   photochemical hydrogen return. The atmosphere's hydrogen/redox budget is
+   open. Pinning through acetate routing requires a non-methane acetate sink;
+   differential permanent biomass export can leave a narrow pinning band even
+   at complete acetate recycling. The source record does not estimate the
+   Archean recycling fraction.
 4. **Turnover.** The competition experiments assign both guilds the same
    constant loss rate `L`. Its effects do not establish that physiology or
    adaptation cannot also move or remove the competitive crossing.
@@ -29,8 +42,9 @@ the precursor and competition models do not share identical physiology.
 deterministic model, and its contrast with a matched control.
 
 - **Allowed:** "in the model, the mixed community holds the climate near
-  281.5 K, 8 K warmer than a methanogen-only world"; "turnover sets the
-  competitive set point in the tested physiology".
+  281.5 K, 8 K warmer than a methanogen-only world, under instantaneous
+  temperature"; "joint physiology selects the break-even resource crossing;
+  changing turnover moves that crossing under fixed remaining parameters".
 - **Not allowed:** "the Archean surface was 281 K"; "acetogens warmed the
   early Earth by 8 K"; "the model predicts Archean temperature".
 
@@ -111,11 +125,13 @@ switching law, with dormant death `εL`.
 **Estimand.** The linear mode of the reference mixed state, plus finite
 trajectories observed from specific starts.
 
-- **Allowed:** "the model thermostat is weakly damped (period about
-  120 years)"; "some invasion paths kept cycling beside a stable
+- **Allowed:** "with instantaneous temperature and fixed products, the
+  `f=0` mixed state is weakly damped (period about 120 years)"; "some invasion
+  paths kept cycling beside a stable
   equilibrium under cubic switching".
 - **Not allowed:** "limit cycle", "attractor", or "basin" for the dormancy
-  cycles; "Archean climate oscillated on a 120-year period"; "linear
+  cycles; "a physically delayed climate retains that stability";
+  "Archean climate oscillated on a 120-year period"; "linear
   switching removes the cycles", since two controls are unresolved.
 
 ## E8. Endpoint state (C23, C26)
@@ -152,10 +168,10 @@ trade-off are different scenarios.
   shallow methane loss without a floor. C04 concerns fixed-optimum,
   no-mutation unconstrained strains dying during warming on the way to the
   greenhouse peak; it is not mortality of all methanogens at the peak.
-- **Not allowed:** extending C02 to the two-guild switch. Whether selection
-  erases a competition-set point is untested. A crossing can shift, leave
-  the supported temperature range or disappear; its existence after evolution
-  cannot be assumed from its existence in the reference strains.
+- **Not allowed:** extending C02 to the two-guild switch. E13 now reports
+  the restricted competitive-kinetics evolution test; it can shift, remove
+  or retain a crossing. Neither family establishes a general response to
+  selection on all physiological traits.
 
 ## E12. Persistence through displacement (C07, C09, C17)
 
@@ -163,8 +179,8 @@ trade-off are different scenarios.
 invasion transients. Refuges and dormancy are two mechanisms that can bridge
 rapid population decline and slow climate adjustment in this model.
 
-- **Allowed:** "a competitive climate thermostat can need biological memory
-  during an invasion"; "an equilibrium can exist while an invasion fails to
+- **Allowed:** "a single-temperature competitive climate thermostat can
+  need biological memory during an invasion"; "an equilibrium can exist while an invasion fails to
   reach it in the finite-census variant".
 - **Not allowed:** a theorem that every competitive thermostat requires a
   refuge or dormant bank, or that either mechanism guarantees a common
@@ -177,7 +193,7 @@ rapid population decline and slow climate adjustment in this model.
 
 **Estimand.** Best-response kinetic positions within the measured 4–30 °C
 trait interval, their feasible joint trait–climate equilibria, frozen-trait
-five-stock ecological stability, and evolutionary convergence under the
+five-stock ecological stability with instantaneous temperature, and evolutionary convergence under the
 specified per-cell mutational-supply ratios. S4 concerns rare-mutant growth
 in each fixed resident environment. The
 [implementation choices](../competitive-evolution-methods.md) distinguish
@@ -191,6 +207,9 @@ smooth, corner and projected boundary cases.
   or stable climate equilibrium; inferring a methanogen-only world without
   checking its ecological state and invasion fitness; calling a numerical
   centered derivative at a corner a canonical Jacobian.
+- Both guilds share the same Arrhenius parameter E in C29–C37. Unequal
+  constraint strengths can reverse the competitive feedback; the common-E
+  grid does not establish resistance to that change.
 - Thresholds, maintenance, yields, turnover and the Arrhenius parameter E
   do not evolve in this family. Their non-evolution is a model assumption,
   not proof of a fundamental evolutionary constraint. The rate multiplier

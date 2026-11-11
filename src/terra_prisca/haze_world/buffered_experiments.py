@@ -82,7 +82,7 @@ def design(stage="main",years=None):
 
 
 def source_hashes():
-    names=("buffered_experiments.py","habitat_coupling.py","habitat_integration.py","habitat_equilibria.py",
+    names=("buffered_experiments.py","habitat_coupling.py","habitat_integration.py","habitat_equilibria.py","dense_roots.py",
            "population_coupling.py","methane_budget.py","darwinian.py","two_guilds.py","hydrogen_uptake.py",
            "woodii1998.py","finite_experiments.py","finite_populations.py")
     paths=[Path(__file__).with_name(name) for name in names]

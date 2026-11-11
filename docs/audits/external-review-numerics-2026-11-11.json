@@ -1,0 +1,1031 @@
+{
+  "scope": "Boundary checks and bounded selected replays; not archive-wide dense-polynomial certification",
+  "machine": {
+    "system": "Darwin",
+    "architecture": "arm64"
+  },
+  "source_sha256": {
+    "docs/audits/external-review-numerics-2026-11-11.py": "99f06a276403f68e434134a4dbaf48d403bc042e35024758c909061c8478e26e",
+    "src/terra_prisca/haze_world/dense_roots.py": "726d174e54916753f737dd83cab64593ff6a410e06ad693b024dcd63319a279e",
+    "src/terra_prisca/haze_world/habitat_integration.py": "b63708823a920625a005929dac17260ecef7a240f5857efa572f2a91088d6ec0",
+    "src/terra_prisca/haze_world/refuge_integration.py": "43e7e7a2e88f7d81f7b1dbb399a38d991451c3ffd850f04ae102a01f1047c925",
+    "src/terra_prisca/haze_world/methane_budget.py": "f2374cfcb658102cc9919c61108379560922fc787c2cd85e089e878a9fa25fa8"
+  },
+  "domain_exits": [
+    {
+      "path": "local/haze/refuge_coupling/main_0009_t100000-d25419393b19d749.json.gz",
+      "sha256": "6e631df70c3c08110184f97b907ae048be5086244288196c84dc0c30d9bb2574",
+      "case_id": "main_0009_t100000",
+      "time_yr": 35556.878272714785,
+      "ratio": 0.2165157336345775,
+      "residual": 0.0,
+      "host": "not recorded"
+    },
+    {
+      "path": "local/haze/refuge_coupling/main_0011_t100000-0903f719bc142f7f.json.gz",
+      "sha256": "1b50baa2d89d48f475b60b2cfcfeb9fe3f79ea69b0c5d2cc7c1220e7ffa9f0f7",
+      "case_id": "main_0011_t100000",
+      "time_yr": 35553.93200780896,
+      "ratio": 0.2165157336345775,
+      "residual": 0.0,
+      "host": "not recorded"
+    },
+    {
+      "path": "local/haze/refuge_coupling/main_0013_t100000-7ae3b0e0f7cb21ed.json.gz",
+      "sha256": "96166d0221bd2ab9f66d30345676ad32c270fcbaf2a02c09afa530c75ee37750",
+      "case_id": "main_0013_t100000",
+      "time_yr": 35543.40838764332,
+      "ratio": 0.2165157336345775,
+      "residual": 0.0,
+      "host": "not recorded"
+    },
+    {
+      "path": "local/haze/refuge_coupling/main_0015_t100000-a46fa14a80545661.json.gz",
+      "sha256": "05a3b88d41d7210e227a711c42489f24cc079e7c28c80afd56bc94577f79c9d1",
+      "case_id": "main_0015_t100000",
+      "time_yr": 35284.58353935026,
+      "ratio": 0.2165157336345775,
+      "residual": 0.0,
+      "host": "not recorded"
+    },
+    {
+      "path": "local/haze/refuge_coupling/main_0017_t100000-55cdda8fa211611a.json.gz",
+      "sha256": "6618daf30cddab0f74f919fcb266599723d57375d73bafc5cb945843b81f4f41",
+      "case_id": "main_0017_t100000",
+      "time_yr": 5682.929049218441,
+      "ratio": 0.11394358787516592,
+      "residual": 0.0,
+      "host": "not recorded"
+    },
+    {
+      "path": "local/haze/refuge_coupling/main_0019_t100000-813c161c407accc4.json.gz",
+      "sha256": "0ab6b185b677b6cd529e057d87c49b616868758390b94bbbd2fe3fdae025f4c3",
+      "case_id": "main_0019_t100000",
+      "time_yr": 5672.722313566183,
+      "ratio": 0.11394358787516592,
+      "residual": 0.0,
+      "host": "not recorded"
+    },
+    {
+      "path": "local/haze/refuge_coupling/main_0021_t100000-3a22cd98ae1c32dc.json.gz",
+      "sha256": "680a8fd22693aaaaa20682852936aa92704ba794d24d71bd6bd09f85d7397ab9",
+      "case_id": "main_0021_t100000",
+      "time_yr": 5655.336977220118,
+      "ratio": 0.11394358787516592,
+      "residual": 0.0,
+      "host": "not recorded"
+    },
+    {
+      "path": "local/haze/refuge_coupling/main_0023_t100000-fd5a84183569eed8.json.gz",
+      "sha256": "f8a9ff34a110f10f024ea369e886f4313b154e81545f3cc7919c27ef81d1f392",
+      "case_id": "main_0023_t100000",
+      "time_yr": 5638.83753910404,
+      "ratio": 0.11394358787516592,
+      "residual": 0.0,
+      "host": "not recorded"
+    },
+    {
+      "path": "local/haze/refuge_coupling/main_0025_t100000-56863b2028ae5b56.json.gz",
+      "sha256": "85824f372d816afb245ec6d2e69c97e7bfdeae15daf3f6b249dbefe9d36d0df2",
+      "case_id": "main_0025_t100000",
+      "time_yr": 2166.6416655705457,
+      "ratio": 0.04879249139513587,
+      "residual": 0.0,
+      "host": "not recorded"
+    },
+    {
+      "path": "local/haze/refuge_coupling/main_0027_t100000-2d56447e1bd7471f.json.gz",
+      "sha256": "7b4ce651596d5053e1d35492ccdfe19b2d71e5d6d0df81506424b38188f29738",
+      "case_id": "main_0027_t100000",
+      "time_yr": 2129.9087365553237,
+      "ratio": 0.04879249139513586,
+      "residual": 6.938893903907228e-18,
+      "host": "not recorded"
+    },
+    {
+      "path": "local/haze/refuge_coupling/main_0029_t100000-fd5ed869bbf8e888.json.gz",
+      "sha256": "bd44f894ddc2921567c623a078745fdec73c12a995518fd3cdcc7832e052fda5",
+      "case_id": "main_0029_t100000",
+      "time_yr": 2081.523413301725,
+      "ratio": 0.04879249139513587,
+      "residual": 0.0,
+      "host": "not recorded"
+    },
+    {
+      "path": "local/haze/refuge_coupling/main_0031_t100000-7bd95a9edfdfb67b.json.gz",
+      "sha256": "f88cf2c74ec675022b2b04836a8aac5944e382ddf78882789311f1f77a1ecc0f",
+      "case_id": "main_0031_t100000",
+      "time_yr": 2032.2463577181227,
+      "ratio": 0.04879249139513587,
+      "residual": 0.0,
+      "host": "not recorded"
+    },
+    {
+      "path": "local/haze/refuge_coupling/main_0033_t100000-0e36d68caef143a8.json.gz",
+      "sha256": "84be0c8dce84bd206c2efe087d777a9b312fd5cbde446988b687aa0fda93909d",
+      "case_id": "main_0033_t100000",
+      "time_yr": 1114.3144012136815,
+      "ratio": 0.007730791445102801,
+      "residual": 0.0,
+      "host": "not recorded"
+    },
+    {
+      "path": "local/haze/refuge_coupling/main_0035_t100000-bff2127123bc16c7.json.gz",
+      "sha256": "98e802e5cfb5836bdfe173fb7d15407a22d643ef0c07d93c79bb6e751f5bcbd7",
+      "case_id": "main_0035_t100000",
+      "time_yr": 845.1123318625492,
+      "ratio": 0.007730791445102801,
+      "residual": 0.0,
+      "host": "not recorded"
+    },
+    {
+      "path": "local/haze/refuge_coupling/main_0037_t100000-c8157a003cce9775.json.gz",
+      "sha256": "764be51f109cce87e7fcf5552208b6fcaaccbb0652c16bae7956a60f54d5c5e2",
+      "case_id": "main_0037_t100000",
+      "time_yr": 750.6407563340088,
+      "ratio": 0.007730791445102802,
+      "residual": 8.673617379884035e-19,
+      "host": "not recorded"
+    },
+    {
+      "path": "local/haze/refuge_coupling/main_0039_t100000-0a429bb226c00788.json.gz",
+      "sha256": "3ef8134dfad0835e4f5f7ebf39923894469d78e80338265d7d0c6e16382544c0",
+      "case_id": "main_0039_t100000",
+      "time_yr": 332.559900933254,
+      "ratio": 0.007730791445102801,
+      "residual": 0.0,
+      "host": "not recorded"
+    },
+    {
+      "path": "local/haze/refuge_coupling/main_0059_t100000-0353a831f88d5ea7.json.gz",
+      "sha256": "01c46a2d69b9ef7088ac376c4b227b5aa5e19a3e17062350b04de84ff371ecb4",
+      "case_id": "main_0059_t100000",
+      "time_yr": 15837.022280549067,
+      "ratio": 0.20347395344495814,
+      "residual": 0.0,
+      "host": "not recorded"
+    },
+    {
+      "path": "local/haze/refuge_coupling/main_0061_t100000-dc91000361f3f40f.json.gz",
+      "sha256": "4e233c7c26541c5818eab56028f37b8ba187a7a197503ba8cce644a5e1678e3d",
+      "case_id": "main_0061_t100000",
+      "time_yr": 15811.96856183256,
+      "ratio": 0.20347395344495814,
+      "residual": 0.0,
+      "host": "not recorded"
+    },
+    {
+      "path": "local/haze/refuge_coupling/main_0063_t100000-bf8da95bd41dcf26.json.gz",
+      "sha256": "fa221096a4a82ae9111b35abca5ee11f3541f3aecfa83609813fb67cb1f00612",
+      "case_id": "main_0063_t100000",
+      "time_yr": 15672.900339481524,
+      "ratio": 0.20347395344495814,
+      "residual": 0.0,
+      "host": "not recorded"
+    },
+    {
+      "path": "local/haze/refuge_coupling/main_0067_t100000-9cc811f378500350.json.gz",
+      "sha256": "b378b50d1c86ea342e537e0fac07204e4e20f0445a12cc0cf335be175a698563",
+      "case_id": "main_0067_t100000",
+      "time_yr": 15630.343644414443,
+      "ratio": 0.20000778763213795,
+      "residual": 0.0,
+      "host": "not recorded"
+    },
+    {
+      "path": "local/haze/refuge_coupling/main_0069_t100000-0337b148cebb57c7.json.gz",
+      "sha256": "f29bf60a9f6eebbc5421b1a7e0b865105634437254bb646211539daff99a777b",
+      "case_id": "main_0069_t100000",
+      "time_yr": 15589.881995519205,
+      "ratio": 0.20000778763213795,
+      "residual": 0.0,
+      "host": "not recorded"
+    },
+    {
+      "path": "local/haze/refuge_coupling/main_0071_t100000-20b5289a024cd337.json.gz",
+      "sha256": "2e84afb8390ef2ffdbfb7879feebfb29f70891ea42d1fab5e6e5589d6bf9cfeb",
+      "case_id": "main_0071_t100000",
+      "time_yr": 15171.672369661135,
+      "ratio": 0.20000778763213795,
+      "residual": 0.0,
+      "host": "not recorded"
+    },
+    {
+      "path": "local/haze/refuge_coupling/main_0075_t100000-ee936f1c22c7fa19.json.gz",
+      "sha256": "b09f1ae8b8a1f3d77d417035c97810f86e35d630eccb5c2bae3404cc99da7a68",
+      "case_id": "main_0075_t100000",
+      "time_yr": 9860.643065490101,
+      "ratio": 0.14161632691899062,
+      "residual": 0.0,
+      "host": "not recorded"
+    },
+    {
+      "path": "local/haze/refuge_coupling/main_0077_t100000-76c2b7a7aff3a0ce.json.gz",
+      "sha256": "c8797b96b4b90a69d0e3e11c58fd9ae7c7ebb5768c8a0de3241c331e061736e7",
+      "case_id": "main_0077_t100000",
+      "time_yr": 9785.18242149677,
+      "ratio": 0.14161632691899062,
+      "residual": 0.0,
+      "host": "not recorded"
+    },
+    {
+      "path": "local/haze/refuge_coupling/main_0079_t100000-eb5ccd67800f7f4e.json.gz",
+      "sha256": "47c04665d4c9dda4697a28ea23b061d91a83473a6574bee797a3d10e27fab37b",
+      "case_id": "main_0079_t100000",
+      "time_yr": 8778.196065672219,
+      "ratio": 0.14161632691899062,
+      "residual": 0.0,
+      "host": "not recorded"
+    },
+    {
+      "path": "local/haze/refuge_coupling/main_0081_t100000-cfcdbb120063affd.json.gz",
+      "sha256": "b0d52dba5465c6b9d490f9e65f882a1ecbb2565c2084c19cbd63d42812825a38",
+      "case_id": "main_0081_t100000",
+      "time_yr": 17716.56573079881,
+      "ratio": 0.1063948354764292,
+      "residual": 0.0,
+      "host": "not recorded"
+    },
+    {
+      "path": "local/haze/refuge_coupling/main_0083_t100000-21180cb9941b9cd9.json.gz",
+      "sha256": "e6111f167d989800b50f3f34e3272a7b3f1a47a59f347a1484815ee208cdd338",
+      "case_id": "main_0083_t100000",
+      "time_yr": 12688.459693914658,
+      "ratio": 0.10639483547642918,
+      "residual": 1.3877787807814457e-17,
+      "host": "not recorded"
+    },
+    {
+      "path": "local/haze/refuge_coupling/main_0085_t100000-cf3fef61ac97a94b.json.gz",
+      "sha256": "0bc73e44b508e8afe6724464d69b3056c4bd16b80ecc97dc0c31f3cfec81395a",
+      "case_id": "main_0085_t100000",
+      "time_yr": 12437.742216756067,
+      "ratio": 0.10639483547642918,
+      "residual": 1.3877787807814457e-17,
+      "host": "not recorded"
+    },
+    {
+      "path": "local/haze/refuge_coupling/main_0087_t100000-2c6a5acb4e102209.json.gz",
+      "sha256": "80f9d94eeef92cad5859558a8f882f0fbc3ae97bd4e711d2cdfde3809405033f",
+      "case_id": "main_0087_t100000",
+      "time_yr": 8439.97764254784,
+      "ratio": 0.10639483547642918,
+      "residual": 1.3877787807814457e-17,
+      "host": "not recorded"
+    },
+    {
+      "path": "local/haze/refuge_coupling/main_0105_t100000-0d1a6d9789a10e34.json.gz",
+      "sha256": "05aa8fb8ca0970d7b6a221432fffb215a41ca953d0c8cc05527a9ff078e3befc",
+      "case_id": "main_0105_t100000",
+      "time_yr": 19153.92940353944,
+      "ratio": 0.20070102079470198,
+      "residual": 0.0,
+      "host": "not recorded"
+    },
+    {
+      "path": "local/haze/refuge_coupling/main_0107_t100000-b619a5ff1441c38a.json.gz",
+      "sha256": "2af9a69bd03be013c412abab6b9bf7b43a812f98e7c343c99505145ec70eb87f",
+      "case_id": "main_0107_t100000",
+      "time_yr": 14620.652916862953,
+      "ratio": 0.20070102079470198,
+      "residual": 0.0,
+      "host": "not recorded"
+    },
+    {
+      "path": "local/haze/refuge_coupling/main_0109_t100000-208651beb395ebcc.json.gz",
+      "sha256": "a2d41e395d0a3f367b389348fe9cca2195e92bc43ded7aae918f7bf8525a1d3e",
+      "case_id": "main_0109_t100000",
+      "time_yr": 14615.34113029498,
+      "ratio": 0.20070102079470198,
+      "residual": 0.0,
+      "host": "not recorded"
+    },
+    {
+      "path": "local/haze/refuge_coupling/main_0111_t100000-58bff1337b4b7867.json.gz",
+      "sha256": "3a9da45ffcdde5ee4ff618f985efcf438e066fb7482fbce8372853c5a13e9b8d",
+      "case_id": "main_0111_t100000",
+      "time_yr": 14573.430537677905,
+      "ratio": 0.20070102079470198,
+      "residual": 0.0,
+      "host": "not recorded"
+    },
+    {
+      "path": "local/haze/refuge_coupling/main_0113_t100000-63859f8dc531e1c3.json.gz",
+      "sha256": "f9b43fc17999336194fc34b04a3b6fa2bdad9777578de68a4a7ee4f59a5096d6",
+      "case_id": "main_0113_t100000",
+      "time_yr": 17095.44619094814,
+      "ratio": 0.19446192233162563,
+      "residual": 0.0,
+      "host": "not recorded"
+    },
+    {
+      "path": "local/haze/refuge_coupling/main_0115_t100000-fac688a1e4e5f07a.json.gz",
+      "sha256": "914d6213d692151cdbcbbbf3bf3a894986f0b2e6f88141e3cde28e85f16b22bf",
+      "case_id": "main_0115_t100000",
+      "time_yr": 13836.414219327937,
+      "ratio": 0.19446192233162563,
+      "residual": 0.0,
+      "host": "not recorded"
+    },
+    {
+      "path": "local/haze/refuge_coupling/main_0117_t100000-50d8dcb8717070a2.json.gz",
+      "sha256": "70c0af276170ffbaf0824d3c55f6acf37526ce5f6dc02e6689d4aee764b506de",
+      "case_id": "main_0117_t100000",
+      "time_yr": 13821.109273486938,
+      "ratio": 0.19446192233162563,
+      "residual": 0.0,
+      "host": "not recorded"
+    },
+    {
+      "path": "local/haze/refuge_coupling/main_0119_t100000-f762ee7c208035cb.json.gz",
+      "sha256": "0edd166540cac9d6a7e8bd2bc67f0d1fbb64d16acf0dd84485591c9c282c3ebb",
+      "case_id": "main_0119_t100000",
+      "time_yr": 13627.794754612325,
+      "ratio": 0.19446192233162563,
+      "residual": 0.0,
+      "host": "not recorded"
+    },
+    {
+      "path": "local/haze/refuge_coupling/main_0153_t100000-1d24dd0e861728d9.json.gz",
+      "sha256": "158e3794fbb16fc179059af48e6e7d00f19537b9f88d881640d2fb961c0b3cee",
+      "case_id": "main_0153_t100000",
+      "time_yr": 29604.986884842536,
+      "ratio": 0.2165157336345775,
+      "residual": 0.0,
+      "host": "not recorded"
+    },
+    {
+      "path": "local/haze/refuge_coupling/main_0155_t100000-c55f443e892ccc89.json.gz",
+      "sha256": "c2426a449dbd6cc3edaf975f2e252417ba2b069c0cf0b2902dd62caba674e1f9",
+      "case_id": "main_0155_t100000",
+      "time_yr": 29604.977846104717,
+      "ratio": 0.2165157336345775,
+      "residual": 0.0,
+      "host": "not recorded"
+    },
+    {
+      "path": "local/haze/refuge_coupling/main_0157_t100000-484d2a86e8ff815a.json.gz",
+      "sha256": "70645c938cea110cb81bccbece955ac49a28374d40c1fcc6e83af039820e7c07",
+      "case_id": "main_0157_t100000",
+      "time_yr": 29604.673351730755,
+      "ratio": 0.2165157336345775,
+      "residual": 0.0,
+      "host": "not recorded"
+    },
+    {
+      "path": "local/haze/refuge_coupling/main_0159_t100000-3dac629d4f2c0009.json.gz",
+      "sha256": "f35c946f63ee5c380f639257933900fc4f753d2ed7eb37d08b107c9c29988967",
+      "case_id": "main_0159_t100000",
+      "time_yr": 29352.463669443987,
+      "ratio": 0.2165157336345775,
+      "residual": 0.0,
+      "host": "not recorded"
+    },
+    {
+      "path": "local/haze/refuge_coupling/main_0201_t100000-14bb15057962e637.json.gz",
+      "sha256": "2ff47849e75a9f966bea8544e1ffb3760211a7ad430d4d7b3f2260a1508ff7cb",
+      "case_id": "main_0201_t100000",
+      "time_yr": 9786.197521399998,
+      "ratio": 0.20347395344495814,
+      "residual": 0.0,
+      "host": "not recorded"
+    },
+    {
+      "path": "local/haze/refuge_coupling/main_0203_t100000-9b07605a35cfd50f.json.gz",
+      "sha256": "b83241b3a839691866ab6b7e51228948f6fb61a025ff96e93045a1763b1a8240",
+      "case_id": "main_0203_t100000",
+      "time_yr": 9786.196931354976,
+      "ratio": 0.20347395344495814,
+      "residual": 0.0,
+      "host": "not recorded"
+    },
+    {
+      "path": "local/haze/refuge_coupling/main_0205_t100000-6a45df3d056554de.json.gz",
+      "sha256": "ea0fa989be5517d755f2271950d2832ad665a07a0213094ce9ff4138adc472be",
+      "case_id": "main_0205_t100000",
+      "time_yr": 9786.122320949342,
+      "ratio": 0.20347395344495814,
+      "residual": 0.0,
+      "host": "not recorded"
+    },
+    {
+      "path": "local/haze/refuge_coupling/main_0207_t100000-35fb4229240a52c8.json.gz",
+      "sha256": "5839e975fb0d825056253ee424a33d72991df6e5d87a84c5532e762782956955",
+      "case_id": "main_0207_t100000",
+      "time_yr": 9760.345849251562,
+      "ratio": 0.20347395344495814,
+      "residual": 0.0,
+      "host": "not recorded"
+    },
+    {
+      "path": "local/haze/refuge_coupling/main_0209_t100000-a6b1d5d28f59c773.json.gz",
+      "sha256": "fcaccb3ab84e0b36126a974d3bcb94b99ca84c2904ec74e9b14794849d128fa3",
+      "case_id": "main_0209_t100000",
+      "time_yr": 9156.469217097285,
+      "ratio": 0.20000778763213795,
+      "residual": 0.0,
+      "host": "not recorded"
+    },
+    {
+      "path": "local/haze/refuge_coupling/main_0211_t100000-8a1a8633515773f4.json.gz",
+      "sha256": "37807965f9eeede8eb9a7c4263599beec2913ac70dc9086f3be44ffa51debc5a",
+      "case_id": "main_0211_t100000",
+      "time_yr": 9156.46483153902,
+      "ratio": 0.20000778763213795,
+      "residual": 0.0,
+      "host": "not recorded"
+    },
+    {
+      "path": "local/haze/refuge_coupling/main_0213_t100000-fc5b73747332a195.json.gz",
+      "sha256": "5383f87cdf635d44a200a253cf56afb1ece20a50bda4dbf2d28b207ff484d4d9",
+      "case_id": "main_0213_t100000",
+      "time_yr": 9156.068261964865,
+      "ratio": 0.20000778763213795,
+      "residual": 0.0,
+      "host": "not recorded"
+    },
+    {
+      "path": "local/haze/refuge_coupling/main_0215_t100000-230f5bf9cb65eee5.json.gz",
+      "sha256": "3809470c670b5759ba81ce674b2a0b07c0597ee89d0dd5860153a7518594b647",
+      "case_id": "main_0215_t100000",
+      "time_yr": 9124.747180039274,
+      "ratio": 0.20000778763213795,
+      "residual": 0.0,
+      "host": "not recorded"
+    },
+    {
+      "path": "local/haze/refuge_coupling/main_0217_t100000-f72c3838195629e8.json.gz",
+      "sha256": "807e0691de90016cc871a125dedae995880c959f6364f8bbead4856806415717",
+      "case_id": "main_0217_t100000",
+      "time_yr": 2198.7777738250925,
+      "ratio": 0.14161632691899062,
+      "residual": 0.0,
+      "host": "not recorded"
+    },
+    {
+      "path": "local/haze/refuge_coupling/main_0219_t100000-95e070c51e71ef74.json.gz",
+      "sha256": "710a4407980d05c658dae3447ec2d1387fa294bf3cb065a06800d2ab4d7787d5",
+      "case_id": "main_0219_t100000",
+      "time_yr": 2198.676885940658,
+      "ratio": 0.14161632691899062,
+      "residual": 0.0,
+      "host": "not recorded"
+    },
+    {
+      "path": "local/haze/refuge_coupling/main_0221_t100000-42e81a5d20e54a89.json.gz",
+      "sha256": "d6806079cf7d817eb4edbface0c27ce07140ddd32a97c7e204338a572f02cd9b",
+      "case_id": "main_0221_t100000",
+      "time_yr": 2197.7183087608523,
+      "ratio": 0.14161632691899062,
+      "residual": 0.0,
+      "host": "not recorded"
+    },
+    {
+      "path": "local/haze/refuge_coupling/main_0223_t100000-4e4372422dab0220.json.gz",
+      "sha256": "e748798c6cd8aadc2a173b8fd331d75d1805a6e639ec16389e3275a5d225cb17",
+      "case_id": "main_0223_t100000",
+      "time_yr": 2163.948767069162,
+      "ratio": 0.14161632691899062,
+      "residual": 0.0,
+      "host": "not recorded"
+    },
+    {
+      "path": "local/haze/refuge_coupling/main_0249_t100000-b51f0580ba7f7837.json.gz",
+      "sha256": "6a21987eba463e16fd8a4f3171a2d8cb08750e598bee870e289faffa16d91da3",
+      "case_id": "main_0249_t100000",
+      "time_yr": 8620.348745307243,
+      "ratio": 0.20070102079470198,
+      "residual": 0.0,
+      "host": "not recorded"
+    },
+    {
+      "path": "local/haze/refuge_coupling/main_0251_t100000-6de56baa49a8c5e3.json.gz",
+      "sha256": "b22d784c54ba903cb1d80e4c41c82e5ffe13b2c4f773c6235cb22a2196838036",
+      "case_id": "main_0251_t100000",
+      "time_yr": 8620.34885024329,
+      "ratio": 0.20070102079470198,
+      "residual": 0.0,
+      "host": "not recorded"
+    },
+    {
+      "path": "local/haze/refuge_coupling/main_0253_t100000-84a9fc239010964d.json.gz",
+      "sha256": "c0342ac752cff3d4a845bf56dc7a1aa00596fff94fd95a0993ff73e8d136f016",
+      "case_id": "main_0253_t100000",
+      "time_yr": 8620.326019552826,
+      "ratio": 0.20070102079470198,
+      "residual": 0.0,
+      "host": "not recorded"
+    },
+    {
+      "path": "local/haze/refuge_coupling/main_0255_t100000-63d4b43cc108f2d9.json.gz",
+      "sha256": "e44948089571ad1918c72f9f33839f40109226dd9948323ee7d1022fabfd5c34",
+      "case_id": "main_0255_t100000",
+      "time_yr": 8615.971965854302,
+      "ratio": 0.20070102079470198,
+      "residual": 0.0,
+      "host": "not recorded"
+    },
+    {
+      "path": "local/haze/refuge_coupling/main_0257_t100000-1b24678d473b7935.json.gz",
+      "sha256": "6054c5ab346a45d4ce1cdd48aee2c2294848f50bae8c475e674a92bcde40bc93",
+      "case_id": "main_0257_t100000",
+      "time_yr": 7541.427566371721,
+      "ratio": 0.19446192233162563,
+      "residual": 0.0,
+      "host": "not recorded"
+    },
+    {
+      "path": "local/haze/refuge_coupling/main_0259_t100000-c16603140b806a2e.json.gz",
+      "sha256": "0a7c10958e5aca7b3f1c289d8b1d483c0161729dc072e2a6ec9ca4e4adc04638",
+      "case_id": "main_0259_t100000",
+      "time_yr": 7541.382109163925,
+      "ratio": 0.19446192233162563,
+      "residual": 0.0,
+      "host": "not recorded"
+    },
+    {
+      "path": "local/haze/refuge_coupling/main_0261_t100000-cd715d1f7903ceb7.json.gz",
+      "sha256": "c5610b96826c3c00776a9f872025b81a1bc8f689d95c03dc5b1512396207c203",
+      "case_id": "main_0261_t100000",
+      "time_yr": 7541.108244291745,
+      "ratio": 0.19446192233162563,
+      "residual": 0.0,
+      "host": "not recorded"
+    },
+    {
+      "path": "local/haze/refuge_coupling/main_0263_t100000-353885ba718cf5cb.json.gz",
+      "sha256": "40ba781ef8e241d9b52b52e5ae8136657533a4e08bc1420994e679c2a94cdc64",
+      "case_id": "main_0263_t100000",
+      "time_yr": 7535.19114811434,
+      "ratio": 0.19446192233162563,
+      "residual": 0.0,
+      "host": "not recorded"
+    },
+    {
+      "path": "local/haze/refuge_coupling/main_0265_t100000-83a65c8abee73e1e.json.gz",
+      "sha256": "045e6cfc551992271362761a39744b8fc98f10b381e1995ee3a5a43c8c93675d",
+      "case_id": "main_0265_t100000",
+      "time_yr": 7532.710817348716,
+      "ratio": 0.18696249900270082,
+      "residual": 0.0,
+      "host": "not recorded"
+    },
+    {
+      "path": "local/haze/refuge_coupling/main_0267_t100000-5a12534b38a09ed6.json.gz",
+      "sha256": "66745e85f9d505737eaeed7ff91a598a79ff004cb46618a2c415cefdc79c30b4",
+      "case_id": "main_0267_t100000",
+      "time_yr": 6710.968410988109,
+      "ratio": 0.18696249900270082,
+      "residual": 0.0,
+      "host": "not recorded"
+    },
+    {
+      "path": "local/haze/refuge_coupling/main_0269_t100000-e76d8b9555928737.json.gz",
+      "sha256": "cf329691749c6ae54df38179f2b746b0511d6b040d7707533e9459a7e090d16d",
+      "case_id": "main_0269_t100000",
+      "time_yr": 6697.040090576271,
+      "ratio": 0.18696249900270082,
+      "residual": 0.0,
+      "host": "not recorded"
+    },
+    {
+      "path": "local/haze/refuge_coupling/main_0271_t100000-3130103b485f22ad.json.gz",
+      "sha256": "718010aaf27c7b7fee6577df87721803be87f53da85fc1720fa6a2d0b068fd9e",
+      "case_id": "main_0271_t100000",
+      "time_yr": 6579.968830238814,
+      "ratio": 0.18696249900270082,
+      "residual": 0.0,
+      "host": "not recorded"
+    },
+    {
+      "path": "local/haze/refuge_coupling/main_0273_t100000-ae98fa085de14210.json.gz",
+      "sha256": "8cc675b51a9b88718f802700eb3232c2ac38441f2e310b067dc404df084a4b2a",
+      "case_id": "main_0273_t100000",
+      "time_yr": 6538.174290784044,
+      "ratio": 0.17946167375512656,
+      "residual": 0.0,
+      "host": "not recorded"
+    },
+    {
+      "path": "local/haze/refuge_coupling/main_0275_t100000-c5f6a4fdabcc125c.json.gz",
+      "sha256": "3bbe2e9b4f1e08d72b7e19c7e5c2cffd092135f8e1bcb3bab4243d4c89b69542",
+      "case_id": "main_0275_t100000",
+      "time_yr": 6538.174176642168,
+      "ratio": 0.17946167375512656,
+      "residual": 0.0,
+      "host": "not recorded"
+    },
+    {
+      "path": "local/haze/refuge_coupling/main_0277_t100000-6bce93fc81000b63.json.gz",
+      "sha256": "02d34d8b0a7be0732af71160481dc333dc995a8a2755da61f1f6627586f67bd9",
+      "case_id": "main_0277_t100000",
+      "time_yr": 6538.059498205357,
+      "ratio": 0.17946167375512656,
+      "residual": 0.0,
+      "host": "not recorded"
+    },
+    {
+      "path": "local/haze/refuge_coupling/main_0279_t100000-9ea96c0e943af301.json.gz",
+      "sha256": "da8f76d49ed9ff57b13afd9e08e7570d6cb893795d2491c70d053f32a8f65f25",
+      "case_id": "main_0279_t100000",
+      "time_yr": 6437.592339907628,
+      "ratio": 0.17946167375512656,
+      "residual": 0.0,
+      "host": "not recorded"
+    },
+    {
+      "path": "local/haze/refuge_coupling/subsets_0000_t100000-3bada368688d034d.json.gz",
+      "sha256": "c48ad12a7d8d329d6cf6d7df89f16b34b458c191c7c9afd75b58e1db88d42530",
+      "case_id": "subsets_0000_t100000",
+      "time_yr": 2664.4340624150013,
+      "ratio": 0.17075296733120263,
+      "residual": 0.0,
+      "host": "not recorded"
+    },
+    {
+      "path": "local/haze/refuge_coupling/subsets_0001_t100000-cede227d108a2fbb.json.gz",
+      "sha256": "b54518706c9f2301d64bf7f274a9c708ab91b2080c26625cbe30aef1f321a4bd",
+      "case_id": "subsets_0001_t100000",
+      "time_yr": 7005.493442585552,
+      "ratio": 0.1327610504249664,
+      "residual": 0.0,
+      "host": "not recorded"
+    },
+    {
+      "path": "local/haze/refuge_coupling/subsets_0003_t100000-1985872d6fc52f3d.json.gz",
+      "sha256": "562951b475b1a9ad5e4685fa30678d0ecf104ce44b63b6c2970d3fa52cd12b9f",
+      "case_id": "subsets_0003_t100000",
+      "time_yr": 6992.242575089974,
+      "ratio": 0.1327610504249664,
+      "residual": 0.0,
+      "host": "not recorded"
+    },
+    {
+      "path": "local/haze/refuge_coupling/subsets_0004_t100000-57e47de3902191bd.json.gz",
+      "sha256": "e1a08c9a7c762516b99cc0c1a025d1df6ceddb5cef554de109ff4f0821312c4a",
+      "case_id": "subsets_0004_t100000",
+      "time_yr": 2639.149810028216,
+      "ratio": 0.17117510095085903,
+      "residual": 0.0,
+      "host": "not recorded"
+    },
+    {
+      "path": "local/haze/refuge_coupling/subsets_0005_t100000-af2603f380dc111b.json.gz",
+      "sha256": "88d644750c8d8809ffc4c8c6782f2f49ed42b0ccc43035b28b8a12b390fc82d8",
+      "case_id": "subsets_0005_t100000",
+      "time_yr": 6740.146149357717,
+      "ratio": 0.12925583681274863,
+      "residual": 0.0,
+      "host": "not recorded"
+    },
+    {
+      "path": "local/haze/refuge_coupling/subsets_0007_t100000-a6087a6f6850c271.json.gz",
+      "sha256": "08957680cd8df3421069e452117fde57bba6f9a10b7522a834c08627964c566f",
+      "case_id": "subsets_0007_t100000",
+      "time_yr": 6726.708338065709,
+      "ratio": 0.12925583681274863,
+      "residual": 0.0,
+      "host": "not recorded"
+    },
+    {
+      "path": "local/haze/refuge_coupling/subsets_0008_t100000-716c9960005fa8d1.json.gz",
+      "sha256": "fc9491346d5b4ddde57c320227766b7dc8a3a94ed66a2b24d2f034e2d321504b",
+      "case_id": "subsets_0008_t100000",
+      "time_yr": 2588.565878614279,
+      "ratio": 0.17201936819017186,
+      "residual": 0.0,
+      "host": "not recorded"
+    },
+    {
+      "path": "local/haze/refuge_coupling/subsets_0009_t100000-c4ebd9e3148a2255.json.gz",
+      "sha256": "ef0d2c493a8269a632e9b6c8a025c8e03e7900d73fdb6afdfd48e1c69e6f1d9b",
+      "case_id": "subsets_0009_t100000",
+      "time_yr": 6229.964777083918,
+      "ratio": 0.12224540958831313,
+      "residual": 0.0,
+      "host": "not recorded"
+    },
+    {
+      "path": "local/haze/refuge_coupling/subsets_0011_t100000-c4c9bf81dd8d57d6.json.gz",
+      "sha256": "274a21e3c578edc2a74c2387b14f4e06652622b4dc8229dab96283cd34534d94",
+      "case_id": "subsets_0011_t100000",
+      "time_yr": 6216.1512024820495,
+      "ratio": 0.12224540958831313,
+      "residual": 0.0,
+      "host": "not recorded"
+    },
+    {
+      "path": "local/haze/refuge_coupling/subsets_0012_t100000-92950704d1251168.json.gz",
+      "sha256": "1db2f70f6352ff416e23529bdffebbf978de669ba24fbd9156f19f7f7707dbca",
+      "case_id": "subsets_0012_t100000",
+      "time_yr": 7626.856918413315,
+      "ratio": 0.17075296733120263,
+      "residual": 0.0,
+      "host": "not recorded"
+    },
+    {
+      "path": "local/haze/refuge_coupling/subsets_0013_t100000-3904327300c35373.json.gz",
+      "sha256": "91916e6291a6a13aacf31d2ff3cc0cca053b8402fa20aadb9cc3c7240499da56",
+      "case_id": "subsets_0013_t100000",
+      "time_yr": 1064.9177758651335,
+      "ratio": 0.1327610504249664,
+      "residual": 0.0,
+      "host": "not recorded"
+    },
+    {
+      "path": "local/haze/refuge_coupling/subsets_0015_t100000-4f6b1f7fff819ae2.json.gz",
+      "sha256": "e38c7ccba09dc5ccc20db4ddd8c1c088a25a05d5554fa51beb3e2906f9484341",
+      "case_id": "subsets_0015_t100000",
+      "time_yr": 1064.9058808786756,
+      "ratio": 0.1327610504249664,
+      "residual": 0.0,
+      "host": "not recorded"
+    },
+    {
+      "path": "local/haze/refuge_coupling/subsets_0016_t100000-892fa9e969af06a0.json.gz",
+      "sha256": "77ac17e7b094a046ffca953d01f81027087aba8adb5b9b25185551e971714df1",
+      "case_id": "subsets_0016_t100000",
+      "time_yr": 7543.279149710596,
+      "ratio": 0.17117510095085903,
+      "residual": 0.0,
+      "host": "not recorded"
+    },
+    {
+      "path": "local/haze/refuge_coupling/subsets_0017_t100000-2139f0f2ac6f0b5f.json.gz",
+      "sha256": "38f940e4a1bc972391490d962a93df261afe773d914c8c71eaea4b36d4edf8bd",
+      "case_id": "subsets_0017_t100000",
+      "time_yr": 800.7282007852479,
+      "ratio": 0.12925583681274863,
+      "residual": 0.0,
+      "host": "not recorded"
+    },
+    {
+      "path": "local/haze/refuge_coupling/subsets_0019_t100000-df1688c3d02459f7.json.gz",
+      "sha256": "ba17182c09515f6922b31ded6bd285d51b6449581637a39f3256b7b88877020a",
+      "case_id": "subsets_0019_t100000",
+      "time_yr": 800.715951621179,
+      "ratio": 0.12925583681274863,
+      "residual": 0.0,
+      "host": "not recorded"
+    },
+    {
+      "path": "local/haze/refuge_coupling/subsets_0020_t100000-a1814c159e8b3f62.json.gz",
+      "sha256": "edc0aab9731e8bd17b2845197d52dbebb53763759e0250a6d10a6fa77ebda4d4",
+      "case_id": "subsets_0020_t100000",
+      "time_yr": 7366.397453593492,
+      "ratio": 0.17201936819017186,
+      "residual": 0.0,
+      "host": "not recorded"
+    },
+    {
+      "path": "local/haze/refuge_coupling/subsets_0021_t100000-9fceea000100e83d.json.gz",
+      "sha256": "d0c9299c37c3fb6e5ba31c7215a6160f6bfdeea32e4e4c3c61204e88efa0c057",
+      "case_id": "subsets_0021_t100000",
+      "time_yr": 292.98926483051713,
+      "ratio": 0.12224540958831313,
+      "residual": 0.0,
+      "host": "not recorded"
+    },
+    {
+      "path": "local/haze/refuge_coupling/subsets_0023_t100000-a40c7012c79a9b64.json.gz",
+      "sha256": "750e5a022e67e13e80658b655dfcbb429f9b45aa4c308d768ec95c9de3668ba4",
+      "case_id": "subsets_0023_t100000",
+      "time_yr": 292.97541455500954,
+      "ratio": 0.12224540958831313,
+      "residual": 0.0,
+      "host": "not recorded"
+    },
+    {
+      "path": "local/haze/refuge_coupling/subsets_0041_t100000-cd7f124ee99fc20e.json.gz",
+      "sha256": "2e1159dd8feba27a9a6b243bb192c6adf08bfe28e7198edea16960fcf6e33203",
+      "case_id": "subsets_0041_t100000",
+      "time_yr": 6728.079589672312,
+      "ratio": 0.12925583681274863,
+      "residual": 0.0,
+      "host": "not recorded"
+    },
+    {
+      "path": "local/haze/refuge_coupling/subsets_0042_t100000-4fc988b5eb117fae.json.gz",
+      "sha256": "f78a210cd78864d9836260b0af9f613326109c24c64ea0fb61ee7832c83fb435",
+      "case_id": "subsets_0042_t100000",
+      "time_yr": 6726.233164931429,
+      "ratio": 0.12925583681274863,
+      "residual": 0.0,
+      "host": "not recorded"
+    },
+    {
+      "path": "local/haze/refuge_coupling/subsets_0043_t100000-293ef9d1853728a0.json.gz",
+      "sha256": "dd3ea829c92afe13facaff52fb9858f373cadf5ca14192ff2e3528da311c5d46",
+      "case_id": "subsets_0043_t100000",
+      "time_yr": 6718.113491780394,
+      "ratio": 0.12925583681274863,
+      "residual": 0.0,
+      "host": "not recorded"
+    },
+    {
+      "path": "local/haze/refuge_coupling/subsets_0044_t100000-a25a9f69d372bd08.json.gz",
+      "sha256": "54739aa08ac542742ea609c68c3a91f2e83b7afee0255436fd758aa50a21ce82",
+      "case_id": "subsets_0044_t100000",
+      "time_yr": 6726.708580300961,
+      "ratio": 0.12925583681274863,
+      "residual": 0.0,
+      "host": "not recorded"
+    },
+    {
+      "path": "local/haze/refuge_coupling/subsets_0045_t100000-8ba7b869ea864069.json.gz",
+      "sha256": "06403430b4cec0eb8dbb3886ba147c1d248a57a9dd874d8748f84220a6a1c591",
+      "case_id": "subsets_0045_t100000",
+      "time_yr": 6001.168727066329,
+      "ratio": 0.11925675377158047,
+      "residual": 0.0,
+      "host": "not recorded"
+    },
+    {
+      "path": "local/haze/refuge_coupling/subsets_0051_t100000-68a90a8f3151741f.json.gz",
+      "sha256": "b31793f3d42378c90fc045f0bd59b85a30e30f4256c0117dd64471f367d4aedf",
+      "case_id": "subsets_0051_t100000",
+      "time_yr": 800.7499371576794,
+      "ratio": 0.12925583681274863,
+      "residual": 0.0,
+      "host": "not recorded"
+    },
+    {
+      "path": "local/haze/refuge_coupling/subsets_0052_t100000-be6e31617e62fe06.json.gz",
+      "sha256": "6eb2446d43dde01d58f913c9ab23f5d0a2df73687fbce41f3e7a6b4fef51dfdd",
+      "case_id": "subsets_0052_t100000",
+      "time_yr": 800.812249838524,
+      "ratio": 0.12925583681274863,
+      "residual": 0.0,
+      "host": "not recorded"
+    },
+    {
+      "path": "local/haze/refuge_coupling/subsets_0053_t100000-1cfcdb3d42aa55fb.json.gz",
+      "sha256": "8e5cc7f182ee8f05ef258cd866a36d21c442120b902e7760ceae051b4714b93c",
+      "case_id": "subsets_0053_t100000",
+      "time_yr": 902.5168218978106,
+      "ratio": 0.12925583681274863,
+      "residual": 0.0,
+      "host": "not recorded"
+    },
+    {
+      "path": "local/haze/refuge_coupling/subsets_0054_t100000-b3c953461a37d557.json.gz",
+      "sha256": "2ab0ffc9977cd73abeb70128ba82cc47eb02e6abda4da0e1b6d648d3fe6fdcc1",
+      "case_id": "subsets_0054_t100000",
+      "time_yr": 800.7160427708017,
+      "ratio": 0.12925583681274863,
+      "residual": 0.0,
+      "host": "not recorded"
+    },
+    {
+      "path": "local/haze/refuge_coupling/subsets_0055_t100000-9a62eafb68043700.json.gz",
+      "sha256": "4a3f79ef12c80332b66b5a8b2e4f3cd638f44cda35852a7cc9adb2794748604b",
+      "case_id": "subsets_0055_t100000",
+      "time_yr": 54.04417487909169,
+      "ratio": 0.11925675377158047,
+      "residual": 0.0,
+      "host": "not recorded"
+    },
+    {
+      "path": "local/haze/refuge_coupling/subsets_0067_t100000-b1e148b5a1b63c0a.json.gz",
+      "sha256": "ee559f31fda2365a4a8c2b6315d8eda9fa9de0159382896af3a32393f791a4f6",
+      "case_id": "subsets_0067_t100000",
+      "time_yr": 26599.9297521611,
+      "ratio": 0.21127357253438098,
+      "residual": 0.0,
+      "host": "not recorded"
+    },
+    {
+      "path": "local/haze/refuge_coupling/subsets_0069_t100000-31ab9b27b46082c9.json.gz",
+      "sha256": "163ac42c23ed45451e01056630f4279d9cd7c5c7a17cb0507cb4ddf2cf4aa955",
+      "case_id": "subsets_0069_t100000",
+      "time_yr": 26597.528151847153,
+      "ratio": 0.21127357253438098,
+      "residual": 0.0,
+      "host": "not recorded"
+    },
+    {
+      "path": "local/haze/refuge_coupling/subsets_0071_t100000-e2d8697a5fe0a7e9.json.gz",
+      "sha256": "83474264d18e73ca230857fec13e718935f7daa518cac2fe1b301fbe05a971cb",
+      "case_id": "subsets_0071_t100000",
+      "time_yr": 9257.04453141621,
+      "ratio": 0.2012833366512558,
+      "residual": 0.0,
+      "host": "not recorded"
+    },
+    {
+      "path": "local/haze/refuge_coupling/subsets_0073_t100000-43cd1b6645752fd5.json.gz",
+      "sha256": "bf54371fd32167dc136aaa6d7add9b09765d73007d96c4ab7450f96e7637963d",
+      "case_id": "subsets_0073_t100000",
+      "time_yr": 9256.779949590942,
+      "ratio": 0.2012833366512558,
+      "residual": 0.0,
+      "host": "not recorded"
+    },
+    {
+      "path": "local/haze/refuge_coupling/subsets_0075_t100000-6731b7d0fa7b2dfb.json.gz",
+      "sha256": "1955e4e0355ba226a7b44cc82caec4f24aa4d95dcdbd0cdee19183645c073ff8",
+      "case_id": "subsets_0075_t100000",
+      "time_yr": 6199.259911442323,
+      "ratio": 0.18471225142842848,
+      "residual": 0.0,
+      "host": "not recorded"
+    },
+    {
+      "path": "local/haze/refuge_coupling/subsets_0077_t100000-6b44ec115682e31d.json.gz",
+      "sha256": "7890194b4f8d5967c38c7631e454fd35874c875e05d542698d636b401404594e",
+      "case_id": "subsets_0077_t100000",
+      "time_yr": 6157.835938199119,
+      "ratio": 0.18471225142842848,
+      "residual": 0.0,
+      "host": "not recorded"
+    }
+  ],
+  "counts": {
+    "exits": 103,
+    "boundary_residual_over_1e_8": 0
+  },
+  "provenance": {
+    "not recorded": 103
+  },
+  "exit_tail_replays": [
+    {
+      "path": "local/haze/refuge_coupling/main_0009_t100000-d25419393b19d749.json.gz",
+      "restart_time_yr": 35550.0,
+      "archived_exit_time_yr": 35556.878272714785,
+      "repaired_exit_time_yr": 35556.876836173935,
+      "repaired_status": "domain_exit",
+      "repaired_boundary_residual": 0.0
+    },
+    {
+      "path": "local/haze/refuge_coupling/subsets_0077_t100000-6b44ec115682e31d.json.gz",
+      "restart_time_yr": 6150.0,
+      "archived_exit_time_yr": 6157.835938199119,
+      "repaired_exit_time_yr": 6157.835939873183,
+      "repaired_status": "domain_exit",
+      "repaired_boundary_residual": 0.0
+    }
+  ],
+  "headline_minimum_replay": {
+    "path": "local/haze/bottleneck/main_0010_t100000_t30000-b436ce124e3fe500.npz",
+    "sha256": "295e9fbe58785ece11e02791c63467311a5afeed157c03be5d941bd214a79a91",
+    "host": "not recorded",
+    "status": "completed",
+    "replay_end_yr": 2000.0,
+    "archived_minimum_times_yr": [
+      1344.4834461742505,
+      10.609156046097626
+    ],
+    "archived_minimum_log_biomass": [
+      -69.62833702578996,
+      -11.277829538432826
+    ],
+    "repaired_minimum_times_yr": [
+      1344.4832780557654,
+      10.609960570414545
+    ],
+    "repaired_minimum_log_biomass": [
+      -69.62833628535387,
+      -11.277829538432826
+    ],
+    "minimum_function_controls": {
+      "local": {
+        "calls": 4387,
+        "max_log_minimum_difference": 1.7763568394002505e-15,
+        "finite_mask_changes": 0
+      },
+      "global_": {
+        "calls": 4387,
+        "max_log_minimum_difference": 0.0,
+        "finite_mask_changes": 0
+      }
+    }
+  },
+  "linux_minimum_replay": {
+    "path": "local/haze/dormancy_linux_pilot/dormancy_0010_census_t100000-c3721df26b697651.npz",
+    "sha256": "5100e1eb41843282631ae4cd59ca90ff0ec1edb9d7fcb281950c1d0202bd116d",
+    "host": "Linux",
+    "status": "completed",
+    "replay_end_yr": 1500.0,
+    "archived_minimum_times_yr": [
+      1410.0,
+      1020.8964251816268
+    ],
+    "archived_minimum_log_biomass": [
+      null,
+      -11.277829473505854
+    ],
+    "repaired_minimum_times_yr": [
+      1410.0,
+      1020.9312778502607
+    ],
+    "repaired_minimum_log_biomass": [
+      null,
+      -11.277829473505854
+    ],
+    "minimum_function_control": {
+      "calls": 9064,
+      "max_log_minimum_difference": 0.0,
+      "finite_mask_changes": 0
+    }
+  }
+}

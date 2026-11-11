@@ -1,0 +1,258 @@
+{
+  "scope": "Bounded checks of published reviewer examples; grid counts are not probabilities; no Stage B or C full build.",
+  "grid": {
+    "total": 243,
+    "restoring_on_branch": 79,
+    "warm_m": 161,
+    "warm_m_restoring": 73,
+    "differing_classifications": [
+      {
+        "on_cooling_branch": true,
+        "warm_m": true,
+        "roots": [
+          {
+            "temperature_k": 278.1634288290995,
+            "slope_pa_k": 202462.37833536268
+          }
+        ],
+        "root_pressures_pa": [
+          7148.5665396397035
+        ],
+        "config": {
+          "capacity_ratio": 1.5,
+          "yield_m": 1.7,
+          "maintenance_m30": 0.0023,
+          "loss_h": 0.01,
+          "threshold_a30": 5.0
+        },
+        "production_roots": [],
+        "production_good": false
+      },
+      {
+        "on_cooling_branch": true,
+        "warm_m": true,
+        "roots": [
+          {
+            "temperature_k": 278.1634206066722,
+            "slope_pa_k": 202581.1683220945
+          }
+        ],
+        "root_pressures_pa": [
+          7150.443869383547
+        ],
+        "config": {
+          "capacity_ratio": 1.5,
+          "yield_m": 1.7,
+          "maintenance_m30": 0.0023,
+          "loss_h": 0.01,
+          "threshold_a30": 20.0
+        },
+        "production_roots": [],
+        "production_good": false
+      },
+      {
+        "on_cooling_branch": true,
+        "warm_m": true,
+        "roots": [
+          {
+            "temperature_k": 278.1633795668482,
+            "slope_pa_k": 203175.49391536886
+          }
+        ],
+        "root_pressures_pa": [
+          7159.828801230262
+        ],
+        "config": {
+          "capacity_ratio": 1.5,
+          "yield_m": 1.7,
+          "maintenance_m30": 0.0023,
+          "loss_h": 0.01,
+          "threshold_a30": 95.0
+        },
+        "production_roots": [],
+        "production_good": false
+      }
+    ]
+  },
+  "reference": [
+    {
+      "temperature_k": 281.53482280508206,
+      "slope_pa_k": 1.6719347703819665
+    }
+  ],
+  "rounded_dry_mass": [
+    {
+      "temperature_k": 297.07707501199775,
+      "slope_pa_k": 3.098307052411542
+    }
+  ],
+  "exact_dry_mass_ratio": 0.37894736842105264,
+  "exact_dry_mass": [
+    {
+      "temperature_k": 297.1528184635824,
+      "slope_pa_k": 3.1081006369859665
+    }
+  ],
+  "msp": [
+    {
+      "temperature_k": 290.2854859912477,
+      "slope_pa_k": 3.5075682400176333
+    }
+  ],
+  "unequal_loss": [
+    {
+      "m_loss_h": 0.0005,
+      "roots": []
+    },
+    {
+      "m_loss_h": 0.00075,
+      "roots": [
+        {
+          "temperature_k": 278.3746465930464,
+          "slope_pa_k": 5.1011492205788045
+        }
+      ]
+    },
+    {
+      "m_loss_h": 0.001,
+      "roots": [
+        {
+          "temperature_k": 281.53482280508206,
+          "slope_pa_k": 1.6719347703819665
+        }
+      ]
+    },
+    {
+      "m_loss_h": 0.00125,
+      "roots": [
+        {
+          "temperature_k": 285.15826640620423,
+          "slope_pa_k": 1.8605480601685542
+        }
+      ]
+    },
+    {
+      "m_loss_h": 0.002,
+      "roots": [
+        {
+          "temperature_k": 294.31438820180347,
+          "slope_pa_k": 3.390762404684722
+        }
+      ]
+    }
+  ],
+  "co2_factors": [
+    2.581988897471611,
+    1.6068568378893036
+  ],
+  "co2_diagnostic": [
+    {
+      "temperature_k": 279.920978865589,
+      "slope_pa_k": 4.13490532219285
+    }
+  ],
+  "supply_band": {
+    "temperature_k": 281.53482280508206,
+    "ratio": 0.1951068748475969,
+    "eta_a": 0.8948707824828852,
+    "eta_m": 0.9413221412423226,
+    "outlet_h2": 7.495433326849458e-08,
+    "rows": [
+      {
+        "f": 0.0,
+        "lower_potential": 0.22975527443609656,
+        "upper_potential": null,
+        "endpoint_ratio": null,
+        "ideal_no_assimilation_no_outlet_ratio": null
+      },
+      {
+        "f": 0.5,
+        "lower_potential": 0.22975527443609656,
+        "upper_potential": 0.45854227290271354,
+        "endpoint_ratio": 1.9957856202785504,
+        "ideal_no_assimilation_no_outlet_ratio": 2.0
+      },
+      {
+        "f": 0.9,
+        "lower_potential": 0.22975527443609656,
+        "upper_potential": 0.26473961827064013,
+        "endpoint_ratio": 1.1522678594448286,
+        "ideal_no_assimilation_no_outlet_ratio": 1.1111111111111112
+      },
+      {
+        "f": 0.95,
+        "lower_potential": 0.22975527443609656,
+        "upper_potential": 0.2519894436237932,
+        "endpoint_ratio": 1.0967732699162944,
+        "ideal_no_assimilation_no_outlet_ratio": 1.0526315789473684
+      },
+      {
+        "f": 0.98,
+        "lower_potential": 0.22975527443609656,
+        "upper_potential": 0.2449638371857347,
+        "endpoint_ratio": 1.0661946185434286,
+        "ideal_no_assimilation_no_outlet_ratio": 1.0204081632653061
+      },
+      {
+        "f": 1.0,
+        "lower_potential": 0.22975527443609656,
+        "upper_potential": 0.24051428644163095,
+        "endpoint_ratio": 1.0468281393406134,
+        "ideal_no_assimilation_no_outlet_ratio": 1.0
+      }
+    ]
+  },
+  "donor_h2_molecules_cm2_s": 1500630080456.013,
+  "atmosphere_pa": 0.0,
+  "demographics": [
+    {
+      "extra_balanced_birth_death_yr": 0.0,
+      "half_survival_minimum_cells": 230.44752534857764
+    },
+    {
+      "extra_balanced_birth_death_yr": 8.766,
+      "half_survival_minimum_cells": 460.89505339007866
+    },
+    {
+      "extra_balanced_birth_death_yr": 87.66,
+      "half_survival_minimum_cells": 2534.9227651337974
+    }
+  ],
+  "assay_noise": {
+    "draws": 1024,
+    "missing": 0,
+    "sd_k": 1.436676077655344,
+    "quantiles_2_5_50_97_5_k": [
+      279.08735237502043,
+      281.4841156025035,
+      284.54543632542067
+    ],
+    "assumption": "Independent Gaussian V and K errors with published 95-percent halfwidth divided by 1.96; independent assay errors and their correlations are not measured."
+  },
+  "bank_half_life_fraction": [
+    {
+      "entry_to_survivor_ratio": 1000000.0,
+      "fraction": 0.050171665943996864
+    },
+    {
+      "entry_to_survivor_ratio": 1000000000000.0,
+      "fraction": 0.025085832971998432
+    },
+    {
+      "entry_to_survivor_ratio": 4.013817811736628e+23,
+      "fraction": 0.012753585711656202
+    }
+  ],
+  "climate_geometry": {
+    "cooling_vertices": 6,
+    "cooling_segments": 5,
+    "local_slope_k_per_ratio": -721.2580514046181
+  },
+  "sha256": {
+    "src/terra_prisca/haze_world/two_guilds.py": "eff6a9027c5b28d154f03462d926591ebee3408eb2c80ec0df5c38929f169f83",
+    "src/terra_prisca/haze_world/population_coupling.py": "17a433957e94845595f6d7fd160ffe593c01c4e74550707b0814c95ab67ae663",
+    "models/haze_response/arney2016/figure4.csv": "c0ef5f3d17ee7c6085ad36247f0f7814726dbbe3273842b01f2c6c4e046856f8",
+    "models/haze_world/figures/bottleneck/main_0010_environment.npz": "d3d7e3c92b9d984d8500a6bec532a70b12fcf56b9bca513765055989ce59a92b",
+    "docs/audits/external-review-static-2026-11-11.py": "bb1497b1cfa095405471dc6dfe8f2aa74309254450ed034f0b329039a0732ffe"
+  }
+}

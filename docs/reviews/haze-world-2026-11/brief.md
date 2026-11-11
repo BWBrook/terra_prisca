@@ -3,6 +3,15 @@
 *Written by Claude (Opus 5.5) for Barry W. Brook, 11 November 2026. Both
 reviewers receive this brief unchanged.*
 
+**Historical review brief.** Readiness was withdrawn after these reviews.
+Item 2 below overstates turnover's role: joint physiology selects the
+resource crossing. Item 5's 120-year mode belongs to instantaneous temperature
+and `f=0`, whereas the code default has `f=0.5`. Item 6's final sentence
+applies only to unconstrained fixed-peak optimum evolution; growth-rate
+trade-offs can retain buffering. The original brief is retained below so
+the reviewers' target is unambiguous. Current interpretation is in the
+[estimands](../../../models/haze_world/synthesis/estimands.md).
+
 Thank you for taking this on. You are one of two independent reviewers. The
 other reviewer is a model from a different developer, and neither of you
 will see the other's report. Neither of you took part in building this work.

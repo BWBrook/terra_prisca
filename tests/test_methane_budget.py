@@ -70,6 +70,16 @@ def test_positive_biomass_recovers_after_a_long_cold_interval():
     assert y[2] == pytest.approx(warm["r"], rel=1e-4)
 
 
+def test_success_status_does_not_hide_nonfinite_accepted_state(monkeypatch):
+    from types import SimpleNamespace
+    from terra_prisca.haze_world import methane_budget
+
+    monkeypatch.setattr(methane_budget, "solve_ivp", lambda *args, **kwargs:
+                        SimpleNamespace(success=True, y=np.full((3, 1), np.nan)))
+    with pytest.raises(RuntimeError, match="nonfinite internal"):
+        integrate_full(np.array([1e-5, 1e-6, .2]), HIGH, 10.)
+
+
 def test_reduced_interval_invariance_does_not_imply_full_state_invariance():
     lo = response("B").ratios[0]
     c = atmosphere("B")["flux_to_ratio_per_yr"]
