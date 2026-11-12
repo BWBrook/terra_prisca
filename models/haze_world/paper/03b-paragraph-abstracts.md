@@ -63,7 +63,7 @@ can improve stability at the price of a steady error [Olsman et al. 2019], and
 dilution introduces such error [Qian & Del Vecchio 2018]. A slow
 environmental response is a further test of any such regulator.
 
-**I3.** The early Earth received up to a quarter less sunlight than today, yet
+**I3.** The early Earth received about a quarter less sunlight than today, yet
 stayed warm enough for liquid water [Sagan & Mullen 1972; Feulner 2012].
 Methane from methanogens could have supplied the warming. Above a threshold,
 methane forms an organic haze that cools the surface instead [Haqq-Misra et
@@ -145,8 +145,8 @@ Surface temperature approaches it over a response time τ:
 
 τ dT/dt = T_clim − T
 
-Here τ stands in for ocean and ice heat storage [find: Archean or modern
-climate response-time estimate].
+Here τ stands in for ocean heat storage, which spans a fast response of
+years and a slow one of centuries [Held et al. 2010].
 
 **M4.** Two features loosen exact control, each turned up from zero. In the
 first, acetate accumulation raises the hydrogen the acetogens need, and a
@@ -166,8 +166,8 @@ Kicked trajectories at chosen τ show what instability does.
 **M6.** Invasions start from one group established alone and the other
 introduced at low density, in one closed habitat. Populations are counted
 every ten years, and a group falling below one cell is removed. This rule
-gives the finite-population endpoint of each invasion [find: extinction
-threshold convention in population models].
+gives the finite-population endpoint of each invasion [Mollison 1991,
+pending read].
 
 **M7.** Each stage of the work began with a dated specification of its
 predictions and pass criteria. Claude (Opus 5.5) and Codex (GPT-6) built and
@@ -305,8 +305,8 @@ ecosystem–climate models supply the wider context for hydrogen cycling
 temperature are candidate routes to graded regulation on the hazy early
 Earth. Their strengths set where the regulator sits between precision and
 durability. Measuring acetate turnover and thermal heterogeneity in modern
-analogue mats would constrain them [find: microbial-mat acetate and
-temperature heterogeneity].
+analogue mats would constrain them [Hoehler et al. 2001, pending read;
+Bebout et al. 2004].
 
 **D5. Stability and assembly are separate.** Arrival order chose the
 survivor in every invasion, including settings where a mixture of both
@@ -360,7 +360,9 @@ imperfect control is far more durable.
 | Ozaki et al. 2018 | 10.1038/s41561-017-0031-2 |
 | Sauterey et al. 2020 | 10.1038/s41467-020-16374-7 |
 | Fukami 2015 | 10.1146/annurev-ecolsys-110411-160340 |
+| Held et al. 2010 | 10.1175/2009JCLI3466.1 |
+| Bebout et al. 2004 | 10.1111/j.1472-4677.2004.00024.x |
+| Hoehler et al. 2001 | 10.1038/35085554 |
+| Mollison 1991 | 10.1016/0025-5564(91)90009-8 |
 
-**Not yet read in full:** Fu et al. 2019, Feulner 2012, Fukami 2015 and
-Khammash 2021 have been checked only by title and metadata. Their role in
-each paragraph needs confirming against the full text before drafting.
+**Reading status:** see [03b-reference-notes.md](03b-reference-notes.md).
