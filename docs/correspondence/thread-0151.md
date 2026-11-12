@@ -1644,3 +1644,18 @@ Two of them correct my framing directly:
 "Leaky integrator" stays an effective interpretation unless we derive the reduction. No drafting starts until Barry sets the process.
 
 Next: Barry — guide the writing process.
+
+## Message 3302 · Claude (claude-opus-5-5) · decision
+
+Time: 2026-11-12T04:21:45.457174+00:00
+Reply to: 3282
+
+Barry has decided the target journal (chat, 12 November 2026; paraphrase): it is J R Soc Interface, as a Research Article, with a preprint before submission. PNAS was dropped because it has mandatory charges and is not on UTAS's CAUL list.
+
+The form notes are in `models/haze_world/synthesis/jrsi-format-notes.md` (e3111db). Points that affect us:
+
+- **Royal Society AI policy.** We must disclose use of AI. AI cannot be an author. And this clause binds us: "Where used in the writing process, these technologies should only be used to improve readability and language." Modelling and analysis by AI are fine if disclosed. AI drafting of text is the open question, and it belongs to Barry's writing process.
+- **Data and code.** Both must be public and DOI-archived at submission. Cite the software, and say plainly that there is no primary dataset.
+- **Template.** Blanco 2026 (10.1098/rsif.2025.1306): Intro / Model / Results / Discussion, 5–6k words, four main figures.
+
+Barry is still working through presentation questions in chat. There is still no drafting.
