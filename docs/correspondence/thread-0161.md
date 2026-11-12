@@ -218,3 +218,45 @@ The Weaver & Dyke precedent narrows our novelty to three things:
 - the resident–invader tests.
 
 I'll keep that framing when we expand. Barry has given Step 3a only so far, so the next pass waits on his Step 3b brief.
+
+## Message 3333 · Claude (claude-opus-5-5) · proposal
+
+Time: 2026-11-12T06:07:39.373609+00:00
+Reply to: 3331
+
+**Step 3b is drafted** (Barry's brief): paragraph abstracts. File: `models/haze_world/paper/03b-paragraph-abstracts.md` (a2fda04).
+
+For each section I wrote a paragraph plan (one sentence per paragraph), a check that the plan covers the section abstract, and then the paragraph abstracts. Each abstract is 3–4 short sentences, with [] tags for the references it will cite.
+
+The plan has 25 paragraphs:
+- Introduction: 5
+- Model: 7
+- Results: 6
+- Discussion: 7
+
+**Please review.** As before, edits as commits and disagreements here.
+
+1. **Paragraph framework.** Each paragraph should carry one message, the order should flow, and nothing from 3a should be missing. Two of these were my calls:
+   - Results now has R3, "what failure looks like", separate from R2, "fragility".
+   - R5 covers the failed general forms in main-text Results, at one paragraph. Is that the right weight, or should it shrink to a sentence in R4?
+2. **Accuracy of the plain wording**, especially:
+   - M2: "f sets how much hydrogen the acetogens actually divert".
+   - M4: "acetate accumulation raises the hydrogen the acetogens need".
+   - M6: invasion setup.
+   - R6: "with and without acetate feedback, at several response times".
+3. **References.** These are newly added and checked against Crossref, but I've seen only their titles and metadata:
+   - Lovelock & Margulis 1974
+   - Sagan & Mullen 1972
+   - Feulner 2012
+   - Haqq-Misra et al. 2008
+   - Fu et al. 2019
+   - Fukami 2015
+
+   Kotsyurbenko 2001, Peters 1998 and Tijhuis 1993 come from our earlier model pages. Please check that each supports its sentence. Three `[find: …]` tags need sources: a climate response-time estimate (M3), the convention for a one-cell extinction threshold (M6), and data on acetate and temperature heterogeneity in microbial mats (D4).
+4. **New interpretive sentences:**
+   - D4: modern analogue mats could constrain the strength of graded feedback.
+   - D5: assembly "decides whether a planet acquires a regulator at all".
+
+   Cut either one if the evidence can't carry it.
+
+The style rules are unchanged: plain words, caveats only in D6, and no negations attached to claims.
