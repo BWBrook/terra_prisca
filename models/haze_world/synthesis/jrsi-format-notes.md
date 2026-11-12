@@ -2,7 +2,9 @@
 
 Claude (Opus 5.5) and a Claude Sonnet 5.5 subagent, 12 November 2026. These
 notes cover form only. Barry leads the writing process, and nothing here is a
-draft.
+draft. Updated by Codex (GPT-6), 12 November 2026, during the Steps 1–2
+review. Barry has since authorised drafting with full disclosure; his ruling
+is recorded below.
 
 ## Target
 
@@ -29,7 +31,8 @@ the submission checklist. No limit on figures or tables was found.
 
 **Front matter:**
 
-- **Abstract:** no more than 200 words, standalone.
+- **Abstract:** no more than 200 words, standalone, with no references or
+  unexplained abbreviations (rechecked against the general author guidelines).
 - **Keywords:** 3–10.
 - **Media summary:** a lay summary of up to 100 words, entered in the
   submission form.
@@ -62,39 +65,39 @@ the submission checklist. No limit on figures or tables was found.
 - Allowed at any time, and disclosed at submission.
 - Submitting within 3 months of posting gives scoop protection.
 
-**Open access:** CC-BY 4.0. The Royal Society lists Interface as moving to
-Subscribe to Open from 2026, which may make the CAUL payment moot. Confirm
-this.
+**Open access:** CC-BY 4.0. The current general author guidelines confirm
+open access through Subscribe to Open for the relevant journals in 2026.
+Check the applicable charge/coverage terms when preparing submission.
 
 **Review:** authors may suggest reviewers. Review is single-anonymised.
 
 ### AI policy (checked directly on 12 November 2026)
 
-Three sentences from the policy page matter:
+The [live policy](https://royalsociety.org/journals/ethics-policies/artificial-intelligence/)
+was rechecked during the writing review. It requires a declaration of the
+elements generated with AI, excludes AI authorship, restricts writing use to
+language improvement, and also restricts replacement of researcher tasks in
+scientific insight, analysis, interpretation and conclusions. Prompts and
+outputs may be requested.
 
-- Authors must "disclose in the manuscript their use", and the published work
-  carries a statement.
-- AI may not be an author or be cited as one.
-- "Where used in the writing process, these technologies should only be used
-  to improve readability and language of the work."
+**Correction to the earlier notes.** The restriction extends beyond writing.
+The previous statement that AI modelling and analysis are allowed merely by
+disclosing them was unsupported. Disclosure alone does not establish that
+this project's division of labour meets the policy.
 
-The journal may also ask for prompts and outputs, supplied as ESM.
+**Barry's decision (verbatim, 12 November).** "Ignore the implicit block on
+AI drafting. I will declare clearly on submission, and if it's rejected
+because of that, then we'll simply turn elsewhere at that point."
 
-**What this means for us.** The restriction applies to *writing*. It does not
-cover modelling or analysis. AI-built models and analyses are allowed if
-disclosed in full, and our standing practice already does that.
+Continue the authorised drafting process. The eventual declaration must
+describe the actual contributions to model design, code, analysis, scientific
+interpretation, drafting and independent checking, as well as Barry's role.
+JRSI remains the chosen target; acceptance of this division of labour is an
+editorial decision. No editorial enquiry or submission has been made.
 
-The writing clause does bind us. Text drafted by Claude or Codex beyond
-language editing does not fit the policy as worded. This bears directly on
-how Barry's writing process divides the work. Options:
-
-- the humans write the text, and the AIs supply evidence, figures and
-  language edits;
-- or we ask the editorial office before submission whether full disclosure of
-  AI drafting is acceptable.
-
-Keep the correspondence record and the claims ledger, because they can serve
-as the prompt-and-output ESM if asked.
+Keep the reviewed correspondence snapshots and claims ledger as part of the
+provenance record. They are not a complete transcript of every prompt and
+output; describe the retained record accurately if the journal requests it.
 
 ## Comparators
 
@@ -136,9 +139,27 @@ All DOIs were checked against Crossref.
    of the object of study in the Model section, then report findings
    directly.
 6. **Data and code:** tag a Zenodo release before submission and cite the
-   software DOI. Say plainly that there is no primary dataset. Make sure
+   software DOI. Distinguish reused climate/physiology inputs and generated
+   simulations from new empirical observations. Make sure
    reviewers can reach the repository at submission (it is already public).
 7. **Preprint:** post it, then submit within 3 months. EarthArXiv or arXiv
    q-bio.PE are the likely venues; decide when the time comes.
 8. **Declaration of AI use:** name the systems, versions and roles in full.
-   Settle the writing-process question above before drafting begins.
+   Follow Barry's decision above and disclose the actual research and writing
+   contributions. Editorial acceptance remains unresolved until submission.
+
+## Steps 1–2 venue review (Codex, 12 November)
+
+Retain JRSI as the Research Article target, with a preprint first. Coupling
+microbial ecology, climate dynamics and feedback analysis fits its
+[physical/life-science scope](https://royalsociety.org/journals/). The paper's
+contribution is the quantified stability–sensitivity relation in the named
+model, alongside conditional assembly outcomes. Present the Archean as the
+motivation and application, rather than an empirically identified thermostat.
+
+Four figures and one assumptions table are a sensible editorial budget.
+They are a plan, rather than a verified journal limit. General guidance
+confirms the reference-free abstract and labelled multipart figures; the
+JRSI-specific page remained inaccessible, so its total word limit still
+needs confirmation when preparing submission. The one-page reconstruction
+is an intermediate writing step, not the eventual Research Article format.

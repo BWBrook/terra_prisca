@@ -1,6 +1,6 @@
 # Step 1c: display items
 
-Claude (Opus 5.5), 12 November 2026. Each item serves the
+Claude (Opus 5.5), revised by Codex (GPT-6), 12 November 2026. Each item serves the
 [main message](01a-working-abstract.md). Microbes can hold a planet's
 temperature steady, but perfect control breaks down when the climate responds
 slowly. Slightly imperfect control is far more durable.
@@ -21,17 +21,23 @@ This figure gives the context a new reader needs and sets up the first
 result.
 
 - **(a) Schematic.**
-  - Hydrogen enters from volcanoes and is drawn down by two microbial
-    groups.
+  - An imposed hydrogen supply feeds two microbial groups; exchange with an
+    atmospheric reservoir provides an outlet.
   - Methanogens make methane, which thickens an organic haze and cools the
     surface.
-  - Acetogens divert hydrogen into acetate instead.
+  - Acetogens divert hydrogen into acetate. Show recycling to methane and
+    material retained outside methane production as separate routes.
   - Temperature sets which group wins, and the climate responds after a lag.
 - **(b) The switch.** The hydrogen level each group needs to grow, plotted
   against temperature. The curves cross at the set temperature, T* ≈ 281.5 K.
+  Mark the supported climate range and show how the alternative capacity
+  transfer can move the crossing outside it. The chosen normalisation is a
+  condition of the reference example.
 - **(c) The plateau.** Surface temperature against hydrogen supply. With one
-  group alone, temperature tracks supply; with both, it stays flat at T*.
-  The caption credits the plateau to Seto & Akagi (2007).
+  group alone, show its actual climate curve, including any flat haze floor;
+  with both, show the coexistence plateau at T*. Mark the haze-cooling
+  branch on a small inset of the Arney response. The caption credits the
+  plateau mechanism to Seto & Akagi (2007).
 
 Source: existing set-point data; panel (a) is new artwork.
 
@@ -39,42 +45,62 @@ Source: existing set-point data; panel (a) is new artwork.
 
 This figure shows the failure as it happens.
 
-- **(a) Perfect control under rising lag.** Temperature over time after a
-  small kick, at climate lags of 0.1, 1 and 10 years:
-  - at 0.1 years it settles;
-  - at 1 year it swings by about 1.3 K;
-  - at 10 years the regulation is lost and both populations fall below one
-    cell.
+- **(a) Perfect control after a small kick.** Existing fixed-product,
+  zero-recycling temperature trajectories at lags of 1 and 10 years:
+  - at 1 year, late peak-to-peak swings span about 1.3 K over the
+    30,000-year run;
+  - at 10 years the continuous trajectory reaches a subcell bottleneck.
 - **(b) Population sizes** for the same runs, on a log scale, with the
-  one-cell line marked.
-- **(c) Slightly imperfect control** under a 100-year lag. It settles.
+  one-cell line marked. End the physically interpreted trajectory at the
+  first crossing. Any later continuous solution is a muted diagnostic, since
+  removing a guild changes the subsequent environment.
+- **(c) Stability comparison.** Leading growth/decay rate against thermal
+  lag for the exact reference and a graded state, calculated from the
+  existing linearised systems. Mark first losses and the 100-year line.
+  This panel reports local stability, rather than an uncomputed nonlinear
+  settling trajectory.
 
-Source: the B2 transients and the dial branches.
+Source: B2 at f = 0, τ = 1/10 years; the exact and dial linearisations.
+There is no τ = 0.1 B2 trajectory or graded τ = 100 settling run in these
+outputs. Building panel (c) requires a spectral export from the existing
+systems, rather than a new invasion or nonlinear experiment.
 
 ### Figure 3. Durability costs a little precision (headline)
 
 This is the trade-off itself.
 
-- **(a) The critical lag against temperature drift.** The critical lag is
-  the longest climate lag a regulator survives. The drift is the temperature
-  change per e-fold of hydrogen supply. Both axes are logarithmic.
-  - The four dial branches climb continuously from the perfect-control limit.
-  - The resolved habitat states sit far out along the curve.
+- **(a) First-loss margin against local sensitivity.** The critical lag is
+  the first loss of equilibrium stability as thermal response slows; later
+  restabilisation is possible. Sensitivity is |dT*/d ln Φ|, in K per e-fold
+  of supply. Use logarithmic axes for positive values and a separate strip
+  for S = 0 and zero-lag-unstable states.
+  - The four dial branches approach the exact limit continuously; join only
+    points on the same continuation branch.
+  - Plot resolved habitat states by mechanism and connectivity, rather than
+    implying one universal curve.
+  - Draw upward arrows for right-censored margins. The 10,000-year search
+    ceiling is a lower bound, rather than a measured first loss.
   - A line marks a 30-year lag, and a band marks its price of 0.07–0.32 K.
-- **(b) What the drift looks like.** Temperature against supply for three
-  settings of one dial: flat, a gentle slope, and a steeper slope. It shows
-  the reader that "slightly imperfect" is a small effect.
+- **(b) What the sensitivity means.** Draw local tangent segments of
+  temperature against log supply for three settings of one dial: flat,
+  gently sloped and more steeply sloped. Label these as derivatives at the
+  reference supply. A finite supply-response curve would require additional
+  continuation data.
 
 Source: the graded-dial and continuum-habitat outputs (C54, C55, C57).
 
-### Figure 4. Arrival order decides the regulator
+### Figure 4. Arrival order selects the surviving guild
 
 This figure covers the supporting assembly result.
 
 - **(a) The invasions.** Population sizes during an invasion in each
-  direction, with the displaced resident crossing the one-cell line.
-- **(b) The outcome.** A tally of the final resident against arrival order
-  across all 24 runs: 12 of 12 in each direction.
+  direction, with the displaced resident crossing the one-cell line. Use
+  the finite-census paths for endpoints; distinguish them from uncensored
+  diagnostic paths.
+- **(b) The outcome.** A tally of the surviving guild against invasion
+  direction across all 24 runs: 12 of 12 invaders persist in each direction.
+  Label these as single-guild endpoints under the closed-habitat census rule.
+  Mark which starting parameter sets also support a locally stable mixture.
 
 Source: the B3 transients (C52).
 
@@ -91,6 +117,12 @@ This table is the packaged statement of the model's assumptions and scope.
 The Discussion's limitations paragraph points to it, which keeps those points
 out of the narrative.
 
+Foreground the alternative capacity transfer, the acetate-recycling and
+assimilation routes, common turnover, and the below-measurement continuation
+from 277.15 K to the model floor at 273 K. Explain that τ is a first-order
+thermal relaxation time. Pair each source measurement with the assumption
+needed to transfer it; this is parametrisation of a conditional model.
+
 ## ESM
 
 Each item backs a specific point in the main text.
@@ -101,7 +133,7 @@ Each item backs a specific point in the main text.
 | Habitat-resolution convergence (C44, C45) | Fig. 3, habitat states |
 | The full set of resolved states and their critical lags, including the six with reversed frozen response (C54) | Fig. 3 |
 | Dial brackets and refinement points (C55, C57) | Fig. 3, the 30-year price |
-| Predictions that failed: the power-law band (C56) and the weak-mode formula (C58) | the Discussion's account of the prespecified tests |
+| Dated staged predictions, including failed mechanism/gain predictions, the power-law band (C56) and the weak-mode formula (C58) | the Discussion's account of exploration and prospective tests |
 | Atmospheric-hydrogen sensitivity (C59) | Table 1 |
 | Dependence on the acetate fate f, and the coexistence interval at f = 1 | Table 1 |
 | Methods for continuation, quadrature and critical-lag root-finding | Model section |
@@ -109,8 +141,12 @@ Each item backs a specific point in the main text.
 
 ## Build notes
 
-- Figs 2–4 come from existing evidence files and need new composite plotting
-  only.
+- Figs 2–4 use existing evidence and systems. Fig. 2c needs a spectral export;
+  Fig. 3b uses labelled tangent segments, rather than an uncomputed sweep.
+- Read Fig. 4's finite trajectories from the separate `census_raw` archives;
+  existing trajectory CSVs contain uncensored solutions. The f = 0, τ = 10
+  B2 trace also needs an export from its existing raw archive. These are
+  figure-building exports, rather than new simulations.
 - Fig. 1a is new artwork.
 - The figures must read in greyscale, with panel labels (*a*)–(*c*), as JRSI
   requires.
