@@ -7,13 +7,14 @@ Claude (Opus 5.5), with independent numerical and semantic audit by Codex
 records corrections to the first synthesis. Barry has agreed to aim for a
 paper; he will guide its writing once the evidence is ready (see [Paper](#paper)).
 
-The current revision checkpoint is the
-[resolved C0/C1 calculation](../continuum-habitats.md) and the
-[homogeneous nonlinear B2/B3 checks](../review/dynamic-transients-2026-11-12.md).
-The newly defined local-gain frontier fails its numerical test, without
-revealing exact physical pinning; connectivity has a nonmonotonic effect on
-the delay margin. The historical argument below is not a newly accepted paper
-thesis. Writing readiness remains withdrawn.
+The current revision checkpoint is the [graded-dial stage](../graded-dials.md),
+following [resolved C0/C1](../continuum-habitats.md) and
+[homogeneous B2/B3](../review/dynamic-transients-2026-11-12.md). Small nonzero
+local sensitivity buys a thirty-year delay margin on the tested branches;
+the proposed universal power-law and weak-mode formula do not hold generally.
+The historical argument below is not a newly accepted paper thesis. Writing
+readiness remains withdrawn pending joint reconciliation and the accepted
+robustness/literature dispositions.
 
 ## Thesis
 

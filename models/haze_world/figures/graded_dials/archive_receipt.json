@@ -1,0 +1,14 @@
+{
+  "archive_name": "haze-graded-dials-20261112.tar.gz",
+  "archive_sha256": "1ecca438340861c6803a7bb2489ca959aaf883846046e43f10daa325378a4a8d",
+  "archive_bytes": 1381089,
+  "members_sha256": "d830616c0a54e662b78a9cf332acff82ba8ad87a845e55d5c93e135054dbad9f",
+  "payload_files": 215,
+  "payload_bytes": 4653633,
+  "local_full_member_readback": true,
+  "publication_status": "Prepared working evidence; not deposited or publicly released",
+  "packager_sha256": "5d253eeff1eaf7af69212f07fb702f3797cb9d506c90db326f7dbe64f966d6a9",
+  "shared_archive_full_member_readback": true,
+  "evidence_commit": "0e29057",
+  "scope": "All215 archive members checked locally and on shared storage; no public deposit or release"
+}

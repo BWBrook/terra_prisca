@@ -17,6 +17,14 @@ normalization does not reveal exact pinning. Connectivity also changes the
 delay margin nonmonotonically. Homogeneous nonlinear invasion and oscillation
 checks are reported in the [B2/B3 review](review/dynamic-transients-2026-11-12.md).
 
+The [graded-dial stage](graded-dials.md) closes the gap between zero and
+nonzero residual response. Four reference branches achieve a thirty-year
+delay margin at small nonzero local temperature sensitivities. The finite
+curves depart gradually from exact regulation; the proposed universal
+power-law band and weak-mode formula fail their broader tests. Writing
+readiness still needs joint reconciliation, including the remaining accepted
+robustness and literature dispositions.
+
 This is a new
 model, not a reconstruction. It couples methanogens and a finite methane budget
 to the [Arney et al. (2016) climate responses](../haze_response/README.md).

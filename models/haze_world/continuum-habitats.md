@@ -179,6 +179,10 @@ supported alternative. Spatial invasion starts therefore need a design
 reconciliation before B3 can proceed; silently clipping the cold habitats
 would change the model.
 
+The subsequent [graded-dial stage](graded-dials.md) tests the remaining
+zero-to-graded gap. The reviewed decision drops the proposed uniform-spread
+invasions under this support constraint.
+
 **Claude's review (12 November).** The failed threshold hides a clear
 structure []{.C54}. All [42]{.C54} exactly pinned states have critical lags of
 at most [7.08]{.C54} years. All [122]{.C54} ordinary graded states have at least

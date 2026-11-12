@@ -294,3 +294,43 @@ branching probabilities. PC1–PC6 and PB5/PB6 retain their original statements.
   previous loss. Thresholds below one cell, earlier own loss and other-guild
   loss before or during the interval make assembly unassessed. Conditional
   mathematical probabilities may still be shown, with those flags.
+
+## E16. Graded departure from exact regulation (D1/D2)
+
+**Estimands.** Raw local supply derivative S_c; local frozen-mix derivative
+S_0 and its qualified ratio; the first detected thermal-lag loss; zero-lag
+complex-mode frequency/damping; refined brackets for the sensitivity at a
+30-year first-loss margin. The [pre-run choices](../graded-dial-methods.md)
+preserve PD1–PD4 and the original 32 settings.
+
+- D1 is the specified exponent-interpolation path with fixed methane activity.
+  D2 is fixed chemistry at fixed positive connectivity. Results are conditional
+  on the transferred reference physiology and climate response. They do not
+  establish a universal trade-off or an Archean calibration.
+- S_0 is a frozen-local-mix counterfactual, not an entirely unregulated system.
+  Physiology, resources, chemistry, total biomass and geographical allocation
+  still respond. Keep its stability visible even though S_c is primary.
+- Small residual sensitivity buys a larger tested delay margin along these
+  branches. The point with perfect adaptation can be a regular boundary of
+  a smooth equilibrium path. Do not imply a mathematically singular equilibrium
+  or a jump at zero from the special property of exact pinning.
+- Adjacent finite ratios, censored lower bounds and a mathematical continuity
+  argument are separate. A first-loss margin can coexist with recovery at a
+  larger delay; a finite point is not a claim of instability at every greater
+  lag. No all-lag theorem follows from censoring at 10,000 years.
+- PD2 uses per-branch fits. A two-point fit cannot test linearity; the original
+  specification supplies no R-squared acceptance cutoff. A high R-squared
+  cannot rescue a slope outside the stated band.
+- PD3 is a bracketed local-derivative cost, not the temperature change after a
+  finite e-fold perturbation or a guarantee for an ocean with any heat capacity.
+  Never replace a censored endpoint by 10,000 as if it were a measured margin.
+- The weak-mode formula uses the specified complex pair, not the slowest real
+  population mode. Report its successful original-grid tests and its failed
+  authorised threshold-refinement diagnostics separately. In the latter the
+  zero-lag oscillation is appreciably damped and its frequency changes with lag.
+  Do not discard these failures because the original grid happened to pass.
+- Keep C54's old on/off separation descriptive. D1/D2 do not identify a unique
+  control-law explanation or settle the capacity-normalisation, acetate-fate,
+  evolution and literature findings accepted in the external-review triage.
+  Joint writing-readiness review follows this stage; numerical completion alone
+  does not close those dispositions.
