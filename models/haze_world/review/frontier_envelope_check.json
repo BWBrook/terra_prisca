@@ -1,0 +1,128 @@
+{
+ "states": 170,
+ "exact_pinning": {
+  "count": 42,
+  "max_abs_Sc_k": 2.2970875552294528e-10,
+  "max_tau_yr": 7.079524561115154,
+  "statuses": [
+   "already_unstable",
+   "finite_crossing"
+  ]
+ },
+ "graded_ordinary": {
+  "count": 122,
+  "min_abs_Sc_k": 0.5896452346392214,
+  "min_tau_yr": 331.42605522734783,
+  "censored": 113
+ },
+ "graded_reversed_open_loop": [
+  {
+   "chemistry": "acetate_only",
+   "fraction": 0.0,
+   "loss_h": "0.002",
+   "potential": 0.24,
+   "Sc": -0.5984282004590626,
+   "S0": 2.6348025974331466,
+   "status": "already_unstable"
+  },
+  {
+   "chemistry": "acetate_only",
+   "fraction": 0.0,
+   "loss_h": "0.002",
+   "potential": 0.3,
+   "Sc": -0.5812014045119147,
+   "S0": 2.4671244196405206,
+   "status": "already_unstable"
+  },
+  {
+   "chemistry": "acetate_only",
+   "fraction": 0.0,
+   "loss_h": "0.002",
+   "potential": 0.36,
+   "Sc": -0.5736065133406191,
+   "S0": 2.3495487009623504,
+   "status": "already_unstable"
+  },
+  {
+   "chemistry": "products",
+   "fraction": 0.0,
+   "loss_h": "0.002",
+   "potential": 0.24,
+   "Sc": -0.5945052070554454,
+   "S0": 2.6077488952479877,
+   "status": "already_unstable"
+  },
+  {
+   "chemistry": "products",
+   "fraction": 0.0,
+   "loss_h": "0.002",
+   "potential": 0.3,
+   "Sc": -0.5777009525184256,
+   "S0": 2.440692114414793,
+   "status": "already_unstable"
+  },
+  {
+   "chemistry": "products",
+   "fraction": 0.0,
+   "loss_h": "0.002",
+   "potential": 0.36,
+   "Sc": -0.5703289522755057,
+   "S0": 2.3234297726375965,
+   "status": "already_unstable"
+  }
+ ],
+ "finite_spatial": {
+  "count": 9,
+  "points": [
+   [
+    1.5496,
+    331.43,
+    0.0218
+   ],
+   [
+    1.5563,
+    581.48,
+    0.0237
+   ],
+   [
+    2.9116,
+    842.24,
+    0.0404
+   ],
+   [
+    2.934,
+    947.43,
+    0.0405
+   ],
+   [
+    3.7175,
+    1402.73,
+    0.0398
+   ],
+   [
+    4.5062,
+    1866.41,
+    0.0481
+   ],
+   [
+    5.7246,
+    3431.18,
+    0.0602
+   ],
+   [
+    6.8775,
+    3704.53,
+    0.0896
+   ],
+   [
+    8.3039,
+    4781.04,
+    0.094
+   ]
+  ],
+  "spearman_abs_Sc_tau": 1.0,
+  "spearman_p": 0.0,
+  "loglog_slope": 1.482122610209657
+ },
+ "note": "Descriptive envelope of existing resolved states; not a prespecified test."
+}

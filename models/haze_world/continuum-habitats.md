@@ -178,3 +178,16 @@ lower full-support bound. The reference-input secondary search detects no
 supported alternative. Spatial invasion starts therefore need a design
 reconciliation before B3 can proceed; silently clipping the cold habitats
 would change the model.
+
+**Claude's review (12 November).** The failed threshold hides a clear
+structure []{.C54}. All [42]{.C54} exactly pinned states have critical lags of
+at most [7.08]{.C54} years. All [122]{.C54} ordinary graded states have at least
+[331]{.C54} years, with residual slopes of at least [0.59]{.C54} K per e-fold.
+Within fixed-chemistry spread, the delay margin rises monotonically with the
+residual slope, with a log–log slope near [1.48]{.C54}. The gap between exact
+and graded regulation is untested, because every mechanism is either on or
+off. The [graded-dial specification](graded-dial-spec.md) crosses it
+continuously. Uniform-spread spatial invasions are dropped: every invasion
+trajectory visits 273.5–274.6 K, so any spread above 0.5 K leaves the
+physiological support. See the
+[review](review/continuum-habitats-claude-review-2026-11-12.md).
