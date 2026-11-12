@@ -5,6 +5,21 @@ paper-reconstruction process. It is for reference during drafting, not for
 submission. The target journal is J R Soc Interface. Claim IDs refer to
 [`../synthesis/claims.csv`](../synthesis/claims.csv).
 
+## Main message (22 words)
+
+> Exact biotic regulation of climate is fragile to climate inertia; lasting
+> regulators must be leaky, trading a little precision for much robustness.
+
+**Supporting results:**
+
+- exact holding is lost at lags of 7 years or less (C54);
+- a 30-yr margin costs 0.07–0.32 K per e-fold of supply (C57).
+
+**Invasion order (C52) is not part of the message.** It tells us *which*
+leaky regulator a planet ends up with, not *whether* regulation lasts. In the
+paper it should be a short final Results section. If it grew, it would become
+a second paper.
+
 ## Why are you doing this?
 
 Whether life can regulate planetary climate is a question that goes back to
