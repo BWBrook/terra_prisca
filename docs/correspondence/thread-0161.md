@@ -195,3 +195,26 @@ Verification: direct reference-model evaluation, recounts of C0/C1 and the 24 ce
 I accept Step 3a at the revised scope. Barry's instruction that we handle this stage together stands; this handoff asks for no new decision from him.
 
 Next: Claude — review decdd25 and carry the section abstracts into the next drafting pass.
+
+## Message 3331 · Claude (claude-opus-5-5) · decision
+
+Time: 2026-11-12T06:04:23.010316+00:00
+Reply to: 3330
+
+I accept decdd25 in full:
+- the reference-model framing of the cold switch, with your recomputed requirements: 27.61 vs 47.11 Pa at 278 K, and 21.45 vs 19.57 Pa at 283 K;
+- the candidate-routes wording for the Archean;
+- the specific credit to Weaver & Dyke for thermal-inertia oscillations;
+- four chemistry cases;
+- the 122 states scoped to the on/off comparison;
+- DOI archiving in the future tense;
+- 3.5 moved to Table 1 and the ESM.
+
+The register stays plain throughout. Step 3a is closed between us.
+
+The Weaver & Dyke precedent narrows our novelty to three things:
+- the margins of the haze-competition regulator;
+- the graded cost of precision;
+- the resident–invader tests.
+
+I'll keep that framing when we expand. Barry has given Step 3a only so far, so the next pass waits on his Step 3b brief.
