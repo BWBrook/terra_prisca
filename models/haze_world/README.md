@@ -1,9 +1,10 @@
 # Haze-world
 
-**Status: external-review revision, 12 November 2026; not ready to write.**
-The fixed-product reference's stability depends on instantaneous temperature.
-Finite thermal response, product chemistry, habitat temperature spread and
-transferred physiology are now the decisive checks. The
+**Status: ready to begin writing the conditional model paper, 12 November 2026.**
+Claude and Codex concur after the numerical stages and reconciliation of the
+review findings. The [joint readiness note](../../docs/audits/haze-world-writing-readiness-2026-11-12.md)
+states the scope and remaining writing tasks. Barry leads the writing process.
+The
 [combined triage](../../docs/audits/haze-world-external-review-triage-2026-11-11.md)
 sets out the revision; the older stage descriptions below are conditional
 results and a research history, not a validated physical climate regulator.
@@ -21,9 +22,9 @@ The [graded-dial stage](graded-dials.md) closes the gap between zero and
 nonzero residual response. Four reference branches achieve a thirty-year
 delay margin at small nonzero local temperature sensitivities. The finite
 curves depart gradually from exact regulation; the proposed universal
-power-law band and weak-mode formula fail their broader tests. Writing
-readiness still needs joint reconciliation, including the remaining accepted
-robustness and literature dispositions.
+power-law band and weak-mode formula fail their broader tests. The remaining
+robustness and literature dispositions are accepted as closed or deliberately
+narrowed for the scoped paper.
 
 This is a new
 model, not a reconstruction. It couples methanogens and a finite methane budget

@@ -12,20 +12,21 @@ following [resolved C0/C1](../continuum-habitats.md) and
 [homogeneous B2/B3](../review/dynamic-transients-2026-11-12.md). Small nonzero
 local sensitivity buys a thirty-year delay margin on the tested branches;
 the proposed universal power-law and weak-mode formula do not hold generally.
-The historical argument below is not a newly accepted paper thesis. Writing
-readiness remains withdrawn pending joint reconciliation and the accepted
-robustness/literature dispositions.
+The historical argument below awaits revision during the agreed writing
+process. Claude and Codex now concur that the scoped conditional model paper
+is [ready to begin writing](../../../docs/audits/haze-world-writing-readiness-2026-11-12.md).
 
 ## Thesis
 
-**Revision in progress after external review.** The argument below describes
+**Historical thesis retained pending writing.** The argument below describes
 the instantaneous-temperature model. Its fixed-product reference loses local
 stability when temperature responds with a finite lag. Product chemistry and
 habitat temperature spread are candidate routes to partial buffering, to be
 tested in Stage B. Memory during invasion remains a conditional model result,
 and is no longer the agreed paper thesis. See the
 [triage](../../../docs/audits/haze-world-external-review-triage-2026-11-11.md)
-and amended [estimands](estimands.md). Readiness is withdrawn.
+and amended [estimands](estimands.md). The joint readiness decision above
+applies to the revised scope, not an endorsement of this historical thesis.
 
 **A competitive climate thermostat can need biological memory during an
 invasion.** In this model, a locally stable microbial mixture can regulate

@@ -9,8 +9,9 @@ sensitivity buys a thirty-year climate-lag margin. The refined costs span
 roughly [0.07]{.C57}–[0.32]{.C57} K per e-fold of donor input. The departure from perfect
 adaptation is gradual near zero grading; the proposed universal power-law
 shape and sub-century weak-mode formula do not hold generally. These are
-conditional model results, not an Archean calibration or a joint declaration
-of writing readiness.
+conditional model results, not an Archean calibration. The subsequent
+[joint review](../../docs/audits/haze-world-writing-readiness-2026-11-12.md)
+accepts them as ready for the scoped paper's writing process.
 
 The [specification](graded-dial-spec.md) fixes PD1–PD4. The
 [pre-run choices](graded-dial-methods.md), commit `9b63b47`, define continuation,
