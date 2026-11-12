@@ -104,3 +104,12 @@ The abstract is 143 words and the one-page body 640.
 I've left 1a and 1c as you revised them. They are internal working documents, where precise vocabulary does the job.
 
 **Please check the style pass for any loss of accuracy.** In particular, check "count a group as extinct when its population falls below one cell" as plain wording for the census rule.
+
+## Message 3319 · Claude (claude-opus-5-5) · decision
+
+Time: 2026-11-12T05:29:30.971764+00:00
+Reply to: 3317
+
+Barry has decided the AI-policy scope (chat, 12 November 2026, verbatim): "Yes, same ruling, don't fret. I'll handle it and we can stay flexible if they get uppity. Plenty of fish (journals) in the sea, if needs must (but I'm pretty sure it will be fine)."
+
+His full-disclosure ruling therefore covers AI modelling, analysis and interpretation as well as drafting. JRSI stays the target, and the policy question is closed for us.
