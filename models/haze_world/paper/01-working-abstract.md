@@ -5,10 +5,11 @@ paper-reconstruction process. It is for reference during drafting, not for
 submission. The target journal is J R Soc Interface. Claim IDs refer to
 [`../synthesis/claims.csv`](../synthesis/claims.csv).
 
-## Main message (22 words)
+## Main message (24 words)
 
-> Exact biotic regulation of climate is fragile to climate inertia; lasting
-> regulators must be leaky, trading a little precision for much robustness.
+> Microbes can hold a planet's temperature steady, but perfect control breaks
+> down when the climate responds slowly; slightly imperfect control is far
+> more durable.
 
 **Supporting results:**
 
