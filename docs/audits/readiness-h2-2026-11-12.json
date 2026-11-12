@@ -1,0 +1,494 @@
+{
+  "source_rows": 28,
+  "replay_exact": true,
+  "mixed_roots": 26,
+  "qualified_roots": [
+    {
+      "chemistry": "fixed",
+      "fraction": 0.0,
+      "atmosphere_pa": 0.0,
+      "source_status": "accepted",
+      "physiology_status": "in_domain",
+      "scaled_flow_residual_yr": 1.5512085741884777e-11,
+      "per_cell_balance_residual_yr": 1.7107409239214277e-14
+    },
+    {
+      "chemistry": "fixed",
+      "fraction": 0.0,
+      "atmosphere_pa": 1.0,
+      "source_status": "accepted",
+      "physiology_status": "in_domain",
+      "scaled_flow_residual_yr": 3.9387209014178787e-10,
+      "per_cell_balance_residual_yr": 3.7066053351630934e-13
+    },
+    {
+      "chemistry": "fixed",
+      "fraction": 0.0,
+      "atmosphere_pa": 3.0,
+      "source_status": "accepted",
+      "physiology_status": "in_domain",
+      "scaled_flow_residual_yr": 1.3454373846277188e-08,
+      "per_cell_balance_residual_yr": 1.253402850259766e-11
+    },
+    {
+      "chemistry": "fixed",
+      "fraction": 0.0,
+      "atmosphere_pa": 10.0,
+      "source_status": "accepted",
+      "physiology_status": "in_domain",
+      "scaled_flow_residual_yr": 4.4580385545157833e-10,
+      "per_cell_balance_residual_yr": 3.7066053351630934e-13
+    },
+    {
+      "chemistry": "fixed",
+      "fraction": 0.0,
+      "atmosphere_pa": 30.0,
+      "source_status": "accepted",
+      "physiology_status": "in_domain",
+      "scaled_flow_residual_yr": 3.6613580639688265e-09,
+      "per_cell_balance_residual_yr": 2.490078455930078e-12
+    },
+    {
+      "chemistry": "fixed",
+      "fraction": 0.0,
+      "atmosphere_pa": 100.0,
+      "source_status": "accepted",
+      "physiology_status": "in_domain",
+      "scaled_flow_residual_yr": 4.046631063100376e-11,
+      "per_cell_balance_residual_yr": 1.7107409239214277e-14
+    },
+    {
+      "chemistry": "fixed",
+      "fraction": 0.0,
+      "atmosphere_pa": 200.0,
+      "source_status": "accepted",
+      "physiology_status": "in_domain",
+      "scaled_flow_residual_yr": 6.474609700960602e-11,
+      "per_cell_balance_residual_yr": 1.7107409239214277e-14
+    },
+    {
+      "chemistry": "fixed",
+      "fraction": 0.5,
+      "atmosphere_pa": 0.0,
+      "source_status": "accepted",
+      "physiology_status": "in_domain",
+      "scaled_flow_residual_yr": 3.709411807842012e-11,
+      "per_cell_balance_residual_yr": 1.7107409239214277e-14
+    },
+    {
+      "chemistry": "fixed",
+      "fraction": 0.5,
+      "atmosphere_pa": 1.0,
+      "source_status": "accepted",
+      "physiology_status": "in_domain",
+      "scaled_flow_residual_yr": 7.44580115610503e-10,
+      "per_cell_balance_residual_yr": 3.7066053351630934e-13
+    },
+    {
+      "chemistry": "fixed",
+      "fraction": 0.5,
+      "atmosphere_pa": 3.0,
+      "source_status": "accepted",
+      "physiology_status": "in_domain",
+      "scaled_flow_residual_yr": 2.5642826608316455e-08,
+      "per_cell_balance_residual_yr": 1.253402850259766e-11
+    },
+    {
+      "chemistry": "fixed",
+      "fraction": 0.5,
+      "atmosphere_pa": 10.0,
+      "source_status": "accepted",
+      "physiology_status": "in_domain",
+      "scaled_flow_residual_yr": 8.450714536775001e-10,
+      "per_cell_balance_residual_yr": 3.7066053351630934e-13
+    },
+    {
+      "chemistry": "fixed",
+      "fraction": 0.5,
+      "atmosphere_pa": 30.0,
+      "source_status": "accepted",
+      "physiology_status": "in_domain",
+      "scaled_flow_residual_yr": 6.963409011459754e-09,
+      "per_cell_balance_residual_yr": 2.490078455930078e-12
+    },
+    {
+      "chemistry": "fixed",
+      "fraction": 0.5,
+      "atmosphere_pa": 100.0,
+      "source_status": "accepted",
+      "physiology_status": "in_domain",
+      "scaled_flow_residual_yr": 7.283935913580677e-11,
+      "per_cell_balance_residual_yr": 1.7107409239214277e-14
+    },
+    {
+      "chemistry": "products",
+      "fraction": 0.0,
+      "atmosphere_pa": 0.0,
+      "source_status": "accepted",
+      "physiology_status": "in_domain",
+      "scaled_flow_residual_yr": 5.41639263405609e-12,
+      "per_cell_balance_residual_yr": 1.9008232488015864e-15
+    },
+    {
+      "chemistry": "products",
+      "fraction": 0.0,
+      "atmosphere_pa": 1.0,
+      "source_status": "accepted",
+      "physiology_status": "in_domain",
+      "scaled_flow_residual_yr": 1.152665892022663e-16,
+      "per_cell_balance_residual_yr": 0.0
+    },
+    {
+      "chemistry": "products",
+      "fraction": 0.0,
+      "atmosphere_pa": 3.0,
+      "source_status": "accepted",
+      "physiology_status": "in_domain",
+      "scaled_flow_residual_yr": 6.756450236935393e-13,
+      "per_cell_balance_residual_yr": 1.9008232488015864e-15
+    },
+    {
+      "chemistry": "products",
+      "fraction": 0.0,
+      "atmosphere_pa": 10.0,
+      "source_status": "accepted",
+      "physiology_status": "in_domain",
+      "scaled_flow_residual_yr": 4.707931320163682e-12,
+      "per_cell_balance_residual_yr": 1.9008232488015864e-15
+    },
+    {
+      "chemistry": "products",
+      "fraction": 0.0,
+      "atmosphere_pa": 30.0,
+      "source_status": "accepted",
+      "physiology_status": "in_domain",
+      "scaled_flow_residual_yr": 3.989658379421986e-12,
+      "per_cell_balance_residual_yr": 1.9008232488015864e-15
+    },
+    {
+      "chemistry": "products",
+      "fraction": 0.0,
+      "atmosphere_pa": 100.0,
+      "source_status": "accepted",
+      "physiology_status": "in_domain",
+      "scaled_flow_residual_yr": 2.5853155916603275e-12,
+      "per_cell_balance_residual_yr": 1.9008232488015864e-15
+    },
+    {
+      "chemistry": "products",
+      "fraction": 0.0,
+      "atmosphere_pa": 200.0,
+      "source_status": "accepted",
+      "physiology_status": "in_domain",
+      "scaled_flow_residual_yr": 1.0074383010820977e-11,
+      "per_cell_balance_residual_yr": 1.9008232488015864e-15
+    },
+    {
+      "chemistry": "products",
+      "fraction": 0.5,
+      "atmosphere_pa": 0.0,
+      "source_status": "accepted",
+      "physiology_status": "in_domain",
+      "scaled_flow_residual_yr": 1.2491253456168655e-16,
+      "per_cell_balance_residual_yr": 0.0
+    },
+    {
+      "chemistry": "products",
+      "fraction": 0.5,
+      "atmosphere_pa": 1.0,
+      "source_status": "accepted",
+      "physiology_status": "in_domain",
+      "scaled_flow_residual_yr": 2.6179704288348463e-12,
+      "per_cell_balance_residual_yr": 1.9008232488015864e-15
+    },
+    {
+      "chemistry": "products",
+      "fraction": 0.5,
+      "atmosphere_pa": 3.0,
+      "source_status": "accepted",
+      "physiology_status": "in_domain",
+      "scaled_flow_residual_yr": 1.960578678682247e-12,
+      "per_cell_balance_residual_yr": 1.9008232488015864e-15
+    },
+    {
+      "chemistry": "products",
+      "fraction": 0.5,
+      "atmosphere_pa": 10.0,
+      "source_status": "accepted",
+      "physiology_status": "in_domain",
+      "scaled_flow_residual_yr": 1.073037009470554e-11,
+      "per_cell_balance_residual_yr": 1.9008232488015864e-15
+    },
+    {
+      "chemistry": "products",
+      "fraction": 0.5,
+      "atmosphere_pa": 30.0,
+      "source_status": "accepted",
+      "physiology_status": "in_domain",
+      "scaled_flow_residual_yr": 4.818258333210441e-12,
+      "per_cell_balance_residual_yr": 0.0
+    },
+    {
+      "chemistry": "products",
+      "fraction": 0.5,
+      "atmosphere_pa": 100.0,
+      "source_status": "accepted",
+      "physiology_status": "in_domain",
+      "scaled_flow_residual_yr": 1.2464838755928654e-11,
+      "per_cell_balance_residual_yr": 1.9008232488015864e-15
+    }
+  ],
+  "fixed_independent": [
+    {
+      "fraction": 0.0,
+      "atmosphere_pa": 0.0,
+      "temperature_k": 281.5348228050822,
+      "local_h2_pa": 22.486299980548264,
+      "positive": true,
+      "XA": 0.0003011934792797923,
+      "XM": 0.0004906231105327,
+      "state_relative_error": 4.098237974356115e-15,
+      "upper_reference_branch_pressure_pa": null,
+      "captured_h2_mol_l_h": 9.250456667315058e-07,
+      "atmospheric_h2_flux_mol_l_h": -7.495433326849416e-08
+    },
+    {
+      "fraction": 0.0,
+      "atmosphere_pa": 1.0,
+      "temperature_k": 281.5348228050822,
+      "local_h2_pa": 22.486299980548264,
+      "positive": true,
+      "XA": 0.0003054462793411641,
+      "XM": 0.0004906231105327,
+      "state_relative_error": 4.1552576383522476e-14,
+      "upper_reference_branch_pressure_pa": null,
+      "captured_h2_mol_l_h": 9.28379000064839e-07,
+      "atmospheric_h2_flux_mol_l_h": -7.162099993516093e-08
+    },
+    {
+      "fraction": 0.0,
+      "atmosphere_pa": 3.0,
+      "temperature_k": 281.5348228050822,
+      "local_h2_pa": 22.486299980548264,
+      "positive": true,
+      "XA": 0.000313951879463908,
+      "XM": 0.0004906231105327,
+      "state_relative_error": 1.5680962760701924e-12,
+      "upper_reference_branch_pressure_pa": null,
+      "captured_h2_mol_l_h": 9.350456667315057e-07,
+      "atmospheric_h2_flux_mol_l_h": -6.495433326849425e-08
+    },
+    {
+      "fraction": 0.0,
+      "atmosphere_pa": 10.0,
+      "temperature_k": 281.5348228050822,
+      "local_h2_pa": 22.486299980548264,
+      "positive": true,
+      "XA": 0.00034372147989351177,
+      "XM": 0.0004906231105327,
+      "state_relative_error": 4.1552576383522476e-14,
+      "upper_reference_branch_pressure_pa": null,
+      "captured_h2_mol_l_h": 9.583790000648392e-07,
+      "atmospheric_h2_flux_mol_l_h": -4.162099993516079e-08
+    },
+    {
+      "fraction": 0.0,
+      "atmosphere_pa": 30.0,
+      "temperature_k": 281.5348228050822,
+      "local_h2_pa": 22.486299980548264,
+      "positive": true,
+      "XA": 0.0004287774811209505,
+      "XM": 0.0004906231105327,
+      "state_relative_error": 3.0524554210253015e-13,
+      "upper_reference_branch_pressure_pa": null,
+      "captured_h2_mol_l_h": 1.0250456667315057e-06,
+      "atmospheric_h2_flux_mol_l_h": 2.504566673150573e-08
+    },
+    {
+      "fraction": 0.0,
+      "atmosphere_pa": 100.0,
+      "temperature_k": 281.5348228050822,
+      "local_h2_pa": 22.486299980548264,
+      "positive": true,
+      "XA": 0.0007264734854169868,
+      "XM": 0.0004906231105327,
+      "state_relative_error": 3.791870088230188e-15,
+      "upper_reference_branch_pressure_pa": null,
+      "captured_h2_mol_l_h": 1.258379000064839e-06,
+      "atmospheric_h2_flux_mol_l_h": 2.583790000648391e-07
+    },
+    {
+      "fraction": 0.0,
+      "atmosphere_pa": 200.0,
+      "temperature_k": 281.5348228050822,
+      "local_h2_pa": 22.486299980548264,
+      "positive": true,
+      "XA": 0.0011517534915541814,
+      "XM": 0.0004906231105327,
+      "state_relative_error": 3.791870088230188e-15,
+      "upper_reference_branch_pressure_pa": null,
+      "captured_h2_mol_l_h": 1.5917123333981723e-06,
+      "atmospheric_h2_flux_mol_l_h": 5.917123333981723e-07
+    },
+    {
+      "fraction": 0.5,
+      "atmosphere_pa": 0.0,
+      "temperature_k": 281.5348228050822,
+      "local_h2_pa": 22.486299980548264,
+      "positive": true,
+      "XA": 0.0005740589129863762,
+      "XM": 0.00033832330504541224,
+      "state_relative_error": 4.91482678963173e-15,
+      "upper_reference_branch_pressure_pa": 157.32696540265496,
+      "captured_h2_mol_l_h": 9.250456667315058e-07,
+      "atmospheric_h2_flux_mol_l_h": -7.495433326849416e-08
+    },
+    {
+      "fraction": 0.5,
+      "atmosphere_pa": 1.0,
+      "temperature_k": 281.5348228050822,
+      "local_h2_pa": 22.486299980548264,
+      "positive": true,
+      "XA": 0.0005821645259837664,
+      "XM": 0.0003361728580182322,
+      "state_relative_error": 4.1552576383522476e-14,
+      "upper_reference_branch_pressure_pa": 157.32696540265496,
+      "captured_h2_mol_l_h": 9.28379000064839e-07,
+      "atmospheric_h2_flux_mol_l_h": -7.162099993516093e-08
+    },
+    {
+      "fraction": 0.5,
+      "atmosphere_pa": 3.0,
+      "temperature_k": 281.5348228050822,
+      "local_h2_pa": 22.486299980548264,
+      "positive": true,
+      "XA": 0.0005983757519785476,
+      "XM": 0.0003318719639638719,
+      "state_relative_error": 1.5680962760701924e-12,
+      "upper_reference_branch_pressure_pa": 157.32696540265496,
+      "captured_h2_mol_l_h": 9.350456667315057e-07,
+      "atmospheric_h2_flux_mol_l_h": -6.495433326849425e-08
+    },
+    {
+      "fraction": 0.5,
+      "atmosphere_pa": 10.0,
+      "temperature_k": 281.5348228050822,
+      "local_h2_pa": 22.486299980548264,
+      "positive": true,
+      "XA": 0.0006551150429602821,
+      "XM": 0.00031681883477361077,
+      "state_relative_error": 4.1552576383522476e-14,
+      "upper_reference_branch_pressure_pa": 157.32696540265496,
+      "captured_h2_mol_l_h": 9.583790000648392e-07,
+      "atmospheric_h2_flux_mol_l_h": -4.162099993516079e-08
+    },
+    {
+      "fraction": 0.5,
+      "atmosphere_pa": 30.0,
+      "temperature_k": 281.5348228050822,
+      "local_h2_pa": 22.486299980548264,
+      "positive": true,
+      "XA": 0.0008172273029080932,
+      "XM": 0.0002738098942300081,
+      "state_relative_error": 3.0524554210253015e-13,
+      "upper_reference_branch_pressure_pa": 157.32696540265496,
+      "captured_h2_mol_l_h": 1.0250456667315057e-06,
+      "atmospheric_h2_flux_mol_l_h": 2.504566673150573e-08
+    },
+    {
+      "fraction": 0.5,
+      "atmosphere_pa": 100.0,
+      "temperature_k": 281.5348228050822,
+      "local_h2_pa": 22.486299980548264,
+      "positive": true,
+      "XA": 0.0013846202127254334,
+      "XM": 0.00012327860232739813,
+      "state_relative_error": 1.1872887145234417e-14,
+      "upper_reference_branch_pressure_pa": 157.32696540265496,
+      "captured_h2_mol_l_h": 1.258379000064839e-06,
+      "atmospheric_h2_flux_mol_l_h": 2.583790000648391e-07
+    },
+    {
+      "fraction": 0.5,
+      "atmosphere_pa": 200.0,
+      "temperature_k": 281.5348228050822,
+      "local_h2_pa": 22.486299980548264,
+      "positive": false,
+      "XA": 0.0021951815124644906,
+      "XM": -9.176610039061584e-05,
+      "state_relative_error": null,
+      "upper_reference_branch_pressure_pa": 157.32696540265496,
+      "captured_h2_mol_l_h": 1.5917123333981723e-06,
+      "atmospheric_h2_flux_mol_l_h": 5.917123333981723e-07
+    }
+  ],
+  "finite_difference_checks": [
+    {
+      "chemistry": "fixed",
+      "fraction": 0.0,
+      "atmosphere_pa": 100.0,
+      "critical_lag_yr": 0.11884384961789754,
+      "source_critical_lag_yr": 0.11884384969366217,
+      "relative_error": -6.375141525793993e-10
+    },
+    {
+      "chemistry": "fixed",
+      "fraction": 0.5,
+      "atmosphere_pa": 100.0,
+      "critical_lag_yr": 1.185146366613616,
+      "source_critical_lag_yr": 1.1851463666656585,
+      "relative_error": -4.391242924839389e-11
+    },
+    {
+      "chemistry": "products",
+      "fraction": 0.0,
+      "atmosphere_pa": 100.0,
+      "leading_real_yr": {
+        "0.0": -0.02967443415655877,
+        "1.0": -0.03077061181139729,
+        "100.0": -0.004496701916241774,
+        "10000.0": -9.661087491697653e-05
+      },
+      "scope": "Selected finite-lag checks; not all-lag stability"
+    },
+    {
+      "chemistry": "products",
+      "fraction": 0.5,
+      "atmosphere_pa": 100.0,
+      "leading_real_yr": {
+        "0.0": -0.025109817935031722,
+        "1.0": -0.024468380938853257,
+        "100.0": -0.0024846549067988775,
+        "10000.0": -7.600739645598163e-05
+      },
+      "scope": "Selected finite-lag checks; not all-lag stability"
+    }
+  ],
+  "source_sha256": {
+    "src/terra_prisca/haze_world/dynamic_realisation.py": "974b355ba9d0f50185772e7f680698d0c7011be7126093b276826e434b451327",
+    "src/terra_prisca/haze_world/dynamic_core.py": "a359406f79444380f5554e6d27b478e2b70d624398cd1f2f853e1e25cbc88be6",
+    "src/terra_prisca/haze_world/population_coupling.py": "17a433957e94845595f6d7fd160ffe593c01c4e74550707b0814c95ab67ae663",
+    "src/terra_prisca/haze_world/two_guilds.py": "eff6a9027c5b28d154f03462d926591ebee3408eb2c80ec0df5c38929f169f83",
+    "src/terra_prisca/haze_world/methane_budget.py": "f2374cfcb658102cc9919c61108379560922fc787c2cd85e089e878a9fa25fa8",
+    "src/terra_prisca/haze_world/darwinian.py": "e965035d5dfbfafcb695dc3738b23d8a445c4c1e7e246ab4688d67b33482f1aa",
+    "src/terra_prisca/haze_world/hydrogen_uptake.py": "c48d8231ef726605ab07be22438f3e2fd97f23b310773ac748d1b2bf5c36fafd",
+    "src/terra_prisca/haze_world/woodii1998.py": "b0130f4f8ea15aa64245133f79dc8b35883a414031a8b49262c6657350cad0b0",
+    "models/haze_world/dynamic-realisation-spec.md": "28221690cd451aefe55e9fcdc32548f964f57d76de355a36e5601bc5498b2a95",
+    "models/haze_world/dynamic-realisation-methods.md": "cb8d1ee300a922d894d11db350995f433e0092787417ec3b70f347ea886242c8",
+    "models/haze_response/arney2016/figure4.csv": "c0ef5f3d17ee7c6085ad36247f0f7814726dbbe3273842b01f2c6c4e046856f8",
+    "models/haze_response/arney2016/cases.csv": "e3d77d275052a8875991a751868f857bffc964295bfd47591944d86bc58ab07a",
+    "models/haze_world/evidence/kotsyurbenko2001_table2.csv": "c95b4be023e5502fbb30eb322621e5612bbbf850f99d1b6669e98b95eb370480",
+    "models/haze_world/evidence/peters1998_chemostat.csv": "b0b00bf03eaeaabf45fb571330773c5158b53b088436aaee942188f8e9498320",
+    "uv.lock": "02bf429b2ec474f03280ec550d5fd847b573ece24ab9043e0b5998370fd4d2b4",
+    "docs/audits/readiness-h2-2026-11-12.py": "2dc0e94bc05721d51fc1fec9890fbeba9f71293011c9e189adb49eff381c360a",
+    "models/haze_world/review/atmospheric_h2_check.json": "699501c488a45679ac903db415c61ca2a1037a4ee98b995bb9d6aa41760a77e7",
+    "models/haze_world/review/check_atmospheric_h2.py": "129d43868ed8de3914e762a77a9296ee260664c5e22a0e7b6966e76bab559375",
+    "src/terra_prisca/haze_response/arney2016.py": "a1b8b52f4c929a0518a17542fb323588699433b038949b38ee6ad74679cd0da6"
+  },
+  "limitations": [
+    "Open prescribed atmospheric reservoir; gas exchange can import hydrogen.",
+    "No photochemical hydrogen budget or Archean calibration.",
+    "Fixed reference branch boundary is independently diagnosed; general root completeness is not proved.",
+    "Products are tested on finite lag grids only."
+  ]
+}
