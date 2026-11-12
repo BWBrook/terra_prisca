@@ -152,3 +152,46 @@ It tests one hypothesis: exclusion acts as integral control, which forces a
 trade-off between exact pinning and robustness to lag. It also separates
 the product variant's methane-to-methanogen thermodynamic loop from
 temperature-mediated regulation.
+
+## Final dispositions after Stage B (Claude, 12 November 2026)
+
+**Review of C55–C58.** I accept the graded-dial build and its verdicts.
+
+- **PD3 holds.** A 30-year delay margin costs a residual sensitivity of
+  0.07–0.32 K per e-fold of supply, on all four branches.
+- **PD1 holds locally.** The equilibrium and the Hopf crossing are regular,
+  so robustness rises continuously out of exact pinning. It does not jump.
+- **PD2 is refuted.** There is no universal power law. That fits a finite
+  baseline margin.
+- **PD4 is refuted by the refinement points.** The weak-mode formula fails
+  once the zero-lag mode is appreciably damped.
+
+I also accept Codex's two corrections.
+
+- **Exact pinning is a special property, not a singular equilibrium.** That
+  replaces my "singular limit".
+- **Uncensored B2 minima below one cell show loss of the mixed regulator,
+  not joint finite extinction.** My closing message to Barry overstated this
+  as "both groups go extinct", and I correct it there.
+
+`S_0` is renamed the **frozen-local-mix counterfactual**.
+
+**Remaining findings.** Each is now closed, narrowed, or left for writing.
+
+| Finding | Disposition |
+|---|---|
+| X1–X3, X15, X16 | **Closed by Stage B** (C38–C58). Spatial rescue claims at ±10/18 K with clipping are inadmissible; see the Stage B′ review. |
+| X4 | **Closed as a condition.** The evidence exists: dry-mass ratio 0.379 puts the crossing at 297.15 K, off the branch, and 79 of 243 settings are restoring. Existence is stated as conditional on the culture capacity normalisation. A continuous map of crossing temperature against capacity ratio is a figure task during writing, not a readiness gate. |
+| X5, X6, X17 | **Closed.** Codex's Stage A static checks: MSP 290.285 K, invariance across cases A–C, assay SD of about 1.4 K, CO₂ diagnostic 279.921 K. Each is reported as a diagnostic. |
+| X7 | **Closed as a condition.** Full-budget band endpoints are computed. Regulation needs a non-methane acetate sink, and f in the Archean is unknown. |
+| X8 | **Closed** ([check](../../models/haze_world/review/check_atmospheric_h2.py), C59). Atmospheric H₂ from 0 to 100 Pa leaves the fixed-chemistry set point unchanged at 281.5348 K. The critical lag moves from 0.149 to 0.119 yr at f=0, and from 1.10 to 1.19 yr at f=.5. At f=.5 the mixed state is lost by 200 Pa, against a local H₂ of 22.5 Pa; at f=0 it persists. Product feedback stays lag-robust, and its supply slope falls in magnitude from −1.88 to −0.78 K by 100 Pa. The open budget is a stated limitation, discussed with Kharecha 2005, Ozaki 2018 and Sauterey 2020. |
+| X9 | **Closed by Stage D** ([literature-framing.md](../../models/haze_world/synthesis/literature-framing.md)). The static plateau is Seto & Akagi's mechanism. The dynamic trade-off is our contribution. Control-theory precedents are identified and must be read in full before they are cited in detail. |
+| X10, X11 | **Narrowed.** Evolution becomes a short section restricted to common E. The E_A=0.65/E_M=0.10 reversal is reported as a counterexample. No map is built: evolution is not the thesis. |
+| X12, X14, X19, X20 | **Closed in Stage A.** |
+| X13 | **Closed.** 230 cells is a worked example, and balanced turnover's 2,535 is the counterexample. The panel is drawn at figure time. |
+| X18 | **Narrowed.** Joint stochastic recovery is not claimed. Recovery appears only as a deterministic finite-census result. |
+
+**Readiness.** I consider the evidence ready to write the one paper framed in
+`literature-framing.md`. That needs Codex's concurrence; the readiness gate
+is joint. If Codex agrees, I report "ready to write" to Barry, who then leads
+the writing process.

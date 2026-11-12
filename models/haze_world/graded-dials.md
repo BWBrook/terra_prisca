@@ -160,3 +160,12 @@ the claims before declaring writing readiness. The uncensored B2 records
 establish subcell expectations after loss of the exact mixed regulator;
 they do not establish joint finite extinction. The separately censused B3
 history dependence remains a different result.
+
+**Claude's review (12 November).** I accept C55–C58 and Codex's
+corrections []{.C57}. Robustness rises continuously out of exact pinning,
+and a 30-year margin costs [0.07]{.C57}–[0.32]{.C57} K per e-fold of supply.
+The remaining review findings are reconciled in the
+[triage](../../docs/audits/haze-world-external-review-triage-2026-11-11.md).
+The atmospheric-H₂ check is C59: the set point stays at [281.5348]{.C59} K
+up to [100]{.C59} Pa []{.C59}. The precedents are compared in
+[literature-framing.md](synthesis/literature-framing.md).

@@ -1,0 +1,331 @@
+{
+ "setting": "homogeneous, L=1e-3/h, supply 0.30; atmosphere_pa varied with fixed exchange coefficient",
+ "rows": [
+  {
+   "chemistry": "fixed",
+   "fraction": 0.0,
+   "atmosphere_pa": 0.0,
+   "status": "mixed",
+   "temperature_k": 281.53482280508206,
+   "local_h2_pa": 22.48629998054835,
+   "dT_dlog_supply_k": -8.061637187587907e-14,
+   "critical_lag_status": "finite_crossing",
+   "critical_lag_yr": 0.1492142601025095
+  },
+  {
+   "chemistry": "fixed",
+   "fraction": 0.0,
+   "atmosphere_pa": 1.0,
+   "status": "mixed",
+   "temperature_k": 281.53482280508246,
+   "local_h2_pa": 22.48629998054733,
+   "dT_dlog_supply_k": -1.704853935697825e-12,
+   "critical_lag_status": "finite_crossing",
+   "critical_lag_yr": 0.14842888513260374
+  },
+  {
+   "chemistry": "fixed",
+   "fraction": 0.0,
+   "atmosphere_pa": 3.0,
+   "status": "mixed",
+   "temperature_k": 281.53482280506825,
+   "local_h2_pa": 22.486299980583524,
+   "dT_dlog_supply_k": 5.6070175568593844e-11,
+   "critical_lag_status": "finite_crossing",
+   "critical_lag_yr": 0.1469275260323863
+  },
+  {
+   "chemistry": "fixed",
+   "fraction": 0.0,
+   "atmosphere_pa": 10.0,
+   "status": "mixed",
+   "temperature_k": 281.53482280508246,
+   "local_h2_pa": 22.48629998054733,
+   "dT_dlog_supply_k": -1.5155147918326648e-12,
+   "critical_lag_status": "finite_crossing",
+   "critical_lag_yr": 0.1423086305572211
+  },
+  {
+   "chemistry": "fixed",
+   "fraction": 0.0,
+   "atmosphere_pa": 30.0,
+   "status": "mixed",
+   "temperature_k": 281.5348228050848,
+   "local_h2_pa": 22.4862999805414,
+   "dT_dlog_supply_k": -8.155853060376208e-12,
+   "critical_lag_status": "finite_crossing",
+   "critical_lag_yr": 0.13294886068120257
+  },
+  {
+   "chemistry": "fixed",
+   "fraction": 0.0,
+   "atmosphere_pa": 100.0,
+   "status": "mixed",
+   "temperature_k": 281.53482280508206,
+   "local_h2_pa": 22.48629998054835,
+   "dT_dlog_supply_k": -3.2130010940092296e-14,
+   "critical_lag_status": "finite_crossing",
+   "critical_lag_yr": 0.11884384969366217
+  },
+  {
+   "chemistry": "fixed",
+   "fraction": 0.0,
+   "atmosphere_pa": 200.0,
+   "status": "mixed",
+   "temperature_k": 281.53482280508206,
+   "local_h2_pa": 22.48629998054835,
+   "dT_dlog_supply_k": -1.9208695390348422e-14,
+   "critical_lag_status": "finite_crossing",
+   "critical_lag_yr": 0.11256708542015842
+  },
+  {
+   "chemistry": "fixed",
+   "fraction": 0.5,
+   "atmosphere_pa": 0.0,
+   "status": "mixed",
+   "temperature_k": 281.53482280508206,
+   "local_h2_pa": 22.48629998054835,
+   "dT_dlog_supply_k": -7.937924565289429e-14,
+   "critical_lag_status": "finite_crossing",
+   "critical_lag_yr": 1.1027600781128808
+  },
+  {
+   "chemistry": "fixed",
+   "fraction": 0.5,
+   "atmosphere_pa": 1.0,
+   "status": "mixed",
+   "temperature_k": 281.53482280508246,
+   "local_h2_pa": 22.48629998054733,
+   "dT_dlog_supply_k": -1.7119095157653482e-12,
+   "critical_lag_status": "finite_crossing",
+   "critical_lag_yr": 1.1024058367974148
+  },
+  {
+   "chemistry": "fixed",
+   "fraction": 0.5,
+   "atmosphere_pa": 3.0,
+   "status": "mixed",
+   "temperature_k": 281.53482280506825,
+   "local_h2_pa": 22.486299980583524,
+   "dT_dlog_supply_k": 5.607500753114389e-11,
+   "critical_lag_status": "finite_crossing",
+   "critical_lag_yr": 1.1017821831743335
+  },
+  {
+   "chemistry": "fixed",
+   "fraction": 0.5,
+   "atmosphere_pa": 10.0,
+   "status": "mixed",
+   "temperature_k": 281.53482280508246,
+   "local_h2_pa": 22.48629998054733,
+   "dT_dlog_supply_k": -1.5209982324654143e-12,
+   "critical_lag_status": "finite_crossing",
+   "critical_lag_yr": 1.1004090105443305
+  },
+  {
+   "chemistry": "fixed",
+   "fraction": 0.5,
+   "atmosphere_pa": 30.0,
+   "status": "mixed",
+   "temperature_k": 281.5348228050848,
+   "local_h2_pa": 22.4862999805414,
+   "dT_dlog_supply_k": -8.148596941460305e-12,
+   "critical_lag_status": "finite_crossing",
+   "critical_lag_yr": 1.102164394465777
+  },
+  {
+   "chemistry": "fixed",
+   "fraction": 0.5,
+   "atmosphere_pa": 100.0,
+   "status": "mixed",
+   "temperature_k": 281.53482280508206,
+   "local_h2_pa": 22.48629998054835,
+   "dT_dlog_supply_k": -3.401205038884296e-14,
+   "critical_lag_status": "finite_crossing",
+   "critical_lag_yr": 1.1851463666656585
+  },
+  {
+   "chemistry": "fixed",
+   "fraction": 0.5,
+   "atmosphere_pa": 200.0,
+   "status": "no_mixed_state",
+   "found": [
+    {
+     "kind": "lifeless",
+     "temperature_k": 283.19877678579377
+    },
+    {
+     "kind": "acetogen",
+     "temperature_k": 273.89471310993304
+    },
+    {
+     "kind": "methanogen",
+     "temperature_k": 274.002
+    }
+   ]
+  },
+  {
+   "chemistry": "products",
+   "fraction": 0.0,
+   "atmosphere_pa": 0.0,
+   "status": "mixed",
+   "temperature_k": 281.5691435563301,
+   "local_h2_pa": 22.399597208751896,
+   "dT_dlog_supply_k": -1.8826396499508422,
+   "critical_lag_status": "not_detected_through_10000",
+   "critical_lag_yr": null
+  },
+  {
+   "chemistry": "products",
+   "fraction": 0.0,
+   "atmosphere_pa": 1.0,
+   "status": "mixed",
+   "temperature_k": 281.5629108992523,
+   "local_h2_pa": 22.415288179569394,
+   "dT_dlog_supply_k": -1.8570682433793224,
+   "critical_lag_status": "not_detected_through_10000",
+   "critical_lag_yr": null
+  },
+  {
+   "chemistry": "products",
+   "fraction": 0.0,
+   "atmosphere_pa": 3.0,
+   "status": "mixed",
+   "temperature_k": 281.5506957482307,
+   "local_h2_pa": 22.446145733461734,
+   "dT_dlog_supply_k": -1.807905778871347,
+   "critical_lag_status": "not_detected_through_10000",
+   "critical_lag_yr": null
+  },
+  {
+   "chemistry": "products",
+   "fraction": 0.0,
+   "atmosphere_pa": 10.0,
+   "status": "mixed",
+   "temperature_k": 281.5103563980799,
+   "local_h2_pa": 22.549051683639014,
+   "dT_dlog_supply_k": -1.6541932644304767,
+   "critical_lag_status": "not_detected_through_10000",
+   "critical_lag_yr": null
+  },
+  {
+   "chemistry": "products",
+   "fraction": 0.0,
+   "atmosphere_pa": 30.0,
+   "status": "mixed",
+   "temperature_k": 281.4116899997918,
+   "local_h2_pa": 22.80740638466979,
+   "dT_dlog_supply_k": -1.3289460429219337,
+   "critical_lag_status": "not_detected_through_10000",
+   "critical_lag_yr": null
+  },
+  {
+   "chemistry": "products",
+   "fraction": 0.0,
+   "atmosphere_pa": 100.0,
+   "status": "mixed",
+   "temperature_k": 281.1764132648766,
+   "local_h2_pa": 23.46425591495977,
+   "dT_dlog_supply_k": -0.7816365311018313,
+   "critical_lag_status": "not_detected_through_10000",
+   "critical_lag_yr": null
+  },
+  {
+   "chemistry": "products",
+   "fraction": 0.0,
+   "atmosphere_pa": 200.0,
+   "status": "mixed",
+   "temperature_k": 280.97219418460764,
+   "local_h2_pa": 24.085844899283842,
+   "dT_dlog_supply_k": -0.4884132802746586,
+   "critical_lag_status": "not_detected_through_10000",
+   "critical_lag_yr": null
+  },
+  {
+   "chemistry": "products",
+   "fraction": 0.5,
+   "atmosphere_pa": 0.0,
+   "status": "mixed",
+   "temperature_k": 281.28482672129456,
+   "local_h2_pa": 23.154152051827882,
+   "dT_dlog_supply_k": -1.877567151561392,
+   "critical_lag_status": "not_detected_through_10000",
+   "critical_lag_yr": null
+  },
+  {
+   "chemistry": "products",
+   "fraction": 0.5,
+   "atmosphere_pa": 1.0,
+   "status": "mixed",
+   "temperature_k": 281.2786115202698,
+   "local_h2_pa": 23.17157825600498,
+   "dT_dlog_supply_k": -1.8516701666342703,
+   "critical_lag_status": "not_detected_through_10000",
+   "critical_lag_yr": null
+  },
+  {
+   "chemistry": "products",
+   "fraction": 0.5,
+   "atmosphere_pa": 3.0,
+   "status": "mixed",
+   "temperature_k": 281.2664343895823,
+   "local_h2_pa": 23.205842485403203,
+   "dT_dlog_supply_k": -1.8019089472504375,
+   "critical_lag_status": "not_detected_through_10000",
+   "critical_lag_yr": null
+  },
+  {
+   "chemistry": "products",
+   "fraction": 0.5,
+   "atmosphere_pa": 10.0,
+   "status": "mixed",
+   "temperature_k": 281.22625533446194,
+   "local_h2_pa": 23.320056790123022,
+   "dT_dlog_supply_k": -1.646556790778971,
+   "critical_lag_status": "not_detected_through_10000",
+   "critical_lag_yr": null
+  },
+  {
+   "chemistry": "products",
+   "fraction": 0.5,
+   "atmosphere_pa": 30.0,
+   "status": "mixed",
+   "temperature_k": 281.12818866991614,
+   "local_h2_pa": 23.606496814495863,
+   "dT_dlog_supply_k": -1.319022989156011,
+   "critical_lag_status": "not_detected_through_10000",
+   "critical_lag_yr": null
+  },
+  {
+   "chemistry": "products",
+   "fraction": 0.5,
+   "atmosphere_pa": 100.0,
+   "status": "mixed",
+   "temperature_k": 280.895327515425,
+   "local_h2_pa": 24.333450216032933,
+   "dT_dlog_supply_k": -0.7716628693499394,
+   "critical_lag_status": "not_detected_through_10000",
+   "critical_lag_yr": null
+  },
+  {
+   "chemistry": "products",
+   "fraction": 0.5,
+   "atmosphere_pa": 200.0,
+   "status": "no_mixed_state",
+   "found": [
+    {
+     "kind": "lifeless",
+     "temperature_k": 283.19877678579377
+    },
+    {
+     "kind": "acetogen",
+     "temperature_k": 273.91134820125046
+    },
+    {
+     "kind": "methanogen",
+     "temperature_k": 274.002
+    }
+   ]
+  }
+ ]
+}
