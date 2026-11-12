@@ -255,3 +255,42 @@ branch matching, gain validity and censoring conventions.
 - B1/B4 alone do not estimate invasion minima, finite-population recovery,
   bounded nonlinear oscillations or a physical Archean ocean response. PB5
   and PB6 remain pending B2/B3.
+
+## E15. Weighted continuum, local frozen mix and homogeneous transients
+
+**Estimands.** C0/C1 equilibrium slopes and delay margins under the
+[frozen Stage B′ methods](../continuum-habitats-methods.md); and homogeneous
+B2/B3 finite trajectories, census outcomes and conditional first-window
+branching probabilities. PC1–PC6 and PB5/PB6 retain their original statements.
+
+- S_0 freezes each habitat's local ratio while total biomass and chemistry
+  respond. It removes within-habitat sorting, not all global composition
+  changes through geographical biomass redistribution. It is an explicitly
+  projected counterfactual, not an empirical ecosystem replacement.
+- Report S_c and S_0, their singular/zero/corner/plateau qualifications, and
+  frozen-system stability alongside G_loc. Existence of the original mixed
+  equilibrium does not guarantee a finite or nonzero counterfactual slope.
+  The old methanogen-only gain is a separate secondary treatment contrast.
+  A smaller G_loc across different geometries can accompany a larger absolute
+  S_c; changed normalization must not be described as improved physical holding.
+- A static adaptive panel rule does not establish spectral convergence.
+  Resolved continuum claims require the declared doubling checks and
+  independent characteristic validation. Local-block poles, sink-spectrum
+  edges and discrete collective roots remain distinct.
+- A finite frequency/lag search can be right-censored; it is not a proof of
+  all-lag stability. Failure of connectivity monotonicity does not establish
+  robustness at every connectivity. Near-zero G_loc is approximate pinning.
+- Nonlinear results apply to the stated kicks/invasions, fixed reference
+  physiology, lag equation and horizons. A bounded finite envelope is not an
+  attracting cycle. A subcell continuum minimum is not a simulated demographic
+  extinction. Census outcomes and uncensored first-window probabilities are
+  separate; another guild's loss changes the environmental counterfactual.
+- First-window branching uses the declared birth/death split and an exogenous
+  recorded environment. Horizon-censored recovery is not permanent exclusion;
+  per-guild survival probabilities do not establish joint regulator recovery.
+  The post-diagnostic first-episode amendment retains the old global-minimum
+  windows, but begins the new diagnostic with the first capped rare episode
+  and scores it only if declining. It never selects a later episode after a
+  previous loss. Thresholds below one cell, earlier own loss and other-guild
+  loss before or during the interval make assembly unassessed. Conditional
+  mathematical probabilities may still be shown, with those flags.

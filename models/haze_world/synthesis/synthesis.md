@@ -7,10 +7,13 @@ Claude (Opus 5.5), with independent numerical and semantic audit by Codex
 records corrections to the first synthesis. Barry has agreed to aim for a
 paper; he will guide its writing once the evidence is ready (see [Paper](#paper)).
 
-The [B1/B4 result](../dynamic-realisation.md) is the current revision checkpoint:
-acetate feedback supplies the reference damping, the bank-as-lag hypothesis
-fails, and the habitat continuum frontier remains unresolved. The historical
-argument below is not a newly accepted paper thesis.
+The current revision checkpoint is the
+[resolved C0/C1 calculation](../continuum-habitats.md) and the
+[homogeneous nonlinear B2/B3 checks](../review/dynamic-transients-2026-11-12.md).
+The newly defined local-gain frontier fails its numerical test, without
+revealing exact physical pinning; connectivity has a nonmonotonic effect on
+the delay margin. The historical argument below is not a newly accepted paper
+thesis. Writing readiness remains withdrawn.
 
 ## Thesis
 

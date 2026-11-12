@@ -1,6 +1,6 @@
 # Haze-world
 
-**Status: external-review revision, 11 November 2026; not ready to write.**
+**Status: external-review revision, 12 November 2026; not ready to write.**
 The fixed-product reference's stability depends on instantaneous temperature.
 Finite thermal response, product chemistry, habitat temperature spread and
 transferred physiology are now the decisive checks. The
@@ -8,12 +8,14 @@ transferred physiology are now the decisive checks. The
 sets out the revision; the older stage descriptions below are conditional
 results and a research history, not a validated physical climate regulator.
 
-The [B1/B4 dynamic-realisation build](dynamic-realisation.md) reverses the
-proposed chemical attribution: acetate feedback supplies the reference
-damping, not the direct atmospheric-methane loop. The habitat quadrature
-fails its prescribed convergence test, leaving the continuum frontier open.
-B4 rejects the proposed local bank-as-thermal-lag mechanism. Nonlinear B2/B3
-runs remain pending.
+The [B1/B4 build](dynamic-realisation.md) identifies acetate feedback as the
+reference damping and rejects the proposed local bank-as-thermal-lag mechanism.
+The [adaptive continuum calculation](continuum-habitats.md) now resolves all
+tested habitat settings. The restated numerical frontier fails under the new
+gain, but the raw temperature responses remain nonzero; changing the
+normalization does not reveal exact pinning. Connectivity also changes the
+delay margin nonmonotonically. Homogeneous nonlinear invasion and oscillation
+checks are reported in the [B2/B3 review](review/dynamic-transients-2026-11-12.md).
 
 This is a new
 model, not a reconstruction. It couples methanogens and a finite methane budget

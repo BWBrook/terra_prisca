@@ -1,5 +1,12 @@
 # Dynamic realisation: B1 and B4
 
+**Historical B1/B4 checkpoint.** The subsequent
+[adaptive C0/C1 calculation](continuum-habitats.md) resolves the sampled habitat
+settings and tests the newly defined local gain. The
+[homogeneous B2/B3 tranche](review/dynamic-transients-2026-11-12.md) supplies
+the nonlinear checks. The finite-grid results below remain resolution
+diagnostics, not the current continuum estimates.
+
 The reference chemical attribution fails: local acetate feedback supplies
 almost all the tested added damping, whereas the direct atmospheric-methane
 loop barely shifts the critical thermal lag. The proposed dormant-bank-as-lag
@@ -10,8 +17,7 @@ and many matched controls are unavailable. Writing readiness remains withdrawn.
 The [original specification](dynamic-realisation-spec.md) retains PB1–PB7.
 The [pre-run methods](dynamic-realisation-methods.md), frozen as `db09eea`,
 explain the control comparison, two-layer equations, numerical censoring and
-directional dormancy analysis. Only B1 and B4 were run. B2/B3 nonlinear
-oscillations and invasions are pending.
+directional dormancy analysis. This checkpoint ran only B1 and B4.
 
 ## The chemistry diagnosis
 
