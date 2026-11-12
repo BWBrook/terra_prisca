@@ -1,0 +1,9 @@
+case_id,guild,main_status,control_status,main_log_survival_probability,control_log_survival_probability,main_start_yr,control_start_yr,main_end_yr,control_end_yr,main_log_threshold,control_log_threshold,main_survival_probability,control_survival_probability
+B2_f0_tau100,acetogen,qualified_first_window_conditional,qualified_first_window_conditional,-7.485009621022782,-7.473795300475824,873.0,873.5,1182.0,1182.0,36.841361487904734,36.841361487904734,0.0005614377683402773,0.0005677693472640964
+B2_f0_tau100,methanogen,unassessed_other_guild_loss,unassessed_other_guild_loss,-3.8524738954493677e-14,-3.164135620181746e-14,1273.0,1273.5,1478.0,1478.0,34.53877639491069,34.53877639491069,0.9999999999999615,0.9999999999999684
+B2_f0_tau1,acetogen,qualified_first_window_conditional,qualified_first_window_conditional,0.0,0.0,10573.0,10573.5,10579.0,10580.5,36.841361487904734,36.841361487904734,1.0,1.0
+B2_f0_tau1,methanogen,unassessed,unassessed,,,,,,,,,,
+B3_products_f0.5_tau3_M_into_A,acetogen,qualified_first_window_conditional,qualified_first_window_conditional,-46997.69141351063,-46997.67289009078,4.0,4.0,12014.0,12014.0,32.23619130191665,32.23619130191665,0.0,0.0
+B3_products_f0.5_tau3_M_into_A,methanogen,unassessed_other_guild_loss,unassessed_other_guild_loss,-2422.674219967013,-2422.674415266161,12023.0,12023.0,14445.0,14445.5,32.23619130191665,34.53877639491069,0.0,0.0
+B3_fixed_f0.5_tau3_A_into_M,acetogen,unassessed_other_guild_loss,unassessed_other_guild_loss,-7657.690007357899,-7657.687708254587,4916.0,4915.5,8316.0,8316.5,25.328436022934508,29.9336062089226,0.0,0.0
+B3_fixed_f0.5_tau3_A_into_M,methanogen,qualified_first_window_conditional,qualified_first_window_conditional,-7194.4777489423905,-7194.475036058624,10.0,9.0,4907.0,4907.5,29.9336062089226,32.23619130191665,0.0,0.0

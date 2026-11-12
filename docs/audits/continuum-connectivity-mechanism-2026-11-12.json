@@ -1,0 +1,420 @@
+{
+  "scope": "Four accepted endpoints and two extra mesh checks; local tangent diagnostic, not a finite-difference intervention at nonequilibrium or a global stability theorem.",
+  "rows": [
+    {
+      "fraction": 0.0,
+      "dispersal_yr": 0.0001,
+      "nodes": 176,
+      "tau_c_yr": 581.4824952861634,
+      "temperature_k": 282.0094386488166,
+      "climate_slope": -599.9339874576178,
+      "eigenvalue": [
+        -1.820077658437262e-12,
+        0.0013195775995600914
+      ],
+      "period_yr": 4761.512554679783,
+      "eigen_residual": 9.791893474081394e-10,
+      "left_right_condition": 248548.24222523262,
+      "temperature_logd": -0.000715190627532689,
+      "mean_A_logd": -2.412049671254298e-05,
+      "mean_M_logd": 1.4399364018414867e-05,
+      "mode_per_kelvin": {
+        "relative_mean_A": [
+          -0.2211775084307943,
+          0.33773579745467625
+        ],
+        "relative_mean_M": [
+          0.06863349424143377,
+          -0.12093889636355712
+        ],
+        "log_ratio_A_M": [
+          -0.28981100267222804,
+          0.4586746938182334
+        ],
+        "relative_methane": [
+          -0.008572232940889931,
+          -0.006577571012348078
+        ]
+      },
+      "components": [
+        {
+          "log_d_step": 0.001,
+          "lambda_explicit_real": -3.100330226341539e-05,
+          "lambda_state_shift_real": 0.00010120006734314676,
+          "lambda_logtau_real": 0.00021328054792039684,
+          "logtau_logd_explicit": 0.14536394699711114,
+          "logtau_logd_state_shift": -0.47449272017492133,
+          "logtau_logd_total": -0.3291287731778102
+        },
+        {
+          "log_d_step": 0.0005,
+          "lambda_explicit_real": -3.100330226341539e-05,
+          "lambda_state_shift_real": 0.00010120005052830342,
+          "lambda_logtau_real": 0.00021328054792039684,
+          "logtau_logd_explicit": 0.14536394699711114,
+          "logtau_logd_state_shift": -0.4744926413358359,
+          "logtau_logd_total": -0.32912869433872477
+        },
+        {
+          "log_d_step": 0.00025,
+          "lambda_explicit_real": -3.100330226341539e-05,
+          "lambda_state_shift_real": 0.00010120008901517517,
+          "lambda_logtau_real": 0.00021328054792039684,
+          "logtau_logd_explicit": 0.14536394699711114,
+          "logtau_logd_state_shift": -0.47449282178769675,
+          "logtau_logd_total": -0.3291288747905856
+        }
+      ],
+      "additional_mixed_panel_doubling": false,
+      "input_path": "local/haze/continuum_habitats/d170993d5d8f10b12d907c65.json",
+      "input_sha256": "ee192a37654dd95a4b6ab6fc1560b5195f2477421856a3777ce764e081aa9dfb"
+    },
+    {
+      "fraction": 0.0,
+      "dispersal_yr": 0.001,
+      "nodes": 144,
+      "tau_c_yr": 331.42605522734783,
+      "temperature_k": 282.0044730720056,
+      "climate_slope": -721.2580514046181,
+      "eigenvalue": [
+        -2.4417029510739115e-12,
+        0.0032432831616360258
+      ],
+      "period_yr": 1937.2916251968968,
+      "eigen_residual": 1.9296591167369304e-09,
+      "left_right_condition": 70609.36335983787,
+      "temperature_logd": -0.004751959484632168,
+      "mean_A_logd": -0.00016337341708225187,
+      "mean_M_logd": 9.113300412663577e-05,
+      "mode_per_kelvin": {
+        "relative_mean_A": [
+          -0.6818283977913997,
+          0.6744390393408308
+        ],
+        "relative_mean_M": [
+          0.2334778340921338,
+          -0.24144251963595034
+        ],
+        "log_ratio_A_M": [
+          -0.9153062318835334,
+          0.915881558976781
+        ],
+        "relative_methane": [
+          -0.0071299847650872685,
+          -0.007664081543467384
+        ]
+      },
+      "components": [
+        {
+          "log_d_step": 0.001,
+          "lambda_explicit_real": -0.00025747667910479196,
+          "lambda_state_shift_real": 0.00023278689066571793,
+          "lambda_logtau_real": 0.0004219379470973239,
+          "logtau_logd_explicit": 0.61022404094269,
+          "logtau_logd_state_shift": -0.5517088289099142,
+          "logtau_logd_total": 0.058515212032775765
+        },
+        {
+          "log_d_step": 0.0005,
+          "lambda_explicit_real": -0.00025747667910479196,
+          "lambda_state_shift_real": 0.00023278688035740128,
+          "lambda_logtau_real": 0.0004219379470973239,
+          "logtau_logd_explicit": 0.61022404094269,
+          "logtau_logd_state_shift": -0.5517088044790311,
+          "logtau_logd_total": 0.05851523646365883
+        },
+        {
+          "log_d_step": 0.00025,
+          "lambda_explicit_real": -0.00025747667910479196,
+          "lambda_state_shift_real": 0.00023278687542424906,
+          "lambda_logtau_real": 0.0004219379470973239,
+          "logtau_logd_explicit": 0.61022404094269,
+          "logtau_logd_state_shift": -0.5517087927873778,
+          "logtau_logd_total": 0.0585152481553122
+        }
+      ],
+      "additional_mixed_panel_doubling": false,
+      "input_path": "local/haze/continuum_habitats/34323c7ca167bc670aa5b301.json",
+      "input_sha256": "859be996236efefd9efe7b1314f0b2b8ece14fe2d2a3e5ec449e96d55077f378"
+    },
+    {
+      "fraction": 0.5,
+      "dispersal_yr": 0.0001,
+      "nodes": 176,
+      "tau_c_yr": 947.4302548729287,
+      "temperature_k": 281.55544574106364,
+      "climate_slope": -721.2580514046181,
+      "eigenvalue": [
+        -7.978799779692592e-10,
+        0.0009714946863978004
+      ],
+      "period_yr": 6467.544697003926,
+      "eigen_residual": 1.256998574719927e-09,
+      "left_right_condition": 327960.71789223014,
+      "temperature_logd": -0.0002418269696731273,
+      "mean_A_logd": -1.0431066688124765e-05,
+      "mean_M_logd": 1.231760375148685e-05,
+      "mode_per_kelvin": {
+        "relative_mean_A": [
+          -0.16150883605544722,
+          0.21753366778094355
+        ],
+        "relative_mean_M": [
+          0.1338538789539266,
+          -0.2110249362167997
+        ],
+        "log_ratio_A_M": [
+          -0.29536271500937383,
+          0.42855860399774326
+        ],
+        "relative_methane": [
+          -0.007107225107350513,
+          -0.006541661732697901
+        ]
+      },
+      "components": [
+        {
+          "log_d_step": 0.001,
+          "lambda_explicit_real": -2.885550373577334e-05,
+          "lambda_state_shift_real": 7.840287687828095e-05,
+          "lambda_logtau_real": 0.00014457136283734754,
+          "logtau_logd_explicit": 0.1995934960386153,
+          "logtau_logd_state_shift": -0.5423126360542747,
+          "logtau_logd_total": -0.3427191400156594
+        },
+        {
+          "log_d_step": 0.0005,
+          "lambda_explicit_real": -2.885550373577334e-05,
+          "lambda_state_shift_real": 7.840287802942396e-05,
+          "lambda_logtau_real": 0.00014457136283734754,
+          "logtau_logd_explicit": 0.1995934960386153,
+          "logtau_logd_state_shift": -0.54231264401673,
+          "logtau_logd_total": -0.34271914797811465
+        },
+        {
+          "log_d_step": 0.00025,
+          "lambda_explicit_real": -2.885550373577334e-05,
+          "lambda_state_shift_real": 7.840287419181758e-05,
+          "lambda_logtau_real": 0.00014457136283734754,
+          "logtau_logd_explicit": 0.1995934960386153,
+          "logtau_logd_state_shift": -0.5423126174720098,
+          "logtau_logd_total": -0.34271912143339445
+        }
+      ],
+      "additional_mixed_panel_doubling": false,
+      "input_path": "local/haze/continuum_habitats/51f6d307eb70dc5bacee8715.json",
+      "input_sha256": "25063f146dd950f17191e53bc07ff5568484fdf4713271c013a27f4dbb968805"
+    },
+    {
+      "fraction": 0.5,
+      "dispersal_yr": 0.001,
+      "nodes": 144,
+      "tau_c_yr": 842.2407985320649,
+      "temperature_k": 281.5538144665619,
+      "climate_slope": -721.2580514046181,
+      "eigenvalue": [
+        -1.6492249300446744e-10,
+        0.0018405292835314401
+      ],
+      "period_yr": 3413.792632043312,
+      "eigen_residual": 2.1251569177272427e-09,
+      "left_right_condition": 65749.23280766484,
+      "temperature_logd": -0.0015254984036360386,
+      "mean_A_logd": -8.491907911145051e-05,
+      "mean_M_logd": 8.434485625398492e-05,
+      "mode_per_kelvin": {
+        "relative_mean_A": [
+          -0.56149287861622,
+          0.408933167371706
+        ],
+        "relative_mean_M": [
+          0.521745170243017,
+          -0.3966412973591451
+        ],
+        "log_ratio_A_M": [
+          -1.083238048859237,
+          0.805574464730851
+        ],
+        "relative_methane": [
+          -0.00710714723160516,
+          -0.01101727971051669
+        ]
+      },
+      "components": [
+        {
+          "log_d_step": 0.001,
+          "lambda_explicit_real": -0.00021721057788569336,
+          "lambda_state_shift_real": 0.00013371400580575624,
+          "lambda_logtau_real": 0.0001495039502691937,
+          "logtau_logd_explicit": 1.4528751748337654,
+          "logtau_logd_state_shift": -0.894384433086842,
+          "logtau_logd_total": 0.5584907417469233
+        },
+        {
+          "log_d_step": 0.0005,
+          "lambda_explicit_real": -0.00021721057788569336,
+          "lambda_state_shift_real": 0.00013371399722401944,
+          "lambda_logtau_real": 0.0001495039502691937,
+          "logtau_logd_explicit": 1.4528751748337654,
+          "logtau_logd_state_shift": -0.894384375685437,
+          "logtau_logd_total": 0.5584907991483283
+        },
+        {
+          "log_d_step": 0.00025,
+          "lambda_explicit_real": -0.00021721057788569336,
+          "lambda_state_shift_real": 0.00013371402138716686,
+          "lambda_logtau_real": 0.0001495039502691937,
+          "logtau_logd_explicit": 1.4528751748337654,
+          "logtau_logd_state_shift": -0.8943845373075706,
+          "logtau_logd_total": 0.5584906375261948
+        }
+      ],
+      "additional_mixed_panel_doubling": false,
+      "input_path": "local/haze/continuum_habitats/6673045283b4b4a7bbe095a1.json",
+      "input_sha256": "fa81477fa708221fc3b49320a922a04901a31c2258fcee0417ff194fa4b5383e"
+    }
+  ],
+  "refined_rows": [
+    {
+      "fraction": 0.5,
+      "dispersal_yr": 0.0001,
+      "nodes": 296,
+      "tau_c_yr": 947.3995213851616,
+      "temperature_k": 281.55544574106665,
+      "climate_slope": -721.2580514046181,
+      "eigenvalue": [
+        5.472604847478556e-09,
+        0.0009715022616529381
+      ],
+      "period_yr": 6467.494266548818,
+      "eigen_residual": 1.5885390398520613e-09,
+      "left_right_condition": 463603.2842257229,
+      "temperature_logd": -0.00024182695894380094,
+      "mean_A_logd": -1.0431066462833513e-05,
+      "mean_M_logd": 1.2317603288210797e-05,
+      "mode_per_kelvin": {
+        "relative_mean_A": [
+          -0.16150866662407776,
+          0.21753189473630472
+        ],
+        "relative_mean_M": [
+          0.13385371472447324,
+          -0.21102321640157504
+        ],
+        "log_ratio_A_M": [
+          -0.29536238134855103,
+          0.4285551111378798
+        ],
+        "relative_methane": [
+          -0.007107267379230247,
+          -0.006541748215928859
+        ]
+      },
+      "components": [
+        {
+          "log_d_step": 0.001,
+          "lambda_explicit_real": -2.88555716059759e-05,
+          "lambda_state_shift_real": 7.840402298475084e-05,
+          "lambda_logtau_real": 0.00014456952794414212,
+          "logtau_logd_explicit": 0.1995964987664962,
+          "logtau_logd_state_shift": -0.5423274468672548,
+          "logtau_logd_total": -0.3427309481007586
+        },
+        {
+          "log_d_step": 0.0005,
+          "lambda_explicit_real": -2.88555716059759e-05,
+          "lambda_state_shift_real": 7.840401855111064e-05,
+          "lambda_logtau_real": 0.00014456952794414212,
+          "logtau_logd_explicit": 0.1995964987664962,
+          "logtau_logd_state_shift": -0.5423274161993799,
+          "logtau_logd_total": -0.3427309174328837
+        },
+        {
+          "log_d_step": 0.00025,
+          "lambda_explicit_real": -2.88555716059759e-05,
+          "lambda_state_shift_real": 7.840400875360741e-05,
+          "lambda_logtau_real": 0.00014456952794414212,
+          "logtau_logd_explicit": 0.1995964987664962,
+          "logtau_logd_state_shift": -0.5423273484291978,
+          "logtau_logd_total": -0.3427308496627016
+        }
+      ],
+      "additional_mixed_panel_doubling": true,
+      "input_path": "local/haze/continuum_habitats/51f6d307eb70dc5bacee8715.json",
+      "input_sha256": "25063f146dd950f17191e53bc07ff5568484fdf4713271c013a27f4dbb968805"
+    },
+    {
+      "fraction": 0.5,
+      "dispersal_yr": 0.001,
+      "nodes": 256,
+      "tau_c_yr": 842.2397025534433,
+      "temperature_k": 281.55381446656077,
+      "climate_slope": -721.2580514046181,
+      "eigenvalue": [
+        1.6778187060937442e-11,
+        0.0018405298606428277
+      ],
+      "period_yr": 3413.7915616240566,
+      "eigen_residual": 3.023119640646216e-09,
+      "left_right_condition": 92952.90374847189,
+      "temperature_logd": -0.0015254981852542411,
+      "mean_A_logd": -8.49190745102549e-05,
+      "mean_M_logd": 8.43448468079757e-05,
+      "mode_per_kelvin": {
+        "relative_mean_A": [
+          -0.5614928046062698,
+          0.4089331447037534
+        ],
+        "relative_mean_M": [
+          0.5217450983378342,
+          -0.39664127521735415
+        ],
+        "log_ratio_A_M": [
+          -1.083237902944104,
+          0.8055744199211076
+        ],
+        "relative_methane": [
+          -0.007107148260565585,
+          -0.011017268824048916
+        ]
+      },
+      "components": [
+        {
+          "log_d_step": 0.001,
+          "lambda_explicit_real": -0.00021721074038756746,
+          "lambda_state_shift_real": 0.00013371396913472775,
+          "lambda_logtau_real": 0.00014950403461767086,
+          "logtau_logd_explicit": 1.452875442077828,
+          "logtau_logd_state_shift": -0.8943836832007691,
+          "logtau_logd_total": 0.558491758877059
+        },
+        {
+          "log_d_step": 0.0005,
+          "lambda_explicit_real": -0.00021721074038756746,
+          "lambda_state_shift_real": 0.00013371396973419346,
+          "lambda_logtau_real": 0.00014950403461767086,
+          "logtau_logd_explicit": 1.452875442077828,
+          "logtau_logd_state_shift": -0.894383687210465,
+          "logtau_logd_total": 0.5584917548673631
+        },
+        {
+          "log_d_step": 0.00025,
+          "lambda_explicit_real": -0.00021721074038756746,
+          "lambda_state_shift_real": 0.00013371395857710432,
+          "lambda_logtau_real": 0.00014950403461767086,
+          "logtau_logd_explicit": 1.452875442077828,
+          "logtau_logd_state_shift": -0.8943836125831202,
+          "logtau_logd_total": 0.558491829494708
+        }
+      ],
+      "additional_mixed_panel_doubling": true,
+      "input_path": "local/haze/continuum_habitats/6673045283b4b4a7bbe095a1.json",
+      "input_sha256": "fa81477fa708221fc3b49320a922a04901a31c2258fcee0417ff194fa4b5383e"
+    }
+  ],
+  "source_sha256": {
+    "docs/audits/continuum-connectivity-mechanism-2026-11-12.py": "b4c10e047af443b8ae8b1d024ccb08af9da5f57d267f0367bb3831b4a76e9b75",
+    "src/terra_prisca/haze_world/continuum_core.py": "5ce1ca453ce9603814534ace5aa74787d69b478d7123ef7b2fc220af51b7d375",
+    "models/haze_world/figures/continuum_habitats/c1_resolved.csv": "40e925e709a73181ade3455a2f6b8b52c989cf02b277899411dab07409eeb9ea"
+  }
+}

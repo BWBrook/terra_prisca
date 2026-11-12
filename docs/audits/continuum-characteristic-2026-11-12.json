@@ -1,0 +1,1079 @@
+{
+  "scope": "Independent selected characteristic and homogeneous frozen-composition checks; no continuum certificate from an unresolved mesh.",
+  "homogeneous": [
+    {
+      "chemistry": "fixed",
+      "fraction": 0.0,
+      "y": [
+        22.48629998054835,
+        0.00030119347927979196,
+        0.0004906231105327009,
+        0.00046296818626002885,
+        0.19510687484759687
+      ],
+      "sc": -8.061637187587917e-14,
+      "s0": -41.16487341374461,
+      "gain_local": 1.958377742732522e-15,
+      "frozen_leading_real_yr": -0.00036851838725268074,
+      "frozen_condition": 18241899141.160305,
+      "finite_perturbations": [
+        {
+          "log_supply_step": 0.001,
+          "s0_finite": -41.1654150447589,
+          "relative_difference": 1.3157601842947501e-05,
+          "maximum_root_residual": 3.3509677837466225e-14
+        },
+        {
+          "log_supply_step": 0.0001,
+          "s0_finite": -41.16487882157571,
+          "relative_difference": 1.3137004089520856e-07,
+          "maximum_root_residual": 6.6927893437437025e-15
+        },
+        {
+          "log_supply_step": 1e-05,
+          "s0_finite": -41.16487345982023,
+          "relative_difference": 1.1192945815937426e-09,
+          "maximum_root_residual": 1.8299935635486858e-14
+        }
+      ],
+      "scope": "Within-habitat composition frozen at the same operating point; total biomass and chemistry respond.",
+      "characteristic": {
+        "status": "crossing_found",
+        "critical_lag_yr": 0.14921426010294253,
+        "crossings": [
+          {
+            "tau_yr": 0.14921426010294253,
+            "omega_yr": 0.0525489510739255,
+            "period_yr": 119.56823454649826,
+            "smallest_singular": 8.950899112745385e-19,
+            "backsubstitution_residual": 4.295175326518574e-12,
+            "local_pole_distance": 0.05255846515043876,
+            "accepted": true,
+            "crossing_direction": "loss",
+            "real_speed_per_tau": 0.001380569509455217
+          }
+        ],
+        "sink_edge_yr": -0.0010000000000346277,
+        "frequency_bounds": [
+          1e-06,
+          10.0
+        ],
+        "frequency_points": 721,
+        "limitation": "Imaginary-axis crossings from finite frequency bracketing; initial stability and crossing direction require separate checks."
+      }
+    },
+    {
+      "chemistry": "products",
+      "fraction": 0.0,
+      "y": [
+        22.399597208751896,
+        0.000301523540858595,
+        0.0004903399145597221,
+        0.0004639406922892508,
+        0.19505929028173835
+      ],
+      "sc": -1.8826396499508418,
+      "s0": -42.09627311026648,
+      "gain_local": 0.04472224049429453,
+      "frozen_leading_real_yr": -0.0003623526097145347,
+      "frozen_condition": 18423071930.60655,
+      "finite_perturbations": [
+        {
+          "log_supply_step": 0.001,
+          "s0_finite": -42.09689659600713,
+          "relative_difference": 1.481094867979655e-05,
+          "maximum_root_residual": 1.0243966585542699e-14
+        },
+        {
+          "log_supply_step": 0.0001,
+          "s0_finite": -42.09627933050797,
+          "relative_difference": 1.4776228460451325e-07,
+          "maximum_root_residual": 5.765657492562544e-15
+        },
+        {
+          "log_supply_step": 1e-05,
+          "s0_finite": -42.096273156744246,
+          "relative_difference": 1.1040826705587806e-09,
+          "maximum_root_residual": 1.2951302521847664e-14
+        }
+      ],
+      "scope": "Within-habitat composition frozen at the same operating point; total biomass and chemistry respond.",
+      "characteristic": {
+        "status": "not_detected_through_10000",
+        "critical_lag_yr": null,
+        "crossings": [],
+        "sink_edge_yr": -0.46066256888912765,
+        "frequency_bounds": [
+          1e-06,
+          10.0
+        ],
+        "frequency_points": 721,
+        "limitation": "Imaginary-axis crossings from finite frequency bracketing; initial stability and crossing direction require separate checks."
+      }
+    },
+    {
+      "chemistry": "acetate_only",
+      "fraction": 0.0,
+      "y": [
+        22.399669245414294,
+        0.0003015233320019982,
+        0.0004903406198025147,
+        0.00046393921132887683,
+        0.19505940870683433
+      ],
+      "sc": -1.8829114518529992,
+      "s0": -42.10121582151783,
+      "gain_local": 0.044723445988717685,
+      "frozen_leading_real_yr": -0.00036231033308555997,
+      "frozen_condition": 18422230568.493896,
+      "finite_perturbations": [
+        {
+          "log_supply_step": 0.001,
+          "s0_finite": -42.10184069359002,
+          "relative_difference": 1.4842138403701812e-05,
+          "maximum_root_residual": 2.673265256369662e-14
+        },
+        {
+          "log_supply_step": 0.0001,
+          "s0_finite": -42.10122206274036,
+          "relative_difference": 1.482432848369971e-07,
+          "maximum_root_residual": 2.454410817279078e-14
+        },
+        {
+          "log_supply_step": 1e-05,
+          "s0_finite": -42.101215876755305,
+          "relative_difference": 1.3120160643316473e-09,
+          "maximum_root_residual": 1.4661562689149436e-14
+        }
+      ],
+      "scope": "Within-habitat composition frozen at the same operating point; total biomass and chemistry respond.",
+      "characteristic": {
+        "status": "not_detected_through_10000",
+        "critical_lag_yr": null,
+        "crossings": [],
+        "sink_edge_yr": -0.4606205598328145,
+        "frequency_bounds": [
+          1e-06,
+          10.0
+        ],
+        "frequency_points": 721,
+        "limitation": "Imaginary-axis crossings from finite frequency bracketing; initial stability and crossing direction require separate checks."
+      }
+    },
+    {
+      "chemistry": "methane_only",
+      "fraction": 0.0,
+      "y": [
+        22.486219792466095,
+        0.0003011937189571248,
+        0.0004906223545065728,
+        0.0004629697938361629,
+        0.1951067477346421
+      ],
+      "sc": -1.694226664749403e-13,
+      "s0": -41.16018598581556,
+      "gain_local": 4.116178350926937e-15,
+      "frozen_leading_real_yr": -0.0003685600076778747,
+      "frozen_condition": 18242696585.994083,
+      "finite_perturbations": [
+        {
+          "log_supply_step": 0.001,
+          "s0_finite": -41.16072635815726,
+          "relative_difference": 1.3128520407790509e-05,
+          "maximum_root_residual": 1.6281626058754573e-14
+        },
+        {
+          "log_supply_step": 0.0001,
+          "s0_finite": -41.16019137740068,
+          "relative_difference": 1.309903002273653e-07,
+          "maximum_root_residual": 1.8681174190555554e-14
+        },
+        {
+          "log_supply_step": 1e-05,
+          "s0_finite": -41.160186026445444,
+          "relative_difference": 9.871161721186863e-10,
+          "maximum_root_residual": 1.802248519098734e-14
+        }
+      ],
+      "scope": "Within-habitat composition frozen at the same operating point; total biomass and chemistry respond.",
+      "characteristic": {
+        "status": "crossing_found",
+        "critical_lag_yr": 0.149235494752031,
+        "crossings": [
+          {
+            "tau_yr": 0.149235494752031,
+            "omega_yr": 0.052553106170318796,
+            "period_yr": 119.55878091803896,
+            "smallest_singular": 4.9878964424557305e-18,
+            "backsubstitution_residual": 3.5780822749131858e-12,
+            "local_pole_distance": 0.052562619494739574,
+            "accepted": true,
+            "crossing_direction": "loss",
+            "real_speed_per_tau": 0.0013805231412508188
+          }
+        ],
+        "sink_edge_yr": -0.0009999999999883778,
+        "frequency_bounds": [
+          1e-06,
+          10.0
+        ],
+        "frequency_points": 721,
+        "limitation": "Imaginary-axis crossings from finite frequency bracketing; initial stability and crossing direction require separate checks."
+      }
+    },
+    {
+      "chemistry": "fixed",
+      "fraction": 0.5,
+      "y": [
+        22.48629998054835,
+        0.0005740589129863751,
+        0.00033832330504541375,
+        0.0008823929866848788,
+        0.19510687484759687
+      ],
+      "sc": -7.937924565289404e-14,
+      "s0": -51.33082008023949,
+      "gain_local": 1.5464246534306235e-15,
+      "frozen_leading_real_yr": -0.00029551579794401413,
+      "frozen_condition": 16674186122.095562,
+      "finite_perturbations": [
+        {
+          "log_supply_step": 0.001,
+          "s0_finite": -51.33138778325019,
+          "relative_difference": 1.1059691035811991e-05,
+          "maximum_root_residual": 3.228935071261083e-14
+        },
+        {
+          "log_supply_step": 0.0001,
+          "s0_finite": -51.33082574729997,
+          "relative_difference": 1.1040268729230852e-07,
+          "maximum_root_residual": 1.0528237999924186e-14
+        },
+        {
+          "log_supply_step": 1e-05,
+          "s0_finite": -51.33082012775957,
+          "relative_difference": 9.257612096833979e-10,
+          "maximum_root_residual": 2.2450431236115395e-15
+        }
+      ],
+      "scope": "Within-habitat composition frozen at the same operating point; total biomass and chemistry respond.",
+      "characteristic": {
+        "status": "crossing_found",
+        "critical_lag_yr": 1.1027600781106706,
+        "crossings": [
+          {
+            "tau_yr": 1.1027600781106706,
+            "omega_yr": 0.0409516163682808,
+            "period_yr": 153.4294825062448,
+            "smallest_singular": 8.595857691005986e-18,
+            "backsubstitution_residual": 1.2772009583843574e-12,
+            "local_pole_distance": 0.04096382407899675,
+            "accepted": true,
+            "crossing_direction": "loss",
+            "real_speed_per_tau": 0.0008378153388123449
+          }
+        ],
+        "sink_edge_yr": -0.001000000000075175,
+        "frequency_bounds": [
+          1e-06,
+          10.0
+        ],
+        "frequency_points": 721,
+        "limitation": "Imaginary-axis crossings from finite frequency bracketing; initial stability and crossing direction require separate checks."
+      }
+    },
+    {
+      "chemistry": "products",
+      "fraction": 0.5,
+      "y": [
+        23.154152051827882,
+        0.0005687760381834438,
+        0.00034250584139566825,
+        0.0008679690763540502,
+        0.19545348599918216
+      ],
+      "sc": -1.8775671515603358,
+      "s0": -48.55497806259248,
+      "gain_local": 0.03866889094543414,
+      "frozen_leading_real_yr": -0.00031466499980158634,
+      "frozen_condition": 16397334524.497042,
+      "finite_perturbations": [
+        {
+          "log_supply_step": 0.001,
+          "s0_finite": -48.555520650751305,
+          "relative_difference": 1.1174717412556573e-05,
+          "maximum_root_residual": 5.854779706692552e-15
+        },
+        {
+          "log_supply_step": 0.0001,
+          "s0_finite": -48.554983476378766,
+          "relative_difference": 1.1149806877250448e-07,
+          "maximum_root_residual": 6.112482498648339e-15
+        },
+        {
+          "log_supply_step": 1e-05,
+          "s0_finite": -48.55497810751785,
+          "relative_difference": 9.252473495863853e-10,
+          "maximum_root_residual": 3.59877650046824e-15
+        }
+      ],
+      "scope": "Within-habitat composition frozen at the same operating point; total biomass and chemistry respond.",
+      "characteristic": {
+        "status": "not_detected_through_10000",
+        "critical_lag_yr": null,
+        "crossings": [],
+        "sink_edge_yr": -0.22007806686111164,
+        "frequency_bounds": [
+          1e-06,
+          10.0
+        ],
+        "frequency_points": 721,
+        "limitation": "Imaginary-axis crossings from finite frequency bracketing; initial stability and crossing direction require separate checks."
+      }
+    },
+    {
+      "chemistry": "acetate_only",
+      "fraction": 0.5,
+      "y": [
+        23.154253697771317,
+        0.0005687752526709587,
+        0.0003425073522649778,
+        0.0008679649415302643,
+        0.19545364943568835
+      ],
+      "sc": -1.8777433910665013,
+      "s0": -48.5582437055256,
+      "gain_local": 0.03866991982769811,
+      "frozen_leading_real_yr": -0.00031464418130981297,
+      "frozen_condition": 16397090489.772709,
+      "finite_perturbations": [
+        {
+          "log_supply_step": 0.001,
+          "s0_finite": -48.55878736202612,
+          "relative_difference": 1.119596713222133e-05,
+          "maximum_root_residual": 2.890289039914342e-14
+        },
+        {
+          "log_supply_step": 0.0001,
+          "s0_finite": -48.55824913136075,
+          "relative_difference": 1.117387026659535e-07,
+          "maximum_root_residual": 1.426496519422272e-14
+        },
+        {
+          "log_supply_step": 1e-05,
+          "s0_finite": -48.558243747720546,
+          "relative_difference": 8.689553978921446e-10,
+          "maximum_root_residual": 8.313638817907511e-15
+        }
+      ],
+      "scope": "Within-habitat composition frozen at the same operating point; total biomass and chemistry respond.",
+      "characteristic": {
+        "status": "not_detected_through_10000",
+        "critical_lag_yr": null,
+        "crossings": [],
+        "sink_edge_yr": -0.22007080166459586,
+        "frequency_bounds": [
+          1e-06,
+          10.0
+        ],
+        "frequency_points": 721,
+        "limitation": "Imaginary-axis crossings from finite frequency bracketing; initial stability and crossing direction require separate checks."
+      }
+    },
+    {
+      "chemistry": "methane_only",
+      "fraction": 0.5,
+      "y": [
+        22.486219792466095,
+        0.0005740594890504876,
+        0.00033832212373266827,
+        0.0008823962339441421,
+        0.1951067477346421
+      ],
+      "sc": -1.62786685196916e-13,
+      "s0": -51.32626805199118,
+      "gain_local": 3.1716057172132694e-15,
+      "frozen_leading_real_yr": -0.0002955417221630006,
+      "frozen_condition": 16674490916.99693,
+      "finite_perturbations": [
+        {
+          "log_supply_step": 0.001,
+          "s0_finite": -51.326834390181375,
+          "relative_difference": 1.1034080826276468e-05,
+          "maximum_root_residual": 1.779800719722526e-14
+        },
+        {
+          "log_supply_step": 0.0001,
+          "s0_finite": -51.32627370500131,
+          "relative_difference": 1.101387330350805e-07,
+          "maximum_root_residual": 1.1915122280089872e-14
+        },
+        {
+          "log_supply_step": 1e-05,
+          "s0_finite": -51.326268095408516,
+          "relative_difference": 8.459087116365284e-10,
+          "maximum_root_residual": 1.6276051232254442e-14
+        }
+      ],
+      "scope": "Within-habitat composition frozen at the same operating point; total biomass and chemistry respond.",
+      "characteristic": {
+        "status": "crossing_found",
+        "critical_lag_yr": 1.1029576499965192,
+        "crossings": [
+          {
+            "tau_yr": 1.1029576499965192,
+            "omega_yr": 0.04095483970892463,
+            "period_yr": 153.41740687634515,
+            "smallest_singular": 4.772787517033589e-17,
+            "backsubstitution_residual": 2.1308883118262584e-12,
+            "local_pole_distance": 0.040967046459119257,
+            "accepted": true,
+            "crossing_direction": "loss",
+            "real_speed_per_tau": 0.0008377852750498595
+          }
+        ],
+        "sink_edge_yr": -0.0009999999999630194,
+        "frequency_bounds": [
+          1e-06,
+          10.0
+        ],
+        "frequency_points": 721,
+        "limitation": "Imaginary-axis crossings from finite frequency bracketing; initial stability and crossing direction require separate checks."
+      }
+    }
+  ],
+  "selected": [
+    {
+      "case_id": "fixed_f0.5_s1_d0.0001",
+      "chemistry": "fixed",
+      "fraction": 0.5,
+      "sigma_k": 1.0,
+      "dispersal_yr": 0.0001,
+      "nodes": 176,
+      "Sc": -2.933951692102251,
+      "S0": -72.43351662817722,
+      "G_loc": 0.04050544317989002,
+      "mesh_converged": true,
+      "primary_tau_yr": null,
+      "primary_status": "independent_sign_bracket",
+      "relative_tau_difference": null,
+      "frequency_grid_relative_change": 6.156240864327852e-11,
+      "comparison_kind": "independent_sign_bracket",
+      "primary_sign_bracket": [
+        937.9601569347103,
+        956.9088469737953
+      ],
+      "primary_operator_checks": [
+        {
+          "tau_yr": 937.9601569347103,
+          "leading_real_yr": -1.4605178028593823e-06,
+          "leading_imag_yr": 0.0009741185729789699
+        },
+        {
+          "tau_yr": 947.4345019542528,
+          "leading_real_yr": -7.787634445092893e-10,
+          "leading_imag_yr": 0.000971493483456839
+        },
+        {
+          "tau_yr": 956.9088469737953,
+          "leading_real_yr": 1.432780233011085e-06,
+          "leading_imag_yr": 0.0009688947133725445
+        }
+      ],
+      "passed": true,
+      "characteristic_checks": [
+        {
+          "status": "crossing_found",
+          "critical_lag_yr": 947.4345018959265,
+          "crossings": [
+            {
+              "tau_yr": 947.4345018959265,
+              "omega_yr": 0.0009714953715961053,
+              "period_yr": 6467.5401354272135,
+              "smallest_singular": 3.295095993897825e-19,
+              "backsubstitution_residual": 3.715314294060266e-12,
+              "local_pole_distance": 0.0009766133722521571,
+              "accepted": true,
+              "crossing_direction": "loss",
+              "real_speed_per_tau": 1.5259208731300574e-07
+            }
+          ],
+          "sink_edge_yr": -9.985199962482293e-05,
+          "frequency_bounds": [
+            1e-06,
+            10.0
+          ],
+          "frequency_points": 361,
+          "limitation": "Imaginary-axis crossings from finite frequency bracketing; initial stability and crossing direction require separate checks."
+        },
+        {
+          "status": "crossing_found",
+          "critical_lag_yr": 947.4345019542528,
+          "crossings": [
+            {
+              "tau_yr": 947.4345019542528,
+              "omega_yr": 0.0009714953715751038,
+              "period_yr": 6467.540135567027,
+              "smallest_singular": 2.040637578095093e-16,
+              "backsubstitution_residual": 2.866762898144928e-12,
+              "local_pole_distance": 0.0009766133722312656,
+              "accepted": true,
+              "crossing_direction": "loss",
+              "real_speed_per_tau": 1.5259208729221432e-07
+            }
+          ],
+          "sink_edge_yr": -9.985199962482293e-05,
+          "frequency_bounds": [
+            1e-06,
+            10.0
+          ],
+          "frequency_points": 721,
+          "limitation": "Imaginary-axis crossings from finite frequency bracketing; initial stability and crossing direction require separate checks."
+        }
+      ]
+    },
+    {
+      "case_id": "fixed_f0.5_s3_d0.0001",
+      "chemistry": "fixed",
+      "fraction": 0.5,
+      "sigma_k": 3.0,
+      "dispersal_yr": 0.0001,
+      "nodes": 188,
+      "Sc": -8.303914224107235,
+      "S0": -88.3832886846733,
+      "G_loc": 0.09395344241752832,
+      "mesh_converged": true,
+      "primary_tau_yr": null,
+      "primary_status": "independent_sign_bracket",
+      "relative_tau_difference": null,
+      "frequency_grid_relative_change": 2.9512022162510355e-10,
+      "comparison_kind": "independent_sign_bracket",
+      "primary_sign_bracket": [
+        4733.322170300384,
+        4828.944840407463
+      ],
+      "primary_operator_checks": [
+        {
+          "tau_yr": 4733.322170300384,
+          "leading_real_yr": -2.0516396409385353e-07,
+          "leading_imag_yr": 0.00037998953376069467
+        },
+        {
+          "tau_yr": 4781.133505353923,
+          "leading_real_yr": -1.5006011258408393e-09,
+          "leading_imag_yr": 0.0003786129891597878
+        },
+        {
+          "tau_yr": 4828.944840407463,
+          "leading_real_yr": 1.9773309561587307e-07,
+          "leading_imag_yr": 0.00037725503441979406
+        }
+      ],
+      "passed": true,
+      "characteristic_checks": [
+        {
+          "status": "crossing_found",
+          "critical_lag_yr": 4781.133503942914,
+          "crossings": [
+            {
+              "tau_yr": 4781.133503942914,
+              "omega_yr": 0.000378613966671498,
+              "period_yr": 16595.228544833775,
+              "smallest_singular": 2.143003385825961e-16,
+              "backsubstitution_residual": 2.9850454624698643e-12,
+              "local_pole_distance": 0.0003916640632038074,
+              "accepted": true,
+              "crossing_direction": "loss",
+              "real_speed_per_tau": 4.223053677479105e-09
+            }
+          ],
+          "sink_edge_yr": -0.00010026067347963421,
+          "frequency_bounds": [
+            1e-06,
+            10.0
+          ],
+          "frequency_points": 361,
+          "limitation": "Imaginary-axis crossings from finite frequency bracketing; initial stability and crossing direction require separate checks."
+        },
+        {
+          "status": "crossing_found",
+          "critical_lag_yr": 4781.133505353923,
+          "crossings": [
+            {
+              "tau_yr": 4781.133505353923,
+              "omega_yr": 0.0003786139666303099,
+              "period_yr": 16595.22854663911,
+              "smallest_singular": 3.2668131321503547e-19,
+              "backsubstitution_residual": 3.43562945881877e-12,
+              "local_pole_distance": 0.0003916640631639917,
+              "accepted": true,
+              "crossing_direction": "loss",
+              "real_speed_per_tau": 4.223053673969341e-09
+            }
+          ],
+          "sink_edge_yr": -0.00010026067347963421,
+          "frequency_bounds": [
+            1e-06,
+            10.0
+          ],
+          "frequency_points": 721,
+          "limitation": "Imaginary-axis crossings from finite frequency bracketing; initial stability and crossing direction require separate checks."
+        }
+      ]
+    },
+    {
+      "case_id": "fixed_f0.5_s6_d0.0001",
+      "chemistry": "fixed",
+      "fraction": 0.5,
+      "sigma_k": 6.0,
+      "dispersal_yr": 0.0001,
+      "nodes": 200,
+      "Sc": -15.596314173514598,
+      "S0": -103.52041505961114,
+      "G_loc": 0.15065930874150402,
+      "mesh_converged": true,
+      "primary_tau_yr": null,
+      "primary_status": "not_detected_through_10000",
+      "relative_tau_difference": null,
+      "frequency_grid_relative_change": null,
+      "comparison_kind": "consistent_right_censoring",
+      "primary_sign_bracket": null,
+      "primary_operator_checks": [
+        {
+          "tau_yr": 0.0,
+          "leading_real_yr": -0.00010035111750738041,
+          "leading_imag_yr": 0.0
+        },
+        {
+          "tau_yr": 0.03,
+          "leading_real_yr": -0.00010035111702183287,
+          "leading_imag_yr": 0.0
+        },
+        {
+          "tau_yr": 0.1,
+          "leading_real_yr": -0.00010035111602804312,
+          "leading_imag_yr": 0.0
+        },
+        {
+          "tau_yr": 0.3,
+          "leading_real_yr": -0.00010035111716718363,
+          "leading_imag_yr": 0.0
+        },
+        {
+          "tau_yr": 1.0,
+          "leading_real_yr": -0.00010035111527373492,
+          "leading_imag_yr": 0.0
+        },
+        {
+          "tau_yr": 3.0,
+          "leading_real_yr": -0.00010035111679117871,
+          "leading_imag_yr": 0.0
+        },
+        {
+          "tau_yr": 10.0,
+          "leading_real_yr": -0.00010035111831278089,
+          "leading_imag_yr": 0.0
+        },
+        {
+          "tau_yr": 30.0,
+          "leading_real_yr": -0.00010035111603530693,
+          "leading_imag_yr": 0.0
+        },
+        {
+          "tau_yr": 100.0,
+          "leading_real_yr": -0.00010035111640630838,
+          "leading_imag_yr": 0.0
+        },
+        {
+          "tau_yr": 300.0,
+          "leading_real_yr": -0.00010035111390633615,
+          "leading_imag_yr": 0.0
+        },
+        {
+          "tau_yr": 1000.0,
+          "leading_real_yr": -0.00010035111288247945,
+          "leading_imag_yr": 0.0
+        },
+        {
+          "tau_yr": 10000.0,
+          "leading_real_yr": -2.0999427925191684e-05,
+          "leading_imag_yr": 0.00022131112837931263
+        }
+      ],
+      "passed": true,
+      "characteristic_checks": [
+        {
+          "status": "not_detected_through_10000",
+          "critical_lag_yr": null,
+          "crossings": [],
+          "sink_edge_yr": -0.00010031340338592299,
+          "frequency_bounds": [
+            1e-06,
+            10.0
+          ],
+          "frequency_points": 361,
+          "limitation": "Imaginary-axis crossings from finite frequency bracketing; initial stability and crossing direction require separate checks."
+        },
+        {
+          "status": "not_detected_through_10000",
+          "critical_lag_yr": null,
+          "crossings": [],
+          "sink_edge_yr": -0.00010031340338592299,
+          "frequency_bounds": [
+            1e-06,
+            10.0
+          ],
+          "frequency_points": 721,
+          "limitation": "Imaginary-axis crossings from finite frequency bracketing; initial stability and crossing direction require separate checks."
+        }
+      ]
+    },
+    {
+      "case_id": "fixed_f0_s3_d0.001",
+      "chemistry": "fixed",
+      "fraction": 0.0,
+      "sigma_k": 3.0,
+      "dispersal_yr": 0.001,
+      "nodes": 156,
+      "Sc": -4.494664475611222,
+      "S0": -92.96709366467697,
+      "G_loc": 0.04834683217938412,
+      "mesh_converged": true,
+      "primary_tau_yr": null,
+      "primary_status": "not_detected_through_10000",
+      "relative_tau_difference": null,
+      "frequency_grid_relative_change": null,
+      "comparison_kind": "consistent_right_censoring",
+      "primary_sign_bracket": null,
+      "primary_operator_checks": [
+        {
+          "tau_yr": 0.0,
+          "leading_real_yr": -0.000940761968757484,
+          "leading_imag_yr": 0.0
+        },
+        {
+          "tau_yr": 0.03,
+          "leading_real_yr": -0.0009407619663999877,
+          "leading_imag_yr": 0.0
+        },
+        {
+          "tau_yr": 0.1,
+          "leading_real_yr": -0.0009407619678065819,
+          "leading_imag_yr": 0.0
+        },
+        {
+          "tau_yr": 0.3,
+          "leading_real_yr": -0.0009407619660329786,
+          "leading_imag_yr": 0.0
+        },
+        {
+          "tau_yr": 1.0,
+          "leading_real_yr": -0.000940761960148206,
+          "leading_imag_yr": 0.0
+        },
+        {
+          "tau_yr": 3.0,
+          "leading_real_yr": -0.0009407619382293741,
+          "leading_imag_yr": 0.0
+        },
+        {
+          "tau_yr": 10.0,
+          "leading_real_yr": -0.000940761862796366,
+          "leading_imag_yr": 0.0
+        },
+        {
+          "tau_yr": 30.0,
+          "leading_real_yr": -0.0009407616535032339,
+          "leading_imag_yr": 0.0
+        },
+        {
+          "tau_yr": 100.0,
+          "leading_real_yr": -0.0009407609133842051,
+          "leading_imag_yr": 0.0
+        },
+        {
+          "tau_yr": 300.0,
+          "leading_real_yr": -0.0005178544429109552,
+          "leading_imag_yr": 0.001817628117635791
+        },
+        {
+          "tau_yr": 1000.0,
+          "leading_real_yr": -0.00012281708486257324,
+          "leading_imag_yr": 0.001306045726264371
+        },
+        {
+          "tau_yr": 10000.0,
+          "leading_real_yr": -3.0667031088671394e-05,
+          "leading_imag_yr": 0.0004976413330073672
+        }
+      ],
+      "passed": true,
+      "characteristic_checks": [
+        {
+          "status": "not_detected_through_10000",
+          "critical_lag_yr": null,
+          "crossings": [],
+          "sink_edge_yr": -0.0009398236563219124,
+          "frequency_bounds": [
+            1e-06,
+            10.0
+          ],
+          "frequency_points": 361,
+          "limitation": "Imaginary-axis crossings from finite frequency bracketing; initial stability and crossing direction require separate checks."
+        },
+        {
+          "status": "not_detected_through_10000",
+          "critical_lag_yr": null,
+          "crossings": [],
+          "sink_edge_yr": -0.0009398236563219124,
+          "frequency_bounds": [
+            1e-06,
+            10.0
+          ],
+          "frequency_points": 721,
+          "limitation": "Imaginary-axis crossings from finite frequency bracketing; initial stability and crossing direction require separate checks."
+        }
+      ]
+    },
+    {
+      "case_id": "fixed_f0.5_s3_d0.01",
+      "chemistry": "fixed",
+      "fraction": 0.5,
+      "sigma_k": 3.0,
+      "dispersal_yr": 0.01,
+      "nodes": 124,
+      "Sc": -8.117051233342147,
+      "S0": -86.14236412113247,
+      "G_loc": 0.09422833139253105,
+      "mesh_converged": true,
+      "primary_tau_yr": null,
+      "primary_status": "not_detected_through_10000",
+      "relative_tau_difference": null,
+      "frequency_grid_relative_change": null,
+      "comparison_kind": "consistent_right_censoring",
+      "primary_sign_bracket": null,
+      "primary_operator_checks": [
+        {
+          "tau_yr": 0.0,
+          "leading_real_yr": -0.002103265102062691,
+          "leading_imag_yr": 0.0
+        },
+        {
+          "tau_yr": 0.03,
+          "leading_real_yr": -0.0021034116498705032,
+          "leading_imag_yr": 0.0
+        },
+        {
+          "tau_yr": 0.1,
+          "leading_real_yr": -0.002103754028256334,
+          "leading_imag_yr": 0.0
+        },
+        {
+          "tau_yr": 0.3,
+          "leading_real_yr": -0.002104733245552459,
+          "leading_imag_yr": 0.0
+        },
+        {
+          "tau_yr": 1.0,
+          "leading_real_yr": -0.002108175927416165,
+          "leading_imag_yr": 0.0
+        },
+        {
+          "tau_yr": 3.0,
+          "leading_real_yr": -0.002118142885361685,
+          "leading_imag_yr": 0.0
+        },
+        {
+          "tau_yr": 10.0,
+          "leading_real_yr": -0.0021546540373337266,
+          "leading_imag_yr": 0.0
+        },
+        {
+          "tau_yr": 30.0,
+          "leading_real_yr": -0.0022760729704298555,
+          "leading_imag_yr": 0.0
+        },
+        {
+          "tau_yr": 100.0,
+          "leading_real_yr": -0.0036504051731228067,
+          "leading_imag_yr": 0.0
+        },
+        {
+          "tau_yr": 300.0,
+          "leading_real_yr": -0.0015170048290259184,
+          "leading_imag_yr": 0.0019279131642867856
+        },
+        {
+          "tau_yr": 1000.0,
+          "leading_real_yr": -0.0004985033180678355,
+          "leading_imag_yr": 0.0012642073613426585
+        },
+        {
+          "tau_yr": 10000.0,
+          "leading_real_yr": -9.511678971503756e-05,
+          "leading_imag_yr": 0.00042064206504489486
+        }
+      ],
+      "passed": true,
+      "characteristic_checks": [
+        {
+          "status": "not_detected_through_10000",
+          "critical_lag_yr": null,
+          "crossings": [],
+          "sink_edge_yr": -0.010035545396404303,
+          "frequency_bounds": [
+            1e-06,
+            10.0
+          ],
+          "frequency_points": 361,
+          "limitation": "Imaginary-axis crossings from finite frequency bracketing; initial stability and crossing direction require separate checks."
+        },
+        {
+          "status": "not_detected_through_10000",
+          "critical_lag_yr": null,
+          "crossings": [],
+          "sink_edge_yr": -0.010035545396404303,
+          "frequency_bounds": [
+            1e-06,
+            10.0
+          ],
+          "frequency_points": 721,
+          "limitation": "Imaginary-axis crossings from finite frequency bracketing; initial stability and crossing direction require separate checks."
+        }
+      ]
+    },
+    {
+      "case_id": "products_f0.5_s6_d0.0001",
+      "chemistry": "products",
+      "fraction": 0.5,
+      "sigma_k": 6.0,
+      "dispersal_yr": 0.0001,
+      "nodes": 188,
+      "Sc": -15.982335511107435,
+      "S0": -99.05559989851545,
+      "G_loc": 0.16134711745203376,
+      "mesh_converged": true,
+      "primary_tau_yr": null,
+      "primary_status": "not_detected_through_10000",
+      "relative_tau_difference": null,
+      "frequency_grid_relative_change": null,
+      "comparison_kind": "consistent_right_censoring",
+      "primary_sign_bracket": null,
+      "primary_operator_checks": [
+        {
+          "tau_yr": 0.0,
+          "leading_real_yr": -0.0009832656913832582,
+          "leading_imag_yr": 0.0
+        },
+        {
+          "tau_yr": 0.03,
+          "leading_real_yr": -0.0009832920391273944,
+          "leading_imag_yr": 0.0
+        },
+        {
+          "tau_yr": 0.1,
+          "leading_real_yr": -0.0009833535521813716,
+          "leading_imag_yr": 0.0
+        },
+        {
+          "tau_yr": 0.3,
+          "leading_real_yr": -0.0009835293627462882,
+          "leading_imag_yr": 0.0
+        },
+        {
+          "tau_yr": 1.0,
+          "leading_real_yr": -0.0009841457617433816,
+          "leading_imag_yr": 0.0
+        },
+        {
+          "tau_yr": 3.0,
+          "leading_real_yr": -0.0009859159507535353,
+          "leading_imag_yr": 0.0
+        },
+        {
+          "tau_yr": 10.0,
+          "leading_real_yr": -0.000992219612059258,
+          "leading_imag_yr": 0.0
+        },
+        {
+          "tau_yr": 30.0,
+          "leading_real_yr": -0.0010112258005442187,
+          "leading_imag_yr": 0.0
+        },
+        {
+          "tau_yr": 100.0,
+          "leading_real_yr": -0.001093064463986687,
+          "leading_imag_yr": 0.0
+        },
+        {
+          "tau_yr": 300.0,
+          "leading_real_yr": -0.001695785539411267,
+          "leading_imag_yr": 0.0005985385214718307
+        },
+        {
+          "tau_yr": 1000.0,
+          "leading_real_yr": -0.0005446581150860984,
+          "leading_imag_yr": 0.0008218175393748926
+        },
+        {
+          "tau_yr": 10000.0,
+          "leading_real_yr": -9.956396850476724e-05,
+          "leading_imag_yr": 0.00029553940093539886
+        }
+      ],
+      "passed": true,
+      "characteristic_checks": [
+        {
+          "status": "not_detected_through_10000",
+          "critical_lag_yr": null,
+          "crossings": [],
+          "sink_edge_yr": -0.007613072675833507,
+          "frequency_bounds": [
+            1e-06,
+            10.0
+          ],
+          "frequency_points": 361,
+          "limitation": "Imaginary-axis crossings from finite frequency bracketing; initial stability and crossing direction require separate checks."
+        },
+        {
+          "status": "not_detected_through_10000",
+          "critical_lag_yr": null,
+          "crossings": [],
+          "sink_edge_yr": -0.007613072675833507,
+          "frequency_bounds": [
+            1e-06,
+            10.0
+          ],
+          "frequency_points": 721,
+          "limitation": "Imaginary-axis crossings from finite frequency bracketing; initial stability and crossing direction require separate checks."
+        }
+      ]
+    }
+  ],
+  "selected_status": "completed",
+  "primary_operator_provenance": {
+    "physical_function_sha256": "13d8461dff9e24aad87ef2cbe3398a126f2e3ab6abf2baf269fdf63d327eb2e0",
+    "source_sha256": "5ce1ca453ce9603814534ace5aa74787d69b478d7123ef7b2fc220af51b7d375",
+    "route": "Full operator dense spectra at independent characteristic candidate +/-1percent, or prescribed censored lag grid."
+  },
+  "states_file_sha256": "fcbfba566caf4b1c0fee36269ab28a0979b5be4d03af44515982347c478c7ca9",
+  "source_sha256": {
+    "docs/audits/continuum-characteristic-2026-11-12.py": "34737191d0c53f066f1a23c3bebad6eb157148603f7be5b31151f2847a3728e9",
+    "src/terra_prisca/haze_world/continuum_characteristic.py": "eff3d013497894d2cf13385f00761e2bdf3a4e9bf7c177ae8d0a2217113f7139",
+    "src/terra_prisca/haze_world/dynamic_core.py": "a359406f79444380f5554e6d27b478e2b70d624398cd1f2f853e1e25cbc88be6",
+    "src/terra_prisca/haze_world/population_coupling.py": "17a433957e94845595f6d7fd160ffe593c01c4e74550707b0814c95ab67ae663",
+    "src/terra_prisca/haze_world/two_guilds.py": "eff6a9027c5b28d154f03462d926591ebee3408eb2c80ec0df5c38929f169f83",
+    "src/terra_prisca/haze_world/methane_budget.py": "f2374cfcb658102cc9919c61108379560922fc787c2cd85e089e878a9fa25fa8",
+    "src/terra_prisca/haze_world/darwinian.py": "e965035d5dfbfafcb695dc3738b23d8a445c4c1e7e246ab4688d67b33482f1aa",
+    "src/terra_prisca/haze_world/hydrogen_uptake.py": "c48d8231ef726605ab07be22438f3e2fd97f23b310773ac748d1b2bf5c36fafd",
+    "src/terra_prisca/haze_world/woodii1998.py": "b0130f4f8ea15aa64245133f79dc8b35883a414031a8b49262c6657350cad0b0",
+    "models/haze_world/continuum-habitats-spec.md": "4924d02c1a985df199e91aa74fcb907299e5add4e07d524c0cf7c53880c73c21",
+    "models/haze_world/continuum-habitats-methods.md": "cd9ba21c71d37e3c48b5c3778f6604bb539c83637b580c3441490a93617500ba",
+    "models/haze_response/arney2016/figure4.csv": "c0ef5f3d17ee7c6085ad36247f0f7814726dbbe3273842b01f2c6c4e046856f8",
+    "models/haze_response/arney2016/cases.csv": "e3d77d275052a8875991a751868f857bffc964295bfd47591944d86bc58ab07a",
+    "models/haze_world/evidence/kotsyurbenko2001_table2.csv": "c95b4be023e5502fbb30eb322621e5612bbbf850f99d1b6669e98b95eb370480",
+    "models/haze_world/evidence/peters1998_chemostat.csv": "b0b00bf03eaeaabf45fb571330773c5158b53b088436aaee942188f8e9498320",
+    "uv.lock": "02bf429b2ec474f03280ec550d5fd847b573ece24ab9043e0b5998370fd4d2b4",
+    "src/terra_prisca/haze_world/continuum_core.py": "5ce1ca453ce9603814534ace5aa74787d69b478d7123ef7b2fc220af51b7d375"
+  }
+}

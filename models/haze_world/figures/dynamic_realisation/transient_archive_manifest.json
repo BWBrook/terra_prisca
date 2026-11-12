@@ -1,0 +1,1182 @@
+{
+  "scope": "Canonical29-case main epoch plus four tighter controls only; failed preliminary epochs remain retained but are not canonical evidence.",
+  "receipts": [
+    {
+      "case_id": "B2_f0_tau10",
+      "receipt": "local/haze/dynamic_transients/B2_f0_tau10-9e75b9e501f97576b418.json",
+      "source_epoch": "local/haze/dynamic_transients/source_epochs/f77468b9d23032c908b7",
+      "producer_sha256": "ec9e06f77f647bf7d5be2a9ec7f0747a4430e35945212ca26a650fb336ebc592",
+      "rtol": 2e-08,
+      "max_step_yr": 50.0,
+      "sample_step_yr": 1.0
+    },
+    {
+      "case_id": "B2_f0_tau100",
+      "receipt": "local/haze/dynamic_transients/B2_f0_tau100-9c95c15a4cd112070124.json",
+      "source_epoch": "local/haze/dynamic_transients/source_epochs/f77468b9d23032c908b7",
+      "producer_sha256": "ec9e06f77f647bf7d5be2a9ec7f0747a4430e35945212ca26a650fb336ebc592",
+      "rtol": 2e-08,
+      "max_step_yr": 50.0,
+      "sample_step_yr": 1.0
+    },
+    {
+      "case_id": "B2_f0_tau1",
+      "receipt": "local/haze/dynamic_transients/B2_f0_tau1-efc80c67ce99eb1e2f60.json",
+      "source_epoch": "local/haze/dynamic_transients/source_epochs/f77468b9d23032c908b7",
+      "producer_sha256": "ec9e06f77f647bf7d5be2a9ec7f0747a4430e35945212ca26a650fb336ebc592",
+      "rtol": 2e-08,
+      "max_step_yr": 50.0,
+      "sample_step_yr": 1.0
+    },
+    {
+      "case_id": "B2_f0.5_tau10",
+      "receipt": "local/haze/dynamic_transients/B2_f0.5_tau10-bbe3b661525a65b26334.json",
+      "source_epoch": "local/haze/dynamic_transients/source_epochs/f77468b9d23032c908b7",
+      "producer_sha256": "ec9e06f77f647bf7d5be2a9ec7f0747a4430e35945212ca26a650fb336ebc592",
+      "rtol": 2e-08,
+      "max_step_yr": 50.0,
+      "sample_step_yr": 1.0
+    },
+    {
+      "case_id": "B2_f0.5_tau100",
+      "receipt": "local/haze/dynamic_transients/B2_f0.5_tau100-3315104f4cc1d9995db5.json",
+      "source_epoch": "local/haze/dynamic_transients/source_epochs/f77468b9d23032c908b7",
+      "producer_sha256": "ec9e06f77f647bf7d5be2a9ec7f0747a4430e35945212ca26a650fb336ebc592",
+      "rtol": 2e-08,
+      "max_step_yr": 50.0,
+      "sample_step_yr": 1.0
+    },
+    {
+      "case_id": "B3_fixed_f0_tau0_A_into_M",
+      "receipt": "local/haze/dynamic_transients/B3_fixed_f0_tau0_A_into_M-478d2ed03a7d444539a1.json",
+      "source_epoch": "local/haze/dynamic_transients/source_epochs/f77468b9d23032c908b7",
+      "producer_sha256": "ec9e06f77f647bf7d5be2a9ec7f0747a4430e35945212ca26a650fb336ebc592",
+      "rtol": 2e-08,
+      "max_step_yr": 50.0,
+      "sample_step_yr": 1.0
+    },
+    {
+      "case_id": "B3_fixed_f0_tau0_M_into_A",
+      "receipt": "local/haze/dynamic_transients/B3_fixed_f0_tau0_M_into_A-9c23d796d7cbdb607174.json",
+      "source_epoch": "local/haze/dynamic_transients/source_epochs/f77468b9d23032c908b7",
+      "producer_sha256": "ec9e06f77f647bf7d5be2a9ec7f0747a4430e35945212ca26a650fb336ebc592",
+      "rtol": 2e-08,
+      "max_step_yr": 50.0,
+      "sample_step_yr": 1.0
+    },
+    {
+      "case_id": "B3_fixed_f0_tau3_M_into_A",
+      "receipt": "local/haze/dynamic_transients/B3_fixed_f0_tau3_M_into_A-2fcb2abdcf0d283f7b0f.json",
+      "source_epoch": "local/haze/dynamic_transients/source_epochs/f77468b9d23032c908b7",
+      "producer_sha256": "ec9e06f77f647bf7d5be2a9ec7f0747a4430e35945212ca26a650fb336ebc592",
+      "rtol": 2e-08,
+      "max_step_yr": 50.0,
+      "sample_step_yr": 1.0
+    },
+    {
+      "case_id": "B3_fixed_f0_tau3_A_into_M",
+      "receipt": "local/haze/dynamic_transients/B3_fixed_f0_tau3_A_into_M-3331fb0c7a6db909753d.json",
+      "source_epoch": "local/haze/dynamic_transients/source_epochs/f77468b9d23032c908b7",
+      "producer_sha256": "ec9e06f77f647bf7d5be2a9ec7f0747a4430e35945212ca26a650fb336ebc592",
+      "rtol": 2e-08,
+      "max_step_yr": 50.0,
+      "sample_step_yr": 1.0
+    },
+    {
+      "case_id": "B3_fixed_f0_tau30_A_into_M",
+      "receipt": "local/haze/dynamic_transients/B3_fixed_f0_tau30_A_into_M-fe43379f11f8a7f47b27.json",
+      "source_epoch": "local/haze/dynamic_transients/source_epochs/f77468b9d23032c908b7",
+      "producer_sha256": "ec9e06f77f647bf7d5be2a9ec7f0747a4430e35945212ca26a650fb336ebc592",
+      "rtol": 2e-08,
+      "max_step_yr": 50.0,
+      "sample_step_yr": 1.0
+    },
+    {
+      "case_id": "B3_fixed_f0_tau30_M_into_A",
+      "receipt": "local/haze/dynamic_transients/B3_fixed_f0_tau30_M_into_A-cc2e1c5f2e8a9fd3f6ae.json",
+      "source_epoch": "local/haze/dynamic_transients/source_epochs/f77468b9d23032c908b7",
+      "producer_sha256": "ec9e06f77f647bf7d5be2a9ec7f0747a4430e35945212ca26a650fb336ebc592",
+      "rtol": 2e-08,
+      "max_step_yr": 50.0,
+      "sample_step_yr": 1.0
+    },
+    {
+      "case_id": "B3_fixed_f0.5_tau0_A_into_M",
+      "receipt": "local/haze/dynamic_transients/B3_fixed_f0.5_tau0_A_into_M-98c13b1b7772e6d57c48.json",
+      "source_epoch": "local/haze/dynamic_transients/source_epochs/f77468b9d23032c908b7",
+      "producer_sha256": "ec9e06f77f647bf7d5be2a9ec7f0747a4430e35945212ca26a650fb336ebc592",
+      "rtol": 2e-08,
+      "max_step_yr": 50.0,
+      "sample_step_yr": 1.0
+    },
+    {
+      "case_id": "B3_fixed_f0.5_tau0_M_into_A",
+      "receipt": "local/haze/dynamic_transients/B3_fixed_f0.5_tau0_M_into_A-0d38a54febce2ca9fb01.json",
+      "source_epoch": "local/haze/dynamic_transients/source_epochs/f77468b9d23032c908b7",
+      "producer_sha256": "ec9e06f77f647bf7d5be2a9ec7f0747a4430e35945212ca26a650fb336ebc592",
+      "rtol": 2e-08,
+      "max_step_yr": 50.0,
+      "sample_step_yr": 1.0
+    },
+    {
+      "case_id": "B3_fixed_f0.5_tau3_A_into_M",
+      "receipt": "local/haze/dynamic_transients/B3_fixed_f0.5_tau3_A_into_M-c030bf93fc04fce1579c.json",
+      "source_epoch": "local/haze/dynamic_transients/source_epochs/f77468b9d23032c908b7",
+      "producer_sha256": "ec9e06f77f647bf7d5be2a9ec7f0747a4430e35945212ca26a650fb336ebc592",
+      "rtol": 2e-08,
+      "max_step_yr": 50.0,
+      "sample_step_yr": 1.0
+    },
+    {
+      "case_id": "B3_fixed_f0.5_tau30_A_into_M",
+      "receipt": "local/haze/dynamic_transients/B3_fixed_f0.5_tau30_A_into_M-236e55bbb9a6e3734a89.json",
+      "source_epoch": "local/haze/dynamic_transients/source_epochs/f77468b9d23032c908b7",
+      "producer_sha256": "ec9e06f77f647bf7d5be2a9ec7f0747a4430e35945212ca26a650fb336ebc592",
+      "rtol": 2e-08,
+      "max_step_yr": 50.0,
+      "sample_step_yr": 1.0
+    },
+    {
+      "case_id": "B3_fixed_f0.5_tau3_M_into_A",
+      "receipt": "local/haze/dynamic_transients/B3_fixed_f0.5_tau3_M_into_A-4dacbdd807b3775d4e3d.json",
+      "source_epoch": "local/haze/dynamic_transients/source_epochs/f77468b9d23032c908b7",
+      "producer_sha256": "ec9e06f77f647bf7d5be2a9ec7f0747a4430e35945212ca26a650fb336ebc592",
+      "rtol": 2e-08,
+      "max_step_yr": 50.0,
+      "sample_step_yr": 1.0
+    },
+    {
+      "case_id": "B3_products_f0_tau0_A_into_M",
+      "receipt": "local/haze/dynamic_transients/B3_products_f0_tau0_A_into_M-d29934bfb2cd2d87bb7e.json",
+      "source_epoch": "local/haze/dynamic_transients/source_epochs/f77468b9d23032c908b7",
+      "producer_sha256": "ec9e06f77f647bf7d5be2a9ec7f0747a4430e35945212ca26a650fb336ebc592",
+      "rtol": 2e-08,
+      "max_step_yr": 50.0,
+      "sample_step_yr": 1.0
+    },
+    {
+      "case_id": "B3_products_f0_tau0_M_into_A",
+      "receipt": "local/haze/dynamic_transients/B3_products_f0_tau0_M_into_A-dedc1c387147acd9d1bf.json",
+      "source_epoch": "local/haze/dynamic_transients/source_epochs/f77468b9d23032c908b7",
+      "producer_sha256": "ec9e06f77f647bf7d5be2a9ec7f0747a4430e35945212ca26a650fb336ebc592",
+      "rtol": 2e-08,
+      "max_step_yr": 50.0,
+      "sample_step_yr": 1.0
+    },
+    {
+      "case_id": "B3_products_f0_tau3_A_into_M",
+      "receipt": "local/haze/dynamic_transients/B3_products_f0_tau3_A_into_M-581dc482db777d60310b.json",
+      "source_epoch": "local/haze/dynamic_transients/source_epochs/f77468b9d23032c908b7",
+      "producer_sha256": "ec9e06f77f647bf7d5be2a9ec7f0747a4430e35945212ca26a650fb336ebc592",
+      "rtol": 2e-08,
+      "max_step_yr": 50.0,
+      "sample_step_yr": 1.0
+    },
+    {
+      "case_id": "B3_products_f0_tau3_M_into_A",
+      "receipt": "local/haze/dynamic_transients/B3_products_f0_tau3_M_into_A-496ec0f02c25ff37a1ac.json",
+      "source_epoch": "local/haze/dynamic_transients/source_epochs/f77468b9d23032c908b7",
+      "producer_sha256": "ec9e06f77f647bf7d5be2a9ec7f0747a4430e35945212ca26a650fb336ebc592",
+      "rtol": 2e-08,
+      "max_step_yr": 50.0,
+      "sample_step_yr": 1.0
+    },
+    {
+      "case_id": "B3_products_f0_tau30_A_into_M",
+      "receipt": "local/haze/dynamic_transients/B3_products_f0_tau30_A_into_M-ecfb8233046fb5139690.json",
+      "source_epoch": "local/haze/dynamic_transients/source_epochs/f77468b9d23032c908b7",
+      "producer_sha256": "ec9e06f77f647bf7d5be2a9ec7f0747a4430e35945212ca26a650fb336ebc592",
+      "rtol": 2e-08,
+      "max_step_yr": 50.0,
+      "sample_step_yr": 1.0
+    },
+    {
+      "case_id": "B3_products_f0_tau30_M_into_A",
+      "receipt": "local/haze/dynamic_transients/B3_products_f0_tau30_M_into_A-e6269650e2d14557ecc2.json",
+      "source_epoch": "local/haze/dynamic_transients/source_epochs/f77468b9d23032c908b7",
+      "producer_sha256": "ec9e06f77f647bf7d5be2a9ec7f0747a4430e35945212ca26a650fb336ebc592",
+      "rtol": 2e-08,
+      "max_step_yr": 50.0,
+      "sample_step_yr": 1.0
+    },
+    {
+      "case_id": "B3_fixed_f0.5_tau30_M_into_A",
+      "receipt": "local/haze/dynamic_transients/B3_fixed_f0.5_tau30_M_into_A-13d632b0802a3fa07c6c.json",
+      "source_epoch": "local/haze/dynamic_transients/source_epochs/f77468b9d23032c908b7",
+      "producer_sha256": "ec9e06f77f647bf7d5be2a9ec7f0747a4430e35945212ca26a650fb336ebc592",
+      "rtol": 2e-08,
+      "max_step_yr": 50.0,
+      "sample_step_yr": 1.0
+    },
+    {
+      "case_id": "B3_products_f0.5_tau0_A_into_M",
+      "receipt": "local/haze/dynamic_transients/B3_products_f0.5_tau0_A_into_M-0d2f907260a4b31e7330.json",
+      "source_epoch": "local/haze/dynamic_transients/source_epochs/f77468b9d23032c908b7",
+      "producer_sha256": "ec9e06f77f647bf7d5be2a9ec7f0747a4430e35945212ca26a650fb336ebc592",
+      "rtol": 2e-08,
+      "max_step_yr": 50.0,
+      "sample_step_yr": 1.0
+    },
+    {
+      "case_id": "B3_products_f0.5_tau3_A_into_M",
+      "receipt": "local/haze/dynamic_transients/B3_products_f0.5_tau3_A_into_M-f0db6a850aa8e8833db9.json",
+      "source_epoch": "local/haze/dynamic_transients/source_epochs/f77468b9d23032c908b7",
+      "producer_sha256": "ec9e06f77f647bf7d5be2a9ec7f0747a4430e35945212ca26a650fb336ebc592",
+      "rtol": 2e-08,
+      "max_step_yr": 50.0,
+      "sample_step_yr": 1.0
+    },
+    {
+      "case_id": "B3_products_f0.5_tau0_M_into_A",
+      "receipt": "local/haze/dynamic_transients/B3_products_f0.5_tau0_M_into_A-c3620554f68abcd6f406.json",
+      "source_epoch": "local/haze/dynamic_transients/source_epochs/f77468b9d23032c908b7",
+      "producer_sha256": "ec9e06f77f647bf7d5be2a9ec7f0747a4430e35945212ca26a650fb336ebc592",
+      "rtol": 2e-08,
+      "max_step_yr": 50.0,
+      "sample_step_yr": 1.0
+    },
+    {
+      "case_id": "B3_products_f0.5_tau3_M_into_A",
+      "receipt": "local/haze/dynamic_transients/B3_products_f0.5_tau3_M_into_A-34dba3e992dbaeeb46bb.json",
+      "source_epoch": "local/haze/dynamic_transients/source_epochs/f77468b9d23032c908b7",
+      "producer_sha256": "ec9e06f77f647bf7d5be2a9ec7f0747a4430e35945212ca26a650fb336ebc592",
+      "rtol": 2e-08,
+      "max_step_yr": 50.0,
+      "sample_step_yr": 1.0
+    },
+    {
+      "case_id": "B3_products_f0.5_tau30_A_into_M",
+      "receipt": "local/haze/dynamic_transients/B3_products_f0.5_tau30_A_into_M-a2feba3ad6e4b9015dc0.json",
+      "source_epoch": "local/haze/dynamic_transients/source_epochs/f77468b9d23032c908b7",
+      "producer_sha256": "ec9e06f77f647bf7d5be2a9ec7f0747a4430e35945212ca26a650fb336ebc592",
+      "rtol": 2e-08,
+      "max_step_yr": 50.0,
+      "sample_step_yr": 1.0
+    },
+    {
+      "case_id": "B3_products_f0.5_tau30_M_into_A",
+      "receipt": "local/haze/dynamic_transients/B3_products_f0.5_tau30_M_into_A-a3949c238c299e76d301.json",
+      "source_epoch": "local/haze/dynamic_transients/source_epochs/f77468b9d23032c908b7",
+      "producer_sha256": "ec9e06f77f647bf7d5be2a9ec7f0747a4430e35945212ca26a650fb336ebc592",
+      "rtol": 2e-08,
+      "max_step_yr": 50.0,
+      "sample_step_yr": 1.0
+    },
+    {
+      "case_id": "B2_f0_tau100",
+      "receipt": "local/haze/dynamic_transients/B2_f0_tau100-85e82c63dc091e7640ed.json",
+      "source_epoch": "local/haze/dynamic_transients/source_epochs/47c84ea93d74450d537d",
+      "producer_sha256": "ef45d4a944bf888862313340cbab5d4ed3c3d1690459f30611ccdfe46fb85159",
+      "rtol": 2e-09,
+      "max_step_yr": 2.0,
+      "sample_step_yr": 0.5
+    },
+    {
+      "case_id": "B2_f0_tau1",
+      "receipt": "local/haze/dynamic_transients/B2_f0_tau1-29c5d3cd28fc0c503ddd.json",
+      "source_epoch": "local/haze/dynamic_transients/source_epochs/47c84ea93d74450d537d",
+      "producer_sha256": "ef45d4a944bf888862313340cbab5d4ed3c3d1690459f30611ccdfe46fb85159",
+      "rtol": 2e-09,
+      "max_step_yr": 2.0,
+      "sample_step_yr": 0.5
+    },
+    {
+      "case_id": "B3_products_f0.5_tau3_M_into_A",
+      "receipt": "local/haze/dynamic_transients/B3_products_f0.5_tau3_M_into_A-62fa2d50764099ffaec6.json",
+      "source_epoch": "local/haze/dynamic_transients/source_epochs/47c84ea93d74450d537d",
+      "producer_sha256": "ef45d4a944bf888862313340cbab5d4ed3c3d1690459f30611ccdfe46fb85159",
+      "rtol": 2e-09,
+      "max_step_yr": 2.0,
+      "sample_step_yr": 0.5
+    },
+    {
+      "case_id": "B3_fixed_f0.5_tau3_A_into_M",
+      "receipt": "local/haze/dynamic_transients/B3_fixed_f0.5_tau3_A_into_M-d1f73cc8ebb75913f928.json",
+      "source_epoch": "local/haze/dynamic_transients/source_epochs/47c84ea93d74450d537d",
+      "producer_sha256": "ef45d4a944bf888862313340cbab5d4ed3c3d1690459f30611ccdfe46fb85159",
+      "rtol": 2e-09,
+      "max_step_yr": 2.0,
+      "sample_step_yr": 0.5
+    }
+  ],
+  "canonical_raw": [
+    {
+      "path": "local/haze/dynamic_transients/B2_f0_tau10-9e75b9e501f97576b418.json",
+      "sha256": "4a91e17fa88393c7374476d3d5e112a95c0feb3e3adede47da3b08f395dc622b",
+      "bytes": 7718,
+      "role": "raw_receipt"
+    },
+    {
+      "path": "local/haze/dynamic_transients/source_epochs/f77468b9d23032c908b7/src/terra_prisca/haze_world/dynamic_transients.py",
+      "sha256": "ec9e06f77f647bf7d5be2a9ec7f0747a4430e35945212ca26a650fb336ebc592",
+      "bytes": 27641,
+      "role": "producer_epoch"
+    },
+    {
+      "path": "local/haze/dynamic_transients/source_epochs/f77468b9d23032c908b7/src/terra_prisca/haze_world/population_coupling.py",
+      "sha256": "17a433957e94845595f6d7fd160ffe593c01c4e74550707b0814c95ab67ae663",
+      "bytes": 19901,
+      "role": "producer_epoch"
+    },
+    {
+      "path": "local/haze/dynamic_transients/source_epochs/f77468b9d23032c908b7/src/terra_prisca/haze_world/habitat_integration.py",
+      "sha256": "b63708823a920625a005929dac17260ecef7a240f5857efa572f2a91088d6ec0",
+      "bytes": 36913,
+      "role": "producer_epoch"
+    },
+    {
+      "path": "local/haze/dynamic_transients/source_epochs/f77468b9d23032c908b7/src/terra_prisca/haze_world/branching.py",
+      "sha256": "a49b14b06a7dcef9b7894e8604b7ede998544e3b865336f1ed6cb604603eb27d",
+      "bytes": 8597,
+      "role": "producer_epoch"
+    },
+    {
+      "path": "local/haze/dynamic_transients/source_epochs/f77468b9d23032c908b7/src/terra_prisca/haze_world/bottleneck.py",
+      "sha256": "dda7c8749e7a4a24bfeaafab6ea65379df3f27398c64c6afcb8d7a7c0f90da04",
+      "bytes": 25430,
+      "role": "producer_epoch"
+    },
+    {
+      "path": "local/haze/dynamic_transients/source_epochs/f77468b9d23032c908b7/src/terra_prisca/haze_world/habitat_coupling.py",
+      "sha256": "34f611d3f9046bf7d96f8caeffb452f2a2206bab4abc45e630a09980a067c4d0",
+      "bytes": 10663,
+      "role": "producer_epoch"
+    },
+    {
+      "path": "local/haze/dynamic_transients/source_epochs/f77468b9d23032c908b7/src/terra_prisca/haze_world/finite_populations.py",
+      "sha256": "4644088974706aa5f012fb3335a6b1cc8bfd90da88d0b99f9f9e2b64356890df",
+      "bytes": 12057,
+      "role": "producer_epoch"
+    },
+    {
+      "path": "local/haze/dynamic_transients/source_epochs/f77468b9d23032c908b7/src/terra_prisca/haze_world/dense_roots.py",
+      "sha256": "726d174e54916753f737dd83cab64593ff6a410e06ad693b024dcd63319a279e",
+      "bytes": 2688,
+      "role": "producer_epoch"
+    },
+    {
+      "path": "local/haze/dynamic_transients/source_epochs/f77468b9d23032c908b7/src/terra_prisca/haze_world/two_guilds.py",
+      "sha256": "eff6a9027c5b28d154f03462d926591ebee3408eb2c80ec0df5c38929f169f83",
+      "bytes": 20349,
+      "role": "producer_epoch"
+    },
+    {
+      "path": "local/haze/dynamic_transients/source_epochs/f77468b9d23032c908b7/src/terra_prisca/haze_world/hydrogen_uptake.py",
+      "sha256": "c48d8231ef726605ab07be22438f3e2fd97f23b310773ac748d1b2bf5c36fafd",
+      "bytes": 8693,
+      "role": "producer_epoch"
+    },
+    {
+      "path": "local/haze/dynamic_transients/source_epochs/f77468b9d23032c908b7/src/terra_prisca/haze_world/woodii1998.py",
+      "sha256": "b0130f4f8ea15aa64245133f79dc8b35883a414031a8b49262c6657350cad0b0",
+      "bytes": 10148,
+      "role": "producer_epoch"
+    },
+    {
+      "path": "local/haze/dynamic_transients/source_epochs/f77468b9d23032c908b7/src/terra_prisca/haze_world/methane_budget.py",
+      "sha256": "f2374cfcb658102cc9919c61108379560922fc787c2cd85e089e878a9fa25fa8",
+      "bytes": 10637,
+      "role": "producer_epoch"
+    },
+    {
+      "path": "local/haze/dynamic_transients/source_epochs/f77468b9d23032c908b7/src/terra_prisca/haze_world/finite_experiments.py",
+      "sha256": "285d5f4ab46997920559ee0ac68657b0405eee39b38f97520e248faba4db631c",
+      "bytes": 19463,
+      "role": "producer_epoch"
+    },
+    {
+      "path": "local/haze/dynamic_transients/source_epochs/f77468b9d23032c908b7/src/terra_prisca/haze_world/darwinian.py",
+      "sha256": "e965035d5dfbfafcb695dc3738b23d8a445c4c1e7e246ab4688d67b33482f1aa",
+      "bytes": 21863,
+      "role": "producer_epoch"
+    },
+    {
+      "path": "local/haze/dynamic_transients/source_epochs/f77468b9d23032c908b7/models/haze_world/dynamic-realisation-spec.md",
+      "sha256": "28221690cd451aefe55e9fcdc32548f964f57d76de355a36e5601bc5498b2a95",
+      "bytes": 10666,
+      "role": "producer_epoch"
+    },
+    {
+      "path": "local/haze/dynamic_transients/source_epochs/f77468b9d23032c908b7/models/haze_world/continuum-habitats-spec.md",
+      "sha256": "4924d02c1a985df199e91aa74fcb907299e5add4e07d524c0cf7c53880c73c21",
+      "bytes": 5841,
+      "role": "producer_epoch"
+    },
+    {
+      "path": "local/haze/dynamic_transients/source_epochs/f77468b9d23032c908b7/models/haze_world/continuum-habitats-methods.md",
+      "sha256": "cd9ba21c71d37e3c48b5c3778f6604bb539c83637b580c3441490a93617500ba",
+      "bytes": 7622,
+      "role": "producer_epoch"
+    },
+    {
+      "path": "local/haze/dynamic_transients/source_epochs/f77468b9d23032c908b7/models/haze_world/evidence/kotsyurbenko2001_table2.csv",
+      "sha256": "c95b4be023e5502fbb30eb322621e5612bbbf850f99d1b6669e98b95eb370480",
+      "bytes": 798,
+      "role": "producer_epoch"
+    },
+    {
+      "path": "local/haze/dynamic_transients/source_epochs/f77468b9d23032c908b7/models/haze_response/arney2016/figure4.csv",
+      "sha256": "c0ef5f3d17ee7c6085ad36247f0f7814726dbbe3273842b01f2c6c4e046856f8",
+      "bytes": 1404,
+      "role": "producer_epoch"
+    },
+    {
+      "path": "local/haze/dynamic_transients/source_epochs/f77468b9d23032c908b7/models/haze_response/arney2016/cases.csv",
+      "sha256": "e3d77d275052a8875991a751868f857bffc964295bfd47591944d86bc58ab07a",
+      "bytes": 316,
+      "role": "producer_epoch"
+    },
+    {
+      "path": "local/haze/dynamic_transients/source_epochs/f77468b9d23032c908b7/uv.lock",
+      "sha256": "02bf429b2ec474f03280ec550d5fd847b573ece24ab9043e0b5998370fd4d2b4",
+      "bytes": 158361,
+      "role": "producer_epoch"
+    },
+    {
+      "path": "local/haze/dynamic_transients/B2_f0_tau10-9e75b9e501f97576b418.npz",
+      "sha256": "44c8efe51448ce72429ceb9a1e1a3f492dd55bee2cc3685c1047efd7bfdc253d",
+      "bytes": 3025787,
+      "role": "uncensored_trajectory"
+    },
+    {
+      "path": "local/haze/dynamic_transients/B2_f0_tau100-9c95c15a4cd112070124.json",
+      "sha256": "36348834390c82813dbbecc2d4dde6569f86a90eedbd6c06cc522bf8fa923350",
+      "bytes": 7594,
+      "role": "raw_receipt"
+    },
+    {
+      "path": "local/haze/dynamic_transients/B2_f0_tau100-9c95c15a4cd112070124.npz",
+      "sha256": "bd6fc309a1617cceefc684fdbd817e2d831825405e18d093426e02a42581ae96",
+      "bytes": 2255788,
+      "role": "uncensored_trajectory"
+    },
+    {
+      "path": "local/haze/dynamic_transients/B2_f0_tau1-efc80c67ce99eb1e2f60.json",
+      "sha256": "563d21b07c0f6c8bcac5e50ffaa604a8c32fbc1d3f1cca2b21de4d0d3f424773",
+      "bytes": 6530,
+      "role": "raw_receipt"
+    },
+    {
+      "path": "local/haze/dynamic_transients/B2_f0_tau1-efc80c67ce99eb1e2f60.npz",
+      "sha256": "492ebe102d19adc6e32cfba69b13e19e4ca365200309fb1b1b6cd6576cf16d40",
+      "bytes": 3625440,
+      "role": "uncensored_trajectory"
+    },
+    {
+      "path": "local/haze/dynamic_transients/B2_f0.5_tau10-bbe3b661525a65b26334.json",
+      "sha256": "0979b32e4e3bdd92bd4f639314a38db90864c9198902eb2c061a9b6b01a75bcb",
+      "bytes": 7717,
+      "role": "raw_receipt"
+    },
+    {
+      "path": "local/haze/dynamic_transients/B2_f0.5_tau10-bbe3b661525a65b26334.npz",
+      "sha256": "745125e144c7c6c2e89eeef462a2ff5213c5b2c539785353bb759a74d7e6fbcf",
+      "bytes": 2985698,
+      "role": "uncensored_trajectory"
+    },
+    {
+      "path": "local/haze/dynamic_transients/B2_f0.5_tau100-3315104f4cc1d9995db5.json",
+      "sha256": "da23174d2a8d02eb4b90db42de417958b9c85f99b5a5c2e6ba75bb1eda9b9d5b",
+      "bytes": 7467,
+      "role": "raw_receipt"
+    },
+    {
+      "path": "local/haze/dynamic_transients/B2_f0.5_tau100-3315104f4cc1d9995db5.npz",
+      "sha256": "49ad2fcd1faf7def1efc53e26733bf16efb9b5e279de5bc776ac9aef99dede5d",
+      "bytes": 2316277,
+      "role": "uncensored_trajectory"
+    },
+    {
+      "path": "local/haze/dynamic_transients/B3_fixed_f0_tau0_A_into_M-478d2ed03a7d444539a1.json",
+      "sha256": "b6cb6bac5d03ab908b0010fd0a6b6495e934096b8ae4044e4f8748823fce89d2",
+      "bytes": 8533,
+      "role": "raw_receipt"
+    },
+    {
+      "path": "local/haze/dynamic_transients/B3_fixed_f0_tau0_A_into_M-478d2ed03a7d444539a1.npz",
+      "sha256": "5720cb04a625e1f3d4f0dac40091e8b4fe48e378cc7563617c507a77b85d53fe",
+      "bytes": 8976421,
+      "role": "uncensored_trajectory"
+    },
+    {
+      "path": "local/haze/dynamic_transients/B3_fixed_f0_tau0_A_into_M-478d2ed03a7d444539a1-census.npz",
+      "sha256": "1b2a9836ee0b90e6365be2080241a0410ba560b4f57b5313f5495078400eee9c",
+      "bytes": 3765752,
+      "role": "census_trajectory"
+    },
+    {
+      "path": "local/haze/dynamic_transients/B3_fixed_f0_tau0_M_into_A-9c23d796d7cbdb607174.json",
+      "sha256": "d972e4aa1ca4cf1b8271598c0b37710a2da291c671ceb3ce3e423a4f59c20bbd",
+      "bytes": 8536,
+      "role": "raw_receipt"
+    },
+    {
+      "path": "local/haze/dynamic_transients/B3_fixed_f0_tau0_M_into_A-9c23d796d7cbdb607174.npz",
+      "sha256": "51447145e5f3f3b91ae7c310e2b40f2c358eeeb03cfb342787ddeb0b314223a6",
+      "bytes": 8663488,
+      "role": "uncensored_trajectory"
+    },
+    {
+      "path": "local/haze/dynamic_transients/B3_fixed_f0_tau0_M_into_A-9c23d796d7cbdb607174-census.npz",
+      "sha256": "5bdf5ee89b32d60371703a3c586aeee02b8d969dee0364c6fb35ef58df1bb456",
+      "bytes": 2817911,
+      "role": "census_trajectory"
+    },
+    {
+      "path": "local/haze/dynamic_transients/B3_fixed_f0_tau3_M_into_A-2fcb2abdcf0d283f7b0f.json",
+      "sha256": "40cd78916f56c4f83546a142110f86fc61d0a164202750db8801316c5170044a",
+      "bytes": 8565,
+      "role": "raw_receipt"
+    },
+    {
+      "path": "local/haze/dynamic_transients/B3_fixed_f0_tau3_M_into_A-2fcb2abdcf0d283f7b0f.npz",
+      "sha256": "17909fb97059d58ed8cf95d64fbd20f9c6b6842ab10bf2adf2dd6014c6ffe10f",
+      "bytes": 9020535,
+      "role": "uncensored_trajectory"
+    },
+    {
+      "path": "local/haze/dynamic_transients/B3_fixed_f0_tau3_M_into_A-2fcb2abdcf0d283f7b0f-census.npz",
+      "sha256": "8893837623959fe53d131ca5d27fb84d840c4809fef0511c2275a0191fcde915",
+      "bytes": 2821839,
+      "role": "census_trajectory"
+    },
+    {
+      "path": "local/haze/dynamic_transients/B3_fixed_f0_tau3_A_into_M-3331fb0c7a6db909753d.json",
+      "sha256": "9d5d390fe643922a3b4fd52df8f26340710ecb39caa7176225299f307223cb79",
+      "bytes": 8556,
+      "role": "raw_receipt"
+    },
+    {
+      "path": "local/haze/dynamic_transients/B3_fixed_f0_tau3_A_into_M-3331fb0c7a6db909753d.npz",
+      "sha256": "7d6dd8b80a6c9aa2931ff4e29abbfc2b1b741dd8a8ad730a70604987cb2eb5c1",
+      "bytes": 10322479,
+      "role": "uncensored_trajectory"
+    },
+    {
+      "path": "local/haze/dynamic_transients/B3_fixed_f0_tau3_A_into_M-3331fb0c7a6db909753d-census.npz",
+      "sha256": "a7ddce8edca989d047c2312b8d91b235c6ba632749d35373522c3cbf570bd795",
+      "bytes": 3767534,
+      "role": "census_trajectory"
+    },
+    {
+      "path": "local/haze/dynamic_transients/B3_fixed_f0_tau30_A_into_M-fe43379f11f8a7f47b27.json",
+      "sha256": "8b527fcfc35c7bb6661d1bdea15a6a0ced0f8807493229110425f7afd06351ff",
+      "bytes": 8546,
+      "role": "raw_receipt"
+    },
+    {
+      "path": "local/haze/dynamic_transients/B3_fixed_f0_tau30_A_into_M-fe43379f11f8a7f47b27.npz",
+      "sha256": "09a1340b0974076354d4257f9ad36fda910d9cfadbdc00978d4d65d4df82f00c",
+      "bytes": 7944763,
+      "role": "uncensored_trajectory"
+    },
+    {
+      "path": "local/haze/dynamic_transients/B3_fixed_f0_tau30_A_into_M-fe43379f11f8a7f47b27-census.npz",
+      "sha256": "d073506309058a1c452bed5103710d0a37f748a57f25adbf3668d9b761b410bd",
+      "bytes": 3769277,
+      "role": "census_trajectory"
+    },
+    {
+      "path": "local/haze/dynamic_transients/B3_fixed_f0_tau30_M_into_A-cc2e1c5f2e8a9fd3f6ae.json",
+      "sha256": "5ba872b5451b4ad6b65ba012fa8b14676936b6a48c021d1cac7b10e300e3b1fc",
+      "bytes": 8564,
+      "role": "raw_receipt"
+    },
+    {
+      "path": "local/haze/dynamic_transients/B3_fixed_f0_tau30_M_into_A-cc2e1c5f2e8a9fd3f6ae.npz",
+      "sha256": "4b0fec109bae2fa11bb19a4dc6ac5a23b1f2dbf97f9a7654d511b6da37db7c29",
+      "bytes": 7273004,
+      "role": "uncensored_trajectory"
+    },
+    {
+      "path": "local/haze/dynamic_transients/B3_fixed_f0_tau30_M_into_A-cc2e1c5f2e8a9fd3f6ae-census.npz",
+      "sha256": "22fe8723329871327651275cb64b1a2b70ba6676c9a0c4f60ffc9d7e4f16e34a",
+      "bytes": 2821869,
+      "role": "census_trajectory"
+    },
+    {
+      "path": "local/haze/dynamic_transients/B3_fixed_f0.5_tau0_A_into_M-98c13b1b7772e6d57c48.json",
+      "sha256": "c6de204531172bdef695d84e78144b3c0788c3e09361575d3c20bec1ae7b0539",
+      "bytes": 8556,
+      "role": "raw_receipt"
+    },
+    {
+      "path": "local/haze/dynamic_transients/B3_fixed_f0.5_tau0_A_into_M-98c13b1b7772e6d57c48.npz",
+      "sha256": "d69ad5c52055a63c670183f80f89801c70575f412cf3aaca2a49d44b9ad755b2",
+      "bytes": 7012175,
+      "role": "uncensored_trajectory"
+    },
+    {
+      "path": "local/haze/dynamic_transients/B3_fixed_f0.5_tau0_A_into_M-98c13b1b7772e6d57c48-census.npz",
+      "sha256": "0d074b7e955567267ad83de8460426a111e21de9b089a9a35287674f2e662a37",
+      "bytes": 3480388,
+      "role": "census_trajectory"
+    },
+    {
+      "path": "local/haze/dynamic_transients/B3_fixed_f0.5_tau0_M_into_A-0d38a54febce2ca9fb01.json",
+      "sha256": "15eb2280d772eac5069219252969a06f5885616f10b7c789a6ab57de4ad23c62",
+      "bytes": 8549,
+      "role": "raw_receipt"
+    },
+    {
+      "path": "local/haze/dynamic_transients/B3_fixed_f0.5_tau0_M_into_A-0d38a54febce2ca9fb01.npz",
+      "sha256": "aaeb97804bd9145fe4ea4145c70ce3a392e20ccab17aafcbf6a759249b6cf2c9",
+      "bytes": 7192839,
+      "role": "uncensored_trajectory"
+    },
+    {
+      "path": "local/haze/dynamic_transients/B3_fixed_f0.5_tau0_M_into_A-0d38a54febce2ca9fb01-census.npz",
+      "sha256": "0934cdc1cb90b793c25b7eaadcd1f8f436058e82433011b88a8f5ce4933ea24d",
+      "bytes": 2982194,
+      "role": "census_trajectory"
+    },
+    {
+      "path": "local/haze/dynamic_transients/B3_fixed_f0.5_tau3_A_into_M-c030bf93fc04fce1579c.json",
+      "sha256": "8678a6642feec798da04c4fca29f019de44426be91359d5a5d7b8cce3aa7ad8a",
+      "bytes": 8557,
+      "role": "raw_receipt"
+    },
+    {
+      "path": "local/haze/dynamic_transients/B3_fixed_f0.5_tau3_A_into_M-c030bf93fc04fce1579c.npz",
+      "sha256": "7705842b2f14b55eb2f90a06d3a344849ff7701305e410c48576f618a82071af",
+      "bytes": 10305799,
+      "role": "uncensored_trajectory"
+    },
+    {
+      "path": "local/haze/dynamic_transients/B3_fixed_f0.5_tau3_A_into_M-c030bf93fc04fce1579c-census.npz",
+      "sha256": "c6afe3909141d7a9292eecaad002df698b96b5cc56d436ab195089f428d93aef",
+      "bytes": 3481344,
+      "role": "census_trajectory"
+    },
+    {
+      "path": "local/haze/dynamic_transients/B3_fixed_f0.5_tau30_A_into_M-236e55bbb9a6e3734a89.json",
+      "sha256": "72a70d34e09993e377051e258cfd9ee5e62838e0926924fd32b25363be6a2d9b",
+      "bytes": 8546,
+      "role": "raw_receipt"
+    },
+    {
+      "path": "local/haze/dynamic_transients/B3_fixed_f0.5_tau30_A_into_M-236e55bbb9a6e3734a89.npz",
+      "sha256": "865d02544650d69abc8e64be4adae3d93db60408a9a1e2775990daffc75797f9",
+      "bytes": 8713611,
+      "role": "uncensored_trajectory"
+    },
+    {
+      "path": "local/haze/dynamic_transients/B3_fixed_f0.5_tau30_A_into_M-236e55bbb9a6e3734a89-census.npz",
+      "sha256": "a44706d9bc71af5295cfe7ab8fb336b204d8b72ab878f9869021edf63622855f",
+      "bytes": 3482053,
+      "role": "census_trajectory"
+    },
+    {
+      "path": "local/haze/dynamic_transients/B3_fixed_f0.5_tau3_M_into_A-4dacbdd807b3775d4e3d.json",
+      "sha256": "f1a2cfa2740a9a582a7759039ab27592a17c22bb7543480834c7b0ee7167ef8d",
+      "bytes": 8568,
+      "role": "raw_receipt"
+    },
+    {
+      "path": "local/haze/dynamic_transients/B3_fixed_f0.5_tau3_M_into_A-4dacbdd807b3775d4e3d.npz",
+      "sha256": "c6f6fae326a515655a06516f2e6bf44cf579b02e266cb0e6b565f10786e991a3",
+      "bytes": 9822858,
+      "role": "uncensored_trajectory"
+    },
+    {
+      "path": "local/haze/dynamic_transients/B3_fixed_f0.5_tau3_M_into_A-4dacbdd807b3775d4e3d-census.npz",
+      "sha256": "58c44dd6074b3687ce0d9675927e528468513326ed861665d5a3088137f695fc",
+      "bytes": 2975501,
+      "role": "census_trajectory"
+    },
+    {
+      "path": "local/haze/dynamic_transients/B3_products_f0_tau0_A_into_M-d29934bfb2cd2d87bb7e.json",
+      "sha256": "0c735894fedd3e153d4340ef0836b88ab806aa52b18677972c9a154486f5f499",
+      "bytes": 8477,
+      "role": "raw_receipt"
+    },
+    {
+      "path": "local/haze/dynamic_transients/B3_products_f0_tau0_A_into_M-d29934bfb2cd2d87bb7e.npz",
+      "sha256": "353154e64d0b355958835330f848721e4553b7126fd0df6cde60149798009a9d",
+      "bytes": 899864,
+      "role": "uncensored_trajectory"
+    },
+    {
+      "path": "local/haze/dynamic_transients/B3_products_f0_tau0_A_into_M-d29934bfb2cd2d87bb7e-census.npz",
+      "sha256": "37bc0dc3a1fc11e23c4223c0fb4fa3b7718c7ba185d1c733290cb3f24ae0a848",
+      "bytes": 3768254,
+      "role": "census_trajectory"
+    },
+    {
+      "path": "local/haze/dynamic_transients/B3_products_f0_tau0_M_into_A-dedc1c387147acd9d1bf.json",
+      "sha256": "fc8968fab28a1de87acd19c8f71e70c72d75652f34cbcb5008f7175ec532d802",
+      "bytes": 8475,
+      "role": "raw_receipt"
+    },
+    {
+      "path": "local/haze/dynamic_transients/B3_products_f0_tau0_M_into_A-dedc1c387147acd9d1bf.npz",
+      "sha256": "c279adc6e9b502f444eacc56bc514b4f7e7dfed5c1226369ac864b91f9807520",
+      "bytes": 1682849,
+      "role": "uncensored_trajectory"
+    },
+    {
+      "path": "local/haze/dynamic_transients/B3_products_f0_tau0_M_into_A-dedc1c387147acd9d1bf-census.npz",
+      "sha256": "fdc9b089356fcfdd0d4ea730d71885a3b80a3c7c23c6ed447539d35621999c4b",
+      "bytes": 2825584,
+      "role": "census_trajectory"
+    },
+    {
+      "path": "local/haze/dynamic_transients/B3_products_f0_tau3_A_into_M-581dc482db777d60310b.json",
+      "sha256": "5662052d534a4d02d5e49b1480df9042a21c144d17aa8f36f301117a9464a614",
+      "bytes": 8472,
+      "role": "raw_receipt"
+    },
+    {
+      "path": "local/haze/dynamic_transients/B3_products_f0_tau3_A_into_M-581dc482db777d60310b.npz",
+      "sha256": "0ffacc2ee1e2ea825df0388e025533a0c95c4eaa9a453c657b2d390fd099ae34",
+      "bytes": 910268,
+      "role": "uncensored_trajectory"
+    },
+    {
+      "path": "local/haze/dynamic_transients/B3_products_f0_tau3_A_into_M-581dc482db777d60310b-census.npz",
+      "sha256": "07471191e3ebb100667e695b5d3971b036cfaea2966f385dc3bbd6ab25809f3e",
+      "bytes": 3769119,
+      "role": "census_trajectory"
+    },
+    {
+      "path": "local/haze/dynamic_transients/B3_products_f0_tau3_M_into_A-496ec0f02c25ff37a1ac.json",
+      "sha256": "b9fd44f60c94716b56f977d5d6800ac8c2bba68aeb29f9429200305322cff3e0",
+      "bytes": 8511,
+      "role": "raw_receipt"
+    },
+    {
+      "path": "local/haze/dynamic_transients/B3_products_f0_tau3_M_into_A-496ec0f02c25ff37a1ac.npz",
+      "sha256": "6939db9cc1c1453a1b726e9bafa1506ca7fdd03e0447ec299a36186d7c07972c",
+      "bytes": 1712641,
+      "role": "uncensored_trajectory"
+    },
+    {
+      "path": "local/haze/dynamic_transients/B3_products_f0_tau3_M_into_A-496ec0f02c25ff37a1ac-census.npz",
+      "sha256": "520ccfcc73b156ef79ddab2347beb0dc1e7a43c273bce265c22e360a8893dae5",
+      "bytes": 2826916,
+      "role": "census_trajectory"
+    },
+    {
+      "path": "local/haze/dynamic_transients/B3_products_f0_tau30_A_into_M-ecfb8233046fb5139690.json",
+      "sha256": "ded99e5b2a0d3bcd4f3fba0bb036682e5675ba39c2552872cea0605b12c3709a",
+      "bytes": 8486,
+      "role": "raw_receipt"
+    },
+    {
+      "path": "local/haze/dynamic_transients/B3_products_f0_tau30_A_into_M-ecfb8233046fb5139690.npz",
+      "sha256": "495dc9aa7503313d169b12e0be62ea4d9c97c80609d3e60863aa5a21fcb1328e",
+      "bytes": 929535,
+      "role": "uncensored_trajectory"
+    },
+    {
+      "path": "local/haze/dynamic_transients/B3_products_f0_tau30_A_into_M-ecfb8233046fb5139690-census.npz",
+      "sha256": "fb9cdfeb446d6e8fc3752ea365c043991f3e81c2566d4f35a20052e7eda74530",
+      "bytes": 3770241,
+      "role": "census_trajectory"
+    },
+    {
+      "path": "local/haze/dynamic_transients/B3_products_f0_tau30_M_into_A-e6269650e2d14557ecc2.json",
+      "sha256": "ffa8afaf249c07fff6ad2669badac775b4cc6cfbef665a5930661e044048e9b9",
+      "bytes": 8513,
+      "role": "raw_receipt"
+    },
+    {
+      "path": "local/haze/dynamic_transients/B3_products_f0_tau30_M_into_A-e6269650e2d14557ecc2.npz",
+      "sha256": "cd1da8d5c77aeac60fbe09f7b3c3a21c1a852f7becc6ec3d3a73107de574744f",
+      "bytes": 1793554,
+      "role": "uncensored_trajectory"
+    },
+    {
+      "path": "local/haze/dynamic_transients/B3_products_f0_tau30_M_into_A-e6269650e2d14557ecc2-census.npz",
+      "sha256": "70eb94dfa47a01b055f738a4fab1e69fa7c95fb40fab7dedf000b05baa4f345e",
+      "bytes": 2829733,
+      "role": "census_trajectory"
+    },
+    {
+      "path": "local/haze/dynamic_transients/B3_fixed_f0.5_tau30_M_into_A-13d632b0802a3fa07c6c.json",
+      "sha256": "ababdcb6a4ffca5e6726472e3b3157f04547d8cf3e08c72dbdda5ca264986ef4",
+      "bytes": 8567,
+      "role": "raw_receipt"
+    },
+    {
+      "path": "local/haze/dynamic_transients/B3_fixed_f0.5_tau30_M_into_A-13d632b0802a3fa07c6c.npz",
+      "sha256": "246cd2e9a6d9be11710df8b6acc04b22e1760aa747f132e4d71428162d609cb2",
+      "bytes": 8471105,
+      "role": "uncensored_trajectory"
+    },
+    {
+      "path": "local/haze/dynamic_transients/B3_fixed_f0.5_tau30_M_into_A-13d632b0802a3fa07c6c-census.npz",
+      "sha256": "5619a9dc097ce97536ff2cd5077f80d3e93f35f879cf7a395130bdf6e831df33",
+      "bytes": 2976450,
+      "role": "census_trajectory"
+    },
+    {
+      "path": "local/haze/dynamic_transients/B3_products_f0.5_tau0_A_into_M-0d2f907260a4b31e7330.json",
+      "sha256": "9c07df506e127e47f87e96ad26549e608c6199af75a2c7a9b219499d48d09763",
+      "bytes": 8568,
+      "role": "raw_receipt"
+    },
+    {
+      "path": "local/haze/dynamic_transients/B3_products_f0.5_tau0_A_into_M-0d2f907260a4b31e7330.npz",
+      "sha256": "385ccdeb16fd75cf4372de62ec56b793acbab3c19204b9f64f701339676e0109",
+      "bytes": 1524722,
+      "role": "uncensored_trajectory"
+    },
+    {
+      "path": "local/haze/dynamic_transients/B3_products_f0.5_tau0_A_into_M-0d2f907260a4b31e7330-census.npz",
+      "sha256": "d8a09e0e23e2722dc1a38c4c58c3c5816b2051cef2973d0984e5db82e0b635a5",
+      "bytes": 3481766,
+      "role": "census_trajectory"
+    },
+    {
+      "path": "local/haze/dynamic_transients/B3_products_f0.5_tau3_A_into_M-f0db6a850aa8e8833db9.json",
+      "sha256": "80eadd1622ed18e076b6f52657254ce0507f46769c3841b0a9a61444ef94f8b3",
+      "bytes": 8581,
+      "role": "raw_receipt"
+    },
+    {
+      "path": "local/haze/dynamic_transients/B3_products_f0.5_tau3_A_into_M-f0db6a850aa8e8833db9.npz",
+      "sha256": "1930a58a072ad5f5e36b9e9b7be24d73f4093aaccf88921af0f4271f1fea0118",
+      "bytes": 1633070,
+      "role": "uncensored_trajectory"
+    },
+    {
+      "path": "local/haze/dynamic_transients/B3_products_f0.5_tau3_A_into_M-f0db6a850aa8e8833db9-census.npz",
+      "sha256": "fc5f25d5ac3840e8993a900cd0d21e85ea0689a774c5b21ca0c12504b2df9efc",
+      "bytes": 3482611,
+      "role": "census_trajectory"
+    },
+    {
+      "path": "local/haze/dynamic_transients/B3_products_f0.5_tau0_M_into_A-c3620554f68abcd6f406.json",
+      "sha256": "1256ed787db5e6852152300c68e9fb4e4dffddf10bff4a60464422c2f394759f",
+      "bytes": 8565,
+      "role": "raw_receipt"
+    },
+    {
+      "path": "local/haze/dynamic_transients/B3_products_f0.5_tau0_M_into_A-c3620554f68abcd6f406.npz",
+      "sha256": "7e67338ef4f8e9e39b97600802dbf6e91c4a29105089f72396d1c5f8816391f5",
+      "bytes": 1890759,
+      "role": "uncensored_trajectory"
+    },
+    {
+      "path": "local/haze/dynamic_transients/B3_products_f0.5_tau0_M_into_A-c3620554f68abcd6f406-census.npz",
+      "sha256": "5a001db782af1a018c3f44b1fb97d6f151af4e67f9668f12384d5528e7a30296",
+      "bytes": 2745136,
+      "role": "census_trajectory"
+    },
+    {
+      "path": "local/haze/dynamic_transients/B3_products_f0.5_tau3_M_into_A-34dba3e992dbaeeb46bb.json",
+      "sha256": "2acfac6a8a2d6996327af0861cf66b16b7b4210fe944548e8c92fb494f810b69",
+      "bytes": 8603,
+      "role": "raw_receipt"
+    },
+    {
+      "path": "local/haze/dynamic_transients/B3_products_f0.5_tau3_M_into_A-34dba3e992dbaeeb46bb.npz",
+      "sha256": "bc84bbd1d2fb7f184c580168c9ecedc5d2136416960c2563d7233ee10a6cf5b6",
+      "bytes": 1872257,
+      "role": "uncensored_trajectory"
+    },
+    {
+      "path": "local/haze/dynamic_transients/B3_products_f0.5_tau3_M_into_A-34dba3e992dbaeeb46bb-census.npz",
+      "sha256": "1ffb1a10eca86fc6873ba612fc768ac0622075ac7a801e2d3936a06c09a4c419",
+      "bytes": 2747168,
+      "role": "census_trajectory"
+    },
+    {
+      "path": "local/haze/dynamic_transients/B3_products_f0.5_tau30_A_into_M-a2feba3ad6e4b9015dc0.json",
+      "sha256": "3a084865416914387128a4dfc2005624940132be012c07cfe66954d0ce56bf46",
+      "bytes": 8588,
+      "role": "raw_receipt"
+    },
+    {
+      "path": "local/haze/dynamic_transients/B3_products_f0.5_tau30_A_into_M-a2feba3ad6e4b9015dc0.npz",
+      "sha256": "d489af9324b11dceabf759aae33a5931d4116ac974dd5d7cf154491ddfaf48d8",
+      "bytes": 1633729,
+      "role": "uncensored_trajectory"
+    },
+    {
+      "path": "local/haze/dynamic_transients/B3_products_f0.5_tau30_A_into_M-a2feba3ad6e4b9015dc0-census.npz",
+      "sha256": "28d0bbd64571d10e21b9c4f3f195415075738fdea99282c26a9bfc724e8841eb",
+      "bytes": 3483595,
+      "role": "census_trajectory"
+    },
+    {
+      "path": "local/haze/dynamic_transients/B3_products_f0.5_tau30_M_into_A-a3949c238c299e76d301.json",
+      "sha256": "428d852f3a33510c832f8f37a97622d24b955685797c3b5500768f851e840083",
+      "bytes": 8608,
+      "role": "raw_receipt"
+    },
+    {
+      "path": "local/haze/dynamic_transients/B3_products_f0.5_tau30_M_into_A-a3949c238c299e76d301.npz",
+      "sha256": "ebaa59a1a188dc6ae4de2c3beefb5b03c7b0af9d03835291cb526e668a267191",
+      "bytes": 1916270,
+      "role": "uncensored_trajectory"
+    },
+    {
+      "path": "local/haze/dynamic_transients/B3_products_f0.5_tau30_M_into_A-a3949c238c299e76d301-census.npz",
+      "sha256": "285283e38abaf423e1edaec576899b0f849ae9bc13e530733a890f07a05ca7e6",
+      "bytes": 2748362,
+      "role": "census_trajectory"
+    },
+    {
+      "path": "local/haze/dynamic_transients/B2_f0_tau100-85e82c63dc091e7640ed.json",
+      "sha256": "87de943f4046a725d0fc0ed5743da9b267cd9d442230a6d7074200d59e83a6b0",
+      "bytes": 7659,
+      "role": "raw_receipt"
+    },
+    {
+      "path": "local/haze/dynamic_transients/source_epochs/47c84ea93d74450d537d/src/terra_prisca/haze_world/dynamic_transients.py",
+      "sha256": "ef45d4a944bf888862313340cbab5d4ed3c3d1690459f30611ccdfe46fb85159",
+      "bytes": 29033,
+      "role": "producer_epoch"
+    },
+    {
+      "path": "local/haze/dynamic_transients/source_epochs/47c84ea93d74450d537d/src/terra_prisca/haze_world/population_coupling.py",
+      "sha256": "17a433957e94845595f6d7fd160ffe593c01c4e74550707b0814c95ab67ae663",
+      "bytes": 19901,
+      "role": "producer_epoch"
+    },
+    {
+      "path": "local/haze/dynamic_transients/source_epochs/47c84ea93d74450d537d/src/terra_prisca/haze_world/habitat_integration.py",
+      "sha256": "b63708823a920625a005929dac17260ecef7a240f5857efa572f2a91088d6ec0",
+      "bytes": 36913,
+      "role": "producer_epoch"
+    },
+    {
+      "path": "local/haze/dynamic_transients/source_epochs/47c84ea93d74450d537d/src/terra_prisca/haze_world/branching.py",
+      "sha256": "a49b14b06a7dcef9b7894e8604b7ede998544e3b865336f1ed6cb604603eb27d",
+      "bytes": 8597,
+      "role": "producer_epoch"
+    },
+    {
+      "path": "local/haze/dynamic_transients/source_epochs/47c84ea93d74450d537d/src/terra_prisca/haze_world/bottleneck.py",
+      "sha256": "dda7c8749e7a4a24bfeaafab6ea65379df3f27398c64c6afcb8d7a7c0f90da04",
+      "bytes": 25430,
+      "role": "producer_epoch"
+    },
+    {
+      "path": "local/haze/dynamic_transients/source_epochs/47c84ea93d74450d537d/src/terra_prisca/haze_world/habitat_coupling.py",
+      "sha256": "34f611d3f9046bf7d96f8caeffb452f2a2206bab4abc45e630a09980a067c4d0",
+      "bytes": 10663,
+      "role": "producer_epoch"
+    },
+    {
+      "path": "local/haze/dynamic_transients/source_epochs/47c84ea93d74450d537d/src/terra_prisca/haze_world/finite_populations.py",
+      "sha256": "4644088974706aa5f012fb3335a6b1cc8bfd90da88d0b99f9f9e2b64356890df",
+      "bytes": 12057,
+      "role": "producer_epoch"
+    },
+    {
+      "path": "local/haze/dynamic_transients/source_epochs/47c84ea93d74450d537d/src/terra_prisca/haze_world/dense_roots.py",
+      "sha256": "726d174e54916753f737dd83cab64593ff6a410e06ad693b024dcd63319a279e",
+      "bytes": 2688,
+      "role": "producer_epoch"
+    },
+    {
+      "path": "local/haze/dynamic_transients/source_epochs/47c84ea93d74450d537d/src/terra_prisca/haze_world/two_guilds.py",
+      "sha256": "eff6a9027c5b28d154f03462d926591ebee3408eb2c80ec0df5c38929f169f83",
+      "bytes": 20349,
+      "role": "producer_epoch"
+    },
+    {
+      "path": "local/haze/dynamic_transients/source_epochs/47c84ea93d74450d537d/src/terra_prisca/haze_world/hydrogen_uptake.py",
+      "sha256": "c48d8231ef726605ab07be22438f3e2fd97f23b310773ac748d1b2bf5c36fafd",
+      "bytes": 8693,
+      "role": "producer_epoch"
+    },
+    {
+      "path": "local/haze/dynamic_transients/source_epochs/47c84ea93d74450d537d/src/terra_prisca/haze_world/woodii1998.py",
+      "sha256": "b0130f4f8ea15aa64245133f79dc8b35883a414031a8b49262c6657350cad0b0",
+      "bytes": 10148,
+      "role": "producer_epoch"
+    },
+    {
+      "path": "local/haze/dynamic_transients/source_epochs/47c84ea93d74450d537d/src/terra_prisca/haze_world/methane_budget.py",
+      "sha256": "f2374cfcb658102cc9919c61108379560922fc787c2cd85e089e878a9fa25fa8",
+      "bytes": 10637,
+      "role": "producer_epoch"
+    },
+    {
+      "path": "local/haze/dynamic_transients/source_epochs/47c84ea93d74450d537d/src/terra_prisca/haze_world/finite_experiments.py",
+      "sha256": "285d5f4ab46997920559ee0ac68657b0405eee39b38f97520e248faba4db631c",
+      "bytes": 19463,
+      "role": "producer_epoch"
+    },
+    {
+      "path": "local/haze/dynamic_transients/source_epochs/47c84ea93d74450d537d/src/terra_prisca/haze_world/darwinian.py",
+      "sha256": "e965035d5dfbfafcb695dc3738b23d8a445c4c1e7e246ab4688d67b33482f1aa",
+      "bytes": 21863,
+      "role": "producer_epoch"
+    },
+    {
+      "path": "local/haze/dynamic_transients/source_epochs/47c84ea93d74450d537d/models/haze_world/dynamic-realisation-spec.md",
+      "sha256": "28221690cd451aefe55e9fcdc32548f964f57d76de355a36e5601bc5498b2a95",
+      "bytes": 10666,
+      "role": "producer_epoch"
+    },
+    {
+      "path": "local/haze/dynamic_transients/source_epochs/47c84ea93d74450d537d/models/haze_world/continuum-habitats-spec.md",
+      "sha256": "4924d02c1a985df199e91aa74fcb907299e5add4e07d524c0cf7c53880c73c21",
+      "bytes": 5841,
+      "role": "producer_epoch"
+    },
+    {
+      "path": "local/haze/dynamic_transients/source_epochs/47c84ea93d74450d537d/models/haze_world/continuum-habitats-methods.md",
+      "sha256": "cd9ba21c71d37e3c48b5c3778f6604bb539c83637b580c3441490a93617500ba",
+      "bytes": 7622,
+      "role": "producer_epoch"
+    },
+    {
+      "path": "local/haze/dynamic_transients/source_epochs/47c84ea93d74450d537d/models/haze_world/evidence/kotsyurbenko2001_table2.csv",
+      "sha256": "c95b4be023e5502fbb30eb322621e5612bbbf850f99d1b6669e98b95eb370480",
+      "bytes": 798,
+      "role": "producer_epoch"
+    },
+    {
+      "path": "local/haze/dynamic_transients/source_epochs/47c84ea93d74450d537d/models/haze_response/arney2016/figure4.csv",
+      "sha256": "c0ef5f3d17ee7c6085ad36247f0f7814726dbbe3273842b01f2c6c4e046856f8",
+      "bytes": 1404,
+      "role": "producer_epoch"
+    },
+    {
+      "path": "local/haze/dynamic_transients/source_epochs/47c84ea93d74450d537d/models/haze_response/arney2016/cases.csv",
+      "sha256": "e3d77d275052a8875991a751868f857bffc964295bfd47591944d86bc58ab07a",
+      "bytes": 316,
+      "role": "producer_epoch"
+    },
+    {
+      "path": "local/haze/dynamic_transients/source_epochs/47c84ea93d74450d537d/uv.lock",
+      "sha256": "02bf429b2ec474f03280ec550d5fd847b573ece24ab9043e0b5998370fd4d2b4",
+      "bytes": 158361,
+      "role": "producer_epoch"
+    },
+    {
+      "path": "local/haze/dynamic_transients/B2_f0_tau100-85e82c63dc091e7640ed.npz",
+      "sha256": "4e6598e08d3e854d02a245d74897d9dfe3d243cd302c1c28c258b028d709e044",
+      "bytes": 4347295,
+      "role": "uncensored_trajectory"
+    },
+    {
+      "path": "local/haze/dynamic_transients/B2_f0_tau1-29c5d3cd28fc0c503ddd.json",
+      "sha256": "d3312fa9e9adfcac5a78fc93abd2efbdf08a7b86c111f52df6097761ea7453da",
+      "bytes": 6580,
+      "role": "raw_receipt"
+    },
+    {
+      "path": "local/haze/dynamic_transients/B2_f0_tau1-29c5d3cd28fc0c503ddd.npz",
+      "sha256": "ad21a22e8c6d4ab50089ea12617170a4f644e8e361dde46f2f07019c69e63eca",
+      "bytes": 6540947,
+      "role": "uncensored_trajectory"
+    },
+    {
+      "path": "local/haze/dynamic_transients/B3_products_f0.5_tau3_M_into_A-62fa2d50764099ffaec6.json",
+      "sha256": "98c1d4011e201113cf403f3526e60537e5e3d44c8ce4a9d0353ceca5b1e68dc3",
+      "bytes": 8625,
+      "role": "raw_receipt"
+    },
+    {
+      "path": "local/haze/dynamic_transients/B3_products_f0.5_tau3_M_into_A-62fa2d50764099ffaec6.npz",
+      "sha256": "8e505bbfc0dd0a1f46ea1cbd04df1d9318e3631c707558627f9d899cdc9222c0",
+      "bytes": 3271938,
+      "role": "uncensored_trajectory"
+    },
+    {
+      "path": "local/haze/dynamic_transients/B3_products_f0.5_tau3_M_into_A-62fa2d50764099ffaec6-census.npz",
+      "sha256": "ba2d4dab766de575b753a90ab7c0c47d4332f0abf1e91b003638eee30350ca8b",
+      "bytes": 5843202,
+      "role": "census_trajectory"
+    },
+    {
+      "path": "local/haze/dynamic_transients/B3_fixed_f0.5_tau3_A_into_M-d1f73cc8ebb75913f928.json",
+      "sha256": "ed2e7a216c2611fb5bdba676186c49c88261c823260041ca3473b19533721d4c",
+      "bytes": 8665,
+      "role": "raw_receipt"
+    },
+    {
+      "path": "local/haze/dynamic_transients/B3_fixed_f0.5_tau3_A_into_M-d1f73cc8ebb75913f928.npz",
+      "sha256": "f4bfcce2e61f3dc8ee9c27512eac12cf8318dbd98876615e0e34ece54f391f81",
+      "bytes": 19105596,
+      "role": "uncensored_trajectory"
+    },
+    {
+      "path": "local/haze/dynamic_transients/B3_fixed_f0.5_tau3_A_into_M-d1f73cc8ebb75913f928-census.npz",
+      "sha256": "71f2c475dae6af5a1749ce075e59aaea7e877f7529c45fbb6d334a5b7892a68a",
+      "bytes": 7270286,
+      "role": "census_trajectory"
+    }
+  ],
+  "canonical_bytes": 261442585,
+  "public_files": [
+    {
+      "path": "models/haze_world/figures/dynamic_realisation/transient_B2_f0.5_tau10.csv",
+      "sha256": "1209b6e8728ea924d54be1bd9650cf7ab1ce024579cec5df970e2dc7eb6b433a",
+      "bytes": 123853
+    },
+    {
+      "path": "models/haze_world/figures/dynamic_realisation/transient_B2_f0_tau1.csv",
+      "sha256": "30de376498dd2412a2d57c7b74464af9ac378f987e62a1a8e52907560983d037",
+      "bytes": 123744
+    },
+    {
+      "path": "models/haze_world/figures/dynamic_realisation/transient_B2_f0_tau100.csv",
+      "sha256": "9a07a48787b05fc0dfab2bd4e3c143b33ab280d0267778b2a18b84685c7ccdab",
+      "bytes": 116729
+    },
+    {
+      "path": "models/haze_world/figures/dynamic_realisation/transient_B3_fixed_f0.5_tau3_A_into_M.csv",
+      "sha256": "17166c0c2993bb7e481660ed71b68aacf765be8694980a6c580780ffbdc48e84",
+      "bytes": 149759
+    },
+    {
+      "path": "models/haze_world/figures/dynamic_realisation/transient_B3_fixed_f0.5_tau3_M_into_A.csv",
+      "sha256": "ee9716d2651a252a896a2b90a4398de23df8ec46b2ea01621db0545f66f029a2",
+      "bytes": 146425
+    },
+    {
+      "path": "models/haze_world/figures/dynamic_realisation/transient_B3_products_f0.5_tau3_A_into_M.csv",
+      "sha256": "4986f88c332bc2174fdd7f229a6ea70ac3bb687f11fc499cbdbf1173b6b19246",
+      "bytes": 149700
+    },
+    {
+      "path": "models/haze_world/figures/dynamic_realisation/transient_B3_products_f0.5_tau3_M_into_A.csv",
+      "sha256": "620ed8f1e14ad2ac55b837d16753378d56ffa3e84e3897aa5a757c44484c196f",
+      "bytes": 147256
+    },
+    {
+      "path": "models/haze_world/figures/dynamic_realisation/transient_assessment.json",
+      "sha256": "53331f5128ea058c737e42c48ad6acfb2aa5a48f46c330ec70cec9f30c083895",
+      "bytes": 103371
+    },
+    {
+      "path": "models/haze_world/figures/dynamic_realisation/transient_first_survival.csv",
+      "sha256": "a9814f966be4be0aa9a47467610244ae8d6570c94d190c0b70f56bbebfdb9fdf",
+      "bytes": 32143
+    },
+    {
+      "path": "models/haze_world/figures/dynamic_realisation/transient_manifest.json",
+      "sha256": "aa6f400426042edc3d039247ca750bd50aeb014806fd31e9429ea9a99714da10",
+      "bytes": 75791
+    },
+    {
+      "path": "models/haze_world/figures/dynamic_realisation/transient_refinement_controls.csv",
+      "sha256": "f347a289605a50336e11deb331f1949083f33e24b7325b6398076ab973d3ea20",
+      "bytes": 2214
+    },
+    {
+      "path": "models/haze_world/figures/dynamic_realisation/transient_refinement_first_survival.csv",
+      "sha256": "fd648d5f7b8dcc8174ab8b67e66a28ecf0011fb1965f66b233b60b0f975dab8d",
+      "bytes": 1800
+    },
+    {
+      "path": "models/haze_world/figures/dynamic_realisation/oscillations.csv",
+      "sha256": "1b59fab1a40156b3b50597b2d33cbae4d9a8299198a13b0b3a4135c3e5953c96",
+      "bytes": 4473
+    },
+    {
+      "path": "models/haze_world/figures/dynamic_realisation/invasions.csv",
+      "sha256": "582416676757c38526d2b88837610a54b9e60f9c56e039f8716b1c4afaacbac2",
+      "bytes": 25391
+    }
+  ],
+  "archive_publication_status": "Prepared local evidence index; not deposited or released"
+}
