@@ -1,0 +1,774 @@
+{
+  "scope": "Postprocessing numerical qualification only; primary producer, states and predictions unchanged.",
+  "original_unresolved": 6,
+  "checked_points": 10,
+  "checked_zero_dial_controls": 4,
+  "qualified": 10,
+  "records": [
+    {
+      "branch_id": "D1_f0",
+      "stage": "D1",
+      "dial": 0.0,
+      "role": "zero_dial_control",
+      "primary_supply_check_status": "passed",
+      "implicit_Sc": -7.776441380953838e-14,
+      "status": "qualified_by_two_steps",
+      "checks": [
+        {
+          "status": "passed",
+          "step": 0.001,
+          "solver_tolerance": 1e-09,
+          "finite_Sc": 0.0,
+          "absolute_error": 7.776441380953838e-14,
+          "relative_error": null,
+          "exact_zero_uses_absolute_tolerance": true,
+          "points": [
+            {
+              "log_input_offset": -0.001,
+              "temperature_k": 281.53482280508206,
+              "root_residual": 7.351379764632335e-11,
+              "maximum_actual_per_cell_residual": 1.520658599041269e-14,
+              "scaled_physical_flow_residual": 7.351379764632335e-11,
+              "support_min_k": 281.53482280508206,
+              "support_max_k": 281.53482280508206,
+              "minimum_positive_stock": 0.00029991827696880264
+            },
+            {
+              "log_input_offset": 0.001,
+              "temperature_k": 281.53482280508206,
+              "root_residual": 7.890930573045716e-11,
+              "maximum_actual_per_cell_residual": 1.520658599041269e-14,
+              "scaled_physical_flow_residual": 7.890930573045716e-11,
+              "support_min_k": 281.53482280508206,
+              "support_max_k": 281.53482280508206,
+              "minimum_positive_stock": 0.0003024699574309057
+            }
+          ]
+        },
+        {
+          "status": "passed",
+          "step": 0.0003,
+          "solver_tolerance": 1e-09,
+          "finite_Sc": 0.0,
+          "absolute_error": 7.776441380953838e-14,
+          "relative_error": null,
+          "exact_zero_uses_absolute_tolerance": true,
+          "points": [
+            {
+              "log_input_offset": -0.0003,
+              "temperature_k": 281.53482280508206,
+              "root_residual": 7.351379764632335e-11,
+              "maximum_actual_per_cell_residual": 1.520658599041269e-14,
+              "scaled_physical_flow_residual": 7.351379764632335e-11,
+              "support_min_k": 281.53482280508206,
+              "support_max_k": 281.53482280508206,
+              "minimum_positive_stock": 0.0003008107846813283
+            },
+            {
+              "log_input_offset": 0.0003,
+              "temperature_k": 281.53482280508206,
+              "root_residual": 7.351379764632334e-11,
+              "maximum_actual_per_cell_residual": 1.520658599041269e-14,
+              "scaled_physical_flow_residual": 7.351379764632334e-11,
+              "support_min_k": 281.53482280508206,
+              "support_max_k": 281.53482280508206,
+              "minimum_positive_stock": 0.00030157628870385776
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "branch_id": "D1_f0",
+      "stage": "D1",
+      "dial": 0.0003,
+      "role": "previously_unresolved_raw_supply_check",
+      "primary_supply_check_status": "unresolved",
+      "implicit_Sc": -0.0005806167674479767,
+      "status": "qualified_by_two_steps",
+      "checks": [
+        {
+          "status": "passed",
+          "step": 0.001,
+          "solver_tolerance": 1e-09,
+          "finite_Sc": -0.000580619143875083,
+          "absolute_error": 2.3764271062055517e-09,
+          "relative_error": 4.09293571842718e-06,
+          "exact_zero_uses_absolute_tolerance": false,
+          "points": [
+            {
+              "log_input_offset": -0.001,
+              "temperature_k": 281.5348339340624,
+              "root_residual": 1.1465469129411004e-10,
+              "maximum_actual_per_cell_residual": 2.4710702234420623e-14,
+              "scaled_physical_flow_residual": 1.1465469129411004e-10,
+              "support_min_k": 281.5348339340624,
+              "support_max_k": 281.5348339340624,
+              "minimum_positive_stock": 0.00029991838556566125
+            },
+            {
+              "log_input_offset": 0.001,
+              "temperature_k": 281.53483277282413,
+              "root_residual": 1.7467977141114967e-10,
+              "maximum_actual_per_cell_residual": 3.611564172723014e-14,
+              "scaled_physical_flow_residual": 1.7467977141114967e-10,
+              "support_min_k": 281.53483277282413,
+              "support_max_k": 281.53483277282413,
+              "minimum_positive_stock": 0.00030247005403192894
+            }
+          ]
+        },
+        {
+          "status": "passed",
+          "step": 0.0003,
+          "solver_tolerance": 1e-09,
+          "finite_Sc": -0.00058061696487736,
+          "absolute_error": 1.9742938328019127e-10,
+          "relative_error": 3.40033899034583e-07,
+          "exact_zero_uses_absolute_tolerance": false,
+          "points": [
+            {
+              "log_input_offset": -0.0003,
+              "temperature_k": 281.53483352677347,
+              "root_residual": 1.4500445583060885e-10,
+              "maximum_actual_per_cell_residual": 3.041317198082538e-14,
+              "scaled_physical_flow_residual": 1.4500445583060885e-10,
+              "support_min_k": 281.53483352677347,
+              "support_max_k": 281.53483352677347,
+              "minimum_positive_stock": 0.00030081088905386854
+            },
+            {
+              "log_input_offset": 0.0003,
+              "temperature_k": 281.5348331784033,
+              "root_residual": 1.5039996453243473e-10,
+              "maximum_actual_per_cell_residual": 3.041317198082538e-14,
+              "scaled_physical_flow_residual": 1.5039996453243473e-10,
+              "support_min_k": 281.5348331784033,
+              "support_max_k": 281.5348331784033,
+              "minimum_positive_stock": 0.0003015763894776718
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "branch_id": "D1_f0.5",
+      "stage": "D1",
+      "dial": 0.0,
+      "role": "zero_dial_control",
+      "primary_supply_check_status": "passed",
+      "implicit_Sc": -8.024279192796893e-14,
+      "status": "qualified_by_two_steps",
+      "checks": [
+        {
+          "status": "passed",
+          "step": 0.001,
+          "solver_tolerance": 1e-09,
+          "finite_Sc": 0.0,
+          "absolute_error": 8.024279192796893e-14,
+          "relative_error": null,
+          "exact_zero_uses_absolute_tolerance": true,
+          "points": [
+            {
+              "log_input_offset": -0.001,
+              "temperature_k": 281.53482280508206,
+              "root_residual": 7.351379764632335e-11,
+              "maximum_actual_per_cell_residual": 1.520658599041269e-14,
+              "scaled_physical_flow_residual": 7.351379764632335e-11,
+              "support_min_k": 281.53482280508206,
+              "support_max_k": 281.53482280508206,
+              "minimum_positive_stock": 0.0003389681166940093
+            },
+            {
+              "log_input_offset": 0.001,
+              "temperature_k": 281.53482280508206,
+              "root_residual": 7.890930573045716e-11,
+              "maximum_actual_per_cell_residual": 1.520658599041269e-14,
+              "scaled_physical_flow_residual": 7.890930573045716e-11,
+              "support_min_k": 281.53482280508206,
+              "support_max_k": 281.53482280508206,
+              "minimum_positive_stock": 0.0003376778482626566
+            }
+          ]
+        },
+        {
+          "status": "passed",
+          "step": 0.0003,
+          "solver_tolerance": 1e-09,
+          "finite_Sc": 0.0,
+          "absolute_error": 8.024279192796893e-14,
+          "relative_error": null,
+          "exact_zero_uses_absolute_tolerance": true,
+          "points": [
+            {
+              "log_input_offset": -0.0003,
+              "temperature_k": 281.53482280508206,
+              "root_residual": 7.890930573045718e-11,
+              "maximum_actual_per_cell_residual": 1.520658599041269e-14,
+              "scaled_physical_flow_residual": 7.890930573045718e-11,
+              "support_min_k": 281.53482280508206,
+              "support_max_k": 281.53482280508206,
+              "minimum_positive_stock": 0.00033851681624972815
+            },
+            {
+              "log_input_offset": 0.0003,
+              "temperature_k": 281.53482280508206,
+              "root_residual": 7.890930573045716e-11,
+              "maximum_actual_per_cell_residual": 1.520658599041269e-14,
+              "scaled_physical_flow_residual": 7.890930573045716e-11,
+              "support_min_k": 281.53482280508206,
+              "support_max_k": 281.53482280508206,
+              "minimum_positive_stock": 0.00033812973577902956
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "branch_id": "D1_f0.5",
+      "stage": "D1",
+      "dial": 1.0,
+      "role": "previously_unresolved_raw_supply_check",
+      "primary_supply_check_status": "unresolved",
+      "implicit_Sc": -1.8777433910795727,
+      "status": "qualified_by_two_steps",
+      "checks": [
+        {
+          "status": "passed",
+          "step": 0.001,
+          "solver_tolerance": 1e-09,
+          "finite_Sc": -1.8777504835725267,
+          "absolute_error": 7.092492954052787e-06,
+          "relative_error": 3.7771364222323763e-06,
+          "exact_zero_uses_absolute_tolerance": false,
+          "points": [
+            {
+              "log_input_offset": -0.001,
+              "temperature_k": 281.2865895911015,
+              "root_residual": 1.1202744785082777e-10,
+              "maximum_actual_per_cell_residual": 2.4710702234420623e-14,
+              "scaled_physical_flow_residual": 1.1202744785082777e-10,
+              "support_min_k": 281.2865895911015,
+              "support_max_k": 281.2865895911015,
+              "minimum_positive_stock": 0.00034312089937936854
+            },
+            {
+              "log_input_offset": 0.001,
+              "temperature_k": 281.2828340901344,
+              "root_residual": 3.1432021852497036e-11,
+              "maximum_actual_per_cell_residual": 5.702469746404759e-15,
+              "scaled_physical_flow_residual": 3.1432021852497036e-11,
+              "support_min_k": 281.2828340901344,
+              "support_max_k": 281.2828340901344,
+              "minimum_positive_stock": 0.00034189305496146795
+            }
+          ]
+        },
+        {
+          "status": "passed",
+          "step": 0.0003,
+          "solver_tolerance": 1e-09,
+          "finite_Sc": -1.8777440288886285,
+          "absolute_error": 6.378090557923599e-07,
+          "relative_error": 3.3966784749308254e-07,
+          "exact_zero_uses_absolute_tolerance": false,
+          "points": [
+            {
+              "log_input_offset": -0.0003,
+              "temperature_k": 281.2852724345355,
+              "root_residual": 4.585188693595713e-11,
+              "maximum_actual_per_cell_residual": 1.1404939492809518e-14,
+              "scaled_physical_flow_residual": 4.585188693595713e-11,
+              "support_min_k": 281.2852724345355,
+              "support_max_k": 281.2852724345355,
+              "minimum_positive_stock": 0.00034269149517143527
+            },
+            {
+              "log_input_offset": 0.0003,
+              "temperature_k": 281.28414578811817,
+              "root_residual": 4.781045289452616e-11,
+              "maximum_actual_per_cell_residual": 1.7107409239214277e-14,
+              "scaled_physical_flow_residual": 4.781045289452616e-11,
+              "support_min_k": 281.28414578811817,
+              "support_max_k": 281.28414578811817,
+              "minimum_positive_stock": 0.0003423231418415657
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "branch_id": "D2_d0.0001",
+      "stage": "D2",
+      "dial": 0.0,
+      "role": "zero_dial_control",
+      "primary_supply_check_status": "passed",
+      "implicit_Sc": -8.186513840401486e-14,
+      "status": "qualified_by_two_steps",
+      "checks": [
+        {
+          "status": "passed",
+          "step": 0.001,
+          "solver_tolerance": 1e-09,
+          "finite_Sc": 0.0,
+          "absolute_error": 8.186513840401486e-14,
+          "relative_error": null,
+          "exact_zero_uses_absolute_tolerance": true,
+          "points": [
+            {
+              "log_input_offset": -0.001,
+              "temperature_k": 281.53482280508206,
+              "root_residual": 7.351379764632335e-11,
+              "maximum_actual_per_cell_residual": 1.520658599041269e-14,
+              "scaled_physical_flow_residual": 7.351379764632335e-11,
+              "support_min_k": 281.53482280508206,
+              "support_max_k": 281.53482280508206,
+              "minimum_positive_stock": 0.0003389681166940093
+            },
+            {
+              "log_input_offset": 0.001,
+              "temperature_k": 281.53482280508206,
+              "root_residual": 7.890930573045716e-11,
+              "maximum_actual_per_cell_residual": 1.520658599041269e-14,
+              "scaled_physical_flow_residual": 7.890930573045716e-11,
+              "support_min_k": 281.53482280508206,
+              "support_max_k": 281.53482280508206,
+              "minimum_positive_stock": 0.0003376778482626566
+            }
+          ]
+        },
+        {
+          "status": "passed",
+          "step": 0.0003,
+          "solver_tolerance": 1e-09,
+          "finite_Sc": 0.0,
+          "absolute_error": 8.186513840401486e-14,
+          "relative_error": null,
+          "exact_zero_uses_absolute_tolerance": true,
+          "points": [
+            {
+              "log_input_offset": -0.0003,
+              "temperature_k": 281.53482280508206,
+              "root_residual": 7.890930573045718e-11,
+              "maximum_actual_per_cell_residual": 1.520658599041269e-14,
+              "scaled_physical_flow_residual": 7.890930573045718e-11,
+              "support_min_k": 281.53482280508206,
+              "support_max_k": 281.53482280508206,
+              "minimum_positive_stock": 0.00033851681624972815
+            },
+            {
+              "log_input_offset": 0.0003,
+              "temperature_k": 281.53482280508206,
+              "root_residual": 7.890930573045716e-11,
+              "maximum_actual_per_cell_residual": 1.520658599041269e-14,
+              "scaled_physical_flow_residual": 7.890930573045716e-11,
+              "support_min_k": 281.53482280508206,
+              "support_max_k": 281.53482280508206,
+              "minimum_positive_stock": 0.00033812973577902956
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "branch_id": "D2_d0.0001",
+      "stage": "D2",
+      "dial": 0.1,
+      "role": "previously_unresolved_raw_supply_check",
+      "primary_supply_check_status": "unresolved",
+      "implicit_Sc": -0.30268444481495815,
+      "status": "qualified_by_two_steps",
+      "checks": [
+        {
+          "status": "passed",
+          "step": 0.001,
+          "solver_tolerance": 1e-09,
+          "finite_Sc": -0.3026845464262351,
+          "absolute_error": 1.0161127694807703e-07,
+          "relative_error": 3.3570035952853686e-07,
+          "exact_zero_uses_absolute_tolerance": false,
+          "points": [
+            {
+              "log_input_offset": -0.001,
+              "temperature_k": 281.537547627118,
+              "root_residual": 1.430452426924714e-10,
+              "maximum_actual_per_cell_residual": 2.7295924716471895e-14,
+              "scaled_physical_flow_residual": 1.430452426924714e-10,
+              "support_min_k": 281.43754762711797,
+              "support_max_k": 281.637547627118,
+              "minimum_positive_stock": 6.419378208682173e-07
+            },
+            {
+              "log_input_offset": 0.001,
+              "temperature_k": 281.53694225802514,
+              "root_residual": 5.0468322117393526e-11,
+              "maximum_actual_per_cell_residual": 1.976409758509129e-14,
+              "scaled_physical_flow_residual": 5.0468322117393526e-11,
+              "support_min_k": 281.4369422580251,
+              "support_max_k": 281.63694225802516,
+              "minimum_positive_stock": 6.513154820311086e-07
+            }
+          ]
+        },
+        {
+          "status": "passed",
+          "step": 0.0003,
+          "solver_tolerance": 1e-09,
+          "finite_Sc": -0.30268445044612236,
+          "absolute_error": 5.631164201602701e-09,
+          "relative_error": 1.8604075293810467e-08,
+          "exact_zero_uses_absolute_tolerance": false,
+          "points": [
+            {
+              "log_input_offset": -0.0003,
+              "temperature_k": 281.5373355888327,
+              "root_residual": 2.0175005105325253e-10,
+              "maximum_actual_per_cell_residual": 4.0298981599656836e-14,
+              "scaled_physical_flow_residual": 2.0175005105325253e-10,
+              "support_min_k": 281.4373355888327,
+              "support_max_k": 281.63733558883274,
+              "minimum_positive_stock": 6.452068002935304e-07
+            },
+            {
+              "log_input_offset": 0.0003,
+              "temperature_k": 281.53715397816245,
+              "root_residual": 8.931771986189479e-11,
+              "maximum_actual_per_cell_residual": 2.5916768731093498e-14,
+              "scaled_physical_flow_residual": 8.931771986189479e-11,
+              "support_min_k": 281.4371539781624,
+              "support_max_k": 281.6371539781625,
+              "minimum_positive_stock": 6.480200782805796e-07
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "branch_id": "D2_d0.0001",
+      "stage": "D2",
+      "dial": 1.0,
+      "role": "previously_unresolved_raw_supply_check",
+      "primary_supply_check_status": "unresolved",
+      "implicit_Sc": -2.9339502611569186,
+      "status": "qualified_by_two_steps",
+      "checks": [
+        {
+          "status": "passed",
+          "step": 0.001,
+          "solver_tolerance": 1e-09,
+          "finite_Sc": -2.9340319865696074,
+          "absolute_error": 8.172541268880451e-05,
+          "relative_error": 2.7855077766921124e-05,
+          "exact_zero_uses_absolute_tolerance": false,
+          "points": [
+            {
+              "log_input_offset": -0.001,
+              "temperature_k": 281.5583812496438,
+              "root_residual": 1.936335717599387e-10,
+              "maximum_actual_per_cell_residual": 3.952237435976905e-14,
+              "scaled_physical_flow_residual": 1.936335717599387e-10,
+              "support_min_k": 280.5583812496438,
+              "support_max_k": 282.5583812496438,
+              "minimum_positive_stock": 6.206269800866059e-08
+            },
+            {
+              "log_input_offset": 0.001,
+              "temperature_k": 281.55251318567065,
+              "root_residual": 1.4712429871765132e-10,
+              "maximum_actual_per_cell_residual": 3.358417195601163e-14,
+              "scaled_physical_flow_residual": 1.4712429871765132e-10,
+              "support_min_k": 280.55251318567065,
+              "support_max_k": 282.55251318567065,
+              "minimum_positive_stock": 6.143389629285459e-08
+            }
+          ]
+        },
+        {
+          "status": "passed",
+          "step": 0.0003,
+          "solver_tolerance": 1e-09,
+          "finite_Sc": -2.9339577651891586,
+          "absolute_error": 7.504032240035485e-06,
+          "relative_error": 2.557654892580383e-06,
+          "exact_zero_uses_absolute_tolerance": false,
+          "points": [
+            {
+              "log_input_offset": -0.0003,
+              "temperature_k": 281.5563260548442,
+              "root_residual": 5.525410923817299e-11,
+              "maximum_actual_per_cell_residual": 2.2437511443544784e-14,
+              "scaled_physical_flow_residual": 5.525410923817299e-11,
+              "support_min_k": 280.5563260548442,
+              "support_max_k": 282.5563260548442,
+              "minimum_positive_stock": 6.184167855917038e-08
+            },
+            {
+              "log_input_offset": 0.0003,
+              "temperature_k": 281.5545656801851,
+              "root_residual": 1.1065135448143948e-10,
+              "maximum_actual_per_cell_residual": 2.4543281090198127e-14,
+              "scaled_physical_flow_residual": 1.1065135448143948e-10,
+              "support_min_k": 280.5545656801851,
+              "support_max_k": 282.5545656801851,
+              "minimum_positive_stock": 6.165304301531715e-08
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "branch_id": "D2_d0.001",
+      "stage": "D2",
+      "dial": 0.0,
+      "role": "zero_dial_control",
+      "primary_supply_check_status": "passed",
+      "implicit_Sc": -8.024279192796893e-14,
+      "status": "qualified_by_two_steps",
+      "checks": [
+        {
+          "status": "passed",
+          "step": 0.001,
+          "solver_tolerance": 1e-09,
+          "finite_Sc": 0.0,
+          "absolute_error": 8.024279192796893e-14,
+          "relative_error": null,
+          "exact_zero_uses_absolute_tolerance": true,
+          "points": [
+            {
+              "log_input_offset": -0.001,
+              "temperature_k": 281.53482280508206,
+              "root_residual": 7.351379764632335e-11,
+              "maximum_actual_per_cell_residual": 1.520658599041269e-14,
+              "scaled_physical_flow_residual": 7.351379764632335e-11,
+              "support_min_k": 281.53482280508206,
+              "support_max_k": 281.53482280508206,
+              "minimum_positive_stock": 0.0003389681166940093
+            },
+            {
+              "log_input_offset": 0.001,
+              "temperature_k": 281.53482280508206,
+              "root_residual": 7.890930573045716e-11,
+              "maximum_actual_per_cell_residual": 1.520658599041269e-14,
+              "scaled_physical_flow_residual": 7.890930573045716e-11,
+              "support_min_k": 281.53482280508206,
+              "support_max_k": 281.53482280508206,
+              "minimum_positive_stock": 0.0003376778482626566
+            }
+          ]
+        },
+        {
+          "status": "passed",
+          "step": 0.0003,
+          "solver_tolerance": 1e-09,
+          "finite_Sc": 0.0,
+          "absolute_error": 8.024279192796893e-14,
+          "relative_error": null,
+          "exact_zero_uses_absolute_tolerance": true,
+          "points": [
+            {
+              "log_input_offset": -0.0003,
+              "temperature_k": 281.53482280508206,
+              "root_residual": 7.890930573045718e-11,
+              "maximum_actual_per_cell_residual": 1.520658599041269e-14,
+              "scaled_physical_flow_residual": 7.890930573045718e-11,
+              "support_min_k": 281.53482280508206,
+              "support_max_k": 281.53482280508206,
+              "minimum_positive_stock": 0.00033851681624972815
+            },
+            {
+              "log_input_offset": 0.0003,
+              "temperature_k": 281.53482280508206,
+              "root_residual": 7.890930573045716e-11,
+              "maximum_actual_per_cell_residual": 1.520658599041269e-14,
+              "scaled_physical_flow_residual": 7.890930573045716e-11,
+              "support_min_k": 281.53482280508206,
+              "support_max_k": 281.53482280508206,
+              "minimum_positive_stock": 0.00033812973577902956
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "branch_id": "D2_d0.001",
+      "stage": "D2",
+      "dial": 0.03,
+      "role": "previously_unresolved_raw_supply_check",
+      "primary_supply_check_status": "unresolved",
+      "implicit_Sc": -0.07909702891973731,
+      "status": "qualified_by_two_steps",
+      "checks": [
+        {
+          "status": "passed",
+          "step": 0.001,
+          "solver_tolerance": 1e-09,
+          "finite_Sc": -0.07909707463227278,
+          "absolute_error": 4.5712535465258775e-08,
+          "relative_error": 5.779298677785353e-07,
+          "exact_zero_uses_absolute_tolerance": false,
+          "points": [
+            {
+              "log_input_offset": -0.001,
+              "temperature_k": 281.53487379915725,
+              "root_residual": 6.473134118039457e-11,
+              "maximum_actual_per_cell_residual": 1.8474805019152996e-14,
+              "scaled_physical_flow_residual": 6.473134118039457e-11,
+              "support_min_k": 281.5048737991573,
+              "support_max_k": 281.5648737991572,
+              "minimum_positive_stock": 2.0566042316714104e-05
+            },
+            {
+              "log_input_offset": 0.001,
+              "temperature_k": 281.534715605008,
+              "root_residual": 1.1268698269554141e-10,
+              "maximum_actual_per_cell_residual": 2.2997449349590818e-14,
+              "scaled_physical_flow_residual": 1.1268698269554141e-10,
+              "support_min_k": 281.504715605008,
+              "support_max_k": 281.56471560500796,
+              "minimum_positive_stock": 2.0380653264607222e-05
+            }
+          ]
+        },
+        {
+          "status": "passed",
+          "step": 0.0003,
+          "solver_tolerance": 1e-09,
+          "finite_Sc": -0.07909703299446846,
+          "absolute_error": 4.074731149716904e-09,
+          "relative_error": 5.151560311894502e-08,
+          "exact_zero_uses_absolute_tolerance": false,
+          "points": [
+            {
+              "log_input_offset": -0.0003,
+              "temperature_k": 281.53481838413796,
+              "root_residual": 5.6664031826628045e-11,
+              "maximum_actual_per_cell_residual": 1.7829975777067242e-14,
+              "scaled_physical_flow_residual": 5.6664031826628045e-11,
+              "support_min_k": 281.504818384138,
+              "support_max_k": 281.56481838413794,
+              "minimum_positive_stock": 2.050092074078149e-05
+            },
+            {
+              "log_input_offset": 0.0003,
+              "temperature_k": 281.53477092591817,
+              "root_residual": 9.568024676814233e-11,
+              "maximum_actual_per_cell_residual": 2.2031963926860687e-14,
+              "scaled_physical_flow_residual": 9.568024676814233e-11,
+              "support_min_k": 281.5047709259182,
+              "support_max_k": 281.56477092591814,
+              "minimum_positive_stock": 2.0445304501527154e-05
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "branch_id": "D2_d0.001",
+      "stage": "D2",
+      "dial": 0.3,
+      "role": "previously_unresolved_raw_supply_check",
+      "primary_supply_check_status": "unresolved",
+      "implicit_Sc": -0.8859065663516202,
+      "status": "qualified_by_two_steps",
+      "checks": [
+        {
+          "status": "passed",
+          "step": 0.001,
+          "solver_tolerance": 1e-09,
+          "finite_Sc": -0.8859067800983667,
+          "absolute_error": 2.1374674641361224e-07,
+          "relative_error": 2.4127459320442063e-07,
+          "exact_zero_uses_absolute_tolerance": false,
+          "points": [
+            {
+              "log_input_offset": -0.001,
+              "temperature_k": 281.5415586527384,
+              "root_residual": 8.231809809120265e-11,
+              "maximum_actual_per_cell_residual": 2.4386525784847457e-14,
+              "scaled_physical_flow_residual": 8.231809809120265e-11,
+              "support_min_k": 281.2415586527384,
+              "support_max_k": 281.8415586527384,
+              "minimum_positive_stock": 2.1854493828882966e-06
+            },
+            {
+              "log_input_offset": 0.001,
+              "temperature_k": 281.5397868391782,
+              "root_residual": 1.0258413940803426e-10,
+              "maximum_actual_per_cell_residual": 2.8459981767092746e-14,
+              "scaled_physical_flow_residual": 1.0258413940803426e-10,
+              "support_min_k": 281.2397868391782,
+              "support_max_k": 281.8397868391782,
+              "minimum_positive_stock": 2.1635077553178e-06
+            }
+          ]
+        },
+        {
+          "status": "passed",
+          "step": 0.0003,
+          "solver_tolerance": 1e-09,
+          "finite_Sc": -0.8859065886213103,
+          "absolute_error": 2.2269690092002747e-08,
+          "relative_error": 2.5137741312511965e-08,
+          "exact_zero_uses_absolute_tolerance": false,
+          "points": [
+            {
+              "log_input_offset": -0.0003,
+              "temperature_k": 281.5409380570931,
+              "root_residual": 1.7738835558932517e-10,
+              "maximum_actual_per_cell_residual": 1.829831723426309e-13,
+              "scaled_physical_flow_residual": 1.7738835558932517e-10,
+              "support_min_k": 281.2409380570931,
+              "support_max_k": 281.8409380570931,
+              "minimum_positive_stock": 2.177736836282384e-06
+            },
+            {
+              "log_input_offset": 0.0003,
+              "temperature_k": 281.54040651313994,
+              "root_residual": 2.529238547659306e-10,
+              "maximum_actual_per_cell_residual": 2.5894748584970317e-13,
+              "scaled_physical_flow_residual": 2.529238547659306e-10,
+              "support_min_k": 281.24040651313993,
+              "support_max_k": 281.84040651313995,
+              "minimum_positive_stock": 2.171154421463823e-06
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "source_sha256": {
+    "src/terra_prisca/haze_world/continuum_experiments.py": "7574c415f51f0d2bac775acb93f3a442a8182b0a1c80bb93c36e0b44c46d441c",
+    "src/terra_prisca/haze_world/continuum_core.py": "5ce1ca453ce9603814534ace5aa74787d69b478d7123ef7b2fc220af51b7d375",
+    "src/terra_prisca/haze_world/dynamic_core.py": "a359406f79444380f5554e6d27b478e2b70d624398cd1f2f853e1e25cbc88be6",
+    "src/terra_prisca/haze_world/dynamic_realisation.py": "974b355ba9d0f50185772e7f680698d0c7011be7126093b276826e434b451327",
+    "src/terra_prisca/haze_world/population_coupling.py": "17a433957e94845595f6d7fd160ffe593c01c4e74550707b0814c95ab67ae663",
+    "src/terra_prisca/haze_world/methane_budget.py": "f2374cfcb658102cc9919c61108379560922fc787c2cd85e089e878a9fa25fa8",
+    "src/terra_prisca/haze_world/darwinian.py": "e965035d5dfbfafcb695dc3738b23d8a445c4c1e7e246ab4688d67b33482f1aa",
+    "src/terra_prisca/haze_world/two_guilds.py": "eff6a9027c5b28d154f03462d926591ebee3408eb2c80ec0df5c38929f169f83",
+    "src/terra_prisca/haze_world/hydrogen_uptake.py": "c48d8231ef726605ab07be22438f3e2fd97f23b310773ac748d1b2bf5c36fafd",
+    "src/terra_prisca/haze_world/woodii1998.py": "b0130f4f8ea15aa64245133f79dc8b35883a414031a8b49262c6657350cad0b0",
+    "models/haze_world/continuum-habitats-spec.md": "4924d02c1a985df199e91aa74fcb907299e5add4e07d524c0cf7c53880c73c21",
+    "models/haze_world/continuum-habitats-methods.md": "cd9ba21c71d37e3c48b5c3778f6604bb539c83637b580c3441490a93617500ba",
+    "models/haze_world/evidence/kotsyurbenko2001_table2.csv": "c95b4be023e5502fbb30eb322621e5612bbbf850f99d1b6669e98b95eb370480",
+    "models/haze_world/evidence/peters1998_chemostat.csv": "b0b00bf03eaeaabf45fb571330773c5158b53b088436aaee942188f8e9498320",
+    "models/haze_response/arney2016/figure4.csv": "c0ef5f3d17ee7c6085ad36247f0f7814726dbbe3273842b01f2c6c4e046856f8",
+    "models/haze_response/arney2016/cases.csv": "e3d77d275052a8875991a751868f857bffc964295bfd47591944d86bc58ab07a",
+    "uv.lock": "02bf429b2ec474f03280ec550d5fd847b573ece24ab9043e0b5998370fd4d2b4",
+    "src/terra_prisca/haze_world/graded_dials.py": "438558c9983f0716e49e5114a3339d17c04a9e43bf2bda969e6bea0dbe445226",
+    "src/terra_prisca/haze_world/graded_acetate.py": "69308af99c85ccf6d7c1964b84d94005c57e600db1bf26a5687d7b9d69e6dbd8",
+    "src/terra_prisca/haze_world/graded_spread.py": "339b721094749b5179ab7a88674fca94df9a15f545fef2747c61d3b6611ce365",
+    "models/haze_world/graded-dial-spec.md": "d6e2de55108b88a0bdbfce02b9bf54afc2856f1cbec8fd580bd6cfcbd8622a25",
+    "models/haze_world/graded-dial-methods.md": "e6d54cbc62c50cb60e5bd5ce9cdc3a845275e5bae6c55635a4ab432d8c3e0df7",
+    "src/terra_prisca/haze_response/arney2016.py": "a1b8b52f4c929a0518a17542fb323588699433b038949b38ee6ad74679cd0da6",
+    "src/terra_prisca/haze_response/__init__.py": "7b856e453d2cb6a2afd973f53aaa6e154270dc03f38203f513eb8a37e62fe781",
+    "src/terra_prisca/haze_response/inventory_mak2023.py": "d507ef818bb2b9886b51c5f0719b68f24e51f29a06379934bb1da4c9af5142c8",
+    "src/terra_prisca/haze_response/extract_eager_nash2023.py": "1960e094842b8fb1787110ae2399a67ae96bbd3bb8052ce32bf08dd5c8465174",
+    "src/terra_prisca/haze_response/extract_arney2016.py": "0baea06f5838779b39fccdb005daccd8861e6529323b4837687d25a58d956a6b",
+    "docs/audits/graded-dial-numerics-2026-11-12.py": "6a1edc7e62ff8364f28d361e8ca3b4989d6323bdc505e40107792fd69559f643"
+  },
+  "input_sha256": {
+    "models/haze_world/figures/graded_dials/manifest.json": "d0a609159e0f211295c15e561495ee9e6344e8a41ce134d7a79bdd347c46183d",
+    "models/haze_world/figures/graded_dials/states.json": "7040b771e1f0bd31952b7795dcaf0989b4885923e1feb6172e5799aef2985200"
+  },
+  "limitation": "Loosening the solver stopping tolerance is explicit. Actual residuals are reported; this is not a new scientific parameter or a substitute for independent physical derivatives."
+}

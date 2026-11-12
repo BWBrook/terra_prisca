@@ -1,0 +1,1935 @@
+{
+  "C54": {
+    "total": 170,
+    "pinned_count": 42,
+    "pinned_finite": 36,
+    "pinned_already_unstable": 6,
+    "pinned_max_abs_Sc": 2.2970875552294528e-10,
+    "pinned_max_finite_tau": 7.079524561115154,
+    "ordinary_count": 122,
+    "ordinary_censored": 113,
+    "ordinary_min_Sc": 0.5896452346392214,
+    "ordinary_min_finite_tau": 331.42605522734783,
+    "excluded_count": 6,
+    "excluded_all_unstable": true,
+    "spatial_finite_count": 9,
+    "spatial_spearman": 1.0,
+    "spatial_loglog_slope": 1.482122610209657,
+    "input_sha256": {
+      "models/haze_world/figures/continuum_habitats/c0_local_gain.csv": "32b69f807619a5e4275a7e4139ad89d8b23c950de4ba9f9403af8e03704b9d8d",
+      "models/haze_world/figures/continuum_habitats/c1_resolved.csv": "40e925e709a73181ade3455a2f6b8b52c989cf02b277899411dab07409eeb9ea"
+    },
+    "limit": "Descriptive committed sample; no universal trade-off theorem, causal ordering or mathematical singularity."
+  },
+  "zero_dial_regularity": [
+    {
+      "fraction": 0.0,
+      "positive_equilibrium": true,
+      "scaled_static_condition": 24708590025.823345,
+      "scaled_static_min_singular": 2.348194419669516e-05,
+      "largest_static_real": -0.00020601947096321146,
+      "critical_lag_yr": 0.14921426010179778,
+      "critical_frequency_yr": 0.05254895107397468,
+      "critical_eigenvalue_residual": 2.4490908216138307e-16,
+      "next_eigenvalue_distance": 0.10509790214794941,
+      "crossing_real_speed_per_tau": 0.0013805695090671009,
+      "backsubstitution_residual": 1.6736056984711922e-12,
+      "regular_simple_transversal": true,
+      "mode": {
+        "status": "damped",
+        "leading": [
+          -0.00020601947096321146,
+          0.05254893927380605
+        ],
+        "complex_pair": [
+          -0.00020601947096321146,
+          0.05254893927380605
+        ],
+        "period_yr": 119.56826139612586,
+        "damping_time_yr": 4853.910144146367,
+        "weak_tau_yr": 0.14921426886698516,
+        "weak_damping_ratio": 0.003920525776738285
+      }
+    },
+    {
+      "fraction": 0.5,
+      "positive_equilibrium": true,
+      "scaled_static_condition": 26836985275.510582,
+      "scaled_static_min_singular": 2.0075598789519914e-05,
+      "largest_static_real": -0.0009260103679429366,
+      "critical_lag_yr": 1.1027600781018485,
+      "critical_frequency_yr": 0.04095161636838997,
+      "critical_eigenvalue_residual": 1.4162037865879925e-15,
+      "next_eigenvalue_distance": 0.08190323273677987,
+      "crossing_real_speed_per_tau": 0.0008378153391523264,
+      "backsubstitution_residual": 3.3666729741158473e-12,
+      "regular_simple_transversal": true,
+      "mode": {
+        "status": "damped",
+        "leading": [
+          -0.0009260103679429366,
+          0.04094346157743097
+        ],
+        "complex_pair": [
+          -0.0009260103679429366,
+          0.04094346157743097
+        ],
+        "period_yr": 153.46004136208722,
+        "damping_time_yr": 1079.9015158128584,
+        "weak_tau_yr": 1.1047823568045283,
+        "weak_damping_ratio": 0.022616806988624918
+      }
+    }
+  ],
+  "source_sha256": {
+    "docs/audits/graded-dial-independent-2026-11-12.py": "2559a81bcb16dc8c0e08edc766a5037f7c2d00fb7db0dc1609c10411f4b54122",
+    "models/haze_world/graded-dial-spec.md": "d6e2de55108b88a0bdbfce02b9bf54afc2856f1cbec8fd580bd6cfcbd8622a25",
+    "models/haze_world/graded-dial-methods.md": "e6d54cbc62c50cb60e5bd5ce9cdc3a845275e5bae6c55635a4ab432d8c3e0df7",
+    "uv.lock": "02bf429b2ec474f03280ec550d5fd847b573ece24ab9043e0b5998370fd4d2b4",
+    "src/terra_prisca/haze_world/continuum_characteristic.py": "eff3d013497894d2cf13385f00761e2bdf3a4e9bf7c177ae8d0a2217113f7139",
+    "src/terra_prisca/haze_world/population_coupling.py": "17a433957e94845595f6d7fd160ffe593c01c4e74550707b0814c95ab67ae663",
+    "src/terra_prisca/haze_world/dynamic_core.py": "a359406f79444380f5554e6d27b478e2b70d624398cd1f2f853e1e25cbc88be6",
+    "src/terra_prisca/haze_world/two_guilds.py": "eff6a9027c5b28d154f03462d926591ebee3408eb2c80ec0df5c38929f169f83",
+    "src/terra_prisca/haze_world/hydrogen_uptake.py": "c48d8231ef726605ab07be22438f3e2fd97f23b310773ac748d1b2bf5c36fafd",
+    "src/terra_prisca/haze_world/woodii1998.py": "b0130f4f8ea15aa64245133f79dc8b35883a414031a8b49262c6657350cad0b0",
+    "src/terra_prisca/haze_world/methane_budget.py": "f2374cfcb658102cc9919c61108379560922fc787c2cd85e089e878a9fa25fa8",
+    "src/terra_prisca/haze_world/darwinian.py": "e965035d5dfbfafcb695dc3738b23d8a445c4c1e7e246ab4688d67b33482f1aa",
+    "src/terra_prisca/haze_world/continuum_core.py": "5ce1ca453ce9603814534ace5aa74787d69b478d7123ef7b2fc220af51b7d375",
+    "models/haze_response/arney2016/cases.csv": "e3d77d275052a8875991a751868f857bffc964295bfd47591944d86bc58ab07a",
+    "models/haze_response/arney2016/figure4.csv": "c0ef5f3d17ee7c6085ad36247f0f7814726dbbe3273842b01f2c6c4e046856f8"
+  },
+  "states_sha256": "7040b771e1f0bd31952b7795dcaf0989b4885923e1feb6172e5799aef2985200",
+  "grid_recount": {
+    "branches": [
+      {
+        "branch_id": "D1_f0",
+        "finite_pairs": [
+          {
+            "lower_dial": 0.0,
+            "upper_dial": 0.0001,
+            "tau_ratio": 1.0635100706740217
+          },
+          {
+            "lower_dial": 0.0001,
+            "upper_dial": 0.0003,
+            "tau_ratio": 1.1194376443093652
+          },
+          {
+            "lower_dial": 0.0003,
+            "upper_dial": 0.001,
+            "tau_ratio": 1.373464889978805
+          },
+          {
+            "lower_dial": 0.001,
+            "upper_dial": 0.003,
+            "tau_ratio": 1.7772667883545927
+          },
+          {
+            "lower_dial": 0.003,
+            "upper_dial": 0.01,
+            "tau_ratio": 2.5364552424320475
+          },
+          {
+            "lower_dial": 0.01,
+            "upper_dial": 0.03,
+            "tau_ratio": 2.785572035679411
+          },
+          {
+            "lower_dial": 0.03,
+            "upper_dial": 0.1,
+            "tau_ratio": 4.233310143215789
+          }
+        ],
+        "first_censored_transition_bounds": [
+          {
+            "lower_dial": 0.1,
+            "upper_dial": 0.3,
+            "tau_ratio_lower_bound": 771.0033832134267
+          }
+        ],
+        "loglog_fit": {
+          "count": 2,
+          "slope": 1.2004734584729901,
+          "R_squared": 1.0,
+          "residuals": [
+            -2.220446049250313e-16,
+            -8.881784197001252e-16
+          ],
+          "linearity_status": "No prospective residual tolerance; descriptive only",
+          "residual_degrees_of_freedom": 0,
+          "slope_in_band": true
+        },
+        "weak_mode_eligible": 8,
+        "weak_mode_evaluated": 8,
+        "weak_ratio_min": 0.7915901812100625,
+        "weak_ratio_max": 1.000000056773046,
+        "weak_factor_two_failures": 0
+      },
+      {
+        "branch_id": "D1_f0.5",
+        "finite_pairs": [
+          {
+            "lower_dial": 0.0,
+            "upper_dial": 0.0001,
+            "tau_ratio": 1.0086062129120819
+          },
+          {
+            "lower_dial": 0.0001,
+            "upper_dial": 0.0003,
+            "tau_ratio": 1.0170673320947985
+          },
+          {
+            "lower_dial": 0.0003,
+            "upper_dial": 0.001,
+            "tau_ratio": 1.0587523852907639
+          },
+          {
+            "lower_dial": 0.001,
+            "upper_dial": 0.003,
+            "tau_ratio": 1.1587227856673703
+          },
+          {
+            "lower_dial": 0.003,
+            "upper_dial": 0.01,
+            "tau_ratio": 1.4818294818565534
+          },
+          {
+            "lower_dial": 0.01,
+            "upper_dial": 0.03,
+            "tau_ratio": 1.954527863292093
+          },
+          {
+            "lower_dial": 0.03,
+            "upper_dial": 0.1,
+            "tau_ratio": 3.176720286855075
+          }
+        ],
+        "first_censored_transition_bounds": [
+          {
+            "lower_dial": 0.1,
+            "upper_dial": 0.3,
+            "tau_ratio_lower_bound": 783.1673936735599
+          }
+        ],
+        "loglog_fit": {
+          "count": 3,
+          "slope": 0.7965684275930018,
+          "R_squared": 0.9841314070693906,
+          "residuals": [
+            0.07019085086751287,
+            -0.1343145160003496,
+            0.0641236651328354
+          ],
+          "linearity_status": "No prospective residual tolerance; descriptive only",
+          "residual_degrees_of_freedom": 1,
+          "slope_in_band": false
+        },
+        "weak_mode_eligible": 8,
+        "weak_mode_evaluated": 8,
+        "weak_ratio_min": 0.8685298752604076,
+        "weak_ratio_max": 1.0018338337965287,
+        "weak_factor_two_failures": 0
+      },
+      {
+        "branch_id": "D2_d0.0001",
+        "finite_pairs": [
+          {
+            "lower_dial": 0.0,
+            "upper_dial": 0.003,
+            "tau_ratio": 2.4542831013976
+          },
+          {
+            "lower_dial": 0.003,
+            "upper_dial": 0.01,
+            "tau_ratio": 3.771449070769081
+          },
+          {
+            "lower_dial": 0.01,
+            "upper_dial": 0.03,
+            "tau_ratio": 3.7704458378486767
+          },
+          {
+            "lower_dial": 0.03,
+            "upper_dial": 0.1,
+            "tau_ratio": 3.0119835456948
+          },
+          {
+            "lower_dial": 0.1,
+            "upper_dial": 0.3,
+            "tau_ratio": 2.5508010339687552
+          },
+          {
+            "lower_dial": 0.3,
+            "upper_dial": 1.0,
+            "tau_ratio": 3.2041763798678256
+          }
+        ],
+        "first_censored_transition_bounds": [],
+        "loglog_fit": {
+          "count": 6,
+          "slope": 0.9851975119229504,
+          "R_squared": 0.9977303463829538,
+          "residuals": [
+            -0.08994667466823303,
+            -0.03768373435104477,
+            0.17359158011158105,
+            0.07778663126234697,
+            -0.0646053539178526,
+            -0.05914244843679839
+          ],
+          "linearity_status": "No prospective residual tolerance; descriptive only",
+          "residual_degrees_of_freedom": 4,
+          "slope_in_band": false
+        },
+        "weak_mode_eligible": 4,
+        "weak_mode_evaluated": 4,
+        "weak_ratio_min": 1.000008487442222,
+        "weak_ratio_max": 1.0278766748962482,
+        "weak_factor_two_failures": 0
+      },
+      {
+        "branch_id": "D2_d0.001",
+        "finite_pairs": [
+          {
+            "lower_dial": 0.0,
+            "upper_dial": 0.003,
+            "tau_ratio": 1.3104620698181066
+          },
+          {
+            "lower_dial": 0.003,
+            "upper_dial": 0.01,
+            "tau_ratio": 2.406467662709891
+          },
+          {
+            "lower_dial": 0.01,
+            "upper_dial": 0.03,
+            "tau_ratio": 3.8264712238673178
+          },
+          {
+            "lower_dial": 0.03,
+            "upper_dial": 0.1,
+            "tau_ratio": 4.111327293454357
+          },
+          {
+            "lower_dial": 0.1,
+            "upper_dial": 0.3,
+            "tau_ratio": 3.114066537175629
+          },
+          {
+            "lower_dial": 0.3,
+            "upper_dial": 1.0,
+            "tau_ratio": 4.943589398041211
+          }
+        ],
+        "first_censored_transition_bounds": [],
+        "loglog_fit": {
+          "count": 5,
+          "slope": 1.108485464567842,
+          "R_squared": 0.9975569465755878,
+          "residuals": [
+            0.06495045551396372,
+            -0.017401948407286927,
+            -0.03520542227519474,
+            -0.14575672422093788,
+            0.13341363938945605
+          ],
+          "linearity_status": "No prospective residual tolerance; descriptive only",
+          "residual_degrees_of_freedom": 3,
+          "slope_in_band": true
+        },
+        "weak_mode_eligible": 5,
+        "weak_mode_evaluated": 5,
+        "weak_ratio_min": 0.9758522684896559,
+        "weak_ratio_max": 1.0018338337965287,
+        "weak_factor_two_failures": 0
+      }
+    ],
+    "records": 34,
+    "prescribed_records": 32,
+    "interpretation": "Finite adjacent ratios, censor-transition lower bounds and continuous mathematical behavior are separate estimands."
+  },
+  "selected": [
+    {
+      "stage": "D1",
+      "fraction": 0.0,
+      "kappa": 0.0,
+      "sigma_k": 0.0,
+      "dispersal_yr": 0.001,
+      "branch_id": "D1_f0",
+      "dial": 0.0,
+      "kind": "prescribed",
+      "independent_slopes": {
+        "Sc": -8.396336056154154e-14,
+        "S0": -41.164873414029415,
+        "G_loc": 2.039684653394949e-15,
+        "jacobian_condition": 24708590025.823345,
+        "frozen_condition": 18241899141.265614,
+        "frozen_leading_real_yr": -0.00036851838725058454
+      },
+      "independent_mode": {
+        "status": "damped",
+        "leading": [
+          -0.00020601947096321146,
+          0.05254893927380605
+        ],
+        "complex_pair": [
+          -0.00020601947096321146,
+          0.05254893927380605
+        ],
+        "period_yr": 119.56826139612586,
+        "damping_time_yr": 4853.910144146367,
+        "weak_tau_yr": 0.14921426886698516,
+        "weak_damping_ratio": 0.003920525776738285
+      },
+      "independent_lag": {
+        "status": "crossing_found",
+        "critical_lag_yr": 0.14921426010179778,
+        "crossings": [
+          {
+            "tau_yr": 0.14921426010179778,
+            "omega_yr": 0.05254895107397468,
+            "period_yr": 119.56823454638638,
+            "smallest_singular": 4.4408895831364655e-19,
+            "backsubstitution_residual": 1.6736056984711922e-12,
+            "local_pole_distance": 0.05255846515048748,
+            "accepted": true,
+            "crossing_direction": "loss",
+            "real_speed_per_tau": 0.0013805695090671009
+          }
+        ],
+        "sink_edge_yr": -0.0010000000000113267,
+        "frequency_bounds": [
+          1e-06,
+          10.0
+        ],
+        "frequency_points": 721,
+        "limitation": "Imaginary-axis crossings from finite frequency bracketing; initial stability and crossing direction require separate checks."
+      },
+      "frequency_refinement": {
+        "status": "crossing_found",
+        "critical_lag_yr": 0.14921426010180738,
+        "crossings": [
+          {
+            "tau_yr": 0.14921426010180738,
+            "omega_yr": 0.05254895107397402,
+            "period_yr": 119.56823454638787,
+            "smallest_singular": 9.694600291795188e-19,
+            "backsubstitution_residual": 3.5675351561792468e-12,
+            "local_pole_distance": 0.05255846515048682,
+            "accepted": true,
+            "crossing_direction": "loss",
+            "real_speed_per_tau": 0.001380569509066134
+          }
+        ],
+        "sink_edge_yr": -0.0010000000000113267,
+        "frequency_bounds": [
+          1e-06,
+          10.0
+        ],
+        "frequency_points": 1441,
+        "limitation": "Imaginary-axis crossings from finite frequency bracketing; initial stability and crossing direction require separate checks."
+      },
+      "comparison": {
+        "Sc_absolute_error": -6.1989467520031546e-15,
+        "S0_relative_error": -3.0633051650852394e-11,
+        "finite_tau_relative_error": -1.9523795913301e-09,
+        "frequency_refinement_relative_error": 6.439293542825908e-14,
+        "censor_classification_agrees": true,
+        "complex_real_absolute_error": -3.85829606111554e-15,
+        "complex_frequency_relative_error": 9.316991622654314e-13
+      },
+      "reported_primary": {
+        "Sc": -7.776441380953838e-14,
+        "S0": -41.16487341529042,
+        "critical_lag_yr": 0.14921426039312066,
+        "critical_lag_status": "finite_crossing"
+      }
+    },
+    {
+      "stage": "D1",
+      "fraction": 0.0,
+      "kappa": 0.01,
+      "sigma_k": 0.0,
+      "dispersal_yr": 0.001,
+      "branch_id": "D1_f0",
+      "dial": 0.01,
+      "kind": "prescribed",
+      "independent_slopes": {
+        "Sc": -0.019348622373963724,
+        "S0": -41.17444699183651,
+        "G_loc": 0.00046991820868413594,
+        "jacobian_condition": 24702436388.99103,
+        "frozen_condition": 18243753119.06376,
+        "frozen_leading_real_yr": -0.0003684536908047514
+      },
+      "independent_mode": {
+        "status": "damped",
+        "leading": [
+          -0.001517775215121669,
+          0.0525940367110999
+        ],
+        "complex_pair": [
+          -0.001517775215121669,
+          0.0525940367110999
+        ],
+        "period_yr": 119.46573604329421,
+        "damping_time_yr": 658.859091937298,
+        "weak_tau_yr": 1.0973987014114097,
+        "weak_damping_ratio": 0.028858313794372523
+      },
+      "independent_lag": {
+        "status": "crossing_found",
+        "critical_lag_yr": 1.0998899519432523,
+        "crossings": [
+          {
+            "tau_yr": 1.0998899519432523,
+            "omega_yr": 0.0525371191727562,
+            "period_yr": 119.59516254629,
+            "smallest_singular": 1.8182785578477794e-18,
+            "backsubstitution_residual": 3.981576164199481e-13,
+            "local_pole_distance": 0.052662550180933826,
+            "accepted": true,
+            "crossing_direction": "loss",
+            "real_speed_per_tau": 0.0013671462034290716
+          }
+        ],
+        "sink_edge_yr": -0.0036325336319140335,
+        "frequency_bounds": [
+          1e-06,
+          10.0
+        ],
+        "frequency_points": 721,
+        "limitation": "Imaginary-axis crossings from finite frequency bracketing; initial stability and crossing direction require separate checks."
+      },
+      "frequency_refinement": {
+        "status": "crossing_found",
+        "critical_lag_yr": 1.0998899519432683,
+        "crossings": [
+          {
+            "tau_yr": 1.0998899519432683,
+            "omega_yr": 0.052537119172756,
+            "period_yr": 119.59516254629045,
+            "smallest_singular": 3.574425636306721e-18,
+            "backsubstitution_residual": 1.4559755800951312e-12,
+            "local_pole_distance": 0.052662550180933625,
+            "accepted": true,
+            "crossing_direction": "loss",
+            "real_speed_per_tau": 0.0013671462034330446
+          }
+        ],
+        "sink_edge_yr": -0.0036325336319140335,
+        "frequency_bounds": [
+          1e-06,
+          10.0
+        ],
+        "frequency_points": 1441,
+        "limitation": "Imaginary-axis crossings from finite frequency bracketing; initial stability and crossing direction require separate checks."
+      },
+      "comparison": {
+        "Sc_absolute_error": 2.9581323501837176e-11,
+        "S0_relative_error": 3.034239526300553e-11,
+        "finite_tau_relative_error": -1.3295547995895163e-09,
+        "frequency_refinement_relative_error": 1.4432899320127035e-14,
+        "censor_classification_agrees": true,
+        "complex_real_absolute_error": 2.015888324324866e-12,
+        "complex_frequency_relative_error": -9.933165401321276e-13
+      },
+      "reported_primary": {
+        "Sc": -0.019348622403545047,
+        "S0": -41.17444699058718,
+        "critical_lag_yr": 1.0998899534056163,
+        "critical_lag_status": "finite_crossing"
+      }
+    },
+    {
+      "stage": "D1",
+      "fraction": 0.0,
+      "kappa": 1.0,
+      "sigma_k": 0.0,
+      "dispersal_yr": 0.001,
+      "branch_id": "D1_f0",
+      "dial": 1.0,
+      "kind": "prescribed",
+      "independent_slopes": {
+        "Sc": -1.8829114517200543,
+        "S0": -42.1012158192745,
+        "G_loc": 0.04472344598794299,
+        "jacobian_condition": 24131939721.84971,
+        "frozen_condition": 18422230567.964844,
+        "frozen_leading_real_yr": -0.0003623103331056487
+      },
+      "independent_mode": {
+        "status": "no_complex_pair",
+        "leading": [
+          -0.011170123784406377,
+          0.0
+        ]
+      },
+      "independent_lag": {
+        "status": "not_detected_through_10000",
+        "critical_lag_yr": null,
+        "crossings": [],
+        "sink_edge_yr": -0.46062055980779903,
+        "frequency_bounds": [
+          1e-06,
+          10.0
+        ],
+        "frequency_points": 721,
+        "limitation": "Imaginary-axis crossings from finite frequency bracketing; initial stability and crossing direction require separate checks."
+      },
+      "frequency_refinement": {
+        "status": "not_detected_through_10000",
+        "critical_lag_yr": null,
+        "crossings": [],
+        "sink_edge_yr": -0.46062055980779903,
+        "frequency_bounds": [
+          1e-06,
+          10.0
+        ],
+        "frequency_points": 1441,
+        "limitation": "Imaginary-axis crossings from finite frequency bracketing; initial stability and crossing direction require separate checks."
+      },
+      "comparison": {
+        "Sc_absolute_error": 1.0821787910231251e-11,
+        "S0_relative_error": 3.847966389969315e-11,
+        "finite_tau_relative_error": null,
+        "frequency_refinement_relative_error": null,
+        "censor_classification_agrees": true
+      },
+      "reported_primary": {
+        "Sc": -1.882911451730876,
+        "S0": -42.101215817654456,
+        "critical_lag_yr": null,
+        "critical_lag_status": "not_detected_through_10000"
+      }
+    },
+    {
+      "stage": "D1",
+      "fraction": 0.5,
+      "kappa": 0.0,
+      "sigma_k": 0.0,
+      "dispersal_yr": 0.001,
+      "branch_id": "D1_f0.5",
+      "dial": 0.0,
+      "kind": "prescribed",
+      "independent_slopes": {
+        "Sc": -8.443869478102066e-14,
+        "S0": -51.33082008060048,
+        "G_loc": 1.6449901764365669e-15,
+        "jacobian_condition": 26836985275.510582,
+        "frozen_condition": 16674186122.208769,
+        "frozen_leading_real_yr": -0.0002955157979420339
+      },
+      "independent_mode": {
+        "status": "damped",
+        "leading": [
+          -0.0009260103679429366,
+          0.04094346157743097
+        ],
+        "complex_pair": [
+          -0.0009260103679429366,
+          0.04094346157743097
+        ],
+        "period_yr": 153.46004136208722,
+        "damping_time_yr": 1079.9015158128584,
+        "weak_tau_yr": 1.1047823568045283,
+        "weak_damping_ratio": 0.022616806988624918
+      },
+      "independent_lag": {
+        "status": "crossing_found",
+        "critical_lag_yr": 1.1027600781018485,
+        "crossings": [
+          {
+            "tau_yr": 1.1027600781018485,
+            "omega_yr": 0.04095161636838997,
+            "period_yr": 153.42948250583578,
+            "smallest_singular": 1.2913282498725286e-17,
+            "backsubstitution_residual": 3.3666729741158473e-12,
+            "local_pole_distance": 0.04096382407910424,
+            "accepted": true,
+            "crossing_direction": "loss",
+            "real_speed_per_tau": 0.0008378153391523264
+          }
+        ],
+        "sink_edge_yr": -0.00100000000000721,
+        "frequency_bounds": [
+          1e-06,
+          10.0
+        ],
+        "frequency_points": 721,
+        "limitation": "Imaginary-axis crossings from finite frequency bracketing; initial stability and crossing direction require separate checks."
+      },
+      "frequency_refinement": {
+        "status": "crossing_found",
+        "critical_lag_yr": 1.102760078099981,
+        "crossings": [
+          {
+            "tau_yr": 1.102760078099981,
+            "omega_yr": 0.04095161636842556,
+            "period_yr": 153.42948250570242,
+            "smallest_singular": 4.3299188332721474e-17,
+            "backsubstitution_residual": 3.017455508364723e-12,
+            "local_pole_distance": 0.04096382407913981,
+            "accepted": true,
+            "crossing_direction": "loss",
+            "real_speed_per_tau": 0.0008378153388564927
+          }
+        ],
+        "sink_edge_yr": -0.00100000000000721,
+        "frequency_bounds": [
+          1e-06,
+          10.0
+        ],
+        "frequency_points": 1441,
+        "limitation": "Imaginary-axis crossings from finite frequency bracketing; initial stability and crossing direction require separate checks."
+      },
+      "comparison": {
+        "Sc_absolute_error": -4.195902853051732e-15,
+        "S0_relative_error": 4.31061852879111e-11,
+        "finite_tau_relative_error": -1.5263013075639265e-11,
+        "frequency_refinement_relative_error": -1.6935342017632138e-12,
+        "censor_classification_agrees": true,
+        "complex_real_absolute_error": 7.520785209880199e-15,
+        "complex_frequency_relative_error": 2.6683100173841012e-12
+      },
+      "reported_primary": {
+        "Sc": -8.024279192796893e-14,
+        "S0": -51.3308200783878,
+        "critical_lag_yr": 1.10276007811868,
+        "critical_lag_status": "finite_crossing"
+      }
+    },
+    {
+      "stage": "D1",
+      "fraction": 0.5,
+      "kappa": 0.01,
+      "sigma_k": 0.0,
+      "dispersal_yr": 0.001,
+      "branch_id": "D1_f0.5",
+      "dial": 0.01,
+      "kind": "prescribed",
+      "independent_slopes": {
+        "Sc": -0.019348402976719897,
+        "S0": -51.30140769231513,
+        "G_loc": 0.0003771515022114736,
+        "jacobian_condition": 26833401376.354572,
+        "frozen_condition": 16671056244.069696,
+        "frozen_leading_real_yr": -0.00029570635496409676
+      },
+      "independent_mode": {
+        "status": "damped",
+        "leading": [
+          -0.0017255445714078874,
+          0.040972977457218195
+        ],
+        "complex_pair": [
+          -0.0017255445714078874,
+          0.040972977457218195
+        ],
+        "period_yr": 153.34949269284016,
+        "damping_time_yr": 579.5271919195288,
+        "weak_tau_yr": 2.0557065889830457,
+        "weak_damping_ratio": 0.04211420986452862
+      },
+      "independent_lag": {
+        "status": "crossing_found",
+        "critical_lag_yr": 2.0564803301242875,
+        "crossings": [
+          {
+            "tau_yr": 2.0564803301242875,
+            "omega_yr": 0.04093779364014855,
+            "period_yr": 153.48128827874922,
+            "smallest_singular": 4.334228432350562e-18,
+            "backsubstitution_residual": 2.3493197289220258e-12,
+            "local_pole_distance": 0.04102007663052423,
+            "accepted": true,
+            "crossing_direction": "loss",
+            "real_speed_per_tau": 0.0008273954567404831
+          }
+        ],
+        "sink_edge_yr": -0.0025968709345466686,
+        "frequency_bounds": [
+          1e-06,
+          10.0
+        ],
+        "frequency_points": 721,
+        "limitation": "Imaginary-axis crossings from finite frequency bracketing; initial stability and crossing direction require separate checks."
+      },
+      "frequency_refinement": {
+        "status": "crossing_found",
+        "critical_lag_yr": 2.056480330116748,
+        "crossings": [
+          {
+            "tau_yr": 2.056480330116748,
+            "omega_yr": 0.040937793640197846,
+            "period_yr": 153.48128827856442,
+            "smallest_singular": 5.628081729452573e-17,
+            "backsubstitution_residual": 7.305212159399572e-13,
+            "local_pole_distance": 0.04102007663057343,
+            "accepted": true,
+            "crossing_direction": "loss",
+            "real_speed_per_tau": 0.0008273954564898072
+          }
+        ],
+        "sink_edge_yr": -0.0025968709345466686,
+        "frequency_bounds": [
+          1e-06,
+          10.0
+        ],
+        "frequency_points": 1441,
+        "limitation": "Imaginary-axis crossings from finite frequency bracketing; initial stability and crossing direction require separate checks."
+      },
+      "comparison": {
+        "Sc_absolute_error": -1.9136258549989904e-11,
+        "S0_relative_error": -1.2990941655743882e-11,
+        "finite_tau_relative_error": 4.599425285078951e-10,
+        "frequency_refinement_relative_error": -3.6662894942196544e-12,
+        "censor_classification_agrees": true,
+        "complex_real_absolute_error": -7.904002972958235e-13,
+        "complex_frequency_relative_error": -5.395683899678261e-13
+      },
+      "reported_primary": {
+        "Sc": -0.019348402957583638,
+        "S0": -51.301407692981584,
+        "critical_lag_yr": 2.0564803291784246,
+        "critical_lag_status": "finite_crossing"
+      }
+    },
+    {
+      "stage": "D1",
+      "fraction": 0.5,
+      "kappa": 1.0,
+      "sigma_k": 0.0,
+      "dispersal_yr": 0.001,
+      "branch_id": "D1_f0.5",
+      "dial": 1.0,
+      "kind": "prescribed",
+      "independent_slopes": {
+        "Sc": -1.8777433911582317,
+        "S0": -48.558243706985905,
+        "G_loc": 0.03866991982842426,
+        "jacobian_condition": 26462432205.177265,
+        "frozen_condition": 16397090490.803751,
+        "frozen_leading_real_yr": -0.0003146441813007816
+      },
+      "independent_mode": {
+        "status": "no_complex_pair",
+        "leading": [
+          -0.011334901340927274,
+          0.0
+        ]
+      },
+      "independent_lag": {
+        "status": "not_detected_through_10000",
+        "critical_lag_yr": null,
+        "crossings": [],
+        "sink_edge_yr": -0.22007080167599144,
+        "frequency_bounds": [
+          1e-06,
+          10.0
+        ],
+        "frequency_points": 721,
+        "limitation": "Imaginary-axis crossings from finite frequency bracketing; initial stability and crossing direction require separate checks."
+      },
+      "frequency_refinement": {
+        "status": "not_detected_through_10000",
+        "critical_lag_yr": null,
+        "crossings": [],
+        "sink_edge_yr": -0.22007080167599144,
+        "frequency_bounds": [
+          1e-06,
+          10.0
+        ],
+        "frequency_points": 1441,
+        "limitation": "Imaginary-axis crossings from finite frequency bracketing; initial stability and crossing direction require separate checks."
+      },
+      "comparison": {
+        "Sc_absolute_error": -7.865907925008742e-11,
+        "S0_relative_error": 3.3357316908677603e-11,
+        "finite_tau_relative_error": null,
+        "frequency_refinement_relative_error": null,
+        "censor_classification_agrees": true
+      },
+      "reported_primary": {
+        "Sc": -1.8777433910795727,
+        "S0": -48.55824370536613,
+        "critical_lag_yr": null,
+        "critical_lag_status": "not_detected_through_10000"
+      }
+    },
+    {
+      "stage": "D2",
+      "fraction": 0.5,
+      "kappa": 0.0,
+      "sigma_k": 0.1,
+      "dispersal_yr": 0.0001,
+      "branch_id": "D2_d0.0001",
+      "dial": 0.1,
+      "kind": "prescribed",
+      "independent_slopes": {
+        "Sc": -0.3026844448143404,
+        "S0": -68.54335324554228,
+        "G_loc": 0.0044159561865909375,
+        "jacobian_condition": 617045971366614.4,
+        "frozen_condition": 4979597583461.376,
+        "frozen_leading_real_yr": -0.0002212628638868982
+      },
+      "independent_mode": {
+        "status": "damped",
+        "leading": [
+          -9.962349444367354e-05,
+          0.0
+        ],
+        "complex_pair": [
+          -0.0010776917274192646,
+          0.004272126655114286
+        ],
+        "period_yr": 1470.7394734324657,
+        "damping_time_yr": 927.9091363118171,
+        "weak_tau_yr": 118.0963038683601,
+        "weak_damping_ratio": 0.2522611838132488
+      },
+      "independent_lag": {
+        "status": "crossing_found",
+        "critical_lag_yr": 115.9201939653082,
+        "crossings": [
+          {
+            "tau_yr": 115.9201939653082,
+            "omega_yr": 0.004099454460260343,
+            "period_yr": 1532.6881584093906,
+            "smallest_singular": 4.103178731802252e-19,
+            "backsubstitution_residual": 2.2439864728729984e-12,
+            "local_pole_distance": 0.004100661981388001,
+            "accepted": true,
+            "crossing_direction": "loss",
+            "real_speed_per_tau": 5.854554727217721e-06
+          }
+        ],
+        "sink_edge_yr": -9.950785824517562e-05,
+        "frequency_bounds": [
+          1e-06,
+          10.0
+        ],
+        "frequency_points": 721,
+        "limitation": "Imaginary-axis crossings from finite frequency bracketing; initial stability and crossing direction require separate checks."
+      },
+      "frequency_refinement": {
+        "status": "crossing_found",
+        "critical_lag_yr": 115.92019396535872,
+        "crossings": [
+          {
+            "tau_yr": 115.92019396535872,
+            "omega_yr": 0.004099454460259743,
+            "period_yr": 1532.6881584096145,
+            "smallest_singular": 4.4792363949863956e-18,
+            "backsubstitution_residual": 3.181708770473913e-12,
+            "local_pole_distance": 0.004100661981387401,
+            "accepted": true,
+            "crossing_direction": "loss",
+            "real_speed_per_tau": 5.854554727252325e-06
+          }
+        ],
+        "sink_edge_yr": -9.950785824517562e-05,
+        "frequency_bounds": [
+          1e-06,
+          10.0
+        ],
+        "frequency_points": 1441,
+        "limitation": "Imaginary-axis crossings from finite frequency bracketing; initial stability and crossing direction require separate checks."
+      },
+      "comparison": {
+        "Sc_absolute_error": 6.177280909014371e-13,
+        "S0_relative_error": -2.576949764687697e-11,
+        "finite_tau_relative_error": -3.2800085136841517e-07,
+        "frequency_refinement_relative_error": 4.3587355946783646e-13,
+        "censor_classification_agrees": true,
+        "complex_real_absolute_error": -1.858707805724169e-11,
+        "complex_frequency_relative_error": -3.472897525114149e-09
+      },
+      "reported_primary": {
+        "Sc": -0.30268444481495815,
+        "S0": -68.5433532473086,
+        "critical_lag_yr": 115.92023198724299,
+        "critical_lag_status": "finite_crossing"
+      }
+    },
+    {
+      "stage": "D2",
+      "fraction": 0.5,
+      "kappa": 0.0,
+      "sigma_k": 1.0,
+      "dispersal_yr": 0.001,
+      "branch_id": "D2_d0.001",
+      "dial": 1.0,
+      "kind": "prescribed",
+      "independent_slopes": {
+        "Sc": -2.911583450211438,
+        "S0": -71.99043114119692,
+        "G_loc": 0.04044403407587412,
+        "jacobian_condition": 584634099754595.6,
+        "frozen_condition": 4864035022276.942,
+        "frozen_leading_real_yr": -0.00021021494498573681
+      },
+      "independent_mode": {
+        "status": "damped",
+        "leading": [
+          -0.0009998175548298373,
+          0.0
+        ],
+        "complex_pair": [
+          -0.001578498740826212,
+          0.002647118730966054
+        ],
+        "period_yr": 2373.59406424757,
+        "damping_time_yr": 633.5133339901074,
+        "weak_tau_yr": 450.53381557109265,
+        "weak_damping_ratio": 0.5963082510659226
+      },
+      "independent_lag": {
+        "status": "crossing_found",
+        "critical_lag_yr": 842.2404622661777,
+        "crossings": [
+          {
+            "tau_yr": 842.2404622661777,
+            "omega_yr": 0.0018405291619694193,
+            "period_yr": 3413.792857515171,
+            "smallest_singular": 3.562726888680427e-17,
+            "backsubstitution_residual": 3.829466708014408e-12,
+            "local_pole_distance": 0.002094180759701968,
+            "accepted": true,
+            "crossing_direction": "loss",
+            "real_speed_per_tau": 1.7750735041686724e-07
+          }
+        ],
+        "sink_edge_yr": -0.0009990222511266002,
+        "frequency_bounds": [
+          1e-06,
+          10.0
+        ],
+        "frequency_points": 721,
+        "limitation": "Imaginary-axis crossings from finite frequency bracketing; initial stability and crossing direction require separate checks."
+      },
+      "frequency_refinement": {
+        "status": "crossing_found",
+        "critical_lag_yr": 842.2404622746652,
+        "crossings": [
+          {
+            "tau_yr": 842.2404622746652,
+            "omega_yr": 0.0018405291619624045,
+            "period_yr": 3413.7928575281817,
+            "smallest_singular": 1.95847113272285e-18,
+            "backsubstitution_residual": 3.491407583015648e-12,
+            "local_pole_distance": 0.002094180759695803,
+            "accepted": true,
+            "crossing_direction": "loss",
+            "real_speed_per_tau": 1.7750735045648067e-07
+          }
+        ],
+        "sink_edge_yr": -0.0009990222511266002,
+        "frequency_bounds": [
+          1e-06,
+          10.0
+        ],
+        "frequency_points": 1441,
+        "limitation": "Imaginary-axis crossings from finite frequency bracketing; initial stability and crossing direction require separate checks."
+      },
+      "comparison": {
+        "Sc_absolute_error": -4.39648317751562e-12,
+        "S0_relative_error": -1.7360224369156185e-11,
+        "finite_tau_relative_error": -4.654716303509332e-07,
+        "frequency_refinement_relative_error": 1.0077272349917621e-11,
+        "censor_classification_agrees": true,
+        "complex_real_absolute_error": 3.351618678773538e-11,
+        "complex_frequency_relative_error": 4.9242265820481634e-08
+      },
+      "reported_primary": {
+        "Sc": -2.9115834502070417,
+        "S0": -71.9904311424467,
+        "critical_lag_yr": 842.2408543054013,
+        "critical_lag_status": "finite_crossing"
+      }
+    }
+  ],
+  "threshold_diagnostics": [
+    {
+      "stage": "D1",
+      "fraction": 0.0,
+      "kappa": 0.14401879292147662,
+      "sigma_k": 0.0,
+      "dispersal_yr": 0.001,
+      "branch_id": "D1_f0",
+      "dial": 0.14401879292147662,
+      "kind": "threshold_refinement",
+      "independent_slopes": {
+        "Sc": -0.27761324380975283,
+        "S0": -41.302331499259594,
+        "G_loc": 0.006721490863408751,
+        "jacobian_condition": 24620751140.60167,
+        "frozen_condition": 18268499179.98499,
+        "frozen_leading_real_yr": -0.0003675919308459397
+      },
+      "independent_mode": {
+        "status": "damped",
+        "leading": [
+          -0.019708976594897364,
+          0.04980774110575042
+        ],
+        "complex_pair": [
+          -0.019708976594897364,
+          0.04980774110575042
+        ],
+        "period_yr": 126.1487706065469,
+        "damping_time_yr": 50.73830166599818,
+        "weak_tau_yr": 15.88913948425955,
+        "weak_damping_ratio": 0.39570107291257817
+      },
+      "independent_lag": {
+        "status": "crossing_found",
+        "critical_lag_yr": 29.976039928953593,
+        "crossings": [
+          {
+            "tau_yr": 29.976039928953593,
+            "omega_yr": 0.036318463824879,
+            "period_yr": 173.00250741540057,
+            "smallest_singular": 2.8943630178516016e-18,
+            "backsubstitution_residual": 8.088960311600719e-13,
+            "local_pole_distance": 0.05414208777677136,
+            "accepted": true,
+            "crossing_direction": "loss",
+            "real_speed_per_tau": 0.00011073407542302387
+          },
+          {
+            "tau_yr": 8576.164994960282,
+            "omega_yr": 0.002916820779582299,
+            "period_yr": 2154.1211414708055,
+            "smallest_singular": 7.592067512544825e-17,
+            "backsubstitution_residual": 7.389644451905042e-13,
+            "local_pole_distance": 0.040259690730167975,
+            "accepted": true,
+            "crossing_direction": "restabilisation",
+            "real_speed_per_tau": -5.729089221146572e-09
+          }
+        ],
+        "sink_edge_yr": -0.04015388965254263,
+        "frequency_bounds": [
+          1e-06,
+          10.0
+        ],
+        "frequency_points": 721,
+        "limitation": "Imaginary-axis crossings from finite frequency bracketing; initial stability and crossing direction require separate checks."
+      },
+      "frequency_refinement": {
+        "status": "crossing_found",
+        "critical_lag_yr": 29.97603992895417,
+        "crossings": [
+          {
+            "tau_yr": 29.97603992895417,
+            "omega_yr": 0.03631846382487876,
+            "period_yr": 173.0025074154017,
+            "smallest_singular": 1.2943984918955333e-18,
+            "backsubstitution_residual": 1.3903416866736517e-12,
+            "local_pole_distance": 0.054142087776771194,
+            "accepted": true,
+            "crossing_direction": "loss",
+            "real_speed_per_tau": 0.00011073407542520482
+          },
+          {
+            "tau_yr": 8576.164995462783,
+            "omega_yr": 0.0029168207794972125,
+            "period_yr": 2154.121141533643,
+            "smallest_singular": 2.2635172064136483e-17,
+            "backsubstitution_residual": 1.2807569768128717e-12,
+            "local_pole_distance": 0.04025969073016181,
+            "accepted": true,
+            "crossing_direction": "restabilisation",
+            "real_speed_per_tau": -5.72908928831805e-09
+          }
+        ],
+        "sink_edge_yr": -0.04015388965254263,
+        "frequency_bounds": [
+          1e-06,
+          10.0
+        ],
+        "frequency_points": 1441,
+        "limitation": "Imaginary-axis crossings from finite frequency bracketing; initial stability and crossing direction require separate checks."
+      },
+      "comparison": {
+        "Sc_absolute_error": 3.2062130728149896e-12,
+        "S0_relative_error": 1.0296208330373702e-11,
+        "finite_tau_relative_error": -6.675227037789e-11,
+        "frequency_refinement_relative_error": 1.9095836023552692e-14,
+        "censor_classification_agrees": true,
+        "complex_real_absolute_error": 2.352770755997824e-13,
+        "complex_frequency_relative_error": 1.5416556919944924e-12
+      },
+      "reported_primary": {
+        "Sc": -0.27761324381295904,
+        "S0": -41.302331498834334,
+        "critical_lag_yr": 29.976039930954563,
+        "critical_lag_status": "finite_crossing"
+      }
+    },
+    {
+      "stage": "D1",
+      "fraction": 0.0,
+      "kappa": 0.14463817104869564,
+      "sigma_k": 0.0,
+      "dispersal_yr": 0.001,
+      "branch_id": "D1_f0",
+      "dial": 0.14463817104869564,
+      "kind": "threshold_refinement",
+      "independent_slopes": {
+        "Sc": -0.27880234909590174,
+        "S0": -41.302920721214164,
+        "G_loc": 0.006750184835057009,
+        "jacobian_condition": 24620376994.33403,
+        "frozen_condition": 18268613110.606167,
+        "frozen_leading_real_yr": -0.000367587970893441
+      },
+      "independent_mode": {
+        "status": "damped",
+        "leading": [
+          -0.01979590282910261,
+          0.049778269195599
+        ],
+        "complex_pair": [
+          -0.01979590282910261,
+          0.049778269195599
+        ],
+        "period_yr": 126.22345872433618,
+        "damping_time_yr": 50.5155035682367,
+        "weak_tau_yr": 15.978121711616346,
+        "weak_damping_ratio": 0.39768162190044176
+      },
+      "independent_lag": {
+        "status": "crossing_found",
+        "critical_lag_yr": 30.417000216644414,
+        "crossings": [
+          {
+            "tau_yr": 30.417000216644414,
+            "omega_yr": 0.036134466295907705,
+            "period_yr": 173.8834401406717,
+            "smallest_singular": 6.250469483267644e-17,
+            "backsubstitution_residual": 2.702305283493095e-12,
+            "local_pole_distance": 0.054148734646141866,
+            "accepted": true,
+            "crossing_direction": "loss",
+            "real_speed_per_tau": 0.0001073901309268606
+          },
+          {
+            "tau_yr": 8414.021275642997,
+            "omega_yr": 0.0029384570053956906,
+            "period_yr": 2138.2600785521777,
+            "smallest_singular": 1.40489381371957e-16,
+            "backsubstitution_residual": 5.621825620452366e-13,
+            "local_pole_distance": 0.04043538473739002,
+            "accepted": true,
+            "crossing_direction": "restabilisation",
+            "real_speed_per_tau": -5.838159412259725e-09
+          }
+        ],
+        "sink_edge_yr": -0.04032847392709269,
+        "frequency_bounds": [
+          1e-06,
+          10.0
+        ],
+        "frequency_points": 721,
+        "limitation": "Imaginary-axis crossings from finite frequency bracketing; initial stability and crossing direction require separate checks."
+      },
+      "frequency_refinement": {
+        "status": "crossing_found",
+        "critical_lag_yr": 30.41700021689491,
+        "crossings": [
+          {
+            "tau_yr": 30.41700021689491,
+            "omega_yr": 0.03613446629580549,
+            "period_yr": 173.88344014116356,
+            "smallest_singular": 2.90924126541292e-18,
+            "backsubstitution_residual": 1.538452193327016e-12,
+            "local_pole_distance": 0.05414873464607366,
+            "accepted": true,
+            "crossing_direction": "loss",
+            "real_speed_per_tau": 0.000107390130863988
+          },
+          {
+            "tau_yr": 8414.021275003646,
+            "omega_yr": 0.002938457005506833,
+            "period_yr": 2138.2600784713013,
+            "smallest_singular": 5.60613663387295e-17,
+            "backsubstitution_residual": 2.5579538487363607e-13,
+            "local_pole_distance": 0.0404353847373981,
+            "accepted": true,
+            "crossing_direction": "restabilisation",
+            "real_speed_per_tau": -5.838159406242559e-09
+          }
+        ],
+        "sink_edge_yr": -0.04032847392709269,
+        "frequency_bounds": [
+          1e-06,
+          10.0
+        ],
+        "frequency_points": 1441,
+        "limitation": "Imaginary-axis crossings from finite frequency bracketing; initial stability and crossing direction require separate checks."
+      },
+      "comparison": {
+        "Sc_absolute_error": -7.661110634771262e-11,
+        "S0_relative_error": 4.6600723280221246e-11,
+        "finite_tau_relative_error": 9.309917281541402e-10,
+        "frequency_refinement_relative_error": 8.235412352064486e-12,
+        "censor_classification_agrees": true,
+        "complex_real_absolute_error": -5.665783814334802e-12,
+        "complex_frequency_relative_error": -3.63493679600424e-11
+      },
+      "reported_primary": {
+        "Sc": -0.27880234901929063,
+        "S0": -41.30292071928942,
+        "critical_lag_yr": 30.41700018832644,
+        "critical_lag_status": "finite_crossing"
+      }
+    },
+    {
+      "stage": "D1",
+      "fraction": 0.5,
+      "kappa": 0.16310529450090666,
+      "sigma_k": 0.0,
+      "dispersal_yr": 0.001,
+      "branch_id": "D1_f0.5",
+      "dial": 0.16310529450090666,
+      "kind": "threshold_refinement",
+      "independent_slopes": {
+        "Sc": -0.3141664377435893,
+        "S0": -50.85547248574207,
+        "G_loc": 0.006177632856162522,
+        "jacobian_condition": 26778093176.848675,
+        "frozen_condition": 16624051838.821747,
+        "frozen_leading_real_yr": -0.00029862630938148947
+      },
+      "independent_mode": {
+        "status": "damped",
+        "leading": [
+          -0.014472090156876893,
+          0.03931225005085492
+        ],
+        "complex_pair": [
+          -0.014472090156876893,
+          0.03931225005085492
+        ],
+        "period_yr": 159.8276694682081,
+        "damping_time_yr": 69.0985192297753,
+        "weak_tau_yr": 18.728605941234058,
+        "weak_damping_ratio": 0.3681318199328601
+      },
+      "independent_lag": {
+        "status": "crossing_found",
+        "critical_lag_yr": 29.957692732013232,
+        "crossings": [
+          {
+            "tau_yr": 29.957692732013232,
+            "omega_yr": 0.031103610965086643,
+            "period_yr": 202.008227090815,
+            "smallest_singular": 1.3103647725529379e-17,
+            "backsubstitution_residual": 4.516280279765028e-12,
+            "local_pole_distance": 0.041887626358240115,
+            "accepted": true,
+            "crossing_direction": "loss",
+            "real_speed_per_tau": 0.00011582586045111629
+          }
+        ],
+        "sink_edge_yr": -0.028055990926361418,
+        "frequency_bounds": [
+          1e-06,
+          10.0
+        ],
+        "frequency_points": 721,
+        "limitation": "Imaginary-axis crossings from finite frequency bracketing; initial stability and crossing direction require separate checks."
+      },
+      "frequency_refinement": {
+        "status": "crossing_found",
+        "critical_lag_yr": 29.957692731990385,
+        "crossings": [
+          {
+            "tau_yr": 29.957692731990385,
+            "omega_yr": 0.031103610965094366,
+            "period_yr": 202.00822709076485,
+            "smallest_singular": 3.417013270766689e-17,
+            "backsubstitution_residual": 2.799213746640164e-13,
+            "local_pole_distance": 0.04188762635824585,
+            "accepted": true,
+            "crossing_direction": "loss",
+            "real_speed_per_tau": 0.00011582586045051077
+          }
+        ],
+        "sink_edge_yr": -0.028055990926361418,
+        "frequency_bounds": [
+          1e-06,
+          10.0
+        ],
+        "frequency_points": 1441,
+        "limitation": "Imaginary-axis crossings from finite frequency bracketing; initial stability and crossing direction require separate checks."
+      },
+      "comparison": {
+        "Sc_absolute_error": -4.6592729674443945e-11,
+        "S0_relative_error": 6.7483796328815515e-12,
+        "finite_tau_relative_error": 2.8275692898205307e-10,
+        "frequency_refinement_relative_error": -7.6261219561502e-13,
+        "censor_classification_agrees": true,
+        "complex_real_absolute_error": -2.077886473994539e-12,
+        "complex_frequency_relative_error": -1.6885715048431393e-11
+      },
+      "reported_primary": {
+        "Sc": -0.3141664376969966,
+        "S0": -50.85547248539888,
+        "critical_lag_yr": 29.95769272354249,
+        "critical_lag_status": "finite_crossing"
+      }
+    },
+    {
+      "stage": "D1",
+      "fraction": 0.5,
+      "kappa": 0.16380675748221743,
+      "sigma_k": 0.0,
+      "dispersal_yr": 0.001,
+      "branch_id": "D1_f0.5",
+      "dial": 0.16380675748221743,
+      "kind": "threshold_refinement",
+      "independent_slopes": {
+        "Sc": -0.3155110284148867,
+        "S0": -50.85344822998872,
+        "G_loc": 0.006204319262441423,
+        "jacobian_condition": 26777837915.749836,
+        "frozen_condition": 16623840434.53909,
+        "frozen_leading_real_yr": -0.00029863969735176077
+      },
+      "independent_mode": {
+        "status": "damped",
+        "leading": [
+          -0.014532790566014045,
+          0.03929433045687094
+        ],
+        "complex_pair": [
+          -0.014532790566014045,
+          0.03929433045687094
+        ],
+        "period_yr": 159.90055649569973,
+        "damping_time_yr": 68.80990925022827,
+        "weak_tau_yr": 18.824316851296444,
+        "weak_damping_ratio": 0.3698444634898434
+      },
+      "independent_lag": {
+        "status": "crossing_found",
+        "critical_lag_yr": 30.287973343934844,
+        "crossings": [
+          {
+            "tau_yr": 30.287973343934844,
+            "omega_yr": 0.030998849329485996,
+            "period_yr": 202.69092056920456,
+            "smallest_singular": 2.1203846664101413e-17,
+            "backsubstitution_residual": 1.6924644718255201e-12,
+            "local_pole_distance": 0.04189135029745006,
+            "accepted": true,
+            "crossing_direction": "loss",
+            "real_speed_per_tau": 0.0001134181847984065
+          }
+        ],
+        "sink_edge_yr": -0.02817723496000796,
+        "frequency_bounds": [
+          1e-06,
+          10.0
+        ],
+        "frequency_points": 721,
+        "limitation": "Imaginary-axis crossings from finite frequency bracketing; initial stability and crossing direction require separate checks."
+      },
+      "frequency_refinement": {
+        "status": "crossing_found",
+        "critical_lag_yr": 30.287973343938155,
+        "crossings": [
+          {
+            "tau_yr": 30.287973343938155,
+            "omega_yr": 0.0309988493294849,
+            "period_yr": 202.69092056921173,
+            "smallest_singular": 1.1761777905307399e-17,
+            "backsubstitution_residual": 2.9673135796061134e-13,
+            "local_pole_distance": 0.04189135029744925,
+            "accepted": true,
+            "crossing_direction": "loss",
+            "real_speed_per_tau": 0.00011341818479409657
+          }
+        ],
+        "sink_edge_yr": -0.02817723496000796,
+        "frequency_bounds": [
+          1e-06,
+          10.0
+        ],
+        "frequency_points": 1441,
+        "limitation": "Imaginary-axis crossings from finite frequency bracketing; initial stability and crossing direction require separate checks."
+      },
+      "comparison": {
+        "Sc_absolute_error": 1.0512829495823439e-10,
+        "S0_relative_error": 2.7697844018348405e-12,
+        "finite_tau_relative_error": -8.547780261380922e-10,
+        "frequency_refinement_relative_error": 1.092459456231154e-13,
+        "censor_classification_agrees": true,
+        "complex_real_absolute_error": 4.634646832979428e-12,
+        "complex_frequency_relative_error": 3.9511283134174846e-11
+      },
+      "reported_primary": {
+        "Sc": -0.315511028520015,
+        "S0": -50.853448229847864,
+        "critical_lag_yr": 30.28797336982434,
+        "critical_lag_status": "finite_crossing"
+      }
+    },
+    {
+      "stage": "D2",
+      "fraction": 0.5,
+      "kappa": 0.0,
+      "sigma_k": 0.023999710326032157,
+      "dispersal_yr": 0.0001,
+      "branch_id": "D2_d0.0001",
+      "dial": 0.023999710326032157,
+      "kind": "threshold_refinement",
+      "independent_slopes": {
+        "Sc": -0.07141195825227385,
+        "S0": -67.28482665042746,
+        "G_loc": 0.0010613382215174387,
+        "jacobian_condition": 158811973082579.78,
+        "frozen_condition": 4430013397224.798,
+        "frozen_leading_real_yr": -0.00022545002720580115
+      },
+      "independent_mode": {
+        "status": "damped",
+        "leading": [
+          -9.949207110198189e-05,
+          0.0
+        ],
+        "complex_pair": [
+          -0.001343690991985223,
+          0.009330808679436585
+        ],
+        "period_yr": 673.3805742932647,
+        "damping_time_yr": 744.2187273448636,
+        "weak_tau_yr": 30.86674485137092,
+        "weak_damping_ratio": 0.14400584538256314
+      },
+      "independent_lag": {
+        "status": "crossing_found",
+        "critical_lag_yr": 30.163127760379908,
+        "crossings": [
+          {
+            "tau_yr": 30.163127760379908,
+            "omega_yr": 0.00915432936025251,
+            "period_yr": 686.3621637277723,
+            "smallest_singular": 3.461265417834196e-19,
+            "backsubstitution_residual": 3.495966387067873e-12,
+            "local_pole_distance": 0.00915486979158903,
+            "accepted": true,
+            "crossing_direction": "loss",
+            "real_speed_per_tau": 3.687782285624989e-05
+          }
+        ],
+        "sink_edge_yr": -9.947293585824847e-05,
+        "frequency_bounds": [
+          1e-06,
+          10.0
+        ],
+        "frequency_points": 721,
+        "limitation": "Imaginary-axis crossings from finite frequency bracketing; initial stability and crossing direction require separate checks."
+      },
+      "frequency_refinement": {
+        "status": "crossing_found",
+        "critical_lag_yr": 30.163127760379396,
+        "crossings": [
+          {
+            "tau_yr": 30.163127760379396,
+            "omega_yr": 0.00915432936025256,
+            "period_yr": 686.3621637277686,
+            "smallest_singular": 3.4612654178341655e-19,
+            "backsubstitution_residual": 2.035583165613222e-12,
+            "local_pole_distance": 0.00915486979158908,
+            "accepted": true,
+            "crossing_direction": "loss",
+            "real_speed_per_tau": 3.687782285583654e-05
+          }
+        ],
+        "sink_edge_yr": -9.947293585824847e-05,
+        "frequency_bounds": [
+          1e-06,
+          10.0
+        ],
+        "frequency_points": 1441,
+        "limitation": "Imaginary-axis crossings from finite frequency bracketing; initial stability and crossing direction require separate checks."
+      },
+      "comparison": {
+        "Sc_absolute_error": -4.198030811863873e-14,
+        "S0_relative_error": -2.9813929103283954e-12,
+        "finite_tau_relative_error": -6.186273604491532e-09,
+        "frequency_refinement_relative_error": -1.6986412276764895e-14,
+        "censor_classification_agrees": true,
+        "complex_real_absolute_error": 4.694303539637401e-12,
+        "complex_frequency_relative_error": 2.9264926038052863e-09
+      },
+      "reported_primary": {
+        "Sc": -0.07141195825223187,
+        "S0": -67.28482665062806,
+        "critical_lag_yr": 30.16312794697727,
+        "critical_lag_status": "finite_crossing"
+      }
+    },
+    {
+      "stage": "D2",
+      "fraction": 0.5,
+      "kappa": 0.0,
+      "sigma_k": 0.058499958600962056,
+      "dispersal_yr": 0.001,
+      "branch_id": "D2_d0.001",
+      "dial": 0.058499958600962056,
+      "kind": "threshold_refinement",
+      "independent_slopes": {
+        "Sc": -0.16353250455989984,
+        "S0": -64.99372899116705,
+        "G_loc": 0.002516127434111754,
+        "jacobian_condition": 33363013790306.168,
+        "frozen_condition": 2970938442079.244,
+        "frozen_leading_real_yr": -0.00023337590965789078
+      },
+      "independent_mode": {
+        "status": "damped",
+        "leading": [
+          -0.00099589064291238,
+          0.0
+        ],
+        "complex_pair": [
+          -0.0034312765615899378,
+          0.015080862236305038
+        ],
+        "period_yr": 416.63302858464607,
+        "damping_time_yr": 291.4367239277949,
+        "weak_tau_yr": 30.174033903963576,
+        "weak_damping_ratio": 0.22752522420963608
+      },
+      "independent_lag": {
+        "status": "crossing_found",
+        "critical_lag_yr": 30.311505109744125,
+        "crossings": [
+          {
+            "tau_yr": 30.311505109744125,
+            "omega_yr": 0.014392851051796088,
+            "period_yr": 436.5490398370728,
+            "smallest_singular": 4.572760471086785e-18,
+            "backsubstitution_residual": 3.886197331950313e-12,
+            "local_pole_distance": 0.014427197740316899,
+            "accepted": true,
+            "crossing_direction": "loss",
+            "real_speed_per_tau": 7.346549257712555e-05
+          }
+        ],
+        "sink_edge_yr": -0.0009949237352768747,
+        "frequency_bounds": [
+          1e-06,
+          10.0
+        ],
+        "frequency_points": 721,
+        "limitation": "Imaginary-axis crossings from finite frequency bracketing; initial stability and crossing direction require separate checks."
+      },
+      "frequency_refinement": {
+        "status": "crossing_found",
+        "critical_lag_yr": 30.311505109876197,
+        "crossings": [
+          {
+            "tau_yr": 30.311505109876197,
+            "omega_yr": 0.01439285105177626,
+            "period_yr": 436.54903983767423,
+            "smallest_singular": 5.2708848431651214e-17,
+            "backsubstitution_residual": 3.95290182333515e-12,
+            "local_pole_distance": 0.01442719774029712,
+            "accepted": true,
+            "crossing_direction": "loss",
+            "real_speed_per_tau": 7.34654925783955e-05
+          }
+        ],
+        "sink_edge_yr": -0.0009949237352768747,
+        "frequency_bounds": [
+          1e-06,
+          10.0
+        ],
+        "frequency_points": 1441,
+        "limitation": "Imaginary-axis crossings from finite frequency bracketing; initial stability and crossing direction require separate checks."
+      },
+      "comparison": {
+        "Sc_absolute_error": -2.9004576518332215e-14,
+        "S0_relative_error": -8.158063113938852e-11,
+        "finite_tau_relative_error": 1.525167903082547e-08,
+        "frequency_refinement_relative_error": 4.357181282443889e-12,
+        "censor_classification_agrees": true,
+        "complex_real_absolute_error": 5.320976732142713e-12,
+        "complex_frequency_relative_error": -8.302760701184297e-10
+      },
+      "reported_primary": {
+        "Sc": -0.16353250455987084,
+        "S0": -64.99372899646927,
+        "critical_lag_yr": 30.311504647442785,
+        "critical_lag_status": "finite_crossing"
+      }
+    },
+    {
+      "stage": "D1",
+      "fraction": 0.0,
+      "kappa": 0.17320508075688773,
+      "sigma_k": 0.0,
+      "dispersal_yr": 0.001,
+      "branch_id": "D1_f0",
+      "dial": 0.17320508075688773,
+      "kind": "threshold_refinement",
+      "independent_slopes": {
+        "Sc": -0.33360158755175284,
+        "S0": -41.33007887868733,
+        "G_loc": 0.008071641685730754,
+        "jacobian_condition": 24603154102.34321,
+        "frozen_condition": 18273863565.867474,
+        "frozen_leading_real_yr": -0.00036740555517530564
+      },
+      "independent_mode": {
+        "status": "damped",
+        "leading": [
+          -0.023836349235140088,
+          0.04821791243785328
+        ],
+        "complex_pair": [
+          -0.023836349235140088,
+          0.04821791243785328
+        ],
+        "period_yr": 130.30811558417855,
+        "damping_time_yr": 41.95273320319444,
+        "weak_tau_yr": 20.50467676860992,
+        "weak_damping_ratio": 0.49434635449765874
+      },
+      "independent_lag": {
+        "status": "crossing_found",
+        "critical_lag_yr": 78.59239978287135,
+        "crossings": [
+          {
+            "tau_yr": 78.59239978287135,
+            "omega_yr": 0.024726494687653134,
+            "period_yr": 254.10740125315928,
+            "smallest_singular": 1.909794236521933e-18,
+            "backsubstitution_residual": 1.0785280415467626e-12,
+            "local_pole_distance": 0.054389680068229244,
+            "accepted": true,
+            "crossing_direction": "loss",
+            "real_speed_per_tau": 1.1252509719413736e-05
+          },
+          {
+            "tau_yr": 2695.749135667812,
+            "omega_yr": 0.004735595569007182,
+            "period_yr": 1326.7993889302622,
+            "smallest_singular": 2.3677599852354276e-17,
+            "backsubstitution_residual": 2.2296356668653246e-12,
+            "local_pole_distance": 0.04867508216509752,
+            "accepted": true,
+            "crossing_direction": "restabilisation",
+            "real_speed_per_tau": -1.752006237404701e-08
+          }
+        ],
+        "sink_edge_yr": -0.048444171562591454,
+        "frequency_bounds": [
+          1e-06,
+          10.0
+        ],
+        "frequency_points": 721,
+        "limitation": "Imaginary-axis crossings from finite frequency bracketing; initial stability and crossing direction require separate checks."
+      },
+      "frequency_refinement": {
+        "status": "crossing_found",
+        "critical_lag_yr": 78.59239978289335,
+        "crossings": [
+          {
+            "tau_yr": 78.59239978289335,
+            "omega_yr": 0.024726494687650286,
+            "period_yr": 254.10740125318856,
+            "smallest_singular": 2.700856910631713e-18,
+            "backsubstitution_residual": 2.8421709430404007e-13,
+            "local_pole_distance": 0.05438968006822794,
+            "accepted": true,
+            "crossing_direction": "loss",
+            "real_speed_per_tau": 1.1252509718593986e-05
+          },
+          {
+            "tau_yr": 2695.7491356675077,
+            "omega_yr": 0.004735595569007447,
+            "period_yr": 1326.7993889301881,
+            "smallest_singular": 1.1838799926176554e-17,
+            "backsubstitution_residual": 1.0325203057334438e-12,
+            "local_pole_distance": 0.04867508216509754,
+            "accepted": true,
+            "crossing_direction": "restabilisation",
+            "real_speed_per_tau": -1.7520062371313907e-08
+          }
+        ],
+        "sink_edge_yr": -0.048444171562591454,
+        "frequency_bounds": [
+          1e-06,
+          10.0
+        ],
+        "frequency_points": 1441,
+        "limitation": "Imaginary-axis crossings from finite frequency bracketing; initial stability and crossing direction require separate checks."
+      },
+      "comparison": {
+        "Sc_absolute_error": -1.1269651878365039e-10,
+        "S0_relative_error": 1.7269297103439385e-11,
+        "finite_tau_relative_error": 3.0176963150552183e-09,
+        "frequency_refinement_relative_error": 2.799982468104645e-13,
+        "censor_classification_agrees": true,
+        "complex_real_absolute_error": -8.423175351657264e-12,
+        "complex_frequency_relative_error": -7.406042445978755e-11
+      },
+      "reported_primary": {
+        "Sc": -0.3336015874390563,
+        "S0": -41.33007887797359,
+        "critical_lag_yr": 78.59239954570336,
+        "critical_lag_status": "finite_crossing"
+      }
+    },
+    {
+      "stage": "D1",
+      "fraction": 0.0,
+      "kappa": 0.1509803648477105,
+      "sigma_k": 0.0,
+      "dispersal_yr": 0.001,
+      "branch_id": "D1_f0",
+      "dial": 0.1509803648477105,
+      "kind": "threshold_refinement",
+      "independent_slopes": {
+        "Sc": -0.29097596642834217,
+        "S0": -41.30895319131718,
+        "G_loc": 0.007043895909942909,
+        "jacobian_condition": 24616547658.331562,
+        "frozen_condition": 18269779504.59576,
+        "frozen_leading_real_yr": -0.000367547434312897
+      },
+      "independent_mode": {
+        "status": "damped",
+        "leading": [
+          -0.020687626899843645,
+          0.04946620014075173
+        ],
+        "complex_pair": [
+          -0.020687626899843645,
+          0.04946620014075173
+        ],
+        "period_yr": 127.01976883814268,
+        "damping_time_yr": 48.33807206797402,
+        "weak_tau_yr": 16.909219825666575,
+        "weak_damping_ratio": 0.418217426060195
+      },
+      "independent_lag": {
+        "status": "crossing_found",
+        "critical_lag_yr": 35.63714276904527,
+        "crossings": [
+          {
+            "tau_yr": 35.63714276904527,
+            "omega_yr": 0.034135769252421434,
+            "period_yr": 184.06455881271478,
+            "smallest_singular": 2.9231469384342316e-17,
+            "backsubstitution_residual": 1.5938979791837882e-12,
+            "local_pole_distance": 0.05421531599913695,
+            "accepted": true,
+            "crossing_direction": "loss",
+            "real_speed_per_tau": 7.632216891756615e-05
+          },
+          {
+            "tau_yr": 6866.382884540421,
+            "omega_yr": 0.003183379223812071,
+            "period_yr": 1973.7470359109534,
+            "smallest_singular": 1.3590589450935802e-16,
+            "backsubstitution_residual": 2.160061603237245e-12,
+            "local_pole_distance": 0.042239598124441384,
+            "accepted": true,
+            "crossing_direction": "restabilisation",
+            "real_speed_per_tau": -7.133272728405428e-09
+          }
+        ],
+        "sink_edge_yr": -0.04211946992106755,
+        "frequency_bounds": [
+          1e-06,
+          10.0
+        ],
+        "frequency_points": 721,
+        "limitation": "Imaginary-axis crossings from finite frequency bracketing; initial stability and crossing direction require separate checks."
+      },
+      "frequency_refinement": {
+        "status": "crossing_found",
+        "critical_lag_yr": 35.637142768843624,
+        "crossings": [
+          {
+            "tau_yr": 35.637142768843624,
+            "omega_yr": 0.03413576925249009,
+            "period_yr": 184.06455881234461,
+            "smallest_singular": 3.081267420257284e-18,
+            "backsubstitution_residual": 1.3609815020814584e-12,
+            "local_pole_distance": 0.054215315999180176,
+            "accepted": true,
+            "crossing_direction": "loss",
+            "real_speed_per_tau": 7.632216896314766e-05
+          },
+          {
+            "tau_yr": 6866.382883598975,
+            "omega_yr": 0.0031833792240292206,
+            "period_yr": 1973.747035776317,
+            "smallest_singular": 2.0203611164946728e-17,
+            "backsubstitution_residual": 3.412270059808006e-13,
+            "local_pole_distance": 0.04223959812445775,
+            "accepted": true,
+            "crossing_direction": "restabilisation",
+            "real_speed_per_tau": -7.133272717287825e-09
+          }
+        ],
+        "sink_edge_yr": -0.04211946992106755,
+        "frequency_bounds": [
+          1e-06,
+          10.0
+        ],
+        "frequency_points": 1441,
+        "limitation": "Imaginary-axis crossings from finite frequency bracketing; initial stability and crossing direction require separate checks."
+      },
+      "comparison": {
+        "Sc_absolute_error": 3.260214320732757e-11,
+        "S0_relative_error": -3.338107568140458e-11,
+        "finite_tau_relative_error": -1.5503798245219969e-10,
+        "frequency_refinement_relative_error": -5.65825164500211e-12,
+        "censor_classification_agrees": true,
+        "complex_real_absolute_error": 2.236918983378189e-12,
+        "complex_frequency_relative_error": 1.9650725491260346e-11
+      },
+      "reported_primary": {
+        "Sc": -0.2909759664609443,
+        "S0": -41.308953192696116,
+        "critical_lag_yr": 35.63714277457038,
+        "critical_lag_status": "finite_crossing"
+      }
+    }
+  ],
+  "threshold_selection_scope": "Final D1 bracket endpoints, final D2 upper endpoints, plus already-computed weak-mode counterexamples selected after diagnosis.",
+  "threshold_input_sha256": {
+    "models/haze_world/figures/graded_dials/threshold_refinement/states.json": "9c8a1aefa66b95ba110476bd471b824fec83f7b770bb7890db459304a14ab62a",
+    "models/haze_world/figures/graded_dials/threshold_refinement/thresholds.json": "d36b1786dfba5a5b867c83fa15c4646eff59fa0b4f4555a71246fc0deebb3ec8"
+  },
+  "semantic_review": {
+    "assessment_sha256": "b38f6a8efc5abc8f4328dc89e9b3fa6a57b4692a33b8af21788c52aa461a82ed",
+    "assessor_sources": {
+      "src/terra_prisca/haze_world/graded_assessment.py": "0b65f4886caa55c5d39ca1655c5555ba5e99e765d40153fb8cbacfe939113b97"
+    },
+    "all_assessor_input_hashes_match": true,
+    "grid_and_fit_recount_agrees": true,
+    "prescribed_weak_mode_eligible": 23,
+    "baseline_weak_mode_eligible": 2,
+    "refinement_weak_mode_eligible": 29,
+    "refinement_weak_mode_failures": 2,
+    "accepted_statuses": {
+      "PD1": "sampled_finite_criteria_supported",
+      "PD2": "refuted_slope_clause",
+      "PD3": "supported_in_all_refined_brackets",
+      "PD4": "refuted_by_authorised_refinement"
+    },
+    "limitation": "PD1 supports finite pairs only and retains censored-transition bounds; PD2 linearity lacks a prospective tolerance."
+  }
+}

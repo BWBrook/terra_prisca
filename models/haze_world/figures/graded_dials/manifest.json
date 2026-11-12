@@ -1,0 +1,38 @@
+{
+  "method_freeze_commit": "9b63b47",
+  "source_sha256": {
+    "src/terra_prisca/haze_world/continuum_experiments.py": "7574c415f51f0d2bac775acb93f3a442a8182b0a1c80bb93c36e0b44c46d441c",
+    "src/terra_prisca/haze_world/continuum_core.py": "5ce1ca453ce9603814534ace5aa74787d69b478d7123ef7b2fc220af51b7d375",
+    "src/terra_prisca/haze_world/dynamic_core.py": "a359406f79444380f5554e6d27b478e2b70d624398cd1f2f853e1e25cbc88be6",
+    "src/terra_prisca/haze_world/dynamic_realisation.py": "974b355ba9d0f50185772e7f680698d0c7011be7126093b276826e434b451327",
+    "src/terra_prisca/haze_world/population_coupling.py": "17a433957e94845595f6d7fd160ffe593c01c4e74550707b0814c95ab67ae663",
+    "src/terra_prisca/haze_world/methane_budget.py": "f2374cfcb658102cc9919c61108379560922fc787c2cd85e089e878a9fa25fa8",
+    "src/terra_prisca/haze_world/darwinian.py": "e965035d5dfbfafcb695dc3738b23d8a445c4c1e7e246ab4688d67b33482f1aa",
+    "src/terra_prisca/haze_world/two_guilds.py": "eff6a9027c5b28d154f03462d926591ebee3408eb2c80ec0df5c38929f169f83",
+    "src/terra_prisca/haze_world/hydrogen_uptake.py": "c48d8231ef726605ab07be22438f3e2fd97f23b310773ac748d1b2bf5c36fafd",
+    "src/terra_prisca/haze_world/woodii1998.py": "b0130f4f8ea15aa64245133f79dc8b35883a414031a8b49262c6657350cad0b0",
+    "models/haze_world/continuum-habitats-spec.md": "4924d02c1a985df199e91aa74fcb907299e5add4e07d524c0cf7c53880c73c21",
+    "models/haze_world/continuum-habitats-methods.md": "cd9ba21c71d37e3c48b5c3778f6604bb539c83637b580c3441490a93617500ba",
+    "models/haze_world/evidence/kotsyurbenko2001_table2.csv": "c95b4be023e5502fbb30eb322621e5612bbbf850f99d1b6669e98b95eb370480",
+    "models/haze_world/evidence/peters1998_chemostat.csv": "b0b00bf03eaeaabf45fb571330773c5158b53b088436aaee942188f8e9498320",
+    "models/haze_response/arney2016/figure4.csv": "c0ef5f3d17ee7c6085ad36247f0f7814726dbbe3273842b01f2c6c4e046856f8",
+    "models/haze_response/arney2016/cases.csv": "e3d77d275052a8875991a751868f857bffc964295bfd47591944d86bc58ab07a",
+    "uv.lock": "02bf429b2ec474f03280ec550d5fd847b573ece24ab9043e0b5998370fd4d2b4",
+    "src/terra_prisca/haze_world/graded_dials.py": "438558c9983f0716e49e5114a3339d17c04a9e43bf2bda969e6bea0dbe445226",
+    "src/terra_prisca/haze_world/graded_acetate.py": "69308af99c85ccf6d7c1964b84d94005c57e600db1bf26a5687d7b9d69e6dbd8",
+    "src/terra_prisca/haze_world/graded_spread.py": "339b721094749b5179ab7a88674fca94df9a15f545fef2747c61d3b6611ce365",
+    "models/haze_world/graded-dial-spec.md": "d6e2de55108b88a0bdbfce02b9bf54afc2856f1cbec8fd580bd6cfcbd8622a25",
+    "models/haze_world/graded-dial-methods.md": "e6d54cbc62c50cb60e5bd5ce9cdc3a845275e5bae6c55635a4ab432d8c3e0df7",
+    "src/terra_prisca/haze_response/arney2016.py": "a1b8b52f4c929a0518a17542fb323588699433b038949b38ee6ad74679cd0da6",
+    "src/terra_prisca/haze_response/__init__.py": "7b856e453d2cb6a2afd973f53aaa6e154270dc03f38203f513eb8a37e62fe781",
+    "src/terra_prisca/haze_response/inventory_mak2023.py": "d507ef818bb2b9886b51c5f0719b68f24e51f29a06379934bb1da4c9af5142c8",
+    "src/terra_prisca/haze_response/extract_eager_nash2023.py": "1960e094842b8fb1787110ae2399a67ae96bbd3bb8052ce32bf08dd5c8465174",
+    "src/terra_prisca/haze_response/extract_arney2016.py": "0baea06f5838779b39fccdb005daccd8861e6529323b4837687d25a58d956a6b"
+  },
+  "prescribed_count": 32,
+  "baseline_count": 2,
+  "output_sha256": {
+    "dials.csv": "f313a048ade0e42c785016218e14c9ac1f065f4bb7d4d792015c9aca40e77524",
+    "states.json": "7040b771e1f0bd31952b7795dcaf0989b4885923e1feb6172e5799aef2985200"
+  }
+}
