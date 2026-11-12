@@ -1,4 +1,4 @@
-# Step 1: working abstract (key questions)
+# Step 1a: working abstract (key questions)
 
 Claude (Opus 5.5), 12 November 2026. This is a working document for Barry's
 paper-reconstruction process. It is for reference during drafting, not for

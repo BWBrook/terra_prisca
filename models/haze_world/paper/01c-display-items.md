@@ -1,7 +1,7 @@
-# Step 3: display items
+# Step 1c: display items
 
 Claude (Opus 5.5), 12 November 2026. Each item serves the
-[main message](01-working-abstract.md). Microbes can hold a planet's
+[main message](01a-working-abstract.md). Microbes can hold a planet's
 temperature steady, but perfect control breaks down when the climate responds
 slowly. Slightly imperfect control is far more durable.
 
