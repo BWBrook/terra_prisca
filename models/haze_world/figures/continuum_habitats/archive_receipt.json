@@ -1,0 +1,15 @@
+{
+  "archive_name": "haze-stage-b-prime-20261112.tar.gz",
+  "archive_sha256": "3288598852a8e9a23b06695d854f6712a148b7375c1a8069c42a508e35244b02",
+  "archive_bytes": 255258726,
+  "members_sha256": "8f0b230fbdda3a4965e8ced6986fb2f10174c0de65ff5000754f78a0c4fa9e4e",
+  "payload_files": 373,
+  "payload_bytes": 269036866,
+  "canonical_transient_receipts": 33,
+  "local_full_member_readback": true,
+  "publication_status": "Prepared evidence archive; not deposited or publicly released",
+  "packager_sha256": "ebce8c5aa60e0dc3e0ad7dcc583dc2f43941fb1d7adb41c13f8e1430b74fdbae",
+  "shared_archive_full_member_readback": true,
+  "evidence_commit": "18b31e1",
+  "scope": "All373 archived members checked locally and after transfer; prepared numerical evidence, not a Zenodo deposit or release."
+}

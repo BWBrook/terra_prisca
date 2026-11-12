@@ -219,3 +219,9 @@ locally and has not been deposited. Fifteen focused tests pass; the parent
 also arranged an independent audit of the RHS, rates, root diagnostics,
 receipts, control bounds and window semantics. No conclusion here relies on
 a failed or missing numerical receipt.
+
+The parent prepared the combined
+[raw-evidence archive](../figures/continuum_habitats/archive_receipt.json)
+and verified every member both locally and after transfer to shared project
+storage. Its source epochs and canonical main/control selection remain
+separate. A public deposit is held until release.

@@ -155,6 +155,12 @@ retains its coarser diagnostic. A
 records the separate calculation/export source epochs and verifies that only
 the flattening function changed; no equilibrium, implicit slope, gain or
 spectrum was recomputed or altered.
+The [prepared raw-archive receipt](figures/continuum_habitats/archive_receipt.json)
+records the payload identity and full-member readback both locally and on
+shared project storage. It includes the canonical transient receipts,
+separate source epochs, adaptive histories, compact evidence and replay code.
+Original repository-relative paths are retained. This is a verified working
+archive; a public deposit remains held for the eventual release.
 The named physiological support, transferred uptake normalization, prescribed
 product activities, assumed acetate fate and climate interpolation remain
 unchanged limitations. The gain is a local derivative, not a response to a
