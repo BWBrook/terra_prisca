@@ -115,3 +115,22 @@ claims absent from these four short drafts. Both independent reviewers
 also checked the revisions and found no remaining material issue. No
 simulation or production code changed, so a new full model-test run was
 unnecessary.
+
+## Follow-up: plain-style pass at `785b4f2`
+
+Accepted Claude's simpler prose in Steps 1b and 2. Small edits preserve its
+style while restoring the meaning: the first loss of stability, losses by
+about seven years rather than all at seven years, the four-branch/local
+scope in the standalone abstract, and temperature swings spanning about
+1.3 K. The growth explanation now describes differences shifting relative
+abundance without incorrectly saying the raw ratio integrates them. The
+continuous crash calculations report populations below one cell, rather
+than actual loss of both groups. Smoothness is stated near the exact limit
+on the tested branches. A steady hydrogen supply replaces the unsupported
+implication that the model's whole supply comes from volcanoes.
+
+“Count a group as extinct when its population falls below one cell” is clear
+wording for the model rule, with the ten-year count interval in Scope. Kept
+that wording and the single Scope paragraph. No numerical evidence or
+scientific conclusion changed. This is a focused review of wording against
+the already-checked evidence, rather than a new modelling audit.

@@ -12,13 +12,13 @@ end. Revised by Codex (GPT-6) for accuracy, then by Claude for plain style,
 
 **Introduction.** Can life regulate its planet's climate? Daisyworld showed
 that it can in principle (Watson & Lovelock 1983). Real climates respond
-slowly, because oceans store heat, and control engineering teaches that delay
-destabilises feedback. We ask how a slow climate response affects a microbial
+slowly, because oceans store heat. A delayed response can destabilise
+feedback. We ask how a slow climate response affects a microbial
 thermostat, and what durable regulation costs in temperature precision.
 
 Our test case is inspired by the hazy early Earth:
 
-- Volcanoes supply hydrogen to the microbes.
+- A steady hydrogen supply feeds the microbes.
 - Methanogens turn hydrogen into methane. At high methane levels, sunlight
   converts methane into an organic haze that cools the surface (Arney et al.
   2016).
@@ -32,8 +32,10 @@ Surface temperature approaches its climate value over a response time τ. For
 each steady state we compute three things:
 
 - its temperature T\*;
-- its sensitivity S, the change in T\* per e-fold change in hydrogen supply;
-- its critical response time τ_c, the slowest climate response it tolerates.
+- its local sensitivity S, the temperature slope against proportional
+  changes in hydrogen supply;
+- its critical response time τ_c, when the steady state first loses
+  stability as the climate response slows.
 
 We then turn up two features from zero:
 
@@ -43,22 +45,23 @@ We then turn up two features from zero:
 Invasion simulations count a group as extinct when its population falls
 below one cell.
 
-**Perfect control.** The two groups coexist where their hydrogen requirements
-match, at 281.5 K. A change in supply shifts the balance between them and
-leaves temperature fixed (S = 0). This is the plateau mechanism of Seto &
-Akagi (2007). The ratio of the two populations accumulates their difference
-in growth rate, which near coexistence acts as integral feedback, the
+**Perfect control.** In the reference case, the two groups coexist where their
+hydrogen requirements match, at 281.5 K. A change in supply shifts the balance
+between them and leaves temperature fixed (S = 0). This is the plateau
+mechanism of Seto & Akagi (2007). Growth-rate differences keep shifting the balance between the
+groups. Near coexistence, this acts like integral feedback, the
 mechanism behind exact adaptation in cells (Yi et al. 2000).
 
 **Fragility.** We found 42 perfectly holding states. Six are unstable outright,
-and the other 36 lose stability once the climate takes about 7 years to
-respond. The reference state loses stability at 0.15 years. At a 1-year
+and the other 36 first lose stability at response times of about 7 years or
+less. The reference state loses stability at 0.15 years. At a 1-year
 response time it keeps both groups alive for 30,000 years while temperature
-swings over 1.3 K; at 10–100 years both populations crash below one cell.
+swings span about 1.3 K; at 10–100 years the calculations reach populations
+below one cell.
 
 **The price of durability.** The two features let temperature follow supply
 slightly, and that small sensitivity buys a large gain in stability. The
-gain grows smoothly as control loosens.
+gain grows smoothly near the perfect-control limit on the tested branches.
 
 - On all four tuned branches, 0.07–0.32 K per e-fold of supply buys
   tolerance of a 30-year response.
