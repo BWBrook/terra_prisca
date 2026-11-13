@@ -1,0 +1,51 @@
+{
+  "counts": {
+    "total": 170,
+    "exact": 42,
+    "ordinary_graded": 122,
+    "excluded_graded": 6,
+    "exact_finite": 36,
+    "graded_finite": 9,
+    "graded_lower_bounds": 113
+  },
+  "per_branch_prescribed_fits": [
+    {
+      "branch": "D1_f0",
+      "points": 2,
+      "slope": 1.2004734584729897,
+      "r_squared": 1.0,
+      "slope_in_band": true
+    },
+    {
+      "branch": "D1_f0.5",
+      "points": 3,
+      "slope": 0.7965684275930021,
+      "r_squared": 0.9841314070693905,
+      "slope_in_band": false
+    },
+    {
+      "branch": "D2_d0.0001",
+      "points": 6,
+      "slope": 0.98519751192295,
+      "r_squared": 0.9977303463829538,
+      "slope_in_band": false
+    },
+    {
+      "branch": "D2_d0.001",
+      "points": 5,
+      "slope": 1.1084854645678417,
+      "r_squared": 0.9975569465755878,
+      "slope_in_band": true
+    }
+  ],
+  "threshold_brackets_match": true,
+  "source_sha256": {
+    "models/haze_world/figures/continuum_habitats/c0_local_gain.csv": "32b69f807619a5e4275a7e4139ad89d8b23c950de4ba9f9403af8e03704b9d8d",
+    "models/haze_world/figures/continuum_habitats/c1_resolved.csv": "40e925e709a73181ade3455a2f6b8b52c989cf02b277899411dab07409eeb9ea",
+    "models/haze_world/paper/figures/data/fig3_states.csv": "366d9a07ff127da0496a5380ea9d03918e4c2da5481cf858962d26244337add4",
+    "models/haze_world/figures/graded_dials/dials.csv": "f313a048ade0e42c785016218e14c9ac1f065f4bb7d4d792015c9aca40e77524",
+    "models/haze_world/paper/esm/s5_power_law_fits.csv": "2a47ba3cf15f41ea07b629c04e972ee7c921a220b8dc275dd64d305b5f8554f0",
+    "models/haze_world/figures/graded_dials/threshold_refinement/thresholds.json": "d36b1786dfba5a5b867c83fa15c4646eff59fa0b4f4555a71246fc0deebb3ec8",
+    "models/haze_world/paper/figures/data/fig3_thresholds.csv": "b463e39843d2c22e43d1ec12c4d6c21878ec98853a2120259feeda412e37884f"
+  }
+}

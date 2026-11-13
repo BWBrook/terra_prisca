@@ -1,0 +1,345 @@
+{
+  "fig2_period": {
+    "raw": "local/haze/dynamic_transients/B2_f0_tau1-efc80c67ce99eb1e2f60.npz",
+    "sha256": "492ebe102d19adc6e32cfba69b13e19e4ca365200309fb1b1b6cd6576cf16d40",
+    "peak_times_yr": [
+      24143.0,
+      24518.0,
+      24894.0,
+      25269.0,
+      25645.0,
+      26021.0,
+      26397.0,
+      26774.0,
+      27150.0,
+      27527.0,
+      27903.0,
+      28280.0,
+      28657.0,
+      29034.0,
+      29411.0,
+      29788.0
+    ],
+    "periods_yr": [
+      375.0,
+      376.0,
+      375.0,
+      376.0,
+      376.0,
+      376.0,
+      377.0,
+      376.0,
+      377.0,
+      376.0,
+      377.0,
+      377.0,
+      377.0,
+      377.0,
+      377.0
+    ],
+    "min_period_yr": 375.0,
+    "max_period_yr": 377.0,
+    "windows": [
+      {
+        "start_yr": 18000,
+        "end_yr": 21000,
+        "temperature_span_k": 1.2469776435410722
+      },
+      {
+        "start_yr": 21000,
+        "end_yr": 24000,
+        "temperature_span_k": 1.2584913330390464
+      },
+      {
+        "start_yr": 24000,
+        "end_yr": 27000,
+        "temperature_span_k": 1.2638014982948107
+      },
+      {
+        "start_yr": 27000,
+        "end_yr": 30000,
+        "temperature_span_k": 1.2663527737702225
+      }
+    ],
+    "scope": "Finite 30,000-year record; neither settling nor an attracting cycle is established"
+  },
+  "matched_b3": {
+    "nominal_potential": 0.3,
+    "loss_h": 0.001,
+    "sigma_k": 0.0,
+    "lifetime_yr": 10000.0,
+    "source_parameter_and_rhs_checks": [
+      {
+        "chemistry": "fixed",
+        "fraction": 0.0,
+        "equal_base_parameters": true,
+        "perturbed_rhs_max_relative_difference": 2.01034032688185e-14
+      },
+      {
+        "chemistry": "fixed",
+        "fraction": 0.5,
+        "equal_base_parameters": true,
+        "perturbed_rhs_max_relative_difference": 8.481231595886543e-14
+      },
+      {
+        "chemistry": "products",
+        "fraction": 0.0,
+        "equal_base_parameters": true,
+        "perturbed_rhs_max_relative_difference": 1.091764298655707e-14
+      },
+      {
+        "chemistry": "products",
+        "fraction": 0.5,
+        "equal_base_parameters": true,
+        "perturbed_rhs_max_relative_difference": 5.881585568254279e-14
+      }
+    ],
+    "stability": [
+      {
+        "chemistry": "fixed",
+        "fraction": 0.0,
+        "tau_yr": 0.0,
+        "recorded_leading_real_yr": -0.0002060194709693264,
+        "recomputed_leading_real_yr": -0.0002060194709693264,
+        "stable": true
+      },
+      {
+        "chemistry": "fixed",
+        "fraction": 0.0,
+        "tau_yr": 3.0,
+        "recorded_leading_real_yr": 0.0037577573894854634,
+        "recomputed_leading_real_yr": 0.0037577573894854634,
+        "stable": false
+      },
+      {
+        "chemistry": "fixed",
+        "fraction": 0.0,
+        "tau_yr": 30.0,
+        "recorded_leading_real_yr": 0.012954035909811673,
+        "recomputed_leading_real_yr": 0.012954035909811673,
+        "stable": false
+      },
+      {
+        "chemistry": "fixed",
+        "fraction": 0.5,
+        "tau_yr": 0.0,
+        "recorded_leading_real_yr": -0.0009260103679471874,
+        "recomputed_leading_real_yr": -0.0009260103679471874,
+        "stable": true
+      },
+      {
+        "chemistry": "fixed",
+        "fraction": 0.5,
+        "tau_yr": 3.0,
+        "recorded_leading_real_yr": 0.0015543573736869192,
+        "recomputed_leading_real_yr": 0.0015543573736869192,
+        "stable": false
+      },
+      {
+        "chemistry": "fixed",
+        "fraction": 0.5,
+        "tau_yr": 30.0,
+        "recorded_leading_real_yr": 0.009547190197081227,
+        "recomputed_leading_real_yr": 0.009547190197081227,
+        "stable": false
+      },
+      {
+        "chemistry": "products",
+        "fraction": 0.0,
+        "tau_yr": 0.0,
+        "recorded_leading_real_yr": -0.01117178278059228,
+        "recomputed_leading_real_yr": -0.01117178278059228,
+        "stable": true
+      },
+      {
+        "chemistry": "products",
+        "fraction": 0.0,
+        "tau_yr": 3.0,
+        "recorded_leading_real_yr": -0.011584247492895982,
+        "recomputed_leading_real_yr": -0.011584247492895982,
+        "stable": true
+      },
+      {
+        "chemistry": "products",
+        "fraction": 0.0,
+        "tau_yr": 30.0,
+        "recorded_leading_real_yr": -0.016161179857964877,
+        "recomputed_leading_real_yr": -0.016161179857964877,
+        "stable": true
+      },
+      {
+        "chemistry": "products",
+        "fraction": 0.5,
+        "tau_yr": 0.0,
+        "recorded_leading_real_yr": -0.011335997547687706,
+        "recomputed_leading_real_yr": -0.011335997547687706,
+        "stable": true
+      },
+      {
+        "chemistry": "products",
+        "fraction": 0.5,
+        "tau_yr": 3.0,
+        "recorded_leading_real_yr": -0.011767463736402146,
+        "recomputed_leading_real_yr": -0.011767463736402146,
+        "stable": true
+      },
+      {
+        "chemistry": "products",
+        "fraction": 0.5,
+        "tau_yr": 30.0,
+        "recorded_leading_real_yr": -0.015929111102921945,
+        "recomputed_leading_real_yr": -0.015929111102921945,
+        "stable": true
+      }
+    ],
+    "stable_settings": 8,
+    "total_settings": 12
+  },
+  "census_endpoints": [
+    {
+      "case_id": "B3_fixed_f0_tau0_A_into_M",
+      "census_endpoint": "acetogen_only",
+      "census_raw": "local/haze/dynamic_transients/B3_fixed_f0_tau0_A_into_M-478d2ed03a7d444539a1-census.npz",
+      "census_sha256": "1b2a9836ee0b90e6365be2080241a0410ba560b4f57b5313f5495078400eee9c"
+    },
+    {
+      "case_id": "B3_fixed_f0_tau0_M_into_A",
+      "census_endpoint": "methanogen_only",
+      "census_raw": "local/haze/dynamic_transients/B3_fixed_f0_tau0_M_into_A-9c23d796d7cbdb607174-census.npz",
+      "census_sha256": "5bdf5ee89b32d60371703a3c586aeee02b8d969dee0364c6fb35ef58df1bb456"
+    },
+    {
+      "case_id": "B3_fixed_f0_tau3_A_into_M",
+      "census_endpoint": "acetogen_only",
+      "census_raw": "local/haze/dynamic_transients/B3_fixed_f0_tau3_A_into_M-3331fb0c7a6db909753d-census.npz",
+      "census_sha256": "a7ddce8edca989d047c2312b8d91b235c6ba632749d35373522c3cbf570bd795"
+    },
+    {
+      "case_id": "B3_fixed_f0_tau3_M_into_A",
+      "census_endpoint": "methanogen_only",
+      "census_raw": "local/haze/dynamic_transients/B3_fixed_f0_tau3_M_into_A-2fcb2abdcf0d283f7b0f-census.npz",
+      "census_sha256": "8893837623959fe53d131ca5d27fb84d840c4809fef0511c2275a0191fcde915"
+    },
+    {
+      "case_id": "B3_fixed_f0_tau30_A_into_M",
+      "census_endpoint": "acetogen_only",
+      "census_raw": "local/haze/dynamic_transients/B3_fixed_f0_tau30_A_into_M-fe43379f11f8a7f47b27-census.npz",
+      "census_sha256": "d073506309058a1c452bed5103710d0a37f748a57f25adbf3668d9b761b410bd"
+    },
+    {
+      "case_id": "B3_fixed_f0_tau30_M_into_A",
+      "census_endpoint": "methanogen_only",
+      "census_raw": "local/haze/dynamic_transients/B3_fixed_f0_tau30_M_into_A-cc2e1c5f2e8a9fd3f6ae-census.npz",
+      "census_sha256": "22fe8723329871327651275cb64b1a2b70ba6676c9a0c4f60ffc9d7e4f16e34a"
+    },
+    {
+      "case_id": "B3_fixed_f0.5_tau0_A_into_M",
+      "census_endpoint": "acetogen_only",
+      "census_raw": "local/haze/dynamic_transients/B3_fixed_f0.5_tau0_A_into_M-98c13b1b7772e6d57c48-census.npz",
+      "census_sha256": "0d074b7e955567267ad83de8460426a111e21de9b089a9a35287674f2e662a37"
+    },
+    {
+      "case_id": "B3_fixed_f0.5_tau0_M_into_A",
+      "census_endpoint": "methanogen_only",
+      "census_raw": "local/haze/dynamic_transients/B3_fixed_f0.5_tau0_M_into_A-0d38a54febce2ca9fb01-census.npz",
+      "census_sha256": "0934cdc1cb90b793c25b7eaadcd1f8f436058e82433011b88a8f5ce4933ea24d"
+    },
+    {
+      "case_id": "B3_fixed_f0.5_tau3_A_into_M",
+      "census_endpoint": "acetogen_only",
+      "census_raw": "local/haze/dynamic_transients/B3_fixed_f0.5_tau3_A_into_M-c030bf93fc04fce1579c-census.npz",
+      "census_sha256": "c6afe3909141d7a9292eecaad002df698b96b5cc56d436ab195089f428d93aef"
+    },
+    {
+      "case_id": "B3_fixed_f0.5_tau3_M_into_A",
+      "census_endpoint": "methanogen_only",
+      "census_raw": "local/haze/dynamic_transients/B3_fixed_f0.5_tau3_M_into_A-4dacbdd807b3775d4e3d-census.npz",
+      "census_sha256": "58c44dd6074b3687ce0d9675927e528468513326ed861665d5a3088137f695fc"
+    },
+    {
+      "case_id": "B3_fixed_f0.5_tau30_A_into_M",
+      "census_endpoint": "acetogen_only",
+      "census_raw": "local/haze/dynamic_transients/B3_fixed_f0.5_tau30_A_into_M-236e55bbb9a6e3734a89-census.npz",
+      "census_sha256": "a44706d9bc71af5295cfe7ab8fb336b204d8b72ab878f9869021edf63622855f"
+    },
+    {
+      "case_id": "B3_fixed_f0.5_tau30_M_into_A",
+      "census_endpoint": "methanogen_only",
+      "census_raw": "local/haze/dynamic_transients/B3_fixed_f0.5_tau30_M_into_A-13d632b0802a3fa07c6c-census.npz",
+      "census_sha256": "5619a9dc097ce97536ff2cd5077f80d3e93f35f879cf7a395130bdf6e831df33"
+    },
+    {
+      "case_id": "B3_products_f0_tau0_A_into_M",
+      "census_endpoint": "acetogen_only",
+      "census_raw": "local/haze/dynamic_transients/B3_products_f0_tau0_A_into_M-d29934bfb2cd2d87bb7e-census.npz",
+      "census_sha256": "37bc0dc3a1fc11e23c4223c0fb4fa3b7718c7ba185d1c733290cb3f24ae0a848"
+    },
+    {
+      "case_id": "B3_products_f0_tau0_M_into_A",
+      "census_endpoint": "methanogen_only",
+      "census_raw": "local/haze/dynamic_transients/B3_products_f0_tau0_M_into_A-dedc1c387147acd9d1bf-census.npz",
+      "census_sha256": "fdc9b089356fcfdd0d4ea730d71885a3b80a3c7c23c6ed447539d35621999c4b"
+    },
+    {
+      "case_id": "B3_products_f0_tau3_A_into_M",
+      "census_endpoint": "acetogen_only",
+      "census_raw": "local/haze/dynamic_transients/B3_products_f0_tau3_A_into_M-581dc482db777d60310b-census.npz",
+      "census_sha256": "07471191e3ebb100667e695b5d3971b036cfaea2966f385dc3bbd6ab25809f3e"
+    },
+    {
+      "case_id": "B3_products_f0_tau3_M_into_A",
+      "census_endpoint": "methanogen_only",
+      "census_raw": "local/haze/dynamic_transients/B3_products_f0_tau3_M_into_A-496ec0f02c25ff37a1ac-census.npz",
+      "census_sha256": "520ccfcc73b156ef79ddab2347beb0dc1e7a43c273bce265c22e360a8893dae5"
+    },
+    {
+      "case_id": "B3_products_f0_tau30_A_into_M",
+      "census_endpoint": "acetogen_only",
+      "census_raw": "local/haze/dynamic_transients/B3_products_f0_tau30_A_into_M-ecfb8233046fb5139690-census.npz",
+      "census_sha256": "fb9cdfeb446d6e8fc3752ea365c043991f3e81c2566d4f35a20052e7eda74530"
+    },
+    {
+      "case_id": "B3_products_f0_tau30_M_into_A",
+      "census_endpoint": "methanogen_only",
+      "census_raw": "local/haze/dynamic_transients/B3_products_f0_tau30_M_into_A-e6269650e2d14557ecc2-census.npz",
+      "census_sha256": "70eb94dfa47a01b055f738a4fab1e69fa7c95fb40fab7dedf000b05baa4f345e"
+    },
+    {
+      "case_id": "B3_products_f0.5_tau0_A_into_M",
+      "census_endpoint": "acetogen_only",
+      "census_raw": "local/haze/dynamic_transients/B3_products_f0.5_tau0_A_into_M-0d2f907260a4b31e7330-census.npz",
+      "census_sha256": "d8a09e0e23e2722dc1a38c4c58c3c5816b2051cef2973d0984e5db82e0b635a5"
+    },
+    {
+      "case_id": "B3_products_f0.5_tau0_M_into_A",
+      "census_endpoint": "methanogen_only",
+      "census_raw": "local/haze/dynamic_transients/B3_products_f0.5_tau0_M_into_A-c3620554f68abcd6f406-census.npz",
+      "census_sha256": "5a001db782af1a018c3f44b1fb97d6f151af4e67f9668f12384d5528e7a30296"
+    },
+    {
+      "case_id": "B3_products_f0.5_tau3_A_into_M",
+      "census_endpoint": "acetogen_only",
+      "census_raw": "local/haze/dynamic_transients/B3_products_f0.5_tau3_A_into_M-f0db6a850aa8e8833db9-census.npz",
+      "census_sha256": "fc5f25d5ac3840e8993a900cd0d21e85ea0689a774c5b21ca0c12504b2df9efc"
+    },
+    {
+      "case_id": "B3_products_f0.5_tau3_M_into_A",
+      "census_endpoint": "methanogen_only",
+      "census_raw": "local/haze/dynamic_transients/B3_products_f0.5_tau3_M_into_A-34dba3e992dbaeeb46bb-census.npz",
+      "census_sha256": "1ffb1a10eca86fc6873ba612fc768ac0622075ac7a801e2d3936a06c09a4c419"
+    },
+    {
+      "case_id": "B3_products_f0.5_tau30_A_into_M",
+      "census_endpoint": "acetogen_only",
+      "census_raw": "local/haze/dynamic_transients/B3_products_f0.5_tau30_A_into_M-a2feba3ad6e4b9015dc0-census.npz",
+      "census_sha256": "28d0bbd64571d10e21b9c4f3f195415075738fdea99282c26a9bfc724e8841eb"
+    },
+    {
+      "case_id": "B3_products_f0.5_tau30_M_into_A",
+      "census_endpoint": "methanogen_only",
+      "census_raw": "local/haze/dynamic_transients/B3_products_f0.5_tau30_M_into_A-a3949c238c299e76d301-census.npz",
+      "census_sha256": "285283e38abaf423e1edaec576899b0f849ae9bc13e530733a890f07a05ca7e6"
+    }
+  ],
+  "fig4_plotted_census_rows_verified": 164
+}

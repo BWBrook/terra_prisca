@@ -3,10 +3,10 @@
     uv run python -m terra_prisca.haze_world.paper_figures fig2
     uv run python -m terra_prisca.haze_world.paper_figures.fig2 --refresh
 
-Fixed products, f = 0, reference state (loss 1e-3 per h, supply 0.30).
-(a, b) kicked trajectories (0.1% acetogen kick) at tau = 1 and 10 yr; (c) leading
-real part of the eigenvalues against tau for the exact reference state and one
-graded state (dial D2, d = 1e-4 per yr, sigma = 0.03 K).
+Fixed products, reference state (loss 1e-3 per h, supply 0.30).
+(a, b) f = 0 kicked trajectories (0.1% acetogen kick) at tau = 1 and 10 yr;
+(c) leading real part of the eigenvalues against tau for matched f = 0.5 exact
+and graded states (dial D2, d = 1e-4 per yr, sigma = 0.03 K).
 
 The default run replots the CSVs in models/haze_world/paper/figures/data/
 (fig2_trajectories.csv, fig2_spectra.csv, fig2_checks.csv). --refresh
@@ -96,7 +96,7 @@ def spectra():
     from terra_prisca.haze_world import continuum_core as weighted
     from terra_prisca.haze_world import graded_dials as gd
 
-    p = dr.parameters("fixed", 0.0, 0.001, 0.30)
+    p = dr.parameters("fixed", 0.5, 0.001, 0.30)
     exact = next(e for e in dc.equilibrium_states(p) if e["kind"] == "mixed" and e["status"] == "accepted")
     build = dr.thermal_builder(exact["y"], p)
     states = json.loads((FIG_DIR / "graded_dials/states.json").read_text())
@@ -109,17 +109,18 @@ def spectra():
         return leading(weighted.dense_matrix(y2, p2, tau, blocks=blocks) * scale[None, :] / scale[:, None])
 
     series = {"exact": lambda tau: leading(build(tau)), "graded": graded}
-    grid = np.unique(np.r_[np.geomspace(1e-3, 1e4, 281), 0.1492, 38.5])
+    assert p2.base == p.base
+    grid = np.unique(np.r_[np.geomspace(1e-3, 1e4, 281), 1.103, 38.5])
     rows, firsts = [], {}
     for name, function in series.items():
         values = [function(float(t)) for t in grid]
         for t, v in zip(grid, values):
-            rows.append(dict(state=name, tau_yr=float(t), leading_real_yr=v))
+            rows.append(dict(state=name, fraction=0.5, tau_yr=float(t), leading_real_yr=v))
         flips = [i for i in range(len(grid) - 1) if values[i] < 0 <= values[i + 1]]
         first = flips[0]
         firsts[name] = brentq(function, grid[first], grid[first + 1], xtol=1e-10)
     for name, first in firsts.items():
-        rows.append(dict(state=name + "_first_loss", tau_yr=first, leading_real_yr=0.0))
+        rows.append(dict(state=name + "_first_loss", fraction=0.5, tau_yr=first, leading_real_yr=0.0))
     return rows, firsts, record["lag"]["tau_c"], exact["t_k"]
 
 
@@ -138,9 +139,21 @@ def refresh():
         for key in ("first_acetogen_below_cell_yr", "first_methanogen_below_cell_yr",
                     "acetogen_log10_min_cells", "methanogen_log10_min_cells",
                     "final_window_temperature_span_k", "peak_temperature_k", "minimum_temperature_k"):
+            if s[key] is None or arch[key] is None:
+                assert s[key] is arch[key], (key, s[key], arch[key])
+            else:
+                assert np.isclose(s[key], arch[key], rtol=1e-6, atol=1e-7), (key, s[key], arch[key])
             checks.append(dict(quantity=f"tau{s['tau_yr']:g}_{key}", regenerated=s[key], archived=arch[key]))
         checks.append(dict(quantity=f"tau{s['tau_yr']:g}_wall_seconds", regenerated=s["wall_seconds"], archived=""))
-    checks.append(dict(quantity="exact_first_loss_tau_yr", regenerated=firsts["exact"], archived=0.14921426039312066))
+    archived_exact = next(float(r["critical_lag_yr"]) for r in csv.DictReader(
+        (FIG_DIR / "dynamic_realisation/stability_gain.csv").open())
+        if r["chemistry"] == "fixed" and r["fraction"] == "0.5" and r["sigma_k"] == "0.0"
+        and r["nominal_potential"] == "0.3" and r["loss_h"] == "0.001" and r["kind"] == "mixed"
+        and r["status"] == "accepted" and r["branch"] == "0" and r["two_layer"] == "False"
+        and r["slope_multiplier"] == "1.0" and r["lifetime_yr"] == "10000.0")
+    assert np.isclose(firsts["exact"], archived_exact, rtol=1e-6)
+    assert np.isclose(firsts["graded"], recorded, rtol=1e-6)
+    checks.append(dict(quantity="exact_f0.5_first_loss_tau_yr", regenerated=firsts["exact"], archived=archived_exact))
     checks.append(dict(quantity="graded_first_loss_tau_yr", regenerated=firsts["graded"], archived=recorded))
     write_csv("fig2_checks.csv", checks)
 
@@ -219,8 +232,8 @@ def main(do_refresh=False):
     style.panel_label(b1, "b", x=-0.2)
     a1.text(1.0, 0.05, "", transform=a1.transAxes)
 
-    a1.annotate("first cell lost\nat %.0f yr" % stop["time_yr"], (stop["time_yr"], stop["temperature_k"]),
-                xytext=(1100, 283.15), fontsize=6.5, ha="center", va="top", color=style.INK,
+    a1.annotate("one-cell crossing\nat %.0f yr" % stop["time_yr"], (stop["time_yr"], stop["temperature_k"]),
+                xytext=(1350, 283.15), fontsize=6.5, ha="center", va="top", color=style.INK,
                 arrowprops=dict(arrowstyle="-", lw=0.5, color=style.INK_2, shrinkA=1, shrinkB=2))
     a1.plot([], [], **ink_styles[1.0], label="$\\tau$ = 1 yr")
     a1.plot([], [], **ink_styles[10.0], label="$\\tau$ = 10 yr")
@@ -244,8 +257,8 @@ def main(do_refresh=False):
                mec="white", mew=0.5)
         c.annotate(f"{first['tau_yr']:.4g} yr", (first["tau_yr"], 0), xytext=(5, -11),
                    textcoords="offset points", fontsize=6, color=style.INK)
-    c.text(1.5e-3, 1.5e-2, "exact reference", fontsize=6.5, color=style.INK, ha="left", va="center")
-    c.text(60, 2.2e-4, "graded state", fontsize=6.5, color=style.MECHANISM["spread"]["color"],
+    c.text(1.5e-3, 1.5e-2, "exact, $f = 0.5$", fontsize=6.5, color=style.INK, ha="left", va="center")
+    c.text(60, 2.2e-4, "graded, $f = 0.5$", fontsize=6.5, color=style.MECHANISM["spread"]["color"],
            ha="left", va="center")
     c.text(1.2e-3, 3e-3, "unstable", fontsize=6, color=style.INK_2, va="center")
     c.text(1.2e-3, -3.1e-4, "stable", fontsize=6, color=style.INK_2, va="center")
@@ -253,7 +266,7 @@ def main(do_refresh=False):
     c.set_xscale("log")
     c.set_yscale("symlog", linthresh=thresh, linscale=0.6)
     c.set_xlim(1e-3, 1e4)
-    c.set_ylim(-4.5e-4, 3e-2)
+    c.set_ylim(-1.2e-3, 3e-2)
     c.set_xlabel("Climate response time $\\tau$ (yr)")
     c.set_ylabel("Leading real part of eigenvalue (yr$^{-1}$)")
     style.panel_label(c, "c", x=-0.3)

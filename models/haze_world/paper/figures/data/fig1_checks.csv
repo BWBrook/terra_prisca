@@ -1,5 +1,7 @@
 quantity,value,draft_value
 t_star_k,281.53482280508206,281.53
+dry_mass_capacity_ratio_30c,0.37894736842105264,
+dry_mass_crossing_k,297.1528184635824,
 rstar_acetogen_278k_pa,27.614931817597395,27.61
 rstar_methanogen_278k_pa,47.10576817294765,47.11
 rstar_acetogen_283k_pa,21.44953126697813,21.45

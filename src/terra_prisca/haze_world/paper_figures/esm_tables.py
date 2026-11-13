@@ -8,6 +8,7 @@ uv run python -m terra_prisca.haze_world.paper_figures table_s1
 
 import csv
 import json
+import math
 from dataclasses import replace
 
 from .. import methane_budget as budget
@@ -203,12 +204,24 @@ def coexistence_budget():
     outlet = bio.exchange_mol_l_h_pa * (p - bio.atmosphere_pa)
     low = .3 * (outlet + needed / eta[1]) / j_ref
     high = lambda f: float("inf") if f == 0 else .3 * (outlet + needed / (f * eta[0])) / j_ref
-    return dict(low=low, high=high, j_ref=j_ref, k_ex=bio.exchange_mol_l_h_pa, p_star=p)
+    return dict(low=low, high=high, j_ref=j_ref, k_ex=bio.exchange_mol_l_h_pa, p_star=p, t_star=tk)
 
 
 def s7_hydrogen():
     rows = json.loads((REVIEW / "atmospheric_h2_check.json").read_text())["rows"]
     bud = coexistence_budget()
+    pressure_limit = (bud["high"](.5) - .3) * bud["j_ref"] / (.3 * bud["k_ex"])
+    independent = json.loads((AUDITS / "readiness-h2-2026-11-12.json").read_text())["fixed_independent"]
+    recorded_limit = next(r["upper_reference_branch_pressure_pa"] for r in independent if r["fraction"] == .5)
+    if not math.isclose(pressure_limit, recorded_limit, rel_tol=1e-8, abs_tol=1e-6):
+        raise ValueError("Atmospheric-hydrogen endpoint disagrees with the independent budget audit")
+    for pressure, expected in ((pressure_limit - 1., True), (pressure_limit + 1., False)):
+        p = core.reference()
+        p = replace(p, biology=replace(p.biology, atmosphere_pa=pressure))
+        on_reference_branch = any(s["kind"] == "mixed" and abs(s["t_k"] - bud["t_star"]) < 1e-6
+                                  for s in core.equilibrium_states(p))
+        if on_reference_branch != expected:
+            raise ValueError("Reference mixed-state search disagrees across the atmospheric-hydrogen endpoint")
     table = []
     for r in rows:
         mixed = r["status"] == "mixed"
@@ -217,12 +230,12 @@ def s7_hydrogen():
                  "T* (K)": fixed(r.get("temperature_k"), 7), "local H₂ (Pa)": fixed(r.get("local_h2_pa"), 6),
                  "S (K per e-fold)": "" if "dT_dlog_supply_k" not in r else f"{r['dT_dlog_supply_k']:.2e}",
                  "τ_c (yr)": "" if "critical_lag_status" not in r else tau_text(r["critical_lag_status"], r["critical_lag_yr"]),
-                 "effective supply potential": ""}
+                 "equivalent zero-reservoir supply potential": ""}
         if r["chemistry"] == "fixed":
-            effective = .3 * (bud["j_ref"] + bud["k_ex"] * (r["atmosphere_pa"] - bud["p_star"])) / bud["j_ref"]
-            if (bud["low"] <= effective <= bud["high"](float(r["fraction"]))) != mixed:
-                raise ValueError("Effective-supply interval disagrees with the recorded mixed-state search")
-            entry["effective supply potential"] = f"{effective:.4f}"
+            equivalent = .3 * (bud["j_ref"] + bud["k_ex"] * r["atmosphere_pa"]) / bud["j_ref"]
+            if (bud["low"] < equivalent < bud["high"](float(r["fraction"]))) != mixed:
+                raise ValueError("Equivalent-input interval disagrees with the recorded mixed-state search")
+            entry["equivalent zero-reservoir supply potential"] = f"{equivalent:.4f}"
         table.append(entry)
     write_csv(ESM / "s7_atmospheric_h2.csv", table, list(table[0]))
     fixed_rows = [t for t in table if t["chemistry"] == "fixed"]

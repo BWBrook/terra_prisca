@@ -6,7 +6,7 @@ Claude (Sonnet 5.5), 13 November 2026, for the [full draft](../03c-full-draft.md
 
 ## S1 Parameters
 
-**Table S1** ([table_s1.md](table_s1.md), [table_s1.csv](table_s1.csv)) lists every parameter with value, units, basis, source and code location. It is built from `population_coupling.reference()`, `two_guilds`, `woodii1998` and `methane_budget`, so it cannot drift from the code. The six-temperature kinetic tables, with the derived capacity, maintenance, cessation pressure and hydrogen requirement at each temperature, are in [table_s1_kinetics.md](table_s1_kinetics.md). Basis labels: source (quoted), transferred (a measurement applied beyond its system), assumption, derived, swept.
+**Table S1** ([table_s1.md](table_s1.md), [table_s1.csv](table_s1.csv)) lists the reference parameters and the main Stage B and dial settings with value, units, basis, source and code location. Values are drawn from model objects, source tables and experiment constants, with explicit checks on cited definitions; code locations are navigation aids. The six-temperature kinetic tables, with the derived capacity, maintenance, cessation pressure and hydrogen requirement at each temperature, are in [table_s1_kinetics.md](table_s1_kinetics.md). Basis labels: source (quoted), transferred (a measurement applied beyond its system), assumption, derived, swept.
 
 Unit conversions, with values from table S1:
 
@@ -70,7 +70,7 @@ with $E_A = 53.1$ and $E_M = 116.1$ kJ mol⁻¹ and $K_i$ still frozen. The mixe
 
 $$\frac{dC}{dt} = \frac{F_A}{4} - \left(k_{rec} + k_{other}\right)C,\qquad k_{rec} = \frac{f}{t_A},\quad k_{other} = \frac{1-f}{t_A}, \tag{S8}$$
 
-with local methane production $F_M/4 + k_{rec}C$ in mol L⁻¹ yr⁻¹. At a coexistence steady state $g_i = \ell$, so $q_i = Q_i$ and $F_i = H(Q_i - \alpha_i\ell)X_i$. The catabolised fraction is $\eta_i = 1 - \alpha_i\ell/Q_i$, which is $\eta_A = 0.894871$ and $\eta_M = 0.941322$ at the reference $T^*$ (table S1). The steady methane yields per hydrogen taken up are $f\eta_A/4$ and $\eta_M/4$. Because $\eta_i < 1$, even $f = 1$ does not equalise the two routes (S8).
+with local methane production $F_M/4 + k_{rec}C$ in mol L⁻¹ yr⁻¹. At a coexistence steady state $g_i = \ell$, so $q_i = Q_i$ and $F_i = H(Q_i - \alpha_i\ell)X_i$. The catabolised fraction is $\eta_i = 1 - \alpha_i\ell/Q_i$, which is $\eta_A = 0.894871$ and $\eta_M = 0.941322$ at the reference $T^*$ (table S1). The steady methane yields per hydrogen taken up are $f\eta_A/4$ and $\eta_M/4$. Because $\eta_A < \eta_M$ under the assumed biomass export, even $f = 1$ does not equalise the two routes (S8).
 
 **Habitat-weighted methane source.** For habitats at offsets $\delta_j$ with quadrature weights $w_j$ ($\sum_j w_j = 1$; on a panel $[a,b]$ the Gauss–Legendre weight is $(b-a)w_{GL}/(4\sigma)$), each habitat keeps its own hydrogen, acetate and biomass balances (2.4), (S8) and (2.9) at temperature $T + \delta_j$, and the cell exchange uses the weighted mean $\bar X_i = \sum_j w_j X_{ij}$. All habitats share the atmosphere and the temperature $T$:
 
@@ -88,7 +88,7 @@ $$\frac{dr}{dt} = \chi\sum_j w_j\left(\frac{F_{M,j}}{4} + k_{rec}C_j\right) + c\
 
 $$S = \frac{dT^*}{d\ln\Phi} = T_{clim}'(r^*)\,v_r,\qquad v = -J_0^{-1}\,\partial_{\ln\Phi}F, \tag{S10}$$
 
-where the forcing enters only the hydrogen balance. The temperature derivative $b$ uses the five-point stencil $[F(T-2h) - 8F(T-h) + 8F(T+h) - F(T+2h)]/12h$ with $h = 10^{-4}$ K (one-sided inside $2h$ of the domain edge). S is checked against a finite supply perturbation of ±$10^{-3}$ in $\ln\Phi$ (±$10^{-4}$ on disagreement) and accepted within max($10^{-7}$ K, 2%); all 34 dial points pass (`graded_dials/prediction_assessment.json`). The frozen-composition slope $S_0$ is checked the same way, with tolerance max($10^{-3}$ K, 2%).
+where the forcing enters only the hydrogen balance. The temperature derivative $b$ uses the five-point stencil $[F(T-2h) - 8F(T-h) + 8F(T+h) - F(T+2h)]/12h$ with $h = 10^{-4}$ K (one-sided inside $2h$ of the domain edge). S is checked against a finite supply perturbation of ±$10^{-3}$ in $\ln\Phi$ (±$10^{-4}$ on disagreement) and accepted within max($10^{-7}$ K, 2%); all 34 dial points pass (`graded_dials/prediction_assessment.json`). The frozen-composition slope $S_0$ is checked by supply perturbations of ±$10^{-4}$ in $\ln\Phi$, reduced to ±$10^{-5}$ on disagreement, with tolerance max($10^{-3}$ K, 2%).
 
 **Characteristic equation and τ_c.** The linearisation at lag τ is $J_\tau = \begin{pmatrix} A & b\\ c^{\mathsf T}/\tau & -1/\tau\end{pmatrix}$, whose eigenvalues solve (2.11); $J_0$ is the τ = 0 limit. States are first classified by the leading real part at τ = 0: above $10^{-9}$ yr⁻¹ is already unstable (τ_c reported as 0 and listed apart), within $\pm10^{-9}$ neutral. For the others the leading real part is evaluated on the lag grid 0.03, 0.1, 0.3, 1, 3, 10, 30, 100, 300, 1000 yr, merged with 29 (homogeneous) or 22 (habitats) log-spaced lags from 0.001 to 10⁴ yr. A sign change from negative to positive between neighbours is refined by Brent's method (tolerance $10^{-8}$ yr homogeneous, $10^{-7}$ yr habitats) and recorded as a loss; positive to negative is recorded as a restabilisation. τ_c is the first loss. A state with no loss through 10⁴ yr is reported as "not detected through 10 000 yr", a lower bound that is never interpolated or treated as a margin. Matrices are rescaled by the state magnitudes before the eigenproblem. Habitat systems up to 2048 states use the full dense spectrum; larger ones use shift-invert Arnoldi at shifts 0, 0.001i, 0.003i, 0.01i, 0.03i, 0.1i, 0.3i and 1i yr⁻¹ (tolerance $10^{-10}$). The slow sink-population spectrum (the slowest local decay rate) is reported separately from the collective roots.
 
@@ -96,7 +96,7 @@ An independent route, written by Codex, eliminates the local habitat blocks by q
 
 **Integrators.** Trajectories use LSODA in positive coordinates (softplus for biomasses and acetate, with logarithms retained near zero so per-capita rates stay defined), relative tolerance $2\times10^{-8}$, absolute tolerances $10^{-9}$ (p, $X_A$, $X_M$), $10^{-10}$ (C), $10^{-12}$ (r) and $10^{-8}$ (T), maximum step 50 yr and output every year (`dynamic_transients.integrate`). Population minima, one-cell crossings and temperature extrema are located from the roots of the dense-output polynomials. Four selected runs (B2 at f = 0 with τ = 1 and 100 yr, and two f = 0.5, τ = 3 yr invasions: acetogen into methanogen with fixed products, methanogen into acetogen with both products) were repeated with relative tolerance $2\times10^{-9}$, maximum step 2 yr and output every 0.5 yr (`dynamic_transient_assessment.py`). The kicked runs last 30 000 yr and the invasions 100 000 yr.
 
-**Adaptive quadrature and the doubling test (C44, C45).** Habitat spread is a uniform temperature distribution on $[-\sigma, \sigma]$. Each habitat switches from acetogen to methanogen dominance across a zone of temperature width proportional to the cell exchange rate $d$. Equal-weight midpoint grids do not resolve that zone: at $d = 10^{-3}$ yr⁻¹, σ = 1 K, $f = 0.5$, the critical lag changes from 7.2 yr at N = 9 to 102 yr at N = 33 and has not converged at N = 513 (782 yr); the zone width is 0.15 K at $d = 10^{-3}$ and 1.5 K at $d = 10^{-2}$ (C44; table S3a). The resolved calculation uses composite Gauss–Legendre panels of 4 nodes, starting from 4 panels, and bisects any panel across which the acetogen share changes by more than 1 in logit units. It then doubles the panels inside the mixed zone and accepts the setting only when the doubled solution agrees with the previous one: supply slopes $S$ and $S_0$ within max($10^{-3}$ K, 2%), finite τ_c within 2%, the same censoring class, and the frozen-composition slope within the same tolerance of a finite supply difference (up to 7 doublings, at most 4096 nodes). All 80 resolved C1 settings pass, with 48 to 204 nodes, and the 90 homogeneous C0 records use the same estimands (C45). Six independent characteristic checks agree: two finite margins to 2 × 10⁻⁵ relative, four as right-censored. The checks cover finite sampled branches and finite lag and frequency scans; they are not an interval proof for every root or delay (C45).
+**Adaptive quadrature and the doubling test (C44, C45).** Habitat spread is a uniform temperature distribution on $[-\sigma, \sigma]$. With fixed chemistry, each habitat switches from acetogen to methanogen dominance across a zone whose width scales with the cell exchange rate $d$ over the tested range; product feedback breaks that scaling (C48). Equal-weight midpoint grids do not resolve that zone: at $d = 10^{-3}$ yr⁻¹, σ = 1 K, $f = 0.5$, the critical lag changes from 7.2 yr at N = 9 to 102 yr at N = 33 and has not converged at N = 513 (782 yr); the zone width is 0.15 K at $d = 10^{-3}$ and 1.5 K at $d = 10^{-2}$ (C44; table S3a). The resolved calculation uses composite Gauss–Legendre panels of 4 nodes, starting from 4 panels, and bisects any panel across which the acetogen share changes by more than 1 in logit units. It then doubles the panels inside the mixed zone and accepts the setting only when the doubled solution agrees with the previous one: supply slopes $S$ and $S_0$ within max($10^{-3}$ K, 2%), finite τ_c within 2%, the same censoring class, and the frozen-composition slope within the same tolerance of a finite supply difference (up to 7 doublings, at most 4096 nodes). All 80 resolved C1 settings pass, with 48 to 204 nodes, and the 90 homogeneous C0 records use the same estimands (C45). Six independent characteristic checks agree: two finite margins to 2 × 10⁻⁵ relative, four as right-censored. The checks cover finite sampled branches and finite lag and frequency scans; they are not an interval proof for every root or delay (C45).
 
 <!-- table:s3_resolution -->
 
@@ -238,7 +238,7 @@ The prescribed log–log slope band (slope 1 to 2.5 of ln τ_c against ln $|S|$ 
 
 ## S6 Staged predictions
 
-Each stage was specified before its results were computed. Each specification file has one commit, earlier than the commits holding the outputs it predicts (git history; times are UTC+11). Prediction labels (PB, PC, PD) belong to the stage.
+Each specification's first commit precedes the commits holding that stage's outputs (git history; times are UTC+11). The staged predictions were informed by earlier model results and external reviews. Prediction labels (PB, PC, PD) belong to the stage.
 
 | Stage | Specification (file date; first commit) | Prediction | Outcome | Evidence |
 |---|---|---|---|---|
@@ -271,7 +271,7 @@ Each stage was specified before its results were computed. Each specification fi
 
 *Table S5c. The two refinement points where the weak-mode formula misses by more than a factor of 2 (both D1, f = 0; `threshold_refinement/states.json`).*
 
-The earlier stages carry their own dated specifications: [stage3-growth-spec.md](../../stage3-growth-spec.md) (9 Nov), [refuge-coupling-spec.md](../../refuge-coupling-spec.md), [buffered-refuge-spec.md](../../buffered-refuge-spec.md), [bottleneck-test-spec.md](../../bottleneck-test-spec.md) and [turnover-dormancy-spec.md](../../turnover-dormancy-spec.md) (10 Nov), and [competitive-evolution-spec.md](../../competitive-evolution-spec.md) (11 Nov). The paper does not use their outcomes, and this supplement does not summarise them.
+The earlier stages carry their own dated specifications: [stage3-growth-spec.md](../../stage3-growth-spec.md) (9 Nov), [refuge-coupling-spec.md](../../refuge-coupling-spec.md), [buffered-refuge-spec.md](../../buffered-refuge-spec.md), [bottleneck-test-spec.md](../../bottleneck-test-spec.md) and [turnover-dormancy-spec.md](../../turnover-dormancy-spec.md) (10 Nov), and [competitive-evolution-spec.md](../../competitive-evolution-spec.md) (11 Nov). The paper retains the benchmark parameters and reference comparisons C05–C06; the earlier refuge, bottleneck, dormancy and evolutionary outcomes are outside its reported results.
 
 ## S7 Atmospheric hydrogen (C59)
 
@@ -279,33 +279,33 @@ The reference fixes the reservoir at $p_{atm} = 0$ Pa. Table S7 varies it from 0
 
 - **Set point.** With fixed products, $T^*$ stays at 281.5348 K from 0 to 100 Pa (and 200 Pa at $f = 0$), because coexistence fixes the local hydrogen at $R^*(T^*) = 22.486$ Pa whatever the reservoir.
 - **Critical lag.** At $f = 0$, τ_c falls monotonically from 0.149 to 0.119 yr over 0 to 100 Pa (0.113 yr at 200 Pa). At $f = 0.5$ it moves from 1.103 to 1.185 yr, with a small dip to 1.100 yr at 10 Pa.
-- **Loss of the mixed state.** At $f = 0.5$ and 200 Pa no mixed state was found; the search returns the lifeless, acetogen-only and methanogen-only states. The reservoir imports hydrogen when $p_{atm} > p$, so the effective supply is $P_{eff} = 0.30\,[J + k_{ex}(p_{atm} - R^*)]/J$ (last column). At 200 Pa $P_{eff} = 0.4775$ exceeds the upper end of the coexistence interval for $f = 0.5$, 0.4573 (table S8b); at 100 Pa it is 0.3775, inside it. At $f = 0$ the interval has no upper end. The script checks that this interval criterion agrees with the recorded search in every fixed-chemistry row.
+- **Loss of the mixed state.** At $f = 0.5$ and 200 Pa no mixed state was found; the search returns the lifeless, acetogen-only and methanogen-only states. The reservoir imports hydrogen when $p_{atm} > p$. The nominal-supply bounds in table S8b already include the outlet at $p_{atm}=0$. Their equivalent zero-reservoir input is therefore $P_{eq} = 0.30\,[J + k_{ex}p_{atm}]/J$ (last column). At 200 Pa $P_{eq} = 0.5000$ exceeds the upper end for $f = 0.5$, 0.4573; at 100 Pa it is 0.4000, inside it. The positive reference branch ends at 157.326965 Pa, agreeing with the independent budget audit in `docs/audits/readiness-h2-2026-11-12.json`. The table generator checks that endpoint, live reference-branch searches 1 Pa either side, and agreement with every recorded fixed-chemistry row. At $f = 0$ the interval has no upper end.
 - **Product feedback.** With both products, $T^*$ falls from 281.569 K (0 Pa) to 280.972 K (200 Pa) at $f = 0$ and from 281.285 K to 280.895 K (100 Pa) at $f = 0.5$, with no loss of stability detected through 10⁴ yr; $f = 0.5$ has no mixed state at 200 Pa (rows in [s7_atmospheric_h2.csv](s7_atmospheric_h2.csv)).
 
 <!-- table:s7_h2 -->
 
-| chemistry | f | p_atm (Pa) | mixed state | T* (K) | local H₂ (Pa) | S (K per e-fold) | τ_c (yr) | effective supply potential |
+| chemistry | f | p_atm (Pa) | mixed state | T* (K) | local H₂ (Pa) | S (K per e-fold) | τ_c (yr) | equivalent zero-reservoir supply potential |
 |---|---|---|---|---|---|---|---|---|
-| fixed | 0.0 | 0 | yes | 281.5348 | 22.4863 | -8.06e-14 | 0.1492 | 0.2775 |
-| fixed | 0.0 | 1 | yes | 281.5348 | 22.4863 | -1.70e-12 | 0.1484 | 0.2785 |
-| fixed | 0.0 | 3 | yes | 281.5348 | 22.4863 | 5.61e-11 | 0.1469 | 0.2805 |
-| fixed | 0.0 | 10 | yes | 281.5348 | 22.4863 | -1.52e-12 | 0.1423 | 0.2875 |
-| fixed | 0.0 | 30 | yes | 281.5348 | 22.4863 | -8.16e-12 | 0.1329 | 0.3075 |
-| fixed | 0.0 | 100 | yes | 281.5348 | 22.4863 | -3.21e-14 | 0.1188 | 0.3775 |
-| fixed | 0.0 | 200 | yes | 281.5348 | 22.4863 | -1.92e-14 | 0.1126 | 0.4775 |
-| fixed | 0.5 | 0 | yes | 281.5348 | 22.4863 | -7.94e-14 | 1.103 | 0.2775 |
-| fixed | 0.5 | 1 | yes | 281.5348 | 22.4863 | -1.71e-12 | 1.102 | 0.2785 |
-| fixed | 0.5 | 3 | yes | 281.5348 | 22.4863 | 5.61e-11 | 1.102 | 0.2805 |
-| fixed | 0.5 | 10 | yes | 281.5348 | 22.4863 | -1.52e-12 | 1.1 | 0.2875 |
-| fixed | 0.5 | 30 | yes | 281.5348 | 22.4863 | -8.15e-12 | 1.102 | 0.3075 |
-| fixed | 0.5 | 100 | yes | 281.5348 | 22.4863 | -3.40e-14 | 1.185 | 0.3775 |
-| fixed | 0.5 | 200 | none found (other states: lifeless, acetogen, methanogen) |  |  |  |  | 0.4775 |
+| fixed | 0.0 | 0 | yes | 281.5348 | 22.4863 | -8.06e-14 | 0.1492 | 0.3000 |
+| fixed | 0.0 | 1 | yes | 281.5348 | 22.4863 | -1.70e-12 | 0.1484 | 0.3010 |
+| fixed | 0.0 | 3 | yes | 281.5348 | 22.4863 | 5.61e-11 | 0.1469 | 0.3030 |
+| fixed | 0.0 | 10 | yes | 281.5348 | 22.4863 | -1.52e-12 | 0.1423 | 0.3100 |
+| fixed | 0.0 | 30 | yes | 281.5348 | 22.4863 | -8.16e-12 | 0.1329 | 0.3300 |
+| fixed | 0.0 | 100 | yes | 281.5348 | 22.4863 | -3.21e-14 | 0.1188 | 0.4000 |
+| fixed | 0.0 | 200 | yes | 281.5348 | 22.4863 | -1.92e-14 | 0.1126 | 0.5000 |
+| fixed | 0.5 | 0 | yes | 281.5348 | 22.4863 | -7.94e-14 | 1.103 | 0.3000 |
+| fixed | 0.5 | 1 | yes | 281.5348 | 22.4863 | -1.71e-12 | 1.102 | 0.3010 |
+| fixed | 0.5 | 3 | yes | 281.5348 | 22.4863 | 5.61e-11 | 1.102 | 0.3030 |
+| fixed | 0.5 | 10 | yes | 281.5348 | 22.4863 | -1.52e-12 | 1.1 | 0.3100 |
+| fixed | 0.5 | 30 | yes | 281.5348 | 22.4863 | -8.15e-12 | 1.102 | 0.3300 |
+| fixed | 0.5 | 100 | yes | 281.5348 | 22.4863 | -3.40e-14 | 1.185 | 0.4000 |
+| fixed | 0.5 | 200 | none found (other states: lifeless, acetogen, methanogen) |  |  |  |  | 0.5000 |
 
 <!-- /table:s7_h2 -->
 
-*Table S7. Fixed-product rows. S in K per e-fold; "effective supply potential" is derived in `esm_tables.py` from the S8 budget.*
+*Table S7. Fixed-product rows. S in K per e-fold; the equivalent input is derived in `esm_tables.py` for comparison with the nominal-input bounds in S8.*
 
-The reservoir is imposed, not a photochemical hydrogen budget, and imported hydrogen supplements the nominal supply (C59). The check does not cover other loss rates, supplies or exchange conductances, and it is not a proof that no mixed state exists at any lag.
+The reservoir is imposed, not a photochemical hydrogen budget, and imported hydrogen supplements the nominal supply (C59). The check does not cover other loss rates, supplies or exchange conductances, and it does not exclude other equilibrium branches. Climate lag changes stability, not the location or existence of these steady states.
 
 ## S8 Dependence on the acetate fate f
 
@@ -329,11 +329,11 @@ The reservoir is imposed, not a photochemical hydrogen budget, and imported hydr
 
 *Table S8a. Stable mixed states and first-loss margins (τ_c from `figures/continuum_habitats/c0_local_gain.csv`).*
 
-**Coexistence interval.** At $T^*$ the mixed state needs both groups to hold the hydrogen at $R^*(T^*)$, so it exists between the supplies at which methanogens alone and acetogens alone would deliver the methane the climate state requires. With the retained-biomass fractions $\eta_i$ (S8) the supply potentials are
+**Coexistence interval.** At $T^*$ the mixed state needs both groups to hold the hydrogen at $R^*(T^*)$, so it exists between the supplies at which methanogens alone and acetogens alone would deliver the methane the climate state requires. With the catabolised fractions $\eta_i$ defined in S2 the supply potentials are
 
 $$P_M = 0.30\,\frac{k_{ex}(R^* - p_{atm}) + n/\eta_M}{J_{ref}},\qquad P_A = 0.30\,\frac{k_{ex}(R^* - p_{atm}) + n/(f\eta_A)}{J_{ref}},$$
 
-where $n = 4(r^*/t_{CH_4} - c\Phi_{abiotic})/(\chi H)$ is the catabolic hydrogen flux (mol L⁻¹ h⁻¹) that must become methane to hold $r^*$ against removal, and $R^* = p^*$ is the local hydrogen at coexistence. Table S8b gives them; the $f = 0.5$ and $f = 1$ upper ends (0.457327 and 0.239907) match the full-budget endpoints recorded in `docs/audits/haze-world-external-review-codex-2026-11-11.md` and the readiness note `docs/audits/haze-world-writing-readiness-2026-11-12.md`. As f rises the interval narrows, from no upper end at f = 0 to a ratio of 1.047 at f = 1. It does not close at f = 1, because lost biomass leaves with its retained hydrogen ($\eta_A < 1$, an assumed export). The interval is a positivity condition on the budget; stability at f = 1 was not assessed here.
+where $n = 4(r^*/t_{CH_4} - c\Phi_{abiotic})/(\chi H)$ is the catabolic hydrogen flux (mol L⁻¹ h⁻¹) that must become methane to hold $r^*$ against removal, and $R^* = p^*$ is the local hydrogen at coexistence. Table S8b gives them; the $f = 0.5$ and $f = 1$ upper ends (0.457327 and 0.239907) match the full-budget endpoints recorded in `docs/audits/haze-world-external-review-codex-2026-11-11.md` and the readiness note `docs/audits/haze-world-writing-readiness-2026-11-12.md`. As f rises the interval narrows, from no upper end at f = 0 to a ratio of 1.047 at f = 1. It does not close at f = 1 because the assumed biomass export leaves a lower catabolised fraction for acetogens than for methanogens ($\eta_A < \eta_M$). If the two fractions were equal, complete acetate recycling would equalise the methane yields and close this interval. The interval is a positivity condition on the budget; stability at f = 1 was not assessed here.
 
 <!-- table:s8_interval -->
 
@@ -386,11 +386,11 @@ where $n = 4(r^*/t_{CH_4} - c\Phi_{abiotic})/(\chi H)$ is the catabolic hydrogen
 
 **Dated specifications.** The stage specifications in S6, each with a first commit that precedes its results commit, and the paper's own step documents under [`models/haze_world/paper/`](../) (working abstract, display items, section and paragraph abstracts, full draft).
 
-**Correspondence snapshots.** [`docs/correspondence/`](../../../../docs/correspondence/) holds reviewed exports of the project board: [INDEX.md](../../../../docs/correspondence/INDEX.md) (exported 2026-11-13 04:51 UTC), threads 150, 151 and 161, and the redaction policy `publication.toml`. They are snapshots, not a live mirror.
+**Correspondence snapshots.** [`docs/correspondence/`](../../../../docs/correspondence/) holds reviewed exports of the project board: [INDEX.md](../../../../docs/correspondence/INDEX.md) records the export time, threads 150, 151 and 161, and the redaction policy `publication.toml`. They are snapshots, not a live mirror.
 
 **Audit records.** [`docs/audits/`](../../../../docs/audits/) holds the independent checks cited in the ledger, among them `continuum-characteristic-2026-11-12`, `graded-dial-independent-2026-11-12`, `homogeneous-transients-independent-2026-11-12`, `readiness-h2-2026-11-12` and `dynamic-realisation-review-2026-11-12`, and the reviews of each paper step: `paper-steps12-codex-review-2026-11-12`, `paper-step3a-codex-review-2026-11-12`, `paper-step3b-codex-review-2026-11-13` and `paper-step3c-codex-review-2026-11-13`, with the model-specification digest `paper-step3c-model-digest-codex-2026-11-13.json` from which this supplement's parameter claims were checked.
 
-**Roles of the AI systems.** Claude (Opus 5.5) wrote the stage specifications, reviewed the stages and drafted the paper; Codex (GPT-6) built the stage code, ran the independent audits (including the characteristic-determinant route in S3) and reviewed each paper step. This supplement, `table_s1.py` and `esm_tables.py` were written by Claude (Sonnet 5.5) on 13 November 2026 on the Opus 5.5 session's instruction, from the digest, the ledger and the committed outputs. They had not been reviewed by Codex or by B.W.B. when this was written. The main text's declaration of AI use covers the project as a whole.
+**Roles of the AI systems.** Claude (Opus 5.5) wrote the stage specifications, reviewed the stages and drafted the paper; Codex (GPT-6) built the stage code, ran the independent audits (including the characteristic-determinant route in S3) and reviewed each paper step. The figures, supplement, `table_s1.py` and `esm_tables.py` were written by Claude (Sonnet 5.5) on 13 November 2026 on the Opus 5.5 session's instruction, from the digest, the ledger and the committed outputs. Codex then reviewed and repaired the display items and supplement, with independent checks recorded in `docs/audits/paper-display-items-codex-review-2026-11-13.md` and `review/paper_transient_figure_check.json`. B.W.B.'s final review is still pending. The main text's declaration of AI use covers the project as a whole.
 
 **Reproduction.** From the repository root:
 
@@ -398,6 +398,8 @@ where $n = 4(r^*/t_{CH_4} - c\Phi_{abiotic})/(\chi H)$ is the catabolic hydrogen
 |---|---|
 | Table S1, kinetics table, all generated tables in this file | `uv run python -m terra_prisca.haze_world.paper_figures table_s1` |
 | Figures 1 to 4 | `uv run python -m terra_prisca.haze_world.paper_figures fig1 fig2 fig3 fig4` (or no argument for every item) |
+| Regenerate Figure 2's long trajectories and spectra from the model | `uv run python -m terra_prisca.haze_world.paper_figures.fig2 --refresh` |
+| Regenerate Figure 4's compact exports from native census archives | `uv run python -m terra_prisca.haze_world.paper_figures.fig4 --refresh` (requires the native payloads described below) |
 | A claim's underlying computation | the `reproduce` column of the ledger, for example C59: `uv run python models/haze_world/review/check_atmospheric_h2.py --output /tmp/terra-C59.json` |
 
-Table S1 and the generated tables read the committed outputs; they do not rerun the long producers. Reproduction levels and the payload of curated raw archives are described in `docs/reproducibility/haze-world-core.md`.
+Table S1 and the generated tables read model parameters and committed outputs, and recompute selected equilibrium objects and budget algebra; they do not rerun the long trajectory producers. The default figure build uses committed compact exports for Figures 2 and 4. The historical C01–C37 reproduction levels and prepared, unpublished raw companion are described in `docs/reproducibility/haze-world-core.md`. That companion predates Stage B. The canonical Stage B trajectory receipts and frozen source epochs are identified in `figures/dynamic_realisation/transient_archive_manifest.json`; their raw payloads remain in ignored `local/` paths and have no public archive download at this draft stage. Recounting committed summaries does not independently replay those trajectories.

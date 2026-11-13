@@ -27,6 +27,7 @@ from . import style
 T_MIN, T_MAX, T_COLD = 273.0, 303.15, 277.15
 REFERENCE_POTENTIAL = 0.3
 J_REFERENCE = 1e-6
+DRY_MASS_RATIO = (560 / 7) / (760 / 3.6)
 
 
 def write_csv(name, rows):
@@ -41,11 +42,14 @@ def write_csv(name, rows):
 
 def requirement_rows():
     biology = core.reference().biology
+    dry_mass = replace(biology, capacity_ratio=DRY_MASS_RATIO)
     grid = np.unique(np.r_[np.round(np.arange(T_MIN, T_MAX, 0.05), 2), T_COLD, T_MAX])
     rows = []
     for t in grid:
         a, m = [g.rstar(biology.loss_h) for g in core.guilds(float(t) - 273.15, biology)]
+        m_dry = core.guilds(float(t) - 273.15, dry_mass)[1].rstar(dry_mass.loss_h)
         rows.append(dict(temperature_k=float(t), rstar_acetogen_pa=a, rstar_methanogen_pa=m,
+                         rstar_methanogen_dry_mass_pa=m_dry,
                          region="continuation" if t < T_COLD else "measured"))
     return rows, core.switch_temperatures(biology)[0]
 
@@ -95,7 +99,8 @@ def inset_rows():
     r_peak, r_trough = curve.ratios[peak], curve.ratios[trough]
     rows = []
     for r, temp in zip(grid, t):
-        domain = "bridge" if r < curve.ratios[0] else "arney"
+        domain = ("bridge" if r < curve.ratios[0] else
+                  "plateau" if r > curve.ratios[-1] else "arney")
         rows.append(dict(ch4_co2_ratio=float(r), temperature_k=float(temp), domain=domain,
                          haze_cooling_branch=bool(r_peak <= r <= r_trough)))
     return rows, (r_peak, curve.temperatures_k[peak], r_trough, curve.temperatures_k[trough])
@@ -158,15 +163,27 @@ def schematic(ax):
             va="center", linespacing=1.1)
 
 
-def panel_b(ax, rows, t_switch):
+def panel_b(ax, rows, t_switch, t_dry_switch, climate_limits):
     t = np.array([r["temperature_k"] for r in rows])
     a = np.array([r["rstar_acetogen_pa"] for r in rows])
     m = np.array([r["rstar_methanogen_pa"] for r in rows])
+    m_dry = np.array([r["rstar_methanogen_dry_mass_pa"] for r in rows])
     ax.axvspan(T_MIN, T_COLD, color=style.GRID, zorder=0, lw=0)
     ax.text(275.1, 42, "continuation", ha="center", va="center", fontsize=6,
             color=style.INK_2, rotation=90)
     ax.plot(t, a, color=style.ACETOGEN, ls="-", label="Acetogens", zorder=3)
-    ax.plot(t, m, color=style.METHANOGEN, ls="--", label="Methanogens", zorder=3)
+    ax.plot(t, m, color=style.METHANOGEN, ls="--", label="Methanogens, γ = 0.74", zorder=3)
+    ax.plot(t, m_dry, color=style.INK_2, ls=":", lw=0.8,
+            label="Methanogens, dry-mass γ = 0.379", zorder=2)
+    ax.plot([t_dry_switch], [np.interp(t_dry_switch, t, a)], marker="D", ms=3.5,
+            mfc="white", mec=style.INK_2, ls="", zorder=4)
+    ax.annotate(f"dry-mass crossing\n{t_dry_switch:.2f} K > climate peak",
+                (t_dry_switch, np.interp(t_dry_switch, t, a)), xytext=(286, 78),
+                fontsize=5.8, color=style.INK_2, va="center",
+                arrowprops=dict(arrowstyle="-", lw=0.5, color=style.INK_2))
+    ax.plot(climate_limits, [13.5, 13.5], color=style.INK_2, lw=0.7, marker="|", ms=4)
+    ax.text(np.mean(climate_limits), 13.9, "published haze-cooling temperatures", ha="center",
+            va="bottom", fontsize=5.5, color=style.INK_2)
     ax.axvline(t_switch, color=style.INK_2, lw=0.7, ls=":", zorder=1)
     ax.plot([t_switch], [np.interp(t_switch, t, a)], marker="D", color=style.INK, ms=3.5, zorder=4, ls="")
     ax.text(t_switch + 0.7, 45, f"$T^*$ = {t_switch:.2f} K", fontsize=6.5, color=style.INK,
@@ -179,7 +196,8 @@ def panel_b(ax, rows, t_switch):
     ax.yaxis.set_minor_locator(plt.NullLocator())
     ax.set_xlabel("Temperature (K)")
     ax.set_ylabel("Hydrogen requirement $R^*$ (Pa)")
-    ax.legend(loc="upper right", handlelength=2.2, borderaxespad=0.2)
+    ax.legend(loc="lower left", bbox_to_anchor=(0, 1.025), handlelength=2.2,
+              borderaxespad=0, fontsize=5.8)
     style.panel_label(ax, "b", x=-0.2)
 
 
@@ -210,7 +228,10 @@ def panel_c(ax, rows, limits, inset, inset_rows_, branch):
     r = np.array([q["ch4_co2_ratio"] for q in inset_rows_])
     t = np.array([q["temperature_k"] for q in inset_rows_])
     on = np.array([q["haze_cooling_branch"] for q in inset_rows_])
-    ins.plot(r, t, color=style.INK_2, lw=0.8)
+    measured = np.array([q["domain"] == "arney" for q in inset_rows_])
+    ins.plot(r[measured], t[measured], color=style.INK_2, lw=0.8)
+    for mask in (r <= r[measured].min(), r >= r[measured].max()):
+        ins.plot(r[mask], t[mask], color=style.INK_2, lw=0.8, ls="--")
     ins.plot(r[on], t[on], color=style.INK, lw=2.0, solid_capstyle="butt")
     ins.plot([inset["r_mixed"]], [inset["t_star"]], marker="D", color=style.INK, ms=3, ls="", zorder=4)
     ins.plot([inset["r_alone"]], [inset["t_alone"]], marker="s", color=style.METHANOGEN, ms=3, ls="",
@@ -230,6 +251,7 @@ def panel_c(ax, rows, limits, inset, inset_rows_, branch):
 def main():
     style.apply()
     req, t_switch = requirement_rows()
+    t_dry_switch = core.switch_temperatures(replace(core.reference().biology, capacity_ratio=DRY_MASS_RATIO))[0]
     write_csv("fig1b_hydrogen_requirement.csv", req)
     steady = steady_rows()
     write_csv("fig1c_steady_state.csv", steady)
@@ -248,6 +270,8 @@ def main():
     m = np.array([r["rstar_methanogen_pa"] for r in req])
     checks = [
         ("t_star_k", t_switch, 281.53),
+        ("dry_mass_capacity_ratio_30c", DRY_MASS_RATIO, None),
+        ("dry_mass_crossing_k", t_dry_switch, None),
         ("rstar_acetogen_278k_pa", np.interp(278.0, t, a), 27.61),
         ("rstar_methanogen_278k_pa", np.interp(278.0, t, m), 47.11),
         ("rstar_acetogen_283k_pa", np.interp(283.0, t, a), 21.45),
@@ -271,7 +295,7 @@ def main():
     schematic(ax_a)
     ax_a.text(0.0, 1.0, "(a)", transform=ax_a.transAxes, fontsize=8, fontstyle="italic",
               ha="left", va="top")
-    panel_b(fig.add_subplot(grid[1, 0]), req, t_switch)
+    panel_b(fig.add_subplot(grid[1, 0]), req, t_switch, t_dry_switch, (t_trough, t_peak))
     panel_c(fig.add_subplot(grid[1, 1]), steady, limits, inset, ins_rows, None)
     return style.save(fig, "fig1")
 

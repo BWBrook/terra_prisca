@@ -323,7 +323,8 @@ instant climate response. All six lie at low methane, on the assumed bridge
 where more methane warms rather than cools. The other 36 first lose
 stability at response times between 0.06 and 7.08 years. In the matched
 reference comparison, increasing f from 0 to 0.5 raises the margin from
-0.15 to 1.10 years (figure 2*c*; ESM). Recycling also narrows the difference
+0.15 to 1.10 years (ESM). Figure 2*c* compares exact and graded states at
+the same f = 0.5. Recycling also narrows the difference
 in methane yield between the routes.
 
 <!-- R3 -->
@@ -502,28 +503,35 @@ feeds two groups and exchanges with an atmospheric reservoir. Methanogens
 make methane, which thickens an organic haze and cools the surface;
 acetogens divert hydrogen into acetate, of which a fraction f is recycled to
 methane. Temperature decides which group wins, and the climate responds over
-a time τ. (*b*) Hydrogen requirement of each group against temperature,
+a time τ. Biomass export, omitted from the schematic, also reduces methane
+delivery. (*b*) Hydrogen requirement of each group against temperature,
 equation (2.3). The curves cross at T\* = 281.53 K; acetogens need less
-hydrogen below it and methanogens above it. Kinks fall at the assay
-temperatures; shading marks the continuation below 277.15 K. (*c*) Steady
+hydrogen below it and methanogens above it. The alternative dry-mass
+capacity ratio (grey dotted) moves the crossing to 297.15 K, just above the
+297.01 K climate peak. The bar marks the published haze-cooling temperature
+range; capacity ratios are anchored at 30 °C. Kinks fall at the assay
+temperatures; shading marks the continuation
+below 277.15 K. (*c*) Steady
 surface temperature against hydrogen supply J for methanogens alone and for
 both groups, with fixed products, f = 0.5 and τ = 0. With both present,
 temperature holds at T\* across the coexistence range (shaded), the plateau
 of Seto & Akagi (2007). At the reference supply (dotted) methanogens alone
 give 273.5 K. Inset: the haze response of Arney et al. (2016), case B, with
 the haze-cooling branch in bold and the two reference states marked.
+Dashed segments are the assumed low-methane bridge and high-methane plateau.
 
 **Figure 2. Perfect control breaks down when the climate responds slowly.**
-Reference state, fixed products, f = 0, after a 0.1% kick to acetogen
-biomass. The time axis is broken between 2,000 and 28,000 years. (*a*)
+Panels (*a*, *b*): reference state, fixed products, f = 0, after a 0.1% kick
+to acetogen biomass. The time axis is broken between 2,000 and 28,000 years. (*a*)
 Surface temperature at response times of 1 year (thin) and 10 years
 (thick). (*b*) Global cell counts for the same runs on a log scale; the
 dotted line marks one cell. At 10 years the acetogens fall below one cell at
 1,830 years, where both traces stop. At 1 year both groups persist through
-30,000 years, cycling with a period of about 380 years. (*c*) Leading real
-part of the eigenvalues against τ for the exact reference state and a
-graded state (habitat spread σ = 0.03 K, d = 10⁻⁴ yr⁻¹). Markers show the
-first loss of stability, at 0.149 and 38.5 years. The vertical axis is
+30,000 years, with late oscillations about 380 years apart; their amplitude
+is still changing. (*c*) Leading real part of the eigenvalues against τ for
+matched exact and graded states at f = 0.5 (habitat spread σ = 0.03 K,
+d = 10⁻⁴ yr⁻¹ for the graded state). Markers show the first loss of
+stability, at 1.10 and 38.5 years. The vertical axis is
 linear between ±10⁻⁴ yr⁻¹ and logarithmic beyond.
 
 **Figure 3. Durability costs a little precision.** (*a*) Critical response
@@ -543,9 +551,10 @@ not finite responses.
 
 **Figure 4. Arrival order decides the survivor.** (*a*) Global cell counts
 after a rare invader enters, in each direction, with fixed products, f = 0.5
-and τ = 3 years. Solid traces stop where the resident first falls below one
-cell (18.3 and 7.4 years); dashed continuations are the continuous solution,
-shown as a mathematical diagnostic. (*b*) Surviving group in all 24 runs:
+and τ = 3 years. These are finite-census trajectories: a group below one
+cell is removed at the next ten-year census (20 and 10 years respectively).
+Crosses mark the first one-cell crossings at 18.3 and 7.4 years. (*b*)
+Surviving group in all 24 runs:
 every acetogen invasion ended with acetogens alone, and every methanogen
 invasion with methanogens alone. Diamonds mark the 8 of 12 settings where
 the reference mixture of both groups is locally stable.
@@ -563,7 +572,8 @@ cited; their PDFs remain outside the public archive.
 
 **Declaration of AI use.** [For Barry to settle. Draft:] The model,
 analyses and manuscript drafts were developed with Claude (Anthropic; Claude
-Opus 5.5) and Codex (OpenAI; GPT-6), working with the human author.
+Opus 5.5, with Sonnet 5.5 for the display items and supplement) and Codex
+(OpenAI; GPT-6), working with the human author.
 They designed and coded the model, ran and cross-checked the analyses, and
 generated model figures and manuscript drafts, each reviewing the other's
 work. Independent AI reviews by Claude Fable 5.2 (Anthropic) and GPT-6 Astra
