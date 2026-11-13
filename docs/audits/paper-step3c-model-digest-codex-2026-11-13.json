@@ -1,0 +1,598 @@
+{
+  "items": [
+    {
+      "id": "state_variables",
+      "title": "State variables and units",
+      "description": "The homogeneous model has five material stocks, plus temperature when thermal response is finite. Time is measured in years.",
+      "equations": [
+        "y = (p, X_A, X_M, C, r); for tau > 0 append T.",
+        "r = p_CH4/p_CO2.",
+        "For habitat quadrature: y = (p_j, X_Aj, X_Mj, C_j for j=1,...,N; r), with one shared temperature T when tau > 0.",
+        "H = 8766 h yr^-1 converts hourly physiological rates into annual derivatives."
+      ],
+      "parameters": [
+        {"symbol":"p","meaning":"Dissolved-H2-equivalent pressure; dissolved concentration is K_H p","value":"Dynamic","units":"Pa","basis":"derived"},
+        {"symbol":"X_A, X_M","meaning":"Acetogen and hydrogenotrophic-methanogen dry biomass concentrations","value":"Dynamic","units":"gDW L^-1","basis":"derived"},
+        {"symbol":"C","meaning":"Local acetate concentration; named A or acetate in some documentation/code","value":"Dynamic","units":"mol L^-1","basis":"derived"},
+        {"symbol":"r","meaning":"Shared atmospheric CH4/CO2 ratio","value":"Dynamic","units":"dimensionless","basis":"derived"},
+        {"symbol":"T","meaning":"Surface temperature; local habitat temperature is T plus its prescribed offset","value":"Dynamic for tau > 0; algebraic for tau = 0","units":"K","basis":"derived"},
+        {"symbol":"H","meaning":"Hours per model year","value":"8766","units":"h yr^-1","basis":"derived"}
+      ],
+      "basis": "mixed",
+      "provenance": [
+        "models/haze_world/population-coupling.md:29",
+        "src/terra_prisca/haze_world/population_coupling.py:23",
+        "src/terra_prisca/haze_world/dynamic_transients.py:80",
+        "src/terra_prisca/haze_world/continuum_core.py:70"
+      ],
+      "notes": "The paper does not use the older one-guild donor/biomass state or its parabolic growth law. Throughout this digest, i=A,M, (z)_+=max(z,0), and ell denotes demographic loss, distinguished from habitat exchange d."
+    },
+    {
+      "id": "acetogen_kinetics",
+      "title": "Acetogen uptake and growth",
+      "description": "The paper reference uses saturating uptake, with A. bakii temperature shapes transferred onto an inferred A. woodii absolute rate scale.",
+      "equations": [
+        "u_A = (p - p_A^*)_+; q_A(p,T) = s_A(T) u_A/[K_A(T)+u_A].",
+        "s_A(T) = s_A30 V_A(T)/760.",
+        "s_A30 = mu_max/Y_A + m_A30 = 0.024/1.7 + 0.0016 = 0.0157176470588.",
+        "mu_A = Y_A[q_A-m_A(T)]; dX_A/dt = H(mu_A-ell)X_A.",
+        "V_A(T) and K_A(T) are independently linearly interpolated between the six tabulated temperatures."
+      ],
+      "parameters": [
+        {"symbol":"T_C","meaning":"Assay temperature coordinates; T_C=T-273.15","value":"4, 10, 15, 20, 25, 30","units":"degrees C","basis":"source"},
+        {"symbol":"V_A","meaning":"Kotsyurbenko et al. 2001 A. bakii assay capacities at those temperatures","value":"270, 440, 590, 740, 790, 760","units":"nmol H2 h^-1 per 20-mL culture","basis":"transferred"},
+        {"symbol":"K_A","meaning":"Uptake half-saturation pressures at those temperatures","value":"190, 180, 300, 400, 480, 520","units":"Pa","basis":"transferred"},
+        {"symbol":"mu_max","meaning":"Peters et al. 1998 A. woodii maximum biomass-synthesis rate used in the scale closure","value":"0.024","units":"h^-1","basis":"transferred"},
+        {"symbol":"s_A30","meaning":"Inferred saturation-capacity anchor","value":"0.0157176470588","units":"mol H2 gDW^-1 h^-1","basis":"derived"}
+      ],
+      "basis": "mixed",
+      "provenance": [
+        "src/terra_prisca/haze_world/two_guilds.py:87",
+        "src/terra_prisca/haze_world/two_guilds.py:107",
+        "src/terra_prisca/haze_world/two_guilds.py:142",
+        "src/terra_prisca/haze_world/woodii1998.py:22",
+        "src/terra_prisca/haze_world/woodii1998.py:92",
+        "models/haze_world/evidence/kotsyurbenko2001_table2.csv:2",
+        "models/haze_world/two-guilds.md:70"
+      ],
+      "notes": "03b M1 is broadly consistent, but the absolute capacity is inferred, not a measured A. woodii q_max. The earlier first-order acetogen alternative q_A=s_A u_A/K_A is not the paper reference."
+    },
+    {
+      "id": "methanogen_kinetics",
+      "title": "Methanogen uptake and growth",
+      "description": "The reference methanogen uses the MSB temperature shape and saturating uptake.",
+      "equations": [
+        "u_M = (p-p_M^*)_+; q_M(p,T) = s_M(T)u_M/[K_M(T)+u_M].",
+        "s_M(T) = gamma s_A30 V_M(T)/560.",
+        "mu_M = Y_M[q_M-m_M(T)]; dX_M/dt = H(mu_M-ell)X_M.",
+        "V_M(T) and K_M(T) are independently linearly interpolated between the six assay temperatures."
+      ],
+      "parameters": [
+        {"symbol":"T_C","meaning":"Assay temperature coordinates","value":"4, 10, 15, 20, 25, 30","units":"degrees C","basis":"source"},
+        {"symbol":"V_M","meaning":"Kotsyurbenko et al. 2001 MSB assay capacities","value":"110, 320, 470, 540, 590, 560","units":"nmol H2 h^-1 per 20-mL culture","basis":"transferred"},
+        {"symbol":"K_M","meaning":"MSB half-saturation pressures","value":"50, 70, 110, 130, 140, 160","units":"Pa","basis":"transferred"},
+        {"symbol":"gamma","meaning":"Methanogen/acetogen reference capacity ratio","value":"0.74; earlier sensitivity grid 0.38, 0.74, 1.5","units":"dimensionless","basis":"assumption"},
+        {"symbol":"s_M30","meaning":"Methanogen capacity at 303.15 K","value":"0.0116310588235","units":"mol H2 gDW^-1 h^-1","basis":"derived"}
+      ],
+      "basis": "mixed",
+      "provenance": [
+        "src/terra_prisca/haze_world/two_guilds.py:34",
+        "src/terra_prisca/haze_world/two_guilds.py:142",
+        "models/haze_world/evidence/kotsyurbenko2001_table2.csv:3",
+        "models/haze_world/two-guilds.md:70",
+        "src/terra_prisca/haze_world/population_coupling.py:70"
+      ],
+      "notes": "The reference gamma approximates the source culture-capacity ratio, not its dry-mass-specific ratio. Neither normalization establishes an assay-compatible absolute population uptake capacity. MSP is an earlier alternative, not the paper reference."
+    },
+    {
+      "id": "hydrogen_requirement_switch",
+      "title": "Break-even hydrogen and the temperature switch",
+      "description": "Each requirement is the hydrogen pressure giving zero net population growth. The reference switch is solved from equality of requirements.",
+      "equations": [
+        "Q_i(T) = m_i(T)+ell/Y_i.",
+        "R_i^*(T) = p_i^*(T)+K_i(T)Q_i(T)/[s_i(T)-Q_i(T)] when Q_i<s_i; otherwise R_i^*=infinity.",
+        "p_i^*(T) = p_i30^* exp{[(DeltaH_i-DeltaG_ci)/(4R)](1/T-1/303.15)}.",
+        "T_switch solves R_A^*(T_switch)=R_M^*(T_switch); it is not imposed in the population equations.",
+        "Outlet feasibility additionally requires R_i^* < p_atm+J/k_ex."
+      ],
+      "parameters": [
+        {"symbol":"p_A30^*, p_M30^*","meaning":"Reference cessation-pressure anchors","value":"20, 1","units":"Pa","basis":"assumption"},
+        {"symbol":"DeltaH_A, DeltaH_M","meaning":"Reaction enthalpies used in the fixed-energy threshold law","value":"-270700, -253000","units":"J mol^-1 four-H2 reaction","basis":"source"},
+        {"symbol":"DeltaG_cA, DeltaG_cM","meaning":"Chosen cessation energies within the repository's source-supported brackets","value":"-24000, -28000","units":"J mol^-1 four-H2 reaction","basis":"assumption"},
+        {"symbol":"R","meaning":"Gas constant as implemented","value":"8.314","units":"J mol^-1 K^-1","basis":"source"},
+        {"symbol":"T_switch, R_switch","meaning":"Reference saturating-uptake equality","value":"281.534822805 K; 22.486299981 Pa","units":"K; Pa","basis":"derived"},
+        {"symbol":"R_A^*(278), R_M^*(278)","meaning":"Requirements independently recomputed from implemented equations","value":"27.614931818, 47.105768173","units":"Pa","basis":"derived"},
+        {"symbol":"R_A^*(283), R_M^*(283)","meaning":"Requirements independently recomputed from implemented equations","value":"21.449531267, 19.566693835","units":"Pa","basis":"derived"}
+      ],
+      "basis": "mixed",
+      "provenance": [
+        "src/terra_prisca/haze_world/two_guilds.py:94",
+        "src/terra_prisca/haze_world/two_guilds.py:126",
+        "models/haze_world/two-guilds.md:88",
+        "models/haze_world/hydrogen-outlet.md:22",
+        "models/haze_world/competition-switches.md:77",
+        "models/haze_world/review/switch-feedback-check.md:14"
+      ],
+      "notes": "At 278 K acetogens require less hydrogen; at 283 K methanogens do. The 282.780105860 K crossing belongs to the earlier first-order acetogen alternative. Exact pinning at 281.53 K applies to the reference fixed chemistry, not every product-feedback or turnover setting."
+    },
+    {
+      "id": "maintenance",
+      "title": "Maintenance and the Tijhuis temperature transfer",
+      "description": "A shared Arrhenius slope scales each group's substrate-maintenance demand.",
+      "equations": [
+        "m_i(T)=m_i30 exp[-E_m/R(1/T-1/303.15)].",
+        "m_A30=4 m_acetate=4(0.00040)=0.00160.",
+        "mu_i=Y_i(q_i-m_i); maintenance is substrate expenditure, separate from demographic loss ell."
+      ],
+      "parameters": [
+        {"symbol":"m_A30","meaning":"A. woodii hydrogen-maintenance anchor derived from Peters et al. 1998 acetate maintenance","value":"0.00160","units":"mol H2 gDW^-1 h^-1","basis":"derived"},
+        {"symbol":"m_M30","meaning":"Reference methanogen maintenance; no matched cold-MSB calibration","value":"0.001; earlier sensitivities 0.0003, 0.001, 0.0023","units":"mol H2 gDW^-1 h^-1","basis":"assumption"},
+        {"symbol":"E_m","meaning":"Tijhuis et al. 1993 pooled energetic-maintenance activation energy transferred to H2 demand","value":"69000","units":"J mol^-1","basis":"transferred"},
+        {"symbol":"T_ref","meaning":"Maintenance reference temperature","value":"303.15","units":"K","basis":"assumption"}
+      ],
+      "basis": "mixed",
+      "provenance": [
+        "src/terra_prisca/haze_world/two_guilds.py:122",
+        "src/terra_prisca/haze_world/two_guilds.py:146",
+        "src/terra_prisca/haze_world/woodii1998.py:24",
+        "models/haze_world/two-guilds.md:73",
+        "models/haze_world/evidence/growth-parameters.md:17"
+      ],
+      "notes": "03b correctly calls this a transferred correlation. The reported Tijhuis dataset spans 5–75 degrees C; even the 4-degree uptake endpoint is slightly outside that maintenance dataset."
+    },
+    {
+      "id": "physiology_continuation",
+      "title": "Physiology below the uptake measurements",
+      "description": "The paper reference uses the named constant_shape continuation from 277.15 K down to 273 K.",
+      "equations": [
+        "For 273 <= T < 277.15 K: s_i(T)=s_i(277.15), K_i(T)=K_i(277.15).",
+        "m_i(T) and p_i^*(T) continue using their temperature-dependent laws.",
+        "Alternative continuation: E_i=R ln[V_i(10 degrees C)/V_i(4 degrees C)]/(1/277.15-1/283.15).",
+        "Alternative s_i(T)=s_i(277.15) exp[-E_i/R(1/T-1/277.15)], with K_i still frozen."
+      ],
+      "parameters": [
+        {"symbol":"T_measurement_min","meaning":"Lowest uptake measurement temperature","value":"277.15","units":"K","basis":"source"},
+        {"symbol":"T_model_min","meaning":"Lower boundary of named continuations","value":"273","units":"K","basis":"assumption"},
+        {"symbol":"s_A(277.15), s_M(277.15)","meaning":"Frozen capacity anchors","value":"s_A30(270/760), s_M30(110/560)","units":"mol H2 gDW^-1 h^-1","basis":"derived"},
+        {"symbol":"K_A(277.15), K_M(277.15)","meaning":"Frozen affinity anchors","value":"190, 50","units":"Pa","basis":"transferred"}
+      ],
+      "basis": "mixed",
+      "provenance": [
+        "src/terra_prisca/haze_world/two_guilds.py:107",
+        "src/terra_prisca/haze_world/population_coupling.py:70",
+        "models/haze_world/competition-switches.md:69",
+        "models/haze_world/population-coupling.md:110",
+        "models/haze_world/population-coupling.md:150"
+      ],
+      "notes": "03b M1 rounds 277.15 K to 277 K. Constant_shape freezes capacity and affinity, not maintenance or cessation pressure. The alternative continuation changes the C06 methanogen-only control from 273.517 to 276.807 K, reducing the mixed-minus-control contrast from 8.02 to 4.73 K."
+    },
+    {
+      "id": "hydrogen_budget",
+      "title": "Hydrogen supply and atmospheric exchange",
+      "description": "Hydrogen is supplied continuously and exchanges with a prescribed atmospheric reservoir through a fixed conductance.",
+      "equations": [
+        "K_H dp/dt = H[J-q_A X_A-q_M X_M-k_ex(p-p_atm)].",
+        "J = 4 Phi(3600)/(N_A V).",
+        "P = t_CH4 c_atm Phi; c_atm = seconds_per_year/N_CO2.",
+        "Lifeless pressure p_0=p_atm+J/k_ex.",
+        "Exchange k_ex(p-p_atm) is signed: p_atm>p imports hydrogen from the reservoir."
+      ],
+      "parameters": [
+        {"symbol":"K_H","meaning":"Fixed dissolved-H2 storage coefficient from the 30-degree uptake assay","value":"7.65e-9","units":"mol L^-1 Pa^-1","basis":"transferred"},
+        {"symbol":"Phi","meaning":"Donor supply expressed as CH4-equivalent surface flux; N_A is Avogadro's constant and V is habitat L per surface cm2","value":"Reference 3.75157520114e11; P=0.24,0.30,0.36 gives 3.00126016091e11,3.75157520114e11,4.50189024137e11","units":"CH4-equivalent molecules cm^-2 s^-1","basis":"swept"},
+        {"symbol":"J","meaning":"Local hydrogen input","value":"Reference 1e-6; proportional to Phi at fixed V","units":"mol H2 L^-1 h^-1","basis":"assumption"},
+        {"symbol":"k_ex","meaning":"Hydrogen exchange conductance, not a first-order rate constant","value":"1e-6/300 = 3.33333333333e-9","units":"mol H2 L^-1 h^-1 Pa^-1","basis":"assumption"},
+        {"symbol":"p_atm","meaning":"Prescribed atmospheric H2 pressure","value":"Reference 0; C59 checks 0,1,3,10,30,100,200","units":"Pa","basis":"swept"},
+        {"symbol":"P","meaning":"Nominal donor potential, distinct from actual methane abundance","value":"Reference 0.30","units":"dimensionless","basis":"assumption"}
+      ],
+      "basis": "mixed",
+      "provenance": [
+        "src/terra_prisca/haze_world/population_coupling.py:59",
+        "src/terra_prisca/haze_world/population_coupling.py:80",
+        "src/terra_prisca/haze_world/population_coupling.py:144",
+        "models/haze_world/hydrogen-outlet.md:11",
+        "models/haze_world/review/check_atmospheric_h2.py:14",
+        "models/haze_world/review/atmospheric_h2_check.json:59",
+        "models/haze_world/review/atmospheric_h2_check.json:136"
+      ],
+      "notes": "C59 keeps the fixed-chemistry set point at 281.5348 K through 100 Pa. Its critical margins change 0.149→0.119 yr for f=0 and 1.103→1.185 yr for f=0.5. At 200 Pa the searched f=0.5 mixed state disappears. This is an imposed reservoir, not a photochemical atmospheric-H2 budget; imported hydrogen can supplement nominal Phi."
+    },
+    {
+      "id": "acetate_pool_and_f",
+      "title": "Acetate, biomass retention and methane routing",
+      "description": "Acetate is an explicit local stock. Biomass synthesis retains reducing equivalents before catabolic products are calculated.",
+      "equations": [
+        "mu_i=Y_i(q_i-m_i); U_i=H q_i X_i.",
+        "B_i=H a_i max(mu_i,0)X_i; F_i=U_i-B_i.",
+        "dC/dt=F_A/4-(k_rec+k_other)C.",
+        "k_rec=f/t_A; k_other=(1-f)/t_A.",
+        "Local methane production = F_M/4+k_rec C.",
+        "Biomass-associated export E_i=H a_i[ell+max(-mu_i,0)]X_i.",
+        "At steady state, F_i=H(Q_i-a_i ell)X_i: direct methanogenesis yields 1/4 mol CH4 per catabolic mol H2; the acetogen route yields f/4 after acetate removal."
+      ],
+      "parameters": [
+        {"symbol":"F_i, B_i, U_i, E_i","meaning":"Catabolic, biomass-synthesis, uptake and biomass-export H2-equivalent flows","value":"Calculated from instantaneous stocks and rates","units":"mol H2 L^-1 yr^-1","basis":"derived"},
+        {"symbol":"a_A","meaning":"Hydrogen retained per synthesized acetogen biomass; 4 times Peters' acetate-equivalent coefficient","value":"4(0.0206)=0.0824","units":"mol H2 gDW^-1","basis":"derived"},
+        {"symbol":"a_M","meaning":"Same biomass-composition coefficient imposed on methanogens","value":"0.0824","units":"mol H2 gDW^-1","basis":"assumption"},
+        {"symbol":"t_A","meaning":"Acetate-pool removal time for constant recycling","value":"1","units":"yr","basis":"assumption"},
+        {"symbol":"f","meaning":"Fraction of acetate removal routed to methane","value":"0,0.5,0.9 in homogeneous maps; 0,0.5 in invasions and chemical dials","units":"dimensionless","basis":"swept"},
+        {"symbol":"k_rec, k_other","meaning":"Methane-recycling and other-removal coefficients","value":"f and 1-f when t_A=1 yr","units":"yr^-1","basis":"derived"}
+      ],
+      "basis": "mixed",
+      "provenance": [
+        "src/terra_prisca/haze_world/population_coupling.py:84",
+        "src/terra_prisca/haze_world/population_coupling.py:129",
+        "src/terra_prisca/haze_world/population_coupling.py:155",
+        "src/terra_prisca/haze_world/woodii1998.py:26",
+        "models/haze_world/population-coupling.md:48",
+        "models/haze_world/finite-populations.md:101"
+      ],
+      "notes": "The paper uses constant recycling. The older cold-limited recycling alternative is separate. Methane-producing acetate recyclers are prescribed chemistry, not a third population. Lost biomass is exported rather than automatically recycled into methane; f=1 therefore does not imply identical methane delivery per supplied H2."
+    },
+    {
+      "id": "methane_budget",
+      "title": "Atmospheric methane inventory",
+      "description": "The model converts local methane production into a shared atmospheric ratio and applies linear removal.",
+      "equations": [
+        "dr/dt = chi[F_M/4+k_rec C]+c_atm Phi_abiotic-r/t_CH4.",
+        "chi=V N_A/N_CO2; c_atm=seconds_per_year/N_CO2.",
+        "N_air=p_s N_A/(M_air g 10^4); N_CO2=f_CO2 N_air; f_CO2=p_CO2/p_s.",
+        "For habitats, replace the local production bracket by its quadrature-weighted mean."
+      ],
+      "parameters": [
+        {"symbol":"t_CH4","meaning":"Assumed atmospheric methane lifetime","value":"10000","units":"yr","basis":"assumption"},
+        {"symbol":"Phi_abiotic","meaning":"Earth-mass serpentinization estimate quoted by Arney et al. 2016","value":"6.8e8","units":"molecules CH4 cm^-2 s^-1","basis":"source"},
+        {"symbol":"V","meaning":"Effective habitat volume per planetary surface area","value":"0.00897067754630","units":"L cm^-2","basis":"assumption"},
+        {"symbol":"p_s, p_CO2","meaning":"Case-B total and CO2 pressure","value":"1e5, 1800","units":"Pa","basis":"source"},
+        {"symbol":"M_air, g","meaning":"Atmospheric conversion assumptions","value":"0.028 kg mol^-1; 9.81 m s^-2","units":"kg mol^-1; m s^-2","basis":"assumption"},
+        {"symbol":"N_air, N_CO2","meaning":"Calculated atmospheric columns","value":"2.19242054755e25; 3.94635698558e23","units":"molecules cm^-2","basis":"derived"},
+        {"symbol":"N_A, seconds_per_year","meaning":"Conversion constants","value":"6.02214076e23; 3.15576e7","units":"mol^-1; s yr^-1","basis":"source"}
+      ],
+      "basis": "mixed",
+      "provenance": [
+        "src/terra_prisca/haze_world/population_coupling.py:75",
+        "src/terra_prisca/haze_world/population_coupling.py:137",
+        "src/terra_prisca/haze_world/methane_budget.py:45",
+        "src/terra_prisca/haze_world/methane_budget.py:71",
+        "src/terra_prisca/haze_world/darwinian.py:49",
+        "models/haze_world/README.md:213"
+      ],
+      "notes": "03b M3 correctly labels the 10000-year lifetime an assumption. The repository's conditional 6–19-kyr estimate is not an Arney case-specific measured lifetime. Identifying the column inventory ratio with surface CH4/CO2 also assumes well-mixed methane."
+    },
+    {
+      "id": "climate_closure",
+      "title": "Arney case-B climate mapping",
+      "description": "The climate target is piecewise linear through digitized Arney case-B vertices, with explicitly assumed extensions.",
+      "equations": [
+        "For r_j <= r <= r_(j+1): T_clim(r)=T_j+(T_(j+1)-T_j)(r-r_j)/(r_(j+1)-r_j).",
+        "For r<r_0: T_clim=T_0+(T_first-T_0)ln[1+max(r,0)/s]/ln(1+r_0/s).",
+        "For r>r_last: T_clim=T_last.",
+        "At the reference switch, r=0.195106875 and dT_clim/dr=-721.258 K per unit ratio."
+      ],
+      "parameters": [
+        {"symbol":"(r_j,T_j)","meaning":"Case-B interpolation vertices, ordered by methane ratio","value":"(0.10000663,292.002); (0.11110252,293.996); (0.16666938,297.008); (0.17779149,292.002); (0.19445499,282.005); (0.20555088,274.002); (0.21666863,273.493); (0.22221876,273.390); (0.22778637,273.698); (0.23333650,274.002)","units":"dimensionless ratio; K","basis":"source"},
+        {"symbol":"T_0","meaning":"Methane-free bridge temperature in the population reference","value":"283","units":"K","basis":"assumption"},
+        {"symbol":"s","meaning":"Low-methane logarithmic bridge scale","value":"0.01","units":"dimensionless ratio","basis":"assumption"},
+        {"symbol":"S/S_0, epoch, albedo","meaning":"Fixed Arney case-B setting","value":"0.81; 2.7 Ga; 0.32","units":"dimensionless; Ga; dimensionless","basis":"source"}
+      ],
+      "basis": "mixed",
+      "provenance": [
+        "src/terra_prisca/haze_response/arney2016.py:32",
+        "src/terra_prisca/haze_world/methane_budget.py:92",
+        "src/terra_prisca/haze_world/population_coupling.py:65",
+        "models/haze_response/arney2016/figure4.csv:9",
+        "models/haze_response/arney2016/cases.csv:3",
+        "models/haze_world/review/switch-feedback-check.md:14"
+      ],
+      "notes": "03b M3 should distinguish the extracted curve from the assumed bridge and plateau. The paper reference uses T_0=283 K, overriding the older README/default 265 K. Haze cooling is the negative-slope branch after the peak; the final extracted vertices include a small upturn."
+    },
+    {
+      "id": "thermal_response",
+      "title": "Finite climate-response time",
+      "description": "A first-order temperature state supplies the paper's thermal inertia.",
+      "equations": [
+        "tau dT/dt=T_clim(r)-T.",
+        "For tau=0, T=T_clim(r) algebraically.",
+        "All temperature-dependent biological rates use actual T, or T plus the habitat offset, rather than T_clim when tau>0."
+      ],
+      "parameters": [
+        {"symbol":"tau","meaning":"Thermal response coefficient","value":"Main spectral grid 0,0.03,0.1,0.3,1,3,10,30,100,300,1000; crossing search through 10000","units":"yr","basis":"swept"},
+        {"symbol":"T_clim","meaning":"Equilibrium climate target supplied by the case-B mapping","value":"Function of atmospheric methane ratio","units":"K","basis":"derived"}
+      ],
+      "basis": "mixed",
+      "provenance": [
+        "models/haze_world/dynamic-realisation-methods.md:65",
+        "src/terra_prisca/haze_world/dynamic_transients.py:108",
+        "src/terra_prisca/haze_world/dynamic_transients.py:133",
+        "src/terra_prisca/haze_world/dynamic_realisation.py:20"
+      ],
+      "notes": "03b M3 matches the implementation. Tau is an assumed response coefficient, not an empirically calibrated Archean ocean timescale. The separate two-layer diagnostic is not the paper's main thermal equation."
+    },
+    {
+      "id": "product_feedback_cases",
+      "title": "Four product chemistries and the acetate dial",
+      "description": "Product feedback multiplies cessation thresholds; the product stocks remain dynamic in every chemistry.",
+      "equations": [
+        "p_A^*=p_A0^*(T)[max(C,0)/C_ref]^(a/4); p_M^*=p_M0^*(T)[max(r,0)p_CO2/p_CH4ref]^(m/4), applying each multiplier only when its feedback is enabled.",
+        "Chemistry switches (a,m): fixed=(0,0), methane_only=(0,1), acetate_only=(1,0), products=(1,1).",
+        "D1: p_A^*=p_A0^*(T)(C/C_ref)^(kappa/4), p_M^*=p_M0^*(T). At kappa=0 the acetogen multiplier is explicitly 1.",
+        "For C>0: partial p_A^*/partial C = kappa p_A^*/(4C)."
+      ],
+      "parameters": [
+        {"symbol":"C_ref","meaning":"Acetate reference activity proxy","value":"0.0005","units":"mol L^-1","basis":"assumption"},
+        {"symbol":"p_CH4ref","meaning":"Methane reference activity proxy","value":"350","units":"Pa","basis":"assumption"},
+        {"symbol":"p_CO2","meaning":"Fixed case-B CO2 pressure","value":"1800","units":"Pa","basis":"source"},
+        {"symbol":"kappa","meaning":"Dimensionless acetate-feedback exponent dial","value":"0,0.0001,0.0003,0.001,0.003,0.01,0.03,0.1,0.3,1","units":"dimensionless","basis":"swept"},
+        {"symbol":"f, P, ell","meaning":"D1 branch settings","value":"f=0 or 0.5; P=0.30; ell=0.001","units":"dimensionless; dimensionless; h^-1","basis":"assumption"}
+      ],
+      "basis": "mixed",
+      "provenance": [
+        "src/terra_prisca/haze_world/dynamic_core.py:48",
+        "src/terra_prisca/haze_world/dynamic_core.py:86",
+        "src/terra_prisca/haze_world/population_coupling.py:39",
+        "src/terra_prisca/haze_world/graded_acetate.py:15",
+        "src/terra_prisca/haze_world/graded_acetate.py:34",
+        "src/terra_prisca/haze_world/graded_dials.py:22",
+        "models/haze_world/finite-populations.md:110"
+      ],
+      "notes": "03b M4 is consistent. Kappa changes the acetate exponent, not recycling rate or growth directly. Fixed products means fixed product effects on thresholds, not fixed acetate or methane inventories. Concentration/pressure ratios approximate activities/fugacities at fixed reference pH and CO2."
+    },
+    {
+      "id": "habitat_spread",
+      "title": "Continuous habitat-temperature spread",
+      "description": "Habitats have local hydrogen, biomass and acetate, with shared atmospheric methane and climate.",
+      "equations": [
+        "delta is uniform on [-sigma,sigma]; T_local(delta)=T+delta.",
+        "Mean X_i = integral[-sigma,sigma] X_i(delta) ddelta/(2 sigma).",
+        "dX_i(delta)/dt=H X_i(delta){Y_i[q_i(p(delta),T+delta)-m_i(T+delta)]-ell}+d[Mean X_i-X_i(delta)].",
+        "Local hydrogen and acetate retain their homogeneous budgets; atmospheric methane receives the uniform mean of local methane production.",
+        "Quadrature: Mean X_i approximately sum_j w_j X_ij, sum_j w_j=1. An order-four Gauss-Legendre node on panel [a,b] has weight (b-a)w_GL/(4 sigma)."
+      ],
+      "parameters": [
+        {"symbol":"sigma","meaning":"Uniform temperature half-width, not standard deviation","value":"D2: 0.003,0.01,0.03,0.1,0.3,1, plus zero-spread controls; preceding C1 map: 1,3,6","units":"K","basis":"swept"},
+        {"symbol":"d","meaning":"Conservative cell-exchange rate","value":"D2: 1e-4,1e-3; C1 additionally 1e-2,1e-1","units":"yr^-1","basis":"swept"},
+        {"symbol":"f, chemistry","meaning":"D2 branch configuration","value":"0.5; fixed products","units":"dimensionless; categorical","basis":"assumption"},
+        {"symbol":"quadrature order","meaning":"Gauss-Legendre nodes per panel; initial support divided into four panels","value":"4","units":"nodes per panel","basis":"assumption"},
+        {"symbol":"doubling criteria","meaning":"Agreement of refined supply slopes and finite first-loss margins","value":"Slopes within max(0.001 K,2%); finite margins within 2%; censored classifications agree","units":"K; relative tolerance","basis":"assumption"}
+      ],
+      "basis": "mixed",
+      "provenance": [
+        "src/terra_prisca/haze_world/continuum_core.py:31",
+        "src/terra_prisca/haze_world/continuum_core.py:84",
+        "src/terra_prisca/haze_world/continuum_core.py:132",
+        "src/terra_prisca/haze_world/continuum_core.py:480",
+        "src/terra_prisca/haze_world/graded_spread.py:108",
+        "src/terra_prisca/haze_world/continuum_experiments.py:132",
+        "models/haze_world/continuum-habitats.md:19",
+        "models/haze_world/continuum-habitats.md:26"
+      ],
+      "notes": "Adaptive refinement bisects panels with acetogen-share logit range above one, including endpoint profile evaluations; doubling further bisects mixed panels. The full T±sigma support must remain within 273–303.15 K. Every reported D2 setting passes doubling; the independently derived characteristic method checks selected states, not every state as 03b M4 might imply."
+    },
+    {
+      "id": "steady_states_and_sensitivity",
+      "title": "Equilibria, continuation and the 42 pinned states",
+      "description": "Equilibria satisfy all physical budgets; supply sensitivity is obtained by implicit differentiation. Positive graded branches are followed by continuation.",
+      "equations": [
+        "F(y,T_clim(r);Phi)=0.",
+        "For homogeneous fixed/methane-only mixtures, solve R_A^*=R_M^*, then solve hydrogen and methane allocation balances for X_A,X_M and the acetate balance for C.",
+        "J_0=partial F/partial y after substituting T_clim(r); v=-J_0^(-1)F_lnPhi.",
+        "S=dT^*/d ln Phi=T_clim'(r^*)v_r.",
+        "S_0 is the separate derivative with local guild biomass fractions frozen; G_loc=S/S_0 where defined."
+      ],
+      "parameters": [
+        {"symbol":"chemistry","meaning":"Chemistries contributing the exactly pinned C54 states","value":"fixed, methane_only; 21 roots each","units":"categorical","basis":"swept"},
+        {"symbol":"f","meaning":"Recycling fractions in the homogeneous scan","value":"0,0.5,0.9","units":"dimensionless","basis":"swept"},
+        {"symbol":"ell","meaning":"Demographic losses in that scan","value":"0.0005,0.001,0.002","units":"h^-1","basis":"swept"},
+        {"symbol":"P","meaning":"Supply potentials in that scan","value":"0.24,0.30,0.36","units":"dimensionless","basis":"swept"},
+        {"symbol":"pinning classification","meaning":"Operational criterion in the frontier recount","value":"|S|<1e-6; observed maximum among pinned states 2.2971e-10","units":"K per e-fold","basis":"derived"},
+        {"symbol":"S","meaning":"Local temperature response to supply","value":"Implicit derivative, not a finite e-fold perturbation","units":"K per e-fold","basis":"derived"}
+      ],
+      "basis": "mixed",
+      "provenance": [
+        "src/terra_prisca/haze_world/dynamic_core.py:247",
+        "src/terra_prisca/haze_world/dynamic_core.py:318",
+        "src/terra_prisca/haze_world/dynamic_core.py:380",
+        "src/terra_prisca/haze_world/graded_dials.py:102",
+        "src/terra_prisca/haze_world/graded_dials.py:66",
+        "models/haze_world/figures/continuum_habitats/c0_local_gain.csv:26",
+        "models/haze_world/review/check_frontier_envelope.py:22"
+      ],
+      "notes": "The 42 are roots, not 42 parameter combinations. Per chemistry: f=0 contributes 11 roots—three each at ell=.0005/.001 and five at .002, where P=.30/.36 each have greenhouse and cooling roots. f=.5 contributes eight—three each at .0005/.001 and two at .002, P=.30/.36. f=.9 contributes two—P=.24 at ell=.0005/.001. Six greenhouse roots are unstable at zero lag; the remaining 36 have finite first losses. Other missing branches are finite-search outcomes."
+    },
+    {
+      "id": "critical_response_time",
+      "title": "Linear stability and the first-loss margin",
+      "description": "The critical response time is the first detected stable-to-unstable spectral crossing, with later recoveries retained.",
+      "equations": [
+        "Let A=F_y at fixed T, b=F_T, c^T=T_clim'(r)e_r^T, where e_r selects atmospheric methane.",
+        "J_0=A+bc^T.",
+        "J_tau=[[A,b],[c^T/tau,-1/tau]].",
+        "Characteristic equation: (1+tau lambda)det(lambda I-A)-c^T adj(lambda I-A)b=0.",
+        "tau_c is the first detected crossing of max Re eigenvalue(J_tau) from negative to positive; lambda has units yr^-1.",
+        "For spatial states, independent elimination of local habitat blocks gives a four-variable characteristic determinant in mean A biomass, mean M biomass, methane and temperature."
+      ],
+      "parameters": [
+        {"symbol":"tau search","meaning":"Requested grid supplemented by a logarithmic search","value":"29 logarithmic points from 0.001 to 10000, combined with the main lag grid","units":"yr","basis":"swept"},
+        {"symbol":"crossing tolerance","meaning":"Brent refinement absolute tolerance","value":"1e-8","units":"yr","basis":"assumption"},
+        {"symbol":"zero-lag spectral tolerance","meaning":"Threshold distinguishing stable, neutral and already unstable states","value":"1e-9","units":"yr^-1","basis":"assumption"},
+        {"symbol":"tau_c at fixed f=0","meaning":"Reference loss=.001 h^-1, P=.30 margin","value":"0.1492142604","units":"yr","basis":"derived"},
+        {"symbol":"tau_c at fixed f=.5","meaning":"Otherwise identical default-recycling margin","value":"1.1027600781","units":"yr","basis":"derived"},
+        {"symbol":"maximum pinned tau_c","meaning":"Largest finite margin among the 36 initially stable pinned roots","value":"7.079524561","units":"yr","basis":"derived"}
+      ],
+      "basis": "mixed",
+      "provenance": [
+        "src/terra_prisca/haze_world/dynamic_core.py:148",
+        "src/terra_prisca/haze_world/dynamic_core.py:217",
+        "src/terra_prisca/haze_world/dynamic_realisation.py:78",
+        "src/terra_prisca/haze_world/continuum_characteristic.py:146",
+        "models/haze_world/dynamic-realisation-methods.md:69",
+        "models/haze_world/figures/continuum_habitats/c0_local_gain.csv:30",
+        "models/haze_world/figures/continuum_habitats/c0_local_gain.csv:41"
+      ],
+      "notes": "03b R2's 0.15-year reference must specify f=0; default f=.5 gives 1.10 years. 'About 7 years or less' is more precisely 7.08 years. No loss detected through 10000 years is right-censored, not infinite stability. This thermal-state model is an ODE, not a fixed time-delay equation."
+    },
+    {
+      "id": "kicked_trajectories",
+      "title": "Perturbed mixed-state trajectories",
+      "description": "Five homogeneous fixed-product trajectories test nonlinear consequences of unstable thermal response.",
+      "equations": [
+        "X_A(0)=X_A^* exp(0.001); X_M(0)=X_M^*; remaining stocks and T start at their mixed equilibrium.",
+        "The exact kick is Delta ln X_A=0.001, equivalent to a 0.10005% biomass increase.",
+        "Global count N_i=X_i V_global/m_cell; minima retain logarithmic values even after physical floating-point underflow."
+      ],
+      "parameters": [
+        {"symbol":"(f,tau)","meaning":"Five prescribed perturbation cases","value":"(0,1),(0,10),(0,100),(0.5,10),(0.5,100)","units":"dimensionless; yr","basis":"swept"},
+        {"symbol":"duration","meaning":"Each trajectory horizon","value":"30000","units":"yr","basis":"assumption"},
+        {"symbol":"integrator","meaning":"Adaptive stiff/nonstiff solver in positive coordinates","value":"LSODA; census disabled; nominal samples every year","units":"categorical","basis":"assumption"},
+        {"symbol":"temperature span at f=0,tau=1","meaning":"Last observed window span","value":"1.266352774","units":"K","basis":"derived"},
+        {"symbol":"minimum log10 counts, tau=1","meaning":"Acetogen and methanogen minima across 30000 years","value":"8.03838,22.08926","units":"log10 cells","basis":"derived"}
+      ],
+      "basis": "mixed",
+      "provenance": [
+        "src/terra_prisca/haze_world/dynamic_transients.py:43",
+        "src/terra_prisca/haze_world/dynamic_transients.py:60",
+        "src/terra_prisca/haze_world/dynamic_transients.py:193",
+        "models/haze_world/figures/dynamic_realisation/oscillations.csv:2",
+        "models/haze_world/review/dynamic-transients-2026-11-12.md:151"
+      ],
+      "notes": "03b R3 is supported over the stated horizon: neither group crosses one cell at f=0,tau=1; both cross below one in each tested 10/100-year case. These uncensored trajectories report temperature extrema, late-window spans, dense population minima and first one-cell crossings. They do not establish an attracting limit cycle or indefinite persistence. The 1-year case uses f=0."
+    },
+    {
+      "id": "invasions",
+      "title": "The 24 invasion experiments",
+      "description": "Each invasion begins at a conditional single-group equilibrium, with a prescribed dose of the missing group and no subsequent immigration.",
+      "equations": [
+        "Design count = 2 directions x 2 chemistries x 2 recycling fractions x 3 response times = 24.",
+        "V_global=V A_eff; N_i=X_i V_global/m_cell.",
+        "At scheduled ten-year censuses, set an entire guild to zero if its global count is below one; absence is absorbing without immigration.",
+        "Resident equilibrium is calculated with the other guild disabled; introduce the missing guild at X_seed=1e-12 gDW L^-1."
+      ],
+      "parameters": [
+        {"symbol":"directions","meaning":"Arrival-order comparisons","value":"Acetogen into methanogen; methanogen into acetogen","units":"categorical","basis":"swept"},
+        {"symbol":"chemistry, f, tau","meaning":"Factorial settings","value":"fixed/products; 0/0.5; 0/3/30","units":"categorical; dimensionless; yr","basis":"swept"},
+        {"symbol":"duration, P, ell","meaning":"Fixed invasion settings","value":"100000 yr; 0.30; 0.001 h^-1","units":"yr; dimensionless; h^-1","basis":"assumption"},
+        {"symbol":"X_seed","meaning":"Invader dose, approximately 1.525e17 assumed global cells","value":"1e-12","units":"gDW L^-1","basis":"assumption"},
+        {"symbol":"m_cell","meaning":"Dry mass per cell for both groups","value":"3e-13","units":"gDW cell^-1","basis":"assumption"},
+        {"symbol":"A_eff","meaning":"Effective habitat area","value":"5.1e18","units":"cm^2","basis":"assumption"},
+        {"symbol":"V_global","meaning":"Total effective habitat volume","value":"4.57504554862e16","units":"L","basis":"derived"},
+        {"symbol":"census interval, floor","meaning":"Scheduled irreversible removal rule","value":"10 yr; 1 cell, equivalent to 6.5573e-30 gDW L^-1","units":"yr; cells","basis":"assumption"}
+      ],
+      "basis": "mixed",
+      "provenance": [
+        "src/terra_prisca/haze_world/dynamic_transients.py:43",
+        "src/terra_prisca/haze_world/dynamic_transients.py:66",
+        "src/terra_prisca/haze_world/dynamic_transients.py:198",
+        "src/terra_prisca/haze_world/dynamic_transients.py:222",
+        "src/terra_prisca/haze_world/finite_experiments.py:81",
+        "src/terra_prisca/haze_world/finite_populations.py:20",
+        "models/haze_world/finite-populations.md:85",
+        "models/haze_world/review/dynamic-transients-2026-11-12.md:168"
+      ],
+      "notes": "03b M6's 'closed habitat' should mean no cell immigration: hydrogen supply/exchange and methane loss remain active. The dose is not one cell. Separate uncensored and census runs support C52: all displaced residents cross below one; all 12 A-into-M census runs finish A-only, and all 12 reverse runs M-only. These are deterministic finite-rule endpoints, not coupled stochastic survival probabilities."
+    },
+    {
+      "id": "cell_loss_and_yields",
+      "title": "Demographic loss and growth yields",
+      "description": "Constant true yields convert uptake minus maintenance into biomass synthesis; demographic loss is added once.",
+      "equations": [
+        "mu_i=Y_i(q_i-m_i); net growth per year = H(mu_i-ell).",
+        "For branching diagnostics: birth_i=H max(mu_i,0); death_i=H[ell+max(-mu_i,0)].",
+        "Source assimilation conversion: Y_A,converted=1/[4(1/7.7+0.0206)]=1.661459, but the implemented reference retains reported Y_A=1.7."
+      ],
+      "parameters": [
+        {"symbol":"Y_A","meaning":"Peters et al. 1998 maintenance-corrected A. woodii yield transferred to the acetogen","value":"1.7","units":"gDW mol^-1 H2","basis":"transferred"},
+        {"symbol":"Y_M","meaning":"Representative transferred methanogen yield; no matched MSB temperature calibration","value":"0.78; earlier sensitivity grid 0.4,0.78,1.7","units":"gDW mol^-1 H2","basis":"transferred"},
+        {"symbol":"ell","meaning":"Reference independent demographic loss","value":"0.001; paper homogeneous map 0.0005,0.001,0.002","units":"h^-1","basis":"swept"},
+        {"symbol":"reference loss half-life","meaning":"ln(2)/ell, excluding growth and starvation","value":"28.8811","units":"days","basis":"derived"}
+      ],
+      "basis": "mixed",
+      "provenance": [
+        "src/terra_prisca/haze_world/two_guilds.py:34",
+        "src/terra_prisca/haze_world/two_guilds.py:94",
+        "src/terra_prisca/haze_world/woodii1998.py:87",
+        "src/terra_prisca/haze_world/dynamic_realisation.py:21",
+        "src/terra_prisca/haze_world/dynamic_transients.py:287",
+        "models/haze_world/two-guilds.md:70",
+        "models/haze_world/evidence/growth-parameters.md:37"
+      ],
+      "notes": "Neither ell nor the methanogen yield is a calibrated Archean demographic parameter. Earlier standalone physiology sweeps used ell=0.0001,0.001,0.01 h^-1; those are not the narrower paper stability grid. Maintenance must not be described as this demographic loss."
+    },
+    {
+      "id": "numerics_and_tests",
+      "title": "Numerical settings and relevant verification",
+      "description": "Existing tests and independent audits cover physical budgets, equilibrium algebra, derivatives, thermal spectra, positive-coordinate trajectories and finite censuses. Tests were inspected, not rerun for this digest.",
+      "equations": [
+        "Homogeneous root acceptance checks max|F_j/state_scale_j|<1e-6.",
+        "Interior thermal derivative uses [F(T-2h)-8F(T-h)+8F(T+h)-F(T+2h)]/(12h); inward stencils apply at physiological boundaries.",
+        "Positive biomass and acetate use softplus coordinates, logarithmic near zero; retained logarithms preserve uncensored per-capita dynamics.",
+        "Dense-output polynomial roots locate population minima, one-cell crossings and thermal extrema."
+      ],
+      "parameters": [
+        {"symbol":"homogeneous root search","meaning":"Ratio grid and Brent tolerance","value":"401 initial ratio-grid points; xtol=1e-13","units":"points; dimensionless ratio","basis":"assumption"},
+        {"symbol":"h","meaning":"Temperature derivative step","value":"1e-4","units":"K","basis":"assumption"},
+        {"symbol":"LSODA rtol","meaning":"Main nonlinear relative tolerance","value":"2e-8","units":"dimensionless","basis":"assumption"},
+        {"symbol":"LSODA atol","meaning":"Absolute tolerances in pressure/biomass-coordinate/acetate-coordinate/ratio order, then temperature if present","value":"[1e-9,1e-9,1e-9,1e-10,1e-12]; append 1e-8 for T","units":"mixed solver-coordinate units; K for T","basis":"assumption"},
+        {"symbol":"maximum step, sample interval","meaning":"Main trajectory controls","value":"50; 1","units":"yr","basis":"assumption"},
+        {"symbol":"tighter controls","meaning":"Four selected transient refinements","value":"rtol=2e-9; maximum step 2 yr; samples 0.5 yr","units":"dimensionless; yr; yr","basis":"assumption"},
+        {"symbol":"physiology support","meaning":"Full accepted physical temperature interval","value":"273–303.15","units":"K","basis":"assumption"}
+      ],
+      "basis": "mixed",
+      "provenance": [
+        "src/terra_prisca/haze_world/dynamic_core.py:203",
+        "src/terra_prisca/haze_world/dynamic_core.py:262",
+        "src/terra_prisca/haze_world/dynamic_core.py:350",
+        "src/terra_prisca/haze_world/dynamic_transients.py:193",
+        "tests/test_two_guilds.py:14",
+        "tests/test_dynamic_core.py:11",
+        "tests/test_dynamic_transients.py:10",
+        "tests/test_continuum_core.py:18",
+        "tests/test_graded_acetate.py:17",
+        "tests/test_graded_spread.py:7",
+        "tests/test_graded_dial_audit.py:19",
+        "models/haze_world/review/dynamic-transients-2026-11-12.md:31"
+      ],
+      "notes": "Relevant regressions check source-shape transfers, independent break-even roots, budget conservation, four-chemistry Jacobians, the reference thermal crossing, exchange conservation, quadrature exactness, dial endpoints, unsafe-source rejection and census behavior. Historical main transient outputs used sampled accepted-source checks; four tighter controls added interval certificates. Current producer certification must not be attributed retrospectively to the old epoch. This task changed no files and used no web; R* values and unit conversions were independently recomputed."
+    },
+    {
+      "id": "table1_candidates",
+      "title": "Twenty compact Table 1 entries",
+      "description": "Reference quantities and main sweep axes; six-temperature kinetic tables, full thermodynamic inputs and solver controls can go in Table S1.",
+      "equations": [
+        "Table values refer to the explicit two-group population model; the prominently reported 0.15-year margin uses f=0, whereas the default population reference uses f=0.5."
+      ],
+      "parameters": [
+        {"symbol":"s_A30","meaning":"Inferred acetogen saturation-capacity anchor","value":"0.0157176471","units":"mol H2 gDW^-1 h^-1","basis":"derived"},
+        {"symbol":"gamma","meaning":"Methanogen/acetogen capacity ratio","value":"0.74","units":"dimensionless","basis":"assumption"},
+        {"symbol":"Y_A, Y_M","meaning":"Constant true biomass yields","value":"1.7,0.78","units":"gDW mol^-1 H2","basis":"transferred"},
+        {"symbol":"m_A30, m_M30","meaning":"Maintenance anchors; A derives from Peters, M is an assumed transfer scenario","value":"0.0016,0.0010","units":"mol H2 gDW^-1 h^-1","basis":"assumption"},
+        {"symbol":"E_m","meaning":"Transferred Tijhuis maintenance-temperature slope","value":"69000","units":"J mol^-1","basis":"transferred"},
+        {"symbol":"ell","meaning":"Demographic loss","value":"Reference 0.001; scan 0.0005,0.001,0.002","units":"h^-1","basis":"swept"},
+        {"symbol":"p_A30^*, p_M30^*","meaning":"Cessation-pressure anchors; fixed-energy law specified in ESM","value":"20,1","units":"Pa","basis":"assumption"},
+        {"symbol":"a_A, a_M","meaning":"Biomass H2-equivalent retention; A derived from source composition, same value assumed for M","value":"0.0824,0.0824","units":"mol H2 gDW^-1","basis":"assumption"},
+        {"symbol":"K_H","meaning":"Fixed dissolved-H2 storage coefficient","value":"7.65e-9","units":"mol L^-1 Pa^-1","basis":"transferred"},
+        {"symbol":"J; Phi","meaning":"Reference local H2 input and equivalent surface donor supply","value":"1e-6; 3.7515752e11; supply potentials 0.24,0.30,0.36","units":"mol H2 L^-1 h^-1; CH4-equivalent molecules cm^-2 s^-1","basis":"swept"},
+        {"symbol":"k_ex","meaning":"Atmospheric H2 exchange conductance","value":"3.3333333e-9","units":"mol H2 L^-1 h^-1 Pa^-1","basis":"assumption"},
+        {"symbol":"p_atm","meaning":"Atmospheric H2 reservoir pressure","value":"Reference 0; sensitivity through 100, plus 200-Pa boundary check","units":"Pa","basis":"swept"},
+        {"symbol":"V","meaning":"Effective habitat volume per surface area","value":"0.00897067755","units":"L cm^-2","basis":"assumption"},
+        {"symbol":"f","meaning":"Acetate fraction recycled into methane","value":"0,0.5,0.9 in homogeneous maps; 0/0.5 in invasion and dial comparisons","units":"dimensionless","basis":"swept"},
+        {"symbol":"t_A","meaning":"Acetate removal time","value":"1","units":"yr","basis":"assumption"},
+        {"symbol":"t_CH4","meaning":"Atmospheric methane lifetime","value":"10000","units":"yr","basis":"assumption"},
+        {"symbol":"Phi_abiotic","meaning":"Abiotic methane source quoted by Arney","value":"6.8e8","units":"molecules CH4 cm^-2 s^-1","basis":"source"},
+        {"symbol":"tau","meaning":"Thermal response time; tau=0 is instantaneous climate","value":"Swept; first-loss search through 10000","units":"yr","basis":"swept"},
+        {"symbol":"kappa","meaning":"Acetate-feedback exponent dial, with C_ref=0.5 mM","value":"0–1; methane activity fixed on D1","units":"dimensionless","basis":"swept"},
+        {"symbol":"sigma; d","meaning":"Habitat temperature half-width and cell exchange on D2","value":"sigma=0–1; d=1e-4 or 1e-3","units":"K; yr^-1","basis":"swept"}
+      ],
+      "basis": "mixed",
+      "provenance": [
+        "models/haze_world/two-guilds.md:68",
+        "src/terra_prisca/haze_world/population_coupling.py:26",
+        "src/terra_prisca/haze_world/population_coupling.py:59",
+        "src/terra_prisca/haze_world/methane_budget.py:51",
+        "src/terra_prisca/haze_world/dynamic_realisation.py:20",
+        "src/terra_prisca/haze_world/graded_dials.py:22",
+        "models/haze_world/graded-dials.md:33"
+      ],
+      "notes": "Grouped rows contain mixed derivations where stated; their basis labels identify the assumption or transfer required for model use. Table 1 should also identify Arney case B and the assumed 283-K methane-free bridge in its caption. No substantive equation contradiction was found in 03b; the material clarifications are recorded above.\nNext: Claude — use this digest for the Model section, Table 1 and ESM.\n"
+    }
+  ]
+}
