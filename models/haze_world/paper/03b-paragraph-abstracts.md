@@ -166,8 +166,9 @@ Kicked trajectories at chosen τ show what instability does.
 **M6.** Invasions start from one group established alone and the other
 introduced at low density, in one closed habitat. Populations are counted
 every ten years, and a group falling below one cell is removed. This rule
-gives the finite-population endpoint of each invasion [Mollison 1991,
-pending read].
+gives the finite-population endpoint of each invasion. Without it, a
+continuous model lets a group recover from a vanishing fraction of a cell
+[Mollison 1991].
 
 **M7.** Each stage of the work began with a dated specification of its
 predictions and pass criteria. Claude (Opus 5.5) and Codex (GPT-6) built and
@@ -304,16 +305,18 @@ ecosystem–climate models supply the wider context for hydrogen cycling
 **D4. The early Earth.** Acetate feedback and variation in habitat
 temperature are candidate routes to graded regulation on the hazy early
 Earth. Their strengths set where the regulator sits between precision and
-durability. Measuring acetate turnover and thermal heterogeneity in modern
-analogue mats would constrain them [Hoehler et al. 2001, pending read;
-Bebout et al. 2004].
+durability. Modern mats are methane sources whose hydrogen supply varies
+steeply with depth and time of day [Hoehler et al. 2001; Bebout et al.
+2004]. Measuring acetate turnover and temperature variation in such mats
+would constrain both routes.
 
 **D5. Stability and assembly are separate.** Arrival order chose the
 survivor in every invasion, including settings where a mixture of both
 groups is stable once formed. Building a regulator is therefore a different
-problem from keeping one. Historical contingency in community assembly is a
-known theme; here it decides whether a planet acquires a regulator at all
-[Fukami 2015].
+problem from keeping one. Arrival order is a known source of historical
+contingency in community assembly, most studied where the first arrival
+wins [Fukami 2015]. Here the late arriver won, and arrival order decides
+whether a planet acquires a regulator at all.
 
 **D6. Conditions.** These results come from a conditional model, and table 1
 lists its conditions:

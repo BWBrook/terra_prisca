@@ -1,34 +1,34 @@
 # Step 3b: reference reading notes
 
-Claude (Opus 5.5), 12 November 2026. These notes cover the references tagged
-in [03b-paragraph-abstracts.md](03b-paragraph-abstracts.md) that had been
-checked only by title. PDFs are stored in `local/sources/paper_refs/`, which
-is gitignored. Notes are in my own words.
-
-## Read in full text (open access)
+Claude (Opus 5.5), 12–13 November 2026. These notes cover the references
+tagged in [03b-paragraph-abstracts.md](03b-paragraph-abstracts.md) that had
+been checked only by title. All eleven are now read in full text. Five were
+open access; Barry supplied the other six through UTAS on 13 November. PDFs
+are stored in `local/sources/paper_refs/`, which is gitignored and never
+pushed. Notes are in my own words.
 
 | Reference | DOI | Paragraph | What it supports |
 |---|---|---|---|
 | Lovelock & Margulis 1974 | 10.1111/j.2153-3490.1974.tb01946.x | I1 | The Gaia proposal: the biosphere actively keeps planetary conditions favourable as solar output rises. This is the origin of the question in I1. |
+| Khammash 2021 | 10.1016/j.cels.2021.05.020 | I2, D2 | Perfect adaptation returns a variable exactly to its set point after a sustained disturbance; *E. coli* chemotaxis is the lead example. Integral feedback delivers it provided the closed loop stays stable. A "leaky" integrator (degradation or dilution of the controller) introduces steady-state error. Adaptation is a steady-state property and guarantees nothing about transient performance; points to Olsman et al. for the stability–performance trade-offs. |
+| Sagan & Mullen 1972 | 10.1126/science.177.4043.52 | I3 | The original faint-young-Sun argument. Adopts a 30% rise in solar luminosity over Earth history (best estimate then 40 ± 10%) and cites geological evidence for liquid water 2.7–4.0 Gyr ago. Supports the paradox; Feulner supplies the modern figure. |
 | Feulner 2012 | 10.1029/2011RG000375 | I3 | Stellar models give the early Earth about 25% less solar input than today. Geological evidence nonetheless shows liquid water through the Archean. Supports "about a quarter less sunlight". |
+| Haqq-Misra et al. 2008 | 10.1089/ast.2007.0197 | I3 | Organic haze begins to form at CH₄/CO₂ ≈ 0.1 in their model. Surface temperature peaks in the thin-haze range (0.1–0.2) and drops well below freezing as the haze builds; the haze has an anti-greenhouse effect. Supports "above a threshold, methane forms an organic haze that cools the surface". |
 | Fu et al. 2019 | 10.3389/fmicb.2019.02418 | I3 | Digester sludge incubated under H₂/CO₂. Acetogenesis took a large share of hydrogen use at 15 °C, and methanogenesis dominated at 30 °C. Direct evidence that temperature shifts the competition. |
-| Held et al. 2010 | 10.1175/2009JCLI3466.1 | M3 (new) | A climate model separates a fast surface response, relaxing over about 4 years, from a slow response tied to the deep ocean that lasts centuries. Grounds our τ range: years for the fast mode, centuries for the slow. |
-| Bebout et al. 2004 | 10.1111/j.1472-4677.2004.00024.x | D4 (candidate) | Modern hypersaline mats held at Archean-like low sulfate. Methane flux rose up to tenfold but stayed a small share of carbon turnover. Useful context on mats as methane sources. It does not address acetate or temperature heterogeneity. |
+| Held et al. 2010 | 10.1175/2009JCLI3466.1 | M3 | A climate model separates a fast surface response, relaxing over about 4 years, from a slow response tied to the deep ocean that lasts centuries. Grounds our τ range: years for the fast mode, centuries for the slow. |
+| Mollison 1991 | 10.1016/0025-5564(91)90009-8 | M6 | The "atto-fox" passage: a continuous rabies model never lets infected density reach zero, so a remnant of 10⁻¹⁸ fox per km² starts a spurious second epidemic wave. Mollison traces this to modelling populations as continuous rather than discrete. This is the problem our one-cell rule addresses. |
+| Fukami 2015 | 10.1146/annurev-ecolsys-110411-160340 | R6, D5 | Defines priority effects as cases where the outcome depends on arrival order and cannot be predicted without it; they cause historical contingency in community assembly. Inhibitory effects (the first arrival wins) have received most attention; facilitative effects also count. **Note for the paper:** our invasions show the reverse of the usual incumbency advantage, since the late arriver won all 24. D5 now says so. |
+| Hoehler et al. 2001 | 10.1038/35085554 | D4 | Modern hypersaline mats (Guerrero Negro). Hydrogen partial pressure in surface bubbles swings by four orders of magnitude over a day, reaching about 10 kPa at night. Methane production is confined to the high-hydrogen mat layer, where hydrogen relieves sulfate reducers' advantage. Supports mats as hydrogen-rich, strongly heterogeneous methane sources. It measures neither acetate nor temperature. |
+| Bebout et al. 2004 | 10.1111/j.1472-4677.2004.00024.x | D4 | The same mats held at Archean-like low sulfate. Methane flux rose up to tenfold but stayed a small share of carbon turnover. Context on mats as methane sources; no acetate or temperature data. |
 
-## Open access but blocked by a bot check (Barry to pull)
+## Resolution of the `[find]` and pending tags
 
-- **Fukami 2015,** 10.1146/annurev-ecolsys-110411-160340. Historical contingency (priority effects) in community assembly. Paragraphs R6 and D5.
-- **Khammash 2021,** 10.1016/j.cels.2021.05.020. Review of perfect adaptation and integral feedback. Paragraphs I2 and D2.
-
-## Paywalled (Barry to pull from UTAS)
-
-- **Sagan & Mullen 1972,** 10.1126/science.177.4043.52. The original faint-young-Sun paper (I3). Feulner 2012 can carry the sentence alone, so this one is optional.
-- **Haqq-Misra et al. 2008,** 10.1089/ast.2007.0197. The haze threshold and anti-greenhouse cooling (I3).
-- **Hoehler et al. 2001,** 10.1038/35085554. Microbial mats as sources of hydrogen and methane on the early Earth. This is the best candidate for D4's `[find]`.
-- **Mollison 1991,** 10.1016/0025-5564(91)90009-8. The "atto-fox" problem, the classic case for a minimum-population threshold in continuous models. Candidate for M6's `[find]`.
-
-## Resolution of the `[find]` tags
-
-- **M3 (climate response time):** resolved by Held et al. 2010.
-- **M6 (one-cell rule):** Mollison 1991 once read. Otherwise the sentence can stand as a stated modelling rule without a citation.
-- **D4 (mats):** Hoehler et al. 2001 once read. If it gives no basis for acetate or thermal-heterogeneity measurements, cut D4's third sentence.
+- **M3 (climate response time):** Held et al. 2010.
+- **M6 (one-cell rule):** Mollison 1991. M6 now states what the rule
+  prevents: recovery from a vanishing fraction of a cell.
+- **D4 (mats):** Hoehler et al. 2001 with Bebout et al. 2004. Neither measures
+  acetate or temperature, so D4 now cites them for mats as hydrogen-rich,
+  heterogeneous methane sources and proposes the acetate and temperature
+  measurements as the test, without a citation.
+- **D5 (arrival order):** reworded after reading Fukami 2015 to say that the
+  late arriver won, reversing the most-studied form of priority effect.
