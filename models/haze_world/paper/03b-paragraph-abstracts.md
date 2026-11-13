@@ -163,10 +163,10 @@ Kicked trajectories at chosen τ show what instability does.
 
 **M6.** Invasions start from one group established alone and the other
 introduced at low density, in one closed habitat. Populations are counted
-every ten years, and a group with fewer than one cell in total is removed.
-This chosen rule determines when loss becomes permanent in these runs.
-It prevents recovery from a vanishing fraction of a cell, as in the
-epidemic-model example discussed by Mollison [Mollison 1991].
+every ten years, and a group with less than one cell in total is removed.
+This rule, our choice, fixes when a loss becomes permanent. It stops a group
+recovering from a vanishing fraction of a cell, an artefact of continuous
+models [Mollison 1991].
 
 **M7.** Dated specifications preserve the staged predictions and their pass
 criteria. Claude (Opus 5.5) and Codex (GPT-6) built and cross-checked the
@@ -184,8 +184,8 @@ archived with a Zenodo DOI.
    the coexistence supply range.
 2. Every exactly holding state is unstable or loses stability within a few
    years of climate response time.
-3. The nonlinear examples distinguish oscillating regulation from severe
-   population bottlenecks.
+3. Once unstable, the regulator either swings widely or lets a population
+   crash.
 4. Allowing a small temperature response to supply raises the stability
    margin smoothly near the exact limit on the tested branches.
 5. Counterexamples to a proposed slope range and an oscillation-based
@@ -221,11 +221,11 @@ with an instant climate response. The other 36 first lose stability at
 response times of about 7 years or less. The reference state loses stability
 at 0.15 years.
 
-**R3. Oscillations and population bottlenecks** (figure 2). At a 1-year response time, the
+**R3. Swings and crashes** (figure 2). At a 1-year response time, the
 reference regulator oscillates: both groups persist for 30,000 years while
 temperature swings span about 1.3 K. At 10–100 years, the calculated
-populations reach values below one cell. These examples distinguish
-oscillating regulation from severe population bottlenecks.
+populations fall below one cell. An unstable regulator can therefore keep
+working with wide swings, or let a population crash.
 
 **R4. The price of durability** (figure 3). Each loosening lets temperature
 follow supply slightly, and near the exact limit the tested branches show
@@ -285,11 +285,12 @@ gives each paragraph one message.
 ### Paragraph abstracts
 
 **D1. Exactness brings fragility.** Near coexistence, competition acts like
-integral feedback and holds temperature exactly. In this model, slow climate
-response destabilises that exact holding. The initially stable exact states
-first lose stability at response times of about seven years or less.
-The nonlinear examples show oscillating regulation as well as population
-bottlenecks.
+integral feedback and holds temperature exactly. Integral control is
+sensitive to delay, and a slowly responding climate supplies one [find:
+control-theory source on integral action and delay]. Every exact state that
+starts stable loses stability at a response time of about seven years or
+less. Past that point the regulator swings widely or a population
+crashes.
 
 **D2. A small price for durability.** Graded feedback relaxes the exactness.
 A residual sensitivity of a fraction of a kelvin per e-fold of supply buys
@@ -308,11 +309,11 @@ ecosystem–climate models supply the wider context for hydrogen cycling
 **D4. The early Earth.** Acetate feedback and variation in habitat
 temperature are candidate routes to graded regulation on the hazy early
 Earth. Their strengths set where the regulator sits between precision and
-durability. Modern mats are methane sources whose hydrogen levels vary
-steeply with depth and time of day [Hoehler et al. 2001; Bebout et al.
-2004]. Measuring acetate stocks and turnover, their effect on hydrogen
-requirements, and habitat temperatures and cell exchange would test the two
-routes.
+durability. In modern mats, hydrogen levels vary steeply with depth and
+time of day, and far more fixed carbon leaves as organic acids than as
+methane [Hoehler et al. 2001; Bebout et al. 2004]. Measuring acetate stocks
+and turnover, their effect on hydrogen requirements, and habitat
+temperatures and cell exchange would test the two routes.
 
 **D5. Stability and assembly are separate.** Arrival order chose the
 survivor in every tested invasion, including settings where a mixture of
@@ -325,9 +326,9 @@ arriver won all 24 invasions, and each run ended with one group.
 The switch depends on culture transfers and an assumed cell-loss rate;
 regulation requires different methane yields from the two hydrogen
 pathways. Physiology is extended below 277 K, costs are local slopes on four
-branches, and stability is local to each steady state. Crash interpretation
-ends at the first fall below one cell; invasions use a closed habitat with a
-chosen total one-cell cutoff at ten-year counts.
+branches, and stability is local to each steady state. A crash is read at
+the first fall below one cell, and invasions use one closed habitat with the
+one-cell rule applied every ten years.
 
 **D7. Tests and generality.** Any population–environment feedback with a slow
 environment invites the same two measurements: how far the regulated

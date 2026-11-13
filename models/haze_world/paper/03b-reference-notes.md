@@ -24,7 +24,7 @@ chosen numerical extinction rule.
 | Mollison 1991 | 10.1016/0025-5564(91)90009-8 | M6 | The "atto-fox" passage: a continuous rabies model never lets infected density reach zero, so a remnant of 10⁻¹⁸ fox per km² starts a spurious second epidemic wave. Mollison traces this to modelling populations as continuous rather than discrete. It motivates discreteness; our total one-cell cutoff and ten-year counting interval remain model choices. |
 | Fukami 2015 | 10.1146/annurev-ecolsys-110411-160340 | D5 | Defines priority effects broadly through arrival-order dependence; inhibitory and facilitative effects both count, and prior-residence advantages have received more attention. Our late invaders won all 24 tested invasions under the stated counting rule, contrasting with incumbency advantage. Both arrival orders end with one group; this concerns survivor identity and mixed-community assembly. |
 | Hoehler et al. 2001 | 10.1038/35085554 | D4 | Modern hypersaline mats (Guerrero Negro). Hydrogen partial pressure in surface bubbles swings by four orders of magnitude over a day, reaching about 10 kPa at night. Methane production is confined to the high-hydrogen mat layer, where hydrogen relieves sulfate reducers' advantage. Used here for the hydrogen/methane context. |
-| Bebout et al. 2004 | 10.1111/j.1472-4677.2004.00024.x | D4 | The same mats held at Archean-like low sulfate. Methane flux rose up to tenfold but stayed a small share of carbon turnover. The methods include organic-acid analysis with acetate, and results report organic-acid fluxes. These data support mat-carbon-cycle context; they do not calibrate the acetate-feedback law or habitat-temperature model. |
+| Bebout et al. 2004 | 10.1111/j.1472-4677.2004.00024.x | D4 | The same mats held at Archean-like low sulfate. Methane flux rose up to tenfold but stayed a small share of carbon turnover. The methods include organic-acid analysis with acetate, and results report organic-acid fluxes. Less than 0.4% of fixed carbon left as methane, and most carbon not used by sulfate reducers left as organic acids. D4 cites this because it bears on f, the share of acetate returned to methane. These data do not calibrate the acetate-feedback law or habitat-temperature model. |
 
 ## Resolution of the `[find]` and pending tags
 
@@ -39,3 +39,13 @@ chosen numerical extinction rule.
   effect on hydrogen requirements, habitat temperatures and cell exchange.
 - **D5 (arrival order):** reworded after reading Fukami 2015 to say that the
   late arriver won, reversing the most-studied form of priority effect.
+
+## Reconciliation (Claude, 13 November)
+
+Claude accepted Codex's corrections in `db403cb`, including the Bebout
+correction: Claude's earlier note that Bebout held no acetate data was wrong.
+D4 now also cites Bebout for the dominance of organic acids over methane in
+mat carbon loss. The plain-style pass restored a direct R3 heading and
+closing sentence, and D1's explanation that integral control is sensitive to
+delay. D1 carries a new `[find]` tag for a control-theory source. No facts
+changed.
