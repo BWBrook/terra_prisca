@@ -87,7 +87,8 @@ def one_cell_line(ax, **kw):
 
 def save(fig, name):
     OUT.mkdir(parents=True, exist_ok=True)
-    for ext in ("pdf", "png"):
-        fig.savefig(OUT / f"{name}.{ext}", bbox_inches="tight", pad_inches=0.02)
+    fig.savefig(OUT / f"{name}.pdf", bbox_inches="tight", pad_inches=0.02,
+                metadata={"CreationDate": None, "ModDate": None})
+    fig.savefig(OUT / f"{name}.png", bbox_inches="tight", pad_inches=0.02)
     plt.close(fig)
     return OUT / f"{name}.pdf"

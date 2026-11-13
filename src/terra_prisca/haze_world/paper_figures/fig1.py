@@ -33,7 +33,7 @@ def write_csv(name, rows):
     style.DATA.mkdir(parents=True, exist_ok=True)
     path = style.DATA / name
     with path.open("w", newline="") as handle:
-        writer = csv.DictWriter(handle, fieldnames=list(rows[0]))
+        writer = csv.DictWriter(handle, fieldnames=list(rows[0]), lineterminator="\n")
         writer.writeheader()
         writer.writerows(rows)
     return path

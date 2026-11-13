@@ -30,7 +30,7 @@ def read(path):
 def write(name, rows):
     style.DATA.mkdir(parents=True, exist_ok=True)
     with open(style.DATA / name, "w", newline="") as fh:
-        w = csv.DictWriter(fh, fieldnames=list(rows[0]))
+        w = csv.DictWriter(fh, fieldnames=list(rows[0]), lineterminator="\n")
         w.writeheader()
         w.writerows(rows)
 

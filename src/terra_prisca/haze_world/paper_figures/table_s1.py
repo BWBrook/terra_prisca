@@ -400,7 +400,7 @@ KINETICS_UNITS = ("V in nmol H₂ h⁻¹ per 20-mL culture and K in Pa (source, 
 
 def write_csv(path, rows, columns):
     with path.open("w", newline="") as handle:
-        writer = csv.DictWriter(handle, fieldnames=columns, extrasaction="ignore")
+        writer = csv.DictWriter(handle, fieldnames=columns, extrasaction="ignore", lineterminator="\n")
         writer.writeheader()
         writer.writerows(rows)
 
