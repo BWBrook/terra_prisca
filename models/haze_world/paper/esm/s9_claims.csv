@@ -1,0 +1,24 @@
+claim,status,commit,used in,claim text
+C05,supported,ffd4fbc,S2,At the central hydrogen crossings the routing feedback is locally restoring on case B haze cooling if acetogens deliver less methane
+C06,supported,ffd4fbc,S2,Reference explicit populations have a locally stable mixed state warmer than matched controls with acetogens disabled
+C38,provisional,1c1df89,S6,PB1 continuum pinning-robustness frontier after B1
+C39,refuted,1c1df89,S6,PB2 methane-only product feedback supplies all-lag stability
+C40,refuted,1c1df89,S6,PB3 habitat quadrature converges at N33 and fixed-chemistry delay margin stays below30 yr
+C41,refuted,1c1df89,S6,PB4 two-layer critical lag agrees within factor2 using tau_f
+C42,refuted,1c1df89,S6,PB7 dormant bank produces an epsilon-driven local Hopf and matched thermal periods
+C43,supported,1c1df89,S6,Reference stability gain comes from acetate feedback rather than the direct methane-product loop
+C44,supported,1077f03,S3,Equal-weight B1 habitat grids do not resolve the guild-switching zone at d=1e-3; the zone width scales with cell exchange d
+C45,supported,459e9bc,"S3, S4",Adaptive weighted habitats meet declared sampled-branch profile slope and delay-margin convergence checks
+C46,supported,459e9bc,S6,The restated local-gain frontier has qualified counterexamples while raw temperature responses remain nonzero
+C47,supported,459e9bc,S6,Fixed-chemistry delay robustness is nonmonotonic in habitat connectivity
+C48,supported,459e9bc,S6,Product chemistry breaks mixed-zone width scaling with connectivity over the tested range
+C49,supported,459e9bc,S6,Some resolved fixed-chemistry spread communities lie below the declared local-gain interval
+C50,supported,459e9bc,S6,Product-feedback spatial states retain tested lag stability but normalized gain can fall while absolute temperature response worsens
+C51,supported,459e9bc,S6,A homogeneous unstable thermal-lag mixture can avoid the one-cell threshold over the specified nonlinear horizon
+C52,supported,459e9bc,"S3, S6",Every studied homogeneous invasion loses its displaced resident under the finite-population rule despite conditional mixed-state stability
+C54,supported,0e29057,S4,"Among resolved C0/C1 states every exactly pinned state is lag-fragile and every ordinary graded state is lag-robust, with no states between"
+C55,supported,0e29057,"S5, S6",The specified graded mechanisms depart gradually from exact pinning on the sampled finite-margin branches
+C56,supported,0e29057,"S5, S6",Two dial branches refute the prescribed universal power-law slope band
+C57,supported,0e29057,S5,A thirty-year first-loss margin has a small nonzero local temperature-sensitivity cost on all four dial branches
+C58,supported,0e29057,"S5, S6",The weak-mode formula passes the original eligible grid but fails at authorised refinement states
+C59,supported,957bd13,S7,"Atmospheric H2 pressure leaves the fixed-chemistry set point unchanged, barely moves the critical lag, and can remove the mixed state at high pressure"

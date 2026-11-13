@@ -1,0 +1,4 @@
+quantity,reproduced,expected
+acetogen_invasions_ending_acetogen_only,12,12
+methanogen_invasions_ending_methanogen_only,12,12
+settings_with_locally_stable_mixture,8,"recorded, no prior count"

@@ -1,0 +1,3 @@
+variant,mixed_K,methanogen_only_K,contrast_K,only_stable
+constant_shape,281.53482280508206,273.51674403884846,8.0180787662336,False
+arrhenius_continuation,281.53482280508206,276.8074759511707,4.727346853911342,False

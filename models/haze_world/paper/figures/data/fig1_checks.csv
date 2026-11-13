@@ -1,0 +1,16 @@
+quantity,value,draft_value
+t_star_k,281.53482280508206,281.53
+rstar_acetogen_278k_pa,27.614931817597395,27.61
+rstar_methanogen_278k_pa,47.10576817294765,47.11
+rstar_acetogen_283k_pa,21.44953126697813,21.45
+rstar_methanogen_283k_pa,19.566693835254398,19.57
+mixed_temperature_reference_k,281.53482280508206,281.53
+methanogens_alone_temperature_reference_k,273.51674403884846,273.52
+coexistence_start_potential,0.2291776065248996,
+coexistence_end_potential,0.4573269653599709,
+coexistence_start_supply_j_1e6,0.7639253550829987,
+coexistence_end_supply_j_1e6,1.5244232178665698,
+arney_peak_ratio,0.16666938,
+arney_peak_k,297.008,
+arney_trough_ratio,0.22221876,
+arney_trough_k,273.39,

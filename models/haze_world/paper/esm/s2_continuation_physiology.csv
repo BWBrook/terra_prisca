@@ -1,0 +1,7 @@
+variant,T (K),s_A,K_A (Pa),s_M,K_M (Pa),R*_A (Pa),R*_M (Pa)
+constant_shape,273,0.005584,190,0.002285,50,27.07,69.83
+constant_shape,275,0.005584,190,0.002285,50,28.21,71.37
+constant_shape,277.15,0.005584,190,0.002285,50,29.73,73.49
+arrhenius_continuation,273,0.003934,190,0.001062,50,40.07,inf
+arrhenius_continuation,275,0.004663,190,0.001541,50,34.37,339.2
+arrhenius_continuation,277.15,0.005584,190,0.002285,50,29.73,73.49

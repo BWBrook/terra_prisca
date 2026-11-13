@@ -1,0 +1,5 @@
+class,states,C0,C1,max |S| (K per e-fold),min |S|,finite τ_c (n),finite τ_c range (yr),censored at 10⁴ yr (n),unstable at zero lag (n)
+"exact, already unstable",6,6,0,2.73e-12,5.74e-14,0,,0,6
+"exact, finite first loss",36,36,0,2.3e-10,7.78e-14,36,0.0575 to 7.08,0,0
+"graded, reversed frozen response",6,6,0,0.598,0.57,0,,0,6
+graded,122,42,80,111,0.59,9,331 to 4.78e+03,113,0

@@ -1,0 +1,12 @@
+quantity,reproduced,expected
+exact_states,42,42
+exact_cooling,36,36
+exact_bridge,6,6
+graded_ordinary,122,122
+graded_censored,113,113
+graded_finite_C1,9,9
+excluded_bridge,6,6
+graded_min_abs_S_K,0.5896452346392214,0.59
+graded_min_tau_c_yr,331.42605522734783,331
+exact_cooling_tau_c_min_yr,0.057456814650053756,0.057
+exact_cooling_tau_c_max_yr,7.079524561115154,7.08

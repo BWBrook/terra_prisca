@@ -357,8 +357,9 @@ against supply.
 <!-- R5 -->
 Before the dial runs we proposed two general forms for this trade-off. The
 first was a power law between margin and sensitivity, with a slope between 1
-and 2.5 on each branch. The acetate branch at f = 0.5 fell outside it, with a
-slope of 0.80. The second was an approximation to the margin from the
+and 2.5 on each branch. Two branches fell outside it: acetate feedback at
+f = 0.5, with a slope of 0.80, and habitat spread at the lower exchange
+rate, with 0.99. The second was an approximation to the margin from the
 oscillation period and damping time. It passed the planned grid but failed
 at two refinement points, where it gave 26% and 47% of the computed margins.
 We therefore report the price of durability branch by branch (ESM).
@@ -497,41 +498,57 @@ more durable.
 ## Figure captions
 
 **Figure 1. How microbes can set a planet's temperature.** (*a*) Hydrogen
-feeds two groups. Methanogens make methane, which thickens an organic haze
-and cools the surface; acetogens divert hydrogen into acetate, part of which
-is recycled to methane. Temperature decides which group wins, and the climate
-responds over a time τ. (*b*) Hydrogen requirement of each group against
-temperature, equation (2.3). The curves cross at T\* = 281.53 K. (*c*)
-Surface temperature against hydrogen supply for methanogens alone and for
-both groups, with fixed products and τ = 0. With both present, temperature
-holds at T\* across the coexistence range, the plateau of Seto & Akagi
-(2007). Inset: the haze response of Arney et al. (2016), case B, with the
-haze-cooling branch marked.
+feeds two groups and exchanges with an atmospheric reservoir. Methanogens
+make methane, which thickens an organic haze and cools the surface;
+acetogens divert hydrogen into acetate, of which a fraction f is recycled to
+methane. Temperature decides which group wins, and the climate responds over
+a time τ. (*b*) Hydrogen requirement of each group against temperature,
+equation (2.3). The curves cross at T\* = 281.53 K; acetogens need less
+hydrogen below it and methanogens above it. Kinks fall at the assay
+temperatures; shading marks the continuation below 277.15 K. (*c*) Steady
+surface temperature against hydrogen supply J for methanogens alone and for
+both groups, with fixed products, f = 0.5 and τ = 0. With both present,
+temperature holds at T\* across the coexistence range (shaded), the plateau
+of Seto & Akagi (2007). At the reference supply (dotted) methanogens alone
+give 273.5 K. Inset: the haze response of Arney et al. (2016), case B, with
+the haze-cooling branch in bold and the two reference states marked.
 
 **Figure 2. Perfect control breaks down when the climate responds slowly.**
-Reference state, fixed products, f = 0. (*a*) Surface temperature after a
-0.1% kick to acetogen biomass, at response times of 1 and 10 years. (*b*)
-Global cell counts for the same runs, on a log scale; the dashed line marks
-one cell. Temperature and population traces stop at the first crossing
-below one cell. (*c*) Leading
-growth rate of small disturbances against τ for the exact reference state and
-a graded state; markers show the first loss of stability.
+Reference state, fixed products, f = 0, after a 0.1% kick to acetogen
+biomass. The time axis is broken between 2,000 and 28,000 years. (*a*)
+Surface temperature at response times of 1 year (thin) and 10 years
+(thick). (*b*) Global cell counts for the same runs on a log scale; the
+dotted line marks one cell. At 10 years the acetogens fall below one cell at
+1,830 years, where both traces stop. At 1 year both groups persist through
+30,000 years, cycling with a period of about 380 years. (*c*) Leading real
+part of the eigenvalues against τ for the exact reference state and a
+graded state (habitat spread σ = 0.03 K, d = 10⁻⁴ yr⁻¹). Markers show the
+first loss of stability, at 0.149 and 38.5 years. The vertical axis is
+linear between ±10⁻⁴ yr⁻¹ and logarithmic beyond.
 
 **Figure 3. Durability costs a little precision.** (*a*) Critical response
-time τ_c against local sensitivity |S| for the exact states (left strip), the
-four dial branches (lines joining points on one branch) and resolved
-habitat-spread states. The strip distinguishes 36 cooling-branch states from
-six already unstable bridge states. Arrows mark lower bounds at the 10⁴-year ceiling. The
-horizontal line marks 30 years, and the shaded band its price, 0.07–0.32 K
-per e-fold. (*b*) Temperature against log supply near the reference supply
-for three settings of one dial, drawn as local tangents.
+time τ_c against local sensitivity |S|. Left strip: the 42 exact states (S =
+0), 36 on the haze-cooling branch (filled) and six bridge states already
+unstable at τ = 0 (open, placed at the strip's base). Lines: the four dial
+branches, joining finite margins on one branch; ringed markers show where
+each crosses 30 years. Symbols without lines: the 122 graded states of an
+on/off comparison (grey, all at the ceiling) and of resolved habitat spread
+(green; nine finite). Arrows mark lower bounds at the 10⁴-year search
+ceiling. The shaded band marks the price of a 30-year margin, 0.07–0.32 K
+per e-fold. (*b*) Local tangents of steady temperature against log supply
+at the reference supply, for three settings of the acetate dial at f = 0:
+exact (κ = 0), the 30-year point (S = −0.28 K per e-fold) and κ = 1 (S =
+−1.88 K per e-fold, stable through 10⁴ years). Tangents show derivatives,
+not finite responses.
 
 **Figure 4. Arrival order decides the survivor.** (*a*) Global cell counts
-during one invasion in each direction; the resident crosses below one cell.
-Dashed lines show the continuous solution; post-crossing continuations are
-mathematical diagnostics. (*b*) Surviving group
-against invasion direction for all 24 runs, marking settings where a mixture
-of both groups is also locally stable.
+after a rare invader enters, in each direction, with fixed products, f = 0.5
+and τ = 3 years. Solid traces stop where the resident first falls below one
+cell (18.3 and 7.4 years); dashed continuations are the continuous solution,
+shown as a mathematical diagnostic. (*b*) Surviving group in all 24 runs:
+every acetogen invasion ended with acetogens alone, and every methanogen
+invasion with methanogens alone. Diamonds mark the 8 of 12 settings where
+the reference mixture of both groups is locally stable.
 
 ---
 

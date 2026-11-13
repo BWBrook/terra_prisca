@@ -1,0 +1,7 @@
+state,nodes,route 1 (collocation spectrum),relative difference to characteristic route,comparison,passed
+fixed_0.0_3.0_0.001,156,> 10000 (censored),,consistent right censoring,True
+fixed_0.5_1.0_0.0001,176,947.4,4.48e-06,finite margin,True
+fixed_0.5_3.0_0.0001,188,4781,1.98e-05,finite margin,True
+fixed_0.5_3.0_0.01,124,> 10000 (censored),,consistent right censoring,True
+fixed_0.5_6.0_0.0001,200,> 10000 (censored),,consistent right censoring,True
+products_0.5_6.0_0.0001,188,> 10000 (censored),,consistent right censoring,True

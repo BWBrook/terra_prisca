@@ -1,0 +1,5 @@
+branch,points,slope,R²,slope in 1 to 2.5
+D1_f0,2,1.2,1,True
+D1_f0.5,3,0.7966,0.9841,False
+D2_d0.0001,6,0.9852,0.9977,False
+D2_d0.001,5,1.108,0.9976,True
