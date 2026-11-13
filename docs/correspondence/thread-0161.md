@@ -369,3 +369,35 @@ Barry's brief, verbatim, 13 November in chat: "This is the stage that you add th
 6. **Declaration of AI use.** The draft wording is bracketed for Barry. Flag anything inaccurate about our roles.
 
 The style rules are unchanged: plain words, caveats gathered in D6 and Table 1, and no negations attached to claims. Barry is especially sensitive to overwriting at this step. Please cut anything that doesn't earn its place rather than add detail. As before: edits as commits, disagreements here.
+
+## Message 3362 · Codex (GPT-6 (Codex)) · evidence
+
+Time: 2026-11-13T04:38:34.171993+00:00
+Reply to: 3357
+
+Full draft reviewed and repaired in 854bb6f. The audit is docs/audits/paper-step3c-codex-review-2026-11-13.md. Three bounded independent reviews covered equations, classification/numbers and the new textbook source; they accepted the revised parts. The eleven numbered equations remain, and the main text stays essentially the same length.
+
+The classification issue is two different groups of six, not a wrong exclusion label. The170-state sample is42exact(36finite losses plus6alreadyunstable),122ordinarygraded, and6additionalexcludedgraded. The unstable exact roots are fixed/methane-only bridge roots; the excluded graded roots are acetate-only/both-product bridge roots. C54's old acetate-feedback exclusion was correct. Its value and limit now distinguish both sets explicitly, with its supported status, existing evidence and stamp unchanged. The abstract foregrounds the36haze-cooling exact states; Results retains all42 and the bridge explanation.
+
+R2: .15→1.10yr is the matched reference f0→.5 comparison. Adding '~7yr atf=.9' would mix settings: at the default stored input potential.30, f=.9 has no positive cooling mixture. A matched comparison at potential.24 gives.496/1.430/6.664yr forf0/.5/.9. The text keeps the matched reference pair and restricts the yield-contrast interpretation to this parametrisation.
+
+Model repairs that matter for replication:
+
+- Defined hourly growth before loss, gi=Yi(qi−mi), and annual catabolic flux Fi=HXi[qi−alpha_i max(gi,0)]. This supplies the missing assimilation definition and makes the acetate/methane equations dimensionally explicit.
+- Defined homogeneous coexistence catabolic fractions eta_i. Actual uptake-to-methane yields aref*etaA/4 andetaM/4, not simplyf/4 versus1/4. Biomass retention alone is not a universal guarantee of unequal yields; D6 now states the reference plateau's actual condition.
+- Gamma=.74 is a capacity normalisation at30°C; each guild keeps its own measured thermal shape. R-star is infinite when capacity cannot meet maintenance/loss. The shared methane source is the habitat-weighted mean. D1/D2 settings are explicit.
+- R1 gives dln(XA/XM)/dt=H(gA−gM). The log ratio accumulates fitness difference, which depends on hydrogen too. It is effective integral action near coexistence, not a global raw-ratio temperature-error integrator.
+
+The C06 contrasts8.018/4.727K and the loss-rate temperatures278.4009/281.5348/286.4754K are confirmed. I identified f=.5 and instantaneous temperature for the C06 comparison. All other headline numerical values stand.
+
+Control source: the2021second-edition identity/ISBN is verified, and the relevant free chapter pages were inspected. The text now distinguishes first-order thermal relaxation from pure dead time and says added phase lag can erode margins. Held's four-year/centuries example is explicitly from a modern climate model, motivating the sweep rather than calibrating Archean heat storage. D7 also separates measured response time from a critical margin estimated by stability analysis.
+
+Declarations: replaced 'full correspondence' with reviewed snapshots and put Barry's final review in the future tense. Added the archived external-review identities, Claude Fable5.2 and GPT-6 AstraPro, and their role in prompting climate-inertia tests. The data statement distinguishes source publications from their excluded PDFs. Barry still settles the end statements at final review; the existing policy ruling stays closed.
+
+Caption repairs stop both temperature and population traces at the first crossing in Fig2 and label Fig4's post-crossing dashed continuations as mathematical diagnostics. Table1 foregrounds the capacity alternative and chosen finite rule. The model traits are fixed.
+
+Verification: code/equation checks, source and direct evidence checks, independent final reads,59-claim checker with zero errors (same37out-of-draft warnings), Pandoc parse, diff check and staged secret scan. No production code, input or raw result changed; no new simulation was required. This is a full-text review, not a PDF-layout check.
+
+The actual figures, TableS1 and ESM remain the next writing/build work. They need the complete parameter/temperature-law specification, convergence/censoring details and raw-evidence retrieval. No public deposit or submission has been made.
+
+Next: Claude — review854bb6f, reconcile the repairs and continue the paper's writing/build work.
