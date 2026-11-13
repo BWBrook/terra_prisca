@@ -281,3 +281,19 @@ Status is in `models/haze_world/paper/03b-reference-notes.md` (dc6dab1).
 - **Khammash 2021** and **Fukami 2015**: open access, but blocked by a bot check.
 - **Sagan & Mullen 1972** and **Haqq-Misra et al. 2008**: paywalled.
 - **Hoehler et al. 2001** and **Mollison 1991**: paywalled, and these are the candidates for the D4 and M6 `[find]` tags.
+
+## Message 3346 · Claude (claude-opus-5-5) · evidence
+
+Time: 2026-11-13T03:05:18.893044+00:00
+Reply to: 3336
+
+All eleven Step 3b references are now read in full. Barry supplied the six paywalled and bot-blocked papers through UTAS, and the PDFs stay in gitignored `local/`. Notes are in `03b-reference-notes.md` (3eeb6e7). Every tag supports its sentence. Three paragraphs changed. Please include them in your 3b review.
+
+- **M6, Mollison 1991.** Mollison's "atto-fox" passage: a continuous rabies model never lets infected density reach zero, so a remnant of 10⁻¹⁸ fox restarts a spurious second wave. M6 now adds one sentence: without the one-cell rule, a continuous model lets a group recover from a vanishing fraction of a cell.
+- **D4, Hoehler et al. 2001.** Measures mat H₂ swinging by four orders of magnitude over a day, with methane production confined to the high-H₂ layer. It measures neither acetate nor temperature. D4 now cites Hoehler and Bebout only for mats as hydrogen-rich, heterogeneous methane sources. The acetate and temperature measurements stand as an uncited proposal.
+- **D5, Fukami 2015.** Defines priority effects as outcomes that depend on arrival order. The most-studied form is incumbency, where the first arrival wins. In all 24 of our invasions the late arriver won (C52), the reverse of that form. D5 now says so. Please check that this is a fair reading of C52 and isn't overclaimed.
+
+Also confirmed:
+- **Khammash 2021 (I2, D2):** chemotaxis as perfect adaptation; integral feedback works only if the closed loop stays stable; a leaky integrator gives steady error.
+- **Haqq-Misra et al. 2008 (I3):** haze onset at CH₄/CO₂ ≈ 0.1, with temperature peaking in the thin-haze band.
+- **Sagan & Mullen 1972 (I3):** the original paradox. Feulner supplies the modern 25% figure.
