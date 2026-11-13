@@ -6,6 +6,10 @@ HTML comments. Figures and table follow [Step 1c](01c-display-items.md).
 Citations are author–year for drafting and convert to Vancouver at
 submission.
 
+Reviewed by Codex (GPT-6), 13 November 2026. Result scopes follow C06,
+C52 and C54–C59 in the claims ledger; the review record is
+[here](../../../docs/audits/paper-step3c-codex-review-2026-11-13.md).
+
 ---
 
 ## Abstract
@@ -15,9 +19,9 @@ test this in a model inspired by the hazy early Earth. Two microbial groups
 compete for hydrogen: methanogens make methane, which forms a cooling organic
 haze, and acetogens divert hydrogen into acetate. Temperature decides which
 group grows faster, so their competition can hold temperature exactly
-constant as hydrogen supply changes. That perfect control is fragile. Of 42
-exactly holding states, six were unstable outright; the rest first lost
-stability at climate response times of about seven years or less. Two
+constant as hydrogen supply changes. That perfect control is fragile. The 36
+exactly holding states on the haze-cooling branch all first lost stability
+at climate response times of about seven years or less. Two
 changes, acetate slowing its own producers and habitats differing in
 temperature, made control slightly imperfect and far more durable. On four
 tested branches, a local sensitivity of 0.07–0.32 K per e-fold of supply
@@ -43,15 +47,15 @@ inertia, Daisyworld regulation can produce damped oscillations (Weaver & Dyke
 <!-- I2 -->
 Control theory explains how a biological system can hold a variable exactly
 at a set point. Integral feedback accumulates past error, so a stable loop
-returns the regulated variable to its set point after any sustained
+returns the regulated variable to its set point after sustained
 disturbance; bacterial chemotaxis adapts perfectly in this way (Yi et al.
 2000; Khammash 2021). Exactness has costs. In molecular circuits, weakening
 the integral action can improve stability at the price of a steady error
 (Olsman et al. 2019), and dilution of the controller molecules by cell growth
 introduces such an error (Qian & Del Vecchio 2018). Integral control is also
-sensitive to delay: delays add phase lag that erodes the stability margin,
-and stronger integral action makes a loop more oscillatory (Åström & Murray
-2021). A climate that responds slowly is such a delay.
+sensitive to added phase lag, and stronger integral action can make a loop
+more oscillatory (Åström & Murray 2021). Thermal inertia adds phase lag to
+the climate-feedback loop.
 
 <!-- I3 -->
 The early Earth offers a concrete case. The young Sun delivered about a
@@ -86,8 +90,8 @@ response? How much temperature precision must be given up to buy how much
 durability? When one group arrives in a world held by the other, does arrival
 order decide which persists? We answer with linear stability analysis of the
 steady states, two tunable departures from exact control, and invasion
-simulations under a finite-population rule. The hypotheses were developed in
-stages, and each stage's predictions were recorded before its tests (§2.7).
+simulations under a finite-population rule. Hypotheses developed during the
+work; dated specifications preserve the staged predictions and tests (§2.7).
 
 ---
 
@@ -110,16 +114,21 @@ cannot use hydrogen:
 $$q_i = \frac{s_i(T)\,u_i}{K_i(T) + u_i}, \qquad u_i = (p - p_i^*)_+,
 \qquad i \in \{A, M\}. \tag{2.1}$$
 
+Here $(z)_+=\max(z,0)$.
+
 Biomass X_i grows with a constant yield Y_i on uptake net of maintenance
 m_i(T), and is lost at a common rate ℓ:
 
 $$\frac{dX_i}{dt} = H\,[\,Y_i(q_i - m_i(T)) - \ell\,]\,X_i. \tag{2.2}$$
 
+Write $g_i=Y_i(q_i-m_i)$ for hourly growth before cell loss.
+
 The temperature shapes of capacity s_i and half-saturation K_i come from
 hydrogen-uptake assays of an acetogen (*Acetobacterium bakii*) and a
 methanogen at six temperatures from 4 to 30 °C (Kotsyurbenko et al. 2001). The acetogen's
 absolute capacity is set from *Acetobacterium woodii* growth data (Peters et
-al. 1998), and the methanogen's is a fixed fraction, γ = 0.74, of it.
+al. 1998); at 30 °C the methanogen's capacity is γ = 0.74 times the
+acetogen's, with its own temperature dependence.
 Maintenance follows a shared Arrhenius slope from a cross-species
 correlation (Tijhuis et al. 1993), and the cessation thresholds follow the
 thermodynamics of each reaction. Below the coldest assay, 277.15 K, capacity
@@ -133,34 +142,38 @@ declines:
 $$R_i^*(T) = p_i^*(T) + \frac{K_i(T)\,Q_i(T)}{s_i(T) - Q_i(T)},
 \qquad Q_i = m_i + \ell / Y_i. \tag{2.3}$$
 
-The group with the lower requirement excludes the other. In the reference
+We set $R_i^*=\infty$ when $s_i\le Q_i$. At fixed temperature and sufficient
+supply, the group with the lower requirement excludes the other. In the reference
 model the requirements cross at T\* = 281.53 K (figure 1*b*): at 278 K the
 acetogen needs 27.6 Pa and the methanogen 47.1 Pa, and at 283 K the acetogen
 needs 21.4 Pa and the methanogen 19.6 Pa. This crossing, the switch, emerges
-from the transferred kinetics; it is not imposed.
+from the transferred kinetics.
 
 <!-- M2 -->
 ### 2.2 Hydrogen and acetate
 
 Hydrogen enters at a fixed rate J, proportional to a supply Φ expressed as a
 methane-equivalent flux, and exchanges with an atmospheric reservoir at
-partial pressure p_atm:
+partial pressure p_atm; the reference input is J = 10⁻⁶ mol H₂ L⁻¹ h⁻¹:
 
 $$K_H \frac{dp}{dt} = H\,[\,J - q_A X_A - q_M X_M - k_{ex}(p - p_{atm})\,],
 \tag{2.4}$$
 
 where K_H is hydrogen's solubility. Exchange runs in either direction. Part
 of each group's uptake builds biomass, which leaves with lost cells rather
-than becoming methane; the remainder, F_i, is catabolised. The methanogen
+than becoming methane. The catabolic flux is
+$F_i=H X_i[q_i-\alpha_i(g_i)_+]$, in mol H₂ L⁻¹ yr⁻¹, where α_i is
+hydrogen equivalents retained per unit new biomass. The methanogen
 returns one methane per four hydrogen catabolised. The acetogen makes
 acetate, which is removed over t_A = 1 year; a fraction f is recycled into
 methane and the rest leaves by other routes:
 
 $$\frac{dC}{dt} = \frac{F_A}{4} - \frac{C}{t_A}. \tag{2.5}$$
 
-Hydrogen routed through acetogens therefore yields at most f/4 methane per
-molecule, against 1/4 through methanogens. That difference in yield makes
-the competition matter to climate.
+At homogeneous coexistence, the catabolised fraction of uptake is
+$\eta_i=1-\alpha_i\ell/(m_i+\ell/Y_i)$. The steady methane yields per
+hydrogen taken up are $f\eta_A/4$ and $\eta_M/4$. Their difference makes
+competition matter to climate.
 
 <!-- M3 -->
 ### 2.3 Methane and climate
@@ -184,9 +197,9 @@ a response time τ:
 $$\tau \frac{dT}{dt} = T_{clim}(r) - T. \tag{2.7}$$
 
 All biological rates use T, not T_clim. With τ = 0 temperature follows
-methane instantly. The parameter τ stands in for ocean heat storage, which
-gives the climate a fast response of years and a slow one of centuries
-(Held et al. 2010); we treat it as a free parameter. At the reference
+methane instantly. A modern climate model separates a fast response of years
+from a slow response of centuries (Held et al. 2010); we use τ as a free
+measure of thermal inertia. At the reference
 switch, r = 0.195 lies on the haze-cooling branch, where temperature falls
 by about 0.7 K for each 0.001 rise in r.
 
@@ -215,7 +228,9 @@ at rate d:
 $$\frac{dX_i(\delta)}{dt} = H\,X_i(\delta)\,[\,Y_i(q_i - m_i(T+\delta))
 - \ell\,] + d\,[\bar X_i - X_i(\delta)], \tag{2.9}$$
 
-where X̄_i is the habitat mean. All habitats feed one atmosphere. We resolve
+where X̄_i is the habitat mean and all local rates use T + δ. All habitats
+feed one atmosphere; equation (2.6) uses their weighted mean microbial source.
+D1 uses f = 0 and 0.5; D2 uses f = 0.5 at d = 10⁻⁴ and 10⁻³ yr⁻¹. We resolve
 the spread with adaptive Gauss–Legendre quadrature, refining panels where the
 acetogen share changes fastest. Every reported setting passes a doubling
 test, and an independently derived characteristic equation (§2.5) confirms
@@ -244,7 +259,8 @@ $$(1 + \tau\lambda)\det(\lambda I - A) - c^{\mathsf T}\operatorname{adj}(\lambda
 The critical response time τ_c is the first τ at which a stable state's
 leading eigenvalue crosses into the right half-plane. We scan τ on a
 logarithmic grid to 10⁴ years and refine each crossing; a state still stable
-at 10⁴ years has τ_c reported as a lower bound. To see what instability
+at 10⁴ years has τ_c reported as a lower bound. Already unstable states are
+reported separately. To see what instability
 does, we kick the biomass of the acetogen by 0.1% and integrate the full
 equations for 30,000 years.
 
@@ -266,8 +282,8 @@ vanishing fraction of a cell, an artefact of continuous models (Mollison
 <!-- M7 -->
 ### 2.7 Workflow and verification
 
-The work ran in stages. Before each stage, a dated specification recorded
-its predictions and pass criteria; failed predictions are reported (§3.4).
+The work ran in stages. Dated specifications preserve the staged predictions
+and their pass criteria; trade-off counterexamples are reported (§3.4).
 Claude (Opus 5.5) and Codex (GPT-6) built the model and cross-checked the
 reported findings, including independent recalculation of key numbers. A
 claims ledger links each reported finding to its evidence, the commit that
@@ -284,16 +300,15 @@ Parameters (table S1), code and outputs will be archived with a Zenodo DOI.
 
 With fixed products, the two groups coexist only where their hydrogen
 requirements match, at T\* = 281.53 K in the reference model (figure 1*b*).
-The reason is the steady-state condition itself. A mixture is steady only
-when both groups grow at the loss rate, which requires equal requirements in
-(2.3) and so fixes temperature at T\*, whatever the supply. A change in
-supply within the coexistence range shifts the balance between the groups and
-leaves temperature unchanged, S = 0 (figure 1*c*). This is the plateau
-mechanism of Seto & Akagi (2007). Away from T\*, the ratio of the
-populations changes at a rate set by their growth-rate difference, which
-changes sign at T\*. Near coexistence, that ratio accumulates temperature
-error as the integrator does in integral feedback (Yi et al. 2000). The
-mixture is also warmer than a world of methanogens alone: 281.5 K against
+At positive coexistence, $g_A=g_M=\ell$, giving equal requirements in (2.3).
+Their equality fixes T\* within the coexistence supply range. Supply then
+changes biomass shares while temperature stays at T\*, S = 0 (figure 1*c*).
+This is the plateau
+mechanism of Seto & Akagi (2007). The log population ratio records relative
+growth advantage: $d\ln(X_A/X_M)/dt=H(g_A-g_M)$. The growth-rate difference
+depends on hydrogen, temperature and product feedback. Near coexistence
+this gives effective integral action (Yi et al. 2000). At f = 0.5 and τ = 0,
+the mixture is warmer than a world of methanogens alone: 281.5 K against
 273.5 K at the same supply, or 4.7 K warmer under an alternative cold
 continuation of physiology.
 
@@ -305,10 +320,10 @@ Across the fixed and methane-feedback chemistries, three recycling fractions
 holding states (figure 3*a*, left strip). Six are unstable even with an
 instant climate response. All six lie at low methane, on the assumed bridge
 where more methane warms rather than cools. The other 36 first lose
-stability at response times between 0.06 and 7.08 years. Margins lengthen
-with recycling, which narrows the difference in methane yield that drives
-the loop. The reference state, with f = 0, loses stability at 0.15 years; at
-f = 0.5 the same state does so at 1.10 years (figure 2*c*).
+stability at response times between 0.06 and 7.08 years. In the matched
+reference comparison, increasing f from 0 to 0.5 raises the margin from
+0.15 to 1.10 years (ESM). Recycling also narrows the routes'
+methane-yield difference in this parametrisation.
 
 <!-- R3 -->
 ### 3.3 Swings and crashes
@@ -318,7 +333,7 @@ response time, well past its 0.15-year limit, the reference regulator
 oscillates. Both groups persist for 30,000 years, while late temperature
 swings span about 1.3 K and the populations cycle through deep minima
 (figure 2*b*). At response times of 10 and 100 years, with f = 0 or 0.5,
-the calculated populations of both groups fall below one cell. An unstable
+the calculations reach populations below one cell. An unstable
 regulator can therefore keep working with wide swings, or let a population
 crash.
 
@@ -367,13 +382,13 @@ locally stable. Arrival order chose the surviving group.
 
 Near coexistence, competition between the two groups acts as integral
 feedback and holds temperature exactly. Integral control is sensitive to
-delay, and a slowly responding climate supplies one (Åström & Murray 2021).
+added phase lag, which a slowly responding climate supplies (Åström & Murray
+2021).
 Every exactly holding state that starts stable loses stability at a climate
 response time of about 7 years or less, and the reference state does so at
-0.15 years. Ocean heat storage gives the real climate a fast response of
-about 4 years and a slow one of centuries (Held et al. 2010), so the stable
-range of exact regulation is narrow. Past the stability limit, the regulator
-either keeps working with wide temperature swings or lets a population crash.
+0.15 years. Held et al. (2010) illustrate a roughly four-year fast response
+and a centuries-long slow component in a modern climate model. The simulations show both regulation
+with wide swings and severe population crashes.
 
 <!-- D2 -->
 ### 4.2 A small price for durability
@@ -381,11 +396,9 @@ either keeps working with wide temperature swings or lets a population crash.
 Graded feedback gives up exactness and gains durability. A residual
 sensitivity of a fraction of a kelvin per e-fold of hydrogen supply buys
 tolerance of a 30-year climate response, and 1–2 K per e-fold buys
-centuries. The regulator then holds temperature near the switch rather than
-at it, and drifts slightly as supply changes. Molecular circuits show the
-same trade: leaky or weakened integral action accepts a small steady error
-in return for stability (Olsman et al. 2019; Qian & Del Vecchio 2018;
-Khammash 2021).
+centuries. Graded communities retain a small temperature response to supply.
+This parallels precision–stability trade-offs in molecular circuits (Olsman
+et al. 2019; Qian & Del Vecchio 2018; Khammash 2021).
 
 <!-- D3 -->
 ### 4.3 Relation to earlier work
@@ -418,10 +431,8 @@ would test the second.
 ### 4.5 Stability and assembly are separate
 
 Arrival order chose the survivor in every tested invasion, including settings
-where a mixture of the two groups is stable once formed. A stable mixture is
-therefore not the same as one that sequential invasion assembles. Arrival
-order is a known source of historical contingency in community assembly, and
-its most studied form, incumbency advantage, favours the first arrival
+where a mixture of the two groups is stable once formed. Incumbency
+advantage, a familiar arrival-order effect, favours the first arrival
 (Fukami 2015). Here the late arriver won all 24 invasions, and each run ended
 with one group.
 
@@ -431,9 +442,11 @@ with one group.
 These results come from a conditional model, and table 1 lists its
 conditions. The switch depends on kinetics transferred from cultured strains,
 on the capacity ratio γ and on the assumed loss rate: halving or doubling ℓ
-moves T\* from 281.5 K to 278.4 or 286.5 K. Regulation requires the two
-routes to deliver different amounts of methane, which holds whenever
-recycling is incomplete or biomass retains hydrogen. Physiology is extended
+moves T\* from 281.5 K to 278.4 or 286.5 K. The alternative dry-mass capacity
+normalisation can put the crossing outside the cooling branch. The reference
+coexistence plateau requires different effective methane yields; here
+those yields depend on recycling and biomass retention. Strain traits remain
+fixed. Physiology is extended
 below the coldest assay, 277.15 K, to 273 K. The costs of durability are
 local slopes on four branches, and stability is local to each steady state.
 A crash is read at the first fall below one cell, and invasions use one
@@ -447,8 +460,9 @@ unchanged and moves the reference margin from 0.15 to 0.12 years (ESM).
 
 Any population–environment feedback with a slow environment invites two
 measurements: how far the regulated variable drifts with forcing, and how
-slowly the environment responds. Together they place a system on the
-precision–durability plane of figure 3. Mesocosms with controlled supply and
+slowly the environment responds. Stability analysis of that system then
+estimates its critical response time, placing it on the precision–durability plane of
+figure 3. Mesocosms with controlled supply and
 an imposed thermal lag, and biogeochemical models that resolve both groups,
 could test the trade-off with the delay-margin analysis used here.
 
@@ -462,20 +476,20 @@ more durable.
 
 | Ingredient | Basis | Role | Condition it sets |
 |---|---|---|---|
-| Hydrogen-uptake kinetics, 4–30 °C | Assays of *A. bakii* and a methanogen (Kotsyurbenko et al. 2001) | Temperature shapes of capacity and half-saturation; with (2.3), the switch | Transferred from two strains; methanogen capacity a fixed fraction γ = 0.74 of the acetogen's |
+| Hydrogen-uptake kinetics, 4–30 °C | Assays of *A. bakii* and a methanogen (Kotsyurbenko et al. 2001) | Temperature shapes of capacity and half-saturation; with (2.3), the switch | Reference ratio γ = 0.74 at 30 °C; the alternative dry-mass normalisation can move the crossing off the cooling branch |
 | Acetogen capacity and yields | *A. woodii* growth (Peters et al. 1998) | Absolute uptake rate | Capacity inferred from growth rate, yield and maintenance |
 | Maintenance | Cross-species correlation (Tijhuis et al. 1993) | Temperature dependence of requirements | One Arrhenius slope for both groups |
 | Cessation thresholds | Reaction thermodynamics; reference thresholds assumed | Requirements at low hydrogen | 20 and 1 Pa at 30 °C |
 | Physiology below 277.15 K | Continuation | Extends the model to 273 K | Capacity and half-saturation held at 277.15 K values |
 | Cell loss ℓ | Assumption, 0.001 h⁻¹ | Sets requirements, and so T\* | T\* = 278.4, 281.5, 286.5 K at ℓ = 0.0005, 0.001, 0.002 h⁻¹ |
 | Hydrogen supply and exchange | Assumption | Feeds the community; atmospheric outlet | Reservoir at 0 Pa; 0–100 Pa leaves T\* unchanged (ESM) |
-| Acetate fate | Assumption: removal over 1 yr, fraction f to methane; biomass exported | Methane yield of the acetogen route | Regulation needs the routes' methane yields to differ |
+| Acetate fate | Assumption: removal over 1 yr, fraction f to methane; biomass exported | Methane yield of the acetogen route | The reference coexistence plateau needs the routes' methane yields to differ |
 | Atmospheric methane | Lifetime 10,000 yr assumed; abiotic source quoted by Arney et al. (2016) | Links microbes to climate | Well-mixed column ratio stands for surface CH₄/CO₂ |
 | Haze climate T_clim(r) | Arney et al. (2016), case B: 2.7 Ga, 81% sunlight | Provides the haze-cooling branch | One case; assumed bridge to 283 K at zero methane and plateau beyond the data |
 | Climate response time τ | Free parameter | Thermal inertia | First-order relaxation of surface temperature |
 | Product feedback (dial D1) | Assumed activity form, equation (2.8) | Acetate slows its producers by κ | Methane feedback held off along D1 |
 | Habitat spread (dial D2) | Assumption | Habitats offset by up to ±σ, exchanging cells at rate d | Uniform offsets; one shared atmosphere and climate |
-| One-cell rule | Assumption, motivated by Mollison (1991) | Finite endpoint of invasions and crashes | Ten-year counts; no immigration |
+| One-cell rule | Assumption, motivated by Mollison (1991) | Finite endpoints of invasions | Ten-year counts; no immigration; continuous crash calculations are read at the first crossing |
 
 ---
 
@@ -497,21 +511,24 @@ haze-cooling branch marked.
 Reference state, fixed products, f = 0. (*a*) Surface temperature after a
 0.1% kick to acetogen biomass, at response times of 1 and 10 years. (*b*)
 Global cell counts for the same runs, on a log scale; the dashed line marks
-one cell, and each trajectory is drawn to its first crossing. (*c*) Leading
+one cell. Temperature and population traces stop at the first crossing
+below one cell. (*c*) Leading
 growth rate of small disturbances against τ for the exact reference state and
 a graded state; markers show the first loss of stability.
 
 **Figure 3. Durability costs a little precision.** (*a*) Critical response
 time τ_c against local sensitivity |S| for the exact states (left strip), the
 four dial branches (lines joining points on one branch) and resolved
-habitat-spread states. Arrows mark lower bounds at the 10⁴-year ceiling. The
+habitat-spread states. The strip distinguishes 36 cooling-branch states from
+six already unstable bridge states. Arrows mark lower bounds at the 10⁴-year ceiling. The
 horizontal line marks 30 years, and the shaded band its price, 0.07–0.32 K
 per e-fold. (*b*) Temperature against log supply near the reference supply
 for three settings of one dial, drawn as local tangents.
 
 **Figure 4. Arrival order decides the survivor.** (*a*) Global cell counts
 during one invasion in each direction; the resident crosses below one cell.
-Dashed lines show the uncensored continuous solution. (*b*) Surviving group
+Dashed lines show the continuous solution; post-crossing continuations are
+mathematical diagnostics. (*b*) Surviving group
 against invasion direction for all 24 runs, marking settings where a mixture
 of both groups is also locally stable.
 
@@ -523,17 +540,21 @@ of both groups is also locally stable.
 
 **Data accessibility.** Code, model outputs, the claims ledger and the dated
 stage specifications are at https://github.com/BWBrook/terra_prisca and will
-be archived on Zenodo with a DOI before submission. Third-party source data
-are cited and not redistributed.
+be archived on Zenodo with a DOI before submission. Source publications are
+cited; their PDFs remain outside the public archive.
 
 **Declaration of AI use.** [For Barry to settle. Draft:] The model,
-analyses, figures and text were produced by two AI systems working with the
-human author: Claude (Anthropic; Claude Opus 5.5) and Codex (OpenAI; GPT-6).
+analyses and manuscript drafts were developed with Claude (Anthropic; Claude
+Opus 5.5) and Codex (OpenAI; GPT-6), working with the human author.
 They designed and coded the model, ran and cross-checked the analyses, and
-drafted the manuscript, each reviewing the other's work. B.W.B. directed the
-research, set its questions and scope, led the structure of the paper and
-reviewed the final text. The full correspondence between the three, dated
-specifications and a claims ledger are public in the repository.
+generated model figures and manuscript drafts, each reviewing the other's
+work. Independent AI reviews by Claude Fable 5.2 (Anthropic) and GPT-6 Astra
+Pro (OpenAI) prompted the climate-inertia tests; their checks are archived.
+B.W.B. initiated
+the project, shaped its questions and scope, and led the writing process.
+He will review the final manuscript before release. Reviewed correspondence
+snapshots, dated specifications and a claims ledger are public in the
+repository.
 
 **Authors' contributions.** [Barry.]
 
