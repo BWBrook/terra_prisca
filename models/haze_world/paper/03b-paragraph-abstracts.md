@@ -1,6 +1,9 @@
 # Step 3b: paragraph abstracts
 
 Claude (Opus 5.5), 12 November 2026. Built from [Step 3a](03a-section-abstracts.md).
+Reviewed and revised by Codex (GPT-6), 13 November 2026.
+The [review record](../../../docs/audits/paper-step3b-codex-review-2026-11-13.md)
+maps the corrections to the model, claims and sources.
 
 Each section has three parts:
 
@@ -23,12 +26,11 @@ cite.
 
 1. Whether life regulates its planet's climate is an old question, and
    Daisyworld made it testable.
-2. Control theory explains how biological regulators hold a set point exactly
-   and what that exactness costs.
-3. The hazy early Earth offers a concrete regulator: two microbial groups
-   competing for hydrogen, with opposite effects on climate.
-4. That competition can hold temperature flat, but its behaviour under a slow
-   climate is unknown.
+2. Molecular control models connect set-point holding, stability and steady
+   error.
+3. The hazy early Earth motivates a two-group hydrogen-competition model.
+4. Resource competition can hold temperature flat, motivating tests of its
+   climate-response stability and precision cost.
 5. We ask three questions and answer them with stability analysis, tuned
    loosenings and invasion simulations.
 
@@ -40,7 +42,7 @@ cite.
 | Weaver & Dyke timescales and oscillations | I1 |
 | Integral feedback, steady error, dilution | I2 |
 | Faint Sun, methane, haze, hydrogen competition | I3 |
-| Switch and loop | I3 |
+| Switch and loop | I4 |
 | Seto & Akagi plateau | I4 |
 | Gap | I4 |
 | Questions and approach | I5 |
@@ -50,43 +52,39 @@ cite.
 **I1.** Whether life regulates the climate of its planet has been argued since
 the Gaia hypothesis [Lovelock & Margulis 1974]. Daisyworld made the idea
 testable: two kinds of daisy, each changing the planet's reflectivity, hold
-temperature near their growth optimum [Watson & Lovelock 1983]. Most analyses
-examine such regulation at equilibrium. Yet climates respond slowly, and in
-Daisyworld thermal inertia can produce damped oscillations [Weaver & Dyke
-2012].
+temperature near their growth optimum [Watson & Lovelock 1983]. The relative
+pace of biological and climate adjustment matters: thermal inertia can
+produce damped oscillations in Daisyworld [Weaver & Dyke 2012].
 
 **I2.** Control theory explains how a biological system can hold a set point
-exactly. Integral feedback accumulates past error and so restores the set
-point after any sustained disturbance; bacteria use it in chemotaxis [Yi et
-al. 2000; Khammash 2021]. In molecular circuits, weakening the integral action
+exactly. A stable integral-feedback loop accumulates error and restores a
+set point after sustained forcing; bacteria use it in chemotaxis [Yi et al.
+2000; Khammash 2021]. In molecular circuits, weakening the integral action
 can improve stability at the price of a steady error [Olsman et al. 2019], and
 dilution introduces such error [Qian & Del Vecchio 2018]. A slow
 environmental response is a further test of any such regulator.
 
 **I3.** The early Earth received about a quarter less sunlight than today, yet
 stayed warm enough for liquid water [Sagan & Mullen 1972; Feulner 2012].
-Methane from methanogens could have supplied the warming. Above a threshold,
+Methane from methanogens could have contributed greenhouse warming. Above a threshold,
 methane forms an organic haze that cools the surface instead [Haqq-Misra et
 al. 2008; Arney et al. 2016]. Acetogens compete with methanogens for the same
 hydrogen and convert it to acetate, and temperature shifts the balance
 between them [Kotsyurbenko et al. 2001; Fu et al. 2019].
 
-**I4.** On the haze-cooling branch this competition closes a loop. Warming
+**I4.** On the haze-cooling branch the reference community forms a restoring
+loop. Warming
 favours methanogens, whose methane thickens the haze and cools the surface.
 Cooling favours acetogens, which divert hydrogen away from methane and warm
-it. Seto & Akagi showed that such a pair holds temperature exactly flat
-against forcing [Seto & Akagi 2007]; how it behaves when climate responds
-slowly, and what a durable version costs, are open.
+the surface. Seto & Akagi found the coexistence plateau in a generic
+competition model [Seto & Akagi 2007]; here we ask how climate response time
+changes stability and what durability costs.
 
-**I5.** We build this thermostat from measured microbial kinetics and a
-published haze climate, and give the climate an explicit response time. We
-ask three questions:
-
-1. Does exact regulation survive a slow climate response?
-2. How much temperature precision buys how much durability?
-3. Does arrival order decide which group persists?
-
-We answer them with stability analysis, two tuned loosenings and invasion
+**I5.** We couple transferred microbial kinetics to a published haze response
+with an explicit climate response time. We ask whether exact holding
+survives a slow climate response, what durability costs in temperature
+precision, and whether arrival order selects the survivor. We answer with
+stability analysis, two tunable departures from exact control, and invasion
 simulations.
 
 ---
@@ -103,12 +101,12 @@ simulations.
    responds over a set time.
 4. Two tunable features loosen exact control: acetate slowing its producers,
    and spread in habitat temperature.
-5. For each steady state we compute its temperature, its sensitivity to
-   supply, and the slowest climate response it tolerates.
+5. Each steady state is described by temperature, local supply sensitivity,
+   and its first loss of stability as climate response slows.
 6. Invasion simulations test whether arrival order decides the surviving
    group.
-7. Staged predictions, two-agent cross-checking and a claims ledger make
-   every result reproducible.
+7. Staged predictions, two-agent cross-checking and a claims ledger document
+   the reported findings and their reproduction.
 
 ### Coverage check
 
@@ -127,16 +125,16 @@ simulations.
 **M1.** One acetogen and one hydrogen-consuming methanogen compete for
 dissolved hydrogen in a well-mixed habitat (figure 1*a*). Growth rises with
 hydrogen and depends on temperature through kinetics transferred from
-cultured strains. The acetogen is benchmarked against *Acetobacterium
-woodii* [Peters et al. 1998]. Maintenance follows a thermodynamic
-correlation [Tijhuis et al. 1993], and physiology is continued from the
+cultured strains [Kotsyurbenko et al. 2001]. The acetogen is benchmarked against *Acetobacterium
+woodii* [Peters et al. 1998]. Maintenance changes with temperature using a
+transferred correlation [Tijhuis et al. 1993], and physiology is continued from the
 lowest measurement, 277 K, down to 273 K.
 
-**M2.** Hydrogen enters at a fixed supply rate Φ, and some escapes to the
-atmosphere. The two groups draw it down in proportion to their populations.
-A fraction f of the acetate is later recycled into methane, so f sets how
-much hydrogen the acetogens actually divert. Table 1 lists the budget
-assumptions, including atmospheric hydrogen up to 100 Pa.
+**M2.** Hydrogen enters at a fixed supply rate Φ and exchanges with the
+atmosphere. Each group draws it down for metabolism and growth. Acetate
+enters a pool; a fraction f is recycled into methane and the rest leaves
+that route. Table 1 lists the budget assumptions, including material
+retained in biomass and atmospheric hydrogen up to 100 Pa.
 
 **M3.** Atmospheric methane balances microbial production against removal over
 an assumed lifetime of 10,000 years. The climate temperature T_clim then
@@ -165,16 +163,16 @@ Kicked trajectories at chosen τ show what instability does.
 
 **M6.** Invasions start from one group established alone and the other
 introduced at low density, in one closed habitat. Populations are counted
-every ten years, and a group falling below one cell is removed. This rule
-gives the finite-population endpoint of each invasion. Without it, a
-continuous model lets a group recover from a vanishing fraction of a cell
-[Mollison 1991].
+every ten years, and a group with fewer than one cell in total is removed.
+This chosen rule determines when loss becomes permanent in these runs.
+It prevents recovery from a vanishing fraction of a cell, as in the
+epidemic-model example discussed by Mollison [Mollison 1991].
 
-**M7.** Each stage of the work began with a dated specification of its
-predictions and pass criteria. Claude (Opus 5.5) and Codex (GPT-6) built and
-cross-checked every reported result, and a claims ledger links each number to
-its code, commit and reproducing command. Parameters (table S1), code and
-outputs will be archived with a Zenodo DOI.
+**M7.** Dated specifications preserve the staged predictions and their pass
+criteria. Claude (Opus 5.5) and Codex (GPT-6) built and cross-checked the
+reported findings. A claims ledger links findings to evidence, commits and
+reproduction commands. Parameters (table S1), code and outputs will be
+archived with a Zenodo DOI.
 
 ---
 
@@ -182,16 +180,16 @@ outputs will be archived with a Zenodo DOI.
 
 ### Plan
 
-1. With fixed products, the two groups hold temperature exactly at the
-   switch, against any change in supply.
+1. With fixed products, the two groups hold temperature at the switch within
+   the coexistence supply range.
 2. Every exactly holding state is unstable or loses stability within a few
    years of climate response time.
-3. Past that point, the regulator first oscillates and then collapses as the
-   response slows further.
-4. Allowing temperature to follow supply slightly raises the tolerable
-   response time smoothly and steeply.
-5. The shape of that trade-off is branch-specific, and two simple general
-   forms we proposed failed.
+3. The nonlinear examples distinguish oscillating regulation from severe
+   population bottlenecks.
+4. Allowing a small temperature response to supply raises the stability
+   margin smoothly near the exact limit on the tested branches.
+5. Counterexamples to a proposed slope range and an oscillation-based
+   approximation support reporting the trade-off branch by branch.
 6. Arrival order decides the surviving group, even where a stable mixture
    exists.
 
@@ -208,10 +206,12 @@ outputs will be archived with a Zenodo DOI.
 
 ### Paragraph abstracts
 
-**R1. Perfect control** (figure 1*b*,*c*). The two groups coexist only where
-their hydrogen requirements match, at 281.5 K in the reference case. A
-change in supply shifts the balance between them and leaves temperature
-unchanged (S = 0), as in Seto & Akagi's plateau [Seto & Akagi 2007].
+**R1. Perfect control** (figure 1*b*,*c*). With fixed product activities, the
+two groups coexist only where their hydrogen requirements match, at 281.5 K
+in the reference case. A
+change in supply within the coexistence range shifts the balance between
+them and leaves temperature unchanged (S = 0), as in Seto & Akagi's plateau
+[Seto & Akagi 2007].
 Growth-rate differences keep shifting that balance, which near coexistence
 acts like integral feedback [Yi et al. 2000].
 
@@ -221,30 +221,33 @@ with an instant climate response. The other 36 first lose stability at
 response times of about 7 years or less. The reference state loses stability
 at 0.15 years.
 
-**R3. What failure looks like** (figure 2). At a 1-year response time, the
+**R3. Oscillations and population bottlenecks** (figure 2). At a 1-year response time, the
 reference regulator oscillates: both groups persist for 30,000 years while
 temperature swings span about 1.3 K. At 10–100 years, the calculated
-populations of both groups fall below one cell. Exact control thus degrades
-from wide swings to collapse as the climate slows.
+populations reach values below one cell. These examples distinguish
+oscillating regulation from severe population bottlenecks.
 
 **R4. The price of durability** (figure 3). Each loosening lets temperature
-follow supply slightly, and the critical response time rises smoothly from
-the perfect-control limit. On four tuned branches, sensitivities of
+follow supply slightly, and near the exact limit the tested branches show
+a smooth rise in the critical response time. On four tuned branches, local sensitivities of
 0.07–0.32 K per e-fold buy tolerance of a 30-year response. Resolved spread
-communities at 1–2 K per e-fold tolerate centuries, and all 122 graded states
-in the earlier on/off comparison tolerate at least 331 years.
+communities at 1–2 K per e-fold tolerate centuries. The earlier on/off
+comparison's 122 initially stable graded states have sensitivities of at
+least 0.59 K per e-fold and margins of at least 331 years; 113 have only
+lower bounds at the 10⁴-year search ceiling.
 
 **R5. The trade-off is branch-specific** (ESM). Before the tuned runs we
-proposed a common power-law slope for the trade-off, and an approximation
-from the oscillation period and damping time. Each had counterexamples:
-one chemical branch fell outside the slope range, and the approximation
-failed at refinement points. The price of durability is therefore reported
+proposed a range of power-law slopes for each branch and an approximation
+from the oscillation period and damping time. One chemical branch fell
+outside the slope range. The approximation passed the initial eligible grid
+and failed at two refinement points, so the price of durability is reported
 branch by branch.
 
 **R6. Arrival order** (figure 4). In all 24 invasions, the invader drove the
-resident below one cell. This held with and without acetate feedback, at
-several response times, and where a stable mixture of both groups exists.
-Arrival order chose the surviving group [Fukami 2015].
+resident below one cell. We compared fixed products and feedback from both
+products, at two acetate-recycling fractions and response times of 0, 3 and
+30 years. The invader alone persisted in each direction, including settings
+where a stable mixture exists. Arrival order chose the surviving group.
 
 ---
 
@@ -252,8 +255,7 @@ Arrival order chose the surviving group [Fukami 2015].
 
 ### Plan
 
-1. A microbial thermostat can hold temperature exactly, and that exactness
-   makes it fragile to a slow climate.
+1. Exact holding is fragile to slow climate response in this model.
 2. A small loss of precision buys large gains in durability, paralleling
    molecular circuits.
 3. Relative to earlier work, the new results are the stability margins, the
@@ -282,11 +284,12 @@ gives each paragraph one message.
 
 ### Paragraph abstracts
 
-**D1. Exactness brings fragility.** Competition between two microbial groups
-can hold planetary temperature exactly, and this exactness is integral
-control. Integral control is sensitive to delay, and here a climate response
-of a few years suffices to destabilise it. Past that point, regulation turns
-into large swings and then collapse [Weaver & Dyke 2012].
+**D1. Exactness brings fragility.** Near coexistence, competition acts like
+integral feedback and holds temperature exactly. In this model, slow climate
+response destabilises that exact holding. The initially stable exact states
+first lose stability at response times of about seven years or less.
+The nonlinear examples show oscillating regulation as well as population
+bottlenecks.
 
 **D2. A small price for durability.** Graded feedback relaxes the exactness.
 A residual sensitivity of a fraction of a kelvin per e-fold of supply buys
@@ -295,8 +298,8 @@ precision–stability trade-offs of molecular circuits [Olsman et al. 2019;
 Qian & Del Vecchio 2018; Khammash 2021].
 
 **D3. What is new.** Seto & Akagi found the plateau [Seto & Akagi 2007], and
-Weaver & Dyke showed that thermal inertia makes Daisyworld oscillate [Weaver &
-Dyke 2012]. We add three things for a hydrogen-competition regulator in a
+Weaver & Dyke showed that thermal inertia can produce damped oscillations in
+Daisyworld [Weaver & Dyke 2012]. We add three things for a hydrogen-competition regulator in a
 haze climate: its stability margins under a slow climate, the sensitivity
 cost of graded feedback, and finite-population invasion tests. Archean
 ecosystem–climate models supply the wider context for hydrogen cycling
@@ -305,29 +308,26 @@ ecosystem–climate models supply the wider context for hydrogen cycling
 **D4. The early Earth.** Acetate feedback and variation in habitat
 temperature are candidate routes to graded regulation on the hazy early
 Earth. Their strengths set where the regulator sits between precision and
-durability. Modern mats are methane sources whose hydrogen supply varies
+durability. Modern mats are methane sources whose hydrogen levels vary
 steeply with depth and time of day [Hoehler et al. 2001; Bebout et al.
-2004]. Measuring acetate turnover and temperature variation in such mats
-would constrain both routes.
+2004]. Measuring acetate stocks and turnover, their effect on hydrogen
+requirements, and habitat temperatures and cell exchange would test the two
+routes.
 
 **D5. Stability and assembly are separate.** Arrival order chose the
-survivor in every invasion, including settings where a mixture of both
-groups is stable once formed. Building a regulator is therefore a different
-problem from keeping one. Arrival order is a known source of historical
-contingency in community assembly, most studied where the first arrival
-wins [Fukami 2015]. Here the late arriver won, and arrival order decides
-whether a planet acquires a regulator at all.
+survivor in every tested invasion, including settings where a mixture of
+both groups is stable once formed. This separates the assembly of a
+regulator from its stability. A familiar arrival-order effect is incumbency
+advantage, which favours the first arrival [Fukami 2015]. Here the late
+arriver won all 24 invasions, and each run ended with one group.
 
-**D6. Conditions.** These results come from a conditional model, and table 1
-lists its conditions:
-
-- the switch depends on culture transfers and an assumed cell-loss rate;
-- regulation requires the two hydrogen pathways to yield different amounts of
-  methane;
-- physiology below 277 K is a continuation;
-- costs are local slopes on four branches, and stability is local to each
-  steady state;
-- invasions use one closed habitat with a one-cell rule.
+**D6. Conditions.** Table 1 lists the assumptions of this conditional model.
+The switch depends on culture transfers and an assumed cell-loss rate;
+regulation requires different methane yields from the two hydrogen
+pathways. Physiology is extended below 277 K, costs are local slopes on four
+branches, and stability is local to each steady state. Crash interpretation
+ends at the first fall below one cell; invasions use a closed habitat with a
+chosen total one-cell cutoff at ten-year counts.
 
 **D7. Tests and generality.** Any population–environment feedback with a slow
 environment invites the same two measurements: how far the regulated
