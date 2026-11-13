@@ -90,8 +90,9 @@ response? How much temperature precision must be given up to buy how much
 durability? When one group arrives in a world held by the other, does arrival
 order decide which persists? We answer with linear stability analysis of the
 steady states, two tunable departures from exact control, and invasion
-simulations under a finite-population rule. Hypotheses developed during the
-work; dated specifications preserve the staged predictions and tests (§2.7).
+simulations under a finite-population rule. The hypotheses developed in
+stages, and dated specifications record each stage's predictions and tests
+(§2.7).
 
 ---
 
@@ -304,10 +305,10 @@ At positive coexistence, $g_A=g_M=\ell$, giving equal requirements in (2.3).
 Their equality fixes T\* within the coexistence supply range. Supply then
 changes biomass shares while temperature stays at T\*, S = 0 (figure 1*c*).
 This is the plateau
-mechanism of Seto & Akagi (2007). The log population ratio records relative
-growth advantage: $d\ln(X_A/X_M)/dt=H(g_A-g_M)$. The growth-rate difference
-depends on hydrogen, temperature and product feedback. Near coexistence
-this gives effective integral action (Yi et al. 2000). At f = 0.5 and τ = 0,
+mechanism of Seto & Akagi (2007). The log ratio of the populations integrates
+their growth-rate difference, $d\ln(X_A/X_M)/dt=H(g_A-g_M)$, which depends on
+hydrogen, temperature and product feedback. Near coexistence this acts as
+integral feedback (Yi et al. 2000). At f = 0.5 and τ = 0,
 the mixture is warmer than a world of methanogens alone: 281.5 K against
 273.5 K at the same supply, or 4.7 K warmer under an alternative cold
 continuation of physiology.
@@ -322,8 +323,8 @@ instant climate response. All six lie at low methane, on the assumed bridge
 where more methane warms rather than cools. The other 36 first lose
 stability at response times between 0.06 and 7.08 years. In the matched
 reference comparison, increasing f from 0 to 0.5 raises the margin from
-0.15 to 1.10 years (ESM). Recycling also narrows the routes'
-methane-yield difference in this parametrisation.
+0.15 to 1.10 years (figure 2*c*; ESM). Recycling also narrows the difference
+in methane yield between the routes.
 
 <!-- R3 -->
 ### 3.3 Swings and crashes
@@ -333,7 +334,7 @@ response time, well past its 0.15-year limit, the reference regulator
 oscillates. Both groups persist for 30,000 years, while late temperature
 swings span about 1.3 K and the populations cycle through deep minima
 (figure 2*b*). At response times of 10 and 100 years, with f = 0 or 0.5,
-the calculations reach populations below one cell. An unstable
+the calculated populations fall below one cell. An unstable
 regulator can therefore keep working with wide swings, or let a population
 crash.
 
@@ -386,9 +387,9 @@ added phase lag, which a slowly responding climate supplies (Åström & Murray
 2021).
 Every exactly holding state that starts stable loses stability at a climate
 response time of about 7 years or less, and the reference state does so at
-0.15 years. Held et al. (2010) illustrate a roughly four-year fast response
-and a centuries-long slow component in a modern climate model. The simulations show both regulation
-with wide swings and severe population crashes.
+0.15 years. In 32 of the 36 cases the limit is shorter than the fast climate
+response of about 4 years found in a modern climate model (Held et al. 2010).
+Past the limit, the regulator swings widely or a population crashes.
 
 <!-- D2 -->
 ### 4.2 A small price for durability
@@ -431,8 +432,8 @@ would test the second.
 ### 4.5 Stability and assembly are separate
 
 Arrival order chose the survivor in every tested invasion, including settings
-where a mixture of the two groups is stable once formed. Incumbency
-advantage, a familiar arrival-order effect, favours the first arrival
+where a mixture of the two groups is stable once formed. Local stability of
+the mixture did not predict the outcome of invasion. Incumbency advantage, a familiar arrival-order effect, favours the first arrival
 (Fukami 2015). Here the late arriver won all 24 invasions, and each run ended
 with one group.
 
