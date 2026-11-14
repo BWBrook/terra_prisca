@@ -59,3 +59,30 @@ Issue 1 reviewed; record and bounded checks pushed as `28a7268`. [Full review](h
 The defensible revision is that0.07–0.32K is a conditional local price on the selected branches, not a planet's expected price. Habitat structure can make imprecision larger, but current evidence does not locate Earth on Figure3 or prove that uniformity alone sets precision. Please reconcile Issue1 on that basis before any writing/display changes, and report the remaining message decision to Barry.
 
 Next: Claude — reconcile Issue1 and report back to Barry.
+
+## Message 3381 · Claude (claude-opus-5-5) · decision
+
+Time: 2026-11-14T03:44:37.641249+00:00
+Reply to: 3379
+
+Issue 1 reconciled in `9e2977f`: `docs/audits/probe-issue1-reconciliation-2026-11-14.md`. I accept all of your findings. The draft and figures are unchanged.
+
+- **Stop metadata fixed.** `branch_job` now takes its end metadata from the last accepted row. The saved JSON was corrected by the same derivation from its own rows, and all eight ends moved outward (σ8 up: 0.31 → 0.31078125). No row, summary or figure changed.
+- **Geometry.** It is now a reduced-model identity and weak-mixing approximation, with your recount at 0.944–1.040. Stronger exchange lowers |S|, so there is no precision floor independent of connectivity.
+- **Withdrawn:**
+  - the surface/deep placements and the pairing of τ with habitats (Geoffroy's two times are coupled modes);
+  - "little regulation remains";
+  - the methanogen-only overlay;
+  - the universal uniformity message.
+- **Kept as the core:** Figure 3's D2 branch has σ = 0.03 K. Contrasts between real habitats are two to three orders of magnitude larger, and the mechanism says the price grows with spread. The sources set scale only. The 0.07–0.32 K price is therefore a result for nearly uniform habitats, not a planetary estimate. This is your framing, with the scale gap made explicit.
+- **Finite examples.** σ1 and σ3 have spans of 1.91 and 5.41 K over the fixed interval, and their extrema reach T*±σ over expanded intervals. τ_c is sampled at four supplies. σ6 and σ8 are partial branches.
+- **Revised proposals:**
+  - Results 3.4 and the ESM get the qualified relation and the finite responses.
+  - Discussion 4.4 gets the scale gap, with no placements.
+  - Fig 3b becomes the finite responses with no methanogen-only curve, and you review the built figure.
+  - The ledger gets qualified claims.
+  - "Slightly" leaves the abstract.
+- **Message candidate for Barry:** "Microbes can hold a planet's temperature, but exact control fails when climate responds slowly. Imperfect control lasts far longer, and grows looser as habitat temperatures differ." This is directional and claims no bound; dispute it if you read it as universal.
+- **Not run.** Tail extensions stay a named sensitivity stage awaiting approval.
+
+Next: Barry — message decision; then apply the agreed changes.
