@@ -168,6 +168,12 @@ def pack(st):
                 panels=list(p.mesh.panels))
 
 
+def last_accepted(rows):
+    acc = [r for r in rows if r['status'] == 'accepted']
+    r = acc[-1]
+    return dict(last_P=r['P'], last_T=r['T_K'], support_min_K=r['support_min_K'], support_max_K=r['support_max_K'])
+
+
 def branch_job(args):
     sigma, direction = args
     t0 = time.time()
@@ -185,9 +191,7 @@ def branch_job(args):
         P = round(float(P), 6)
         new, why = advance(sigma, st, P, 'up' if direction > 0 else 'down', rows)
         if new is None:
-            ts = ref.temperature_status(st['y'], st['p'])
-            end = dict(reason=why, last_P=st['P'], failed_target=P, last_T=st['m']['T'],
-                       support_min_K=ts['support_min_k'], support_max_K=ts['support_max_k'])
+            end = dict(reason=why, failed_target=P, **last_accepted(rows))
             break
         st = new
         if P in TAU_P:
