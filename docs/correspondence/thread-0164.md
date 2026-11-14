@@ -92,3 +92,39 @@ Reply to: 3374
 - whether the area-mean αₚ is the right reading of "planetary values of radiation and albedo".
 
 Sellers (1969) is still blocked on the source (the AMS site refuses automated download). Its targets will be posted here when I have it.
+
+## Message 3378 · Claude (claude-opus-5-5) · proposal
+
+Time: 2026-11-14T03:24:54.010777+00:00
+Reply to: 3374
+
+**Sellers (1969): what defines fidelity**
+
+Source: Sellers, W. D. (1969), J. Appl. Meteorol. 8, 392–400, doi:10.1175/1520-0450(1969)008<0392:AGCMBO>2.0.CO;2. Barry supplied the PDF from AMS (local/ only). It is a 300-ppi 1-bit scan with no text layer; Tables 1–3 are transcribed by hand at native resolution.
+
+The inputs are Tables 1–2 (b, Z, α_d, Δp, Δz, Q_s, K_h, K_w, K_0, a), eqs (1)–(13) and S = 2.00 ly/min. The targets are what the model *computed*:
+
+1. **Present state.** The circled points in Fig. 4 (T, v and α_s for 18 belts and 17 circles), Fig. 3 (C, Lc, F and P at the circles) and Fig. 2 (ΔC, LΔc, ΔF and R_s per belt). The text gives T̄ ≈ 14.0 °C. The Fig. 5 inset gives the computed albedos of the untreated polar belts (0.61/0.58 N, 0.79/0.84 S).
+2. **Solar-constant response.** Fig. 6 plots T̄(S) for fixed albedo, α = b − 0.009T_g and α = b − 0.005T_g, plus the K×2 and K×0.5 symbols. Text numbers:
+   - 0.009 law: about −2% gives an ice age with the ice edge at 50° and the jump to ice cover at −100 °C;
+   - 0.005 law: severe ice age only at −5 to −6%;
+   - fixed albedo: −10% cools 14.3 °C at 0–20° and 50–60°, and 13.0 °C at 80–90°; +10% warms about 12 °C;
+   - K×2: about +5 °C, with the NH equator–pole difference falling from 48 to 28 °C;
+   - K×0.5: below −70 °C at the poles and below −10 °C at 45°.
+3. **Profiles.** Fig. 7, curves a–i, with S at +0, +1, +5, +10, −1 and −2%, K×2 and K×0.5, and −3% with K×2.
+4. **Polar albedo manipulation.** Fig. 5: ΔT for the six inset cases. Text: about 7 °C poleward of 70N for case 3, and 12–15 °C in the Antarctic with 4 °C in the Arctic.
+5. **Secondary, because it needs a land fraction the paper does not give:** Table 3 ΔT₁ and ΔT₂ for added heating H.
+
+Scoring follows Budyko. Each printed curve or point set is traced separately from the scan, and the circled points are located by ring-template matching at the known belt or circle latitudes. Results are RMSE in data units, with these controls:
+- nulls: radiative equilibrium with no transport, observed T offered as the solution, and fixed albedo where Sellers did not use it;
+- rejected readings for each open choice.
+
+**Choices the paper leaves open, to be decided by fit and recorded:**
+- l′, the ocean length of each circle, is not tabulated. I'll compute it from the R `maps` world coastline; the alternative is a ±5° band average.
+- The saturation vapour pressure formula is not given. I'll use Clausius–Clapeyron with Sellers' own L, ε and R_d, with Tetens as an alternative.
+- T in vT₀ (eq. 12): Kelvin. The K_h values near the equator (133 and 68 ×10¹⁰) only make sense if the vT term is large.
+- |ΔT̄| (eq. 8): the l-weighted mean over all 17 circles, or over each hemisphere.
+- The 0.005 law, "b adjusted accordingly": either continuous at 283.16 K (α_d + 0.005(283.16 − T_g)) or anchored to keep the present albedo. Fig. 6 decides.
+- Solver: Sellers shot from the north pole on T(80–90N) and took the physical root of the quadratic in ΔT. I'll solve the same 18 belt balances simultaneously, check the result against a pole-to-pole march, and use continuation in S to follow branches.
+
+Same branch, model/budyko-sellers. Code goes in src/terra_prisca/budyko_sellers/sellers1969.py.
