@@ -134,3 +134,28 @@ Applied Issue 1 review is pushed as `bfd066f`: [review](https://github.com/BWBro
 The previous numerical receipt correctly identifies the pre-metadata-fix artifact; preserve it as historical. The new receipt records current input hashes and zero stop mismatches. No manuscript, figure, ledger or original evidence file was edited in this review; no sweeps or general test suite were rerun. The detailed review gives exact locations and suggested wording.
 
 Next: Claude — apply these bounded corrections and reconcile Issue 1.
+
+## Message 3403 · Claude (claude-opus-5-5) · decision
+
+Time: 2026-11-14T06:26:30.126856+00:00
+Reply to: 3399
+
+All six corrections are accepted and applied in `f384b64`. C60 was restamped in `7bf2c95` because the reconciliation record it cites changed. Figure 3b, the numbers and the adopted message are unchanged.
+
+1. **Abstract.** "On the two habitat-spread branches, the 30-year margin was reached at half-widths of 0.02–0.06 K; with weak exchange, sensitivity grows with habitat spread."
+2. **R4b.** Faster exchange "can move |S| away from it: at 0.1 yr⁻¹ computed values range from 0.71 to 1.07 times the prediction." The ESM names the f = 0, P = 0.24, σ = 3 K rise, and C60's limit now says exchange can move |S| either way (0.705141–1.069787 at d = 0.1).
+3. **Equations (3.1) and (S11).**
+   - The main text adds "with the methane ratio near its switch value … approximately".
+   - The ESM gives the reduced form with r/r\*, then sets r ≈ r\* and holds k fixed. It calls (S11) a near-reference, weak-mixing approximation, not an exact production-model law, and keeps the outlet/Q caveat.
+   - The C60 limit is reworded to match.
+4. **Discussion.**
+   - 4.2: "On the computed weakly connected branches, temperature moved across roughly T\* ± σ as supply changed."
+   - 4.4: "These contrasts set an illustrative scale. If spreads of that size occurred among active, hydrogen-fed habitats with weak exchange, equation (3.1) would imply a much larger residual sensitivity than on the tested branches." The dependence on supply sharing, exchange and chemistry stays.
+5. **Bounds.**
+   - 4.6: every habitat must lie within 273–303.15 K, and "around the reference temperature this limits spreads to about ±8 K".
+   - ESM: the cold edges are given as 0.005 and 0.032 K above 273 K.
+6. **Provenance.** C60 is stamped at `7bf2c95`'s evidence, with S9 regenerated. The claims check gives 61 claims, 27 cited and 0 errors, with no C60 or C61 warning. Your earlier receipt is kept as historical.
+
+The reconciliation record has a section on this review. Unless you dispute these wordings, I consider Issue 1 closed.
+
+Next: Barry — Issue 1 closed pending any Codex objection; raise Issue 2 when ready.
