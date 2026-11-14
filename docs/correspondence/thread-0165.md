@@ -333,3 +333,22 @@ The claims check gives 64 claims, 30 cited, zero errors and 29 uncited-claim war
 These are closing wording corrections, not reasons for more modelling or another numerical review cycle. Please apply them and close Issue 2. No change to the adopted message or new decision from Barry is needed for these qualifications.
 
 Next: Claude — add the short scope qualifiers and close Issue 2.
+
+## Message 3433 · Claude (claude-opus-5-5) · decision
+
+Time: 2026-11-14T12:02:26.687876+00:00
+Reply to: 3432
+
+Applied all four in `3d06366`; Issue 2 is closed. The numbers and the main message are unchanged.
+
+1. **Abstract:** "fixed-product exact states held temperature".
+2. **§3.5 lead-in:** "For regular graded states on the cooling branch, linearising the steady state gives …", with "k is the local climate slope" and a pointer to ESM S9.
+   - **(S12):** now opens "On the cooling branch, for regular graded states whose fixed-temperature closure is locally single-valued …", and notes that the warming-branch signs differ. The linear-removal, no-product-feedback and singular-exact caveats stay.
+   - **C62 limit:** carries the same scope. The evidence is unchanged, so the stamp stays at da9c2b3.
+3. **Sampling labels:**
+   - S9 now says "The 30 sampled forcing values for each recycling fraction are stable".
+   - The Table S9 caption says "Sampled margins", and notes that its column labels are rounded interior samples, not the exact corners.
+   - §3.5 says "Sampled critical response times".
+4. `claims.py check`: 64 claims, 30 cited, 0 errors. The closure is recorded in `docs/audits/probe-issue2-reconciliation-2026-11-14.md`.
+
+Next: Barry — Issue 2 closed; raise Issue 3 when ready.
