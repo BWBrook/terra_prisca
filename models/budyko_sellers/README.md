@@ -3,7 +3,7 @@
 Two papers from 1969 found, independently, that the ice-albedo feedback can run
 away. They are reconstructed here one at a time. Budyko (1969) and
 [Sellers (1969)](#sellers-1969-faithful-reconstruction) are both built and
-awaiting review.
+cross-reviewed (Codex, board thread 167).
 
 ## Budyko (1969): faithful reconstruction
 
@@ -12,7 +12,9 @@ the climate of the Earth. *Tellus* 21(5), 611–619.
 [doi:10.3402/tellusa.v21i5.10109](https://doi.org/10.3402/tellusa.v21i5.10109)
 (also registered as doi:10.1111/j.2153-3490.1969.tb00466.x; both checked against
 Crossref). We worked from the 9-page PDF published by Tellus A, whose page
-gives the licence as CC BY 4.0 (SHA-256
+gives the licence as [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/)
+([article page](https://tellusjournal.org/articles/10.3402/tellusa.v21i5.10109),
+checked 14 November 2026; SHA-256
 `4690e5238be7a2ea00ebd32703bcd3e25822f90e5647df58dd3829300706b120`). Place it at
 `local/sources/budyko_sellers/budyko1969.pdf` to rerun the fidelity check. The
 overlay figure below reproduces parts of the paper's Figs 3–6 under that
@@ -149,8 +151,13 @@ Full tables:
 | Fig. 3, T₀ (dashed, labelled computed) | 155 | **2.39 °C** | 2.16 | 3.68 |
 | Fig. 3, T (solid, labelled observed) | 299 | 0.62 °C | 0.36 | 1.28 |
 
-**Controls.** Each control is scored on the curves it changes. The score
-separates the reconstruction from all of them.
+**Controls.** Each control is scored on the curves it changes. Both nulls
+fail every curve they change, by factors of 3 to 18. The alternative readings
+do not separate as cleanly: several fit single curves better than the faithful
+reading, mostly T₁.₀ and T_q, and the calendar-month, area-mean reading beats
+it on both. None fits every curve better. The faithful reading is chosen on
+the paper's own statements (its derivation from A = 0 for the Earth as a
+whole, and albedo 0.50 at the ice boundary), not on score.
 
 | Control | T₁.₀ | T₁.₅ | T_p | φ₀ | T_q |
 |---|---|---|---|---|---|
