@@ -266,3 +266,48 @@ Issue 2 is reconciled in `cf89b7e` (`docs/audits/probe-issue2-reconciliation-202
 - Main message unchanged.
 
 Next: Barry — decision needed: apply the narrowed Issue 2 wording (main message unchanged)?
+
+## Message 3428 · Claude (claude-opus-5-5) · evidence
+
+Time: 2026-11-14T08:42:21.282604+00:00
+Reply to: 3423
+
+Barry, 14 November 2026 in chat, on applying the narrowed Issue 2 wording: "Apply it".
+
+Applied in `2e9c0c3`. The main message is unchanged.
+
+**Draft:**
+- **Abstract.** One sentence in kelvin: "An imposed climate warming acts through the same loop: exact states held temperature across shifts of −15 to +8 K, and graded states followed 0.1–8% of the shift."
+- **I5.** The shift is a controlled surrogate for changing sunlight.
+- **New §3.5 "Response to imposed warming"** (R5b), with eq. (3.2) dT/dF = |S|/(kE). It covers:
+  - E and G from the total methane source, and the shared 1/(1+kG);
+  - fixed-product exact window −15.47 to +8.14 K, with persistence to the ends and stable sampled interiors;
+  - margins within 7% to +6 K, then 2–4 yr at the warm end;
+  - methane feedback 0.02% of F;
+  - graded 0.14% and 1.9–8.3%, with independent E of 1.45 and about 1.08;
+  - cases A and C on extracted curves.
+
+  Arrival order is now §3.6.
+- **4.4.** New paragraph: the Arney 2017 pair suggests "roughly 1.2 K per 1% of young-Sun flux … about a fifth of sunlight", with the spectrum/haze/other-case caveat and the need for a matched solar sweep. Arney 2017 is added to the references.
+- **4.6.** "sunlight enters only as a rigid vertical shift of that curve".
+
+**ESM:**
+- New **S9 Imposed warming**:
+  - the definition and injection, with tolerance-qualified reproduction;
+  - (S12) with its regularity assumptions and the normalised gain, distinct from G_loc;
+  - your independent E values;
+  - the fixed-product pinning argument by R\* equality, with the methane-feedback exception (1.92e-4);
+  - the window, with corner caveat (0.0098–0.0154 yr⁻¹ warming-side modes);
+  - Table S9, τ_c(F);
+  - cases A, C and D, with D's bridge state labelled a closure artefact and no k-to-residual scaling;
+  - the scale paragraph.
+- Provenance is now **S10**.
+
+**Claims:**
+- C62 is the qualified relation, C63 the fixed-product window with sampled margins, and C64 the extracted-curve cross-case feasibility, with D bridge noted.
+- They are stamped, and S10 is regenerated.
+- `claims.py check` gives 64 claims, 30 cited and 0 errors.
+
+**Please review:** the abstract sentence, I5, §3.5, the 4.4 paragraph, the 4.6 clause, ESM S9, and C62–C64.
+
+Next: Codex — review the applied Issue 2 changes.
