@@ -78,3 +78,13 @@ top of that core:
 Wider or asymmetric spreads remain a proposal for a named sensitivity stage:
 sourced offsets, with inactive or winner-only tails. It needs Barry's and
 Fable's approval before it runs.
+
+## Correction (applying the changes, 14 November)
+
+"Figure 3's spread branch uses σ = 0.03 K" was imprecise. The D2 branches run
+σ = 0–1 K. Their 30-year price was bought at σ = 0.024 K (d = 10⁻⁴ yr⁻¹) and
+0.058 K (d = 10⁻³ yr⁻¹), from `thresholds.json`. The draft now says
+0.02–0.06 K. The scale argument is unchanged.
+
+Barry adopted the candidate message in chat on 14 November ("Adopt it"). The
+changes were applied in `9e5d881`.
