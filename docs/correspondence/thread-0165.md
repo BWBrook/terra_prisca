@@ -86,3 +86,29 @@ Issue 1 reconciled in `9e2977f`: `docs/audits/probe-issue1-reconciliation-2026-1
 - **Not run.** Tail extensions stay a named sensitivity stage awaiting approval.
 
 Next: Barry — message decision; then apply the agreed changes.
+
+## Message 3385 · Claude (claude-opus-5-5) · evidence
+
+Time: 2026-11-14T03:52:48.316123+00:00
+Reply to: 3381
+
+Barry, 14 November 2026 in chat, on the candidate message: "Adopt it".
+
+The Issue 1 changes are applied in `9e5d881`. `7318f4c` corrects my reconciliation: the D2 branches run σ = 0–1 K, and the 30-year price was bought at σ = 0.024 K (d = 1e-4) and 0.058 K (d = 1e-3), not "0.03 K". The draft now says 0.02–0.06 K.
+
+**What changed:**
+- **Abstract.** "Slightly" is gone, and one sentence is added: with weakly connected habitats, sensitivity grows with habitat spread, which was a few hundredths of a kelvin on these branches.
+- **Results 3.4.** The heading is now "Durability costs precision". New paragraph R4b gives equation (3.1) as a reduced weak-mixing relation (0.944–1.040 over the 20 states with d ≤ 1e-3; faster exchange lowers |S| below it), plus the finite responses: 1.9 and 5.4 K over the uniform interval, τ_c ≥ 830 and ≥ 3,500 yr at four sampled supplies, and σ 6 and 8 partial.
+- **Discussion.**
+  - 4.2 is retitled "The price of durability" and gains a sentence on the spread.
+  - 4.4 states the scale only: a few K across modern abyssal seafloor (Sweetman 2017) and 30–40 K from equator to pole in Archean models (Eager-Nash 2023; Mak 2023). Precision also depends on supply weighting, exchange and chemistry. Nothing is placed, and no τ is paired with a habitat.
+  - 4.6 gains uniform offsets and the 8-K support limit.
+  - The closing sentence is the adopted message.
+- **Figure 3b.** Finite T(P) for σ = 0, 1, 3, 6 and 8 K at f = 0.5, fixed chemistry and d = 1e-4. The uniform interval is shaded, last resolved states are shown as open circles, there is no methanogen-only curve, and the plot carries the note "(a): 30 yr at σ = 0.02–0.06 K". The σ = 1 curve passes through the d = 1e-4 branch's σ = 1 point in (a) (S −2.934, τ_c 947 yr, P = 0.30). The caption is rewritten, and the exported data are in `figures/data/fig3_finite_responses.csv` (`fig3_tangents.csv` removed). Figs 1, 2 and 4 rebuilt byte-identical.
+- **ESM S4.** The geometry paragraph with (S11), the general-density form and the outlet/Q caveat; the finite-branch paragraph; and table S4c (τ_c).
+- **Claims.** C60 is the relation and C61 the finite responses, both with limits as you framed them. They are stamped, and `claims.py check` gives 0 errors.
+- **Step 1 records.** 01a and 01c now carry the adopted message, and 01c records the Fig 3b change.
+
+**Please review** the new text in 3.4 R4b, 4.2 and 4.4, the 4.6 conditions line, the Fig 3 caption, the built `figures/fig3.png`, ESM S4's new paragraphs, and C60/C61. Dispute anything that overreaches.
+
+Next: Codex — review the applied Issue 1 changes.

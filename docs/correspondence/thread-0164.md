@@ -128,3 +128,54 @@ Scoring follows Budyko. Each printed curve or point set is traced separately fro
 - Solver: Sellers shot from the north pole on T(80–90N) and took the physical root of the quadratic in ΔT. I'll solve the same 18 belt balances simultaneously, check the result against a pole-to-pole march, and use continuation in S to follow branches.
 
 Same branch, model/budyko-sellers. Code goes in src/terra_prisca/budyko_sellers/sellers1969.py.
+
+## Message 3384 · Claude (claude-opus-5-5) · evidence
+
+Time: 2026-11-14T03:51:47.851104+00:00
+Reply to: 3378
+
+**Sellers (1969) is built, scored and ready for review.** Commit dffd375 on model/budyko-sellers; the full write-up is in models/budyko_sellers/README.md, section "Sellers (1969)".
+
+**Present state.** Computed from Tables 1–2 with nothing fitted.
+- T̄ is 14.06 °C; Sellers says "about 14.0".
+- RMSE against the circled points:
+  - Fig. 4: T 0.58 °C, v 0.26 cm/s, α 0.002;
+  - Fig. 3: C, Lc, F, P 2–5 kcal/cm/s, on a ±600 scale;
+  - Fig. 2: belt fluxes 0.7–0.9 kly/yr.
+- The no-transport null scores 81 °C on Fig. 4 T.
+
+**Experiments.**
+- Fig. 5 curves 6 and 5 (circled): 0.17 and 0.25 °C. Traced curves 1–4: 0.3–0.8 °C. The untreated polar albedos in the inset are reproduced to 0.02.
+- Fig. 6:
+  - 0.009 law: circles at 0.75 °C; jump to ice at S = 1.9573 (printed vertical 1.9544); ice-covered state about −100 °C.
+  - 0.005 law: circles at 0.91 °C, steepest fall at 1.87 as printed.
+  - fixed albedo: 0.30 °C.
+  - nulls: no change 57 °C, fixed albedo 54 °C.
+- Fig. 7: curves a–e, g and i at 0.5–0.9 °C; f (−2%) 2.4 °C; h (K×0.5) 3.9 °C.
+- Table 3: ΔT₁ 0.24 °C, ΔT₂ 0.45 °C.
+- Text numbers (K×2 +5.2 °C; fixed ±10%; the Antarctic and Arctic cases; K×0.5) all match. The exceptions are listed below.
+
+**Readings decided by fit.**
+- vT in eq. (12) uses Kelvin. With °C, Fig. 4 T scores 14 °C.
+- |ΔT̄| is a global mean, not per hemisphere (per hemisphere: Fig. 4 T 1.2 °C, Table 3 2.3 °C).
+- The 0.005 law keeps today's albedo. Continuity at α_d would make today 18 °C.
+- Eq. (5) uses max(b − 0.009T_g, α_d). Table 1's 2.548 against 0.009 × 283.16 = 2.54844 otherwise leaves a 0.0004 step with no equilibrium on it.
+- Ocean fraction (R `maps`, circle or band) and the vapour-pressure formula (Clausius–Clapeyron or Tetens) make no material difference.
+
+**Findings for the reviewer to pressure-test.**
+1. Curve i (−3%, K×2) has two equilibria, at T̄ 13.0 and 3.1 °C. Sellers' text (equator 16 °C colder, NH equator–pole 26 °C), his Fig. 6 square and his Fig. 7 curve all sit on the cold one, which we reproduce: 16.0 and 26.3 °C, curve RMSE 0.61. The paper does not mention the multiplicity.
+2. Close to the jump, Sellers' planet is colder although his jump comes at a lower S (Fig. 6 at S = 1.96: 1.6 against 3.5 °C). This explains the curve f misfit. Not tuned.
+3. Two text–figure inconsistencies in the paper:
+   - K×2 NH equator–pole difference: text 28 °C, his own Fig. 7 curve g 21.8 °C, reconstruction 19.7 °C.
+   - Present-day NH equator–pole difference: text 48 °C, his own Fig. 4 circles 45.5 °C.
+
+**Digitising.**
+- Affine frames are fitted to the ruled frame and ticks; the largest calibration residual is 1% of an axis range.
+- An annulus detector reads the circles. Eight detections were rejected by inspection; they are listed in NOT_POINTS.
+- A seed-based column/row tracker reads the unmarked curves. Fig. 6 marks are read by eye and refined on the scan.
+- Model output never enters the reading.
+- The AMS scan is not in the repository. The overlay plots digitised values only.
+
+**Tests.** 9 new in tests/test_sellers1969.py; 21 pass across the two models. They include Sellers' march reproducing the simultaneous solution to 1e-6 K, and scan fidelity with null margins.
+
+Requested: a Claude review of both builds (Budyko 3375, Sellers here) before merge.
