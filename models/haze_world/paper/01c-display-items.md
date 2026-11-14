@@ -2,8 +2,8 @@
 
 Claude (Opus 5.5), revised by Codex (GPT-6), 12 November 2026. Each item serves the
 [main message](01a-working-abstract.md). Microbes can hold a planet's
-temperature steady, but perfect control breaks down when the climate responds
-slowly. Slightly imperfect control is far more durable.
+temperature, but exact control fails when climate responds slowly. Imperfect
+control lasts far longer, and grows looser as habitat temperatures differ.
 
 ## Budget
 
@@ -81,13 +81,13 @@ This is the trade-off itself.
   - Draw upward arrows for right-censored margins. The 10,000-year search
     ceiling is a lower bound, rather than a measured first loss.
   - A line marks a 30-year lag, and a band marks its price of 0.07–0.32 K.
-- **(b) What the sensitivity means.** Draw local tangent segments of
-  temperature against log supply for three settings of one dial: flat,
-  gently sloped and more steeply sloped. Label these as derivatives at the
-  reference supply. A finite supply-response curve would require additional
-  continuation data.
+- **(b) What habitat spread costs.** Finite supply responses of steady
+  temperature for uniform habitats and spreads of 1, 3, 6 and 8 K (f = 0.5,
+  d = 10⁻⁴ yr⁻¹), over the uniform coexistence interval. Replaced the
+  original local tangents after pressure-test Issue 1 (14 November 2026).
 
-Source: the graded-dial and continuum-habitat outputs (C54, C55, C57).
+Source: the graded-dial and continuum-habitat outputs (C54, C55, C57) and the
+Issue 1 finite branches (C60, C61).
 
 ### Figure 4. Arrival order selects the surviving guild
 
@@ -142,7 +142,7 @@ Each item backs a specific point in the main text.
 ## Build notes
 
 - Figs 2–4 use existing evidence and systems. Fig. 2c needs a spectral export;
-  Fig. 3b uses labelled tangent segments, rather than an uncomputed sweep.
+  Fig. 3b uses the Issue 1 finite branches.
 - Read Fig. 4's finite trajectories from the separate `census_raw` archives;
   existing trajectory CSVs contain uncensored solutions. The f = 0, τ = 10
   B2 trace also needs an export from its existing raw archive. These are

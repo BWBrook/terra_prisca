@@ -23,9 +23,11 @@ constant as hydrogen supply changes. That perfect control is fragile. The 36
 exactly holding states on the haze-cooling branch all first lost stability
 at climate response times of about seven years or less. Two
 changes, acetate slowing its own producers and habitats differing in
-temperature, made control slightly imperfect and far more durable. On four
-tested branches, a local sensitivity of 0.07–0.32 K per e-fold of supply
-bought tolerance of a 30-year response, and 1–2 K bought centuries. In
+temperature, made control imperfect and far more durable. On four tested
+branches, a local sensitivity of 0.07–0.32 K per e-fold of supply bought
+tolerance of a 30-year response, and 1–2 K bought centuries. With weakly
+connected habitats, that sensitivity grows with the spread of habitat
+temperatures, which on these branches was a few hundredths of a kelvin. In
 invasion simulations, arrival order decided which group survived.
 
 ---
@@ -340,7 +342,7 @@ regulator can therefore keep working with wide swings, or let a population
 crash.
 
 <!-- R4 -->
-### 3.4 Durability costs a little precision
+### 3.4 Durability costs precision
 
 Both dials let temperature follow supply slightly, and near the exact limit
 the critical response time rises smoothly on every tested branch (figure
@@ -352,8 +354,29 @@ spread communities at 1–2 K per e-fold tolerate centuries. In an earlier
 comparison that switched each mechanism fully on or off, all 122 initially
 stable graded states had sensitivities of at least 0.59 K per e-fold and
 margins of at least 331 years; 113 were still stable at the 10⁴-year
-ceiling. Figure 3*b* shows what these sensitivities mean as temperature
-against supply.
+ceiling.
+
+<!-- R4b -->
+Habitat spread sets the size of this price. With weak exchange between
+habitats, acetogens hold every habitat colder than T\* and methanogens every
+warmer one. Supply then fixes the share of methanogen-held habitats that keeps
+the methane ratio near the switch, and temperature moves to the point in the
+spread that gives this share. For uniform offsets of ±σ this reduced model
+gives
+
+1/|S| = 1/k + 1/|S_geo|,  |S_geo| = 2σ (P_lo/P) Q/(Q − 1),   (3.1)
+
+where k = 140.7 K per e-fold is the response of the haze climate to the
+methane ratio at the switch, P_lo is the lowest supply at which a uniform
+community coexists and Q is its coexistence supply ratio (2.00 at f = 0.5;
+unbounded at f = 0, where the last factor is 1; ESM). With no fitted parameter, equation (3.1) matches the 20 spread states
+with exchange rates up to 10⁻³ yr⁻¹ within 6%; faster exchange blends
+habitats and lowers |S| below it. The 30-year price on the spread branches
+was bought at σ = 0.02–0.06 K. Over the supply range in which a uniform
+community coexists, wider spreads of 1 and 3 K move temperature by 1.9 and
+5.4 K (figure 3*b*). Their critical response times are at least 830 and
+3,500 years at four sampled supplies. Spreads of 6 and 8 K are resolved over
+part of that range.
 
 <!-- R5 -->
 Before the dial runs we proposed two general forms for this trade-off. The
@@ -394,12 +417,13 @@ response of about 4 years found in a modern climate model (Held et al. 2010).
 Past the limit, the regulator swings widely or a population crashes.
 
 <!-- D2 -->
-### 4.2 A small price for durability
+### 4.2 The price of durability
 
 Graded feedback gives up exactness and gains durability. A residual
 sensitivity of a fraction of a kelvin per e-fold of hydrogen supply buys
 tolerance of a 30-year climate response, and 1–2 K per e-fold buys
-centuries. Graded communities retain a small temperature response to supply.
+centuries. When habitats differ in temperature, the community holds
+temperature within its habitat spread, so wider spreads give looser control.
 This parallels precision–stability trade-offs in molecular circuits (Olsman
 et al. 2019; Qian & Del Vecchio 2018; Khammash 2021).
 
@@ -421,7 +445,14 @@ temperature regulation that such couplings can produce.
 
 Acetate feedback and variation in habitat temperature are candidate routes to
 graded regulation on the hazy early Earth. Their strengths would set where an
-Archean regulator sat between precision and durability. Modern microbial mats
+Archean regulator sat between precision and durability. Habitat temperatures
+on a real planet differ by far more than the hundredths of a kelvin that
+bought a 30-year margin here: by a few kelvin across today's abyssal seafloor
+(Sweetman et al. 2017) and by 30–40 K from equator to pole in Archean
+climate models (Eager-Nash et al. 2023; Mak et al. 2023). Equation (3.1)
+implies a correspondingly larger residual sensitivity. Its size would also
+depend on how hydrogen supply is shared among habitats, how fast they
+exchange cells and the acetate chemistry. Modern microbial mats
 are accessible analogue habitats. Their hydrogen levels vary by orders of
 magnitude with depth and time of day, and far more of their fixed carbon
 leaves as organic acids than as methane (Hoehler et al. 2001; Bebout et al.
@@ -452,6 +483,8 @@ those yields depend on recycling and biomass retention. Strain traits remain
 fixed. Physiology is extended
 below the coldest assay, 277.15 K, to 273 K. The costs of durability are
 local slopes on four branches, and stability is local to each steady state.
+Habitat offsets are uniform, and spreads beyond about 8 K leave the
+physiological support of 273–303.15 K.
 A crash is read at the first fall below one cell, and invasions use one
 habitat without immigration, with the one-cell rule applied every ten years.
 The climate is one published case with an assumed methane lifetime and
@@ -469,9 +502,9 @@ figure 3. Mesocosms with controlled supply and
 an imposed thermal lag, and biogeochemical models that resolve both groups,
 could test the trade-off with the delay-margin analysis used here.
 
-Microbes can hold a planet's temperature steady, but perfect control breaks
-down when the climate responds slowly. Slightly imperfect control is far
-more durable.
+Microbes can hold a planet's temperature, but exact control fails when
+climate responds slowly. Imperfect control lasts far longer, and grows looser
+as habitat temperatures differ.
 
 ---
 
@@ -534,7 +567,7 @@ d = 10⁻⁴ yr⁻¹ for the graded state). Markers show the first loss of
 stability, at 1.10 and 38.5 years. The vertical axis is
 linear between ±10⁻⁴ yr⁻¹ and logarithmic beyond.
 
-**Figure 3. Durability costs a little precision.** (*a*) Critical response
+**Figure 3. Durability costs precision.** (*a*) Critical response
 time τ_c against local sensitivity |S|. Left strip: the 42 exact states (S =
 0), 36 on the haze-cooling branch (filled) and six bridge states already
 unstable at τ = 0 (open, placed at the strip's base). Lines: the four dial
@@ -543,11 +576,14 @@ each crosses 30 years. Symbols without lines: the 122 graded states of an
 on/off comparison (grey, all at the ceiling) and of resolved habitat spread
 (green; nine finite). Arrows mark lower bounds at the 10⁴-year search
 ceiling. The shaded band marks the price of a 30-year margin, 0.07–0.32 K
-per e-fold. (*b*) Local tangents of steady temperature against log supply
-at the reference supply, for three settings of the acetate dial at f = 0:
-exact (κ = 0), the 30-year point (S = −0.28 K per e-fold) and κ = 1 (S =
-−1.88 K per e-fold, stable through 10⁴ years). Tangents show derivatives,
-not finite responses.
+per e-fold. (*b*) Steady temperature against hydrogen supply potential P for
+uniform habitats (σ = 0, black) and uniform habitat spreads of σ = 1, 3, 6
+and 8 K (green, darker for wider), at f = 0.5 with fixed products and cell
+exchange d = 10⁻⁴ yr⁻¹. Shading marks the supply range in which a uniform
+community coexists (P = 0.229–0.457); the dotted line marks T\*. Open
+circles mark the last resolved state on each branch. The σ = 1 K curve
+passes through the last point of the d = 10⁻⁴ yr⁻¹ spread branch in (*a*),
+at P = 0.30.
 
 **Figure 4. Arrival order decides the survivor.** (*a*) Global cell counts
 after a rare invader enters, in each direction, with fixed products, f = 0.5
@@ -601,6 +637,7 @@ repository.
 | Arney et al. 2016 | 10.1089/ast.2015.1422 |
 | Åström & Murray 2021 | *Feedback systems: an introduction for scientists and engineers*, 2nd edn. Princeton University Press. ISBN 978-0-691-19398-4 |
 | Bebout et al. 2004 | 10.1111/j.1472-4677.2004.00024.x |
+| Eager-Nash et al. 2023 | 10.1029/2022JD037544 |
 | Feulner 2012 | 10.1029/2011RG000375 |
 | Fu et al. 2019 | 10.3389/fmicb.2019.02418 |
 | Fukami 2015 | 10.1146/annurev-ecolsys-110411-160340 |
@@ -612,6 +649,7 @@ repository.
 | Kotsyurbenko et al. 2001 | 10.1111/j.1574-6941.2001.tb00893.x |
 | Lovelock & Margulis 1974 | 10.1111/j.2153-3490.1974.tb01946.x |
 | Mollison 1991 | 10.1016/0025-5564(91)90009-8 |
+| Mak et al. 2023 | 10.1029/2023JD039343 |
 | Olsman et al. 2019 | 10.1016/j.cels.2019.06.001 |
 | Ozaki et al. 2018 | 10.1038/s41561-017-0031-2 |
 | Peters et al. 1998 | 10.1111/j.1574-6941.1998.tb00516.x |
@@ -619,6 +657,7 @@ repository.
 | Sagan & Mullen 1972 | 10.1126/science.177.4043.52 |
 | Sauterey et al. 2020 | 10.1038/s41467-020-16374-7 |
 | Seto & Akagi 2007 | 10.1016/j.jtbi.2007.05.013 |
+| Sweetman et al. 2017 | 10.1525/elementa.203 |
 | Tijhuis et al. 1993 | 10.1002/bit.260420415 |
 | Watson & Lovelock 1983 | 10.1111/j.1600-0889.1983.tb00031.x |
 | Weaver & Dyke 2012 | 10.1016/j.jtbi.2012.07.034 |

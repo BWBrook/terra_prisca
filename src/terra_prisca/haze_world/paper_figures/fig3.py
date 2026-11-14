@@ -2,7 +2,8 @@
 
 (a) Critical response time against local sensitivity: exact states (strip),
 on/off and resolved-habitat graded states, and the four dial branches.
-(b) Local tangents of temperature against log supply for three dial settings.
+(b) Finite responses of temperature to supply for habitat spreads of 0-8 K
+(weak mixing, f = 0.5), from the Issue 1 pressure-test branches.
 Sources are archived outputs only; every plotted number is exported to
 models/haze_world/paper/figures/data/fig3_*.csv.
 """
@@ -128,8 +129,8 @@ def main():
 
     fig = plt.figure(figsize=(style.DOUBLE, 82 * style.MM))
     gs = GridSpec(1, 2, figure=fig, width_ratios=[0.1, 0.9], wspace=0.0,
-                  left=0.075, right=0.755, bottom=0.14, top=0.97)
-    gs_b = GridSpec(1, 1, figure=fig, left=0.835, right=0.995, bottom=0.14, top=0.97)
+                  left=0.075, right=0.65, bottom=0.14, top=0.97)
+    gs_b = GridSpec(1, 1, figure=fig, left=0.735, right=0.995, bottom=0.14, top=0.97)
     ax0 = fig.add_subplot(gs[0, 0])
     ax = fig.add_subplot(gs[0, 1], sharey=ax0)
     axb = fig.add_subplot(gs_b[0, 0])
@@ -214,44 +215,48 @@ def main():
     leg2.set_zorder(9)
     style.panel_label(ax0, "a", x=-0.9, y=0.985)
 
-    # (b) local tangents, D1 f = 0
-    d1 = {float(r["dial"]): r for r in read(FIG / "graded_dials" / "dials.csv") if r["branch_id"] == "D1_f0"}
-    ref = d1[0.0]
-    mid_dial = 0.5 * (thr["D1_f0"]["low_dial"] + thr["D1_f0"]["high_dial"])
-    tr = {float(r["dial"]): r for r in read(FIG / "graded_dials" / "threshold_refinement" / "dials.csv") if r["branch_id"] == "D1_f0"}
-    mid = tr[thr["D1_f0"]["low_dial"]]
-    steep = d1[1.0]
-    settings = [("flat", ref), ("gentle", mid), ("steeper", steep)]
-    half = 0.4
-    tang = []
-    cols = ["#0b0b0b", "#2a78d6", "#2a78d6"]
-    lss = ["-", "-", (0, (4, 2))]
-    for (name, r), col, ls in zip(settings, cols, lss):
-        S = float(r["Sc"]) if abs(float(r["Sc"])) > 1e-6 else 0.0
-        T = float(r["temperature_k"])
-        x = np.array([-half, half])
-        y = T + S * x
-        axb.plot(x, y, color=col, ls=ls, lw=1.3, solid_capstyle="butt")
-        axb.plot([0], [T], marker="o", ms=3.2, color=col, zorder=5)
-        tau = r["critical_lag_yr"]
-        tang.append(dict(setting=name, dial_kappa=float(r["dial"]), S_K_per_efold=S, T_star_k=T,
-                         tau_c_yr=float(tau) if r["critical_lag_status"] == "finite_crossing" else CENSOR,
-                         tau_status=r["critical_lag_status"], dlnPhi_low=-half, dlnPhi_high=half,
-                         T_low_k=T - S * half, T_high_k=T + S * half))
-    axb.set_xlim(-0.5, 0.5)
-    axb.set_xticks([-0.4, 0, 0.4])
-    axb.set_ylim(280.6, 282.3)
-    axb.set_xlabel("Change in log supply, ln($\\Phi/\\Phi_{ref}$)")
-    axb.set_ylabel("Surface temperature $T^*$ (K)")
-    axb.text(0.0, 0.5 * (tang[0]["T_star_k"] + 0.0) + 0.0, "", fontsize=1)
-    labs = [(f"exact: $S$ = 0", (0.48, tang[0]["T_star_k"] + 0.06), "right", "bottom", "#0b0b0b"),
-            (f"$S$ = −0.28 K\n$\\tau_c$ = 30 yr", (-0.48, tang[1]["T_star_k"] - 0.09), "left", "top", "#2a78d6"),
-            (f"$S$ = −1.88 K, $\\tau_c$ > 10$^4$ yr", (-0.27, 282.22), "left", "top", "#2a78d6")]
-    for txt, xy, ha, va, col in labs:
-        axb.text(*xy, txt, fontsize=6.3, color=col, ha=ha, va=va)
-    axb.text(0.02, 0.03, "local tangents (derivatives),\nnot finite responses;\nacetate dial, f = 0", transform=axb.transAxes,
-             fontsize=5.8, color=style.INK_2, ha="left", va="bottom")
-    style.panel_label(axb, "b", x=-0.2, y=0.985)
+    # (b) finite responses across habitat spread
+    probe = json.load(open(style.ROOT / "models" / "haze_world" / "review" / "issue1_spread_response.json"))
+    meta = probe["meta"]
+    p_lo, p_hi, t_star = meta["P_lo"], meta["P_hi"], meta["T_star_K"]
+    assert abs(t_star - 281.5348) < 1e-3 and meta["f"] == 0.5 and meta["d_per_yr"] == 1e-4
+    axb.axvspan(p_lo, p_hi, color=style.GRID, lw=0, zorder=0)
+    axb.axhline(t_star, color=style.INK_2, lw=0.5, ls=":", zorder=1)
+    ramp = {0.0: style.INK, 1.0: "#8fd3b8", 3.0: "#4cbd92", 6.0: style.THIRD, 8.0: "#0d6b48"}
+    fin = []
+    for sg, col in ramp.items():
+        kind = "hom" if sg == 0.0 else None
+        seq = [r for r in probe["rows"] if r["status"] == "accepted" and r["sigma_K"] == sg
+               and (r["direction"] == "hom" if kind else r["direction"] in ("up", "down", "ref"))]
+        seq.sort(key=lambda r: r["P"])
+        P = np.array([r["P"] for r in seq])
+        T = np.array([r["T_K"] for r in seq])
+        axb.plot(P, T, color=col, lw=1.2 if sg else 1.0, zorder=4)
+        if sg:
+            axb.plot(P[[0, -1]], T[[0, -1]], ls="none", marker="o", ms=2.8, mfc="white", mec=col, mew=0.8, zorder=5)
+            span = float(np.interp(p_lo, P, T) - np.interp(p_hi, P, T)) if P[0] <= p_lo and P[-1] >= p_hi else None
+            if sg == 1.0:
+                assert abs(span - 1.91115) < 1e-4
+            if sg == 3.0:
+                assert abs(span - 5.40874) < 1e-4
+        for r in seq:
+            fin.append(dict(sigma_K=sg, P=r["P"], direction=r["direction"], T_K=r["T_K"],
+                            S_K_per_efold=r.get("S_K_per_efold"), branch_end=bool(sg) and r["P"] in (P[0], P[-1])))
+    lab = {0.0: ("uniform, σ = 0", 0.47, t_star + 0.3, "right"), 1.0: ("1 K", 0.468, 280.0, "left"),
+           3.0: ("3 K", 0.478, 277.9, "left"), 6.0: ("6 K", 0.364, 278.3, "left"), 8.0: ("σ = 8 K", 0.222, 289.6, "left")}
+    for sg, (txt, x, y, ha) in lab.items():
+        axb.text(x, y, txt, fontsize=6.3, color=ramp[sg], ha=ha, va="center")
+    axb.set_xscale("log")
+    axb.set_xlim(0.19, 0.52)
+    axb.set_xticks([0.2, 0.3, 0.4, 0.5])
+    axb.set_xticklabels(["0.2", "0.3", "0.4", "0.5"])
+    axb.minorticks_off()
+    axb.set_ylim(272.5, 291)
+    axb.set_xlabel("Hydrogen supply potential $P$")
+    axb.set_ylabel("Surface temperature $T$ (K)")
+    axb.text(0.5 * (p_lo + p_hi) ** 1, 290.4, "uniform coexistence", fontsize=5.8, color=style.INK_2, ha="center", va="top")
+    axb.text(0.02, 0.03, "(a): 30 yr at σ = 0.02–0.06 K", transform=axb.transAxes, fontsize=5.8, color=style.INK_2, ha="left", va="bottom")
+    style.panel_label(axb, "b", x=-0.25, y=0.985)
 
     # exports
     export_states = [r for r in states]
@@ -271,7 +276,7 @@ def main():
                                        dial_low=thr[b]["low_dial"], dial_high=thr[b]["high_dial"],
                                        tau_low_yr=thr[b]["low_tau"], tau_high_yr=thr[b]["high_tau"], tau_target_yr=TAU_STAR)
                                   for b in BRANCHES])
-    write("fig3_tangents.csv", tang)
+    write("fig3_finite_responses.csv", fin)
     write("fig3_checks.csv", [dict(quantity=k, reproduced=v[0], expected=v[1]) for k, v in checks.items()] + [
         dict(quantity="graded_min_abs_S_K", reproduced=min(r["abs_S"] for r in ordinary), expected=0.59),
         dict(quantity="graded_min_tau_c_yr", reproduced=min(r["tau_c_yr"] for r in ordinary), expected=331),

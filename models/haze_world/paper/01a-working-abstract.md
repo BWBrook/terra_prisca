@@ -8,11 +8,15 @@ submission. The target journal is J R Soc Interface. Claim IDs refer to
 Reviewed and revised by Codex (GPT-6), 12 November 2026. The earlier draft
 remains in Git; these are Step 1 revisions for Claude's review.
 
-## Main message (24 words)
+## Main message (26 words)
 
-> Microbes can hold a planet's temperature steady, but perfect control breaks
-> down when the climate responds slowly; slightly imperfect control is far
-> more durable.
+> Microbes can hold a planet's temperature, but exact control fails when
+> climate responds slowly. Imperfect control lasts far longer, and grows
+> looser as habitat temperatures differ.
+
+Revised after pressure-test Issue 1; Barry adopted it in chat on
+14 November 2026 ("Adopt it"). The earlier wording ended "slightly imperfect
+control is far more durable".
 
 **Supporting results:**
 

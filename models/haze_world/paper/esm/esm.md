@@ -200,6 +200,21 @@ All 170 resolved states of the C0 (homogeneous, 90) and C1 (resolved habitats, 8
 
 **Graded (122 states).** 42 homogeneous (acetate-feedback and both-product chemistries) and 80 resolved-habitat states, all with $|S| \ge 0.59$ K per e-fold. 113 are still stable at the 10⁴-yr search ceiling and nine (all C1) have finite first losses between 331 and 4781 yr; across those nine, τ_c rises with $|S|$ (Spearman ρ = 1.0, log–log slope 1.48; C54). Lag search is censored at 10⁴ yr.
 
+**Habitat-spread geometry (pressure-test Issue 1).** With weak exchange, every habitat colder than T\* is acetogen-held and every warmer one methanogen-held. Supply fixes the methanogen-held share that keeps the methane ratio near $r^*$, and temperature sits where the spread gives that share. For uniform offsets of ±σ the reduced closure (supply-proportional emission, linear methane removal) gives equation (3.1) of the main text,
+
+$$\frac{1}{|S|} = \frac{1}{k} + \frac{1}{|S_{geo}|},\qquad |S_{geo}| = 2\sigma\,\frac{P_{lo}}{P}\,\frac{Q}{Q-1}, \tag{S11}$$
+
+with $k = |dT_{clim}/dr|\,r^* = 140.72$ K per e-fold, $P_{lo} = 0.229178$ and $Q = P_{hi}/P_{lo}$ the uniform community's coexistence supply ratio (1.9955 at f = 0.5; unbounded at f = 0, where the last factor is 1). For any offset density $\rho$, $1/|S_{geo}| = \rho(T^* - T)\,\Delta$, with $\Delta$ the change in log methane yield per unit methanogen share. Against the 40 fixed-chemistry spread states above, computed/predicted $|S|$ is 0.944–1.040 for the 20 states with $d \le 10^{-3}$ yr⁻¹ and falls to 0.705 at $d = 0.1$, where exchange blends habitats (C60; `models/haze_world/review/issue1_geometric_check.py`). This is a reduced-model identity: $k$ is held at its switch value, and the hydrogen outlet (7.5% of supply at the switch) makes the endpoint $Q$ differ from the raw yield ratio, 2.104.
+
+Finite branches at f = 0.5, fixed products and $d = 10^{-4}$ yr⁻¹ (figure 3b; C61; `models/haze_world/review/issue1_spread_response.py`) were continued from the reference supply with the production continuum solver and the S3 acceptance rules. Over the uniform coexistence interval, P = 0.229178–0.457327, temperature spans 1.911 K at σ = 1 K and 5.409 K at σ = 3 K; the resolved extrema approach T\* ± σ over slightly wider supply ranges. Branch ends are unresolved numerical stops, not ecological endpoints. The σ = 6 and 8 K branches are resolved up to P = 0.361 and 0.311, where their cold edges are within 0.03 K of the 273-K support floor. Critical response times were computed at four supplies (table S4c).
+
+| σ (K) | P = 0.24 | 0.30 | 0.36 | 0.42 |
+|---|---|---|---|---|
+| 1 | 1773 | 947 | 833 | 851 |
+| 3 | > 10⁴ | 4781 | 3704 | 3506 |
+
+*Table S4c. Critical response time τ_c (yr) on the finite spread branches; > 10⁴ marks no loss found through the search ceiling.*
+
 ## S5 Dial brackets and the 30-year price
 
 The two dials turn one mechanism up continuously from the exact state (graded-dial specification, [graded-dial-spec.md](../../graded-dial-spec.md)). D1 raises the acetate exponent κ over 0, 10⁻⁴, 3 × 10⁻⁴, 10⁻³, 3 × 10⁻³, 0.01, 0.03, 0.1, 0.3, 1 at f = 0 and 0.5. D2 raises the habitat half-width σ over 0.003, 0.01, 0.03, 0.1, 0.3, 1 K at f = 0.5 and $d = 10^{-4}$ and $10^{-3}$ yr⁻¹. That is 32 prescribed settings and two zero-spread controls (C55); all 34 are in [s5_dial_points.csv](s5_dial_points.csv).
@@ -379,6 +394,8 @@ where $n = 4(r^*/t_{CH_4} - c\Phi_{abiotic})/(\chi H)$ is the catabolic hydrogen
 | C57 | supported | 0e29057 | S5 | A thirty-year first-loss margin has a small nonzero local temperature-sensitivity cost on all four dial branches |
 | C58 | supported | 0e29057 | S5, S6 | The weak-mode formula passes the original eligible grid but fails at authorised refinement states |
 | C59 | supported | 957bd13 | S7 | Atmospheric H2 pressure leaves the fixed-chemistry set point unchanged, barely moves the critical lag, and can remove the mixed state at high pressure |
+| C60 | supported | 9e2977f | S4 | In weakly connected fixed-chemistry spread communities the local supply sensitivity follows a no-fit habitat-geometry relation |
+| C61 | supported | 9e2977f | S4 | Finite supply responses of weakly connected spread communities move temperature across the habitat spread while keeping centuries-long margins at sampled supplies |
 
 <!-- /table:s9_claims -->
 
