@@ -367,7 +367,7 @@ where $n = 4(r^*/t_{CH_4} - c\Phi_{abiotic})/(\chi H)$ is the catabolic hydrogen
 
 **Definition.** A warming F shifts the climate curve rigidly, $T_{clim}(r) \to T_{clim}(r) + F$, leaving its slope unchanged. It is a controlled surrogate for a change in sunlight, not a solar calculation: a change in solar flux also alters the spectrum, haze photochemistry and the curve's shape. F was injected by wrapping the climate function and all its aliases, with dependent caches cleared at each F (`models/haze_world/review/issue2_forcing.py`). At F = 0 the reference states reproduce the archive; σ = 1 and 3 K at P = 0.30 are bit-identical, and the off-reference states agree within the acceptance tolerance.
 
-**Local relation.** Let $M(P,T)$ be the total atmospheric methane source, including the abiotic term, at fixed temperature, with $E = \partial\ln M/\partial\ln P$ and $G = \partial\ln M/\partial T$. With linear methane removal, no direct methane-product dependence in $M$ and $k = |dT_{clim}/d\ln r|$ at the state,
+**Local relation.** On the cooling branch, for regular graded states whose fixed-temperature closure is locally single-valued, let $M(P,T)$ be the total atmospheric methane source, including the abiotic term, at fixed temperature, with $E = \partial\ln M/\partial\ln P$ and $G = \partial\ln M/\partial T$. With linear methane removal, no direct methane-product dependence in $M$ and $k = |dT_{clim}/d\ln r|$ at the state (on the warming branch the signs differ),
 
 $$S = -\frac{kE}{1+kG},\qquad \frac{dT}{dF} = \frac{1}{1+kG} = \frac{|S|}{kE}. \tag{S12}$$
 
@@ -375,14 +375,14 @@ Each response, divided by its open-loop value ($-kE$ for supply, 1 for imposed w
 
 **Exact states.** With fixed products, T\* is set by equality of the two guilds' hydrogen requirements, which depends on temperature alone, so any r that the community can supply on the cooling branch holds T = T\*; the fixed-temperature closure is singular there, and the pinning follows from this argument rather than from (S12). With methane feedback on the producers the requirements depend on methane too, and an exact state at f = 0.5, P = 0.30 moves by 1.92 × 10⁻⁴ K per K of F (`docs/audits/probe-issue2-scope-check-2026-11-14.py`).
 
-**Window.** At P = 0.30 and f = 0 or 0.5, fixed-product exact states exist for F = −15.473 to +8.145 K. The ends are case B's extracted peak (297.01 K at r = 0.1667) and minimum (273.39 K at r = 0.2222); both guilds remain positive there. All 30 sampled interior states are stable at τ = 0. At the two nonsmooth corners the adjoining warming-side linearisations have real positive eigenvalues (0.0098–0.0154 yr⁻¹), so stability is not claimed at the ends (C63; `docs/audits/probe-issue2-window-check-2026-11-14.py`).
+**Window.** At P = 0.30 and f = 0 or 0.5, fixed-product exact states exist for F = −15.473 to +8.145 K. The ends are case B's extracted peak (297.01 K at r = 0.1667) and minimum (273.39 K at r = 0.2222); both guilds remain positive there. The 30 sampled forcing values for each recycling fraction are stable at τ = 0. At the two nonsmooth corners the adjoining warming-side linearisations have real positive eigenvalues (0.0098–0.0154 yr⁻¹), so stability is not claimed at the ends (C63; `docs/audits/probe-issue2-window-check-2026-11-14.py`).
 
 | F (K) | −15.47 | −12 | −9 | −6 | −3 | 0 | +3 | +6 | +8.0 | +8.14 |
 |---|---|---|---|---|---|---|---|---|---|---|
 | f = 0 | 0.154 | 0.157 | 0.147 | 0.150 | 0.153 | 0.149 | 0.153 | 0.157 | 0.842 | 2.093 |
 | f = 0.5 | 1.175 | 1.158 | 1.122 | 1.119 | 1.116 | 1.103 | 1.103 | 1.105 | 2.028 | 3.598 |
 
-*Table S9. Critical response time τ_c (yr) of the fixed-product exact state across imposed warming. Margins stay within 7% of the reference up to +6 K and lengthen near the warm end, where the piecewise climate curve flattens. Graded-state margins were not swept in F.*
+*Table S9. Critical response time τ_c (yr) of the fixed-product exact state across imposed warming. Column labels are rounded forcings of interior samples, not the exact corners. Sampled margins stay within 7% of the reference up to +6 K and lengthen near the warm end, where the piecewise climate curve flattens. Graded-state margins were not swept in F.*
 
 **Other climate cases.** At F = 0 and f = 0.5, Arney's cases A and C, which differ from B in carbon dioxide and pressure, give fixed-product exact states at T\* on their extracted cooling curves: case A at r = 0.190 with k = 210 K per e-fold, case C at r = 0.178 with k = 46 and τ_c of 1.26–7.20 yr over the scanned supplies (C64). Case D's extracted curve never reaches T\* (its maximum is 273.39 K). The implemented low-methane bridge, an assumption, does admit a stable coexistence state in case D near P = 0.0233; it is an artefact of that closure, not a physical result. A difference in k between cases does not by itself set a difference in graded residual, since S, E and G change too.
 

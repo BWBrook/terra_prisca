@@ -28,8 +28,8 @@ branches, a local sensitivity of 0.07–0.32 K per e-fold of supply bought
 tolerance of a 30-year response, and 1–2 K bought centuries. On the two
 habitat-spread branches, the 30-year margin was reached at half-widths of
 0.02–0.06 K; with weak exchange, sensitivity grows with habitat spread. An
-imposed climate warming acts through the same loop: exact states held
-temperature across shifts of −15 to +8 K, and graded states followed 0.1–8%
+imposed climate warming acts through the same loop: fixed-product exact
+states held temperature across shifts of −15 to +8 K, and graded states followed 0.1–8%
 of the shift. In invasion simulations, arrival order decided which group
 survived.
 
@@ -399,19 +399,19 @@ We therefore report the price of durability branch by branch (ESM).
 ### 3.5 Response to imposed warming
 
 The Introduction's question concerns sunlight. As a controlled surrogate, we
-impose a warming F that shifts the climate curve, T_clim(r) + F. Linearising
-the steady state gives
+impose a warming F that shifts the climate curve, T_clim(r) + F. For regular
+graded states on the cooling branch, linearising the steady state gives
 
 dT/dF = |S|/(kE),   (3.2)
 
-where E is the response of the total methane source to supply at fixed
-temperature. Supply and imposed warming are attenuated by the same
+where k is the local climate slope and E is the response of the total
+methane source to supply at fixed temperature (ESM S9). Supply and imposed warming are attenuated by the same
 closed-loop factor, 1/(1 + kG), where G is the response of the methane
 source to temperature. With fixed products, exact states hold T\* for every
 shift from −15.47 to +8.14 K, the range over which case B's haze-cooling
 branch can supply the cooling needed. Both groups persist to the ends of
-that range, and sampled states within it are stable. Critical response
-times stay within 7% of the reference for shifts up to +6 K and lengthen to
+that range, and sampled states within it are stable. Sampled critical
+response times stay within 7% of the reference for shifts up to +6 K and lengthen to
 2–4 years near the warm end. With methane feedback on the producers, an
 exact state moves by 0.02% of F. Graded states move by 0.14% of F at the
 30-year acetate point and by 1.9–8.3% with habitat spreads of 1–3 K. These

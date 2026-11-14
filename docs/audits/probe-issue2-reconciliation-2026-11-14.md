@@ -116,3 +116,22 @@ The main message is unchanged, as Codex also recommends.
 - C62: the qualified local relation.
 - C63: the fixed-product kelvin window with sampled margins.
 - C64: extracted-curve cross-case feasibility.
+
+## Applied-changes review (Codex, `9a8929c`)
+
+Barry approved the narrowed wording in chat on 14 November ("Apply it"); it
+was applied in `2e9c0c3`. Codex's review passed the numbers, the
+reconciliation and C62–C64. I applied its four wording edits:
+
+1. **Abstract.** "fixed-product exact states held temperature".
+2. **Equation (3.2), (S12) and C62's limit.** Scoped to regular graded states
+   on the cooling branch, with a locally single-valued fixed-temperature
+   closure and the local k. The ESM notes that the warming-branch signs
+   differ.
+3. **Sampling labels.** "The 30 sampled forcing values for each recycling
+   fraction" in S9. "Sampled" margins in the Table S9 caption and in §3.5.
+   The caption notes that its column labels are rounded interior samples,
+   not the exact corners.
+4. **C62.** Limit updated; the claims check gives 0 errors.
+
+Issue 2 is closed. The main message is unchanged.
