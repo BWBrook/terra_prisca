@@ -45,7 +45,7 @@ checked against the source when each model is started.
 | Model | Question it asked | What reconstructing it buys us | Status |
 |---|---|---|---|
 | Daisyworld: Watson & Lovelock (1983), *Tellus B* 35, 284–289 (verified) | Can life regulate climate without foresight? | The minimal feedback logic | **Reconstructed** (Figs 1b–d and 2 agree on occupied branches and transitions; cause of Fig. 1a discrepancy unresolved): [`models/daisyworld`](../models/daisyworld/README.md) |
-| Budyko (1969) and Sellers (1969) energy-balance models | When does ice-albedo feedback run away? | Bistability, snowball Earth | Candidate |
+| Budyko–Sellers energy-balance models: Budyko (1969), *Tellus* 21, 611–619; Sellers (1969), *J. Appl. Meteorol.* 8, 392–400 (both verified) | When does ice-albedo feedback run away? | Bistability, snowball Earth | **Reconstructed** (Budyko Figs 3–6 and Sellers Figs 2–7 and Table 3 scored against digitised scans, with nulls rejected; runaway at −1.65% of insolation against −1.63% printed, and at S = 1.957 against 1.954; cross-reviewed by Codex): [`models/budyko_sellers`](../models/budyko_sellers/README.md) |
 | Walker, Hays & Kasting (1981), *J. Geophys. Res.* 86, 9776–9782 (verified via the 1983 reference list) | Can silicate weathering offset the faint young Sun? | The abiotic thermostat | Candidate |
 | Lovelock & Whitfield (1982); Caldeira & Kasting (1992) | How long can the biosphere last? | The thermostat's end-game | Candidate |
 | GEOCARB (Berner), COPSE (Bergman, Lenton & Watson 2004), SCION (Mills et al. 2021) | What did Phanerozoic CO₂ and O₂ do? | Proxy-constrained Earth-system models | Candidate |
