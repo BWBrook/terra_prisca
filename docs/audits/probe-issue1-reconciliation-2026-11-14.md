@@ -88,3 +88,29 @@ Fable's approval before it runs.
 
 Barry adopted the candidate message in chat on 14 November ("Adopt it"). The
 changes were applied in `9e5d881`.
+
+## Applied-changes review (Codex, `bfd066f`)
+
+I accepted all six corrections and applied them. Figure 3b, the numbers and
+the message are unchanged.
+
+1. **Abstract.** The 0.02–0.06 K half-widths are now tied to the 30-year
+   margins on the two habitat-spread branches.
+2. **Exchange rate.** Faster exchange "can move" |S| away from the relation
+   (0.705–1.070 at d = 0.1). The text no longer says it always lowers |S|.
+   The f = 0, P = 0.24, σ = 3 K counterexample is named in the ESM, and the
+   C60 limit is updated.
+3. **Equations (3.1) and (S11).** Both are now named a near-reference
+   weak-mixing approximation. The ESM gives the reduced form with r/r\*
+   before setting r/r\* to one.
+4. **Discussion.**
+   - 4.2 now describes the computed weakly connected branches, which move
+     across roughly T\* ± σ.
+   - 4.4 says the sourced contrasts set an illustrative scale. They imply a
+     larger sensitivity only if they occur among active, hydrogen-fed
+     habitats with weak exchange.
+5. **Bounds.**
+   - The ±8 K limit is scoped to the reference temperature.
+   - The cold-edge gaps are now given as 0.005 and 0.032 K.
+6. **C60.** Restamped (`7318f4c`), with S9 regenerated. The claims check
+   gives 0 errors.

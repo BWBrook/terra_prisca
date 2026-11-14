@@ -25,9 +25,9 @@ at climate response times of about seven years or less. Two
 changes, acetate slowing its own producers and habitats differing in
 temperature, made control imperfect and far more durable. On four tested
 branches, a local sensitivity of 0.07–0.32 K per e-fold of supply bought
-tolerance of a 30-year response, and 1–2 K bought centuries. With weakly
-connected habitats, that sensitivity grows with the spread of habitat
-temperatures, which on these branches was a few hundredths of a kelvin. In
+tolerance of a 30-year response, and 1–2 K bought centuries. On the two
+habitat-spread branches, the 30-year margin was reached at half-widths of
+0.02–0.06 K; with weak exchange, sensitivity grows with habitat spread. In
 invasion simulations, arrival order decided which group survived.
 
 ---
@@ -361,17 +361,19 @@ Habitat spread sets the size of this price. With weak exchange between
 habitats, acetogens hold every habitat colder than T\* and methanogens every
 warmer one. Supply then fixes the share of methanogen-held habitats that keeps
 the methane ratio near the switch, and temperature moves to the point in the
-spread that gives this share. For uniform offsets of ±σ this reduced model
-gives
+spread that gives this share. For uniform offsets of ±σ, and with the
+methane ratio near its switch value, this reduced model gives approximately
 
 1/|S| = 1/k + 1/|S_geo|,  |S_geo| = 2σ (P_lo/P) Q/(Q − 1),   (3.1)
 
 where k = 140.7 K per e-fold is the response of the haze climate to the
 methane ratio at the switch, P_lo is the lowest supply at which a uniform
 community coexists and Q is its coexistence supply ratio (2.00 at f = 0.5;
-unbounded at f = 0, where the last factor is 1; ESM). With no fitted parameter, equation (3.1) matches the 20 spread states
-with exchange rates up to 10⁻³ yr⁻¹ within 6%; faster exchange blends
-habitats and lowers |S| below it. The 30-year price on the spread branches
+unbounded at f = 0, where the last factor is 1; ESM). With no fitted
+parameter, equation (3.1) matches the 20 spread states with exchange rates up
+to 10⁻³ yr⁻¹ within 6%. Faster exchange blends habitats and can move |S|
+away from it: at 0.1 yr⁻¹ computed values range from 0.71 to 1.07 times the
+prediction. The 30-year price on the spread branches
 was bought at σ = 0.02–0.06 K. Over the supply range in which a uniform
 community coexists, wider spreads of 1 and 3 K move temperature by 1.9 and
 5.4 K (figure 3*b*). Their critical response times are at least 830 and
@@ -422,8 +424,9 @@ Past the limit, the regulator swings widely or a population crashes.
 Graded feedback gives up exactness and gains durability. A residual
 sensitivity of a fraction of a kelvin per e-fold of hydrogen supply buys
 tolerance of a 30-year climate response, and 1–2 K per e-fold buys
-centuries. When habitats differ in temperature, the community holds
-temperature within its habitat spread, so wider spreads give looser control.
+centuries. On the computed weakly connected branches, temperature moved
+across roughly T\* ± σ as supply changed, so wider spreads gave looser
+control.
 This parallels precision–stability trade-offs in molecular circuits (Olsman
 et al. 2019; Qian & Del Vecchio 2018; Khammash 2021).
 
@@ -449,8 +452,10 @@ Archean regulator sat between precision and durability. Habitat temperatures
 on a real planet differ by far more than the hundredths of a kelvin that
 bought a 30-year margin here: by a few kelvin across today's abyssal seafloor
 (Sweetman et al. 2017) and by 30–40 K from equator to pole in Archean
-climate models (Eager-Nash et al. 2023; Mak et al. 2023). Equation (3.1)
-implies a correspondingly larger residual sensitivity. Its size would also
+climate models (Eager-Nash et al. 2023; Mak et al. 2023). These contrasts
+set an illustrative scale. If spreads of that size occurred among active,
+hydrogen-fed habitats with weak exchange, equation (3.1) would imply a much
+larger residual sensitivity than on the tested branches. Its size would also
 depend on how hydrogen supply is shared among habitats, how fast they
 exchange cells and the acetate chemistry. Modern microbial mats
 are accessible analogue habitats. Their hydrogen levels vary by orders of
@@ -483,8 +488,9 @@ those yields depend on recycling and biomass retention. Strain traits remain
 fixed. Physiology is extended
 below the coldest assay, 277.15 K, to 273 K. The costs of durability are
 local slopes on four branches, and stability is local to each steady state.
-Habitat offsets are uniform, and spreads beyond about 8 K leave the
-physiological support of 273–303.15 K.
+Habitat offsets are uniform, and every habitat must lie within the
+physiological support of 273–303.15 K; around the reference temperature this
+limits spreads to about ±8 K.
 A crash is read at the first fall below one cell, and invasions use one
 habitat without immigration, with the one-cell rule applied every ten years.
 The climate is one published case with an assumed methane lifetime and
