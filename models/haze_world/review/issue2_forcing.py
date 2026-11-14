@@ -419,7 +419,7 @@ def main(only=None):
     cols = ['f', 'F', 'branch', 'T_K', 'r', 'domain', 'climate_slope', 'k', 'S', 'S0', 'leading_real_yr', 'leading_imag_yr', 'stable',
             'tau_c_status', 'tau_c_yr', 'xa', 'xm', 'acetate', 'pressure_pa']
     with STEM.with_name('issue2_forcing_window.csv').open('w', newline='') as h:
-        w = csv.DictWriter(h, cols, extrasaction='ignore')
+        w = csv.DictWriter(h, cols, extrasaction='ignore', lineterminator='\n')
         w.writeheader()
         for win in windows:
             for row in win['rows']:
