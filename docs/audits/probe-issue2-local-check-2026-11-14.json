@@ -1,0 +1,155 @@
+{
+  "git_head": "fbcee3a37e2a1b3fda9416c5b06392e06aed7a63",
+  "source_sha256": {
+    "models/haze_world/review/issue2_forcing.py": "9e1c50e908458310950d8e1fa553542d4e4d9c600b0ecc8c3b0529df04632eb2",
+    "src/terra_prisca/haze_world/continuum_core.py": "5ce1ca453ce9603814534ace5aa74787d69b478d7123ef7b2fc220af51b7d375",
+    "src/terra_prisca/haze_world/dynamic_core.py": "a359406f79444380f5554e6d27b478e2b70d624398cd1f2f853e1e25cbc88be6",
+    "src/terra_prisca/haze_world/graded_acetate.py": "69308af99c85ccf6d7c1964b84d94005c57e600db1bf26a5687d7b9d69e6dbd8",
+    "src/terra_prisca/haze_world/graded_dials.py": "438558c9983f0716e49e5114a3339d17c04a9e43bf2bda969e6bea0dbe445226",
+    "src/terra_prisca/haze_world/continuum_experiments.py": "7574c415f51f0d2bac775acb93f3a442a8182b0a1c80bb93c36e0b44c46d441c",
+    "src/terra_prisca/haze_world/methane_budget.py": "f2374cfcb658102cc9919c61108379560922fc787c2cd85e089e878a9fa25fa8",
+    "src/terra_prisca/haze_world/population_coupling.py": "17a433957e94845595f6d7fd160ffe593c01c4e74550707b0814c95ab67ae663"
+  },
+  "definition": "A is the physical Jacobian at clamped actual temperature; v_P=-A^-1 f_lnP and v_T=-A^-1 f_T. For linear methane removal and no methane product feedback, E_total=v_P[r]/r and G_total=v_T[r]/r are derivatives of TOTAL methane source, including abiotic input. E_biological=E_total/(1-abiotic source fraction).",
+  "normalization": "Supply S divided by its clamped-temperature open-loop -k E_total equals H=1/(1+k G_total), the same dimensionless response as dT/dF. This is not G_loc=Sc/S0 from the frozen-composition control.",
+  "states": [
+    {
+      "label": "b_D1_f0",
+      "nodes": 1,
+      "E_total_fixed_actual_T": 1.4474506553090567,
+      "E_biological_fixed_actual_T": 1.4514961850993768,
+      "abiotic_source_fraction": 0.0027871446248707546,
+      "G_total_per_K": 5.2068042305425735,
+      "fixed_T_schur_condition": 10004.927088259197,
+      "methane_loss_elasticity": 1.0,
+      "methane_product_feedback": false,
+      "S_closed": -0.27761324382873714,
+      "supply_open_loop_S": -203.68143574036765,
+      "normalized_supply_response": 0.0013629776460463007,
+      "forcing_closed_response": 0.001362977646046204,
+      "normalized_response_H": 0.0013629776460463005,
+      "dTdF_from_independent_E": 0.0013629776460463007,
+      "archive_inferred_E": 1.4474485940186108,
+      "archive_dTdF": 0.0013629795870429007,
+      "dTdF_finite_difference_step_0p03K": 0.0013629778199704865
+    },
+    {
+      "label": "c_sigma1",
+      "nodes": 176,
+      "E_total_fixed_actual_T": 1.0755093038838626,
+      "E_biological_fixed_actual_T": 1.0785156157202067,
+      "abiotic_source_fraction": 0.002787453229721244,
+      "G_total_per_K": 0.35946639326500035,
+      "fixed_T_schur_condition": 10002.223644033145,
+      "methane_loss_elasticity": 1.0,
+      "methane_product_feedback": false,
+      "S_closed": -2.933951692102251,
+      "supply_open_loop_S": -151.32607500340876,
+      "normalized_supply_response": 0.019388275893868,
+      "forcing_closed_response": 0.01938827589386749,
+      "normalized_response_H": 0.01938827589386799,
+      "dTdF_from_independent_E": 0.019388275893868,
+      "archive_inferred_E": 1.0755097668735483,
+      "archive_dTdF": 0.01938826754752654
+    }
+  ],
+  "exact_state": {
+    "fixed_T_scaled_singular_values": [
+      56771.18892794464,
+      8.32824443775821,
+      1.2357775816189,
+      0.00010199524326395267,
+      5.1406374153982165e-15
+    ],
+    "warning": "M(P,T) is not single-valued at exact fixed-product coexistence: guild allocation adjusts methane at fixed P and T. Do not apply the regular M(P,T) derivative closure here.",
+    "example_states": [
+      {
+        "P": 0.3,
+        "T": 281.53482280508206,
+        "r": 0.19,
+        "F": -3.1428771097017716,
+        "total_methane_source_ratio_per_yr": 1.9e-05,
+        "residual": 3.709411807842012e-11,
+        "state": [
+          22.48629998054835,
+          0.0006180336048873828,
+          0.00031377883661674275,
+          0.0009499870242431783,
+          0.19
+        ]
+      },
+      {
+        "P": 0.3,
+        "T": 281.53482280508206,
+        "r": 0.2,
+        "F": 3.5292059127011726,
+        "total_methane_source_ratio_per_yr": 2e-05,
+        "residual": 3.169860999428628e-11,
+        "state": [
+          22.48629998054835,
+          0.0005319247942872934,
+          0.00036184045778652916,
+          0.0008176281167400753,
+          0.2
+        ]
+      }
+    ]
+  },
+  "injection": {
+    "patched_modules": [
+      "terra_prisca.haze_world.darwinian",
+      "terra_prisca.haze_world.experiments",
+      "terra_prisca.haze_world.methane_budget",
+      "terra_prisca.haze_world.population_coupling"
+    ],
+    "modules_still_holding_original": [],
+    "shift_checks": [
+      {
+        "F": 0.0,
+        "max_abs_dev_dynamic_core": 0.0,
+        "max_abs_dev_population_coupling": 0.0,
+        "slope_fd": [
+          54.204970382389,
+          -599.9339874727777,
+          -45.78264488936807
+        ],
+        "slope_reference": [
+          54.20497037262858,
+          -599.9339874576178,
+          -45.78264486969163
+        ]
+      },
+      {
+        "F": 2.5,
+        "max_abs_dev_dynamic_core": 0.0,
+        "max_abs_dev_population_coupling": 0.0,
+        "slope_fd": [
+          54.204970382389,
+          -599.9339874727777,
+          -45.78264488936807
+        ],
+        "slope_reference": [
+          54.20497037262858,
+          -599.9339874576178,
+          -45.78264486969163
+        ]
+      },
+      {
+        "F": -4.0,
+        "max_abs_dev_dynamic_core": 0.0,
+        "max_abs_dev_population_coupling": 0.0,
+        "slope_fd": [
+          54.204970382389,
+          -599.9339874727777,
+          -45.78264488936807
+        ],
+        "slope_reference": [
+          54.20497037262858,
+          -599.9339874576178,
+          -45.78264486969163
+        ]
+      }
+    ]
+  },
+  "seconds": 4.354328155517578
+}

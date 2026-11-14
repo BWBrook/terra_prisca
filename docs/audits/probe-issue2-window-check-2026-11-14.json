@@ -1,0 +1,257 @@
+{
+  "scope": "Selected exact roots and 5x5 linear algebra only; no integration or sweep",
+  "T_star_K": 281.53482280508206,
+  "Rstar_difference_pa": 2.842170943040401e-14,
+  "D_bridge": {
+    "f": 0.5,
+    "P": 0.023328209525919383,
+    "ratio": 0.005272191843413553,
+    "P_positive_mixture_interval": [
+      0.0230287994709371,
+      0.023627619580901666
+    ],
+    "y": [
+      22.48629998054835,
+      2.426902033213774e-06,
+      6.438654626445007e-07,
+      3.7304208418935105e-06,
+      0.005272191843413553
+    ],
+    "checks": {
+      "status": "accepted",
+      "physiology_status": "in_domain",
+      "climate_domain": "bridge",
+      "rhs": [
+        0.0,
+        -4.151800626566923e-20,
+        0.0,
+        -4.658681209898652e-21,
+        0.0
+      ],
+      "maximum_scaled_rhs": 4.151800626566922e-15,
+      "per_capita_residual_yr": [
+        [
+          -1.7107409239214277e-14,
+          0.0
+        ]
+      ],
+      "min_guild_biomass": 6.438654626445007e-07,
+      "temperature_k": 281.53482280508206,
+      "temperature_minus_switch_k": 0.0
+    },
+    "spectrum": {
+      "status": "full_collocation_spectrum",
+      "leading_real": -9.225491434984999e-05,
+      "leading_imag": 0.0025172342448743124,
+      "residual": null
+    }
+  },
+  "B_corners": [
+    {
+      "f": 0.0,
+      "end": "cold",
+      "F": -15.473177194917923,
+      "ratio": 0.16666938,
+      "y": [
+        22.48629998054835,
+        0.0004296712601949563,
+        0.0004189132542236064,
+        0.0006604529570035293,
+        0.16666938
+      ],
+      "checks": {
+        "status": "accepted",
+        "physiology_status": "in_domain",
+        "climate_domain": "arney",
+        "rhs": [
+          5.914594399706222e-10,
+          -7.350562086484037e-18,
+          0.0,
+          -8.673617379884035e-19,
+          -3.3881317890172014e-21
+        ],
+        "maximum_scaled_rhs": 2.6303101910152446e-11,
+        "per_capita_residual_yr": [
+          [
+            -1.7107409239214277e-14,
+            0.0
+          ]
+        ],
+        "min_guild_biomass": 0.0004189132542236064,
+        "temperature_k": 281.53482280508206,
+        "temperature_minus_switch_k": 0.0
+      },
+      "one_sided_spectra": {
+        "left": {
+          "climate_slope": 54.20497037262858,
+          "leading_real_yr": 0.015372337234608818,
+          "leading_abs_imag_yr": 0.0,
+          "ratio_eigenvector_component_abs": 0.0024356027267334003
+        },
+        "right": {
+          "climate_slope": -450.09445150245557,
+          "leading_real_yr": -0.000151873364159067,
+          "leading_abs_imag_yr": 0.04440511443618838,
+          "ratio_eigenvector_component_abs": 0.0008425420074865198
+        }
+      }
+    },
+    {
+      "f": 0.0,
+      "end": "warm",
+      "F": 8.144822805082072,
+      "ratio": 0.22221876,
+      "y": [
+        22.48629998054835,
+        0.00017870467147603733,
+        0.0005589902222971817,
+        0.00027468913944381744,
+        0.22221876
+      ],
+      "checks": {
+        "status": "accepted",
+        "physiology_status": "in_domain",
+        "climate_domain": "arney",
+        "rhs": [
+          2.2748439998870085e-10,
+          -3.057173947899913e-18,
+          0.0,
+          -3.2526065174565133e-19,
+          0.0
+        ],
+        "maximum_scaled_rhs": 1.011657765775094e-11,
+        "per_capita_residual_yr": [
+          [
+            -1.7107409239214277e-14,
+            0.0
+          ]
+        ],
+        "min_guild_biomass": 0.00017870467147603733,
+        "temperature_k": 281.53482280508206,
+        "temperature_minus_switch_k": 0.0
+      },
+      "one_sided_spectra": {
+        "left": {
+          "climate_slope": -18.558123863766955,
+          "leading_real_yr": -5.354857858131697e-05,
+          "leading_abs_imag_yr": 0.0071536934245243385,
+          "ratio_eigenvector_component_abs": 0.0017455217826983227
+        },
+        "right": {
+          "climate_slope": 55.319966736174536,
+          "leading_real_yr": 0.012312047651297432,
+          "leading_abs_imag_yr": 0.0,
+          "ratio_eigenvector_component_abs": 0.0010134461987797235
+        }
+      }
+    },
+    {
+      "f": 0.5,
+      "end": "cold",
+      "F": -15.473177194917923,
+      "ratio": 0.16666938,
+      "y": [
+        22.48629998054835,
+        0.0008189307987636491,
+        0.00020164809460711825,
+        0.0012587885617001834,
+        0.16666938
+      ],
+      "checks": {
+        "status": "accepted",
+        "physiology_status": "in_domain",
+        "climate_domain": "arney",
+        "rhs": [
+          1.0767594932798507e-09,
+          -1.400978431304638e-17,
+          0.0,
+          -1.5178830414797062e-18,
+          -3.3881317890172014e-21
+        ],
+        "maximum_scaled_rhs": 4.7885134246687784e-11,
+        "per_capita_residual_yr": [
+          [
+            -1.7107409239214277e-14,
+            0.0
+          ]
+        ],
+        "min_guild_biomass": 0.00020164809460711825,
+        "temperature_k": 281.53482280508206,
+        "temperature_minus_switch_k": 0.0
+      },
+      "one_sided_spectra": {
+        "left": {
+          "climate_slope": 54.20497037262858,
+          "leading_real_yr": 0.009827841941602418,
+          "leading_abs_imag_yr": 0.0,
+          "ratio_eigenvector_component_abs": 0.0021762648968091883
+        },
+        "right": {
+          "climate_slope": -450.09445150245557,
+          "leading_real_yr": -0.00047162934012279125,
+          "leading_abs_imag_yr": 0.028324690121217685,
+          "ratio_eigenvector_component_abs": 0.0007544326597351832
+        }
+      }
+    },
+    {
+      "f": 0.5,
+      "end": "warm",
+      "F": 8.144822805082072,
+      "ratio": 0.22221876,
+      "y": [
+        22.48629998054835,
+        0.000340601694626409,
+        0.00046862742038476953,
+        0.0005235430367727106,
+        0.22221876
+      ],
+      "checks": {
+        "status": "accepted",
+        "physiology_status": "in_domain",
+        "climate_domain": "arney",
+        "rhs": [
+          3.4880941331600796e-10,
+          -5.82681257754387e-18,
+          0.0,
+          -6.505213034913027e-19,
+          0.0
+        ],
+        "maximum_scaled_rhs": 1.5512085741884777e-11,
+        "per_capita_residual_yr": [
+          [
+            -1.7107409239214277e-14,
+            0.0
+          ]
+        ],
+        "min_guild_biomass": 0.000340601694626409,
+        "temperature_k": 281.53482280508206,
+        "temperature_minus_switch_k": 0.0
+      },
+      "one_sided_spectra": {
+        "left": {
+          "climate_slope": -18.558123863766955,
+          "leading_real_yr": -7.101249181098442e-05,
+          "leading_abs_imag_yr": 0.006283475182617297,
+          "ratio_eigenvector_component_abs": 0.0019253512425438538
+        },
+        "right": {
+          "climate_slope": 55.319966736174536,
+          "leading_real_yr": 0.010861209469926096,
+          "leading_abs_imag_yr": 0.0,
+          "ratio_eigenvector_component_abs": 0.0011215392297881331
+        }
+      }
+    }
+  ],
+  "source_sha256": {
+    "models/haze_world/review/issue2_forcing.py": "9e1c50e908458310950d8e1fa553542d4e4d9c600b0ecc8c3b0529df04632eb2",
+    "src/terra_prisca/haze_world/dynamic_core.py": "a359406f79444380f5554e6d27b478e2b70d624398cd1f2f853e1e25cbc88be6",
+    "src/terra_prisca/haze_world/continuum_core.py": "5ce1ca453ce9603814534ace5aa74787d69b478d7123ef7b2fc220af51b7d375",
+    "src/terra_prisca/haze_world/continuum_experiments.py": "7574c415f51f0d2bac775acb93f3a442a8182b0a1c80bb93c36e0b44c46d441c",
+    "src/terra_prisca/haze_world/methane_budget.py": "f2374cfcb658102cc9919c61108379560922fc787c2cd85e089e878a9fa25fa8",
+    "models/haze_response/arney2016/figure4.csv": "c0ef5f3d17ee7c6085ad36247f0f7814726dbbe3273842b01f2c6c4e046856f8",
+    "models/haze_response/arney2016/cases.csv": "e3d77d275052a8875991a751868f857bffc964295bfd47591944d86bc58ab07a"
+  },
+  "process_cpu_seconds_after_import": 0.004240999999999995
+}

@@ -1,0 +1,85 @@
+{
+  "methane_feedback_counterexample": {
+    "f": 0.5,
+    "nominal_potential": 0.3,
+    "supply_sensitivity_k_per_efold": -1.6424390226065889e-13,
+    "imposed_warming_derivative": 0.00019164957649309144,
+    "imposed_warming_derivative_linear": 0.00019164955274830753,
+    "warning": "Pinned against supply does not imply pinned against imposed warming under direct methane-product feedback.",
+    "points": [
+      {
+        "F": 0.0,
+        "temperature_k": 281.53491448632417,
+        "ratio": 0.1951067477346421,
+        "scaled_residual": 7.149073705689845e-11,
+        "state": [
+          22.486219792466095,
+          0.0005740594890504876,
+          0.00033832212373266827,
+          0.0008823962339441421,
+          0.1951067477346421
+        ],
+        "status": "accepted"
+      },
+      {
+        "F": 0.1,
+        "temperature_k": 281.53493364628514,
+        "ratio": 0.19524536780251425,
+        "scaled_residual": 1.1195727543067754e-09,
+        "state": [
+          22.486203034660498,
+          0.0005728657430056816,
+          0.00033898823450205376,
+          0.0008805617999180319,
+          0.19524536780251425
+        ],
+        "status": "accepted"
+      },
+      {
+        "F": -0.1,
+        "temperature_k": 281.53489531636984,
+        "ratio": 0.19496812768062532,
+        "scaled_residual": 3.304758022431013e-11,
+        "state": [
+          22.486236559102526,
+          0.000575253236149006,
+          0.0003376560129027631,
+          0.0008842306672801055,
+          0.19496812768062532
+        ],
+        "status": "accepted"
+      }
+    ]
+  },
+  "largest_archived_forcing_response": {
+    "label": "e_P0.24",
+    "response": 0.08261519148732077
+  },
+  "fixed_product_window_samples": [
+    {
+      "f": 0.0,
+      "reference_tau_yr": 0.14921426039312066,
+      "largest_relative_change_sampled_F_le_6": 0.05955829110590494,
+      "largest_tau_yr": 2.0929745872471424,
+      "largest_tau_relative_to_reference": 14.026639154548505
+    },
+    {
+      "f": 0.5,
+      "reference_tau_yr": 1.10276007811868,
+      "largest_relative_change_sampled_F_le_6": 0.06524274579881983,
+      "largest_tau_yr": 3.5978426192202626,
+      "largest_tau_relative_to_reference": 3.2625796767672433
+    }
+  ],
+  "case_C_cooling_tau_range": [
+    1.2610909943250295,
+    7.195518130237593
+  ],
+  "source_sha256": {
+    "models/haze_world/review/issue2_forcing.json": "fff5dbe970d3c3a108c3c19a883b3fb921fac5e5323ed6f8bcace4a8866e02a0",
+    "models/haze_world/review/issue2_forcing_window.csv": "476cc8bc83d93ec91313782fb1652ef0cd26c2e26f15ff5f172599d18bab3172",
+    "models/haze_world/review/issue2_forcing.py": "9e1c50e908458310950d8e1fa553542d4e4d9c600b0ecc8c3b0529df04632eb2",
+    "src/terra_prisca/haze_world/dynamic_core.py": "a359406f79444380f5554e6d27b478e2b70d624398cd1f2f853e1e25cbc88be6",
+    "src/terra_prisca/haze_world/continuum_core.py": "5ce1ca453ce9603814534ace5aa74787d69b478d7123ef7b2fc220af51b7d375"
+  }
+}
