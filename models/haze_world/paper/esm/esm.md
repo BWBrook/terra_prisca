@@ -363,9 +363,34 @@ where $n = 4(r^*/t_{CH_4} - c\Phi_{abiotic})/(\chi H)$ is the catabolic hydrogen
 
 *Table S8b. Supply-potential interval for coexistence at the reference $T^*$ ($\ell = 10^{-3}$ h⁻¹, $p_{atm} = 0$; computed by `esm_tables.coexistence_budget`).*
 
-## S9 Provenance and AI-use record
+## S9 Imposed warming
 
-**Claims ledger.** [claims.csv](../../synthesis/claims.csv) gives, for each claim, the status, evidence paths, producing commit and a reproduction command with its reproduction level. The claims behind this supplement are listed in table S9; consult the ledger for the command of each.
+**Definition.** A warming F shifts the climate curve rigidly, $T_{clim}(r) \to T_{clim}(r) + F$, leaving its slope unchanged. It is a controlled surrogate for a change in sunlight, not a solar calculation: a change in solar flux also alters the spectrum, haze photochemistry and the curve's shape. F was injected by wrapping the climate function and all its aliases, with dependent caches cleared at each F (`models/haze_world/review/issue2_forcing.py`). At F = 0 the reference states reproduce the archive; σ = 1 and 3 K at P = 0.30 are bit-identical, and the off-reference states agree within the acceptance tolerance.
+
+**Local relation.** Let $M(P,T)$ be the total atmospheric methane source, including the abiotic term, at fixed temperature, with $E = \partial\ln M/\partial\ln P$ and $G = \partial\ln M/\partial T$. With linear methane removal, no direct methane-product dependence in $M$ and $k = |dT_{clim}/d\ln r|$ at the state,
+
+$$S = -\frac{kE}{1+kG},\qquad \frac{dT}{dF} = \frac{1}{1+kG} = \frac{|S|}{kE}. \tag{S12}$$
+
+Each response, divided by its open-loop value ($-kE$ for supply, 1 for imposed warming), equals the same factor $1/(1+kG)$; this normalised gain differs from the frozen-composition $G_{loc} = S/S_0$. Independent clamped-temperature Jacobians give $E$ = 1.4475 at the 30-year D1 point (f = 0) and 1.0755 at σ = 1 K (f = 0.5, d = 10⁻⁴ yr⁻¹, P = 0.30); the predicted dT/dF, 0.001363 and 0.01939, agrees with finite differences to 10⁻⁸ (C62; `docs/audits/probe-issue2-local-check-2026-11-14.py`). $E$ exceeds one mainly because the hydrogen outlet removes a nearly fixed flux at fixed temperature; with acetate feedback, supply also shifts composition. Across the tested graded states dT/dF is 0.0014 (D1), 0.019 (σ = 1 K), 0.048–0.055 (σ = 3 K at P = 0.30, d = 10⁻⁴ and 0.1) and 0.039–0.083 (σ = 3 K at P = 0.42 and 0.24).
+
+**Exact states.** With fixed products, T\* is set by equality of the two guilds' hydrogen requirements, which depends on temperature alone, so any r that the community can supply on the cooling branch holds T = T\*; the fixed-temperature closure is singular there, and the pinning follows from this argument rather than from (S12). With methane feedback on the producers the requirements depend on methane too, and an exact state at f = 0.5, P = 0.30 moves by 1.92 × 10⁻⁴ K per K of F (`docs/audits/probe-issue2-scope-check-2026-11-14.py`).
+
+**Window.** At P = 0.30 and f = 0 or 0.5, fixed-product exact states exist for F = −15.473 to +8.145 K. The ends are case B's extracted peak (297.01 K at r = 0.1667) and minimum (273.39 K at r = 0.2222); both guilds remain positive there. All 30 sampled interior states are stable at τ = 0. At the two nonsmooth corners the adjoining warming-side linearisations have real positive eigenvalues (0.0098–0.0154 yr⁻¹), so stability is not claimed at the ends (C63; `docs/audits/probe-issue2-window-check-2026-11-14.py`).
+
+| F (K) | −15.47 | −12 | −9 | −6 | −3 | 0 | +3 | +6 | +8.0 | +8.14 |
+|---|---|---|---|---|---|---|---|---|---|---|
+| f = 0 | 0.154 | 0.157 | 0.147 | 0.150 | 0.153 | 0.149 | 0.153 | 0.157 | 0.842 | 2.093 |
+| f = 0.5 | 1.175 | 1.158 | 1.122 | 1.119 | 1.116 | 1.103 | 1.103 | 1.105 | 2.028 | 3.598 |
+
+*Table S9. Critical response time τ_c (yr) of the fixed-product exact state across imposed warming. Margins stay within 7% of the reference up to +6 K and lengthen near the warm end, where the piecewise climate curve flattens. Graded-state margins were not swept in F.*
+
+**Other climate cases.** At F = 0 and f = 0.5, Arney's cases A and C, which differ from B in carbon dioxide and pressure, give fixed-product exact states at T\* on their extracted cooling curves: case A at r = 0.190 with k = 210 K per e-fold, case C at r = 0.178 with k = 46 and τ_c of 1.26–7.20 yr over the scanned supplies (C64). Case D's extracted curve never reaches T\* (its maximum is 273.39 K). The implemented low-methane bridge, an assumption, does admit a stable coexistence state in case D near P = 0.0233; it is an artefact of that closure, not a physical result. A difference in k between cases does not by itself set a difference in graded residual, since S, E and G change too.
+
+**Scale.** Arney et al. (2017, table 3) give 272 and 299 K for a case-A atmosphere at CH₄/CO₂ = 0.2 under the 2.7-Ga and modern Sun (278 and 342 W m⁻² mean incoming shortwave), a secant of about 1.2 K per 1% of young-Sun flux. Spectrum and haze change together in that pair, so this is a rough scale, not a calibration of the window in sunlight.
+
+## S10 Provenance and AI-use record
+
+**Claims ledger.** [claims.csv](../../synthesis/claims.csv) gives, for each claim, the status, evidence paths, producing commit and a reproduction command with its reproduction level. The claims behind this supplement are listed in table S10; consult the ledger for the command of each.
 
 <!-- table:s9_claims -->
 
@@ -396,10 +421,13 @@ where $n = 4(r^*/t_{CH_4} - c\Phi_{abiotic})/(\chi H)$ is the catabolic hydrogen
 | C59 | supported | 957bd13 | S7 | Atmospheric H2 pressure leaves the fixed-chemistry set point unchanged, barely moves the critical lag, and can remove the mixed state at high pressure |
 | C60 | supported | f384b64 | S4 | In weakly connected fixed-chemistry spread communities the local supply sensitivity follows a no-fit habitat-geometry relation |
 | C61 | supported | 9e2977f | S4 | Finite supply responses of weakly connected spread communities move temperature across the habitat spread while keeping centuries-long margins at sampled supplies |
+| C62 | supported | da9c2b3 | S9 | Imposed climate warming and hydrogen supply are attenuated by the same local closed-loop factor; graded temperature follows imposed warming by \|S\|/(kE) |
+| C63 | supported | da9c2b3 | S9 | Fixed-product exact states hold T* across a bounded window of imposed warming on case B with short sampled margins |
+| C64 | supported | da9c2b3 | S9 | Fixed-product exact states exist at T* on the extracted cooling curves of Arney cases A and C but not on case D |
 
 <!-- /table:s9_claims -->
 
-*Table S9. Claims used in the paper or this supplement (ledger commit column).*
+*Table S10. Claims used in the paper or this supplement (ledger commit column).*
 
 **Dated specifications.** The stage specifications in S6, each with a first commit that precedes its results commit, and the paper's own step documents under [`models/haze_world/paper/`](../) (working abstract, display items, section and paragraph abstracts, full draft).
 

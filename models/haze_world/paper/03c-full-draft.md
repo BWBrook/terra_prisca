@@ -27,8 +27,11 @@ temperature, made control imperfect and far more durable. On four tested
 branches, a local sensitivity of 0.07–0.32 K per e-fold of supply bought
 tolerance of a 30-year response, and 1–2 K bought centuries. On the two
 habitat-spread branches, the 30-year margin was reached at half-widths of
-0.02–0.06 K; with weak exchange, sensitivity grows with habitat spread. In
-invasion simulations, arrival order decided which group survived.
+0.02–0.06 K; with weak exchange, sensitivity grows with habitat spread. An
+imposed climate warming acts through the same loop: exact states held
+temperature across shifts of −15 to +8 K, and graded states followed 0.1–8%
+of the shift. In invasion simulations, arrival order decided which group
+survived.
 
 ---
 
@@ -92,7 +95,9 @@ response? How much temperature precision must be given up to buy how much
 durability? When one group arrives in a world held by the other, does arrival
 order decide which persists? We answer with linear stability analysis of the
 steady states, two tunable departures from exact control, and invasion
-simulations under a finite-population rule. The hypotheses developed in
+simulations under a finite-population rule. We vary hydrogen supply
+throughout and test a shift of the climate curve as a controlled surrogate
+for changing sunlight. The hypotheses developed in
 stages, and dated specifications record each stage's predictions and tests
 (§2.7).
 
@@ -390,8 +395,32 @@ oscillation period and damping time. It passed the planned grid but failed
 at two refinement points, where it gave 26% and 47% of the computed margins.
 We therefore report the price of durability branch by branch (ESM).
 
+<!-- R5b -->
+### 3.5 Response to imposed warming
+
+The Introduction's question concerns sunlight. As a controlled surrogate, we
+impose a warming F that shifts the climate curve, T_clim(r) + F. Linearising
+the steady state gives
+
+dT/dF = |S|/(kE),   (3.2)
+
+where E is the response of the total methane source to supply at fixed
+temperature. Supply and imposed warming are attenuated by the same
+closed-loop factor, 1/(1 + kG), where G is the response of the methane
+source to temperature. With fixed products, exact states hold T\* for every
+shift from −15.47 to +8.14 K, the range over which case B's haze-cooling
+branch can supply the cooling needed. Both groups persist to the ends of
+that range, and sampled states within it are stable. Critical response
+times stay within 7% of the reference for shifts up to +6 K and lengthen to
+2–4 years near the warm end. With methane feedback on the producers, an
+exact state moves by 0.02% of F. Graded states move by 0.14% of F at the
+30-year acetate point and by 1.9–8.3% with habitat spreads of 1–3 K. These
+agree with independently computed values of E, 1.45 and about 1.08 (ESM).
+Cases A and C, which differ in carbon dioxide and pressure, also give exact
+states at T\* on their extracted curves.
+
 <!-- R6 -->
-### 3.5 Arrival order decides the survivor
+### 3.6 Arrival order decides the survivor
 
 In all 24 invasions the invader drove the resident below one cell (figure
 4*a*). This held in both directions, with fixed products and with feedback
@@ -466,6 +495,12 @@ acetate on the hydrogen acetogens need, would test the first route.
 Measuring habitat temperatures and the exchange of cells between habitats
 would test the second.
 
+Arney et al.'s (2017) young- and modern-Sun pair suggests roughly 1.2 K per
+1% of young-Sun flux. On that rough scale the exact window spans about a
+fifth of sunlight. The pair changes spectrum and haze together and comes
+from another case, so a matched solar sweep of a haze climate is needed to
+test the regulator against the Sun's brightening.
+
 <!-- D5 -->
 ### 4.5 Stability and assembly are separate
 
@@ -494,7 +529,8 @@ limits spreads to about ±8 K.
 A crash is read at the first fall below one cell, and invasions use one
 habitat without immigration, with the one-cell rule applied every ten years.
 The climate is one published case with an assumed methane lifetime and
-low-methane bridge. Atmospheric hydrogen up to 100 Pa leaves the set point
+low-methane bridge, and sunlight enters only as a rigid vertical shift of
+that curve. Atmospheric hydrogen up to 100 Pa leaves the set point
 unchanged and moves the reference margin from 0.15 to 0.12 years (ESM).
 
 <!-- D7 -->
@@ -641,6 +677,7 @@ repository.
 | Key | Identifier |
 |---|---|
 | Arney et al. 2016 | 10.1089/ast.2015.1422 |
+| Arney et al. 2017 | 10.3847/1538-4357/836/1/49 |
 | Åström & Murray 2021 | *Feedback systems: an introduction for scientists and engineers*, 2nd edn. Princeton University Press. ISBN 978-0-691-19398-4 |
 | Bebout et al. 2004 | 10.1111/j.1472-4677.2004.00024.x |
 | Eager-Nash et al. 2023 | 10.1029/2022JD037544 |

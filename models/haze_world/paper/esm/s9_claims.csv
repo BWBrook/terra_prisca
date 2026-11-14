@@ -24,3 +24,6 @@ C58,supported,0e29057,"S5, S6",The weak-mode formula passes the original eligibl
 C59,supported,957bd13,S7,"Atmospheric H2 pressure leaves the fixed-chemistry set point unchanged, barely moves the critical lag, and can remove the mixed state at high pressure"
 C60,supported,f384b64,S4,In weakly connected fixed-chemistry spread communities the local supply sensitivity follows a no-fit habitat-geometry relation
 C61,supported,9e2977f,S4,Finite supply responses of weakly connected spread communities move temperature across the habitat spread while keeping centuries-long margins at sampled supplies
+C62,supported,da9c2b3,S9,Imposed climate warming and hydrogen supply are attenuated by the same local closed-loop factor; graded temperature follows imposed warming by |S|/(kE)
+C63,supported,da9c2b3,S9,Fixed-product exact states hold T* across a bounded window of imposed warming on case B with short sampled margins
+C64,supported,da9c2b3,S9,Fixed-product exact states exist at T* on the extracted cooling curves of Arney cases A and C but not on case D

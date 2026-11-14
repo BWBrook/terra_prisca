@@ -277,7 +277,7 @@ def s8_acetate():
 
 CLAIM_USE = {"C05": "S2", "C06": "S2", "C44": "S3", "C45": "S3, S4", "C52": "S3, S6", "C54": "S4", "C55": "S5, S6", "C56": "S5, S6",
              "C57": "S5", "C58": "S5, S6", "C59": "S7", "C38": "S6", "C39": "S6", "C40": "S6", "C41": "S6", "C42": "S6", "C43": "S6",
-             "C46": "S6", "C47": "S6", "C48": "S6", "C49": "S6", "C50": "S6", "C51": "S6", "C60": "S4", "C61": "S4"}
+             "C46": "S6", "C47": "S6", "C48": "S6", "C49": "S6", "C50": "S6", "C51": "S6", "C60": "S4", "C61": "S4", "C62": "S9", "C63": "S9", "C64": "S9"}
 
 
 def s9_claims():
@@ -298,4 +298,4 @@ def main():
     s8_acetate()
     n_claims = s9_claims()
     return (f"S4 classes {classes}; S3 {doubling}, {passed} independent checks passed; S5 {n_dial} dial points, "
-            f"{n_ref} refinement points ({n_fail} outside factor 2); S7 {n_h2} rows; S9 {n_claims} claims")
+            f"{n_ref} refinement points ({n_fail} outside factor 2); S7 {n_h2} rows; S10 {n_claims} claims")
