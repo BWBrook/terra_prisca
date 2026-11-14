@@ -1,0 +1,36 @@
+quantity,paper,reconstruction
+present T-bar (deg C),about 14.0 (text),14.0642
+0.009 law: S at the jump to ice cover (ly/min),1.9544 (Fig. 6 vertical),1.9573
+0.009 law: -2% ice edge where T = -10 C (deg N),50 (text),52.406
+ice-covered T-bar (deg C),-100 (text),-102.4335
+0.005 law: steepest fall in T-bar at S (ly/min),1.87 (Fig. 6); 5-6% (text),1.87
+fixed albedo -10%: cooling at 0-20 and 50-60 (deg C),14.3 (text),14.3082
+fixed albedo -10%: cooling at 80-90 (deg C),13.0 (text),12.5499
+fixed albedo +10%: warming of T-bar (deg C),about 12 (text),12.2756
+K x2: warming of T-bar (deg C),about 5 (text),5.1729
+present NH equator-pole difference (deg C),48 (text),45.7549
+K x2: NH equator-pole difference (deg C),28 (text),19.6825
+K x0.5: polar belts (deg C),below -70 (text),-70.1509
+K x0.5: 40-50N and 40-50S (deg C),below -10 (text),-13.5769
+-3% and K x2: NH equator-pole difference (deg C),26 (text),26.2574
+-3% and K x2: equatorial cooling (deg C),about 16 (text),16.046
+-3% and K x2: T-bar on the warm equilibrium (deg C),not reported,13.0493
+-3% and K x2: T-bar on the cold equilibrium (deg C),3.8 (Fig. 6 square),3.1182
+m -3%: T-bar (deg C),brink of an ice age (text),5.7644
+"albedo 80-90N, case 3 (untreated)",0.61 (Fig. 5),0.6046
+"albedo 70-80N, case 3 (untreated)",0.58 (Fig. 5),0.5706
+"albedo 70-80N, case 4 (untreated)",0.57 (Fig. 5),0.5627
+"albedo 70-80S, case 1 (untreated)",0.79 (Fig. 5),0.7814
+"albedo 80-90S, case 1 (untreated)",0.84 (Fig. 5),0.8222
+"albedo 70-80S, case 2 (untreated)",0.78 (Fig. 5),0.7686
+"albedo 80-90S, case 2 (untreated)",0.82 (Fig. 5),0.8077
+"case 2: warming poleward of 70N, max (deg C)",about 7 (text),7.6713
+"case 2: warming 0-20N and 0-20S, mean (deg C)",about 1 (text),1.0345
+case 2: warming 70-90S (deg C),1-3 (text),4.0205
+case 3: warming 80-90S (deg C),12-15 (text),12.7403
+case 4: warming 80-90S (deg C),12-15 (text),15.5933
+case 3: warming 80-90N (deg C),about 4 (text),4.8035
+cases 5 and 6: warming 80-90N (deg C),7-10 (text),7.28 / 10.74
+cases 5 and 6: warming 80-90S (deg C),13-17 (text),13.53 / 17.14
+"cases 5 and 6: largest tropical warming, 0-20 (deg C)",never exceeds 2 (text),2.0615
+"Table 3 dT1, area mean (deg C)",about 15 (text); 14.8 (table),14.6502

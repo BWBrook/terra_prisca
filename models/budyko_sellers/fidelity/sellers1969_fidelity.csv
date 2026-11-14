@@ -1,0 +1,208 @@
+reading,figure,curve,n,rmse,max_abs
+faithful,fig4,T,18,0.5768,1.1646
+faithful,fig4,v,17,0.263,0.4294
+faithful,fig4,albedo,18,0.0024,0.0072
+faithful,fig3,C,17,3.7515,7.8691
+faithful,fig3,Lc,17,2.2228,5.1382
+faithful,fig3,F,17,4.6483,8.8584
+faithful,fig3,P,17,2.7747,5.4197
+faithful,fig2,dC,17,0.9042,1.9453
+faithful,fig2,Ldc,18,0.6866,1.5537
+faithful,fig2,dF,17,0.8923,1.9057
+faithful,fig2,Rs,18,0.7478,1.5071
+faithful,fig5,5,18,0.25,0.5043
+faithful,fig5,6,18,0.1738,0.3171
+faithful,fig5,1,69,0.5937,1.3528
+faithful,fig5,2,41,0.2898,0.8335
+faithful,fig5,3,22,0.478,0.7807
+faithful,fig5,4,17,0.6406,0.8843
+faithful,fig5,3 south,3,0.5597,0.7891
+faithful,fig5,4 south,8,0.8362,1.6357
+faithful,fig6,0.009,8,0.7496,1.9988
+faithful,fig6,0.005,8,0.9104,1.5483
+faithful,fig6,fixed,80,0.3044,0.6133
+faithful,fig6,K x2,2,0.6631,0.7101
+faithful,fig6,K x0.5,1,1.4754,1.4754
+faithful,fig7,a,18,0.5201,1.4524
+faithful,fig7,b,69,0.8567,2.4947
+faithful,fig7,c,69,0.4905,2.0241
+faithful,fig7,d,69,0.6491,2.2259
+faithful,fig7,e,69,0.6896,1.9447
+faithful,fig7,f,69,2.446,3.9551
+faithful,fig7,g,69,0.7167,1.8538
+faithful,fig7,h,64,3.852,8.4159
+faithful,fig7,i,69,0.6124,1.4778
+faithful,table3,dT1,18,0.2389,0.4256
+faithful,table3,dT2,18,0.452,0.9594
+no transport,fig4,T,18,80.7013,111.3686
+no transport,fig4,albedo,18,0.2379,0.4635
+no change,fig5,5,18,5.5583,13.0236
+no change,fig5,6,18,7.3532,16.8198
+no change,fig5,1,69,1.3959,3.4215
+no change,fig5,2,41,3.7178,7.4712
+no change,fig5,3,22,3.1599,4.0228
+no change,fig5,4,17,4.0765,4.8716
+no change,fig5,3 south,3,11.5612,11.9512
+no change,fig5,4 south,8,11.9819,14.6744
+no change,fig6,0.009,8,57.4291,113.9152
+fixed albedo,fig6,0.009,8,54.2382,109.1778
+no change,fig6,0.005,8,35.8044,65.0387
+fixed albedo,fig6,0.005,8,27.7207,50.947
+no change,fig7,b,69,3.0779,4.5943
+no change,fig7,c,69,12.3204,19.5879
+no change,fig7,d,69,19.9861,32.05
+no change,fig7,e,69,4.6792,7.5359
+no change,fig7,f,69,14.3518,18.901
+no change,fig7,g,69,13.2668,31.5758
+no change,fig7,h,64,29.6406,50.8298
+no change,fig7,i,69,10.4578,15.96
+no change,table3,dT1,18,18.2039,27.0
+no change,table3,dT2,18,16.8966,25.2
+fixed albedo,fig5,5,18,2.0799,3.3219
+fixed albedo,fig5,6,18,2.6114,3.5636
+fixed albedo,fig5,1,69,0.5751,0.7878
+fixed albedo,fig5,2,41,1.7579,2.487
+fixed albedo,fig5,3,22,2.067,2.5234
+fixed albedo,fig5,4,17,2.6132,3.0196
+fixed albedo,fig5,3 south,3,2.3499,2.4698
+fixed albedo,fig5,4 south,8,2.6516,3.0455
+ocean band mean,fig4,T,18,0.5755,1.1601
+ocean band mean,fig4,v,17,0.2651,0.4451
+ocean band mean,fig4,albedo,18,0.0024,0.0072
+ocean band mean,fig3,C,17,4.3191,11.6077
+ocean band mean,fig3,Lc,17,2.1884,5.0844
+ocean band mean,fig3,F,17,4.963,8.9289
+ocean band mean,fig3,P,17,2.7866,5.4236
+ocean band mean,fig2,dC,17,1.3356,3.048
+ocean band mean,fig2,Ldc,18,0.7141,1.7578
+ocean band mean,fig2,dF,17,1.2925,3.3399
+ocean band mean,fig2,Rs,18,0.7483,1.5167
+ocean band mean,fig5,5,18,0.2496,0.5036
+ocean band mean,fig5,6,18,0.174,0.317
+ocean band mean,fig5,1,69,0.596,1.3563
+ocean band mean,fig5,2,41,0.2928,0.8371
+ocean band mean,fig5,3,22,0.4783,0.7815
+ocean band mean,fig5,4,17,0.6314,0.8741
+ocean band mean,fig5,3 south,3,0.5626,0.7923
+ocean band mean,fig5,4 south,8,0.8337,1.6327
+ocean band mean,fig6,0.009,8,0.7633,2.0408
+ocean band mean,fig6,0.005,8,0.9163,1.5508
+ocean band mean,fig6,fixed,80,0.3029,0.6114
+ocean band mean,fig6,K x2,2,0.6627,0.7101
+ocean band mean,fig6,K x0.5,1,1.5319,1.5319
+ocean band mean,fig7,a,18,0.5172,1.4468
+ocean band mean,fig7,b,69,0.8487,2.4823
+ocean band mean,fig7,c,69,0.4848,2.0152
+ocean band mean,fig7,d,69,0.6466,2.2226
+ocean band mean,fig7,e,69,0.6852,1.9408
+ocean band mean,fig7,f,69,2.4874,3.995
+ocean band mean,fig7,g,69,0.7166,1.8557
+ocean band mean,fig7,h,64,3.8709,8.4539
+ocean band mean,fig7,i,69,0.6123,1.4824
+ocean band mean,table3,dT1,18,0.2407,0.426
+ocean band mean,table3,dT2,18,0.4498,0.9582
+Tetens vapour pressure,fig4,T,18,0.5986,1.2065
+Tetens vapour pressure,fig4,v,17,0.2638,0.4326
+Tetens vapour pressure,fig4,albedo,18,0.0025,0.0072
+Tetens vapour pressure,fig3,C,17,3.9124,8.261
+Tetens vapour pressure,fig3,Lc,17,2.3457,5.1979
+Tetens vapour pressure,fig3,F,17,4.6647,8.9932
+Tetens vapour pressure,fig3,P,17,2.7945,5.4158
+Tetens vapour pressure,fig2,dC,17,0.9121,1.941
+Tetens vapour pressure,fig2,Ldc,18,0.692,1.5896
+Tetens vapour pressure,fig2,dF,17,0.8944,1.8902
+Tetens vapour pressure,fig2,Rs,18,0.7561,1.5281
+Tetens vapour pressure,fig5,5,18,0.2481,0.4957
+Tetens vapour pressure,fig5,6,18,0.1718,0.314
+Tetens vapour pressure,fig5,1,69,0.5875,1.3442
+Tetens vapour pressure,fig5,2,41,0.2855,0.8305
+Tetens vapour pressure,fig5,3,22,0.4764,0.7809
+Tetens vapour pressure,fig5,4,17,0.6337,0.879
+Tetens vapour pressure,fig5,3 south,3,0.5548,0.7844
+Tetens vapour pressure,fig5,4 south,8,0.828,1.6242
+Tetens vapour pressure,fig6,0.009,8,0.7481,1.9922
+Tetens vapour pressure,fig6,0.005,8,0.941,1.5636
+Tetens vapour pressure,fig6,fixed,80,0.2917,0.5953
+Tetens vapour pressure,fig6,K x2,2,0.6656,0.7113
+Tetens vapour pressure,fig6,K x0.5,1,1.4692,1.4692
+Tetens vapour pressure,fig7,a,18,0.5405,1.498
+Tetens vapour pressure,fig7,b,69,0.8777,2.5404
+Tetens vapour pressure,fig7,c,69,0.5135,2.0849
+Tetens vapour pressure,fig7,d,69,0.6594,2.2452
+Tetens vapour pressure,fig7,e,69,0.6955,1.9581
+Tetens vapour pressure,fig7,f,69,2.4327,3.9327
+Tetens vapour pressure,fig7,g,69,0.7243,1.8582
+Tetens vapour pressure,fig7,h,64,3.8547,8.4224
+Tetens vapour pressure,fig7,i,69,0.6168,1.4989
+Tetens vapour pressure,table3,dT1,18,0.2469,0.4351
+Tetens vapour pressure,table3,dT2,18,0.4502,0.9832
+vT in deg C,fig4,T,18,13.9737,29.3237
+vT in deg C,fig4,v,17,5.4448,9.2267
+vT in deg C,fig4,albedo,18,0.096,0.2377
+vT in deg C,fig3,C,17,82.3718,177.418
+vT in deg C,fig3,Lc,17,58.0756,123.3366
+vT in deg C,fig3,F,17,28.7457,58.8768
+vT in deg C,fig3,P,17,35.2618,80.1996
+vT in deg C,fig2,dC,17,27.735,82.0551
+vT in deg C,fig2,Ldc,18,19.3062,66.6492
+vT in deg C,fig2,dF,17,8.2204,21.4195
+vT in deg C,fig2,Rs,18,10.9764,38.8426
+vT in deg C,fig5,5,18,6.8589,14.3019
+vT in deg C,fig5,6,18,7.9485,16.562
+vT in deg C,fig5,1,69,5.9137,16.3228
+vT in deg C,fig5,2,41,7.9831,17.6495
+vT in deg C,fig5,3,22,1.1769,2.3968
+vT in deg C,fig5,4,17,1.6321,2.9591
+vT in deg C,fig5,3 south,3,11.5332,13.1175
+vT in deg C,fig5,4 south,8,10.313,15.7088
+vT in deg C,fig6,0.009,8,3.1672,4.9941
+vT in deg C,fig6,0.005,8,4.2209,8.0852
+vT in deg C,fig6,fixed,80,4.7131,5.4191
+vT in deg C,fig6,K x2,2,1.8193,2.5519
+vT in deg C,fig6,K x0.5,1,1.8291,1.8291
+vT in deg C,fig7,a,18,13.8986,28.8134
+vT in deg C,fig7,b,69,12.5427,29.7976
+vT in deg C,fig7,c,69,9.1614,32.2893
+vT in deg C,fig7,d,69,4.9568,18.5259
+vT in deg C,fig7,e,69,13.0672,29.1866
+vT in deg C,fig7,f,69,12.1049,25.9404
+vT in deg C,fig7,g,69,3.4626,9.489
+vT in deg C,fig7,h,64,13.0173,23.0656
+vT in deg C,fig7,i,69,7.4436,19.4676
+vT in deg C,table3,dT1,18,8.8632,20.7033
+vT in deg C,table3,dT2,18,9.0165,20.893
+|dT| per hemisphere,fig4,T,18,1.2042,2.3175
+|dT| per hemisphere,fig4,v,17,0.2888,0.576
+|dT| per hemisphere,fig4,albedo,18,0.0068,0.0124
+|dT| per hemisphere,fig3,C,17,3.8066,10.514
+|dT| per hemisphere,fig3,Lc,17,3.0289,5.7725
+|dT| per hemisphere,fig3,F,17,3.4185,6.3065
+|dT| per hemisphere,fig3,P,17,2.349,5.0993
+|dT| per hemisphere,fig2,dC,17,1.2238,3.3764
+|dT| per hemisphere,fig2,Ldc,18,0.8507,1.4038
+|dT| per hemisphere,fig2,dF,17,0.8828,1.9836
+|dT| per hemisphere,fig2,Rs,18,0.7676,1.7219
+|dT| per hemisphere,fig5,5,18,0.4289,0.886
+|dT| per hemisphere,fig5,6,18,0.2495,0.5637
+|dT| per hemisphere,fig5,1,69,0.9406,2.4072
+|dT| per hemisphere,fig5,2,41,1.4477,2.6452
+|dT| per hemisphere,fig5,3,22,1.9709,2.6248
+|dT| per hemisphere,fig5,4,17,2.5518,3.1797
+|dT| per hemisphere,fig5,3 south,3,1.1462,1.4176
+|dT| per hemisphere,fig5,4 south,8,1.5805,2.3711
+|dT| per hemisphere,fig6,0.009,8,0.4891,1.1754
+|dT| per hemisphere,fig6,0.005,8,0.7514,1.4665
+|dT| per hemisphere,fig6,fixed,80,0.3597,0.6847
+|dT| per hemisphere,fig6,K x2,2,0.6678,0.7264
+|dT| per hemisphere,fig6,K x0.5,1,1.3431,1.3431
+|dT| per hemisphere,fig7,a,18,1.1498,2.5021
+|dT| per hemisphere,fig7,b,69,1.1659,3.1881
+|dT| per hemisphere,fig7,c,69,0.7429,2.7635
+|dT| per hemisphere,fig7,d,69,1.0173,3.0222
+|dT| per hemisphere,fig7,e,69,1.3703,2.9355
+|dT| per hemisphere,fig7,f,69,2.3433,4.8555
+|dT| per hemisphere,fig7,g,69,0.7962,1.8617
+|dT| per hemisphere,fig7,h,64,5.0141,8.1893
+|dT| per hemisphere,fig7,i,69,0.9552,2.2479
+|dT| per hemisphere,table3,dT1,18,2.2757,4.3496
+|dT| per hemisphere,table3,dT2,18,2.3042,4.5588
