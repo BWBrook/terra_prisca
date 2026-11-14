@@ -394,7 +394,7 @@ where $n = 4(r^*/t_{CH_4} - c\Phi_{abiotic})/(\chi H)$ is the catabolic hydrogen
 | C57 | supported | 0e29057 | S5 | A thirty-year first-loss margin has a small nonzero local temperature-sensitivity cost on all four dial branches |
 | C58 | supported | 0e29057 | S5, S6 | The weak-mode formula passes the original eligible grid but fails at authorised refinement states |
 | C59 | supported | 957bd13 | S7 | Atmospheric H2 pressure leaves the fixed-chemistry set point unchanged, barely moves the critical lag, and can remove the mixed state at high pressure |
-| C60 | supported | 7318f4c | S4 | In weakly connected fixed-chemistry spread communities the local supply sensitivity follows a no-fit habitat-geometry relation |
+| C60 | supported | f384b64 | S4 | In weakly connected fixed-chemistry spread communities the local supply sensitivity follows a no-fit habitat-geometry relation |
 | C61 | supported | 9e2977f | S4 | Finite supply responses of weakly connected spread communities move temperature across the habitat spread while keeping centuries-long margins at sampled supplies |
 
 <!-- /table:s9_claims -->
