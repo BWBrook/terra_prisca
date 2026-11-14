@@ -1,59 +1,95 @@
 reading,figure,curve,columns,rmse,median_abs,max_abs,model_to_ink_median_px,model_to_ink_p95_px,ink_to_model_median_px,ink_to_model_p95_px,within_3px
-faithful,fig3,T0,155,2.46,1.41,4.22,21.6,45.7,14.0,31.1,0.116
-faithful,fig4,T0,367,0.65,0.4,1.51,1.8,7.2,4.4,10.8,0.427
-faithful,fig4,T1.0,413,0.34,0.18,1.59,0.7,13.9,2.7,13.2,0.61
-faithful,fig4,T1.5,381,0.91,0.86,3.06,6.3,16.9,8.5,17.7,0.11
-faithful,fig6,T0,419,0.75,0.49,1.46,1.8,8.0,4.6,10.9,0.391
-faithful,fig6,Tq,453,0.64,0.35,1.46,0.9,13.6,3.2,14.4,0.537
-faithful,fig3,T observed,299,0.96,0.49,1.79,2.8,10.0,5.7,14.3,0.318
-faithful,fig5,Tp,404,0.66,0.35,5.27,1.8,14.9,4.4,38.4,0.433
-faithful,fig5,phi0,218,1.53,1.41,3.65,12.1,25.6,14.1,37.5,0.116
-alt: insolation-weighted planetary albedo,fig3,T0,155,3.37,1.21,5.8,32.0,50.2,13.5,42.6,0.111
-alt: insolation-weighted planetary albedo,fig4,T0,367,2.1,1.98,3.05,12.7,20.5,15.3,22.8,0.108
-alt: insolation-weighted planetary albedo,fig4,T1.0,413,1.41,1.43,2.44,9.0,15.6,10.9,18.1,0.058
-alt: insolation-weighted planetary albedo,fig4,T1.5,381,2.36,2.34,4.53,17.5,25.2,20.0,27.8,0.045
-alt: insolation-weighted planetary albedo,fig6,T0,419,2.11,2.01,3.04,13.9,21.9,15.9,24.2,0.067
-alt: insolation-weighted planetary albedo,fig6,Tq,453,1.36,1.35,2.01,9.6,17.5,11.6,19.6,0.094
-alt: insolation-weighted planetary albedo,fig3,T observed,299,2.43,2.07,3.37,16.8,21.4,19.6,25.8,0.084
-alt: insolation-weighted planetary albedo,fig5,Tp,404,2.21,1.9,7.09,18.0,31.3,21.6,57.5,0.0
-alt: insolation-weighted planetary albedo,fig5,phi0,218,1.51,1.46,3.25,12.4,25.3,14.5,33.9,0.095
-alt: stepped present-day albedo,fig3,T0,155,3.38,0.75,6.21,32.0,50.7,34.9,64.7,0.176
-alt: stepped present-day albedo,fig4,T0,367,1.61,1.49,2.59,12.3,22.7,14.4,23.8,0.047
-alt: stepped present-day albedo,fig4,T1.0,413,0.97,0.97,2.84,5.9,11.8,8.0,14.0,0.116
-alt: stepped present-day albedo,fig4,T1.5,381,1.93,1.91,4.11,14.4,21.3,16.7,23.9,0.049
-alt: stepped present-day albedo,fig6,T0,419,1.74,1.58,2.97,14.2,30.3,16.1,30.8,0.05
-alt: stepped present-day albedo,fig6,Tq,453,0.95,0.88,1.55,5.9,12.3,7.8,14.3,0.187
-alt: stepped present-day albedo,fig3,T observed,299,2.05,1.62,3.64,14.7,30.4,17.7,31.4,0.044
-alt: stepped present-day albedo,fig5,Tp,404,1.63,1.27,6.55,11.5,26.8,15.0,51.9,0.0
-alt: stepped present-day albedo,fig5,phi0,218,1.51,1.45,3.37,12.3,25.3,14.3,35.1,0.103
-alt: albedo profile translated with the edge,fig3,T0,155,2.46,1.41,4.22,21.6,45.7,14.0,31.1,0.116
-alt: albedo profile translated with the edge,fig4,T0,367,0.65,0.4,1.51,1.8,7.2,4.4,10.8,0.427
-alt: albedo profile translated with the edge,fig4,T1.0,413,60.05,63.03,67.97,442.6,480.9,551.3,669.0,0.0
-alt: albedo profile translated with the edge,fig4,T1.5,381,55.59,60.59,64.9,408.3,449.4,507.3,635.5,0.0
-alt: albedo profile translated with the edge,fig6,T0,419,0.75,0.49,1.46,1.8,8.0,4.6,10.9,0.391
-alt: albedo profile translated with the edge,fig6,Tq,453,0.58,0.56,0.98,3.0,7.7,4.5,9.6,0.403
-alt: albedo profile translated with the edge,fig3,T observed,299,0.96,0.49,1.79,2.8,10.0,5.7,14.3,0.318
-alt: albedo profile translated with the edge,fig5,Tp,404,2.8,2.37,6.35,139.4,380.4,75.6,235.3,0.011
-alt: albedo profile translated with the edge,fig5,phi0,218,5.7,5.25,9.51,61.7,269.9,61.7,223.3,0.004
-alt: S counted over the whole globe,fig3,T0,155,2.46,1.41,4.22,21.6,45.7,14.0,31.1,0.116
-alt: S counted over the whole globe,fig4,T0,367,0.65,0.4,1.51,1.8,7.2,4.4,10.8,0.427
-alt: S counted over the whole globe,fig4,T1.0,413,1.48,1.5,2.51,9.7,16.2,11.9,19.0,0.036
-alt: S counted over the whole globe,fig4,T1.5,381,5.3,3.89,16.81,35.3,46.4,37.3,48.4,0.0
-alt: S counted over the whole globe,fig6,T0,419,0.75,0.49,1.46,1.8,8.0,4.6,10.9,0.391
-alt: S counted over the whole globe,fig6,Tq,453,1.14,0.9,2.13,6.6,21.1,8.0,21.5,0.172
-alt: S counted over the whole globe,fig3,T observed,299,0.96,0.49,1.79,2.8,10.0,5.7,14.3,0.318
-alt: S counted over the whole globe,fig5,Tp,404,2.53,1.34,10.6,12.7,51.3,21.0,94.8,0.144
-alt: S counted over the whole globe,fig5,phi0,218,3.9,1.45,11.3,19.0,71.4,20.8,120.3,0.129
-null: no feedback,fig4,T1.0,413,2.98,2.18,8.31,14.5,39.5,18.6,44.1,0.0
-null: no feedback,fig4,T1.5,381,7.28,4.91,17.71,46.4,74.9,50.9,81.2,0.0
-null: no feedback,fig6,Tq,453,4.69,1.62,12.71,14.7,141.3,14.7,68.8,0.0
-null: no feedback,fig5,Tp,404,3.27,2.02,11.96,20.4,63.3,30.0,109.2,0.073
-null: no feedback,fig5,phi0,218,9.08,6.23,20.58,74.0,158.0,77.9,212.5,0.015
-null: no change,fig4,T1.0,413,4.33,3.76,9.65,24.7,47.5,30.5,53.0,0.0
-null: no change,fig4,T1.5,381,9.28,7.25,19.85,59.8,85.9,68.9,94.0,0.0
-null: no change,fig6,Tq,453,4.69,1.62,12.71,14.7,141.3,14.7,68.8,0.0
-null: no change,fig5,Tp,404,4.61,3.18,14.45,33.3,87.5,45.7,135.7,0.045
-null: no change,fig5,phi0,218,9.08,6.23,20.58,74.0,158.0,77.9,212.5,0.015
+faithful,fig3,T0,155,2.39,2.16,3.68,20.7,45.1,20.1,27.1,0.125
+faithful,fig4,T0,367,0.52,0.43,1.91,1.9,7.6,4.1,10.4,0.426
+faithful,fig4,T1.0,413,0.84,0.86,1.84,6.4,15.1,7.5,14.4,0.274
+faithful,fig4,T1.5,381,0.5,0.21,2.48,2.6,14.0,4.4,15.4,0.418
+faithful,fig6,T0,419,0.58,0.52,1.3,2.1,5.6,4.6,8.8,0.382
+faithful,fig6,Tq,453,1.09,0.99,1.89,6.8,18.0,8.7,18.7,0.204
+faithful,fig3,T observed,299,0.62,0.36,1.28,1.5,6.5,4.8,10.8,0.399
+faithful,fig5,Tp,404,0.64,0.4,4.99,2.1,14.2,4.6,35.4,0.403
+faithful,fig5,phi0,232,1.47,1.4,3.25,12.4,25.3,14.1,27.5,0.097
+alt: area-mean planetary albedo,fig3,T0,155,2.74,2.74,3.96,23.3,46.0,14.5,38.3,0.026
+alt: area-mean planetary albedo,fig4,T0,367,1.78,1.85,3.47,11.8,17.4,14.6,21.0,0.046
+alt: area-mean planetary albedo,fig4,T1.0,413,2.29,2.38,3.36,15.6,23.9,18.3,27.0,0.016
+alt: area-mean planetary albedo,fig4,T1.5,381,1.23,1.26,1.67,7.1,13.1,10.1,16.4,0.114
+alt: area-mean planetary albedo,fig6,T0,419,1.82,1.91,2.87,11.4,22.0,14.7,23.8,0.013
+alt: area-mean planetary albedo,fig6,Tq,453,2.59,2.55,3.45,23.2,35.7,24.0,35.1,0.0
+alt: area-mean planetary albedo,fig3,T observed,299,1.57,1.8,2.61,10.1,19.1,13.2,23.0,0.139
+alt: area-mean planetary albedo,fig5,Tp,404,2.27,2.43,3.19,22.7,26.3,24.2,29.7,0.03
+alt: area-mean planetary albedo,fig5,phi0,232,1.49,1.35,3.65,12.1,25.6,13.7,31.0,0.118
+alt: 365.25/12-day month,fig3,T0,155,3.37,1.21,5.8,32.0,50.2,13.5,42.6,0.111
+alt: 365.25/12-day month,fig4,T0,367,2.1,1.98,3.05,12.7,20.5,15.3,22.8,0.108
+alt: 365.25/12-day month,fig4,T1.0,413,1.41,1.43,2.44,9.0,15.6,10.9,18.1,0.058
+alt: 365.25/12-day month,fig4,T1.5,381,2.36,2.34,4.53,17.5,25.2,20.0,27.8,0.045
+alt: 365.25/12-day month,fig6,T0,419,2.11,2.01,3.04,13.9,21.9,15.9,24.2,0.067
+alt: 365.25/12-day month,fig6,Tq,453,1.36,1.35,2.01,9.6,17.5,11.6,19.6,0.094
+alt: 365.25/12-day month,fig3,T observed,299,2.43,2.07,3.37,16.8,21.4,19.6,25.8,0.084
+alt: 365.25/12-day month,fig5,Tp,404,2.21,1.9,7.09,18.0,31.3,21.6,57.5,0.0
+alt: 365.25/12-day month,fig5,phi0,232,1.47,1.4,3.25,12.4,25.3,14.1,27.5,0.097
+"alt: 365.25/12-day month, area-mean planetary albedo",fig3,T0,155,2.46,1.41,4.22,21.6,45.7,14.0,31.1,0.116
+"alt: 365.25/12-day month, area-mean planetary albedo",fig4,T0,367,0.65,0.4,1.51,1.8,7.2,4.4,10.8,0.427
+"alt: 365.25/12-day month, area-mean planetary albedo",fig4,T1.0,413,0.34,0.18,1.59,0.7,13.9,2.7,13.2,0.61
+"alt: 365.25/12-day month, area-mean planetary albedo",fig4,T1.5,381,0.91,0.86,3.06,6.3,16.9,8.5,17.7,0.11
+"alt: 365.25/12-day month, area-mean planetary albedo",fig6,T0,419,0.75,0.49,1.46,1.8,8.0,4.6,10.9,0.391
+"alt: 365.25/12-day month, area-mean planetary albedo",fig6,Tq,453,0.64,0.35,1.46,0.9,13.6,3.2,14.4,0.537
+"alt: 365.25/12-day month, area-mean planetary albedo",fig3,T observed,299,0.96,0.49,1.79,2.8,10.0,5.7,14.3,0.318
+"alt: 365.25/12-day month, area-mean planetary albedo",fig5,Tp,404,0.66,0.35,5.27,1.8,14.9,4.4,38.4,0.433
+"alt: 365.25/12-day month, area-mean planetary albedo",fig5,phi0,232,1.49,1.35,3.65,12.1,25.6,13.7,31.0,0.118
+alt: stepped present-day albedo,fig3,T0,155,2.85,1.59,5.35,26.2,47.2,27.6,54.7,0.007
+alt: stepped present-day albedo,fig4,T0,367,0.75,0.38,1.74,4.1,19.6,6.4,20.5,0.351
+alt: stepped present-day albedo,fig4,T1.0,413,0.42,0.35,1.95,1.8,13.1,3.8,12.6,0.485
+alt: stepped present-day albedo,fig4,T1.5,381,0.99,0.81,3.1,6.0,15.8,8.7,17.6,0.172
+alt: stepped present-day albedo,fig6,T0,419,0.97,0.41,3.16,6.5,26.6,8.1,27.8,0.272
+alt: stepped present-day albedo,fig6,Tq,453,0.57,0.43,1.2,1.5,10.4,3.6,11.5,0.49
+alt: stepped present-day albedo,fig3,T observed,299,1.12,0.47,2.76,7.8,25.9,9.7,25.9,0.204
+alt: stepped present-day albedo,fig5,Tp,404,1.05,0.63,5.71,4.8,21.0,8.2,43.0,0.085
+alt: stepped present-day albedo,fig5,phi0,232,1.47,1.42,3.09,12.6,25.2,14.3,25.4,0.087
+alt: albedo profile translated with the edge,fig3,T0,155,2.39,2.16,3.68,20.7,45.1,20.1,27.1,0.125
+alt: albedo profile translated with the edge,fig4,T0,367,0.52,0.43,1.91,1.9,7.6,4.1,10.4,0.426
+alt: albedo profile translated with the edge,fig4,T1.0,413,59.76,62.72,67.75,440.7,476.0,550.2,667.8,0.0
+alt: albedo profile translated with the edge,fig4,T1.5,381,55.3,60.4,64.69,406.2,444.5,506.3,634.3,0.0
+alt: albedo profile translated with the edge,fig6,T0,419,0.58,0.52,1.3,2.1,5.6,4.6,8.8,0.382
+alt: albedo profile translated with the edge,fig6,Tq,453,0.65,0.44,1.34,1.8,11.8,3.9,12.9,0.448
+alt: albedo profile translated with the edge,fig3,T observed,299,0.62,0.36,1.28,1.5,6.5,4.8,10.8,0.399
+alt: albedo profile translated with the edge,fig5,Tp,404,2.8,2.39,6.41,140.9,382.0,77.5,237.7,0.009
+alt: albedo profile translated with the edge,fig5,phi0,232,5.89,5.44,9.6,117.7,340.1,64.2,225.7,0.004
+alt: S counted over the whole globe,fig3,T0,155,2.39,2.16,3.68,20.7,45.1,20.1,27.1,0.125
+alt: S counted over the whole globe,fig4,T0,367,0.52,0.43,1.91,1.9,7.6,4.1,10.4,0.426
+alt: S counted over the whole globe,fig4,T1.0,413,0.97,0.75,2.06,5.6,14.5,7.5,16.6,0.154
+alt: S counted over the whole globe,fig4,T1.5,381,4.81,3.25,16.33,30.7,45.2,33.1,47.5,0.0
+alt: S counted over the whole globe,fig6,T0,419,0.58,0.52,1.3,2.1,5.6,4.6,8.8,0.382
+alt: S counted over the whole globe,fig6,Tq,453,1.7,1.65,2.54,13.2,25.4,15.1,25.6,0.0
+alt: S counted over the whole globe,fig3,T observed,299,0.62,0.36,1.28,1.5,6.5,4.8,10.8,0.399
+alt: S counted over the whole globe,fig5,Tp,404,2.5,1.28,10.55,12.2,51.0,20.5,94.3,0.162
+alt: S counted over the whole globe,fig5,phi0,232,3.81,1.51,11.2,18.7,71.0,18.7,112.3,0.144
+alt: ice threshold from the model's present T0 at 72 deg,fig3,T0,155,2.39,2.16,3.68,20.7,45.1,20.1,27.1,0.125
+alt: ice threshold from the model's present T0 at 72 deg,fig4,T0,367,0.52,0.43,1.91,1.9,7.6,4.1,10.4,0.426
+alt: ice threshold from the model's present T0 at 72 deg,fig4,T1.0,413,1.05,0.48,7.04,3.7,16.9,5.9,18.4,0.285
+alt: ice threshold from the model's present T0 at 72 deg,fig4,T1.5,381,4.0,2.28,15.37,22.2,43.4,24.6,45.5,0.0
+alt: ice threshold from the model's present T0 at 72 deg,fig6,T0,419,0.58,0.52,1.3,2.1,5.6,4.6,8.8,0.382
+alt: ice threshold from the model's present T0 at 72 deg,fig6,Tq,453,1.09,0.99,1.89,6.8,18.0,8.7,18.7,0.204
+alt: ice threshold from the model's present T0 at 72 deg,fig3,T observed,299,0.62,0.36,1.28,1.5,6.5,4.8,10.8,0.399
+alt: ice threshold from the model's present T0 at 72 deg,fig5,Tp,404,2.03,1.58,8.93,17.5,42.2,34.8,154.8,0.0
+alt: ice threshold from the model's present T0 at 72 deg,fig5,phi0,232,5.39,5.18,10.68,53.9,71.6,70.4,140.6,0.0
+alt: ice threshold from the observed T at 72 deg (Fig. 3),fig3,T0,155,2.39,2.16,3.68,20.7,45.1,20.1,27.1,0.125
+alt: ice threshold from the observed T at 72 deg (Fig. 3),fig4,T0,367,0.52,0.43,1.91,1.9,7.6,4.1,10.4,0.426
+alt: ice threshold from the observed T at 72 deg (Fig. 3),fig4,T1.0,413,0.56,0.52,1.49,2.3,10.8,4.0,9.8,0.448
+alt: ice threshold from the observed T at 72 deg (Fig. 3),fig4,T1.5,381,1.08,0.9,3.19,8.9,22.9,11.1,24.4,0.079
+alt: ice threshold from the observed T at 72 deg (Fig. 3),fig6,T0,419,0.58,0.52,1.3,2.1,5.6,4.6,8.8,0.382
+alt: ice threshold from the observed T at 72 deg (Fig. 3),fig6,Tq,453,1.09,0.99,1.89,6.8,18.0,8.7,18.7,0.204
+alt: ice threshold from the observed T at 72 deg (Fig. 3),fig3,T observed,299,0.62,0.36,1.28,1.5,6.5,4.8,10.8,0.399
+alt: ice threshold from the observed T at 72 deg (Fig. 3),fig5,Tp,404,0.93,0.16,6.68,0.6,23.3,5.3,53.2,0.456
+alt: ice threshold from the observed T at 72 deg (Fig. 3),fig5,phi0,232,1.66,0.48,5.73,5.0,37.4,6.1,53.7,0.332
+null: no feedback,fig4,T1.0,413,2.55,1.39,7.94,10.5,37.8,13.6,42.2,0.0
+null: no feedback,fig4,T1.5,381,6.83,4.15,17.24,39.6,73.5,45.8,79.4,0.0
+null: no feedback,fig6,Tq,453,5.01,2.35,12.93,22.1,144.2,22.2,70.5,0.0
+null: no feedback,fig5,Tp,404,3.22,1.97,11.91,19.8,62.7,29.4,108.6,0.087
+null: no feedback,fig5,phi0,232,9.08,6.51,20.58,74.0,158.0,75.9,212.9,0.016
+null: no change,fig4,T1.0,413,3.82,3.03,9.28,20.7,46.0,25.3,51.2,0.0
+null: no change,fig4,T1.5,381,8.78,6.56,19.36,55.2,84.4,64.1,92.1,0.0
+null: no change,fig6,Tq,453,5.01,2.35,12.93,22.1,144.2,22.2,70.5,0.0
+null: no change,fig5,Tp,404,4.56,3.13,14.4,32.8,86.9,45.1,135.1,0.045
+null: no change,fig5,phi0,232,9.08,6.51,20.58,74.0,158.0,75.9,212.9,0.016
 null: observed T offered as T0,fig3,T0,155,1.93,1.79,4.1,15.5,45.9,16.1,42.0,0.0
 printed vs printed,fig3 T observed,fig3 T0,200,1.71,1.71,2.62,,,,,
 printed vs printed,fig4 T0,fig3 T0,200,1.95,1.72,2.86,,,,,

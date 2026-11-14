@@ -105,6 +105,8 @@ FIGS = {
 # a steep curve row by row; "keep" limits a trace to pixel-x ranges where the
 # curve is clear of its neighbours (Fig. 5's curves 2-5 merge near 30N-30S).
 TRACES = {
+    # Fig. 4's solid line is the observed profile; the circles on it are computed.
+    ("fig4", "T observed"): dict(seeds=[(600, 420)], box=(414, 1134, 342, 598)),
     ("fig5", "1"): dict(seeds=[(1720, 2700)]),
     ("fig5", "2"): dict(seeds=[(1370, 2415), (2070, 2600)], strict=True, keep=[(1352, 1560), (1830, 2128)]),
     ("fig5", "3"): dict(seeds=[(1380, 2565)], strict=True, keep=[(1352, 1600)]),
@@ -115,12 +117,24 @@ TRACES = {
     ("fig6", "0.009 drop"): dict(seeds=[(633, 2300)], rows=True),
     ("fig7", "d"): dict(seeds=[(1725, 420)]), ("fig7", "c"): dict(seeds=[(1725, 465)]),
     ("fig7", "b"): dict(seeds=[(1725, 517)]), ("fig7", "f"): dict(seeds=[(1725, 620)]),
-    ("fig7", "i"): dict(seeds=[(1725, 670)]), ("fig7", "g"): dict(seeds=[(1375, 720)]),
+    ("fig7", "i"): dict(seeds=[(1725, 670)]),
+    # g crosses the circled curve a near x = 1630 and 1810 and runs flat below it
+    # (y ~ 551) between them. Traced from the left end it switches onto a at the
+    # first crossing, so it is traced from its own crest and stopped at x = 2000,
+    # before it converges with c and d.
+    ("fig7", "g"): dict(segments=[((1725, 551), (1364, 2000))]),
     ("fig7", "e"): dict(seeds=[(1365, 975)]),
-    ("fig7", "h"): dict(seeds=[(1395, 1310), (2025, 1200)], rows=True),
+}
+
+# Dashed curves read as their isolated dashes: connected components of the
+# given size and elongation (ratio of principal axes), clear of the frame
+# ticks and of the horizontal reference lines. Fig. 7's h is its only dashed
+# curve; dashes that touch a solid curve near the crest are lost, not guessed.
+DASHES = {
+    ("fig7", "h"): dict(size=(30, 150), elongation=3.0, margin=20, drop_rows=[(662, 682), (838, 858)], drop_boxes=[(2050, 2128, 640, 1240)]),
 }
 # Reference lines and lettering kept out of the traces, as (x0, x1, y0, y1).
-TRACE_EXCLUDE = {"fig5": [(1440, 2000, 1680, 1960)], "fig6": [], "fig7": []}
+TRACE_EXCLUDE = {"fig4": [(414, 1134, 444, 467)], "fig5": [(1440, 2000, 1680, 1960)], "fig6": [], "fig7": []}
 
 # Fig. 6 marks its computed points with circles (two albedo laws), a square
 # (a and K's doubled) and a triangle (halved). Positions are read by eye and
@@ -259,20 +273,50 @@ def load(pdf: Path = DEFAULT_PDF) -> Scan:
         spec = FIGS[fig]
         ink = pages[spec["page"]]
         pieces = []
-        for seed in t["seeds"]:
+        segments = t.get("segments") or [(sd, None) for sd in t["seeds"]]
+        for seed, span in segments:
             seed = snap(ink, seed)
             if t.get("rows"):
                 x0, x1, y0, y1 = spec["box"]
                 ex = [(e[2], e[3], e[0], e[1]) for e in TRACE_EXCLUDE[fig]]
                 px = track(ink.T, (y0, y1, x0, x1), (seed[1], seed[0]), exclude=ex, strict=t.get("strict", False))[:, ::-1]
             else:
-                px = track(ink, spec["box"], seed, exclude=TRACE_EXCLUDE[fig], strict=t.get("strict", False))
+                px = track(ink, t.get("box", spec["box"]), seed, exclude=TRACE_EXCLUDE[fig], strict=t.get("strict", False))
+            if span is not None:
+                px = px[(px[:, 0] >= span[0]) & (px[:, 0] <= span[1])]
             pieces.append(px)
         px = np.unique(np.vstack(pieces), axis=0)
         if "keep" in t:
             px = px[np.any([(px[:, 0] >= a) & (px[:, 0] <= b) for a, b in t["keep"]], axis=0)]
         traces[(fig, name)] = (px, frames[(fig, next(iter(spec["panels"])))].to_data(px))
+    for (fig, name), d in DASHES.items():
+        spec = FIGS[fig]
+        px = dash_pixels(pages[spec["page"]], spec["box"], **d)
+        traces[(fig, name)] = (px, frames[(fig, next(iter(spec["panels"])))].to_data(px))
     return Scan(pages, frames, points, traces)
+
+
+def dash_pixels(ink, box, size, elongation, margin, drop_rows, drop_boxes=()):
+    """Pixels of the isolated, elongated dash components inside box."""
+    from scipy import ndimage
+
+    x0, x1, y0, y1 = box
+    sub = np.zeros_like(ink)
+    sub[y0:y1, x0:x1] = ink[y0:y1, x0:x1]
+    lab, _ = ndimage.label(sub, structure=np.ones((3, 3)))
+    keep = []
+    for i, sl in enumerate(ndimage.find_objects(lab)):
+        ys, xs = np.nonzero(lab[sl] == i + 1)
+        if not size[0] <= ys.size <= size[1]:
+            continue
+        xs, ys = xs + sl[1].start, ys + sl[0].start
+        ev = np.sort(np.linalg.eigvalsh(np.cov(np.vstack([xs, ys]))))
+        cx, cy = xs.mean(), ys.mean()
+        inside = x0 + margin <= cx <= x1 - margin and y0 + margin <= cy <= y1 - margin
+        on_line = any(a <= cy <= b for a, b in drop_rows) or any(a <= cx <= b and c <= cy <= d for a, b, c, d in drop_boxes)
+        if inside and not on_line and np.sqrt(ev[1] / max(ev[0], 1e-9)) >= elongation:
+            keep.append(np.column_stack([xs, ys]))
+    return np.vstack(keep).astype(float)
 
 
 def snap(ink, seed, radius=12):

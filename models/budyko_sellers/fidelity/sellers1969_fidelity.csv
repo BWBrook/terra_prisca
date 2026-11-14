@@ -19,7 +19,7 @@ faithful,fig5,4,17,0.6406,0.8843
 faithful,fig5,3 south,3,0.5597,0.7891
 faithful,fig5,4 south,8,0.8362,1.6357
 faithful,fig6,0.009,8,0.7496,1.9988
-faithful,fig6,0.005,8,0.9104,1.5483
+faithful,fig6,0.005,8,0.9109,1.5483
 faithful,fig6,fixed,80,0.3044,0.6133
 faithful,fig6,K x2,2,0.6631,0.7101
 faithful,fig6,K x0.5,1,1.4754,1.4754
@@ -29,13 +29,14 @@ faithful,fig7,c,69,0.4905,2.0241
 faithful,fig7,d,69,0.6491,2.2259
 faithful,fig7,e,69,0.6896,1.9447
 faithful,fig7,f,69,2.446,3.9551
-faithful,fig7,g,69,0.7167,1.8538
-faithful,fig7,h,64,3.852,8.4159
+faithful,fig7,g,59,0.3312,0.6274
+faithful,fig7,h,51,1.1613,2.9788
 faithful,fig7,i,69,0.6124,1.4778
 faithful,table3,dT1,18,0.2389,0.4256
 faithful,table3,dT2,18,0.452,0.9594
 no transport,fig4,T,18,80.7013,111.3686
 no transport,fig4,albedo,18,0.2379,0.4635
+observed T offered as the solution,fig4,T,18,0.547,1.0153
 no change,fig5,5,18,5.5583,13.0236
 no change,fig5,6,18,7.3532,16.8198
 no change,fig5,1,69,1.3959,3.4215
@@ -53,8 +54,8 @@ no change,fig7,c,69,12.3204,19.5879
 no change,fig7,d,69,19.9861,32.05
 no change,fig7,e,69,4.6792,7.5359
 no change,fig7,f,69,14.3518,18.901
-no change,fig7,g,69,13.2668,31.5758
-no change,fig7,h,64,29.6406,50.8298
+no change,fig7,g,59,10.1728,23.8818
+no change,fig7,h,51,32.5564,50.8893
 no change,fig7,i,69,10.4578,15.96
 no change,table3,dT1,18,18.2039,27.0
 no change,table3,dT2,18,16.8966,25.2
@@ -86,7 +87,7 @@ ocean band mean,fig5,4,17,0.6314,0.8741
 ocean band mean,fig5,3 south,3,0.5626,0.7923
 ocean band mean,fig5,4 south,8,0.8337,1.6327
 ocean band mean,fig6,0.009,8,0.7633,2.0408
-ocean band mean,fig6,0.005,8,0.9163,1.5508
+ocean band mean,fig6,0.005,8,0.9168,1.5508
 ocean band mean,fig6,fixed,80,0.3029,0.6114
 ocean band mean,fig6,K x2,2,0.6627,0.7101
 ocean band mean,fig6,K x0.5,1,1.5319,1.5319
@@ -96,8 +97,8 @@ ocean band mean,fig7,c,69,0.4848,2.0152
 ocean band mean,fig7,d,69,0.6466,2.2226
 ocean band mean,fig7,e,69,0.6852,1.9408
 ocean band mean,fig7,f,69,2.4874,3.995
-ocean band mean,fig7,g,69,0.7166,1.8557
-ocean band mean,fig7,h,64,3.8709,8.4539
+ocean band mean,fig7,g,59,0.3303,0.6359
+ocean band mean,fig7,h,51,1.1652,3.0297
 ocean band mean,fig7,i,69,0.6123,1.4824
 ocean band mean,table3,dT1,18,0.2407,0.426
 ocean band mean,table3,dT2,18,0.4498,0.9582
@@ -121,7 +122,7 @@ Tetens vapour pressure,fig5,4,17,0.6337,0.879
 Tetens vapour pressure,fig5,3 south,3,0.5548,0.7844
 Tetens vapour pressure,fig5,4 south,8,0.828,1.6242
 Tetens vapour pressure,fig6,0.009,8,0.7481,1.9922
-Tetens vapour pressure,fig6,0.005,8,0.941,1.5636
+Tetens vapour pressure,fig6,0.005,8,0.9414,1.5636
 Tetens vapour pressure,fig6,fixed,80,0.2917,0.5953
 Tetens vapour pressure,fig6,K x2,2,0.6656,0.7113
 Tetens vapour pressure,fig6,K x0.5,1,1.4692,1.4692
@@ -131,8 +132,8 @@ Tetens vapour pressure,fig7,c,69,0.5135,2.0849
 Tetens vapour pressure,fig7,d,69,0.6594,2.2452
 Tetens vapour pressure,fig7,e,69,0.6955,1.9581
 Tetens vapour pressure,fig7,f,69,2.4327,3.9327
-Tetens vapour pressure,fig7,g,69,0.7243,1.8582
-Tetens vapour pressure,fig7,h,64,3.8547,8.4224
+Tetens vapour pressure,fig7,g,59,0.3399,0.6283
+Tetens vapour pressure,fig7,h,51,1.1609,2.9807
 Tetens vapour pressure,fig7,i,69,0.6168,1.4989
 Tetens vapour pressure,table3,dT1,18,0.2469,0.4351
 Tetens vapour pressure,table3,dT2,18,0.4502,0.9832
@@ -156,7 +157,7 @@ vT in deg C,fig5,4,17,1.6321,2.9591
 vT in deg C,fig5,3 south,3,11.5332,13.1175
 vT in deg C,fig5,4 south,8,10.313,15.7088
 vT in deg C,fig6,0.009,8,3.1672,4.9941
-vT in deg C,fig6,0.005,8,4.2209,8.0852
+vT in deg C,fig6,0.005,8,4.2282,8.0852
 vT in deg C,fig6,fixed,80,4.7131,5.4191
 vT in deg C,fig6,K x2,2,1.8193,2.5519
 vT in deg C,fig6,K x0.5,1,1.8291,1.8291
@@ -166,8 +167,8 @@ vT in deg C,fig7,c,69,9.1614,32.2893
 vT in deg C,fig7,d,69,4.9568,18.5259
 vT in deg C,fig7,e,69,13.0672,29.1866
 vT in deg C,fig7,f,69,12.1049,25.9404
-vT in deg C,fig7,g,69,3.4626,9.489
-vT in deg C,fig7,h,64,13.0173,23.0656
+vT in deg C,fig7,g,59,2.754,7.3652
+vT in deg C,fig7,h,51,12.7089,22.7091
 vT in deg C,fig7,i,69,7.4436,19.4676
 vT in deg C,table3,dT1,18,8.8632,20.7033
 vT in deg C,table3,dT2,18,9.0165,20.893
@@ -191,7 +192,7 @@ vT in deg C,table3,dT2,18,9.0165,20.893
 |dT| per hemisphere,fig5,3 south,3,1.1462,1.4176
 |dT| per hemisphere,fig5,4 south,8,1.5805,2.3711
 |dT| per hemisphere,fig6,0.009,8,0.4891,1.1754
-|dT| per hemisphere,fig6,0.005,8,0.7514,1.4665
+|dT| per hemisphere,fig6,0.005,8,0.7527,1.4665
 |dT| per hemisphere,fig6,fixed,80,0.3597,0.6847
 |dT| per hemisphere,fig6,K x2,2,0.6678,0.7264
 |dT| per hemisphere,fig6,K x0.5,1,1.3431,1.3431
@@ -201,8 +202,8 @@ vT in deg C,table3,dT2,18,9.0165,20.893
 |dT| per hemisphere,fig7,d,69,1.0173,3.0222
 |dT| per hemisphere,fig7,e,69,1.3703,2.9355
 |dT| per hemisphere,fig7,f,69,2.3433,4.8555
-|dT| per hemisphere,fig7,g,69,0.7962,1.8617
-|dT| per hemisphere,fig7,h,64,5.0141,8.1893
+|dT| per hemisphere,fig7,g,59,0.3298,0.8731
+|dT| per hemisphere,fig7,h,51,3.7406,5.8099
 |dT| per hemisphere,fig7,i,69,0.9552,2.2479
 |dT| per hemisphere,table3,dT1,18,2.2757,4.3496
 |dT| per hemisphere,table3,dT2,18,2.3042,4.5588

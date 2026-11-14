@@ -1,15 +1,15 @@
 quantity,stated,printed,reconstruction
 beta from Fig. 2 points (kcal cm-2 month-1 K-1),0.235 (text),0.2309,0.235
-"dT_p per 1% radiation, fixed albedo 0.33 (deg C)",1.5 (text),,1.5662
-present T_p (deg C),Fig. 5,14.9329,15.0871
+"dT_p per 1% radiation, fixed albedo 0.33 (deg C)",1.5 (text),,1.5437
+present T_p (deg C),Fig. 5,14.9329,15.0331
 present ice edge (deg),72 (text),71.6873,72.0
-dT_p at -1.0% (deg C),-5 (text),-4.3399,-4.648
-ice edge at -1.0% (deg),shift 10-18 deg from 72 (text),61.8973,61.4572
-dT_p at -1.5% (deg C),-9 (text),-9.041,-7.7239
-ice edge at -1.5% (deg),shift 10-18 deg from 72 (text),53.658,56.2281
-dQ_p/Q_p holding the ice edge at 65 deg,Fig. 5,-0.0071,-0.0056
-dQ_p/Q_p holding the ice edge at 60 deg,Fig. 5,-0.0115,-0.0117
-dQ_p/Q_p holding the ice edge at 55 deg,Fig. 5,-0.0145,-0.0157
-critical dQ_p/Q_p (runaway),-1.6% (text),-0.0163,-0.0167
+dT_p at -1.0% (deg C),-5 (text),-4.3399,-4.6387
+ice edge at -1.0% (deg),shift 10-18 deg from 72 (text),61.8973,61.3608
+dT_p at -1.5% (deg C),-9 (text),-9.041,-7.7643
+ice edge at -1.5% (deg),shift 10-18 deg from 72 (text),53.658,55.9819
+dQ_p/Q_p holding the ice edge at 65 deg,Fig. 5,-0.0071,-0.0055
+dQ_p/Q_p holding the ice edge at 60 deg,Fig. 5,-0.0115,-0.0115
+dQ_p/Q_p holding the ice edge at 55 deg,Fig. 5,-0.0145,-0.0155
+critical dQ_p/Q_p (runaway),-1.6% (text),-0.0163,-0.0165
 ice edge at the critical point (deg),about 50 (text),,51.45
-"ice-free polar mean, 80-90 deg (deg C)",several degrees below zero (text),-2.056,-3.6756
+"ice-free polar mean, 80-90 deg (deg C)",several degrees below zero (text),-2.056,-4.0579

@@ -27,7 +27,8 @@ matplotlib.use("Agg")
 import matplotlib.pyplot as plt
 import numpy as np
 
-from .budyko1969 import Budyko1969, model
+from .budyko1969 import LAT as GRID
+from .budyko1969 import Budyko1969, hemispheric_mean, model
 from .digitise import chamfer, column_median
 from .scan_budyko1969 import DEFAULT_PDF, FRAMES, fig2_points, load
 
@@ -173,11 +174,36 @@ def key_numbers(scan, m: Budyko1969) -> list[dict]:
 
 READINGS = {
     "faithful": {},
-    "alt: insolation-weighted planetary albedo": {"planetary_albedo": "insolation"},
+    "alt: area-mean planetary albedo": {"planetary_albedo": "area"},
+    "alt: 365.25/12-day month": {"month_days": 365.25 / 12},
+    "alt: 365.25/12-day month, area-mean planetary albedo": {"month_days": 365.25 / 12, "planetary_albedo": "area"},
     "alt: stepped present-day albedo": {"present_albedo": "step"},
     "alt: albedo profile translated with the edge": {"ice_albedo": "translate"},
     "alt: S counted over the whole globe": {"s_area_factor": 0.5},
 }
+
+
+def threshold_readings(scan) -> dict[str, dict]:
+    """Ice-onset temperature: the present T0 profile at 72 deg, or the observed curve of Fig. 3 there."""
+    obs = column_median(scan.curves[("fig3", "T observed")], scan.frames["fig3"])
+    o = np.argsort(obs[:, 0])
+    return {
+        "alt: ice threshold from the model's present T0 at 72 deg": {"t_edge": float(model().profile(72.0))},
+        "alt: ice threshold from the observed T at 72 deg (Fig. 3)": {"t_edge": float(np.interp(72.0, *obs[o].T))},
+    }
+
+
+def reading_summary(readings: dict[str, dict]) -> list[dict]:
+    """For each reading: present T_p, global closure of the present state, ice threshold and runaway point."""
+    rows = []
+    for label, kw in readings.items():
+        m = model(**kw)
+        c = m.critical()
+        rows.append({"reading": label, "alpha_p": round(m.alpha_p_now, 5), "Tp": round(m.tp_now, 4),
+                     "mean_T0_minus_Tp": round(hemispheric_mean(m.profile(GRID)) - m.tp_now, 4),
+                     "t_edge": round(float(m.t_edge), 4), "critical_eps": round(c["eps"], 5),
+                     "critical_edge": round(c["edge"], 2)})
+    return rows
 
 
 def overlay(scan, curves: dict, path: Path) -> None:
@@ -203,7 +229,8 @@ def main(pdf: Path, outdir: Path) -> None:
     scan = load(pdf)
     outdir.mkdir(parents=True, exist_ok=True)
     rows = []
-    for label, kw in READINGS.items():
+    readings = READINGS | threshold_readings(scan)
+    for label, kw in readings.items():
         rows += score(scan, model_curves(model(**kw)), label)
     m = model()
     for control in ("no feedback", "no change"):
@@ -216,6 +243,11 @@ def main(pdf: Path, outdir: Path) -> None:
         w = csv.DictWriter(fh, fieldnames=fields, lineterminator="\n")
         w.writeheader()
         w.writerows(rows)
+    summary = reading_summary(readings)
+    with (outdir / "budyko1969_readings.csv").open("w", newline="") as fh:
+        w = csv.DictWriter(fh, fieldnames=list(summary[0]), lineterminator="\n")
+        w.writeheader()
+        w.writerows(summary)
     keys = key_numbers(scan, m)
     with (outdir / "budyko1969_numbers.csv").open("w", newline="") as fh:
         w = csv.DictWriter(fh, fieldnames=list(keys[0]), lineterminator="\n")
@@ -231,7 +263,7 @@ def main(pdf: Path, outdir: Path) -> None:
     overlay(scan, model_curves(m), outdir / "budyko1969_overlay.png")
     for r in rows:
         print(r)
-    for k in keys:
+    for k in keys + summary:
         print(k)
 
 

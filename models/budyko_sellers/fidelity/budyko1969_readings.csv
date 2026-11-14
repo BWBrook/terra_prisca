@@ -1,0 +1,10 @@
+reading,alpha_p,Tp,mean_T0_minus_Tp,t_edge,critical_eps,critical_edge
+faithful,0.33194,15.0331,-0.0,-9.6045,-0.01651,51.45
+alt: area-mean planetary albedo,0.34131,12.8738,0.5979,-11.1657,-0.01671,51.45
+alt: 365.25/12-day month,0.33194,17.2778,-0.0,-7.7191,-0.01651,51.45
+"alt: 365.25/12-day month, area-mean planetary albedo",0.34131,15.0871,0.6067,-9.3031,-0.01671,51.45
+alt: stepped present-day albedo,0.32784,15.9767,-0.0,-8.9221,-0.01643,51.45
+alt: albedo profile translated with the edge,0.33194,15.0331,-0.0,-10.4678,-0.00711,55.4
+alt: S counted over the whole globe,0.33194,15.0331,-0.0,-9.6045,-0.05052,36.1
+alt: ice threshold from the model's present T0 at 72 deg,0.33194,15.0331,-0.0,-10.4678,-0.02308,51.45
+alt: ice threshold from the observed T at 72 deg (Fig. 3),0.33194,15.0331,-0.0,-9.8097,-0.01808,51.45

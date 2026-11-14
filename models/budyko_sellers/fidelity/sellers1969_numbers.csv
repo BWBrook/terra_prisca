@@ -8,14 +8,18 @@ fixed albedo -10%: cooling at 0-20 and 50-60 (deg C),14.3 (text),14.3082
 fixed albedo -10%: cooling at 80-90 (deg C),13.0 (text),12.5499
 fixed albedo +10%: warming of T-bar (deg C),about 12 (text),12.2756
 K x2: warming of T-bar (deg C),about 5 (text),5.1729
-present NH equator-pole difference (deg C),48 (text),45.7549
-K x2: NH equator-pole difference (deg C),28 (text),19.6825
+"present NH difference, belt centres 5N-85N (deg C)","48 (text, equator-pole)",45.7549
+"present NH difference, extrapolated to 0-90N (deg C)","48 (text, equator-pole)",48.444
+"K x2: NH difference, belt centres 5N-85N (deg C)",28 (text); 20.3 (Fig. 7 g),19.6825
+"K x2: NH difference, extrapolated to 0-90N (deg C)","28 (text); 20.9 (Fig. 7 g, 0N to its end at 88.8N)",20.8267
 K x0.5: polar belts (deg C),below -70 (text),-70.1509
 K x0.5: 40-50N and 40-50S (deg C),below -10 (text),-13.5769
 -3% and K x2: NH equator-pole difference (deg C),26 (text),26.2574
 -3% and K x2: equatorial cooling (deg C),about 16 (text),16.046
 -3% and K x2: T-bar on the warm equilibrium (deg C),not reported,13.0493
 -3% and K x2: T-bar on the cold equilibrium (deg C),3.8 (Fig. 6 square),3.1182
+-3% and K x2: T-bar on the ice-covered equilibrium (deg C),not reported,-99.0505
+"-3% and K x2: leading growth rate, warm / plotted / ice-covered root (per unit heat capacity)",steady states only (paper),-0.627 / 1.117 / -0.844
 m -3%: T-bar (deg C),brink of an ice age (text),5.7644
 "albedo 80-90N, case 3 (untreated)",0.61 (Fig. 5),0.6046
 "albedo 70-80N, case 3 (untreated)",0.58 (Fig. 5),0.5706

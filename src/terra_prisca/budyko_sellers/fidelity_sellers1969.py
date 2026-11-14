@@ -21,7 +21,7 @@ import matplotlib.pyplot as plt
 import numpy as np
 
 from .scan_sellers1969 import DEFAULT_PDF, load
-from .sellers1969 import (AREA, BELT_LAT, CIRC_LAT, KLY_YR, NB, Scenario, Sellers1969, model,
+from .sellers1969 import (AREA, BELT_LAT, CIRC_LAT, ICE_GUESS, KLY_YR, NB, Scenario, Sellers1969, model,
                           radiative_equilibrium)
 
 FIG5_CASES = {"1": {0: .50, 1: .50}, "2": {0: .40, 1: .40}, "3": {16: .50, 17: .50},
@@ -43,10 +43,14 @@ LAND = 1.0 - np.genfromtxt(Path(__file__).with_name("data") / "ocean_fraction_be
 
 
 def sweep(m: Sellers1969, law: str):
-    """T-bar along S_GRID by continuation from the present state, down and up."""
+    """T-bar along S_GRID by continuation from the present state, down and up.
+
+    The anchored 0.005 law is defined for cooling only: re-anchoring b keeps
+    today's albedo but leaves jumps of up to 0.22 at the warm switch, which the
+    paper never reaches (its 0.005 points stop at S = 2.00). Above 2.00 it is NaN."""
     down = S_GRID[S_GRID <= 2.0][::-1]
-    up = S_GRID[S_GRID >= 2.0]
-    tb = {}
+    up = S_GRID[S_GRID >= 2.0] if law != "0.005-anchored" else S_GRID[:0]
+    tb = {s: np.nan for s in S_GRID}
     for seq in (down, up):
         for s, st in zip(seq, m.continuation(seq, lambda x: Scenario(s=x, law=law))):
             tb[s] = st["Tbar"] if st["ok"] else np.nan
@@ -72,8 +76,9 @@ def experiments(m: Sellers1969) -> dict:
     out["fig5"] = {k: m.solve(Scenario(fixed_albedo=fa)) for k, fa in FIG5_CASES.items()}
     out["fig6"] = {law: sweep(m, law) for law in ("0.009", "0.005-anchored", "fixed")}
     out["Sc"] = critical_s(m)
-    # Curve i has two equilibria; the paper's text and figures match the colder,
-    # reached here from a uniform 250 K start (the warm one from the present state).
+    # Curve i has three equilibria (13.0, 3.1 and -99.1 C); the paper's text and figures
+    # match the middle one, reached here from a uniform 250 K start (the warm one from
+    # the present state, the ice-covered one from ICE_GUESS).
     out["fig7"] = {k: m.solve(Scenario(**kw), np.full(NB, 250.0) if k == "i" else None)
                    for k, kw in FIG7_CURVES.items()}
     out["i warm"] = m.solve(Scenario(s=1.94, k_mult=2.0))
@@ -158,6 +163,16 @@ def summarise(rows, reading):
     return out
 
 
+def observed_at(scan, lat, ring_px: float = 10.0):
+    """Fig. 4's observed temperature line at the given latitudes, read away from the computed circles."""
+    px, data = scan.traces[("fig4", "T observed")]
+    rings = scan.frames[("fig4", "T")].to_px(scan.points[("fig4", "T")])
+    clear = np.min(np.hypot(*(px[:, None, :] - rings[None, :, :]).transpose(2, 0, 1)), axis=1) > ring_px
+    d = data[clear]
+    o = np.argsort(d[:, 0])
+    return np.interp(lat, d[o, 0], d[o, 1])
+
+
 def null_rows(scan, ex):
     """Controls: no transport (radiative equilibrium), no change (perturbation leaves T as it is),
     and fixed albedo where the paper let it vary."""
@@ -170,6 +185,9 @@ def null_rows(scan, ex):
     pts = scan.points[("fig4", "albedo")]
     rows.append(("no transport", "fig4", "albedo", pts[:, 0], pts[:, 1],
                  np.interp(-pts[:, 0], -BELT_LAT, rad["albedo"])))
+    pts = scan.points[("fig4", "T")]
+    rows.append(("observed T offered as the solution", "fig4", "T", pts[:, 0], pts[:, 1],
+                 observed_at(scan, pts[:, 0])))
     for fig, curve, x, printed, modelled in scan_targets(scan, ex) + table_targets(ex):
         if fig == "fig5" or fig == "table3":
             rows.append(("no change", fig, curve, x, printed, np.zeros_like(printed)))
@@ -203,6 +221,19 @@ def key_numbers(ex, scan):
         t, lat = st["Tc"][:9], BELT_LAT[:9]
         return float(np.interp(level, t, lat))
     f6 = ex["fig6"]
+    m = model()
+    sc_i = Scenario(s=1.94, k_mult=2.0)
+    ice_i = m.solve(sc_i, np.full(NB, ICE_GUESS))
+    g = scan.traces[("fig7", "g")][1]
+    g = g[np.argsort(g[:, 0])]
+
+    def g_at(lat):
+        return float(np.interp(lat, g[:, 0], g[:, 1]))
+
+    def ends(t):
+        """Equator-pole difference, linearly extrapolated from the two belts nearest each end."""
+        return float((t[8] + 0.5 * (t[8] - t[7])) - (t[0] + 0.5 * (t[0] - t[1])))
+
     s005 = S_GRID[np.nanargmax(np.where(S_GRID < 1.95, np.abs(np.gradient(f6["0.005-anchored"])), -1))]
     return [
         ("present T-bar (deg C)", "about 14.0 (text)", p["Tbar"]),
@@ -216,8 +247,12 @@ def key_numbers(ex, scan):
         ("fixed albedo +10%: warming of T-bar (deg C)", "about 12 (text)",
          float(interp_s([2.20], f6["fixed"])[0] - p["Tbar"])),
         ("K x2: warming of T-bar (deg C)", "about 5 (text)", f7["g"]["Tbar"] - p["Tbar"]),
-        ("present NH equator-pole difference (deg C)", "48 (text)", p["Tc"][8] - p["Tc"][0]),
-        ("K x2: NH equator-pole difference (deg C)", "28 (text)", f7["g"]["Tc"][8] - f7["g"]["Tc"][0]),
+        ("present NH difference, belt centres 5N-85N (deg C)", "48 (text, equator-pole)", p["Tc"][8] - p["Tc"][0]),
+        ("present NH difference, extrapolated to 0-90N (deg C)", "48 (text, equator-pole)", ends(p["Tc"])),
+        ("K x2: NH difference, belt centres 5N-85N (deg C)", f"28 (text); {g_at(5) - g_at(85):.1f} (Fig. 7 g)",
+         f7["g"]["Tc"][8] - f7["g"]["Tc"][0]),
+        ("K x2: NH difference, extrapolated to 0-90N (deg C)",
+         f"28 (text); {g_at(0) - g_at(90):.1f} (Fig. 7 g, 0N to its end at {g[-1, 0]:.1f}N)", ends(f7["g"]["Tc"])),
         ("K x0.5: polar belts (deg C)", "below -70 (text)", float(max(f7["h"]["Tc"][0], f7["h"]["Tc"][17]))),
         ("K x0.5: 40-50N and 40-50S (deg C)", "below -10 (text)", float(max(f7["h"]["Tc"][4], f7["h"]["Tc"][13]))),
         ("-3% and K x2: NH equator-pole difference (deg C)", "26 (text)", f7["i"]["Tc"][8] - f7["i"]["Tc"][0]),
@@ -225,6 +260,10 @@ def key_numbers(ex, scan):
         ("-3% and K x2: T-bar on the warm equilibrium (deg C)", "not reported", ex["i warm"]["Tbar"]),
         ("-3% and K x2: T-bar on the cold equilibrium (deg C)", f"{scan.points[('fig6', 'K x2')][1, 1]:.1f} (Fig. 6 square)",
          f7["i"]["Tbar"]),
+        ("-3% and K x2: T-bar on the ice-covered equilibrium (deg C)", "not reported", ice_i["Tbar"]),
+        ("-3% and K x2: leading growth rate, warm / plotted / ice-covered root (per unit heat capacity)",
+         "steady states only (paper)", " / ".join(f"{m.growth_rates(st['T'], sc_i)[0].real:.3f}"
+                                                   for st in (ex["i warm"], f7["i"], ice_i))),
         ("m -3%: T-bar (deg C)", "brink of an ice age (text)", ex["m -3%"]["Tbar"]),
         ("albedo 80-90N, case 3 (untreated)", "0.61 (Fig. 5)", ex["fig5"]["3"]["albedo"][0]),
         ("albedo 70-80N, case 3 (untreated)", "0.58 (Fig. 5)", ex["fig5"]["3"]["albedo"][1]),

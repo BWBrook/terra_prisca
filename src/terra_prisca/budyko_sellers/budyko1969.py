@@ -16,7 +16,8 @@ from dataclasses import dataclass, replace
 
 import numpy as np
 
-CAL_MIN_TO_KCAL_MONTH = 1440 * 365.25 / 12 / 1000  # cal cm-2 min-1 -> kcal cm-2 month-1
+MONTH_DAYS = 30.0  # the month of kcal cm-2 month-1; the paper does not state it
+CAL_MIN_TO_KCAL_MONTH = 1440 * MONTH_DAYS / 1000  # cal cm-2 min-1 -> kcal cm-2 month-1
 
 
 @dataclass(frozen=True)
@@ -46,9 +47,10 @@ class Reading:
     # Present-day albedo: "profile" (the stated 60/70/80 deg values, linearly
     # interpolated) or "step" (0.32 equatorward of 72 deg, 0.62 poleward).
     present_albedo: str = "profile"
-    # Planetary albedo alpha_p in eqs (5)-(6): "area" (area mean of the zonal
-    # albedos) or "insolation" (weighted by incoming radiation).
-    planetary_albedo: str = "area"
+    # Planetary albedo alpha_p in eqs (5)-(6): "insolation" (weighted by
+    # incoming radiation, so that A sums to zero over the Earth as the paper's
+    # derivation of eq. (5) requires) or "area" (area mean of the zonal albedos).
+    planetary_albedo: str = "insolation"
     # Present planetary temperature T_p' in eqs (4) and (7): None takes eq. (5).
     tp_now: float | None = None
     # Area basis of S in eq. (6): 1 for one hemisphere (both hemispheres alike),
@@ -57,6 +59,12 @@ class Reading:
     # Albedo of newly iced latitudes in eq. (7): "step" puts albedo_ice
     # poleward of the edge; "translate" shifts the present profile with it.
     ice_albedo: str = "step"
+    # Days per month in the radiation unit kcal cm-2 month-1.
+    month_days: float = MONTH_DAYS
+    # Temperature at which ice forms: None takes eq. (4) at 72 deg with the
+    # boundary albedo 0.50; a number overrides it (e.g. the present profile's
+    # own T0 at 72 deg, or a reading of the observed curve).
+    t_edge: float | None = None
 
 
 FAITHFUL = Reading()
@@ -71,7 +79,8 @@ def hemispheric_mean(f: np.ndarray) -> float:
     return float(np.mean(f))
 
 
-def annual_insolation(lat, solar_constant: float = 1.92, obliquity: float = 23.45) -> np.ndarray:
+def annual_insolation(lat, solar_constant: float = 1.92, obliquity: float = 23.45,
+                      month_days: float = MONTH_DAYS) -> np.ndarray:
     """Annual-mean top-of-atmosphere insolation, kcal cm-2 month-1, on a circular orbit."""
     lat = np.atleast_1d(np.asarray(lat, dtype=float))
     grid = np.linspace(0.0, 90.0, 1801)
@@ -80,14 +89,14 @@ def annual_insolation(lat, solar_constant: float = 1.92, obliquity: float = 23.4
     phi = np.radians(grid)[:, None]
     h0 = np.arccos(np.clip(-np.tan(phi) * np.tan(dec), -1.0, 1.0))
     daily = (h0 * np.sin(phi) * np.sin(dec) + np.cos(phi) * np.cos(dec) * np.sin(h0)) / np.pi
-    s0 = solar_constant * CAL_MIN_TO_KCAL_MONTH
+    s0 = solar_constant * 1440 * month_days / 1000
     return s0 * np.interp(np.abs(lat), grid, daily.mean(axis=1))
 
 
 class Budyko1969:
     def __init__(self, p: Params = Params(), r: Reading = FAITHFUL):
         self.p, self.r = p, r
-        self.q = annual_insolation(LAT, p.solar_constant, r.obliquity)
+        self.q = annual_insolation(LAT, p.solar_constant, r.obliquity, r.month_days)
         self.qp = hemispheric_mean(self.q)
         self.k = p.b - p.b1 * p.cloud  # B - B1 n
         self.c = p.a - p.a1 * p.cloud  # a - a1 n
@@ -96,7 +105,8 @@ class Budyko1969:
         self.alpha_p_now = hemispheric_mean(weight * self.alpha_now)
         self.tp_eq5 = self.planetary_temperature(self.alpha_p_now)
         self.tp_now = self.tp_eq5 if r.tp_now is None else r.tp_now
-        self.t_edge = self.zonal_temperature(self.insolation(p.edge_now), self.edge_albedo(p.edge_now), self.tp_now)
+        self.t_edge = (self.zonal_temperature(self.insolation(p.edge_now), self.edge_albedo(p.edge_now), self.tp_now)
+                       if r.t_edge is None else r.t_edge)
 
     def insolation(self, lat):
         return np.interp(np.abs(np.asarray(lat, dtype=float)), LAT, self.q, left=self.q[0], right=self.q[-1])
@@ -122,6 +132,7 @@ class Budyko1969:
 
         "step": ice-covered latitudes (poleward of the edge) take 0.62 and
         latitudes freed of ice take 0.32; elsewhere the present albedo holds.
+        The edge itself takes the boundary albedo 0.50.
         Eq. (6) still sets the planetary temperature, through 0.30 S."""
         lat = np.asarray(lat, dtype=float)
         p = self.p
@@ -129,7 +140,8 @@ class Budyko1969:
             return np.interp(lat - (edge - p.edge_now), p.profile_lat, p.profile_albedo)
         now = self.present_albedo(lat)
         freed = (lat >= p.edge_now) & (lat < edge)
-        return np.where(lat >= edge, p.albedo_ice, np.where(freed, p.albedo_free, now))
+        inner = np.where(lat > edge, p.albedo_ice, np.where(freed, p.albedo_free, now))
+        return np.where(lat == edge, p.albedo_edge, inner)
 
     def edge_albedo(self, edge: float) -> float:
         """Albedo used for the temperature at the ice edge."""
@@ -194,7 +206,12 @@ class Budyko1969:
         e, x = b["edge"][: i + 1], b["eps"][: i + 1]
         if eps < x[-1]:
             return 0.0
-        return float(np.interp(-eps, -x, e))
+        j = int(np.searchsorted(-x, -eps))
+        if j == 0 or x[j - 1] == eps:
+            return float(e[max(j - 1, 0)])
+        from scipy.optimize import brentq
+
+        return float(brentq(lambda z: self.eps_for_edge(z) - eps, e[j], e[j - 1], xtol=1e-10))
 
     def profile(self, lat, eps: float = 0.0, edge: float | None = None):
         """Eq. (7): zonal temperature for radiation change eps with the ice edge at `edge`.

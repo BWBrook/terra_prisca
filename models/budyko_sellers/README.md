@@ -80,11 +80,12 @@ controls below.
 | Choice | What we did | Why |
 |---|---|---|
 | Insolation by latitude, Q(φ) | Annual mean at the top of the atmosphere on a circular orbit, obliquity 23.45° | The paper gives no Q(φ) table. The critical point is sensitive to this: obliquities of 22° and 24.5° give runaway at −2.2% and −1.3% |
-| Month length | 365.25/12 days, so Q_p = S₀/4 = 21.04 | The units of eq. (1). A 30-day month would make T_p 12.9 °C, against the printed 14.9 °C. The critical point does not depend on this choice |
-| Present albedo by latitude | The stated values at 60°, 70° and 80°, interpolated linearly; 0.62 beyond 80° | As stated for Fig. 3. A step from 0.32 to 0.62 at 72° fits every T₀ curve worse (RMSE 1.6–1.7 °C against 0.65–0.75 °C) |
-| Planetary albedo α_p in eqs (5)–(6) | The area mean of the zonal albedos, 0.341 | It gives T_p = 15.1 °C, against 14.9 °C printed in Fig. 5. The insolation-weighted mean (0.332) gives 17.3 °C and fits all curves worse |
+| Planetary albedo α_p in eqs (5)–(6) | The insolation-weighted mean of the zonal albedos, 0.332 | The paper derives eqs (4)–(5) "for the Earth as a whole A = 0" (p. 614), which holds only with this weighting: the area mean of T₀ then equals T_p exactly. The area mean of the albedos (0.341) leaves a net transport of 0.14 kcal cm⁻² month⁻¹, a 0.6 °C mismatch between T_p and the mean of T₀. With a 30-day month it fits all 9 curves worse; with a calendar month (our first reading, T_p = 15.1 °C) it fits 7 of 9 worse and beats this reading only on Fig. 4's T₁.₀ and Fig. 6's T_q |
+| Month length in kcal cm⁻² month⁻¹ | 30 days, so Q_p = 20.74 | Not stated. With the conserving α_p it is decided by fit: 30 days gives T_p = 15.0 °C against the 14.9 °C printed in Fig. 5, and a calendar month (365.25/12 days) gives 17.3 °C and fits every temperature curve worse (RMSE 1.4–3.4 °C). The ice-edge branch and critical point do not depend on it |
+| Present albedo by latitude | The stated values at 60°, 70° and 80°, interpolated linearly; 0.62 beyond 80° | As stated for Fig. 3. A step from 0.32 to 0.62 at 72° fits the T₀ curves worse (RMSE 0.75–2.85 °C against 0.52–2.39 °C) |
 | Present T_p′ in eqs (4) and (7) | From eq. (5) | The paper computes it so; it then agrees with Fig. 5 |
-| Albedo when ice spreads | 0.62 poleward of the new edge, 0.50 for the edge temperature, present values equatorward | "The albedo on the ice-covered area is equal to 0.62 and at the southern boundary … 0.50". Shifting the present albedo profile with the edge instead triggers runaway at −0.7% |
+| Temperature at which ice forms | Eq. (4) at 72° with the boundary albedo 0.50: −9.60 °C | Ice spreads to where T equals "the present temperature of the 72° boundary", and the paper puts albedo 0.50 at the boundary. Taking instead the present profile's own T₀ at 72° (albedo 0.524 by interpolation, −10.47 °C) or Fig. 3's observed curve at 72° (−9.81 °C) moves runaway to −2.31% or −1.81%, against −1.63% printed, and fits Fig. 5 worse (φ₀ RMSE 5.4° and 1.7° against 1.5°) |
+| Albedo when ice spreads | 0.62 poleward of the new edge, 0.50 at the edge itself, present values equatorward | "The albedo on the ice-covered area is equal to 0.62 and at the southern boundary … 0.50". Shifting the present albedo profile with the edge instead triggers runaway at −0.7% |
 | Area basis of S | One hemisphere, standing for both | The paper assumes the hemispheres change alike. Counting the area over the whole globe halves the feedback and moves runaway to −5.1% |
 | Planetary temperature after the ice moves | Eq. (6) as printed, with 0.30S over the band between 72° and the new edge | Eq. (6) is the paper's method. Our local albedo also raises 72–80° to 0.62, which eq. (6) does not count (at most 0.1 in albedo over 3.4% of the hemisphere) |
 | Fig. 6, ice-free planet | Albedo 0.32 everywhere; T_p from eq. (6) for the removal of ice poleward of 72° | "the albedo at high latitudes is accepted to be equal to the albedo of ice-free areas and the coefficient β … equal to its value accepted above" |
@@ -94,12 +95,12 @@ controls below.
 
 ![Reconstruction of Figs 3–6](figures/budyko1969_figures.png)
 
-- **Present climate.** T₀ runs from 26.2 °C at the equator to −15 °C at the
-  pole, and T_p = 15.1 °C.
+- **Present climate.** T₀ runs from 25.4 °C at the equator to −15.3 °C at the
+  pole, and T_p = 15.0 °C, the area mean of T₀.
 - **Ice-edge response.** Cutting radiation by 1% moves the ice edge from 72° to
-  61.5° and cools the planet by 4.6 °C. A 1.5% cut moves it to 56.2° and cools
-  the planet by 7.7 °C.
-- **Runaway.** The stable branch ends at ΔQ_p/Q_p = −1.67%, with the edge at
+  61.4° and cools the planet by 4.6 °C. A 1.5% cut moves it to 56.0° and cools
+  the planet by 7.8 °C.
+- **Runaway.** The stable branch ends at ΔQ_p/Q_p = −1.65%, with the edge at
   51.5°. Past that point, no partly glaciated equilibrium exists.
 - **The unstable branch.** It returns to the present radiation at 37.5°.
   Equatorward of that latitude, ice spreads to the equator even under today's
@@ -116,7 +117,7 @@ tick residual is 1.7 px, about 0.16 °C. Every printed curve was traced
 separately from the scan, as follows:
 - **Solid curves:** the connected strokes containing hand-placed seed pixels.
 - **Dashed curves:** the dashes inside a box.
-- **Lettering:** removed by box.
+- **Lettering:** removed by box, including the tick label that meets Fig. 5's ice-edge dashes.
 
 Seeds and boxes were read from the scan, never from the model. Two scores
 follow:
@@ -138,32 +139,45 @@ Full tables:
 
 | Printed curve | Columns | RMSE | Median abs. | Max abs. |
 |---|---|---|---|---|
-| Fig. 4, T₀ (present) | 367 | 0.65 °C | 0.40 | 1.51 |
-| Fig. 4, T₁.₀ (−1.0%) | 413 | 0.34 °C | 0.18 | 1.59 |
-| Fig. 4, T₁.₅ (−1.5%) | 381 | 0.91 °C | 0.86 | 3.06 |
-| Fig. 5, T_p | 404 | 0.66 °C | 0.35 | 5.27 |
-| Fig. 5, ice edge φ₀ | 218 | 1.53° | 1.41 | 3.65 |
-| Fig. 6, T₀ | 419 | 0.75 °C | 0.49 | 1.46 |
-| Fig. 6, T_q (no polar ice) | 453 | 0.64 °C | 0.35 | 1.46 |
-| Fig. 3, T₀ (dashed, labelled computed) | 155 | **2.46 °C** | 1.41 | 4.22 |
-| Fig. 3, T (solid, labelled observed) | 299 | 0.96 °C | 0.49 | 1.79 |
+| Fig. 4, T₀ (present) | 367 | 0.52 °C | 0.43 | 1.91 |
+| Fig. 4, T₁.₀ (−1.0%) | 413 | 0.84 °C | 0.86 | 1.84 |
+| Fig. 4, T₁.₅ (−1.5%) | 381 | 0.50 °C | 0.21 | 2.48 |
+| Fig. 5, T_p | 404 | 0.64 °C | 0.40 | 4.99 |
+| Fig. 5, ice edge φ₀ | 232 | 1.47° | 1.40 | 3.25 |
+| Fig. 6, T₀ | 419 | 0.58 °C | 0.52 | 1.30 |
+| Fig. 6, T_q (no polar ice) | 453 | 1.09 °C | 0.99 | 1.89 |
+| Fig. 3, T₀ (dashed, labelled computed) | 155 | **2.39 °C** | 2.16 | 3.68 |
+| Fig. 3, T (solid, labelled observed) | 299 | 0.62 °C | 0.36 | 1.28 |
 
 **Controls.** Each control is scored on the curves it changes. The score
 separates the reconstruction from all of them.
 
 | Control | T₁.₀ | T₁.₅ | T_p | φ₀ | T_q |
 |---|---|---|---|---|---|
-| Faithful reading | 0.34 | 0.91 | 0.66 | 1.53 | 0.64 |
-| Null: no ice-albedo feedback (edge held at 72°) | 2.98 | 7.28 | 3.27 | 9.08 | 4.69 |
-| Null: no change from the present | 4.33 | 9.28 | 4.61 | 9.08 | 4.69 |
-| Insolation-weighted planetary albedo | 1.41 | 2.36 | 2.21 | 1.51 | 1.36 |
-| Stepped present-day albedo | 0.97 | 1.93 | 1.63 | 1.51 | 0.95 |
-| Albedo profile translated with the edge (runaway at −0.7%) | 60.1 | 55.6 | 2.80 | 5.70 | 0.58 |
-| S counted over the whole globe (runaway at −5.1%) | 1.48 | 5.30 | 2.53 | 3.90 | 1.14 |
+| Faithful reading | 0.84 | 0.50 | 0.64 | 1.47 | 1.09 |
+| Null: no ice-albedo feedback (edge held at 72°) | 2.55 | 6.83 | 3.22 | 9.08 | 5.01 |
+| Null: no change from the present | 3.82 | 8.78 | 4.56 | 9.08 | 5.01 |
+| Area-mean planetary albedo | 2.29 | 1.23 | 2.27 | 1.49 | 2.59 |
+| Calendar month (365.25/12 days) | 1.41 | 2.36 | 2.21 | 1.47 | 1.36 |
+| Calendar month and area-mean planetary albedo (our first reading) | 0.34 | 0.91 | 0.66 | 1.49 | 0.64 |
+| Stepped present-day albedo | 0.42 | 0.99 | 1.05 | 1.47 | 0.57 |
+| Ice threshold from the present T₀ at 72° (runaway at −2.31%) | 1.05 | 4.00 | 2.03 | 5.39 | 1.09 |
+| Ice threshold from Fig. 3's observed T at 72° (runaway at −1.81%) | 0.56 | 1.08 | 0.93 | 1.66 | 1.09 |
+| Albedo profile translated with the edge (runaway at −0.7%) | 59.8 | 55.3 | 2.80 | 5.89 | 0.65 |
+| S counted over the whole globe (runaway at −5.1%) | 0.97 | 4.81 | 2.50 | 3.81 | 1.70 |
 
 RMSE is in °C (degrees of latitude for φ₀). The ice-edge curve hardly
-distinguishes the two albedo-weighting readings: the branch's shape is set by
-the feedback, and those readings shift only temperatures.
+distinguishes the albedo-weighting and month readings: the branch's shape is
+set by the feedback, and those readings shift only temperatures. The ice
+threshold does move the branch, and the printed φ₀ and runaway point favour
+the boundary albedo 0.50. Per-reading T_p, global closure, threshold and
+runaway point: [`fidelity/budyko1969_readings.csv`](fidelity/budyko1969_readings.csv).
+
+Our first reading (calendar month, area-mean α_p) fits two perturbed curves
+better than the faithful one, but it does not close the global balance that
+the paper's derivation requires, so the conserving reading stands. Codex's
+cross-review (board thread 167, BS-R2) found the closure failure and proposed
+the joint alternative.
 
 **Key numbers**, as stated in the text, as printed in the figures, and as
 reconstructed:
@@ -171,24 +185,25 @@ reconstructed:
 | Quantity | Text | Printed | Reconstruction |
 |---|---|---|---|
 | β refitted to the Fig. 2 points | 0.235 | 0.231 | 0.235 (input) |
-| Cooling per 1% less radiation, fixed albedo 0.33 | 1.5 °C | — | 1.57 °C |
-| Present T_p | — | 14.9 °C | 15.1 °C |
+| Cooling per 1% less radiation, fixed albedo 0.33 | 1.5 °C | — | 1.54 °C |
+| Present T_p | — | 14.9 °C | 15.0 °C |
 | ΔT_p at −1.0% | −5 °C | −4.3 °C | −4.6 °C |
-| ΔT_p at −1.5% | −9 °C | −9.0 °C | −7.7 °C |
-| Ice edge at −1.0% / −1.5% | shifted 10–18° from 72° | 61.9° / 53.7° | 61.5° / 56.2° |
-| ΔQ_p/Q_p holding the edge at 65° / 60° / 55° | — | −0.71 / −1.15 / −1.45% | −0.56 / −1.17 / −1.57% |
-| Runaway threshold | −1.6% | −1.63% | −1.67% |
+| ΔT_p at −1.5% | −9 °C | −9.0 °C | −7.8 °C |
+| Ice edge at −1.0% / −1.5% | shifted 10–18° from 72° | 61.9° / 53.7° | 61.4° / 56.0° |
+| ΔQ_p/Q_p holding the edge at 65° / 60° / 55° | — | −0.71 / −1.15 / −1.45% | −0.55 / −1.15 / −1.55% |
+| Runaway threshold | −1.6% | −1.63% | −1.65% |
 | Ice edge at runaway | about 50° | about 51° | 51.5° |
-| Ice-free polar temperature | "several degrees below zero" | −2.1 °C (80–85°) | −3.7 °C (80–90°) |
+| Ice-free polar temperature | "several degrees below zero" | −2.1 °C (80–85°) | −4.1 °C (80–90°) |
 
 **The reconstruction agrees with Figs 4, 5 and 6 and with the stated numbers.**
-- Every perturbed and ice-free profile is within an RMSE of 1 °C.
-- The runaway threshold is within 0.04% of radiation of the printed value.
+- Every perturbed profile is within an RMSE of 1 °C, and the ice-free profile
+  within 1.1 °C.
+- The runaway threshold is within 0.02% of radiation of the printed value.
 - The largest local errors sit at the ice edge, where the printed curves are
   drawn smooth and the model has a jump.
-- The printed ice-edge branch is straighter than ours: Budyko needs 0.15% more
-  radiation loss to reach 65° and 0.12% less to reach 55°. At −1.5% this puts
-  his edge 2.6° further south and his planet 1.3 °C colder. That is within the
+- The printed ice-edge branch is straighter than ours: Budyko needs 0.16% more
+  radiation loss to reach 65° and 0.10% less to reach 55°. At −1.5% this puts
+  his edge 2.3° further south and his planet 1.3 °C colder. That is within the
   sensitivity to Q(φ) noted above, which we do not have from the paper. We have
   not tuned it.
 
@@ -196,8 +211,8 @@ reconstructed:
 computed (T₀) and the solid one as observed (T). The T₀ drawn in Figs 4 and 6
 matches Fig. 3's observed curve (RMSE 0.49 °C) and not its computed one
 (1.95 °C). The two Fig. 3 curves differ by 1.7 °C. Our computed T₀ follows the
-Figs 4 and 6 version and Fig. 3's solid curve (0.65–0.96 °C), and departs from
-Fig. 3's dashed curve by 2.5 °C. Two explanations fit equally well:
+Figs 4 and 6 version and Fig. 3's solid curve (0.52–0.62 °C), and departs from
+Fig. 3's dashed curve by 2.4 °C. Two explanations fit equally well:
 - Fig. 3's labels are swapped;
 - Figs 4 and 6 draw the observed profile as their baseline.
 
@@ -282,11 +297,11 @@ south pole closed.
 | l′/l₁, the ocean fraction of each circle | Fraction of the circle over ocean in the R `maps` world coastline | Not tabulated in the paper. A ±5° band mean is slightly worse on Figs 2 and 3 (ΔC RMSE 1.34 against 0.90 kly yr⁻¹) and ties elsewhere. |
 | Land fraction for Table 3 | Area-weighted land fraction of each belt, same coastline | H and ΔQ_s are given "per cm² of land". Near 85S the `maps` polygons are wrong, but H = 0 there. |
 | Eq. (5) at the switch | α = max(b − 0.009T_g, α_d) | Table 1 gives b − α_d = 2.548 where 0.009 × 283.16 = 2.54844. The 0.0004 step leaves no equilibrium when a belt sits on the switch (40–50S does near S = 2.005). Taking the maximum moves the switch by 0.05 K. |
-| The 0.005 law, "b being adjusted accordingly" | b re-anchored in each belt so that today's albedo is unchanged: α = α_now − 0.005(T_g − T_g,now) below 283.16 K | Fig. 6 draws the 0.005 curve through today's T̄. Keeping α_d at the switch instead makes today 4 °C warmer (18.0 °C). |
+| The 0.005 law, "b being adjusted accordingly" | b re-anchored in each belt so that today's albedo is unchanged: α = α_now − 0.005(T_g − T_g,now) below 283.16 K; computed for cooling only (S ≤ 2.00) | Fig. 6 draws the 0.005 curve through today's T̄. Keeping α_d at the switch instead makes today 4 °C warmer (18.0 °C). The anchoring leaves α_d unchanged above 283.16 K, so warming a cold belt past the switch drops its albedo by up to 0.22 (80–90S; 0.16 at 70–80S, 0.12 and 0.10 at 80–90N and 70–80N). Sellers computed this law only for cooling (his 0.005 points stop at S = 2.00), which never crosses those switches, so we leave it undefined above S = 2.00 rather than invent a warm-side law |
 | Fixed albedo (Fig. 6) | Today's computed α_s, held in every belt | "Held fixed at its current values (Fig. 4)". |
 | Fig. 5 cases | Listed albedos imposed in the treated polar belts; every other belt free under eq. (5) | The inset lists computed values for the untreated poles. The reconstruction reproduces them (key numbers below). |
 | K changes (Figs 6, 7) | a, K_h, K_w and K₀ multiplied together | "Exchange coefficients and eddy diffusivities". |
-| Curve i (−3%, K×2) | The colder of two equilibria | Both exist (T̄ = 13.0 and 3.1 °C). The paper's text (equator 16 °C colder, NH equator–pole difference 26 °C), its Fig. 6 square (3.8 °C) and its Fig. 7 curve all match the colder one. We reach it from a uniform 250 K start. |
+| Curve i (−3%, K×2) | The middle of three equilibria | Three steady states exist: T̄ = 13.0, 3.1 and −99.1 °C. The paper's text (equator 16 °C colder, NH equator–pole difference 26 °C), its Fig. 6 square (3.8 °C) and its Fig. 7 curve all match the 3.1 °C root. We reach it from a uniform 250 K start. |
 | Year, T̄ | 365.25 days; T̄ is the area-weighted belt mean | The table's Q_s averages to S/4 at 365.25 days. |
 
 ### Results
@@ -331,13 +346,24 @@ pasted-up original; the largest calibration residual is 1% of an axis range.
   - The near-vertical drop is traced row by row.
 - **Fig. 7.**
   - Curve a's 18 circles are taken as the strongest detection at each belt.
-  - The other eight curves are traced from seeds; h, which is steep, row by
-    row.
+  - Curves b–f and i are traced from seeds.
+  - Curve g crosses curve a twice and runs just below it at the crest. Traced
+    from its end, it switched onto a at the first crossing (Codex's
+    cross-review, board thread 167, BS-R1). It is now traced from a seed on its
+    own crest and stopped at 59S, before it converges with c and d.
+  - Curve h, the only dashed curve, is read as its isolated dashes: connected
+    components of dash size and elongation, clear of the frame ticks, the two
+    horizontal reference lines and the end labels. Dashes that touch a solid
+    curve near the crest are lost rather than guessed. The earlier row-by-row
+    trace had joined the solid curve f at the crest.
+  - A trace-on-scan check confirms each curve's identity where curves run
+    close, and the test suite checks g and h there.
 
 Model output never enters the reading.
 
 **Faithful reading, RMSE against the printed values.** All values are computed
-by the model; the observed curves in Figs 2–4 are not targets.
+by the model. The observed curves in Figs 2–4 are not targets; Fig. 4's
+observed temperature line is traced only for the observed-T control.
 
 | Figure | Item | n | RMSE | Unit |
 |---|---|---|---|---|
@@ -352,21 +378,32 @@ by the model; the observed curves in Figs 2–4 are not targets.
 | 6 | fixed albedo (traced) | 80 | 0.30 | °C |
 | 6 | K×2 squares, K×0.5 triangle | 2, 1 | 0.66, 1.48 | °C |
 | 7 | a (circles) | 18 | 0.52 | °C |
-| 7 | b, c, d, e, g, i (traced) | 69 each | 0.86, 0.49, 0.65, 0.69, 0.72, 0.61 | °C |
-| 7 | f (−2%), h (K×0.5) | 69, 64 | 2.45, 3.85 | °C |
+| 7 | b, c, d, e, i (traced) | 69 each | 0.86, 0.49, 0.65, 0.69, 0.61 | °C |
+| 7 | g (K×2, traced in its clear stretch, 84N–59S) | 59 | 0.33 | °C |
+| 7 | h (K×0.5, its isolated dashes) | 51 | 1.16 | °C |
+| 7 | f (−2%) | 69 | 2.45 | °C |
 | Table 3 | ΔT₁, ΔT₂ | 18 each | 0.24, 0.45 | °C |
 
 The full table, including maxima, is
 [`fidelity/sellers1969_fidelity.csv`](fidelity/sellers1969_fidelity.csv).
 
-**Controls.** Each null fails by one to two orders of magnitude:
+**Controls.** Every null except one fails by one to two orders of magnitude.
+The exception was declared in advance (board thread 164) and is informative:
+Fig. 4's solid line is the observed temperature, and Sellers' computed circles
+lie on it. Offered as the solution, the observed line scores as well as the
+model. The present-state temperature fit therefore shows that the
+reconstruction reproduces today's climate as Sellers' model did, and no more;
+it cannot separate the two. The evidence that the reconstruction is Sellers'
+model comes from the transports and fluxes of Figs 2–3 and from the perturbed
+states of Figs 5–7 and Table 3.
 
 | Control | Item | RMSE |
 |---|---|---|
 | No transport (each belt in radiative balance) | Fig. 4 T | 80.7 °C (faithful 0.58) |
+| Observed T offered as the solution | Fig. 4 T | 0.55 °C (faithful 0.58): a tie |
 | No change (the perturbation does nothing) | Fig. 5 curves 6, 5 | 7.4, 5.6 °C (faithful 0.17, 0.25) |
 | | Fig. 6, 0.009 law | 57 °C (faithful 0.75) |
-| | Fig. 7 c, d, h | 12–30 °C |
+| | Fig. 7 c, d, g, h | 10–33 °C |
 | | Table 3 ΔT₁ | 18.2 °C (faithful 0.24) |
 | Fixed albedo, where the paper let it vary | Fig. 5 curves 6, 5 | 2.6, 2.1 °C |
 | | Fig. 6, 0.009 law | 54 °C |
@@ -394,7 +431,9 @@ The full table, including maxima, is
 | Fixed albedo +10%: warming | about 12 °C | 12.3 °C |
 | K×2: warming | about 5 °C | 5.2 °C |
 | K×0.5: polar belts / 40–50° | below −70 / below −10 °C | −70.2 / −13.6 °C |
-| −3% and K×2 (cold equilibrium): equator cooling / NH equator–pole difference | about 16 / 26 °C | 16.0 / 26.3 °C |
+| −3% and K×2 (plotted equilibrium): equator cooling / NH equator–pole difference | about 16 / 26 °C | 16.0 / 26.3 °C |
+| NH equator–pole difference today, belt centres (5N–85N) / extrapolated to 0–90N | 48 °C (text) | 45.8 / 48.4 °C |
+| K×2: NH equator–pole difference, belt centres / extrapolated | 28 °C (text); printed g 20.3 / 20.9 °C | 19.7 / 20.8 °C |
 | Untreated Arctic: case 3 (80–90N, 70–80N); case 4 (70–80N) | 0.61, 0.58; 0.57 | 0.605, 0.571; 0.563 |
 | Untreated Antarctic, cases 1 and 2 (70–80S, 80–90S) | 0.79, 0.84; 0.78, 0.82 | 0.781, 0.822; 0.769, 0.808 |
 | Case 2: warming poleward of 70N / in the tropics | at most about 7 / about 1 °C | 7.7 / 1.0 °C |
@@ -411,30 +450,47 @@ The full table, including maxima, is
   Sellers' Tables 1–2 and nothing fitted. Two inputs had to be supplied: the
   ocean fraction l′ and a vapour-pressure formula. Neither changes any score
   materially.
-- **Curve i is on a second equilibrium.** For S − 3% with doubled exchange,
-  the model has two steady states: T̄ = 13.0 °C, with ice near today's
-  positions, and T̄ = 3.1 °C. Sellers' text and figures describe the colder
-  one. His shooting procedure found it; continuation from today finds the
-  warmer one. The paper does not mention the multiplicity.
-- **Sellers sits slightly further from the edge than we do.** His jump to ice
-  comes at S = 1.9544 and ours at 1.9573, 0.15% of S apart. Yet just above the
-  jump his planet is colder: at S = 1.96 his Fig. 6 circle reads 1.6 °C against
-  our 3.5 °C, and his Fig. 7 curve f (−2%) is about 2.5 °C colder than ours.
-  The model's slope is steep there, so a small difference in an unstated input
-  (l′, or e_s) moves both numbers. We have not tuned for it.
-- **Two numbers in the text disagree with the paper's own figures.**
-  - The text puts the NH equator–pole difference at 48 °C today and 28 °C with
-    K×2. Sellers' computed Fig. 4 circles give 45.5 °C (85N to 5N); his printed
-    Fig. 7 curve g gives 21.8 °C. The reconstruction gives 45.8 and 19.7 °C,
-    and matches curve g to 0.7 °C RMSE.
-  - The text says case 2 warms the south polar region by 1–3 °C. The traced
-    curve 2 reaches 3.1 °C at 75S, against the model's 3.6 °C.
+- **Curve i is the middle of three equilibria, and the middle one is
+  unstable.** For S − 3% with doubled exchange, the model has three steady
+  states: T̄ = 13.0 °C with ice near today's positions, T̄ = 3.1 °C, and an
+  ice-covered planet at −99.1 °C. Sellers' text and figures describe the
+  3.1 °C root. His shooting procedure found it; continuation from today finds
+  the warm one. The paper does not mention the multiplicity. Sellers computes
+  steady states only, but if every belt is given the same positive heat
+  capacity, the Jacobian of the belt balances has one positive eigenvalue at
+  the 3.1 °C root (+1.12) and none at the other two (leading −0.63 and −0.84;
+  today −0.39). The plotted curve i is then a state the climate would leave
+  for one of its neighbours, not one it would settle in. This leaves the
+  fidelity score intact: we reproduce what Sellers printed.
+- **Near the jump to ice, Sellers' states are colder than ours.** His jump
+  comes at S = 1.9544 and ours at 1.9573, 0.15% of S apart. Just above the
+  jump his planet is colder: at S = 1.96 his Fig. 6 circle reads 1.6 °C
+  against our 3.5 °C, and his Fig. 7 curve f (−2%) is about 2.5 °C colder than
+  ours. The model's slope is steep there, so a small difference in an input
+  moves both numbers. The two unstated inputs we can vary do not explain it:
+  ocean band means and Tetens' formula leave the S = 1.96 state near 3.5 °C
+  and move the jump by at most 0.0001 in S. Its cause is open, and we have not
+  tuned for it.
+- **One number in the text disagrees with the paper's own figure.** The text
+  puts the NH equator–pole difference with K×2 at 28 °C. Sellers' printed Fig. 7
+  curve g gives 20.9 °C from the equator to its end at 88.8N, and 20.3 °C
+  between the belt centres 5N and 85N. The reconstruction gives 20.8 and
+  19.7 °C, and matches curve g to 0.33 °C RMSE. The text's 48 °C for today
+  agrees with the model once the profile is extrapolated from the belt centres
+  to the equator and pole (48.4 °C; 45.8 °C between belt centres), so the
+  text uses endpoint values there. Case 2's south-polar warming of "1–3 °C"
+  in the text and 3.1 °C on the traced curve agree within the precision of the
+  drawing and the rounding of the text; the model gives 3.6–4.0 °C there.
 
 ### Open threads
 
 - The ocean fractions Sellers used (probably from Sellers 1965, *Physical
-  Climatology*) would remove the last free input. They would also test whether
-  the near-threshold offset in Figs 6 and 7 comes from l′.
+  Climatology*) would remove the last free input. They would also give a
+  stronger test of whether l′ causes the near-threshold offset in Figs 6
+  and 7 than our band-mean check.
+- A time-dependent variant (with stated belt heat capacities) would put the
+  stability of curve i's three roots on a physical footing rather than the
+  equal-capacity diagnostic used here.
 - A seasonal or monthly extension, which Sellers names as the next step, is a
   variant for later. So is a modern-units variant.
 

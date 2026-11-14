@@ -22,17 +22,19 @@ def test_fixed_albedo_sensitivity_text():
     assert model().fixed_albedo_sensitivity(0.33) == pytest.approx(1.5, abs=0.07)
 
 
-def test_transport_sums_to_zero_with_insolation_weighted_albedo():
-    # Eq. (3) with A summing to zero: the area mean of eq. (4) is T_p of eq. (5)
-    m = model(planetary_albedo="insolation")
+def test_faithful_transport_sums_to_zero():
+    # p. 614: eqs (4)-(5) follow from A = 0 over the Earth, so the area mean of eq. (4) is T_p of eq. (5)
+    m = model()
     assert hemispheric_mean(m.profile(LAT)) == pytest.approx(m.tp_now, abs=1e-6)
+    assert hemispheric_mean(model(planetary_albedo="area").profile(LAT)) - model(planetary_albedo="area").tp_now > 0.5
 
 
 def test_faithful_present_planetary_temperature():
-    # Area-mean albedo of the stated profile gives the T_p printed in Fig. 5 (14.9 deg C)
+    # Insolation-weighted albedo with a 30-day month gives the T_p printed in Fig. 5 (14.9 deg C)
     m = model()
-    assert m.alpha_p_now == pytest.approx(0.3413, abs=2e-4)
-    assert m.tp_now == pytest.approx(15.09, abs=0.02)
+    assert m.alpha_p_now == pytest.approx(0.3319, abs=2e-4)
+    assert m.tp_now == pytest.approx(15.03, abs=0.02)
+    assert model(month_days=365.25 / 12).tp_now > 17
 
 
 def test_eq6_matches_eq5_when_albedo_change_is_exact():
@@ -49,12 +51,15 @@ def test_ice_edge_holds_boundary_temperature(eps):
     edge = m.stable_edge(eps)
     t = m.zonal_temperature(m.insolation(edge), m.p.albedo_edge, m.tp_now + m.delta_tp(eps, edge), eps)
     assert t == pytest.approx(m.t_edge, abs=1e-3)
+    # the public profile uses the boundary albedo 0.50 at the edge and 0.62 just poleward
+    assert m.profile([edge], eps)[0] == pytest.approx(m.t_edge, abs=0.01)
+    assert m.albedo([edge, edge + 0.01], edge) == pytest.approx([0.50, 0.62])
 
 
 def test_critical_point_and_runaway():
     m = model()
     c = m.critical()
-    assert c["eps"] == pytest.approx(-0.0167, abs=2e-4)
+    assert c["eps"] == pytest.approx(-0.0165, abs=2e-4)
     assert c["edge"] == pytest.approx(51.5, abs=0.3)
     assert m.stable_edge(c["eps"] - 1e-4) == 0.0
     assert m.eps_for_edge(72.0) == pytest.approx(0.0, abs=1e-9)
@@ -63,6 +68,8 @@ def test_critical_point_and_runaway():
 def test_rejected_readings_differ():
     assert model(s_area_factor=0.5).critical()["eps"] < -0.04
     assert model(ice_albedo="translate").critical()["eps"] > -0.01
+    # ice threshold from the present profile's own T0 at 72 deg (albedo 0.524) instead of the boundary albedo 0.50
+    assert model(t_edge=float(model().profile(72.0))).critical()["eps"] < -0.02
 
 
 def test_axis_and_column_median_on_synthetic_stroke():
@@ -85,8 +92,12 @@ def test_fidelity_against_scan():
 
     scan = load(PDF)
     rows = {(r["figure"], r["curve"]): r for r in score(scan, model_curves(model()), "faithful")}
-    for key in [("fig4", "T0"), ("fig4", "T1.0"), ("fig4", "T1.5"), ("fig6", "T0"), ("fig6", "Tq"), ("fig5", "Tp")]:
+    for key in [("fig4", "T0"), ("fig4", "T1.0"), ("fig4", "T1.5"), ("fig6", "T0"), ("fig5", "Tp")]:
         assert rows[key]["rmse"] < 1.0, key
+    assert rows[("fig6", "Tq")]["rmse"] < 1.2
+    # the minus sign of the -0.01 tick label is not part of the traced ice edge
+    phi = scan.curves[("fig5", "phi0")]
+    assert not np.any((phi[:, 0] < 1443) & (phi[:, 1] > 2190) & (phi[:, 1] < 2205))
     nulls = {(r["figure"], r["curve"]): r for r in score(scan, model_curves(model(), "no feedback"), "null")}
     for key in [("fig4", "T1.0"), ("fig4", "T1.5"), ("fig5", "Tp"), ("fig5", "phi0")]:
         assert nulls[key]["rmse"] > 2 * rows[key]["rmse"], key

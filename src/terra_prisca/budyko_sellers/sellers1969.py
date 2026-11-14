@@ -203,6 +203,21 @@ class Sellers1969:
                 break
         return self._state(sol.x, sc, ok)
 
+    def growth_rates(self, t, sc: Scenario = Scenario(), dt: float = 1e-3) -> np.ndarray:
+        """Eigenvalues of the Jacobian of the belt balances at state t, largest real part first.
+
+        Sellers solves for steady states only. With equal, positive heat capacity in
+        every belt, dT/dt is proportional to the residual, so a positive real part
+        marks an equilibrium that thermal relaxation would leave. Central differences."""
+        t = np.asarray(t, dtype=float)
+        jac = np.empty((NB, NB))
+        for j in range(NB):
+            e = np.zeros(NB)
+            e[j] = dt
+            jac[:, j] = (self.residual(t + e, sc) - self.residual(t - e, sc)) / (2 * dt)
+        ev = np.linalg.eigvals(jac)
+        return ev[np.argsort(-ev.real)]
+
     def _state(self, t, sc, ok=True):
         fl = self.fluxes(t, sc)
         return {"T": t, "Tc": t - 273.16, "albedo": self.albedo(t, sc), "Rs": self.net_radiation(t, sc),

@@ -48,13 +48,19 @@ def test_ice_age_threshold(m):
     assert warm["Tbar"] > 0 and ice["Tbar"] < -95
 
 
-def test_curve_i_has_two_equilibria(m):
-    warm = m.solve(Scenario(s=1.94, k_mult=2.0))
-    cold = m.solve(Scenario(s=1.94, k_mult=2.0), np.full(NB, 250.0))
-    assert warm["ok"] and cold["ok"]
-    assert warm["Tbar"] - cold["Tbar"] > 8
+def test_curve_i_has_three_equilibria(m):
+    sc = Scenario(s=1.94, k_mult=2.0)
+    warm = m.solve(sc)
+    cold = m.solve(sc, np.full(NB, 250.0))
+    ice = m.solve(sc, np.full(NB, 175.0))
+    assert warm["ok"] and cold["ok"] and ice["ok"]
+    assert warm["Tbar"] - cold["Tbar"] > 8 and ice["Tbar"] < -95
     p = m.present()
     assert p["Tc"][8] - cold["Tc"][8] == pytest.approx(16, abs=1)  # p. 398: equator "about 16C lower"
+    # with equal heat capacities the plotted (middle) root is unstable; the other two are stable
+    assert m.growth_rates(cold["T"], sc)[0].real > 0.5
+    assert m.growth_rates(warm["T"], sc)[0].real < 0 and m.growth_rates(ice["T"], sc)[0].real < 0
+    assert m.growth_rates(p["T"])[0].real < 0
 
 
 def test_table3_heating(m):
@@ -86,8 +92,17 @@ def test_fidelity_against_scan(m):
     assert rows[("fig4", "T")] < 1.0 and rows[("fig4", "albedo")] < 0.01
     assert rows[("fig3", "P")] < 6.0 and rows[("fig2", "Rs")] < 1.5
     assert rows[("fig5", "6")] < 0.5 and rows[("fig6", "0.009")] < 1.5 and rows[("fig6", "0.005")] < 1.5
-    assert rows[("fig7", "i")] < 1.5
+    assert rows[("fig7", "i")] < 1.5 and rows[("fig7", "g")] < 1.0 and rows[("fig7", "h")] < 2.0
+    # curve identity where g and h run close to other curves: g's flat crest lies below the circled
+    # a (~26.1 C at 0 deg), and h's crest dashes lie above the solid f (~16 C)
+    for name, lat, lo, hi in (("g", 0.0, 24.0, 25.5), ("h", 15.0, 22.5, 25.0)):
+        d = scan.traces[("fig7", name)][1]
+        near = np.abs(d[:, 0] - lat) < 1.5
+        assert near.any() and lo < np.median(d[near, 1]) < hi, name
     nulls = {(r["reading"], r["figure"], r["curve"]): r["rmse"] for r in null_rows(scan, ex)}
+    # the observed line of Fig. 4 offered as the solution ties with the model: the present-state
+    # T score cannot separate the reconstruction from Sellers' calibration target
+    assert abs(nulls[("observed T offered as the solution", "fig4", "T")] - rows[("fig4", "T")]) < 0.2
     assert nulls[("no transport", "fig4", "T")] > 20 * rows[("fig4", "T")]
     assert nulls[("no change", "fig5", "6")] > 10 * rows[("fig5", "6")]
     assert nulls[("fixed albedo", "fig6", "0.009")] > 10 * rows[("fig6", "0.009")]
