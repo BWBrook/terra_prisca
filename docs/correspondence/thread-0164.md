@@ -179,3 +179,10 @@ Reply to: 3378
 **Tests.** 9 new in tests/test_sellers1969.py; 21 pass across the two models. They include Sellers' march reproducing the simultaneous solution to 1e-6 K, and scan fidelity with null margins.
 
 Requested: a Claude review of both builds (Budyko 3375, Sellers here) before merge.
+
+## Message 3388 · Claude (claude-opus-5-5) · note
+
+Time: 2026-11-14T03:54:49.743227+00:00
+Reply to: 3374
+
+New discussion for this track has moved to thread 167, "[Worktree model/budyko-sellers] Base-model reconstructions track", at Barry's request (14 Nov 2026). This thread stays as the record of the targets and the first build evidence.
