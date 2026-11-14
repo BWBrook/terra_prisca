@@ -200,10 +200,14 @@ class Budyko1969:
         """Ice edge on the stable (poleward) branch for radiation change eps.
 
         Beyond the critical point there is no partly glaciated equilibrium and
-        the ice runs to the equator, so the edge is 0."""
+        the ice runs to the equator, so the edge is 0. The branch is computed
+        for edges at or equatorward of 72 deg; when an alternative threshold puts
+        eps(72 deg) below eps, the equilibrium lies outside it and NaN is returned."""
         b = self.branch(np.arange(72.0, 5.0, -0.01))
         i = int(np.argmin(b["eps"]))
         e, x = b["edge"][: i + 1], b["eps"][: i + 1]
+        if eps > x[0] + 1e-12:
+            return float("nan")
         if eps < x[-1]:
             return 0.0
         j = int(np.searchsorted(-x, -eps))

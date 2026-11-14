@@ -85,23 +85,41 @@ def model_curves(m: Budyko1969 | None, control: str | None = None) -> dict[tuple
 PRESENT = {("fig3", "T0"), ("fig3", "T observed"), ("fig4", "T0"), ("fig6", "T0")}
 
 
-def score(scan, curves: dict, label: str, skip=frozenset()) -> list[dict]:
+def column_errors(scan, key, mc: np.ndarray) -> tuple[np.ndarray, np.ndarray]:
+    """Model minus printed value in each printed column; NaN where the column lies
+    outside the abscissa range the model curve was computed over (never clamped)."""
+    printed = column_median(scan.curves[key], scan.frames[key[0]])
+    o = np.argsort(mc[:, 0], kind="stable")
+    xs, ys = mc[o, 0], mc[o, 1]
+    single = np.r_[True, np.diff(xs) > 0]
+    err = np.interp(printed[:, 0], xs[single], ys[single]) - printed[:, 1]
+    tol = 1e-9 * max(1.0, float(np.abs(xs).max()))
+    err[(printed[:, 0] < xs[0] - tol) | (printed[:, 0] > xs[-1] + tol)] = np.nan
+    return printed, err
+
+
+def score(scan, curves: dict, label: str, skip=frozenset(), baseline: dict | None = None) -> list[dict]:
+    """Column and two-way scores. Printed columns outside the model curve's support
+    are counted in columns_unsupported and left out of the column error;
+    faithful_rmse_same_columns scores the faithful reading on exactly the columns used."""
     rows = []
     for key, mc in curves.items():
         if key not in scan.curves or key in skip:
             continue
         fr = scan.frames[key[0]]
         ink = scan.curves[key]
-        printed = column_median(ink, fr)
+        _, err_all = column_errors(scan, key, mc)
+        ok = np.isfinite(err_all)
+        err = err_all[ok]
         xlo, xhi = np.sort(fr.x.value([ink[:, 0].min(), ink[:, 0].max()]))
-        mc = mc[(mc[:, 0] >= xlo) & (mc[:, 0] <= xhi)] if key[0] != "fig5" else mc[mc[:, 0] >= xlo]
-        o = np.argsort(mc[:, 0], kind="stable")
-        xs, ys = mc[o, 0], mc[o, 1]
-        single = np.r_[True, np.diff(xs) > 0]
-        err = np.interp(printed[:, 0], xs[single], ys[single]) - printed[:, 1]
-        to_ink, to_model = chamfer(fr.to_px(mc), ink)
-        rows.append({"reading": label, "figure": key[0], "curve": key[1], "columns": len(printed),
+        drawn = mc[(mc[:, 0] >= xlo) & (mc[:, 0] <= xhi)] if key[0] != "fig5" else mc[mc[:, 0] >= xlo]
+        to_ink, to_model = chamfer(fr.to_px(drawn), ink)
+        base = baseline.get(key) if baseline else None
+        rows.append({"reading": label, "figure": key[0], "curve": key[1], "columns": int(ok.sum()),
+                     "columns_unsupported": int((~ok).sum()),
                      "rmse": round(float(np.sqrt(np.mean(err ** 2))), 2),
+                     "faithful_rmse_same_columns": (round(float(np.sqrt(np.mean(base[ok] ** 2))), 2)
+                                                    if base is not None else ""),
                      "median_abs": round(float(np.median(np.abs(err))), 2),
                      "max_abs": round(float(np.abs(err).max()), 2),
                      "model_to_ink_median_px": round(float(np.median(to_ink)), 1),
@@ -230,8 +248,9 @@ def main(pdf: Path, outdir: Path) -> None:
     outdir.mkdir(parents=True, exist_ok=True)
     rows = []
     readings = READINGS | threshold_readings(scan)
+    baseline = {k: column_errors(scan, k, mc)[1] for k, mc in model_curves(model()).items() if k in scan.curves}
     for label, kw in readings.items():
-        rows += score(scan, model_curves(model(**kw)), label)
+        rows += score(scan, model_curves(model(**kw)), label, baseline=baseline)
     m = model()
     for control in ("no feedback", "no change"):
         rows += score(scan, model_curves(m, control), f"null: {control}", skip=PRESENT)

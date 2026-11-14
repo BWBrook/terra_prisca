@@ -72,6 +72,16 @@ def test_rejected_readings_differ():
     assert model(t_edge=float(model().profile(72.0))).critical()["eps"] < -0.02
 
 
+def test_no_equilibrium_is_invented_off_the_branch():
+    # this threshold puts eps(72 deg) at -0.67%: nearer the present there is no computed equilibrium
+    alt = model(t_edge=float(model().profile(72.0)))
+    top = alt.eps_for_edge(72.0)
+    assert top < -0.006
+    assert np.isnan(alt.stable_edge(-0.001)) and np.isnan(alt.stable_edge(top / 2))
+    assert alt.stable_edge(top - 1e-4) < 72.0
+    assert model().stable_edge(0.0) == pytest.approx(72.0, abs=0.05)  # eps(edge) wobbles by ~1e-5 within 0.03 deg of 72
+
+
 def test_axis_and_column_median_on_synthetic_stroke():
     ax = Axis.from_ticks([(100, 0.0), (200, 10.0), (300, 20.0)])
     assert ax.value(250) == pytest.approx(15.0) and ax.residual < 1e-9
@@ -87,7 +97,7 @@ PDF = Path("local/sources/budyko_sellers/budyko1969.pdf")
 
 @pytest.mark.skipif(not PDF.exists(), reason="Budyko (1969) scan not present")
 def test_fidelity_against_scan():
-    from terra_prisca.budyko_sellers.fidelity_budyko1969 import model_curves, score
+    from terra_prisca.budyko_sellers.fidelity_budyko1969 import column_errors, model_curves, score
     from terra_prisca.budyko_sellers.scan_budyko1969 import load
 
     scan = load(PDF)
@@ -101,3 +111,11 @@ def test_fidelity_against_scan():
     nulls = {(r["figure"], r["curve"]): r for r in score(scan, model_curves(model(), "no feedback"), "null")}
     for key in [("fig4", "T1.0"), ("fig4", "T1.5"), ("fig5", "Tp"), ("fig5", "phi0")]:
         assert nulls[key]["rmse"] > 2 * rows[key]["rmse"], key
+    # scores never extend a model curve past its computed range: the off-branch columns are counted, not clamped
+    assert all(r["columns_unsupported"] == 0 for r in rows.values())
+    base = {k: column_errors(scan, k, mc)[1] for k, mc in model_curves(model()).items() if k in scan.curves}
+    alt = {(r["figure"], r["curve"]): r for r in
+           score(scan, model_curves(model(t_edge=float(model().profile(72.0)))), "alt", baseline=base)}
+    tp = alt[("fig5", "Tp")]
+    assert tp["columns_unsupported"] > 100 and tp["columns"] + tp["columns_unsupported"] == rows[("fig5", "Tp")]["columns"]
+    assert tp["faithful_rmse_same_columns"] < tp["rmse"] / 2
