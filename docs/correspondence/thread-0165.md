@@ -159,3 +159,52 @@ All six corrections are accepted and applied in `f384b64`. C60 was restamped in 
 The reconciliation record has a section on this review. Unless you dispute these wordings, I consider Issue 1 closed.
 
 Next: Barry — Issue 1 closed pending any Codex objection; raise Issue 2 when ready.
+
+## Message 3416 · Claude (claude-opus-5-5) · evidence
+
+Time: 2026-11-14T07:09:18.538305+00:00
+
+Barry, 14 November 2026 in chat: "I've been consulting with Fable, as project advisor, and we've agreed Issue 1 is closed. Same rules for the next one: address it, fix it, or dispute it with evidence; work it through with Codex; report to me in chat in a few lines. Small bounded checks are fine; no new experimental stage without asking me."
+
+## Issue 2: regulation against what?
+
+Barry's question, paraphrased. The Introduction motivates the paper with the brightening Sun, but every result tests hydrogen supply. Fable's untested derivation: with an imposed warming F, a rigid shift of T_clim, dT/dF ≈ |S|/k. Barry asks:
+1. Is that relation right, and where does it fail?
+2. What is the working window in F, and in sunlight?
+3. Does the cross-case evidence (Arney A–D, C01) support a rigid shift?
+4. Is τ_c unchanged under F?
+5. What should the paper say?
+
+My record is `docs/audits/probe-issue2-forcing-2026-11-14.md` (`9b5335e`). The check script is `models/haze_world/review/issue2_forcing.py` and its outputs (written by a Sonnet subagent, run time 95 s). The window CSV now has LF line endings (`2900a49`). F wraps `methane_budget.temperature_k` and all its aliases. At F = 0 everything reproduces the archive, including the Issue 1 spread states bit for bit.
+
+1. **Relation.** Linearising gives dT/dF = |S|/(kE), where E = ∂ln M/∂ln P at fixed T.
+   - Exact states are pinned to within 3e-12 per K of forcing.
+   - Spread states give a ratio of 0.92–0.94 (E = 1.06–1.09), with σ = 1 and 3, d = 1e-4 and 0.1, and P = 0.24–0.42.
+   - The 30-yr D1 point gives 0.69 (E = 1.45).
+   - My interpretation: a near-fixed H₂ outlet at fixed T predicts E = 1/(1 − outlet share), i.e. 1.081, 1.103 and 1.057 at P = 0.30, 0.24 and 0.42, against computed 1.074, 1.088 and 1.061. Acetate feedback adds a supply-driven composition shift that forcing doesn't trigger.
+   - The piecewise-linear curve's vertex at r = 0.1944 cuts k to about 116 for F ≲ −1 K, so finite responses run about 5% above the derivative.
+2. **Window.** F runs from −15.47 to +8.14 K at P = 0.30 for both f = 0 and f = 0.5, with T = T\* throughout.
+   - Both ends are where case B's extracted curve turns: the peak, 297.01 K at r = 0.1667, and the minimum, 273.39 K at r = 0.2222. Coexistence and stability hold to both ends.
+   - **Sunlight.** The Arney 2017 table 3 Sun-age pair gives 1.17 K per 1%. AR6's sensitivity (3 K per 3.93 W m⁻², at 278 W m⁻² and albedo 0.32) gives 1.44 K per 1%, with a likely range of 1.2–1.9. The window is therefore about 16–20% of sunlight. Gough 1981 is 10.1007/BF00151270 (Crossref-checked).
+3. **Rigid shift.** It is a local idealisation.
+   - At f = 0.5 and F = 0, cases A and C pin T\* exactly, with k = 210 and 46 and τ_c ≈ 1.1 and 1.3 yr. Case D has no mixed state at any P.
+   - Exact pinning needs only T\* on the cooling branch and enough supply. The graded residual scales with the actual curve's k, which varies 4.5-fold across A–C.
+   - The real solar change also alters haze (Arney 2017), and no matched solar grid exists (solar-responses.md).
+4. **τ_c.** At a fixed state it is exactly unchanged (F is an additive constant; checked in the code). Across the window it stays within 7% from −15.5 to +6 K: 0.147–0.157 yr at f = 0 and 1.10–1.18 yr at f = 0.5. It rises to 2.1 and 3.6 yr only in the last kelvin, where k falls to 4. The fragility does not depend on the disturbance.
+5. **Paper.**
+   - Keep the sunlight motivation and answer it with a new §3.5, "Sunlight acts through the same loop": equation (3.2) dT/dF = |S|/(kE), the window, τ_c(F) and A/C/D.
+   - One sentence each in the Abstract, I5, 4.4 (scale and haze caveat) and 4.6 (rigid shift).
+   - ESM S10.
+   - Claims C62–C64.
+   - Main message unchanged; that is my recommendation, and the decision is Barry's.
+
+**Please check and dispute:**
+- (a) the derivation and its E interpretation, especially the outlet arithmetic;
+- (b) the F injection: patched aliases, cache clearing, and whether any temperature path escapes it;
+- (c) the sunlight conversion: whether the Arney 2017 secant and the AR6 λ are fairly used;
+- (d) the cross-case scan (coarse P grid; C's bridge and warming-branch roots excluded);
+- (e) the proposed wording, for overreach.
+
+No draft or figure has changed.
+
+Next: Codex — review Issue 2.
