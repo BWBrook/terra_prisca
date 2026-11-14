@@ -28,8 +28,11 @@ end to end before you start.
   Seed each trace on a feature only that curve has, such as a crest. Then test
   that the trace stays on its own curve where its neighbours are close:
   [`test_fidelity_against_scan`](../tests/test_sellers1969.py).
-- **Dashed curves** cannot be column-tracked. Select the dash components by size
-  and elongation, then drop reference lines and labels:
+- **Dashed curves need explicit gap handling.**
+  [`track`](../src/terra_prisca/budyko_sellers/digitise.py) can bridge the gaps,
+  but it can switch onto a neighbouring solid curve. Sellers' curve h kept its
+  identity when its isolated dashes were selected by size and elongation, with
+  reference lines and labels excluded:
   [`dash_pixels`](../src/terra_prisca/budyko_sellers/scan_sellers1969.py),
   `DASHES`.
 - **Tick labels, minus signs and curve labels** join traces that pass near
@@ -37,8 +40,9 @@ end to end before you start.
   [`scan_budyko1969.py`](../src/terra_prisca/budyko_sellers/scan_budyko1969.py)
   `drop`, and the φ₀ label check in
   [`test_fidelity_against_scan`](../tests/test_budyko1969.py).
-- **Lines drawn through plotted symbols** pick up the symbols' ink. Mask a ring
-  around each symbol before reading the line:
+- **Lines drawn through plotted symbols** pick up the symbols' ink. Exclude each
+  whole symbol and the area around it before interpolating the rest of the
+  line:
   [`observed_at`](../src/terra_prisca/budyko_sellers/fidelity_sellers1969.py).
 - Check every trace by eye on a native-resolution overlay before scoring it.
   An RMSE cannot show that a trace is on the wrong curve.
@@ -55,11 +59,13 @@ end to end before you start.
   [`test_no_equilibrium_is_invented_off_the_branch`](../tests/test_budyko1969.py).
   A solver asked for an equilibrium off its branch returns NaN, not the
   branch's end value.
-- Include nulls that the score must reject: no feedback, no transport, no
-  change and fixed albedo. Also include **the calibration target offered as the
-  solution**. Sellers' observed temperatures tie with the model on the
-  present-state curve, so that fit cannot be evidence of fidelity, and the
-  README says so.
+- Declare in advance the controls relevant to each experiment: no feedback, no
+  transport, no change or fixed albedo, and **the calibration target offered as
+  the solution**. Report ties and failures as they fall; never tune the score
+  to force a rejection. Sellers' observed temperatures tie with the
+  reconstruction. The present-state fit therefore shows agreement but cannot
+  distinguish the model from its calibration target. The transports and the
+  perturbation experiments discriminate more strongly.
 - State fit in measured numbers (RMSE, maximum error, columns used), never as
   "within the line width".
 - Outputs are byte-reproducible CSVs with LF line endings. The reviewer
@@ -72,8 +78,11 @@ end to end before you start.
   with an insolation-weighted planetary albedo. That reading stands even though
   another reading fits two curves better:
   [`test_faithful_transport_sums_to_zero`](../tests/test_budyko1969.py).
-- Let the fit decide only what the text leaves genuinely open, such as
-  Budyko's month length. Say that the fit decided it.
+- Let the fit decide only what the text leaves genuinely open, and say when it
+  did. Test coupled choices together: Budyko's 30-day month and
+  insolation-weighted albedo were misleading when varied one at a time. The
+  joint comparison is in
+  [`budyko1969_readings.csv`](../models/budyko_sellers/fidelity/budyko1969_readings.csv).
 - Keep every rejected reading as a scored row next to the faithful one
   (`READINGS` in each fidelity module). Give each its own line in the choices
   table, with the reason. The table should show where an alternative does
@@ -88,17 +97,25 @@ Check them before asking for review.
 
 1. Each trace is on its own curve (R1).
 2. The global balance closes under the faithful reading (R2).
-3. Values at a discontinuity, such as an ice edge, come from an exact root, not
-   from interpolating between grid nodes:
-   [`stable_edge`](../src/terra_prisca/budyko_sellers/budyko1969.py) (R3).
+3. At a discontinuity, use the value the source specifies at the boundary,
+   separately from either side. Check the public profile at its solved
+   boundary against the defining equation:
+   [`test_ice_edge_holds_boundary_temperature`](../tests/test_budyko1969.py).
+   Check the root's residual; neither grid interpolation nor a converged solver
+   guarantees the right boundary value (R3). Budyko's edge temperature was
+   5 °C out because albedo 0.62 was used at the boundary instead of 0.50.
 4. Every threshold or constant you supply is recorded as an interpretive
    choice, with scored alternatives (R4).
-5. Count the equilibria. Continuation from the present state and the source's
-   own procedure can find different roots. Report local stability only as
-   local: [`growth_rates`](../src/terra_prisca/budyko_sellers/sellers1969.py),
+5. Search for further equilibria from different starts and along different
+   continuation paths. Report the roots found as found; do not imply the count
+   is exhaustive unless that is established. State the heat-capacity
+   assumptions behind any stability result, and keep local stability separate
+   from claims about where trajectories end or which basins they fall in:
+   [`growth_rates`](../src/terra_prisca/budyko_sellers/sellers1969.py),
    [`test_curve_i_has_three_equilibria`](../tests/test_sellers1969.py) (R5).
 6. A law re-anchored to today can behave differently on the side the source
-   never ran. Restrict it to that side and say so (R6).
+   never ran. Restrict the reported reconstruction to the side the source
+   computed, and say that the direct solver still permits the other side (R6).
 7. Before calling a source inconsistent, compare like with like: belt centres
    against endpoints, and rounded prose against the figure (R7, R8).
 8. Every control promised on the board is in the table (R9).
