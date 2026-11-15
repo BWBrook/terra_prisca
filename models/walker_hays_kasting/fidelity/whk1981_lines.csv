@@ -1,0 +1,7 @@
+line,quantity,printed,model
+Fig. 2a broken line,slope dT/dTe,2.01594,2
+Fig. 2a broken line,intercept (K),0.099863,0
+Fig. 1b Lagache line,slope (decades per K),0.0244113,0.0245364
+Fig. 1b Lagache line,implied e-folding (K),17.7907,17.7
+Fig. 1b Lagache line,slope if 13.7 K,0.0244113,0.0317003
+Fig. 1b Lagache line,"slope if natural log, 17.7 K",0.0244113,0.0564972
