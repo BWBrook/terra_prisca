@@ -2,3 +2,7 @@ quantity,reproduced,expected
 acetogen_invasions_ending_acetogen_only,12,12
 methanogen_invasions_ending_methanogen_only,12,12
 settings_with_locally_stable_mixture,8,"recorded, no prior count"
+refuge_both_A_into_M_final_bulk_temperature_k,281.534823,281.535 (both)
+refuge_both_M_into_A_final_bulk_temperature_k,281.534823,281.535 (both)
+refuge_none_A_into_M_final_bulk_temperature_k,294.40263,single-guild
+refuge_none_M_into_A_final_bulk_temperature_k,273.516845,single-guild

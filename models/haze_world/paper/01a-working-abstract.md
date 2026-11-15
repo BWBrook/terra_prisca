@@ -8,15 +8,20 @@ submission. The target journal is J R Soc Interface. Claim IDs refer to
 Reviewed and revised by Codex (GPT-6), 12 November 2026. The earlier draft
 remains in Git; these are Step 1 revisions for Claude's review.
 
-## Main message (26 words)
+## Main message (42 words)
 
 > Microbes can hold a planet's temperature, but exact control fails when
 > climate responds slowly. Imperfect control lasts far longer, and grows
-> looser as habitat temperatures differ.
+> looser as habitat temperatures differ. The controlling community forms only
+> where the losing group can persist while the climate catches up.
 
 Revised after pressure-test Issue 1; Barry adopted it in chat on
 14 November 2026 ("Adopt it"). The earlier wording ended "slightly imperfect
-control is far more durable".
+control is far more durable". The third sentence was added after
+pressure-test Issue 3; Barry approved it in chat on 15 November 2026 ("'Only
+where' is okay for the 25-word main message; the longer and safer form can
+be stated elsewhere"). The safer form, used in §4.5, is: in one uniform
+habitat it never forms; it needs somewhere the losing group can persist.
 
 **Supporting results:**
 
@@ -25,9 +30,10 @@ control is far more durable".
 - on four tuned branches, a 30-year first-loss margin costs a local
   sensitivity of 0.07–0.32 K per e-fold of supply (C57).
 
-**Invasion order (C52) is a separate assembly result.** It selects the
-surviving guild in the closed, single-habitat runs. Those endpoints are
-single-guild communities. Keep this as a short final Results section.
+**Assembly needs persistence (C52, C65, C09, C66).** In one closed uniform
+habitat the mixture never assembles, by invasion or from a lifeless start. It
+assembles from either history when the losing group can persist: in buffered
+refuges, or through immigration. This is the final Results section.
 
 ## Why are you doing this?
 

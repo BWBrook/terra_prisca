@@ -388,9 +388,44 @@ Each response, divided by its open-loop value ($-kE$ for supply, 1 for imposed w
 
 **Scale.** Arney et al. (2017, table 3) give 272 and 299 K for a case-A atmosphere at CH₄/CO₂ = 0.2 under the 2.7-Ga and modern Sun (278 and 342 W m⁻² mean incoming shortwave), a secant of about 1.2 K per 1% of young-Sun flux. Spectrum and haze change together in that pair, so this is a rough scale, not a calibration of the window in sunlight.
 
-## S10 Provenance and AI-use record
+## S10 Assembly
 
-**Claims ledger.** [claims.csv](../../synthesis/claims.csv) gives, for each claim, the status, evidence paths, producing commit and a reproduction command with its reproduction level. The claims behind this supplement are listed in table S10; consult the ledger for the command of each.
+**Timescales.** In the C52 invasions with fixed products and τ = 0, the displaced resident is removed at the 10- to 70-yr census, while temperature first crosses T\* only after 1,029–13,459 yr (table S10a; `models/haze_world/review/issue3_assembly.py`). At removal temperature has moved 0.006–0.018 K from its start in three runs and 0.41 K in the fourth (f = 0, methanogens invading). Without the census, the continuous equations reach the mixture by recovering from far below one cell.
+
+| f | direction | resident removed (yr) | first T\* crossing (yr) |
+|---|---|---|---|
+| 0 | acetogens invade | 20 | 1,029 |
+| 0 | methanogens invade | 70 | 13,459 |
+| 0.5 | acetogens invade | 20 | 2,501 |
+| 0.5 | methanogens invade | 10 | 7,499 |
+
+*Table S10a. Removal against climate crossing (fixed products, τ = 0, census run).*
+
+**Methane lifetime.** Multiplying the right-hand side of (2.6) by s divides the lifetime by s and multiplies every methane source by s, so every steady state, including T\* and both single-group states, is unchanged; only the methane response speeds up. s = 1 reproduces the C52 outcomes and removal times. Endpoints for lifetimes of 10⁴, 10³, 10² and 10 yr are in table S10b (C65). At 100 yr the faster climate overshoots T\* and invading acetogens are lost at 40 yr (282.9 K, f = 0). At 10 yr acetogen invasions assemble the mixture at 281.535 K; methanogen invasions still lose the acetogen resident within 10–30 yr.
+
+| lifetime (yr) | f = 0, A invades | f = 0, M invades | f = 0.5, A invades | f = 0.5, M invades |
+|---|---|---|---|---|
+| 10,000 | A only | M only | A only | M only |
+| 1,000 | A only | M only | A only | M only |
+| 100 | M only | M only | A only | M only |
+| 10 | both | M only | both | M only |
+
+*Table S10b. Census endpoints under a faster methane response (fixed products, τ = 0).*
+
+**Lifeless start.** Hydrogen at its donor-only level (300 Pa), abiotic methane (r = 5.4 × 10⁻⁴, T = 283.2 K), acetate at local balance, and both groups at the invasion dose (10⁻¹² gDW L⁻¹). Fixed products, τ = 0, 100 kyr, step limit 1 yr. Acetogens grow faster on abundant hydrogen (72 against 27 yr⁻¹) and lead for about a decade; once hydrogen falls, methanogens, favoured at 283 K, exclude them. Acetogens fall below one cell at 51.7–54.5 yr and are removed at the 60-yr census at 283.61–283.71 K. Every run ends with methanogens alone at 273.517 K, at f = 0, 0.5 and 0.9 (C65). The plain population integrator reproduces the removals and their temperatures to 10⁻⁸ K (`issue3_lifeless.py`). The lifeless temperature follows from the assumed low-methane bridge; a lifeless world below T\* would favour acetogens instead, with the same single-group outcome.
+
+**Persistence.** Two designs keep the losing group alive.
+
+- *Buffered refuges* (C09): two habitats of 2% area each at fixed 278 and 286 K, the bulk following T(r). In all 12 key runs (f = 0 and 0.5, exchange 10⁻⁹, 10⁻⁶ and 10⁻³ yr⁻¹), opposite invasion histories reach the same mixed state at 281.535 K (figure 4*c*). A single buffered refuge protects one side only; at f = 0 the climate's overshoot can remove the invader.
+- *Immigration* (C66): in the finite-population design behind C07, every positive mean immigration rate (down to 0.1 yr⁻¹ relative to the removal floor, 0.1 cells yr⁻¹ at the one-cell floor) gives two materially active groups (each at least 1% of catabolic hydrogen use, with no immigration-supported sink) in 36 of 36 runs at each of f = 0 and 0.5, at 281.29–281.57 K. Zero immigration gives single groups in all 24. At f = 0.9 immigration retains trace methanogens without material activity.
+
+**Climate-tracking refuges.** Habitats offset from the surface move with it through the invasion transient, which spans up to 24 K. All 38 completed runs whose refuge protected the losing group along the whole path kept it (C08). The failures were runs in which protection lapsed, or which left the 273–303.15 K support: the main matrix had 69 domain exits and 284 configurations without a supported starting equilibrium. Uniform-spread invasions were not run, because the methanogen-only world at 273.5 K puts any spread above 0.5 K below the support floor. These designs therefore do not test whether tracking habitats can assemble the mixture.
+
+All assembly runs use instantaneous temperature and one supply; refuge temperatures and immigration rates are prescribed, not calibrated. The buffered-refuge mixture sits at the exact set point, and its margin against a slow climate response was not computed.
+
+## S11 Provenance and AI-use record
+
+**Claims ledger.** [claims.csv](../../synthesis/claims.csv) gives, for each claim, the status, evidence paths, producing commit and a reproduction command with its reproduction level. The claims behind this supplement are listed in table S11; consult the ledger for the command of each.
 
 <!-- table:s9_claims -->
 
@@ -398,6 +433,8 @@ Each response, divided by its open-loop value ($-kE$ for supply, 1 for imposed w
 |---|---|---|---|---|
 | C05 | supported | ffd4fbc | S2 | At the central hydrogen crossings the routing feedback is locally restoring on case B haze cooling if acetogens deliver less methane |
 | C06 | supported | ffd4fbc | S2 | Reference explicit populations have a locally stable mixed state warmer than matched controls with acetogens disabled |
+| C08 | supported | ffd4fbc | S10 | Tested lower-recycling climate-tracking geometry leaves paired rescue domain-limited; higher-recycling coexistence provides counterexamples to universal failure |
+| C09 | supported | ffd4fbc | S10 | Both buffered refuges restore matching mixed states in the twelve key reference runs; the full inventory has diverse outcomes |
 | C38 | provisional | 1c1df89 | S6 | PB1 continuum pinning-robustness frontier after B1 |
 | C39 | refuted | 1c1df89 | S6 | PB2 methane-only product feedback supplies all-lag stability |
 | C40 | refuted | 1c1df89 | S6 | PB3 habitat quadrature converges at N33 and fixed-chemistry delay margin stays below30 yr |
@@ -412,7 +449,7 @@ Each response, divided by its open-loop value ($-kE$ for supply, 1 for imposed w
 | C49 | supported | 459e9bc | S6 | Some resolved fixed-chemistry spread communities lie below the declared local-gain interval |
 | C50 | supported | 459e9bc | S6 | Product-feedback spatial states retain tested lag stability but normalized gain can fall while absolute temperature response worsens |
 | C51 | supported | 459e9bc | S6 | A homogeneous unstable thermal-lag mixture can avoid the one-cell threshold over the specified nonlinear horizon |
-| C52 | supported | 459e9bc | S3, S6 | Every studied homogeneous invasion loses its displaced resident under the finite-population rule despite conditional mixed-state stability |
+| C52 | supported | 459e9bc | S3, S6, S10 | Every studied homogeneous invasion loses its displaced resident under the finite-population rule despite conditional mixed-state stability |
 | C54 | supported | 0e29057 | S4 | Among resolved C0/C1 states every exactly pinned state is lag-fragile and every ordinary graded state is lag-robust, with no states between |
 | C55 | supported | 0e29057 | S5, S6 | The specified graded mechanisms depart gradually from exact pinning on the sampled finite-margin branches |
 | C56 | supported | 0e29057 | S5, S6 | Two dial branches refute the prescribed universal power-law slope band |
@@ -424,10 +461,12 @@ Each response, divided by its open-loop value ($-kE$ for supply, 1 for imposed w
 | C62 | supported | da9c2b3 | S9 | Imposed climate warming and hydrogen supply are attenuated by the same local closed-loop factor; graded temperature follows imposed warming by \|S\|/(kE) |
 | C63 | supported | da9c2b3 | S9 | Fixed-product exact states hold T* across a bounded window of imposed warming on case B with short sampled margins |
 | C64 | supported | da9c2b3 | S9 | Fixed-product exact states exist at T* on the extracted cooling curves of Arney cases A and C but not on case D |
+| C65 | supported | f508dfa | S10 | In one uniform closed habitat the mixture does not assemble: the group favoured at the starting temperature is removed or removes the other within decades, while methane needs millennia to carry temperature across T*; this holds from a lifeless start at every tested f and for methane lifetimes down to 1000 yr |
+| C66 | supported | f508dfa | S10 | Any tested positive immigration assembles the mixture in one uniform habitat at f=0 and 0.5, with both groups materially active near T* |
 
 <!-- /table:s9_claims -->
 
-*Table S10. Claims used in the paper or this supplement (ledger commit column).*
+*Table S11. Claims used in the paper or this supplement (ledger commit column).*
 
 **Dated specifications.** The stage specifications in S6, each with a first commit that precedes its results commit, and the paper's own step documents under [`models/haze_world/paper/`](../) (working abstract, display items, section and paragraph abstracts, full draft).
 

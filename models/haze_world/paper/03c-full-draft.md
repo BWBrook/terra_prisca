@@ -30,8 +30,12 @@ habitat-spread branches, the 30-year margin was reached at half-widths of
 0.02–0.06 K; with weak exchange, sensitivity grows with habitat spread. An
 imposed climate warming acts through the same loop: fixed-product exact
 states held temperature across shifts of −15 to +8 K, and graded states followed 0.1–8%
-of the shift. In invasion simulations, arrival order decided which group
-survived.
+of the shift. In one uniform habitat the controlling mixture never
+assembled: the group favoured at the starting temperature removed the other
+within decades, long before methane could carry the climate across the
+switch. It assembled from either history when the losing group could
+persist, in a small habitat held on its side of the switch or through a
+trickle of immigrants.
 
 ---
 
@@ -92,10 +96,10 @@ We couple microbial kinetics transferred from cultured strains to a published
 haze climate (Arney et al. 2016) and give the climate an explicit response
 time. We ask three questions. Does exact regulation survive a slow climate
 response? How much temperature precision must be given up to buy how much
-durability? When one group arrives in a world held by the other, does arrival
-order decide which persists? We answer with linear stability analysis of the
-steady states, two tunable departures from exact control, and invasion
-simulations under a finite-population rule. We vary hydrogen supply
+durability? Can the controlling mixture assemble, by invasion or from a
+lifeless start, and what does assembly need? We answer with linear stability
+analysis of the steady states, two tunable departures from exact control,
+and invasion simulations under a finite-population rule. We vary hydrogen supply
 throughout and test a shift of the climate curve as a controlled surrogate
 for changing sunlight. The hypotheses developed in
 stages, and dated specifications record each stage's predictions and tests
@@ -285,7 +289,11 @@ years. Populations are converted to global cell counts, using a cell mass of
 group with less than one cell in total is removed. This rule, our choice,
 fixes when a loss becomes permanent. It stops a group recovering from a
 vanishing fraction of a cell, an artefact of continuous models (Mollison
-1991). We report the uncensored continuous trajectories alongside.
+1991). We report the uncensored continuous trajectories alongside. Bounded
+checks start from a lifeless planet with both groups rare, and speed up the
+methane response while keeping every steady state fixed. Two earlier stages
+test persistence: small habitats held at fixed temperatures, and a steady
+trickle of immigrants (ESM S10).
 
 <!-- M7 -->
 ### 2.7 Workflow and verification
@@ -420,15 +428,29 @@ Cases A and C, which differ in carbon dioxide and pressure, also give exact
 states at T\* on their extracted curves.
 
 <!-- R6 -->
-### 3.6 Arrival order decides the survivor
+### 3.6 Assembly needs somewhere to persist
 
 In all 24 invasions the invader drove the resident below one cell (figure
 4*a*). This held in both directions, with fixed products and with feedback
 from both products, at f = 0 and 0.5, and at response times of 0, 3 and 30
-years. Each run ended with the invader alone: 12 of 12 acetogen invasions
-left only acetogens, and 12 of 12 methanogen invasions only methanogens
-(figure 4*b*). This includes settings where a mixture of both groups is
-locally stable. Arrival order chose the surviving group.
+years. Each run ended with the invader alone (figure 4*b*), including
+settings where the mixture is locally stable. The resident was lost within
+10–70 years with fixed products, while temperature moved by 0.4 K at most.
+The climate needed 1,000–13,500 years to cross T\*. Starting from a lifeless
+planet with both groups rare gave the same failure: at 283 K methanogens
+removed acetogens within 60 years, at every f. Shortening the methane
+lifetime to 1,000 years changed no outcome. Only at 10 years did acetogen
+invasions assemble the mixture (ESM S10).
+
+The loss is permanent because a group below one cell cannot return. When
+the losing group could persist elsewhere, the mixture formed. Two small
+habitats held at 278 and 286 K, each 2% of the area, let both invasion
+directions reach the same mixed state at 281.535 K in all 12 key runs
+(figure 4*c*). Immigration of as little as 0.1 cells per year did the same
+at f = 0 and 0.5, with both groups materially active. Habitats that track
+the surface climate gave no comparable test: in this model most such runs
+left the physiological support, or lost protection during the transient
+(ESM S10).
 
 ---
 
@@ -502,13 +524,22 @@ from another case, so a matched solar sweep of a haze climate is needed to
 test the regulator against the Sun's brightening.
 
 <!-- D5 -->
-### 4.5 Stability and assembly are separate
+### 4.5 Stability, assembly and persistence
 
-Arrival order chose the survivor in every tested invasion, including settings
-where a mixture of the two groups is stable once formed. Local stability of
-the mixture did not predict the outcome of invasion. Incumbency advantage, a familiar arrival-order effect, favours the first arrival
-(Fukami 2015). Here the late arriver won all 24 invasions, and each run ended
-with one group.
+A stable mixture is not a mixture that forms. Competition between the two
+groups is fast, and the climate they regulate is slow, so in one uniform
+habitat the group favoured at the current temperature removes the other
+long before the climate can reverse its advantage. Arrival order, or the
+starting temperature, then fixes a single-group world. Incumbency usually
+favours the first arrival (Fukami 2015). Here the favoured arrival wins,
+whichever came first. In one uniform habitat the controlling community never
+formed; it needs somewhere the losing group can persist while the climate
+catches up. A real planet has many candidates, from thermally buffered
+refuges to dispersal between regions. Persistence does not by itself give
+durable control. The mixture assembled by buffered refuges sits at the exact
+set point, and its margin against slow climate response was not tested.
+Assembly and durability have different requirements, and a regulating
+biosphere needs both.
 
 <!-- D6 -->
 ### 4.6 Conditions
@@ -526,8 +557,9 @@ local slopes on four branches, and stability is local to each steady state.
 Habitat offsets are uniform, and every habitat must lie within the
 physiological support of 273–303.15 K; around the reference temperature this
 limits spreads to about ±8 K.
-A crash is read at the first fall below one cell, and invasions use one
-habitat without immigration, with the one-cell rule applied every ten years.
+A crash is read at the first fall below one cell, with the one-cell rule
+applied every ten years. Assembly runs use instantaneous temperature, and
+refuge temperatures and immigration rates are prescribed, not calibrated.
 The climate is one published case with an assumed methane lifetime and
 low-methane bridge, and sunlight enters only as a rigid vertical shift of
 that curve. Atmospheric hydrogen up to 100 Pa leaves the set point
@@ -546,7 +578,8 @@ could test the trade-off with the delay-margin analysis used here.
 
 Microbes can hold a planet's temperature, but exact control fails when
 climate responds slowly. Imperfect control lasts far longer, and grows looser
-as habitat temperatures differ.
+as habitat temperatures differ. The controlling community forms only where
+the losing group can persist while the climate catches up.
 
 ---
 
@@ -567,7 +600,7 @@ as habitat temperatures differ.
 | Climate response time τ | Free parameter | Thermal inertia | First-order relaxation of surface temperature |
 | Product feedback (dial D1) | Assumed activity form, equation (2.8) | Acetate slows its producers by κ | Methane feedback held off along D1 |
 | Habitat spread (dial D2) | Assumption | Habitats offset by up to ±σ, exchanging cells at rate d | Uniform offsets; one shared atmosphere and climate |
-| One-cell rule | Assumption, motivated by Mollison (1991) | Finite endpoints of invasions | Ten-year counts; no immigration; continuous crash calculations are read at the first crossing |
+| One-cell rule | Assumption, motivated by Mollison (1991) | Finite endpoints of invasions | Ten-year counts; no immigration in the invasion runs (refuges and immigration in ESM S10); continuous crash calculations are read at the first crossing |
 
 ---
 
@@ -627,7 +660,7 @@ circles mark the last resolved state on each branch. The σ = 1 K curve
 passes through the last point of the d = 10⁻⁴ yr⁻¹ spread branch in (*a*),
 at P = 0.30.
 
-**Figure 4. Arrival order decides the survivor.** (*a*) Global cell counts
+**Figure 4. Assembly needs somewhere to persist.** (*a*) Global cell counts
 after a rare invader enters, in each direction, with fixed products, f = 0.5
 and τ = 3 years. These are finite-census trajectories: a group below one
 cell is removed at the next ten-year census (20 and 10 years respectively).
@@ -635,7 +668,12 @@ Crosses mark the first one-cell crossings at 18.3 and 7.4 years. (*b*)
 Surviving group in all 24 runs:
 every acetogen invasion ended with acetogens alone, and every methanogen
 invasion with methanogens alone. Diamonds mark the 8 of 12 settings where
-the reference mixture of both groups is locally stable.
+the reference mixture of both groups is locally stable. (*c*) Bulk
+temperature after an invasion in each direction (f = 0.5, instantaneous
+temperature). With no refuge (grey), the run ends with the invader alone,
+at 294.4 or 273.5 K. With two small habitats held at 278 and 286 K (2% of
+the area each, cell exchange 10⁻⁶ yr⁻¹), both histories end at the same
+mixed state at T\* (dotted), 281.535 K; the two end markers coincide.
 
 ---
 

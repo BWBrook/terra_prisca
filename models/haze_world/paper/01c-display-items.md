@@ -4,6 +4,8 @@ Claude (Opus 5.5), revised by Codex (GPT-6), 12 November 2026. Each item serves 
 [main message](01a-working-abstract.md). Microbes can hold a planet's
 temperature, but exact control fails when climate responds slowly. Imperfect
 control lasts far longer, and grows looser as habitat temperatures differ.
+The controlling community forms only where the losing group can persist
+while the climate catches up.
 
 ## Budget
 
@@ -89,9 +91,10 @@ This is the trade-off itself.
 Source: the graded-dial and continuum-habitat outputs (C54, C55, C57) and the
 Issue 1 finite branches (C60, C61).
 
-### Figure 4. Arrival order selects the surviving guild
+### Figure 4. Assembly needs somewhere to persist
 
-This figure covers the supporting assembly result.
+This figure covers the assembly result (retitled after pressure-test Issue 3,
+15 November 2026).
 
 - **(a) The invasions.** Population sizes during an invasion in each
   direction, with the displaced resident crossing the one-cell line. Use
@@ -101,8 +104,10 @@ This figure covers the supporting assembly result.
   direction across all 24 runs: 12 of 12 invaders persist in each direction.
   Label these as single-guild endpoints under the closed-habitat census rule.
   Mark which starting parameter sets also support a locally stable mixture.
+- **(c) Persistence assembles the mixture.** Opposite invasion histories
+  with both buffered refuges converge on the same mixed state near T\*.
 
-Source: the B3 transients (C52).
+Source: the B3 transients (C52) and the buffered-refuge key runs (C09).
 
 ### Table 1. Model ingredients and their roles
 

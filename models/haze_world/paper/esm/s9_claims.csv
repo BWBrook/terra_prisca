@@ -1,6 +1,8 @@
 claim,status,commit,used in,claim text
 C05,supported,ffd4fbc,S2,At the central hydrogen crossings the routing feedback is locally restoring on case B haze cooling if acetogens deliver less methane
 C06,supported,ffd4fbc,S2,Reference explicit populations have a locally stable mixed state warmer than matched controls with acetogens disabled
+C08,supported,ffd4fbc,S10,Tested lower-recycling climate-tracking geometry leaves paired rescue domain-limited; higher-recycling coexistence provides counterexamples to universal failure
+C09,supported,ffd4fbc,S10,Both buffered refuges restore matching mixed states in the twelve key reference runs; the full inventory has diverse outcomes
 C38,provisional,1c1df89,S6,PB1 continuum pinning-robustness frontier after B1
 C39,refuted,1c1df89,S6,PB2 methane-only product feedback supplies all-lag stability
 C40,refuted,1c1df89,S6,PB3 habitat quadrature converges at N33 and fixed-chemistry delay margin stays below30 yr
@@ -15,7 +17,7 @@ C48,supported,459e9bc,S6,Product chemistry breaks mixed-zone width scaling with 
 C49,supported,459e9bc,S6,Some resolved fixed-chemistry spread communities lie below the declared local-gain interval
 C50,supported,459e9bc,S6,Product-feedback spatial states retain tested lag stability but normalized gain can fall while absolute temperature response worsens
 C51,supported,459e9bc,S6,A homogeneous unstable thermal-lag mixture can avoid the one-cell threshold over the specified nonlinear horizon
-C52,supported,459e9bc,"S3, S6",Every studied homogeneous invasion loses its displaced resident under the finite-population rule despite conditional mixed-state stability
+C52,supported,459e9bc,"S3, S6, S10",Every studied homogeneous invasion loses its displaced resident under the finite-population rule despite conditional mixed-state stability
 C54,supported,0e29057,S4,"Among resolved C0/C1 states every exactly pinned state is lag-fragile and every ordinary graded state is lag-robust, with no states between"
 C55,supported,0e29057,"S5, S6",The specified graded mechanisms depart gradually from exact pinning on the sampled finite-margin branches
 C56,supported,0e29057,"S5, S6",Two dial branches refute the prescribed universal power-law slope band
@@ -27,3 +29,5 @@ C61,supported,9e2977f,S4,Finite supply responses of weakly connected spread comm
 C62,supported,da9c2b3,S9,Imposed climate warming and hydrogen supply are attenuated by the same local closed-loop factor; graded temperature follows imposed warming by |S|/(kE)
 C63,supported,da9c2b3,S9,Fixed-product exact states hold T* across a bounded window of imposed warming on case B with short sampled margins
 C64,supported,da9c2b3,S9,Fixed-product exact states exist at T* on the extracted cooling curves of Arney cases A and C but not on case D
+C65,supported,f508dfa,S10,"In one uniform closed habitat the mixture does not assemble: the group favoured at the starting temperature is removed or removes the other within decades, while methane needs millennia to carry temperature across T*; this holds from a lifeless start at every tested f and for methane lifetimes down to 1000 yr"
+C66,supported,f508dfa,S10,"Any tested positive immigration assembles the mixture in one uniform habitat at f=0 and 0.5, with both groups materially active near T*"

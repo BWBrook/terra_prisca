@@ -1,8 +1,10 @@
-"""Figure 4. Arrival order decides the survivor.
+"""Figure 4. Assembly needs somewhere to persist.
 
 (a) Global cell counts during one invasion in each direction (fixed products,
 f = 0.5, tau = 3 yr). (b) Outcome of all 24 invasion runs, with the settings
-whose reference mixed state is locally stable. Exports: data/fig4_*.csv.
+whose reference mixed state is locally stable. (c) Bulk temperature in the
+buffered-refuge key runs (f = 0.5, exchange 1e-6 per yr): both 2% refuges
+against no refuges, in each invasion direction (C09). Exports: data/fig4_*.csv.
 Paths and endpoints use the archived finite-census runs, which remove a guild
 below one cell at the next 10-year census. No uncensored continuation is drawn.
 The default build uses committed CSV exports and verifies their source identities
@@ -11,6 +13,7 @@ against the manifest. --refresh regenerates those exports from local native NPZs
 
 import csv
 from dataclasses import replace
+import gzip
 from hashlib import sha256
 import json
 import sys
@@ -27,6 +30,9 @@ from terra_prisca.haze_world.finite_populations import CellProcess
 from . import style
 
 DYN = style.ROOT / "models" / "haze_world" / "figures" / "dynamic_realisation"
+BUF = style.ROOT / "models" / "haze_world" / "figures" / "buffered_refuges"
+BUF_RAW = style.ROOT / "local" / "haze" / "buffered_refuges"
+T_STAR = 281.534823
 TMAX = 40.0
 DIRS = ("A_into_M", "M_into_A")
 DIR_TEXT = {"A_into_M": "acetogens invade methanogens", "M_into_A": "methanogens invade acetogens"}
@@ -78,7 +84,45 @@ def reference_inputs():
     return inv, lam, records, cases
 
 
+def refuge_rows():
+    rows = [r for r in read(BUF / "selected_main.csv") if r["fraction"] == "0.5" and r["dispersal_yr"] == "1e-06"
+            and r["configuration"] in ("both", "none")]
+    assert len(rows) == 4 and all(r["settling_status"] == "census_stationary" for r in rows)
+    digests = {f["path"]: f["sha256"] for f in json.loads((BUF / "raw_manifest.json").read_text())["files"]}
+    return sorted(rows, key=lambda r: (r["configuration"], r["direction"])), digests
+
+
+def refresh_refuges():
+    rows, digests = refuge_rows()
+    out = []
+    for r in rows:
+        path = BUF_RAW / r["raw_file"]
+        assert sha256(path.read_bytes()).hexdigest() == digests[r["raw_file"]], path
+        with gzip.open(path, "rt") as fh:
+            result = json.load(fh)["result"]
+        t = np.asarray(result["t"], float)
+        bulk = np.asarray(result["temperatures_k"], float)[0]
+        keep = np.unique(np.r_[0, np.searchsorted(t, np.geomspace(10., t[-1], 120)), len(t) - 1])
+        for j in keep:
+            out.append(dict(case_id=r["case_id"], configuration=r["configuration"], direction=r["direction"],
+                            endpoint_class=r["endpoint_class"], time_yr=float(t[j]), bulk_temperature_k=float(bulk[j]),
+                            raw_file=r["raw_file"], raw_sha256=digests[r["raw_file"]]))
+    write("fig4_refuges.csv", out)
+
+
+def load_refuges():
+    rows, digests = refuge_rows()
+    data = read(style.DATA / "fig4_refuges.csv")
+    for r in rows:
+        mine = [d for d in data if d["case_id"] == r["case_id"]]
+        assert mine and all(d["raw_file"] == r["raw_file"] and d["raw_sha256"] == digests[r["raw_file"]]
+                            and d["endpoint_class"] == r["endpoint_class"] for d in mine)
+        assert abs(float(mine[-1]["bulk_temperature_k"]) - float(r["global_temperature_k"])) < 1e-6
+    return rows, data
+
+
 def refresh():
+    refresh_refuges()
     inv, lam, records, cases = reference_inputs()
     outcomes = []
     trajectories = []
@@ -175,8 +219,9 @@ def main(do_refresh=False):
     assert (n_a, n_m) == (12, 12)
     assert all(o["first_resident_below_one_cell_yr"] > 0 for o in outcomes)
 
-    fig = plt.figure(figsize=(style.DOUBLE, 80 * style.MM))
-    gs = GridSpec(1, 2, figure=fig, width_ratios=[1.0, 0.82], wspace=0.34, left=0.07, right=0.995, bottom=0.14, top=0.97)
+    fig = plt.figure(figsize=(style.DOUBLE, 135 * style.MM))
+    outer = GridSpec(2, 1, figure=fig, height_ratios=[1.0, 0.72], hspace=0.42, left=0.07, right=0.995, bottom=0.08, top=0.98)
+    gs = outer[0].subgridspec(1, 2, width_ratios=[1.0, 0.82], wspace=0.34)
     sub = gs[0, 0].subgridspec(1, 2, wspace=0.08)
     axa = [fig.add_subplot(sub[0, 0])]
     axa.append(fig.add_subplot(sub[0, 1], sharey=axa[0]))
@@ -273,10 +318,42 @@ def main(do_refresh=False):
     axb.legend(handles=hb, loc="upper center", bbox_to_anchor=(0.42, -0.04), ncol=2, fontsize=6, columnspacing=1.0, handletextpad=0.3)
     style.panel_label(axb, "b", x=-0.34, y=1.1)
     write("fig4_grid.csv", rows_out)
+
+    # (c) buffered refuges: opposite histories meet at T*
+    axc = fig.add_subplot(outer[1])
+    refuges, data = load_refuges()
+    for r in refuges:
+        pts = [d for d in data if d["case_id"] == r["case_id"] and float(d["time_yr"]) > 0]
+        t = np.array([float(d["time_yr"]) for d in pts])
+        temp = np.array([float(d["bulk_temperature_k"]) for d in pts])
+        invader = "acetogen" if r["direction"] == "A_into_M" else "methanogen"
+        e = style.ENTITY[invader]
+        both = r["configuration"] == "both"
+        axc.plot(t, temp, color=e["color"] if both else style.MUTED, ls="-" if both else e["linestyle"],
+                 lw=1.3 if both else 0.9, zorder=4 if both else 3)
+        axc.plot(t[-1], temp[-1], marker=e["marker"], ms=4, color=e["color"] if both else style.MUTED, ls="none", zorder=5)
+    axc.axhline(T_STAR, color=style.INK_2, ls=":", lw=0.7)
+    axc.text(12, T_STAR - 0.6, "T* (switch)", fontsize=6, color=style.INK_2, va="top")
+    axc.set_xscale("log")
+    axc.set_xlim(10, 1.3e5)
+    axc.set_xlabel("Time after invasion (yr)")
+    axc.set_ylabel("Bulk temperature (K)")
+    hc = [
+        Line2D([], [], color=style.ACETOGEN, lw=1.3, label="acetogens invade, two refuges"),
+        Line2D([], [], color=style.METHANOGEN, lw=1.3, label="methanogens invade, two refuges"),
+        Line2D([], [], color=style.MUTED, lw=0.9, ls="-", label="acetogens invade, no refuge"),
+        Line2D([], [], color=style.MUTED, lw=0.9, ls="--", label="methanogens invade, no refuge"),
+    ]
+    axc.legend(handles=hc, loc="center left", bbox_to_anchor=(0.0, 0.6), fontsize=5.8, ncol=1, handlelength=2.2)
+    style.panel_label(axc, "c", x=-0.07, y=1.0)
+    finals = {(r["configuration"], r["direction"]): float(r["global_temperature_k"]) for r in refuges}
     stable_n = sum(lam[(c, f, tau)] < 0 for c, f, tau in settings)
     write("fig4_checks.csv", [dict(quantity="acetogen_invasions_ending_acetogen_only", reproduced=n_a, expected=12),
                               dict(quantity="methanogen_invasions_ending_methanogen_only", reproduced=n_m, expected=12),
-                              dict(quantity="settings_with_locally_stable_mixture", reproduced=stable_n, expected="recorded, no prior count")])
+                              dict(quantity="settings_with_locally_stable_mixture", reproduced=stable_n, expected="recorded, no prior count"),
+                              *[dict(quantity=f"refuge_{c}_{d}_final_bulk_temperature_k", reproduced=round(v, 6),
+                                     expected="281.535 (both)" if c == "both" else "single-guild")
+                                for (c, d), v in sorted(finals.items())]])
     return style.save(fig, "fig4")
 
 
