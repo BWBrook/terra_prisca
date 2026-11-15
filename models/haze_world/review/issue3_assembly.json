@@ -1,0 +1,1051 @@
+[
+ {
+  "check": "methane_speed",
+  "fraction": 0.0,
+  "direction": "A_into_M",
+  "speed": 1,
+  "methane_lifetime_yr": 10000.0,
+  "initial_temperature_k": 273.51674403884846,
+  "status": "completed",
+  "horizon_yr": 100000.0,
+  "endpoint": "acetogen_only",
+  "final_temperature_k": 283.2022609386929,
+  "final_log10_cells": [
+   26.236753813315413,
+   null
+  ],
+  "temperature_range_k": [
+   273.51674403884846,
+   297.008
+  ],
+  "first_T_star_crossing_yr": 1029.0,
+  "n_T_star_crossings": 1,
+  "removals": [
+   {
+    "time_yr": 20.0,
+    "guild": 1,
+    "log_removed_cells": -6.003470818905782
+   }
+  ],
+  "temperature_at_first_removal_k": 273.5346430386605,
+  "final_window_temperature_span_k": 0.02218444268191888,
+  "wall_seconds": 10.28366129094502
+ },
+ {
+  "check": "methane_speed",
+  "fraction": 0.0,
+  "direction": "A_into_M",
+  "speed": 10,
+  "methane_lifetime_yr": 1000.0,
+  "initial_temperature_k": 273.51674403884846,
+  "status": "completed",
+  "horizon_yr": 100000.0,
+  "endpoint": "acetogen_only",
+  "final_temperature_k": 283.19877678579377,
+  "final_log10_cells": [
+   26.23680872561199,
+   null
+  ],
+  "temperature_range_k": [
+   273.51674403884846,
+   297.008
+  ],
+  "first_T_star_crossing_yr": 105.0,
+  "n_T_star_crossings": 1,
+  "removals": [
+   {
+    "time_yr": 20.0,
+    "guild": 1,
+    "log_removed_cells": -5.9594923205819725
+   }
+  ],
+  "temperature_at_first_removal_k": 273.6942800475688,
+  "final_window_temperature_span_k": 0.0,
+  "wall_seconds": 10.358733290981036
+ },
+ {
+  "check": "methane_speed",
+  "fraction": 0.0,
+  "direction": "A_into_M",
+  "speed": 100,
+  "methane_lifetime_yr": 100.0,
+  "initial_temperature_k": 273.51674403884846,
+  "status": "completed",
+  "horizon_yr": 100000.0,
+  "endpoint": "methanogen_only",
+  "final_temperature_k": 273.51674403884846,
+  "final_log10_cells": [
+   null,
+   25.942502007072584
+  ],
+  "temperature_range_k": [
+   273.51674403884846,
+   291.66555322155085
+  ],
+  "first_T_star_crossing_yr": 13.0,
+  "n_T_star_crossings": 2,
+  "removals": [
+   {
+    "time_yr": 40.0,
+    "guild": 0,
+    "log_removed_cells": -31.25481059064535
+   }
+  ],
+  "temperature_at_first_removal_k": 282.9141052127114,
+  "final_window_temperature_span_k": 0.0,
+  "wall_seconds": 9.701658957987092
+ },
+ {
+  "check": "methane_speed",
+  "fraction": 0.0,
+  "direction": "A_into_M",
+  "speed": 1000,
+  "methane_lifetime_yr": 10.0,
+  "initial_temperature_k": 273.51674403884846,
+  "status": "completed",
+  "horizon_yr": 100000.0,
+  "endpoint": "both",
+  "final_temperature_k": 281.53482280508206,
+  "final_log10_cells": [
+   25.66211973281504,
+   25.874022169044817
+  ],
+  "temperature_range_k": [
+   273.51674403884846,
+   290.46149610173336
+  ],
+  "first_T_star_crossing_yr": 3.0,
+  "n_T_star_crossings": 33,
+  "removals": [],
+  "temperature_at_first_removal_k": null,
+  "final_window_temperature_span_k": 5.684341886080802e-14,
+  "wall_seconds": 14.401821750041563
+ },
+ {
+  "check": "methane_speed",
+  "fraction": 0.0,
+  "direction": "M_into_A",
+  "speed": 1,
+  "methane_lifetime_yr": 10000.0,
+  "initial_temperature_k": 283.19877678579377,
+  "status": "completed",
+  "horizon_yr": 100000.0,
+  "endpoint": "methanogen_only",
+  "final_temperature_k": 273.5169245038539,
+  "final_log10_cells": [
+   null,
+   25.942501422408547
+  ],
+  "temperature_range_k": [
+   273.5169245038539,
+   297.008
+  ],
+  "first_T_star_crossing_yr": 13459.0,
+  "n_T_star_crossings": 1,
+  "removals": [
+   {
+    "time_yr": 70.0,
+    "guild": 0,
+    "log_removed_cells": -10.00246515985556
+   }
+  ],
+  "temperature_at_first_removal_k": 283.60828022917997,
+  "final_window_temperature_span_k": 0.0010789796298809051,
+  "wall_seconds": 8.007383082993329
+ },
+ {
+  "check": "methane_speed",
+  "fraction": 0.0,
+  "direction": "M_into_A",
+  "speed": 10,
+  "methane_lifetime_yr": 1000.0,
+  "initial_temperature_k": 283.19877678579377,
+  "status": "completed",
+  "horizon_yr": 100000.0,
+  "endpoint": "methanogen_only",
+  "final_temperature_k": 273.5167440388485,
+  "final_log10_cells": [
+   null,
+   25.942502007072584
+  ],
+  "temperature_range_k": [
+   273.5167440388485,
+   297.008
+  ],
+  "first_T_star_crossing_yr": 1368.0,
+  "n_T_star_crossings": 1,
+  "removals": [
+   {
+    "time_yr": 60.0,
+    "guild": 0,
+    "log_removed_cells": -33.491569567932075
+   }
+  ],
+  "temperature_at_first_removal_k": 285.5897733539189,
+  "final_window_temperature_span_k": 0.0,
+  "wall_seconds": 7.969326250022277
+ },
+ {
+  "check": "methane_speed",
+  "fraction": 0.0,
+  "direction": "M_into_A",
+  "speed": 100,
+  "methane_lifetime_yr": 100.0,
+  "initial_temperature_k": 283.19877678579377,
+  "status": "completed",
+  "horizon_yr": 100000.0,
+  "endpoint": "methanogen_only",
+  "final_temperature_k": 273.51674403884846,
+  "final_log10_cells": [
+   null,
+   25.942502007072584
+  ],
+  "temperature_range_k": [
+   273.51674403884846,
+   297.008
+  ],
+  "first_T_star_crossing_yr": 158.0,
+  "n_T_star_crossings": 1,
+  "removals": [
+   {
+    "time_yr": 40.0,
+    "guild": 0,
+    "log_removed_cells": -18.826891646573586
+   }
+  ],
+  "temperature_at_first_removal_k": 289.13121899694715,
+  "final_window_temperature_span_k": 0.0,
+  "wall_seconds": 7.851075374986976
+ },
+ {
+  "check": "methane_speed",
+  "fraction": 0.0,
+  "direction": "M_into_A",
+  "speed": 1000,
+  "methane_lifetime_yr": 10.0,
+  "initial_temperature_k": 283.19877678579377,
+  "status": "completed",
+  "horizon_yr": 100000.0,
+  "endpoint": "methanogen_only",
+  "final_temperature_k": 273.51674403884846,
+  "final_log10_cells": [
+   null,
+   25.942502007072584
+  ],
+  "temperature_range_k": [
+   273.5167440365737,
+   297.008
+  ],
+  "first_T_star_crossing_yr": 36.0,
+  "n_T_star_crossings": 1,
+  "removals": [
+   {
+    "time_yr": 30.0,
+    "guild": 0,
+    "log_removed_cells": -11.381272996004654
+   }
+  ],
+  "temperature_at_first_removal_k": 295.89781224036085,
+  "final_window_temperature_span_k": 0.0,
+  "wall_seconds": 8.030252875003498
+ },
+ {
+  "check": "methane_speed",
+  "fraction": 0.5,
+  "direction": "A_into_M",
+  "speed": 1,
+  "methane_lifetime_yr": 10000.0,
+  "initial_temperature_k": 273.51674403884846,
+  "status": "completed",
+  "horizon_yr": 100000.0,
+  "endpoint": "acetogen_only",
+  "final_temperature_k": 294.4026297651821,
+  "final_log10_cells": [
+   25.99463985592925,
+   null
+  ],
+  "temperature_range_k": [
+   273.51674403884846,
+   297.008
+  ],
+  "first_T_star_crossing_yr": 2501.0,
+  "n_T_star_crossings": 1,
+  "removals": [
+   {
+    "time_yr": 20.0,
+    "guild": 1,
+    "log_removed_cells": -6.005907013564283
+   }
+  ],
+  "temperature_at_first_removal_k": 273.52525137664634,
+  "final_window_temperature_span_k": 0.0009112898170542394,
+  "wall_seconds": 9.134960041032173
+ },
+ {
+  "check": "methane_speed",
+  "fraction": 0.5,
+  "direction": "A_into_M",
+  "speed": 10,
+  "methane_lifetime_yr": 1000.0,
+  "initial_temperature_k": 273.51674403884846,
+  "status": "completed",
+  "horizon_yr": 100000.0,
+  "endpoint": "acetogen_only",
+  "final_temperature_k": 294.4025100407066,
+  "final_log10_cells": [
+   25.994643384151342,
+   null
+  ],
+  "temperature_range_k": [
+   273.51674403884846,
+   297.008
+  ],
+  "first_T_star_crossing_yr": 251.0,
+  "n_T_star_crossings": 1,
+  "removals": [
+   {
+    "time_yr": 20.0,
+    "guild": 1,
+    "log_removed_cells": -5.9838703761381
+   }
+  ],
+  "temperature_at_first_removal_k": 273.60108805003773,
+  "final_window_temperature_span_k": 0.0,
+  "wall_seconds": 8.731004709028639
+ },
+ {
+  "check": "methane_speed",
+  "fraction": 0.5,
+  "direction": "A_into_M",
+  "speed": 100,
+  "methane_lifetime_yr": 100.0,
+  "initial_temperature_k": 273.51674403884846,
+  "status": "completed",
+  "horizon_yr": 100000.0,
+  "endpoint": "acetogen_only",
+  "final_temperature_k": 294.4025100407066,
+  "final_log10_cells": [
+   25.994643384151345,
+   null
+  ],
+  "temperature_range_k": [
+   273.51674403884846,
+   297.008
+  ],
+  "first_T_star_crossing_yr": 26.0,
+  "n_T_star_crossings": 1,
+  "removals": [
+   {
+    "time_yr": 20.0,
+    "guild": 1,
+    "log_removed_cells": -3.393104958968337
+   }
+  ],
+  "temperature_at_first_removal_k": 278.55796028534684,
+  "final_window_temperature_span_k": 5.684341886080802e-14,
+  "wall_seconds": 9.127148624975234
+ },
+ {
+  "check": "methane_speed",
+  "fraction": 0.5,
+  "direction": "A_into_M",
+  "speed": 1000,
+  "methane_lifetime_yr": 10.0,
+  "initial_temperature_k": 273.51674403884846,
+  "status": "completed",
+  "horizon_yr": 100000.0,
+  "endpoint": "both",
+  "final_temperature_k": 281.534822805082,
+  "final_log10_cells": [
+   25.94223063178948,
+   25.71260608222659
+  ],
+  "temperature_range_k": [
+   273.51674403884846,
+   287.52586740286205
+  ],
+  "first_T_star_crossing_yr": 4.0,
+  "n_T_star_crossings": 17,
+  "removals": [],
+  "temperature_at_first_removal_k": null,
+  "final_window_temperature_span_k": 5.684341886080802e-14,
+  "wall_seconds": 10.371527915995102
+ },
+ {
+  "check": "methane_speed",
+  "fraction": 0.5,
+  "direction": "M_into_A",
+  "speed": 1,
+  "methane_lifetime_yr": 10000.0,
+  "initial_temperature_k": 294.40251004070655,
+  "status": "completed",
+  "horizon_yr": 100000.0,
+  "endpoint": "methanogen_only",
+  "final_temperature_k": 273.5168451798926,
+  "final_log10_cells": [
+   null,
+   25.942501679400863
+  ],
+  "temperature_range_k": [
+   273.5168451798926,
+   297.008
+  ],
+  "first_T_star_crossing_yr": 7499.0,
+  "n_T_star_crossings": 1,
+  "removals": [
+   {
+    "time_yr": 10.0,
+    "guild": 0,
+    "log_removed_cells": -30.788148976622537
+   }
+  ],
+  "temperature_at_first_removal_k": 294.4092851665623,
+  "final_window_temperature_span_k": 0.0006047163095672659,
+  "wall_seconds": 36.82507379195886
+ },
+ {
+  "check": "methane_speed",
+  "fraction": 0.5,
+  "direction": "M_into_A",
+  "speed": 10,
+  "methane_lifetime_yr": 1000.0,
+  "initial_temperature_k": 294.40251004070655,
+  "status": "completed",
+  "horizon_yr": 100000.0,
+  "endpoint": "methanogen_only",
+  "final_temperature_k": 273.5167440388485,
+  "final_log10_cells": [
+   null,
+   25.942502007072584
+  ],
+  "temperature_range_k": [
+   273.5167440388485,
+   297.008
+  ],
+  "first_T_star_crossing_yr": 752.0,
+  "n_T_star_crossings": 1,
+  "removals": [
+   {
+    "time_yr": 10.0,
+    "guild": 0,
+    "log_removed_cells": -31.127599949604573
+   }
+  ],
+  "temperature_at_first_removal_k": 294.4700039217227,
+  "final_window_temperature_span_k": 0.0,
+  "wall_seconds": 36.539496375015005
+ },
+ {
+  "check": "methane_speed",
+  "fraction": 0.5,
+  "direction": "M_into_A",
+  "speed": 100,
+  "methane_lifetime_yr": 100.0,
+  "initial_temperature_k": 294.40251004070655,
+  "status": "completed",
+  "horizon_yr": 100000.0,
+  "endpoint": "methanogen_only",
+  "final_temperature_k": 273.51674403884846,
+  "final_log10_cells": [
+   null,
+   25.942502007072584
+  ],
+  "temperature_range_k": [
+   273.51674403884846,
+   297.008
+  ],
+  "first_T_star_crossing_yr": 77.0,
+  "n_T_star_crossings": 1,
+  "removals": [
+   {
+    "time_yr": 10.0,
+    "guild": 0,
+    "log_removed_cells": -34.47123409886446
+   }
+  ],
+  "temperature_at_first_removal_k": 295.0523893123825,
+  "final_window_temperature_span_k": 0.0,
+  "wall_seconds": 36.42658137495164
+ },
+ {
+  "check": "methane_speed",
+  "fraction": 0.5,
+  "direction": "M_into_A",
+  "speed": 1000,
+  "methane_lifetime_yr": 10.0,
+  "initial_temperature_k": 294.40251004070655,
+  "status": "completed",
+  "horizon_yr": 100000.0,
+  "endpoint": "methanogen_only",
+  "final_temperature_k": 273.51674403884846,
+  "final_log10_cells": [
+   null,
+   25.942502007072584
+  ],
+  "temperature_range_k": [
+   273.51674403563874,
+   297.008
+  ],
+  "first_T_star_crossing_yr": 9.0,
+  "n_T_star_crossings": 1,
+  "removals": [
+   {
+    "time_yr": 10.0,
+    "guild": 0,
+    "log_removed_cells": -0.7764313565749887
+   }
+  ],
+  "temperature_at_first_removal_k": 277.1999538315239,
+  "final_window_temperature_span_k": 5.684341886080802e-14,
+  "wall_seconds": 35.093220541020855
+ },
+ {
+  "check": "lifeless",
+  "fraction": 0.0,
+  "initial_ratio": 0.0005437715867670953,
+  "initial_temperature_k": 283.19877678579377,
+  "initial_hydrogen_pa": 300.0,
+  "initial_acetate_mol_l": 1.0750295593905803e-11,
+  "status": "completed",
+  "horizon_yr": 100000.0,
+  "endpoint": "methanogen_only",
+  "final_temperature_k": 273.51692434157655,
+  "final_log10_cells": [
+   null,
+   25.942501422934292
+  ],
+  "temperature_range_k": [
+   273.51692434157655,
+   297.008
+  ],
+  "first_T_star_crossing_yr": 13450.0,
+  "n_T_star_crossings": 1,
+  "removals": [
+   {
+    "time_yr": 60.0,
+    "guild": 0,
+    "log_removed_cells": -9.414870029899689
+   }
+  ],
+  "temperature_at_first_removal_k": 283.60545141509857,
+  "final_window_temperature_span_k": 0.0010779599704164866,
+  "wall_seconds": 89.9650693750009,
+  "uncensored": {
+   "status": "completed",
+   "min_log10_cells": [
+    -54084.415513287066,
+    -848.9921797079597
+   ],
+   "min_time_yr": [
+    13449.017108387336,
+    25256.23611914228
+   ],
+   "first_below_cell_yr": [
+    54.53198920458361,
+    24529.107531924594
+   ],
+   "final_log10_cells": [
+    25.6621612564265,
+    25.8740079462097
+   ],
+   "final_temperature_k": 281.534821724877,
+   "final_window_temperature_span_k": 0.0010783184392266776
+  },
+  "trace": [
+   {
+    "time_yr": 0.0,
+    "temperature_k": 283.19877678579377,
+    "log10_cells": [
+     17.183274167489095,
+     17.183274167489095
+    ]
+   },
+   {
+    "time_yr": 1.0,
+    "temperature_k": 283.1987768473975,
+    "log10_cells": [
+     26.236700356255778,
+     21.019728504438135
+    ]
+   },
+   {
+    "time_yr": 2.0,
+    "temperature_k": 283.1987770138187,
+    "log10_cells": [
+     26.236798107957654,
+     21.379568427659407
+    ]
+   },
+   {
+    "time_yr": 5.0,
+    "temperature_k": 283.1987802647478,
+    "log10_cells": [
+     26.236681273851275,
+     22.458836965564217
+    ]
+   },
+   {
+    "time_yr": 10.0,
+    "temperature_k": 283.1989985910446,
+    "log10_cells": [
+     26.22880422250517,
+     24.252970239446405
+    ]
+   },
+   {
+    "time_yr": 20.0,
+    "temperature_k": 283.25226280678385,
+    "log10_cells": [
+     23.172847273732575,
+     25.999132044626418
+    ]
+   },
+   {
+    "time_yr": 50.0,
+    "temperature_k": 283.52034849944386,
+    "log10_cells": [
+     3.3048638510239914,
+     25.998199632806156
+    ]
+   },
+   {
+    "time_yr": 100.0,
+    "temperature_k": 283.9270174638928,
+    "log10_cells": [
+     null,
+     25.996129891344655
+    ]
+   },
+   {
+    "time_yr": 200.0,
+    "temperature_k": 284.6233135231211,
+    "log10_cells": [
+     null,
+     25.992406802036484
+    ]
+   },
+   {
+    "time_yr": 500.0,
+    "temperature_k": 286.13987949467287,
+    "log10_cells": [
+     null,
+     25.98347500620328
+    ]
+   },
+   {
+    "time_yr": 1000.0,
+    "temperature_k": 287.7413771765763,
+    "log10_cells": [
+     null,
+     25.972727119529335
+    ]
+   },
+   {
+    "time_yr": 2000.0,
+    "temperature_k": 289.60770756140624,
+    "log10_cells": [
+     null,
+     25.95815157655384
+    ]
+   },
+   {
+    "time_yr": 5000.0,
+    "temperature_k": 292.74253737066573,
+    "log10_cells": [
+     null,
+     25.92850777182212
+    ]
+   },
+   {
+    "time_yr": 10000.0,
+    "temperature_k": 297.00781066607976,
+    "log10_cells": [
+     null,
+     25.87728601992461
+    ]
+   },
+   {
+    "time_yr": 50000.0,
+    "temperature_k": 273.5399412186208,
+    "log10_cells": [
+     null,
+     25.94242676065232
+    ]
+   },
+   {
+    "time_yr": 100000.0,
+    "temperature_k": 273.51692434157655,
+    "log10_cells": [
+     null,
+     25.942501422934292
+    ]
+   }
+  ]
+ },
+ {
+  "check": "lifeless",
+  "fraction": 0.5,
+  "initial_ratio": 0.0005437715867670953,
+  "initial_temperature_k": 283.19877678579377,
+  "initial_hydrogen_pa": 300.0,
+  "initial_acetate_mol_l": 1.0750295593905803e-11,
+  "status": "completed",
+  "horizon_yr": 100000.0,
+  "endpoint": "methanogen_only",
+  "final_temperature_k": 273.51692422289125,
+  "final_log10_cells": [
+   null,
+   25.94250142331881
+  ],
+  "temperature_range_k": [
+   273.51692422289125,
+   297.008
+  ],
+  "first_T_star_crossing_yr": 13443.0,
+  "n_T_star_crossings": 1,
+  "removals": [
+   {
+    "time_yr": 60.0,
+    "guild": 0,
+    "log_removed_cells": -12.614542546599154
+   }
+  ],
+  "temperature_at_first_removal_k": 283.6621331743838,
+  "final_window_temperature_span_k": 0.0010772485837264867,
+  "wall_seconds": 90.29129620903404,
+  "uncensored": {
+   "status": "completed",
+   "min_log10_cells": [
+    -54080.57418411909,
+    -2103.65779182354
+   ],
+   "min_time_yr": [
+    13442.224167618228,
+    26355.921564793116
+   ],
+   "first_below_cell_yr": [
+    52.880656543581566,
+    24521.58448375131
+   ],
+   "final_log10_cells": [
+    25.94223063178868,
+    25.712606082227353
+   ],
+   "final_temperature_k": 281.53482280508206,
+   "final_window_temperature_span_k": 5.684341886080802e-14
+  },
+  "trace": [
+   {
+    "time_yr": 0.0,
+    "temperature_k": 283.19877678579377,
+    "log10_cells": [
+     17.183274167489095,
+     17.183274167489095
+    ]
+   },
+   {
+    "time_yr": 1.0,
+    "temperature_k": 283.1997202368707,
+    "log10_cells": [
+     26.236688383558747,
+     21.019795602836084
+    ]
+   },
+   {
+    "time_yr": 2.0,
+    "temperature_k": 283.20281538395085,
+    "log10_cells": [
+     26.236739386603492,
+     21.380326928928472
+    ]
+   },
+   {
+    "time_yr": 5.0,
+    "temperature_k": 283.2154080065998,
+    "log10_cells": [
+     26.236422195462712,
+     22.46870795344407
+    ]
+   },
+   {
+    "time_yr": 10.0,
+    "temperature_k": 283.2376696967216,
+    "log10_cells": [
+     26.22718617211052,
+     24.30384799000126
+    ]
+   },
+   {
+    "time_yr": 20.0,
+    "temperature_k": 283.3146957277042,
+    "log10_cells": [
+     22.831334254918772,
+     25.9990388234946
+    ]
+   },
+   {
+    "time_yr": 50.0,
+    "temperature_k": 283.57837754418506,
+    "log10_cells": [
+     2.16434230500668,
+     25.997908928659918
+    ]
+   },
+   {
+    "time_yr": 100.0,
+    "temperature_k": 283.97887127022534,
+    "log10_cells": [
+     null,
+     25.995860495660814
+    ]
+   },
+   {
+    "time_yr": 200.0,
+    "temperature_k": 284.66601035645346,
+    "log10_cells": [
+     null,
+     25.992170980252883
+    ]
+   },
+   {
+    "time_yr": 500.0,
+    "temperature_k": 286.16759303307646,
+    "log10_cells": [
+     null,
+     25.98330084417221
+    ]
+   },
+   {
+    "time_yr": 1000.0,
+    "temperature_k": 287.75860086965884,
+    "log10_cells": [
+     null,
+     25.972603741050907
+    ]
+   },
+   {
+    "time_yr": 2000.0,
+    "temperature_k": 289.6171844130808,
+    "log10_cells": [
+     null,
+     25.95807185803045
+    ]
+   },
+   {
+    "time_yr": 5000.0,
+    "temperature_k": 292.7620178594137,
+    "log10_cells": [
+     null,
+     25.928301923664222
+    ]
+   },
+   {
+    "time_yr": 10000.0,
+    "temperature_k": 296.978476493279,
+    "log10_cells": [
+     null,
+     25.87768505318471
+    ]
+   },
+   {
+    "time_yr": 50000.0,
+    "temperature_k": 273.53992591609614,
+    "log10_cells": [
+     null,
+     25.942426810352117
+    ]
+   },
+   {
+    "time_yr": 100000.0,
+    "temperature_k": 273.51692422289125,
+    "log10_cells": [
+     null,
+     25.94250142331881
+    ]
+   }
+  ]
+ },
+ {
+  "check": "lifeless",
+  "fraction": 0.9,
+  "initial_ratio": 0.0005437715867670953,
+  "initial_temperature_k": 283.19877678579377,
+  "initial_hydrogen_pa": 300.0,
+  "initial_acetate_mol_l": 1.0750295593905803e-11,
+  "status": "completed",
+  "horizon_yr": 100000.0,
+  "endpoint": "methanogen_only",
+  "final_temperature_k": 273.5169241314078,
+  "final_log10_cells": [
+   null,
+   25.942501423615198
+  ],
+  "temperature_range_k": [
+   273.5169241314078,
+   297.008
+  ],
+  "first_T_star_crossing_yr": 13438.0,
+  "n_T_star_crossings": 1,
+  "removals": [
+   {
+    "time_yr": 60.0,
+    "guild": 0,
+    "log_removed_cells": -15.043242306571784
+   }
+  ],
+  "temperature_at_first_removal_k": 283.7051343205774,
+  "final_window_temperature_span_k": 0.0010767019409740897,
+  "wall_seconds": 90.49150570802158,
+  "uncensored": {
+   "status": "completed",
+   "min_log10_cells": [
+    -54077.49156776386,
+    -118188.55450326303
+   ],
+   "min_time_yr": [
+    13436.998738916744,
+    100000.0
+   ],
+   "first_below_cell_yr": [
+    51.68911282884083,
+    24515.7731521886
+   ],
+   "final_log10_cells": [
+    26.3151561686002,
+    -118188.55450326303
+   ],
+   "final_temperature_k": 273.53372361930417,
+   "final_window_temperature_span_k": 0.0008772505817660203
+  },
+  "trace": [
+   {
+    "time_yr": 0.0,
+    "temperature_k": 283.19877678579377,
+    "log10_cells": [
+     17.183274167489095,
+     17.183274167489095
+    ]
+   },
+   {
+    "time_yr": 1.0,
+    "temperature_k": 283.2004747771153,
+    "log10_cells": [
+     26.23667880689604,
+     21.019849264740074
+    ]
+   },
+   {
+    "time_yr": 2.0,
+    "temperature_k": 283.20604293742554,
+    "log10_cells": [
+     26.236692442650988,
+     21.380933333979748
+    ]
+   },
+   {
+    "time_yr": 5.0,
+    "temperature_k": 283.2286569009716,
+    "log10_cells": [
+     26.236215525073003,
+     22.476583283765773
+    ]
+   },
+   {
+    "time_yr": 10.0,
+    "temperature_k": 283.2683132459841,
+    "log10_cells": [
+     26.225810009054822,
+     24.344230372882244
+    ]
+   },
+   {
+    "time_yr": 20.0,
+    "temperature_k": 283.3620144937963,
+    "log10_cells": [
+     22.56673574589536,
+     25.99888754109441
+    ]
+   },
+   {
+    "time_yr": 50.0,
+    "temperature_k": 283.62238700883967,
+    "log10_cells": [
+     1.2975722135667802,
+     25.997687434260197
+    ]
+   },
+   {
+    "time_yr": 100.0,
+    "temperature_k": 284.018253946029,
+    "log10_cells": [
+     null,
+     25.995655054677297
+    ]
+   },
+   {
+    "time_yr": 200.0,
+    "temperature_k": 284.6985076414239,
+    "log10_cells": [
+     null,
+     25.991990901343005
+    ]
+   },
+   {
+    "time_yr": 500.0,
+    "temperature_k": 286.18876027371715,
+    "log10_cells": [
+     null,
+     25.983167549006478
+    ]
+   },
+   {
+    "time_yr": 1000.0,
+    "temperature_k": 287.7717884930552,
+    "log10_cells": [
+     null,
+     25.972509158734013
+    ]
+   },
+   {
+    "time_yr": 2000.0,
+    "temperature_k": 289.62445377221417,
+    "log10_cells": [
+     null,
+     25.958010670180293
+    ]
+   },
+   {
+    "time_yr": 5000.0,
+    "temperature_k": 292.7769936632577,
+    "log10_cells": [
+     null,
+     25.92814348542109
+    ]
+   },
+   {
+    "time_yr": 10000.0,
+    "temperature_k": 296.9559233152138,
+    "log10_cells": [
+     null,
+     25.877994062256843
+    ]
+   },
+   {
+    "time_yr": 50000.0,
+    "temperature_k": 273.53991415212516,
+    "log10_cells": [
+     null,
+     25.942426848559286
+    ]
+   },
+   {
+    "time_yr": 100000.0,
+    "temperature_k": 273.5169241314078,
+    "log10_cells": [
+     null,
+     25.942501423615198
+    ]
+   }
+  ]
+ }
+]

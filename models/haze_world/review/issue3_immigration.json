@@ -1,0 +1,69 @@
+{
+ "source": "models/haze_world/figures/finite_populations/attained_endpoints.csv",
+ "endpoints": 144,
+ "settling": [
+  "census_stationary"
+ ],
+ "groups": {
+  "f=0, immigration=zero": {
+   "n": 12,
+   "both_material": 0,
+   "sinks": 0,
+   "min_relative_immigration_yr": null,
+   "temperature_range_k": [
+    273.517,
+    283.199
+   ]
+  },
+  "f=0, immigration=positive": {
+   "n": 36,
+   "both_material": 36,
+   "sinks": 0,
+   "min_relative_immigration_yr": 0.1,
+   "temperature_range_k": [
+    281.535,
+    281.569
+   ]
+  },
+  "f=0.5, immigration=zero": {
+   "n": 12,
+   "both_material": 0,
+   "sinks": 0,
+   "min_relative_immigration_yr": null,
+   "temperature_range_k": [
+    273.517,
+    294.403
+   ]
+  },
+  "f=0.5, immigration=positive": {
+   "n": 36,
+   "both_material": 36,
+   "sinks": 0,
+   "min_relative_immigration_yr": 0.1,
+   "temperature_range_k": [
+    281.285,
+    281.535
+   ]
+  },
+  "f=0.9, immigration=zero": {
+   "n": 12,
+   "both_material": 0,
+   "sinks": 0,
+   "min_relative_immigration_yr": null,
+   "temperature_range_k": [
+    273.534,
+    273.552
+   ]
+  },
+  "f=0.9, immigration=positive": {
+   "n": 36,
+   "both_material": 0,
+   "sinks": 12,
+   "min_relative_immigration_yr": 0.1,
+   "temperature_range_k": [
+    273.534,
+    273.552
+   ]
+  }
+ }
+}
