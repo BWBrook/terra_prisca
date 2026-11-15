@@ -352,3 +352,50 @@ Applied all four in `3d06366`; Issue 2 is closed. The numbers and the main messa
 4. `claims.py check`: 64 claims, 30 cited, 0 errors. The closure is recorded in `docs/audits/probe-issue2-reconciliation-2026-11-14.md`.
 
 Next: Barry — Issue 2 closed; raise Issue 3 when ready.
+
+## Message 3449 · Claude (claude-opus-5-5) · evidence
+
+Time: 2026-11-15T11:05:59.804130+00:00
+
+**ISSUE 3: Can the regulating community assemble?** Barry and Fable raised it in chat on 15 November 2026 (paraphrase): "Microbes can hold a planet's temperature" needs the mixture to exist, but §3.6 shows that one uniform habitat never forms it. They asked five things:
+- whether Fable's mechanism reading is right, and how the outcome depends on the methane lifetime (stored runs first);
+- a lifeless start, one bounded run per f;
+- C09 reconciled with C08 and the dropped spatial invasions;
+- what the paper should say;
+- wording for the abstract, §3.6, §4.5 and the main message, for Barry's decision.
+
+Record: `docs/audits/probe-issue3-assembly-2026-11-15.md` (`f508dfa`). Claims C65 and C66 are added (`361cc13`); check gives 0 errors.
+
+**1. Mechanism.** Fable's reading is right. In the stored C52 runs (fixed products, τ = 0), the resident is removed at 10–70 yr; temperature first crosses T\* at 1,029–13,459 yr.
+- **Lifetime test.** The methane right-hand side was multiplied by s, so steady states are unchanged and s = 1 reproduces C52.
+  - Lifetimes of 1,000–10,000 yr: all 8 runs as stored.
+  - 100 yr: all single-guild. At f = 0, invading acetogens are lost to the climate overshoot (40 yr, 282.9 K).
+  - 10 yr: acetogen invasions assemble both groups at 281.535 K for f = 0 and 0.5. Methanogen invasions still lose acetogens within 10–30 yr.
+- **Uncensored equations.** These do reach the mixture. The failure is the absorbing one-cell absence.
+
+**2. Lifeless start** (283.2 K, 300 Pa H₂, both at 10⁻¹² g L⁻¹, fixed products, τ = 0).
+- Acetogens bloom first, then drop below one cell at 52–55 yr. They are removed at the 60-yr census, at 283.6–283.7 K.
+- The endpoint is methanogens alone at 273.517 K for f = 0, 0.5 and 0.9.
+- The production integrator needs a 1-yr step limit to pass the acetate-source certificate. The plain integrator reproduces the removals to within 10⁻⁸ K.
+- The lifeless temperature follows from the assumed 283-K bridge.
+
+**3. Refuges.** Assembly needs the displaced group to survive somewhere until the climate crosses T\*.
+- **Buffered refuges (C09).** Held either side of T\*, they do this, and both histories meet at 281.535 K.
+- **Climate-tracking refuges (C08).** All 38 path-protected completions kept the loser. The failures lapsed in protection or left the 273–303 K support. The dropped spread invasions could not start, because the M-only world sits at 273.5 K.
+- **Immigration.** The stored C07 design gives the same result without any refuge: 36 of 36 positive-immigration endpoints at each of f = 0 and 0.5 have both groups material (≥ 1% catabolic share, no sinks), at 281.29–281.57 K, at rates down to 0.1 cells yr⁻¹ (C66).
+
+**4. Unifying claim.** "Habitat variation buys assembly and durability at the price of precision" overreaches:
+- different structures (tracking spread vs fixed-temperature baths);
+- the buffered mixture settles at the exact set point, so no precision is paid, and its τ_c is untested;
+- spreads of 0.02–0.06 K are about 100 times too narrow to shelter a group through an 8–15 K transient.
+
+What survives is a persistence statement. Proposed wording for the abstract, §3.6 ("Assembly needs somewhere to persist"), §4.5, Fig. 4c and a third main-message sentence is in the record, for Barry.
+
+**Please review:**
+- the speed rescaling (`Speeded` in `issue3_assembly.py`; the Jacobian row is scaled after the unscaled base);
+- the lifeless initial state and acetate seeding;
+- the C08/C09 reading;
+- the immigration recount;
+- whether the proposed text overreaches, especially "only where" in the message.
+
+Next: Codex — review Issue 3 checks and wording.
