@@ -3,7 +3,7 @@
 The first quantitative statement of the abiotic thermostat. Silicate weathering
 removes CO₂ faster when the planet is warmer, so a fainter Sun is partly offset
 by more CO₂. Reconstructed faithfully here and scored against the printed paper.
-Cross-review is by Codex on board thread 170.
+Cross-review is by Codex on board thread 170; its findings WHK-R1 to R6 are applied.
 
 ## Source
 
@@ -97,8 +97,8 @@ without feedback, and the feedback divides it down.
   paper rounds it) gives ΔT = −17.7 K at today's CO₂ release (−17.98 K at
   −18 K). That is T_s = 267.3 K. P/P₀ rises to 80.
 - **Without the feedback,** the same Sun gives ΔT = 2ΔT_e = −35 K.
-- **Holding today's temperature** under that Sun would take P/P₀ = 397 in
-  eq. (6).
+- **Holding today's temperature** under that Sun would take P/P₀ = 373 in
+  eq. (6), or 397 at the paper's rounded ΔT_e = −18 K.
 - **The feedback weakens toward the present.** At V/V₀ = 1, dΔT/dΔT_e is 0.62
   at ΔT_e = −20 K, 1.42 today and 1.70 at +6 K, against 2 without feedback.
   The weakening comes from the CO₂ greenhouse term flattening as P falls.
@@ -125,8 +125,23 @@ Curve table: [`figures/whk1981_fig2.csv`](figures/whk1981_fig2.csv).
   - Column error: in each pixel column where the printed curve is
     single-valued, its value against the model evaluated directly at the same
     ΔT_e. No column is interpolated or extrapolated from a model grid.
-  - Two-way pixel distance: in
+  - Two-way pixel distance, in
     [`fidelity/whk1981_chamfer.csv`](fidelity/whk1981_chamfer.csv).
+    - Ink to model is measured from every traced pixel to the full model curve
+      inside the plot box.
+    - Model to ink is measured from model samples every 0.01 K of ΔT_e (under
+      0.5 px apart) to the nearest traced pixel.
+    - Model samples where ink was deliberately removed have nothing to meet, so
+      they are left out of model to ink and counted. These are the ±6 px band
+      around the broken line (149, 202 and 205 samples for V/V₀ = 2, 1 and 0.5)
+      and the clipped tick (27 samples).
+    - Solid curves: model-to-ink p95 is 0.65–4.3 px and ink-to-model p95 is
+      2.1–6.1 px. The worst curve is panel a, V/V₀ = 4, which carries the
+      uniform 0.21 K (4.7 px) offset described below.
+    - Broken line: model to ink is scored only over the rows its dashes span.
+      It still includes the gaps between dashes and the four dashes that touch
+      solid curves, which are not traced. Its 53% within 3 px therefore
+      measures dash coverage, not fit. Ink to model is 92% within 3 px.
 - **Fig. 1 (page 4).**
   - The class segments are read as boxes.
   - The dashed Lagache line is read as its six isolated dashes.
@@ -176,11 +191,17 @@ each alternative's faithful RMSE on the same columns.
 | No water-vapour amplification | 1.35 | 1.93 | 3.55 | 4.32 | 5.62 | 0.20 | 0.22 | 0.37 | 0.61 |
 | Panel b read as natural log | — | — | — | — | — | 2.36 | 1.91 | 1.50 | 1.21 |
 | Null: no feedback (P = P₀) | 20.97 | 14.38 | 9.76 | 3.38 | — | 1.80 | 1.48 | 1.16 | 0.92 |
-| Null: perfect thermostat (W independent of P) | 18.07 | 14.30 | 11.35 | 8.57 | — | 0.70 | 0.66 | 0.83\* | 0.85\* |
+| Null: perfect thermostat (W independent of P) | 18.07 | 14.30 | 11.95\* | 6.11\* | — | 0.70 | 0.66 | 0.83\* | 0.85\* |
 | Null: no change (ΔT = 0, P = P₀) | 4.43 | 6.93 | 11.35 | 11.22 | 11.19 | 1.80 | 1.48 | 1.16 | 0.92 |
 
-\* The thermostat gives no positive P on 71 and 80 of the printed columns, which
-are excluded and counted.
+\* The thermostat has no equilibrium where eq. (6) would need P ≤ 0. There
+it returns neither a temperature nor a pressure. Those columns are excluded
+from both panels and counted:
+- panel a: 68 for V/V₀ = 1 and 174 for V/V₀ = 0.5;
+- panel b: 71 and 80.
+
+The faithful RMSE on the remaining columns is 0.10 and 0.23 K, and 0.004 and
+0.010 decades.
 
 Every null and every rejected reading fails every curve it changes, by
 2.9–320× the faithful RMSE. The unrounded constants tie.
@@ -196,11 +217,19 @@ curvature of all four, and panel b.
   difference of 0.5%. The combined 13.7 K would give 0.0317, and a natural-log
   axis 0.0565. The line therefore shows Lagache's direct temperature dependence
   alone on a log₁₀ axis, as the caption says.
-- **Implied runoff.** Table 1's rates divided by Fig. 1a's concentrations give
-  a runoff for each class (1000 × rate / mg l⁻¹, in mm yr⁻¹). In 12 of the 13
-  cells it falls inside the cell's runoff class:
+- **Implied runoff.** Table 1's rates divided by Fig. 1a's concentrations
+  give a runoff for each class (1000 × rate / mg l⁻¹, in mm yr⁻¹):
   [`fidelity/whk1981_fig1_implied_runoff.csv`](fidelity/whk1981_fig1_implied_runoff.csv).
-  The exception is in the inconsistencies below.
+  - **Condition.** The quotient is a runoff only if both class means come from
+    the same rivers with the same weights, and the concentration mean is
+    arithmetic. Under that condition it is a weighted mean of the rivers'
+    runoffs and must fall inside the class. WHK do not state how Meybeck
+    averaged.
+  - **Pairing.** Two tropical >630 mm yr⁻¹ cells (plains 11.4, mountains 16.4)
+    face two printed tropical >630 levels that the paper does not label. Both
+    one-to-one pairings are reported, as pairings A and B.
+  - **Result.** Under either pairing, 12 of the 13 cells fall inside their
+    class. The exception is under What stays open.
 - **Fig. 1b's class concentrations** (0.62, 0.85, 1.19 and 1.10 in log₁₀ mg l⁻¹)
   lie within the spread of the corresponding Fig. 1a segments:
   [`fidelity/whk1981_fig1_segments.csv`](fidelity/whk1981_fig1_segments.csv).
@@ -246,8 +275,9 @@ All hold.
   - 2 and 4.6 in eq. (6) from eqs (3)–(5), which close exactly today;
   - 1.3 K per doubling of CO₂.
 - **The Fig. 1b dashed line shows the 17.7 K slope** on a log₁₀ axis, to 0.5%.
-- **Fig. 1a and Table 1 agree in 12 of 13 cells** once the runoff axis is read
-  in mm yr⁻¹.
+- **Fig. 1a and Table 1 are compatible in 12 of 13 cells** once the runoff
+  axis is read in mm yr⁻¹. This assumes matched arithmetic class averages, and
+  holds under either pairing of the two tropical >630 levels.
 - **All five qualitative claims about the model hold.**
 - **"About a half" holds where the paper uses it,** at the faint-young-Sun end
   (0.500 at ΔT_e = −18 K). Nearer the present the feedback removes less: 0.71
@@ -266,14 +296,6 @@ All hold.
   - The segment ends fall on Table 1's mm limits.
   - Only mm makes Fig. 1a's concentrations agree with Table 1's rates.
   - 800 cm yr⁻¹ of runoff is physically implausible.
-- **Table 1 and Fig. 1a disagree for tropical (>20 °C) rivers at 30–120 mm yr⁻¹.**
-  - Table 1 gives the same rate, 2.35, to "mixed tropical" rivers in both the
-    30–120 and the 120–280 classes.
-  - Fig. 1a draws one concentration (14.5 mg l⁻¹) across both.
-  - The same rate at the same concentration needs the same runoff. That runoff
-    is 162 mm yr⁻¹, outside 30–120.
-  - Both table and figure come from Meybeck (1979), which we have not seen, so
-    the inconsistency may be inherited.
 - **Table 1's temperature classes overlap** (15–25 °C for arid, >20 °C for
   tropical), as printed.
 
@@ -281,7 +303,8 @@ All hold.
 
 - **Whether eq. (5) reproduces Owen et al. (1979)**, as the paper says, and eq. (4)
   Rodgers & Walshaw (1966). Neither source is in hand.
-  - Eq. (6) needs P/P₀ = 397 to hold today's temperature under ΔT_e = −18 K.
+  - Eq. (6) needs P/P₀ = 397 to hold today's temperature under ΔT_e = −18 K
+    (373 for the exact 25%, −17.56 K).
   - The paper quotes Owen et al.'s "up to 1000 times".
   - Whether that is the same case (luminosity, albedo, water-vapour treatment)
     cannot be checked here.
@@ -289,9 +312,19 @@ All hold.
   Clausius–Clapeyron gives 15.2 K. 14.1 K matches it near 275 K, which suggests
   a fit over colder zonal means. The value is not used in eq. (1), and Sellers
   (1965) is not in hand.
+- **An apparent inconsistency for tropical (>20 °C) rivers at 30–120 mm yr⁻¹.**
+  - Table 1 gives "mixed tropical" rivers the same rate, 2.35, in both the
+    30–120 and the 120–280 classes.
+  - Fig. 1a draws one concentration (14.5 mg l⁻¹) across both.
+  - Rate divided by concentration gives 162 mm yr⁻¹, outside 30–120.
+  - This contradicts the source only if the class means are matched arithmetic
+    averages over the same rivers. WHK do not say how Meybeck averaged.
+  - Means from different subsets or weights, or a non-arithmetic concentration
+    summary, need not obey the bound.
+  - Meybeck (1979) is not in hand. Its averaging would settle whether this is
+    an error, and whether it is WHK's or inherited.
 - **Fig. 1 is Meybeck's data,** and the model does not depend on it beyond the
-  17.7 K slope. Checking the figure against Meybeck (1979) itself would settle
-  the tropical inconsistency above.
+  17.7 K slope.
 - **Dynamics.** The paper solves only equilibria, so it says nothing about how
   fast the thermostat acts or whether it overshoots. A time-dependent variant
   would need a fluid-carbon reservoir. The paper's own numbers imply about

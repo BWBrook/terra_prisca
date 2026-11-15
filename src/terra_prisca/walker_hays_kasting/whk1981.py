@@ -81,13 +81,19 @@ def equilibrium(dTe: float, v_ratio: float = 1.0, r: Reading = FAITHFUL) -> tupl
     """(dT, P/P0) satisfying eqs (2) and (6) together.
 
     g(dT) = dT - surface_dT(dTe, co2_ratio(v, dT)) is strictly increasing in dT
-    (the CO2 term falls as dT rises), so the root is unique."""
+    (the CO2 term falls as dT rises), so the root is unique.
+
+    Under the perfect-thermostat control, weathering fixes dT = efold ln(V/V0)
+    and eq. (6) must then supply P. Where that needs P <= 0 there is no
+    equilibrium, and both values are NaN."""
     if r.fixed_p:
         return float(surface_dT(dTe, 1.0, r)), 1.0
     if r.perfect_thermostat:
         dT = r.efold_K * np.log(v_ratio)
-        p = ((dT - r.te_gain * dTe) / r.gh_amp + 1.0)
-        return float(dT), float(p ** (1.0 / r.gh_exponent)) if p > 0 else float("nan")
+        q = (dT - r.te_gain * dTe) / r.gh_amp + 1.0
+        if q <= 0:
+            return float("nan"), float("nan")
+        return float(dT), float(q ** (1.0 / r.gh_exponent))
 
     def g(dT):
         return dT - surface_dT(dTe, co2_ratio(v_ratio, dT, r), r)
@@ -107,8 +113,14 @@ def sensitivity(dTe: float, v_ratio: float = 1.0, r: Reading = FAITHFUL) -> floa
     """d(dT)/d(dTe) on the equilibrium curve, by implicit differentiation.
 
     Without feedback it is te_gain (2 K/K); the feedback divides it by
-    1 + gh_amp * gh_exponent * (P/P0)^gh_exponent / p_efold."""
+    1 + gh_amp * gh_exponent * (P/P0)^gh_exponent / p_efold. The controls
+    follow their own branches: te_gain with P fixed; zero for the perfect
+    thermostat where it has an equilibrium, NaN where it has none."""
     dT, p = equilibrium(dTe, v_ratio, r)
+    if r.fixed_p:
+        return r.te_gain
+    if r.perfect_thermostat:
+        return 0.0 if np.isfinite(dT) else float("nan")
     return r.te_gain / (1.0 + r.gh_amp * r.gh_exponent * p ** r.gh_exponent / r.p_efold)
 
 

@@ -1,16 +1,16 @@
-temperature_class,runoff_class,name,rate,poorly_determined,segment,log10_SiO2,implied_runoff_mm,inside_class
-<4,120-280,tundra and taiga,0.75,True,left,0.569659,202.024,True
-<4,280-630,wet taiga,1.6,False,middle,0.602767,399.349,True
-<4,>630,very wet taiga (high relief),5.75,False,right,0.721831,1091.03,True
-4-15,30-120,semi-arid temperate,0.8,True,left,0.852517,112.35,True
-4-15,120-280,temperate,1.4,False,left,0.852517,196.612,True
-4-15,280-630,wet temperate,2.35,False,middle,0.7824,387.853,True
-4-15,>630,very wet temperate (high relief),10,True,right,0.902519,1251.65,True
-15-25,0-30,arid,0.25,False,short,1.19287,16.0351,True
->20,30-120,mixed tropical,2.35,False,"upper, left",1.16076,162.297,False
->20,120-280,mixed tropical,2.35,False,"upper, left",1.16076,162.297,True
->20,280-630,wet tropical,4.15,False,lower,1.06183,359.927,True
->20,>630,very wet tropical (plains),11.4,False,"upper, right",1.16066,787.493,True
->20,>630,very wet tropical (plains),11.4,False,lower,1.06183,988.715,True
->20,>630,very wet tropical (mountains),16.4,False,"upper, right",1.16066,1132.89,True
->20,>630,very wet tropical (mountains),16.4,False,lower,1.06183,1422.36,True
+temperature_class,runoff_class,name,rate,poorly_determined,segment,pairing,log10_SiO2,implied_runoff_mm,inside_class
+<4,120-280,tundra and taiga,0.75,True,left,unique,0.569659,202.024,True
+<4,280-630,wet taiga,1.6,False,middle,unique,0.602767,399.349,True
+<4,>630,very wet taiga (high relief),5.75,False,right,unique,0.721831,1091.03,True
+4-15,30-120,semi-arid temperate,0.8,True,left,unique,0.852517,112.35,True
+4-15,120-280,temperate,1.4,False,left,unique,0.852517,196.612,True
+4-15,280-630,wet temperate,2.35,False,middle,unique,0.7824,387.853,True
+4-15,>630,very wet temperate (high relief),10,True,right,unique,0.902519,1251.65,True
+15-25,0-30,arid,0.25,False,short,unique,1.19287,16.0351,True
+>20,30-120,mixed tropical,2.35,False,"upper, left",unique,1.16076,162.297,False
+>20,120-280,mixed tropical,2.35,False,"upper, left",unique,1.16076,162.297,True
+>20,280-630,wet tropical,4.15,False,lower,unique,1.06183,359.927,True
+>20,>630,very wet tropical (plains),11.4,False,"upper, right",pairing A,1.16066,787.493,True
+>20,>630,very wet tropical (mountains),16.4,False,lower,pairing A,1.06183,1422.36,True
+>20,>630,very wet tropical (plains),11.4,False,lower,pairing B,1.06183,988.715,True
+>20,>630,very wet tropical (mountains),16.4,False,"upper, right",pairing B,1.16066,1132.89,True

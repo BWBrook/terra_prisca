@@ -77,6 +77,30 @@ def test_controls():
         assert m.equilibrium(dTe, 2.0, m.CONTROLS["no_feedback"]) == (pytest.approx(2 * dTe), 1.0)
 
 
+def test_thermostat_has_no_equilibrium_where_eq6_needs_nonpositive_co2():
+    from terra_prisca.walker_hays_kasting.fidelity_whk1981 import predict
+
+    th = m.CONTROLS["thermostat"]
+    # V/V0 = 0.5 fixes dT = -9.50 K; at dTe = 5 K eq. (6) would need P^0.364 < 0.
+    dT, p = m.equilibrium(5.0, 0.5, th)
+    assert np.isnan(dT) and np.isnan(p)
+    assert np.isnan(m.sensitivity(5.0, 0.5, th))
+    assert np.all(np.isnan(predict("thermostat", "a", 0.5, np.array([5.0, 6.0]))))
+    assert np.all(np.isnan(predict("thermostat", "b", 0.5, np.array([5.0, 6.0]))))
+
+
+def test_control_sensitivities_match_their_equilibria():
+    h = 1e-4
+    for key in ("no_feedback", "thermostat"):
+        r = m.CONTROLS[key]
+        for v in V:
+            for dTe in (-15.0, -10.0, 0.0):
+                lo, hi = m.equilibrium(dTe - h, v, r)[0], m.equilibrium(dTe + h, v, r)[0]
+                if np.isnan(lo) or np.isnan(hi):
+                    continue
+                assert m.sensitivity(dTe, v, r) == pytest.approx((hi - lo) / (2 * h), abs=1e-7), (key, v, dTe)
+
+
 def test_figure_table_is_reproducible(tmp_path):
     from terra_prisca.walker_hays_kasting import figures_whk1981
 
@@ -123,9 +147,25 @@ def test_fidelity_against_scan(tmp_path):
         assert min(abs(e - bound) for e in ends) <= 15
     outside = [(r["temperature_class"], r["runoff_class"]) for r in implied if not r["inside_class"]]
     assert outside == [(">20", "30-120")]
+    # The two tropical >630 cells have two possible pairings with the two printed levels;
+    # under each pairing there are 13 cells and 12 fall inside their class.
+    labels = sorted({r["pairing"] for r in implied} - {"unique"})
+    assert labels == ["pairing A", "pairing B"]
+    for lab in labels:
+        cells = [r for r in implied if r["pairing"] in ("unique", lab)]
+        assert len(cells) == 13 and sum(r["inside_class"] for r in cells) == 12
+
+    # Thermostat columns without an equilibrium are excluded and counted in both panels.
+    th = {r["curve"]: r for r in rows if r["reading"] == "thermostat"}
+    assert th["Fig. 2a, V/V0 = 0.5"]["columns_unsupported"] > 0
+    assert th["Fig. 2a, V/V0 = 1"]["columns_unsupported"] > 0
+
+    ch = {r["curve"]: r for r in f.fig2_chamfer(sc)}
+    for name, r in ch.items():
+        if "constant" not in name:
+            assert r["model_to_ink_p95_px"] < 5 and r["ink_to_model_p95_px"] < 7, name
 
     f.main(PDF, tmp_path)
-    for name in ("whk1981_fidelity.csv", "whk1981_numbers.csv", "whk1981_printed_curves.csv",
-                 "whk1981_fig1_implied_runoff.csv", "whk1981_lines.csv"):
-        committed = Path("models/walker_hays_kasting/fidelity") / name
+    for committed in sorted(Path("models/walker_hays_kasting/fidelity").glob("*.csv")):
+        name = committed.name
         assert (tmp_path / name).read_bytes() == committed.read_bytes(), name

@@ -17,6 +17,7 @@ from __future__ import annotations
 
 import csv
 import sys
+from itertools import permutations
 
 from pathlib import Path
 
@@ -25,6 +26,7 @@ import matplotlib
 matplotlib.use("Agg")
 import matplotlib.pyplot as plt
 import numpy as np
+from scipy.spatial import cKDTree
 
 from terra_prisca.budyko_sellers.digitise import chamfer
 
@@ -138,17 +140,42 @@ def fig2_scores(sc, traces) -> list[dict]:
 
 
 def fig2_chamfer(sc) -> list[dict]:
-    """Two-way pixel distances between the faithful curves and the traced ink."""
+    """Two-way pixel distances between the faithful curves and the traced ink.
+
+    Model samples are taken every 0.01 K of dTe inside the plot box (under
+    0.5 px apart), and model-to-ink is measured at the samples themselves. Ink was
+    deliberately removed in two places: the band of +-BAND_PX around the broken
+    line (panel a solid curves) and the clipped tick boxes. Model samples lying
+    there have no ink to meet by construction, so they are excluded from the
+    model-to-ink score and counted. For the broken line, only samples within the
+    rows its dashes span are used; the gaps between dashes stay in the score, so
+    its model-to-ink fraction within 3 px measures the dash duty cycle, not fit.
+    Ink-to-model uses every traced pixel."""
     rows = []
     grid = np.linspace(-20.5, 6.5, 2701)
+    k, c = sc.broken_line
     for (p, v), pix in [*sc.curves.items(), (("a", None), sc.broken)]:
         fr = sc.fig2[p]
         y = predict("faithful", p, v, grid)
         m = fr.to_px(np.column_stack([grid, y]))
         x0, x1, y0, y1 = fr.box
-        inside = (m[:, 0] >= x0) & (m[:, 0] < x1) & (m[:, 1] >= y0) & (m[:, 1] < y1)
-        _, to_model = chamfer(m[inside], pix)
-        rows.append(dict(curve=curve_name(p, v), ink_px=len(pix),
+        m = m[(m[:, 0] >= x0) & (m[:, 0] < x1) & (m[:, 1] >= y0) & (m[:, 1] < y1)]
+        excluded = np.zeros(len(m), bool)
+        if v is None:
+            excluded |= (m[:, 1] < pix[:, 1].min()) | (m[:, 1] > pix[:, 1].max())
+        elif p == "a":
+            excluded |= np.abs(m[:, 0] - (k * m[:, 1] + c)) / np.hypot(1.0, k) <= scan_mod.BAND_PX
+        if (p, v) in scan_mod.FIG2_CLIP:
+            cx0, cx1, cy0, cy1 = scan_mod.FIG2_CLIP[(p, v)]
+            excluded |= (m[:, 0] >= cx0) & (m[:, 0] < cx1) & (m[:, 1] >= cy0) & (m[:, 1] < cy1)
+        _, to_model = chamfer(m, pix)
+        to_ink = cKDTree(pix).query(m[~excluded])[0]  # at the samples, so no segment bridges a gap
+        rows.append(dict(curve=curve_name(p, v),
+                         model_samples=int(len(m)), model_samples_excluded=int(excluded.sum()),
+                         model_to_ink_median_px=float(np.median(to_ink)),
+                         model_to_ink_p95_px=float(np.percentile(to_ink, 95)),
+                         model_within_3px=float(np.mean(to_ink <= 3.0)),
+                         ink_px=len(pix),
                          ink_to_model_median_px=float(np.median(to_model)),
                          ink_to_model_p95_px=float(np.percentile(to_model, 95)),
                          ink_within_3px=float(np.mean(to_model <= 3.0))))
@@ -188,21 +215,43 @@ def fig1_table(sc) -> tuple[list[dict], list[dict]]:
         x0, x1, lev = scan_mod.segment_level(pix, sc.fig1[key[0]])
         segs.append(dict(panel=key[0], temperature_class=key[1], segment=key[2],
                          x_start=x0, x_end=x1, log10_SiO2=lev, SiO2_mg_per_l=10 ** lev))
-    rows = []
+    # Candidate segments for each Table 1 cell: Fig. 1a segments of its
+    # temperature class covering at least half its runoff class (to 800).
+    cand = []
     for tclass, (r0, r1), name, rate, poor in TABLE1:
         lo, hi = r0, (r1 if r1 is not None else 800)
-        for s in segs:
-            if s["panel"] != "a" or s["temperature_class"] != tclass:
-                continue
-            overlap = min(hi, s["x_end"]) - max(lo, s["x_start"])
-            if overlap < 0.5 * (hi - lo):
-                continue
-            implied = 1000.0 * rate / s["SiO2_mg_per_l"]
-            inside = implied >= r0 and (r1 is None or implied <= r1)
-            rows.append(dict(temperature_class=tclass, runoff_class=f"{r0}-{r1}" if r1 else f">{r0}",
-                             name=name, rate=rate, poorly_determined=poor, segment=s["segment"],
-                             log10_SiO2=s["log10_SiO2"], implied_runoff_mm=implied, inside_class=inside))
+        cand.append([s for s in segs if s["panel"] == "a" and s["temperature_class"] == tclass
+                     and min(hi, s["x_end"]) - max(lo, s["x_start"]) >= 0.5 * (hi - lo)])
+    # Cells sharing a class whose candidates are the same set of n > 1 segments
+    # are paired one-to-one; the paper does not say which goes with which, so
+    # every pairing is reported, labelled. Otherwise each cell has one candidate.
+    rows = []
+    done = set()
+    for i, (tclass, (r0, r1), name, rate, poor) in enumerate(TABLE1):
+        if i in done:
+            continue
+        group = [j for j, (t, rc, *_ ) in enumerate(TABLE1) if t == tclass and rc == (r0, r1)]
+        segs_i = cand[i]
+        if len(group) > 1 and len(segs_i) == len(group):
+            for n_pair, perm in enumerate(permutations(range(len(segs_i)))):
+                label = "pairing " + "ABCDEF"[n_pair]
+                for j, sidx in zip(group, perm):
+                    rows.append(_implied_row(TABLE1[j], segs_i[sidx], label))
+            done.update(group)
+            continue
+        if len(segs_i) != 1:
+            raise ValueError(f"Table 1 cell {name} {r0}-{r1} has {len(segs_i)} candidate segments")
+        rows.append(_implied_row(TABLE1[i], segs_i[0], "unique"))
     return segs, rows
+
+
+def _implied_row(cell, seg, pairing) -> dict:
+    tclass, (r0, r1), name, rate, poor = cell
+    implied = 1000.0 * rate / seg["SiO2_mg_per_l"]
+    inside = implied >= r0 and (r1 is None or implied <= r1)
+    return dict(temperature_class=tclass, runoff_class=f"{r0}-{r1}" if r1 else f">{r0}",
+                name=name, rate=rate, poorly_determined=poor, segment=seg["segment"], pairing=pairing,
+                log10_SiO2=seg["log10_SiO2"], implied_runoff_mm=implied, inside_class=inside)
 
 
 def lagache_fit(sc) -> dict:
@@ -244,8 +293,10 @@ def numbers() -> list[dict]:
         f"local slope at today: {sensitivity(0.0) / 2:.3f} of the no-feedback slope")
     add("P/P0 at dTe = -18 K, V/V0 = 1", "-", f"{p18:.1f}")
     keep285 = (1 + 36 / 4.6) ** (1 / 0.364)
-    add("P/P0 that holds dT = 0 at dTe = -18 K, eq. (6)", "'up to 1000 times' (Owen et al. 1979)",
-        f"{keep285:.0f}", "Owen et al.'s luminosity and case not in hand: open")
+    keep285_exact = (1 - 2 * d25 / 4.6) ** (1 / 0.364)
+    add("P/P0 that holds dT = 0, eq. (6)", "'up to 1000 times' (Owen et al. 1979)",
+        f"{keep285:.0f} at dTe = -18 K (paper's rounding); {keep285_exact:.0f} at dTe = {d25:.2f} K (exact 25%)",
+        "Owen et al.'s luminosity and case not in hand: open")
     holland = 3.3e14
     add("Fluid carbon implied by doubling in 400 kyr", "-", f"{holland * 4e5:.2e} g CO2 = {holland * 4e5 * 12 / 44:.2e} g C")
     bar = 1e5 * 5.10e14 / 9.81 * 1e3  # g of CO2 in a 1-bar column over the Earth
