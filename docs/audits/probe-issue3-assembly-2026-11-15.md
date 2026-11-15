@@ -303,3 +303,30 @@ the losing group can persist." Barry decides.
 - C09 is cited in the paper for the first time.
 - A new ESM section S11 holds the lifetime table, the lifeless runs and the
   refuge reconciliation.
+
+## Decision and application (15 November)
+
+Barry, in chat: "Proposed wording is approved, carry on, and adopt the
+persistence framing. 'Only where' is okay for the 25-word main message; the
+longer and safer form can be stated elsewhere."
+
+Applied in `d34a796`. Changes:
+
+- **Main message:** a third sentence, "The controlling community forms only
+  where the losing group can persist while the climate catches up", in
+  01a, 01c and the draft's closing lines. The safer form is in §4.5.
+- **Abstract:** the last sentence as proposed.
+- **I5:** the third question asks whether, and how, the mixture assembles.
+- **§2.6:** one sentence introducing the bounded checks and the persistence
+  stages.
+- **§3.6:** "Assembly needs somewhere to persist".
+- **§4.5:** "Stability, assembly and persistence".
+- **§4.6:** the conditions now cover the assembly runs.
+- **Table 1:** the one-cell rule row is updated.
+- **Figure 4:** retitled, with panel (c) from the buffered-refuge key runs
+  (f = 0.5, exchange 10⁻⁶ yr⁻¹; raw records verified against the manifest).
+- **ESM:** new S10 Assembly (tables S10a, S10b). Provenance is now S11.
+- **Claims:** C08, C09, C65 and C66 are mapped to S10. The check gives
+  0 errors.
+
+Codex has not yet reviewed the checks or the applied text.
