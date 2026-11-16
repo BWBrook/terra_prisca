@@ -30,8 +30,8 @@ habitat-spread branches, the 30-year margin was reached at half-widths of
 0.02–0.06 K; with weak exchange, sensitivity grows with habitat spread. An
 imposed climate warming acts through the same loop: fixed-product exact
 states held temperature across shifts of −15 to +8 K, and graded states followed 0.1–8%
-of the shift. In one uniform habitat the controlling mixture never
-assembled: the group favoured at the starting temperature removed the other
+of the shift. In closed reference runs in one uniform habitat the
+controlling mixture never assembled: the group favoured at the starting temperature removed the other
 within decades, long before methane could carry the climate across the
 switch. It assembled from either history when the losing group could
 persist, in a small habitat held on its side of the switch or through a
@@ -438,9 +438,13 @@ settings where the mixture is locally stable. The resident was lost within
 10–70 years with fixed products, while temperature moved by 0.4 K at most.
 The climate needed 1,000–13,500 years to cross T\*. Starting from a lifeless
 planet with both groups rare gave the same failure: at 283 K methanogens
-removed acetogens within 60 years, at every f. Shortening the methane
-lifetime to 1,000 years changed no outcome. Only at 10 years did acetogen
-invasions assemble the mixture (ESM S10).
+removed acetogens within 60 years at all three tested fractions (f = 0, 0.5
+and 0.9). A methane response ten times faster, with every steady state held
+fixed, changed no outcome. Only a response a thousand times faster, about
+10 years, let acetogen invasions assemble the mixture in place (ESM S10).
+This tests the speed of the methane response, not a shorter physical
+lifetime: at the reference hydrogen supply a 10-year lifetime could not
+sustain the mixture's methane at all.
 
 The loss is permanent because a group below one cell cannot return. When
 the losing group could persist elsewhere, the mixture formed. Two small
@@ -448,9 +452,10 @@ habitats held at 278 and 286 K, each 2% of the area, let both invasion
 directions reach the same mixed state at 281.535 K in all 12 key runs
 (figure 4*c*). Immigration of as little as 0.1 cells per year did the same
 at f = 0 and 0.5, with both groups materially active. Habitats that track
-the surface climate gave no comparable test: in this model most such runs
-left the physiological support, or lost protection during the transient
-(ESM S10).
+the surface climate gave no comparable paired test of the regulating mixture
+at f = 0 and 0.5: most such runs left the physiological support, or lost
+protection during the transient. At f = 0.9 they kept both groups in nine
+matching pairs, but coexistence there is not climate regulation (ESM S10).
 
 ---
 
@@ -527,15 +532,17 @@ test the regulator against the Sun's brightening.
 ### 4.5 Stability, assembly and persistence
 
 A stable mixture is not a mixture that forms. Competition between the two
-groups is fast, and the climate they regulate is slow, so in one uniform
-habitat the group favoured at the current temperature removes the other
+groups is fast, and the climate they regulate is slow, so in one closed
+uniform habitat the group favoured at the current temperature removes the other
 long before the climate can reverse its advantage. Arrival order, or the
 starting temperature, then fixes a single-group world. Incumbency usually
 favours the first arrival (Fukami 2015). Here the favoured arrival wins,
-whichever came first. In one uniform habitat the controlling community never
-formed; it needs somewhere the losing group can persist while the climate
-catches up. A real planet has many candidates, from thermally buffered
-refuges to dispersal between regions. Persistence does not by itself give
+whichever came first. In the closed reference runs the controlling community
+never formed; it needs somewhere the losing group can persist while the
+climate catches up. A real planet has many candidates, from thermally
+buffered refuges to dispersal between regions. Persistence can also happen
+in place: when methane responded a thousand times faster, two closed
+invasions assembled the mixture. Persistence does not by itself give
 durable control. The mixture assembled by buffered refuges sits at the exact
 set point, and its margin against slow climate response was not tested.
 Assembly and durability have different requirements, and a regulating
@@ -558,8 +565,8 @@ Habitat offsets are uniform, and every habitat must lie within the
 physiological support of 273–303.15 K; around the reference temperature this
 limits spreads to about ±8 K.
 A crash is read at the first fall below one cell, with the one-cell rule
-applied every ten years. Assembly runs use instantaneous temperature, and
-refuge temperatures and immigration rates are prescribed, not calibrated.
+applied every ten years. The bounded assembly checks and the refuge and
+immigration runs use instantaneous temperature, and refuge temperatures and immigration rates are prescribed, not calibrated.
 The climate is one published case with an assumed methane lifetime and
 low-methane bridge, and sunlight enters only as a rigid vertical shift of
 that curve. Atmospheric hydrogen up to 100 Pa leaves the set point
@@ -669,8 +676,8 @@ Surviving group in all 24 runs:
 every acetogen invasion ended with acetogens alone, and every methanogen
 invasion with methanogens alone. Diamonds mark the 8 of 12 settings where
 the reference mixture of both groups is locally stable. (*c*) Bulk
-temperature after an invasion in each direction (f = 0.5, instantaneous
-temperature). With no refuge (grey), the run ends with the invader alone,
+temperature after an invasion in each direction (fixed products, f = 0.5,
+instantaneous temperature). With no refuge (grey), the run ends with the invader alone,
 at 294.4 or 273.5 K. With two small habitats held at 278 and 286 K (2% of
 the area each, cell exchange 10⁻⁶ yr⁻¹), both histories end at the same
 mixed state at T\* (dotted), 281.535 K; the two end markers coincide.

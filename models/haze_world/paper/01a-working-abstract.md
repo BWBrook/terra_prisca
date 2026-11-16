@@ -30,8 +30,9 @@ habitat it never forms; it needs somewhere the losing group can persist.
 - on four tuned branches, a 30-year first-loss margin costs a local
   sensitivity of 0.07–0.32 K per e-fold of supply (C57).
 
-**Assembly needs persistence (C52, C65, C09, C66).** In one closed uniform
-habitat the mixture never assembles, by invasion or from a lifeless start. It
+**Assembly needs persistence (C52, C65, C09, C66).** In the closed reference
+runs in one uniform habitat the mixture never assembles, by invasion or from
+the tested lifeless start. It
 assembles from either history when the losing group can persist: in buffered
 refuges, or through immigration. This is the final Results section.
 

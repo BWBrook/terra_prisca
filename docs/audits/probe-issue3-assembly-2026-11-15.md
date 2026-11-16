@@ -82,8 +82,10 @@ reproduces the stored C52 outcomes and removal times.
 | 100 yr | **M alone** (invader lost at 40 yr, 282.9 K) | M alone | A alone | M alone |
 | 10 yr | **both, 281.535 K** | M alone | **both, 281.535 K** | M alone |
 
-- **Sourced lifetimes (6–19 kyr; model README).** The arrival-order outcome
-  holds across this range and down to 1,000 years.
+- **Response times of 10⁴ and 10³ years.** The arrival-order outcome holds.
+  (Corrected 16 November: this grid does not test the sourced physical
+  6–19 kyr lifetimes, which were tested for equilibria and local stability,
+  not assembly.)
 - **Lifetime of 100 years or less.** The outcome changes, but not simply
   towards the mixture.
 - **Overshoot.** At 100 years the fast climate overshoots T\* and the
@@ -95,9 +97,12 @@ reproduces the stored C52 outcomes and removal times.
   in the warm acetogen world is excluded too fast even for a 10-year
   lifetime.
 
-A modern-like 10-year lifetime would therefore assemble the mixture in one
-direction only. An Archean-like lifetime of 10⁴ years assembles it in
-neither.
+A methane response a thousand times faster than the reference assembles
+the mixture in one direction only; the reference response assembles it in
+neither. (Corrected 16 November: this is a fixed-equilibrium response-speed
+test, not a physical lifetime. At the reference supply a physical 10-year
+lifetime sustains at most r = 3.0 × 10⁻⁴, far below the mixture's 0.195, so
+no inference about a modern-like lifetime follows.)
 
 ## 2. Lifeless start
 
@@ -118,9 +123,12 @@ methanogens' lower requirement at 283 K decides. The uncensored f = 0 and
 0.5 runs reach the mixture only by recovering from about 10⁻⁴³⁰⁰⁰ cells.
 That is the artefact the census rule removes.
 
-**Integrators.** The production integrator needed a 1-year step limit: at its
-default of 50 years, the acetate-source certificate failed during the
-initial bloom. The plain population integrator, with the same ten-year census over the
+**Integrators.** The production integrator was run with a 1-year step limit.
+A historical observation, from a development run before the final
+balanced-acetate initialisation: at the default 50-year limit the
+acetate-source certificate failed during the initial bloom. Codex did not
+reproduce that failure with the final f = 0.5 initialisation through year
+60; the conservative limit is kept. The plain population integrator, with the same ten-year census over the
 first 1,000 years, gives the same removals:
 - every removal at 60 years;
 - temperatures identical to within 10⁻⁸ K;
@@ -133,9 +141,10 @@ It failed (LSODA) on the long single-group stretch after removal, so the
 100-kyr census endpoint rests on the production integrator alone.
 
 **Dependence on the bridge.** The lifeless temperature comes from the
-assumed low-methane bridge to 283 K. If a lifeless world lay below T\*,
-acetogens would win instead. Either way one group excludes the other before
-methane can move the climate, so the result does not depend on the side.
+assumed low-methane bridge to 283 K. Only this start was run. (Corrected
+16 November: an earlier sentence here inferred the same outcome for a
+lifeless world on the other side of T\*. Near T\* exclusion slows without
+limit, so that inference does not hold without runs.)
 
 ## 3. Refuges
 
@@ -190,7 +199,7 @@ The single-habitat failure is real and robust:
 - a lifeless start;
 - three values of f;
 - three thermal lags;
-- methane lifetimes from 10⁴ down to 10³ years.
+- methane responses up to ten times faster at fixed equilibria.
 
 But its cause is narrow: the absorbing absence of a group that briefly drops
 below one cell. Anything that keeps the loser alive somewhere until the
@@ -291,8 +300,9 @@ it:
 > looser as habitat temperatures differ. The controlling community forms
 > only where the losing group can persist while the climate catches up.
 
-"Only where" is bounded by the evidence: it holds for every lifetime of
-1,000 years or more, but a 10-year lifetime assembled it in one direction.
+"Only where" is bounded by the evidence: it holds at the reference methane
+response and one ten times faster, but a thousandfold-faster response
+assembled it in one direction.
 A safer form is "In one uniform habitat it never forms; it needs somewhere
 the losing group can persist." Barry decides.
 
@@ -330,3 +340,29 @@ Applied in `d34a796`. Changes:
   0 errors.
 
 Codex has not yet reviewed the checks or the applied text.
+
+## Reconciliation after Codex review (16 November)
+
+Codex's review (`docs/audits/probe-issue3-codex-review-2026-11-16.md`,
+`8af7b9a`) accepted the numerical results and Figure 4c and asked for scope
+corrections, applied here without new runs:
+
+- **Response speed, not lifetime.** §3.6, S10 (heading, table S10b, text),
+  C65 and this record now describe a fixed-equilibrium methane
+  response-speed test, with the physical-supply bound in S10.
+- **Closed reference runs.** The abstract, §4.5 and C65 restrict "never
+  assembled" to the closed reference runs; §4.5 notes that a faster
+  methane response lets the losing group persist in place. §3.6 names the
+  three tested fractions; the colder-start inference is removed.
+- **Climate-tracking results.** S10 and §3.6 keep the f = 0.9 coexisting
+  pairs (nine, seven with positive exchange) and call paired assembly at
+  f = 0 and 0.5 domain-limited, not untested.
+- **Other.** Instantaneous temperature is scoped to the new checks (§4.6,
+  S10); S6 points to S10; the f = 0.9 trace-immigration statement is
+  limited to 100 yr⁻¹; 281.285–281.569 K; the 100-kyr runs are described
+  as completed, not certified stationary; the Figure 4c caption says fixed
+  products; panel (c) now keeps native points within 0.01 K of each trace
+  (the old log thinning missed the damped oscillations about T\*, up to
+  0.63 K); source descriptions name the gzipped JSON records.
+
+Barry's adopted main message is unchanged.

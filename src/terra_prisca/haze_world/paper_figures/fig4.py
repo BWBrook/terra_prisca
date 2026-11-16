@@ -8,7 +8,9 @@ against no refuges, in each invasion direction (C09). Exports: data/fig4_*.csv.
 Paths and endpoints use the archived finite-census runs, which remove a guild
 below one cell at the next 10-year census. No uncensored continuation is drawn.
 The default build uses committed CSV exports and verifies their source identities
-against the manifest. --refresh regenerates those exports from local native NPZs.
+against the manifest. --refresh regenerates those exports from local native
+census NPZs and gzipped JSON refuge records; panel (c) keeps native points so
+that its plotted interpolation stays within 0.01 K of each native trace.
 """
 
 import csv
@@ -84,12 +86,27 @@ def reference_inputs():
     return inv, lam, records, cases
 
 
+REFUGE_TOL_K = 0.01
+
+
 def refuge_rows():
     rows = [r for r in read(BUF / "selected_main.csv") if r["fraction"] == "0.5" and r["dispersal_yr"] == "1e-06"
             and r["configuration"] in ("both", "none")]
     assert len(rows) == 4 and all(r["settling_status"] == "census_stationary" for r in rows)
     digests = {f["path"]: f["sha256"] for f in json.loads((BUF / "raw_manifest.json").read_text())["files"]}
     return sorted(rows, key=lambda r: (r["configuration"], r["direction"])), digests
+
+
+def simplify(t, y, tol=REFUGE_TOL_K):
+    x = np.log10(np.maximum(t, t[t > 0][0]))
+    keep = set(np.unique(np.r_[0, np.searchsorted(t, np.geomspace(10., t[-1], 120)), len(t) - 1]).tolist())
+    while True:
+        k = np.array(sorted(keep))
+        err = np.abs(np.interp(x, x[k], y[k]) - y)
+        j = int(err.argmax())
+        if err[j] <= tol:
+            return k
+        keep.add(j)
 
 
 def refresh_refuges():
@@ -102,7 +119,7 @@ def refresh_refuges():
             result = json.load(fh)["result"]
         t = np.asarray(result["t"], float)
         bulk = np.asarray(result["temperatures_k"], float)[0]
-        keep = np.unique(np.r_[0, np.searchsorted(t, np.geomspace(10., t[-1], 120)), len(t) - 1])
+        keep = simplify(t, bulk)
         for j in keep:
             out.append(dict(case_id=r["case_id"], configuration=r["configuration"], direction=r["direction"],
                             endpoint_class=r["endpoint_class"], time_yr=float(t[j]), bulk_temperature_k=float(bulk[j]),
