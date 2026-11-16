@@ -104,20 +104,41 @@ def _whk_p(dte: float, r: Reading) -> float:
     return q ** (1.0 / w.gh_exponent) if q > 0 else float("nan")
 
 
+def _last_solution(r: Reading, lo: float, hi: float, xtol: float = 1e-12) -> float:
+    """Bisect for the end of the rule's domain between lo (solution) and hi (none);
+    returns a time inside the domain within xtol of its end."""
+    while hi - lo > xtol * max(1.0, abs(hi)):
+        mid = 0.5 * (lo + hi)
+        if np.isfinite(float(co2(mid, r))):
+            lo = mid
+        else:
+            hi = mid
+    return lo
+
+
 def lifespan(r: Reading = FAITHFUL, step: float = 1.0, horizon: float = 1.0e4) -> float:
-    """Myr from today until CO2 falls to c_limit, searched only where the rule
-    has a solution; inf if it never reaches the limit there."""
-    t = np.arange(0.0, horizon + step, step)
+    """Myr from today until CO2 falls to c_limit, within [0, horizon] and only
+    where the rule has a solution; inf if it does not reach the limit there.
+
+    The grid only brackets: an interval whose far end is past the domain is
+    cut back to the domain's end by bisection, so a crossing just before the
+    rule ends is found whatever the step."""
+    t = np.append(np.arange(0.0, horizon, step), horizon)
     c = co2(t, r)
-    hit = np.nonzero(np.isfinite(c) & (c <= r.c_limit))[0]
-    if not hit.size:
-        return float("inf")
-    i = hit[0]
-    if i == 0:
+    if not np.isfinite(c[0]):
+        raise ValueError("the rule has no solution today")
+    if c[0] <= r.c_limit:
         return 0.0
-    if not np.isfinite(c[i - 1]):
-        raise ValueError("the rule loses its solution before reaching the limit")
-    return brentq(lambda x: float(co2(x, r)) - r.c_limit, t[i - 1], t[i], xtol=1e-9)
+    stop = np.nonzero(~np.isfinite(c) | (c <= r.c_limit))[0]
+    if not stop.size:
+        return float("inf")
+    i = stop[0]
+    lo, hi = float(t[i - 1]), float(t[i])
+    if not np.isfinite(c[i]):
+        hi = _last_solution(r, lo, hi)
+        if float(co2(hi, r)) > r.c_limit:
+            return float("inf")  # the rule ends above the limit
+    return brentq(lambda x: float(co2(x, r)) - r.c_limit, lo, hi, xtol=1e-9)
 
 
 def domain_end(r: Reading = FAITHFUL, step: float = 0.01, horizon: float = 1.0e4) -> float:

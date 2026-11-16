@@ -58,6 +58,24 @@ def test_rules_have_no_solution_beyond_their_domain():
         assert float(whk1981.surface_dT(dte, float(m.co2(t, r)) / m.C_NOW)) == pytest.approx(0.0, abs=1e-9)
 
 
+def test_lifespan_search_is_domain_aware_and_respects_horizon():
+    from dataclasses import replace
+
+    lin = m.READINGS["linear_c"]
+    narrow = replace(lin, c_limit=1.0)  # crossing at 16.023 Myr, domain ends at 16.073
+    exact = (m.C_NOW - 1.0) / (m.C_PAST - m.C_NOW) * -m.T_PAST
+    assert exact < m.domain_end(narrow) < exact + 0.1
+    for step in (1.0, 0.03, 20.0, 1000.0):
+        assert m.lifespan(narrow, step=step) == pytest.approx(exact, rel=1e-9), step
+    for step in (20.0, 300.0, 5000.0):  # coarse grids that jump past the domain
+        assert m.lifespan(lin, step=step) == pytest.approx(8.53904, abs=1e-5), step
+        assert m.lifespan(step=step) == pytest.approx(80.036102, abs=1e-6), step
+    assert m.lifespan(horizon=80.01) == float("inf")
+    assert m.lifespan(horizon=80.04, step=7.0) == pytest.approx(80.036102, abs=1e-6)
+    for key, r in {**m.READINGS, **m.VARIANTS}.items():  # published values unchanged
+        assert m.lifespan(r, step=0.1) == pytest.approx(m.lifespan(r), rel=1e-9), key
+
+
 def test_whk_readings_use_whk1981():
     for t in (-3000.0, -500.0, 100.0):
         dte = float(whk1981.dTe_from_luminosity(m.luminosity(t)))
