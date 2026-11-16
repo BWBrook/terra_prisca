@@ -363,6 +363,39 @@ where $n = 4(r^*/t_{CH_4} - c\Phi_{abiotic})/(\chi H)$ is the catabolic hydrogen
 
 *Table S8b. Supply-potential interval for coexistence at the reference $T^*$ ($\ell = 10^{-3}$ h⁻¹, $p_{atm} = 0$; computed by `esm_tables.coexistence_budget`).*
 
+**Recycling trades range for tolerance (C67).** Table S8c follows the exact window, its first-loss margins and the graded states as f rises from 0.5 to 1 (fixed products for the exact states; full product feedback, acetate and methane at reference strength, for the graded states; homogeneous, ℓ = 10⁻³ h⁻¹; `models/haze_world/review/issue4_acetate_fate.py`). The window ratio Q is within about 5% of η_M/(fη_A); the atmospheric outlet, common to both ends, narrows it slightly. Over the sampled 5–95% of each window the exact margin is lowest mid-window, and mid-window τ_c(Q − 1) stays between 1.0 and 1.1 yr. This is a sampled relation for f = 0.5–1 with biomass exported, not a law. At f = 1 an exact state at 95% of the window is stable at a 30-year lag. Graded states move temperature by a similar amount across a narrower window, so their sensitivity per e-fold of supply rises; they remain durable, with τ_c not detected through 10⁴ yr except at the upper edge for f = 0.5 and 0.6 (48 and 130 yr). The habitat-spread factor Q/(Q − 1) of equation (3.1) rises from 2 to 22. The imposed-warming window, at the geometric mid-window supply, shrinks far less than Q: it scales roughly as k ln Q because the haze climate is steep, and the cooling branch caps it at 23.6 K up to f = 0.7. These windows establish feasibility at bisected ends, not continuous stability.
+
+<!-- table:s8_sweep -->
+
+| f | Q | τ_c exact, 5–95% of window (yr) | mid-window τ_c(Q − 1) (yr) | full-product sensitivity mid-window (K per e-fold) | full-product excursion over window (K) | Q/(Q − 1) | imposed-warming window (K) |
+|---|---|---|---|---|---|---|---|
+| 0.5 | 1.9955 | 1.11–1.88 | 1.102 | 1.33 | 1.251 | 2 | 23.6 |
+| 0.6 | 1.6793 | 1.57–2.54 | 1.065 | 1.75 | 1.214 | 2.47 |  |
+| 0.7 | 1.4534 | 2.29–3.57 | 1.039 | 2.39 | 1.162 | 3.21 | 23.6 |
+| 0.8 | 1.2840 | 3.59–5.43 | 1.020 | 3.5 | 1.086 | 4.52 |  |
+| 0.9 | 1.1522 | 6.61–9.73 | 1.006 | 5.94 | 0.963 | 7.57 | 16.6 |
+| 0.95 | 1.0967 | 10.3–15 | 1.000 | 8.7 | 0.863 | 11.3 |  |
+| 1 | 1.0468 | 21.3–30.7 | 0.996 | 15.4 | 0.690 | 22.4 | 6.6 |
+
+<!-- /table:s8_sweep -->
+
+*Table S8c. Exact window, margins and graded response against f (reference ℓ; positions are fractions of the exact supply window).*
+
+**The sink (C68).** Let U be captured hydrogen and n the hydrogen equivalents that must become methane at T\*. The acetate export (1 − f)η_A u_A and the biomass export (1 − η_A)u_A + (1 − η_M)u_M sum to U − n, independent of f. At the reference supply this combined export is 27.7 Tmol CH₄-equivalent yr⁻¹, against 65.0 Tmol yr⁻¹ of biotic methane (case B column, assumed 10⁴-yr lifetime; the planetary scale moves inversely with the lifetime). At f = 0.5 the acetate share is 20.2 Tmol yr⁻¹, which needs about 20 Tmol yr⁻¹ of sulfate or 160 Tmol yr⁻¹ of Fe(III) if oxidised. The reference mixture exists only for f < 0.783 at this supply. If a fraction b of lost biomass also returns as methane, the routes' yields become [η_M + b(1 − η_M)]/4 and [fη_A + b(1 − η_A)]/4 (table S8d). With b = 1 the exact window closes at f = 1: equal ultimate yields remove the composition-controlled plateau, though away from T\* the groups' different hydrogen requirements still change leakage. Biomass recycling was analysed through the budget only; margins with b > 0 were not computed. Storage alone, without lasting export, burial or oxidation, does not create a lasting yield contrast.
+
+<!-- table:s8_biomass -->
+
+| f | Q, biomass recycled b = 0 | Q, biomass recycled b = 0.5 | Q, biomass recycled b = 1 |
+|---|---|---|---|
+| 0 | no upper end | 16.7043 | 8.6303 |
+| 0.5 | 1.9955 | 1.8464 | 1.7259 |
+| 0.9 | 1.1522 | 1.1181 | 1.0881 |
+| 1 | 1.0468 | 1.0220 | 1.0000 |
+
+<!-- /table:s8_biomass -->
+
+*Table S8d. Window ratio Q with lost biomass recycled to methane at fraction b (closed-form budget at the reference T\*).*
+
 ## S9 Imposed warming
 
 **Definition.** A warming F shifts the climate curve rigidly, $T_{clim}(r) \to T_{clim}(r) + F$, leaving its slope unchanged. It is a controlled surrogate for a change in sunlight, not a solar calculation: a change in solar flux also alters the spectrum, haze photochemistry and the curve's shape. F was injected by wrapping the climate function and all its aliases, with dependent caches cleared at each F (`models/haze_world/review/issue2_forcing.py`). At F = 0 the reference states reproduce the archive; σ = 1 and 3 K at P = 0.30 are bit-identical, and the off-reference states agree within the acceptance tolerance.
@@ -463,6 +496,8 @@ The new bounded checks and the refuge and immigration runs use instantaneous tem
 | C64 | supported | da9c2b3 | S9 | Fixed-product exact states exist at T* on the extracted cooling curves of Arney cases A and C but not on case D |
 | C65 | supported | f508dfa | S10 | Closed reference runs in one uniform habitat do not assemble the mixture: the group favoured at the starting temperature is removed or removes the other within decades, while methane needs millennia to carry temperature across T*; this holds from the tested 283.2-K lifeless start at f=0, 0.5 and 0.9 and for methane responses up to tenfold faster at fixed equilibria; a thousandfold-faster response assembles it from acetogen invasions |
 | C66 | supported | f508dfa | S10 | Any tested positive immigration assembles the mixture in one uniform habitat at f=0 and 0.5, with both groups materially active near T* |
+| C67 | supported | 1a2358c | S8 | Raising the acetate fate f from 0.5 towards 1 narrows the exact supply window and lengthens the exact first-loss margin together, steepens full-product graded states, and narrows the imposed-warming window far less than the supply window |
+| C68 | supported | 1a2358c | S8 | Exact control needs a lasting route-dependent hydrogen sink other than methane: at fixed feasible supply the combined acetate-plus-biomass export is independent of f, and if lost biomass also returned as methane the exact plateau would close at f=1 |
 
 <!-- /table:s9_claims -->
 

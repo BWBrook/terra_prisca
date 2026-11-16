@@ -8,10 +8,10 @@ submission. The target journal is J R Soc Interface. Claim IDs refer to
 Reviewed and revised by Codex (GPT-6), 12 November 2026. The earlier draft
 remains in Git; these are Step 1 revisions for Claude's review.
 
-## Main message (42 words)
+## Main message (48 words)
 
-> Microbes can hold a planet's temperature, but exact control fails when
-> climate responds slowly. Imperfect control lasts far longer, and grows
+> Microbes can hold a planet's temperature if some hydrogen avoids becoming
+> methane, but exact control fails when climate responds slowly. Imperfect control lasts far longer, and grows
 > looser as habitat temperatures differ. The controlling community forms only
 > where the losing group can persist while the climate catches up.
 
@@ -22,6 +22,10 @@ pressure-test Issue 3; Barry approved it in chat on 15 November 2026 ("'Only
 where' is okay for the 25-word main message; the longer and safer form can
 be stated elsewhere"). The safer form, used in §4.5, is: in one uniform
 habitat it never forms; it needs somewhere the losing group can persist.
+The sink condition in the first sentence was added after pressure-test
+Issue 4; Barry adopted it in chat on 16 November 2026 ("Adopt all"). Codex's
+alternative, tied more closely to the mechanism, is "when competition
+diverts hydrogen from methane".
 
 **Supporting results:**
 

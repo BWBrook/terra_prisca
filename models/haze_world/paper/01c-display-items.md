@@ -2,7 +2,8 @@
 
 Claude (Opus 5.5), revised by Codex (GPT-6), 12 November 2026. Each item serves the
 [main message](01a-working-abstract.md). Microbes can hold a planet's
-temperature, but exact control fails when climate responds slowly. Imperfect
+temperature if some hydrogen avoids becoming methane, but exact control
+fails when climate responds slowly. Imperfect
 control lasts far longer, and grows looser as habitat temperatures differ.
 The controlling community forms only where the losing group can persist
 while the climate catches up.
