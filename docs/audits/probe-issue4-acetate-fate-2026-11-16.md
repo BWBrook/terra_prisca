@@ -6,7 +6,7 @@ evidence; small bounded checks only; wording for Barry's decision.
 
 **Evidence.**
 - Check: `models/haze_world/review/issue4_acetate_fate.py`, with its results in
-  `issue4_acetate_fate.json`, evidence commit `2b6134a`.
+  `issue4_acetate_fate.json`, evidence commit `3628035`.
 - Ledger: C67 and C68.
 - Method: production equilibrium, delay-margin and rigid-shift code. No new
   model, variant or experimental stage.
