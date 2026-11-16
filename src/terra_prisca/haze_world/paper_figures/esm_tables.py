@@ -285,7 +285,7 @@ def s8_acetate():
         q = win[f]["ratio"]
         sweep.append({"f": f"{f:g}", "Q": f"{q:.4f}", "τ_c exact, 5–95% of window (yr)": f"{min(r['tau_c'] for r in exact):.3g}–{max(r['tau_c'] for r in exact):.3g}",
                       "mid-window τ_c(Q − 1) (yr)": f"{mid['tau_c'] * (q - 1):.3f}", "full-product sensitivity mid-window (K per e-fold)": f"{abs(graded['Sc']):.3g}",
-                      "full-product excursion over window (K)": f"{span[f]:.3f}", "Q/(Q − 1)": f"{q / (q - 1):.3g}",
+                      "full-product excursion over 5–95% of exact window (K)": f"{span[f]:.3f}", "Q/(Q − 1)": f"{q / (q - 1):.3g}",
                       "imposed-warming window (K)": f"{warm[f]:.1f}" if f in warm else ""})
     write_csv(ESM / "s8_fraction_sweep.csv", sweep, list(sweep[0]))
     splice("s8_sweep", md_table(sweep, list(sweep[0])))

@@ -348,7 +348,7 @@ The reservoir is imposed, not a photochemical hydrogen budget, and imported hydr
 
 $$P_M = 0.30\,\frac{k_{ex}(R^* - p_{atm}) + n/\eta_M}{J_{ref}},\qquad P_A = 0.30\,\frac{k_{ex}(R^* - p_{atm}) + n/(f\eta_A)}{J_{ref}},$$
 
-where $n = 4(r^*/t_{CH_4} - c\Phi_{abiotic})/(\chi H)$ is the catabolic hydrogen flux (mol L⁻¹ h⁻¹) that must become methane to hold $r^*$ against removal, and $R^* = p^*$ is the local hydrogen at coexistence. Table S8b gives them; the $f = 0.5$ and $f = 1$ upper ends (0.457327 and 0.239907) match the full-budget endpoints recorded in `docs/audits/haze-world-external-review-codex-2026-11-11.md` and the readiness note `docs/audits/haze-world-writing-readiness-2026-11-12.md`. As f rises the interval narrows, from no upper end at f = 0 to a ratio of 1.047 at f = 1. It does not close at f = 1 because the assumed biomass export leaves a lower catabolised fraction for acetogens than for methanogens ($\eta_A < \eta_M$). If the two fractions were equal, complete acetate recycling would equalise the methane yields and close this interval. The interval is a positivity condition on the budget; stability at f = 1 was not assessed here.
+where $n = 4(r^*/t_{CH_4} - c\Phi_{abiotic})/(\chi H)$ is the catabolic hydrogen flux (mol L⁻¹ h⁻¹) that must become methane to hold $r^*$ against removal, and $R^* = p^*$ is the local hydrogen at coexistence. Table S8b gives them; the $f = 0.5$ and $f = 1$ upper ends (0.457327 and 0.239907) match the full-budget endpoints recorded in `docs/audits/haze-world-external-review-codex-2026-11-11.md` and the readiness note `docs/audits/haze-world-writing-readiness-2026-11-12.md`. As f rises the interval narrows, from no upper end at f = 0 to a ratio of 1.047 at f = 1. It does not close at f = 1 because the assumed biomass export leaves a lower catabolised fraction for acetogens than for methanogens ($\eta_A < \eta_M$). If the two fractions were equal, complete acetate recycling would equalise the methane yields and close this interval. The interval itself is a positivity condition; sampled stability margins are reported in table S8c.
 
 <!-- table:s8_interval -->
 
@@ -367,7 +367,7 @@ where $n = 4(r^*/t_{CH_4} - c\Phi_{abiotic})/(\chi H)$ is the catabolic hydrogen
 
 <!-- table:s8_sweep -->
 
-| f | Q | τ_c exact, 5–95% of window (yr) | mid-window τ_c(Q − 1) (yr) | full-product sensitivity mid-window (K per e-fold) | full-product excursion over window (K) | Q/(Q − 1) | imposed-warming window (K) |
+| f | Q | τ_c exact, 5–95% of window (yr) | mid-window τ_c(Q − 1) (yr) | full-product sensitivity mid-window (K per e-fold) | full-product excursion over 5–95% of exact window (K) | Q/(Q − 1) | imposed-warming window (K) |
 |---|---|---|---|---|---|---|---|
 | 0.5 | 1.9955 | 1.11–1.88 | 1.102 | 1.33 | 1.251 | 2 | 23.6 |
 | 0.6 | 1.6793 | 1.57–2.54 | 1.065 | 1.75 | 1.214 | 2.47 |  |

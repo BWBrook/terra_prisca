@@ -431,3 +431,14 @@ Changes:
 Barry, in chat on 16 November: "Leave it open for now, I'll go back to Fable
 to discuss this, once you feel the current Issue is otherwise resolved." The
 first sentence of the main message stays as applied, and its wording is open.
+
+## Applied-text review and technical closure (16 November)
+
+Codex reviewed the applied text (`docs/audits/probe-issue4-applied-review-2026-11-16.md`, `c42852d`): numbers, tables, sink budget and C67–C68 pass; four wording corrections were requested and are applied without numerical change.
+
+- §4.4 states the oxidant requirement in equivalent units (about 20 Tmol sulfate or 160 Tmol Fe(III) a year for the f = 0.5 sink); "several times" now compares the Fe(III) requirement with modelled iron recycling.
+- §4.4 adds that oxidant regeneration and any accompanying reductants would also have to enter a planetary methane budget, and its opening says acetate and dead biomass *can* return as methane rather than that they tend to.
+- The abstract labels the seven-year first-loss statement as the original sampled inventory.
+- ESM S8's interval paragraph points to table S8c for stability; the S8c excursion column is labelled "over 5–95% of exact window".
+
+Checks: four targeted tests pass; the claims checker reports 68 claims, 37 cited, 0 errors. Issue 4's technical review is closed. The first sentence of the main message remains open for Barry and Fable.

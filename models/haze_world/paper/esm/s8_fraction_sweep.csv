@@ -1,4 +1,4 @@
-f,Q,"τ_c exact, 5–95% of window (yr)",mid-window τ_c(Q − 1) (yr),full-product sensitivity mid-window (K per e-fold),full-product excursion over window (K),Q/(Q − 1),imposed-warming window (K)
+f,Q,"τ_c exact, 5–95% of window (yr)",mid-window τ_c(Q − 1) (yr),full-product sensitivity mid-window (K per e-fold),full-product excursion over 5–95% of exact window (K),Q/(Q − 1),imposed-warming window (K)
 0.5,1.9955,1.11–1.88,1.102,1.33,1.251,2,23.6
 0.6,1.6793,1.57–2.54,1.065,1.75,1.214,2.47,
 0.7,1.4534,2.29–3.57,1.039,2.39,1.162,3.21,23.6

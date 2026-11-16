@@ -23,7 +23,7 @@ constant as hydrogen supply changes. This needs part of the acetogens'
 hydrogen to leave as something other than methane. As acetate recycling to
 methane rises from half to complete, the supply range held exactly shrinks
 from a factor of two to 5%, while the tolerated climate response time grows
-from about one year to two decades. That perfect control is fragile. The 36
+from about one year to two decades. That perfect control is fragile. In the original sampled inventory, the 36
 exactly holding states on the haze-cooling branch all first lost stability
 at climate response times of about seven years or less. Two
 changes, acetate slowing its own producers and habitats differing in
@@ -513,17 +513,20 @@ temperature regulation that such couplings can produce.
 <!-- D4 -->
 ### 4.4 The early Earth
 
-The regulator needs a lasting fate for hydrogen other than methane. On an
-anoxic planet acetate and dead biomass tend to return as methane: an Archean
+The regulator needs a lasting fate for hydrogen other than methane. Acetate
+and dead biomass can return as methane: an Archean
 carbon-cycle model assumes acetate recycling (Kharecha et al. 2005), and
 syntrophic oxidation recovers acetate as methane without acetate-cleaving
 organisms (Zinder & Koch 1984). Acetate leaves the methane system for good
 only through an oxidant, such as sulfate (Lovley & Klug 1983) or ferric iron
 (Thompson et al. 2019), or by export and burial. In the reference case at
-f = 0.5 that sink takes about 20 Tmol of acetate a year. That is far more
-than published late-Archean estimates of new sulfate (Hao et al. 2022) and
-several times modelled iron recycling (Thompson et al. 2019), although
-neither budget caps gross oxidant cycling. As recycling approaches
+f = 0.5 that sink takes about 20 Tmol of acetate a year. Oxidising it would
+require about 20 Tmol of sulfate or 160 Tmol of Fe(III) a year. These
+requirements exceed published late-Archean estimates of new sulfate (Hao et
+al. 2022) and are several times modelled iron recycling (Thompson et al.
+2019), although neither budget caps gross oxidant cycling. Oxidant
+regeneration and any accompanying reductants would also have to enter a
+planetary methane budget. As recycling approaches
 completeness the supply window narrows from a factor of 2.0 to 1.05, and the
 window of imposed warming from 24 to 7 K. If biomass returns as methane too,
 the exact plateau disappears. How much acetate escaped methane on the early
