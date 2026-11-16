@@ -642,3 +642,36 @@ All of your corrections are applied as worded, in `4e0273a`. No numbers changed.
 Issue 4's technical review is closed. The first sentence of the main message stays open for Barry and Fable.
 
 Next: Barry — settle the main-message sentence with Fable.
+
+## Message 3540 · Claude (claude-opus-5-5) · evidence
+
+Time: 2026-11-16T10:45:53.538769+00:00
+Reply to: 3535
+
+**Main message.** Barry, 16 November 2026 in chat, after consulting Fable: "Please change the first sentence to: 'Microbial competition can hold a planet's temperature if some of the hydrogen it diverts stays out of methane, but exact control fails when climate responds slowly.' The rest stays as it is." Applied in 01a, 01c and the draft in `ebb3fa6`. Issue 4 is closed.
+
+**Issue 5** (Barry, the same message): "How big is the hydrogen supply, and what provides it? … We expect this to be the last probe." The record is `docs/audits/probe-issue5-hydrogen-supply-2026-11-16.md`, commit `7b47489`. The arithmetic script is `models/haze_world/review/issue5_supply_scale.py`. It reads only the stored Issue 4 JSON; no model is run.
+
+**Q1.** The reference supply is 401.1 Tmol H₂ yr⁻¹. Of that, 260.1 becomes methane, 110.9 is exported and 30.1 leaves through the outlet. Fable's ~370 omits the outlet. The planetary scale comes only from r*/τ, with τ = 10 kyr assumed. The f = 0.5 window is 306–611 Tmol, and τ = 6–19 kyr gives 668–211 Tmol. Methane is 2.44 × 10¹¹ molecules cm⁻² s⁻¹.
+
+**Q2.** A Sonnet subagent verified the sources, and I spot-checked Canfield's Table 12.
+- Arney's haze onset is 27–80 Tmol CH₄ yr⁻¹, so the model's 65 lies inside it.
+- Archean geological H₂ is about 1–10 Tmol yr⁻¹: Ward 2019 gives 1.5–6, Canfield 10× present is ~3.4, and Guzmán-Marmolejo gives a 3.0 maximum. The reference supply is 40–400 times that.
+- Modern emissions are 35.9 (top-down) and 45.9 (bottom-up) Tmol yr⁻¹ (Saunois 2020).
+- A fermentation-fed reference supply needs about 600 Tmol C yr⁻¹ fermented. That is 2× Canfield's early-Earth NPP and more than 200× Ward's.
+
+**Q3.** Glucose fermentation gives 2 acetate per 4 H₂. If that acetate shares f, the competition-independent methane source tightens the exact condition:
+- at f = 0.5 the window ratio falls from 2.00 to 1.27, about 64% of biotic CH₄ falls outside the competition, and the lasting acetate sink rises to ~50 Tmol yr⁻¹;
+- at f = 0 the sink is ~222 Tmol yr⁻¹.
+
+This is analytic only: the model has no fermenters.
+
+**Q4.** Proposed wording for §2.2, Table 1, §4.4 and §4.6 is in the record, for Barry's decision.
+
+**Please check:**
+1. the fermentation window algebra and acetate split;
+2. whether "geology falls short by two orders of magnitude" and "~600 Tmol C" are fairly stated;
+3. any source you can read that I could not: Ozaki 2018 (10.1038/s41561-017-0031-2) body, Kharecha 2005's H₂ and CH₄ fluxes, Holland 2002, Conrad 1999's one-third;
+4. whether the proposed wording overreaches.
+
+Next: Codex — review Issue 5 analysis and wording.
