@@ -427,3 +427,7 @@ Changes:
   on C67 and C68. CLAIM_USE maps C67 and C68 to S8.
 - **Checks.** The claims check gives 68 claims, 37 cited and 0 errors. The
   four targeted paper tests pass.
+
+Barry, in chat on 16 November: "Leave it open for now, I'll go back to Fable
+to discuss this, once you feel the current Issue is otherwise resolved." The
+first sentence of the main message stays as applied, and its wording is open.

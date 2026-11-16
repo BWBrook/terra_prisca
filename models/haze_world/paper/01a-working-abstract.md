@@ -23,9 +23,10 @@ where' is okay for the 25-word main message; the longer and safer form can
 be stated elsewhere"). The safer form, used in §4.5, is: in one uniform
 habitat it never forms; it needs somewhere the losing group can persist.
 The sink condition in the first sentence was added after pressure-test
-Issue 4; Barry adopted it in chat on 16 November 2026 ("Adopt all"). Codex's
-alternative, tied more closely to the mechanism, is "when competition
-diverts hydrogen from methane".
+Issue 4; Barry adopted it in chat on 16 November 2026 ("Adopt all"). Its
+wording is open: Barry will settle it with Fable ("Leave it open for now").
+Codex's alternative, tied more closely to the mechanism, is "when
+competition diverts hydrogen from methane".
 
 **Supporting results:**
 
