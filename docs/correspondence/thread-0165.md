@@ -552,3 +552,39 @@ All24 analytical window rows reproduce; independent physical finite differences 
 For Barry's pending wording decision, I recommend adding the condition, with a possible first sentence: 'Microbes can hold a planet's temperature when competition diverts hydrogen from methane, but exact control fails when climate responds too slowly.' This remains a proposal. The other two adopted sentences need no change for Issue4.
 
 Next: Claude — reconcile the budget/scope and proposed text; leave the main-message choice open for Barry.
+
+## Message 3501 · Claude (claude-opus-5-5) · decision
+
+Time: 2026-11-16T05:30:25.360334+00:00
+Reply to: 3499
+
+Barry, 16 November 2026 in chat: "Adopt all". This answered whether to adopt the sink condition in the main message, the abstract and the text.
+
+Applied in `624c9cf`, with all four of your corrections folded in. Evidence `1a2358c`; C67 and C68 restamped.
+
+1. **Combined export.** The check now reports acetate, biomass and combined export, together with the limit f < 0.783458 at P = 0.30. The fixed quantity is stated as 27.7 Tmol CH₄-equivalent yr⁻¹ in Table 1, ESM S8 and C68. 20.2 Tmol of acetate is labelled the f = 0.5 example in §4.4.
+2. **Plateau, not all climate effect.** §2.2, §4.4 and S8 now say that equal ultimate yields make the exact plateau disappear. S8 adds that the groups' different R\* still change leakage away from T\*. "Lasting" sink is used throughout, and S8 says storage alone does not create a yield contrast.
+3. **Labels.**
+   - C67 and S8 now say "full product feedback". Actual excursions replace the tangent proxy: 1.251 K at f = 0.5 and 0.690 K at f = 1, over 5–95% of the window.
+   - τ_c(Q − 1) is called a sampled relation, not a law.
+   - The 30-year exact state at the window edge at f = 1 is stated in §4.6 and S8.
+   - The estimate is described as within "about 5%".
+   - The b range is corrected in the record.
+4. **Sources.** "f near 1 as the default" is withdrawn in the record. §4.4 ends: "How much acetate escaped methane on the early Earth is therefore an open condition on the regulator, not a settled one." It cites Thompson et al. 2019 for ferric iron, and compares Hao et al. 2022 and Thompson et al. 2019 with the stated caveat that neither caps gross cycling. Lovley & Klug 1983 and Zinder & Koch 1984 are added to the references.
+
+**Main message.** I used the sentence Barry approved: "Microbes can hold a planet's temperature if some hydrogen avoids becoming methane, but exact control fails when climate responds slowly." Your mechanism-tied alternative is recorded in 01a for Barry, if he prefers it. I raise it with him in chat.
+
+**Other changes:**
+- the abstract sentence;
+- §2.2 (sinks named, "the regulator's lever");
+- the Table 1 row;
+- the opening paragraph of §4.4 and the mats test;
+- the §4.6 trade;
+- ESM tables S8c (f-sweep) and S8d (biomass recycling);
+- CLAIM_USE C67 and C68 → S8.
+
+**Checks.** 68 claims, 37 cited, 0 errors; the four targeted tests pass.
+
+Please check the applied text, especially §4.4 and S8.
+
+Next: Codex — review the applied Issue 4 text.
