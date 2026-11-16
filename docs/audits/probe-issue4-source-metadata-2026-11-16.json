@@ -1,0 +1,167 @@
+{
+  "verified_utc": "2026-11-16T05:14:01.952474+00:00",
+  "sources": [
+    {
+      "doi": "10.1126/sciadv.aav2869",
+      "title": "Photoferrotrophy, deposition of banded iron formations, and methane production in Archean oceans",
+      "authors": [
+        {
+          "given": "Katharine J.",
+          "family": "Thompson"
+        },
+        {
+          "given": "Paul A.",
+          "family": "Kenward"
+        },
+        {
+          "given": "Kohen W.",
+          "family": "Bauer"
+        },
+        {
+          "given": "Tyler",
+          "family": "Warchola"
+        },
+        {
+          "given": "Tina",
+          "family": "Gauger"
+        },
+        {
+          "given": "Raul",
+          "family": "Martinez"
+        },
+        {
+          "given": "Rachel L.",
+          "family": "Simister"
+        },
+        {
+          "given": "Céline C.",
+          "family": "Michiels"
+        },
+        {
+          "given": "Marc",
+          "family": "Llirós"
+        },
+        {
+          "given": "Christopher T.",
+          "family": "Reinhard"
+        },
+        {
+          "given": "Andreas",
+          "family": "Kappler"
+        },
+        {
+          "given": "Kurt O.",
+          "family": "Konhauser"
+        },
+        {
+          "given": "Sean A.",
+          "family": "Crowe"
+        }
+      ],
+      "journal": "Science Advances",
+      "published": [
+        [
+          2019,
+          11
+        ]
+      ],
+      "registry_url": "https://api.crossref.org/works/10.1126/sciadv.aav2869",
+      "response_sha256": "33d9d16e7c10cc0b0fe1b59a1ec6152db45a6d486561361d79bea00a6b0211f8"
+    },
+    {
+      "doi": "10.1038/ngeo1585",
+      "title": "Contributions to late Archaean sulphur cycling by life on land",
+      "authors": [
+        {
+          "given": "Eva E.",
+          "family": "Stüeken"
+        },
+        {
+          "given": "David C.",
+          "family": "Catling"
+        },
+        {
+          "given": "Roger",
+          "family": "Buick"
+        }
+      ],
+      "journal": "Nature Geoscience",
+      "published": [
+        [
+          2012,
+          9,
+          23
+        ]
+      ],
+      "registry_url": "https://api.crossref.org/works/10.1038/ngeo1585",
+      "response_sha256": "f48a3480c7e5b4bd20cc627a5a73b5cc22ddf3e2494ae85a1fce2562d5e43f8c"
+    },
+    {
+      "doi": "10.1126/sciadv.abn2226",
+      "title": "Anoxic photochemical weathering of pyrite on Archean continents",
+      "authors": [
+        {
+          "given": "Jihua",
+          "family": "Hao"
+        },
+        {
+          "given": "Winnie",
+          "family": "Liu"
+        },
+        {
+          "given": "Jennifer L.",
+          "family": "Goff"
+        },
+        {
+          "given": "Jeffrey A.",
+          "family": "Steadman"
+        },
+        {
+          "given": "Ross R.",
+          "family": "Large"
+        },
+        {
+          "given": "Paul G.",
+          "family": "Falkowski"
+        },
+        {
+          "given": "Nathan",
+          "family": "Yee"
+        }
+      ],
+      "journal": "Science Advances",
+      "published": [
+        [
+          2022,
+          7
+        ]
+      ],
+      "registry_url": "https://api.crossref.org/works/10.1126/sciadv.abn2226",
+      "response_sha256": "11b010fe6751c4baf817102a8d7b36284b3d5b0cd9b38b69abf7bbc3d48c4b7f"
+    },
+    {
+      "doi": "10.1038/s41467-019-12396-y",
+      "title": "Organic sulfur was integral to the Archean sulfur cycle",
+      "authors": [
+        {
+          "given": "Mojtaba",
+          "family": "Fakhraee"
+        },
+        {
+          "given": "Sergei",
+          "family": "Katsev"
+        }
+      ],
+      "journal": "Nature Communications",
+      "published": [
+        [
+          2019,
+          10,
+          7
+        ]
+      ],
+      "registry_url": "https://api.crossref.org/works/10.1038/s41467-019-12396-y",
+      "response_sha256": "2cf4d56c41d86ef37fea902a26342f2d0c28a35d23a43ebe8930f4bd667cf9f2"
+    }
+  ]
+}
