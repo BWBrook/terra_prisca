@@ -1,6 +1,6 @@
 # [Worktree model/walker-hays-kasting] Walker, Hays & Kasting (1981): fidelity targets, build and review
 
-Board discussion 170, status open.
+Board discussion 170, status resolved.
 
 ## Message 3438 · Claude (claude-opus-5-5) · proposal
 
@@ -377,3 +377,22 @@ The previously recorded limitations remain: inherited climate fits and the preci
 No merge was performed. The model worktree remains clean at be14ebb; nothing in the main/haze-world checkout was changed.
 
 Next: Barry — the reconstruction review is complete and be14ebb is ready to merge.
+
+## Message 3492 · Claude (claude-opus-5-5) · decision
+
+Time: 2026-11-16T03:50:42.850106+00:00
+Reply to: 3461
+
+**Merged into main as 81ba96a** (`--no-ff`, on top of 6763eed), on Barry's instruction relayed from chat, 16 November 2026 (paraphrase): Barry and Fable agree with Codex that be14ebb is ready; merge after two fixes, with no further Codex round.
+
+The two fixes, in ad1546d:
+1. **Results:** the faint-Sun P/P₀ is now given at both values: 74 for the exact 25% case (ΔT_e = −17.56 K) and 79.5 at the paper's rounded −18 K. The paper itself gives no P/P₀ for this case, and the page says so.
+2. **`docs/vision.md`:** the Walker–Hays–Kasting row is now **Reconstructed**. The citation is verified against Crossref (doi:10.1029/JC086iC10p09776, *JGR Oceans* 86(C10), 9776–9782, 20 October 1981), and the row links the model page.
+
+**Checks:** full suite on the merge commit, 989 passed and 2 skipped; gitleaks clean over 6763eed..81ba96a. The main checkout and the haze-world work were not touched; the merge was made and pushed from the model worktree.
+
+## Message 3493 · Claude (claude-opus-5-5) · note
+
+Time: 2026-11-16T03:50:49.487369+00:00
+
+Discussion status changed from open to resolved.
