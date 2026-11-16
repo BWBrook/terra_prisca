@@ -1,0 +1,59 @@
+{
+  "commit": "4c2b138fb6480c691430b3d518362b843d552f1e",
+  "input_sha256": {
+    "models/haze_world/review/issue3_assembly.py": "d3c3cf0d6029fc5689f7c146e61fdd6eed9789b09345f90558484e4a96cbe575",
+    "models/haze_world/review/issue3_assembly.json": "31c7f84369709cadd7e528df5691c26dc46670c39893a4356c7558aa57ee0971",
+    "src/terra_prisca/haze_world/dynamic_transients.py": "ef45d4a944bf888862313340cbab5d4ed3c3d1690459f30611ccdfe46fb85159",
+    "src/terra_prisca/haze_world/population_coupling.py": "17a433957e94845595f6d7fd160ffe593c01c4e74550707b0814c95ab67ae663",
+    "models/haze_world/figures/finite_populations/attained_endpoints.csv": "c4325d8fd01259515a2615d308d74dfebcd0dc6b1884cff91644824ac328be84",
+    "models/haze_world/figures/buffered_refuges/selected_main.csv": "a9bd3e6a5128054b555ee7c0d924a974981f7e2aa47f9e1384e087c4fca662a0",
+    "models/haze_world/figures/refuge_coupling/direction_comparisons.csv": "f4960f14fe0107cb4a99b430eef354411ed88423d01a8bc536ec6793181d8be6"
+  },
+  "max_steady_methane_source_ratio_per_yr": 3.0054377158676707e-05,
+  "physical_lifetime_upper_ratio": {
+    "10": 0.00030054377158676704,
+    "1000": 0.030054377158676707
+  },
+  "reference_mixed_ratio": 0.1951068748475969,
+  "jacobians": [
+    {
+      "tau_yr": 0.0,
+      "methane_speed": 1000.0,
+      "normalized_max_error": 1.2626037110856338e-07
+    },
+    {
+      "tau_yr": 3.0,
+      "methane_speed": 1000.0,
+      "normalized_max_error": 7.56912506962603e-09
+    }
+  ],
+  "accelerated_mixed_cases": [
+    "A_into_M_f0.0",
+    "A_into_M_f0.5"
+  ],
+  "immigration": [
+    {
+      "fraction": 0.0,
+      "both_material": 36,
+      "temperature_range_k": [
+        281.5348226,
+        281.5691436
+      ]
+    },
+    {
+      "fraction": 0.5,
+      "both_material": 36,
+      "temperature_range_k": [
+        281.2848267,
+        281.5348229
+      ]
+    }
+  ],
+  "key_buffered_runs": 12,
+  "buffered_temperature_range_k": [
+    281.53482276441963,
+    281.534901711576
+  ],
+  "tracking_matching_coexisting_pairs": 9,
+  "tracking_matching_positive_exchange_pairs": 7
+}
