@@ -7,9 +7,11 @@ Nature 277, 640-642, doi:10.1038/277640a0.
 WHK (p. 9779) obtain T_g(CO2) by subtracting T_e and T_g(H2O) from Owen et al.'s
 quoted surface temperatures, and fit 2.3 (P/P0)^0.364. Owen et al.'s present
 row gives 290 K, not WHK's 285 K, so the subtraction leaves 4.8 K today, not
-2.3 K. Lowering Owen et al.'s temperatures by 5 K (to WHK's present) and
-passing a power law through today and the 4.25 Gyr row recovers the printed
-law to within rounding. WHK do not state that procedure; it is our inference.
+2.3 K. The printed law is approximately consistent with an inferred procedure:
+lower Owen et al.'s temperatures by 5 K (to WHK's present) and pass a power law
+through today and the 4.25 Gyr row, which gives exponent 0.367. WHK state
+neither the normalisation nor the choice of fitted rows, so their actual
+procedure stays undocumented.
 """
 
 from __future__ import annotations

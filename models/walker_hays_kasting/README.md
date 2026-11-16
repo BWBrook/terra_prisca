@@ -287,26 +287,29 @@ All hold.
 - **"About a half" holds where the paper uses it,** at the faint-young-Sun end
   (0.500 at ΔT_e = −18 K). Nearer the present the feedback removes less: 0.71
   of the no-feedback slope today.
-- **Eq. (5) follows from Owen, Cess & Ramanathan (1979, Table 1)**
-  ([`owen1979.py`](../../src/terra_prisca/walker_hays_kasting/owen1979.py);
+- **Eq. (5) is approximately consistent with Owen, Cess & Ramanathan (1979,
+  Table 1)** ([`owen1979.py`](../../src/terra_prisca/walker_hays_kasting/owen1979.py);
   `fidelity/whk1981_eq5_owen_*.csv`). This was checked after the merge, once
   the source was in hand.
   - Owen et al.'s present row is 290 K, not 285 K. WHK's subtraction applied
     to the printed temperatures leaves T_g(CO₂) = 4.8 K today, not 2.3 K.
-  - Lower Owen et al.'s temperatures by 5 K, so that today is 285 K, and pass a
-    power law through today and their 4.25 Gyr row: the result is
-    2.3(P/P₀)^0.367, against the printed 0.364. WHK do not state this
-    procedure; it is our inference, and the only one of three tried that
-    comes near the printed exponent (exponents 0.27 and 0.28 without the shift
-    or without the weak CO₂ bands).
+  - An inferred procedure comes close to the printed law. Lower Owen et al.'s
+    temperatures by 5 K, so that today is 285 K, and pass a power law through
+    today and their 4.25 Gyr row: the result is 2.3(P/P₀)^0.367, against the
+    printed 0.364. The table's printed precision (temperatures to 1 K) admits
+    0.364.
+  - WHK state neither the normalisation nor which rows they fitted, so their
+    actual procedure remains undocumented. Of the three variants tried, only
+    this one comes near the printed exponent; without the shift, or without
+    the weak CO₂ bands, the exponents are 0.27 and 0.28.
   - A least-squares fit to all nine rows would give 3.38(P/P₀)^0.314. Eq. (5)
     falls up to 2.7 K below Owen et al.'s intermediate rows (3.0–2.5 Gyr),
     which eq. (6)'s factor of 2 makes 5.3 K in T_s.
-  - Owen et al.'s "up to 1000 times" is their 4.25 Gyr row: P/P₀ = 969 at
-    76% of today’s sunlight (ΔT_e = −16.5 K), with T_s = 310 K. That is a
-    warm state, not a constant-temperature requirement. Eq. (6) needs
-    P/P₀ = 320 to hold today's temperature at that ΔT_e, and gives
-    ΔT = +18.7 K at P/P₀ = 969.
+  - WHK's summary, that Owen et al. found CO₂ "up to 1000 times" today's, matches
+    Owen et al.'s 4.25 Gyr row: P/P₀ = 969 at 76% of today's sunlight
+    (ΔT_e = −16.5 K), with T_s = 310 K. That is a warm state, not a
+    constant-temperature requirement. Eq. (6) needs P/P₀ = 320 to hold today's
+    temperature at that ΔT_e, and gives ΔT = +18.7 K at P/P₀ = 969.
 - **The 1-bar-in-20-Myr figure** lies within the range implied by Holland's
   rate (11.8–23.6 Myr). The central rate gives 15.8 Myr.
 

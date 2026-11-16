@@ -5,7 +5,7 @@ import pytest
 from terra_prisca.walker_hays_kasting import owen1979 as o
 
 
-def test_eq5_is_an_endpoint_fit_to_owen_shifted_to_285K():
+def test_eq5_is_approximately_an_inferred_normalised_endpoint_fit():
     fits = {r["owen_temperatures"]: r for r in o.fits()}
     shifted = fits["shifted to 285 K"]
     assert shifted["tg_co2_today"] == pytest.approx(2.3, abs=1e-9)       # eq. (3) closes today

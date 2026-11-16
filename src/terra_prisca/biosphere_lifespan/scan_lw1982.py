@@ -16,8 +16,9 @@ single pixel column), so each scale is a separate linear map fitted to its ticks
     the axis has labels but no ticks.
 
 Lines are traced by following ink within +-4 px of a straight guess between
-two seeds and refitting; columns with more than six ink pixels in that window
-(crossings, labels) are dropped.
+two seeds and refitting (+-2 px for the CO2 stroke beyond t = 0 and the limit line). A column is used only when that window holds a single
+run of ink at most 4 px tall; columns where a second stroke enters the window
+(crossings, labels, the CO2 limit beside the CO2 line) are dropped and counted.
 """
 
 from __future__ import annotations
@@ -47,10 +48,17 @@ MIDDLE_AXIS_X = 606.0
 SEEDS = {
     "sun": ((146, 447), (837, 238)),
     "co2": ((206, 240), (604, 480)),
-    "co2_tail": ((608, 482), (630, 496)),
+    "co2_tail": ((608, 482), (636, 498)),
     "limit": ((612, 488), (740, 488)),
 }
 HALF = 4
+# Beyond t = 0 the CO2 stroke runs within 1-9 px of the horizontal limit line;
+# a +-2 px window keeps the two apart, and columns where they merge are dropped.
+HALF_BY_LINE = {"co2_tail": 2, "limit": 2}
+# Columns where the CO2 stroke and the limit line share ink (rows 486-490),
+# read from the native scan; neither line is measured there.
+OVERLAP = {"co2_tail": (615, 625), "limit": (615, 625)}
+MAX_RUN = 4  # the strokes are 1-3 px thick; a taller run is two strokes merged
 
 # Temperature band: horizontal segments (row, x0, x1) as printed, and the x
 # windows holding each glaciation minimum.
@@ -87,21 +95,45 @@ def load(pdf: Path = DEFAULT_PDF) -> Scan:
                 Axis.from_ticks(SQRTC_TICKS), Axis.from_ticks(TEMP_TICKS))
 
 
-def trace(sc: Scan, key: str, half: int = HALF) -> np.ndarray:
-    """Pixel centres (x, y) of a straight printed line, one per usable column."""
+@dataclass(frozen=True)
+class Trace:
+    centres: np.ndarray   # (x, y) per accepted column
+    pixels: np.ndarray    # every ink pixel (x, y) of the accepted columns
+    dropped: np.ndarray   # columns in the seeded span left out (crossings, labels, gaps)
+
+
+def trace_full(sc: Scan, key: str, half: int | None = None) -> Trace:
+    """Follow a straight printed line. In each column the window +-half px about
+    the current line must hold exactly one run of ink, at most MAX_RUN px tall;
+    a second stroke in the window (a crossing or a nearby line) or a merged run
+    makes the column ambiguous, and it is dropped and counted."""
+    half = HALF_BY_LINE.get(key, HALF) if half is None else half
     (x0, y0), (x1, y1) = SEEDS[key]
     xs = np.arange(int(x0), int(x1) + 1)
     k, c = (y1 - y0) / (x1 - x0), y0 - (y1 - y0) / (x1 - x0) * x0
     for _ in range(5):
-        pts = []
+        pts, pix, drop = [], [], []
         for x in xs:
+            o = OVERLAP.get(key)
+            if o and o[0] <= x <= o[1]:
+                drop.append(x)
+                continue
             lo = int(round(k * x + c - half))
             idx = np.nonzero(sc.ink[lo:lo + 2 * half + 1, x])[0]
-            if 0 < idx.size <= 6:
+            runs = np.split(idx, np.nonzero(np.diff(idx) > 1)[0] + 1) if idx.size else []
+            if len(runs) == 1 and runs[0].size <= MAX_RUN:
                 pts.append((x, lo + idx.mean()))
+                pix += [(x, lo + i) for i in idx]
+            else:
+                drop.append(x)
         pts = np.array(pts)
         k, c = np.polyfit(pts[:, 0], pts[:, 1], 1)
-    return pts
+    return Trace(pts, np.array(pix, float), np.array(drop, int))
+
+
+def trace(sc: Scan, key: str, half: int | None = None) -> np.ndarray:
+    """Pixel centres (x, y) of a straight printed line, one per usable column."""
+    return trace_full(sc, key, half).centres
 
 
 def band_levels(sc: Scan) -> dict[str, tuple[float, float, float]]:

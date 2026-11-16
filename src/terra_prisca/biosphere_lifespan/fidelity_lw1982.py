@@ -5,6 +5,7 @@
 Writes, to models/biosphere_lifespan/fidelity/:
   lw1982_lines.csv     each printed straight line, fitted in data units
   lw1982_fidelity.csv  the Sun and CO2 lines scored against each reading and null
+  lw1982_two_way.csv   model-to-ink and ink-to-model pixel distances
   lw1982_lifespan.csv  time to 150 ppm and CO2 at the anchors, for every reading
   lw1982_band.csv      the temperature band against the limits the text states
   lw1982_claims.csv    the stated numbers, recomputed
@@ -22,6 +23,7 @@ import matplotlib
 matplotlib.use("Agg")
 import matplotlib.pyplot as plt
 import numpy as np
+from scipy.spatial import cKDTree
 
 from terra_prisca.walker_hays_kasting import whk1981
 
@@ -75,6 +77,67 @@ def scores(sc: s.Scan) -> list[dict]:
     return rows
 
 
+def _samples(xs, ys, max_gap=0.4):
+    """Model samples in pixels, subdivided so that neighbours are under 0.5 px
+    apart. Used only within one continuous supported span."""
+    out = [np.column_stack([xs[:1], ys[:1]])]
+    for i in range(1, len(xs)):
+        d = np.hypot(xs[i] - xs[i - 1], ys[i] - ys[i - 1])
+        n = max(1, int(np.ceil(d / max_gap)))
+        f = np.arange(1, n + 1) / n
+        out.append(np.column_stack([xs[i - 1] + f * (xs[i] - xs[i - 1]), ys[i - 1] + f * (ys[i] - ys[i - 1])]))
+    return np.vstack(out)
+
+
+def _curves(sc: s.Scan):
+    yield "Sun line", "sun", sc.lum, (
+        ("faithful", lambda t: m.luminosity(t)),
+        ("null: Gough (1981)", m.gough_luminosity),
+        ("null: Owen et al. (1979) linear", lambda t: m.luminosity(t, 1000 * OCR_SLOPE / 1000)))
+    yield "CO2 line", "co2", sc.sqrtc, tuple(
+        (key, (lambda r: lambda t: np.sqrt(m.co2(t, r)))(r)) for key, r in m.READINGS.items())
+
+
+def two_way(sc: s.Scan) -> list[dict]:
+    """Distances between model curve and traced ink, in pixels, both ways.
+
+    Supported span: the traced line's first to last accepted column. Model to
+    ink: at each model sample (neighbours < 0.5 px apart) whose column was
+    accepted; samples in dropped columns (crossings, labels) or where the model
+    has no solution are excluded and counted. Ink to model: every ink pixel of
+    the accepted columns, to the nearest model sample anywhere in the span."""
+    rows = []
+    for curve, key, axis, models in _curves(sc):
+        tr = s.trace_full(sc, key)
+        x0, x1 = tr.centres[0, 0], tr.centres[-1, 0]
+        xs = np.arange(x0, x1 + 1e-9, 0.1)
+        ink = tr.pixels
+        tree = cKDTree(ink)
+        dropped = set(tr.dropped.tolist())
+        for name, f in models:
+            ys = axis.pixel(f(sc.time.value(xs)))
+            ok = np.isfinite(ys)
+            smp = _samples(xs[ok], ys[ok])
+            spacing = float(np.hypot(*np.diff(smp, axis=0).T).max())
+            use = np.array([int(round(x)) not in dropped for x in smp[:, 0]])
+            d_m2i = tree.query(smp[use])[0]
+            d_i2m = cKDTree(smp).query(ink)[0]
+            rows.append({"curve": curve, "reading": name,
+                         "t_start": float(sc.time.value(x0)), "t_end": float(sc.time.value(x1)),
+                         "model_samples": int(use.sum()),
+                         "model_samples_excluded": int((~use).sum()),
+                         "columns_without_solution": int(np.unique(np.round(xs[~ok])).size),
+                         "max_sample_spacing_px": spacing,
+                         "model_to_ink_median_px": float(np.median(d_m2i)),
+                         "model_to_ink_p95_px": float(np.percentile(d_m2i, 95)),
+                         "model_to_ink_within_3px": float(np.mean(d_m2i <= 3)),
+                         "ink_px": len(ink),
+                         "ink_to_model_median_px": float(np.median(d_i2m)),
+                         "ink_to_model_p95_px": float(np.percentile(d_i2m, 95)),
+                         "ink_to_model_within_3px": float(np.mean(d_i2m <= 3))})
+    return rows
+
+
 def crossing(sc: s.Scan) -> dict:
     """Where the printed CO2 line meets the printed limit line, in Myr."""
     lim = s.trace(sc, "limit")
@@ -83,6 +146,7 @@ def crossing(sc: s.Scan) -> dict:
     for key in ("co2", "co2_tail"):
         p = s.trace(sc, key)
         k, c = np.polyfit(p[:, 0], p[:, 1], 1)
+        out[f"{key}_slope_px_per_px"] = float(k)
         out[f"{key}_meets_limit_Myr"] = float(sc.time.value((yl - c) / k))
     return out
 
@@ -94,7 +158,8 @@ def lifespans() -> list[dict]:
             rows.append({"group": group, "key": key, "name": r.name,
                          "co2_at_minus3500_ppm": float(m.co2(m.T_PAST, r)),
                          "co2_today_ppm": float(m.co2(0.0, r)),
-                         "years_to_150ppm_Myr": m.lifespan(r)})
+                         "years_to_150ppm_Myr": m.lifespan(r),
+                         "rule_ends_Myr": m.domain_end(r)})
     return rows
 
 
@@ -124,13 +189,13 @@ def claims(sc: s.Scan) -> list[dict]:
     return [
         {"claim": "150 ppm is reached in about 100 Myr", "stated": 100.0,
          "reconstructed": m.lifespan(), "note": "faithful rule (70,000 ppm anchor); printed lines cross at "
-         f"{x['co2_meets_limit_Myr']:.0f} Myr (main line) and {x['co2_tail_meets_limit_Myr']:.0f} Myr (tail)"},
+         f"{x['co2_meets_limit_Myr']:.0f} Myr (main line extended) and {x['co2_tail_meets_limit_Myr']:.0f} Myr (stroke beyond t = 0)"},
         {"claim": "150 ppm with the text's 7,000 ppm anchor", "stated": 100.0,
          "reconstructed": m.lifespan(m.READINGS["text_7000"]), "note": "the literal text gives 3 times the stated span"},
         {"claim": "CO2 3,500 Myr ago (ppm)", "stated": 7000.0,
          "reconstructed": ln["co2"]["value_at_start"] ** 2,
          "note": f"printed line read at its start (t = {ln['co2']['t_start']:.0f} Myr); "
-                 "Owen et al. (1979) Table 1, from Hart (1978): 0.070 bar = 70,000 ppm"},
+                 "Owen et al. (1979) Table 1 gives 0.070 bar = 70,000 ppm, attributing it to Hart (1978)"},
         {"claim": "CO2 today (ppm)", "stated": 320.0, "reconstructed": ln["co2"]["value_at_t0"] ** 2,
          "note": "printed line at t = 0"},
         {"claim": "CO2 limit (ppm)", "stated": 150.0, "reconstructed": x["limit_ppm"], "note": "printed limit line"},
@@ -185,6 +250,7 @@ def main(pdf: Path = s.DEFAULT_PDF, outdir: Path = OUT) -> None:
     sc = s.load(pdf)
     write(outdir / "lw1982_lines.csv", lines(sc))
     write(outdir / "lw1982_fidelity.csv", scores(sc))
+    write(outdir / "lw1982_two_way.csv", two_way(sc))
     write(outdir / "lw1982_lifespan.csv", lifespans())
     write(outdir / "lw1982_band.csv", band(sc))
     write(outdir / "lw1982_claims.csv", claims(sc))

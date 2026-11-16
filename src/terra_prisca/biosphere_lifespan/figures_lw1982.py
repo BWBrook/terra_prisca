@@ -4,6 +4,7 @@
 
 Writes lw1982_fig2.png and lw1982_fig2.csv: the straight Sun line, sqrt(CO2)
 under the faithful rule and the alternative readings, and the 150 ppm limit.
+Cells are empty where a rule has no positive solution (see lw1982.co2).
 The temperature band is drawn from the limits the text states.
 """
 
@@ -37,7 +38,7 @@ def main(outdir: Path) -> None:
                           ("text_7000", "k--", "text's 7,000 ppm"),
                           ("two_thirds", "k-.", "2/3 power"),
                           ("whk_constant_T", "k:", "WHK eq. (6), constant T")):
-        keep = co2[k] >= np.sqrt(m.C_LIMIT)
+        keep = np.isfinite(co2[k]) & (co2[k] >= np.sqrt(m.C_LIMIT))
         a.plot(tc[keep], co2[k][keep], style, lw=1, label=lab)
     a.axhline(np.sqrt(m.C_LIMIT), color="k", lw=0.6)
     a.text(150, np.sqrt(m.C_LIMIT) + 4, "150 ppm limit", fontsize=7)
@@ -60,7 +61,7 @@ def main(outdir: Path) -> None:
         for i, t in enumerate(T):
             j = i - int(np.sum(T < m.T_PAST))
             w.writerow([f"{t:.0f}", f"{m.luminosity(t):.5f}",
-                        *((f"{co2[k][j]:.4f}" if j >= 0 else "") for k in CO2_KEYS)])
+                        *((f"{co2[k][j]:.4f}" if j >= 0 and np.isfinite(co2[k][j]) else "") for k in CO2_KEYS)])
 
 
 if __name__ == "__main__":

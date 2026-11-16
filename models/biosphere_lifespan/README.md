@@ -77,22 +77,31 @@ Fig. 2, as straight lines against time t (Myr from the present):
 
 Fig. 2 also draws a band of probable past mean temperatures. It is set by
 stated assumptions about prokaryote limits and glaciations, not computed.
+Fig. 1 is a conceptual diagram of the biological and geological feedback loop
+and carries no numbers, so Fig. 2 and the text supply every quantitative
+target.
 
 With luminosity linear in time and √C linear in luminosity, √C is linear in
-time. The time to the limit is then
+time, and the luminosity slope cancels:
 
-  Δt = [(√320 − √150) / (√C_past − √320)] × [1 − L(−3,500)] / (dL/dt).
+  Δt = 3,500 Myr × (√320 − √150) / (√C_past − √320).
+
+The span to the limit therefore depends on the two dated anchors and the
+shape of the rule, not on how fast the Sun brightens. A Sun law of a different
+shape does change it (below).
 
 ### Interpretive choices
 
 | Choice | Adopted | Reason |
 |---|---|---|
 | Luminosity law | Straight line, L = 1 + 0.0733 t/Gyr | The paper gives no formula and Newkirk (1980) is not in hand. The printed Sun line is straight to 0.55 px RMS, and its slope is read from the scan. Gough's (1981) curved law and Owen et al.'s linear 75% at 4,500 Myr are scored as nulls |
-| CO₂ 3,500 Myr ago | **70,000 ppm** | The text prints 7,000 ppm. Both references it cites give 0.070 bar (Owen et al. 1979, Table 1, from Hart 1978). The printed line starts at 71,900 ppm, and only 70,000 gives the stated span. 7,000 is kept as a scored, rejected reading |
+| CO₂ 3,500 Myr ago | **70,000 ppm** | The text prints 7,000 ppm, citing Owen et al. (1979) and Hart (1978). Owen et al.'s Table 1 gives 0.070 bar at 3.5 Gyr and attributes its CO₂ history to Hart, which is not in hand. The printed line starts at 71,900 ppm, and only 70,000 gives the stated span. 7,000 is kept as a scored, rejected reading |
 | "2/3 power relationship" | C^(2/3) linear in L, with the same anchors | The natural reading of "a 2/3 power relationship might be more appropriate" in place of the square root. WHK's published eq. (6) implies a different law (below) |
 | Constant temperature | Implicit in the rule | The paper has no climate model. The WHK reading supplies one through the [`whk1981`](../../src/terra_prisca/walker_hays_kasting/whk1981.py) import |
 | WHK's P₀ | 320 ppm | WHK leave P₀ as "present"; Lovelock & Whitfield's present is 320 ppm |
 | The limit | 150 ppm exactly | As stated |
+| Where a rule ends | No value (NaN) | The two-point rules end where C^power would reach zero (the faithful one at +254 Myr). WHK eq. (6) at constant temperature ends where it would need P ≤ 0 (+503 Myr). Every lifespan falls inside its rule's domain; nothing is extrapolated past it |
+| Changing the Sun law | Keep the two dated CO₂ anchors and recalibrate the rule on the new luminosities | This keeps the source's own calibration (CO₂ at two dates) fixed while the law changes. Freezing the CO₂–luminosity coefficient instead and swapping only the slope would mix a change of calibration with a change of law; that comparison is not used |
 
 **Readings of the compensation rule** (`READINGS` in `lw1982.py`):
 
@@ -106,9 +115,13 @@ time. The time to the limit is then
   explicit: P^0.364 is linear in ΔT_e, which makes the CO₂ needed 3,500 Myr ago
   128,000 ppm rather than 70,000.
 
-**A WHK variant**, **whk_feedback**, lets temperature float, with WHK's full
-equilibrium at V/V₀ = 1. It is not a reading of Lovelock & Whitfield, who
-assume constant temperature; it is kept for the ingredient-swap analysis.
+**Variants** (`VARIANTS`), kept for the ingredient-swap analysis and not
+readings of Lovelock & Whitfield:
+
+- **whk_feedback** lets temperature float, with WHK's full equilibrium at
+  V/V₀ = 1. Lovelock & Whitfield assume constant temperature.
+- **gough_sun** replaces the straight Sun by Gough's (1981) law, keeping the
+  two dated anchors.
 
 **Control**, **no_brightening**: a constant Sun. CO₂ stays at 320 ppm and the
 limit is never reached.
@@ -117,19 +130,25 @@ limit is never reached.
 
 ![Reconstruction of Fig. 2](figures/lw1982_fig2.png)
 
-| Rule | CO₂ 3,500 Myr ago (ppm) | Time to 150 ppm (Myr) |
-|---|---|---|
-| **Faithful** (√C linear in L, 70,000 ppm) | 70,000 | **80** |
-| Text's 7,000 ppm | 7,000 | 300 |
-| 2/3 power | 70,000 | 39 |
-| C linear in L | 70,000 | 8.5 |
-| WHK eq. (6) at constant temperature | 128,000 | 120 |
-| *Variant:* WHK feedback, temperature free | 25,700 | 461 |
-| *Control:* constant Sun | 320 | never |
+| Rule | CO₂ 3,500 Myr ago (ppm) | Time to 150 ppm (Myr) | Rule ends (Myr) |
+|---|---|---|---|
+| **Faithful** (√C linear in L, 70,000 ppm) | 70,000 | **80** | 254 |
+| Text's 7,000 ppm | 7,000 | 300 | 952 |
+| 2/3 power | 70,000 | 39 | 99 |
+| C linear in L | 70,000 | 8.5 | 16 |
+| WHK eq. (6) at constant temperature | 128,000 | 120 | 503 |
+| *Variant:* WHK feedback, temperature free | 25,700 | 461 | — |
+| *Variant:* Gough (1981) Sun, same anchors | 70,000 | 61 | 192 |
+| *Control:* constant Sun | 320 | never | — |
 
 - **The stated "about 100 Myr" holds.** The faithful rule gives 80 Myr. The
-  printed lines cross at 105 Myr if the main CO₂ line is extended, and at
-  110 Myr along the short stroke drawn beyond the present.
+  printed lines meet the printed limit at 106 Myr if the main CO₂ line is
+  extended, and at 114 Myr along the stroke drawn beyond the present, which
+  continues the same line.
+- **How fast the Sun brightens does not matter; the shape of its law does.**
+  Any straight Sun gives 80 Myr. Gough's curved law, re-anchored on the same
+  two dates, gives 61 Myr: it brightens more slowly in the past and faster
+  today, relative to its own 3,500-Myr change.
 - **The span depends strongly on the shape of the rule.** With the same two
   anchors, the 2/3 power halves it and a linear rule cuts it tenfold. The
   2/3 power, the alternative the paper names, leaves the span at tens of Myr,
@@ -150,33 +169,55 @@ tick residuals are 0.79 px (time), 0.47 px (luminosity) and 0.53 px (√CO₂).
 The temperature scale (0–100 °C) has labels but no ticks; it is calibrated on
 the frame, and each label then sits within 0.8 °C (4 px) of its value.
 
-**Lines.** Each straight line is traced by following ink within ±4 px of a
-seeded guess and refitting, dropping columns at crossings and labels
+**Lines.** Each straight line is traced by following ink within a window
+about a seeded guess, ±4 px (±2 px for the stroke beyond t = 0 and the limit
+line), and refitting. A column is used only when its window holds a single run
+of ink at most 4 px tall. Columns where a second stroke enters the window
+(crossings, labels) are dropped and counted. Columns 615–625, where the CO₂
+stroke and the limit line share ink, are excluded from both. The main Sun and
+CO₂ fits change by less than 2×10⁻⁴ px/px between windows of ±2 and ±8 px
 (`fidelity/lw1982_lines.csv`).
 
 | Line | Traced span | Straightness (RMS about own fit) | Reading |
 |---|---|---|---|
-| Sun | −3,984 to +1,996 Myr | 0.55 px | L = 0.9989 + 0.0734 t/Gyr |
-| CO₂ | −3,456 to −20 Myr | 0.39 px | √C from 268.1 (71,900 ppm) to 18.8 at t = 0 (354 ppm) |
-| CO₂ beyond the present | +14 to +205 Myr | 0.91 px | a shallower stroke to the limit |
-| CO₂ limit | +49 to +1,157 Myr | 0.63 px | √C = 11.2 (126 ppm), 1.1 px below √150 |
+| Sun | −3,975 to +1,987 Myr | 0.49 px | L = 0.9989 + 0.0734 t/Gyr |
+| CO₂ | −3,456 to −20 Myr | 0.33 px | √C from 268.1 (71,900 ppm) to 18.8 at t = 0 (354 ppm) |
+| CO₂ beyond the present | +14 to +248 Myr (17 columns) | 0.33 px | the same line: slope within 0.8% of the main CO₂ line |
+| CO₂ limit | +49 to +1,157 Myr | 0.24 px | √C = 11.2 (124 ppm), 1.0 px below √150 |
 
 **Scores** (`fidelity/lw1982_fidelity.csv`), over every traced column:
 
 | Line | Reading | RMSE | RMSE (px) | Times the faithful |
 |---|---|---|---|---|
-| Sun | **faithful: straight, 0.0733/Gyr** | 0.0017 | **0.80** | 1 |
-| Sun | null: Gough (1981) | 0.022 | 10.5 | 13 |
-| Sun | null: Owen et al., linear 0.0556/Gyr | 0.037 | 17.9 | 22 |
-| Sun | null: constant Sun | 0.151 | 72.5 | 90 |
+| Sun | **faithful: straight, 0.0733/Gyr** | 0.0016 | **0.78** | 1 |
+| Sun | null: Gough (1981) | 0.022 | 10.6 | 14 |
+| Sun | null: Owen et al., linear 0.0556/Gyr | 0.037 | 18.0 | 23 |
+| Sun | null: constant Sun | 0.152 | 73.1 | 94 |
 | CO₂ | **faithful** | 4.1 √ppm | **4.0** | 1 |
-| CO₂ | 2/3 power | 12.6 | 12.1 | 3.0 |
-| CO₂ | WHK eq. (6), constant temperature | 32.1 | 30.9 | 7.8 |
-| CO₂ | C linear in L | 36.8 | 35.4 | 8.9 |
-| CO₂ | text's 7,000 ppm | 107.6 | 103.5 | 26 |
-| CO₂ | null: constant 320 ppm | 145.2 | 139.7 | 35 |
+| CO₂ | 2/3 power | 12.5 | 12.0 | 3.0 |
+| CO₂ | WHK eq. (6), constant temperature | 32.3 | 31.1 | 7.8 |
+| CO₂ | C linear in L | 36.7 | 35.3 | 8.9 |
+| CO₂ | text's 7,000 ppm | 107.7 | 103.6 | 26 |
+| CO₂ | null: constant 320 ppm | 145.4 | 139.9 | 35 |
 
-The faithful Sun slope is read from this same line, so its 0.80 px measures
+**Two-way pixel distances** (`fidelity/lw1982_two_way.csv`), over each traced
+line's span. Model to ink is measured at model samples under 0.5 px apart;
+samples in dropped columns (710 for the Sun line, 150 for CO₂) are excluded
+and counted, and no gap is bridged. Ink to model takes every traced ink pixel
+(884 and 544) to the nearest model sample anywhere in the span.
+
+| Line | Reading | Model to ink: median / p95 (px) | Ink to model: median / p95 (px) |
+|---|---|---|---|
+| Sun | **faithful** | **0.54 / 1.04** | **0.62 / 1.43** |
+| Sun | null: Gough (1981) | 4.2 / 21.2 | 4.5 / 20.5 |
+| Sun | null: Owen et al. linear | 12.5 / 30.6 | 13.1 / 31.6 |
+| CO₂ | **faithful** | **2.6 / 5.0** | **3.0 / 5.5** |
+| CO₂ | 2/3 power | 10.0 / 14.4 | 10.5 / 14.9 |
+| CO₂ | WHK eq. (6), constant temperature | 6.6 / 61.3 | 7.1 / 47.0 |
+| CO₂ | C linear in L | 30.1 / 41.7 | 30.8 / 42.3 |
+| CO₂ | text's 7,000 ppm | 76.5 / 145.1 | 88.6 / 167.0 |
+
+The faithful Sun slope is read from this same line, so its 0.78 px measures
 how straight the line is, not an independent prediction. What the score tests
 is that the printed luminosity is linear and that the two published laws in
 hand are not it.
@@ -202,10 +243,10 @@ present and 6–7 px at the line's start.
 
 | Statement | Stated | Reconstructed |
 |---|---|---|
-| 150 ppm reached in | about 100 Myr | 80 Myr (rule); 105–110 Myr (printed lines) |
+| 150 ppm reached in | about 100 Myr | 80 Myr (rule); 106–114 Myr (printed lines) |
 | CO₂ 3,500 Myr ago | 7,000 ppm | 71,900 ppm (printed line, at −3,456 Myr) |
 | CO₂ today | 320 ppm | 354 ppm (printed line) |
-| CO₂ limit | 150 ppm | 126 ppm (printed line, 1.1 px) |
+| CO₂ limit | 150 ppm | 124 ppm (printed line, 1.0 px) |
 | Sun's rise since the Earth formed | 30% | 33% of today's at −4,500 Myr on the printed line, or 49% of the young Sun's. The line starts at −4,000 Myr, where it gives 29% |
 | Without the CO₂ decline, temperature "might by now have exceeded 50 °C" | 50 °C | 40 °C under WHK eq. (6), with CO₂ held at 70,000 ppm |
 
@@ -214,13 +255,14 @@ present and 6–7 px at the line's start.
 ### Lovelock & Whitfield (1982)
 
 - **Fig. 2's CO₂ line is the stated rule:** √CO₂ linear in luminosity, from
-  70,000 ppm 3,500 Myr ago to 320 ppm today. It fits to 4.0 px. The four
-  alternative rules and the constant-CO₂ null miss by 3 to 35 times as much.
+  70,000 ppm 3,500 Myr ago to 320 ppm today. It fits to 4.0 px RMS (ink to
+  model: median 3.0 px, p95 5.5 px). The four alternative rules and the
+  constant-CO₂ null miss by 3 to 35 times as much.
 - **The Sun line is straight,** rising 7.3% of today's luminosity per Gyr. The
-  two published laws in hand, Gough's (1981) and Owen et al.'s, miss it by 13
-  and 22 times as much.
-- **"About 100 Myr" holds.** The rule gives 80 Myr and the printed lines cross
-  at 105–110 Myr.
+  two published laws in hand, Gough's (1981) and Owen et al.'s, miss it by 14
+  and 23 times as much.
+- **"About 100 Myr" holds.** The rule gives 80 Myr and the printed lines meet
+  the printed limit at 106–114 Myr.
 - **The temperature band is drawn at the stated limits** (40, 15, 25 and
   15 °C, each within 0.1 °C).
 - **The 2/3-power alternative leaves the conclusion intact.** It halves the
@@ -231,7 +273,8 @@ present and 6–7 px at the line's start.
 ### Lovelock & Whitfield (1982)
 
 - **The text's 7,000 ppm should read 70,000 ppm.**
-  - Both references the text cites for it give 0.070 bar.
+  - Owen et al.'s Table 1, one of the two references the text cites for it,
+    gives 0.070 bar and attributes the value to Hart (1978), the other.
   - The printed line starts at 71,900 ppm.
   - Taken literally, 7,000 ppm gives 300 Myr, three times the stated span,
     and misses the printed line by 26 times as much as 70,000 does.
@@ -243,10 +286,12 @@ present and 6–7 px at the line's start.
 ### Lovelock & Whitfield (1982)
 
 - **The luminosity law.** Newkirk (1980) is not in hand, so the printed line
-  is the only record of it. Near the present the printed line rises 7.3% of
-  today's luminosity per Gyr; Gough's (1981) curve rises 8.5%. The span to
-  150 ppm scales inversely with that slope, so Gough's law would give 69 Myr
-  instead of 80.
+  is the only record of it. With the two dated anchors, a straight law of any
+  slope gives 80 Myr; a curved law does not, and Gough's (1981) gives 61 Myr.
+  Whether Newkirk's law is straight, or was straightened for the figure, would
+  settle how much of the span rests on that drafting.
+- **Hart (1978)** is not in hand. The 0.070 bar anchor is checked through
+  Owen et al.'s Table 1, which attributes it to Hart.
 - **Why the printed CO₂ line runs 2.3% steeper than the rule** and passes 354
   rather than 320 ppm today. It may be drafting, or a slightly different
   anchor.

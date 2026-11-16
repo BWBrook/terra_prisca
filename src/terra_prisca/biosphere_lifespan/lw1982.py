@@ -52,7 +52,12 @@ class Reading:
 
     power: C**power is linear in L (0.5 is the text's square root; 2/3 the
     alternative the text mentions; 1 a plain linear rule). whk_constant_T
-    replaces the two-point rule by WHK eq. (6) with dT = 0."""
+    replaces the two-point rule by WHK eq. (6) with dT = 0.
+
+    sun: "straight" (Fig. 2) or "gough" (Gough 1981). The two dated CO2 anchors
+    are kept whatever the Sun law, so the rule is re-anchored on the new
+    luminosities. With a straight Sun, (L - 1)/(L_past - 1) = t/t_past and the
+    slope cancels: the span to the limit does not depend on it."""
 
     name: str = "faithful"
     power: float = 0.5
@@ -60,6 +65,7 @@ class Reading:
     t_past: float = T_PAST
     c_now: float = C_NOW
     c_limit: float = C_LIMIT
+    sun: str = "straight"
     sun_slope: float = SUN_SLOPE_PER_GYR
     whk_constant_T: bool = False
     whk_feedback: bool = False
@@ -68,19 +74,25 @@ class Reading:
 FAITHFUL = Reading()
 
 
+def sun(t, r: Reading = FAITHFUL):
+    return gough_luminosity(t) if r.sun == "gough" else luminosity(t, r.sun_slope)
+
+
 def co2(t, r: Reading = FAITHFUL):
-    """Atmospheric CO2 (ppm) along the compensation rule."""
-    L = luminosity(t, r.sun_slope)
+    """Atmospheric CO2 (ppm) along the compensation rule; NaN where the rule has
+    no positive solution (the two-point rule once C**power would fall to zero or
+    below; WHK eq. (6) once dT = 0 would need P <= 0)."""
+    L = sun(t, r)
     if r.whk_constant_T or r.whk_feedback:
         dte = whk1981.dTe_from_luminosity(L)
         return r.c_now * np.vectorize(lambda x: _whk_p(x, r))(dte)
-    if r.sun_slope == 0:
+    if r.sun == "straight" and r.sun_slope == 0:
         return np.full_like(L, r.c_now)  # a constant Sun needs no compensation
-    lp = luminosity(r.t_past, r.sun_slope)
+    lp = sun(r.t_past, r)
     a, b = r.c_now ** r.power, r.c_past ** r.power
     y = a + (b - a) * (L - 1.0) / (lp - 1.0)
     with np.errstate(invalid="ignore"):
-        return np.where(y > 0, np.abs(y) ** (1.0 / r.power), 0.0)
+        return np.where(y > 0, np.abs(y) ** (1.0 / r.power), np.nan)
 
 
 def _whk_p(dte: float, r: Reading) -> float:
@@ -89,15 +101,30 @@ def _whk_p(dte: float, r: Reading) -> float:
     # eq. (6) with dT = 0: 0 = 2 dTe + 4.6 (P^0.364 - 1)
     w = whk1981.FAITHFUL
     q = 1.0 - w.te_gain * dte / w.gh_amp
-    return q ** (1.0 / w.gh_exponent) if q > 0 else 0.0
+    return q ** (1.0 / w.gh_exponent) if q > 0 else float("nan")
 
 
-def lifespan(r: Reading = FAITHFUL) -> float:
-    """Myr from today until CO2 falls to c_limit; inf if it never does."""
-    if r.sun_slope <= 0:
+def lifespan(r: Reading = FAITHFUL, step: float = 1.0, horizon: float = 1.0e4) -> float:
+    """Myr from today until CO2 falls to c_limit, searched only where the rule
+    has a solution; inf if it never reaches the limit there."""
+    t = np.arange(0.0, horizon + step, step)
+    c = co2(t, r)
+    hit = np.nonzero(np.isfinite(c) & (c <= r.c_limit))[0]
+    if not hit.size:
         return float("inf")
-    f = lambda t: float(co2(t, r)) - r.c_limit
-    return brentq(f, 0.0, 1.0e4, xtol=1e-9)
+    i = hit[0]
+    if i == 0:
+        return 0.0
+    if not np.isfinite(c[i - 1]):
+        raise ValueError("the rule loses its solution before reaching the limit")
+    return brentq(lambda x: float(co2(x, r)) - r.c_limit, t[i - 1], t[i], xtol=1e-9)
+
+
+def domain_end(r: Reading = FAITHFUL, step: float = 0.01, horizon: float = 1.0e4) -> float:
+    """First time after today (Myr, to `step`) at which the rule has no solution."""
+    t = np.arange(0.0, horizon + step, step)
+    bad = np.nonzero(~np.isfinite(co2(t, r)))[0]
+    return float(t[bad[0]]) if bad.size else float("inf")
 
 
 READINGS = {
@@ -110,6 +137,7 @@ READINGS = {
 
 VARIANTS = {
     "whk_feedback": Reading(name="WHK feedback, V/V0 = 1 (temperature free)", whk_feedback=True),
+    "gough_sun": Reading(name="Gough (1981) Sun, same dated CO2 anchors", sun="gough"),
 }
 
 CONTROLS = {

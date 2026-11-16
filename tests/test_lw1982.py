@@ -33,6 +33,31 @@ def test_lifespan_matches_closed_form():
     assert m.lifespan(m.READINGS["text_7000"]) == pytest.approx(300.2, abs=0.1)
 
 
+def test_straight_sun_slope_cancels_and_gough_reanchors():
+    from dataclasses import replace
+
+    for slope in (0.05556, 0.0733, 0.0851):
+        assert m.lifespan(replace(m.FAITHFUL, sun_slope=slope)) == pytest.approx(80.036102, abs=1e-6)
+    g = m.VARIANTS["gough_sun"]
+    assert float(m.co2(m.T_PAST, g)) == pytest.approx(m.C_PAST) and float(m.co2(0.0, g)) == pytest.approx(m.C_NOW)
+    assert m.lifespan(g) == pytest.approx(61.345204, abs=1e-6)
+
+
+def test_rules_have_no_solution_beyond_their_domain():
+    for key, r in {**m.READINGS, **m.VARIANTS}.items():
+        end = m.domain_end(r)
+        assert m.lifespan(r) < end, key
+        if np.isfinite(end):
+            assert np.isnan(float(m.co2(end + 1.0, r))), key
+            assert np.isfinite(float(m.co2(end - 1.0, r))), key
+    r = m.READINGS["whk_constant_T"]
+    assert m.domain_end(r) == pytest.approx(502.9, abs=0.02)
+    assert np.isnan(float(m.co2(1000.0, r)))
+    for t in np.linspace(-3500, 500, 41):  # eq. (6) closes at dT = 0 throughout the domain
+        dte = float(whk1981.dTe_from_luminosity(m.luminosity(t)))
+        assert float(whk1981.surface_dT(dte, float(m.co2(t, r)) / m.C_NOW)) == pytest.approx(0.0, abs=1e-9)
+
+
 def test_whk_readings_use_whk1981():
     for t in (-3000.0, -500.0, 100.0):
         dte = float(whk1981.dTe_from_luminosity(m.luminosity(t)))
@@ -85,6 +110,25 @@ def test_fidelity_against_scan(tmp_path):
     assert abs(ln["sun"]["slope_per_Myr"] * 1000 - m.SUN_SLOPE_PER_GYR) < 0.001
     x = f.crossing(sc)
     assert 80 < x["co2_meets_limit_Myr"] < 130 and 80 < x["co2_tail_meets_limit_Myr"] < 130
+    # The stroke beyond t = 0 is the same line: same slope, stable to the window.
+    assert abs(x["co2_tail_slope_px_per_px"] / x["co2_slope_px_per_px"] - 1) < 0.02
+    for half in (1, 2, 3):
+        tail = s.trace(sc, "co2_tail", half)
+        assert abs(np.polyfit(tail[:, 0], tail[:, 1], 1)[0] / x["co2_slope_px_per_px"] - 1) < 0.02, half
+        assert not np.any((tail[:, 0] >= 615) & (tail[:, 0] <= 625))
+    for key in ("sun", "co2"):  # main lines are stable from +-2 to +-8 px
+        k = [np.polyfit(*s.trace(sc, key, h).T, 1)[0] for h in (2, 4, 6, 8)]
+        assert np.ptp(k) < 2e-4, key
+
+    tw = {(r["curve"], r["reading"]): r for r in f.two_way(sc)}
+    for curve, lim in (("Sun line", 2.0), ("CO2 line", 6.0)):
+        best = tw[(curve, "faithful")]
+        assert best["model_to_ink_p95_px"] < lim and best["ink_to_model_p95_px"] < lim, curve
+        assert best["max_sample_spacing_px"] < 0.5
+        for (c, name), r in tw.items():
+            if c == curve and name != "faithful":
+                assert r["model_to_ink_median_px"] > 2 * best["model_to_ink_median_px"], (c, name)
+                assert r["ink_to_model_median_px"] > 2 * best["ink_to_model_median_px"], (c, name)
     assert abs(np.sqrt(x["limit_ppm"]) - np.sqrt(150)) < 1.5
 
     for r in f.band(sc):
