@@ -620,8 +620,7 @@ figure 3. Mesocosms with controlled supply and
 an imposed thermal lag, and biogeochemical models that resolve both groups,
 could test the trade-off with the delay-margin analysis used here.
 
-Microbes can hold a planet's temperature if some hydrogen avoids becoming
-methane, but exact control fails when climate responds slowly. Imperfect control lasts far longer, and grows looser
+Microbial competition can hold a planet's temperature if some of the hydrogen it diverts stays out of methane, but exact control fails when climate responds slowly. Imperfect control lasts far longer, and grows looser
 as habitat temperatures differ. The controlling community forms only where
 the losing group can persist while the climate catches up.
 

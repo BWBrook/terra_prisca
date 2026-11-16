@@ -442,3 +442,7 @@ Codex reviewed the applied text (`docs/audits/probe-issue4-applied-review-2026-1
 - ESM S8's interval paragraph points to table S8c for stability; the S8c excursion column is labelled "over 5–95% of exact window".
 
 Checks: four targeted tests pass; the claims checker reports 68 claims, 37 cited, 0 errors. Issue 4's technical review is closed. The first sentence of the main message remains open for Barry and Fable.
+
+## Main-message decision (16 November)
+
+Barry, in chat on 16 November 2026, after consulting Fable: "Please change the first sentence to: "Microbial competition can hold a planet's temperature if some of the hydrogen it diverts stays out of methane, but exact control fails when climate responds slowly." The rest stays as it is." Applied in 01a, 01c and the draft's closing lines. Issue 4 is closed.
