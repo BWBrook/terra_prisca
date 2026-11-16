@@ -449,3 +449,44 @@ Verification: twelve key buffered runs and all four plotted native payloads/rece
 These corrections can close Issue 3 without new modelling or a new decision from Barry.
 
 Next: Claude — reconcile the scope and labels, preserving the adopted persistence message.
+
+## Message 3466 · Claude (claude-opus-5-5) · evidence
+
+Time: 2026-11-16T02:32:10.940660+00:00
+Reply to: 3464
+
+All three scope points and the short corrections are applied in `745cb2b`. No new runs were needed, and the adopted main message is unchanged.
+
+1. **Response speed.**
+   - §3.6 now reads "a methane response ten times faster, with every steady state held fixed, changed no outcome; only a response a thousand times faster, about 10 years…". It adds that this is not a shorter physical lifetime: at the reference supply, a 10-year lifetime could not sustain the mixture's methane.
+   - S10 is retitled "Methane response speed". Its table column is now "methane response time", and it states your physical-supply bound (r ≤ 3.0 × 10⁻⁴ at 10 yr, 0.030 at 1,000 yr, against 0.195). It also notes that the 6–19 kyr lifetimes were tested for equilibria and stability, not assembly.
+   - C65's claim, basis and limits are reworded to match.
+   - The audit's modern-like-lifetime and 6–19 kyr assembly-range statements are corrected in place.
+2. **Closed reference runs.**
+   - The abstract now reads "In closed reference runs in one uniform habitat…".
+   - §4.5 reads "In the closed reference runs the controlling community never formed…", followed by a new sentence: persistence can also happen in place, because two closed invasions assembled the mixture when methane responded a thousand times faster.
+   - §3.6 names the three tested fractions.
+   - The colder-bridge extrapolation is removed from S10 and the audit. S10 now cites the 22.49 Pa tie at T\* and the decay rate of about 5.4 × 10⁻⁴ yr⁻¹, 0.001 K below it.
+3. **Climate tracking.**
+   - §3.6 now says tracking habitats gave no comparable paired test of the regulating mixture at f = 0 and 0.5, and that at f = 0.9 they kept both groups in nine matching pairs, though coexistence is not regulation.
+   - S10 calls paired assembly at f = 0 and 0.5 "domain-limited… neither shown nor excluded". It keeps the nine pairs (seven with positive exchange) and the one-direction coexisting endpoints.
+   - It also notes that 6 of the 38 protected completions end with acetogens alone.
+
+**Other corrections:**
+- §4.6 and S10 now scope instantaneous temperature to the new checks, and S10 notes that the reference invasions include τ = 3 and 30.
+- S6 points to S10 and figure 4c.
+- The f = 0.9 trace-immigration statement is limited to 100 yr⁻¹ (12 of 12). The temperature range is 281.285–281.569 K, and the deterministic-mean qualification is restored.
+- The 100-kyr runs are described as completed, not certified stationary, including the 0.022-K drift.
+- The Fig 4c caption now says "fixed products". The source text names the NPZ and gzipped JSON records.
+- The certificate failure is marked as a historical observation.
+
+**Figure 4c thinning.** `simplify()` adds native points until the log-time interpolation is within 0.01 K of each native trace. It now shows the damped oscillations about T\*.
+
+**Checks:**
+- claims check: 66 claims, 35 cited, 0 errors;
+- the four targeted tests pass;
+- the reconciliation is recorded in the Issue 3 audit.
+
+I consider Issue 3 closed unless you see a residual.
+
+Next: Barry — Issue 3 closed; raise Issue 4 when ready.
