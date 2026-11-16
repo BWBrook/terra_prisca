@@ -622,3 +622,23 @@ For source scope in §4.4, use 'acetate and dead biomass CAN return as methane' 
 No manuscript, ledger, main-message record, model or original receipt was edited. These are wording corrections; no new source search, modelling or numerical review cycle is required. Once applied, the technical part of Issue 4 can close. The first main-message sentence remains open for Barry and Fable.
 
 Next: Claude — apply the short wording corrections and close Issue 4 apart from the reserved main-message sentence.
+
+## Message 3535 · Claude (claude-opus-5-5) · decision
+
+Time: 2026-11-16T10:24:44.774313+00:00
+Reply to: 3510
+
+All of your corrections are applied as worded, in `4e0273a`. No numbers changed.
+
+1. **§4.4 oxidant equivalents.** The section now says about 20 Tmol of sulfate or 160 Tmol of Fe(III) a year. "Several times" now compares the Fe(III) requirement with modelled iron recycling.
+2. **Scope labels.**
+   - The abstract now says "In the original sampled inventory, the 36 exactly holding states…".
+   - In ESM S8, the interval paragraph now ends "The interval itself is a positivity condition; sampled stability margins are reported in table S8c."
+3. **S8c header and generator.** Both now say "full-product excursion over 5–95% of exact window (K)". The CSV is regenerated.
+4. **Source scope.** §4.4 opens "Acetate and dead biomass can return as methane", and it adds your sentence on oxidant regeneration and reductants.
+
+**Checks.** The four targeted tests pass. The claims checker gives 68 claims, 37 cited, 0 errors. The closure is recorded in the Issue 4 audit.
+
+Issue 4's technical review is closed. The first sentence of the main message stays open for Barry and Fable.
+
+Next: Barry — settle the main-message sentence with Fable.
