@@ -1,0 +1,8 @@
+group,key,name,co2_at_minus3500_ppm,co2_today_ppm,years_to_150ppm_Myr
+reading,faithful,faithful,70000,320,80.0361
+reading,text_7000,"text's 7,000 ppm anchor",7000,320,300.161
+reading,two_thirds,2/3 power (text's alternative),70000,320,39.3144
+reading,linear_c,CO2 linear in L,70000,320,8.53904
+reading,whk_constant_T,WHK eq. (6) at constant temperature,128139,320,119.969
+variant,whk_feedback,"WHK feedback, V/V0 = 1 (temperature free)",25732.1,320,461.151
+control,no_brightening,null: constant Sun,320,320,inf

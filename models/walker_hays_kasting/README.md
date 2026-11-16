@@ -27,6 +27,10 @@ Crossref on 15 November 2026).
   fidelity check. The scripts refuse any file with a different hash.
 - Table 1 (Meybeck's rates, 13 numbers) was transcribed by hand from the scan at
   native resolution.
+- Owen, Cess & Ramanathan (1979), *Nature* 277, 640–642,
+  [doi:10.1038/277640a0](https://doi.org/10.1038/277640a0), supplied by Barry on
+  16 November 2026 for the eq. (5) check. Its Table 1 (nine rows) is
+  transcribed in [`owen1979.py`](../../src/terra_prisca/walker_hays_kasting/owen1979.py).
 
 ## Code
 
@@ -283,6 +287,26 @@ All hold.
 - **"About a half" holds where the paper uses it,** at the faint-young-Sun end
   (0.500 at ΔT_e = −18 K). Nearer the present the feedback removes less: 0.71
   of the no-feedback slope today.
+- **Eq. (5) follows from Owen, Cess & Ramanathan (1979, Table 1)**
+  ([`owen1979.py`](../../src/terra_prisca/walker_hays_kasting/owen1979.py);
+  `fidelity/whk1981_eq5_owen_*.csv`). This was checked after the merge, once
+  the source was in hand.
+  - Owen et al.'s present row is 290 K, not 285 K. WHK's subtraction applied
+    to the printed temperatures leaves T_g(CO₂) = 4.8 K today, not 2.3 K.
+  - Lower Owen et al.'s temperatures by 5 K, so that today is 285 K, and pass a
+    power law through today and their 4.25 Gyr row: the result is
+    2.3(P/P₀)^0.367, against the printed 0.364. WHK do not state this
+    procedure; it is our inference, and the only one of three tried that
+    comes near the printed exponent (exponents 0.27 and 0.28 without the shift
+    or without the weak CO₂ bands).
+  - A least-squares fit to all nine rows would give 3.38(P/P₀)^0.314. Eq. (5)
+    falls up to 2.7 K below Owen et al.'s intermediate rows (3.0–2.5 Gyr),
+    which eq. (6)'s factor of 2 makes 5.3 K in T_s.
+  - Owen et al.'s "up to 1000 times" is their 4.25 Gyr row: P/P₀ = 969 at
+    76% of today’s sunlight (ΔT_e = −16.5 K), with T_s = 310 K. That is a
+    warm state, not a constant-temperature requirement. Eq. (6) needs
+    P/P₀ = 320 to hold today's temperature at that ΔT_e, and gives
+    ΔT = +18.7 K at P/P₀ = 969.
 - **The 1-bar-in-20-Myr figure** lies within the range implied by Holland's
   rate (11.8–23.6 Myr). The central rate gives 15.8 Myr.
 
@@ -302,13 +326,8 @@ All hold.
 
 ## What stays open
 
-- **Whether eq. (5) reproduces Owen et al. (1979)**, as the paper says, and eq. (4)
-  Rodgers & Walshaw (1966). Neither source is in hand.
-  - Eq. (6) needs P/P₀ = 397 to hold today's temperature under ΔT_e = −18 K
-    (373 for the exact 25%, −17.56 K).
-  - The paper quotes Owen et al.'s "up to 1000 times".
-  - Whether that is the same case (luminosity, albedo, water-vapour treatment)
-    cannot be checked here.
+- **Eq. (4), T_g(H₂O) = 29.7 + 0.5(T_s − 285),** attributed to Rodgers &
+  Walshaw (1966), which is not in hand.
 - **The 14.1 K precipitation e-folding attributed to Sellers (1965).** At 285 K,
   Clausius–Clapeyron gives 15.2 K. 14.1 K matches it near 275 K, which suggests
   a fit over colder zonal means. The value is not used in eq. (1), and Sellers

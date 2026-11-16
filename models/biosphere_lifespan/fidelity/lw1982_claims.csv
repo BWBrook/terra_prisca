@@ -1,0 +1,9 @@
+claim,stated,reconstructed,note
+150 ppm is reached in about 100 Myr,100,80.0361,"faithful rule (70,000 ppm anchor); printed lines cross at 105 Myr (main line) and 110 Myr (tail)"
+"150 ppm with the text's 7,000 ppm anchor",100,300.161,the literal text gives 3 times the stated span
+"CO2 3,500 Myr ago (ppm)",7000,71855.8,"printed line read at its start (t = -3456 Myr); Owen et al. (1979) Table 1, from Hart (1978): 0.070 bar = 70,000 ppm"
+CO2 today (ppm),320,353.98,printed line at t = 0
+CO2 limit (ppm),150,125.995,printed limit line
+"Sun's output up 30% since 4,500 Myr ago (per cent of today's)",30,32.985,printed Sun line; as a rise relative to the young Sun it is 49%
+"without the CO2 decline, might by now have exceeded 50 C",50,39.9463,"WHK eq. (6) with CO2 held at 70,000 ppm and today's Sun; L&W give no climate model"
+2/3 power would not change the qualitative conclusion,nan,39.3144,"C^(2/3) linear in L, same anchors"

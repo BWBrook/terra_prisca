@@ -30,6 +30,7 @@ from scipy.spatial import cKDTree
 
 from terra_prisca.budyko_sellers.digitise import chamfer
 
+from . import owen1979
 from . import scan_whk1981 as scan_mod
 from .whk1981 import (
     CONTROLS, FAITHFUL, READINGS, RUNOFF_EFOLD_K, TS0, Reading, arrhenius_efold,
@@ -397,6 +398,7 @@ def write(path: Path, rows: list[dict]) -> None:
 
 def main(pdf: Path, outdir: Path) -> None:
     outdir.mkdir(parents=True, exist_ok=True)
+    owen1979.main(outdir)
     sc = scan_mod.load(pdf)
     traces = printed(sc)
     write(outdir / "whk1981_fidelity.csv", fig2_scores(sc, traces))

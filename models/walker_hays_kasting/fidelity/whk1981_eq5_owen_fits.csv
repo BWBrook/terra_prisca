@@ -1,0 +1,4 @@
+owen_temperatures,tg_co2_today,endpoint_exponent,endpoint_coefficient,lsq_coefficient,lsq_exponent,eq5_resid_max,eq5_resid_rms
+shifted to 285 K,2.3,0.367417,2.3,3.37937,0.313908,2.65728,1.73016
+as printed (290 K today),4.8,0.272539,4.8,5.16916,0.262006,5.15728,4.05882
+"shifted, weak bands deleted",2.3,0.279971,2.3,3.40259,0.23188,12.332,4.35101

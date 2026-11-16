@@ -1,0 +1,11 @@
+curve,reading,columns,rmse,bias,max_abs,rmse_px
+Sun line (L/L0),"faithful (straight, 0.0733/Gyr)",637,0.00167185,0.00120897,0.00840173,0.804886
+Sun line (L/L0),null: Gough (1981),637,0.0218671,0.0140269,0.0601612,10.5276
+Sun line (L/L0),"null: Owen et al. (1979) linear, 0.0556/Gyr",637,0.0370794,0.0201078,0.0728574,17.8513
+Sun line (L/L0),null: constant Sun,637,0.15066,0.0792774,0.29337,72.5329
+CO2 line (sqrt ppm),faithful,387,4.13214,-3.77467,7.25433,3.97574
+CO2 line (sqrt ppm),text_7000,387,107.556,-93.5456,185.499,103.485
+CO2 line (sqrt ppm),two_thirds,387,12.5519,10.391,18.4639,12.0768
+CO2 line (sqrt ppm),linear_c,387,36.8257,32.6927,51.9306,35.4319
+CO2 line (sqrt ppm),whk_constant_T,387,32.113,16.9464,83.4856,30.8975
+CO2 line (sqrt ppm),null: constant CO2 (320 ppm),387,145.176,-126.186,250.448,139.681
