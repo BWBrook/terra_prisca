@@ -95,7 +95,8 @@ without feedback, and the feedback divides it down.
 
 - **Faint young Sun.** A 25% fainter Sun (ΔT_e = −17.56 K, or −18 K as the
   paper rounds it) gives ΔT = −17.7 K at today's CO₂ release (−17.98 K at
-  −18 K). That is T_s = 267.3 K. P/P₀ rises to 80.
+  −18 K). That is T_s = 267.3 K. P/P₀ rises to 74, or 79.5 at the
+  paper's rounded −18 K (the text gives no value).
 - **Without the feedback,** the same Sun gives ΔT = 2ΔT_e = −35 K.
 - **Holding today's temperature** under that Sun would take P/P₀ = 373 in
   eq. (6), or 397 at the paper's rounded ΔT_e = −18 K.
