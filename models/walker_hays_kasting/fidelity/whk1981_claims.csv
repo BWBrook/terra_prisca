@@ -1,0 +1,7 @@
+claim,holds,detail
+Larger V gives more CO2,True,P/P0 increases with V/V0 at every dTe on the grid
+Larger V gives stronger feedback,True,"d(dT)/d(dTe) at dTe = -10: V=0.5: 1.149, V=1: 0.932, V=2: 0.760, V=4: 0.628"
+Curvature: weaker feedback at lower P (higher dTe),True,"V/V0 = 1: slope 0.617 at dTe = -20, 1.699 at +6; no-feedback slope 2"
+A weaker P dependence of weathering gives stronger feedback,True,"slope at dTe = -15, -5, +3 for exponents 0.2/0.3/0.4: 0.499/0.752/0.972; 0.895/1.162/1.340; 1.475/1.570/1.636"
+A stronger runoff dependence on temperature buffers more,True,slope at dTe = -10 for e-folding 7.85/13.7/17.7 K: 0.566/0.932/1.123
+Te and V uniquely determine T and P,True,"g(dT) = dT - eq.(6)(eq.(2)(dT)) is strictly increasing, so the root is unique (tested)"
