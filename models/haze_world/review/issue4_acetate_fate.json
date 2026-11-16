@@ -1303,7 +1303,10 @@
    "acetogen_uptake_share": 0.2552032330702567,
    "methane_tmol_yr": 65.21434147123765,
    "biotic_methane_tmol_yr": 65.03258618470822,
-   "diverted_acetate_tmol_yr": 21.183683004580764
+   "diverted_acetate_tmol_yr": 21.183683004580764,
+   "biomass_export_tmol_ch4eq_yr": 6.542498076866292,
+   "combined_export_tmol_ch4eq_yr": 27.726181081447056,
+   "max_f_at_potential": 0.7834580155711741
   },
   {
    "f": 0.5,
@@ -1311,7 +1314,10 @@
    "acetogen_uptake_share": 0.4864039252019406,
    "methane_tmol_yr": 65.21434147123765,
    "biotic_methane_tmol_yr": 65.03258618470822,
-   "diverted_acetate_tmol_yr": 20.187492218848785
+   "diverted_acetate_tmol_yr": 20.18749221884879,
+   "biomass_export_tmol_ch4eq_yr": 7.538688862598268,
+   "combined_export_tmol_ch4eq_yr": 27.726181081447056,
+   "max_f_at_potential": 0.7834580155711741
   },
   {
    "f": 0.7,
@@ -1319,7 +1325,10 @@
    "acetogen_uptake_share": 0.7628416861086093,
    "methane_tmol_yr": 65.21434147123765,
    "biotic_methane_tmol_yr": 65.03258618470822,
-   "diverted_acetate_tmol_yr": 18.996385273170816
+   "diverted_acetate_tmol_yr": 18.996385273170816,
+   "biomass_export_tmol_ch4eq_yr": 8.729795808276238,
+   "combined_export_tmol_ch4eq_yr": 27.726181081447056,
+   "max_f_at_potential": 0.7834580155711741
   },
   {
    "f": 0.9,
@@ -1327,7 +1336,47 @@
    "acetogen_uptake_share": 0.34453449100476713,
    "methane_tmol_yr": 65.21434147123765,
    "biotic_methane_tmol_yr": 65.03258618470822,
-   "diverted_acetate_tmol_yr": 2.241559082613465
+   "diverted_acetate_tmol_yr": 2.241559082613465,
+   "biomass_export_tmol_ch4eq_yr": 5.429662421777701,
+   "combined_export_tmol_ch4eq_yr": 7.671221504391166,
+   "max_f_at_potential": 0.9995707520565847
+  }
+ ],
+ "spans": [
+  {
+   "f": 0.5,
+   "products_temperature_span_k": 1.2507231744804699,
+   "positions": 5
+  },
+  {
+   "f": 0.6,
+   "products_temperature_span_k": 1.2142150730141452,
+   "positions": 5
+  },
+  {
+   "f": 0.7,
+   "products_temperature_span_k": 1.1620763824142841,
+   "positions": 5
+  },
+  {
+   "f": 0.8,
+   "products_temperature_span_k": 1.085845297825358,
+   "positions": 5
+  },
+  {
+   "f": 0.9,
+   "products_temperature_span_k": 0.9633404483843151,
+   "positions": 5
+  },
+  {
+   "f": 0.95,
+   "products_temperature_span_k": 0.8630960685611058,
+   "positions": 5
+  },
+  {
+   "f": 1.0,
+   "products_temperature_span_k": 0.6896381443045811,
+   "positions": 5
   }
  ],
  "forcing": [

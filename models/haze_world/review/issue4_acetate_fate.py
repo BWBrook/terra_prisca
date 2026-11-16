@@ -54,10 +54,14 @@ def diverted(q, f, P=.3):
     flux = q["mixed_ratio"] / ref.climate.lifetime_yr / budget.atmosphere("B")["flux_to_ratio_per_yr"]
     tmol_ch4 = flux * EARTH_AREA_CM2 * SECONDS_PER_YEAR / AVOGADRO / 1e12
     methane_from_biota = tmol_ch4 - ref.climate.abiotic_flux * EARTH_AREA_CM2 * SECONDS_PER_YEAR / AVOGADRO / 1e12
+    scale = methane_from_biota / (q["needed"] / 4)
     acetate = (1 - f) * q["eta_A"] * u_A / 4
+    biomass = ((1 - q["eta_A"]) * u_A + (1 - q["eta_M"]) * (uptake - u_A)) / 4
     return dict(f=f, potential=P, acetogen_uptake_share=u_A / uptake,
                 methane_tmol_yr=tmol_ch4, biotic_methane_tmol_yr=methane_from_biota,
-                diverted_acetate_tmol_yr=acetate / (q["needed"] / 4) * methane_from_biota)
+                diverted_acetate_tmol_yr=acetate * scale, biomass_export_tmol_ch4eq_yr=biomass * scale,
+                combined_export_tmol_ch4eq_yr=(acetate + biomass) * scale,
+                max_f_at_potential=q["needed"] / (q["eta_A"] * (P / .3 * q["j_ref"] - q["outlet"])))
 
 
 def window(q, f, b):
@@ -120,11 +124,15 @@ def main():
                 for s in state_metrics(chem, f, P):
                     sweep.append(dict(chemistry=chem, f=f, window_position=pos, potential=P, **s))
     sinks = [diverted(q, f) for f in (0., .5, .7)] + [diverted(q, .9, .24)]
+    spans = []
+    for f in FRACTIONS[1:]:
+        temps = [s["temperature_k"] for s in sweep if s["chemistry"] == "products" and s["f"] == f and s["window_position"] is not None]
+        spans.append(dict(f=f, products_temperature_span_k=max(temps) - min(temps), positions=len(temps)))
     forcing = []
     for f in (.5, .7, .9, 1.):
         lo, hi = window(q, f, 0.)
         forcing.append(forcing_window(f, float(np.sqrt(lo * hi))))
-    OUT.write_text(json.dumps(dict(parts=q, windows=windows, sweep=sweep, sinks=sinks, forcing=forcing), indent=1) + "\n")
+    OUT.write_text(json.dumps(dict(parts=q, windows=windows, sweep=sweep, sinks=sinks, spans=spans, forcing=forcing), indent=1) + "\n")
 
 
 if __name__ == "__main__":
