@@ -1,9 +1,10 @@
 # Terra Prisca: agent guide
 
 Reconstructions and re-imaginings of simulations of the Precambrian and early
-Phanerozoic Earth system, developed in the open by Barry W. Brook, Claude and
-Codex. Read [`docs/vision.md`](docs/vision.md) first: it holds the aims, the
-lineage of models and the agreed order of work.
+Phanerozoic Earth system. Barry W. Brook leads the project in the open. Claude,
+Codex and Gemini may collaborate on equal terms. Record actual contributions in
+the project history. Read [`docs/vision.md`](docs/vision.md) first for the aims,
+the lineage of models and the agreed order of work.
 
 ## Conventions
 
