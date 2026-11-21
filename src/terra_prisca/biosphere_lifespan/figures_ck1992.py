@@ -3,7 +3,7 @@
     uv run python -m terra_prisca.biosphere_lifespan.figures_ck1992 [outdir]
 
 Writes ck1992_fig2.png and ck1992_fig2.csv: Psoil, Patm, S/S0, Pi/Pi0 and T
-over the next 1.6 Gyr, for the faithful reading (documented equilibrium
+over the next 1.6 Gyr, for the faithful reading (standard equilibrium
 constants), the reading with the SO2 term fitted to the printed kink, and the
 C3-only world (Pmin = 150 ppm). T is left empty above 373.15 K, the top of
 the range the climate fits were made over.
@@ -41,7 +41,7 @@ def main(outdir: Path) -> None:
     outdir.mkdir(parents=True, exist_ok=True)
     tr = runs()
     fig, (a, b) = plt.subplots(2, 1, figsize=(6.0, 7.0), sharex=True)
-    for k, ls, lab in (("faithful", "-", "faithful (documented constants)"),
+    for k, ls, lab in (("faithful", "-", "faithful (standard constants)"),
                        ("so2_fitted", "--", f"SO2 term x {m.SO2_FIT_FACTOR} (fitted to the kink)"),
                        ("c3", ":", "C3 world, Pmin = 150 ppm")):
         a.semilogy(T, tr[k]["P_soil_ppm"], "C3" + ls, lw=1)

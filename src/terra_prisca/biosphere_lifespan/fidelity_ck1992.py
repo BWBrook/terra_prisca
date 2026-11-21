@@ -8,6 +8,7 @@ Writes, to models/biosphere_lifespan/fidelity/:
                           in data units on the curve's shallow stretches
   ck1992_two_way.csv      two-way pixel distances, model to traced centres and back
   ck1992_events.csv       printed and reconstructed values at the figure's features
+  ck1992_coupled.csv      each alternative reading with the SO2 factor refitted under it
   ck1992_claims.csv       the text's numerical claims against the reconstruction
   ck1992_overlay.png      traced points (never the scan) with the faithful model
 """
@@ -60,7 +61,7 @@ def model(r: m.Reading) -> dict[str, np.ndarray]:
     tr = m.trajectory(np.arange(0.0, 1.6 + STEP / 2, STEP), r)
     tr["log_P_atm"] = np.log10(tr["P_atm_ppm"])
     tr["log_P_soil"] = np.log10(tr["P_soil_ppm"])
-    for k in ("T_K", "Pi_ratio", "log_P_atm", "log_P_soil", "S_ratio"):
+    for k in ("T_K", "Pi_ratio", "log_P_atm", "log_P_soil"):
         tr[k] = np.where(tr["in_fit"], tr[k], np.nan)
     return tr
 
@@ -249,13 +250,46 @@ def model_events(r: m.Reading = m.FAITHFUL) -> dict[str, float]:
     }
 
 
-def fit_so2_factor(pdf: Path = s.DEFAULT_PDF, chemistry_T: str = "25C") -> float:
+def fit_so2_factor(pdf: Path = s.DEFAULT_PDF, base: m.Reading = m.FAITHFUL) -> float:
     """SO2 factor at which the model's 10 ppm kink falls at the printed kink."""
     from scipy.optimize import brentq
 
     target = printed_events(pdf)["kink in P_atm, t Gyr"]
-    return brentq(lambda x: m.co2_time(m.P_MIN_C4, replace(m.FAITHFUL, so2_factor=x, chemistry_T=chemistry_T)) - target,
-                  0.05, 1.0, xtol=1e-6)
+    return brentq(lambda x: m.co2_time(m.P_MIN_C4, replace(base, so2_factor=x)) - target, 0.05, 1.5, xtol=1e-6)
+
+
+COUPLED_BASES = {"faithful": m.FAITHFUL, "t0_printed": m.READINGS["t0_printed"],
+                 "chemistry_T": m.READINGS["chemistry_T"], "volk_p_half": m.READINGS["volk_p_half"]}
+OUT_OF_SAMPLE = ("Pi_ratio at t=0", "P_atm reaches 1 ppm, t Gyr", "Pi_ratio falls to 0.05, t Gyr",
+                 "T reaches 300 K, t Gyr", "T at 0.9 Gyr, K")
+
+
+def coupled(pdf: Path = s.DEFAULT_PDF) -> list[dict]:
+    """Each alternative choice with the SO2 factor refitted to the kink under it,
+    so that no alternative is judged against a base that misses the low-CO2
+    phase. The kink is fitted; every column after so2_share is a test."""
+    pr = printed_events(pdf)
+    sc, tr = _traces(pdf)
+    rows = []
+    for key, base in COUPLED_BASES.items():
+        fac = fit_so2_factor(pdf, base)
+        r = replace(base, name=f"{key}, SO2 refitted", so2_factor=fac)
+        ev = model_events(r)
+        row = {"base": key, "so2_factor": fac, "so2_share": m.so2_share(r)}
+        for k in OUT_OF_SAMPLE:
+            row[f"{k} (printed {pr[k]:.4g})"] = ev[k]
+        data = traced(sc, tr)
+        for c in CURVES:
+            if c == "S_ratio":
+                continue
+            ink = tr[c].centres
+            t_lo, t_hi = data[c][:, 0].min(), data[c][:, 0].max()
+            mp = _model_px(sc, c, r, t_lo, t_hi)
+            keep = np.array([s._excluded(x, y, sc, s.CURVE_AXES[c][0]) is None for x, y in mp])
+            row[f"{c} median px"] = float(np.median(cKDTree(ink).query(mp[keep])[0]))
+            row[f"{c} p95 px"] = float(np.percentile(cKDTree(mp).query(ink)[0], 95))
+        rows.append(row)
+    return rows
 
 
 EVENT_READINGS = {"faithful": m.FAITHFUL, "so2_fitted": m.READINGS["so2_fitted"], "t0_printed": m.READINGS["t0_printed"],
@@ -384,6 +418,7 @@ def main(pdf: Path = s.DEFAULT_PDF, outdir: Path = OUT) -> None:
     write(outdir / "ck1992_fidelity.csv", scores(pdf))
     write(outdir / "ck1992_two_way.csv", two_way(pdf))
     write(outdir / "ck1992_events.csv", events(pdf))
+    write(outdir / "ck1992_coupled.csv", coupled(pdf))
     write(outdir / "ck1992_claims.csv", claims())
     overlay(pdf, outdir / "ck1992_overlay.png")
 

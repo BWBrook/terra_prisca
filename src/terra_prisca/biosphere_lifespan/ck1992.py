@@ -48,9 +48,12 @@ P_FIT = (1e-8, 1e-2)                # bar
 
 # Equilibrium constants at 298.15 K, with van 't Hoff coefficients -dH/R (K)
 # for the temperature-dependent reading. Units M atm-1 and M; bar is taken as
-# atm. Carbonate: Stumm & Morgan (1981). Sulphur: Chameides (1984),
-# doi:10.1029/JD089iD03p04739. PROVISIONAL until checked against Chameides'
-# table: these are the values widely quoted from it, not yet read from it.
+# atm. The paper takes carbonate from Stumm & Morgan (1981) and sulphur from
+# Chameides (1984), doi:10.1029/JD089iD03p04739; neither is in hand. These are
+# standard values, not read from those sources. Sander's compilation
+# (henrys-law.org, read 21 Nov 2026) lists Chameides' Henry constants as
+# 1.216 M atm-1 (3100 K) for SO2 and 0.0314 M atm-1 (2400 K) for CO2; the
+# dissociation constants are unverified.
 CO2_KH, CO2_K1, CO2_K2 = (10 ** -1.47, 2420.0), (10 ** -6.35, -1000.0), (10 ** -10.33, -1760.0)
 SO2_KH, SO2_K1, SO2_K2 = (1.23, 3120.0), (1.23e-2, 2010.0), (6.61e-8, 1500.0)
 KW = (1.0e-14, -6716.0)
@@ -142,6 +145,17 @@ def h_activity(p_soil: float, T: float, r: Reading = FAITHFUL) -> float:
         return h - (k1 * c / h * (1 + 2 * k2 / h) + s1 * s / h * (1 + 2 * s2 / h) + kw / h)
 
     return 10.0 ** brentq(bal, -12.0, 0.0, xtol=1e-13)
+
+
+def so2_share(r: Reading = FAITHFUL) -> float:
+    """Fraction of today's soil-water acidity carried by sulphur: ([HSO3-] +
+    2[SO3--]) / [H+] at Psoil0 and T0. Only this ratio, not the SO2 constants
+    themselves, enters aH/aH0."""
+    T = t0(r)
+    h = h_activity(PSOIL0, T, r)
+    s = _k(SO2_KH, T, r) * SO2 * r.so2_factor
+    s1, s2 = _k(SO2_K1, T, r), _k(SO2_K2, T, r)
+    return s1 * s / h * (1 + 2 * s2 / h) / h
 
 
 def t0(r: Reading = FAITHFUL) -> float:

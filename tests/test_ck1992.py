@@ -121,6 +121,12 @@ def test_fidelity_against_scan(tmp_path):
         assert sum(v for k, v in tr.reasons.items() if k in ("none", "two strokes", "merged")) <= 6, (c, tr.reasons)
 
     assert f.fit_so2_factor(PDF) == pytest.approx(m.SO2_FIT_FACTOR, abs=2e-4)
+    assert m.so2_share() == pytest.approx(0.0598, abs=1e-4)
+    assert m.so2_share(m.READINGS["so2_fitted"]) == pytest.approx(0.0243, abs=1e-4)
+    co = {r["base"]: r for r in f.coupled(PDF)}  # alternatives with the SO2 factor refitted under each
+    px = "Pi_ratio median px"
+    assert co["faithful"][px] < 2 and co["t0_printed"][px] > 3 * co["faithful"][px]
+    assert co["volk_p_half"][px] > 20
 
     ev = {r["feature"]: r for r in f.events(PDF)}
     assert abs(ev["Pi_ratio at t=0"]["printed"] - 1.0) < 0.006   # rejects T0 = 15 C (1.017)
