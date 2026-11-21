@@ -57,8 +57,10 @@ def main():
         fermentation.append(dict(
             f=f, J_lo=lo, J_hi=hi, ratio=None if hi is None else hi / lo,
             P_lo=.3 * lo / j, P_hi=None if hi is None else .3 * hi / j,
+            h2_window_lo_tmol_yr=lo * scale, h2_window_hi_tmol_yr=None if hi is None else hi * scale,
             evaluated_at="reference J" if hi is None else "geometric mid-window",
             h2_tmol_yr=at * scale,
+            fermenter_acetate_methane_at_reference_supply_tmol_yr=f * a * j * scale / 4,
             fermentation_acetate_tmol_yr=a * at * scale / 4,
             carbohydrate_carbon_fermented_tmol_c_yr=CARBON_PER_H2 * at * scale,
             fermenter_acetate_leaving_tmol_yr=fermenter_leaving,

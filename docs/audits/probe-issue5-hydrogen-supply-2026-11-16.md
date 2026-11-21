@@ -43,38 +43,37 @@ All values are converted to Tmol yr⁻¹. Each source's identity was checked aga
 | Arney's view of that flux | "broadly consistent with" biological fluxes after oxygenic photosynthesis (Kharecha et al. 2005) | — | same | yes |
 | Volcanic H₂ boundary flux in Arney's model | 3.5 × 10⁹ molecules cm⁻² s⁻¹ | 0.93 H₂ | same, supplement | yes |
 | Present geological H₂ (volcanic, serpentinisation, MOR) | 1.8–5.0 × 10¹¹ mol yr⁻¹ | 0.18–0.50 H₂ | Canfield, Rosing & Bjerrum 2006 (10.1098/rstb.2006.1906), Table 7 | yes |
-| Early-Earth H₂ assumed by Canfield et al. | 10 × present (30 × in one case) | ~3.4 (~10) H₂ | same, §7 and Table 13 | yes |
-| Archean H₂ supply, volcanic plus water–rock | ~1.5–6 × 10¹² mol yr⁻¹ | 1.5–6 H₂ | Ward, Rasmussen & Fischer 2019 (10.1029/2018JG004679), §2.1 | yes |
+| Early-Earth H₂ assumed by Canfield et al. | 10 × present (base case); Tables 8 and 13 also run 3.4 × 10¹³ and, with escape reduced tenfold, 1.1 × 10¹⁴ mol yr⁻¹ | 3.4 base; scenarios to 34 and 110 H₂ | same, §7, Tables 8 and 13 | yes (*corrected 21 Nov*) |
+| Archean H₂ supply, volcanic plus water–rock | 4.7 + 1.36 × 10¹² mol yr⁻¹ (Fe²⁺ 0.19 + 1.4) | 6.06 H₂ (Fe²⁺ 1.59) | Ward, Rasmussen & Fischer 2019 (10.1029/2018JG004679), Table 1 | yes (*corrected 21 Nov*: the earlier "1.5–6 each" was the §2.1 order-of-magnitude sentence; 1.5 is iron) |
 | Maximum serpentinisation H₂, one Earth mass | 3.0 × 10¹² mol yr⁻¹ | 3.0 H₂ | Guzmán-Marmolejo et al. 2013 (10.1089/ast.2012.0817) | yes |
 | Mid-ocean-ridge serpentinisation, modern | ~10¹² mol yr⁻¹ | ~1 H₂ | Worman et al. 2016 (10.1002/2016GL069066), abstract | yes |
 | Maximum abiotic CH₄, one Earth mass | 6.8 × 10⁸ molecules cm⁻² s⁻¹ | 0.18 CH₄ | Guzmán-Marmolejo et al. 2013, quoted by Arney | yes |
 | Modern total CH₄ emissions, 2008–2017 | 576 (top-down) / 737 (bottom-up) Tg | **35.9 / 45.9 CH₄** | Saunois et al. 2020 (10.5194/essd-12-1561-2020), Table 3 | yes |
 | Modern natural CH₄ emissions | 218 / 371 Tg | 13.6 / 23.1 CH₄ | same | yes |
 | Early-Earth primary production (Fe-based dominates) | 2.8 × 10¹⁴ mol C yr⁻¹ (Fe-based 1.7–5.0 × 10¹⁴; H₂-based 2.9 × 10¹³) | 280 C | Canfield et al. 2006, Table 12 | yes (checked by me) |
-| Archean anoxygenic NPP, limited by electron donors | ≤ ~2.75 × 10¹² mol C yr⁻¹ | ≤ 2.75 C | Ward et al. 2019, §3 | yes |
+| Archean anoxygenic NPP, limited by electron donors | ≤ ~2.75 × 10¹² mol C yr⁻¹, counting only new donors and excluding recycling by design | ≤ 2.75 C | Ward et al. 2019, §§2–3 | yes |
 | Modern primary production | 4 × 10¹⁵ mol C yr⁻¹ / 104.9 Pg C yr⁻¹ | 4,000 / 8,740 C | Canfield et al. 2006, Table 12 / Field et al. 1998 (10.1126/science.281.5374.237) | yes |
 
 **What follows from these numbers:**
 
 1. **The methane scale is right for a haze.** The model's 65 Tmol CH₄ yr⁻¹ lies inside Arney's haze-onset range of 27–80. It is 1.4–1.8 times modern total emissions and 3–5 times modern natural emissions.
-2. **Geology falls short by two orders of magnitude.** Sourced Archean geological hydrogen totals about 1–10 Tmol H₂ yr⁻¹. The reference supply is 401, which is 40–400 times more. Even with every geological hydrogen molecule turned into methane, the flux would be at most about 2.5 Tmol CH₄ yr⁻¹, a tenth or less of what haze onset needs. Abiotic methane is 2–3 orders of magnitude short, which is Arney's own argument.
-3. **Fermentation needs a productive biosphere.** Fermenting carbohydrate yields 1.5 mol C per mol of H₂ released (Q3). A fermentation-fed reference supply therefore needs about 600 Tmol C yr⁻¹ of organic matter to reach fermenters. That is twice Canfield's early-Earth total, more than 200 times Ward's donor-limited estimate, and 7–15% of modern global NPP. In practice it requires oxygenic photosynthesis, or iron-based production near Canfield's upper bound. This is consistent with Arney's statement that the haze-onset flux matches biological fluxes after oxygenic photosynthesis.
-4. **Fable's recollection is broadly right.** Geological hydrogen totals a few Tmol H₂ yr⁻¹, which in methane equivalents is a few percent of the haze requirement. The modern scale is confirmed at ~576 Tg top-down. The sources do not support "tens of Tmol" of geological hydrogen, except in Canfield's 30-fold case.
+2. **Named fresh geological inputs fall short by about two orders of magnitude.** The reference supply is 118 times Canfield's 3.4 Tmol H₂ yr⁻¹ base case and 66 times Ward's 6.06. *Corrected 21 Nov after Codex's review:* this is a comparison with selected fresh-input scenarios, not a bound. Canfield et al. also ran 34 and 110 Tmol H₂ yr⁻¹. Kharecha et al.'s anaerobic Case 3 spans 1.7–68.4 Tmol yr⁻¹ of fresh volcanic H₂ and 35–172 Tmol yr⁻¹ deposited into the ocean, because atmospheric recycling raises gross delivery above fresh input. The model prescribes gross delivery to the microbes. Abiotic methane is 2–3 orders of magnitude short of haze onset, as Arney argues.
+3. **A fully fermentation-fed reference supply would need about 600 Tmol C yr⁻¹ reaching fermenters** (602; 1.5 mol C per mol H₂, Q3). For scale, that is about 7% of global NPP or 15% of marine NPP, and twice Canfield's burial-based 280 Tmol C yr⁻¹ for 3.8 Ga; Canfield's 34-Tmol H₂ reduced-escape scenario reaches 1,100 Tmol C yr⁻¹ of anoxygenic production. *Withdrawn 21 Nov after Codex's review:* the comparison with Ward's 2.75 Tmol C yr⁻¹ (which excludes recycled electrons by design) and the inference that this flux requires oxygenic photosynthesis. Kharecha et al.'s anaerobic Cases 2–3 give about 10–80 Tmol CH₄ yr⁻¹, which brackets the model's 65, and Ozaki et al. show iron and hydrogen phototrophs amplifying methane release. The source of J stays open.
+4. **The Arney match is partly by construction.** The assumed 10-kyr lifetime was itself bracketed by assigning Arney's onset flux to case B, so agreement with the 27–80 Tmol range is a consistency check, not independent support.
+5. **Fable's recollection is broadly right.** Geological hydrogen totals a few Tmol H₂ yr⁻¹, which in methane equivalents is a few percent of the haze requirement. The modern scale is confirmed at ~576 Tg top-down. The sources do not support "tens of Tmol" of geological hydrogen, except in Canfield's 30-fold case.
 
 **Not verified:**
 
-- Holland 2002's own volcanic H₂ numbers. The 4.7 Tmol figure is quoted by Canfield et al.
-- Kharecha et al. 2005's H₂ flux and its methane fluxes in absolute units; the body text is paywalled.
 - A global rate in Sleep et al. 2004.
 - The 2025 Global Methane Budget update.
-- Conrad 1999 (10.1111/j.1574-6941.1999.tb00575.x). Its one-third H₂ share is read only through a summary. The paper does not need it, because the stoichiometry below is a reaction balance.
-- Ozaki et al. 2018 (10.1038/s41561-017-0031-2, Nat. Geosci. 11:55–59). Its identity is verified, but its body text is unread. It models primitive photosynthesis and climate and would be the closest check on Q3.
+
+*Recovered by Codex, 21 Nov* (`probe-issue5-codex-review-2026-11-21.md`, §3): Holland 2002, table A3, gives 4.8 ± 3.6 Tmol H₂ yr⁻¹ for present-day input; Kharecha et al. 2005, table 2 and fig. 12, as above; Ozaki et al. 2018, fig. 2 and supplement; Conrad 1999, table 1, gives the one-third H₂-derived share for ideal glucose degradation with complete methane recovery, with departures in both directions.
 
 ## Q3. A fermentation-fed supply
 
 When fermenters degrade carbohydrate at the low hydrogen that competition maintains, they make C₆H₁₂O₆ + 2 H₂O → 2 CH₃COOH + 2 CO₂ + 4 H₂. That is two acetate, 16 electrons, for every four hydrogen, 8 electrons. Two thirds of the reducing power therefore reaches the methane system as acetate, which bypasses the hydrogen competition. That ratio is the most hydrogen fermenters can make from carbohydrate. Lipid-rich substrates give a similar split.
 
-**Framing.** If J is fermentation hydrogen, then:
+**Framing.** *Revised 21 Nov:* fermentation is one possible source of J, not an established one. If J is fermentation hydrogen, then:
 
 - "changes in hydrogen supply" means changes in the organic flux that reaches anoxic decomposition: productivity, minus remineralisation by oxidants and burial before fermentation;
 - the regulator holds temperature against changes in the biosphere's own productivity, not against geological forcing;
@@ -92,11 +91,11 @@ When fermenters degrade carbohydrate at the low hydrogen that competition mainta
 
 **Conclusion.** A fermentation-fed supply keeps the exact plateau, because competition still sets T*. It does narrow the window and dilute the regulator's authority: at f = 0.5 the competition governs about a third of the biotic methane. It also tightens Issue 4's condition. The lasting acetate sink becomes about 50 Tmol yr⁻¹ at f = 0.5 (50 Tmol sulfate or 400 Tmol Fe(III)) and about 220 Tmol at f = 0. That is more than published new-sulfate and modelled iron-recycling fluxes (Issue 4).
 
-One possibility, an inference not checked against sources: a biosphere productive enough to supply this much organic matter is probably oxygenic. It would then also make oxidants in proportion to its organic matter, so the sink and the supply might share a cause. A planetary redox budget would decide this. That would be a new stage, so I have not attempted it.
+*Withdrawn 21 Nov:* the inference that a biosphere this productive is probably oxygenic (see Q2, point 3). Each row holds only at its stated evaluation supply: the f = 0 row at the original 401 Tmol H₂ yr⁻¹, the others at their geometric mid-window. At the original supply and f = 0.5, fermenter acetate alone would yield 100.3 Tmol CH₄ yr⁻¹, above the 65.03 needed. The bypass assumes acetate reaches methane by cleavage or by hydrogen transfer outside the contested pool; syntrophic oxidation that releases H₂ back into that pool would change the allocation (Conrad 1999).
 
 **Arithmetic only.** These rows apply the stored parts to an added supply-proportional methane source. They are not model runs. The model has no fermenters, and figures and stability margins were not recomputed for this case.
 
-## Q4. Proposed wording, for Barry's decision
+## Q4. Proposed wording, for Barry's decision (superseded 21 Nov; see Revised Q4 wording)
 
 **§2.2**, after "the reference input is J = 10⁻⁶ mol H₂ L⁻¹ h⁻¹":
 
@@ -123,3 +122,64 @@ One possibility, an inference not checked against sources: a biosphere productiv
 - add the new references: Canfield et al. 2006, Guzmán-Marmolejo et al. 2013, Ward et al. 2019 and, if cited, Saunois et al. 2020.
 
 A model variant with explicit fermenters would be a new experimental stage, and I am not proposing one.
+
+## Reconciliation after Codex review (21 November)
+
+Codex reviewed this record (`probe-issue5-codex-review-2026-11-21.md`, `9189bae`). It recomputed all five fermentation rows from the saved endpoints and found they balance. It also recovered the four sources I could not read. I accept its corrections, and they are applied in place above, each with a note:
+
+- **Fresh-input comparison.** "Geology falls short by two orders of magnitude" is now a comparison with named base cases: 118 times Canfield's 3.4 and 66 times Ward's 6.06 Tmol H₂ yr⁻¹. Canfield's 34- and 110-Tmol scenarios and Kharecha's Case 3 inputs are listed alongside. I checked Ward's Table 1 (4.7 volcanic + 1.36 water–rock) and Canfield's Tables 8 and 13 in the source texts myself.
+- **Withdrawn.** The ">200 × Ward" productivity comparison. The inference that the flux requires oxygenic photosynthesis. The framing "J stands for fermentation hydrogen". The source of J stays open, and fermentation is an example.
+- **Evaluation supply.** Each fermentation row is labelled with its evaluation supply. The script now stores the planetary window ends (148.6–189.0 Tmol H₂ yr⁻¹ at f = 0.5) and the fermenter-acetate methane at the original supply (100.3 Tmol CH₄ yr⁻¹ at f = 0.5).
+- **Arney match.** The agreement with Arney's onset range is partly by construction.
+
+**Gemini's two additions.** Codex recommends both. I have seen them only in Codex's rendering.
+
+- **§3.2, weak mode.** I confirmed the §3.2 numbers against stored results:
+  - the period is 119.56826 yr and the damping time 4,853.910 yr (C20);
+  - the weak-mode estimate is 0.14921427 yr (`docs/audits/graded-dial-independent-2026-11-12.json`);
+  - the independent stability crossing is 0.14921426 yr (`docs/audits/continuum-characteristic-main-map-2026-11-12.json`).
+
+  C58 already records that the formula passes the original grid, which includes this reference, and fails at two refinement states. C20 and C58 therefore cover the sentence, and no new claim is needed.
+- **§4.4, oxidant access.** The sentence replaces the literal co-location requirement with access to the acetate flux before it becomes methane. It cites culture and sediment competition experiments (Cord-Ruwisch et al. 1988, 10.1007/BF00411655; Lovley & Phillips 1987, 10.1128/aem.53.11.2636-2641.1987; both identities checked in Crossref).
+
+## Revised Q4 wording (21 November), for Barry's decision
+
+Codex's wording, with one change. In §2.2 I add the high-input scenarios, so the base cases do not read as the full range.
+
+**A1. §2.2**, after "the reference input is J = 10⁻⁶ mol H₂ L⁻¹ h⁻¹":
+
+> At the assumed methane lifetime of 10,000 years, the reference supply scales to 401 Tmol H₂ per year. Of this, 260 goes to methane, 111 leaves in acetate and biomass, and 30 enters the atmosphere. Base-case fresh geological inputs are 3.4 and 6.1 Tmol H₂ per year (Canfield et al. 2006; Ward et al. 2019), and scenarios with more outgassing and slower escape reach tens of Tmol (Kharecha et al. 2005; Canfield et al. 2006). The model prescribes gross delivery to the microbes, which could also include biologically recycled hydrogen.
+
+**A2. Table 1, hydrogen supply row, "Basis" column:**
+
+> Gross H₂ input prescribed. At a 10,000-year methane lifetime, 401 Tmol H₂ yr⁻¹ at reference and 306–611 across the half-recycling window. Geological and recycled contributions are unresolved.
+
+The existing condition stays unchanged: "Reservoir at 0 Pa; 0–100 Pa leaves T\* unchanged (ESM)".
+
+**A3. §4.4**, a new paragraph after the acetate-fate paragraph:
+
+> Fermentation is one possible source. If glucose fermentation supplied all the reference hydrogen, about 600 Tmol of organic carbon per year would have to reach fermenters. The same pathway produces one acetate per two H₂ (Conrad 1999). If half the acetate from each source became methane outside the shared hydrogen pool, steady-state accounting gives a coexistence window of 149–189 Tmol H₂ per year, a factor of 1.27 across. At the midpoint, fermenters would process 251 Tmol C per year, their acetate would supply 64% of biotic methane, and the lasting sink would take 50 Tmol of acetate per year. Anoxygenic ecosystems in published models also sustain methane fluxes of this size (Kharecha et al. 2005; Ozaki et al. 2018).
+
+**A4. §4.6**, after the sentence on acetate fate:
+
+> Supply is prescribed. If productivity depends on temperature, the two guilds can still coexist at the switch provided that the supply there falls inside the coexistence window. How productivity responds to temperature could then alter stability and assembly.
+
+**B1 (Gemini). §3.2**, after "raises the margin from 0.15 to 1.10 years (ESM)":
+
+> The 10,000-year methane lifetime sets the removal rate of the atmospheric stock. At the reference state with no acetate recycling and an instantaneous temperature response, a small disturbance oscillates with a period of 120 years and an amplitude decay time of 4,850 years. A thermal response time of just 0.15 years cancels this weak damping, as the local estimate $P_{\rm osc}^2/(2\pi^2 t_d)$ predicts here.
+
+**B2 (Gemini). §4.4**, after the oxidant budget:
+
+> An oxidative sink must intercept acetate before it returns to methane. Acetate could diffuse to an adjacent oxidant-rich layer while hydrogen is consumed where it forms. Where the oxidant reaches the same hydrogen pool, sulfate or Fe(III) reducers can compete for it at concentrations below those used by methanogens in modern sediments (Cord-Ruwisch et al. 1988; Lovley & Phillips 1987). The two-guild calculation then applies only if this additional hydrogen uptake is small.
+
+**On adoption:**
+
+- **Claims.**
+  - Add C69, the conditional planetary scale and the named source comparisons, with the supply labelled.
+  - Add C70, the static fermentation budget, with each row's evaluation supply.
+  - Stamp both to the evidence commit.
+- **ESM.** Add S8e with the fermentation table. Its f = 0 row is labelled at the original supply.
+- **References.** Add Canfield et al. 2006, Ward et al. 2019, Conrad 1999, Cord-Ruwisch et al. 1988 and Lovley & Phillips 1987.
+- **Unchanged.** The abstract and the main message stay as they are.
+
+**My recommendation.** Adopt A1–A4 and B1–B2. B1 explains the 0.15-year margin that §3.2 already reports.
