@@ -1,0 +1,14 @@
+claim,printed,reconstructed,note,so2_fitted
+WHK's weathering implies an exponent 0.6 on aH,0.6,0.6,WHK P^0.3 with aH ~ P^0.5 gives aH^0.6,
+S rises at ~0.12 W m-2 Myr-1 (eq. 1),0.12,0.114251,today; the mean over the next 0.9 Gyr is 0.1235,
+C&K's reading of L&W: sqrt(P) falls to zero at S = 1.017 S0,1.017,1.0186,"zero of the faithful L&W rule (lw1982), 70,000 ppm anchor",
+L&W imply only ~4 W m-2 of trapping by 320 ppm,4,4.07172,(1 - a0)(0.017) S0/4 with a0 = 0.2997 from eq. (5); 4.46 with the reconstructed zero,
+C3-only world (Pmin = 150 ppm): ~0.5 Gyr,0.5,0.443832,"separate run, P_half recalibrated to 112.7 ppm; the C4 run passes 150 ppm at 0.194 Gyr",0.488873
+C4 limit (Pmin = 10 ppm): 0.9 Gyr,0.9,0.793465,the printed kink is in ck1992_events.csv,0.86337
+Patm reaches 1 ppm after ~1 Gyr,1,0.956748,,1.0234
+constant temperature for the next 0.9 Gyr,0.9,9.41894,"T rises by this many K over 0.9 Gyr in the faithful run; held literally at T0, CO2 must reach 10 ppm by 0.486 Gyr and 1 ppm by 0.671 Gyr",12.1662
+"with negligible CO2, T exceeds 50 C after ~1.5 Gyr",1.5,1.45882,"Patm = 0.01 ppm (the fit's lower bound); at the 1 ppm floor, 1.324 Gyr",
+T passes 80 C at ~1.5 Gyr (caption),1.5,1.46469,,
+T goes from 50 to 100 C in <0.2 Gyr,0.2,0.246645,1.324 to 1.571 Gyr,
+"above 300 K at the floor, weathering exceeds supply",300,297.331,T at which F(Psoil = Patm = 1 ppm) = F0,300.251
+ocean loss takes ~1 Gyr at 6e11 H cm-2 s-1,1,0.969084,"ocean mass 1.4e21 kg, not stated in the paper",

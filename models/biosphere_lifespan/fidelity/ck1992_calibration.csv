@@ -1,0 +1,15 @@
+item,kh,kv,units_per_px,max_tick_residual_px,ticks,points,dropped,dropped_by
+upper frame slopes,0.00334642,-0.00503783,,,,,,
+lower frame slopes,0.00371231,-0.00547912,,,,,,
+upper time,,,0.00133002,3.08569,15,,,
+lower time,,,0.00133268,2.85603,15,,,
+upper log10_ppm,,,-0.00453581,4.1357,5,,,
+upper S_ratio,,,-0.000226584,2.78576,21,,,
+lower Pi_ratio,,,-0.0011335,2.36369,11,,,
+lower T_K,,,-0.113357,2.17005,11,,,
+trace P_soil,,,,,,415,50,Psoil label=20; Psoil x S=25; Psoil-Patm junction=4; two strokes=1
+trace P_atm,,,,,,331,34,Patm x S=25; Psoil-Patm junction=7; frame=1; two strokes=1
+trace merged,,,,,,109,7,Psoil-Patm junction=3; frame=2; two strokes=2
+trace S_ratio,,,,,,638,64,Patm x S=26; Psoil x S=22; frame=12; merged=2; two strokes=2
+trace Pi_ratio,,,,,,510,65,Pi x T=26; frame=34; merged=1; two strokes=4
+trace T_K,,,,,,766,26,Pi x T=21; frame=4; two strokes=1
