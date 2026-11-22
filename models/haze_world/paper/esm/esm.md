@@ -396,6 +396,22 @@ where $n = 4(r^*/t_{CH_4} - c\Phi_{abiotic})/(\chi H)$ is the catabolic hydrogen
 
 *Table S8d. Window ratio Q with lost biomass recycled to methane at fraction b (closed-form budget at the reference T\*).*
 
+**Planetary scale and a fermentation-fed supply (C69, C70).** The per-litre supply has no planetary volume of its own; its scale comes from the methane flux r\*/τ that holds the mixed state, so at fixed supply potential it moves inversely with the assumed lifetime. At τ = 10⁴ yr the reference J is 401 Tmol H₂ yr⁻¹: 260 Tmol becomes methane, 111 Tmol leaves as acetate and biomass and 30 Tmol enters the atmosphere at R\*. The total methane flux, 65.2 Tmol CH₄ yr⁻¹ or 2.44 × 10¹¹ molecules cm⁻² s⁻¹, lies within the haze-onset range of Arney et al. (2016), partly by construction because that range bracketed the lifetime. Base-case fresh geological inputs are 3.4 and 6.1 Tmol H₂ yr⁻¹ (Canfield et al. 2006; Ward et al. 2019); scenarios with more outgassing reach 34–110 Tmol (Canfield et al. 2006). The model prescribes gross delivery, which could include recycled hydrogen. Table S8e asks what follows if glucose fermentation supplies J: C₆H₁₂O₆ + 2H₂O → 2 CH₃COOH + 2 CO₂ + 4 H₂ delivers one acetate per two H₂ (Conrad 1999). If that acetate shares the acetogens' fate f and reaches methane outside the shared hydrogen pool, the pure-guild endpoints satisfy M = fJ/2 + y(J − e)/4 with y = η_M or fη_A, where M is the biotic methane needed and e the outlet. Each row holds at its stated supply; at the original supply and f = 0.5, fermenter acetate alone would give 100.3 Tmol CH₄ yr⁻¹, above the 65.0 needed. The flux share is not a sensitivity, and syntrophic oxidation that returns H₂ to the shared pool would change the allocation. This is steady-state arithmetic on stored parts (`models/haze_world/review/issue5_supply_scale.py`); the model has no fermenters, and no margins were computed for this case.
+
+<!-- table:s8_fermentation -->
+
+| f | H₂ window (Tmol yr⁻¹) | window ratio | evaluated at | H₂ supply (Tmol yr⁻¹) | carbon fermented (Tmol C yr⁻¹) | biotic CH₄ from fermenter acetate | acetate to lasting sink, fermenters + acetogens (Tmol yr⁻¹) |
+|---|---|---|---|---|---|---|---|
+| 0 | ≥ 306.4 | no upper end | original 401 Tmol H₂ yr⁻¹ | 401.1 | 601.6 | 0.0% | 200.55 + 21.18 |
+| 0.5 | 148.6–189.0 | 1.272 | geometric mid-window | 167.6 | 251.4 | 64.4% | 41.89 + 8.36 |
+| 0.7 | 123.2–137.7 | 1.117 | geometric mid-window | 130.2 | 195.3 | 70.1% | 19.53 + 3.51 |
+| 0.9 | 105.2–109.1 | 1.037 | geometric mid-window | 107.2 | 160.7 | 74.1% | 5.36 + 0.88 |
+| 1 | 98.1–99.2 | 1.011 | geometric mid-window | 98.6 | 147.9 | 75.8% | 0.00 + 0.00 |
+
+<!-- /table:s8_fermentation -->
+
+*Table S8e. Exact window and acetate budget with hydrogen supplied by glucose fermentation (steady-state accounting; planetary units at τ = 10⁴ yr).*
+
 ## S9 Imposed warming
 
 **Definition.** A warming F shifts the climate curve rigidly, $T_{clim}(r) \to T_{clim}(r) + F$, leaving its slope unchanged. It is a controlled surrogate for a change in sunlight, not a solar calculation: a change in solar flux also alters the spectrum, haze photochemistry and the curve's shape. F was injected by wrapping the climate function and all its aliases, with dependent caches cleared at each F (`models/haze_world/review/issue2_forcing.py`). At F = 0 the reference states reproduce the archive; σ = 1 and 3 K at P = 0.30 are bit-identical, and the off-reference states agree within the acceptance tolerance.
@@ -498,6 +514,8 @@ The new bounded checks and the refuge and immigration runs use instantaneous tem
 | C66 | supported | f508dfa | S10 | Any tested positive immigration assembles the mixture in one uniform habitat at f=0 and 0.5, with both groups materially active near T* |
 | C67 | supported | 1a2358c | S8 | Raising the acetate fate f from 0.5 towards 1 narrows the exact supply window and lengthens the exact first-loss margin together, steepens full-product graded states, and narrows the imposed-warming window far less than the supply window |
 | C68 | supported | 1a2358c | S8 | Exact control needs a lasting route-dependent hydrogen sink other than methane: at fixed feasible supply the combined acetate-plus-biomass export is independent of f, and if lost biomass also returned as methane the exact plateau would close at f=1 |
+| C69 | supported | 56a4609 | S8 | At the assumed 10000-yr methane lifetime the reference hydrogen supply is about 400 Tmol H2 per yr, far above base-case fresh geological inputs; its planetary scale is conditional on the lifetime |
+| C70 | supported | 56a4609 | S8 | If glucose fermentation supplied the hydrogen and its acetate shared the acetogens' fate, the exact window would narrow and shift to lower supply and the lasting acetate sink would grow |
 
 <!-- /table:s9_claims -->
 

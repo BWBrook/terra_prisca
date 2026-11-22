@@ -175,7 +175,14 @@ partial pressure p_atm; the reference input is J = 10⁻⁶ mol H₂ L⁻¹ h⁻
 $$K_H \frac{dp}{dt} = H\,[\,J - q_A X_A - q_M X_M - k_{ex}(p - p_{atm})\,],
 \tag{2.4}$$
 
-where K_H is hydrogen's solubility. Exchange runs in either direction. Part
+where K_H is hydrogen's solubility. Exchange runs in either direction.
+At the assumed methane lifetime of 10,000 years, the reference supply scales
+to 401 Tmol H₂ per year. Of this, 260 goes to methane, 111 leaves in acetate
+and biomass, and 30 enters the atmosphere. Base-case fresh geological inputs
+are 3.4 and 6.1 Tmol H₂ per year (Canfield et al. 2006; Ward et al. 2019),
+and published scenarios with greater outgassing reach 34–110 Tmol (Canfield
+et al. 2006). The model prescribes gross delivery to the microbes, which
+could also include biologically recycled hydrogen. Part
 of each group's uptake builds biomass, which leaves with lost cells rather
 than becoming methane. The catabolic flux is
 $F_i=H X_i[q_i-\alpha_i(g_i)_+]$, in mol H₂ L⁻¹ yr⁻¹, where α_i is
@@ -349,7 +356,12 @@ instant climate response. All six lie at low methane, on the assumed bridge
 where more methane warms rather than cools. The other 36 first lose
 stability at response times between 0.06 and 7.08 years. In the matched
 reference comparison, increasing f from 0 to 0.5 raises the margin from
-0.15 to 1.10 years (ESM). Figure 2*c* compares exact and graded states at
+0.15 to 1.10 years (ESM). The 10,000-year methane lifetime sets the removal
+rate of the atmospheric stock. At the reference state with no acetate
+recycling and an instantaneous temperature response, a small disturbance
+oscillates with a period of 120 years and an amplitude decay time of 4,850
+years. A thermal response time of just 0.15 years cancels this weak damping,
+as the local estimate $P_{\rm osc}^2/(2\pi^2 t_d)$ predicts here. Figure 2*c* compares exact and graded states at
 the same f = 0.5. Recycling also narrows the difference
 in methane yield between the routes.
 
@@ -526,11 +538,29 @@ requirements exceed published late-Archean estimates of new sulfate (Hao et
 al. 2022) and are several times modelled iron recycling (Thompson et al.
 2019), although neither budget caps gross oxidant cycling. Oxidant
 regeneration and any accompanying reductants would also have to enter a
-planetary methane budget. As recycling approaches
+planetary methane budget. An oxidative sink must intercept acetate before it
+returns to methane. Acetate could diffuse to an adjacent oxidant-rich layer
+while hydrogen is consumed where it forms. Where the oxidant reaches the same
+hydrogen pool, sulfate or Fe(III) reducers can compete for it at
+concentrations below those used by methanogens in modern sediments
+(Cord-Ruwisch et al. 1988; Lovley & Phillips 1987). The two-guild calculation
+then applies only if this additional hydrogen uptake is small. As recycling approaches
 completeness the supply window narrows from a factor of 2.0 to 1.05, and the
 window of imposed warming from 24 to 7 K. If biomass returns as methane too,
 the exact plateau disappears. How much acetate escaped methane on the early
 Earth is therefore an open condition on the regulator, not a settled one.
+
+Fermentation is one possible source. If glucose fermentation supplied all the
+reference hydrogen, about 600 Tmol of organic carbon per year would have to
+reach fermenters. The same pathway produces one acetate per two H₂ (Conrad
+1999). If half the acetate from each source became methane outside the shared
+hydrogen pool, steady-state accounting gives a coexistence window of 149–189
+Tmol H₂ per year, a factor of 1.27 across. At the midpoint, fermenters would
+process 251 Tmol C per year, their acetate would supply 64% of biotic
+methane, and the lasting sink would take 50 Tmol of acetate per year (ESM
+S8). Anoxygenic ecosystems in published models reach methane fluxes
+comparable to the model's 65 Tmol CH₄ per year (Kharecha et al. 2005; Ozaki
+et al. 2018).
 
 Acetate feedback and variation in habitat temperature are candidate routes to
 graded regulation on the hazy early Earth. Their strengths would set where an
@@ -589,7 +619,11 @@ on the capacity ratio γ and on the assumed loss rate: halving or doubling ℓ
 moves T\* from 281.5 K to 278.4 or 286.5 K. The alternative dry-mass capacity
 normalisation can put the crossing outside the cooling branch. The regulator
 requires the two routes to differ in their ultimate methane yield, and so a
-lasting sink for hydrogen other than methane. The headline results use f = 0
+lasting sink for hydrogen other than methane. Supply is prescribed. If
+productivity depends on temperature, the two guilds can still coexist at the
+switch provided that the supply there falls inside the coexistence window.
+How productivity responds to temperature could then alter stability and
+assembly. The headline results use f = 0
 and 0.5. As f rises towards 1, the sampled supply window narrows and the
 exact critical response time lengthens in proportion, from about 1 year at
 f = 0.5 to 21–31 years at f = 1. There an exact state near the window's edge
@@ -636,7 +670,7 @@ the losing group can persist while the climate catches up.
 | Cessation thresholds | Reaction thermodynamics; reference thresholds assumed | Requirements at low hydrogen | 20 and 1 Pa at 30 °C |
 | Physiology below 277.15 K | Continuation | Extends the model to 273 K | Capacity and half-saturation held at 277.15 K values |
 | Cell loss ℓ | Assumption, 0.001 h⁻¹ | Sets requirements, and so T\* | T\* = 278.4, 281.5, 286.5 K at ℓ = 0.0005, 0.001, 0.002 h⁻¹ |
-| Hydrogen supply and exchange | Assumption | Feeds the community; atmospheric outlet | Reservoir at 0 Pa; 0–100 Pa leaves T\* unchanged (ESM) |
+| Hydrogen supply and exchange | Gross H₂ input prescribed. At a 10,000-year methane lifetime, 401 Tmol H₂ yr⁻¹ at reference and 306–611 across the half-recycling window. Geological and recycled contributions are unresolved | Feeds the community; atmospheric outlet | Reservoir at 0 Pa; 0–100 Pa leaves T\* unchanged (ESM) |
 | Acetate fate | Assumption: removal over 1 yr; fraction f to methane, the rest to a lasting non-methane sink (oxidant, export or burial); lost biomass exported | Sets the methane-yield contrast between routes, and so the supply window | Needs a lasting non-methane sink: at the reference supply 27.7 Tmol CH₄-equivalent yr⁻¹ of acetate and biomass, 20.2 Tmol of it acetate at f = 0.5. The window ratio falls from 2.0 (f = 0.5) to 1.15 (0.9) and 1.05 (1), and closes at f = 1 if biomass also returns as methane |
 | Atmospheric methane | Lifetime 10,000 yr assumed; abiotic source quoted by Arney et al. (2016) | Links microbes to climate | Well-mixed column ratio stands for surface CH₄/CO₂ |
 | Haze climate T_clim(r) | Arney et al. (2016), case B: 2.7 Ga, 81% sunlight | Provides the haze-cooling branch | One case; assumed bridge to 283 K at zero methane and plateau beyond the data |
@@ -761,21 +795,25 @@ repository.
 | Arney et al. 2017 | 10.3847/1538-4357/836/1/49 |
 | Åström & Murray 2021 | *Feedback systems: an introduction for scientists and engineers*, 2nd edn. Princeton University Press. ISBN 978-0-691-19398-4 |
 | Bebout et al. 2004 | 10.1111/j.1472-4677.2004.00024.x |
+| Canfield et al. 2006 | 10.1098/rstb.2006.1906 |
+| Conrad 1999 | 10.1111/j.1574-6941.1999.tb00575.x |
+| Cord-Ruwisch et al. 1988 | 10.1007/BF00411655 |
 | Eager-Nash et al. 2023 | 10.1029/2022JD037544 |
 | Feulner 2012 | 10.1029/2011RG000375 |
 | Fu et al. 2019 | 10.3389/fmicb.2019.02418 |
 | Fukami 2015 | 10.1146/annurev-ecolsys-110411-160340 |
+| Hao et al. 2022 | 10.1126/sciadv.abn2226 |
 | Haqq-Misra et al. 2008 | 10.1089/ast.2007.0197 |
 | Held et al. 2010 | 10.1175/2009JCLI3466.1 |
-| Hao et al. 2022 | 10.1126/sciadv.abn2226 |
 | Hoehler et al. 2001 | 10.1038/35085554 |
 | Khammash 2021 | 10.1016/j.cels.2021.05.020 |
 | Kharecha et al. 2005 | 10.1111/j.1472-4669.2005.00049.x |
 | Kotsyurbenko et al. 2001 | 10.1111/j.1574-6941.2001.tb00893.x |
-| Lovley & Klug 1983 | 10.1128/AEM.45.1.187-192.1983 |
 | Lovelock & Margulis 1974 | 10.1111/j.2153-3490.1974.tb01946.x |
-| Mollison 1991 | 10.1016/0025-5564(91)90009-8 |
+| Lovley & Klug 1983 | 10.1128/AEM.45.1.187-192.1983 |
+| Lovley & Phillips 1987 | 10.1128/aem.53.11.2636-2641.1987 |
 | Mak et al. 2023 | 10.1029/2023JD039343 |
+| Mollison 1991 | 10.1016/0025-5564(91)90009-8 |
 | Olsman et al. 2019 | 10.1016/j.cels.2019.06.001 |
 | Ozaki et al. 2018 | 10.1038/s41561-017-0031-2 |
 | Peters et al. 1998 | 10.1111/j.1574-6941.1998.tb00516.x |
@@ -784,8 +822,9 @@ repository.
 | Sauterey et al. 2020 | 10.1038/s41467-020-16374-7 |
 | Seto & Akagi 2007 | 10.1016/j.jtbi.2007.05.013 |
 | Sweetman et al. 2017 | 10.1525/elementa.203 |
-| Tijhuis et al. 1993 | 10.1002/bit.260420415 |
 | Thompson et al. 2019 | 10.1126/sciadv.aav2869 |
+| Tijhuis et al. 1993 | 10.1002/bit.260420415 |
+| Ward et al. 2019 | 10.1029/2018JG004679 |
 | Watson & Lovelock 1983 | 10.1111/j.1600-0889.1983.tb00031.x |
 | Weaver & Dyke 2012 | 10.1016/j.jtbi.2012.07.034 |
 | Yi et al. 2000 | 10.1073/pnas.97.9.4649 |

@@ -299,13 +299,28 @@ def s8_acetate():
         biomass.append(row)
     write_csv(ESM / "s8_biomass_recycling.csv", biomass, list(biomass[0]))
     splice("s8_biomass", md_table(biomass, list(biomass[0])))
+
+    ferm = []
+    for r in json.loads((REVIEW / "issue5_supply_scale.json").read_text())["fermentation"]:
+        hi = r["h2_window_hi_tmol_yr"]
+        ferm.append({"f": f"{r['f']:g}",
+                     "H₂ window (Tmol yr⁻¹)": f"≥ {r['h2_window_lo_tmol_yr']:.1f}" if hi is None else f"{r['h2_window_lo_tmol_yr']:.1f}–{hi:.1f}",
+                     "window ratio": "no upper end" if r["ratio"] is None else f"{r['ratio']:.3f}",
+                     "evaluated at": "original 401 Tmol H₂ yr⁻¹" if r["evaluated_at"] == "reference J" else "geometric mid-window",
+                     "H₂ supply (Tmol yr⁻¹)": f"{r['h2_tmol_yr']:.1f}",
+                     "carbon fermented (Tmol C yr⁻¹)": f"{r['carbohydrate_carbon_fermented_tmol_c_yr']:.1f}",
+                     "biotic CH₄ from fermenter acetate": f"{100 * r['share_of_biotic_methane_outside_competition']:.1f}%",
+                     "acetate to lasting sink, fermenters + acetogens (Tmol yr⁻¹)":
+                         f"{r['fermenter_acetate_leaving_tmol_yr']:.2f} + {r['acetogen_acetate_leaving_tmol_yr']:.2f}"})
+    write_csv(ESM / "s8_fermentation.csv", ferm, list(ferm[0]))
+    splice("s8_fermentation", md_table(ferm, list(ferm[0])))
     return interval
 
 
 CLAIM_USE = {"C05": "S2", "C06": "S2", "C44": "S3", "C45": "S3, S4", "C52": "S3, S6, S10", "C54": "S4", "C55": "S5, S6", "C56": "S5, S6",
              "C57": "S5", "C58": "S5, S6", "C59": "S7", "C38": "S6", "C39": "S6", "C40": "S6", "C41": "S6", "C42": "S6", "C43": "S6",
              "C46": "S6", "C47": "S6", "C48": "S6", "C49": "S6", "C50": "S6", "C51": "S6", "C60": "S4", "C61": "S4", "C62": "S9", "C63": "S9", "C64": "S9",
-             "C08": "S10", "C09": "S10", "C65": "S10", "C66": "S10", "C67": "S8", "C68": "S8"}
+             "C08": "S10", "C09": "S10", "C65": "S10", "C66": "S10", "C67": "S8", "C68": "S8", "C69": "S8", "C70": "S8"}
 
 
 def s9_claims():
