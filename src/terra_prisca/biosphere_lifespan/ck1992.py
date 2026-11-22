@@ -50,14 +50,17 @@ P_FIT = (1e-8, 1e-2)                # bar
 # the carbon system from Stumm & Morgan (1981, ref. 14) and the sulphur system
 # from Chameides (1984, ref. 23), doi:10.1029/JD089iD03p04739. Neither is in
 # hand; the faithful set is traced to them through later tables:
-#   carbonate and water: Butler (1991), Carbon Dioxide Equilibria and Their
-#     Applications, Table 2.2, p. 17 -- pK_H, pK1, pK2, pKw "selected by Stumm,
-#     W. and Morgan, J. J. 1981 ... pp. 204-206", 0-50 C and 100 C;
+#   carbonate: Butler (1991), Carbon Dioxide Equilibria and Their
+#     Applications, Table 2.2, p. 17 -- pK_H, pK1, pK2 "selected by Stumm,
+#     W. and Morgan, J. J. 1981 ... pp. 204-206" (with the calcite pKs0, unused
+#     here), 0-50 C and 100 C;
+#   water: pKw from the same table, which Butler's footnote traces to Sillen &
+#     Martell's compilation, not to Stumm & Morgan;
 #   S(IV) dissociation: Sellegri et al. (2003), Atmos. Chem. Phys. 3, 1509,
 #     Table 5, p. 1517 -- K1 = 1.7e-2 M (-dH/R 2090 K) and K2 = 6.3e-8 M
 #     (1510 K), attributed to Chameides (1984);
 #   SO2 Henry constant: 1.23 M atm-1, 3100 K -- Sander's compilation lists
-#     Chameides' value as 1.2e-2 mol m-3 Pa-1 (1.22 M atm-1) and 3100 K, and
+#     Chameides' value as 1.2e-2 mol m-3 Pa-1 (1.216 M atm-1) and 3100 K, and
 #     Sellegri et al. give 1.2-1.23 M atm-1.
 # "textbook" is the set first used here (board message 3628), kept as a reading.
 BUTLER_T_C = (0.0, 5.0, 10.0, 15.0, 20.0, 25.0, 30.0, 35.0, 40.0, 45.0, 50.0, 100.0)
@@ -241,6 +244,10 @@ def weathering(p: float, s: float, r: Reading = FAITHFUL, ref: _Ref | None = Non
     return (h_activity(ps, T, r) / ref.aH0) ** 0.5 * np.exp((T - ref.T0) / EFOLD_K)
 
 
+CO2_XTOL_DECADES = 1e-12
+CO2_TOL_DECADES = 10 * CO2_XTOL_DECADES
+
+
 def co2(t: float, r: Reading = FAITHFUL, ref: _Ref | None = None) -> float:
     """Patm (bar) at time t: the root of F = F0, or the floor once F at the
     floor reaches F0. F - F0 changes sign once between the floor and 1e-2 bar
@@ -252,7 +259,7 @@ def co2(t: float, r: Reading = FAITHFUL, ref: _Ref | None = None) -> float:
     if weathering(r.p_floor, s, r, ref) >= 1.0:
         return r.p_floor
     return 10.0 ** brentq(lambda lp: weathering(10.0 ** lp, s, r, ref) - 1.0,
-                          np.log10(r.p_floor), np.log10(P_FIT[1]), xtol=1e-12)
+                          np.log10(r.p_floor), np.log10(P_FIT[1]), xtol=CO2_XTOL_DECADES)
 
 
 def state(t: float, r: Reading = FAITHFUL, ref: _Ref | None = None) -> dict[str, float]:
@@ -272,19 +279,19 @@ def trajectory(times, r: Reading = FAITHFUL) -> dict[str, np.ndarray]:
     return {k: np.array([row[k] for row in rows]) for k in rows[0]}
 
 
-def first_crossing(f, level: float, t_max: float = 2.0, step: float = 0.01) -> float:
-    """First t in [0, t_max] at which f(t) reaches level: 0 if it holds at
-    t = 0, otherwise the first sign change of f - level on the grid, refined by
-    brentq; inf if none."""
+def first_crossing(f, level: float, t_max: float = 2.0, step: float = 0.01, tol: float = 0.0) -> float:
+    """First t in [0, t_max] at which f(t) reaches level (to within tol): 0 if
+    it holds at t = 0, otherwise the first sign change of f - level on the
+    grid, refined by brentq; inf if none."""
     g0 = f(0.0) - level
-    if g0 == 0.0:
+    if abs(g0) <= tol:
         return 0.0
     t = np.append(np.arange(0.0, t_max, step), t_max)
     for a, b in zip(t[:-1], t[1:]):
         if b <= a:
             continue
         gb = f(b) - level
-        if gb == 0.0:
+        if abs(gb) <= tol:
             return float(b)
         if np.sign(gb) != np.sign(g0):
             return brentq(lambda x: f(x) - level, a, b, xtol=1e-9)
@@ -295,14 +302,15 @@ def first_crossing(f, level: float, t_max: float = 2.0, step: float = 0.01) -> f
 def co2_time(level: float, r: Reading = FAITHFUL, t_max: float = 2.0) -> float:
     """Gyr until Patm first falls to `level` (bar); inf for a level below the
     floor, which Patm never goes beneath. The floor itself is reached when Patm
-    comes within 1e-9 decades of it."""
+    comes within 1e-9 decades of it; any other level when Patm comes within
+    CO2_TOL_DECADES, ten times the accuracy of the CO2 solve."""
     ref = _ref(r)
     if level < r.p_floor:
         return float("inf")
     if level == r.p_floor:
         f = lambda t: float(np.log10(co2(t, r, ref) / r.p_floor) > 1e-9)
         return first_crossing(f, 0.5, t_max) if f(0.0) else 0.0
-    return first_crossing(lambda t: np.log10(co2(t, r, ref)), np.log10(level), t_max)
+    return first_crossing(lambda t: np.log10(co2(t, r, ref)), np.log10(level), t_max, tol=CO2_TOL_DECADES)
 
 
 def temperature_time(level_K: float, r: Reading = FAITHFUL, t_max: float = 2.0) -> float:

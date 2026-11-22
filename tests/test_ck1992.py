@@ -85,6 +85,9 @@ def test_event_search_boundaries():
     assert m.co2_time(0.5e-6) == float("inf")  # below the floor: never reached
     assert m.co2_time(0.5e-6, m.READINGS["so2_fitted"]) == float("inf")
     assert m.co2_time(m.P0, m.CONTROLS["fixed_co2"]) == 0.0  # holds at t = 0
+    assert m.co2_time(m.P0, m.CONTROLS["constant_sun"]) == 0.0  # solved, so equal only to solver accuracy
+    assert m.co2_time(m.P0, t_max=0.0) == 0.0
+    assert m.co2_time(300e-6, m.CONTROLS["constant_sun"]) == float("inf")  # genuinely never reached
     assert m.first_crossing(lambda t: 1.0, 1.0, t_max=0.0) == 0.0
     assert m.first_crossing(lambda t: 2.0, 1.0, t_max=0.0) == float("inf")
     assert m.first_crossing(lambda t: 1.0 - t, 0.5, t_max=0.5, step=0.5) == pytest.approx(0.5)
@@ -133,6 +136,7 @@ def test_figure_table_is_reproducible(tmp_path):
 def test_fidelity_against_scan(tmp_path):
     from terra_prisca.biosphere_lifespan import fidelity_ck1992 as f
     from terra_prisca.biosphere_lifespan import scan_ck1992 as s
+    from scipy.spatial import cKDTree
 
     sc = s.load(PDF)
     for key, ax in sc.axes.items():
@@ -176,6 +180,19 @@ def test_fidelity_against_scan(tmp_path):
     assert fx["trace_points_without_value"] == 112 and fx["trace_points_used"] == 654
     assert fx["trace_to_model_p95_px"] > 5 * fx["faithful_trace_to_model_p95_px_same_points"]
     assert tw[("T_K", "dT_plus_0.5")]["trace_points_without_value"] == 68
+    # model-to-trace measures against the same 698 supported centres, not all 766 (Codex CK-R5 follow-up)
+    sc, tr = f._traces(PDF)
+    ink, t_ink = tr["T_K"].centres, f.traced(sc, tr)["T_K"][:, 0]
+    hot = f.SENSITIVITY["dT_plus_0.5"]
+    sup = np.isfinite(f._model_values("T_K", t_ink, hot))
+    mp = f._model_px(sc, "T_K", hot, t_ink[sup].min(), t_ink[sup].max())
+    mp = mp[[s._excluded(x, y, sc, s.CURVE_AXES["T_K"][0]) is None for x, y in mp]]
+    to_all = np.percentile(cKDTree(ink).query(mp)[0], 95)
+    to_sup = np.percentile(cKDTree(ink[sup]).query(mp)[0], 95)
+    assert tw[("T_K", "dT_plus_0.5")]["model_to_trace_p95_px"] == pytest.approx(to_sup) and to_sup > to_all + 10
+    for r in (m.FAITHFUL, f.gough_ratio):  # tabulated and callable readings share exact endpoints
+        e = sc.to_data("S_ratio", f._model_px(sc, "S_ratio", r, 0.05, 1.5)[[0, -1]])[:, 0]
+        assert e == pytest.approx([0.05, 1.5], abs=1e-9)
     joint = tw[("T_K", "dT_plus_0.5_albedo_plus_0.005708")]  # greenhouse and albedo trade off
     assert abs(joint["model_to_trace_median_px"] - tw[("T_K", "faithful")]["model_to_trace_median_px"]) < 0.5
     sco = {(r["curve"], r["reading"]): r for r in f.scores(PDF)}

@@ -50,7 +50,10 @@ All citations were checked against Crossref on 16 November 2026.
 - Secondary sources for those constants, as one-page extracts placed by Codex
   in `local/sources/biosphere_lifespan/`:
   - Butler, J. N. (1991). *Carbon Dioxide Equilibria and Their Applications*,
-    Table 2.2, p. 17: Stumm & Morgan's selected carbonate constants, 0–50 °C.
+    Table 2.2, p. 17: Stumm & Morgan's selected carbonate constants (K_H, K₁,
+    K₂; the table's footnote credits them also with the calcite solubility
+    product, unused here), 0–50 °C, and pK_w, which the footnote traces to
+    Sillén & Martell's compilation rather than to Stumm & Morgan.
     Routledge reissue [doi:10.1201/9781315138770](https://doi.org/10.1201/9781315138770).
     Extract SHA-256 `b2f843005745bf08159cbc3c49e6ccb5fcadc344b4c888b0dcdb7052ff6af063`.
   - Sellegri, K. et al. (2003). Contribution of gaseous and particulate
@@ -331,7 +334,7 @@ reaches 1 ppm, T depends on eqs (1)–(5) alone.
 | Choice | Adopted | Reason |
 |---|---|---|
 | Present-day closure | **T₀ = the fits' own present temperature, 287.89 K** | Eqs (1)–(5) put today at 287.89 K, which rounds to the stated 15 °C but is not 288.15 K. With T₀ = 288.15 K, F = F₀ cannot hold at 320 ppm: the model starts at 335 ppm with Π/Π₀ = 1.017. With the printed equations, the printed Π/Π₀ (1.002 at t = 0) favours closing at 287.89 K: with the SO₂ factor refitted under each reading, 288.15 K ties on P_soil and T but misses Π by 6.7 px against 1.6 (`fidelity/ck1992_coupled.csv`). This identifies the closure only for the equations as printed. Codex (CK-R3) closed today at 288.15 K instead by adding 0.067 K to eq. (4) at 320 ppm, tapering to zero at 1 ppm; after the same refit, that version fits Π about as well (1.7 px). The printed P_atm at t = 0 (324 ppm) is not used: 320 against 335 ppm is 3.3 px, inside the 4.1 px residual of the log axis |
-| Equilibrium constants | **Traced to the paper's sources, at 25 °C.** Carbon system and water: pK_H 1.47, pK₁ 6.352, pK₂ 10.329, pK_w 13.999. S(IV): K_H 1.23 M atm⁻¹, K₁ 1.7×10⁻² M, K₂ 6.3×10⁻⁸ M | The paper takes the carbon system from Stumm & Morgan (1981) and sulphur from Chameides (1984); neither is in hand. The carbonate values are from Butler (1991), Table 2.2, which tabulates Stumm & Morgan's selections. The S(IV) dissociations are from Sellegri et al. (2003), Table 5, which attributes them to Chameides. The SO₂ Henry constant agrees with Sander's listing of Chameides (1.2×10⁻² mol m⁻³ Pa⁻¹, 3,100 K). These are secondary attributions, not readings of the primary sources. The constants are held at 25 °C, the temperature of the dissolution experiments the text cites. Two alternatives are scored: following T (Butler's table interpolated; van 't Hoff for sulphur), and the textbook set used in the first build (K₁ 1.23×10⁻², K₂ 6.61×10⁻⁸) |
+| Equilibrium constants | **Traced to the paper's sources, at 25 °C.** Carbon system and water: pK_H 1.47, pK₁ 6.352, pK₂ 10.329, pK_w 13.999. S(IV): K_H 1.23 M atm⁻¹, K₁ 1.7×10⁻² M, K₂ 6.3×10⁻⁸ M | The paper takes the carbon system from Stumm & Morgan (1981) and sulphur from Chameides (1984); neither is in hand. The carbonate values are from Butler (1991), Table 2.2, which tabulates Stumm & Morgan's selections; pK_w comes from the same table, where Butler traces it to Sillén & Martell, not to Stumm & Morgan. The S(IV) dissociations are from Sellegri et al. (2003), Table 5, which attributes them to Chameides. The SO₂ Henry constant, 1.23 M atm⁻¹, is the top of Sellegri et al.'s compiled range and agrees with Sander's two-figure listing of Chameides (1.2×10⁻² mol m⁻³ Pa⁻¹, or 1.216 M atm⁻¹, 3,100 K); 1.216 would move the C₄ limit 1 Myr later. These are secondary attributions, not readings of the primary sources. The constants are held at 25 °C, the temperature of the dissolution experiments the text cites. Two alternatives are scored: following T (Butler's table interpolated; van 't Hoff for sulphur), and the textbook set used in the first build (K₁ 1.23×10⁻², K₂ 6.61×10⁻⁸) |
 | Strength of the SO₂ term | **Faithful: ×1. Reading `so2_fitted`: ×0.283** | This choice decides the low-CO₂ phase (below). The fitted factor puts the model's 10 ppm kink at the printed kink (0.863 Gyr). At the kink, Π = 0 and P_soil = P_atm = 10 ppm. The climate puts T there at 299.93 K, so eq. (6) requires a_H(kink)/a_H(today) = exp(−2(T − T₀)/13.7 K) = **0.172**. That ratio is what the figure fixes, independently of the chemistry. Its translation into today's sulphur contribution depends on the chemistry model: sulphur balances 2.4% of today's soil-water H⁺ with constants at 25 °C, and 5.2% with constants that follow T. Both reproduce the kink. The other printed features were left out of this one-parameter fit, but the figure had already been examined when the reading was chosen. It was added after the first scores, not declared in advance (board message 3627) |
 | Charge balance | [H⁺] = [HCO₃⁻] + 2[CO₃²⁻] + [HSO₃⁻] + 2[SO₃²⁻] + [OH⁻], with activity taken as concentration | Fresh rain water, as the text describes it. Bar is taken as atm (1.3%) |
 | P₁/₂ | Eq. (8) through Π₀ at (T₀, 320 ppm), temperature factor included: 205.6 ppm | As stated. Volk's eq. (13), (Π_max/Π₀ − 1)(P₀ − P_min) = 310 ppm, omits the temperature factor and is scored as a reading |
@@ -450,38 +453,40 @@ reason.
 drawn on the calibrated axes, to the traced centres and back. Model samples
 are 0.25 px apart; samples inside excluded boxes are dropped and counted, and
 no gap is bridged. A reading is scored only on the trace centres at times
-where it has a value. Above 373.15 K, the top of the fits' range, it has none:
-the fixed-CO₂ control loses 112 of the 766 T centres and eq. (4) +0.5 K loses
-68. The faithful reading is rescored on the same centres, so each row is
-paired.
+where both it and the faithful reading have a value, in both directions.
+Above 373.15 K, the top of the fits' range, a reading has none: the fixed-CO₂
+control loses 112 of the 766 T centres and eq. (4) +0.5 K loses 68. The
+faithful reading is scored on the same centres, so each row is paired. Every
+reading, tabulated or a callable Sun curve, is drawn over the same time span
+with exact endpoints.
 
 | Curve | Reading | Centres used | Model to trace: median / p95 (px) | Trace to model: median / p95 (px) | Faithful, same centres: trace to model |
 |---|---|---|---|---|---|
-| P_soil | **faithful** | 415/415 | 17.5 / 92.5 | 13.3 / 64.2 | — |
-| P_soil | textbook constants | 415/415 | 10.1 / 61.7 | 8.8 / 44.8 | 13.3 / 64.2 |
+| P_soil | **faithful** | 415/415 | 17.5 / 92.6 | 13.3 / 64.2 | — |
+| P_soil | textbook constants | 415/415 | 10.1 / 61.8 | 8.8 / 44.8 | 13.3 / 64.2 |
 | P_soil | **SO₂ fitted** | 415/415 | **2.4 / 4.9** | **2.3 / 5.1** | 13.3 / 64.2 |
-| P_soil | Volk's P₁/₂ | 415/415 | 29.2 / 92.1 | 27.4 / 64.9 | 13.3 / 64.2 |
+| P_soil | Volk's P₁/₂ | 415/415 | 29.2 / 92.2 | 27.4 / 64.9 | 13.3 / 64.2 |
 | P_soil | null: Π held at Π₀ | 415/415 | 105 / 241 | 151 / 489 | 13.3 / 64.2 |
-| P_atm | **faithful** | 331/331 | 6.0 / 63.9 | 6.0 / 33.2 | — |
-| P_atm | **SO₂ fitted** | 331/331 | **1.2 / 3.4** | **1.1 / 3.5** | 6.0 / 33.2 |
-| P_atm | null: WHK weathering | 331/331 | 34.0 / 43.6 | 32.5 / 43.9 | 6.0 / 33.2 |
+| P_atm | **faithful** | 331/331 | 6.0 / 66.0 | 6.0 / 33.2 | — |
+| P_atm | **SO₂ fitted** | 331/331 | **1.2 / 3.4** | **1.0 / 3.5** | 6.0 / 33.2 |
+| P_atm | null: WHK weathering | 331/331 | 33.9 / 43.6 | 32.3 / 43.9 | 6.0 / 33.2 |
 | P_atm | null: CO₂ fixed | 331/331 | 141 / 275 | 151 / 310 | 6.0 / 33.2 |
-| P_soil = P_atm | **faithful** | 109/109 | 64.6 / 65.0 | 65.4 / 111.9 | — |
-| P_soil = P_atm | textbook constants | 109/109 | 47.3 / 48.1 | 47.9 / 76.4 | 65.4 / 111.9 |
-| P_soil = P_atm | **SO₂ fitted** | 109/109 | **1.4 / 2.6** | **1.3 / 2.7** | 65.4 / 111.9 |
-| P_soil = P_atm | null: no SO₂ | 109/109 | 54.8 / 91.0 | 111 / 191 | 65.4 / 111.9 |
+| P_soil = P_atm | **faithful** | 109/109 | 64.6 / 65.0 | 65.4 / 112 | — |
+| P_soil = P_atm | textbook constants | 109/109 | 47.3 / 48.1 | 47.9 / 76.4 | 65.4 / 112 |
+| P_soil = P_atm | **SO₂ fitted** | 109/109 | **1.4 / 2.6** | **1.3 / 2.7** | 65.4 / 112 |
+| P_soil = P_atm | null: no SO₂ | 109/109 | 55.0 / 91.3 | 111 / 191 | 65.4 / 112 |
 | S/S₀ | **eq. (1)** | 638/638 | **1.7 / 4.3** | **1.6 / 4.7** | — |
 | S/S₀ | null: Gough (1981) | 638/638 | 5.1 / 9.6 | 5.1 / 9.9 | 1.6 / 4.7 |
 | S/S₀ | null: Lovelock & Whitfield's straight line | 638/638 | 50.9 / 126 | 60.8 / 138 | 1.6 / 4.7 |
-| Π/Π₀ | **faithful** | 510/510 | 4.7 / 19.2 | 4.9 / 21.4 | — |
+| Π/Π₀ | **faithful** | 510/510 | 4.7 / 19.1 | 4.9 / 21.4 | — |
 | Π/Π₀ | **SO₂ fitted** | 510/510 | **1.6 / 6.2** | **1.6 / 6.2** | 4.9 / 21.4 |
-| Π/Π₀ | Volk's P₁/₂ | 510/510 | 40.1 / 52.7 | 42.6 / 71.7 | 4.9 / 21.4 |
+| Π/Π₀ | Volk's P₁/₂ | 510/510 | 40.2 / 53.1 | 42.6 / 69.8 | 4.9 / 21.4 |
 | Π/Π₀ | null: Π held at Π₀ | 510/510 | — (on the frame) | 458 / 846 | 4.9 / 21.4 |
 | T | **faithful** | 766/766 | 3.6 / 28.0 | 3.6 / 28.1 | — |
-| T | **SO₂ fitted** | 766/766 | **2.1 / 4.7** | **2.1 / 4.9** | 3.6 / 28.1 |
-| T | eq. (4) + 0.5 K | 698/766 | 25.2 / 57.4 | 19.8 / 57.4 | 3.6 / 29.2 |
-| T | eq. (4) + 0.5 K, eq. (5) + 0.005708 | 766/766 | 3.7 / 29.0 | 3.8 / 29.2 | 3.6 / 28.1 |
-| T | null: CO₂ fixed | 654/766 | 114 / 211 | 142 / 213 | 3.6 / 29.4 |
+| T | **SO₂ fitted** | 766/766 | **2.2 / 4.7** | **2.1 / 4.9** | 3.6 / 28.1 |
+| T | eq. (4) + 0.5 K | 698/766 | 25.0 / 68.4 | 19.8 / 57.4 | 3.6 / 29.2 |
+| T | eq. (4) + 0.5 K, eq. (5) + 0.005708 | 766/766 | 3.7 / 28.9 | 3.8 / 29.2 | 3.6 / 28.1 |
+| T | null: CO₂ fixed | 654/766 | 138 / 211 | 142 / 213 | 3.6 / 29.4 |
 
 The column errors in data units (`fidelity/ck1992_fidelity.csv`) cover the
 stretches flatter than 2 px/px, with the faithful reading rescored on the
@@ -502,8 +507,8 @@ trace (median):
 |---|---|---|---|---|---|
 | **Faithful: source-traced constants at 25 °C, T₀ = 287.89 K** | 0.283 | 0.172 | 2.4% | 1.000 | 2.4 / 1.2 / 1.6 / 2.2 |
 | T₀ = 288.15 K | 0.310 | 0.179 | 2.7% | 1.017 | 1.9 / 2.2 / 6.7 / 1.9 |
-| Constants follow T | 0.397 | 0.172 | 5.2% | 1.000 | 2.4 / 1.4 / 4.3 / 2.1 |
-| Textbook constants | 0.391 | 0.172 | 2.4% | 1.000 | 2.4 / 1.2 / 1.6 / 2.1 |
+| Constants follow T | 0.397 | 0.172 | 5.2% | 1.000 | 2.4 / 1.3 / 4.3 / 2.1 |
+| Textbook constants | 0.391 | 0.172 | 2.4% | 1.000 | 2.4 / 1.2 / 1.6 / 2.2 |
 | Textbook constants following T | 0.548 | 0.172 | 5.2% | 1.000 | 2.3 / 1.2 / 4.0 / 2.1 |
 | Volk's P₁/₂ | 0.283 | 0.172 | 2.4% | 0.879 | 14.0 / 8.4 / 32.1 / 1.9 |
 

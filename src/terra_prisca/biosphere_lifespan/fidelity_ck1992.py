@@ -133,13 +133,12 @@ def scores(pdf: Path = s.DEFAULT_PDF) -> list[dict]:
 
 
 def _model_px(sc: s.Scan, curve: str, r, t_lo: float, t_hi: float) -> np.ndarray:
-    if callable(r):
-        t = np.arange(t_lo, t_hi + 1e-12, STEP)
-        y = r(t)
-    else:
-        mo = model(r)
-        sel = (mo["t_Gyr"] >= t_lo) & (mo["t_Gyr"] <= t_hi)
-        t, y = mo["t_Gyr"][sel], mo[MODEL_KEY[curve]][sel]
+    """The reading drawn in pixels over [t_lo, t_hi]: the model grid inside the
+    interval plus both exact endpoints, for tabulated and callable readings
+    alike."""
+    g = np.arange(0.0, 1.6 + STEP / 2, STEP)
+    t = np.concatenate([[t_lo], g[(g > t_lo) & (g < t_hi)], [t_hi]])
+    y = _model_values(curve, t, r)
     ok = np.isfinite(y)
     if ok.sum() < 2:
         return np.empty((0, 2))
@@ -147,13 +146,14 @@ def _model_px(sc: s.Scan, curve: str, r, t_lo: float, t_hi: float) -> np.ndarray
     return densify(px, 0.25)
 
 
-def _distances(sc: s.Scan, curve: str, r, ink: np.ndarray, t_ink: np.ndarray) -> dict:
-    """Two-way distances between the model and the traced centres where the
-    model has values. Centres at times where the model has none are left out
-    and counted; model samples in excluded boxes or frame margins are dropped;
-    no gap is bridged."""
-    y = _model_values(curve, t_ink, r)
-    sup = np.isfinite(y)
+def _distances(sc: s.Scan, curve: str, r, ink: np.ndarray, t_ink: np.ndarray,
+               sup: np.ndarray | None = None) -> dict:
+    """Two-way distances between the model and the traced centres in `sup`
+    (default: where the model has values). Other centres are left out of both
+    directions and counted; model samples in excluded boxes or frame margins
+    are dropped; no gap is bridged."""
+    if sup is None:
+        sup = np.isfinite(_model_values(curve, t_ink, r))
     out = {"trace_points_used": int(sup.sum()), "trace_points_without_value": int((~sup).sum())}
     if sup.sum() < 2:
         return out
@@ -168,7 +168,7 @@ def _distances(sc: s.Scan, curve: str, r, ink: np.ndarray, t_ink: np.ndarray) ->
                 "trace_to_model_median_px": float(np.median(to_model)),
                 "trace_to_model_p95_px": float(np.percentile(to_model, 95))})
     if keep.any():
-        to_ink = cKDTree(ink).query(mp[keep])[0]
+        to_ink = cKDTree(ink[sup]).query(mp[keep])[0]
         out.update({"model_to_trace_median_px": float(np.median(to_ink)),
                     "model_to_trace_p95_px": float(np.percentile(to_ink, 95))})
     return out
@@ -176,18 +176,17 @@ def _distances(sc: s.Scan, curve: str, r, ink: np.ndarray, t_ink: np.ndarray) ->
 
 def two_way(pdf: Path = s.DEFAULT_PDF) -> list[dict]:
     """Distances between each reading, drawn on the scan's calibrated axes, and
-    the traced centres, with the faithful reading rescored on the same trace
-    points (paired)."""
+    the traced centres where both it and the faithful reading have values, with
+    the faithful reading scored on the same centres (paired)."""
     sc, tr = _traces(pdf)
     data = traced(sc, tr)
     rows = []
     for curve in CURVES:
         ink, t_ink = tr[curve].centres, data[curve][:, 0]
         for key, r in _candidates(curve).items():
-            y = _model_values(curve, t_ink, r)
-            sup = np.isfinite(y)
-            row = {"curve": curve, "reading": key, "trace_points": int(len(ink)), **_distances(sc, curve, r, ink, t_ink)}
-            base = _distances(sc, curve, m.FAITHFUL, ink[sup], t_ink[sup])
+            sup = np.isfinite(_model_values(curve, t_ink, r)) & np.isfinite(_model_values(curve, t_ink, m.FAITHFUL))
+            row = {"curve": curve, "reading": key, "trace_points": int(len(ink)), **_distances(sc, curve, r, ink, t_ink, sup)}
+            base = _distances(sc, curve, m.FAITHFUL, ink, t_ink, sup)
             for k in ("model_to_trace_median_px", "model_to_trace_p95_px", "trace_to_model_median_px", "trace_to_model_p95_px"):
                 row[f"faithful_{k}_same_points"] = base.get(k, np.nan)
             rows.append(row)
