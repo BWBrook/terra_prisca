@@ -47,6 +47,18 @@ All citations were checked against Crossref on 16 November 2026.
   for sulphur. Sander's Henry's-law compilation (henrys-law.org, read
   21 November 2026) lists Chameides' Henry constants: 1.216 M atm⁻¹ for SO₂
   and 0.0314 M atm⁻¹ for CO₂.
+- Secondary sources for those constants, as one-page extracts placed by Codex
+  in `local/sources/biosphere_lifespan/`:
+  - Butler, J. N. (1991). *Carbon Dioxide Equilibria and Their Applications*,
+    Table 2.2, p. 17: Stumm & Morgan's selected carbonate constants, 0–50 °C.
+    Routledge reissue [doi:10.1201/9781315138770](https://doi.org/10.1201/9781315138770).
+    Extract SHA-256 `b2f843005745bf08159cbc3c49e6ccb5fcadc344b4c888b0dcdb7052ff6af063`.
+  - Sellegri, K. et al. (2003). Contribution of gaseous and particulate
+    species to droplet solute composition at the Puy de Dôme, France.
+    *Atmos. Chem. Phys.* 3, 1509–1522, Table 5, p. 1517: S(IV) dissociation
+    constants attributed to Chameides (1984).
+    [doi:10.5194/acp-3-1509-2003](https://doi.org/10.5194/acp-3-1509-2003).
+    Extract SHA-256 `4c4a8b2c9af892fd575e5fac0aac0aa07bb6978c70932a2cb01519801e9417e3`.
 
 All of these are copyrighted and are not redistributed. Place them in
 `local/sources/biosphere_lifespan/`; the scan scripts refuse any file with a
@@ -318,14 +330,14 @@ reaches 1 ppm, T depends on eqs (1)–(5) alone.
 
 | Choice | Adopted | Reason |
 |---|---|---|
-| Present-day closure | **T₀ = the fits' own present temperature, 287.89 K** | Eqs (1)–(5) put today at 287.89 K, which rounds to the stated 15 °C but is not 288.15 K. With T₀ = 288.15 K, F = F₀ cannot hold at 320 ppm: the model starts at 335 ppm with Π/Π₀ = 1.017. The printed Π/Π₀ starts at 1.002, 15 px from 1.017 on an axis calibrated to 2.4 px. With the SO₂ factor refitted under each reading, T₀ = 288.15 K ties on P_soil and T but misses Π by 6.7 px against 1.6 (`fidelity/ck1992_coupled.csv`). The printed P_atm at t = 0 (324 ppm) is not used: 320 against 335 ppm is 3.3 px, inside the 4.1 px residual of the log axis |
-| Equilibrium constants | **Standard values at 25 °C.** Carbonate: pK_H 1.47, pK₁ 6.35, pK₂ 10.33. SO₂: K_H 1.23 M atm⁻¹, K₁ 1.23×10⁻² M, K₂ 6.61×10⁻⁸ M | The paper points to Stumm & Morgan (1981) and Chameides (1984), neither of which is in hand. The SO₂ Henry constant agrees within 1% with Sander's listing of Chameides (1.216 M atm⁻¹). The dissociation constants and the carbonate set are standard values, not checked against the cited sources. They are held at 25 °C, the temperature of the dissolution experiments the text cites. Temperature-dependent constants are scored as a reading |
-| Strength of the SO₂ term | **Faithful: ×1 (standard constants). Reading `so2_fitted`: ×0.391** | This choice decides the low-CO₂ phase (below). Only the ratio of sulphur to carbonate acidity enters a_H/a_H,₀, so the fit identifies that ratio, not an SO₂ constant. Sulphur carries 6.0% of today's soil-water acidity with the standard constants, and 2.4% in the fitted reading. The factor puts the model's 10 ppm kink at the printed kink (0.863 Gyr); every other printed feature is then an out-of-sample test. This reading and its target were added after the first scores, not declared in advance (board message 3627) |
-| Charge balance | [H⁺] = [HCO₃⁻] + 2[CO₃²⁻] + [HSO₃⁻] + 2[SO₃²⁻] + [OH⁻], with activity taken as concentration | Fresh rain water, as the text describes it. Bar is taken as atm (1.3%, which cancels in a_H/a_H,₀) |
+| Present-day closure | **T₀ = the fits' own present temperature, 287.89 K** | Eqs (1)–(5) put today at 287.89 K, which rounds to the stated 15 °C but is not 288.15 K. With T₀ = 288.15 K, F = F₀ cannot hold at 320 ppm: the model starts at 335 ppm with Π/Π₀ = 1.017. With the printed equations, the printed Π/Π₀ (1.002 at t = 0) favours closing at 287.89 K: with the SO₂ factor refitted under each reading, 288.15 K ties on P_soil and T but misses Π by 6.7 px against 1.6 (`fidelity/ck1992_coupled.csv`). This identifies the closure only for the equations as printed. Codex (CK-R3) closed today at 288.15 K instead by adding 0.067 K to eq. (4) at 320 ppm, tapering to zero at 1 ppm; after the same refit, that version fits Π about as well (1.7 px). The printed P_atm at t = 0 (324 ppm) is not used: 320 against 335 ppm is 3.3 px, inside the 4.1 px residual of the log axis |
+| Equilibrium constants | **Traced to the paper's sources, at 25 °C.** Carbon system and water: pK_H 1.47, pK₁ 6.352, pK₂ 10.329, pK_w 13.999. S(IV): K_H 1.23 M atm⁻¹, K₁ 1.7×10⁻² M, K₂ 6.3×10⁻⁸ M | The paper takes the carbon system from Stumm & Morgan (1981) and sulphur from Chameides (1984); neither is in hand. The carbonate values are from Butler (1991), Table 2.2, which tabulates Stumm & Morgan's selections. The S(IV) dissociations are from Sellegri et al. (2003), Table 5, which attributes them to Chameides. The SO₂ Henry constant agrees with Sander's listing of Chameides (1.2×10⁻² mol m⁻³ Pa⁻¹, 3,100 K). These are secondary attributions, not readings of the primary sources. The constants are held at 25 °C, the temperature of the dissolution experiments the text cites. Two alternatives are scored: following T (Butler's table interpolated; van 't Hoff for sulphur), and the textbook set used in the first build (K₁ 1.23×10⁻², K₂ 6.61×10⁻⁸) |
+| Strength of the SO₂ term | **Faithful: ×1. Reading `so2_fitted`: ×0.283** | This choice decides the low-CO₂ phase (below). The fitted factor puts the model's 10 ppm kink at the printed kink (0.863 Gyr). At the kink, Π = 0 and P_soil = P_atm = 10 ppm. The climate puts T there at 299.93 K, so eq. (6) requires a_H(kink)/a_H(today) = exp(−2(T − T₀)/13.7 K) = **0.172**. That ratio is what the figure fixes, independently of the chemistry. Its translation into today's sulphur contribution depends on the chemistry model: sulphur balances 2.4% of today's soil-water H⁺ with constants at 25 °C, and 5.2% with constants that follow T. Both reproduce the kink. The other printed features were left out of this one-parameter fit, but the figure had already been examined when the reading was chosen. It was added after the first scores, not declared in advance (board message 3627) |
+| Charge balance | [H⁺] = [HCO₃⁻] + 2[CO₃²⁻] + [HSO₃⁻] + 2[SO₃²⁻] + [OH⁻], with activity taken as concentration | Fresh rain water, as the text describes it. Bar is taken as atm (1.3%) |
 | P₁/₂ | Eq. (8) through Π₀ at (T₀, 320 ppm), temperature factor included: 205.6 ppm | As stated. Volk's eq. (13), (Π_max/Π₀ − 1)(P₀ − P_min) = 310 ppm, omits the temperature factor and is scored as a reading |
 | Π outside its range | Zero below P_min and outside 0–50 °C | The temperature factor is negative beyond 50 °C and the CO₂ factor below P_min. A negative productivity has no meaning, and the caption says P_soil = P_atm once P_atm is too low |
 | C₃ world | A separate run with P_min = 150 ppm and P₁/₂ recalibrated (112.7 ppm) | The caption calls it "a C₃-only world with P_min = 150 p.p.m." The time at which the C₄ run passes 150 ppm (0.19 Gyr) is reported alongside |
-| The 1 ppm floor | P_atm is held at 1 ppm whenever F at 1 ppm already reaches F₀ | As stated. F − F₀ changes sign once in P_atm between 1 ppm and 10⁻² bar at every time tested, so the root is unique. F is not monotonic in P_atm everywhere: late on, high CO₂ warms T towards 50 °C and Π falls, but only where F is 6–9 times F₀ |
+| The 1 ppm floor | P_atm is held at 1 ppm whenever F at 1 ppm already reaches F₀; a level below the floor is never reached | As stated. F − F₀ changes sign once in P_atm between 1 ppm and 10⁻² bar at every time tested, so the root is unique. F is not monotonic in P_atm everywhere: late on, high CO₂ warms T towards 50 °C and Π falls, but only where F is 6–9 times F₀ |
 | σ | 5.670×10⁻⁸ W m⁻² K⁻⁴ | Not stated |
 | Range of the fits | T is reported only up to 373.15 K | The fits cover 0–100 °C, and the figure stops at 373 K |
 | ψ | log₁₀ | A natural log puts today at 283 K |
@@ -333,8 +345,9 @@ reaches 1 ppm, T depends on eqs (1)–(5) alone.
 **Readings** (`READINGS` in `ck1992.py`), each scored:
 
 - **faithful**: as above.
-- **so2_fitted**: the SO₂ term ×0.391, fitted to the printed kink.
-- **t0_printed**: T₀ = 15 °C.
+- **so2_fitted**: the SO₂ term ×0.283, fitted to the printed kink.
+- **textbook**: the constants of the first build.
+- **t0_printed**: T₀ = 288.15 K.
 - **chemistry_T**: equilibrium constants follow T.
 - **so2_half**, **so2_double**: the SO₂ term ×0.5 and ×2.
 - **volk_p_half**: Volk's P₁/₂.
@@ -349,51 +362,59 @@ reaches 1 ppm, T depends on eqs (1)–(5) alone.
 - CO₂ held at 320 ppm;
 - constant Sun.
 
-**Sensitivity rows** (fidelity only): eq. (4) ±0.5 K and eq. (5) +0.01,
-their stated mean errors.
+**Sensitivity rows** (fidelity only): eq. (4) ±0.5 K and eq. (5) +0.01, their
+stated mean errors, and eq. (4) +0.5 K with eq. (5) +0.005708 together
+(Codex, CK-R3).
 
 ### Results
 
 ![Reconstruction of Fig. 2](figures/ck1992_fig2.png)
 
-| Quantity | Stated | Faithful | SO₂ fitted to the kink | Printed (Fig. 2) |
-|---|---|---|---|---|
-| C₃ world reaches 150 ppm | ~0.5 Gyr | 0.44 | 0.49 | — |
-| P_atm reaches 10 ppm (the C₄ limit) | 0.9 Gyr | 0.79 | 0.863 (fitted) | 0.863 |
-| P_atm reaches 1 ppm | ~1 Gyr | 0.96 | 1.023 | 1.024 |
-| Π/Π₀ falls to 0.05 | — | 0.71 | 0.75 | 0.73 |
-| T reaches 300 K | — | 1.02 | 0.88 | 0.87 |
-| T at the floor where weathering exceeds supply | "above 300 K" | 297.3 K | 300.3 K | — |
-| T reaches 50 °C | ~1.5 Gyr | 1.32 | 1.32 | 1.33 |
-| T reaches 80 °C | ~1.5 Gyr | 1.46 | 1.46 | 1.47 |
-| T from 50 to 97 °C | < 0.2 Gyr (to 100 °C) | 0.226 | 0.226 | 0.227 |
+| Quantity | Stated | Faithful | Textbook constants | SO₂ fitted to the kink | Printed (Fig. 2) |
+|---|---|---|---|---|---|
+| C₃ world reaches 150 ppm | ~0.5 Gyr | 0.42 | 0.44 | 0.49 | — |
+| P_atm reaches 10 ppm (the C₄ limit) | 0.9 Gyr | 0.77 | 0.79 | 0.863 (fitted) | 0.863 |
+| P_atm reaches 1 ppm | ~1 Gyr | 0.93 | 0.96 | 1.023 | 1.024 |
+| Π/Π₀ falls to 0.05 | — | 0.69 | 0.71 | 0.75 | 0.73 |
+| T at 0.9 Gyr | — | 296.3 K | 297.3 K | 300.1 K | 300.2 K |
+| T at the floor where weathering exceeds supply | "above 300 K" | 296.3 K | 297.3 K | 300.3 K | — |
+| T reaches 50 °C | ~1.5 Gyr | 1.32 | 1.32 | 1.32 | 1.33 |
+| T reaches 80 °C | ~1.5 Gyr | 1.46 | 1.46 | 1.46 | 1.47 |
+| T from 50 to 97 °C | < 0.2 Gyr (to 100 °C) | 0.226 | 0.226 | 0.226 | 0.227 |
 
-- **The hot phase is reproduced exactly from eqs (1)–(5).** Once P_atm sits at
-  1 ppm, T crosses 50, 80, 90 and 97 °C within 0.007 Gyr of the printed
-  curve. This holds under every reading, because none of them changes the
-  climate. Near 340–360 K, dT/d ln S reaches about 2,700 K. Shifting eq. (4) by
-  its stated mean error (±0.5 K) therefore moves the T curve 24–33 px; the
-  printed curve was computed with these fits as published.
+- **The hot phase is reproduced from eqs (1)–(5) as printed.** Once P_atm
+  sits at 1 ppm, T crosses 50, 80, 90 and 97 °C within 0.007 Gyr of the
+  printed curve. This holds under every reading, because none of them changes
+  the climate. Near 340–360 K, dT/d ln S reaches about 2,700 K, so the
+  figure constrains the energy balance tightly, but jointly. Shifting eq. (4)
+  by +0.5 K alone moves T by 20–25 px. Adding 0.005708 to eq. (5) as well
+  restores the fit, to within 0.2 px of the faithful reading (CK-R3). The
+  figure therefore cannot measure either fit's error against the 143 climate
+  runs; it shows that the printed pair reproduces the printed curve.
 - **The low-CO₂ phase depends on how acid rain water is at low soil CO₂.**
   The SO₂ term sets a floor under a_H. A stronger floor stops a_H falling
   with P_soil, so T rises less to keep weathering at the modern rate, and the
-  10 ppm limit comes sooner. With the standard constants the model reaches
-  10 ppm at 0.79 Gyr and 1 ppm at 0.96 Gyr, and its merged P_soil = P_atm
-  curve lies 47 px from the printed one. With the SO₂ term ×0.391, fitted to
-  the kink alone, the curve reaches 1 ppm at 1.023 Gyr (printed 1.024) and T
-  reaches 300 K at 0.88 Gyr (printed 0.87). The floor threshold becomes
-  300.3 K ("above 300 K" in the text), the C₃ world reaches 150 ppm at
-  0.49 Gyr ("~0.5"), and every printed curve lies within a median 2.4 px of
-  the model.
+  10 ppm limit comes sooner. With the source-traced constants, the model
+  reaches 10 ppm at 0.77 Gyr and 1 ppm at 0.93 Gyr, and its merged
+  P_soil = P_atm curve lies 65 px from the printed one. The textbook set of
+  the first build gives 0.79 and 0.96 Gyr. With the SO₂ term ×0.283, fitted
+  to the kink alone, the features left out of the fit land on the figure: 1 ppm
+  at 1.023 Gyr (printed 1.024), T at 0.9 Gyr of 300.1 K (300.2), and Π/Π₀ = 0.05
+  at 0.745 Gyr (0.735, 0.011 Gyr later). The floor threshold becomes 300.3 K
+  ("above 300 K") and the C₃ world reaches 150 ppm at 0.49 Gyr ("~0.5").
+  Every printed curve lies within a median 2.4 px of the model.
+- **The paper's "0.9 Gyr" of constant temperature is an energy-budget
+  estimate** (Codex, CK-R4). The text gives 20.4 W m⁻² of infrared trapping
+  by 320 ppm of CO₂. Removing that much trapping offsets the Sun's
+  brightening, (1 − a₀)(S − S₀)/4 = 20.4 W m⁻², at **0.940 Gyr**. The coupled
+  run is a different calculation: T rises 8–12 K over the same 0.9 Gyr (12 K
+  in the figure).
 - **Declining productivity lengthens the span relative to constant
   productivity.** With Π held at Π₀ (Volk's case W3), the 10 ppm limit comes
-  at 0.50 Gyr instead of 0.79. As Π falls, so does the soil-CO₂ gradient, and
+  at 0.50 Gyr instead of 0.77. As Π falls, so does the soil-CO₂ gradient, and
   T must rise further to keep weathering at the modern rate. WHK's weathering
   law on atmospheric CO₂, with no soil or biology, gives 0.91 Gyr, but its
   P_atm curve lies 34 px from the printed one.
-- **The constant-temperature sentence is a figure of speech.** T rises
-  9–12 K over the first 0.9 Gyr. Holding T at T₀ literally would need
-  10 ppm by 0.49 Gyr and 1 ppm by 0.67 Gyr.
 
 ### Fidelity against the published paper
 
@@ -408,8 +429,9 @@ and each scale is a linear map of u or v fitted to its ticks:
 - S/S₀: all 21 ticks;
 - Π/Π₀ and T: all 11 ticks each.
 
-The largest tick residuals are 2.2–4.1 px. The printed ticks are unevenly
-spaced by a few pixels, so this, not the trace, limits the absolute accuracy.
+The largest tick residuals are 2.2–4.1 px (0.25 K on the T axis). The printed
+ticks are unevenly spaced by a few pixels, so this, not the trace, limits the
+absolute accuracy.
 
 **Traces.** Each curve is traced from knots read off the scan, by refining a
 dense polyline along its normals. A sample is kept only when its ±10 px
@@ -426,68 +448,88 @@ reason.
 
 **Two-way distances** (`fidelity/ck1992_two_way.csv`) run from the model,
 drawn on the calibrated axes, to the traced centres and back. Model samples
-are 0.25 px apart. Samples inside excluded boxes are dropped and counted, and
-no gap is bridged.
+are 0.25 px apart; samples inside excluded boxes are dropped and counted, and
+no gap is bridged. A reading is scored only on the trace centres at times
+where it has a value. Above 373.15 K, the top of the fits' range, it has none:
+the fixed-CO₂ control loses 112 of the 766 T centres and eq. (4) +0.5 K loses
+68. The faithful reading is rescored on the same centres, so each row is
+paired.
 
-| Curve | Reading | Model to trace: median / p95 (px) | Trace to model: median / p95 (px) |
-|---|---|---|---|
-| P_soil | **faithful** | 10.1 / 61.7 | 8.8 / 44.8 |
-| P_soil | **SO₂ fitted** | **2.4 / 4.9** | **2.3 / 5.1** |
-| P_soil | T₀ = 15 °C | 6.5 / 54.5 | 5.5 / 39.6 |
-| P_soil | Volk's P₁/₂ | 22.5 / 61.3 | 22.4 / 45.7 |
-| P_soil | null: Π held at Π₀ | 105 / 241 | 151 / 489 |
-| P_atm | **faithful** | 4.6 / 35.4 | 4.6 / 21.0 |
-| P_atm | **SO₂ fitted** | **1.2 / 3.4** | **1.1 / 3.5** |
-| P_atm | null: WHK weathering | 34.0 / 43.6 | 32.5 / 43.9 |
-| P_atm | null: CO₂ fixed | 141 / 275 | 151 / 310 |
-| P_soil = P_atm | **faithful** | 47.3 / 48.1 | 47.9 / 76.4 |
-| P_soil = P_atm | **SO₂ fitted** | **1.4 / 2.7** | **1.3 / 2.7** |
-| P_soil = P_atm | null: no SO₂ | 54.8 / 91.0 | 111 / 191 |
-| S/S₀ | **eq. (1)** | **1.6 / 4.3** | **1.6 / 4.7** |
-| S/S₀ | null: Gough (1981) | 5.1 / 9.6 | 5.1 / 9.9 |
-| S/S₀ | null: Lovelock & Whitfield's straight line | 50.9 / 126 | 60.8 / 138 |
-| Π/Π₀ | **faithful** | 2.4 / 11.4 | 2.6 / 13.1 |
-| Π/Π₀ | **SO₂ fitted** | **1.6 / 6.3** | **1.6 / 6.2** |
-| Π/Π₀ | Volk's P₁/₂ | 37.1 / 52.1 | 40.0 / 70.8 |
-| Π/Π₀ | null: Π held at Π₀ | — (on the frame) | 458 / 846 |
-| T | **faithful** | 3.3 / 21.8 | 3.4 / 21.7 |
-| T | **SO₂ fitted** | **2.2 / 4.7** | **2.1 / 4.9** |
-| T | eq. (4) − 0.5 K | 33.0 / 54.2 | 35.4 / 63.1 |
-| T | null: CO₂ fixed | 114 / 211 | 122 / 213 |
+| Curve | Reading | Centres used | Model to trace: median / p95 (px) | Trace to model: median / p95 (px) | Faithful, same centres: trace to model |
+|---|---|---|---|---|---|
+| P_soil | **faithful** | 415/415 | 17.5 / 92.5 | 13.3 / 64.2 | — |
+| P_soil | textbook constants | 415/415 | 10.1 / 61.7 | 8.8 / 44.8 | 13.3 / 64.2 |
+| P_soil | **SO₂ fitted** | 415/415 | **2.4 / 4.9** | **2.3 / 5.1** | 13.3 / 64.2 |
+| P_soil | Volk's P₁/₂ | 415/415 | 29.2 / 92.1 | 27.4 / 64.9 | 13.3 / 64.2 |
+| P_soil | null: Π held at Π₀ | 415/415 | 105 / 241 | 151 / 489 | 13.3 / 64.2 |
+| P_atm | **faithful** | 331/331 | 6.0 / 63.9 | 6.0 / 33.2 | — |
+| P_atm | **SO₂ fitted** | 331/331 | **1.2 / 3.4** | **1.1 / 3.5** | 6.0 / 33.2 |
+| P_atm | null: WHK weathering | 331/331 | 34.0 / 43.6 | 32.5 / 43.9 | 6.0 / 33.2 |
+| P_atm | null: CO₂ fixed | 331/331 | 141 / 275 | 151 / 310 | 6.0 / 33.2 |
+| P_soil = P_atm | **faithful** | 109/109 | 64.6 / 65.0 | 65.4 / 111.9 | — |
+| P_soil = P_atm | textbook constants | 109/109 | 47.3 / 48.1 | 47.9 / 76.4 | 65.4 / 111.9 |
+| P_soil = P_atm | **SO₂ fitted** | 109/109 | **1.4 / 2.6** | **1.3 / 2.7** | 65.4 / 111.9 |
+| P_soil = P_atm | null: no SO₂ | 109/109 | 54.8 / 91.0 | 111 / 191 | 65.4 / 111.9 |
+| S/S₀ | **eq. (1)** | 638/638 | **1.7 / 4.3** | **1.6 / 4.7** | — |
+| S/S₀ | null: Gough (1981) | 638/638 | 5.1 / 9.6 | 5.1 / 9.9 | 1.6 / 4.7 |
+| S/S₀ | null: Lovelock & Whitfield's straight line | 638/638 | 50.9 / 126 | 60.8 / 138 | 1.6 / 4.7 |
+| Π/Π₀ | **faithful** | 510/510 | 4.7 / 19.2 | 4.9 / 21.4 | — |
+| Π/Π₀ | **SO₂ fitted** | 510/510 | **1.6 / 6.2** | **1.6 / 6.2** | 4.9 / 21.4 |
+| Π/Π₀ | Volk's P₁/₂ | 510/510 | 40.1 / 52.7 | 42.6 / 71.7 | 4.9 / 21.4 |
+| Π/Π₀ | null: Π held at Π₀ | 510/510 | — (on the frame) | 458 / 846 | 4.9 / 21.4 |
+| T | **faithful** | 766/766 | 3.6 / 28.0 | 3.6 / 28.1 | — |
+| T | **SO₂ fitted** | 766/766 | **2.1 / 4.7** | **2.1 / 4.9** | 3.6 / 28.1 |
+| T | eq. (4) + 0.5 K | 698/766 | 25.2 / 57.4 | 19.8 / 57.4 | 3.6 / 29.2 |
+| T | eq. (4) + 0.5 K, eq. (5) + 0.005708 | 766/766 | 3.7 / 29.0 | 3.8 / 29.2 | 3.6 / 28.1 |
+| T | null: CO₂ fixed | 654/766 | 114 / 211 | 142 / 213 | 3.6 / 29.4 |
 
-The column errors in data units are in `fidelity/ck1992_fidelity.csv`. They
-cover the stretches flatter than 2 px/px. The SO₂-fitted reading scores 0.009
-decades (P_atm), 0.022 (P_soil), 0.0054 (Π/Π₀) and 0.46 K (T).
+The column errors in data units (`fidelity/ck1992_fidelity.csv`) cover the
+stretches flatter than 2 px/px, with the faithful reading rescored on the
+same points. The SO₂-fitted reading scores 0.009 decades (P_atm), 0.022
+(P_soil), 0.0054 (Π/Π₀) and 0.46 K (T), against 0.10, 0.38, 0.017 and
+1.30 K for the faithful reading. The fixed-CO₂ control scores 22.9 K on the
+559 shallow T points where it has values, against 1.32 K for the faithful
+reading on the same points.
 
 ![Overlay](fidelity/ck1992_overlay.png)
 
-**Coupled choices** (`fidelity/ck1992_coupled.csv`). Every alternative above
-was first scored at the faithful SO₂ factor, where the faithful reading itself
-misses the low-CO₂ phase. Here each is rescored with the factor refitted to
-the kink under it:
+**Coupled choices** (`fidelity/ck1992_coupled.csv`). Each alternative is
+rescored with the SO₂ factor refitted to the kink under it, so that none is
+judged against a base that misses the low-CO₂ phase. Distances are model to
+trace (median):
 
-| Base reading | SO₂ factor | Sulphur share today | Π/Π₀ at t = 0 (printed 1.002) | Median px: P_soil / P_atm / Π / T |
-|---|---|---|---|---|
-| **T₀ = present of the fits, 25 °C constants** | 0.391 | 2.4% | 1.000 | 2.4 / 1.2 / 1.6 / 2.1 |
-| T₀ = 288.15 K | 0.429 | 2.7% | 1.017 | 1.9 / 2.2 / 6.7 / 1.9 |
-| Constants follow T | 0.548 | 5.2% | 1.000 | 2.3 / 1.2 / 4.0 / 2.1 |
-| Volk's P₁/₂ | 0.391 | 2.4% | 0.879 | 14.0 / 8.4 / 32.1 / 1.9 |
+| Base reading | SO₂ factor | a_H(kink)/a_H(today) | Sulphur share of today's H⁺ | Π/Π₀ at t = 0 (printed 1.002) | Median px: P_soil / P_atm / Π / T |
+|---|---|---|---|---|---|
+| **Faithful: source-traced constants at 25 °C, T₀ = 287.89 K** | 0.283 | 0.172 | 2.4% | 1.000 | 2.4 / 1.2 / 1.6 / 2.2 |
+| T₀ = 288.15 K | 0.310 | 0.179 | 2.7% | 1.017 | 1.9 / 2.2 / 6.7 / 1.9 |
+| Constants follow T | 0.397 | 0.172 | 5.2% | 1.000 | 2.4 / 1.4 / 4.3 / 2.1 |
+| Textbook constants | 0.391 | 0.172 | 2.4% | 1.000 | 2.4 / 1.2 / 1.6 / 2.1 |
+| Textbook constants following T | 0.548 | 0.172 | 5.2% | 1.000 | 2.3 / 1.2 / 4.0 / 2.1 |
+| Volk's P₁/₂ | 0.283 | 0.172 | 2.4% | 0.879 | 14.0 / 8.4 / 32.1 / 1.9 |
 
-T₀ is decided by Π. The two treatments of the constants fit about equally
-well. The printed figure cannot separate them, and both put the C₄ limit at
-the printed 0.863 Gyr by construction.
+The kink fixes the same acidity ratio under every chemistry. Once the SO₂
+factor is refitted, the two constant sets are indistinguishable. Constants
+held at 25 °C fit Π somewhat better than constants that follow T.
 
 **Printed features** (`fidelity/ck1992_events.csv`), read from the traces:
 
-| Feature | Printed | Faithful | SO₂ fitted | T₀ = 15 °C |
+| Feature | Printed | Faithful | SO₂ fitted | T₀ = 288.15 K |
 |---|---|---|---|---|
 | P_atm at t = 0 | 324 ppm | 320 | 320 | 335 |
-| P_soil at t = 0 | 3,316 ppm | 3,200 | 3,200 | 3,264 |
+| P_soil at t = 0 | 3,316 ppm | 3,200 | 3,200 | 3,265 |
 | Π/Π₀ at t = 0 | 1.002 | 1 | 1 | 1.017 |
 | T at t = 0 | 288.3 K | 287.9 | 287.9 | 288.1 |
-| Kink in P_atm | 0.863 Gyr at 9.97 ppm | 0.793 | 0.863 | 0.800 |
-| P_atm reaches 1 ppm | 1.024 Gyr | 0.957 | 1.023 | 0.963 |
-| T at 0.9 Gyr | 300.2 K | 297.3 | 300.1 | 297.6 |
+| Kink in P_atm | 0.863 Gyr at 9.97 ppm | 0.767 | 0.863 | 0.774 |
+| P_atm reaches 1 ppm | 1.024 Gyr | 0.932 | 1.023 | 0.939 |
+| Π/Π₀ falls to 0.05 | 0.735 Gyr | 0.689 | 0.745 | 0.696 |
+| T at 0.9 Gyr | 300.2 K | 296.3 | 300.1 | 296.6 |
+| T reaches 300 K | 0.873 Gyr | 1.018 | 0.882 | 1.018 |
+
+The printed T curve runs almost flat near 300 K. Moving the level by the T
+axis's tick residual (±0.25 K) moves the printed crossing from 0.853 to
+0.991 Gyr, and a horizontal cut at 300 K meets ink over 0.84–1.00 Gyr
+(Codex, CK-R6). The 300 K timing is therefore weakly fixed; T at 0.9 Gyr is
+the better-conditioned comparison.
 
 **Stated numbers** (`fidelity/ck1992_claims.csv`):
 
@@ -496,7 +538,8 @@ the printed 0.863 Gyr by construction.
 | WHK's implied exponent on a_H | 0.6 | 0.6 (0.3/0.5) |
 | S rises at | ~0.12 W m⁻² Myr⁻¹ | 0.114 today; mean 0.124 over 0.9 Gyr |
 | C&K's reading of L&W: √P falls to zero at | 1.017 S₀ | 1.0186 S₀ from the faithful L&W rule |
-| Trapping by 320 ppm implied by L&W | ~4 W m⁻² | 4.07 with (1 − a₀)(0.017)S₀/4 and a₀ = 0.300 from eq. (5) |
+| Trapping by 320 ppm implied by L&W | ~4 W m⁻² | 4.07, with (1 − a₀)(0.017)S₀/4 and a₀ = 0.300 from eq. (5) |
+| Reducing CO₂ could hold T constant for | 0.9 Gyr | 0.940 Gyr for the stated 20.4 W m⁻² to offset the Sun |
 | Trapping by 320 ppm in C&K's model | 20.4 W m⁻² | not reproducible: needs the radiative–convective model |
 | With negligible CO₂, T exceeds 50 °C after | ~1.5 Gyr | 1.46 Gyr at 0.01 ppm (the fits' lower bound); 1.32 at the 1 ppm floor |
 | Ocean loss at 6×10¹¹ H cm⁻² s⁻¹ | ~1 Gyr | 0.97 Gyr for 1.4×10²¹ kg of water (not stated) |
@@ -522,23 +565,26 @@ the printed 0.863 Gyr by construction.
 ### Caldeira & Kasting (1992)
 
 - **Box 1 reproduces Fig. 2,** once one quantity the paper does not print is
-  fixed: the strength of the SO₂ term in rain-water acidity. Fitted to the
-  printed kink alone, it brings all five printed curves within a median
-  2.4 px and a p95 of 6.3 px. The features it was not fitted to land within
-  0.01 Gyr: P_atm reaching 1 ppm, T reaching 300 K, and Π/Π₀ falling to 0.05.
+  fixed: how much acidity falls between today and the 10 ppm kink, which
+  depends on the sulphur term. Fitted to the printed kink alone, it brings all
+  five printed curves within a median 2.4 px and a p95 of 6.3 px. The features
+  left out of the fit land on the figure: P_atm reaches 1 ppm within 0.001 Gyr,
+  T at 0.9 Gyr comes within 0.12 K, and Π/Π₀ reaches 0.05 within 0.011 Gyr.
   Holding productivity fixed, using WHK's weathering law, or fixing CO₂ each
-  miss the P_atm and T curves by 6 to 80 times as much at the 95th
+  miss the P_atm and T curves by 6 to 90 times as much at the 95th
   percentile.
 - **The hot phase follows from eqs (1)–(5) as printed,** to within 0.007 Gyr
-  at 50, 80, 90 and 97 °C. The figure is sensitive enough to rule out an
-  offset of 0.5 K in eq. (4).
+  at 50, 80, 90 and 97 °C. The figure fixes the energy balance tightly, but
+  it cannot separate the greenhouse fit from the albedo fit.
 - **The Sun is eq. (1).** The printed S/S₀ lies within a median 1.6 px of it.
   Gough's (1981) law misses by three times as much, and Lovelock & Whitfield's
   straight line by 30.
-- **The stated lifespans hold to their rounding.** The C₃ world reaches
-  150 ppm at 0.44–0.49 Gyr ("~0.5"). The C₄ limit comes at 0.79–0.86 Gyr
-  ("0.9"), and the 1 ppm floor at 0.96–1.02 Gyr ("~1 Gyr"). Each range runs
-  from the standard constants to the fitted SO₂ term.
+- **The stated lifespans hold to their rounding, with the fitted sulphur
+  term.** The C₃ world reaches 150 ppm at 0.49 Gyr ("~0.5"), the C₄ limit
+  comes at 0.86 Gyr ("0.9"), and the 1 ppm floor at 1.02 Gyr ("~1 Gyr"). With
+  the source-traced constants they come at 0.42, 0.77 and 0.93 Gyr.
+- **The "0.9 Gyr" of constant temperature is the paper's own energy budget:**
+  20.4 W m⁻² of CO₂ trapping offsets the brightening Sun at 0.94 Gyr.
 - **C&K's reading of Lovelock & Whitfield checks out against our
   reconstruction.** Their √P ∝ 1.017S₀ − S compares with 1.0186 from the
   faithful L&W rule, and ~4 W m⁻² of trapping comes out at 4.07 W m⁻².
@@ -564,8 +610,6 @@ the printed 0.863 Gyr by construction.
 - **"From 50 °C to 100 °C in <0.2 Gyr."** The paper's own figure takes
   0.227 Gyr to go from 50 to 97 °C, the highest level the trace reaches; the
   reconstruction takes 0.226 Gyr.
-- **"Maintain a constant temperature for the next 0.9 Gyr"** describes a rise
-  of 12 K in the figure (288.3 to 300.2 K) and 9–12 K in the reconstruction.
 - **"The present level of 350 p.p.m."** appears in the text, but the model
   uses 320 ppm.
 
@@ -594,27 +638,29 @@ the printed 0.863 Gyr by construction.
 
 - **The acid chemistry at low soil CO₂.** This is the one ingredient that
   moves the CO₂-limited lifespan:
-  - with standard carbonate and SO₂ constants, the C₄ limit comes at
-    0.79 Gyr;
-  - the printed figure implies an SO₂ term 0.39 times as strong (0.55 with
-    temperature-dependent constants), which gives 0.86 Gyr.
+  - with the constants traced to the paper's sources, the C₄ limit comes at
+    0.77 Gyr;
+  - with the textbook set of the first build, at 0.79 Gyr;
+  - the printed figure requires a_H to fall to 0.172 of today's by the kink.
+    That holds with an SO₂ term 0.28 times as strong (sulphur 2.4% of
+    today's soil-water H⁺, constants at 25 °C) or 0.40 times (5.2%, constants
+    following T), and gives 0.86 Gyr.
 
-  The fit fixes only the share of today's soil-water acidity that sulphur
-  carries: 2.4%, against 6.0% with the standard constants. Neither Chameides
-  (1984) nor Stumm & Morgan (1981) is in hand. Whether the difference lies in
-  the constants,
-  in how SO₂ was dissolved, or in the temperature at which the constants were
-  evaluated cannot be settled without C&K's own values.
+  Chameides (1984) and Stumm & Morgan (1981) are not in hand. The constants
+  used are secondary attributions (Butler 1991; Sellegri et al. 2003; Sander's
+  compilation). Whether the difference lies in the constants, in how SO₂ was
+  dissolved, or in the temperature at which the constants were evaluated
+  cannot be settled without C&K's own values.
+- **How today was closed.** With the printed equations, the figure favours
+  closing at the fits' present, 287.89 K, which rounds to the stated 15 °C. A
+  small adjustment to eq. (4) that closes at 288.15 K instead fits about as
+  well (CK-R3), so the figure does not identify which was done.
 - **The 20.4 W m⁻² of trapping by 320 ppm, and 3.4 W m⁻² for doubled CO₂,**
   come from the radiative–convective model itself, not from the fits in
   Box 1, and are not reproduced here.
-- **The 1 Gyr ocean-loss estimate** uses an ocean mass that the paper does not
-  state; 1.4×10²¹ kg gives 0.97 Gyr.
-- **How today was closed.** The fits put today at 287.89 K, which rounds to
-  the stated 15 °C. The printed Π/Π₀ starts at 1.002, so the computation
-  closed today at the climate's own temperature, or with fits that differ
-  from the printed coefficients within their stated errors.
 - **"Exceed 50 °C after ~1.5 Gyr"** is stated "with negligible atmospheric
   CO₂", and the fits give 1.46 Gyr at 0.01 ppm, their lower bound. The model as
   run holds 1 ppm and reaches 50 °C at 1.32 Gyr, as Fig. 2 does (1.33). Which
   case the sentence means is open.
+- **The 1 Gyr ocean-loss estimate** uses an ocean mass that the paper does not
+  state; 1.4×10²¹ kg gives 0.97 Gyr.

@@ -44,7 +44,7 @@ def test_present_day_closure():
     assert s["P_soil_ppm"] == pytest.approx(3200.0, rel=1e-9)
     assert s["Pi_ratio"] == pytest.approx(1.0, rel=1e-9)
     s = m.state(0.0, m.READINGS["t0_printed"])  # T0 = 15 C cannot close today with these fits
-    assert s["P_atm_ppm"] == pytest.approx(335.32, abs=0.01) and s["Pi_ratio"] == pytest.approx(1.0169, abs=1e-4)
+    assert s["P_atm_ppm"] == pytest.approx(335.40, abs=0.01) and s["Pi_ratio"] == pytest.approx(1.0171, abs=1e-4)
 
 
 def test_half_saturation():
@@ -67,7 +67,8 @@ def test_imports_from_whk():
 def test_h_activity_limits():
     r = replace(m.FAITHFUL, so2_factor=0.0)
     for p in (3.2e-3, 3.2e-4):
-        assert m.h_activity(p, 298.15, r) == pytest.approx(np.sqrt(m.CO2_KH[0] * m.CO2_K1[0] * p), rel=2e-3)
+        k = m.constants(298.15, r)
+        assert m.h_activity(p, 298.15, r) == pytest.approx(np.sqrt(k["KH"] * k["K1"] * p), rel=2e-3)
     low = m.h_activity(1e-6, 298.15)
     assert low > 2 * m.h_activity(1e-6, 298.15, r)  # SO2 sets the floor at low soil CO2
 
@@ -77,15 +78,35 @@ def test_floor_is_held():
     for t in (1.0, 1.2, 1.5):
         assert m.co2(t, m.FAITHFUL, ref) == m.P_FLOOR
         assert m.weathering(m.P_FLOOR, float(m.solar(t)), m.FAITHFUL, ref) >= 1.0
-    assert m.co2_time(m.P_FLOOR) == pytest.approx(0.95675, abs=1e-4)
+    assert m.co2_time(m.P_FLOOR) == pytest.approx(0.93195, abs=1e-4)
+
+
+def test_event_search_boundaries():
+    assert m.co2_time(0.5e-6) == float("inf")  # below the floor: never reached
+    assert m.co2_time(0.5e-6, m.READINGS["so2_fitted"]) == float("inf")
+    assert m.co2_time(m.P0, m.CONTROLS["fixed_co2"]) == 0.0  # holds at t = 0
+    assert m.first_crossing(lambda t: 1.0, 1.0, t_max=0.0) == 0.0
+    assert m.first_crossing(lambda t: 2.0, 1.0, t_max=0.0) == float("inf")
+    assert m.first_crossing(lambda t: 1.0 - t, 0.5, t_max=0.5, step=0.5) == pytest.approx(0.5)
+
+
+def test_constants_traced_to_the_sources():
+    k = m.constants(298.15)
+    assert -np.log10([k["KH"], k["K1"], k["K2"], k["KW"]]) == pytest.approx([1.47, 6.352, 10.329, 13.999])
+    assert (k["HS"], k["S1"], k["S2"]) == (1.23, 1.7e-2, 6.3e-8)
+    k15 = m.constants(288.15, m.READINGS["chemistry_T"])  # Butler's 15 C row
+    assert -np.log10([k15["KH"], k15["K1"], k15["K2"]]) == pytest.approx([1.33, 6.419, 10.430])
+    t = m.READINGS["textbook"]
+    assert m.co2_time(m.P_MIN_C4, t) == pytest.approx(0.79347, abs=1e-4)
 
 
 def test_lifespans():
-    assert m.co2_time(m.P_MIN_C3, m.C3) == pytest.approx(0.44383, abs=1e-4)
-    assert m.co2_time(m.P_MIN_C4) == pytest.approx(0.79347, abs=1e-4)
+    assert m.co2_time(m.P_MIN_C3, m.C3) == pytest.approx(0.42302, abs=1e-4)
+    assert m.co2_time(m.P_MIN_C4) == pytest.approx(0.76697, abs=1e-4)
     fit = m.READINGS["so2_fitted"]
     assert m.co2_time(m.P_MIN_C4, fit) == pytest.approx(0.8634, abs=2e-4)
-    assert m.co2_time(m.P_MIN_C3, replace(fit, p_min=m.P_MIN_C3)) == pytest.approx(0.48887, abs=1e-4)
+    assert m.co2_time(m.P_MIN_C3, replace(fit, p_min=m.P_MIN_C3)) == pytest.approx(0.48882, abs=1e-4)
+    assert m.kink_acidity_ratio(0.863374) == pytest.approx(0.17233, abs=1e-5)  # chemistry-free
     assert m.floor_threshold_T(fit) == pytest.approx(300.25, abs=0.01)
     for level, t in ((323.15, 1.32432), (353.15, 1.46469), (373.15, 1.57097)):
         assert m.temperature_time(level) == pytest.approx(t, abs=1e-4)
@@ -121,21 +142,26 @@ def test_fidelity_against_scan(tmp_path):
         assert sum(v for k, v in tr.reasons.items() if k in ("none", "two strokes", "merged")) <= 6, (c, tr.reasons)
 
     assert f.fit_so2_factor(PDF) == pytest.approx(m.SO2_FIT_FACTOR, abs=2e-4)
-    assert m.so2_share() == pytest.approx(0.0598, abs=1e-4)
-    assert m.so2_share(m.READINGS["so2_fitted"]) == pytest.approx(0.0243, abs=1e-4)
+    assert m.so2_share() == pytest.approx(0.0811, abs=1e-4)
+    assert m.so2_share(m.READINGS["so2_fitted"]) == pytest.approx(0.0244, abs=1e-4)
     co = {r["base"]: r for r in f.coupled(PDF)}  # alternatives with the SO2 factor refitted under each
-    px = "Pi_ratio median px"
+    px = "Pi_ratio model_to_trace median px"
     assert co["faithful"][px] < 2 and co["t0_printed"][px] > 3 * co["faithful"][px]
     assert co["volk_p_half"][px] > 20
+    for k in ("faithful", "chemistry_T", "textbook", "textbook_chemistry_T"):  # one ratio, several shares
+        assert co[k]["aH_kink_over_aH_today"] == pytest.approx(0.17233, abs=1e-5)
+    assert co["chemistry_T"]["so2_share_today"] > 2 * co["faithful"]["so2_share_today"]
 
     ev = {r["feature"]: r for r in f.events(PDF)}
     assert abs(ev["Pi_ratio at t=0"]["printed"] - 1.0) < 0.006   # rejects T0 = 15 C (1.017)
-    assert abs(np.log10(ev["P_atm_ppm at t=0"]["printed"] / 320)) < abs(np.log10(ev["P_atm_ppm at t=0"]["printed"] / 335.3))
     for k in ("T reaches 323.15 K, t Gyr", "T reaches 353.15 K, t Gyr", "T reaches 370 K, t Gyr"):
         assert abs(ev[k]["printed"] - ev[k]["faithful"]) < 0.01, k  # hot phase, every reading
-    for k in ("P_atm reaches 1 ppm, t Gyr", "T reaches 300 K, t Gyr", "Pi_ratio falls to 0.05, t Gyr"):
-        assert abs(ev[k]["printed"] - ev[k]["so2_fitted"]) < 0.015, k  # not fitted: tests of the fit
-        assert abs(ev[k]["printed"] - ev[k]["faithful"]) > abs(ev[k]["printed"] - ev[k]["so2_fitted"]), k
+    for k, tol in (("P_atm reaches 1 ppm, t Gyr", 0.002), ("Pi_ratio falls to 0.05, t Gyr", 0.011), ("T at 0.9 Gyr, K", 0.2)):
+        assert abs(ev[k]["printed"] - ev[k]["so2_fitted"]) < tol, k  # left out of the one-parameter fit
+        assert abs(ev[k]["printed"] - ev[k]["faithful"]) > 3 * abs(ev[k]["printed"] - ev[k]["so2_fitted"]), k
+    # the printed T curve is nearly flat at 300 K: the axis residual alone moves its crossing by >0.1 Gyr
+    lo, hi = (ev[k]["printed"] for k in ev if "axis residual" in k)
+    assert hi - lo > 0.1
 
     tw = {(r["curve"], r["reading"]): r for r in f.two_way(PDF)}
     for c in f.CURVES:
@@ -145,6 +171,16 @@ def test_fidelity_against_scan(tmp_path):
         assert r["model_to_trace_median_px"] < 3 and r["trace_to_model_median_px"] < 3, c
         assert r["max_model_spacing_px"] < 0.26
     assert tw[("merged", "faithful")]["model_to_trace_median_px"] > 20
+    # paired coverage: a reading is scored only where it has values, and so is its comparator
+    fx = tw[("T_K", "fixed_co2")]
+    assert fx["trace_points_without_value"] == 112 and fx["trace_points_used"] == 654
+    assert fx["trace_to_model_p95_px"] > 5 * fx["faithful_trace_to_model_p95_px_same_points"]
+    assert tw[("T_K", "dT_plus_0.5")]["trace_points_without_value"] == 68
+    joint = tw[("T_K", "dT_plus_0.5_albedo_plus_0.005708")]  # greenhouse and albedo trade off
+    assert abs(joint["model_to_trace_median_px"] - tw[("T_K", "faithful")]["model_to_trace_median_px"]) < 0.5
+    sco = {(r["curve"], r["reading"]): r for r in f.scores(PDF)}
+    assert sco[("T_K", "fixed_co2")]["used"] < sco[("T_K", "faithful")]["used"]
+    assert sco[("T_K", "fixed_co2")]["rmse"] > 20 * sco[("T_K", "fixed_co2")]["faithful_rmse_same_points"] / 2
     sun = tw[("S_ratio", "faithful")]["model_to_trace_median_px"]
     assert sun < 2 and tw[("S_ratio", "Gough (1981)")]["model_to_trace_median_px"] > 2.5 * sun
     assert tw[("S_ratio", "Lovelock & Whitfield straight line")]["model_to_trace_median_px"] > 20 * sun

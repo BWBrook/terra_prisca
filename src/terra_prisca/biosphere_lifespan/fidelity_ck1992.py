@@ -39,6 +39,8 @@ SENSITIVITY = {
     "dT_minus_0.5": replace(m.FAITHFUL, name="eq. (4) - 0.5 K (its stated mean error)", dT_offset=-0.5),
     "dT_plus_0.5": replace(m.FAITHFUL, name="eq. (4) + 0.5 K", dT_offset=0.5),
     "albedo_plus_0.01": replace(m.FAITHFUL, name="eq. (5) + 0.01 (its stated mean error)", albedo_offset=0.01),
+    "dT_plus_0.5_albedo_plus_0.005708": replace(m.FAITHFUL, name="eq. (4) + 0.5 K with eq. (5) + 0.005708 (Codex CK-R3)",
+                                                dT_offset=0.5, albedo_offset=0.005708),
 }
 SCORED = {**m.READINGS, **m.CONTROLS, **SENSITIVITY}
 
@@ -105,22 +107,28 @@ def _candidates(curve: str) -> dict:
 
 
 def scores(pdf: Path = s.DEFAULT_PDF) -> list[dict]:
+    """Column errors in data units on the shallow stretches of each trace.
+    A reading is scored only where it has a value (T leaves the climate fits'
+    range at 373.15 K); the faithful reading is rescored on exactly the same
+    points, so every row is a paired comparison."""
     sc, tr = _traces(pdf)
     data = traced(sc, tr)
     rows = []
     for curve in CURVES:
         d = data[curve]
         keep = _shallow(sc, curve, tr[curve].centres)
+        y0 = _model_values(curve, d[:, 0], m.FAITHFUL)
         for key, r in _candidates(curve).items():
             y = _model_values(curve, d[:, 0], r)
-            ok = keep & np.isfinite(y)
-            res = d[ok, 1] - y[ok]
+            ok = keep & np.isfinite(y) & np.isfinite(y0)
+            res, res0 = d[ok, 1] - y[ok], d[ok, 1] - y0[ok]
             rows.append({"curve": curve, "reading": key, "units": UNITS[curve],
-                         "points": int(len(d)), "used": int(ok.sum()),
-                         "no_model_value": int((keep & ~np.isfinite(y)).sum()),
+                         "points": int(len(d)), "shallow": int(keep.sum()), "used": int(ok.sum()),
+                         "shallow_without_value": int((keep & ~ok).sum()),
                          "rmse": float(np.sqrt(np.mean(res ** 2))) if ok.any() else np.nan,
                          "bias": float(res.mean()) if ok.any() else np.nan,
-                         "max_abs": float(np.abs(res).max()) if ok.any() else np.nan})
+                         "max_abs": float(np.abs(res).max()) if ok.any() else np.nan,
+                         "faithful_rmse_same_points": float(np.sqrt(np.mean(res0 ** 2))) if ok.any() else np.nan})
     return rows
 
 
@@ -139,40 +147,50 @@ def _model_px(sc: s.Scan, curve: str, r, t_lo: float, t_hi: float) -> np.ndarray
     return densify(px, 0.25)
 
 
+def _distances(sc: s.Scan, curve: str, r, ink: np.ndarray, t_ink: np.ndarray) -> dict:
+    """Two-way distances between the model and the traced centres where the
+    model has values. Centres at times where the model has none are left out
+    and counted; model samples in excluded boxes or frame margins are dropped;
+    no gap is bridged."""
+    y = _model_values(curve, t_ink, r)
+    sup = np.isfinite(y)
+    out = {"trace_points_used": int(sup.sum()), "trace_points_without_value": int((~sup).sum())}
+    if sup.sum() < 2:
+        return out
+    mp = _model_px(sc, curve, r, t_ink[sup].min(), t_ink[sup].max())
+    if len(mp) < 2:
+        return out
+    pname = s.CURVE_AXES[curve][0]
+    keep = np.array([s._excluded(x, yy, sc, pname) is None for x, yy in mp])
+    to_model = cKDTree(mp).query(ink[sup])[0]
+    out.update({"model_samples": int(keep.sum()), "model_samples_excluded": int((~keep).sum()),
+                "max_model_spacing_px": float(np.hypot(*np.diff(mp, axis=0).T).max()),
+                "trace_to_model_median_px": float(np.median(to_model)),
+                "trace_to_model_p95_px": float(np.percentile(to_model, 95))})
+    if keep.any():
+        to_ink = cKDTree(ink).query(mp[keep])[0]
+        out.update({"model_to_trace_median_px": float(np.median(to_ink)),
+                    "model_to_trace_p95_px": float(np.percentile(to_ink, 95))})
+    return out
+
+
 def two_way(pdf: Path = s.DEFAULT_PDF) -> list[dict]:
-    """Distances between the model curve, drawn on the scan's calibrated axes,
-    and the traced centres. Model samples inside excluded boxes or frame
-    margins are dropped (the trace has no points there); no gap is bridged."""
+    """Distances between each reading, drawn on the scan's calibrated axes, and
+    the traced centres, with the faithful reading rescored on the same trace
+    points (paired)."""
     sc, tr = _traces(pdf)
     data = traced(sc, tr)
-    pname = {c: s.CURVE_AXES[c][0] for c in CURVES}
     rows = []
     for curve in CURVES:
-        ink = tr[curve].centres
-        t_lo, t_hi = data[curve][:, 0].min(), data[curve][:, 0].max()
+        ink, t_ink = tr[curve].centres, data[curve][:, 0]
         for key, r in _candidates(curve).items():
-            mp = _model_px(sc, curve, r, t_lo, t_hi)
-            if not len(mp):
-                continue
-            keep = np.array([s._excluded(x, y, sc, pname[curve]) is None for x, y in mp])
-            mk = mp[keep]
-            if not len(mk):  # the whole model curve lies in excluded boxes or frame margins
-                to_model = cKDTree(mp).query(ink)[0]
-                rows.append({"curve": curve, "reading": key, "model_samples": 0,
-                             "model_samples_excluded": int((~keep).sum()), "trace_points": int(len(ink)),
-                             "trace_to_model_median_px": float(np.median(to_model)),
-                             "trace_to_model_p95_px": float(np.percentile(to_model, 95))})
-                continue
-            to_ink = cKDTree(ink).query(mk)[0]
-            to_model = cKDTree(mp).query(ink)[0]
-            gaps = np.hypot(*np.diff(mp, axis=0).T)
-            rows.append({"curve": curve, "reading": key, "model_samples": int(keep.sum()),
-                         "model_samples_excluded": int((~keep).sum()), "trace_points": int(len(ink)),
-                         "max_model_spacing_px": float(gaps.max()),
-                         "model_to_trace_median_px": float(np.median(to_ink)),
-                         "model_to_trace_p95_px": float(np.percentile(to_ink, 95)),
-                         "trace_to_model_median_px": float(np.median(to_model)),
-                         "trace_to_model_p95_px": float(np.percentile(to_model, 95))})
+            y = _model_values(curve, t_ink, r)
+            sup = np.isfinite(y)
+            row = {"curve": curve, "reading": key, "trace_points": int(len(ink)), **_distances(sc, curve, r, ink, t_ink)}
+            base = _distances(sc, curve, m.FAITHFUL, ink[sup], t_ink[sup])
+            for k in ("model_to_trace_median_px", "model_to_trace_p95_px", "trace_to_model_median_px", "trace_to_model_p95_px"):
+                row[f"faithful_{k}_same_points"] = base.get(k, np.nan)
+            rows.append(row)
     return rows
 
 
@@ -259,7 +277,9 @@ def fit_so2_factor(pdf: Path = s.DEFAULT_PDF, base: m.Reading = m.FAITHFUL) -> f
 
 
 COUPLED_BASES = {"faithful": m.FAITHFUL, "t0_printed": m.READINGS["t0_printed"],
-                 "chemistry_T": m.READINGS["chemistry_T"], "volk_p_half": m.READINGS["volk_p_half"]}
+                 "chemistry_T": m.READINGS["chemistry_T"], "textbook": m.READINGS["textbook"],
+                 "textbook_chemistry_T": replace(m.READINGS["textbook"], chemistry_T="T"),
+                 "volk_p_half": m.READINGS["volk_p_half"]}
 OUT_OF_SAMPLE = ("Pi_ratio at t=0", "P_atm reaches 1 ppm, t Gyr", "Pi_ratio falls to 0.05, t Gyr",
                  "T reaches 300 K, t Gyr", "T at 0.9 Gyr, K")
 
@@ -275,19 +295,18 @@ def coupled(pdf: Path = s.DEFAULT_PDF) -> list[dict]:
         fac = fit_so2_factor(pdf, base)
         r = replace(base, name=f"{key}, SO2 refitted", so2_factor=fac)
         ev = model_events(r)
-        row = {"base": key, "so2_factor": fac, "so2_share": m.so2_share(r)}
+        row = {"base": key, "so2_factor": fac, "aH_kink_over_aH_today": m.kink_acidity_ratio(pr["kink in P_atm, t Gyr"], r),
+               "so2_share_today": m.so2_share(r)}
         for k in OUT_OF_SAMPLE:
             row[f"{k} (printed {pr[k]:.4g})"] = ev[k]
         data = traced(sc, tr)
         for c in CURVES:
             if c == "S_ratio":
                 continue
-            ink = tr[c].centres
-            t_lo, t_hi = data[c][:, 0].min(), data[c][:, 0].max()
-            mp = _model_px(sc, c, r, t_lo, t_hi)
-            keep = np.array([s._excluded(x, y, sc, s.CURVE_AXES[c][0]) is None for x, y in mp])
-            row[f"{c} median px"] = float(np.median(cKDTree(ink).query(mp[keep])[0]))
-            row[f"{c} p95 px"] = float(np.percentile(cKDTree(mp).query(ink)[0], 95))
+            dist = _distances(sc, c, r, tr[c].centres, data[c][:, 0])
+            row[f"{c} model_to_trace median px"] = dist.get("model_to_trace_median_px", np.nan)
+            row[f"{c} trace_to_model median px"] = dist.get("trace_to_model_median_px", np.nan)
+            row[f"{c} trace_to_model p95 px"] = dist.get("trace_to_model_p95_px", np.nan)
         rows.append(row)
     return rows
 
@@ -298,9 +317,22 @@ EVENT_READINGS = {"faithful": m.FAITHFUL, "so2_fitted": m.READINGS["so2_fitted"]
 
 
 def events(pdf: Path = s.DEFAULT_PDF) -> list[dict]:
+    """Printed and reconstructed values at the figure's features. The printed T
+    curve runs almost flat near 300 K, so the 300 K crossing is repeated at
+    300 K -/+ the temperature axis's largest tick residual, to show how
+    poorly the trace fixes its time; T at 0.9 Gyr is the better-conditioned
+    comparison there."""
     pr = printed_events(pdf)
     mod = {k: model_events(r) for k, r in EVENT_READINGS.items()}
-    return [{"feature": f, "printed": v, **{k: mod[k][f] for k in mod}} for f, v in pr.items()]
+    rows = [{"feature": f, "printed": v, **{k: mod[k][f] for k in mod}} for f, v in pr.items()]
+    sc, tr = _traces(pdf)
+    T = traced(sc, tr)["T_K"]
+    ax = sc.axes[("lower", "T_K")]
+    delta = ax.residual * abs(ax.slope)
+    for level in (300.0 - delta, 300.0 + delta):
+        rows.append({"feature": f"T reaches {level:.3f} K (300 K -/+ axis residual), t Gyr", "printed": _first_t(T, level),
+                     **{k: m.temperature_time(level, r) for k, r in EVENT_READINGS.items()}})
+    return rows
 
 
 def calibration(pdf: Path = s.DEFAULT_PDF) -> list[dict]:
@@ -331,7 +363,9 @@ def claims() -> list[dict]:
     ocean_kg, earth_cm2 = 1.4e21, 4 * np.pi * (6.371e8) ** 2
     h_atoms = 2 * ocean_kg * 1e3 / 18.015 * 6.02214e23 / earth_cm2
     t50_low = m.first_crossing(lambda t: m.temperature(float(m.solar(t)), m.P_FIT[0]), 323.15)
-    T09 = m.state(0.9)["T_K"] - m.state(0.0)["T_K"]
+    from scipy.optimize import brentq
+
+    t_offset = brentq(lambda t: (1.0 - a0) * (float(m.solar(t)) - m.S0) / 4.0 - 20.4, 0.0, 2.0, xtol=1e-9)
     return [
         {"claim": "WHK's weathering implies an exponent 0.6 on aH", "printed": 0.6,
          "reconstructed": whk1981.FAITHFUL.co2_exponent / 0.5,
@@ -348,9 +382,11 @@ def claims() -> list[dict]:
          "note": "the printed kink is in ck1992_events.csv"},
         {"claim": "Patm reaches 1 ppm after ~1 Gyr", "printed": 1.0, "reconstructed": m.co2_time(m.P_FLOOR),
          "so2_fitted": m.co2_time(m.P_FLOOR, fit), "note": ""},
-        {"claim": "constant temperature for the next 0.9 Gyr", "printed": 0.9, "reconstructed": T09,
-         "so2_fitted": m.state(0.9, fit)["T_K"] - m.state(0.0, fit)["T_K"],
-         "note": f"T rises by this many K over 0.9 Gyr in the faithful run; held literally at T0, CO2 must reach 10 ppm by {m.constant_T_time(10e-6):.3f} Gyr and 1 ppm by {m.constant_T_time(1e-6):.3f} Gyr"},
+        {"claim": "removing CO2's 20.4 W m-2 of trapping could hold T constant for ~0.9 Gyr", "printed": 0.9,
+         "reconstructed": t_offset,
+         "note": f"Gyr at which (1 - a0)(S - S0)/4 = 20.4 W m-2 (Codex CK-R4); the coupled run warms by "
+                 f"{m.state(0.9)['T_K'] - m.state(0.0)['T_K']:.1f} K (faithful) or {m.state(0.9, fit)['T_K'] - m.state(0.0, fit)['T_K']:.1f} K "
+                 f"(fitted) over 0.9 Gyr; ck1992_events.csv has the printed T"},
         {"claim": "with negligible CO2, T exceeds 50 C after ~1.5 Gyr", "printed": 1.5, "reconstructed": t50_low,
          "note": f"Patm = 0.01 ppm (the fit's lower bound); at the 1 ppm floor, {t50:.3f} Gyr"},
         {"claim": "T passes 80 C at ~1.5 Gyr (caption)", "printed": 1.5, "reconstructed": m.temperature_time(353.15), "note": ""},

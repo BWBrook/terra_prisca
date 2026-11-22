@@ -46,22 +46,36 @@ EFOLD_K = whk1981.FAITHFUL.efold_K  # 13.7 K, taken from Walker, Hays & Kasting 
 T_FIT = (273.15, 373.15)            # range of the 143 climate-model runs behind eqs (4)-(5)
 P_FIT = (1e-8, 1e-2)                # bar
 
-# Equilibrium constants at 298.15 K, with van 't Hoff coefficients -dH/R (K)
-# for the temperature-dependent reading. Units M atm-1 and M; bar is taken as
-# atm. The paper takes carbonate from Stumm & Morgan (1981) and sulphur from
-# Chameides (1984), doi:10.1029/JD089iD03p04739; neither is in hand. These are
-# standard values, not read from those sources. Sander's compilation
-# (henrys-law.org, read 21 Nov 2026) lists Chameides' Henry constants as
-# 1.216 M atm-1 (3100 K) for SO2 and 0.0314 M atm-1 (2400 K) for CO2; the
-# dissociation constants are unverified.
-CO2_KH, CO2_K1, CO2_K2 = (10 ** -1.47, 2420.0), (10 ** -6.35, -1000.0), (10 ** -10.33, -1760.0)
-SO2_KH, SO2_K1, SO2_K2 = (1.23, 3120.0), (1.23e-2, 2010.0), (6.61e-8, 1500.0)
-KW = (1.0e-14, -6716.0)
+# Equilibrium constants (M atm-1 and M; bar is taken as atm). The paper takes
+# the carbon system from Stumm & Morgan (1981, ref. 14) and the sulphur system
+# from Chameides (1984, ref. 23), doi:10.1029/JD089iD03p04739. Neither is in
+# hand; the faithful set is traced to them through later tables:
+#   carbonate and water: Butler (1991), Carbon Dioxide Equilibria and Their
+#     Applications, Table 2.2, p. 17 -- pK_H, pK1, pK2, pKw "selected by Stumm,
+#     W. and Morgan, J. J. 1981 ... pp. 204-206", 0-50 C and 100 C;
+#   S(IV) dissociation: Sellegri et al. (2003), Atmos. Chem. Phys. 3, 1509,
+#     Table 5, p. 1517 -- K1 = 1.7e-2 M (-dH/R 2090 K) and K2 = 6.3e-8 M
+#     (1510 K), attributed to Chameides (1984);
+#   SO2 Henry constant: 1.23 M atm-1, 3100 K -- Sander's compilation lists
+#     Chameides' value as 1.2e-2 mol m-3 Pa-1 (1.22 M atm-1) and 3100 K, and
+#     Sellegri et al. give 1.2-1.23 M atm-1.
+# "textbook" is the set first used here (board message 3628), kept as a reading.
+BUTLER_T_C = (0.0, 5.0, 10.0, 15.0, 20.0, 25.0, 30.0, 35.0, 40.0, 45.0, 50.0, 100.0)
+BUTLER_PK = {  # pK_H, pK1, pK2, pKw
+    "KH": (1.11, 1.19, 1.27, 1.33, 1.41, 1.47, 1.53, 1.59, 1.64, 1.68, 1.72, 1.99),
+    "K1": (6.579, 6.517, 6.464, 6.419, 6.381, 6.352, 6.327, 6.309, 6.298, 6.290, 6.285, 6.45),
+    "K2": (10.625, 10.557, 10.490, 10.430, 10.377, 10.329, 10.290, 10.250, 10.220, 10.195, 10.172, 10.16),
+    "KW": (14.955, 14.734, 14.534, 14.337, 14.161, 13.999, 13.833, 13.676, 13.533, 13.394, 13.263, 12.27),
+}
+SULPHUR = {"HS": (1.23, 3100.0), "S1": (1.7e-2, 2090.0), "S2": (6.3e-8, 1510.0)}
+TEXTBOOK = {"KH": (10 ** -1.47, 2420.0), "K1": (10 ** -6.35, -1000.0), "K2": (10 ** -10.33, -1760.0),
+            "KW": (1.0e-14, -6716.0), "HS": (1.23, 3120.0), "S1": (1.23e-2, 2010.0), "S2": (6.61e-8, 1500.0)}
 
 # The SO2 factor that puts the faithful model's 10 ppm kink at the printed kink
 # of Fig. 2 (0.8634 Gyr; fidelity_ck1992.fit_so2_factor re-derives it from the
-# scan). Fitted to that one feature only; every other printed feature is a test.
-SO2_FIT_FACTOR = 0.3914
+# scan). It is fitted to that one feature; the other printed features were left
+# out of the fit, but the figure had already been examined when it was chosen.
+SO2_FIT_FACTOR = 0.2831
 
 
 @dataclass(frozen=True)
@@ -72,7 +86,10 @@ class Reading:
         present-day temperature of eqs (1)-(5) at 320 ppm, so that F = F0,
         Pi = Pi0 and Patm = 320 ppm hold together at t = 0.
     chemistry_T: "25C" holds the equilibrium constants at 25 C; "T" lets them
-        follow the global mean temperature.
+        follow the global mean temperature (Butler's table, interpolated, for
+        carbonate; van 't Hoff for sulphur).
+    constants: "sources" (traced to the paper's refs 14 and 23, above) or
+        "textbook".
     so2_factor: multiplies the SO2 term (Henry constant x first dissociation).
     p_half: "ck" forces eq. (8) through Pi0 at (T0, Patm0), temperature factor
         included; "volk" is Volk's eq. (13), (Pi_max/Pi0 - 1)(Patm0 - Pmin).
@@ -81,6 +98,7 @@ class Reading:
     name: str = "faithful"
     t0: str = "model"
     chemistry_T: str = "25C"
+    constants: str = "sources"
     so2_factor: float = 1.0
     p_half: str = "ck"
     p_min: float = P_MIN_C4
@@ -126,36 +144,50 @@ def temperature(s: float, p: float, r: Reading = FAITHFUL) -> float:
     return brentq(lambda T: climate_residual(T, s, p, r), 200.0, 500.0, xtol=1e-10)
 
 
-def _k(pair, T, r: Reading):
-    k, b = pair
-    return k if r.chemistry_T == "25C" else k * np.exp(b * (1.0 / T - 1.0 / 298.15))
+def constants(T: float, r: Reading = FAITHFUL) -> dict[str, float]:
+    """Equilibrium constants at T (K), or at 25 C under chemistry_T = "25C"."""
+    Tk = 298.15 if r.chemistry_T == "25C" else float(T)
+    vh = lambda k, b: k * np.exp(b * (1.0 / Tk - 1.0 / 298.15))
+    if r.constants == "textbook":
+        return {k: vh(*v) for k, v in TEXTBOOK.items()}
+    out = {k: 10.0 ** -float(np.interp(Tk - 273.15, BUTLER_T_C, pk)) for k, pk in BUTLER_PK.items()}
+    out.update({k: vh(*v) for k, v in SULPHUR.items()})
+    return out
 
 
 def h_activity(p_soil: float, T: float, r: Reading = FAITHFUL) -> float:
     """H+ activity (M) of rain water in equilibrium with soil CO2 p_soil (bar)
     and atmospheric SO2, from the charge balance
     [H+] = [HCO3-] + 2[CO3--] + [HSO3-] + 2[SO3--] + [OH-]."""
-    c = _k(CO2_KH, T, r) * p_soil
-    k1, k2 = _k(CO2_K1, T, r), _k(CO2_K2, T, r)
-    s = _k(SO2_KH, T, r) * SO2 * r.so2_factor
-    s1, s2, kw = _k(SO2_K1, T, r), _k(SO2_K2, T, r), _k(KW, T, r)
+    k = constants(T, r)
+    c = k["KH"] * p_soil
+    s = k["HS"] * SO2 * r.so2_factor
 
     def bal(lh):
         h = 10.0 ** lh
-        return h - (k1 * c / h * (1 + 2 * k2 / h) + s1 * s / h * (1 + 2 * s2 / h) + kw / h)
+        return h - (k["K1"] * c / h * (1 + 2 * k["K2"] / h) + k["S1"] * s / h * (1 + 2 * k["S2"] / h) + k["KW"] / h)
 
     return 10.0 ** brentq(bal, -12.0, 0.0, xtol=1e-13)
 
 
 def so2_share(r: Reading = FAITHFUL) -> float:
-    """Fraction of today's soil-water acidity carried by sulphur: ([HSO3-] +
-    2[SO3--]) / [H+] at Psoil0 and T0. Only this ratio, not the SO2 constants
-    themselves, enters aH/aH0."""
+    """Fraction of today's soil-water H+ balanced by sulphur anions, ([HSO3-] +
+    2[SO3--]) / [H+], at Psoil0 and T0. What the printed kink fixes is an
+    acidity ratio across time (kink_acidity_ratio); this share is its
+    translation into today's chemistry, and depends on the chemistry model."""
     T = t0(r)
+    k = constants(T, r)
     h = h_activity(PSOIL0, T, r)
-    s = _k(SO2_KH, T, r) * SO2 * r.so2_factor
-    s1, s2 = _k(SO2_K1, T, r), _k(SO2_K2, T, r)
-    return s1 * s / h * (1 + 2 * s2 / h) / h
+    s = k["HS"] * SO2 * r.so2_factor
+    return k["S1"] * s / h * (1 + 2 * k["S2"] / h) / h
+
+
+def kink_acidity_ratio(t_kink: float, r: Reading = FAITHFUL) -> float:
+    """aH(kink)/aH(today) required by eq. (6) with F = F0 when Patm = Psoil =
+    Pmin (Pi = 0) at time t_kink: exp(-2 (T_kink - T0)/13.7 K). Independent of
+    the chemistry; only the climate equations and T0 enter."""
+    T = temperature(float(solar(t_kink, r)), r.p_min, r)
+    return float(np.exp(-2.0 * (T - t0(r)) / EFOLD_K))
 
 
 def t0(r: Reading = FAITHFUL) -> float:
@@ -241,11 +273,16 @@ def trajectory(times, r: Reading = FAITHFUL) -> dict[str, np.ndarray]:
 
 
 def first_crossing(f, level: float, t_max: float = 2.0, step: float = 0.01) -> float:
-    """First t in [0, t_max] at which f(t) - level changes sign, refined by
-    brentq on the bracketing step; inf if none."""
-    t = np.append(np.arange(0.0, t_max, step), t_max)
+    """First t in [0, t_max] at which f(t) reaches level: 0 if it holds at
+    t = 0, otherwise the first sign change of f - level on the grid, refined by
+    brentq; inf if none."""
     g0 = f(0.0) - level
+    if g0 == 0.0:
+        return 0.0
+    t = np.append(np.arange(0.0, t_max, step), t_max)
     for a, b in zip(t[:-1], t[1:]):
+        if b <= a:
+            continue
         gb = f(b) - level
         if gb == 0.0:
             return float(b)
@@ -256,12 +293,15 @@ def first_crossing(f, level: float, t_max: float = 2.0, step: float = 0.01) -> f
 
 
 def co2_time(level: float, r: Reading = FAITHFUL, t_max: float = 2.0) -> float:
-    """Gyr until Patm first falls to `level` (bar); compared in log10, so the
-    floor itself is reached when Patm comes within 1e-9 decades of it."""
+    """Gyr until Patm first falls to `level` (bar); inf for a level below the
+    floor, which Patm never goes beneath. The floor itself is reached when Patm
+    comes within 1e-9 decades of it."""
     ref = _ref(r)
-    if level <= r.p_floor:
+    if level < r.p_floor:
+        return float("inf")
+    if level == r.p_floor:
         f = lambda t: float(np.log10(co2(t, r, ref) / r.p_floor) > 1e-9)
-        return first_crossing(f, 0.5, t_max)
+        return first_crossing(f, 0.5, t_max) if f(0.0) else 0.0
     return first_crossing(lambda t: np.log10(co2(t, r, ref)), np.log10(level), t_max)
 
 
@@ -296,6 +336,7 @@ READINGS = {
     "so2_half": Reading(name="SO2 term x 0.5", so2_factor=0.5),
     "so2_double": Reading(name="SO2 term x 2", so2_factor=2.0),
     "volk_p_half": Reading(name="Volk eq. (13) P_half", p_half="volk"),
+    "textbook": Reading(name="textbook constants (first build)", constants="textbook"),
     "so2_fitted": Reading(name=f"SO2 term x {SO2_FIT_FACTOR} (fitted to the printed kink)", so2_factor=SO2_FIT_FACTOR),
 }
 
