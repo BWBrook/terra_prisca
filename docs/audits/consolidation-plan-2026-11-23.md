@@ -1,0 +1,84 @@
+# Consolidation pass: proposed abstract and moves
+
+Claude (Opus 5.5), 23 November 2026, for Barry's decision before the rest is applied. No new analysis or claims.
+
+## Limits
+
+- **Abstract: 200 words at most**, with no references or unexplained abbreviations. Source: the Royal Society's [author guidelines](https://royalsociety.org/journals/authors/author-guidelines/), which cover every Royal Society journal and were read live on 23 November.
+- **Article length: unresolved.**
+  - The general guidelines defer length to each journal's author-information page. Interface's [for-authors page](https://royalsocietypublishing.org/rsif/pages/for-authors) is behind a bot check.
+  - The only Interface page that loaded, [Information for reviewers](https://royalsocietypublishing.org/rsif/pages/for-reviewers), says "The strict length requirements are 2500 words (5000 words for review articles only)". That count includes the cover page, references, end sections and figure legends.
+  - Published Interface research articles are far longer, for example Blanco 2026 at about 4,400 main-text words (see `models/haze_world/synthesis/jrsi-format-notes.md`), so the 2,500 figure needs checking on the author page.
+- **Current draft:**
+  - main text (Introduction to §4.7): about 5,150 words;
+  - abstract: 307;
+  - table 1: about 510;
+  - figure captions: about 780;
+  - end statements: about 180.
+
+## Proposed abstract (195 words)
+
+Can life regulate its planet's climate when that climate responds slowly? We test this in a model inspired by the hazy early Earth. Two microbial groups compete for hydrogen: methanogens make methane, which forms a cooling organic haze, and acetogens divert hydrogen into acetate. Temperature decides which group wins, so their competition can hold temperature exactly constant as hydrogen supply changes. This needs some diverted hydrogen to stay out of methane for good, through oxidation, export or burial. Exact control is fragile: the reference state fails once the climate takes over 0.15 years to respond, or about one year if half the acetate becomes methane. Near-complete recycling stretches this to decades over a much narrower supply range. Imperfect control lasts far longer: when acetate slows its own producers or habitats differ in temperature, a sensitivity of a fraction of a kelvin per e-fold of supply tolerates a 30-year climate response, and 1–2 K tolerates centuries. In one uniform habitat, the group favoured at the starting temperature removes the other within decades, long before the climate can reverse its advantage. The mixture forms only where the losing group can persist, in a refuge or through immigration.
+
+Leaves the abstract, kept in the body:
+
+| Item | Kept in |
+|---|---|
+| "in the original sampled inventory" and the seven-year bound | §3.2 |
+| Recycling trade, numerically (factor 2 to 5%; 21–31 years at f = 1) | §4.4 |
+| Branch-by-branch prices 0.07–0.32 K | §3.4 |
+| Habitat half-widths 0.02–0.06 K | §3.4 |
+| Imposed-warming result (−15 to +8 K; 0.1–8%) | §3.5 |
+
+## Moves in the body
+
+**§4.4 is split.** It currently has seven topics:
+1. sink;
+2. oxidant budget;
+3. interception;
+4. recycling trade;
+5. fermentation;
+6. habitat contrasts and mat tests;
+7. sunlight.
+
+The proposed structure gives one point per paragraph:
+
+- **§4.4 The sink condition**, in three paragraphs:
+  - The regulator needs a lasting non-methane fate, and the known routes return acetate to methane. The oxidant budget (20 Tmol acetate needs 20 sulfate or 160 Fe(III) a year) is compared with published estimates. An oxidant sink must intercept acetate before it becomes methane.
+  - More recycling trades range for tolerance: the window narrows from 2.0 to 1.05 while the exact margin grows from about 1 to 21–31 years. This moves here from §4.6, where it now stands as a condition.
+  - Hydrogen supply: the geological comparison moves here from §2.2, followed by fermentation (600 Tmol C; the 149–189 window; 64%; 50 Tmol acetate) and the anoxygenic-flux comparison.
+- **§4.5 Graded control on the early Earth:** habitat temperature contrasts against the 0.02–0.06 K that bought 30 years, and the rough solar scale.
+- **The tests section** (now §4.8) gains the mat measurements, so all proposed tests sit together.
+- The old §4.5–4.7 become §4.6–4.8.
+
+**Cuts for repetition:**
+
+- §2.2 keeps the 401 Tmol scale and its split. The geological comparison moves to §4.4.
+- §4.4's "If biomass returns as methane too, the exact plateau disappears" goes. §2.2 and table 1 already say it.
+- §3.2 drops "The 10,000-year methane lifetime sets the removal rate of the atmospheric stock" (§2.3 says it). The stranded "Recycling also narrows the difference in methane yield" moves next to the f = 0 to 0.5 margin it explains.
+- §4.1 and §4.2 drop the restated numbers; they keep the interpretation and point to §3.2–3.4.
+
+**Scope conditions that move to §4.6 (Conditions), stated once:**
+
+| Now in | Condition |
+|---|---|
+| §2.2 | Gross delivery could include recycled hydrogen; merged with "Supply is prescribed" |
+| §3.5 | Stability is sampled inside the warming window, not claimed at its ends |
+| §3.6 | The faster-methane test is not a shorter physical lifetime |
+| §3.6 | Climate-tracking habitats gave no paired test at f = 0 and 0.5; f = 0.9 is not regulation |
+| §4.4 | The oxidant budgets do not cap gross cycling, and oxidant regeneration must enter the methane budget |
+| §4.4 | The two-guild calculation assumes reducers take little hydrogen |
+| §4.4 | Habitat contrasts set only an illustrative scale; the residual also depends on how supply is shared, exchange and acetate chemistry |
+| §4.4 | The solar pair changes spectrum and haze together; a matched solar sweep is the test, which also goes in §4.8 |
+| §4.5 | The refuge-assembled mixture's margin against slow climate was not computed |
+
+§4.6 is rewritten as grouped paragraphs: physiology and switch, chemistry and sink, supply, climate, and assembly rules. It is no longer one run-on list.
+
+**Contradictions to fix:**
+
+- §4.1 says every exact state that starts stable fails at a response time of 7 years or less. That predates Issue 4, whose f = 1 exact states hold for 21–31 years (C67). Restate it for the sampled grid (f up to 0.9) and name the f = 1 exception. §3.2's count of 42 states names its grid and stays as it is.
+- The old abstract's "original sampled inventory" and the new "we found" both depend on that same grid. The new abstract anchors on the reference state instead.
+
+**Optional, older than the issues:** the §3.1 figure of 4.7 K under the alternative cold continuation could also move to §4.6. It is left in place unless you want it moved.
+
+**Expected size:** main text about 4,800 words; §4.4 and the new §4.5 together about 600 instead of 712.
