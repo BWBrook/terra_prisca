@@ -25,9 +25,15 @@ pages were not read. The general Royal Society pages were read:
 - [AI](https://royalsociety.org/journals/ethics-policies/artificial-intelligence/);
 - [preprints and embargo](https://royalsociety.org/journals/ethics-policies/media-embargo/).
 
-**Length (unverified, from a search summary).** A research article runs to
-2,500–8,000 words, including references and acknowledgements. Confirm this in
-the submission checklist. No limit on figures or tables was found.
+**Length (Barry, from the JRSI author page, 23 November 2026).** "Full
+research articles should contain original scientific research. Their length
+should be over 2500 and not exceed 8000 words (this includes cover page,
+references and acknowledgements)." Reports are letters-style pieces of at
+most 2,500 words (including references and figure captions) with up to four
+displays, no more than two of them figures. The reviewer page's "strict
+length requirements are 2500 words" matches the Report limit. No figure or table
+limit is stated for Research Articles. We count figure captions and table 1
+as well, to stay safe.
 
 **Front matter:**
 

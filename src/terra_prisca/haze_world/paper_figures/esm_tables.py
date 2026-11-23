@@ -272,13 +272,55 @@ def s8_acetate():
                          "ratio upper/lower": "" if f == 0 else f"{high / low:.4f}"})
     write_csv(ESM / "s8_coexistence_interval.csv", interval, list(interval[0]))
     splice("s8_interval", md_table(interval, list(interval[0])))
+
+    data = json.loads((REVIEW / "issue4_acetate_fate.json").read_text())
+    win = {w["f"]: w for w in data["windows"] if w["biomass_recycled"] == 0.}
+    span = {r["f"]: r["products_temperature_span_k"] for r in data["spans"]}
+    warm = {r["f"]: r["width_k"] for r in data["forcing"]}
+    sweep = []
+    for f in sorted(span):
+        exact = [r for r in data["sweep"] if r["chemistry"] == "fixed" and r["f"] == f and r["window_position"] is not None]
+        mid = next(r for r in exact if r["window_position"] == .5)
+        graded = next(r for r in data["sweep"] if r["chemistry"] == "products" and r["f"] == f and r["window_position"] == .5)
+        q = win[f]["ratio"]
+        sweep.append({"f": f"{f:g}", "Q": f"{q:.4f}", "τ_c exact, 5–95% of window (yr)": f"{min(r['tau_c'] for r in exact):.3g}–{max(r['tau_c'] for r in exact):.3g}",
+                      "mid-window τ_c(Q − 1) (yr)": f"{mid['tau_c'] * (q - 1):.3f}", "full-product sensitivity mid-window (K per e-fold)": f"{abs(graded['Sc']):.3g}",
+                      "full-product excursion over 5–95% of exact window (K)": f"{span[f]:.3f}", "Q/(Q − 1)": f"{q / (q - 1):.3g}",
+                      "imposed-warming window (K)": f"{warm[f]:.1f}" if f in warm else ""})
+    write_csv(ESM / "s8_fraction_sweep.csv", sweep, list(sweep[0]))
+    splice("s8_sweep", md_table(sweep, list(sweep[0])))
+
+    biomass = []
+    for f in (0., .5, .9, 1.):
+        row = {"f": f"{f:g}"}
+        for b in (0., .5, 1.):
+            w = next(x for x in data["windows"] if x["f"] == f and x["biomass_recycled"] == b)
+            row[f"Q, biomass recycled b = {b:g}"] = "no upper end" if w["ratio"] is None else f"{w['ratio']:.4f}"
+        biomass.append(row)
+    write_csv(ESM / "s8_biomass_recycling.csv", biomass, list(biomass[0]))
+    splice("s8_biomass", md_table(biomass, list(biomass[0])))
+
+    ferm = []
+    for r in json.loads((REVIEW / "issue5_supply_scale.json").read_text())["fermentation"]:
+        hi = r["h2_window_hi_tmol_yr"]
+        ferm.append({"f": f"{r['f']:g}",
+                     "H₂ window (Tmol yr⁻¹)": f"{r['h2_window_lo_tmol_yr']:.1f} lower bound" if hi is None else f"{r['h2_window_lo_tmol_yr']:.1f}–{hi:.1f}",
+                     "window ratio": "no upper end" if r["ratio"] is None else f"{r['ratio']:.3f}",
+                     "evaluated at": "original 401 Tmol H₂ yr⁻¹" if r["evaluated_at"] == "reference J" else "geometric mid-window",
+                     "H₂ supply (Tmol yr⁻¹)": f"{r['h2_tmol_yr']:.1f}",
+                     "carbon fermented (Tmol C yr⁻¹)": f"{r['carbohydrate_carbon_fermented_tmol_c_yr']:.1f}",
+                     "biotic CH₄ from fermenter acetate": f"{100 * r['share_of_biotic_methane_outside_competition']:.1f}%",
+                     "acetate to lasting sink, fermenters + acetogens (Tmol yr⁻¹)":
+                         f"{r['fermenter_acetate_leaving_tmol_yr']:.2f} + {r['acetogen_acetate_leaving_tmol_yr']:.2f}"})
+    write_csv(ESM / "s8_fermentation.csv", ferm, list(ferm[0]))
+    splice("s8_fermentation", md_table(ferm, list(ferm[0])))
     return interval
 
 
 CLAIM_USE = {"C05": "S2", "C06": "S2", "C44": "S3", "C45": "S3, S4", "C52": "S3, S6, S10", "C54": "S4", "C55": "S5, S6", "C56": "S5, S6",
              "C57": "S5", "C58": "S5, S6", "C59": "S7", "C38": "S6", "C39": "S6", "C40": "S6", "C41": "S6", "C42": "S6", "C43": "S6",
              "C46": "S6", "C47": "S6", "C48": "S6", "C49": "S6", "C50": "S6", "C51": "S6", "C60": "S4", "C61": "S4", "C62": "S9", "C63": "S9", "C64": "S9",
-             "C08": "S10", "C09": "S10", "C65": "S10", "C66": "S10"}
+             "C08": "S10", "C09": "S10", "C65": "S10", "C66": "S10", "C67": "S8", "C68": "S8", "C69": "S8", "C70": "S8", "C20": "§3.2"}
 
 
 def s9_claims():

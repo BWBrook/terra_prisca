@@ -348,7 +348,7 @@ The reservoir is imposed, not a photochemical hydrogen budget, and imported hydr
 
 $$P_M = 0.30\,\frac{k_{ex}(R^* - p_{atm}) + n/\eta_M}{J_{ref}},\qquad P_A = 0.30\,\frac{k_{ex}(R^* - p_{atm}) + n/(f\eta_A)}{J_{ref}},$$
 
-where $n = 4(r^*/t_{CH_4} - c\Phi_{abiotic})/(\chi H)$ is the catabolic hydrogen flux (mol L⁻¹ h⁻¹) that must become methane to hold $r^*$ against removal, and $R^* = p^*$ is the local hydrogen at coexistence. Table S8b gives them; the $f = 0.5$ and $f = 1$ upper ends (0.457327 and 0.239907) match the full-budget endpoints recorded in `docs/audits/haze-world-external-review-codex-2026-11-11.md` and the readiness note `docs/audits/haze-world-writing-readiness-2026-11-12.md`. As f rises the interval narrows, from no upper end at f = 0 to a ratio of 1.047 at f = 1. It does not close at f = 1 because the assumed biomass export leaves a lower catabolised fraction for acetogens than for methanogens ($\eta_A < \eta_M$). If the two fractions were equal, complete acetate recycling would equalise the methane yields and close this interval. The interval is a positivity condition on the budget; stability at f = 1 was not assessed here.
+where $n = 4(r^*/t_{CH_4} - c\Phi_{abiotic})/(\chi H)$ is the catabolic hydrogen flux (mol L⁻¹ h⁻¹) that must become methane to hold $r^*$ against removal, and $R^* = p^*$ is the local hydrogen at coexistence. Table S8b gives them; the $f = 0.5$ and $f = 1$ upper ends (0.457327 and 0.239907) match the full-budget endpoints recorded in `docs/audits/haze-world-external-review-codex-2026-11-11.md` and the readiness note `docs/audits/haze-world-writing-readiness-2026-11-12.md`. As f rises the interval narrows, from no upper end at f = 0 to a ratio of 1.047 at f = 1. It does not close at f = 1 because the assumed biomass export leaves a lower catabolised fraction for acetogens than for methanogens ($\eta_A < \eta_M$). If the two fractions were equal, complete acetate recycling would equalise the methane yields and close this interval. The interval itself is a positivity condition; sampled stability margins are reported in table S8c.
 
 <!-- table:s8_interval -->
 
@@ -362,6 +362,55 @@ where $n = 4(r^*/t_{CH_4} - c\Phi_{abiotic})/(\chi H)$ is the catabolic hydrogen
 <!-- /table:s8_interval -->
 
 *Table S8b. Supply-potential interval for coexistence at the reference $T^*$ ($\ell = 10^{-3}$ h⁻¹, $p_{atm} = 0$; computed by `esm_tables.coexistence_budget`).*
+
+**Recycling trades range for tolerance (C67).** Table S8c follows the exact window, its first-loss margins and the graded states as f rises from 0.5 to 1 (fixed products for the exact states; full product feedback, acetate and methane at reference strength, for the graded states; homogeneous, ℓ = 10⁻³ h⁻¹; `models/haze_world/review/issue4_acetate_fate.py`). The window ratio Q is within about 5% of η_M/(fη_A); the atmospheric outlet, common to both ends, narrows it slightly. Over the sampled 5–95% of each window the exact margin is lowest mid-window, and mid-window τ_c(Q − 1) stays between 1.0 and 1.1 yr. This is a sampled relation for f = 0.5–1 with biomass exported, not a law. At f = 1 an exact state at 95% of the window is stable at a 30-year lag. Graded states move temperature by a similar amount across a narrower window, so their sensitivity per e-fold of supply rises; they remain durable, with τ_c not detected through 10⁴ yr except at the upper edge for f = 0.5 and 0.6 (48 and 130 yr). The habitat-spread factor Q/(Q − 1) of equation (3.1) rises from 2 to 22. The imposed-warming window, at the geometric mid-window supply, shrinks far less than Q: it scales roughly as k ln Q because the haze climate is steep, and the cooling branch caps it at 23.6 K up to f = 0.7. These windows establish feasibility at bisected ends, not continuous stability.
+
+<!-- table:s8_sweep -->
+
+| f | Q | τ_c exact, 5–95% of window (yr) | mid-window τ_c(Q − 1) (yr) | full-product sensitivity mid-window (K per e-fold) | full-product excursion over 5–95% of exact window (K) | Q/(Q − 1) | imposed-warming window (K) |
+|---|---|---|---|---|---|---|---|
+| 0.5 | 1.9955 | 1.11–1.88 | 1.102 | 1.33 | 1.251 | 2 | 23.6 |
+| 0.6 | 1.6793 | 1.57–2.54 | 1.065 | 1.75 | 1.214 | 2.47 |  |
+| 0.7 | 1.4534 | 2.29–3.57 | 1.039 | 2.39 | 1.162 | 3.21 | 23.6 |
+| 0.8 | 1.2840 | 3.59–5.43 | 1.020 | 3.5 | 1.086 | 4.52 |  |
+| 0.9 | 1.1522 | 6.61–9.73 | 1.006 | 5.94 | 0.963 | 7.57 | 16.6 |
+| 0.95 | 1.0967 | 10.3–15 | 1.000 | 8.7 | 0.863 | 11.3 |  |
+| 1 | 1.0468 | 21.3–30.7 | 0.996 | 15.4 | 0.690 | 22.4 | 6.6 |
+
+<!-- /table:s8_sweep -->
+
+*Table S8c. Exact window, margins and graded response against f (reference ℓ; positions are fractions of the exact supply window).*
+
+**The sink (C68).** Let U be captured hydrogen and n the hydrogen equivalents that must become methane at T\*. The acetate export (1 − f)η_A u_A and the biomass export (1 − η_A)u_A + (1 − η_M)u_M sum to U − n, independent of f. At the reference supply this combined export is 27.7 Tmol CH₄-equivalent yr⁻¹, against 65.0 Tmol yr⁻¹ of biotic methane (case B column, assumed 10⁴-yr lifetime; the planetary scale moves inversely with the lifetime). At f = 0.5 the acetate share is 20.2 Tmol yr⁻¹, which needs about 20 Tmol yr⁻¹ of sulfate or 160 Tmol yr⁻¹ of Fe(III) if oxidised. The reference mixture exists only for f < 0.783 at this supply. If a fraction b of lost biomass also returns as methane, the routes' yields become [η_M + b(1 − η_M)]/4 and [fη_A + b(1 − η_A)]/4 (table S8d). With b = 1 the exact window closes at f = 1: equal ultimate yields remove the composition-controlled plateau, though away from T\* the groups' different hydrogen requirements still change leakage. Biomass recycling was analysed through the budget only; margins with b > 0 were not computed. Storage alone, without lasting export, burial or oxidation, does not create a lasting yield contrast.
+
+<!-- table:s8_biomass -->
+
+| f | Q, biomass recycled b = 0 | Q, biomass recycled b = 0.5 | Q, biomass recycled b = 1 |
+|---|---|---|---|
+| 0 | no upper end | 16.7043 | 8.6303 |
+| 0.5 | 1.9955 | 1.8464 | 1.7259 |
+| 0.9 | 1.1522 | 1.1181 | 1.0881 |
+| 1 | 1.0468 | 1.0220 | 1.0000 |
+
+<!-- /table:s8_biomass -->
+
+*Table S8d. Window ratio Q with lost biomass recycled to methane at fraction b (closed-form budget at the reference T\*).*
+
+**Planetary scale and a fermentation-fed supply (C69, C70).** The per-litre supply has no planetary volume of its own. At fixed supply potential $P$ the gross H₂ input is $4P/(c\,t_{CH_4})$ molecules cm⁻² s⁻¹ (S1), so its planetary scale varies inversely with the assumed methane lifetime. At $t_{CH_4} = 10^4$ yr the reference J is 401 Tmol H₂ yr⁻¹: 260 Tmol becomes methane, 111 Tmol leaves as acetate and biomass and 30 Tmol enters the atmosphere at R\*. Total methane removal, $r^*/(c\,t_{CH_4})$, is 65.2 Tmol CH₄ yr⁻¹ or 2.44 × 10¹¹ molecules cm⁻² s⁻¹; subtracting the abiotic source leaves 65.0 Tmol yr⁻¹ required from biology. The total lies within the haze-onset range of Arney et al. (2016), partly by construction because that range bracketed the lifetime. Base-case fresh geological inputs are 3.4 and 6.1 Tmol H₂ yr⁻¹ (Canfield et al. 2006; Ward et al. 2019); scenarios with more outgassing supply 34 and 110 Tmol H₂ yr⁻¹ (Canfield et al. 2006, tables 8 and 13). The model prescribes gross delivery, which could include recycled hydrogen. Table S8e asks what follows if glucose fermentation supplies J: C₆H₁₂O₆ + 2H₂O → 2 CH₃COOH + 2 CO₂ + 4 H₂ delivers one acetate per two H₂ (Conrad 1999). If that acetate shares the acetogens' fate f and reaches methane outside the shared hydrogen pool, the pure-guild endpoints satisfy M = fJ/2 + y(J − e)/4 with y = η_M or fη_A, where M is the biotic methane needed and e the outlet. Each row holds at its stated supply; at the original supply and f = 0.5, fermenter acetate alone would give 100.3 Tmol CH₄ yr⁻¹, above the 65.0 needed. The flux share is not a sensitivity, and syntrophic oxidation that returns H₂ to the shared pool would change the allocation. This is steady-state arithmetic on stored parts (`models/haze_world/review/issue5_supply_scale.py`); the model has no fermenters, and no margins were computed for this case.
+
+<!-- table:s8_fermentation -->
+
+| f | H₂ window (Tmol yr⁻¹) | window ratio | evaluated at | H₂ supply (Tmol yr⁻¹) | carbon fermented (Tmol C yr⁻¹) | biotic CH₄ from fermenter acetate | acetate to lasting sink, fermenters + acetogens (Tmol yr⁻¹) |
+|---|---|---|---|---|---|---|---|
+| 0 | 306.4 lower bound | no upper end | original 401 Tmol H₂ yr⁻¹ | 401.1 | 601.6 | 0.0% | 200.55 + 21.18 |
+| 0.5 | 148.6–189.0 | 1.272 | geometric mid-window | 167.6 | 251.4 | 64.4% | 41.89 + 8.36 |
+| 0.7 | 123.2–137.7 | 1.117 | geometric mid-window | 130.2 | 195.3 | 70.1% | 19.53 + 3.51 |
+| 0.9 | 105.2–109.1 | 1.037 | geometric mid-window | 107.2 | 160.7 | 74.1% | 5.36 + 0.88 |
+| 1 | 98.1–99.2 | 1.011 | geometric mid-window | 98.6 | 147.9 | 75.8% | 0.00 + 0.00 |
+
+<!-- /table:s8_fermentation -->
+
+*Table S8e. Exact window and acetate budget with hydrogen supplied by glucose fermentation (steady-state accounting; planetary units at $t_{CH_4} = 10^4$ yr). Window ends are the rounded pure-guild limits; both groups are positive strictly inside the window.*
 
 ## S9 Imposed warming
 
@@ -435,6 +484,7 @@ The new bounded checks and the refuge and immigration runs use instantaneous tem
 | C06 | supported | ffd4fbc | S2 | Reference explicit populations have a locally stable mixed state warmer than matched controls with acetogens disabled |
 | C08 | supported | ffd4fbc | S10 | Tested lower-recycling climate-tracking geometry leaves paired rescue domain-limited; higher-recycling coexistence provides counterexamples to universal failure |
 | C09 | supported | ffd4fbc | S10 | Both buffered refuges restore matching mixed states in the twelve key reference runs; the full inventory has diverse outcomes |
+| C20 | supported | ffd4fbc | §3.2 | The reference mixed equilibrium has a weakly damped local mode reproduced by finite perturbations |
 | C38 | provisional | 1c1df89 | S6 | PB1 continuum pinning-robustness frontier after B1 |
 | C39 | refuted | 1c1df89 | S6 | PB2 methane-only product feedback supplies all-lag stability |
 | C40 | refuted | 1c1df89 | S6 | PB3 habitat quadrature converges at N33 and fixed-chemistry delay margin stays below30 yr |
@@ -463,6 +513,10 @@ The new bounded checks and the refuge and immigration runs use instantaneous tem
 | C64 | supported | da9c2b3 | S9 | Fixed-product exact states exist at T* on the extracted cooling curves of Arney cases A and C but not on case D |
 | C65 | supported | f508dfa | S10 | Closed reference runs in one uniform habitat do not assemble the mixture: the group favoured at the starting temperature is removed or removes the other within decades, while methane needs millennia to carry temperature across T*; this holds from the tested 283.2-K lifeless start at f=0, 0.5 and 0.9 and for methane responses up to tenfold faster at fixed equilibria; a thousandfold-faster response assembles it from acetogen invasions |
 | C66 | supported | f508dfa | S10 | Any tested positive immigration assembles the mixture in one uniform habitat at f=0 and 0.5, with both groups materially active near T* |
+| C67 | supported | 1a2358c | S8 | Raising the acetate fate f from 0.5 towards 1 narrows the exact supply window and lengthens the exact first-loss margin together, steepens full-product graded states, and narrows the imposed-warming window far less than the supply window |
+| C68 | supported | 1a2358c | S8 | Exact control needs a lasting route-dependent hydrogen sink other than methane: at fixed feasible supply the combined acetate-plus-biomass export is independent of f, and if lost biomass also returned as methane the exact plateau would close at f=1 |
+| C69 | supported | 56a4609 | S8 | At the assumed 10000-yr methane lifetime the reference hydrogen supply is about 400 Tmol H2 per yr, far above base-case fresh geological inputs; its planetary scale is conditional on the lifetime |
+| C70 | supported | 56a4609 | S8 | With half the acetate from each source recycled outside the shared hydrogen pool, glucose fermentation shifts the feasible H2 supply from 306-611 to 149-189 Tmol per yr; at the new geometric midpoint 50 Tmol acetate per yr leaves the methane pathway |
 
 <!-- /table:s9_claims -->
 
