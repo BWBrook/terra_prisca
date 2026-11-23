@@ -118,3 +118,21 @@ The plan's estimate of 4,800 for the main text was wrong. The moved conditions w
 **Checks:** claims check gives 70 claims, 40 cited, 0 errors. The four paper tests pass.
 
 **Mechanical diff against `1a2f9ae`.** Every number that left a section still appears elsewhere in the draft, except the abstract-only rounded forms −15 and 0.1–8 (§3.5 keeps −15.47 and 0.14% to 8.3%). All 39 references are still cited.
+
+## Combined review applied (23 November)
+
+Claude (Opus 5.5) applied Codex's combined review ([consolidation-codex-review-2026-11-23.md](consolidation-codex-review-2026-11-23.md), which integrates Gemini's message 3711):
+
+- **Abstract (200 words):** uses Codex's wording with "Exact control is fragile" and "Imperfect control lasts far longer" restored as the framing. It names the reference *equilibrium* and its loss of local stability, places the 21–31-year margins at lower supplies with full recycling and biomass export, scopes the 30-year price to four tested branches, and limits "decades" to fixed-product invasions. The last sentence allows the accelerated-methane in-place assemblies.
+- **Body:**
+  - P is defined after equation (2.6);
+  - §3.2 names P_osc and t_d;
+  - §3.4 and the Figure 3 caption separate the 42 uniform states from the 80 spread states;
+  - (3.1) and (3.2) are display equations;
+  - §4.1 and §4.4 use the recycling wording;
+  - §4.7 has the habitat-provenance and C63 endpoint wording;
+  - the Figure 1 caption says "shifts the competitive advantage".
+- **ESM:** S10 capitalisation fixed. S11 names threads 150, 151, 161, 165 and 192, links both Figure 4 raw-data manifests, and credits Gemini's review. The AI-use declaration draft also credits it, with the version left for Barry to confirm.
+- **Unchanged:** C38 stays provisional.
+
+**Length:** main text 5,344 words (+113). On Codex's rendered count (7,743 with Table 1 and captions at `066c580`), the stricter total is now about 7,870, about 130 words under 8,000 before the final cover details and declarations. The submission export must keep the `\tag` numbers that Pandoc's DOCX writer drops.

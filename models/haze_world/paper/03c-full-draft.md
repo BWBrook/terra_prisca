@@ -16,23 +16,24 @@ Consolidated after Issues 1–5 on 23 November 2026
 
 ## Abstract
 
-Can life regulate its planet's climate when that climate responds slowly? We
-test this in a model inspired by the hazy early Earth. Two microbial groups
-compete for hydrogen: methanogens make methane, which forms a cooling organic
-haze, and acetogens divert hydrogen into acetate. Temperature decides which
-group wins, so their competition can hold temperature exactly constant as
-hydrogen supply changes. This needs some diverted hydrogen to stay out of
-methane for good, through oxidation, export or burial. Exact control is
-fragile: the reference state fails once the climate takes over 0.15 years to
-respond, or about one year if half the acetate becomes methane. Near-complete
-recycling stretches this to decades over a much narrower supply range.
-Imperfect control lasts far longer: when acetate slows its own producers or
-habitats differ in temperature, a sensitivity of a fraction of a kelvin per
-e-fold of supply tolerates a 30-year climate response, and 1–2 K tolerates
-centuries. In one uniform habitat, the group favoured at the starting
-temperature removes the other within decades, long before the climate can
-reverse its advantage. The mixture forms only where the losing group can
-persist, in a refuge or through immigration.
+Can life regulate its planet's climate when that climate responds slowly?
+We test this in a model inspired by the hazy early Earth. Two microbial
+groups compete for hydrogen: methanogens make methane, which forms a
+cooling organic haze, and acetogens divert hydrogen into acetate.
+Temperature shifts the competitive advantage, so their competition can hold
+temperature exactly constant as hydrogen supply changes. This needs some
+diverted hydrogen to stay out of methane for good, through oxidation,
+export or burial. Exact control is fragile: the reference equilibrium loses
+local stability at a climate response time of 0.15 years without acetate
+recycling, or about one year with half recycled. With full recycling and
+biomass export, sampled margins reach 21–31 years inside a narrow window of
+lower supplies. Imperfect control lasts far longer: on four tested branches
+with acetate feedback or differing habitat temperatures, a 30-year margin
+costs a sensitivity of a fraction of a kelvin per e-fold of supply. Some
+habitat mixtures tolerate centuries at 1–2 K per e-fold. All 24 closed,
+uniform reference invasions end with the invader alone; with fixed
+products, exclusion takes decades. Refuges or immigration can sustain the
+losing group until the climate catches up and the mixture forms.
 
 ---
 
@@ -205,7 +206,10 @@ $$\frac{dr}{dt} = \chi\left(\frac{F_M}{4} + \frac{fC}{t_A}\right)
 
 Here χ and c convert habitat and column fluxes to ratio units, Φ_abiotic is
 a serpentinisation estimate quoted by Arney et al. (2016), and the methane
-lifetime t_CH₄ = 10,000 years is our assumption. The climate temperature
+lifetime t_CH₄ = 10,000 years is our assumption. We express hydrogen supply
+as $P=c\,t_{CH_4}\Phi$, the methane-to-carbon-dioxide ratio the supplied
+hydrogen alone could sustain if fully converted to methane; at the reference
+J, P = 0.30. The climate temperature
 T_clim(r) interpolates the haze response of Arney et al. (2016), case B: a
 2.7-Ga Earth at 81% of present sunlight. Below the first extracted point we
 assume a smooth bridge to 283 K at zero methane; above the last we hold
@@ -347,10 +351,11 @@ reference comparison, increasing f from 0 to 0.5 raises the margin from
 0.15 to 1.10 years (ESM). Recycling also narrows the difference in methane
 yield between the routes. At the reference state with no acetate
 recycling and an instantaneous temperature response, a small disturbance
-oscillates with a period of 120 years and an amplitude decay time of 4,850
-years. A thermal response time of just 0.15 years cancels this weak damping,
-as the local estimate $P_{\rm osc}^2/(2\pi^2 t_d)$ predicts here. Figure 2*c* compares exact and graded states at
-the same f = 0.5.
+oscillates with a period $P_{\mathrm{osc}}$ = 120 years and an amplitude
+decay time $t_d$ = 4,850 years. A thermal response time of just 0.15 years
+cancels this weak damping, as the local estimate
+$P_{\mathrm{osc}}^2/(2\pi^2 t_d)$ predicts here. Figure 2*c* compares exact
+and graded states at the same f = 0.5.
 
 <!-- R3 -->
 ### 3.3 Swings and crashes
@@ -373,11 +378,12 @@ the critical response time rises smoothly on every tested branch (figure
 0.28 K per e-fold of supply with acetate feedback at f = 0, and 0.31 K at
 f = 0.5. With habitat spread it costs 0.07 K at the lower exchange rate
 (d = 10⁻⁴ yr⁻¹) and 0.16 K at the higher (d = 10⁻³ yr⁻¹). Resolved
-spread communities at 1–2 K per e-fold tolerate centuries. In an earlier
-comparison that switched each mechanism fully on or off, all 122 initially
-stable graded states had sensitivities of at least 0.59 K per e-fold and
-margins of at least 331 years; 113 were still stable at the 10⁴-year
-ceiling.
+spread communities at 1–2 K per e-fold tolerate centuries. The earlier grid
+included 42 initially stable graded states in a uniform habitat with product
+feedback and 80 with a resolved spread of habitat temperatures. Across these
+122 states, sensitivities were at least 0.59 K per e-fold and margins at
+least 331 years; 113 were still stable at the 10⁴-year ceiling, and the nine
+finite margins all belong to spread states.
 
 <!-- R4b -->
 Habitat spread sets the size of this price. With weak exchange between
@@ -385,9 +391,10 @@ habitats, acetogens hold every habitat colder than T\* and methanogens every
 warmer one. Supply then fixes the share of methanogen-held habitats that keeps
 the methane ratio near the switch, and temperature moves to the point in the
 spread that gives this share. For uniform offsets of ±σ, and with the
-methane ratio near its switch value, this reduced model gives approximately
+methane ratio near its switch value, this reduced model gives
 
-1/|S| = 1/k + 1/|S_geo|,  |S_geo| = 2σ (P_lo/P) Q/(Q − 1),   (3.1)
+$$\frac{1}{|S|} \approx \frac{1}{k} + \frac{1}{|S_{geo}|}, \qquad
+|S_{geo}| = 2\sigma\,\frac{P_{lo}}{P}\,\frac{Q}{Q-1}, \tag{3.1}$$
 
 where k = 140.7 K per e-fold is the response of the haze climate to the
 methane ratio at the switch, P_lo is the lowest supply at which a uniform
@@ -420,7 +427,7 @@ The Introduction's question concerns sunlight. As a controlled surrogate, we
 impose a warming F that shifts the climate curve, T_clim(r) + F. For regular
 graded states on the cooling branch, linearising the steady state gives
 
-dT/dF = |S|/(kE),   (3.2)
+$$\frac{dT}{dF} = \frac{|S|}{kE}, \tag{3.2}$$
 
 where k is the local climate slope and E is the response of the total
 methane source to supply at fixed temperature (ESM S9). Supply and imposed warming are attenuated by the same
@@ -473,9 +480,9 @@ added phase lag, which a slowly responding climate supplies (Åström & Murray
 2021). The 36 exactly holding states of §3.2 that start stable lose
 stability within a response time of about 7 years, and in 32 of them the
 limit is shorter than the fast climate response of about 4 years found in a
-modern climate model (Held et al. 2010). Higher recycling lengthens the
-limit, to decades as recycling nears completeness, but narrows the supply
-window to about 5% (§4.4). Past the limit, the regulator swings widely
+modern climate model (Held et al. 2010). At lower supplies, exact states
+tolerate decades when acetate is fully recycled, over a supply window only
+about 5% wide (§4.4). Past the limit, the regulator swings widely
 or a population crashes (§3.3).
 
 <!-- D2 -->
@@ -522,11 +529,15 @@ much acetate escaped methane on the early Earth is therefore an open
 condition on the regulator.
 
 Recycling trades range for tolerance. As f rises from 0.5 to 1, the sampled
-supply window narrows from a factor of 2.0 to 1.05, and the window of imposed
-warming from 24 to 7 K. The exact critical response time lengthens in
-proportion, from about 1 year at f = 0.5 to 21–31 years at f = 1. There an
-exact state near the window's edge tolerates a 30-year response, and graded
-states follow supply more steeply (ESM S8).
+supply window narrows from a factor of 2.0 to 1.05 and moves to lower
+supplies (P = 0.229–0.240 at f = 1, with lost biomass exported), and the
+feasible imposed warming at the window's geometric midpoint narrows from 24
+to 7 K. The exact critical response time rises from about 1 year at f = 0.5
+to 21–31 years at f = 1; at the midpoint of each sampled window it varies
+approximately in inverse proportion to the window's fractional width. At
+f = 1 an exact state near the window's edge tolerates a 30-year response,
+and states with feedback from both products follow supply more steeply at
+mid-window (ESM S8).
 
 The reference supply of 401 Tmol H₂ per year (§2.2) compares with base-case
 fresh geological inputs of 3.4 and 6.1 Tmol H₂ per year (Canfield et al.
@@ -590,10 +601,11 @@ and the capacity normalisation. The further conditions are these.
 cultured strains, and strain traits remain fixed. Habitat offsets are
 uniform, and every habitat must lie within the physiological support of
 273–303.15 K, which limits spreads to about ±8 K around the reference
-temperature. The Archean habitat contrasts in §4.5 set an illustrative scale;
-the residual sensitivity they imply would also depend on how hydrogen supply
-is shared among habitats, how fast they exchange cells and the acetate
-chemistry.
+temperature. The modern seafloor observations and modelled Archean surface
+gradient in §4.5 illustrate the scale. The temperature spread among active
+Archean hydrogen-fed habitats is unknown, and the residual sensitivity it
+implies would also depend on how hydrogen supply is shared among habitats,
+how fast they exchange cells and the acetate chemistry.
 
 *Sink and supply.* The oxidant estimates compared in §4.4 do not cap gross
 oxidant cycling, and oxidant regeneration and any accompanying reductants
@@ -610,8 +622,10 @@ temperature could then alter stability and assembly.
 
 *Climate.* The climate is one published case with an assumed low-methane
 bridge, and sunlight enters only as a rigid vertical shift of that curve.
-Stability across that shift was checked at sampled shifts inside the window,
-not at its two ends (ESM S9). The solar pair behind the scale in §4.5 changes
+At zero thermal lag the sampled interior states were stable. Both groups
+remain present at the two ends of the window, but each warming-side
+linearisation there has a growing mode, so stability at the ends is
+unestablished (ESM S9). The solar pair behind the scale in §4.5 changes
 spectrum and haze together and comes from another case. Atmospheric hydrogen
 up to 100 Pa leaves the set point unchanged and moves the reference margin
 from 0.15 to 0.12 years (ESM). The costs of durability are local slopes on
@@ -685,7 +699,7 @@ the losing group can persist while the climate catches up.
 feeds two groups and exchanges with an atmospheric reservoir. Methanogens
 make methane, which thickens an organic haze and cools the surface;
 acetogens divert hydrogen into acetate, of which a fraction f is recycled to
-methane. Temperature decides which group wins, and the climate responds over
+methane. Temperature shifts the competitive advantage, and the climate responds over
 a time τ. Biomass export, omitted from the schematic, also reduces methane
 delivery. (*b*) Hydrogen requirement of each group against temperature,
 equation (2.3). The curves cross at T\* = 281.53 K; acetogens need less
@@ -722,9 +736,9 @@ time τ_c against local sensitivity |S|. Left strip: the 42 exact states (S =
 0), 36 on the haze-cooling branch (filled) and six bridge states already
 unstable at τ = 0 (open, placed at the strip's base). Lines: the four dial
 branches, joining finite margins on one branch; ringed markers show where
-each crosses 30 years. Symbols without lines: the 122 graded states of an
-on/off comparison (grey, all at the ceiling) and of resolved habitat spread
-(green; nine finite). Arrows mark lower bounds at the 10⁴-year search
+each crosses 30 years. Symbols without lines: the 122 graded states of the
+earlier grid, 42 uniform states with product feedback (grey, all at the
+ceiling) and 80 with resolved habitat spread (green; nine finite). Arrows mark lower bounds at the 10⁴-year search
 ceiling. The shaded band marks the price of a 30-year margin, 0.07–0.32 K
 per e-fold. (*b*) Steady temperature against hydrogen supply potential P for
 uniform habitats (σ = 0, black) and uniform habitat spreads of σ = 1, 3, 6
@@ -769,6 +783,8 @@ They designed and coded the model, ran and cross-checked the analyses, and
 generated model figures and manuscript drafts, each reviewing the other's
 work. Independent AI reviews by Claude Fable 5.2 (Anthropic) and GPT-6 Astra
 Pro (OpenAI) prompted the climate-inertia tests; their checks are archived.
+Gemini (Google; [version to confirm]) reviewed the consolidated manuscript,
+figures and supplement.
 B.W.B. initiated
 the project, shaped its questions and scope, and led the writing process.
 He will review the final manuscript before release. Reviewed correspondence
