@@ -1,7 +1,10 @@
-ck_reading,ingredient,L&W setting,C&K setting,shapley_factor,shapley_ln,shapley_Myr,factor_min,factor_max,Myr_min,Myr_max,share_of_ln_change
+reading,ingredient,L&W setting,C&K setting,shapley_factor,shapley_ln,shapley_Myr,factor_min,factor_max,Myr_min,Myr_max,share_of_ln_change
 faithful,sun,"L&W straight Sun, 0.0733/Gyr",C&K eq. (1),0.798139,-0.225472,-82.713,0.7635,0.846664,-166.705,-18.4221,-0.099768
-faithful,co2,"L&W rule: sqrt(CO2) linear in luminosity, T constant","C&K weathering with plants, eqs (6)-(8): the faithful model",5.49853,1.70448,523.367,4.46867,6.86557,361.402,724.734,0.754206
-faithful,plants,"C3, life ends at 150 ppm","C4, life ends at 10 ppm",2.18356,0.780957,246.276,1.81309,2.61053,97.9094,434.045,0.345562
+faithful,co2,"L&W rule: sqrt(CO2) linear in luminosity, T constant","C&K weathering balance with plants, eqs (6)-(8)",5.49853,1.70448,523.367,4.46867,6.86557,361.402,724.734,0.754206
+faithful,plants,"C3, CO2 limit 150 ppm","C4, CO2 limit 10 ppm",2.18356,0.780957,246.276,1.81309,2.61053,97.9094,434.045,0.345562
 so2_fitted,sun,"L&W straight Sun, 0.0733/Gyr",C&K eq. (1),0.795086,-0.229305,-95.2766,0.7635,0.84184,-196.782,-18.4221,-0.0964122
-so2_fitted,co2,"L&W rule: sqrt(CO2) linear in luminosity, T constant","C&K weathering with plants, eqs (6)-(8): the faithful model",6.29233,1.83933,614.569,5.07408,7.9337,427.213,851.226,0.773355
-so2_fitted,plants,"C3, life ends at 150 ppm","C4, life ends at 10 ppm",2.15621,0.768351,264.053,1.76623,2.61053,97.9094,479.498,0.323057
+so2_fitted,co2,"L&W rule: sqrt(CO2) linear in luminosity, T constant","C&K weathering balance with plants, eqs (6)-(8)",6.29233,1.83933,614.569,5.07408,7.9337,427.213,851.226,0.773355
+so2_fitted,plants,"C3, CO2 limit 150 ppm","C4, CO2 limit 10 ppm",2.15621,0.768351,264.053,1.76623,2.61053,97.9094,479.498,0.323057
+lw_line_fixed,sun,"L&W straight Sun, 0.0733/Gyr",C&K eq. (1),0.849568,-0.163027,-76.4577,0.821452,0.872552,-166.705,-10.2004,-0.072137
+lw_line_fixed,co2,"L&W rule: sqrt(CO2) linear in luminosity, T constant","C&K weathering balance with plants, eqs (6)-(8)",5.16662,1.64222,514.967,4.24649,6.24251,353.18,724.734,0.726656
+lw_line_fixed,plants,"C3, CO2 limit 150 ppm","C4, CO2 limit 10 ppm",2.18316,0.780774,248.421,1.81309,2.61053,110.776,434.045,0.345481

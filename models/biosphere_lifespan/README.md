@@ -10,7 +10,7 @@ time to ask how long the biosphere has left:
 
 This page holds both faithful reconstructions and, separately, an analysis
 that swaps one ingredient at a time between them to attribute the gap
-between their lifespans.
+between their times to the plants' CO₂ limit.
 
 Status: **Lovelock & Whitfield approved by Codex (1d7cd5d); Caldeira &
 Kasting approved by Codex (19efb5e); ingredient swap in review** (board
@@ -84,7 +84,7 @@ never the scans themselves.
 | [`figures_ck1992.py`](../../src/terra_prisca/biosphere_lifespan/figures_ck1992.py) | The reconstructed Fig. 2; writes `figures/ck1992_fig2.*` |
 | [`tests/test_ck1992.py`](../../tests/test_ck1992.py) | Equations, root uniqueness, present-day closure, the WHK import, controls, and the scan test |
 | [`ingredient_swap.py`](../../src/terra_prisca/biosphere_lifespan/ingredient_swap.py) | The analysis swapping ingredients between the two models; writes `swap/ingredient_swap*` |
-| [`tests/test_ingredient_swap.py`](../../tests/test_ingredient_swap.py) | Endpoints equal the faithful models, weathering balance in each cell, Shapley sums, threshold invariance |
+| [`tests/test_ingredient_swap.py`](../../tests/test_ingredient_swap.py) | Endpoints equal the faithful models, weathering balance in each cell, Shapley sums, the fixed-line Sun sensitivity, the closure × pump square and warming, threshold invariance, the threshold domain and name checks |
 
 ```bash
 uv run python -m terra_prisca.biosphere_lifespan.figures_lw1982
@@ -553,7 +553,7 @@ the better-conditioned comparison.
 | With negligible CO₂, T exceeds 50 °C after | ~1.5 Gyr | 1.46 Gyr at 0.01 ppm (the fits' lower bound); 1.32 at the 1 ppm floor |
 | Ocean loss at 6×10¹¹ H cm⁻² s⁻¹ | ~1 Gyr | 0.97 Gyr for 1.4×10²¹ kg of water (not stated) |
 
-## Ingredient swap: what separates the two lifespans
+## Ingredient swap: what separates the two times to the CO₂ limit
 
 This is an analysis built on the two faithful reconstructions, not a
 reconstruction. It lives in its own module,
@@ -561,37 +561,51 @@ reconstruction. It lives in its own module,
 which imports `lw1982` and `ck1992` and changes neither. Its outputs are in
 `swap/`.
 
-Lovelock & Whitfield give the biosphere 80 Myr; Caldeira & Kasting give it
-767 Myr, 9.6 times longer. Three ingredients separate them. Each has one
-setting in each paper:
+**The endpoint.** Throughout this section, "time to the CO₂ limit" means the
+time until atmospheric CO₂ falls to the plants' photosynthetic limit. That is
+the endpoint both papers compute, but neither paper treats it as the end of all
+life. Lovelock & Whitfield put it at about 100 Myr (the reconstruction gives
+80.0 Myr to 150 ppm). Caldeira & Kasting put the C₄ limit at 0.9 Gyr (the
+reconstruction gives 767 Myr to 10 ppm). They also give 1.5 Gyr if temperature
+is the limit instead, and say the Earth may lose its water within a further
+1 Gyr. The swap explains only the gap between the two CO₂-limited times, a
+factor of 9.6.
+
+Three ingredients separate them. Each has one setting in each paper:
 
 | Ingredient | Lovelock & Whitfield | Caldeira & Kasting |
 |---|---|---|
 | Sun law | Straight line, 0.0733 per Gyr (read from their Fig. 2) | Eq. (1), S = S₀/(1 − 0.38t/4.55) |
 | CO₂ law | √CO₂ falls linearly with luminosity between dated anchors, holding temperature constant | Weathering balances a fixed volcanic supply; temperature is free; plants raise soil CO₂ (eqs 1–8) |
-| Plants and threshold | C₃: life ends at 150 ppm | C₄: life ends at 10 ppm, the P_min of eq. (8) |
+| Plants and threshold | C₃: CO₂ limit 150 ppm | C₄: CO₂ limit 10 ppm, the P_min of eq. (8) |
 
-**Method.** Both models are sequences of equilibria, so each lifespan is set
-by the brightening S*/S₀ at which CO₂ first meets the threshold, and the Sun
-law turns S* into time. All eight combinations of the two papers' settings
-are run (`swap/ingredient_swap_cells.csv`). The change from one paper to the
-other is then shared among the ingredients by Shapley values: each
-ingredient's effect, averaged over the six orders in which the three swaps
-can be made. Because the ingredients act as factors on the lifespan, the
-shares are computed in ln(lifespan); the same averages in Myr are given too.
-Each ingredient's smallest and largest effect, over all the contexts in
-which it can be swapped, shows how much its effect depends on the others.
+**Method.** Both models are sequences of equilibria. The time to the limit is
+therefore set by the brightening S*/S₀ at which CO₂ first meets the threshold,
+and the Sun law converts S* into time.
+- All eight combinations of the two papers' settings are run
+  (`swap/ingredient_swap_cells.csv`).
+- The change from one paper to the other is shared among the ingredients by
+  Shapley values: each ingredient's effect, averaged over the six orders in
+  which the three swaps can be made.
+- The ingredients act as factors on the time, so the shares are computed in
+  ln(time). The same averages in Myr are given as well.
+- Each ingredient's smallest and largest effect, over every context in which it
+  can be swapped, shows how much its effect depends on the other two.
 
 ### Interpretive choices
 
 | Choice | Reading | Reason |
 |---|---|---|
+| Endpoint | Time until atmospheric CO₂ reaches the plants' CO₂ limit | It is the quantity both papers compute; C&K's temperature and water-loss limits come later and are not compared |
 | Ingredients | Three, as tabulated; any finer change sits inside one of them | Each is a choice one paper made differently from the other |
-| Plants and threshold together | The C₃/C₄ swap changes the threshold and, in C&K's model, P_min of eq. (8) | Both papers set the threshold at the plants' compensation point; tested below, the lifespan at that threshold does not depend on the rest of eq. (8) |
-| Swapping the Sun under L&W's rule | The two dated anchors (320 ppm today, 70,000 ppm 3,500 Myr ago) are kept and the rule is re-anchored on the new Sun, as in L&W's Gough variant | The anchors are what L&W state. Eq. (1) is evaluated at −3.5 Gyr, outside the span C&K use it for; it has Gough's form, which runs back to the Sun's birth |
+| Plants and threshold together | The C₃/C₄ swap changes the threshold and, in C&K's model, P_min of eq. (8) | Both papers set the threshold at the plants' compensation point. At that threshold the time does not depend on the rest of eq. (8) (tested below) |
+| Swapping the Sun under L&W's rule (primary) | The two dated anchors are kept (320 ppm today, 70,000 ppm 3,500 Myr ago), and the rule is recalibrated on the new Sun, as in L&W's Gough variant | The anchors are what L&W state. Eq. (1) at −3.5 Gyr lies inside the interval −4.5 < t < 4.77 Gyr over which C&K report its mean error as below 0.6% (Box 1). It gives S/S₀ = 0.774 there, against 0.743 on the straight line |
+| Swapping the Sun under L&W's rule (sensitivity) | The √CO₂–luminosity line fitted under L&W's own Sun is kept; only the future clock changes (reading `lw_line_fixed`) | Separates the change of future clock from the recalibration of L&W's response |
 | Swapping the Sun under C&K's law | Exact: their CO₂ depends on time only through S, so S* is found under eq. (1) and the straight line is inverted at S* | Needs no change to `ck1992` |
-| Attribution | Shapley values in ln(lifespan); Myr as a second view | Shares in ln sum to the whole and do not depend on swap order |
+| Attribution | Shapley values in ln(time); Myr as a second view | Shares in ln sum to the whole and do not depend on the order of the swaps |
 | C&K's constant-temperature step | T held at T₀ = 287.89 K, the faithful reading | Same reference as the faithful model |
+| Order of the steps inside the CO₂ law | Not dictated by the equations. After the greenhouse, the closure and the soil pump are reported as a 2 × 2 square | At constant T, eqs (7)–(8) still give productivity and soil CO₂; weathering is then only a diagnostic |
+| Threshold override | A level at or above 320 ppm is already met (time 0, as in `lw1982.lifespan`). Zero, and levels below C&K's 0.01 ppm fit range, are rejected. A level C&K's weathering never reaches gives inf. Unknown names raise an error | Keeps the helper inside the domains the two faithful models support |
 
 ### Results
 
@@ -601,18 +615,19 @@ which it can be swapped, shows how much its effect depends on the others.
 | Plants and threshold | **×2.18** | 35% | +246 | ×1.81 to ×2.61 |
 | Sun law | **×0.80** | −10% | −83 | ×0.76 to ×0.85 |
 
-The three factors multiply to 9.58, the full ratio of 767 to 80.0 Myr. The
+The three factors multiply to 9.58, the full ratio of 767 to 80.0 Myr, and the
 Myr column sums to the full 687 Myr.
 
-**The eight combinations** (`swap/ingredient_swap_cells.csv`), lifespan in
-Myr. Each single swap is one step along an edge of this cube.
+**The eight combinations** (`swap/ingredient_swap_cells.csv`) give the time
+to the CO₂ limit in Myr. Each single swap is one step along an edge of this
+cube.
 
 | CO₂ law | Plants and threshold | L&W's straight Sun | C&K's eq. (1) Sun |
 |---|---|---|---|
 | L&W's rule | C₃, 150 ppm | **80.0** (L&W) | 61.6 |
 | L&W's rule | C₄, 10 ppm | 209 | 160 |
-| C&K's weathering with plants | C₃, 150 ppm | 500 | 423 (C&K's C₃ run) |
-| C&K's weathering with plants | C₄, 10 ppm | 934 | **767** (C&K) |
+| C&K's weathering balance with plants | C₃, 150 ppm | 500 | 423 (C&K's C₃ run) |
+| C&K's weathering balance with plants | C₄, 10 ppm | 934 | **767** (C&K) |
 
 From L&W's end, swapping one ingredient alone gives:
 - the Sun law, ×0.77;
@@ -626,94 +641,135 @@ From C&K's end, swapping one back gives:
 
 ![Ingredient swap](swap/ingredient_swap.png)
 
-- **The CO₂ law accounts for three-quarters of the gap.** On the like-for-like
-  C₃ comparison, under one Sun, it lengthens L&W's 61.6 Myr to C&K's 423 Myr.
-- **The plants and threshold roughly double the lifespan.** The effect is ×2.6
-  under L&W's rule and ×1.8 under C&K's full law. Under C&K's greenhouse at
-  constant T, or with the soil pump held, it is about ×3.5 (139 to 486 Myr,
-  147 to 498 Myr). It falls to ×1.8 only once the plants are in, because the
-  pump switching off lengthens the 150 ppm case (×2.87) more than the 10 ppm
-  case (×1.54).
-- **C&K's Sun brightens faster and shortens every lifespan.** It rises 0.0835
-  per Gyr today against 0.0733 and steepens with time. Under L&W's rule the
-  factor also carries the re-anchoring: eq. (1) puts the Sun at 0.774 of
-  today's brightness 3.5 Gyr ago, against 0.743 on the straight line.
+- **The CO₂ law accounts for three-quarters of the gap.** In the like-for-like
+  C₃ comparison under one Sun, it lengthens L&W's 61.6 Myr to C&K's 423 Myr.
+- **The plants and threshold roughly double the time.** The effect is ×2.6
+  under L&W's rule and ×1.8 under C&K's full law. With C&K's greenhouse at
+  constant T, or with weathering balanced and the soil pump held, it is about
+  ×3.5 (139 to 486 Myr; 147 to 498 Myr). It falls to ×1.8 once the pump
+  responds, because a responsive pump lengthens the 150 ppm case (×2.87) more
+  than the 10 ppm case (×1.54).
+- **C&K's Sun brightens faster and shortens every time.** It rises 0.0835 per
+  Gyr today, against 0.0733, and steepens with time.
+  - Under L&W's rule, the ×0.80 also contains the recalibration of L&W's
+    response on the new Sun.
+  - Keeping L&W's fitted line and changing only the future clock moves just
+    the two L&W-rule cells under eq. (1): 61.6 becomes 69.8 Myr, and 160
+    becomes 181 Myr.
+  - The factors then become ×5.17 for the CO₂ law (73% of the change), ×2.18
+    for the plants and threshold (35%) and ×0.85 for the Sun (−7%), so the
+    ranking is unchanged.
 
-**The CO₂ law, step by step** (`swap/ingredient_swap_co2_steps.csv`, eq. (1)
-Sun). The steps are nested, not interchangeable. The greenhouse swap is
-defined only at constant temperature, because L&W's rule gives no
-temperature. The soil pump is defined only once temperature is free.
+**Inside the CO₂ law** (`swap/ingredient_swap_co2_steps.csv`, eq. (1) Sun).
+The first step swaps L&W's rule for C&K's greenhouse and albedo fits, with
+temperature held at T₀ in both. Each threshold is then reached at the
+brightening that the CO₂ drawdown can offset at fixed temperature:
 
-| Step | C₃, 150 ppm: Myr (factor) | C₄, 10 ppm: Myr (factor) | S*/S₀ (C₃ / C₄) | T − T₀ at the threshold, K (C₃ / C₄) |
-|---|---|---|---|---|
-| L&W's rule, T constant | 61.6 | 160 | 1.0052 / 1.0135 | 0 by assumption |
-| C&K's greenhouse and albedo, eqs (2)–(5), T constant | 139 (×2.26) | 486 (×3.04) | 1.0118 / 1.0423 | 0 / 0 |
-| C&K's weathering, T free, soil pump held at Π₀ | 147 (×1.06) | 498 (×1.03) | 1.0125 / 1.0434 | 0.17 / 0.32 |
-| C&K's weathering with plants (faithful) | 423 (×2.87) | 767 (×1.54) | 1.0366 / 1.0684 | 7.1 / 8.3 |
+| CO₂ drawdown | L&W's rule, recalibrated on eq. (1) | L&W's rule, own straight Sun | C&K's radiative fits, eqs (2)–(5) |
+|---|---|---|---|
+| 320 → 150 ppm | 0.52% more sunlight | 0.59% | 1.18% |
+| 320 → 10 ppm | 1.35% | 1.53% | 4.23% |
 
-- **Greenhouse.** Lowering CO₂ from 320 to 150 ppm offsets 0.52% of
-  brightening under L&W's rule (re-anchored on eq. (1); 0.59% on their own
-  straight Sun) but 1.18% under C&K's radiative fits. Lowering it to 10 ppm
-  offsets 1.35% (1.53%) and 4.23%. L&W's square-root rule gives each
-  e-fold of CO₂ a warming proportional to √CO₂, so low CO₂ buys little. This
-  is the gap C&K pointed to when they set L&W's implied 4 W m⁻² of CO₂
-  trapping against their own 20.4 W m⁻² (*Stated numbers*, above).
-- **Freeing temperature adds almost nothing while the soil pump is held.**
-  With Π fixed, soil CO₂ (P_soil₀ − P₀ + P) barely changes as atmospheric CO₂
-  falls. Weathering then hardly responds to CO₂ and holds temperature within
-  0.2–0.3 K of T₀ at the threshold, nearly where a perfect thermostat would. Freeing temperature and weakening the pump
-  are therefore not separable in C&K's model, and the gain is given to the two
-  together.
-- **The soil pump is what lengthens C&K's lifespans.** At the threshold the
-  plants stop growing (Π = 0), so soil CO₂ falls to the atmospheric value and
-  weathering weakens. The Earth must be 7–8 K warmer, and so the Sun
-  brighter, before weathering can draw CO₂ down to the threshold. The step is
-  ×2.87 for C₃ and ×1.54 for C₄.
+Under one Sun, this lengthens the time from 61.6 to 139 Myr for C₃ (×2.26) and
+from 160 to 486 Myr for C₄ (×3.04). The comparison is of solar compensation at
+fixed temperature, not of warming. Under L&W's square-root rule each e-fold of
+CO₂ offsets an amount proportional to √CO₂, so drawdown at low CO₂ offsets
+little. C&K made a related but separate comparison (*Stated numbers*, above):
+the total infrared trapping by today's 320 ppm, 4 W m⁻² implied by L&W's rule
+against 20.4 W m⁻² in their own model.
 
-**Only the pump being off matters at the threshold** (tested). Because both
-thresholds sit at P_min, where Π = 0, the shape of eq. (8) does not matter:
-- C₃ plants reach 10 ppm at the same time as C₄ plants (0.7670 Gyr);
+Two changes then remain, and either can come first:
+- **the closure:** temperature held at T₀, or weathering balancing the
+  volcanic supply with temperature free;
+- **the soil pump:** productivity held at Π₀, or responding through eq. (8).
+
+Time to the CO₂ limit, Myr, C₃ 150 ppm / C₄ 10 ppm:
+
+| | Soil pump held at Π₀ | Soil pump responsive, eq. (8) |
+|---|---|---|
+| T held at T₀ | 139 / 486 (diagnosed F/F₀ 0.988 / 0.977) | 139 / 486 (diagnosed F/F₀ 0.597 / 0.544) |
+| Weathering balance, T free | 147 / 498 (T − T₀ = 0.17 / 0.32 K) | **423 / 767** (T − T₀ = 7.1 / 8.3 K), the faithful model |
+
+- **Neither change does much alone.** At constant temperature, a responsive
+  pump changes only the diagnosed weathering (to F/F₀ ≈ 0.6), not the time.
+  With the pump held, balancing weathering changes the time by ×1.06 for C₃
+  and ×1.03 for C₄. Weathering then hardly responds to CO₂, and holds
+  temperature within 0.2–0.3 K of T₀.
+- **Together they give ×3.03 for C₃ and ×1.58 for C₄.** With a responsive
+  pump, falling CO₂ cuts productivity and soil CO₂, and with them weathering.
+  Restoring balance then needs a warmer Earth and a brighter Sun.
+- **Any single-path factor depends on the path.** The figure's path puts the
+  closure first (×1.06, then ×2.87 for C₃). Putting the pump first gives
+  ×1.00 and then ×3.03. The square is the order-free statement.
+
+**The warming builds as productivity declines** (`swap/ingredient_swap_warming.csv`,
+faithful runs). It does not wait for the plants to stop.
+
+| Atmospheric CO₂ | C₄ run: Myr, T − T₀, Π/Π₀ | C₃-only run: Myr, T − T₀, Π/Π₀ |
+|---|---|---|
+| 200 ppm | 121, +0.69 K, 0.82 | 171, +1.81 K, 0.54 |
+| 150 ppm | 193, +1.19 K, 0.70 | 423, +7.07 K, 0 |
+| 50 ppm | 448, +3.63 K, 0.30 | 595, +7.93 K, 0 |
+| 20 ppm | 639, +6.20 K, 0.09 | 701, +8.24 K, 0 |
+| 10 ppm | 767, +8.35 K, 0 | 767, +8.35 K, 0 |
+
+**At the threshold only the pump being off matters** (tested). Both
+thresholds sit at P_min, where Π = 0, so the rest of eq. (8) does not matter
+there:
+- In C&K's C₃-only run, atmospheric CO₂ reaches 10 ppm at 0.7670 Gyr, the
+  same time as in the C₄ run. That is 344 Myr after C₃ productivity stopped at
+  150 ppm.
 - Volk's half-saturation constant gives the same 10 ppm and 150 ppm times as
   C&K's own.
 
-Splitting the plants ingredient into curve and threshold therefore depends
-on the order (`swap/ingredient_swap_side.csv`):
-- swapping the C₄ curve first, with the threshold still at 150 ppm, shortens
-  the lifespan from 423 to 193 Myr (×0.46), and lowering the threshold to
-  10 ppm then gives ×3.98;
-- lowering the threshold first gives the whole effect, and the curve then
+This invariance fails once the threshold leaves P_min. With the C₄ curve and
+a 150 ppm threshold, productivity is still Π/Π₀ = 0.70 at the threshold. So
+splitting the plants ingredient into curve and threshold depends on the order
+(`swap/ingredient_swap_side.csv`):
+- Swapping the C₄ curve first, with the threshold still at 150 ppm, shortens
+  the time from 423 to 193 Myr (×0.46). Lowering the threshold to 10 ppm then
+  gives ×3.98.
+- Lowering the threshold first gives the whole effect, and the curve then
   changes nothing.
 
 **Side branch: WHK weathering** (neither paper). Replacing C&K's weathering
 with WHK's law on atmospheric CO₂ (exponent 0.3, no soil pump), with
 temperature free, gives 274 Myr to 150 ppm and 914 Myr to 10 ppm under
-eq. (1). That is shorter than C&K's C₃ run (423 Myr) but longer than their
-C₄ value (767 Myr).
+eq. (1). That is shorter than C&K's C₃ run (423 Myr) but longer than their C₄
+value (767 Myr).
 
 ### What the swap shows
 
-Three-quarters of the gap between 80 Myr and 0.77 Gyr lies in the CO₂ law.
-Inside it, two parts are of comparable size, and which is larger depends on
-the plants:
-- **Greenhouse strength** (×2.26 for C₃, ×3.04 for C₄). C&K's radiative fits
-  give low CO₂ two to three times more warming than L&W's square-root rule.
-- **The soil pump switching off** (×2.87 for C₃, ×1.54 for C₄). When the
-  plants stop growing, weathering weakens, and the Earth warms by 7–8 K
-  before CO₂ reaches the threshold.
+Three-quarters of the gap between L&W's 80 Myr and C&K's 767 Myr to the plant
+CO₂ limit lies in the CO₂ law. Inside it, two parts are of comparable size,
+and which is larger depends on the plants:
+- **Greenhouse strength** (×2.26 for C₃, ×3.04 for C₄). At fixed
+  temperature, C&K's radiative fits let a given CO₂ drawdown offset two to
+  three times as much extra sunlight as L&W's square-root rule.
+- **Weathering balance with a responsive soil pump** (×3.03 for C₃, ×1.58
+  for C₄, from the constant-temperature step). Neither half does much alone.
+  Together, they make falling productivity weaken weathering, so the Earth
+  warms by 7–8 K as CO₂ falls to the limit. The warming builds while
+  productivity is falling, not only after it stops.
 
 Of the other two ingredients:
-- **The threshold.** C₄ plants' lower limit about doubles the lifespan.
-- **The Sun law.** C&K's faster-brightening Sun takes back a fifth.
+- **The plants and threshold.** C₄ plants' lower limit about doubles the
+  time.
+- **The Sun law.** C&K's faster-brightening Sun takes back a fifth, or about
+  a seventh if L&W's fitted response is kept and only the clock changes.
 
-**Limits of the attribution.** The Shapley shares hold for these three
-ingredients and the two papers' settings; a finer or different split would
-share the gap differently. The steps of the CO₂ law are nested in the order
-the models allow, not chosen, and their factors depend on the plants. The
-attribution uses the faithful readings of both papers: L&W's 70,000 ppm past
-anchor and C&K's source-traced constants. With the SO₂ term fitted to C&K's
-printed kink, C&K's lifespan is 863 Myr instead of 767. Rerun for that
-reading, the factors become ×6.29 for the CO₂ law (77% of the change), ×2.16
-for the plants and threshold (32%) and ×0.80 for the Sun (−10%).
+**Limits of the attribution.**
+- The Shapley shares hold for these three ingredients and the two papers'
+  settings. A finer or different split would share the gap differently.
+- Factors along any one path through the CO₂ law depend on that path. The
+  2 × 2 square above is the statement that does not.
+- The attribution uses the faithful readings of both papers: L&W's 70,000 ppm
+  past anchor and C&K's source-traced constants.
+- With the SO₂ term fitted to C&K's printed kink, C&K's time to the C₄ limit
+  is 863 Myr instead of 767. Rerun for that reading, the factors become ×6.29
+  for the CO₂ law (77% of the change), ×2.16 for the plants and threshold
+  (32%) and ×0.80 for the Sun (−10%).
+- All three readings are in `swap/ingredient_swap_shapley.csv`.
 
 ## What holds
 

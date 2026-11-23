@@ -43,7 +43,7 @@ def test_ck_cells_balance_weathering():
 def test_shapley_telescopes():
     cells = sw.factorial()
     sh = sw.shapley(cells)
-    life = {tuple(r[f"{k}_from"] for k in sw.INGREDIENTS): r["lifespan_Myr"] for r in cells}
+    life = {tuple(r[f"{k}_from"] for k in sw.INGREDIENTS): r["time_to_limit_Myr"] for r in cells}
     lw_end, ck_end = life[("L&W",) * 3], life[("C&K",) * 3]
     assert sum(r["shapley_ln"] for r in sh) == pytest.approx(math.log(ck_end / lw_end), abs=1e-12)
     assert sum(r["shapley_Myr"] for r in sh) == pytest.approx(ck_end - lw_end, abs=1e-9)
@@ -54,22 +54,77 @@ def test_shapley_telescopes():
     assert by["sun"]["shapley_factor"] == pytest.approx(0.7981, abs=1e-3)
     for r in sh:
         assert r["factor_min"] <= r["shapley_factor"] <= r["factor_max"]
-    fitted = {(r["sun_from"], r["co2_from"], r["plants_from"]): r["lifespan_Myr"] for r in sw.factorial("so2_fitted")}
+    fitted = {(r["sun_from"], r["co2_from"], r["plants_from"]): r["time_to_limit_Myr"] for r in sw.factorial("so2_fitted")}
     assert fitted[("C&K",) * 3] == pytest.approx(ck.co2_time(ck.P_MIN_C4, ck.READINGS["so2_fitted"]) * 1e3, abs=1e-6)
     assert sum(r["share_of_ln_change"] for r in sw.shapley(sw.factorial("so2_fitted"))) == pytest.approx(1.0, abs=1e-12)
-    steps = sw.co2_steps()
-    held = [r for r in steps if r["step"] == sw.LAWS["ck_pump_held"]]
-    full = [r for r in steps if r["step"] == sw.LAWS["ck_biology"]]
-    assert all(0 < r["T_minus_T0_K"] < 0.5 for r in held)  # pump held: nearly a perfect thermostat
-    assert all(r["T_minus_T0_K"] > 7 for r in full)          # pump off at the threshold: the Earth warms
-    for lab in (p[0] for p in sw.PLANTS.values()):
-        s = [r for r in steps if r["plants"] == lab]
-        assert math.prod(r["factor"] for r in s[1:]) == pytest.approx(s[-1]["lifespan_Myr"] / s[0]["lifespan_Myr"])
+
+
+def test_fixed_lw_line_changes_only_the_future_clock():
+    """SW-R1: keeping the sqrt(CO2)-luminosity line fitted under L&W's own Sun
+    moves only the two L&W-rule cells under eq. (1); the ranking survives."""
+    rec = {(r["sun_from"], r["co2_from"], r["plants_from"]): r["time_to_limit_Myr"] for r in sw.factorial()}
+    fix = {(r["sun_from"], r["co2_from"], r["plants_from"]): r["time_to_limit_Myr"] for r in sw.factorial("lw_line_fixed")}
+    moved = {k for k in rec if rec[k] != fix[k]}
+    assert moved == {("C&K", "L&W", "L&W"), ("C&K", "L&W", "C&K")}
+    assert fix[("C&K", "L&W", "L&W")] == pytest.approx(69.836, abs=1e-3)
+    assert fix[("C&K", "L&W", "C&K")] == pytest.approx(180.612, abs=1e-3)
+    by = {r["ingredient"]: r["shapley_factor"] for r in sw.shapley(sw.factorial("lw_line_fixed"))}
+    assert (by["co2"], by["plants"], by["sun"]) == pytest.approx((5.167, 2.183, 0.850), abs=1e-3)
+
+
+def test_closure_and_pump_act_together():
+    """SW-R4: after the greenhouse, neither the closure (weathering balance, T
+    free) nor the responsive pump does much alone; together they do."""
+    steps = {(r["plants"][:2], r["step"]): r for r in sw.co2_steps()}
+    for p in ("C3", "C4"):
+        t = {k: steps[(p, k)]["time_to_limit_Myr"] for k in sw.CO2_STEPS}
+        assert t["ck_constant_T_pump_responsive"] == t["ck_constant_T_pump_held"]  # pump alone: no change
+        assert 1.0 < t["ck_pump_held"] / t["ck_constant_T_pump_held"] < 1.06       # closure alone: small
+        assert t["ck_biology"] / t["ck_constant_T_pump_responsive"] > 1.5          # both: large
+        assert steps[(p, "lw_rule")]["T_minus_T0_K"] == 0.0
+        assert steps[(p, "ck_pump_held")]["F_over_F0"] == pytest.approx(1.0, abs=1e-7)
+        assert steps[(p, "ck_biology")]["F_over_F0"] == pytest.approx(1.0, abs=1e-7)
+        assert 0 < steps[(p, "ck_pump_held")]["T_minus_T0_K"] < 0.5
+        assert steps[(p, "ck_biology")]["T_minus_T0_K"] > 7
+    assert steps[("C3", "ck_constant_T_pump_responsive")]["F_over_F0"] == pytest.approx(0.597, abs=1e-3)
+    assert steps[("C4", "ck_constant_T_pump_responsive")]["F_over_F0"] == pytest.approx(0.544, abs=1e-3)
+    # the warming builds while productivity declines, not only after it stops
+    w = {(r["plants"], r["P_atm_ppm"]): r for r in sw.warming()}
+    assert w[("C4", 20.0)]["T_minus_T0_K"] == pytest.approx(6.197, abs=1e-3)
+    assert w[("C4", 20.0)]["Pi_ratio"] == pytest.approx(0.0903, abs=1e-4)
+    assert w[("C4", 10.0)]["T_minus_T0_K"] == pytest.approx(8.346, abs=1e-3)
+
+
+def test_threshold_override_domain():
+    """SW-R5: an already-met threshold is reached today; zero and levels below
+    C&K's fit range are rejected; a level C&K's weathering never reaches is inf."""
+    for law in ("lw_rule", "ck_constant_T", "ck_biology"):
+        for sun in sw.SUNS:
+            assert sw.lifespan_myr(law, "C3", sun, threshold_ppm=400.0) == 0.0
+            assert sw.lifespan_myr(law, "C3", sun, threshold_ppm=320.0) == 0.0
+            with pytest.raises(ValueError):
+                sw.lifespan_myr(law, "C3", sun, threshold_ppm=0.0)
+    assert lw.lifespan(replace(lw.FAITHFUL, c_limit=400.0)) == 0.0
+    with pytest.raises(ValueError):
+        sw.lifespan_myr("ck_constant_T", "C4", "straight", threshold_ppm=0.005)
+    assert sw.lifespan_myr("ck_biology", "C4", "eq1", threshold_ppm=0.5) == float("inf")  # below the 1 ppm floor
+
+
+def test_unknown_names_are_rejected():
+    """SW-R6: a misspelt setting must not fall through to another model."""
+    for args in (("lw_rul", "C3", "eq1"), ("lw_rule", "C3", "straght"), ("lw_rule", "C5", "eq1")):
+        with pytest.raises(ValueError, match="unknown"):
+            sw.lifespan_myr(*args)
+    with pytest.raises(ValueError, match="unknown"):
+        sw.lifespan_myr("lw_rule", "C3", "eq1", lw_line="fixd")
+    with pytest.raises(ValueError, match="unknown"):
+        sw.factorial("so2_fited")
 
 
 def test_threshold_at_compensation_point_ignores_the_productivity_curve():
-    """At a threshold equal to Pmin, Pi = 0: the lifespan depends on the soil
-    pump being off, not on the shape of eq. (8)."""
+    """At a threshold equal to Pmin, Pi = 0: the time depends on the soil pump
+    being off, not on the shape of eq. (8). In the C3-only run it is the
+    atmosphere that reaches 10 ppm, long after C3 productivity has stopped."""
     assert ck.co2_time(ck.P_MIN_C4, ck.C3) == pytest.approx(ck.co2_time(ck.P_MIN_C4), abs=1e-9)
     volk = ck.READINGS["volk_p_half"]
     assert ck.co2_time(ck.P_MIN_C4, volk) == pytest.approx(ck.co2_time(ck.P_MIN_C4), abs=1e-9)
@@ -79,6 +134,6 @@ def test_threshold_at_compensation_point_ignores_the_productivity_curve():
 
 def test_outputs_reproduce(tmp_path):
     sw.main(tmp_path)
-    for f in ("cells", "shapley", "co2_steps", "side"):
+    for f in ("cells", "shapley", "co2_steps", "warming", "side"):
         name = f"ingredient_swap_{f}.csv"
         assert (tmp_path / name).read_bytes() == (sw.Path("models/biosphere_lifespan/swap") / name).read_bytes(), name
