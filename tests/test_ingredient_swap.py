@@ -105,6 +105,9 @@ def test_threshold_override_domain():
             with pytest.raises(ValueError):
                 sw.lifespan_myr(law, "C3", sun, threshold_ppm=0.0)
     assert lw.lifespan(replace(lw.FAITHFUL, c_limit=400.0)) == 0.0
+    assert sw.lw_rule_s_star(400.0, lw.luminosity) == 1.0
+    with pytest.raises(ValueError):
+        sw.lw_rule_s_star(0.0, lw.luminosity)
     with pytest.raises(ValueError):
         sw.lifespan_myr("ck_constant_T", "C4", "straight", threshold_ppm=0.005)
     assert sw.lifespan_myr("ck_biology", "C4", "eq1", threshold_ppm=0.5) == float("inf")  # below the 1 ppm floor

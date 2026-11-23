@@ -91,7 +91,13 @@ def time_to(s_ratio: float, sun: str) -> float:
 def lw_rule_s_star(threshold_ppm: float, lum) -> float:
     """L&W's rule re-anchored on the luminosity law lum(t Myr): the two dated
     anchors (320 ppm today, 70,000 ppm 3,500 Myr ago) are kept, so the rule's
-    slope follows the Sun's luminosity at the past anchor."""
+    slope follows the Sun's luminosity at the past anchor. A threshold at or
+    above today's CO2 is already met (S* = 1); it must be positive, since the
+    rule ends where CO2 reaches zero."""
+    if not (math.isfinite(threshold_ppm) and threshold_ppm > 0.0):
+        raise ValueError(f"threshold must be a positive CO2 level in ppm, not {threshold_ppm}")
+    if threshold_ppm >= lw.C_NOW:
+        return 1.0
     lp = float(lum(lw.T_PAST))
     a, b = math.sqrt(lw.C_NOW), math.sqrt(lw.C_PAST)
     return 1.0 + (lp - 1.0) * (math.sqrt(threshold_ppm) - a) / (b - a)
