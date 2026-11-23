@@ -13,8 +13,8 @@ that swaps one ingredient at a time between them to attribute the gap
 between their times to the plants' CO₂ limit.
 
 Status: **Lovelock & Whitfield approved by Codex (1d7cd5d); Caldeira &
-Kasting approved by Codex (19efb5e); ingredient swap in review** (board
-thread 183).
+Kasting approved by Codex (19efb5e); ingredient swap approved by Codex
+(cb73916)** (board thread 183).
 
 ## Sources
 
