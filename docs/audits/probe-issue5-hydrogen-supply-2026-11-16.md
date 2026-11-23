@@ -199,3 +199,13 @@ Applied as worded above:
 - References: Canfield et al. 2006, Conrad 1999, Cord-Ruwisch et al. 1988, Lovley & Phillips 1987 and Ward et al. 2019, all checked in Crossref. The reference table is now sorted alphabetically.
 
 Checks: the claims checker reports 70 claims, 39 cited, 0 errors. The four targeted paper tests pass.
+
+## Applied-text corrections and closure (23 November)
+
+Codex's applied review (`docs/audits/probe-issue5-applied-review-2026-11-23.md`) passed the six insertions, the prose numbers, both literature comparisons and table S8e, and asked for three corrections. All three are applied:
+
+1. C70 is limited to half recycling: fermentation shifts the feasible H₂ supply from 306–611 to 149–189 Tmol yr⁻¹, and the 50 Tmol acetate yr⁻¹ diverted applies at the new geometric midpoint. Its limit field now records that the window ends are pure-guild limits, that f = 0 leaves the bounds unchanged and that f = 1 has no lasting acetate sink. Table S8e's first row reads "306.4 lower bound", and the caption names the ends as pure-guild limits with both groups positive strictly inside.
+2. The S8 paragraph and S8e caption use $t_{CH_4}$ for the methane lifetime (τ is reserved for the thermal response). The paragraph states the gross input as $4P/(c\,t_{CH_4})$ and separates total methane removal (65.2 Tmol yr⁻¹) from the 65.0 required from biology. C69's basis says the same and lists the 21 November source review as evidence.
+3. C20 is in the S11 claim-use map for §3.2.
+
+Also applied from the review's recommendations: §2.2 points to §2.3 for the methane lifetime; §2.2 and S8 give Canfield's higher inputs as "34 and 110 Tmol H₂ per year"; Table 1 says the 306–611 window is "without co-produced acetate". Claims check: 70 claims, 40 cited, 0 errors; the four paper tests pass. Issue 5 is closed.

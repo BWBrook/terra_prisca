@@ -176,12 +176,12 @@ $$K_H \frac{dp}{dt} = H\,[\,J - q_A X_A - q_M X_M - k_{ex}(p - p_{atm})\,],
 \tag{2.4}$$
 
 where K_H is hydrogen's solubility. Exchange runs in either direction.
-At the assumed methane lifetime of 10,000 years, the reference supply scales
-to 401 Tmol H₂ per year. Of this, 260 goes to methane, 111 leaves in acetate
+With the 10,000-year methane lifetime assumed in §2.3, the reference supply
+scales to 401 Tmol H₂ per year. Of this, 260 goes to methane, 111 leaves in acetate
 and biomass, and 30 enters the atmosphere. Base-case fresh geological inputs
 are 3.4 and 6.1 Tmol H₂ per year (Canfield et al. 2006; Ward et al. 2019),
-and published scenarios with greater outgassing reach 34–110 Tmol (Canfield
-et al. 2006). The model prescribes gross delivery to the microbes, which
+and published scenarios with greater outgassing supply 34 and 110 Tmol H₂
+per year (Canfield et al. 2006). The model prescribes gross delivery to the microbes, which
 could also include biologically recycled hydrogen. Part
 of each group's uptake builds biomass, which leaves with lost cells rather
 than becoming methane. The catabolic flux is
@@ -670,7 +670,7 @@ the losing group can persist while the climate catches up.
 | Cessation thresholds | Reaction thermodynamics; reference thresholds assumed | Requirements at low hydrogen | 20 and 1 Pa at 30 °C |
 | Physiology below 277.15 K | Continuation | Extends the model to 273 K | Capacity and half-saturation held at 277.15 K values |
 | Cell loss ℓ | Assumption, 0.001 h⁻¹ | Sets requirements, and so T\* | T\* = 278.4, 281.5, 286.5 K at ℓ = 0.0005, 0.001, 0.002 h⁻¹ |
-| Hydrogen supply and exchange | Gross H₂ input prescribed. At a 10,000-year methane lifetime, 401 Tmol H₂ yr⁻¹ at reference and 306–611 across the half-recycling window. Geological and recycled contributions are unresolved | Feeds the community; atmospheric outlet | Reservoir at 0 Pa; 0–100 Pa leaves T\* unchanged (ESM) |
+| Hydrogen supply and exchange | Gross H₂ input prescribed. At a 10,000-year methane lifetime, 401 Tmol H₂ yr⁻¹ at reference and 306–611 across the half-recycling window without co-produced acetate. Geological and recycled contributions are unresolved | Feeds the community; atmospheric outlet | Reservoir at 0 Pa; 0–100 Pa leaves T\* unchanged (ESM) |
 | Acetate fate | Assumption: removal over 1 yr; fraction f to methane, the rest to a lasting non-methane sink (oxidant, export or burial); lost biomass exported | Sets the methane-yield contrast between routes, and so the supply window | Needs a lasting non-methane sink: at the reference supply 27.7 Tmol CH₄-equivalent yr⁻¹ of acetate and biomass, 20.2 Tmol of it acetate at f = 0.5. The window ratio falls from 2.0 (f = 0.5) to 1.15 (0.9) and 1.05 (1), and closes at f = 1 if biomass also returns as methane |
 | Atmospheric methane | Lifetime 10,000 yr assumed; abiotic source quoted by Arney et al. (2016) | Links microbes to climate | Well-mixed column ratio stands for surface CH₄/CO₂ |
 | Haze climate T_clim(r) | Arney et al. (2016), case B: 2.7 Ga, 81% sunlight | Provides the haze-cooling branch | One case; assumed bridge to 283 K at zero methane and plateau beyond the data |

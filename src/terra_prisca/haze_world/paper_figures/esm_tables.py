@@ -304,7 +304,7 @@ def s8_acetate():
     for r in json.loads((REVIEW / "issue5_supply_scale.json").read_text())["fermentation"]:
         hi = r["h2_window_hi_tmol_yr"]
         ferm.append({"f": f"{r['f']:g}",
-                     "H₂ window (Tmol yr⁻¹)": f"≥ {r['h2_window_lo_tmol_yr']:.1f}" if hi is None else f"{r['h2_window_lo_tmol_yr']:.1f}–{hi:.1f}",
+                     "H₂ window (Tmol yr⁻¹)": f"{r['h2_window_lo_tmol_yr']:.1f} lower bound" if hi is None else f"{r['h2_window_lo_tmol_yr']:.1f}–{hi:.1f}",
                      "window ratio": "no upper end" if r["ratio"] is None else f"{r['ratio']:.3f}",
                      "evaluated at": "original 401 Tmol H₂ yr⁻¹" if r["evaluated_at"] == "reference J" else "geometric mid-window",
                      "H₂ supply (Tmol yr⁻¹)": f"{r['h2_tmol_yr']:.1f}",
@@ -320,7 +320,7 @@ def s8_acetate():
 CLAIM_USE = {"C05": "S2", "C06": "S2", "C44": "S3", "C45": "S3, S4", "C52": "S3, S6, S10", "C54": "S4", "C55": "S5, S6", "C56": "S5, S6",
              "C57": "S5", "C58": "S5, S6", "C59": "S7", "C38": "S6", "C39": "S6", "C40": "S6", "C41": "S6", "C42": "S6", "C43": "S6",
              "C46": "S6", "C47": "S6", "C48": "S6", "C49": "S6", "C50": "S6", "C51": "S6", "C60": "S4", "C61": "S4", "C62": "S9", "C63": "S9", "C64": "S9",
-             "C08": "S10", "C09": "S10", "C65": "S10", "C66": "S10", "C67": "S8", "C68": "S8", "C69": "S8", "C70": "S8"}
+             "C08": "S10", "C09": "S10", "C65": "S10", "C66": "S10", "C67": "S8", "C68": "S8", "C69": "S8", "C70": "S8", "C20": "§3.2"}
 
 
 def s9_claims():

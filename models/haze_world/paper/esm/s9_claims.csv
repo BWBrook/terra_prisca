@@ -3,6 +3,7 @@ C05,supported,ffd4fbc,S2,At the central hydrogen crossings the routing feedback 
 C06,supported,ffd4fbc,S2,Reference explicit populations have a locally stable mixed state warmer than matched controls with acetogens disabled
 C08,supported,ffd4fbc,S10,Tested lower-recycling climate-tracking geometry leaves paired rescue domain-limited; higher-recycling coexistence provides counterexamples to universal failure
 C09,supported,ffd4fbc,S10,Both buffered refuges restore matching mixed states in the twelve key reference runs; the full inventory has diverse outcomes
+C20,supported,ffd4fbc,§3.2,The reference mixed equilibrium has a weakly damped local mode reproduced by finite perturbations
 C38,provisional,1c1df89,S6,PB1 continuum pinning-robustness frontier after B1
 C39,refuted,1c1df89,S6,PB2 methane-only product feedback supplies all-lag stability
 C40,refuted,1c1df89,S6,PB3 habitat quadrature converges at N33 and fixed-chemistry delay margin stays below30 yr
@@ -34,4 +35,4 @@ C66,supported,f508dfa,S10,"Any tested positive immigration assembles the mixture
 C67,supported,1a2358c,S8,"Raising the acetate fate f from 0.5 towards 1 narrows the exact supply window and lengthens the exact first-loss margin together, steepens full-product graded states, and narrows the imposed-warming window far less than the supply window"
 C68,supported,1a2358c,S8,"Exact control needs a lasting route-dependent hydrogen sink other than methane: at fixed feasible supply the combined acetate-plus-biomass export is independent of f, and if lost biomass also returned as methane the exact plateau would close at f=1"
 C69,supported,56a4609,S8,"At the assumed 10000-yr methane lifetime the reference hydrogen supply is about 400 Tmol H2 per yr, far above base-case fresh geological inputs; its planetary scale is conditional on the lifetime"
-C70,supported,56a4609,S8,"If glucose fermentation supplied the hydrogen and its acetate shared the acetogens' fate, the exact window would narrow and shift to lower supply and the lasting acetate sink would grow"
+C70,supported,56a4609,S8,"With half the acetate from each source recycled outside the shared hydrogen pool, glucose fermentation shifts the feasible H2 supply from 306-611 to 149-189 Tmol per yr; at the new geometric midpoint 50 Tmol acetate per yr leaves the methane pathway"
