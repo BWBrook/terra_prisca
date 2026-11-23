@@ -604,13 +604,36 @@ which it can be swapped, shows how much its effect depends on the others.
 The three factors multiply to 9.58, the full ratio of 767 to 80.0 Myr. The
 Myr column sums to the full 687 Myr.
 
+**The eight combinations** (`swap/ingredient_swap_cells.csv`), lifespan in
+Myr. Each single swap is one step along an edge of this cube.
+
+| CO₂ law | Plants and threshold | L&W's straight Sun | C&K's eq. (1) Sun |
+|---|---|---|---|
+| L&W's rule | C₃, 150 ppm | **80.0** (L&W) | 61.6 |
+| L&W's rule | C₄, 10 ppm | 209 | 160 |
+| C&K's weathering with plants | C₃, 150 ppm | 500 | 423 (C&K's C₃ run) |
+| C&K's weathering with plants | C₄, 10 ppm | 934 | **767** (C&K) |
+
+From L&W's end, swapping one ingredient alone gives:
+- the Sun law, ×0.77;
+- the plants and threshold, ×2.61;
+- the CO₂ law, ×6.24.
+
+From C&K's end, swapping one back gives:
+- the Sun law, ×1.22;
+- the plants and threshold, ×0.55;
+- the CO₂ law, ×0.21.
+
 ![Ingredient swap](swap/ingredient_swap.png)
 
 - **The CO₂ law accounts for three-quarters of the gap.** On the like-for-like
   C₃ comparison, under one Sun, it lengthens L&W's 61.6 Myr to C&K's 423 Myr.
 - **The plants and threshold roughly double the lifespan.** The effect is ×2.6
-  under L&W's rule and ×1.8 under C&K's law, because C&K's thermostat already
-  slows the late decline of CO₂.
+  under L&W's rule and ×1.8 under C&K's full law. Under C&K's greenhouse at
+  constant T, or with the soil pump held, it is about ×3.5 (139 to 486 Myr,
+  147 to 498 Myr). It falls to ×1.8 only once the plants are in, because the
+  pump switching off lengthens the 150 ppm case (×2.87) more than the 10 ppm
+  case (×1.54).
 - **C&K's Sun brightens faster and shortens every lifespan.** It rises 0.0835
   per Gyr today against 0.0733 and steepens with time. Under L&W's rule the
   factor also carries the re-anchoring: eq. (1) puts the Sun at 0.774 of
@@ -621,30 +644,31 @@ Sun). The steps are nested, not interchangeable. The greenhouse swap is
 defined only at constant temperature, because L&W's rule gives no
 temperature. The soil pump is defined only once temperature is free.
 
-| Step | C₃, 150 ppm: Myr (factor) | C₄, 10 ppm: Myr (factor) | S*/S₀ (C₃ / C₄) |
-|---|---|---|---|
-| L&W's rule, T constant | 61.6 | 160 | 1.0052 / 1.0135 |
-| C&K's greenhouse and albedo, eqs (2)–(5), T constant | 139 (×2.26) | 486 (×3.04) | 1.0118 / 1.0423 |
-| C&K's weathering, T free, soil pump held at Π₀ | 147 (×1.06) | 498 (×1.03) | 1.0125 / 1.0434 |
-| C&K's weathering with plants (faithful) | 423 (×2.87) | 767 (×1.54) | 1.0366 / 1.0684 |
+| Step | C₃, 150 ppm: Myr (factor) | C₄, 10 ppm: Myr (factor) | S*/S₀ (C₃ / C₄) | T − T₀ at the threshold, K (C₃ / C₄) |
+|---|---|---|---|---|
+| L&W's rule, T constant | 61.6 | 160 | 1.0052 / 1.0135 | 0 by assumption |
+| C&K's greenhouse and albedo, eqs (2)–(5), T constant | 139 (×2.26) | 486 (×3.04) | 1.0118 / 1.0423 | 0 / 0 |
+| C&K's weathering, T free, soil pump held at Π₀ | 147 (×1.06) | 498 (×1.03) | 1.0125 / 1.0434 | 0.17 / 0.32 |
+| C&K's weathering with plants (faithful) | 423 (×2.87) | 767 (×1.54) | 1.0366 / 1.0684 | 7.1 / 8.3 |
 
 - **Greenhouse.** Lowering CO₂ from 320 to 150 ppm offsets 0.52% of
-  brightening under L&W's rule but 1.18% under C&K's radiative fits. Lowering
-  it to 10 ppm offsets 1.35% and 4.23%. L&W's square-root rule gives each
+  brightening under L&W's rule (re-anchored on eq. (1); 0.59% on their own
+  straight Sun) but 1.18% under C&K's radiative fits. Lowering it to 10 ppm
+  offsets 1.35% (1.53%) and 4.23%. L&W's square-root rule gives each
   e-fold of CO₂ a warming proportional to √CO₂, so low CO₂ buys little. This
   is the gap C&K pointed to when they set L&W's implied 4 W m⁻² of CO₂
   trapping against their own 20.4 W m⁻² (*Stated numbers*, above).
 - **Freeing temperature adds almost nothing while the soil pump is held.**
   With Π fixed, soil CO₂ (P_soil₀ − P₀ + P) barely changes as atmospheric CO₂
-  falls. Weathering then hardly responds to CO₂ and holds temperature nearly
-  where a perfect thermostat would. Freeing temperature and weakening the pump
+  falls. Weathering then hardly responds to CO₂ and holds temperature within
+  0.2–0.3 K of T₀ at the threshold, nearly where a perfect thermostat would. Freeing temperature and weakening the pump
   are therefore not separable in C&K's model, and the gain is given to the two
   together.
 - **The soil pump is what lengthens C&K's lifespans.** At the threshold the
   plants stop growing (Π = 0), so soil CO₂ falls to the atmospheric value and
-  weathering weakens. The Sun must then brighten further before weathering
-  can draw CO₂ down to the threshold. The step is ×2.87 for C₃ and ×1.54 for
-  C₄.
+  weathering weakens. The Earth must be 7–8 K warmer, and so the Sun
+  brighter, before weathering can draw CO₂ down to the threshold. The step is
+  ×2.87 for C₃ and ×1.54 for C₄.
 
 **Only the pump being off matters at the threshold** (tested). Because both
 thresholds sit at P_min, where Π = 0, the shape of eq. (8) does not matter:
@@ -663,16 +687,21 @@ on the order (`swap/ingredient_swap_side.csv`):
 **Side branch: WHK weathering** (neither paper). Replacing C&K's weathering
 with WHK's law on atmospheric CO₂ (exponent 0.3, no soil pump), with
 temperature free, gives 274 Myr to 150 ppm and 914 Myr to 10 ppm under
-eq. (1). Both are longer than C&K's faithful values.
+eq. (1). That is shorter than C&K's C₃ run (423 Myr) but longer than their
+C₄ value (767 Myr).
 
 ### What the swap shows
 
-The gap between 80 Myr and 0.77 Gyr is mostly physics, not biology or
-astronomy:
-- **Greenhouse strength.** C&K's radiative fits give low CO₂ two to three
-  times more warming than L&W's square-root rule.
-- **The soil pump switching off.** When the plants stop growing, weathering
-  weakens and the thermostat lets the Earth warm instead of drawing CO₂ down.
+Three-quarters of the gap between 80 Myr and 0.77 Gyr lies in the CO₂ law.
+Inside it, two parts are of comparable size, and which is larger depends on
+the plants:
+- **Greenhouse strength** (×2.26 for C₃, ×3.04 for C₄). C&K's radiative fits
+  give low CO₂ two to three times more warming than L&W's square-root rule.
+- **The soil pump switching off** (×2.87 for C₃, ×1.54 for C₄). When the
+  plants stop growing, weathering weakens, and the Earth warms by 7–8 K
+  before CO₂ reaches the threshold.
+
+Of the other two ingredients:
 - **The threshold.** C₄ plants' lower limit about doubles the lifespan.
 - **The Sun law.** C&K's faster-brightening Sun takes back a fifth.
 
@@ -682,8 +711,9 @@ share the gap differently. The steps of the CO₂ law are nested in the order
 the models allow, not chosen, and their factors depend on the plants. The
 attribution uses the faithful readings of both papers: L&W's 70,000 ppm past
 anchor and C&K's source-traced constants. With the SO₂ term fitted to C&K's
-printed kink, C&K's lifespan is 863 Myr instead of 767; the swap was not
-rerun for that reading.
+printed kink, C&K's lifespan is 863 Myr instead of 767. Rerun for that
+reading, the factors become ×6.29 for the CO₂ law (77% of the change), ×2.16
+for the plants and threshold (32%) and ×0.80 for the Sun (−10%).
 
 ## What holds
 

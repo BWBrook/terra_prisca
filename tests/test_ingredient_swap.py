@@ -54,7 +54,14 @@ def test_shapley_telescopes():
     assert by["sun"]["shapley_factor"] == pytest.approx(0.7981, abs=1e-3)
     for r in sh:
         assert r["factor_min"] <= r["shapley_factor"] <= r["factor_max"]
+    fitted = {(r["sun_from"], r["co2_from"], r["plants_from"]): r["lifespan_Myr"] for r in sw.factorial("so2_fitted")}
+    assert fitted[("C&K",) * 3] == pytest.approx(ck.co2_time(ck.P_MIN_C4, ck.READINGS["so2_fitted"]) * 1e3, abs=1e-6)
+    assert sum(r["share_of_ln_change"] for r in sw.shapley(sw.factorial("so2_fitted"))) == pytest.approx(1.0, abs=1e-12)
     steps = sw.co2_steps()
+    held = [r for r in steps if r["step"] == sw.LAWS["ck_pump_held"]]
+    full = [r for r in steps if r["step"] == sw.LAWS["ck_biology"]]
+    assert all(0 < r["T_minus_T0_K"] < 0.5 for r in held)  # pump held: nearly a perfect thermostat
+    assert all(r["T_minus_T0_K"] > 7 for r in full)          # pump off at the threshold: the Earth warms
     for lab in (p[0] for p in sw.PLANTS.values()):
         s = [r for r in steps if r["plants"] == lab]
         assert math.prod(r["factor"] for r in s[1:]) == pytest.approx(s[-1]["lifespan_Myr"] / s[0]["lifespan_Myr"])

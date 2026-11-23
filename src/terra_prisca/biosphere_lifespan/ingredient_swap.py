@@ -80,8 +80,11 @@ def lw_rule_s_star(threshold_ppm: float, lum) -> float:
     return 1.0 + (lp - 1.0) * (math.sqrt(threshold_ppm) - a) / (b - a)
 
 
-def _reading(law: str, plants: str) -> ck.Reading:
-    r = PLANTS[plants][2]
+CK_READINGS = {"faithful": 1.0, "so2_fitted": ck.SO2_FIT_FACTOR}  # SO2 factor of C&K's weathering
+
+
+def _reading(law: str, plants: str, so2: float = 1.0) -> ck.Reading:
+    r = replace(PLANTS[plants][2], so2_factor=so2) if so2 != 1.0 else PLANTS[plants][2]
     if law == "ck_pump_held":
         return replace(r, name=LAWS[law], productivity="constant")
     if law == "whk_weathering":
@@ -89,7 +92,7 @@ def _reading(law: str, plants: str) -> ck.Reading:
     return r
 
 
-def s_star(law: str, plants: str, sun: str = "eq1", threshold_ppm: float | None = None) -> float:
+def s_star(law: str, plants: str, sun: str = "eq1", threshold_ppm: float | None = None, so2: float = 1.0) -> float:
     """S*/S0: the brightening at which CO2 first falls to the threshold.
     C&K's laws do not depend on the Sun law (CO2 depends on time only through
     S), so they are solved under eq. (1) and mapped."""
@@ -100,12 +103,12 @@ def s_star(law: str, plants: str, sun: str = "eq1", threshold_ppm: float | None 
     if law == "ck_constant_T":
         t = ck.constant_T_time(thr * PPM, ck.FAITHFUL, T_MAX_GYR)
     else:
-        t = ck.co2_time(thr * PPM, _reading(law, plants), T_MAX_GYR)
+        t = ck.co2_time(thr * PPM, _reading(law, plants, so2), T_MAX_GYR)
     return brightness(t, "eq1") if np.isfinite(t) else float("nan")
 
 
-def lifespan_myr(law: str, plants: str, sun: str, threshold_ppm: float | None = None) -> float:
-    return time_to(s_star(law, plants, sun, threshold_ppm), sun) * MYR_PER_GYR
+def lifespan_myr(law: str, plants: str, sun: str, threshold_ppm: float | None = None, so2: float = 1.0) -> float:
+    return time_to(s_star(law, plants, sun, threshold_ppm, so2), sun) * MYR_PER_GYR
 
 
 ENDS = {"L&W": {"sun": "straight", "co2": "lw_rule", "plants": "C3"},
@@ -113,17 +116,14 @@ ENDS = {"L&W": {"sun": "straight", "co2": "lw_rule", "plants": "C3"},
 INGREDIENTS = ("sun", "co2", "plants")
 
 
-def cell(setting: dict) -> float:
-    return lifespan_myr(setting["co2"], setting["plants"], setting["sun"])
-
-
-def factorial() -> list[dict]:
+def factorial(ck_reading: str = "faithful") -> list[dict]:
     """The eight combinations of the two papers' settings."""
+    so2 = CK_READINGS[ck_reading]
     rows = []
     for pick in product(("L&W", "C&K"), repeat=3):
         st = {k: ENDS[p][k] for k, p in zip(INGREDIENTS, pick)}
-        sstar = s_star(st["co2"], st["plants"], st["sun"])
-        rows.append({**{f"{k}_from": p for k, p in zip(INGREDIENTS, pick)},
+        sstar = s_star(st["co2"], st["plants"], st["sun"], so2=so2)
+        rows.append({"ck_reading": ck_reading, **{f"{k}_from": p for k, p in zip(INGREDIENTS, pick)},
                      "sun": SUNS[st["sun"]], "co2": LAWS[st["co2"]], "plants": PLANTS[st["plants"]][0],
                      "S_star_over_S0": sstar, "lifespan_Myr": time_to(sstar, st["sun"]) * MYR_PER_GYR})
     return rows
@@ -148,7 +148,7 @@ def shapley(cells: list[dict]) -> list[dict]:
             logs.append(math.log(b / a))
             myrs.append(b - a)
         factors = [math.exp(x) for x in logs]
-        rows.append({"ingredient": ing, "L&W setting": _label(ing, "L&W"), "C&K setting": _label(ing, "C&K"),
+        rows.append({"ck_reading": cells[0]["ck_reading"], "ingredient": ing, "L&W setting": _label(ing, "L&W"), "C&K setting": _label(ing, "C&K"),
                      "shapley_factor": math.exp(np.mean(logs)), "shapley_ln": float(np.mean(logs)),
                      "shapley_Myr": float(np.mean(myrs)),
                      "factor_min": min(factors), "factor_max": max(factors),
@@ -175,7 +175,9 @@ def co2_steps() -> list[dict]:
         for law in LAWS:
             sstar = s_star(law, plants, "eq1")
             t = time_to(sstar, "eq1") * MYR_PER_GYR
-            rows.append({"plants": PLANTS[plants][0], "step": LAWS[law], "S_star_over_S0": sstar, "lifespan_Myr": t,
+            T = float("nan") if law == "lw_rule" else ck.temperature(sstar * ck.S0, PLANTS[plants][1] * PPM)
+            rows.append({"plants": PLANTS[plants][0], "step": LAWS[law], "S_star_over_S0": sstar,
+                         "T_at_threshold_K": T, "T_minus_T0_K": T - ck.t0(), "lifespan_Myr": t,
                          "factor": t / prev if prev else float("nan"), "change_Myr": t - prev if prev else float("nan")})
             prev = t
     return rows
@@ -259,9 +261,10 @@ def main(outdir: Path) -> None:
     outdir.mkdir(parents=True, exist_ok=True)
     cells = factorial()
     sh = shapley(cells)
+    fitted = factorial("so2_fitted")
     steps = co2_steps()
-    _write(outdir / "ingredient_swap_cells.csv", cells)
-    _write(outdir / "ingredient_swap_shapley.csv", sh)
+    _write(outdir / "ingredient_swap_cells.csv", cells + fitted)
+    _write(outdir / "ingredient_swap_shapley.csv", sh + shapley(fitted))
     _write(outdir / "ingredient_swap_co2_steps.csv", steps)
     _write(outdir / "ingredient_swap_side.csv", side_branches())
     figure(outdir / "ingredient_swap.png", sh, steps, cells)
