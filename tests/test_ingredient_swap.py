@@ -122,6 +122,12 @@ def test_unknown_names_are_rejected():
         sw.lifespan_myr("lw_rule", "C3", "eq1", lw_line="fixd")
     with pytest.raises(ValueError, match="unknown"):
         sw.factorial("so2_fited")
+    # a side-row label is not a law
+    with pytest.raises(ValueError, match="unknown"):
+        sw.lifespan_myr("c4_productivity_at_150", "C4", "eq1")
+    side = [r for r in sw.side_branches() if r["branch"] == sw.SIDE["c4_productivity_at_150"] and r["sun"] == sw.SUNS["eq1"]]
+    assert side[0]["time_to_limit_Myr"] == pytest.approx(sw.lifespan_myr("ck_biology", "C4", "eq1", threshold_ppm=150.0))
+    assert side[0]["time_to_limit_Myr"] == pytest.approx(192.878, abs=1e-3)
 
 
 def test_threshold_at_compensation_point_ignores_the_productivity_curve():
@@ -133,6 +139,9 @@ def test_threshold_at_compensation_point_ignores_the_productivity_curve():
     assert ck.co2_time(ck.P_MIN_C4, volk) == pytest.approx(ck.co2_time(ck.P_MIN_C4), abs=1e-9)
     assert ck.co2_time(ck.P_MIN_C3, replace(volk, p_min=ck.P_MIN_C3)) == pytest.approx(
         ck.co2_time(ck.P_MIN_C3, ck.C3), abs=1e-9)
+    # below Pmin too: Pi stays 0, so the C3 run reaches 100 ppm at one time under both curves
+    assert ck.co2_time(100e-6, replace(volk, p_min=ck.P_MIN_C3)) == pytest.approx(ck.co2_time(100e-6, ck.C3), abs=1e-9)
+    assert ck.co2_time(100e-6, ck.C3) * 1e3 == pytest.approx(494.160, abs=1e-3)
 
 
 def test_outputs_reproduce(tmp_path):

@@ -65,6 +65,9 @@ LAWS = {
 }
 SIDE = {"whk_weathering": "side branch: WHK weathering on Patm, T free (neither paper)",
         "c4_productivity_at_150": "side branch: C4 productivity curve, threshold 150 ppm"}
+# The laws s_star accepts. c4_productivity_at_150 is only a label for the
+# side row ck_biology with C4 plants and threshold_ppm=150, not a law.
+CO2_LAWS = (*LAWS, "whk_weathering")
 
 
 def _check(what: str, name: str, allowed) -> None:
@@ -130,7 +133,7 @@ def s_star(law: str, plants: str, sun: str = "eq1", threshold_ppm: float | None 
     it is already met today, inf if it is not reached.
     C&K's laws do not depend on the Sun law (CO2 depends on time only through
     S), so they are solved under eq. (1) and mapped."""
-    _check("CO2 law", law, LAWS.keys() | SIDE.keys())
+    _check("CO2 law", law, CO2_LAWS)
     _check("plants", plants, PLANTS)
     _check("Sun law", sun, SUNS)
     _check("L&W line", lw_line, LW_LINES)

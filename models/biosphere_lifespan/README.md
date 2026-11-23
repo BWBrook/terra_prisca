@@ -599,7 +599,7 @@ and the Sun law converts S* into time.
 | Endpoint | Time until atmospheric CO₂ reaches the plants' CO₂ limit | It is the quantity both papers compute; C&K's temperature and water-loss limits come later and are not compared |
 | Ingredients | Three, as tabulated; any finer change sits inside one of them | Each is a choice one paper made differently from the other |
 | Plants and threshold together | The C₃/C₄ swap changes the threshold and, in C&K's model, P_min of eq. (8) | Both papers set the threshold at the plants' compensation point. At that threshold the time does not depend on the rest of eq. (8) (tested below) |
-| Swapping the Sun under L&W's rule (primary) | The two dated anchors are kept (320 ppm today, 70,000 ppm 3,500 Myr ago), and the rule is recalibrated on the new Sun, as in L&W's Gough variant | The anchors are what L&W state. Eq. (1) at −3.5 Gyr lies inside the interval −4.5 < t < 4.77 Gyr over which C&K report its mean error as below 0.6% (Box 1). It gives S/S₀ = 0.774 there, against 0.743 on the straight line |
+| Swapping the Sun under L&W's rule (primary) | The two dated anchors are kept (320 ppm today, 70,000 ppm 3,500 Myr ago), and the rule is recalibrated on the new Sun, as in L&W's Gough variant | L&W state the dates and 320 ppm. They print 7,000 ppm for the past anchor, and 70,000 ppm is this reconstruction's correction, supported by their plotted line and their cited source (see *Interpretive choices* for L&W, above). Eq. (1) at −3.5 Gyr lies inside the interval −4.5 < t < 4.77 Gyr over which C&K report its mean error as below 0.6% (Box 1). It gives S/S₀ = 0.774 there, against 0.743 on the straight line |
 | Swapping the Sun under L&W's rule (sensitivity) | The √CO₂–luminosity line fitted under L&W's own Sun is kept; only the future clock changes (reading `lw_line_fixed`) | Separates the change of future clock from the recalibration of L&W's response |
 | Swapping the Sun under C&K's law | Exact: their CO₂ depends on time only through S, so S* is found under eq. (1) and the straight line is inverted at S* | Needs no change to `ck1992` |
 | Attribution | Shapley values in ln(time); Myr as a second view | Shares in ln sum to the whole and do not depend on the order of the swaps |
@@ -722,7 +722,9 @@ there:
 - Volk's half-saturation constant gives the same 10 ppm and 150 ppm times as
   C&K's own.
 
-This invariance fails once the threshold leaves P_min. With the C₄ curve and
+The invariance holds at or below P_min, where eq. (8) keeps Π at zero. In the
+C₃-only run, for example, C&K's and Volk's curves both reach 100 ppm at
+494.16 Myr. It fails only for a threshold above P_min. With the C₄ curve and
 a 150 ppm threshold, productivity is still Π/Π₀ = 0.70 at the threshold. So
 splitting the plants ingredient into curve and threshold depends on the order
 (`swap/ingredient_swap_side.csv`):
