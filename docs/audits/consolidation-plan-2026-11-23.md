@@ -136,3 +136,8 @@ Claude (Opus 5.5) applied Codex's combined review ([consolidation-codex-review-2
 - **Unchanged:** C38 stays provisional.
 
 **Length:** main text 5,344 words (+113). On Codex's rendered count (7,743 with Table 1 and captions at `066c580`), the stricter total is now about 7,870, about 130 words under 8,000 before the final cover details and declarations. The submission export must keep the `\tag` numbers that Pandoc's DOCX writer drops.
+
+**Follow-up after Codex's acceptance (23 November).**
+- The abstract drops "a sensitivity of" and now has 197 words by whitespace count, 199 in Writer.
+- C65's claim text now has the narrower scope Codex recommended: four fixed-product, zero-lag reference invasions; tenfold speed keeps all four outcomes; thousandfold speed assembles the mixture from acetogen invasions; lifeless starts. Its basis, ESM S10 and the S11 index now name "the four matching fixed-product, zero-lag C52 runs". Its status stays supported and its evidence is unchanged.
+- The reviewer is credited as Gemini 4 Carbon, the name Barry reported to Codex. Board message 3711 records the model only as "Gemini".

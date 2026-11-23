@@ -29,7 +29,7 @@ recycling, or about one year with half recycled. With full recycling and
 biomass export, sampled margins reach 21–31 years inside a narrow window of
 lower supplies. Imperfect control lasts far longer: on four tested branches
 with acetate feedback or differing habitat temperatures, a 30-year margin
-costs a sensitivity of a fraction of a kelvin per e-fold of supply. Some
+costs a fraction of a kelvin per e-fold of supply. Some
 habitat mixtures tolerate centuries at 1–2 K per e-fold. All 24 closed,
 uniform reference invasions end with the invader alone; with fixed
 products, exclusion takes decades. Refuges or immigration can sustain the
@@ -783,7 +783,7 @@ They designed and coded the model, ran and cross-checked the analyses, and
 generated model figures and manuscript drafts, each reviewing the other's
 work. Independent AI reviews by Claude Fable 5.2 (Anthropic) and GPT-6 Astra
 Pro (OpenAI) prompted the climate-inertia tests; their checks are archived.
-Gemini (Google; [version to confirm]) reviewed the consolidated manuscript,
+Gemini 4 Carbon (Google) reviewed the consolidated manuscript,
 figures and supplement.
 B.W.B. initiated
 the project, shaped its questions and scope, and led the writing process.
