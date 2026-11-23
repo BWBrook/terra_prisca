@@ -1,0 +1,4 @@
+ingredient,L&W setting,C&K setting,shapley_factor,shapley_ln,shapley_Myr,factor_min,factor_max,Myr_min,Myr_max,share_of_ln_change
+sun,"L&W straight Sun, 0.0733/Gyr",C&K eq. (1),0.798139,-0.225472,-82.713,0.7635,0.846664,-166.705,-18.4221,-0.099768
+co2,"L&W rule: sqrt(CO2) linear in luminosity, T constant","C&K weathering with plants, eqs (6)-(8): the faithful model",5.49853,1.70448,523.367,4.46867,6.86557,361.402,724.734,0.754206
+plants,"C3, life ends at 150 ppm","C4, life ends at 10 ppm",2.18356,0.780957,246.276,1.81309,2.61053,97.9094,434.045,0.345562

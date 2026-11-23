@@ -1,0 +1,9 @@
+sun_from,co2_from,plants_from,sun,co2,plants,S_star_over_S0,lifespan_Myr
+L&W,L&W,L&W,"L&W straight Sun, 0.0733/Gyr","L&W rule: sqrt(CO2) linear in luminosity, T constant","C3, life ends at 150 ppm",1.00587,80.0361
+L&W,L&W,C&K,"L&W straight Sun, 0.0733/Gyr","L&W rule: sqrt(CO2) linear in luminosity, T constant","C4, life ends at 10 ppm",1.01532,208.937
+L&W,C&K,L&W,"L&W straight Sun, 0.0733/Gyr","C&K weathering with plants, eqs (6)-(8): the faithful model","C3, life ends at 150 ppm",1.03662,499.626
+L&W,C&K,C&K,"L&W straight Sun, 0.0733/Gyr","C&K weathering with plants, eqs (6)-(8): the faithful model","C4, life ends at 10 ppm",1.06844,933.671
+C&K,L&W,L&W,C&K eq. (1),"L&W rule: sqrt(CO2) linear in luminosity, T constant","C3, life ends at 150 ppm",1.00517,61.614
+C&K,L&W,C&K,C&K eq. (1),"L&W rule: sqrt(CO2) linear in luminosity, T constant","C4, life ends at 10 ppm",1.0135,159.523
+C&K,C&K,L&W,C&K eq. (1),"C&K weathering with plants, eqs (6)-(8): the faithful model","C3, life ends at 150 ppm",1.03662,423.016
+C&K,C&K,C&K,C&K eq. (1),"C&K weathering with plants, eqs (6)-(8): the faithful model","C4, life ends at 10 ppm",1.06844,766.966
