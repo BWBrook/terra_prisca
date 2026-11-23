@@ -19,7 +19,7 @@ Revised after pressure-test Issue 1; Barry adopted it in chat on
 control is far more durable". The third sentence was added after
 pressure-test Issue 3; Barry approved it in chat on 15 November 2026 ("'Only
 where' is okay for the 25-word main message; the longer and safer form can
-be stated elsewhere"). The safer form, used in §4.5, is: in one uniform
+be stated elsewhere"). The safer form, used in §4.6, is: in one uniform
 habitat it never forms; it needs somewhere the losing group can persist.
 The sink condition in the first sentence was added after pressure-test
 Issue 4; Barry adopted it in chat on 16 November 2026 ("Adopt all").  Barry

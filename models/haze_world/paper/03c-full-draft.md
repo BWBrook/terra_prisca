@@ -98,7 +98,9 @@ lifeless start, and what does assembly need? We answer with linear stability
 analysis of the steady states, two tunable departures from exact control,
 and invasion simulations under a finite-population rule. We vary hydrogen supply
 throughout and test a shift of the climate curve as a controlled surrogate
-for changing sunlight.
+for changing sunlight. The hypotheses developed in
+stages, and dated specifications record each stage's predictions and tests
+(§2.7).
 
 ---
 
@@ -468,11 +470,11 @@ at f = 0 and 0.5, with both groups materially active.
 Near coexistence, competition between the two groups acts as integral
 feedback and holds temperature exactly. Integral control is sensitive to
 added phase lag, which a slowly responding climate supplies (Åström & Murray
-2021). With up to 90% of acetate recycled, every exactly holding state that
-starts stable loses stability within a response time of about 7 years
-(§3.2). In 32 of the 36 cases the limit is shorter than the fast climate
-response of about 4 years found in a modern climate model (Held et al. 2010).
-Near-complete recycling lengthens the limit to decades but narrows the supply
+2021). The 36 exactly holding states of §3.2 that start stable lose
+stability within a response time of about 7 years, and in 32 of them the
+limit is shorter than the fast climate response of about 4 years found in a
+modern climate model (Held et al. 2010). Higher recycling lengthens the
+limit, to decades as recycling nears completeness, but narrows the supply
 window to about 5% (§4.4). Past the limit, the regulator swings widely
 or a population crashes (§3.3).
 
@@ -519,8 +521,8 @@ adjacent oxidant-rich layer while hydrogen is consumed where it forms. How
 much acetate escaped methane on the early Earth is therefore an open
 condition on the regulator.
 
-Recycling trades range for tolerance. As f rises from 0.5 to 1, the supply
-window narrows from a factor of 2.0 to 1.05, and the window of imposed
+Recycling trades range for tolerance. As f rises from 0.5 to 1, the sampled
+supply window narrows from a factor of 2.0 to 1.05, and the window of imposed
 warming from 24 to 7 K. The exact critical response time lengthens in
 proportion, from about 1 year at f = 0.5 to 21–31 years at f = 1. There an
 exact state near the window's edge tolerates a 30-year response, and graded
@@ -573,7 +575,8 @@ never formed; it needs somewhere the losing group can persist while the
 climate catches up. A real planet has many candidates, from thermally
 buffered refuges to dispersal between regions. Persistence can also happen
 in place: when methane responded a thousand times faster, two closed
-invasions assembled the mixture. Assembly and durability have different
+invasions assembled the mixture. Persistence does not by itself give
+durable control. Assembly and durability have different
 requirements, and a regulating biosphere needs both.
 
 <!-- D6 -->

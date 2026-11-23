@@ -100,18 +100,21 @@ Barry: "Apply all." He also pasted the Interface length rule: research articles 
 - §4.2 keeps the 30-year figure and drops only "1–2 K buys centuries".
 - §4.7 no longer repeats conditions that table 1 already gives: the loss-rate shifts of T\*, dry-mass normalisation, continuation to 273 K, the one-cell reading, the sink requirement and the methane lifetime. It points to table 1 instead.
 - "The headline results use f = 0 and 0.5" was dropped, since §2.2 says it.
-- The Introduction's sentence on staged hypotheses was cut, since §2.7 says it.
+- §4.1 no longer claims a bound "with up to 90% of acetate recycled": exact margins at f = 0.9 reach 6.6–9.7 years (S8c). It now refers to the 36 states of §3.2 and says that higher recycling lengthens the limit.
+- The Introduction's sentence on staged hypotheses and §4.6's "Persistence does not by itself give durable control" were cut in the first pass and then restored, because they were not on the approved list.
 
 **Length:**
 
 | Part | Words |
 |---|---|
-| Main text | 5,210 (5,151 before) |
+| Main text | 5,231 (5,151 before) |
 | Table 1 | about 520 |
 | Captions | about 780 |
 | End statements | about 185 |
 | References | 39 |
 
-The plan's estimate of 4,800 for the main text was wrong. The moved conditions were relocated, not deleted. Counted as Interface counts (cover, abstract, text, end statements and about 25 words per reference), the paper is about 6,600 words. With table 1 and the captions included as well, it is about 7,900, under the 8,000 limit.
+The plan's estimate of 4,800 for the main text was wrong. The moved conditions were relocated, not deleted. Counted as Interface counts (cover, abstract, text, end statements and references at an estimated 25 words each), the paper is about 6,627 words. With table 1 and the captions included as well, it is about 7,927. The reference word count is an estimate.
 
 **Checks:** claims check gives 70 claims, 40 cited, 0 errors. The four paper tests pass.
+
+**Mechanical diff against `1a2f9ae`.** Every number that left a section still appears elsewhere in the draft, except the abstract-only rounded forms −15 and 0.1–8 (§3.5 keeps −15.47 and 0.14% to 8.3%). All 39 references are still cited.
