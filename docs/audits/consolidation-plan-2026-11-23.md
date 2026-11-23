@@ -82,3 +82,36 @@ The proposed structure gives one point per paragraph:
 **Optional, older than the issues:** the §3.1 figure of 4.7 K under the alternative cold continuation could also move to §4.6. It is left in place unless you want it moved.
 
 **Expected size:** main text about 4,800 words; §4.4 and the new §4.5 together about 600 instead of 712.
+
+## Applied (23 November)
+
+Barry: "Apply all." He also pasted the Interface length rule: research articles run over 2,500 words and no more than 8,000, "this includes cover page, references and acknowledgements". The rule is recorded in `models/haze_world/synthesis/jrsi-format-notes.md`.
+
+**Applied as proposed:**
+- the abstract (196 words);
+- §2.2;
+- §3.2, §3.6, §4.1 and §4.2;
+- §4.4 split into §4.4 (sink condition) and §4.5 (graded control on the early Earth);
+- the old §4.5–4.7 renumbered to §4.6–4.8;
+- §4.7 Conditions regrouped under physiology and habitats, sink and supply, climate, and assembly;
+- the mat tests and the matched solar sweep moved to §4.8.
+
+**Departures from the plan:**
+- §4.2 keeps the 30-year figure and drops only "1–2 K buys centuries".
+- §4.7 no longer repeats conditions that table 1 already gives: the loss-rate shifts of T\*, dry-mass normalisation, continuation to 273 K, the one-cell reading, the sink requirement and the methane lifetime. It points to table 1 instead.
+- "The headline results use f = 0 and 0.5" was dropped, since §2.2 says it.
+- The Introduction's sentence on staged hypotheses was cut, since §2.7 says it.
+
+**Length:**
+
+| Part | Words |
+|---|---|
+| Main text | 5,210 (5,151 before) |
+| Table 1 | about 520 |
+| Captions | about 780 |
+| End statements | about 185 |
+| References | 39 |
+
+The plan's estimate of 4,800 for the main text was wrong. The moved conditions were relocated, not deleted. Counted as Interface counts (cover, abstract, text, end statements and about 25 words per reference), the paper is about 6,600 words. With table 1 and the captions included as well, it is about 7,900, under the 8,000 limit.
+
+**Checks:** claims check gives 70 claims, 40 cited, 0 errors. The four paper tests pass.

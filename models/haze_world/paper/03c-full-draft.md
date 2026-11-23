@@ -9,6 +9,8 @@ submission.
 Reviewed by Codex (GPT-6), 13 November 2026. Result scopes follow C06,
 C52 and C54–C59 in the claims ledger; the review record is
 [here](../../../docs/audits/paper-step3c-codex-review-2026-11-13.md).
+Consolidated after Issues 1–5 on 23 November 2026
+([plan](../../../docs/audits/consolidation-plan-2026-11-23.md)).
 
 ---
 
@@ -18,28 +20,19 @@ Can life regulate its planet's climate when that climate responds slowly? We
 test this in a model inspired by the hazy early Earth. Two microbial groups
 compete for hydrogen: methanogens make methane, which forms a cooling organic
 haze, and acetogens divert hydrogen into acetate. Temperature decides which
-group grows faster, so their competition can hold temperature exactly
-constant as hydrogen supply changes. This needs part of the acetogens'
-hydrogen to leave as something other than methane. As acetate recycling to
-methane rises from half to complete, the supply range held exactly shrinks
-from a factor of two to 5%, while the tolerated climate response time grows
-from about one year to two decades. That perfect control is fragile. In the original sampled inventory, the 36
-exactly holding states on the haze-cooling branch all first lost stability
-at climate response times of about seven years or less. Two
-changes, acetate slowing its own producers and habitats differing in
-temperature, made control imperfect and far more durable. On four tested
-branches, a local sensitivity of 0.07–0.32 K per e-fold of supply bought
-tolerance of a 30-year response, and 1–2 K bought centuries. On the two
-habitat-spread branches, the 30-year margin was reached at half-widths of
-0.02–0.06 K; with weak exchange, sensitivity grows with habitat spread. An
-imposed climate warming acts through the same loop: fixed-product exact
-states held temperature across shifts of −15 to +8 K, and graded states followed 0.1–8%
-of the shift. In closed reference runs in one uniform habitat the
-controlling mixture never assembled: the group favoured at the starting temperature removed the other
-within decades, long before methane could carry the climate across the
-switch. It assembled from either history when the losing group could
-persist, in a small habitat held on its side of the switch or through a
-trickle of immigrants.
+group wins, so their competition can hold temperature exactly constant as
+hydrogen supply changes. This needs some diverted hydrogen to stay out of
+methane for good, through oxidation, export or burial. Exact control is
+fragile: the reference state fails once the climate takes over 0.15 years to
+respond, or about one year if half the acetate becomes methane. Near-complete
+recycling stretches this to decades over a much narrower supply range.
+Imperfect control lasts far longer: when acetate slows its own producers or
+habitats differ in temperature, a sensitivity of a fraction of a kelvin per
+e-fold of supply tolerates a 30-year climate response, and 1–2 K tolerates
+centuries. In one uniform habitat, the group favoured at the starting
+temperature removes the other within decades, long before the climate can
+reverse its advantage. The mixture forms only where the losing group can
+persist, in a refuge or through immigration.
 
 ---
 
@@ -105,9 +98,7 @@ lifeless start, and what does assembly need? We answer with linear stability
 analysis of the steady states, two tunable departures from exact control,
 and invasion simulations under a finite-population rule. We vary hydrogen supply
 throughout and test a shift of the climate curve as a controlled surrogate
-for changing sunlight. The hypotheses developed in
-stages, and dated specifications record each stage's predictions and tests
-(§2.7).
+for changing sunlight.
 
 ---
 
@@ -178,12 +169,7 @@ $$K_H \frac{dp}{dt} = H\,[\,J - q_A X_A - q_M X_M - k_{ex}(p - p_{atm})\,],
 where K_H is hydrogen's solubility. Exchange runs in either direction.
 With the 10,000-year methane lifetime assumed in §2.3, the reference supply
 scales to 401 Tmol H₂ per year. Of this, 260 goes to methane, 111 leaves in acetate
-and biomass, and 30 enters the atmosphere. Base-case fresh geological inputs
-are 3.4 and 6.1 Tmol H₂ per year (Canfield et al. 2006; Ward et al. 2019),
-and published scenarios with greater outgassing supply 34 and 110 Tmol H₂
-per year (Canfield et al. 2006). The model prescribes gross delivery to the microbes, which
-could also include biologically recycled hydrogen. Part
-of each group's uptake builds biomass, which leaves with lost cells rather
+and biomass, and 30 enters the atmosphere. Part of each group's uptake builds biomass, which leaves with lost cells rather
 than becoming methane. The catabolic flux is
 $F_i=H X_i[q_i-\alpha_i(g_i)_+]$, in mol H₂ L⁻¹ yr⁻¹, where α_i is
 hydrogen equivalents retained per unit new biomass. The methanogen
@@ -356,14 +342,13 @@ instant climate response. All six lie at low methane, on the assumed bridge
 where more methane warms rather than cools. The other 36 first lose
 stability at response times between 0.06 and 7.08 years. In the matched
 reference comparison, increasing f from 0 to 0.5 raises the margin from
-0.15 to 1.10 years (ESM). The 10,000-year methane lifetime sets the removal
-rate of the atmospheric stock. At the reference state with no acetate
+0.15 to 1.10 years (ESM). Recycling also narrows the difference in methane
+yield between the routes. At the reference state with no acetate
 recycling and an instantaneous temperature response, a small disturbance
 oscillates with a period of 120 years and an amplitude decay time of 4,850
 years. A thermal response time of just 0.15 years cancels this weak damping,
 as the local estimate $P_{\rm osc}^2/(2\pi^2 t_d)$ predicts here. Figure 2*c* compares exact and graded states at
-the same f = 0.5. Recycling also narrows the difference
-in methane yield between the routes.
+the same f = 0.5.
 
 <!-- R3 -->
 ### 3.3 Swings and crashes
@@ -465,20 +450,13 @@ removed acetogens within 60 years at all three tested fractions (f = 0, 0.5
 and 0.9). A methane response ten times faster, with every steady state held
 fixed, changed no outcome. Only a response a thousand times faster, about
 10 years, let acetogen invasions assemble the mixture in place (ESM S10).
-This tests the speed of the methane response, not a shorter physical
-lifetime: at the reference hydrogen supply a 10-year lifetime could not
-sustain the mixture's methane at all.
 
 The loss is permanent because a group below one cell cannot return. When
 the losing group could persist elsewhere, the mixture formed. Two small
 habitats held at 278 and 286 K, each 2% of the area, let both invasion
 directions reach the same mixed state at 281.535 K in all 12 key runs
 (figure 4*c*). Immigration of as little as 0.1 cells per year did the same
-at f = 0 and 0.5, with both groups materially active. Habitats that track
-the surface climate gave no comparable paired test of the regulating mixture
-at f = 0 and 0.5: most such runs left the physiological support, or lost
-protection during the transient. At f = 0.9 they kept both groups in nine
-matching pairs, but coexistence there is not climate regulation (ESM S10).
+at f = 0 and 0.5, with both groups materially active.
 
 ---
 
@@ -490,20 +468,20 @@ matching pairs, but coexistence there is not climate regulation (ESM S10).
 Near coexistence, competition between the two groups acts as integral
 feedback and holds temperature exactly. Integral control is sensitive to
 added phase lag, which a slowly responding climate supplies (Åström & Murray
-2021).
-Every exactly holding state that starts stable loses stability at a climate
-response time of about 7 years or less, and the reference state does so at
-0.15 years. In 32 of the 36 cases the limit is shorter than the fast climate
+2021). With up to 90% of acetate recycled, every exactly holding state that
+starts stable loses stability within a response time of about 7 years
+(§3.2). In 32 of the 36 cases the limit is shorter than the fast climate
 response of about 4 years found in a modern climate model (Held et al. 2010).
-Past the limit, the regulator swings widely or a population crashes.
+Near-complete recycling lengthens the limit to decades but narrows the supply
+window to about 5% (§4.4). Past the limit, the regulator swings widely
+or a population crashes (§3.3).
 
 <!-- D2 -->
 ### 4.2 The price of durability
 
-Graded feedback gives up exactness and gains durability. A residual
+Graded feedback gives up exactness and gains durability: a residual
 sensitivity of a fraction of a kelvin per e-fold of hydrogen supply buys
-tolerance of a 30-year climate response, and 1–2 K per e-fold buys
-centuries. On the computed weakly connected branches, temperature moved
+tolerance of a 30-year climate response (§3.4). On the computed weakly connected branches, temperature moved
 across roughly T\* ± σ as supply changed, so wider spreads gave looser
 control.
 This parallels precision–stability trade-offs in molecular circuits (Olsman
@@ -523,44 +501,48 @@ atmospheric composition and climate (Kharecha et al. 2005; Ozaki et al.
 temperature regulation that such couplings can produce.
 
 <!-- D4 -->
-### 4.4 The early Earth
+### 4.4 The sink condition
 
 The regulator needs a lasting fate for hydrogen other than methane. Acetate
-and dead biomass can return as methane: an Archean
-carbon-cycle model assumes acetate recycling (Kharecha et al. 2005), and
-syntrophic oxidation recovers acetate as methane without acetate-cleaving
-organisms (Zinder & Koch 1984). Acetate leaves the methane system for good
-only through an oxidant, such as sulfate (Lovley & Klug 1983) or ferric iron
-(Thompson et al. 2019), or by export and burial. In the reference case at
-f = 0.5 that sink takes about 20 Tmol of acetate a year. Oxidising it would
-require about 20 Tmol of sulfate or 160 Tmol of Fe(III) a year. These
-requirements exceed published late-Archean estimates of new sulfate (Hao et
-al. 2022) and are several times modelled iron recycling (Thompson et al.
-2019), although neither budget caps gross oxidant cycling. Oxidant
-regeneration and any accompanying reductants would also have to enter a
-planetary methane budget. An oxidative sink must intercept acetate before it
-returns to methane. Acetate could diffuse to an adjacent oxidant-rich layer
-while hydrogen is consumed where it forms. Where the oxidant reaches the same
-hydrogen pool, sulfate or Fe(III) reducers can compete for it at
-concentrations below those used by methanogens in modern sediments
-(Cord-Ruwisch et al. 1988; Lovley & Phillips 1987). The two-guild calculation
-then applies only if this additional hydrogen uptake is small. As recycling approaches
-completeness the supply window narrows from a factor of 2.0 to 1.05, and the
-window of imposed warming from 24 to 7 K. If biomass returns as methane too,
-the exact plateau disappears. How much acetate escaped methane on the early
-Earth is therefore an open condition on the regulator, not a settled one.
+and dead biomass can return as methane: an Archean carbon-cycle model assumes
+acetate recycling (Kharecha et al. 2005), and syntrophic oxidation recovers
+acetate as methane without acetate-cleaving organisms (Zinder & Koch 1984).
+Acetate leaves the methane system for good only through an oxidant, such as
+sulfate (Lovley & Klug 1983) or ferric iron (Thompson et al. 2019), or by
+export and burial. In the reference case at f = 0.5 that sink takes about
+20 Tmol of acetate a year. Oxidising it would require about 20 Tmol of
+sulfate or 160 Tmol of Fe(III) a year. These requirements exceed published
+late-Archean estimates of new sulfate (Hao et al. 2022) and are several times
+modelled iron recycling (Thompson et al. 2019). An oxidative sink must
+intercept acetate before it returns to methane: acetate could diffuse to an
+adjacent oxidant-rich layer while hydrogen is consumed where it forms. How
+much acetate escaped methane on the early Earth is therefore an open
+condition on the regulator.
 
-Fermentation is one possible source. If glucose fermentation supplied all the
-reference hydrogen, about 600 Tmol of organic carbon per year would have to
-reach fermenters. The same pathway produces one acetate per two H₂ (Conrad
-1999). If half the acetate from each source became methane outside the shared
-hydrogen pool, steady-state accounting gives a coexistence window of 149–189
-Tmol H₂ per year, a factor of 1.27 across. At the midpoint, fermenters would
-process 251 Tmol C per year, their acetate would supply 64% of biotic
-methane, and the lasting sink would take 50 Tmol of acetate per year (ESM
-S8). Anoxygenic ecosystems in published models reach methane fluxes
-comparable to the model's 65 Tmol CH₄ per year (Kharecha et al. 2005; Ozaki
-et al. 2018).
+Recycling trades range for tolerance. As f rises from 0.5 to 1, the supply
+window narrows from a factor of 2.0 to 1.05, and the window of imposed
+warming from 24 to 7 K. The exact critical response time lengthens in
+proportion, from about 1 year at f = 0.5 to 21–31 years at f = 1. There an
+exact state near the window's edge tolerates a 30-year response, and graded
+states follow supply more steeply (ESM S8).
+
+The reference supply of 401 Tmol H₂ per year (§2.2) compares with base-case
+fresh geological inputs of 3.4 and 6.1 Tmol H₂ per year (Canfield et al.
+2006; Ward et al. 2019); published scenarios with greater outgassing supply
+34 and 110 Tmol H₂ per year (Canfield et al. 2006). Fermentation is one
+possible source. If glucose fermentation supplied all the reference hydrogen,
+about 600 Tmol of organic carbon per year would have to reach fermenters. The
+same pathway produces one acetate per two H₂ (Conrad 1999). If half the
+acetate from each source became methane outside the shared hydrogen pool,
+steady-state accounting gives a coexistence window of 149–189 Tmol H₂ per
+year, a factor of 1.27 across. At the midpoint, fermenters would process
+251 Tmol C per year, their acetate would supply 64% of biotic methane, and
+the lasting sink would take 50 Tmol of acetate per year (ESM S8). Anoxygenic
+ecosystems in published models reach methane fluxes comparable to the
+model's 65 Tmol CH₄ per year (Kharecha et al. 2005; Ozaki et al. 2018).
+
+<!-- D4b -->
+### 4.5 Graded control on the early Earth
 
 Acetate feedback and variation in habitat temperature are candidate routes to
 graded regulation on the hazy early Earth. Their strengths would set where an
@@ -568,30 +550,17 @@ Archean regulator sat between precision and durability. Habitat temperatures
 on a real planet differ by far more than the hundredths of a kelvin that
 bought a 30-year margin here: by a few kelvin across today's abyssal seafloor
 (Sweetman et al. 2017) and by 30–40 K from equator to pole in Archean
-climate models (Eager-Nash et al. 2023; Mak et al. 2023). These contrasts
-set an illustrative scale. If spreads of that size occurred among active,
-hydrogen-fed habitats with weak exchange, equation (3.1) would imply a much
-larger residual sensitivity than on the tested branches. Its size would also
-depend on how hydrogen supply is shared among habitats, how fast they
-exchange cells and the acetate chemistry. Modern microbial mats
-are accessible analogue habitats. Their hydrogen levels vary by orders of
-magnitude with depth and time of day, and far more of their fixed carbon
-leaves as organic acids than as methane (Hoehler et al. 2001; Bebout et al.
-2004). Measuring acetate stocks and turnover in such mats, and the effect of
-acetate on the hydrogen acetogens need, would test the first route.
-Measuring the share of acetate oxidised by sulfate or iron rather than
-converted to methane would test the sink condition itself.
-Measuring habitat temperatures and the exchange of cells between habitats
-would test the second.
+climate models (Eager-Nash et al. 2023; Mak et al. 2023). Spreads of that
+size among active, hydrogen-fed habitats with weak exchange would, by
+equation (3.1), give a much larger residual sensitivity than on the tested
+branches.
 
 Arney et al.'s (2017) young- and modern-Sun pair suggests roughly 1.2 K per
 1% of young-Sun flux. On that rough scale the exact window spans about a
-fifth of sunlight. The pair changes spectrum and haze together and comes
-from another case, so a matched solar sweep of a haze climate is needed to
-test the regulator against the Sun's brightening.
+fifth of sunlight.
 
 <!-- D5 -->
-### 4.5 Stability, assembly and persistence
+### 4.6 Stability, assembly and persistence
 
 A stable mixture is not a mixture that forms. Competition between the two
 groups is fast, and the climate they regulate is slow, so in one closed
@@ -604,47 +573,62 @@ never formed; it needs somewhere the losing group can persist while the
 climate catches up. A real planet has many candidates, from thermally
 buffered refuges to dispersal between regions. Persistence can also happen
 in place: when methane responded a thousand times faster, two closed
-invasions assembled the mixture. Persistence does not by itself give
-durable control. The mixture assembled by buffered refuges sits at the exact
-set point, and its margin against slow climate response was not tested.
-Assembly and durability have different requirements, and a regulating
-biosphere needs both.
+invasions assembled the mixture. Assembly and durability have different
+requirements, and a regulating biosphere needs both.
 
 <!-- D6 -->
-### 4.6 Conditions
+### 4.7 Conditions
 
-These results come from a conditional model, and table 1 lists its
-conditions. The switch depends on kinetics transferred from cultured strains,
-on the capacity ratio γ and on the assumed loss rate: halving or doubling ℓ
-moves T\* from 281.5 K to 278.4 or 286.5 K. The alternative dry-mass capacity
-normalisation can put the crossing outside the cooling branch. The regulator
-requires the two routes to differ in their ultimate methane yield, and so a
-lasting sink for hydrogen other than methane. Supply is prescribed. If
-productivity depends on temperature, the two guilds can still coexist at the
-switch provided that the supply there falls inside the coexistence window.
-How productivity responds to temperature could then alter stability and
-assembly. The headline results use f = 0
-and 0.5. As f rises towards 1, the sampled supply window narrows and the
-exact critical response time lengthens in proportion, from about 1 year at
-f = 0.5 to 21–31 years at f = 1. There an exact state near the window's edge
-tolerates a 30-year response, and graded states follow supply more steeply
-(ESM S8). Strain traits remain
-fixed. Physiology is extended
-below the coldest assay, 277.15 K, to 273 K. The costs of durability are
-local slopes on four branches, and stability is local to each steady state.
-Habitat offsets are uniform, and every habitat must lie within the
-physiological support of 273–303.15 K; around the reference temperature this
-limits spreads to about ±8 K.
-A crash is read at the first fall below one cell, with the one-cell rule
-applied every ten years. The bounded assembly checks and the refuge and
-immigration runs use instantaneous temperature, and refuge temperatures and immigration rates are prescribed, not calibrated.
-The climate is one published case with an assumed methane lifetime and
-low-methane bridge, and sunlight enters only as a rigid vertical shift of
-that curve. Atmospheric hydrogen up to 100 Pa leaves the set point
-unchanged and moves the reference margin from 0.15 to 0.12 years (ESM).
+These results come from a conditional model. Table 1 gives the conditions
+each ingredient sets, including the dependence of the switch on the loss rate
+and the capacity normalisation. The further conditions are these.
+
+*Physiology and habitats.* The switch rests on kinetics transferred from
+cultured strains, and strain traits remain fixed. Habitat offsets are
+uniform, and every habitat must lie within the physiological support of
+273–303.15 K, which limits spreads to about ±8 K around the reference
+temperature. The Archean habitat contrasts in §4.5 set an illustrative scale;
+the residual sensitivity they imply would also depend on how hydrogen supply
+is shared among habitats, how fast they exchange cells and the acetate
+chemistry.
+
+*Sink and supply.* The oxidant estimates compared in §4.4 do not cap gross
+oxidant cycling, and oxidant regeneration and any accompanying reductants
+would also have to enter a planetary methane budget. Where the oxidant
+reaches the same hydrogen pool, sulfate or Fe(III) reducers can compete for
+it at concentrations below those used by methanogens in modern sediments
+(Cord-Ruwisch et al. 1988; Lovley & Phillips 1987); the two-guild calculation
+applies only if this additional hydrogen uptake is small. Supply is
+prescribed as gross delivery to the microbes, which could also include
+biologically recycled hydrogen. If productivity depends on temperature, the
+two guilds can still coexist at the switch provided that the supply there
+falls inside the coexistence window; how productivity responds to
+temperature could then alter stability and assembly.
+
+*Climate.* The climate is one published case with an assumed low-methane
+bridge, and sunlight enters only as a rigid vertical shift of that curve.
+Stability across that shift was checked at sampled shifts inside the window,
+not at its two ends (ESM S9). The solar pair behind the scale in §4.5 changes
+spectrum and haze together and comes from another case. Atmospheric hydrogen
+up to 100 Pa leaves the set point unchanged and moves the reference margin
+from 0.15 to 0.12 years (ESM). The costs of durability are local slopes on
+four branches, and stability is local to each steady state.
+
+*Assembly.* The bounded assembly checks and the refuge and immigration runs
+use instantaneous temperature, and refuge temperatures and immigration rates
+are prescribed, not calibrated. The faster-methane test probes the speed of
+the methane response, not a shorter physical lifetime: at the reference
+hydrogen supply a 10-year lifetime could not sustain the mixture's methane at
+all. Habitats that track the surface climate gave no comparable paired test
+of the regulating mixture at f = 0 and 0.5: most such runs left the
+physiological support, or lost protection during the transient. At f = 0.9
+they kept both groups in nine matching pairs, but coexistence there is not
+climate regulation (ESM S10). The mixture assembled with buffered refuges
+sits at the exact set point, and its margin against slow climate response
+was not tested.
 
 <!-- D7 -->
-### 4.7 Tests and generality
+### 4.8 Tests and generality
 
 Any population–environment feedback with a slow environment invites two
 measurements: how far the regulated variable drifts with forcing, and how
@@ -653,6 +637,17 @@ estimates its critical response time, placing it on the precision–durability p
 figure 3. Mesocosms with controlled supply and
 an imposed thermal lag, and biogeochemical models that resolve both groups,
 could test the trade-off with the delay-margin analysis used here.
+
+Modern microbial mats are accessible analogue habitats. Their hydrogen levels
+vary by orders of magnitude with depth and time of day, and far more of their
+fixed carbon leaves as organic acids than as methane (Hoehler et al. 2001;
+Bebout et al. 2004). Measuring acetate stocks and turnover in such mats, and
+the effect of acetate on the hydrogen acetogens need, would test the acetate
+route to graded control. Measuring the share of acetate oxidised by sulfate
+or iron rather than converted to methane would test the sink condition.
+Measuring habitat temperatures and the exchange of cells between habitats
+would test the habitat route. A matched solar sweep of a haze climate would
+test the regulator against the Sun's brightening.
 
 Microbial competition can hold a planet's temperature if some of the hydrogen it diverts stays out of methane, but exact control fails when climate responds slowly. Imperfect control lasts far longer, and grows looser
 as habitat temperatures differ. The controlling community forms only where
