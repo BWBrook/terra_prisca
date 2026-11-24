@@ -13,7 +13,7 @@ Surface temperature at that point,265 K,267.02 K (267.31 K),285 - 18 = 267; the 
 dTe that would give T = 265 K at V/V0 = 1,-,-21.22 K (luminosity 0.704),
 Feedback reduces the change by about a half (V/V0 = 1),about 1/2,dT/(2 dTe) = 0.500 at dTe = -18; dT/(2 dTe) = 0.583 at dTe = -10; dT/(2 dTe) = 0.684 at dTe = -2,local slope at today: 0.711 of the no-feedback slope
 "P/P0 at dTe = -18 K, V/V0 = 1",-,79.5,
-"P/P0 that holds dT = 0, eq. (6)",'up to 1000 times' (Owen et al. 1979),397 at dTe = -18 K (paper's rounding); 373 at dTe = -17.56 K (exact 25%),Owen et al.'s luminosity and case not in hand: open
+"P/P0 that holds dT = 0, eq. (6)",'up to 1000 times' (Owen et al. 1979),397 at dTe = -18 K (paper's rounding); 373 at dTe = -17.56 K (exact 25%),"Owen et al.'s Table 1 gives P/P0 = 969 at 76% of today's sunlight (dTe = -16.5 K) with Ts = 310 K, a warm state; eq. (6) needs 320 there to hold dT = 0"
 Fluid carbon implied by doubling in 400 kyr,-,1.32e+20 g CO2 = 3.60e+19 g C,
 Time to accumulate 1 bar of CO2 at 3.3(+-1.1)e14 g/yr,20 Myr,15.8 Myr (11.8-23.6),"area 5.10e14 m2, g = 9.81 m s-2"
 Sellers (1965) precipitation e-folding vs Clausius-Clapeyron at 285 K,14.1 K,15.2 K,not used in eq. (1)

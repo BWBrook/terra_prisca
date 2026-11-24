@@ -14,7 +14,9 @@ between their times to the plants' CO₂ limit.
 
 Status: **Lovelock & Whitfield approved by Codex (1d7cd5d); Caldeira &
 Kasting approved by Codex (19efb5e); ingredient swap approved by Codex
-(cb73916)** (board thread 183).
+(cb73916)** (board thread 183). An external review by Gemini 4 Carbon
+(Google, through Antigravity) is addressed on branch `review/gemini-audit`, in
+review by Codex.
 
 ## Sources
 
@@ -65,8 +67,10 @@ All citations were checked against Crossref on 16 November 2026.
     Extract SHA-256 `4c4a8b2c9af892fd575e5fac0aac0aa07bb6978c70932a2cb01519801e9417e3`.
 
 All of these are copyrighted and are not redistributed. Place them in
-`local/sources/biosphere_lifespan/`; the scan scripts refuse any file with a
-different hash. The overlay figures plot values digitised from the scans,
+`local/sources/biosphere_lifespan/`. The scan scripts look for
+`lovelock_whitfield1982.pdf` and `caldeira_kasting1992.pdf` there (the
+publisher's files are `296561a0.pdf` and `360721a0.pdf`; copy or rename them)
+and refuse any file with a different hash. Without them the scan tests skip. The overlay figures plot values digitised from the scans,
 never the scans themselves.
 
 ## Code
@@ -84,7 +88,7 @@ never the scans themselves.
 | [`figures_ck1992.py`](../../src/terra_prisca/biosphere_lifespan/figures_ck1992.py) | The reconstructed Fig. 2; writes `figures/ck1992_fig2.*` |
 | [`tests/test_ck1992.py`](../../tests/test_ck1992.py) | Equations, root uniqueness, present-day closure, the WHK import, controls, and the scan test |
 | [`ingredient_swap.py`](../../src/terra_prisca/biosphere_lifespan/ingredient_swap.py) | The analysis swapping ingredients between the two models; writes `swap/ingredient_swap*` |
-| [`tests/test_ingredient_swap.py`](../../tests/test_ingredient_swap.py) | Endpoints equal the faithful models, weathering balance in each cell, Shapley sums, the fixed-line Sun sensitivity, the closure × pump square and warming, threshold invariance, the threshold domain and name checks |
+| [`tests/test_ingredient_swap.py`](../../tests/test_ingredient_swap.py) | Endpoints equal the faithful models, weathering balance in each cell, Shapley sums, the fixed-line Sun sensitivity, the closure × pump square and warming, the abiotic baseline, threshold invariance, the threshold domain and name checks |
 
 ```bash
 uv run python -m terra_prisca.biosphere_lifespan.figures_lw1982
@@ -105,7 +109,10 @@ The paper has no equations. Its arithmetic is stated in the text and drawn in
 Fig. 2, as straight lines against time t (Myr from the present):
 
 1. **The Sun.** Luminosity rises along a straight line, after Newkirk (1980),
-   from about 0.71 of today's at −4,000 Myr to about 1.15 at +2,000 Myr.
+   from about 0.71 of today's at −4,000 Myr to about 1.15 at +2,000 Myr. The
+   text points to "an alternative analytical expression" by Gough (1977,
+   ref. 13, not in hand); Gough's (1981) published law stands in for it here,
+   as the null for the Sun line and the Sun of the `gough_sun` variant.
 2. **CO₂ at constant temperature.** "A linear relationship between the square
    root of the CO₂ pressure and the solar luminosity for a constant mean
    temperature", anchored at a stated partial pressure 3,500 Myr ago
@@ -478,7 +485,7 @@ with exact endpoints.
 | P_soil = P_atm | **faithful** | 109/109 | 64.6 / 65.0 | 65.4 / 112 | — |
 | P_soil = P_atm | textbook constants | 109/109 | 47.3 / 48.1 | 47.9 / 76.4 | 65.4 / 112 |
 | P_soil = P_atm | **SO₂ fitted** | 109/109 | **1.4 / 2.6** | **1.3 / 2.7** | 65.4 / 112 |
-| P_soil = P_atm | null: no SO₂ | 109/109 | 55.0 / 91.3 | 111 / 191 | 65.4 / 112 |
+| P_soil = P_atm | null: no SO₂ | 109/109 | 126 / 189 | 123 / 199 | 65.4 / 112 |
 | S/S₀ | **eq. (1)** | 638/638 | **1.7 / 4.3** | **1.6 / 4.7** | — |
 | S/S₀ | null: Gough (1981) | 638/638 | 5.1 / 9.6 | 5.1 / 9.9 | 1.6 / 4.7 |
 | S/S₀ | null: Lovelock & Whitfield's straight line | 638/638 | 50.9 / 126 | 60.8 / 138 | 1.6 / 4.7 |
@@ -492,9 +499,18 @@ with exact endpoints.
 | T | eq. (4) + 0.5 K, eq. (5) + 0.005708 | 766/766 | 3.7 / 28.9 | 3.8 / 29.2 | 3.6 / 28.1 |
 | T | null: CO₂ fixed | 654/766 | 138 / 211 | 142 / 213 | 3.6 / 29.4 |
 
+The printed P_soil = P_atm stroke stands for both curves, so a reading is
+scored there on its own P_soil, which equals its P_atm once Π = 0 (WHK
+weathering, which has no soil CO₂, is scored on P_atm). Scoring it on P_atm
+alone let readings whose soil CO₂ never comes down, such as Π held at Π₀,
+score as if it had.
+
 The column errors in data units (`fidelity/ck1992_fidelity.csv`) cover the
 stretches flatter than 2 px/px, with the faithful reading rescored on the
-same points. The SO₂-fitted reading scores 0.009 decades (P_atm), 0.022
+same points. The faithful reading's SO₂ floor is too strong: the no-SO₂ null
+beats it on P_soil (0.14 against 0.38 decades), P_atm (0.026 against 0.10)
+and Π/Π₀ (0.015 against 0.017), and loses only on the merged stroke (0.92
+against 0.50) and T (2.4 against 1.3 K). The SO₂-fitted reading scores 0.009 decades (P_atm), 0.022
 (P_soil), 0.0054 (Π/Π₀) and 0.46 K (T), against 0.10, 0.38, 0.017 and
 1.30 K for the faithful reading. The fixed-CO₂ control scores 22.9 K on the
 559 shallow T points where it has values, against 1.32 K for the faithful
@@ -581,7 +597,18 @@ Three ingredients separate them. Each has one setting in each paper:
 
 **Method.** Both models are sequences of equilibria. The time to the limit is
 therefore set by the brightening S*/S₀ at which CO₂ first meets the threshold,
-and the Sun law converts S* into time.
+and the Sun law converts S* into time. The Sun law plays two different parts
+on the two faces of the cube:
+- **Under C&K's laws** S* does not depend on the Sun, so swapping the Sun
+  changes only the clock: eq. (1) brightens faster ahead (×0.82 for C₄,
+  ×0.85 for C₃).
+- **Under L&W's rule in the primary reading** the rule is refitted through
+  the dated anchors on each Sun's past luminosity, so S* moves (1.00587 to
+  1.00517 for C₃). A straight Sun's rate cancels from the time, so the ×0.77
+  there (×0.76 for C₄) comes from the curvature of eq. (1) over the past
+  3.5 Gyr, which steepens L&W's fitted response.
+- **The `lw_line_fixed` reading** keeps L&W's fitted line, so S* is independent
+  of the Sun on both faces and the Sun changes only the clock.
 - All eight combinations of the two papers' settings are run
   (`swap/ingredient_swap_cells.csv`).
 - The change from one paper to the other is shared among the ingredients by
@@ -702,8 +729,31 @@ Time to the CO₂ limit, Myr, C₃ 150 ppm / C₄ 10 ppm:
   closure first (×1.06, then ×2.87 for C₃). Putting the pump first gives
   ×1.00 and then ×3.03. The square is the order-free statement.
 
-**The warming builds as productivity declines** (`swap/ingredient_swap_warming.csv`,
-faithful runs). It does not wait for the plants to stop.
+**The abiotic baseline** (side branch, `swap/ingredient_swap_side.csv`;
+suggested in Gemini 4 Carbon's review). Holding the pump at Π₀ keeps plants pumping
+today's 2,880 ppm of respired CO₂ into the soil at any atmospheric level. The
+other reference is no pump at all: P_soil = P_atm, with weathering normalised
+to today at 320 ppm, on C&K's own chemistry and temperature law. Time to the
+limit under eq. (1):
+
+| SO₂ term | C₃, 150 ppm: Myr, T − T₀ | C₄, 10 ppm: Myr, T − T₀ |
+|---|---|---|
+| Source-traced (faithful) | 189, +1.10 K | 576, +2.38 K |
+| Fitted to the printed kink | 222, +1.86 K | 661, +4.87 K |
+| None | 252, +2.59 K | 854, +11.66 K |
+
+Against this baseline, the responsive pump of the faithful model lengthens
+the time to 150 ppm by ×2.24 (189 to 423 Myr) and to 10 ppm by ×1.33 (576 to
+767 Myr). Today's soil enrichment, ten times the atmosphere's CO₂, unwinds as
+productivity falls, and the extra weathering that must be made up comes from
+a warmer Earth: 6 K more at 10 ppm. This puts a number on L&W's argument that
+the biota amplify weathering. The table also shows why WHK's law
+(below) runs past C&K's C₄ value: without the SO₂ floor, an abiotic C&K
+reaches 10 ppm at 854 Myr, close to WHK's 914.
+
+**The warming builds as productivity declines** (`swap/ingredient_swap_warming.csv`).
+It does not wait for the plants to stop. Faithful runs (source-traced
+constants):
 
 | Atmospheric CO₂ | C₄ run: Myr, T − T₀, Π/Π₀ | C₃-only run: Myr, T − T₀, Π/Π₀ |
 |---|---|---|
@@ -712,6 +762,10 @@ faithful runs). It does not wait for the plants to stop.
 | 50 ppm | 448, +3.63 K, 0.30 | 595, +7.93 K, 0 |
 | 20 ppm | 639, +6.20 K, 0.09 | 701, +8.24 K, 0 |
 | 10 ppm | 767, +8.35 K, 0 | 767, +8.35 K, 0 |
+
+With the SO₂ term fitted to the printed kink, the warming at the limit is
+larger: +9.04 K for the C₃-only run at 150 ppm (489 Myr) and +12.04 K at
+10 ppm (863 Myr).
 
 **At the threshold only the pump being off matters** (tested). Both
 thresholds sit at P_min, where Π = 0, so the rest of eq. (8) does not matter
@@ -751,14 +805,19 @@ and which is larger depends on the plants:
 - **Weathering balance with a responsive soil pump** (×3.03 for C₃, ×1.58
   for C₄, from the constant-temperature step). Neither half does much alone.
   Together, they make falling productivity weaken weathering, so the Earth
-  warms by 7–8 K as CO₂ falls to the limit. The warming builds while
+  warms by 7–8 K as CO₂ falls to the limit with the source-traced constants
+  (9.0 K for C₃ and 12.0 K for C₄ with the SO₂ term fitted to the printed
+  figure). Against an abiotic Earth on the same chemistry, the unwinding soil
+  pump adds about 6 K and lengthens the times by ×2.24 (C₃) and ×1.33 (C₄). The warming builds while
   productivity is falling, not only after it stops.
 
 Of the other two ingredients:
 - **The plants and threshold.** C₄ plants' lower limit about doubles the
   time.
 - **The Sun law.** C&K's faster-brightening Sun takes back a fifth, or about
-  a seventh if L&W's fitted response is kept and only the clock changes.
+  a seventh if L&W's fitted response is kept and only the clock changes. On
+  the L&W face of the primary reading, the Sun's effect comes from eq. (1)'s
+  curvature over the past, not from its rate ahead (see *Method*).
 
 **Limits of the attribution.**
 - The Shapley shares hold for these three ingredients and the two papers'
@@ -856,10 +915,13 @@ Of the other two ingredients:
 - **Why the printed CO₂ line runs 2.3% steeper than the rule** and passes 354
   rather than 320 ppm today. It may be drafting, or a slightly different
   anchor.
-- **The source of the "2/3 power".** WHK's published eq. (6) implies that
-  P^0.364 is linear in ΔT_e at constant temperature, which is neither a square
-  root nor a 2/3 power. The paper cites WHK "in the press", so the remark may
-  refer to a different draft.
+- **The source of the "2/3 power".** The text attributes it to "an analysis
+  of the geological mechanism" (ref. 3, WHK). WHK's published eq. (6) implies
+  that P^0.364 is linear in ΔT_e at constant temperature, which is neither a
+  square root nor a 2/3 power, and moves the other way: L&W's two-point rule
+  with exponent 0.364 gives 138 Myr (155 Myr with 1/3), where 2/3 gives
+  39 Myr (Gemini 4 Carbon's review). WHK was accepted on 29 May 1981 and L&W received
+  on 4 June 1981, so the remark may refer to a different draft.
 - **"Might by now have exceeded 50 °C".** The paper gives no climate model.
   WHK eq. (6) gives 40 °C; a more sensitive greenhouse would give more.
 
@@ -880,6 +942,34 @@ Of the other two ingredients:
   compilation). Whether the difference lies in the constants, in how SO₂ was
   dissolved, or in the temperature at which the constants were evaluated
   cannot be settled without C&K's own values.
+- **Readings of the SO₂ term with nothing fitted** (`ck1992.SO2_READINGS`,
+  `fidelity/ck1992_so2_readings.csv`; suggested in Gemini 4 Carbon's review). Two
+  choices that Box 1's wording leaves open:
+  - **Equilibration:** soil water open to P_soil and atmospheric SO₂ together
+    (faithful), or rain equilibrated with P_atm and SO₂ first, then closed to
+    SO₂ in the soil.
+  - **Units:** 0.2 p.p.b. by volume (faithful) or by mass, which is smaller by
+    volume by M_air/M_SO₂ = 0.452.
+
+  Crossed with constants at 25 °C or following T, they give eight readings, all
+  scored:
+
+  | Reading | C₄ limit, Gyr (printed 0.863) | 1 ppm, Gyr (1.024) | Median px: P_soil / P_atm / merged / Π / T |
+  |---|---|---|---|
+  | Faithful (open, volume, 25 °C) | 0.767 | 0.932 | 13.3 / 6.0 / 65.4 / 4.9 / 3.6 |
+  | Open, mass, T | 0.852 | 1.013 | 2.1 / 1.3 / 8.3 / 3.4 / 2.7 |
+  | Sequential, mass, T | 0.862 | 1.021 | 6.9 / 5.0 / 1.9 / 3.5 / 2.8 |
+  | SO₂ fitted (×0.283) | 0.863 | 1.023 | 2.3 / 1.0 / 1.3 / 1.6 / 2.1 |
+
+  The sequential, mass, T reading puts the kink and the floor within 1.3 and
+  3.0 Myr of the printed ones, but misses the P_soil and P_atm curves by three to
+  five times as much as the fitted reading. The open, mass, T reading follows
+  those curves about as well as the fitted one but puts the kink 11 Myr early.
+  No reading without a fitted parameter matches the whole figure, and the best
+  of eight is a selection, not a prediction. The paper gives CO₂ in
+  "p.p.m." and SO₂ in "p.p.b." with the same notation, and its CO₂ levels are
+  volume ratios, which favours volume for SO₂ too. The faithful reading stands until Chameides (1984) settles the
+  units and the equilibration.
 - **How today was closed.** With the printed equations, the figure favours
   closing at the fits' present, 287.89 K, which rounds to the stated 15 °C. A
   small adjustment to eq. (4) that closes at 288.15 K instead fits about as

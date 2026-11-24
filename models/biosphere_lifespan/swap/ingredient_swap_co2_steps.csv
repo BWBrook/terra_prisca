@@ -1,11 +1,11 @@
 plants,step,closure,soil_pump,S_star_over_S0,T_at_threshold_K,T_minus_T0_K,Pi_ratio,F_over_F0,time_to_limit_Myr
 "C3, CO2 limit 150 ppm",lw_rule,T constant (the rule),none,1.00517,nan,0,nan,nan,61.614
-"C3, CO2 limit 150 ppm",ck_constant_T_pump_held,T held at T0,held at Pi0,1.01179,287.89,8.52651e-13,1,0.987577,139.486
-"C3, CO2 limit 150 ppm",ck_constant_T_pump_responsive,T held at T0,"responsive, eq. (8)",1.01179,287.89,8.52651e-13,0,0.596782,139.486
+"C3, CO2 limit 150 ppm",ck_constant_T_pump_held,T held at T0,held at Pi0,1.01179,287.89,0,1,0.987577,139.486
+"C3, CO2 limit 150 ppm",ck_constant_T_pump_responsive,T held at T0,"responsive, eq. (8)",1.01179,287.89,0,0,0.596782,139.486
 "C3, CO2 limit 150 ppm",ck_pump_held,"weathering balance, T free",held at Pi0,1.01246,288.061,0.171256,1,1,147.321
 "C3, CO2 limit 150 ppm",ck_biology,"weathering balance, T free","responsive, eq. (8)",1.03662,294.962,7.07199,0,1,423.016
 "C4, CO2 limit 10 ppm",lw_rule,T constant (the rule),none,1.0135,nan,0,nan,nan,159.523
-"C4, CO2 limit 10 ppm",ck_constant_T_pump_held,T held at T0,held at Pi0,1.04226,287.89,-6.24709e-11,1,0.976984,485.52
-"C4, CO2 limit 10 ppm",ck_constant_T_pump_responsive,T held at T0,"responsive, eq. (8)",1.04226,287.89,-6.24709e-11,0,0.543788,485.52
+"C4, CO2 limit 10 ppm",ck_constant_T_pump_held,T held at T0,held at Pi0,1.04226,287.89,0,1,0.976984,485.52
+"C4, CO2 limit 10 ppm",ck_constant_T_pump_responsive,T held at T0,"responsive, eq. (8)",1.04226,287.89,0,0,0.543788,485.52
 "C4, CO2 limit 10 ppm",ck_pump_held,"weathering balance, T free",held at Pi0,1.04341,288.209,0.31901,1,1,498.178
 "C4, CO2 limit 10 ppm",ck_biology,"weathering balance, T free","responsive, eq. (8)",1.06844,296.236,8.34597,0,1,766.966

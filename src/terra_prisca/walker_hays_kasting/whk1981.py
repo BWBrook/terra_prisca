@@ -98,7 +98,12 @@ def equilibrium(dTe: float, v_ratio: float = 1.0, r: Reading = FAITHFUL) -> tupl
     def g(dT):
         return dT - surface_dT(dTe, co2_ratio(v_ratio, dT, r), r)
 
-    lo, hi = -200.0, 200.0
+    # surface_dT >= te_gain dTe - gh_amp for any P >= 0, so g < 0 just below
+    # that; widen upward until g > 0 (g is increasing).
+    lo = r.te_gain * dTe - abs(r.gh_amp) - 1e-6
+    hi = lo + 50.0
+    while g(hi) <= 0:
+        hi += 2.0 * (hi - lo)
     dT = brentq(g, lo, hi, xtol=1e-12, rtol=1e-14, maxiter=200)
     return float(dT), float(co2_ratio(v_ratio, dT, r))
 

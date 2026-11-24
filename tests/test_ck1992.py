@@ -208,3 +208,40 @@ def test_fidelity_against_scan(tmp_path):
     f.main(PDF, tmp_path)
     for committed in sorted(Path("models/biosphere_lifespan/fidelity").glob("ck1992_*.csv")):
         assert (tmp_path / committed.name).read_bytes() == committed.read_bytes(), committed.name
+
+
+def test_boundaries_and_domain():
+    """Gemini review CK-A1/A3: today's temperature and an already-exceeded CO2
+    level are reached at t = 0; levels outside the climate fits are rejected;
+    unknown option strings raise; the Sun law stops at its pole."""
+    assert m.temperature_time(m.t0()) == 0.0
+    cs = m.CONTROLS["constant_sun"]
+    assert m.temperature_time(m.t0(cs), cs) == 0.0
+    assert m.co2_time(400e-6) == 0.0
+    for level in (380.0, 260.0):
+        with pytest.raises(ValueError):
+            m.temperature_time(level)
+    assert m.temperature_time(323.15) == pytest.approx(1.32432, abs=1e-4)
+    for bad in ({"chemistry_T": "25"}, {"t0": "288.15"}, {"sun": "straight"}, {"productivity": "zero"},
+                {"equilibration": "closed"}):
+        with pytest.raises(ValueError, match="unknown"):
+            m.Reading(**bad)
+    assert np.isnan(m.solar(12.0)) and np.isfinite(m.solar(4.77))
+    assert not m.state(1.6)["in_fit"]
+
+
+def test_so2_readings():
+    """CK-A2: the sequential equilibration equals the open one when soil and
+    atmosphere hold the same CO2, and the eight parameter-free readings are
+    distinct; the best kink match is the sequential, mass, T reading."""
+    for key, r in m.SO2_READINGS.items():
+        if r.equilibration == "sequential":
+            o = replace(r, equilibration="open")
+            for p, T in ((10e-6, 300.0), (1e-6, 290.0), (m.P0, m.t0())):
+                assert m.h_activity(p, T, r, p) == pytest.approx(m.h_activity(p, T, o), rel=1e-10)
+            assert m.h_activity(m.PSOIL0, m.t0(), r, m.P0) > m.h_activity(m.PSOIL0, m.t0(), o)  # rain holds more S(IV)
+    assert m.SO2_READINGS["open_volume_25C"] == replace(m.FAITHFUL, name=m.SO2_READINGS["open_volume_25C"].name)
+    assert m.co2_time(m.P_MIN_C4, m.SO2_READINGS["sequential_mass_T"]) == pytest.approx(0.86209, abs=1e-4)
+    assert m.co2_time(m.P_MIN_C4, m.SO2_READINGS["open_mass_T"]) == pytest.approx(0.85232, abs=1e-4)
+    with pytest.raises(ValueError):
+        m.h_activity(m.PSOIL0, m.t0(), m.SO2_READINGS["sequential_mass_T"])

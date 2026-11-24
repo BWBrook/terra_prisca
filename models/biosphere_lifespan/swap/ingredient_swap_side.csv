@@ -1,7 +1,19 @@
-branch,plants,sun,S_star_over_S0,Pi_ratio_at_threshold,time_to_limit_Myr
-"side branch: WHK weathering on Patm, T free (neither paper)","C3, CO2 limit 150 ppm","L&W straight Sun, 0.0733/Gyr",1.02342,nan,319.555
-"side branch: WHK weathering on Patm, T free (neither paper)","C3, CO2 limit 150 ppm",C&K eq. (1),1.02342,nan,274.045
-"side branch: WHK weathering on Patm, T free (neither paper)","C4, CO2 limit 10 ppm","L&W straight Sun, 0.0733/Gyr",1.08263,nan,1127.35
-"side branch: WHK weathering on Patm, T free (neither paper)","C4, CO2 limit 10 ppm",C&K eq. (1),1.08263,nan,913.919
-"side branch: C4 productivity curve, threshold 150 ppm","C4 curve, 150 ppm threshold","L&W straight Sun, 0.0733/Gyr",1.01637,0.703611,223.359
-"side branch: C4 productivity curve, threshold 150 ppm","C4 curve, 150 ppm threshold",C&K eq. (1),1.01637,0.703611,192.878
+branch,so2,plants,sun,S_star_over_S0,Pi_ratio_at_threshold,T_minus_T0_K,time_to_limit_Myr
+"side branch: WHK weathering on Patm, T free (neither paper)",,"C3, CO2 limit 150 ppm","L&W straight Sun, 0.0733/Gyr",1.02342,nan,nan,319.555
+"side branch: WHK weathering on Patm, T free (neither paper)",,"C3, CO2 limit 150 ppm",C&K eq. (1),1.02342,nan,nan,274.045
+"side branch: WHK weathering on Patm, T free (neither paper)",,"C4, CO2 limit 10 ppm","L&W straight Sun, 0.0733/Gyr",1.08263,nan,nan,1127.35
+"side branch: WHK weathering on Patm, T free (neither paper)",,"C4, CO2 limit 10 ppm",C&K eq. (1),1.08263,nan,nan,913.919
+"side branch: C&K weathering balance, T free, no soil pump (Psoil = Patm)",faithful,"C3, CO2 limit 150 ppm","L&W straight Sun, 0.0733/Gyr",1.01604,0,1.10371,218.877
+"side branch: C&K weathering balance, T free, no soil pump (Psoil = Patm)",faithful,"C3, CO2 limit 150 ppm",C&K eq. (1),1.01604,0,1.10371,189.069
+"side branch: C&K weathering balance, T free, no soil pump (Psoil = Patm)",faithful,"C4, CO2 limit 10 ppm","L&W straight Sun, 0.0733/Gyr",1.05053,0,2.37769,689.372
+"side branch: C&K weathering balance, T free, no soil pump (Psoil = Patm)",faithful,"C4, CO2 limit 10 ppm",C&K eq. (1),1.05053,0,2.37769,575.939
+"side branch: C&K weathering balance, T free, no soil pump (Psoil = Patm)",so2_fitted,"C3, CO2 limit 150 ppm","L&W straight Sun, 0.0733/Gyr",1.01886,0,1.85659,257.341
+"side branch: C&K weathering balance, T free, no soil pump (Psoil = Patm)",so2_fitted,"C3, CO2 limit 150 ppm",C&K eq. (1),1.01886,0,1.85659,221.679
+"side branch: C&K weathering balance, T free, no soil pump (Psoil = Patm)",so2_fitted,"C4, CO2 limit 10 ppm","L&W straight Sun, 0.0733/Gyr",1.05847,0,4.86549,797.662
+"side branch: C&K weathering balance, T free, no soil pump (Psoil = Patm)",so2_fitted,"C4, CO2 limit 10 ppm",C&K eq. (1),1.05847,0,4.86549,661.413
+"side branch: C&K weathering balance, T free, no soil pump (Psoil = Patm)",no_so2,"C3, CO2 limit 150 ppm","L&W straight Sun, 0.0733/Gyr",1.02153,0,2.58696,293.781
+"side branch: C&K weathering balance, T free, no soil pump (Psoil = Patm)",no_so2,"C3, CO2 limit 150 ppm",C&K eq. (1),1.02153,0,2.58696,252.408
+"side branch: C&K weathering balance, T free, no soil pump (Psoil = Patm)",no_so2,"C4, CO2 limit 10 ppm","L&W straight Sun, 0.0733/Gyr",1.0768,0,11.6561,1047.68
+"side branch: C&K weathering balance, T free, no soil pump (Psoil = Patm)",no_so2,"C4, CO2 limit 10 ppm",C&K eq. (1),1.0768,0,11.6561,853.942
+"side branch: C4 productivity curve, threshold 150 ppm",faithful,"C4 curve, 150 ppm threshold","L&W straight Sun, 0.0733/Gyr",1.01637,0.703611,1.19051,223.359
+"side branch: C4 productivity curve, threshold 150 ppm",faithful,"C4 curve, 150 ppm threshold",C&K eq. (1),1.01637,0.703611,1.19051,192.878

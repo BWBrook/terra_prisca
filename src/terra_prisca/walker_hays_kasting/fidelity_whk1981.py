@@ -33,7 +33,7 @@ from terra_prisca.budyko_sellers.digitise import chamfer
 from . import owen1979
 from . import scan_whk1981 as scan_mod
 from .whk1981 import (
-    CONTROLS, FAITHFUL, READINGS, RUNOFF_EFOLD_K, TS0, Reading, arrhenius_efold,
+    CONTROLS, FAITHFUL, READINGS, RUNOFF_EFOLD_K, TE0, TS0, Reading, arrhenius_efold,
     combined_efold, doubling_warming, dTe_from_luminosity, equilibrium, sensitivity,
 )
 
@@ -295,9 +295,13 @@ def numbers() -> list[dict]:
     add("P/P0 at dTe = -18 K, V/V0 = 1", "-", f"{p18:.1f}")
     keep285 = (1 + 36 / 4.6) ** (1 / 0.364)
     keep285_exact = (1 - 2 * d25 / 4.6) ** (1 / 0.364)
+    ow = owen1979.TABLE1[0]
+    dte_owen = TE0 * ((ow[1] / owen1979.S0) ** 0.25 - 1.0)
+    keep_owen = (1 - 2 * dte_owen / 4.6) ** (1 / 0.364)
     add("P/P0 that holds dT = 0, eq. (6)", "'up to 1000 times' (Owen et al. 1979)",
         f"{keep285:.0f} at dTe = -18 K (paper's rounding); {keep285_exact:.0f} at dTe = {d25:.2f} K (exact 25%)",
-        "Owen et al.'s luminosity and case not in hand: open")
+        f"Owen et al.'s Table 1 gives P/P0 = {ow[2] / owen1979.P0_BAR:.0f} at {ow[1] / owen1979.S0:.0%} of today's sunlight "
+        f"(dTe = {dte_owen:.1f} K) with Ts = {ow[3]} K, a warm state; eq. (6) needs {keep_owen:.0f} there to hold dT = 0")
     holland = 3.3e14
     add("Fluid carbon implied by doubling in 400 kyr", "-", f"{holland * 4e5:.2e} g CO2 = {holland * 4e5 * 12 / 44:.2e} g C")
     bar = 1e5 * 5.10e14 / 9.81 * 1e3  # g of CO2 in a 1-bar column over the Earth

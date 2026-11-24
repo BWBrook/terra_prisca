@@ -63,12 +63,16 @@ def model(r: m.Reading) -> dict[str, np.ndarray]:
     tr = m.trajectory(np.arange(0.0, 1.6 + STEP / 2, STEP), r)
     tr["log_P_atm"] = np.log10(tr["P_atm_ppm"])
     tr["log_P_soil"] = np.log10(tr["P_soil_ppm"])
-    for k in ("T_K", "Pi_ratio", "log_P_atm", "log_P_soil"):
+    # The printed merged stroke is P_soil and P_atm together; a reading whose
+    # soil CO2 has not come down to the atmosphere's is scored on its P_soil
+    # there. WHK weathering has no soil CO2 and is scored on P_atm.
+    tr["log_merged"] = np.where(np.isfinite(tr["log_P_soil"]), tr["log_P_soil"], tr["log_P_atm"])
+    for k in ("T_K", "Pi_ratio", "log_P_atm", "log_P_soil", "log_merged"):
         tr[k] = np.where(tr["in_fit"], tr[k], np.nan)
     return tr
 
 
-MODEL_KEY = {"P_soil": "log_P_soil", "P_atm": "log_P_atm", "merged": "log_P_atm",
+MODEL_KEY = {"P_soil": "log_P_soil", "P_atm": "log_P_atm", "merged": "log_merged",
              "S_ratio": "S_ratio", "Pi_ratio": "Pi_ratio", "T_K": "T_K"}
 CURVES = ("P_soil", "P_atm", "merged", "S_ratio", "Pi_ratio", "T_K")
 UNITS = {"P_soil": "log10 ppm", "P_atm": "log10 ppm", "merged": "log10 ppm",
@@ -334,6 +338,34 @@ def events(pdf: Path = s.DEFAULT_PDF) -> list[dict]:
     return rows
 
 
+def so2_readings(pdf: Path = s.DEFAULT_PDF) -> list[dict]:
+    """All eight parameter-free readings of the SO2 equilibration (ck1992
+    .SO2_READINGS), with the faithful and fitted readings for reference: the
+    events and the acidity ratio at the kink, and the two-way distances to
+    every traced curve. Nothing here is fitted."""
+    pr = printed_events(pdf)
+    sc, tr = _traces(pdf)
+    data = traced(sc, tr)
+    rows = []
+    for key, r in {"faithful": m.FAITHFUL, "so2_fitted": m.READINGS["so2_fitted"], **m.SO2_READINGS}.items():
+        ev = model_events(r)
+        t_kink = ev["kink in P_atm, t Gyr"]
+        T = m.temperature(float(m.solar(t_kink, r)), r.p_min, r)
+        row = {"reading": key, "equilibration": r.equilibration, "so2_factor": r.so2_factor, "chemistry_T": r.chemistry_T,
+               "aH_kink_over_aH_today": m.h_activity(r.p_min, T, r, r.p_min) / m._ref(r).aH0,
+               f"kink in P_atm, t Gyr (printed {pr['kink in P_atm, t Gyr']:.4g})": t_kink}
+        for k in OUT_OF_SAMPLE:
+            row[f"{k} (printed {pr[k]:.4g})"] = ev[k]
+        for c in CURVES:
+            if c == "S_ratio":
+                continue
+            dist = _distances(sc, c, r, tr[c].centres, data[c][:, 0])
+            row[f"{c} trace_to_model median px"] = dist.get("trace_to_model_median_px", np.nan)
+            row[f"{c} trace_to_model p95 px"] = dist.get("trace_to_model_p95_px", np.nan)
+        rows.append(row)
+    return rows
+
+
 def calibration(pdf: Path = s.DEFAULT_PDF) -> list[dict]:
     sc, _ = _traces(pdf)
     rows = [{"item": f"{p} frame slopes", "kh": sc.panels[p].kh, "kv": sc.panels[p].kv} for p in sc.panels]
@@ -455,6 +487,7 @@ def main(pdf: Path = s.DEFAULT_PDF, outdir: Path = OUT) -> None:
     write(outdir / "ck1992_events.csv", events(pdf))
     write(outdir / "ck1992_coupled.csv", coupled(pdf))
     write(outdir / "ck1992_claims.csv", claims())
+    write(outdir / "ck1992_so2_readings.csv", so2_readings(pdf))
     overlay(pdf, outdir / "ck1992_overlay.png")
 
 

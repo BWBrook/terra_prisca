@@ -158,3 +158,15 @@ def test_fidelity_against_scan(tmp_path):
     f.main(PDF, tmp_path)
     for committed in sorted(Path("models/biosphere_lifespan/fidelity").glob("lw1982_*.csv")):
         assert (tmp_path / committed.name).read_bytes() == committed.read_bytes(), committed.name
+
+
+def test_domain_and_poles():
+    """Gemini review LW-A1: domain_end agrees with the fine grid and is quick
+    for an unbounded domain; Gough's law stops at its pole; unknown Suns raise."""
+    assert m.domain_end(m.FAITHFUL) == pytest.approx(253.81)
+    assert m.domain_end(m.VARIANTS["whk_feedback"]) == float("inf")
+    assert np.isnan(m.gough_luminosity(12000.0)) and np.isnan(m.co2(12000.0, m.VARIANTS["gough_sun"]))
+    with pytest.raises(ValueError, match="unknown"):
+        m.Reading(sun="eq1")
+    from dataclasses import replace
+    assert m.lifespan(replace(m.FAITHFUL, power=0.364)) == pytest.approx(138.119, abs=1e-3)

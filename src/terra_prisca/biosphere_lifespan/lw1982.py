@@ -40,10 +40,14 @@ def luminosity(t, slope_per_gyr: float = SUN_SLOPE_PER_GYR):
 
 
 def gough_luminosity(t, t_sun_gyr: float = 4.7):
-    """Gough (1981) eq. (1): L/L0 = 1/[1 + (2/5)(1 - t/t_sun)], t from the Sun's birth.
-    Used only as a null for the printed Sun line."""
+    """Gough (1981) eq. (1): L/L0 = 1/[1 + (2/5)(1 - t/t_sun)], t from the Sun's
+    birth. A null for the printed Sun line and the Sun of the gough_sun variant.
+    Gough restricts the law to ages up to about today's; NaN past its pole
+    (+11,750 Myr), where the denominator stops being positive."""
     age = t_sun_gyr + np.asarray(t, float) / 1000.0
-    return 1.0 / (1.0 + 0.4 * (1.0 - age / t_sun_gyr))
+    d = 1.0 + 0.4 * (1.0 - age / t_sun_gyr)
+    with np.errstate(divide="ignore", invalid="ignore"):
+        return np.where(d > 0, 1.0 / d, np.nan)
 
 
 @dataclass(frozen=True)
@@ -69,6 +73,10 @@ class Reading:
     sun_slope: float = SUN_SLOPE_PER_GYR
     whk_constant_T: bool = False
     whk_feedback: bool = False
+
+    def __post_init__(self):
+        if self.sun not in ("straight", "gough"):
+            raise ValueError(f"unknown sun {self.sun!r}; expected 'straight' or 'gough'")
 
 
 FAITHFUL = Reading()
@@ -142,10 +150,21 @@ def lifespan(r: Reading = FAITHFUL, step: float = 1.0, horizon: float = 1.0e4) -
 
 
 def domain_end(r: Reading = FAITHFUL, step: float = 0.01, horizon: float = 1.0e4) -> float:
-    """First time after today (Myr, to `step`) at which the rule has no solution."""
-    t = np.arange(0.0, horizon + step, step)
-    bad = np.nonzero(~np.isfinite(co2(t, r)))[0]
-    return float(t[bad[0]]) if bad.size else float("inf")
+    """First time after today (Myr, on the grid of `step`) at which the rule
+    has no solution. A coarse pass finds the first 1-Myr interval that leaves
+    the domain (each rule's domain is one interval from today); only that
+    interval is searched at `step`."""
+    fine = np.arange(0.0, horizon + step, step)
+    coarse = fine[:: max(1, int(round(1.0 / step)))]
+    bad = np.nonzero(~np.isfinite(co2(coarse, r)))[0]
+    if not bad.size:
+        tail = fine[fine > coarse[-1]]
+        bad_tail = np.nonzero(~np.isfinite(co2(tail, r)))[0] if tail.size else []
+        return float(tail[bad_tail[0]]) if len(bad_tail) else float("inf")
+    if bad[0] == 0:
+        return 0.0
+    seg = fine[(fine > coarse[bad[0] - 1]) & (fine <= coarse[bad[0]])]
+    return float(seg[np.nonzero(~np.isfinite(co2(seg, r)))[0][0]])
 
 
 READINGS = {

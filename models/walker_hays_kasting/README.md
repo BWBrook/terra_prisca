@@ -299,12 +299,21 @@ All hold.
     printed 0.364. The table's printed precision (temperatures to 1 K) admits
     0.364.
   - WHK state neither the normalisation nor which rows they fitted, so their
-    actual procedure remains undocumented. Of the three variants tried, only
-    this one comes near the printed exponent; without the shift, or without
-    the weak CO₂ bands, the exponents are 0.27 and 0.28.
-  - A least-squares fit to all nine rows would give 3.38(P/P₀)^0.314. Eq. (5)
-    falls up to 2.7 K below Owen et al.'s intermediate rows (3.0–2.5 Gyr),
-    which eq. (6)'s factor of 2 makes 5.3 K in T_s.
+    actual procedure remains undocumented. Without the shift, or without the
+    weak CO₂ bands, the exponents are 0.27 and 0.28.
+  - The usual power-law fit, least squares in log T_g on log P, gives
+    2.74(P/P₀)^0.360 from all nine shifted rows, against the printed 0.364, so
+    the exponent does not need a choice of rows (Gemini 4 Carbon's review). Least
+    squares in kelvin would give 3.38(P/P₀)^0.314, because the 310 K row
+    dominates the squared residuals. Eq. (5) falls up to 2.7 K below Owen
+    et al.'s intermediate rows (3.0–2.5 Gyr), which eq. (6)'s factor of 2
+    makes 5.3 K in T_s.
+  - Keeping Owen et al.'s printed temperatures and taking T_e(0) = 255.5 K
+    gives the same fits (0.368 through the end rows, 0.360 in log-log). Owen
+    et al. print S₀ = 1,360 W m⁻² but not their albedo, and 255.5 K is the
+    value that leaves T_g(CO₂) = 2.3 K today. It is the same one-parameter
+    offset as the 5 K shift (2.5 K in T_g either way), so it does not add
+    support.
   - WHK's summary, that Owen et al. found CO₂ "up to 1000 times" today's, matches
     Owen et al.'s 4.25 Gyr row: P/P₀ = 969 at 76% of today's sunlight
     (ΔT_e = −16.5 K), with T_s = 310 K. That is a warm state, not a

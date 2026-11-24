@@ -38,7 +38,8 @@ def main(outdir: Path) -> None:
         b.plot(s[:, 0], np.log10(s[:, 2]), "k-", lw=1)
         i = int(np.argmax(s[:, 1] >= -20))
         a.annotate(f"{v:g}", (s[i, 0], s[i, 1]), xytext=(4, 3), textcoords="offset points", fontsize=8)
-        b.annotate(f"{v:g}", (s[0, 0], np.log10(s[0, 2])), xytext=(4, 3), textcoords="offset points", fontsize=8)
+        j = int(np.argmax(np.log10(s[:, 2]) <= 2.4))  # first point inside panel b's axes
+        b.annotate(f"{v:g}", (s[j, 0], np.log10(s[j, 2])), xytext=(4, 3), textcoords="offset points", fontsize=8)
     a.plot(DTE, 2 * DTE, "k--", lw=1, label="constant P")
     a.set_ylim(-20, 10)
     a.set_ylabel("dT = Ts - 285 K (K)")

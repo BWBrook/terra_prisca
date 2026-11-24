@@ -65,7 +65,7 @@ def scores(sc: s.Scan) -> list[dict]:
     ppu = 1 / abs(sc.lum.slope)
     for name, pred in (("faithful (straight, 0.0733/Gyr)", m.luminosity(t)),
                        ("null: Gough (1981)", m.gough_luminosity(t)),
-                       ("null: Owen et al. (1979) linear, 0.0556/Gyr", m.luminosity(t, 1000 * OCR_SLOPE / 1000)),
+                       ("null: Owen et al. (1979) linear, 0.0556/Gyr", m.luminosity(t, OCR_SLOPE)),
                        ("null: constant Sun", np.ones_like(t))):
         rows.append(_row("Sun line (L/L0)", name, pred, obs, ppu))
     p = s.trace(sc, "co2")
@@ -93,7 +93,7 @@ def _curves(sc: s.Scan):
     yield "Sun line", "sun", sc.lum, (
         ("faithful", lambda t: m.luminosity(t)),
         ("null: Gough (1981)", m.gough_luminosity),
-        ("null: Owen et al. (1979) linear", lambda t: m.luminosity(t, 1000 * OCR_SLOPE / 1000)))
+        ("null: Owen et al. (1979) linear", lambda t: m.luminosity(t, OCR_SLOPE)))
     yield "CO2 line", "co2", sc.sqrtc, tuple(
         (key, (lambda r: lambda t: np.sqrt(m.co2(t, r)))(r)) for key, r in m.READINGS.items())
 

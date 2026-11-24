@@ -20,13 +20,19 @@ each with one setting per paper:
 
 Both models are sequences of equilibria, so each time is fixed by the
 brightening S*/S0 at which CO2 meets the threshold, and the Sun law turns S*
-into time. The eight combinations are scored, and the change from L&W to C&K
+into time. Under C&K's laws S* does not depend on the Sun law, so swapping the
+Sun changes only the clock. Under L&W's rule in the primary reading it does:
+the line is refitted through the dated anchors on each Sun's past luminosity,
+so swapping the Sun there changes S* through the curvature of eq. (1) over
+the past, while a straight Sun's rate cancels. Only the lw_line_fixed reading
+keeps S* independent of the Sun on both faces. The eight combinations are scored, and the change from L&W to C&K
 is shared among the ingredients by Shapley values (the mean of each
 ingredient's effect over all orders of swapping), in ln(time) and in Myr.
 The co2 ingredient is then opened up: C&K's greenhouse at constant
 temperature, then a square of closure (T held at T0, or weathering balance
 with T free) by soil pump (held at Pi0, or responsive), and the warming along
-the faithful runs.
+the faithful runs. A side branch removes the soil pump altogether (Psoil =
+Patm, the abiotic baseline on C&K's own chemistry).
 
 Names of laws, Suns, plants and readings are checked; a threshold must be a
 positive CO2 level (ppm). One at or above today's 320 ppm is already met
@@ -64,10 +70,12 @@ LAWS = {
     "ck_biology": "C&K weathering balance with plants, eqs (6)-(8)",
 }
 SIDE = {"whk_weathering": "side branch: WHK weathering on Patm, T free (neither paper)",
+        "ck_no_pump": "side branch: C&K weathering balance, T free, no soil pump (Psoil = Patm)",
         "c4_productivity_at_150": "side branch: C4 productivity curve, threshold 150 ppm"}
 # The laws s_star accepts. c4_productivity_at_150 is only a label for the
 # side row ck_biology with C4 plants and threshold_ppm=150, not a law.
-CO2_LAWS = (*LAWS, "whk_weathering")
+CO2_LAWS = (*LAWS, "whk_weathering", "ck_no_pump")
+SO2_SETTINGS = {"faithful": 1.0, "so2_fitted": ck.SO2_FIT_FACTOR, "no_so2": 0.0}
 
 
 def _check(what: str, name: str, allowed) -> None:
@@ -124,7 +132,17 @@ def _reading(law: str, plants: str, so2: float = 1.0) -> ck.Reading:
         return replace(r, name=LAWS[law], productivity="constant")
     if law == "whk_weathering":
         return replace(r, name=SIDE[law], weathering="whk")
+    if law == "ck_no_pump":
+        return replace(r, name=SIDE[law], productivity="none")
     return r
+
+
+def constant_T_s_star(threshold_bar: float) -> float:
+    """S*/S0 holding T at T0 with CO2 at the threshold: eqs (2)-(5) solved for
+    S in closed form, S = 4 sigma (T0 - dT(T0, P))^4 / (1 - a(T0))."""
+    T0 = ck.t0()
+    te = T0 - float(ck.greenhouse(T0, threshold_bar))
+    return 4.0 * ck.SIGMA * te ** 4 / (1.0 - float(ck.albedo(T0))) / ck.S0
 
 
 def s_star(law: str, plants: str, sun: str = "eq1", threshold_ppm: float | None = None, so2: float = 1.0,
@@ -149,12 +167,9 @@ def s_star(law: str, plants: str, sun: str = "eq1", threshold_ppm: float | None 
     if thr * PPM < ck.P_FIT[0]:
         raise ValueError(f"{thr} ppm is below the range of C&K's climate fits ({ck.P_FIT[0] / PPM} ppm)")
     if law == "ck_constant_T":
-        try:
-            t = ck.constant_T_time(thr * PPM, ck.FAITHFUL, T_MAX_GYR)
-        except ValueError:  # no root within T_MAX_GYR
-            t = float("inf")
-    else:
-        t = ck.co2_time(thr * PPM, _reading(law, plants, so2), T_MAX_GYR)
+        sstar = constant_T_s_star(thr * PPM)
+        return sstar if sstar <= brightness(T_MAX_GYR, "eq1") else float("inf")
+    t = ck.co2_time(thr * PPM, _reading(law, plants, so2), T_MAX_GYR)
     return brightness(t, "eq1") if math.isfinite(t) else float("inf")
 
 
@@ -247,8 +262,9 @@ def co2_steps() -> list[dict]:
             else:
                 sstar = s_star(law, plants, "eq1")
                 r = replace(base, productivity="constant") if pump.startswith("held") else base
-                T = ck.temperature(sstar * ck.S0, thr * PPM, r)
-                row |= {"S_star_over_S0": sstar, "T_at_threshold_K": T, "T_minus_T0_K": T - ck.t0(r),
+                held = closure.startswith("T held")  # T = T0 by construction (closed form)
+                T = ck.t0(r) if held else ck.temperature(sstar * ck.S0, thr * PPM, r)
+                row |= {"S_star_over_S0": sstar, "T_at_threshold_K": T, "T_minus_T0_K": 0.0 if held else T - ck.t0(r),
                         "Pi_ratio": ck.productivity(T, thr * PPM, r), "F_over_F0": ck.weathering(thr * PPM, sstar * ck.S0, r)}
             row["time_to_limit_Myr"] = time_to(sstar, "eq1") * MYR_PER_GYR
             rows.append(row)
@@ -259,18 +275,24 @@ WARMING_PPM = (320.0, 200.0, 150.0, 100.0, 50.0, 20.0, 10.0)
 
 
 def warming() -> list[dict]:
-    """The faithful C&K runs (C4 and C3-only) at falling CO2 levels: the
-    warming grows as productivity declines, not only after it stops."""
+    """The C&K runs (C4 and C3-only; source-traced and fitted SO2 term) at
+    falling CO2 levels: the warming grows as productivity declines, not only
+    after it stops."""
     rows = []
-    for plants in ("C4", "C3"):
-        r = PLANTS[plants][2]
-        for ppm in WARMING_PPM:
-            t = ck.co2_time(ppm * PPM, r, T_MAX_GYR)
-            st = ck.state(t, r)
-            rows.append({"run": f"C&K faithful, Pmin {r.p_min / PPM:g} ppm", "plants": plants, "P_atm_ppm": ppm,
-                         "t_Myr": t * MYR_PER_GYR, "S_ratio": st["S_ratio"], "T_minus_T0_K": st["T_K"] - ck.t0(r),
-                         "Pi_ratio": st["Pi_ratio"], "P_soil_ppm": st["P_soil_ppm"]})
+    for so2 in ("faithful", "so2_fitted"):
+        for plants in ("C4", "C3"):
+            r = replace(PLANTS[plants][2], so2_factor=SO2_SETTINGS[so2])
+            for ppm in WARMING_PPM:
+                rows.append(_warming_row(so2, plants, r, ppm))
     return rows
+
+
+def _warming_row(so2: str, plants: str, r: ck.Reading, ppm: float) -> dict:
+    t = ck.co2_time(ppm * PPM, r, T_MAX_GYR)
+    st = ck.state(t, r)
+    return {"run": f"C&K {so2}, Pmin {r.p_min / PPM:g} ppm", "reading": so2, "plants": plants, "P_atm_ppm": ppm,
+            "t_Myr": t * MYR_PER_GYR, "S_ratio": st["S_ratio"], "T_minus_T0_K": st["T_K"] - ck.t0(r),
+            "Pi_ratio": st["Pi_ratio"], "P_soil_ppm": st["P_soil_ppm"]}
 
 
 def side_branches() -> list[dict]:
@@ -278,14 +300,24 @@ def side_branches() -> list[dict]:
     for plants in PLANTS:
         for sun in SUNS:
             sstar = s_star("whk_weathering", plants, "eq1")
-            rows.append({"branch": SIDE["whk_weathering"], "plants": PLANTS[plants][0], "sun": SUNS[sun],
-                         "S_star_over_S0": sstar, "Pi_ratio_at_threshold": float("nan"),
+            rows.append({"branch": SIDE["whk_weathering"], "so2": "", "plants": PLANTS[plants][0], "sun": SUNS[sun],
+                         "S_star_over_S0": sstar, "Pi_ratio_at_threshold": float("nan"), "T_minus_T0_K": float("nan"),
                          "time_to_limit_Myr": time_to(sstar, sun) * MYR_PER_GYR})
+    for so2, fac in SO2_SETTINGS.items():
+        for plants, (lab, thr, _) in PLANTS.items():
+            r = _reading("ck_no_pump", plants, fac)
+            sstar = s_star("ck_no_pump", plants, "eq1", so2=fac)
+            dT = ck.temperature(sstar * ck.S0, thr * PPM, r) - ck.t0(r)
+            for sun in SUNS:
+                rows.append({"branch": SIDE["ck_no_pump"], "so2": so2, "plants": lab, "sun": SUNS[sun],
+                             "S_star_over_S0": sstar, "Pi_ratio_at_threshold": 0.0, "T_minus_T0_K": dT,
+                             "time_to_limit_Myr": time_to(sstar, sun) * MYR_PER_GYR})
     sstar = s_star("ck_biology", "C4", "eq1", threshold_ppm=150.0)
     pi = ck.productivity(ck.temperature(sstar * ck.S0, 150.0 * PPM), 150.0 * PPM)
     for sun in SUNS:
-        rows.append({"branch": SIDE["c4_productivity_at_150"], "plants": "C4 curve, 150 ppm threshold", "sun": SUNS[sun],
-                     "S_star_over_S0": sstar, "Pi_ratio_at_threshold": pi,
+        rows.append({"branch": SIDE["c4_productivity_at_150"], "so2": "faithful", "plants": "C4 curve, 150 ppm threshold",
+                     "sun": SUNS[sun], "S_star_over_S0": sstar, "Pi_ratio_at_threshold": pi,
+                     "T_minus_T0_K": ck.temperature(sstar * ck.S0, 150.0 * PPM) - ck.t0(),
                      "time_to_limit_Myr": time_to(sstar, sun) * MYR_PER_GYR})
     return rows
 

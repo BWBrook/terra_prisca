@@ -12,6 +12,15 @@ lower Owen et al.'s temperatures by 5 K (to WHK's present) and pass a power law
 through today and the 4.25 Gyr row, which gives exponent 0.367. WHK state
 neither the normalisation nor the choice of fitted rows, so their actual
 procedure stays undocumented.
+
+Each variant is fitted three ways: through the two end rows, by least squares
+in kelvin, and by least squares in log T_g on log P (the usual power-law fit;
+suggested in Gemini's review, WHK-A1). On the shifted rows the log-log fit
+gives 0.360 from all nine rows. A fourth variant keeps Owen et al.'s
+temperatures and takes T_e(0) = 255.5 K; Owen et al. print S0 = 1360 W m-2
+but not their albedo, and 255.5 K is the value that leaves T_g(CO2) = 2.3 K
+today, so it is the same one-parameter offset as the 5 K shift (a 2.5 K
+change in T_g either way), not independent support.
 """
 
 from __future__ import annotations
@@ -34,11 +43,14 @@ P0_BAR = 0.00032
 S0 = 1360.0
 
 
-def derived(shift_K: float = 5.0, weak_bands: bool = True) -> dict[str, np.ndarray]:
+TE0_OWEN_INFERRED = 255.5  # K; leaves T_g(CO2) = 2.3 K today with Owen's 290 K
+
+
+def derived(shift_K: float = 5.0, weak_bands: bool = True, te0: float = w.TE0) -> dict[str, np.ndarray]:
     """T_g(CO2) implied by Owen et al.'s Ts after WHK's subtraction (eqs 3-4)."""
     t = np.array(TABLE1, float)
     ts = (t[:, 3] if weak_bands else t[:, 4]) - shift_K
-    te = w.TE0 * (t[:, 1] / S0) ** 0.25
+    te = te0 * (t[:, 1] / S0) ** 0.25
     tg_h2o = 29.7 + w.FAITHFUL.h2o_slope * (ts - w.TS0)
     return {"gyr": t[:, 0], "S": t[:, 1], "p": t[:, 2] / P0_BAR, "ts": ts, "te": te, "tg_co2": ts - te - tg_h2o}
 
@@ -49,16 +61,19 @@ def eq5(p):
 
 def fits() -> list[dict]:
     rows = []
-    for label, shift, weak in (("shifted to 285 K", 5.0, True), ("as printed (290 K today)", 0.0, True),
-                               ("shifted, weak bands deleted", 5.0, False)):
-        d = derived(shift, weak)
+    for label, shift, weak, te0 in (("shifted to 285 K", 5.0, True, w.TE0), ("as printed (290 K today)", 0.0, True, w.TE0),
+                                    ("shifted, weak bands deleted", 5.0, False, w.TE0),
+                                    ("as printed, T_e(0) = 255.5 K", 0.0, True, TE0_OWEN_INFERRED)):
+        d = derived(shift, weak, te0)
         p, g = d["p"], d["tg_co2"]
         b_end = float(np.log(g[0] / g[-1]) / np.log(p[0] / p[-1]))
         (a_ls, b_ls), _ = curve_fit(lambda x, a, b: a * x ** b, p, g, p0=(2.3, 0.36))
+        b_log, a_log = np.polyfit(np.log(p), np.log(g), 1)
         resid = g - eq5(p)
         rows.append({"owen_temperatures": label, "tg_co2_today": float(g[-1]),
                      "endpoint_exponent": b_end, "endpoint_coefficient": float(g[-1]),
                      "lsq_coefficient": float(a_ls), "lsq_exponent": float(b_ls),
+                     "loglog_coefficient": float(np.exp(a_log)), "loglog_exponent": float(b_log),
                      "eq5_resid_max": float(np.abs(resid).max()),
                      "eq5_resid_rms": float(np.sqrt(np.mean(resid ** 2)))})
     return rows

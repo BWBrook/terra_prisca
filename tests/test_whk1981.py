@@ -169,3 +169,10 @@ def test_fidelity_against_scan(tmp_path):
     for committed in sorted(Path("models/walker_hays_kasting/fidelity").glob("*.csv")):
         name = committed.name
         assert (tmp_path / name).read_bytes() == committed.read_bytes(), name
+
+
+def test_equilibrium_bracket_follows_dte():
+    """Gemini review WHK-A3: no fixed bracket; strong forcing still solves."""
+    for dte in (110.0, -150.0):
+        dT, p = m.equilibrium(dte, 1.0)
+        assert dT == pytest.approx(float(m.surface_dT(dte, p)), abs=1e-8)

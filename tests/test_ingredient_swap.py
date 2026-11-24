@@ -89,10 +89,32 @@ def test_closure_and_pump_act_together():
     assert steps[("C3", "ck_constant_T_pump_responsive")]["F_over_F0"] == pytest.approx(0.597, abs=1e-3)
     assert steps[("C4", "ck_constant_T_pump_responsive")]["F_over_F0"] == pytest.approx(0.544, abs=1e-3)
     # the warming builds while productivity declines, not only after it stops
-    w = {(r["plants"], r["P_atm_ppm"]): r for r in sw.warming()}
+    w = {(r["plants"], r["P_atm_ppm"]): r for r in sw.warming() if r["reading"] == "faithful"}
     assert w[("C4", 20.0)]["T_minus_T0_K"] == pytest.approx(6.197, abs=1e-3)
     assert w[("C4", 20.0)]["Pi_ratio"] == pytest.approx(0.0903, abs=1e-4)
     assert w[("C4", 10.0)]["T_minus_T0_K"] == pytest.approx(8.346, abs=1e-3)
+    fit = {(r["plants"], r["P_atm_ppm"]): r for r in sw.warming() if r["reading"] == "so2_fitted"}
+    assert fit[("C3", 150.0)]["T_minus_T0_K"] == pytest.approx(9.036, abs=1e-3)
+    assert fit[("C4", 10.0)]["T_minus_T0_K"] == pytest.approx(12.045, abs=1e-3)
+    # the constant-T steps hold T at T0 exactly (closed form)
+    for p in ("C3", "C4"):
+        thr = sw.PLANTS[p][1] * sw.PPM
+        assert ck.temperature(sw.constant_T_s_star(thr) * ck.S0, thr) == pytest.approx(ck.t0(), abs=1e-8)
+        assert steps[(p, "ck_constant_T_pump_held")]["T_minus_T0_K"] == 0.0
+
+
+def test_abiotic_baseline():
+    """IS-A2: with no soil pump (Psoil = Patm), C&K's chemistry reaches the
+    limits sooner and warms less; the responsive pump adds about 6 K."""
+    side = {(r["so2"], r["plants"][:2]): r for r in sw.side_branches()
+            if r["branch"] == sw.SIDE["ck_no_pump"] and r["sun"] == sw.SUNS["eq1"]}
+    assert side[("faithful", "C3")]["time_to_limit_Myr"] == pytest.approx(189.069, abs=1e-3)
+    assert side[("faithful", "C4")]["time_to_limit_Myr"] == pytest.approx(575.939, abs=1e-3)
+    assert side[("no_so2", "C4")]["time_to_limit_Myr"] == pytest.approx(853.942, abs=1e-3)
+    assert side[("faithful", "C4")]["T_minus_T0_K"] == pytest.approx(2.378, abs=1e-3)
+    r = sw._reading("ck_no_pump", "C4")
+    assert ck.weathering(ck.P0, ck.S0, r) == pytest.approx(1.0, abs=1e-9)  # normalised today
+    assert sw.lifespan_myr("ck_biology", "C3", "eq1") / side[("faithful", "C3")]["time_to_limit_Myr"] == pytest.approx(2.237, abs=1e-3)
 
 
 def test_threshold_override_domain():

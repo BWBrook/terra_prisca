@@ -80,6 +80,14 @@ TEXTBOOK = {"KH": (10 ** -1.47, 2420.0), "K1": (10 ** -6.35, -1000.0), "K2": (10
 # out of the fit, but the figure had already been examined when it was chosen.
 SO2_FIT_FACTOR = 0.2831
 
+# 0.2 p.p.b. read as a mass mixing ratio (ppbm) rather than by volume: the
+# volume ratio is smaller by M_air / M_SO2 (Gemini's review, CK-A2).
+SO2_MASS_RATIO_FACTOR = 28.97 / 64.06
+
+OPTIONS = {"t0": ("model", "printed"), "chemistry_T": ("25C", "T"), "constants": ("sources", "textbook"),
+           "p_half": ("ck", "volk"), "productivity": ("eq8", "constant", "none"), "weathering": ("ck", "whk"),
+           "sun": ("eq1", "constant"), "equilibration": ("open", "sequential")}
+
 
 @dataclass(frozen=True)
 class Reading:
@@ -96,6 +104,11 @@ class Reading:
     so2_factor: multiplies the SO2 term (Henry constant x first dissociation).
     p_half: "ck" forces eq. (8) through Pi0 at (T0, Patm0), temperature factor
         included; "volk" is Volk's eq. (13), (Pi_max/Pi0 - 1)(Patm0 - Pmin).
+    productivity: "eq8"; "constant" holds Pi at Pi0 (Volk's case W3); "none"
+        removes the soil pump (Psoil = Patm, aH normalised at 320 ppm today).
+    equilibration: "open" equilibrates soil water with Psoil and atmospheric
+        SO2 together; "sequential" equilibrates rain with Patm and SO2 first,
+        then closes it to SO2 and opens it to Psoil, holding total S(IV).
     """
 
     name: str = "faithful"
@@ -112,6 +125,12 @@ class Reading:
     weathering: str = "ck"       # control "whk": WHK eq. (1) on atmospheric CO2
     fixed_co2: bool = False      # control: Patm held at 320 ppm
     sun: str = "eq1"             # control "constant"
+    equilibration: str = "open"
+
+    def __post_init__(self):
+        for field, allowed in OPTIONS.items():
+            if getattr(self, field) not in allowed:
+                raise ValueError(f"unknown {field} {getattr(self, field)!r}; expected one of {allowed}")
 
 
 FAITHFUL = Reading()
@@ -120,7 +139,11 @@ FAITHFUL = Reading()
 def solar(t, r: Reading = FAITHFUL):
     """Eq. (1): insolation at Earth, W m-2."""
     t = np.asarray(t, float)
-    return np.full_like(t, S0) if r.sun == "constant" else S0 / (1.0 - SUN_COEFF * t / TAU0_GYR)
+    if r.sun == "constant":
+        return np.full_like(t, S0)
+    d = 1.0 - SUN_COEFF * t / TAU0_GYR  # pole at 11.97 Gyr; the fit is stated for -4.5 < t < 4.77
+    with np.errstate(divide="ignore", invalid="ignore"):
+        return np.where(d > 0, S0 / d, np.nan)
 
 
 def albedo(T, r: Reading = FAITHFUL):
@@ -158,17 +181,35 @@ def constants(T: float, r: Reading = FAITHFUL) -> dict[str, float]:
     return out
 
 
-def h_activity(p_soil: float, T: float, r: Reading = FAITHFUL) -> float:
-    """H+ activity (M) of rain water in equilibrium with soil CO2 p_soil (bar)
-    and atmospheric SO2, from the charge balance
-    [H+] = [HCO3-] + 2[CO3--] + [HSO3-] + 2[SO3--] + [OH-]."""
-    k = constants(T, r)
-    c = k["KH"] * p_soil
-    s = k["HS"] * SO2 * r.so2_factor
-
+def _open_h(c: float, s: float, k: dict) -> float:
     def bal(lh):
         h = 10.0 ** lh
         return h - (k["K1"] * c / h * (1 + 2 * k["K2"] / h) + k["S1"] * s / h * (1 + 2 * k["S2"] / h) + k["KW"] / h)
+
+    return 10.0 ** brentq(bal, -12.0, 0.0, xtol=1e-13)
+
+
+def h_activity(p_soil: float, T: float, r: Reading = FAITHFUL, p_atm: float | None = None) -> float:
+    """H+ activity (M) of soil water, from the charge balance
+    [H+] = [HCO3-] + 2[CO3--] + [HSO3-] + 2[SO3--] + [OH-].
+
+    "open": in equilibrium with soil CO2 p_soil (bar) and atmospheric SO2.
+    "sequential": rain first equilibrates with p_atm and SO2, fixing total
+    S(IV); in the soil it is open to p_soil and closed to SO2."""
+    k = constants(T, r)
+    c = k["KH"] * p_soil
+    s = k["HS"] * SO2 * r.so2_factor
+    if r.equilibration == "open":
+        return _open_h(c, s, k)
+    if p_atm is None:
+        raise ValueError("sequential equilibration needs p_atm")
+    hr = _open_h(k["KH"] * p_atm, s, k)
+    s_total = s * (1 + k["S1"] / hr + k["S1"] * k["S2"] / hr ** 2)
+
+    def bal(lh):
+        h = 10.0 ** lh
+        d = 1 + k["S1"] / h + k["S1"] * k["S2"] / h ** 2
+        return h - (k["K1"] * c / h * (1 + 2 * k["K2"] / h) + s_total * (k["S1"] / h + 2 * k["S1"] * k["S2"] / h ** 2) / d + k["KW"] / h)
 
     return 10.0 ** brentq(bal, -12.0, 0.0, xtol=1e-13)
 
@@ -180,6 +221,8 @@ def so2_share(r: Reading = FAITHFUL) -> float:
     translation into today's chemistry, and depends on the chemistry model."""
     T = t0(r)
     k = constants(T, r)
+    if r.equilibration != "open":
+        raise ValueError("so2_share is defined for open equilibration")
     h = h_activity(PSOIL0, T, r)
     s = k["HS"] * SO2 * r.so2_factor
     return k["S1"] * s / h * (1 + 2 * k["S2"] / h) / h
@@ -211,6 +254,8 @@ def productivity(T: float, p: float, r: Reading = FAITHFUL, ph: float | None = N
     (below Pmin, or outside 0-50 C)."""
     if r.productivity == "constant":
         return 1.0
+    if r.productivity == "none":
+        return 0.0
     ph = p_half(r) if ph is None else ph
     g = max(0.0, 1.0 - ((T - 298.15) / 25.0) ** 2)
     x = max(0.0, p - r.p_min)
@@ -231,7 +276,8 @@ class _Ref:
 
 def _ref(r: Reading) -> _Ref:
     T = t0(r)
-    return _Ref(T, h_activity(PSOIL0, T, r), p_half(r))
+    ps = P0 if r.productivity == "none" else PSOIL0
+    return _Ref(T, h_activity(ps, T, r, P0), p_half(r))
 
 
 def weathering(p: float, s: float, r: Reading = FAITHFUL, ref: _Ref | None = None) -> float:
@@ -241,7 +287,7 @@ def weathering(p: float, s: float, r: Reading = FAITHFUL, ref: _Ref | None = Non
     if r.weathering == "whk":
         return float(whk1981.weathering_ratio(p / P0, T - ref.T0))
     ps = soil_co2(productivity(T, p, r, ref.ph), p)
-    return (h_activity(ps, T, r) / ref.aH0) ** 0.5 * np.exp((T - ref.T0) / EFOLD_K)
+    return (h_activity(ps, T, r, p) / ref.aH0) ** 0.5 * np.exp((T - ref.T0) / EFOLD_K)
 
 
 CO2_XTOL_DECADES = 1e-12
@@ -269,8 +315,9 @@ def state(t: float, r: Reading = FAITHFUL, ref: _Ref | None = None) -> dict[str,
     T = temperature(s, p, r)
     pi = productivity(T, p, r, ref.ph)
     ps = soil_co2(pi, p) if r.weathering == "ck" else np.nan
+    in_fit = T_FIT[0] <= T <= T_FIT[1] and P_FIT[0] <= p <= P_FIT[1]
     return {"t_Gyr": float(t), "S_ratio": s / S0, "P_atm_ppm": p * 1e6, "P_soil_ppm": ps * 1e6,
-            "Pi_ratio": pi, "T_K": T, "in_fit": bool(T_FIT[0] <= T <= T_FIT[1])}
+            "Pi_ratio": pi, "T_K": T, "in_fit": bool(in_fit)}
 
 
 def trajectory(times, r: Reading = FAITHFUL) -> dict[str, np.ndarray]:
@@ -303,19 +350,32 @@ def co2_time(level: float, r: Reading = FAITHFUL, t_max: float = 2.0) -> float:
     """Gyr until Patm first falls to `level` (bar); inf for a level below the
     floor, which Patm never goes beneath. The floor itself is reached when Patm
     comes within 1e-9 decades of it; any other level when Patm comes within
-    CO2_TOL_DECADES, ten times the accuracy of the CO2 solve."""
+    CO2_TOL_DECADES, ten times the accuracy of the CO2 solve. A level at or
+    above today's is reached at t = 0."""
     ref = _ref(r)
     if level < r.p_floor:
         return float("inf")
+    if np.log10(level) >= np.log10(co2(0.0, r, ref)) - CO2_TOL_DECADES:
+        return 0.0
     if level == r.p_floor:
         f = lambda t: float(np.log10(co2(t, r, ref) / r.p_floor) > 1e-9)
         return first_crossing(f, 0.5, t_max) if f(0.0) else 0.0
     return first_crossing(lambda t: np.log10(co2(t, r, ref)), np.log10(level), t_max, tol=CO2_TOL_DECADES)
 
 
+T_TOL_K = 1e-9
+
+
 def temperature_time(level_K: float, r: Reading = FAITHFUL, t_max: float = 2.0) -> float:
+    """Gyr until T first reaches level_K, which must lie in the climate fits'
+    range T_FIT; 0 for a level at or below today's temperature."""
+    if not T_FIT[0] <= level_K <= T_FIT[1]:
+        raise ValueError(f"{level_K} K is outside the climate fits' range {T_FIT}")
     ref = _ref(r)
-    return first_crossing(lambda t: temperature(float(solar(t, r)), co2(t, r, ref), r), level_K, t_max)
+    f = lambda t: temperature(float(solar(t, r)), co2(t, r, ref), r)
+    if level_K <= f(0.0) + T_TOL_K:
+        return 0.0
+    return first_crossing(f, level_K, t_max)
 
 
 def floor_threshold_T(r: Reading = FAITHFUL) -> float:
@@ -325,7 +385,7 @@ def floor_threshold_T(r: Reading = FAITHFUL) -> float:
     ref = _ref(r)
 
     def f(T):
-        return (h_activity(r.p_floor, T, r) / ref.aH0) ** 0.5 * np.exp((T - ref.T0) / EFOLD_K) - 1.0
+        return (h_activity(r.p_floor, T, r, r.p_floor) / ref.aH0) ** 0.5 * np.exp((T - ref.T0) / EFOLD_K) - 1.0
 
     return brentq(f, 250.0, 400.0, xtol=1e-9)
 
@@ -346,6 +406,18 @@ READINGS = {
     "volk_p_half": Reading(name="Volk eq. (13) P_half", p_half="volk"),
     "textbook": Reading(name="textbook constants (first build)", constants="textbook"),
     "so2_fitted": Reading(name=f"SO2 term x {SO2_FIT_FACTOR} (fitted to the printed kink)", so2_factor=SO2_FIT_FACTOR),
+}
+
+# Readings of Box 1's SO2 equilibration with no fitted parameter, suggested in
+# Gemini's review (CK-A2). Two binary choices crossed with the chemistry
+# temperature give eight combinations; all eight are scored (fidelity_ck1992
+# .so2_readings), so the best of them is a selection among eight, not a
+# prediction. None replaces the faithful reading without Chameides (1984).
+SO2_READINGS = {
+    f"{eq}_{basis}_{chem}": Reading(name=f"{eq} equilibration, 0.2 ppb by {basis}, constants at {chem}",
+                                    equilibration=eq, chemistry_T=chem,
+                                    so2_factor=SO2_MASS_RATIO_FACTOR if basis == "mass" else 1.0)
+    for eq in ("open", "sequential") for basis in ("volume", "mass") for chem in ("25C", "T")
 }
 
 C3 = replace(FAITHFUL, name="C3 world (Pmin = 150 ppm, P_half recalibrated)", p_min=P_MIN_C3)

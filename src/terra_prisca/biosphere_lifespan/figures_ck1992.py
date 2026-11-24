@@ -5,8 +5,8 @@
 Writes ck1992_fig2.png and ck1992_fig2.csv: Psoil, Patm, S/S0, Pi/Pi0 and T
 over the next 1.6 Gyr, for the faithful reading (equilibrium constants traced
 to the sources), the reading with the SO2 term fitted to the printed kink, and
-the C3-only world (Pmin = 150 ppm). T is left empty above 373.15 K, the top of
-the range the climate fits were made over.
+the C3-only world (Pmin = 150 ppm). Every state column is left empty above
+373.15 K, the top of the range the climate fits were made over.
 """
 
 from __future__ import annotations
@@ -32,7 +32,8 @@ def runs() -> dict[str, dict[str, np.ndarray]]:
     out = {}
     for k, r in RUNS.items():
         tr = m.trajectory(T, r)
-        tr["T_K"] = np.where(tr["in_fit"], tr["T_K"], np.nan)
+        for f in FIELDS:
+            tr[f] = np.where(tr["in_fit"], tr[f], np.nan)
         out[k] = tr
     return out
 

@@ -5,7 +5,10 @@
 Writes lw1982_fig2.png and lw1982_fig2.csv: the straight Sun line, sqrt(CO2)
 under the faithful rule and the alternative readings, and the 150 ppm limit.
 Cells are empty where a rule has no positive solution (see lw1982.co2).
-The temperature band is drawn from the limits the text states.
+The temperature band is drawn from the limits the text states, with the
+glaciations at the text's 5 C and at the six times read from the printed
+figure (lw1982_band.csv). Each CO2 curve is drawn to its exact crossing of
+the 150 ppm limit.
 """
 
 from __future__ import annotations
@@ -26,7 +29,8 @@ T = np.round(np.arange(-4000.0, 2000.01, 10.0), 6)
 CO2_KEYS = ("faithful", "text_7000", "two_thirds", "linear_c", "whk_constant_T")
 # (t, C) vertices of the band as the text states it (upper, then lower limit).
 BAND_UPPER = [(-3500, 40), (-2200, 40), (-2200, 25), (0, 25)]
-BAND_LOWER = [(-3500, 15), (-2200, 15), (-2200, 5), (-2200, 15), (0, 15)]
+GLACIATIONS_MYR = (-2300.57, -954.876, -803.431, -626.025, -439.965, -284.194)  # lw1982_band.csv
+BAND_LOWER = [(-3500, 15), *((g, y) for t in GLACIATIONS_MYR for g, y in ((t, 15), (t, 5), (t, 15))), (0, 15)]
 
 
 def main(outdir: Path) -> None:
@@ -39,7 +43,11 @@ def main(outdir: Path) -> None:
                           ("two_thirds", "k-.", "2/3 power"),
                           ("whk_constant_T", "k:", "WHK eq. (6), constant T")):
         keep = np.isfinite(co2[k]) & (co2[k] >= np.sqrt(m.C_LIMIT))
-        a.plot(tc[keep], co2[k][keep], style, lw=1, label=lab)
+        x, y = tc[keep], co2[k][keep]
+        end = m.lifespan(m.READINGS[k])
+        if np.isfinite(end) and end <= tc[-1]:
+            x, y = np.append(x, end), np.append(y, np.sqrt(m.C_LIMIT))
+        a.plot(x, y, style, lw=1, label=lab)
     a.axhline(np.sqrt(m.C_LIMIT), color="k", lw=0.6)
     a.text(150, np.sqrt(m.C_LIMIT) + 4, "150 ppm limit", fontsize=7)
     a.set_ylim(0, 300), a.set_ylabel("sqrt(CO2 / ppm)")
