@@ -15,8 +15,8 @@ between their times to the plants' CO₂ limit.
 Status: **Lovelock & Whitfield approved by Codex (1d7cd5d); Caldeira &
 Kasting approved by Codex (19efb5e); ingredient swap approved by Codex
 (cb73916)** (board thread 183). An external review by Gemini 4 Carbon
-(Google, through Antigravity) is addressed on branch `review/gemini-audit`, in
-review by Codex.
+(Google, through Antigravity) was addressed and approved by Codex (0db08ec,
+board thread 193).
 
 ## Sources
 
