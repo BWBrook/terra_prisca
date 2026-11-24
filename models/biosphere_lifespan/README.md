@@ -605,8 +605,11 @@ on the two faces of the cube:
 - **Under L&W's rule in the primary reading** the rule is refitted through
   the dated anchors on each Sun's past luminosity, so S* moves (1.00587 to
   1.00517 for C₃). A straight Sun's rate cancels from the time, so the ×0.77
-  there (×0.76 for C₄) comes from the curvature of eq. (1) over the past
-  3.5 Gyr, which steepens L&W's fitted response.
+  there (×0.76 for C₄) comes from eq. (1)'s curvature. Most of it is the
+  past: with the future continued along eq. (1)'s present tangent, the
+  refitted line alone gives ×0.774 for both (61.9 and 161.7 Myr). The
+  curvature ahead adds ×0.995 for C₃ and ×0.987 for C₄ (a further 0.3 and
+  2.2 Myr).
 - **The `lw_line_fixed` reading** keeps L&W's fitted line, so S* is independent
   of the Sun on both faces and the Sun changes only the clock.
 - All eight combinations of the two papers' settings are run
@@ -816,8 +819,8 @@ Of the other two ingredients:
   time.
 - **The Sun law.** C&K's faster-brightening Sun takes back a fifth, or about
   a seventh if L&W's fitted response is kept and only the clock changes. On
-  the L&W face of the primary reading, the Sun's effect comes from eq. (1)'s
-  curvature over the past, not from its rate ahead (see *Method*).
+  the L&W face of the primary reading, the Sun's effect comes mostly from
+  eq. (1)'s curvature over the past, not from its rate ahead (see *Method*).
 
 **Limits of the attribution.**
 - The Shapley shares hold for these three ingredients and the two papers'
@@ -954,7 +957,7 @@ Of the other two ingredients:
   Crossed with constants at 25 °C or following T, they give eight readings, all
   scored:
 
-  | Reading | C₄ limit, Gyr (printed 0.863) | 1 ppm, Gyr (1.024) | Median px: P_soil / P_atm / merged / Π / T |
+  | Reading | C₄ limit, Gyr (printed 0.863) | 1 ppm, Gyr (1.024) | Median px, trace to model: P_soil / P_atm / merged / Π / T |
   |---|---|---|---|
   | Faithful (open, volume, 25 °C) | 0.767 | 0.932 | 13.3 / 6.0 / 65.4 / 4.9 / 3.6 |
   | Open, mass, T | 0.852 | 1.013 | 2.1 / 1.3 / 8.3 / 3.4 / 2.7 |
@@ -965,11 +968,14 @@ Of the other two ingredients:
   3.0 Myr of the printed ones, but misses the P_soil and P_atm curves by three to
   five times as much as the fitted reading. The open, mass, T reading follows
   those curves about as well as the fitted one but puts the kink 11 Myr early.
-  No reading without a fitted parameter matches the whole figure, and the best
-  of eight is a selection, not a prediction. The paper gives CO₂ in
+  The distances from model to trace, also in the CSV, show the same trade-off.
+  None of the eight readings tested matches the whole figure without a fitted
+  parameter, and the best of eight is a selection, not a prediction. The paper gives CO₂ in
   "p.p.m." and SO₂ in "p.p.b." with the same notation, and its CO₂ levels are
-  volume ratios, which favours volume for SO₂ too. The faithful reading stands until Chameides (1984) settles the
-  units and the equilibration.
+  volume ratios, which favours volume for SO₂ too. Chameides (1984) can check
+  the constants and that paper's own conventions, but which unit and which
+  equilibration C&K implemented needs evidence of C&K's own choices. Until
+  then the faithful reading stands and these remain open alternatives.
 - **How today was closed.** With the printed equations, the figure favours
   closing at the fits' present, 287.89 K, which rounds to the stated 15 °C. A
   small adjustment to eq. (4) that closes at 288.15 K instead fits about as

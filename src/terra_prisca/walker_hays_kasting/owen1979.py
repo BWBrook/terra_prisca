@@ -16,7 +16,8 @@ procedure stays undocumented.
 Each variant is fitted three ways: through the two end rows, by least squares
 in kelvin, and by least squares in log T_g on log P (the usual power-law fit;
 suggested in Gemini's review, WHK-A1). On the shifted rows the log-log fit
-gives 0.360 from all nine rows. A fourth variant keeps Owen et al.'s
+gives 0.360 from all nine rows, but only by raising the coefficient to 2.74 K;
+held at WHK's 2.3 K it gives 0.397. A fourth variant keeps Owen et al.'s
 temperatures and takes T_e(0) = 255.5 K; Owen et al. print S0 = 1360 W m-2
 but not their albedo, and 255.5 K is the value that leaves T_g(CO2) = 2.3 K
 today, so it is the same one-parameter offset as the 5 K shift (a 2.5 K
@@ -69,11 +70,14 @@ def fits() -> list[dict]:
         b_end = float(np.log(g[0] / g[-1]) / np.log(p[0] / p[-1]))
         (a_ls, b_ls), _ = curve_fit(lambda x, a, b: a * x ** b, p, g, p0=(2.3, 0.36))
         b_log, a_log = np.polyfit(np.log(p), np.log(g), 1)
+        lp = np.log(p)
+        b_log_fixed = float(np.sum(lp * (np.log(g) - np.log(w.FAITHFUL.gh_coeff))) / np.sum(lp ** 2))
         resid = g - eq5(p)
         rows.append({"owen_temperatures": label, "tg_co2_today": float(g[-1]),
                      "endpoint_exponent": b_end, "endpoint_coefficient": float(g[-1]),
                      "lsq_coefficient": float(a_ls), "lsq_exponent": float(b_ls),
                      "loglog_coefficient": float(np.exp(a_log)), "loglog_exponent": float(b_log),
+                     "loglog_exponent_at_2.3": b_log_fixed,
                      "eq5_resid_max": float(np.abs(resid).max()),
                      "eq5_resid_rms": float(np.sqrt(np.mean(resid ** 2)))})
     return rows

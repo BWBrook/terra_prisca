@@ -360,8 +360,9 @@ def so2_readings(pdf: Path = s.DEFAULT_PDF) -> list[dict]:
             if c == "S_ratio":
                 continue
             dist = _distances(sc, c, r, tr[c].centres, data[c][:, 0])
-            row[f"{c} trace_to_model median px"] = dist.get("trace_to_model_median_px", np.nan)
-            row[f"{c} trace_to_model p95 px"] = dist.get("trace_to_model_p95_px", np.nan)
+            for d in ("trace_to_model", "model_to_trace"):
+                row[f"{c} {d} median px"] = dist.get(f"{d}_median_px", np.nan)
+                row[f"{c} {d} p95 px"] = dist.get(f"{d}_p95_px", np.nan)
         rows.append(row)
     return rows
 

@@ -302,14 +302,18 @@ All hold.
     actual procedure remains undocumented. Without the shift, or without the
     weak CO₂ bands, the exponents are 0.27 and 0.28.
   - The usual power-law fit, least squares in log T_g on log P, gives
-    2.74(P/P₀)^0.360 from all nine shifted rows, against the printed 0.364, so
-    the exponent does not need a choice of rows (Gemini 4 Carbon's review). Least
-    squares in kelvin would give 3.38(P/P₀)^0.314, because the 310 K row
-    dominates the squared residuals. Eq. (5) falls up to 2.7 K below Owen
+    2.74(P/P₀)^0.360 from all nine shifted rows (Gemini 4 Carbon's review),
+    near the printed 0.364, but only by raising the coefficient 19% above
+    WHK's 2.3 K. Held at 2.3 K, the same fit gives 0.397. So the printed law
+    is closest to the fit through the two end rows, 2.3(P/P₀)^0.367. Least
+    squares in kelvin would give 3.38(P/P₀)^0.314. The 310 K row has high
+    leverage there (dropping it gives 0.339), although today's row carries
+    the largest share of the squared residuals (39%, against 8%). Eq. (5) falls up to 2.7 K below Owen
     et al.'s intermediate rows (3.0–2.5 Gyr), which eq. (6)'s factor of 2
     makes 5.3 K in T_s.
   - Keeping Owen et al.'s printed temperatures and taking T_e(0) = 255.5 K
-    gives the same fits (0.368 through the end rows, 0.360 in log-log). Owen
+    gives the same fits (0.368 through the end rows, 0.360 in log-log, 0.398
+    in log-log at 2.3 K). Owen
     et al. print S₀ = 1,360 W m⁻² but not their albedo, and 255.5 K is the
     value that leaves T_g(CO₂) = 2.3 K today. It is the same one-parameter
     offset as the 5 K shift (2.5 K in T_g either way), so it does not add

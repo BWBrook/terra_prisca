@@ -298,7 +298,7 @@ def numbers() -> list[dict]:
     ow = owen1979.TABLE1[0]
     dte_owen = TE0 * ((ow[1] / owen1979.S0) ** 0.25 - 1.0)
     keep_owen = (1 - 2 * dte_owen / 4.6) ** (1 / 0.364)
-    add("P/P0 that holds dT = 0, eq. (6)", "'up to 1000 times' (Owen et al. 1979)",
+    add("P/P0 that holds dT = 0, eq. (6)", "'up to 1000 times' (WHK's summary of Owen et al. 1979)",
         f"{keep285:.0f} at dTe = -18 K (paper's rounding); {keep285_exact:.0f} at dTe = {d25:.2f} K (exact 25%)",
         f"Owen et al.'s Table 1 gives P/P0 = {ow[2] / owen1979.P0_BAR:.0f} at {ow[1] / owen1979.S0:.0%} of today's sunlight "
         f"(dTe = {dte_owen:.1f} K) with Ts = {ow[3]} K, a warm state; eq. (6) needs {keep_owen:.0f} there to hold dT = 0")

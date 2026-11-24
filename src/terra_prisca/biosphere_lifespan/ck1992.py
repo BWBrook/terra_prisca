@@ -216,14 +216,15 @@ def h_activity(p_soil: float, T: float, r: Reading = FAITHFUL, p_atm: float | No
 
 def so2_share(r: Reading = FAITHFUL) -> float:
     """Fraction of today's soil-water H+ balanced by sulphur anions, ([HSO3-] +
-    2[SO3--]) / [H+], at Psoil0 and T0. What the printed kink fixes is an
+    2[SO3--]) / [H+], at today's soil CO2 (Psoil0, or Patm0 with no soil pump)
+    and T0, the reference acidity of _ref. What the printed kink fixes is an
     acidity ratio across time (kink_acidity_ratio); this share is its
     translation into today's chemistry, and depends on the chemistry model."""
     T = t0(r)
     k = constants(T, r)
     if r.equilibration != "open":
         raise ValueError("so2_share is defined for open equilibration")
-    h = h_activity(PSOIL0, T, r)
+    h = h_activity(P0 if r.productivity == "none" else PSOIL0, T, r)
     s = k["HS"] * SO2 * r.so2_factor
     return k["S1"] * s / h * (1 + 2 * k["S2"] / h) / h
 

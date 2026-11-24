@@ -170,3 +170,12 @@ def test_domain_and_poles():
         m.Reading(sun="eq1")
     from dataclasses import replace
     assert m.lifespan(replace(m.FAITHFUL, power=0.364)) == pytest.approx(138.119, abs=1e-3)
+
+
+def test_gough_pole_is_excluded_exactly():
+    """Codex's GA edge case: the pole itself is NaN, and a WHK-feedback rule
+    on Gough's Sun keeps its valid samples past it."""
+    from dataclasses import replace
+    assert np.isnan(m.gough_luminosity(11750.0))
+    c = m.co2(np.array([0.0, 80.0, 12000.0]), replace(m.VARIANTS["whk_feedback"], sun="gough"))
+    assert np.all(np.isfinite(c[:2])) and np.isnan(c[2])

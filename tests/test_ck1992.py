@@ -245,3 +245,10 @@ def test_so2_readings():
     assert m.co2_time(m.P_MIN_C4, m.SO2_READINGS["open_mass_T"]) == pytest.approx(0.85232, abs=1e-4)
     with pytest.raises(ValueError):
         m.h_activity(m.PSOIL0, m.t0(), m.SO2_READINGS["sequential_mass_T"])
+
+
+def test_so2_share_uses_the_reference_acidity():
+    """GA-R1: with no soil pump the reference soil water holds 320 ppm."""
+    assert m.so2_share(m.Reading(productivity="none")) == pytest.approx(0.474123, abs=1e-5)
+    assert m.so2_share(m.Reading(productivity="none", so2_factor=m.SO2_FIT_FACTOR)) == pytest.approx(0.204820, abs=1e-5)
+    assert m.so2_share(m.FAITHFUL) == pytest.approx(0.081078, abs=1e-5)

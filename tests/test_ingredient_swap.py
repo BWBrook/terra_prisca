@@ -171,3 +171,16 @@ def test_outputs_reproduce(tmp_path):
     for f in ("cells", "shapley", "co2_steps", "warming", "side"):
         name = f"ingredient_swap_{f}.csv"
         assert (tmp_path / name).read_bytes() == (sw.Path("models/biosphere_lifespan/swap") / name).read_bytes(), name
+
+
+def test_sun_effect_on_the_lw_face_is_mostly_past_curvature():
+    """GA-R4: continuing eq. (1) along its present tangent isolates the
+    refitted past; the curvature ahead adds a little more."""
+    eq1 = lambda t_myr: sw.brightness(t_myr / 1000.0, "eq1")
+    slope = 0.38 / 4.55
+    for plants, past, ahead in (("C3", 0.77381, 0.99485), ("C4", 0.77381, 0.98668)):
+        thr = sw.PLANTS[plants][1]
+        s = sw.lw_rule_s_star(thr, eq1)
+        tangent = (s - 1.0) / slope * 1000.0
+        assert tangent / sw.lifespan_myr("lw_rule", plants, "straight") == pytest.approx(past, abs=1e-5)
+        assert sw.lifespan_myr("lw_rule", plants, "eq1") / tangent == pytest.approx(ahead, abs=1e-5)

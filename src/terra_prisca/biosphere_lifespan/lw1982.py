@@ -47,7 +47,7 @@ def gough_luminosity(t, t_sun_gyr: float = 4.7):
     age = t_sun_gyr + np.asarray(t, float) / 1000.0
     d = 1.0 + 0.4 * (1.0 - age / t_sun_gyr)
     with np.errstate(divide="ignore", invalid="ignore"):
-        return np.where(d > 0, 1.0 / d, np.nan)
+        return np.where(d > 1e-12, 1.0 / d, np.nan)  # d rounds slightly positive at the pole itself
 
 
 @dataclass(frozen=True)
@@ -93,7 +93,7 @@ def co2(t, r: Reading = FAITHFUL):
     L = sun(t, r)
     if r.whk_constant_T or r.whk_feedback:
         dte = whk1981.dTe_from_luminosity(L)
-        return r.c_now * np.vectorize(lambda x: _whk_p(x, r))(dte)
+        return r.c_now * np.vectorize(lambda x: _whk_p(x, r) if np.isfinite(x) else float("nan"))(dte)
     if r.sun == "straight" and r.sun_slope == 0:
         return np.full_like(L, r.c_now)  # a constant Sun needs no compensation
     lp = sun(r.t_past, r)
