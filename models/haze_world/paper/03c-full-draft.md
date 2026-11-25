@@ -23,15 +23,15 @@ cooling organic haze, and acetogens divert hydrogen into acetate.
 Temperature shifts the competitive advantage, so their competition can hold
 temperature exactly constant as hydrogen supply changes. This needs some of
 the diverted hydrogen to stay out of methane for good. Exact control is
-fragile: the reference state loses local stability once the climate takes
-more than 0.15 years to respond without acetate recycling, or about a year
-with half recycled. Imperfect control can last far longer. In the four
+fragile. With no acetate recycled into methane, the reference state loses
+local stability once the climate takes more than 0.15 years to respond; with
+half recycled, about a year. Imperfect control can last far longer. In the four
 cases tested, a local temperature sensitivity of a fraction of a kelvin per
 e-fold of supply bought tolerance of a 30-year response, and some
 habitat-spread communities tolerated centuries. In 24 closed reference invasions a
 single uniform habitat never assembled the regulating mixture; in four
 simplified controls the invader removed the resident within decades, while
-the climate took millennia to reverse its advantage. The mixture can form
+atmospheric methane took millennia to reverse its advantage. The mixture can form
 where the losing group persists, in refuges or through immigration, until
 the climate catches up.
 
@@ -784,18 +784,18 @@ stage specifications are at https://github.com/BWBrook/terra_prisca and will
 be archived on Zenodo with a DOI before submission. Source publications are
 cited; their PDFs remain outside the public archive.
 
-**Declaration of AI use.** [For Barry to settle. Draft:] The model,
-analyses and manuscript drafts were developed with Claude (Anthropic; Claude
-Opus 5.5, with Sonnet 5.5 for the display items and supplement) and Codex
-(OpenAI; GPT-6), working with the human author.
-They designed and coded the model, ran and cross-checked the analyses, and
-generated model figures and manuscript drafts, each reviewing the other's
-work. Independent AI reviews by Claude Fable 5.2 (Anthropic) and GPT-6 Astra
+**Declaration of AI use.** The model, analyses and manuscript were
+developed by B.W.B. with Claude (Anthropic) and Codex (OpenAI). Claude
+(Opus 5.5) wrote the stage specifications, reviewed each stage and drafted
+the manuscript; Claude Sonnet 5.5 drafted the display items and supplement.
+Codex (GPT-6) built the model code, ran the independent audits, reviewed
+each step of the paper and repaired the display items and supplement. Independent AI reviews by Claude Fable 5.2 (Anthropic) and GPT-6 Astra
 Pro (OpenAI) prompted the climate-inertia tests; their checks are archived.
 Claude Fable 5.2, as B.W.B.'s project adviser, then posed five pressure-test
 questions, on habitat temperature spread, imposed warming, assembly, the
 fate of acetate and the size of the hydrogen supply, which led to the
-analyses behind equation (3.1) and §§3.5–3.7. Gemini 4 Carbon (Google) gave
+analyses behind equation (3.1) and §§3.5–3.7, and drafted the abstract,
+which Codex checked against the claims ledger. Gemini 4 Carbon (Google) gave
 a first-pass review on 21 November 2026, whose two text proposals are in
 §3.2 and §4.4, and reviewed the consolidated manuscript, figures and
 supplement.

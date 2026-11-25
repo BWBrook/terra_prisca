@@ -47,8 +47,7 @@ this hydrogen-competition thermostat survives a slow climate response.
    eventually becoming methane, temperature stays at the set point while the
    hydrogen supply changes by a factor of [2.0]{.C67}. If both the acetate and
    the lost biomass returned as methane, the two groups would deliver the same
-   yield and the lever would vanish. How much escaped on the early Earth is
-   unknown.
+   yield and the lever would vanish.
 2. **Exact control is fragile.** With no acetate recycled, the reference
    state loses stability once the climate takes more than [0.15]{.C63} years
    to respond, and with half recycled, about a year[]{.C63}. Every stable exact state
@@ -65,10 +64,11 @@ this hydrogen-competition thermostat survives a slow climate response.
 4. **In our reference runs the community did not form in one uniform habitat.**
    In all [24]{.C52} closed invasions the newcomer ended alone. In four
    simplified controls it removed the resident within decades[]{.C65}, while
-   the climate needed over a thousand years to cross the set point. Two small
+   atmospheric methane needed over a thousand years to bring temperature across
+   the set point. Two small
    sheltered habitats let the mixture form at the set point[]{.C09}; as little
    as [0.1]{.C66} immigrant cells a year kept both groups active near it, with
-   none or half of the acetate recycled. How well that mixture tolerates a slow climate was not tested.
+   none or half of the acetate recycled.
 5. **The hydrogen bill is large.** At the assumed ten-thousand-year methane
    lifetime, the model's gross supply is about [401]{.C69} trillion moles of hydrogen a
    year, far above published base cases for fresh hydrogen from volcanoes and
@@ -81,16 +81,17 @@ this hydrogen-competition thermostat survives a slow climate response.
 In this model a living thermostat that holds temperature exactly over a wide
 range of supply is fragile; control that tolerates a slow climate lets
 temperature drift slightly or works over only a narrow range of supply. In our reference runs the regulating mixture formed
-only where the losing group had somewhere to wait. The
-model's main conditions can be tested today: acetate turnover, the share of
+only where the losing group had somewhere to wait. Two things remain
+unknown: how much acetate escaped methane on the early Earth, and how well a
+mixture formed this way tolerates a slow climate. The model's main conditions can be tested today: acetate turnover, the share of
 acetate that escapes methane, and the spread of habitat temperatures in
 modern microbial mats.
 
 ## How this work was done
 
-Barry W. Brook led the project. Claude (Opus 5.5) specified and reviewed the
-analyses and drafted the paper; Codex (GPT-6)
-wrote the model code and independently audited each stage. Claude Fable 5.2,
+Barry W. Brook led the project. Claude (Opus 5.5) wrote the stage
+specifications, reviewed each stage and drafted the paper; Codex (GPT-6) built
+the model code, ran the independent audits and reviewed each step. Claude Fable 5.2,
 as project adviser, posed five pressure-test questions, and Gemini 4 Carbon
 reviewed the draft. Every number here is checked against the project's
 public claims ledger.
