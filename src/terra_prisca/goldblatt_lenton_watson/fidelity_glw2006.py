@@ -19,10 +19,11 @@ are clipped segment by segment at the calibrated frame, so a curve that leaves
 the frame and comes back is two visible runs, never one joined line. Each run is
 densified to 0.01 pt on its own. Distances are measured on the printed page in
 points, in both directions: printed-to-model and model-to-printed, each as an
-RMS over arc length. Both are taken on the common support, the span of the
-support coordinate (log O in Fig. 2, time in Fig. 3) that both curves cover;
-the length of each curve outside that span, and of the model outside the frame,
-is reported separately.
+RMS over arc length, on the support coordinate (log O in Fig. 2, time in
+Fig. 3). The shared support is the intersection of the spans covered by each curve's
+visible runs, so a gap in either curve is excluded from both directions. The
+length of each curve outside the shared support is reported as unmatched, and
+the model's length outside the frame separately.
 """
 
 from __future__ import annotations
@@ -136,19 +137,43 @@ def densify(p: np.ndarray, step: float) -> np.ndarray:
 
 
 def _samples(runs, sc):
-    """Arc-length samples (pt) of the densified runs: segment midpoints, each
-    weighted by its segment's length, plus the segments themselves."""
-    mids, w, segs = [], [], []
+    """Densified segments (pt) of each run, as (n, 2, 2) arrays."""
+    out = []
     for r in runs:
         q = densify(r * sc, STEP_PT)
-        if len(q) < 2:
-            continue
-        mids.append(0.5 * (q[1:] + q[:-1]))
-        w.append(np.hypot(*np.diff(q, axis=0).T))
-        segs.append(np.stack([q[:-1], q[1:]], axis=1))
-    if not mids:
-        return np.empty((0, 2)), np.empty(0), np.empty((0, 2, 2))
-    return np.vstack(mids), np.concatenate(w), np.vstack(segs)
+        if len(q) >= 2:
+            out.append(np.stack([q[:-1], q[1:]], axis=1))
+    return out
+
+
+def _union(spans):
+    out = []
+    for a, b in sorted(spans):
+        if out and a <= out[-1][1]:
+            out[-1][1] = max(out[-1][1], b)
+        else:
+            out.append([a, b])
+    return out
+
+
+def _intersect(u, v):
+    out, i, j = [], 0, 0
+    while i < len(u) and j < len(v):
+        a, b = max(u[i][0], v[j][0]), min(u[i][1], v[j][1])
+        if a < b:
+            out.append((a, b))
+        if u[i][1] < v[j][1]:
+            i += 1
+        else:
+            j += 1
+    return out
+
+
+def _inside(x, spans):
+    m = np.zeros(len(x), bool)
+    for a, b in spans:
+        m |= (x >= a) & (x <= b)
+    return m
 
 
 def _distance(pts, segs, k=4):
@@ -164,27 +189,36 @@ def _distance(pts, segs, k=4):
 
 
 def score(printed: list, model: list, sc, axis: int | None) -> dict:
-    """Two-way RMS distances (pt) on the common support of coordinate `axis`
-    (0 = x, 1 = y; None = everywhere), with the length of each curve outside it."""
+    """Two-way RMS distances (pt) over arc length on the shared support.
+
+    With `axis` set (0 = x, 1 = y), each curve covers the union of its visible
+    runs' spans along that coordinate; the shared support is the intersection
+    of the two unions. Both the query segments and the target segments are
+    trimmed to it, so neither direction counts a gap in the other curve or
+    reaches past it. The length of each curve outside the shared support is
+    returned as unmatched. With axis None every segment is used."""
     sc = np.asarray(sc, float)
-    pm, pw, ps = _samples(printed, sc)
-    mm, mw, ms = _samples(model, sc)
+    P, M = _samples(printed, sc), _samples(model, sc)
     nan = {"printed_to_model_pt": np.nan, "model_to_printed_pt": np.nan,
-           "printed_outside_support_pt": np.nan, "model_outside_support_pt": np.nan}
-    if not len(mm) or not len(pm):
+           "printed_unmatched_pt": length(printed, sc), "model_unmatched_pt": length(model, sc)}
+    if not P or not M:
         return nan
+    ps, ms = np.vstack(P), np.vstack(M)
     if axis is None:
-        inp, inm = np.ones(len(pm), bool), np.ones(len(mm), bool)
+        inp, inm = np.ones(len(ps), bool), np.ones(len(ms), bool)
     else:
-        lo = max(ps[:, :, axis].min(), ms[:, :, axis].min())
-        hi = min(ps[:, :, axis].max(), ms[:, :, axis].max())
-        inp = (pm[:, axis] >= lo) & (pm[:, axis] <= hi)
-        inm = (mm[:, axis] >= lo) & (mm[:, axis] <= hi)
-    rms = lambda d, w: float(np.sqrt(np.sum(w * d**2) / np.sum(w))) if np.sum(w) > 0 else np.nan
-    return {"printed_to_model_pt": rms(_distance(pm[inp], ms), pw[inp]),
-            "model_to_printed_pt": rms(_distance(mm[inm], ps), mw[inm]),
-            "printed_outside_support_pt": float(pw[~inp].sum()),
-            "model_outside_support_pt": float(mw[~inm].sum())}
+        shared = _intersect(_union([(r[:, :, axis].min(), r[:, :, axis].max()) for r in P]),
+                            _union([(r[:, :, axis].min(), r[:, :, axis].max()) for r in M]))
+        inp = _inside(ps.mean(axis=1)[:, axis], shared)
+        inm = _inside(ms.mean(axis=1)[:, axis], shared)
+    if not inp.any() or not inm.any():
+        return nan
+    pw, mw = np.hypot(*np.diff(ps, axis=1)[:, 0].T), np.hypot(*np.diff(ms, axis=1)[:, 0].T)
+    rms = lambda d, w: float(np.sqrt(np.sum(w * d**2) / np.sum(w)))
+    return {"printed_to_model_pt": rms(_distance(ps[inp].mean(axis=1), ms[inm]), pw[inp]),
+            "model_to_printed_pt": rms(_distance(ms[inm].mean(axis=1), ps[inp]), mw[inm]),
+            "printed_unmatched_pt": float(pw[~inp].sum()),
+            "model_unmatched_pt": float(mw[~inm].sum())}
 
 
 # ----------------------------------------------------------------- Fig. 2
@@ -207,31 +241,58 @@ def model2(rd: g.Reading, fixed: str, value: float, fr: dict, n=3001):
     return runs, off, xy, stable
 
 
-def fig2_scores(vec, F) -> list[dict]:
+def model2_branches(xy: np.ndarray) -> dict[str, np.ndarray] | None:
+    """Split the curve (ordered by O) at its two folds into lower, unstable and
+    upper branches; None unless there are exactly two folds."""
+    d = np.diff(xy[:, 0])
+    idx = np.where(np.sign(d[:-1]) != np.sign(d[1:]))[0] + 1
+    if len(idx) != 2:
+        return None
+    i, j = idx
+    return {"lower": xy[:i + 1], "unstable": xy[i:j + 1], "upper": xy[j:]}
+
+
+def fig2_readings(si) -> dict[str, tuple[g.Reading, bool]]:
+    """The predeclared readings, plus the two SI-derived ones (post hoc)."""
+    line = si[("S3", "", "fit", "line")]
+    unscaled = g.Reading("si_fig_s3_unscaled", coeffs=tuple(float(v) for v in np.polyfit(line[:, 0], line[:, 1], 4)))
+    return {**{k: (v, True) for k, v in g.READINGS.items()},
+            "si_fig_s3": (si_reading(si), False), "si_fig_s3_unscaled": (unscaled, False)}
+
+
+def fig2_scores(vec, F, readings) -> list[dict]:
     rows = []
     for (panel, curve), (fixed, value) in FIG2_CASES.items():
         fr = F[("2", panel)]
-        sc, p = scale(fr), printed2(vec, panel, curve)
+        sc, bx, p = scale(fr), box(fr), printed2(vec, panel, curve)
+        parts = dict(zip(FIG2_PARTS, p))
         base = {"panel": panel, "curve": curve, "fixed": fixed}
         values = [("as captioned", value)]
         if (panel, curve) == ("b", "dashed"):
             values.append(("r = 3e11", CAPTION_R_TENFOLD))
         for label, val in values:
-            for name, rd in g.READINGS.items():
+            for name, (rd, declared) in readings.items():
                 runs, off, xy, stable = model2(rd, fixed, val, fr)
-                inside = (xy[:, 0] >= box(fr)[0]) & (xy[:, 0] <= box(fr)[1])
+                inside = (xy[:, 0] >= bx[0]) & (xy[:, 0] <= bx[1])
                 idx = cKDTree(xy[inside] * sc).query(np.vstack(p) * sc)[1]
                 truth = np.concatenate([np.full(len(q), part != "unstable") for q, part in zip(p, FIG2_PARTS)])
-                rows.append({**base, "value": label, "reading": name, **score(p, runs, sc, 1),
-                             "model_off_frame_pt": off,
+                head = {**base, "value": label, "reading": name, "predeclared": declared}
+                rows.append({**head, "branch": "all", **score(p, runs, sc, 1), "model_off_frame_pt": off,
                              "stability_agreement": float(np.mean(stable[inside][idx] == truth))})
-        flat = [np.array([[min(q[:, 0].min() for q in p), np.median(np.vstack(p)[:, 1])],
-                          [max(q[:, 0].max() for q in p), np.median(np.vstack(p)[:, 1])]])]
-        shifted = [q + [1.0, 0.0] for q in p]
-        for label, m, axis in (("null: flat at median log O", flat, None),
-                               ("null: printed curve shifted one decade", shifted, 1)):
-            rows.append({**base, "value": "null", "reading": label, **score(p, m, sc, axis),
-                         "model_off_frame_pt": 0.0, "stability_agreement": np.nan})
+                br = model2_branches(xy)
+                for part in FIG2_PARTS:
+                    m = clip_runs(br[part], bx) if br else []
+                    rows.append({**head, "branch": part, **score([parts[part]], m, sc, 1),
+                                 "model_off_frame_pt": (length([br[part]], sc) - length(m, sc)) if br else np.nan,
+                                 "stability_agreement": np.nan})
+        allp = np.vstack(p)
+        flat = [np.array([[allp[:, 0].min(), np.median(allp[:, 1])], [allp[:, 0].max(), np.median(allp[:, 1])]])]
+        for label, raw, axis in (("null: flat at median log O", flat, None),
+                                 ("null: printed curve shifted one decade", [q + [1.0, 0.0] for q in p], 1)):
+            vis = [r for q in raw for r in clip_runs(q, bx)]
+            rows.append({**base, "value": "null", "reading": label, "predeclared": True, "branch": "all",
+                         **score(p, vis, sc, axis), "model_off_frame_pt": length(raw, sc) - length(vis, sc),
+                         "stability_agreement": np.nan})
     return rows
 
 
@@ -576,6 +637,17 @@ def claims(vec, F, runs, beta3d: float) -> list[dict]:
             if case == "c":
                 add(f"organic carbon increase after 400 Myr, {tag}", "3% over ~500 Myr",
                     f"{(long.C[-1] / long.C[0] - 1) * 100:.2f}%", "Fig. 3 caption")
+    rdb = runs[("author_p", "Fig. 3d", "a")][0]
+    t_eval = np.unique(np.concatenate([[0.0], np.logspace(-2, 6, 4000)]))
+    hi_short = g.step(rdb, N0=g.N_MODERN, r0=7.5e11, N1=g.N_MODERN, r1=7.5e10, t_end=1e6, t_eval=t_eval)
+    ev = methane_events(hi_short, hi_short, rdb)
+    co2 = np.logspace(np.log10(KASTING_CO2[0]), np.log10(KASTING_CO2[1]), 301)
+    dT = kasting_ts(hi_short.M[0] / g.MU, co2) - kasting_ts(ev["M_cross"] / g.MU, co2)
+    add("cooling sensitivity: Fig. 3a forcing started from r = 7.5e11 (beta Fig. 3d)", "4-9 C",
+        f"methane {hi_short.M[0] / g.MU * 1e6:.2f} -> {ev['M_cross'] / g.MU * 1e6:.2f} ppm (factor "
+        f"{ev['fall_cross']:.3f}) at {ev['t_cross'] / 1e3:.0f} kyr; {dT.min():.2f}-{dT.max():.2f} K, "
+        f"maximum at pCO2 {co2[np.argmax(dT)]:.3g} atm", "p. 685; Kasting et al. eq. 1",
+        "sensitivity run proposed by Codex: the BIF band's upper r in place of the captioned 3e11")
     for r_up in (5.6e11, 6e11, 7.5e11, 1e12, 3e12):
         t = reverse_time(rd, r_up)
         add(f"reverse switch time, r stepped 7.5e10 -> {r_up:.2g}", "3-7 Myr",
@@ -680,7 +752,7 @@ def main(outdir: Path = OUT) -> None:
     F = frames(outdir / V.FRAMES.name)
     si = V.load(outdir / V.SI_OUT.name)
     beta3d = beta_from_fig3d(vec)
-    write(outdir / "glw2006_fig2.csv", fig2_scores(vec, F))
+    write(outdir / "glw2006_fig2.csv", fig2_scores(vec, F, fig2_readings(si)))
     write(outdir / "glw2006_folds.csv", fold_rows(vec, {**g.READINGS, "si_fig_s3": si_reading(si)}))
     rows3, runs = fig3_scores(vec, F, beta3d)
     write(outdir / "glw2006_fig3.csv", rows3)

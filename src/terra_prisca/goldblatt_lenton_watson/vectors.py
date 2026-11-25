@@ -18,8 +18,9 @@ Figs 3a and 3c (pO2 and pCH4 in atm) has its own ticks, drawn about 2 pt below
 the left-hand (PAL) ticks; it is fitted separately and stored as a mapping onto
 the left-hand axis.
 
-The Supplementary Information PDF (SI_SHA256) is read the same way: the marker
-centres of Supplementary Fig. 2 and the fitted line of Supplementary Fig. 3,
+The Supplementary Information PDF (SI_SHA256) is read the same way: the data
+points of Supplementary Fig. 2 (the vertices of the polyline joining each
+marker set) and the fitted line of Supplementary Fig. 3,
 both as log10 values, go to glw2006_si_vectors.csv.
 
 Paths drawn twice at identical coordinates, in either direction, are counted once.
@@ -302,9 +303,9 @@ S2_MARKERS = {"re": "0.01 PAL", "cccc": "0.1 PAL", "lll": "1 PAL", "llll": "1 PA
 
 
 def si_figs(doc) -> tuple[list[dict], list[dict]]:
-    """Supplementary Figs 2 and 3 as log10 values: S2 marker centres by oxygen
-    level (caption: triangles 1 PAL, circles 0.1 PAL, squares 0.01 PAL), and
-    the fitted line of S3."""
+    """Supplementary Figs 2 and 3 as log10 values: S2 data points by oxygen
+    level (caption: triangles 1 PAL, circles 0.1 PAL, squares 0.01 PAL), read
+    from the polyline joining each marker set, and the fitted line of S3."""
     rows, checks = [], []
     for fig, (pg, xt, yt, tl) in SI_FIGS.items():
         page = doc[pg]
@@ -319,14 +320,27 @@ def si_figs(doc) -> tuple[list[dict], list[dict]]:
                    (kx * fr.x0 + cx, kx * fr.x1 + cx, ky * fr.y0 + cy, ky * fr.y1 + cy))
         inside = [d for d in page.get_drawings() if d["type"] == "s" and fr.holds(d["rect"], pad=8)]
         if fig == "S2":
-            marks: dict[str, list] = {}
+            # Each marker set is joined by a polyline through the data points; a
+            # downward triangle's data point is its centroid, not its box centre.
+            marks = []
             for d in inside:
                 kind = "".join(it[0] for it in d["items"])
-                r = d["rect"]
-                if kind in S2_MARKERS and 3 < r.width < 8:
-                    marks.setdefault(S2_MARKERS[kind], []).append(((r.x0 + r.x1) / 2, (r.y0 + r.y1) / 2))
-            for level, pts in marks.items():
-                rows += _row("S2", "", level, "markers", np.array(sorted(pts)), fr)
+                if kind in S2_MARKERS and 3 < d["rect"].width < 8:
+                    marks.append((d["rect"], S2_MARKERS[kind]))
+            lines = [d for d in inside if d["rect"].width > 50 and len(d["items"]) >= 5
+                     and all(it[0] == "l" for it in d["items"]) and _connected(d)]
+            found = {}
+            for d in lines:
+                v = _vertices(d)
+                level = [lv for r, lv in marks if r.x0 <= v[0, 0] <= r.x1 and r.y0 <= v[0, 1] <= r.y1]
+                hits = sum(any(r.x0 <= x <= r.x1 and r.y0 <= y <= r.y1 for r, _ in marks) for x, y in v)
+                if len(set(level)) == 1 and hits == len(v):
+                    found[level[0]] = v
+            counts = {lv: sum(1 for _, m in marks if m == lv) for lv in set(S2_MARKERS.values())}
+            if {lv: len(v) for lv, v in found.items()} != counts:
+                raise ValueError(f"S2: polylines {[(lv, len(v)) for lv, v in found.items()]} do not match markers {counts}")
+            for level, v in sorted(found.items()):
+                rows += _row("S2", "", level, "markers", v, fr)
         else:
             line = [d for d in inside if abs(d["width"] - 0.99) < 0.01 and len(d["items"]) > 50]
             if len(line) != 1:

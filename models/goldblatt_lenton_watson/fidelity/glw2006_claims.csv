@@ -42,6 +42,7 @@ escape coefficient s from Catling et al. (2001) eq. (1),3.7e-5 /yr (Goldblatt's 
 "cooling at fixed CO2 when O crosses 1e-5 PAL, case c (beta Fig. 3d)",4-9 C (Kasting et al. 2001),2.53-3.54 K over pCO2 1e-5 to 1e-2 atm,p. 685; Kasting et al. eq. 1,0.8 solar luminosity; the fit is quoted to about 1 K
 "methane re-adjustment (escape within 10% of r), case c (beta Fig. 3d)",recovers (case c),340.2 Myr,p. 684,
 "organic carbon increase after 400 Myr, case c (beta Fig. 3d)",3% over ~500 Myr,2.81%,Fig. 3 caption,
+cooling sensitivity: Fig. 3a forcing started from r = 7.5e11 (beta Fig. 3d),4-9 C,"methane 208.38 -> 38.99 ppm (factor 5.345) at 236 kyr; 6.92-8.50 K, maximum at pCO2 0.00174 atm",p. 685; Kasting et al. eq. 1,sensitivity run proposed by Codex: the BIF band's upper r in place of the captioned 3e11
 "reverse switch time, r stepped 7.5e10 -> 5.6e+11",3-7 Myr,25.28 Myr,p. 685,the source does not state the reverse forcing; time to O < 1e-5 PAL
 "reverse switch time, r stepped 7.5e10 -> 6e+11",3-7 Myr,12.26 Myr,p. 685,the source does not state the reverse forcing; time to O < 1e-5 PAL
 "reverse switch time, r stepped 7.5e10 -> 7.5e+11",3-7 Myr,6.61 Myr,p. 685,the source does not state the reverse forcing; time to O < 1e-5 PAL

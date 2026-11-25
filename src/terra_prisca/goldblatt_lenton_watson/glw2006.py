@@ -152,6 +152,8 @@ def is_stable(O, N, r, rd: Reading) -> bool:
 
 
 def _check_domain(lo, hi, extrapolate):
+    if not lo < hi:
+        raise ValueError(f"O range must ascend: got {lo:.3g} to {hi:.3g} mol")
     if not extrapolate and (lo < O_VALID[0] * (1 - 1e-12) or hi > O_VALID[1] * (1 + 1e-12)):
         raise ValueError(f"O range {lo:.3g}-{hi:.3g} mol leaves the oxidation fit's stated "
                          f"domain {O_VALID[0]:.0e}-{O_VALID[1]:.0e} mol; pass extrapolate=True")

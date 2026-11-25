@@ -96,6 +96,10 @@ def test_solver_keeps_to_the_fit_domain():
         g.steady_states(g.N_MODERN, 3e11, P, hi=1e21)
     with pytest.raises(ValueError):
         g.branch_curve(P, N=g.N_MODERN, o_mol=(1e7, 1e19))
+    with pytest.raises(ValueError):
+        g.steady_states(g.N_MODERN, 1e6, P, lo=1.7e20, hi=9e19)
+    with pytest.raises(ValueError):
+        g.branch_curve(P, r=7.5e10, o_mol=(1.7e20, 9e19))
     assert all(o <= g.O_VALID[1] for o, _ in g.steady_states(g.N_MODERN, 1e6, P))
     assert g.branch_curve(P, N=g.N_MODERN, o_mol=(1e7, 1e19), n=11, extrapolate=True)[0][0] == pytest.approx(1e7)
 
@@ -147,6 +151,36 @@ def test_score_does_not_join_separate_branches():
     joined = [np.vstack([a, b])]
     assert F.score([a, b], [a, b], (10, 10), None)["printed_to_model_pt"] == pytest.approx(0, abs=1e-12)
     assert F.score(joined, [a, b], (10, 10), None)["printed_to_model_pt"] > 1
+
+
+def test_score_excludes_a_gap_in_the_model_from_both_directions():
+    printed = [np.array([[0.0, 0.0], [10.0, 0.0]])]
+    model = [np.array([[0.0, 0.0], [4.0, 0.0]]), np.array([[6.0, 1.0], [10.0, 1.0]])]
+    sc = F.score(printed, model, (1, 1), 0)
+    assert sc["printed_unmatched_pt"] == pytest.approx(2.0, abs=0.02)
+    assert sc["printed_to_model_pt"] == pytest.approx(np.sqrt(0.5), rel=1e-3)
+
+
+def test_out_of_frame_excursion_counts_as_unmatched(vec, frames):
+    # Codex GLW-R3: author_corrected escape leaves the Fig. 3d zoom frame.
+    rd = F.replace(g.READINGS["author_corrected"], beta=F.beta_from_fig3d(vec))
+    fr = frames[("3", "d_zoom")]
+    m = F.clip_runs(F.model3(rd, F.run_case(rd, "c", 1e6), "escape", fr), F.box(fr))
+    sc = F.score([vec[("3", "d_zoom", "escape", "trace")]], m, F.scale(fr), 0)
+    assert len(m) == 2 and sc["printed_unmatched_pt"] > 25
+
+
+def test_fig2_branches_scored_separately(vec, frames):
+    fr = frames[("2", "b")]
+    br = F.model2_branches(F.model2_points(P, "r", 7.5e10)[0])
+    parts = dict(zip(F.FIG2_PARTS, F.printed2(vec, "b", "solid")))
+    for part in F.FIG2_PARTS:
+        sc = F.score([parts[part]], F.clip_runs(br[part], F.box(fr)), F.scale(fr), 1)
+        assert sc["printed_to_model_pt"] < 0.06 and sc["model_to_printed_pt"] < 0.06
+
+
+def test_si_fig_s2_triangles_read_at_their_data_points(si):
+    assert si[("S2", "", "1 PAL", "markers")][0] == pytest.approx([14.47723, 13.70683], abs=2e-5)
 
 
 def test_flat_trace_scores_zero_against_its_own_null(vec, frames):

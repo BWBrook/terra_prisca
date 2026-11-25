@@ -1,24 +1,109 @@
-panel,curve,fixed,value,reading,printed_to_model_pt,model_to_printed_pt,printed_outside_support_pt,model_outside_support_pt,model_off_frame_pt,stability_agreement
-a,solid,N,as captioned,faithful,10.8722,7.51951,0.0399999,0,44.6842,0.996241
-a,solid,N,as captioned,author_p,0.0259324,0.0233434,0.0399999,0,48.2591,0.997494
-a,solid,N,as captioned,author_corrected,2.38582,2.57839,0.0399999,0,48.2581,0.996241
-a,solid,N,null,null: flat at median log O,32.9587,25.7862,0,0,0,nan
-a,solid,N,null,null: printed curve shifted one decade,11.4151,11.2517,0,0,0,nan
-a,dashed,N,as captioned,faithful,9.90353,7.55122,0,5.4182,44.6889,0.997509
-a,dashed,N,as captioned,author_p,0.0245067,0.0219863,0.365788,3.6738,50.624,0.997509
-a,dashed,N,as captioned,author_corrected,2.27313,2.59417,0,5.5864,48.2586,0.996264
-a,dashed,N,null,null: flat at median log O,32.9695,25.3582,0,0,0,nan
-a,dashed,N,null,null: printed curve shifted one decade,11.3235,10.9529,0,0,0,nan
-b,solid,r,as captioned,faithful,6.38325,5.61958,0.048803,0,32.9453,0.997199
-b,solid,r,as captioned,author_p,0.0297502,0.0294548,0.048803,0,35.4606,0.997199
-b,solid,r,as captioned,author_corrected,2.19273,2.16618,0.048803,0,35.37,0.997199
-b,solid,r,null,null: flat at median log O,31.4505,22.4633,0,0,0,nan
-b,solid,r,null,null: printed curve shifted one decade,13.7584,13.4189,0,0,0,nan
-b,dashed,r,as captioned,faithful,16.7442,16.2438,0.0496296,0,33.033,0.97851
-b,dashed,r,as captioned,author_p,9.24731,10.2054,0.0496296,0,35.5544,0.988539
-b,dashed,r,as captioned,author_corrected,11.8589,12.4721,0.0496296,0,35.423,0.977077
-b,dashed,r,r = 3e11,faithful,6.42825,5.66547,0.0496296,0,32.8582,0.997135
-b,dashed,r,r = 3e11,author_p,0.0227402,0.022226,0.0496296,0,35.3707,0.997135
-b,dashed,r,r = 3e11,author_corrected,2.20503,2.17754,0.0496296,0,35.3218,0.997135
-b,dashed,r,null,null: flat at median log O,31.112,22.5121,0,0,0,nan
-b,dashed,r,null,null: printed curve shifted one decade,13.9565,13.5167,0,0,0,nan
+panel,curve,fixed,value,reading,predeclared,branch,printed_to_model_pt,model_to_printed_pt,printed_unmatched_pt,model_unmatched_pt,model_off_frame_pt,stability_agreement
+a,solid,N,as captioned,faithful,True,all,10.8722,7.51951,0.0399999,0,44.6842,0.996241
+a,solid,N,as captioned,faithful,True,upper,15.3201,9.47217,1.44503,0,40.0447,nan
+a,solid,N,as captioned,faithful,True,unstable,9.63136,12.8581,0,2.19743,0,nan
+a,solid,N,as captioned,faithful,True,lower,2.34884,1.72511,0.889446,0,4.63942,nan
+a,solid,N,as captioned,author_p,True,all,0.0259324,0.0233434,0.0399999,0,48.2591,0.997494
+a,solid,N,as captioned,author_p,True,upper,0.0254868,0.0194567,0,0.344289,43.6196,nan
+a,solid,N,as captioned,author_p,True,unstable,0.0369701,0.0370627,1.50637,0,0,nan
+a,solid,N,as captioned,author_p,True,lower,0.0233622,0.0209905,0.0399999,1.16204,4.63947,nan
+a,solid,N,as captioned,author_corrected,True,all,2.38582,2.57839,0.0399999,0,48.2581,0.996241
+a,solid,N,as captioned,author_corrected,True,upper,1.80377,2.08368,0,0.344305,43.6189,nan
+a,solid,N,as captioned,author_corrected,True,unstable,5.28277,5.26808,1.50637,0,0,nan
+a,solid,N,as captioned,author_corrected,True,lower,2.13349,1.92526,0.0399999,1.16204,4.63923,nan
+a,solid,N,as captioned,si_fig_s3,False,all,0.0245817,0.0218959,0.0399999,0,48.2989,0.997494
+a,solid,N,as captioned,si_fig_s3,False,upper,0.0224734,0.0156454,0,0.344308,43.6594,nan
+a,solid,N,as captioned,si_fig_s3,False,unstable,0.0318006,0.0319262,1.50637,0,0,nan
+a,solid,N,as captioned,si_fig_s3,False,lower,0.0241498,0.0214376,0.0399999,1.16207,4.63947,nan
+a,solid,N,as captioned,si_fig_s3_unscaled,False,all,4.11661,4.27972,0.0399999,0,48.2972,0.996241
+a,solid,N,as captioned,si_fig_s3_unscaled,False,upper,3.28101,3.70935,0,0.34434,43.658,nan
+a,solid,N,as captioned,si_fig_s3_unscaled,False,unstable,8.82771,8.69343,1.50637,0,0,nan
+a,solid,N,as captioned,si_fig_s3_unscaled,False,lower,3.66549,3.02226,0.0399999,1.16207,4.63915,nan
+a,solid,N,null,null: flat at median log O,True,all,32.9587,25.7862,0,0,0,nan
+a,solid,N,null,null: printed curve shifted one decade,True,all,11.4365,10.6696,26.5704,0,26.5666,nan
+a,dashed,N,as captioned,faithful,True,all,10.5301,7.55122,0,5.4182,44.6889,0.997509
+a,dashed,N,as captioned,faithful,True,upper,14.9815,9.56307,1.4448,1.74519,40.0493,nan
+a,dashed,N,as captioned,faithful,True,unstable,9.63353,12.8495,0,2.19811,0,nan
+a,dashed,N,as captioned,faithful,True,lower,2.33971,1.73213,0.843551,3.67301,4.6396,nan
+a,dashed,N,as captioned,author_p,True,all,0.0245067,0.0225071,0.365788,3.6738,50.624,0.997509
+a,dashed,N,as captioned,author_p,True,upper,0.0232977,0.0209052,0.365788,0.344284,45.9843,nan
+a,dashed,N,as captioned,author_p,True,unstable,0.0322687,0.0323135,1.50803,0,0,nan
+a,dashed,N,as captioned,author_p,True,lower,0.0238163,0.0204582,0,4.83584,4.63969,nan
+a,dashed,N,as captioned,author_corrected,True,all,2.3531,2.59417,0,5.5864,48.2586,0.996264
+a,dashed,N,as captioned,author_corrected,True,upper,1.67586,2.10137,0,2.25997,43.6193,nan
+a,dashed,N,as captioned,author_corrected,True,unstable,5.28402,5.26279,1.50803,0,0,nan
+a,dashed,N,as captioned,author_corrected,True,lower,2.13705,1.94234,0,4.83276,4.63932,nan
+a,dashed,N,as captioned,si_fig_s3,False,all,0.0236547,0.0209111,0.454763,3.67379,50.7676,0.997509
+a,dashed,N,as captioned,si_fig_s3,False,upper,0.0213496,0.0173746,0.454763,0.344303,46.1279,nan
+a,dashed,N,as captioned,si_fig_s3,False,unstable,0.0260857,0.0261523,1.50803,0,0,nan
+a,dashed,N,as captioned,si_fig_s3,False,lower,0.0246561,0.020914,0,4.83586,4.63969,nan
+a,dashed,N,as captioned,si_fig_s3_unscaled,False,all,4.06788,4.30664,0,5.58705,48.2978,0.996264
+a,dashed,N,as captioned,si_fig_s3_unscaled,False,upper,3.10602,3.74225,0,2.26165,43.6586,nan
+a,dashed,N,as captioned,si_fig_s3_unscaled,False,unstable,8.82918,8.68544,1.50803,0,0,nan
+a,dashed,N,as captioned,si_fig_s3_unscaled,False,lower,3.66904,3.05132,0,4.8318,4.63921,nan
+a,dashed,N,null,null: flat at median log O,True,all,32.9695,25.3582,0,0,0,nan
+a,dashed,N,null,null: printed curve shifted one decade,True,all,11.3451,10.3965,13.5369,0,13.5413,nan
+b,solid,r,as captioned,faithful,True,all,6.38325,5.61958,0.048803,0,32.9453,0.997199
+b,solid,r,as captioned,faithful,True,upper,10.214,7.79044,1.14953,0,28.1475,nan
+b,solid,r,as captioned,faithful,True,unstable,7.83581,9.62437,0,1.17751,0,nan
+b,solid,r,as captioned,faithful,True,lower,1.88863,1.48658,0.118249,0,4.79781,nan
+b,solid,r,as captioned,author_p,True,all,0.0297502,0.0294548,0.048803,0,35.4606,0.997199
+b,solid,r,as captioned,author_p,True,upper,0.0223292,0.0206446,0,0.607508,30.6425,nan
+b,solid,r,as captioned,author_p,True,unstable,0.0482572,0.0484988,2.50415,0,0,nan
+b,solid,r,as captioned,author_p,True,lower,0.0223662,0.0222465,0.048803,1.91706,4.81807,nan
+b,solid,r,as captioned,author_corrected,True,all,2.19273,2.16618,0.048803,0,35.37,0.997199
+b,solid,r,as captioned,author_corrected,True,upper,1.63363,1.77253,0,0.607517,30.6414,nan
+b,solid,r,as captioned,author_corrected,True,unstable,4.13167,4.13694,2.50415,0,0,nan
+b,solid,r,as captioned,author_corrected,True,lower,1.86343,1.71422,0.048803,1.91706,4.72865,nan
+b,solid,r,as captioned,si_fig_s3,False,all,0.0307595,0.0307095,0.048803,0,35.4876,0.997199
+b,solid,r,as captioned,si_fig_s3,False,upper,0.0200921,0.0193602,0,0.607539,30.6703,nan
+b,solid,r,as captioned,si_fig_s3,False,unstable,0.0523485,0.0526146,2.50415,0,0,nan
+b,solid,r,as captioned,si_fig_s3,False,lower,0.0231529,0.0230273,0.048803,1.91711,4.81731,nan
+b,solid,r,as captioned,si_fig_s3_unscaled,False,all,3.65223,3.58014,0.048803,0,35.3626,0.997199
+b,solid,r,as captioned,si_fig_s3_unscaled,False,upper,2.7198,3.0726,0,0.607556,30.6682,nan
+b,solid,r,as captioned,si_fig_s3_unscaled,False,unstable,6.82417,6.82352,2.50415,0,0,nan
+b,solid,r,as captioned,si_fig_s3_unscaled,False,lower,3.14342,2.75072,0.048803,1.91711,4.69447,nan
+b,solid,r,null,null: flat at median log O,True,all,31.4505,22.4633,0,0,0,nan
+b,solid,r,null,null: printed curve shifted one decade,True,all,14.0248,13.6675,9.58101,0,9.82001,nan
+b,dashed,r,as captioned,faithful,True,all,16.7442,16.2442,0.0496296,0,33.033,0.97851
+b,dashed,r,as captioned,faithful,True,upper,22.0963,19.5895,1.40955,0,28.1511,nan
+b,dashed,r,as captioned,faithful,True,unstable,23.918,26.4587,0,3.08885,0,nan
+b,dashed,r,as captioned,faithful,True,lower,10.9587,10.4341,1.74778,0,4.88187,nan
+b,dashed,r,as captioned,author_p,True,all,9.24731,10.206,0.0496296,0,35.5544,0.988539
+b,dashed,r,as captioned,author_p,True,upper,7.19481,8.38624,0,0.343845,30.643,nan
+b,dashed,r,as captioned,author_p,True,unstable,16.3074,16.053,0.628502,0,0,nan
+b,dashed,r,as captioned,author_p,True,lower,8.53399,9.7318,0.0496296,0.278076,4.91136,nan
+b,dashed,r,as captioned,author_corrected,True,all,11.8589,12.4726,0.0496296,0,35.423,0.977077
+b,dashed,r,as captioned,author_corrected,True,upper,9.61077,11.1587,0,0.343847,30.6422,nan
+b,dashed,r,as captioned,author_corrected,True,unstable,20.8232,20.4559,0.628502,0,0,nan
+b,dashed,r,as captioned,author_corrected,True,lower,10.94,11.2177,0.0496296,0.278076,4.78086,nan
+b,dashed,r,as captioned,si_fig_s3,False,all,9.23662,10.2007,0.0496296,0,35.581,0.988539
+b,dashed,r,as captioned,si_fig_s3,False,upper,7.16388,8.37232,0,0.343854,30.6709,nan
+b,dashed,r,as captioned,si_fig_s3,False,unstable,16.2962,16.0423,0.628502,0,0,nan
+b,dashed,r,as captioned,si_fig_s3,False,lower,8.53171,9.73228,0.0496296,0.278076,4.91017,nan
+b,dashed,r,as captioned,si_fig_s3_unscaled,False,all,13.5571,13.9879,0.0496296,0,35.3978,0.964183
+b,dashed,r,as captioned,si_fig_s3_unscaled,False,upper,11.2672,13.0537,0,0.343858,30.6692,nan
+b,dashed,r,as captioned,si_fig_s3_unscaled,False,unstable,23.7952,23.3688,0.628502,0,0,nan
+b,dashed,r,as captioned,si_fig_s3_unscaled,False,lower,12.5655,12.1576,0.0496296,0.278076,4.72858,nan
+b,dashed,r,r = 3e11,faithful,True,all,6.42825,5.66547,0.0496296,0,32.8582,0.997135
+b,dashed,r,r = 3e11,faithful,True,upper,10.2034,7.78888,1.40955,0,28.1396,nan
+b,dashed,r,r = 3e11,faithful,True,unstable,7.85883,9.69079,0,3.08853,0,nan
+b,dashed,r,r = 3e11,faithful,True,lower,1.91135,1.50509,1.74778,0,4.71856,nan
+b,dashed,r,r = 3e11,author_p,True,all,0.0227402,0.022226,0.0496296,0,35.3707,0.997135
+b,dashed,r,r = 3e11,author_p,True,upper,0.0222407,0.0207189,0,0.343849,30.6414,nan
+b,dashed,r,r = 3e11,author_p,True,unstable,0.021352,0.0213532,0.628502,0,0,nan
+b,dashed,r,r = 3e11,author_p,True,lower,0.0232112,0.0231027,0.0496296,0.278076,4.72931,nan
+b,dashed,r,r = 3e11,author_corrected,True,all,2.20503,2.17755,0.0496296,0,35.3218,0.997135
+b,dashed,r,r = 3e11,author_corrected,True,upper,1.65127,1.79712,0,0.343853,30.6397,nan
+b,dashed,r,r = 3e11,author_corrected,True,unstable,4.14945,4.15047,0.628502,0,0,nan
+b,dashed,r,r = 3e11,author_corrected,True,lower,1.93312,1.78857,0.0496296,0.278076,4.68211,nan
+b,dashed,r,r = 3e11,si_fig_s3,False,all,0.0228199,0.0225813,0.0496296,0,35.3981,0.997135
+b,dashed,r,r = 3e11,si_fig_s3,False,upper,0.0203046,0.0196657,0,0.343858,30.6692,nan
+b,dashed,r,r = 3e11,si_fig_s3,False,unstable,0.0223626,0.0223561,0.628502,0,0,nan
+b,dashed,r,r = 3e11,si_fig_s3,False,lower,0.0241383,0.0240284,0.0496296,0.278076,4.72894,nan
+b,dashed,r,r = 3e11,si_fig_s3_unscaled,False,all,3.66971,3.59541,0.0496296,0,35.331,0.995702
+b,dashed,r,r = 3e11,si_fig_s3_unscaled,False,upper,2.73866,3.11002,0,0.343866,30.6659,nan
+b,dashed,r,r = 3e11,si_fig_s3_unscaled,False,unstable,6.8423,6.83313,0.628502,0,0,nan
+b,dashed,r,r = 3e11,si_fig_s3_unscaled,False,lower,3.25764,2.86708,0.0496296,0.278076,4.66505,nan
+b,dashed,r,null,null: flat at median log O,True,all,31.112,22.5121,0,0,0,nan
+b,dashed,r,null,null: printed curve shifted one decade,True,all,14.5924,14.1588,21.4889,0,21.4801,nan

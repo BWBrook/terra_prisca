@@ -225,8 +225,10 @@ Each curve is a stroked polyline in the PDF.
     Read against the left-hand axis, 1 PAL sits at 0.196, 0.195, 0.191 and
     0.201 atm on the right in 3a, 3a zoom, 3c and 3c zoom, close to the O₂
     fraction of 0.2095.
-  - Supplementary Fig. 2 contributes its 19 marker centres, grouped by the
-    caption's three oxygen levels. Supplementary Fig. 3 contributes its
+  - Supplementary Fig. 2 contributes its 19 data points, grouped by the
+    caption's three oxygen levels. They are read from the polyline that joins
+    each marker set, which passes through each triangle's centroid rather than
+    the centre of its bounding box. Supplementary Fig. 3 contributes its
     120-segment fitted line. Their ticks fit to 0.003 decades.
 - Scores are distances on the printed page, in points (1 pt = 1/72 inch).
   Every curve, printed or modelled, is a set of separate polylines: each
@@ -234,30 +236,37 @@ Each curve is a stroked polyline in the PDF.
   segment by segment into visible runs. Each run is densified to 0.01 pt on
   its own, and distances go to the nearest segment exactly.
 - Both directions are reported as RMS over arc length: printed to model, and
-  model to printed. Each is taken on the common support, the span of log O
-  (Fig. 2) or time (Fig. 3) covered by both curves. The length of each curve
-  outside that span, and of the model outside the frame, is recorded
-  alongside.
+  model to printed. Each curve covers the union of its visible runs' spans in
+  log O (Fig. 2) or time (Fig. 3). The shared support is the intersection of
+  the two unions. Query and target segments are both trimmed to it, so a gap
+  in either curve drops out of both directions. Each curve's length outside
+  the shared support is recorded as unmatched, and the model's length outside
+  the frame separately. Nulls are clipped at the frame like the readings.
 
 ### Fig. 2: steady states
 
-Printed-to-model / model-to-printed RMS distance
-([`glw2006_fig2.csv`](fidelity/glw2006_fig2.csv)):
+Printed-to-model / model-to-printed RMS distance, all three printed branches
+together ([`glw2006_fig2.csv`](fidelity/glw2006_fig2.csv), branch "all"):
 
 | Curve | `faithful` | `author_p` | `author_corrected` | Null: shifted one decade | Null: flat |
 |---|---|---|---|---|---|
-| 2a, N = 3.75 × 10¹⁵ | 10.9 / 7.5 pt | **0.026 / 0.023 pt** | 2.4 / 2.6 pt | 11.4 / 11.3 pt | 33.0 / 25.8 pt |
-| 2a, N/2 | 9.9 / 7.6 pt | **0.025 / 0.022 pt** | 2.3 / 2.6 pt | 11.3 / 11.0 pt | 33.0 / 25.4 pt |
-| 2b, r = 7.5 × 10¹⁰ | 6.4 / 5.6 pt | **0.030 / 0.029 pt** | 2.2 / 2.2 pt | 13.8 / 13.4 pt | 31.5 / 22.5 pt |
-| 2b dashed, r = 3 × 10¹⁰ (captioned) | 16.7 / 16.2 pt | 9.2 / 10.2 pt | 11.9 / 12.5 pt | 14.0 / 13.5 pt | 31.1 / 22.5 pt |
-| 2b dashed, r = 3 × 10¹¹ | 6.4 / 5.7 pt | **0.023 / 0.022 pt** | 2.2 / 2.2 pt | 14.0 / 13.5 pt | 31.1 / 22.5 pt |
+| 2a, N = 3.75 × 10¹⁵ | 10.9 / 7.5 pt | **0.026 / 0.023 pt** | 2.4 / 2.6 pt | 11.4 / 10.7 pt | 33.0 / 25.8 pt |
+| 2a, N/2 | 10.5 / 7.6 pt | **0.025 / 0.023 pt** | 2.4 / 2.6 pt | 11.3 / 10.4 pt | 33.0 / 25.4 pt |
+| 2b, r = 7.5 × 10¹⁰ | 6.4 / 5.6 pt | **0.030 / 0.029 pt** | 2.2 / 2.2 pt | 14.0 / 13.7 pt | 31.5 / 22.5 pt |
+| 2b dashed, r = 3 × 10¹⁰ (captioned) | 16.7 / 16.2 pt | 9.2 / 10.2 pt | 11.9 / 12.5 pt | 14.6 / 14.2 pt | 31.1 / 22.5 pt |
+| 2b dashed, r = 3 × 10¹¹ | 6.4 / 5.7 pt | **0.023 / 0.022 pt** | 2.2 / 2.2 pt | 14.6 / 14.2 pt | 31.1 / 22.5 pt |
 
 - `author_p` puts every curve within three hundredths of a printed point, in
   both directions. Stable and unstable sections agree for 99.7% of vertices;
   the rest lie at the folds.
+- Scored branch by branch, each printed branch against the matching model
+  branch between its folds, `author_p` gives 0.019–0.048 pt for every upper,
+  unstable and lower branch. The largest is the 2b solid unstable connector.
+  The printed connectors run 0.6–2.5 pt past the model's folds, which is
+  recorded as unmatched printed length.
 - The printed 2a N/2 curve stops at 10⁻¹⁰·⁵⁵ PAL. The model's 3.7 pt beyond
   that, down to the frame, is reported as model length outside the common
-  support.
+  support (unmatched model length).
 - With the printed four-decimal coefficients, `faithful` misses by about as
   much as shifting the printed curve by a full decade.
 - The fold positions under `author_p` match the printed connector ends to
@@ -277,15 +286,24 @@ From [`glw2006_si.csv`](fidelity/glw2006_si.csv):
   log₁₀ Ψ from the full-precision coefficients, with a scatter of
   0.002 decades about that offset. The offset is log₁₀ 2 = 0.3010: the figure
   plots methane oxidised, half the oxygen consumed. Against the printed
-  four-decimal coefficients the scatter is 0.43 decades.
+  four-decimal coefficients the line scatters by 0.29 decades about its mean
+  offset, and by 0.43 decades RMS about the halved relation.
 - **`si_fig_s3`.** A quartic fitted to that line gives a bistable range at
   modern N of 1.335–5.511 × 10¹¹, against `author_p`'s 1.337–5.519 × 10¹¹.
   Codex's independent digitisation gives 1.327–5.490 × 10¹¹. Shifting the line
   by ±0.003 decades, the size of the tick-fit residuals, moves the folds by
   up to 1%, so the SI fixes the range to about 1%. At r = 3 × 10¹¹ the stable
   states are 1.28 × 10⁻⁶ and 0.0230 PAL. The Fig. 2 fold positions match the
-  printed connector ends to 0.009 decades, and the Fig. 2a curve scores
-  0.025 pt.
+  printed connector ends to 0.009 decades.
+- **The factor of two, tested on Fig. 2.** Both SI-derived readings are scored
+  in `glw2006_fig2.csv` and marked as post hoc. With the factor, `si_fig_s3`
+  fits every Fig. 2 curve to 0.021–0.031 pt (Fig. 2a: 0.025 / 0.022 pt).
+  Without it, `si_fig_s3_unscaled` misses by 3.6–4.3 pt (Fig. 2a:
+  4.1 / 4.3 pt).
+- **What the SI fixes.** It recovers the oxidation function to plotting
+  precision and the folds to about 1%. Goldblatt's numerical coefficients
+  themselves come only from his note: the digitised fit has a₅ = 71.679,
+  for example, against the note's 71.5397861.
 
 ### Fig. 3: the two triggers
 
@@ -301,21 +319,26 @@ unless stated.
 | 3a CH₄, left axis (PAL units) | **0.011 pt** | 0.011 pt | 1.7 pt | 0.48 pt | 3.6 pt |
 | 3a CH₄, right axis as ticked (atm) | 0.20 pt | – | 1.5 pt | – | – |
 | 3a zoom O₂, CH₄ (left axis) | **0.013–0.019 pt** | 0.012–0.015 pt | 1.2–3.6 pt | 1.5–20 pt | 1.4–20 pt |
-| 3b escape, net | **0.010–0.018 pt** | 0.010–0.018 pt | 0.14–2.2 pt | 0.45–1.7 pt | 0.34–6.5 pt |
+| 3b escape, net | **0.010–0.018 pt** | 0.010–0.018 pt | 0.14–2.3 pt (8.4 pt unmatched) | 0.45–1.7 pt | 0.34–6.5 pt |
 | 3b burial, input | **0.008–0.013 pt** | 0.010–0.013 pt | 0.008–0.013 pt | 0.008–0.013 pt | 0–6.6 pt |
 | 3c O₂ | **0.016 pt** | 0.52 pt | 2.0 pt | 17.8 pt | 25.9 pt |
 | 3c CH₄, left axis (PAL units) | **0.013 pt** | 0.69 pt | 1.7 pt | 0.39 pt | 1.2 pt |
 | 3c CH₄, right axis as ticked (atm) | 0.25 pt | – | 1.5 pt | – | – |
 | 3c zoom O₂, CH₄ (left axis) | **0.014–0.015 pt** | 0.50–1.4 pt | 1.1–3.6 pt | 1.4–20 pt | 1.4–20 pt |
-| 3d escape, net | **0.013–0.017 pt** | 0.24–0.88 pt | 0.13–2.2 pt | 0.39–1.6 pt | 0.29–4.2 pt |
+| 3d escape, net | **0.013–0.017 pt** | 0.24–0.88 pt | 0.13–2.2 pt (8.2 pt unmatched) | 0.39–1.6 pt | 0.29–4.2 pt |
 | 3d burial | 0.021 pt (step fitted) | 0.93–0.99 pt | 0.021 pt (step fitted) | 0.021 pt (step fitted) | 2.7–3.2 pt |
 | 3d input | 0.003 pt | 0.003 pt | 0.003 pt | 0.003 pt | 0 pt |
-| 3b zoom budget | 0.08–1.6 pt | 0.08–1.6 pt | 0.08–6.0 pt | 0.08–7.7 pt | 0–12.6 pt |
-| 3d zoom budget | 0.014–0.54 pt | 0.54–2.3 pt | 0.014–7.2 pt | 0.014–6.1 pt | 0–11.2 pt |
+| 3b zoom budget | 0.08–1.6 pt | 0.08–1.6 pt | 0.08–6.9 pt (32 pt unmatched) | 0.08–7.7 pt | 0–12.6 pt |
+| 3d zoom budget | 0.014–0.54 pt | 0.54–2.3 pt | 0.014–7.9 pt (30 pt unmatched) | 0.014–6.1 pt | 0–11.2 pt |
 
 - `author_p` with the Fig. 3d β reproduces every main-panel trace, and the
   oxygen and methane traces of both zooms, to 0.003–0.021 pt in both
-  directions.
+  directions, with methane read on the left-hand axis in PAL units. On the
+  right-hand atm axis the caption specifies, methane scores 0.20, 0.22, 0.25
+  and 0.11 pt in 3a, 3a zoom, 3c and 3c zoom.
+- Under `author_corrected` the escape and net-flux traces leave the frame and
+  come back. The printed trace across the gap counts as unmatched: 8.2–8.4 pt
+  in the main budget panels and 24–32 pt in the zooms.
 - β comes from the height of a single step in the 3d burial trace. It also
   brings the 3c oxygen and methane traces, which played no part in choosing
   it, from 0.52–0.69 pt down to 0.013–0.016 pt. The 3d burial trace then
@@ -355,6 +378,7 @@ the Fig. 3d β unless stated:
 | Methane fall while O rises to 10⁻⁵ PAL | factor 2–6 | 2.14 in both cases, at 126 kyr (83.4 → 39.0 ppm). Printed zooms: 2.14 (a), 2.17 (c) |
 | Later methane minima | – | first trough 2.24 at 143 kyr; run minimum 4.0 (a, the new steady state) and 2.6 (c, at 32 Myr) |
 | Cooling with that methane fall, fixed CO₂ | 4–9 °C | 2.5–3.5 K across 10⁻⁵ to 10⁻² atm CO₂ |
+| Cooling, Fig. 3a forcing started from r = 7.5 × 10¹¹ (sensitivity) | 4–9 °C | 5.35-fold methane fall; 6.9–8.5 K |
 | Methane re-adjustment, case a | about 50 Myr | 54 Myr for escape to come within 10% of r |
 | Organic carbon, case c | +3% over ~500 Myr | +2.8% after 400 Myr, heading to 3% |
 | Reverse switch | 3–7 Myr | 6.6 Myr (r → 7.5 × 10¹¹); 4.1 Myr (r → 10¹²); 1.1 Myr (r → 3 × 10¹²); 12.3 Myr (r → 6 × 10¹¹); 25.3 Myr (r → 5.6 × 10¹¹) |
@@ -367,7 +391,8 @@ the Fig. 3d β unless stated:
 - **The model reproduces both figures once the polynomial has its full
   precision.** Every Fig. 2 curve lies within 0.030 pt of the printed one, in
   both directions. Every main-panel trace of Fig. 3, and the oxygen and
-  methane of both zooms, lies within 0.021 pt. The only number read from a
+  methane of both zooms, lies within 0.021 pt with methane on the left-hand
+  PAL scale; on the captioned atm scale methane lies within 0.11–0.25 pt. The only number read from a
   figure is β, and the same β also fits traces it was not taken from.
 - **The 2006 publication fixes the bistability quantitatively on its own.**
   Supplementary Fig. 3 draws the oxidation fit at full precision: a quartic
@@ -389,7 +414,8 @@ the Fig. 3d β unless stated:
   state at r = 3 × 10¹¹, 0.023 PAL. Total oxidation matches the stated
   3 × 10¹⁸ and 9 × 10¹⁷ mol.
 - **Methane falls twofold while oxygen rises to 10⁻⁵ PAL**, the low end of the
-  stated factor of 2–6, in the model and in both printed zooms. At fixed CO₂,
+  stated factor of 2–6, in the model and in both printed zooms. Started from
+  the top of the BIF band instead, the same switch gives a 5.35-fold fall. At fixed CO₂,
   Kasting et al.'s fit turns that fall into 2.5–3.5 K of cooling, nearly
   independent of the CO₂ level, as the SI says. Methane takes about 50 Myr to
   re-adjust in case a.
@@ -456,13 +482,15 @@ the Fig. 3d β unless stated:
   C = 1.25 × 10²¹ mol, so the figure may have used burial or reservoir
   numbers other than those the SI quotes. Steady states and case a are
   insensitive to β; case c's path is not.
-- **The 4–9 °C cooling.** The events the paper depicts give a 2.14-fold
-  methane fall and 2.5–3.5 K of cooling at fixed CO₂. On the same fit, a
-  sixfold fall from the same starting methane gives 4.1–7.3 K, and no fall in
-  the stated range reaches 9 K. The paper does not say which runs, methane
-  levels or CO₂ values produced its range. Kasting et al. quote their fit to
-  about 1 K and compute it for 0.8 of present solar luminosity, the Sun at
-  2.8 Gyr ago.
+- **Which run gave the 4–9 °C cooling.** The two events the paper depicts
+  give a 2.14-fold methane fall and 2.5–3.5 K of cooling at fixed CO₂. Codex
+  proposed a sensitivity run: the Fig. 3a forcing started from the top of the
+  BIF band, r = 7.5 × 10¹¹, in place of the captioned 3 × 10¹¹. Methane then
+  falls 5.35-fold, from 208 to 39 ppm, by the 10⁻⁵ PAL crossing, and the fit
+  gives 6.9–8.5 K, peaking at pCO₂ = 0.0017 atm. The paper's range is
+  therefore reachable within the model and within the fit's quoted 1 K
+  accuracy; the paper does not say which runs or CO₂ values it used. The fit
+  is computed for 0.8 of present solar luminosity, the Sun at 2.8 Gyr ago.
 - **What "transition time" meant.** Half the logarithmic rise reproduces
   150 kyr for case a. With the SI β the model's case c has a 25–75% duration
   of 52 kyr, near 50 kyr, but the same clock gives 61 kyr for case a. The
@@ -482,7 +510,8 @@ the Fig. 3d β unless stated:
 - **The prebiotic rise.** The text's condition, that the low state appears
   when N exceeds r, holds by the structure of eq. 12. A quantitative check at
   10⁻¹² PAL lies below the oxidation fit's 10⁸ mol limit; two extensions give
-  N = 8.5–8.7 × 10¹⁰ at r = 7.5 × 10¹⁰.
+  N = 7.95 × 10¹⁰ (slope 1 below 10⁸ mol) and 8.66 × 10¹⁰ (quartic extended)
+  at r = 7.5 × 10¹⁰.
 - **How the two values of s arose.** Catling et al.'s eq. (1) gives
   3.77 × 10⁻⁵ with the constants used here, and the note's 3.7 × 10⁻⁵ agrees
   with it to 2%. Neither the SI's conversion to 2.03 × 10⁻⁵ nor the note's
