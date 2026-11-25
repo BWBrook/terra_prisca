@@ -39,12 +39,13 @@ OUT = Path("models/goldblatt_lenton_watson/fidelity")
 
 # Points per data unit, from the frames (vectors.py): Fig. 2 frames are 216.30 x
 # 89.95 pt over 8 x 11 decades; Fig. 3 main frames 124.25 x 41.54 pt over
-# 0.5 Gyr x 6 decades (a, c) or 12e11 mol/yr (b, d); zoom frames 43.86 pt wide over 1 Myr.
+# 0.5 Gyr x 6 decades (a, c) or 12e11 mol/yr (b, d); zoom frames 43.86-44.77 pt
+# wide over 1.1 Myr (2.4001 to 2.399 Gyr ago).
 SCALE2 = (216.30 / 8, 89.95 / 11)
 SCALE3 = {"a": (124.25 / 0.5, 41.545 / 6), "c": (124.25 / 0.5, 41.50 / 6),
           "b": (124.684 / 0.5, 40.276 / 12), "d": (124.684 / 0.5, 40.12 / 12),
-          "a_zoom": (43.86 / 0.001, 41.545 / 6), "c_zoom": (44.77 / 0.001, 41.50 / 6),
-          "b_zoom": (44.54 / 0.001, 40.51 / 12), "d_zoom": (44.54 / 0.001, 40.34 / 12)}
+          "a_zoom": (43.86 / 0.0011, 41.545 / 6), "c_zoom": (44.77 / 0.0011, 41.50 / 6),
+          "b_zoom": (44.54 / 0.0011, 40.51 / 12), "d_zoom": (44.54 / 0.0011, 40.34 / 12)}
 
 FIG2_CASES = {  # (panel, curve): (fixed parameter, value as captioned)
     ("a", "solid"): ("N", g.N_MODERN),
@@ -95,14 +96,14 @@ def fig2_scores(vec) -> list[dict]:
     for (panel, curve), (fixed, value) in FIG2_CASES.items():
         p = printed2(vec, panel, curve)
         sc = np.array(SCALE2)
-        pd = densify(p * sc, 0.05) / sc
+        pd = densify(p * sc, 0.01) / sc
         values = [("as captioned", value)]
         if (panel, curve) == ("b", "dashed"):
             values.append(("r = 3e11", CAPTION_R_TENFOLD))
         for label, val in values:
             for name, rd in g.READINGS.items():
                 m, stable, _ = model2(rd, fixed, val, panel)
-                d1, d2 = two_way(p, m, SCALE2)
+                d1 = two_way(p, densify(m * sc, 0.01) / sc, SCALE2)[0]
                 d2d = two_way(pd, m, SCALE2)[1]
                 # stable/unstable agreement: each printed vertex's nearest model point
                 idx = cKDTree(m * SCALE2).query(p * SCALE2)[1]
@@ -121,7 +122,7 @@ def fig2_scores(vec) -> list[dict]:
                      "model_to_printed_pt": two_way(pd, flat, SCALE2)[1], "stability_agreement": np.nan})
         rows.append({"panel": panel, "curve": curve, "fixed": fixed, "value": "null",
                      "reading": "null: printed curve shifted one decade", "printed_vertices": len(p),
-                     "printed_to_model_pt": two_way(p, densify(shifted * sc, 0.05) / sc, SCALE2)[0],
+                     "printed_to_model_pt": two_way(p, densify(shifted * sc, 0.01) / sc, SCALE2)[0],
                      "model_to_printed_pt": two_way(pd, shifted, SCALE2)[1], "stability_agreement": np.nan})
     return rows
 
@@ -174,18 +175,10 @@ def run_case(rd: g.Reading, case: str, t_end: float) -> g.Run:
     return g.step(rd, N0=N0, r0=r0, N1=N1, r1=r1, t_end=t_end, t_eval=t_eval)
 
 
-def zoom_step_gyr(vec) -> float:
-    """Where the zoom panels draw the forcing step: the jump in the reductant
-    input of Fig. 3b's zoom. It sits 90 kyr after the labelled 2.4 Gyr."""
-    v = vec[("3", "b_zoom", "input", "trace")]
-    jump = np.argmax(np.abs(np.diff(v[:, 1])) > 1.0)
-    return float(v[jump, 0])
-
-
-def model3(rd: g.Reading, run: g.Run, curve: str, panel: str, methane_axis: str, t_step: float = T_STEP_GYR):
+def model3(rd: g.Reading, run: g.Run, curve: str, panel: str, methane_axis: str):
     """Model trace in Fig. 3 data units (Gyr ago, plotted value), with the
     pre-step steady state drawn back to the left frame edge."""
-    t_ago = t_step - run.t / 1e9
+    t_ago = T_STEP_GYR - run.t / 1e9
     if curve == "oxygen":
         y = np.log10(run.O / rd.pal_mol)
     elif curve == "methane":
@@ -195,7 +188,7 @@ def model3(rd: g.Reading, run: g.Run, curve: str, panel: str, methane_axis: str,
         r0 = STEPS["a" if panel[0] == "b" else "c"][1]
         pre = {"escape": r0, "net": 0.0, "burial": 0.0, "input": -r0}[curve] / 1e11
         x0 = V.FIG3[panel][0]
-        return np.vstack([[x0, pre], [t_step, pre], np.column_stack([t_ago, y])])
+        return np.vstack([[x0, pre], [T_STEP_GYR, pre], np.column_stack([t_ago, y])])
     x0 = V.FIG3[panel][0]
     return np.vstack([[x0, y[0]], np.column_stack([t_ago, y])])
 
@@ -211,7 +204,6 @@ def _clip(m, panel):
 
 def fig3_scores(vec, beta3d: float) -> tuple[list[dict], dict]:
     rows, runs = [], {}
-    t_zoom = zoom_step_gyr(vec)
     for name, rd0 in g.READINGS.items():
         for blabel, beta in (("SI", g.BETA_SI), ("Fig. 3d", beta3d)):
             rd = replace(rd0, beta=beta)
@@ -220,6 +212,8 @@ def fig3_scores(vec, beta3d: float) -> tuple[list[dict], dict]:
                 short = run_case(rd, case, 1e6)
                 runs[(name, blabel, case)] = (rd, long, short)
                 budget_panel = "b" if case == "a" else "d"
+                if name == "faithful" and blabel == "SI":
+                    rows += fig3_nulls(vec, case, budget_panel)
                 for panel, curves in ((case, ("oxygen", "methane")), (budget_panel, ("escape", "burial", "input", "net"))):
                     for zoom in ("", "_zoom"):
                         pn = panel + zoom
@@ -230,16 +224,33 @@ def fig3_scores(vec, beta3d: float) -> tuple[list[dict], dict]:
                                 continue
                             p = vec[key]
                             for axis in (("PAL", "atm right") if curve == "methane" else ("",)):
-                                m = _clip(model3(rd, run, curve, pn, axis, t_zoom if zoom else T_STEP_GYR), pn)
+                                m = _clip(model3(rd, run, curve, pn, axis), pn)
                                 sc = np.array(SCALE3[pn])
-                                m = densify(m * sc, 0.05) / sc
+                                m = densify(m * sc, 0.01) / sc
                                 d1, _ = two_way(p, m, SCALE3[pn])
                                 rows.append({"panel": pn, "curve": curve, "reading": name, "beta": blabel,
                                              "methane_axis": axis, "printed_vertices": len(p),
-                                             "step_drawn_at_gyr": t_zoom if zoom else T_STEP_GYR,
                                              "printed_to_model_pt": d1,
                                              "fitted_to_this_trace": blabel == "Fig. 3d" and pn.startswith("d") and curve == "burial"})
     return rows, runs
+
+
+def fig3_nulls(vec, case: str, budget_panel: str) -> list[dict]:
+    """No-switch null: each printed trace's own first (pre-step) value held
+    across the whole panel."""
+    rows = []
+    for panel in (case, case + "_zoom", budget_panel, budget_panel + "_zoom"):
+        for (fig, pn, curve, _), p in vec.items():
+            if fig != "3" or pn != panel:
+                continue
+            x0, x1 = V.FIG3[pn][:2]
+            sc = np.array(SCALE3[pn])
+            flat = densify(np.array([[x0, p[0, 1]], [x1, p[0, 1]]]) * sc, 0.01) / sc
+            rows.append({"panel": pn, "curve": curve, "reading": "null: no switch", "beta": "",
+                         "methane_axis": "", "printed_vertices": len(p),
+                         "printed_to_model_pt": two_way(p, flat, SCALE3[pn])[0],
+                         "fitted_to_this_trace": False})
+    return rows
 
 
 def transition_times(run: g.Run, rd: g.Reading) -> dict:
@@ -333,18 +344,19 @@ def claims(vec, runs, beta3d: float) -> list[dict]:
         add(f"reverse switch time, r stepped 7.5e10 -> {r_up:.2g}", "3-7 Myr",
             f"{t / 1e6:.2f} Myr" if np.isfinite(t) else "no switch", "p. 685",
             "the source does not state the reverse forcing")
-    tz = zoom_step_gyr(vec)
     for case in ("a", "c"):
         p = vec[("3", f"{case}_zoom", "oxygen", "trace")]
         lo, hi = p[0, 1], p[-1, 1]
         i = np.argmax(p[:, 1] >= lo + 0.5 * (hi - lo))
-        add(f"printed transition time, Fig. 3{case} zoom (half the log rise, from the drawn step)",
-            "150 kyr" if case == "a" else "50 kyr", f"{(tz - p[i, 0]) * 1e6:.0f} kyr", "Fig. 3 zoom",
+        add(f"printed transition time, Fig. 3{case} zoom (half the log rise within the 1 Myr window)",
+            "150 kyr" if case == "a" else "50 kyr", f"{(T_STEP_GYR - p[i, 0]) * 1e6:.0f} kyr", "Fig. 3 zoom",
             "read from the published vertices, not the model")
-    main_in = vec[("3", "b", "input", "trace")][0, 1]
-    zoom_in = vec[("3", "b_zoom", "input", "trace")][0, 1]
-    add("Fig. 3b pre-step reductant input, main vs zoom panel", "both -3e11",
-        f"main {main_in:.3f}e11, zoom {zoom_in:.3f}e11", "Fig. 3b", "same quantity drawn at two levels")
+    for panel in ("b", "d"):
+        lv = {c: (vec[("3", panel, c, "trace")][0, 1], vec[("3", panel + "_zoom", c, "trace")][0, 1])
+              for c in ("input", "escape")}
+        add(f"Fig. 3{panel} pre-step fluxes, main vs zoom panel", "input -3e11, escape 3e11",
+            "; ".join(f"{c}: main {m:.3f}e11, zoom {z:.3f}e11" for c, (m, z) in lv.items()),
+            f"Fig. 3{panel}", "the same quantities drawn in both panels")
     f0 = (0 - (-6)) / (0 - (-30))
     f1 = f0 * 1.03
     add("delta13C carbonate after 3% more burial", "f = 0.206, +0.23 permil",

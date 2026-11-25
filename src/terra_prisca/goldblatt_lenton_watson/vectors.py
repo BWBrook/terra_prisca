@@ -9,11 +9,11 @@ and is not redistributed. The output CSV holds the curve vertices in data units
 and is what the fidelity scoring and the tests read; PyMuPDF is needed only to
 regenerate it.
 
-Calibration. Each panel's frame is the grey quad drawn around it. For Fig. 2
-the axes are fitted to the major (decade) ticks on the left and bottom frame
-edges; the frame itself must then sit at the axis limits, which is checked.
-Fig. 3 has fewer ticks, so its axes are the frame limits, checked against the
-major ticks that exist.
+Calibration. Each panel's frame is the grey quad drawn around it, and both
+axes of every panel are fitted to its major ticks on the left and bottom frame
+edges. The frame limits that follow are reported as checks. In Fig. 3's zoom
+panels the time axis runs from 2.4001 to 2.399 Gyr ago: the "2.4" tick sits
+inside the frame.
 
 Paths drawn twice at identical coordinates, in either direction, are counted once.
 """
@@ -38,10 +38,17 @@ SOLID, DASHED_2, DOTTED, DASHED_3, DASHDOT = "[] 0", "[ 6 6 ] 0", "[ .5 4 ] 0", 
 # Fig. 2: log10 of r or N (mol O2 equiv./yr) and log10 O2 (PAL).
 # Fig. 3: time (Gyr ago, decreasing to the right) and log10 O2 (PAL) or flux (1e11 mol/yr).
 FIG2 = {"a": (8.0, 16.0, 0.0, -11.0), "b": (10.0, 18.0, 0.0, -11.0)}
-FIG3 = {"a": (2.5, 2.0, 0.0, -6.0), "a_zoom": (2.4, 2.399, 0.0, -6.0),
-        "b": (2.5, 2.0, 8.0, -4.0), "b_zoom": (2.4, 2.399, 8.0, -4.0),
-        "c": (2.5, 2.0, 0.0, -6.0), "c_zoom": (2.4, 2.399, 0.0, -6.0),
-        "d": (2.5, 2.0, 8.0, -4.0), "d_zoom": (2.4, 2.399, 8.0, -4.0)}
+FIG3 = {"a": (2.5, 2.0, 0.0, -6.0), "a_zoom": (2.4001, 2.399, 0.0, -6.0),
+        "b": (2.5, 2.0, 8.0, -4.0), "b_zoom": (2.4001, 2.399, 8.0, -4.0),
+        "c": (2.5, 2.0, 0.0, -6.0), "c_zoom": (2.4001, 2.399, 0.0, -6.0),
+        "d": (2.5, 2.0, 8.0, -4.0), "d_zoom": (2.4001, 2.399, 8.0, -4.0)}
+# Fig. 3 major ticks, as (first value, step) from the left or top: the main time
+# axes tick every 0.1 Gyr from 2.5; the zoom time axes tick only at 2.4 and 2.399,
+# with the frame extending 0.1 kyr before 2.4; y ticks every decade (a, c) or
+# every 2e11 mol/yr (b, d).
+FIG3_TICKS = {"x": {"main": (2.5, -0.1), "zoom": (2.4, -0.001)},
+              "y": {"ac": (0.0, -1.0), "bd": (8.0, -2.0)}}
+TICK_LEN = {"main": (1.0, 1.6), "zoom": (0.4, 0.6)}
 
 
 @dataclass(frozen=True)
@@ -190,12 +197,22 @@ def fig3(page) -> tuple[list[dict], list[dict]]:
     rows, checks = [], []
     for name, fr in frames.items():
         inside = [d for d in page.get_drawings() if d["type"] == "s" and fr.holds(d["rect"], pad=0.2)]
-        ys = _ticks(page, fr, "y", *((0.4, 0.5) if name.endswith("zoom") else (1.0, 1.5)))
-        vals = fr.data(fr.x0, ys)[1]
-        step = 1.0 if name[0] in "ac" else 2.0
-        checks.append({"check": f"fig3{name} y ticks off grid", "n": len(ys),
-                       "value": float(np.abs(vals - step * np.round(vals / step)).max()),
-                       "unit": "decades" if name[0] in "ac" else "1e11 mol/yr"})
+        kind = "zoom" if name.endswith("zoom") else "main"
+        xs = _ticks(page, fr, "x", *TICK_LEN[kind])
+        ys = _ticks(page, fr, "y", *TICK_LEN[kind])
+        kx, cx, rx = _tick_fit(xs, *FIG3_TICKS["x"][kind])
+        ky, cy, ry = _tick_fit(ys, *FIG3_TICKS["y"]["ac" if name[0] in "ac" else "bd"])
+        lim = (kx * fr.x0 + cx, kx * fr.x1 + cx, ky * fr.y0 + cy, ky * fr.y1 + cy)
+        checks += [
+            {"check": f"fig3{name} x ticks", "n": len(xs), "value": rx, "unit": "Gyr max residual"},
+            {"check": f"fig3{name} y ticks", "n": len(ys), "value": ry,
+             "unit": ("decades" if name[0] in "ac" else "1e11 mol/yr") + " max residual"},
+            {"check": f"fig3{name} frame left", "n": 1, "value": lim[0], "unit": "Gyr ago"},
+            {"check": f"fig3{name} frame right", "n": 1, "value": lim[1], "unit": "Gyr ago"},
+            {"check": f"fig3{name} frame top", "n": 1, "value": lim[2], "unit": "axis units"},
+            {"check": f"fig3{name} frame bottom", "n": 1, "value": lim[3], "unit": "axis units"},
+        ]
+        fr = Frame(fr.x0, fr.x1, fr.y0, fr.y1, lim)
         for p, v in _unique(inside):
             style = p["dashes"]
             if name[0] in "ac":

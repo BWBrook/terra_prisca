@@ -17,11 +17,51 @@ fig2b frame right,1,0.000369246655,decades
 fig2b grey line,1,15.5741872,log10 mol/yr
 fig2b solid connector gap,1,0,pt
 fig2b dashed connector gap,1,0,pt
-fig3a y ticks off grid,7,0.00466881454,decades
-fig3a_zoom y ticks off grid,7,0.00466881454,decades
-fig3b y ticks off grid,7,0.0111201457,1e11 mol/yr
-fig3b_zoom y ticks off grid,7,0.0126874994,1e11 mol/yr
-fig3c y ticks off grid,7,0.00578328373,decades
-fig3c_zoom y ticks off grid,7,0.00578328373,decades
-fig3d y ticks off grid,7,0.0102612687,1e11 mol/yr
-fig3d_zoom y ticks off grid,7,0.010058616,1e11 mol/yr
+fig3a x ticks,6,9.04798762e-05,Gyr max residual
+fig3a y ticks,7,0.00277423215,decades max residual
+fig3a frame left,1,2.49993324,Gyr ago
+fig3a frame right,1,1.99993387,Gyr ago
+fig3a frame top,1,-0.0017463123,axis units
+fig3a frame bottom,1,-6.00219216,axis units
+fig3a_zoom x ticks,2,8.8817842e-16,Gyr max residual
+fig3a_zoom y ticks,7,0.00277423215,decades max residual
+fig3a_zoom frame left,1,2.40009924,Gyr ago
+fig3a_zoom frame right,1,2.399,Gyr ago
+fig3a_zoom frame top,1,-0.0017463123,axis units
+fig3a_zoom frame bottom,1,-6.00219216,axis units
+fig3b x ticks,6,9.1072311e-05,Gyr max residual
+fig3b y ticks,7,0.00651023266,1e11 mol/yr max residual
+fig3b frame left,1,2.49996279,Gyr ago
+fig3b frame right,1,1.99990887,Gyr ago
+fig3b frame top,1,7.99578131,axis units
+fig3b frame bottom,1,-4.00539519,axis units
+fig3b_zoom x ticks,2,1.33226763e-15,Gyr max residual
+fig3b_zoom y ticks,7,0.00819240507,1e11 mol/yr max residual
+fig3b_zoom frame left,1,2.40009894,Gyr ago
+fig3b_zoom frame right,1,2.399,Gyr ago
+fig3b_zoom frame top,1,7.99181013,axis units
+fig3b_zoom frame bottom,1,-4.00267848,axis units
+fig3c x ticks,6,9.04798762e-05,Gyr max residual
+fig3c y ticks,7,0.00369613154,decades max residual
+fig3c frame left,1,2.49993324,Gyr ago
+fig3c frame right,1,1.99993387,Gyr ago
+fig3c frame top,1,-0.0013452444,axis units
+fig3c frame bottom,1,-6.00369578,axis units
+fig3c_zoom x ticks,2,8.8817842e-16,Gyr max residual
+fig3c_zoom y ticks,7,0.00369613154,decades max residual
+fig3c_zoom frame left,1,2.40009929,Gyr ago
+fig3c_zoom frame right,1,2.399,Gyr ago
+fig3c_zoom frame top,1,-0.0013452444,axis units
+fig3c_zoom frame bottom,1,-6.00369578,axis units
+fig3d x ticks,6,9.1072311e-05,Gyr max residual
+fig3d y ticks,7,0.00618666784,1e11 mol/yr max residual
+fig3d frame left,1,2.49996279,Gyr ago
+fig3d frame right,1,1.99990887,Gyr ago
+fig3d frame top,1,7.99541924,axis units
+fig3d frame bottom,1,-4.00382054,axis units
+fig3d_zoom x ticks,2,1.33226763e-15,Gyr max residual
+fig3d_zoom y ticks,7,0.00581239575,1e11 mol/yr max residual
+fig3d_zoom frame left,1,2.40009894,Gyr ago
+fig3d_zoom frame right,1,2.399,Gyr ago
+fig3d_zoom frame top,1,7.99506032,axis units
+fig3d_zoom frame bottom,1,-4.00367876,axis units

@@ -18,20 +18,21 @@ methanotrophy threshold d_delta,2e-4 PAL; [O] = 2 uM,0.00735 PAL,"p. 684, Method
 "methane re-adjustment (escape within 10% of r), case c (beta SI)",recovers (case c),388.4 Myr,p. 684,
 "organic carbon increase after 400 Myr, case c (beta SI)",3% over ~500 Myr,2.81%,Fig. 3 caption,
 "total oxidation, Fig. 3b (beta Fig. 3d)",3e18 mol,3.05e+18 mol; final O 3.03e+18 mol,Fig. 3 caption,
-"transition time, case a (beta Fig. 3d)",150 kyr,1e-5 PAL: 126 kyr; upper fold 5e-3 PAL: 486 kyr; half the log rise: 146 kyr; 90% of the log rise: 438 kyr,p. 685,
+"transition time, case a (beta Fig. 3d)",150 kyr,1e-5 PAL: 126 kyr; upper fold 5e-3 PAL: 486 kyr; half the log rise: 146 kyr; 90% of the log rise: 437 kyr,p. 685,
 "methane fall, case a (beta Fig. 3d)",factor 2-6,factor 4.00,p. 685,
 "methane re-adjustment (escape within 10% of r), case a (beta Fig. 3d)",about 50 Myr (case a),53.7 Myr,p. 684,
 "total oxidation, Fig. 3d (beta Fig. 3d)",9e17 mol,9.42e+17 mol; final O 9.4e+17 mol,Fig. 3 caption,
-"transition time, case c (beta Fig. 3d)",50 kyr,1e-5 PAL: 125 kyr; upper fold 5e-3 PAL: 485 kyr; half the log rise: 145 kyr; 90% of the log rise: 434 kyr,p. 685,
-"methane fall, case c (beta Fig. 3d)",factor 2-6,factor 2.63,p. 685,
-"methane re-adjustment (escape within 10% of r), case c (beta Fig. 3d)",recovers (case c),340.6 Myr,p. 684,
+"transition time, case c (beta Fig. 3d)",50 kyr,1e-5 PAL: 126 kyr; upper fold 5e-3 PAL: 486 kyr; half the log rise: 146 kyr; 90% of the log rise: 435 kyr,p. 685,
+"methane fall, case c (beta Fig. 3d)",factor 2-6,factor 2.62,p. 685,
+"methane re-adjustment (escape within 10% of r), case c (beta Fig. 3d)",recovers (case c),340.2 Myr,p. 684,
 "organic carbon increase after 400 Myr, case c (beta Fig. 3d)",3% over ~500 Myr,2.81%,Fig. 3 caption,
 "reverse switch time, r stepped 7.5e10 -> 7.5e+11",3-7 Myr,6.61 Myr,p. 685,the source does not state the reverse forcing
 "reverse switch time, r stepped 7.5e10 -> 1e+12",3-7 Myr,4.14 Myr,p. 685,the source does not state the reverse forcing
 "reverse switch time, r stepped 7.5e10 -> 3e+12",3-7 Myr,1.10 Myr,p. 685,the source does not state the reverse forcing
-"printed transition time, Fig. 3a zoom (half the log rise, from the drawn step)",150 kyr,134 kyr,Fig. 3 zoom,"read from the published vertices, not the model"
-"printed transition time, Fig. 3c zoom (half the log rise, from the drawn step)",50 kyr,132 kyr,Fig. 3 zoom,"read from the published vertices, not the model"
-"Fig. 3b pre-step reductant input, main vs zoom panel",both -3e11,"main -2.986e11, zoom -3.327e11",Fig. 3b,same quantity drawn at two levels
+"printed transition time, Fig. 3a zoom (half the log rise within the 1 Myr window)",150 kyr,146 kyr,Fig. 3 zoom,"read from the published vertices, not the model"
+"printed transition time, Fig. 3c zoom (half the log rise within the 1 Myr window)",50 kyr,145 kyr,Fig. 3 zoom,"read from the published vertices, not the model"
+"Fig. 3b pre-step fluxes, main vs zoom panel","input -3e11, escape 3e11","input: main -2.992e11, zoom -3.330e11; escape: main 3.009e11, zoom 3.371e11",Fig. 3b,the same quantities drawn in both panels
+"Fig. 3d pre-step fluxes, main vs zoom panel","input -3e11, escape 3e11","input: main -3.001e11, zoom -2.840e11; escape: main 2.998e11, zoom 3.105e11",Fig. 3d,the same quantities drawn in both panels
 delta13C carbonate after 3% more burial,"f = 0.206, +0.23 permil","f = 0.2060, 0.227 permil",Methods,
-beta implied by Fig. 3d burial step,not printed,0.002002,Fig. 3d,SI-derived beta = 0.002667
+beta implied by Fig. 3d burial step,not printed,0.001998,Fig. 3d,SI-derived beta = 0.002667
 figure PAL offset (decades) for author_p,PAL not printed,-0.0010,Fig. 2,zero means the figure's PAL is 0.2095 mu = 3.714e+19 mol

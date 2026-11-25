@@ -97,3 +97,19 @@ def test_beta_from_fig3d(vec):
 def test_delta13c_arithmetic():
     f1 = 0.2 * 1.03
     assert (-6 + f1 * 30) / (1 - f1) == pytest.approx(0.2267, abs=1e-4)
+
+
+def test_fig3d_beta_also_fits_fig3c_oxygen(vec):
+    from dataclasses import replace
+
+    p = vec[("3", "c", "oxygen", "trace")]
+    sc = np.array(F.SCALE3["c"])
+
+    def score(beta):
+        rd = replace(P, beta=beta)
+        run = F.run_case(rd, "c", 4e8)
+        m = F._clip(F.model3(rd, run, "oxygen", "c", "PAL"), "c")
+        return F.two_way(p, F.densify(m * sc, 0.01) / sc, F.SCALE3["c"])[0]
+
+    assert score(F.beta_from_fig3d(vec)) < 0.1
+    assert score(g.BETA_SI) > 0.3
