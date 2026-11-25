@@ -23,15 +23,17 @@ cooling organic haze, and acetogens divert hydrogen into acetate.
 Temperature shifts the competitive advantage, so their competition can hold
 temperature exactly constant as hydrogen supply changes. This needs some of
 the diverted hydrogen to stay out of methane for good. Exact control is
-fragile: the reference state loses stability once the climate takes more
-than about a year to respond. Imperfect control lasts far longer. In the
-cases tested, letting temperature drift by a fraction of a kelvin as supply
-changes bought tolerance of a 30-year response, and looser control
-tolerated centuries. In our reference runs a single uniform habitat never
-assembled the regulating mixture: the favoured group removed the other long
-before the climate could reverse its advantage. The mixture formed where
-the losing group could persist, in a refuge or through immigration, until
-the climate caught up.
+fragile: the reference state loses local stability once the climate takes
+more than 0.15 years to respond, or about a year if half the acetate is
+recycled into methane. Imperfect control can last far longer. In the four
+cases tested, a local temperature sensitivity of a fraction of a kelvin per
+e-fold of supply bought tolerance of a 30-year response, and some
+habitat-spread communities tolerated centuries. In 24 closed reference invasions a
+single uniform habitat never assembled the regulating mixture; in four
+simplified controls the invader removed the resident within decades, while
+the climate took millennia to reverse its advantage. The mixture can form
+where the losing group persists, in refuges or through immigration, until
+the climate catches up.
 
 ---
 
@@ -446,7 +448,7 @@ modern-Sun pair suggests roughly 1.2 K per 1% of young-Sun flux; on that
 rough scale the exact window spans about a fifth of sunlight.
 
 <!-- R6 -->
-### 3.6 Assembly needs somewhere to persist
+### 3.6 The mixture assembles where the losing group can persist
 
 In all 24 invasions the invader drove the resident below one cell (figure
 4*a*). This held in both directions, with fixed products and with feedback
@@ -465,8 +467,8 @@ The loss is permanent because a group below one cell cannot return. When
 the losing group could persist elsewhere, the mixture formed. Two small
 habitats held at 278 and 286 K, each 2% of the area, let both invasion
 directions reach the same mixed state at 281.535 K in all 12 key runs
-(figure 4*c*). Immigration of as little as 0.1 cells per year did the same
-at f = 0 and 0.5, with both groups materially active.
+(figure 4*c*). Immigration of as little as 0.1 cells per year kept both groups
+materially active near T\* at f = 0 and 0.5.
 
 <!-- R7 -->
 ### 3.7 Recycling and hydrogen supply
@@ -515,9 +517,9 @@ or a population crashes (§3.3).
 <!-- D2 -->
 ### 4.2 The price of durability
 
-Graded feedback gives up exactness and gains durability: a residual
-sensitivity of a fraction of a kelvin per e-fold of hydrogen supply buys
-tolerance of a 30-year climate response (§3.4). On the computed weakly connected branches, temperature moved
+Graded feedback gives up exactness and gains durability: on the four tested
+branches, a local sensitivity of a fraction of a kelvin per e-fold of
+hydrogen supply bought tolerance of a 30-year climate response (§3.4). On the computed weakly connected branches, temperature moved
 across roughly T\* ± σ as supply changed, so wider spreads gave looser
 control.
 This parallels precision–stability trade-offs in molecular circuits (Olsman
@@ -560,9 +562,9 @@ near-complete recycling buys decades of tolerance only where supply stays
 within a few per cent. The reference supply far exceeds base-case fresh
 geological hydrogen, but anoxygenic ecosystems in published models reach
 methane fluxes comparable to the model's 65 Tmol CH₄ per year (Kharecha et
-al. 2005; Ozaki et al. 2018). Fermentation is one possible source; because
-fermenters also make acetate, it would enlarge the lasting sink the
-regulator needs (§3.7).
+al. 2005; Ozaki et al. 2018). Fermentation is one possible source; if it supplied
+all the hydrogen and half of all acetate became methane, the window would
+narrow to a factor of 1.27 (§3.7).
 
 <!-- D4b -->
 ### 4.5 Graded control on the early Earth
@@ -582,9 +584,9 @@ branches.
 ### 4.6 Stability, assembly and persistence
 
 A stable mixture is not a mixture that forms. Competition between the two
-groups is fast, and the climate they regulate is slow, so in one closed
-uniform habitat the group favoured at the current temperature removes the other
-long before the climate can reverse its advantage. Arrival order, or the
+groups is fast, and the climate they regulate is slow. In every closed
+uniform reference run the invader ended alone, and with fixed products it
+removed the resident long before the climate could reverse its advantage. Arrival order, or the
 starting temperature, then fixes a single-group world. Incumbency usually
 favours the first arrival (Fukami 2015). Here the favoured arrival wins,
 whichever came first. In the closed reference runs the controlling community
@@ -672,9 +674,9 @@ Measuring habitat temperatures and the exchange of cells between habitats
 would test the habitat route. A matched solar sweep of a haze climate would
 test the regulator against the Sun's brightening.
 
-Microbial competition can hold a planet's temperature if some of the hydrogen it diverts stays out of methane, but exact control fails when climate responds slowly. Imperfect control lasts far longer, and grows looser
-as habitat temperatures differ. The controlling community forms only where
-the losing group can persist while the climate catches up.
+Microbial competition can hold a planet's temperature if some of the hydrogen it diverts stays out of methane, but exact control loses stability when climate responds slowly. Imperfect control can last far longer, and grows looser
+as habitat temperatures differ. In our reference runs the controlling community formed only where
+the losing group could persist while the climate caught up.
 
 ---
 
@@ -745,7 +747,8 @@ branches, joining finite margins on one branch; ringed markers show where
 each crosses 30 years. Symbols without lines: the 122 graded states of the
 earlier grid, 42 uniform states with product feedback (grey, all at the
 ceiling) and 80 with resolved habitat spread (green; nine finite). Arrows mark lower bounds at the 10⁴-year search
-ceiling. The shaded band marks the price of a 30-year margin, 0.07–0.31 K
+ceiling. The shaded band spans the four ringed 30-year crossings (bracket
+midpoints), 0.07–0.31 K
 per e-fold. (*b*) Steady temperature against hydrogen supply potential P for
 uniform habitats (σ = 0, black) and uniform habitat spreads of σ = 1, 3, 6
 and 8 K (green, darker for wider), at f = 0.5 with fixed products and cell
@@ -755,7 +758,7 @@ circles mark the last resolved state on each branch. The σ = 1 K curve
 passes through the last point of the d = 10⁻⁴ yr⁻¹ spread branch in (*a*),
 at P = 0.30.
 
-**Figure 4. Assembly needs somewhere to persist.** (*a*) Global cell counts
+**Figure 4. The mixture assembles where the losing group can persist.** (*a*) Global cell counts
 after a rare invader enters, in each direction, with fixed products, f = 0.5
 and τ = 3 years. These are finite-census trajectories: a group below one
 cell is removed at the next ten-year census (20 and 10 years respectively).

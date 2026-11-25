@@ -176,3 +176,21 @@ The journal counts the cover page, references and acknowledgements. Adding the n
 - with Table 1 and the captions as well: about **7,970**, which leaves almost no room for the cover details, contributions, funding and acknowledgements.
 
 Codex is asked to recount the rendered file.
+
+## Codex's product review applied (25 November)
+
+Codex's review ([haze-world-products-review-2026-11-25.md](haze-world-products-review-2026-11-25.md), `80e15e1`) checked Barry's abstract sentence by sentence and the brief, guide and graphical abstract. Claude (Opus 5.5) applied it as follows.
+
+- **Abstract (197 words in Writer).** Barry asked for the smallest change wherever a sentence fails, so his first five sentences stand and the rest keep his wording with these scope fixes, in place of Codex's 189-word rewrite of sentences 6–10:
+  - S6: "loses local stability once the climate takes more than 0.15 years to respond, or about a year if half the acetate is recycled into methane" (C63, E22);
+  - S7: "can last";
+  - S8: "In the four cases tested, a local temperature sensitivity of a fraction of a kelvin per e-fold of supply … and some habitat-spread communities tolerated centuries" (C57, C54, C61, E22);
+  - S9: "In 24 closed reference invasions … in four simplified controls the invader removed the resident within decades, while the climate took millennia to reverse its advantage" (C52, C65, E19);
+  - S10: "The mixture can form where the losing group persists, in refuges or through immigration, until the climate catches up" (C09, C66).
+- **Article.** §4.2 scoped to the four tested branches and a local sensitivity; §4.4's fermentation sentence now states the conditional glucose budget (E21) instead of "enlarge the lasting sink"; §4.6 says every closed uniform reference run ended with the invader alone and scopes the decades-versus-millennia contrast to fixed products; §3.6 gives immigration as "materially active near T\*"; the conclusion says "loses stability" (not "fails") and scopes assembly to the reference runs. §3.6 and Figure 4 are retitled "The mixture assembles where the losing group can persist" (accelerated-methane controls assembled in place, C65).
+- **Figure 3.** The band and its label now come from the same four bracket midpoints (0.0708–0.3148); the caption says so. Bracket-edge asserts for C57 are kept.
+- **Graphical abstract** (Claude Opus subagent): panel 1 scoped to the haze-cooling branch near the switch; panel 2's tails cropped at the last extracted climate point, receipted to C06 and C67; panel 3 names the 36 original exact states, labels local temperature sensitivity and notes the 21–31-yr margins at full recycling (C67); panel 4 is "Two refuges let both groups persist", receipted to C09 and its matched controls, with immigration as another route.
+- **Brief.** Precedent sentence replaced; census described as a one-cell check every ten years; finding 1 says acetate *and* lost biomass; finding 2 scopes the seven-year limit to the original survey and gives the 30-year exception; finding 3 is a local slope on four tested cases; finding 4 is scoped to reference runs and the four controls, with immigration "near" the set point; finding 5 gives gross supply against published base cases and the conditional fermentation budget; "exact or durable, not both" replaced. Still two pages.
+- **Agent guide.** Codex's four items applied (case D extracted curve, immigration fractions and the 12 refuge runs, perturbation runs pointed to separately, fixed-product and S definitions, C65 scope, Figure 3 provenance and selection rules, reproducibility notes, graphical-abstract command), plus traps 17–19 (seven-year scope, transient growth advantage, conditional fermentation).
+
+**Length.** The edits add 43 words in Writer (draft source rendered before and after). On Codex's rendered counts at `39993fc`: about **6,764** by the journal's definition (cover, text, references and end statements), and about **8,015** with Table 1 and the captions, before the remaining cover details.

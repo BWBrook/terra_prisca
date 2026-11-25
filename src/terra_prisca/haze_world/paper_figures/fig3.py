@@ -158,13 +158,14 @@ def main():
     ax0.axhline(TAU_STAR, color=style.INK_2, lw=0.6)
     # main: price band and 30-yr line
     ax.set_xscale("log")
-    lo = min(v[0] for v in brackets.values())
-    hi = max(v[1] for v in brackets.values())
+    mids = {b: 0.5 * (thr[b]["price_low"] + thr[b]["price_high"]) for b in BRANCHES}
+    lo, hi = min(mids.values()), max(mids.values())
+    assert f"{lo:.2f}" == "0.07" and f"{hi:.2f}" == "0.31", (lo, hi)
     ax.axvspan(lo, hi, color=style.GRID, zorder=0, lw=0)
     ax.axhline(TAU_STAR, color=style.INK_2, lw=0.6, zorder=1)
     ax.axhline(CENSOR, color=style.GRID, lw=0.6, zorder=0)
     ax.text(2.2e-4, TAU_STAR * 1.15, "30 yr", fontsize=6.5, color=style.INK_2, va="bottom")
-    ax.text(np.sqrt(lo * hi), 6e4, "price of 30 yr: 0.07–0.31 K per e-fold", fontsize=6, color=style.INK_2,
+    ax.text(np.sqrt(lo * hi), 6e4, f"price of 30 yr: {lo:.2f}–{hi:.2f} K per e-fold", fontsize=6, color=style.INK_2,
             ha="center", va="center", zorder=6)
     ax.text(2.2e-4, CENSOR * 1.25, "10$^4$ yr ceiling:\narrows = lower bounds", fontsize=6, color=style.INK_2, va="bottom")
 
@@ -191,9 +192,7 @@ def main():
                 mfc=sty["color"], mew=0.4, zorder=5, clip_on=False)
         for p in seq:
             p["y_plotted"] = p["tau_c_yr"]
-        t = thr[b]
-        mid = 0.5 * (t["price_low"] + t["price_high"])
-        ax.plot([mid], [TAU_STAR], marker="o", ms=5, mfc="none", mec=style.INK, mew=0.7, zorder=7)
+        ax.plot([mids[b]], [TAU_STAR], marker="o", ms=5, mfc="none", mec=style.INK, mew=0.7, zorder=7)
     ax.set_xlim(2e-4, 250)
     ax.set_ylim(YMIN, YMAX)
     ax.set_xlabel("Local sensitivity $|S|$ (K per e-fold of supply)")

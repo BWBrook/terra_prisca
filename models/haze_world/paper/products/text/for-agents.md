@@ -47,20 +47,28 @@ what it does not cover. C38 is the only provisional row and stays so by decision
   time of [0.149]{.C63} yr; at f = 0.5, [1.10]{.C63} yr (C63). All 36 initially stable exact states of
   the original inventory lose stability by [7.08]{.C54} yr; six more are unstable at zero lag (C54). At
   f = 1, sampled exact margins reach [21.3]{.C67}–[30.7]{.C67} yr inside the narrow lower-supply window
-  (C67). Past the limit a 1-yr lag keeps both groups for 30,000 yr while oscillating (C51); 10- and
-  100-yr lags crash a population (C52 context, §3.3).
+  (C67), so the 7.08-yr maximum belongs to the original grid only (E22). Past the limit a 1-yr lag
+  keeps both groups for 30,000 yr while oscillating (C51); in the 10- and 100-yr disturbance runs at
+  least one continuous population fell below one cell (§3.3;
+  `models/haze_world/figures/dynamic_realisation/oscillations.csv`, separate from the C52 invasion
+  censuses).
 - **What does durability cost?** On four dial branches a 30-yr margin costs a local sensitivity of
-  [0.070]{.C57}–[0.316]{.C57} K per e-fold of supply (C57). The original 122 graded states have
+  0.07–0.31 K per e-fold of supply at the bracket midpoints; the bracket edges span
+  [0.070]{.C57}–[0.316]{.C57} (C57). S is a local derivative, not the drift after multiplying supply
+  by e (E22). The original 122 graded states have
   margins of at least [331]{.C54} yr (C54). Weakly connected spread communities follow the no-fit
   relation of equation (3.1) (C60); spreads of 1 and 3 K move temperature by [1.91]{.C61} and
   [5.41]{.C61} K over the uniform coexistence range with margins of centuries (C61).
 - **Does it hold against imposed warming?** Supply and imposed warming share one closed-loop factor;
   graded states follow by |S|/(kE) (C62). Fixed-product exact states hold T\* for F from
-  [−15.47]{.C63} to [8.14]{.C63} K (C63). Cases A and C also give exact states; case D does not (C64).
+  [−15.47]{.C63} to [8.14]{.C63} K (C63). Cases A and C also give exact states; case D does not on its extracted curve, although its assumed
+  low-methane extension admits a state near P = 0.0233 (C64, E18).
 - **Does the mixture assemble?** Not in a closed, uniform habitat: all [24]{.C52} reference invasions
   end with the invader alone (C52). In the four fixed-product, zero-lag runs the resident goes within
-  decades while temperature takes millennia to cross T\* (C65). Buffered refuges (C09) and any tested
-  immigration (C66) assemble it.
+  decades while temperature takes millennia to cross T\* (C65). Two buffered refuges restore matching
+  mixtures in the 12 key runs (C09); any tested positive immigration gives two materially active groups
+  near T\* at f = 0 and 0.5, but no material mixture at f = 0.9 (C66). In two product-feedback
+  invasions the resident briefly grew faster before it was removed (E19).
 - **How big is the supply?** About [401]{.C69} Tmol H₂ per yr at the assumed 10,000-yr methane
   lifetime, far above base-case fresh geological inputs (C69). A fermentation-fed supply with half its
   acetate recycled narrows the window to [149]{.C70}–[189]{.C70} Tmol H₂ per yr (C70).
@@ -76,13 +84,13 @@ what it does not cover. C38 is the only provisional row and stays so by decision
 | r | Column ratio of methane to carbon dioxide |
 | τ | Climate (thermal) response time of equation (2.7) |
 | τ_c | Critical response time: the first τ at which a steady state loses local stability (first-loss margin) |
-| S, S_c | Local sensitivity dT\*/d ln Φ, K per e-fold of supply; S = 0 is exact control |
+| S, S_c | Local sensitivity dT_eq/d ln Φ of the *equilibrium* temperature, K per e-fold of supply; S = 0 is exact control. The physiological switch T\* in the numerator would make S vanish by definition |
 | Q | Coexistence supply ratio (upper/lower edge of the window) |
 | exact / graded | S = 0 (integral-like pinning) / S ≠ 0 (residual drift with supply) |
 | D1, D2 | Dial branches: D1 acetate feedback strength κ at f = 0 or 0.5; D2 habitat spread at exchange d = 10⁻⁴ or 10⁻³ yr⁻¹ |
 | σ, d | Habitat temperature half-width; cell exchange rate between habitats |
-| fixed / product feedback | Products held fixed / acetate and methane feed back on their producers |
-| census | Finite-population rule: a guild below one cell is removed at the next ten-year census |
+| fixed / product feedback | Fixed *effects* of the products on the physiological hydrogen thresholds (methane and acetate stocks still evolve) / acetate and methane feed back on their producers' thresholds |
+| census | Finite-population rule: populations are continuous; every ten years a guild whose biomass represents less than one cell is removed |
 | F | Imposed warming: rigid vertical shift of the climate curve, a surrogate for sunlight |
 | s | Methane response-speed multiplier at fixed equilibria (C65); not a physical lifetime |
 | case A–D | The four Arney et al. (2016) haze-climate responses; results use case B unless stated |
@@ -94,19 +102,21 @@ what it does not cover. C38 is the only provisional row and stays so by decision
 |---|---|---|---|---|
 | Figure 1 (mechanism, requirement curves, plateau) | `models/haze_response/arney2016/`, model parameters | `src/terra_prisca/haze_world/paper_figures/fig1.py` | `models/haze_world/paper/figures/fig1.*`, `figures/data/fig1*.csv` | C05, C06 |
 | Figure 2 (swings, crashes, eigenvalues) | committed trajectory exports | `paper_figures/fig2.py` (`--refresh` reruns) | `figures/fig2.*`, `figures/data/fig2*.csv` | C20, C51, C52 |
-| Figure 3 (precision–durability plane) | `models/haze_world/figures/graded_dials/`, `review/issue1_spread_response.*` | `paper_figures/fig3.py` | `figures/fig3.*`, `figures/data/fig3*.csv` | C54, C57, C60, C61 |
+| Figure 3 (precision–durability plane) | `models/haze_world/figures/continuum_habitats/c0_local_gain.csv` (original states), `c1_resolved.csv` (resolved habitats), `models/haze_world/figures/graded_dials/`, `review/issue1_spread_response.*` | `paper_figures/fig3.py` | `figures/fig3.*`, `figures/data/fig3*.csv` | C54, C57, C60, C61 |
 | Figure 4 (assembly) | census archives and refuge records (manifests in `figures/dynamic_realisation/transient_archive_manifest.json`, `figures/buffered_refuges/raw_manifest.json`) | `paper_figures/fig4.py` (`--refresh` needs raw payloads) | `figures/fig4.*`, `figures/data/fig4*.csv` | C09, C52, C65 |
 | Imposed warming (§3.5) | model | `models/haze_world/review/issue2_forcing.py` | `review/issue2_forcing.json`, `issue2_forcing_window.csv` | C62–C64 |
 | Acetate fate (§3.7) | model | `review/issue4_acetate_fate.py` | `review/issue4_acetate_fate.json`; ESM S8 tables | C67, C68 |
 | Supply scale (§3.7) | `review/issue4_acetate_fate.json` | `review/issue5_supply_scale.py` | `review/issue5_supply_scale.json` | C69, C70 |
 | ESM tables, Table S1 | ledger, committed outputs | `paper_figures/esm_tables.py`, `table_s1.py` | marked blocks in `esm/esm.md`, `esm/*.csv` | all S-table rows |
-| Graphical abstract | `figures/data/` | `paper_figures/graphical_abstract.py` | `products/figures/graphical_abstract.*` | C06, C52, C54, C57, C09 |
+| Graphical abstract | `figures/data/` | `paper_figures/graphical_abstract.py` | `products/figures/graphical_abstract.*` (also reads `models/haze_response/arney2016/figure4.csv`, `review/issue4_acetate_fate.json`) | C06, C09, C54, C57, C66, C67 |
 
 Selection rules that most misquotations drop: the headline margins are the **reference** states
 (P = 0.30, fixed products, case B, ℓ = 0.001 h⁻¹) at f = 0 and 0.5; the f sweep exports lost biomass;
 the 36-state inventory is the original grid (f = 0, 0.5, 0.9; three loss rates; three supplies); the
 30-yr price is interpolated inside refined brackets (`threshold_refinement/thresholds.json`), and the
-paper quotes bracket midpoints.
+paper quotes bracket midpoints (0.07–0.31); 0.070–0.316 are the outer bracket edges. The original graded
+rows plotted require a negative frozen-composition response, which excludes six already-unstable cases;
+the 113 markers at the 10,000-yr search ceiling are lower bounds on tolerated lag.
 
 ## 5. Traps: superseded results and known misreadings
 
@@ -118,7 +128,8 @@ paper quotes bracket midpoints.
 3. **"More recycling leaves less sink."** The combined acetate-plus-biomass export at fixed supply is
    independent of f; the window narrows because the two routes' methane yields converge (C68).
 4. **"Exclusion always takes decades."** Only with fixed products. Three product-feedback invasions took
-   260–290 yr (C52). C65 covers only four fixed-product, zero-lag runs (E19).
+   260–290 yr (C52). C65's removal-versus-crossing comparison covers only four fixed-product, zero-lag
+   runs; C65 also covers the methane-speed variants and the lifeless starts (E19).
 5. **"A uniform habitat can never assemble the mixture."** A thousandfold faster methane response at
    fixed equilibria assembled it from acetogen invasions (C65); that speed-up is not a physical lifetime.
 6. **"Refuge-assembled mixtures are durable."** Their margin against slow climate was not computed (E19).
@@ -142,7 +153,17 @@ paper quotes bracket midpoints.
     fully converted to methane.
 16. **Fermentation or oxygenic photosynthesis is "required".** Neither: gross delivery can include
     recycled hydrogen, and published anoxygenic ecosystems reach comparable methane fluxes (E21).
-17. **Old abstracts and step documents** (`01a`, `01b`, `02`, `03a`, `03b`) are dated stages of the
+17. **"Every exact state loses stability within about 7 years."** The 7.08-yr maximum is for the 36
+    initially stable exact states of the original grid (C54). At f = 1 with biomass exported an exact
+    state at lower supply tolerates 30 yr inside a window about 5% wide (C67, E22).
+18. **"The favoured group always grows faster until it wins."** The invader ended alone in all 24 runs
+    (C52), but in two product-feedback methanogen invasions the resident acetogens briefly grew faster
+    (within years 22–30) before removal. Distinguish the eventual winner from the growth advantage along the
+    path (E19; `docs/audits/haze-world-invasion-wording-2026-11-25.py`).
+19. **"Fermentation enlarges the sink."** C70 is a conditional glucose budget: all hydrogen from
+    fermentation, half of every source's acetate becoming methane outside the shared pool. Its window
+    ends are pure-guild limits; it says nothing about stability or assembly (E21).
+20. **Old abstracts and step documents** (`01a`, `01b`, `02`, `03a`, `03b`) are dated stages of the
     writing process, not current wording. The current text is `03c-full-draft.md`.
 
 ## 6. Checks before and after any change
@@ -153,9 +174,17 @@ uv run pytest -q tests/test_paper_esm.py tests/test_paper_table_s1.py tests/test
 make -C models/haze_world/paper/products check     # claims ledger against all four products, makedoc lint
 make -C models/haze_world/paper/products           # brief PDF, then the two-page check
 uv run python -m terra_prisca.haze_world.paper_figures            # Figures 1–4 and the ESM tables
+uv run python -m terra_prisca.haze_world.paper_figures.graphical_abstract   # the brief's figure
 uv run python -c "from terra_prisca.haze_world.paper_figures import table_s1; table_s1.main()"
 uv run tools/refs.py build models/haze_world/paper/products/references
 ```
+
+A Git-only clone passes the four paper tests and regenerates Figures 3 and 4 and the graphical abstract.
+Figure 2's `--refresh` reintegrates; Figure 4's `--refresh` needs the 24 native census files and four
+native refuge records named in the manifests (archive status: `docs/reproducibility/haze-world-core.md`;
+ESM S11). When updating a claim, commit its evidence before stamping it: a stale evidence stamp is only a
+warning. The figure builders verify exports and selected assertions against the ledger; whether the
+words match the ledger needs a semantic review against `estimands.md`.
 
 Invariants worth asserting when touching the model or figure code (the figure modules already assert
 most of them against the ledger): T\* = [281.53]{.C06} K at the reference; the f = 0 reference margin

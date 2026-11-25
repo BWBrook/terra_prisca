@@ -4,7 +4,7 @@ Barry W. Brook (University of Tasmania), with Claude (Anthropic), Codex (OpenAI)
 
 <div id="figures"></div>
 
-![*Graphical abstract.* (1) Hydrogen feeds two competing groups; temperature decides which wins, and so how much cooling haze forms. (2) Together they hold temperature at the set point over a doubling of supply[]{.C06}. (3) Exact control loses stability within years of climate delay; a small drift buys decades or more[]{.C54}[]{.C57}. (4) Refuges let both groups reach the set point[]{.C52}[]{.C09}.](../figures/graphical_abstract.pdf){#fig-brief width=100%}
+![*Graphical abstract.* (1) Hydrogen feeds two competing groups; near the switch, temperature decides which wins and so how much cooling haze forms. (2) Together they hold temperature at the set point over a doubling of supply[]{.C06}[]{.C67}. (3) The 36 original exact states lose stability within about seven years of climate delay; a small drift buys decades or more[]{.C54}[]{.C57}. (4) Two refuges let both groups persist and reach the set point[]{.C09}.](../figures/graphical_abstract.pdf){#fig-brief width=100%}
 
 ## The puzzle
 
@@ -21,8 +21,8 @@ Microbial populations change within years. Climate does not: oceans store
 heat, so the surface takes years to centuries to catch up. A regulator that acts fast on a slow system can overshoot, the way a
 shower swings between too hot and too cold when the water takes a while to
 reach you. Earlier models showed that a living thermostat is possible in
-principle [@watson1983BiologicalHomeostasisGlobal; @seto2007CoexistenceIntroducingRegulation]. Whether it survives a
-slowly responding climate was untested.
+principle [@watson1983BiologicalHomeostasisGlobal; @seto2007CoexistenceIntroducingRegulation]. We asked whether
+this hydrogen-competition thermostat survives a slow climate response.
 
 ## What we did
 
@@ -32,9 +32,9 @@ slowly responding climate was untested.
 - Measured how slowly the climate can respond before each regulated state
   loses stability, across [42]{.C54} exactly regulating states, [122]{.C54}
   loosely regulating ones and four tuned families of states between them.
-- Ran [24]{.C52} invasions with populations counted in whole cells, so that a
-  group can die out, and repeated them with small sheltered habitats and with
-  a trickle of immigrants.
+- Ran [24]{.C52} invasions in which a group below one cell, checked every ten
+  years, dies out; then ran separate tests with small sheltered habitats and
+  with a trickle of immigrants.
 - Pressure-tested the result five ways, from habitat temperatures to the
   size of the hydrogen supply.
 
@@ -46,38 +46,41 @@ slowly responding climate was untested.
    instead. Below [281.5]{.C06} K the acetogens win and the planet warms;
    above it the methanogens win and it cools. With half the acetate
    eventually becoming methane, temperature stays at the set point while the
-   hydrogen supply changes by a factor of [2.0]{.C67}. If all of it returned
-   as methane, the lever would vanish. How much escaped on the early Earth is
+   hydrogen supply changes by a factor of [2.0]{.C67}. If both the acetate and
+   the lost biomass returned as methane, the two groups would deliver the same
+   yield and the lever would vanish. How much escaped on the early Earth is
    unknown.
 2. **Exact control is fragile.** With no acetate recycled, the reference
    state loses stability once the climate takes more than [0.15]{.C63} years
    to respond, and with half recycled, about a year[]{.C63}. Every stable exact state
-   we found lost stability within [7]{.C54} years. Past that limit the regulator swings widely
-   or a population crashes.
+   in our original survey lost stability within [7]{.C54} years; recycling all
+   the acetate let one tolerate 30 years, but only over a supply range about 5%
+   wide[]{.C67}. Past the limit the regulator swings widely or a population crashes.
 3. **Slightly imperfect control lasts far longer.** Where acetate slows its
    own producers, or habitats differ slightly in temperature, temperature
-   drifts as the supply changes. A drift of [0.07]{.C57} to [0.31]{.C57} K
-   for each *e-fold* (a 2.7-fold change) of supply let the regulator tolerate
-   a 30-year climate response, and looser control tolerated centuries[]{.C61}.
-4. **The regulating community does not form in a single uniform habitat.**
-   In all [24]{.C52} closed invasions the newcomer ended alone. The group
-   favoured at the starting temperature removed the other within decades[]{.C65},
-   while the climate needed more than a thousand years to cross the set
-   point. Two small sheltered habitats, or as little as [0.1]{.C66} immigrant
-   cells per year, let both groups persist and the mixture form at the set
-   point. How well that mixture tolerates a slow climate was not tested.
+   drifts as the supply changes. In four tested cases, a local slope of
+   [0.07]{.C57} to [0.31]{.C57} K per *e-fold* (2.7-fold step) of supply,
+   measured over small changes, let the regulator tolerate a 30-year climate response, and some
+   habitat-spread communities tolerated centuries[]{.C61}.
+4. **In our reference runs the community did not form in one uniform habitat.**
+   In all [24]{.C52} closed invasions the newcomer ended alone. In four
+   simplified controls it removed the resident within decades[]{.C65}, while
+   the climate needed over a thousand years to cross the set point. Two small
+   sheltered habitats let the mixture form at the set point[]{.C09}; as little
+   as [0.1]{.C66} immigrant cells a year kept both groups active near it. How well that mixture tolerates a slow climate was not tested.
 5. **The hydrogen bill is large.** At the assumed ten-thousand-year methane
-   lifetime, the model needs about [401]{.C69} trillion moles of hydrogen a
-   year, far more than volcanoes and rocks are thought to have supplied. Fermentation of organic
-   matter is one possible source, but it also makes acetate, which would
-   narrow the range of supply the regulator can handle[]{.C70}.
+   lifetime, the model's gross supply is about [401]{.C69} trillion moles of hydrogen a
+   year, far above published base cases for fresh hydrogen from volcanoes and
+   rocks. Fermentation is one possible source; if it supplied all of it and
+   half of all acetate became methane, the workable supply range would
+   narrow[]{.C70}.
 
 ## What it means
 
-In this model a living thermostat can be exact or durable, not both. If
-microbes did help hold the early Earth's temperature, the version that
-survives a slow climate holds temperature within a band rather than at a
-point, and in our reference runs it formed only where the losing group had
+In this model a living thermostat that holds temperature exactly over a wide
+range of supply is fragile. If microbes did help hold the early Earth's
+temperature, the version that survives a slow climate holds it within a band
+rather than at a point, and in our reference runs it formed only where the losing group had
 somewhere to wait. The
 model's main conditions can be tested today: acetate turnover, the share of
 acetate that escapes methane, and the spread of habitat temperatures in

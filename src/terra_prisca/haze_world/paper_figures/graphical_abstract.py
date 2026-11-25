@@ -2,8 +2,9 @@
 
     uv run python -m terra_prisca.haze_world.paper_figures.graphical_abstract
 
-Reads committed exports only (paper/figures/data/ and the buffered-refuge
-selection) and never rewrites them. Writes graphical_abstract.{pdf,svg,png} and
+Reads committed exports only (paper/figures/data/, the buffered-refuge
+selection, the case-B climate vertices and the acetate-fate review record) and
+never rewrites them. Writes graphical_abstract.{pdf,svg,png} and
 graphical_abstract_checks.csv, which lists every number shown and its source,
 to models/haze_world/paper/products/figures/.
 
@@ -13,6 +14,7 @@ data; (4) bulk temperature after invasion with and without refuges, fig4 data.
 """
 
 import csv
+import json
 
 import matplotlib.pyplot as plt
 import numpy as np
@@ -22,6 +24,8 @@ from . import style
 
 OUT = style.ROOT / "models" / "haze_world" / "paper" / "products" / "figures"
 REFUGE_SELECTION = style.ROOT / "models" / "haze_world" / "figures" / "buffered_refuges" / "selected_main.csv"
+CLIMATE_VERTICES = style.ROOT / "models" / "haze_response" / "arney2016" / "figure4.csv"
+ACETATE_FATE = style.ROOT / "models" / "haze_world" / "review" / "issue4_acetate_fate.json"
 W, H = 170 * style.MM, 100 * style.MM
 FS = 6.5
 GRADED = style.THIRD
@@ -84,16 +88,24 @@ def panel_schematic(ax):
     for x_edge, x_side, x_box in ((14, 0.6, lx0), (86, 99.4, rx1)):
         ax.plot([x_edge, x_side, x_side], [9, 9, 74], color=style.INK, ls=dash, lw=0.9, zorder=1)
         arrow(ax, (x_side, 74), (x_box, 74), color=style.INK, ls=dash)
-    ax.text(0, -1.5, "Temperature tips the contest:\nbelow the switch temperature\nT*, acetogens win and the\n"
-            "planet warms; above T*,\nmethanogens win and it cools", fontsize=FS, color=style.INK, ha="left", va="top", linespacing=1.15)
+    ax.text(0, -1.5, "Temperature tips the contest.\nNear the switch temperature T*,\non the haze-cooling branch:\n"
+            "below T*, acetogens win and the\nplanet warms; above T*,\nmethanogens win and it cools",
+            fontsize=FS, color=style.INK, ha="left", va="top", linespacing=1.15)
 
 
 def panel_plateau(ax, steady, checks1):
     t_star = checks1["t_star_k"]
     lo, hi = checks1["coexistence_start_supply_j_1e6"], checks1["coexistence_end_supply_j_1e6"]
     ax.axvspan(lo, hi, color=style.GRID, lw=0, zorder=0)
-    both = [r for r in steady if r["system"] == "both_groups"]
-    alone = [r for r in steady if r["system"] == "methanogens_alone"]
+    r_last = max(float(v["ch4_co2_ratio"]) for v in read(CLIMATE_VERTICES) if v["case"] == "B")
+    assert abs(r_last - 0.2333365) < 1e-7
+    both = [r for r in steady if r["system"] == "both_groups" and float(r["ch4_co2_ratio"]) <= r_last]
+    alone = [r for r in steady if r["system"] == "methanogens_alone" and float(r["ch4_co2_ratio"]) <= r_last]
+    ends = {k: max(float(r["supply_j_1e6_mol_l_h"]) for r in v) for k, v in (("both", both), ("alone", alone))}
+    assert abs(ends["both"] - 1.85) < 1e-9 and abs(ends["alone"] - 1.05) < 1e-9, ends
+    shown("lines_end_last_extracted_climate_ratio", "line ends (no number)", r_last, rel(CLIMATE_VERTICES),
+          "max ch4_co2_ratio, case B; steady states above it (assumed flat 274.002 K climate) not drawn; "
+          f"last drawn supply {ends['both']:.4g} (both groups), {ends['alone']:.4g} (methanogens alone)")
     peak = max(alone, key=lambda r: float(r["temperature_k"]))
     x0 = float(peak["supply_j_1e6_mol_l_h"])
     shown("supply_axis_start_haze_peak", "axis start (no number)", x0, rel(style.DATA / "fig1c_steady_state.csv"),
@@ -102,7 +114,7 @@ def panel_plateau(ax, steady, checks1):
             color=style.INK, lw=1.6, zorder=3)
     ax.plot([float(r["supply_j_1e6_mol_l_h"]) for r in alone], [float(r["temperature_k"]) for r in alone],
             color=style.METHANOGEN, ls="--", lw=1.2, zorder=4)
-    ax.set_xlim(x0, 2.3)
+    ax.set_xlim(x0, 1.95)
     ax.set_ylim(270, 300)
     ax.set_xticks([1, 1.5, 2])
     ax.set_xticklabels(["1", "1.5", "2"])
@@ -112,10 +124,12 @@ def panel_plateau(ax, steady, checks1):
                "quantity == t_star_k", "C05/C06")
     ax.text(1.27, t_star + 0.8, f"both groups\nheld at T* =\n{ts}", fontsize=FS, color=style.INK,
             ha="center", va="bottom", linespacing=1.1)
-    ax.text(2.28, 270.6, "methanogens alone", fontsize=FS, color=style.METHANOGEN, ha="right", va="bottom")
+    ax.text(0.86, 271.7, "methanogens\nalone", fontsize=FS, color=style.METHANOGEN, ha="left", va="center", linespacing=1.1)
     ratio = hi / lo
+    assert abs(ratio - 1.99551) < 1e-5
     rt = shown("coexistence_supply_range_factor", f"{ratio:.1f}-fold", ratio, rel(style.DATA / "fig1_checks.csv"),
-               "coexistence_end_supply_j_1e6 / coexistence_start_supply_j_1e6")
+               "coexistence_end_supply_j_1e6 / coexistence_start_supply_j_1e6 (half acetate recycled, biomass exported)",
+               "C06/C67")
     ax.text(1.2, 299.3, f"held over a\n{rt} range\nof supply", fontsize=FS, color=style.INK_2,
             ha="center", va="top", linespacing=1.1)
     return ts
@@ -163,7 +177,7 @@ def panel_margins(ax0, ax, states, branches, thresholds):
     ax.xaxis.set_minor_locator(plt.NullLocator())
     ax.tick_params(axis="y", which="both", left=False, labelleft=False)
     ax.spines["left"].set_visible(False)
-    ax.set_xlabel("Temperature drift\n(K per e-fold of supply)", linespacing=1.1)
+    ax.set_xlabel("Local temperature sensitivity\n(K per e-fold of supply)", linespacing=1.1)
 
     arrow_m = r"$\uparrow$"
     fin = [r for r in graded if r["tau_status"] == "finite_crossing"]
@@ -196,7 +210,7 @@ def panel_margins(ax0, ax, states, branches, thresholds):
                  "max price_midpoint_K over branches", "C57")
     ceil_t = shown("search_ceiling_yr", f"{ceiling:,.0f} yr", ceiling, rel(style.DATA / "fig3_states.csv"),
                    "tau_c_yr where tau_status == censored_at_1e4", "C54")
-    ax.text(1.3e-4, ymin * 1.15, f"exact control ({n} states):\nall lose stability by\na {tmax.replace(' yr', '-yr')} response",
+    ax.text(1.3e-4, ymin * 1.15, f"{n} original exact states:\nall lose stability by\na {tmax.replace(' yr', '-yr')} response",
             fontsize=FS, color=style.INK, ha="left", va="bottom", linespacing=1.1)
     ax.text(1.3e-4, target * 1.2, tt, fontsize=FS, color=style.INK_2, ha="left", va="bottom")
     ax.text(0.5, target / 1.7, f"graded control\ntolerates a\n{target:g}-yr response\nat {p_lo}–{p_hi} K\nper e-fold\n(rings)",
@@ -204,6 +218,21 @@ def panel_margins(ax0, ax, states, branches, thresholds):
     ax.text(1.3e-4, ceiling * 1.3, f"looser control (arrows):\nstill stable at the\n{ceil_t.replace(' yr', '-yr')} search limit",
             fontsize=FS, color=GRADED, ha="left", va="bottom", linespacing=1.1)
     return n, tmax, tt, p_lo, p_hi, ceil_t, len(bridge)
+
+
+def full_recycling_margins():
+    d = json.load(open(ACETATE_FATE))
+    taus = [r["tau_c"] for r in d["sweep"] if r["chemistry"] == "fixed" and r["f"] == 1.0]
+    assert len(taus) == 5 and all(r["lag_status"] == "finite_crossing" for r in d["sweep"]
+                                  if r["chemistry"] == "fixed" and r["f"] == 1.0)
+    (win,) = [w for w in d["windows"] if w["f"] == 1.0 and w["biomass_recycled"] == 0.0]
+    assert abs(min(taus) - 21.2725) < 1e-3 and abs(max(taus) - 30.6566) < 1e-3 and abs(win["ratio"] - 1.04682) < 1e-5
+    src, sel = rel(ACETATE_FATE), "sweep, chemistry fixed, f 1.0 (biomass exported), window positions 0.05-0.95"
+    lo = shown("full_recycling_exact_tau_c_min_yr", f"{min(taus):.0f}", min(taus), src, sel, "C67")
+    hi = shown("full_recycling_exact_tau_c_max_yr", f"{max(taus):.0f} yr", max(taus), src, sel, "C67")
+    wp = shown("full_recycling_window_width_percent", f"{100 * (win['ratio'] - 1):.0f}%", win["ratio"], src,
+               "windows, f 1.0, biomass_recycled 0.0: ratio high/low supply", "C67")
+    return lo, hi, wp
 
 
 def panel_refuges(ax, refuge_rows, selection):
@@ -228,9 +257,11 @@ def panel_refuges(ax, refuge_rows, selection):
     t_end = finals[("both", "A_into_M")][1]
     src = rel(style.DATA / "fig4_refuges.csv")
     hot = shown("no_refuge_acetogens_invade_final_K", f"{finals[('none', 'A_into_M')][0]:.1f} K",
-                finals[("none", "A_into_M")][0], src, "last row, configuration none, direction A_into_M", "C65")
+                finals[("none", "A_into_M")][0], src,
+                "last row, configuration none, direction A_into_M (matched no-refuge control)", "C09")
     cold = shown("no_refuge_methanogens_invade_final_K", f"{finals[('none', 'M_into_A')][0]:.1f} K",
-                 finals[("none", "M_into_A")][0], src, "last row, configuration none, direction M_into_A", "C65")
+                 finals[("none", "M_into_A")][0], src,
+                 "last row, configuration none, direction M_into_A (matched no-refuge control)", "C09")
     shown("refuge_both_final_K", "T* (no number)", float(np.mean(t_both)), src,
           "last rows, configuration both, both directions", "C09")
     both_sel = [s for s in selection if s["configuration"] == "both"]
@@ -299,14 +330,21 @@ def main():
 
     ty = 0.86
     for x, text in ((0.006, "1  How it works"), (0.245, "2  Exact control"),
-                    (0.452, "3  Exact is fragile,\n    graded lasts"), (0.745, "4  Forming the mixture\n    needs a refuge")):
+                    (0.452, "3  Exact is fragile,\n    graded lasts"), (0.745, "4  Two refuges let both\n    groups persist")):
         fig.text(x, ty, text, fontsize=7.5, fontweight="bold", color=style.INK, ha="left", va="top", linespacing=1.1)
-    fig.text(0.452, 0.012, f"Not shown: {n_bridge} exact states that lose stability\neven with an instant climate response",
+    fig.text(0.245, 0.012, "Lines stop where methane\nleaves the extracted climate\ncurve; beyond it the climate\n"
+             "is assumed flat.", fontsize=FS, color=style.INK_2, ha="left", va="bottom", linespacing=1.1)
+    f_lo, f_hi, f_win = full_recycling_margins()
+    fig.text(0.452, 0.012, f"Not shown: {n_bridge} exact states unstable even\nwith an instant climate response. With all\n"
+             f"acetate recycled, exact states in a {f_win}\nwindow at lower supply tolerate a\n"
+             f"{f_lo}–{f_hi.replace(' yr', '-yr')} response.",
              fontsize=FS, color=style.INK_2, ha="left", va="bottom", linespacing=1.1)
-    fig.text(0.745, 0.012, f"Refuges: two habitats, {at} of area each,\nheld at {ct} and {wt}. Instant climate\n"
-             "response. In a single uniform habitat\nthe favoured group removes the other;\n"
-             "refuges let both groups persist until\nthe climate catches up.", fontsize=FS, color=style.INK_2, ha="left", va="bottom",
-             linespacing=1.1)
+    shown("other_route_immigration", "named (no number)", "", "models/haze_world/synthesis/claims.csv",
+          "immigration assembles a material mixture near T* at f = 0 and 0.5", "C66")
+    fig.text(0.745, 0.012, f"Refuges: two habitats, {at} of area each,\nheld at {ct} and {wt}; instant thermal\n"
+             "response. Without refuges the invader\nends alone (grey). Refuges keep the\n"
+             "losing group alive while methane\nadjusts. Immigration is another route.", fontsize=FS, color=style.INK_2,
+             ha="left", va="bottom", linespacing=1.1)
     return save(fig)
 
 
