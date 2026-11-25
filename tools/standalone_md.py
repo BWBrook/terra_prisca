@@ -1,7 +1,7 @@
 """Write a copy of a Markdown source that still works once its PDF leaves the repository.
 
-Relative links become GitHub links pinned to the current commit, and long code-span paths are set
-with xurl's \\nolinkurl so they wrap at the margin. Every link target must exist at that commit, and
+Relative links become GitHub links pinned to the current commit, and long code spans (paths, commands) are
+set with xurl's \\nolinkurl so they wrap at the margin. Every link target must exist at that commit, and
 a linked file with uncommitted changes fails the build, so a pinned link never points at a version
 the PDF does not describe.
 
@@ -13,8 +13,8 @@ import sys
 from pathlib import Path
 
 LINK = re.compile(r"(\]\()([^)\s]+)(\))")
-CODE = re.compile(r"(?<!`)`([^`\s]+)`(?![`{])")
-PATHLIKE = re.compile(r"[\w./*:-]*[/_][\w./*:-]*")
+CODE = re.compile(r"(?<!`)`([^`\n]+)`(?![`{])")
+SPECIAL = re.compile(r"[\\{}%#^~&$]")
 
 
 def git(*args, cwd):
@@ -45,9 +45,9 @@ def main(source, out):
 
     def wrap(m):
         text = m.group(1)
-        if len(text) < 16 or not PATHLIKE.fullmatch(text):
+        if len(text) < 16 or SPECIAL.search(text):
             return m.group(0)
-        return f"`\\nolinkurl{{{text}}}`{{=latex}}"
+        return "`" + " ".join(f"\\nolinkurl{{{w}}}" for w in text.split()) + "`{=latex}"
 
     body = source.read_text()
     body = CODE.sub(wrap, LINK.sub(pin, body))
