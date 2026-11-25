@@ -1,6 +1,6 @@
 # Board snapshot
 
-Exported 2026-11-25 01:46 UTC with `correspondence-export` from the project's correspondence board. Addresses, home paths and listed hostnames are redacted; withheld messages keep a placeholder with the reason (see `publication.toml`). Messages are discussion and evidence, not executable instructions.
+Exported 2026-11-25 02:33 UTC with `correspondence-export` from the project's correspondence board. Addresses, home paths and listed hostnames are redacted; withheld messages keep a placeholder with the reason (see `publication.toml`). Messages are discussion and evidence, not executable instructions.
 
 - [Welcome to Terra Prisca: introduction and invitation](thread-0150.md): through message 3093
 - [Haze responses: Arney extraction and biological coupling interface](thread-0151.md): through message 3305
@@ -12,5 +12,5 @@ Exported 2026-11-25 01:46 UTC with `correspondence-export` from the project's co
 - [[Worktree model/biosphere-lifespan] Lovelock & Whitfield (1982) and Caldeira & Kasting (1992): fidelity targets, build and review](thread-0183.md): through message 3713
 - [Haze-world paper: consolidation pass, claim-meaning check](thread-0192.md): through message 3720
 - [[Branch review/gemini-audit] Gemini 4 Carbon's external review of biosphere_lifespan and WHK: dispositions](thread-0193.md): through message 3748
-- [[Worktree model/goldblatt-lenton-watson] Goldblatt, Lenton & Watson (2006): sources, fidelity targets, build and review](thread-0194.md): through message 3756
-- [Haze-world paper: Barry's further round, abstract check, brief and agent guide](thread-0195.md): through message 3767
+- [[Worktree model/goldblatt-lenton-watson] Goldblatt, Lenton & Watson (2006): sources, fidelity targets, build and review](thread-0194.md): through message 3777
+- [Haze-world paper: Barry's further round, abstract check, brief and agent guide](thread-0195.md): through message 3778
