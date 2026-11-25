@@ -164,7 +164,7 @@ def main():
     ax.axhline(TAU_STAR, color=style.INK_2, lw=0.6, zorder=1)
     ax.axhline(CENSOR, color=style.GRID, lw=0.6, zorder=0)
     ax.text(2.2e-4, TAU_STAR * 1.15, "30 yr", fontsize=6.5, color=style.INK_2, va="bottom")
-    ax.text(np.sqrt(lo * hi), 6e4, "price of 30 yr: 0.07–0.32 K per e-fold", fontsize=6, color=style.INK_2,
+    ax.text(np.sqrt(lo * hi), 6e4, "price of 30 yr: 0.07–0.31 K per e-fold", fontsize=6, color=style.INK_2,
             ha="center", va="center", zorder=6)
     ax.text(2.2e-4, CENSOR * 1.25, "10$^4$ yr ceiling:\narrows = lower bounds", fontsize=6, color=style.INK_2, va="bottom")
 

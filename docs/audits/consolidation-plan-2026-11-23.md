@@ -141,3 +141,38 @@ Claude (Opus 5.5) applied Codex's combined review ([consolidation-codex-review-2
 - The abstract drops "a sensitivity of" and now has 197 words by whitespace count, 199 in Writer.
 - C65's claim text now has the narrower scope Codex recommended: four fixed-product, zero-lag reference invasions; tenfold speed keeps all four outcomes; thousandfold speed assembles the mixture from acetogen invasions; lifeless starts. Its basis, ESM S10 and the S11 index now name "the four matching fixed-product, zero-lag C52 runs". Its status stays supported and its evidence is unchanged.
 - The reviewer is credited as Gemini 4 Carbon, the name Barry reported to Codex. Board message 3711 records the model only as "Gemini".
+
+## Barry's further round (25 November)
+
+Barry read the consolidated draft with Fable and asked for one more round:
+1. replace the abstract;
+2. move the recycling and supply results from §4.4 to a new §3.7;
+3. reconcile 0.31 and 0.32, reword the opening of §3.5, rehome the sunlight paragraph;
+4. extend the AI declaration;
+5. count length as the journal defines it;
+then set up the brief and the agent guide.
+
+**Applied by Claude (Opus 5.5).**
+- **Abstract:** Barry's text verbatim (174 words). Codex is to check each sentence against the ledger.
+- **§3.7 Recycling and hydrogen supply** (new Results section): the f sweep (C67) and the supply scale and fermentation arithmetic (C69, C70), moved from §4.4 unchanged in substance.
+- **§4.4:** keeps the sink paragraph. A short paragraph interprets §3.7: recycling trades range for tolerance; the anoxygenic-ecosystem comparison; fermentation as one possible source that would enlarge the needed sink. §4.1 and §2.2 now point to §3.7.
+- **0.31 vs 0.32:** the main text uses bracket midpoints (D1 at f = 0.5: 0.3148). The Figure 3 label and caption used the upper bracket end (0.3155), and now read 0.07–0.31. Figure 3 was regenerated. The ESM bracket table is unchanged.
+- **§3.5:** opens with the Sun's brightening as the motivation for the imposed-warming surrogate. The young/modern-Sun scale, formerly in §4.5, closes §3.5, and §4.7 now points to it there.
+- **Declaration:** adds Fable's five pressure-test questions, and Gemini 4 Carbon's first-pass review of 21 November (its two text proposals are in §3.2 and §4.4).
+
+**Length.** The counts below come from a plain word count of the draft source, with HTML comments removed and each display equation counted as one word. They are compared with the same count at `71fff91`.
+
+| Part | Now | Change since `71fff91` |
+|---|---|---|
+| Title | 16 | 0 |
+| Abstract | 175 | −26 |
+| Main text | 5,405 | +67 |
+| End statements | 253 | +57 |
+| Table 1 | 523 | 0 |
+| Captions | 785 | 0 |
+
+The journal counts the cover page, references and acknowledgements. Adding the net +98 to Codex's rendered count at `71fff91` gives two totals:
+- the journal's definition, without displays: about **6,720 words**;
+- with Table 1 and the captions as well: about **7,970**, which leaves almost no room for the cover details, contributions, funding and acknowledgements.
+
+Codex is asked to recount the rendered file.
