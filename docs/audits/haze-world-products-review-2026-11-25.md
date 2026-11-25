@@ -2,6 +2,8 @@
 
 Codex (GPT-6), 25 November 2026. Review of the article at `39993fc`, the brief and guide at `899083d`, and the graphical abstract at `6fd990d`, requested in discussion 195. E17–E22 are approved with the amendments recorded in the [interpretation rules](../../models/haze_world/synthesis/estimands.md#e17-habitat-geometry-and-finite-supply-responses-c60-c61). The proposed product edits below go to Claude. All numerical checks used existing evidence.
 
+The [follow-up on the applied edits](#confirmation-at-5ee433a) records which revisions passed and the remaining wording changes.
+
 ## Barry’s abstract, sentence by sentence
 
 | Sentence | Verdict against the claims ledger |
@@ -70,3 +72,17 @@ At `39993fc`, the article contains **6,721 words** counting the current cover ti
 | Four captions and their group heading | 800 |
 
 The first count leaves 1,279 words to the 8,000-word limit. The count including displays leaves 28. Adding the name, institution and ORCID already on record and restoring all 13 equation labels as visible text gives 6,741 and 7,992 respectively. Recount when the cover, declarations and archive entry are complete.
+
+## Confirmation at `5ee433a`
+
+**Abstract.** Sentences 1–5 and 7–10 are supported in the hazy-model setting. In sentence 6, insert **“without acetate recycling”** after “0.15 years to respond”. The two reference equilibria first lose local stability at 0.149214 years with no recycling and 1.102760 years with half recycled. This single insertion takes Barry’s abstract from 197 to exactly 200 words in Writer. [Zero-forcing results](../../models/haze_world/review/issue2_forcing_window.csv)
+
+Sentence 9 now scopes the timing to the four controls. Their resident losses occurred at 10–70 years and their first switch crossings at 1,029–13,459 years. I checked the potential growth rates on both sides of each crossing using the saved hydrogen, products and temperature. In all four, the first annual sample across the switch also favoured the missing resident over the surviving invader. “Reverse its advantage” therefore works in the four controls as a statement about which group the environment would favour. The invader ended alone in all 24 reference runs. [Four controls](../../models/haze_world/review/issue3_assembly.json) · [24-census check](haze-world-invasion-wording-2026-11-25.py)
+
+**Displays.** Both pages of the A4 brief render cleanly. I rebuilt both graphics in a scratch directory and compared their pixels with the committed PNGs. Both matched. The four graphical panels now give the local haze-cooling feedback, the 281.53 K plateau over a 1.9955-fold supply range, the conditional lag margins, and the two-refuge result. Panel 2 stops at the last sampled supplies inside the extracted climate curve. All four native refuge records matched their export hashes and endpoint temperatures. In Figure 3, the rings lie at 0.070790, 0.162716, 0.278208 and 0.314839 K per e-fold, independently recovered from the runs bracketing 30 years. The shading starts at the first ring and ends at the fourth. [Refinement runs](../../models/haze_world/figures/graded_dials/threshold_refinement/dials.csv) · [Graphical abstract receipt](../../models/haze_world/paper/products/figures/graphical_abstract_checks.csv)
+
+**Brief.** Its conclusion still says the version that survives a slow climate holds temperature within a band. The full-recycling experiment gives an exact state with a 30.66-year margin near the upper edge of a 4.68%-wide supply interval, with biomass exported. A replacement that keeps both results is “One exact state tolerated a 30-year response near the edge of a narrow supply range. Some communities that let temperature drift tolerated centuries.” Keep the reference-invasion result as its own sentence. [Recycling sweep](../../models/haze_world/review/issue4_acetate_fate.json)
+
+Three short qualifications align page 2 with its figure and ledger. In finding 1 use panel 1’s “near the switch on the haze-cooling branch” for the warming and cooling directions. In finding 2 say “within **about** 7 years” (maximum 7.0795) and “in the disturbance runs” for the oscillations and population crashes. In finding 4 the 0.1-cell-per-year result applies at zero or half recycling. For standalone use, panel 3’s full-recycling note should specify **“with biomass exported”**. [C51, C66 and C67 in the ledger](../../models/haze_world/synthesis/claims.csv)
+
+**Length and checks.** Writer counted **6,768 words** at the applied commit with title, abstract, main text, end statements and 38 formatted references. Including Table 1 and the captions gives **8,024**, before the final cover and declarations. The ledger check returned 40 cited claims and zero errors, makedoc reported zero lint errors, and the four targeted paper tests passed.
