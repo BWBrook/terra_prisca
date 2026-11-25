@@ -49,12 +49,12 @@ with $E_A = 53.1$ and $E_M = 116.1$ kJ mol⁻¹ and $K_i$ still frozen. The mixe
 <!-- table:s2_continuation -->
 
 | continuation below 277.15 K | mixed state T* (K) | methanogen-only control (K) | mixed minus control (K) |
-|------------|---------|------------|-----------|
+|-----------------------|---------|----------------|-----------|
 | constant_shape | 281.5348 | 273.5167 | 8.018 |
 | arrhenius_continuation | 281.5348 | 276.8075 | 4.727 |
 
 | variant | T (K) | $s_A$ | $K_A$ (Pa) | $s_M$ | $K_M$ (Pa) | R*_A (Pa) | R*_M (Pa) |
-|----------|----|-----|-----|-----|-----|-----|-----|
+|-----------------------|-------|---------|-----|---------|-----|------|------|
 | constant_shape | 273 | 0.005584 | 190 | 0.002285 | 50 | 27.07 | 69.83 |
 | constant_shape | 275 | 0.005584 | 190 | 0.002285 | 50 | 28.21 | 71.37 |
 | constant_shape | 277.15 | 0.005584 | 190 | 0.002285 | 50 | 29.73 | 73.49 |
@@ -101,7 +101,7 @@ An independent route, written by Codex, eliminates the local habitat blocks by q
 <!-- table:s3_resolution -->
 
 | d (yr⁻¹) | N | $\tau_c$ (yr) | S (K per e-fold) | mixed-zone width (K) |
-|-----|---|---------|--------|---------|
+|-------|----|-----------|---------|-----------|
 | 0.001 | 9 | 7.232 | -0.07357 | 0.2222 |
 | 0.001 | 17 | 16.28 | -0.179 | 0.1176 |
 | 0.001 | 33 | 102.1 | -1.041 | 0.1212 |
@@ -131,13 +131,13 @@ An independent route, written by Codex, eliminates the local habitat blocks by q
 <!-- table:s3_checks -->
 
 | state | nodes | route 1 (collocation spectrum) | relative difference to characteristic route | comparison | passed |
-|-----------|---|-------------|----------------|------------|----|
-| fixed_0.0_3.0_0.001 | 156 | > 10000 (censored) |  | consistent right censoring | True |
-| fixed_0.5_1.0_0.0001 | 176 | 947.4 | 4.48e-06 | finite margin | True |
-| fixed_0.5_3.0_0.0001 | 188 | 4781 | 1.98e-05 | finite margin | True |
-| fixed_0.5_3.0_0.01 | 124 | > 10000 (censored) |  | consistent right censoring | True |
-| fixed_0.5_6.0_0.0001 | 200 | > 10000 (censored) |  | consistent right censoring | True |
-| products_0.5_6.0_0.0001 | 188 | > 10000 (censored) |  | consistent right censoring | True |
+|-----------|------|-------------|----------------|------------|-------|
+| fixed 0.0 3.0 0.001 | 156 | > 10000 (censored) |  | consistent right censoring | True |
+| fixed 0.5 1.0 0.0001 | 176 | 947.4 | 4.48e-06 | finite margin | True |
+| fixed 0.5 3.0 0.0001 | 188 | 4781 | 1.98e-05 | finite margin | True |
+| fixed 0.5 3.0 0.01 | 124 | > 10000 (censored) |  | consistent right censoring | True |
+| fixed 0.5 6.0 0.0001 | 200 | > 10000 (censored) |  | consistent right censoring | True |
+| products 0.5 6.0 0.0001 | 188 | > 10000 (censored) |  | consistent right censoring | True |
 
 <!-- /table:s3_checks -->
 
@@ -152,7 +152,7 @@ All 170 resolved states of the C0 (homogeneous, 90) and C1 (resolved habitats, 8
 <!-- table:s4_summary -->
 
 | class | states | C0 | C1 | max \|S\| (K per e-fold) | min \|S\| | finite $\tau_c$ (n) | finite $\tau_c$ range (yr) | censored at 10⁴ yr (n) | unstable at zero lag (n) |
-|-------------|----|---|---|-----------|-----|-------|----------|----------|-----------|
+|-------------|-------|---|---|-----------|---------|-------|----------|----------|-----------|
 | exact, already unstable | 6 | 6 | 0 | 2.73e-12 | 5.74e-14 | 0 |  | 0 | 6 |
 | exact, finite first loss | 36 | 36 | 0 | 2.3e-10 | 7.78e-14 | 36 | 0.0575 to 7.08 | 0 | 0 |
 | graded, reversed frozen response | 6 | 6 | 0 | 0.598 | 0.57 | 0 |  | 0 | 6 |
@@ -168,14 +168,14 @@ All 170 resolved states of the C0 (homogeneous, 90) and C1 (resolved habitats, 8
 
 <!-- table:s4_bridge -->
 
-| chemistry | f | loss_per_h | supply_potential | T_star_K | r | S | S0 |
-|------|---|------|--------|-----|-----|------|----|
+| chemistry | f | ℓ (h⁻¹) | P | T* (K) | r | S | S0 |
+|----------|----|------|-----|--------|----------|-------------|--------|
 | fixed | 0.0 | 0.002 | 0.24 | 286.475 | 0.0152384 | -2.72965e-12 | 2.79919 |
 | fixed | 0.0 | 0.002 | 0.3 | 286.475 | 0.0152384 | -5.74261e-14 | 2.69616 |
 | fixed | 0.0 | 0.002 | 0.36 | 286.475 | 0.0152384 | -1.95892e-12 | 2.63175 |
-| methane_only | 0.0 | 0.002 | 0.24 | 286.433 | 0.0149581 | -6.98847e-13 | 2.77443 |
-| methane_only | 0.0 | 0.002 | 0.3 | 286.433 | 0.0149581 | -1.72175e-12 | 2.67243 |
-| methane_only | 0.0 | 0.002 | 0.36 | 286.433 | 0.0149581 | 1.35124e-12 | 2.60864 |
+| methane only | 0.0 | 0.002 | 0.24 | 286.433 | 0.0149581 | -6.98847e-13 | 2.77443 |
+| methane only | 0.0 | 0.002 | 0.3 | 286.433 | 0.0149581 | -1.72175e-12 | 2.67243 |
+| methane only | 0.0 | 0.002 | 0.36 | 286.433 | 0.0149581 | 1.35124e-12 | 2.60864 |
 
 <!-- /table:s4_bridge -->
 
@@ -185,11 +185,11 @@ All 170 resolved states of the C0 (homogeneous, 90) and C1 (resolved habitats, 8
 
 <!-- table:s4_reversed -->
 
-| chemistry | f | loss_per_h | supply_potential | T_star_K | r | S | S0 |
-|------|---|------|--------|-----|-----|-----|----|
-| acetate_only | 0.0 | 0.002 | 0.24 | 286.116 | 0.0129328 | -0.598428 | 2.6348 |
-| acetate_only | 0.0 | 0.002 | 0.3 | 285.984 | 0.0121439 | -0.581201 | 2.46712 |
-| acetate_only | 0.0 | 0.002 | 0.36 | 285.879 | 0.011532 | -0.573607 | 2.34955 |
+| chemistry | f | ℓ (h⁻¹) | P | T* (K) | r | S | S0 |
+|----------|----|------|-----|--------|----------|----------|--------|
+| acetate only | 0.0 | 0.002 | 0.24 | 286.116 | 0.0129328 | -0.598428 | 2.6348 |
+| acetate only | 0.0 | 0.002 | 0.3 | 285.984 | 0.0121439 | -0.581201 | 2.46712 |
+| acetate only | 0.0 | 0.002 | 0.36 | 285.879 | 0.011532 | -0.573607 | 2.34955 |
 | products | 0.0 | 0.002 | 0.24 | 286.075 | 0.0126826 | -0.594505 | 2.60775 |
 | products | 0.0 | 0.002 | 0.3 | 285.944 | 0.0119071 | -0.577701 | 2.44069 |
 | products | 0.0 | 0.002 | 0.36 | 285.839 | 0.0113052 | -0.570329 | 2.32343 |
@@ -226,11 +226,11 @@ The 30-year price is the local sensitivity $|S|$ at the dial value where $\tau_c
 <!-- table:s5_brackets -->
 
 | branch | initial bracket (dial) | initial $\tau_c$ (yr) | refined bracket (dial) | $\tau_c$ at ends (yr) | \|S\| at ends (K per e-fold) | evaluations | status |
-|------|----------|-----------|----------|--------|------------|------|--------|
-| D1_f0 | 0.1 to 0.3 | 12.97 to > 10⁴ (censored) | 0.144019 to 0.144638 | 29.98 and 30.42 | 0.277613 and 0.278802 | 8 | qualified_bracket |
-| D1_f0.5 | 0.1 to 0.3 | 12.77 to > 10⁴ (censored) | 0.163105 to 0.163807 | 29.96 and 30.29 | 0.314166 and 0.315511 | 8 | qualified_bracket |
-| D2_d0.0001 | 0.01 to 0.03 | 10.21 to 38.49 | 0.0235913 to 0.0239997 | 29.58 and 30.16 | 0.070169 and 0.071412 | 6 | qualified_bracket |
-| D2_d0.001 | 0.03 to 0.1 | 13.31 to 54.71 | 0.0579523 to 0.0585 | 29.98 and 30.31 | 0.161899 and 0.163533 | 7 | qualified_bracket |
+|--------|----------|-----------|----------|--------|------------|------------|----------|
+| D1 f0 | 0.1 to 0.3 | 12.97 to > 10⁴ (censored) | 0.144019 to 0.144638 | 29.98 and 30.42 | 0.277613 and 0.278802 | 8 | qualified bracket |
+| D1 f0.5 | 0.1 to 0.3 | 12.77 to > 10⁴ (censored) | 0.163105 to 0.163807 | 29.96 and 30.29 | 0.314166 and 0.315511 | 8 | qualified bracket |
+| D2 d0.0001 | 0.01 to 0.03 | 10.21 to 38.49 | 0.0235913 to 0.0239997 | 29.58 and 30.16 | 0.070169 and 0.071412 | 6 | qualified bracket |
+| D2 d0.001 | 0.03 to 0.1 | 13.31 to 54.71 | 0.0579523 to 0.0585 | 29.98 and 30.31 | 0.161899 and 0.163533 | 7 | qualified bracket |
 
 <!-- /table:s5_brackets -->
 
@@ -241,11 +241,11 @@ The prescribed log–log slope band (slope 1 to 2.5 of ln $\tau_c$ against ln $|
 <!-- table:s5_fits -->
 
 | branch | points | slope | R² | slope in 1 to 2.5 |
-|------|----|----|----|--------|
-| D1_f0 | 2 | 1.2 | 1 | True |
-| D1_f0.5 | 3 | 0.7966 | 0.9841 | False |
-| D2_d0.0001 | 6 | 0.9852 | 0.9977 | False |
-| D2_d0.001 | 5 | 1.108 | 0.9976 | True |
+|--------|-------|-------|-------|--------|
+| D1 f0 | 2 | 1.2 | 1 | True |
+| D1 f0.5 | 3 | 0.7966 | 0.9841 | False |
+| D2 d0.0001 | 6 | 0.9852 | 0.9977 | False |
+| D2 d0.001 | 5 | 1.108 | 0.9976 | True |
 
 <!-- /table:s5_fits -->
 
@@ -278,9 +278,9 @@ Each specification's first commit precedes the commits holding that stage's outp
 <!-- table:s5_counterexamples -->
 
 | branch | dial | $\tau_c$ (yr) | weak-mode estimate (yr) | ratio |
-|----|-----|-----|-----------|-----|
-| D1_f0 | 0.173205 | 78.5924 | 20.5047 | 0.260899 |
-| D1_f0 | 0.15098 | 35.6371 | 16.9092 | 0.474483 |
+|-------|---------|--------|-----------|---------|
+| D1 f0 | 0.173205 | 78.5924 | 20.5047 | 0.260899 |
+| D1 f0 | 0.15098 | 35.6371 | 16.9092 | 0.474483 |
 
 <!-- /table:s5_counterexamples -->
 
@@ -300,7 +300,7 @@ The reference fixes the reservoir at $p_{atm} = 0$ Pa. Table S7 varies it from 0
 <!-- table:s7_h2 -->
 
 | chemistry | f | $p_{atm}$ (Pa) | mixed state | T* (K) | local H₂ (Pa) | S (K per e-fold) | $\tau_c$ (yr) | equivalent zero-reservoir supply potential |
-|-----|---|------|----------------|-----|-------|--------|-----|----------------|
+|----------|----|------|----------------|---------|--------|----------|-------|----------------|
 | fixed | 0.0 | 0 | yes | 281.5348 | 22.4863 | -8.06e-14 | 0.1492 | 0.3000 |
 | fixed | 0.0 | 1 | yes | 281.5348 | 22.4863 | -1.70e-12 | 0.1484 | 0.3010 |
 | fixed | 0.0 | 3 | yes | 281.5348 | 22.4863 | 5.61e-11 | 0.1469 | 0.3030 |
@@ -329,7 +329,7 @@ The reservoir is imposed, not a photochemical hydrogen budget, and imported hydr
 <!-- table:s8_margins -->
 
 | supply potential | f | stable mixed state | T* (K) | $\tau_c$ (yr) |
-|--------|---|---------|-----|-----|
+|----------|----|---------|---------|-------|
 | 0.24 | 0 | yes | 281.5348 | 0.4961 |
 | 0.24 | 0.5 | yes | 281.5348 | 1.43 |
 | 0.24 | 0.9 | yes | 281.5348 | 6.664 |
@@ -353,7 +353,7 @@ where $n = 4(r^*/t_{CH_4} - c\Phi_{abiotic})/(\chi H)$ is the catabolic hydrogen
 <!-- table:s8_interval -->
 
 | f | lower end, methanogens alone | upper end, acetogens alone | ratio upper/lower |
-|---|------------|------------|--------|
+|----|------------|------------|------------|
 | 0 | 0.229178 | no upper end |  |
 | 0.5 | 0.229178 | 0.457327 | 1.9955 |
 | 0.9 | 0.229178 | 0.264064 | 1.1522 |
@@ -368,7 +368,7 @@ where $n = 4(r^*/t_{CH_4} - c\Phi_{abiotic})/(\chi H)$ is the catabolic hydrogen
 <!-- table:s8_sweep -->
 
 | f | Q | $\tau_c$ exact, 5–95% of window (yr) | mid-window $\tau_c$(Q − 1) (yr) | full-product sensitivity mid-window (K per e-fold) | full-product excursion over 5–95% of exact window (K) | Q/(Q − 1) | imposed-warming window (K) |
-|---|----|-------------|------------|----------------|----------------|-----|------------|
+|-----|-------|-------------|------------|----------------|----------------|-----|----------------|
 | 0.5 | 1.9955 | 1.11–1.88 | 1.102 | 1.33 | 1.251 | 2 | 23.6 |
 | 0.6 | 1.6793 | 1.57–2.54 | 1.065 | 1.75 | 1.214 | 2.47 |  |
 | 0.7 | 1.4534 | 2.29–3.57 | 1.039 | 2.39 | 1.162 | 3.21 | 23.6 |
@@ -386,7 +386,7 @@ where $n = 4(r^*/t_{CH_4} - c\Phi_{abiotic})/(\chi H)$ is the catabolic hydrogen
 <!-- table:s8_biomass -->
 
 | f | Q, biomass recycled b = 0 | Q, biomass recycled b = 0.5 | Q, biomass recycled b = 1 |
-|---|-----------|------------|-----------|
+|----|-----------|------------|-----------|
 | 0 | no upper end | 16.7043 | 8.6303 |
 | 0.5 | 1.9955 | 1.8464 | 1.7259 |
 | 0.9 | 1.1522 | 1.1181 | 1.0881 |
@@ -401,7 +401,7 @@ where $n = 4(r^*/t_{CH_4} - c\Phi_{abiotic})/(\chi H)$ is the catabolic hydrogen
 <!-- table:s8_fermentation -->
 
 | f | H₂ window (Tmol yr⁻¹) | window ratio | evaluated at | H₂ supply (Tmol yr⁻¹) | carbon fermented (Tmol C yr⁻¹) | biotic CH₄ from fermenter acetate | acetate to lasting sink, fermenters + acetogens (Tmol yr⁻¹) |
-|---|----------|------|-----------|----------|-------------|--------------|----------------|
+|----|------------|-------|-----------|----------|-------------|--------------|----------------|
 | 0 | 306.4 lower bound | no upper end | original 401 Tmol H₂ yr⁻¹ | 401.1 | 601.6 | 0.0% | 200.55 + 21.18 |
 | 0.5 | 148.6–189.0 | 1.272 | geometric mid-window | 167.6 | 251.4 | 64.4% | 41.89 + 8.36 |
 | 0.7 | 123.2–137.7 | 1.117 | geometric mid-window | 130.2 | 195.3 | 70.1% | 19.53 + 3.51 |
@@ -479,7 +479,7 @@ The new bounded checks and the refuge and immigration runs use instantaneous tem
 <!-- table:s9_claims -->
 
 | claim | status | commit | used in | claim text |
-|---|------|----|------|----------------|
+|------|------------|--------|------|------------------------|
 | C05 | supported | ffd4fbc | S2 | At the central hydrogen crossings the routing feedback is locally restoring on case B haze cooling if acetogens deliver less methane |
 | C06 | supported | ffd4fbc | S2 | Reference explicit populations have a locally stable mixed state warmer than matched controls with acetogens disabled |
 | C08 | supported | ffd4fbc | S10 | Tested lower-recycling climate-tracking geometry leaves paired rescue domain-limited; higher-recycling coexistence provides counterexamples to universal failure |

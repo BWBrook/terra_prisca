@@ -1,7 +1,8 @@
 # makedoc 2 profiles (https://github.com/BWBrook/makedoc) for the haze-world paper's products.
 # Build with `make -C models/haze_world/paper/products` from the repository root. Paths are relative
 # to this file. The supplement's source stays at ../esm/esm.md, where esm_tables.py and table_s1.py
-# write its generated blocks.
+# write its generated blocks; the Makefile builds from a copy whose links are pinned to the current
+# commit (tools/standalone_md.py), so the PDF's links work away from the repository.
 default_profile: main
 
 common: &common
@@ -42,7 +43,7 @@ profiles:
     <<: *common
     description: Electronic supplementary material.
     manuscript_sources:
-      - ../../esm/esm.md
+      - ../build/supplement-standalone.md
     output_stem: supplement
     line_spacing: single
     line_numbering: none

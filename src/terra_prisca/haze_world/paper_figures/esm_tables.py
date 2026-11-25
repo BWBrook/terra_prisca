@@ -46,6 +46,11 @@ MATH = {"τ_c": r"$\tau_c$", "τ_f": r"$\tau_f$", "s_A": "$s_A$", "K_A": "$K_A$"
 MATH_TOKEN = re.compile("|".join(map(re.escape, MATH)) + r"(?![A-Za-z0-9_{])")
 
 
+def label(identifier):
+    """Display form of a run identifier: a PDF table cell cannot wrap at underscores. CSVs keep the identifier."""
+    return str(identifier).replace("_", " ")
+
+
 def splice(name, text):
     """Write a generated block; symbols in the Markdown become TeX math, the CSV keeps plain names."""
     text = MATH_TOKEN.sub(lambda m: MATH[m.group(0)], text)
@@ -108,7 +113,7 @@ def s3_resolution():
                "relative difference to characteristic route": "" if c["relative_tau_difference"] is None else f"{c['relative_tau_difference']:.2e}",
                "comparison": c["comparison_kind"].replace("_", " "), "passed": c["passed"]} for c in audit["selected"]]
     write_csv(ESM / "s3_characteristic_checks.csv", checks, list(checks[0]))
-    splice("s3_checks", md_table(checks, list(checks[0])))
+    splice("s3_checks", md_table([{**c, "state": label(c["state"])} for c in checks], list(checks[0])))
     return doubling, sum(c["passed"] for c in audit["selected"])
 
 
@@ -153,11 +158,12 @@ def s4_states():
     splice("s4_summary", md_table(summary, list(summary[0])))
     bridge = [r for r in rows if r["class"] == "exact, already unstable"]
     reversed_ = [r for r in rows if r["class"] == "graded, reversed frozen response"]
-    cols = ["chemistry", "f", "loss_per_h", "supply_potential", "T_star_K", "r", "S", "S0"]
+    heads = {"chemistry": "chemistry", "f": "f", "loss_per_h": "ℓ (h⁻¹)", "supply_potential": "P", "T_star_K": "T* (K)",
+             "r": "r", "S": "S", "S0": "S0"}
     def short(rs):
-        return [{c: (fixed(r[c], 6) if c in ("T_star_K", "r", "S", "S0") else r[c]) for c in cols} for r in rs]
-    splice("s4_bridge", md_table(short(bridge), cols))
-    splice("s4_reversed", md_table(short(reversed_), cols))
+        return [{h: (fixed(r[c], 6) if c in ("T_star_K", "r", "S", "S0") else label(r[c])) for c, h in heads.items()} for r in rs]
+    splice("s4_bridge", md_table(short(bridge), list(heads.values())))
+    splice("s4_reversed", md_table(short(reversed_), list(heads.values())))
     return {c: sum(r["class"] == c for r in rows) for c in order}
 
 
@@ -173,7 +179,7 @@ def s5_dials():
             "τ_c at ends (yr)": f"{b['low_tau']:.4g} and {b['high_tau']:.4g}",
             "|S| at ends (K per e-fold)": f"{b['price_low']:.6f} and {b['price_high']:.6f}", "evaluations": b["evaluations"], "status": b["status"]})
     write_csv(ESM / "s5_brackets.csv", brackets, list(brackets[0]))
-    splice("s5_brackets", md_table(brackets, list(brackets[0])))
+    splice("s5_brackets", md_table([{**b, "branch": label(b["branch"]), "status": label(b["status"])} for b in brackets], list(brackets[0])))
 
     states = json.loads((FIG / "graded_dials/threshold_refinement/states.json").read_text())
     pts = [{"branch": s["branch_id"], "dial": s["dial"], "τ_c (yr)": s["lag"]["tau_c"], "|S| (K per e-fold)": abs(s["Sc"]),
@@ -181,7 +187,7 @@ def s5_dials():
             "within factor 2": 0.5 <= s["weak_mode_ratio"] <= 2} for s in states]
     write_csv(ESM / "s5_refinement_points.csv", pts, list(pts[0]))
     failures = [p for p in pts if not p["within factor 2"]]
-    counter = [{"branch": p["branch"], "dial": fixed(p["dial"], 6), "τ_c (yr)": fixed(p["τ_c (yr)"], 6), "weak-mode estimate (yr)": fixed(p["weak-mode estimate (yr)"], 6),
+    counter = [{"branch": label(p["branch"]), "dial": fixed(p["dial"], 6), "τ_c (yr)": fixed(p["τ_c (yr)"], 6), "weak-mode estimate (yr)": fixed(p["weak-mode estimate (yr)"], 6),
                 "ratio": fixed(p["estimate / τ_c"], 6)} for p in failures]
     splice("s5_counterexamples", md_table(counter, list(counter[0])))
 
@@ -189,7 +195,7 @@ def s5_dials():
     fits = [{"branch": b["branch_id"], "points": b["n"], "slope": fixed(b["slope"], 4), "R²": fixed(b["r_squared"], 4), "slope in 1 to 2.5": b["slope_in_band"]}
             for b in assess["PD2"]["branches"]]
     write_csv(ESM / "s5_power_law_fits.csv", fits, list(fits[0]))
-    splice("s5_fits", md_table(fits, list(fits[0])))
+    splice("s5_fits", md_table([{**f, "branch": label(f["branch"])} for f in fits], list(fits[0])))
 
     dial_rows = [r for r in read(FIG / "graded_dials/dials.csv")]
     dial_table = [{"branch": r["branch_id"], "kind": r["kind"], "dial": r["dial"], "T*_K": r["temperature_k"], "S": r["Sc"],

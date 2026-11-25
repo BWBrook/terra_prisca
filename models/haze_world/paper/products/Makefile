@@ -6,7 +6,9 @@ ROOT := ../../../..
 LEDGER := ../../synthesis/claims.csv
 DOCS := ../esm/esm.md text/main.md text/figures.md text/brief.md text/for-agents.md
 
-.PHONY: all main supplement brief check check-render
+STANDALONE := build/supplement-standalone.md
+
+.PHONY: all main supplement brief check check-render standalone
 
 all: main supplement brief
 	@$(MAKE) --no-print-directory check-render
@@ -14,13 +16,17 @@ all: main supplement brief
 main:
 	$(MAKEDOC) build -p main --strict
 
-supplement:
+# Links in the supplement are pinned to HEAD: commit the sources before building it.
+standalone:
+	python3 $(ROOT)/tools/standalone_md.py ../esm/esm.md $(STANDALONE)
+
+supplement: standalone
 	$(MAKEDOC) build -p supplement --strict
 
 brief:
 	$(MAKEDOC) build -p brief --strict
 
-check:
+check: standalone
 	cd $(ROOT) && python3 tools/claims.py check models/haze_world/synthesis/claims.csv $(addprefix models/haze_world/paper/,$(subst ../,,$(filter ../%,$(DOCS)))) $(addprefix models/haze_world/paper/products/,$(filter text/%,$(DOCS)))
 	$(MAKEDOC) check --all
 
