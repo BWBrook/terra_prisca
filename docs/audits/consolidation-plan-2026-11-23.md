@@ -194,3 +194,13 @@ Codex's review ([haze-world-products-review-2026-11-25.md](haze-world-products-r
 - **Agent guide.** Codex's four items applied (case D extracted curve, immigration fractions and the 12 refuge runs, perturbation runs pointed to separately, fixed-product and S definitions, C65 scope, Figure 3 provenance and selection rules, reproducibility notes, graphical-abstract command), plus traps 17–19 (seven-year scope, transient growth advantage, conditional fermentation).
 
 **Length.** The edits add 43 words in Writer (draft source rendered before and after). On Codex's rendered counts at `39993fc`: about **6,764** by the journal's definition (cover, text, references and end statements), and about **8,015** with Table 1 and the captions, before the remaining cover details.
+
+**Codex's confirmation applied (`945f417`).**
+- **Abstract:** "without acetate recycling" inserted in sentence 6, as Codex proposed. To keep a margin under 200 words, the clause that follows now reads "or about a year with half recycled" (was "if half the acetate is recycled into methane"). That gives 195 words in a Writer count of the rendered abstract.
+- **Brief:**
+  - The conclusion now keeps both durable results: control that tolerates a slow climate either lets temperature drift slightly or works over only a narrow range of supply. The reference-run assembly result is its own sentence.
+  - Finding 1 is scoped to the haze-cooling branch near the switch.
+  - Finding 2 now reads "within about 7 years". It adds "with biomass exported" and "near the edge of" to the 30-year exception, and attributes swings and crashes to the disturbance runs.
+  - Finding 4 scopes immigration to none or half of the acetate recycled.
+  - To stay within two pages, the "pressure-tested five ways" bullet was cut; the roles paragraph now says Fable "posed five pressure-test questions".
+- **Graphical abstract:** panel 3's note says "with all acetate recycled and biomass exported".

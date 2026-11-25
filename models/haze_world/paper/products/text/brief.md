@@ -35,15 +35,14 @@ this hydrogen-competition thermostat survives a slow climate response.
 - Ran [24]{.C52} invasions in which a group below one cell, checked every ten
   years, dies out; then ran separate tests with small sheltered habitats and
   with a trickle of immigrants.
-- Pressure-tested the result five ways, from habitat temperatures to the
-  size of the hydrogen supply.
 
 ## What we found
 
 1. **Competition can hold temperature exactly, but only if some hydrogen
    leaves for good.** One group (methanogens) turns hydrogen into methane and
    cools the planet through haze; the other (acetogens) turns it into acetate
-   instead. Below [281.5]{.C06} K the acetogens win and the planet warms;
+   instead. Near the switch, on the haze-cooling branch, the acetogens win
+   below [281.5]{.C06} K and the planet warms;
    above it the methanogens win and it cools. With half the acetate
    eventually becoming methane, temperature stays at the set point while the
    hydrogen supply changes by a factor of [2.0]{.C67}. If both the acetate and
@@ -53,9 +52,10 @@ this hydrogen-competition thermostat survives a slow climate response.
 2. **Exact control is fragile.** With no acetate recycled, the reference
    state loses stability once the climate takes more than [0.15]{.C63} years
    to respond, and with half recycled, about a year[]{.C63}. Every stable exact state
-   in our original survey lost stability within [7]{.C54} years; recycling all
-   the acetate let one tolerate 30 years, but only over a supply range about 5%
-   wide[]{.C67}. Past the limit the regulator swings widely or a population crashes.
+   in our original survey lost stability within about [7]{.C54} years; recycling
+   all the acetate, with biomass exported, let one tolerate 30 years, but only
+   near the edge of a supply range about 5% wide[]{.C67}. In disturbance runs
+   past the limit, the regulator swung widely or a population crashed.
 3. **Slightly imperfect control lasts far longer.** Where acetate slows its
    own producers, or habitats differ slightly in temperature, temperature
    drifts as the supply changes. In four tested cases, a local slope of
@@ -67,7 +67,8 @@ this hydrogen-competition thermostat survives a slow climate response.
    simplified controls it removed the resident within decades[]{.C65}, while
    the climate needed over a thousand years to cross the set point. Two small
    sheltered habitats let the mixture form at the set point[]{.C09}; as little
-   as [0.1]{.C66} immigrant cells a year kept both groups active near it. How well that mixture tolerates a slow climate was not tested.
+   as [0.1]{.C66} immigrant cells a year kept both groups active near it, with
+   none or half of the acetate recycled. How well that mixture tolerates a slow climate was not tested.
 5. **The hydrogen bill is large.** At the assumed ten-thousand-year methane
    lifetime, the model's gross supply is about [401]{.C69} trillion moles of hydrogen a
    year, far above published base cases for fresh hydrogen from volcanoes and
@@ -78,20 +79,19 @@ this hydrogen-competition thermostat survives a slow climate response.
 ## What it means
 
 In this model a living thermostat that holds temperature exactly over a wide
-range of supply is fragile. If microbes did help hold the early Earth's
-temperature, the version that survives a slow climate holds it within a band
-rather than at a point, and in our reference runs it formed only where the losing group had
-somewhere to wait. The
+range of supply is fragile; control that tolerates a slow climate lets
+temperature drift slightly or works over only a narrow range of supply. In our reference runs the regulating mixture formed
+only where the losing group had somewhere to wait. The
 model's main conditions can be tested today: acetate turnover, the share of
 acetate that escapes methane, and the spread of habitat temperatures in
 modern microbial mats.
 
 ## How this work was done
 
-Barry W. Brook led the project and decided its questions. Claude (Opus 5.5)
-specified and reviewed the analyses and drafted the paper; Codex (GPT-6)
+Barry W. Brook led the project. Claude (Opus 5.5) specified and reviewed the
+analyses and drafted the paper; Codex (GPT-6)
 wrote the model code and independently audited each stage. Claude Fable 5.2,
-as project adviser, posed the five pressure tests, and Gemini 4 Carbon
+as project adviser, posed five pressure-test questions, and Gemini 4 Carbon
 reviewed the draft. Every number here is checked against the project's
 public claims ledger.
 

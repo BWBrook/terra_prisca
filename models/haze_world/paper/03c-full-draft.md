@@ -24,8 +24,8 @@ Temperature shifts the competitive advantage, so their competition can hold
 temperature exactly constant as hydrogen supply changes. This needs some of
 the diverted hydrogen to stay out of methane for good. Exact control is
 fragile: the reference state loses local stability once the climate takes
-more than 0.15 years to respond, or about a year if half the acetate is
-recycled into methane. Imperfect control can last far longer. In the four
+more than 0.15 years to respond without acetate recycling, or about a year
+with half recycled. Imperfect control can last far longer. In the four
 cases tested, a local temperature sensitivity of a fraction of a kelvin per
 e-fold of supply bought tolerance of a 30-year response, and some
 habitat-spread communities tolerated centuries. In 24 closed reference invasions a

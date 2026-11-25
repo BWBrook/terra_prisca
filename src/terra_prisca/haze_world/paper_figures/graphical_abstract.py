@@ -336,7 +336,7 @@ def main():
              "is assumed flat.", fontsize=FS, color=style.INK_2, ha="left", va="bottom", linespacing=1.1)
     f_lo, f_hi, f_win = full_recycling_margins()
     fig.text(0.452, 0.012, f"Not shown: {n_bridge} exact states unstable even\nwith an instant climate response. With all\n"
-             f"acetate recycled, exact states in a {f_win}\nwindow at lower supply tolerate a\n"
+             f"acetate recycled and biomass exported, exact\nstates in a {f_win} window at lower supply\ntolerate a "
              f"{f_lo}–{f_hi.replace(' yr', '-yr')} response.",
              fontsize=FS, color=style.INK_2, ha="left", va="bottom", linespacing=1.1)
     shown("other_route_immigration", "named (no number)", "", "models/haze_world/synthesis/claims.csv",
