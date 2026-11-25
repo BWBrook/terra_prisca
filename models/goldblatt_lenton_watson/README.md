@@ -110,9 +110,9 @@ middle one is unstable.
 
 ## Readings
 
-Each reading is a fixed set of values taken from a source. None was tuned to a
-figure. The first three were declared on board thread 194 before any was
-scored.
+The first three readings are fixed sets of values taken from a source, none
+tuned to a figure, and were declared on board thread 194 before any was
+scored. The fourth is read from a figure of the source.
 
 | Reading | Polynomial a₁…a₅ | s (yr⁻¹) | Source |
 |---|---|---|---|
@@ -126,7 +126,9 @@ result the 2006 publication alone fixes, without Goldblatt's later note. It is
 reported separately from the three predeclared readings. Supplementary Fig. 3
 plots methane oxidation over M^0.7. The SI's own equations remove ½ Ψ M^0.7 of
 methane, so Ψ is twice the plotted value, and the fit adds log₁₀ 2 to the
-line.
+line. The article's Fig. 2 settles the factor independently: read as Ψ itself,
+the line gives a bistable range of 3.59 × 10¹¹–1.48 × 10¹² and misses the
+Fig. 2a curve by 4.1 pt, against 0.025 pt with the factor of two.
 
 The transients also need β, which the source never prints. Two values are run:
 
@@ -188,7 +190,9 @@ Some choices came after figure data had been seen, and are labelled as such:
   extrapolation is requested explicitly. Fig. 2 spans 10⁻¹¹ to 1 PAL,
   3.7 × 10⁸ to 3.7 × 10¹⁹ mol, inside the domain. The one claim that needs
   lower oxygen, the prebiotic rise at 10⁻¹² PAL, is labelled as an
-  extrapolation and computed two ways.
+  extrapolation and computed two ways: with the quartic extended, and with
+  log Ψ rising at slope 1 below 10⁸ mol, the straight-line limit the SI
+  describes for low oxygen.
 - **Roots near folds.** The steady-state solver brackets the residual between
   its own turning points, refined by bounded minimisation. Pairs of roots
   closer than the search grid, as next to a fold, are therefore found.
@@ -275,11 +279,13 @@ From [`glw2006_si.csv`](fidelity/glw2006_si.csv):
   plots methane oxidised, half the oxygen consumed. Against the printed
   four-decimal coefficients the scatter is 0.43 decades.
 - **`si_fig_s3`.** A quartic fitted to that line gives a bistable range at
-  modern N of 1.335–5.511 × 10¹¹, within 0.2% of `author_p`'s
-  1.337–5.519 × 10¹¹. At r = 3 × 10¹¹ its stable states are 1.28 × 10⁻⁶ and
-  0.0230 PAL. Shifting the line by ±0.003 decades, the size of the tick-fit
-  residuals, moves the folds by at most 1%. Its Fig. 2 fold positions match
-  the printed connector ends to 0.009 decades.
+  modern N of 1.335–5.511 × 10¹¹, against `author_p`'s 1.337–5.519 × 10¹¹.
+  Codex's independent digitisation gives 1.327–5.490 × 10¹¹. Shifting the line
+  by ±0.003 decades, the size of the tick-fit residuals, moves the folds by
+  up to 1%, so the SI fixes the range to about 1%. At r = 3 × 10¹¹ the stable
+  states are 1.28 × 10⁻⁶ and 0.0230 PAL. The Fig. 2 fold positions match the
+  printed connector ends to 0.009 decades, and the Fig. 2a curve scores
+  0.025 pt.
 
 ### Fig. 3: the two triggers
 
@@ -338,7 +344,7 @@ the Fig. 3d β unless stated:
 | Steady states at modern N, r = 7.5 × 10¹⁰ | high branch only, ~0.1 PAL | 0.0816 PAL, the only state |
 | Edges of the two branches | low < 10⁻⁵, high > 5 × 10⁻³ PAL | low up to 1.99 × 10⁻⁵, high down to 4.47 × 10⁻³ PAL |
 | Low state against the SI's sulphur bound | below 10⁻⁵ PAL | below it for r from 1.403 × 10¹¹ to the upper fold at 5.519 × 10¹¹; above it for r between the lower fold at 1.337 × 10¹¹ and 1.403 × 10¹¹ |
-| Prebiotic rise to the low state (extrapolated below 10⁸ mol) | when N exceeds r | at r = 7.5 × 10¹⁰, O reaches 10⁻¹² PAL at N = 8.7 × 10¹⁰ (quartic extended) or 8.5 × 10¹⁰ (log-linear from 10⁸ mol) |
+| Prebiotic rise to the low state (extrapolated below 10⁸ mol) | when N exceeds r | at r = 7.5 × 10¹⁰, O reaches 10⁻¹² PAL at N = 8.7 × 10¹⁰ (quartic extended) or 7.95 × 10¹⁰ (slope 1 below 10⁸ mol) |
 | Escape coefficient from Catling et al. eq. (1) | 3.7 × 10⁻⁵ yr⁻¹ (Goldblatt's note) | 3.77 × 10⁻⁵ yr⁻¹ |
 | Total oxidation, case a | 3 × 10¹⁸ mol | 3.05 × 10¹⁸ mol |
 | Total oxidation, case c | 9 × 10¹⁷ mol | 9.4 × 10¹⁷ (Fig. 3d β); 9.7 × 10¹⁷ (SI β) mol |
@@ -365,9 +371,10 @@ the Fig. 3d β unless stated:
   figure is β, and the same β also fits traces it was not taken from.
 - **The 2006 publication fixes the bistability quantitatively on its own.**
   Supplementary Fig. 3 draws the oxidation fit at full precision: a quartic
-  fitted to the drawn line puts the bistable range within 0.2% of the range
-  from Goldblatt's later coefficients. Supplementary Fig. 2 recovers the three
-  stated methane exponents to three decimals.
+  fitted to the drawn line puts the bistable range within 1% of the range
+  from Goldblatt's later coefficients, and reproduces Fig. 2. Supplementary
+  Fig. 2 recovers the three stated methane exponents to the two decimals
+  given.
 - **The bistability is real in the model as specified.** At modern
   productivity, reductant inputs between 1.337 × 10¹¹ and
   5.519 × 10¹¹ mol yr⁻¹ have two stable states. The high one sits above
@@ -413,12 +420,17 @@ the Fig. 3d β unless stated:
   then has only the high state, so neither Fig. 3 trigger can be rerun from
   the printed numbers. The full precision is in Supplementary Fig. 3 and in
   Goldblatt's later note.
-- **The printed escape coefficient is about half the value its cited physics
-  gives.** The article uses s = 2.03 × 10⁻⁵ yr⁻¹, and its figures were drawn
-  with it: under 3.7 × 10⁻⁵, all four Fig. 2 curves miss by 2.2–2.6 pt and the
-  Fig. 3 traces by up to 3.6 pt. Catling et al.'s eq. (1) gives
-  3.77 × 10⁻⁵ yr⁻¹, which Goldblatt's later note adopts. The published figures
-  therefore carry escape at 54% of the diffusion-limited rate.
+- **The escape coefficient is about half the value its cited source gives.**
+  The SI scales s = 2.03 × 10⁻⁵ yr⁻¹ from Catling et al. (2001), and the
+  figures were drawn with it: under 3.7 × 10⁻⁵, all four Fig. 2 curves miss by
+  2.2–2.6 pt and the Fig. 3 traces by up to 3.6 pt. Catling et al.'s eq. (1)
+  gives 3.77 × 10⁻⁵ yr⁻¹, and Goldblatt's later note states 3.7 × 10⁻⁵. The
+  published figures therefore carry escape at 54% of the cited
+  diffusion-limited rate.
+- **Supplementary Fig. 3 labels as Ψ a quantity half as large.** Its axis
+  reads "Oxidation parameter, Ψ" and its caption "Ψ = oxidation/M^0.7", but
+  the line sits log₁₀ 2 below the Ψ of the SI's equations: it plots methane
+  oxidised, while Ψ is the oxygen consumed.
 - **The Fig. 2b caption misstates the dashed curve's reductant input.** The
   curve drawn is r = 3 × 10¹¹ (0.023 pt); the captioned 3 × 10¹⁰ misses by
   9–10 pt.
@@ -471,6 +483,7 @@ the Fig. 3d β unless stated:
   when N exceeds r, holds by the structure of eq. 12. A quantitative check at
   10⁻¹² PAL lies below the oxidation fit's 10⁸ mol limit; two extensions give
   N = 8.5–8.7 × 10¹⁰ at r = 7.5 × 10¹⁰.
-- **Goldblatt's exact constants for s.** Catling et al.'s eq. (1) gives
-  3.77 × 10⁻⁵ with the constants used here; the note's 3.7 × 10⁻⁵ is
-  consistent with it, but the note does not document its own conversion.
+- **How the two values of s arose.** Catling et al.'s eq. (1) gives
+  3.77 × 10⁻⁵ with the constants used here, and the note's 3.7 × 10⁻⁵ agrees
+  with it to 2%. Neither the SI's conversion to 2.03 × 10⁻⁵ nor the note's
+  own constants and rounding are documented.

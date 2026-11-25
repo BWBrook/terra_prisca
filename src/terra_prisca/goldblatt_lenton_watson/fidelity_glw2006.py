@@ -378,6 +378,8 @@ def si_reading(si, dy: float = 0.0, dx: float = 0.0) -> g.Reading:
 
 def si_rows(si) -> list[dict]:
     rows = []
+    O, free, _ = g.branch_curve(g.READINGS["author_p"], N=g.N_MODERN, n=8001)
+    ref = "-".join(f"{q[1]:.4g}" for q in sorted(g.folds(O, free), key=lambda t: t[0]))
     for level, stated in (("1 PAL", 0.58), ("0.1 PAL", 0.75), ("0.01 PAL", 0.70)):
         v = si[("S2", "", level, "markers")]
         rows.append({"item": f"S2 log-log slope, oxidation vs methane, {level}", "stated": f"n = {stated}",
@@ -396,10 +398,18 @@ def si_rows(si) -> list[dict]:
         f = sorted(g.folds(O, free), key=lambda t: t[0])
         ss = g.steady_states(g.N_MODERN, 3e11, rd)
         rows.append({"item": f"SI-only quartic ({label}): bistable r at modern N",
-                     "stated": "1.336e11-5.519e11 with the full-precision coefficients",
+                     "stated": f"{ref} with the full-precision coefficients",
                      "value": "-".join(f"{q[1]:.4g}" for q in f) if len(f) == 2 else f"{len(f)} folds",
                      "note": "stable O at r = 3e11: " + ", ".join(f"{o / rd.pal_mol:.4g}" for o, ok in ss if ok)
                      + " PAL; coefficients " + ", ".join(f"{c:.7g}" for c in rd.coeffs)})
+    line = si[("S3", "", "fit", "line")]
+    un = g.Reading("si_fig_s3_unscaled", coeffs=tuple(float(v) for v in np.polyfit(line[:, 0], line[:, 1], 4)))
+    O, free, _ = g.branch_curve(un, N=g.N_MODERN, n=8001)
+    f = sorted(g.folds(O, free), key=lambda t: t[0])
+    rows.append({"item": "SI-only quartic without the factor of two: bistable r at modern N",
+                 "stated": f"{ref} with the full-precision coefficients",
+                 "value": "-".join(f"{q[1]:.4g}" for q in f),
+                 "note": "the line read as Psi itself, as its axis label says; see glw2006_fig2 scoring in the README"})
     rf = g.READINGS["faithful"]
     O, free, _ = g.branch_curve(rf, N=g.N_MODERN, n=8001)
     f = sorted(g.folds(O, free), key=lambda t: t[0])
@@ -501,19 +511,18 @@ def claims(vec, F, runs, beta3d: float) -> list[dict]:
         f"{min(f[0][1], f[1][1]):.4g}-{max(f[0][1], f[1][1]):.4g}", "Fig. 2a")
     r_bound = float(g.r_of_o(SULPHUR_BOUND_PAL * rd.pal_mol, g.N_MODERN, rd)[0])
     add("low stable state above the SI's 1e-5 PAL sulphur bound", "low state below 1e-5 PAL",
-        f"for r between {f[0][1]:.4g} and {r_bound:.4g} at modern N", "SI p. 1, Fig. 2a",
+        f"for r between {f[0][1]:.4g} and {r_bound:.4g} at modern N", "SI Fig. 1 caption; Fig. 2a",
         "the low branch ends at the lower fold, 1.99e-5 PAL")
     # prebiotic: outside the polynomial's domain, two extensions
     o12 = 1e-12 * rd.pal_mol
     n_quartic = float(g.n_of_o(o12, 7.5e10, replace(rd)))
     q0 = np.log10(g.O_VALID[0])
-    slope = np.polyval(np.polyder(rd.coeffs), q0)
-    psi_lin = 10 ** (np.polyval(rd.coeffs, q0) + slope * (np.log10(o12) - q0))
+    psi_lin = 10 ** (np.polyval(rd.coeffs, q0) + (np.log10(o12) - q0))
     om = float(g.omega(o12))
     n_lin = ((2 - om) * 7.5e10 + psi_lin * (7.5e10 / rd.s) ** g.METHANE_EXPONENT) / om
     add("prebiotic rise: N at O = 1e-12 PAL, r = 7.5e10 (EXTRAPOLATION)", "when N exceeds r",
-        f"N = {n_quartic:.3g} (quartic extended); {n_lin:.3g} (log-linear from 1e8 mol)", "p. 685",
-        f"1e-12 PAL = {o12:.3g} mol, below the fit's stated 1e8 mol limit")
+        f"N = {n_quartic:.3g} (quartic extended); {n_lin:.3g} (slope 1 below 1e8 mol, as the SI describes the fit)",
+        "p. 685; SI p. 8", f"1e-12 PAL = {o12:.3g} mol, below the fit's stated 1e8 mol limit")
     add("simplified eq. (6) equivalent to full eq. above", "1e9 PAL (as printed)",
         f"{simplified_agreement(rd):.2g} PAL (1% in r); {simplified_agreement(rd, 0.1):.2g} PAL (10%)",
         "Fig. 2 caption, SI p. 10")

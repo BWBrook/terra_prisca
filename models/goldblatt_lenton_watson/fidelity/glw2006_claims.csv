@@ -4,8 +4,8 @@ claim,stated,author_p,source,note
 lowest high-branch O at modern N,> 5e-3 PAL,0.00447 PAL,p. 684,
 highest low-branch O at modern N,< 1e-5 PAL,1.99e-05 PAL,p. 684,
 bistable range of r at modern N,contains part of 1.25e11-7.5e11 (shaded band),1.337e+11-5.519e+11,Fig. 2a,
-low stable state above the SI's 1e-5 PAL sulphur bound,low state below 1e-5 PAL,for r between 1.337e+11 and 1.403e+11 at modern N,"SI p. 1, Fig. 2a","the low branch ends at the lower fold, 1.99e-5 PAL"
-"prebiotic rise: N at O = 1e-12 PAL, r = 7.5e10 (EXTRAPOLATION)",when N exceeds r,N = 8.66e+10 (quartic extended); 8.46e+10 (log-linear from 1e8 mol),p. 685,"1e-12 PAL = 3.71e+07 mol, below the fit's stated 1e8 mol limit"
+low stable state above the SI's 1e-5 PAL sulphur bound,low state below 1e-5 PAL,for r between 1.337e+11 and 1.403e+11 at modern N,SI Fig. 1 caption; Fig. 2a,"the low branch ends at the lower fold, 1.99e-5 PAL"
+"prebiotic rise: N at O = 1e-12 PAL, r = 7.5e10 (EXTRAPOLATION)",when N exceeds r,"N = 8.66e+10 (quartic extended); 7.95e+10 (slope 1 below 1e8 mol, as the SI describes the fit)",p. 685; SI p. 8,"1e-12 PAL = 3.71e+07 mol, below the fit's stated 1e8 mol limit"
 simplified eq. (6) equivalent to full eq. above,1e9 PAL (as printed),1.9e-08 PAL (1% in r); 4.3e-09 PAL (10%),"Fig. 2 caption, SI p. 10",
 respiration (d_gamma) threshold,0.01 PAL (Pasteur point),half-saturation 0.366 PAL; 0.027 saturated at the stated level,"p. 684, Methods",[O] at half-saturation = 99.72 uM; the source does not define the threshold operationally; it equals half-saturation only if 1 PAL = 1.36e+21 mol
 methanotrophy (d_delta) threshold,2e-4 PAL; [O] = 2 uM,half-saturation 0.00735 PAL; 0.026 saturated at the stated level,"p. 684, Methods",[O] at half-saturation = 2.00 uM; the source does not define the threshold operationally; it equals half-saturation only if 1 PAL = 1.36e+21 mol
