@@ -1,0 +1,27 @@
+check,n,value,unit
+fig2a y ticks,12,0.00253576411,decades max residual
+fig2a x ticks,9,0.000457789259,decades max residual
+fig2a frame top,1,-0.00184598521,decades
+fig2a frame bottom,1,-0.00253483849,decades
+fig2a frame left,1,0.000364273045,decades
+fig2a frame right,1,0.000369246655,decades
+fig2a grey line,1,10.8752665,log10 mol/yr
+fig2a solid connector gap,1,0,pt
+fig2a dashed connector gap,1,0,pt
+fig2b y ticks,12,0.0025639457,decades max residual
+fig2b x ticks,9,0.000457789259,decades max residual
+fig2b frame top,1,-0.00194074371,decades
+fig2b frame bottom,1,-0.00256460258,decades
+fig2b frame left,1,0.000364273045,decades
+fig2b frame right,1,0.000369246655,decades
+fig2b grey line,1,15.5741872,log10 mol/yr
+fig2b solid connector gap,1,0,pt
+fig2b dashed connector gap,1,0,pt
+fig3a y ticks off grid,7,0.00466881454,decades
+fig3a_zoom y ticks off grid,7,0.00466881454,decades
+fig3b y ticks off grid,7,0.0111201457,1e11 mol/yr
+fig3b_zoom y ticks off grid,7,0.0126874994,1e11 mol/yr
+fig3c y ticks off grid,7,0.00578328373,decades
+fig3c_zoom y ticks off grid,7,0.00578328373,decades
+fig3d y ticks off grid,7,0.0102612687,1e11 mol/yr
+fig3d_zoom y ticks off grid,7,0.010058616,1e11 mol/yr

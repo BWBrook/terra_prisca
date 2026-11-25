@@ -1,0 +1,169 @@
+panel,curve,reading,beta,methane_axis,printed_vertices,step_drawn_at_gyr,printed_to_model_pt,fitted_to_this_trace
+a,oxygen,faithful,SI,,118,2.4,8.10538,False
+a,methane,faithful,SI,PAL,124,2.4,0.909317,False
+a,methane,faithful,SI,atm right,124,2.4,2.61106,False
+a_zoom,oxygen,faithful,SI,,166,2.39991,23.6018,False
+a_zoom,methane,faithful,SI,PAL,130,2.39991,1.41856,False
+a_zoom,methane,faithful,SI,atm right,130,2.39991,2.58999,False
+b,escape,faithful,SI,,122,2.4,2.49609,False
+b,burial,faithful,SI,,2,2.4,0.0398059,False
+b,input,faithful,SI,,4,2.4,0.0354572,False
+b,net,faithful,SI,,122,2.4,2.48049,False
+b_zoom,escape,faithful,SI,,152,2.39991,5.9788,False
+b_zoom,burial,faithful,SI,,2,2.39991,0.0871287,False
+b_zoom,input,faithful,SI,,4,2.39991,0.78663,False
+b_zoom,net,faithful,SI,,151,2.39991,5.76596,False
+c,oxygen,faithful,SI,,157,2.4,7.7576,False
+c,methane,faithful,SI,PAL,159,2.4,0.767385,False
+c,methane,faithful,SI,atm right,159,2.4,1.88108,False
+c_zoom,oxygen,faithful,SI,,174,2.39991,23.2008,False
+c_zoom,methane,faithful,SI,PAL,134,2.39991,1.43083,False
+c_zoom,methane,faithful,SI,atm right,134,2.39991,2.6999,False
+d,escape,faithful,SI,,164,2.4,2.0618,False
+d,burial,faithful,SI,,122,2.4,1.53387,False
+d,input,faithful,SI,,2,2.4,0.0359372,False
+d,net,faithful,SI,,127,2.4,1.99213,False
+d_zoom,escape,faithful,SI,,154,2.39991,5.05361,False
+d_zoom,burial,faithful,SI,,6,2.39991,1.77637,False
+d_zoom,input,faithful,SI,,2,2.39991,0.553336,False
+d_zoom,net,faithful,SI,,157,2.39991,3.66266,False
+a,oxygen,faithful,Fig. 3d,,118,2.4,8.10555,False
+a,methane,faithful,Fig. 3d,PAL,124,2.4,0.908553,False
+a,methane,faithful,Fig. 3d,atm right,124,2.4,2.60998,False
+a_zoom,oxygen,faithful,Fig. 3d,,166,2.39991,23.6018,False
+a_zoom,methane,faithful,Fig. 3d,PAL,130,2.39991,1.41858,False
+a_zoom,methane,faithful,Fig. 3d,atm right,130,2.39991,2.58998,False
+b,escape,faithful,Fig. 3d,,122,2.4,2.4955,False
+b,burial,faithful,Fig. 3d,,2,2.4,0.0396897,False
+b,input,faithful,Fig. 3d,,4,2.4,0.0354572,False
+b,net,faithful,Fig. 3d,,122,2.4,2.47931,False
+b_zoom,escape,faithful,Fig. 3d,,152,2.39991,5.97888,False
+b_zoom,burial,faithful,Fig. 3d,,2,2.39991,0.0889271,False
+b_zoom,input,faithful,Fig. 3d,,4,2.39991,0.78663,False
+b_zoom,net,faithful,Fig. 3d,,151,2.39991,5.76359,False
+c,oxygen,faithful,Fig. 3d,,157,2.4,7.62994,False
+c,methane,faithful,Fig. 3d,PAL,159,2.4,0.687103,False
+c,methane,faithful,Fig. 3d,atm right,159,2.4,2.36553,False
+c_zoom,oxygen,faithful,Fig. 3d,,174,2.39991,23.1961,False
+c_zoom,methane,faithful,Fig. 3d,PAL,134,2.39991,1.42412,False
+c_zoom,methane,faithful,Fig. 3d,atm right,134,2.39991,2.70622,False
+d,escape,faithful,Fig. 3d,,164,2.4,2.00113,False
+d,burial,faithful,Fig. 3d,,122,2.4,0.0288233,True
+d,input,faithful,Fig. 3d,,2,2.4,0.0359372,False
+d,net,faithful,Fig. 3d,,127,2.4,2.23195,False
+d_zoom,escape,faithful,Fig. 3d,,154,2.39991,5.01445,False
+d_zoom,burial,faithful,Fig. 3d,,6,2.39991,0.0328852,True
+d_zoom,input,faithful,Fig. 3d,,2,2.39991,0.553336,False
+d_zoom,net,faithful,Fig. 3d,,157,2.39991,4.68008,False
+a,oxygen,author_p,SI,,118,2.4,0.0264838,False
+a,methane,author_p,SI,PAL,124,2.4,0.0215604,False
+a,methane,author_p,SI,atm right,124,2.4,1.73209,False
+a_zoom,oxygen,author_p,SI,,166,2.39991,0.412988,False
+a_zoom,methane,author_p,SI,PAL,130,2.39991,0.205522,False
+a_zoom,methane,author_p,SI,atm right,130,2.39991,1.88966,False
+b,escape,author_p,SI,,122,2.4,0.0274927,False
+b,burial,author_p,SI,,2,2.4,0.0398059,False
+b,input,author_p,SI,,4,2.4,0.0354572,False
+b,net,author_p,SI,,122,2.4,0.0278208,False
+b_zoom,escape,author_p,SI,,152,2.39991,1.34603,False
+b_zoom,burial,author_p,SI,,2,2.39991,0.0871287,False
+b_zoom,input,author_p,SI,,4,2.39991,0.78663,False
+b_zoom,net,author_p,SI,,151,2.39991,1.13921,False
+c,oxygen,author_p,SI,,157,2.4,0.637306,False
+c,methane,author_p,SI,PAL,159,2.4,0.854124,False
+c,methane,author_p,SI,atm right,159,2.4,1.21524,False
+c_zoom,oxygen,author_p,SI,,174,2.39991,1.33689,False
+c_zoom,methane,author_p,SI,PAL,134,2.39991,0.69689,False
+c_zoom,methane,author_p,SI,atm right,134,2.39991,2.27414,False
+d,escape,author_p,SI,,164,2.4,1.04805,False
+d,burial,author_p,SI,,122,2.4,1.53387,False
+d,input,author_p,SI,,2,2.4,0.0359372,False
+d,net,author_p,SI,,127,2.4,0.530054,False
+d_zoom,escape,author_p,SI,,154,2.39991,1.2529,False
+d_zoom,burial,author_p,SI,,6,2.39991,1.77637,False
+d_zoom,input,author_p,SI,,2,2.39991,0.553336,False
+d_zoom,net,author_p,SI,,157,2.39991,2.44815,False
+a,oxygen,author_p,Fig. 3d,,118,2.4,0.0258255,False
+a,methane,author_p,Fig. 3d,PAL,124,2.4,0.0221015,False
+a,methane,author_p,Fig. 3d,atm right,124,2.4,1.73033,False
+a_zoom,oxygen,author_p,Fig. 3d,,166,2.39991,0.407177,False
+a_zoom,methane,author_p,Fig. 3d,PAL,130,2.39991,0.201734,False
+a_zoom,methane,author_p,Fig. 3d,atm right,130,2.39991,1.89006,False
+b,escape,author_p,Fig. 3d,,122,2.4,0.0282099,False
+b,burial,author_p,Fig. 3d,,2,2.4,0.0396897,False
+b,input,author_p,Fig. 3d,,4,2.4,0.0354572,False
+b,net,author_p,Fig. 3d,,122,2.4,0.0276337,False
+b_zoom,escape,author_p,Fig. 3d,,152,2.39991,1.34295,False
+b_zoom,burial,author_p,Fig. 3d,,2,2.39991,0.0889271,False
+b_zoom,input,author_p,Fig. 3d,,4,2.39991,0.78663,False
+b_zoom,net,author_p,Fig. 3d,,151,2.39991,1.13272,False
+c,oxygen,author_p,Fig. 3d,,157,2.4,0.0249973,False
+c,methane,author_p,Fig. 3d,PAL,159,2.4,0.0254185,False
+c,methane,author_p,Fig. 3d,atm right,159,2.4,1.85845,False
+c_zoom,oxygen,author_p,Fig. 3d,,174,2.39991,0.404897,False
+c_zoom,methane,author_p,Fig. 3d,PAL,134,2.39991,0.205691,False
+c_zoom,methane,author_p,Fig. 3d,atm right,134,2.39991,1.88103,False
+d,escape,author_p,Fig. 3d,,164,2.4,0.0307088,False
+d,burial,author_p,Fig. 3d,,122,2.4,0.0288233,True
+d,input,author_p,Fig. 3d,,2,2.4,0.0359372,False
+d,net,author_p,Fig. 3d,,127,2.4,0.0284311,False
+d_zoom,escape,author_p,Fig. 3d,,154,2.39991,0.48727,False
+d_zoom,burial,author_p,Fig. 3d,,6,2.39991,0.0328852,True
+d_zoom,input,author_p,Fig. 3d,,2,2.39991,0.553336,False
+d_zoom,net,author_p,Fig. 3d,,157,2.39991,0.384184,False
+a,oxygen,author_corrected,SI,,118,2.4,0.941958,False
+a,methane,author_corrected,SI,PAL,124,2.4,1.10206,False
+a,methane,author_corrected,SI,atm right,124,2.4,0.669899,False
+a_zoom,oxygen,author_corrected,SI,,166,2.39991,3.80716,False
+a_zoom,methane,author_corrected,SI,PAL,130,2.39991,1.90094,False
+a_zoom,methane,author_corrected,SI,atm right,130,2.39991,2.96276,False
+b,escape,author_corrected,SI,,122,2.4,0.441306,False
+b,burial,author_corrected,SI,,2,2.4,0.0398059,False
+b,input,author_corrected,SI,,4,2.4,0.0354572,False
+b,net,author_corrected,SI,,122,2.4,0.359341,False
+b_zoom,escape,author_corrected,SI,,152,2.39991,5.32131,False
+b_zoom,burial,author_corrected,SI,,2,2.39991,0.0871287,False
+b_zoom,input,author_corrected,SI,,4,2.39991,0.78663,False
+b_zoom,net,author_corrected,SI,,151,2.39991,5.79889,False
+c,oxygen,author_corrected,SI,,157,2.4,1.63388,False
+c,methane,author_corrected,SI,PAL,159,2.4,2.02573,False
+c,methane,author_corrected,SI,atm right,159,2.4,0.58746,False
+c_zoom,oxygen,author_corrected,SI,,174,2.39991,3.98361,False
+c_zoom,methane,author_corrected,SI,PAL,134,2.39991,2.02797,False
+c_zoom,methane,author_corrected,SI,atm right,134,2.39991,3.10726,False
+d,escape,author_corrected,SI,,164,2.4,0.962837,False
+d,burial,author_corrected,SI,,122,2.4,1.53387,False
+d,input,author_corrected,SI,,2,2.4,0.0359372,False
+d,net,author_corrected,SI,,127,2.4,0.878317,False
+d_zoom,escape,author_corrected,SI,,154,2.39991,5.97258,False
+d_zoom,burial,author_corrected,SI,,6,2.39991,1.77637,False
+d_zoom,input,author_corrected,SI,,2,2.39991,0.553336,False
+d_zoom,net,author_corrected,SI,,157,2.39991,6.83082,False
+a,oxygen,author_corrected,Fig. 3d,,118,2.4,0.942713,False
+a,methane,author_corrected,Fig. 3d,PAL,124,2.4,1.10352,False
+a,methane,author_corrected,Fig. 3d,atm right,124,2.4,0.668683,False
+a_zoom,oxygen,author_corrected,Fig. 3d,,166,2.39991,3.80767,False
+a_zoom,methane,author_corrected,Fig. 3d,PAL,130,2.39991,1.90107,False
+a_zoom,methane,author_corrected,Fig. 3d,atm right,130,2.39991,2.96296,False
+b,escape,author_corrected,Fig. 3d,,122,2.4,0.440103,False
+b,burial,author_corrected,Fig. 3d,,2,2.4,0.0396897,False
+b,input,author_corrected,Fig. 3d,,4,2.4,0.0354572,False
+b,net,author_corrected,Fig. 3d,,122,2.4,0.360335,False
+b_zoom,escape,author_corrected,Fig. 3d,,152,2.39991,5.32142,False
+b_zoom,burial,author_corrected,Fig. 3d,,2,2.39991,0.0889271,False
+b_zoom,input,author_corrected,Fig. 3d,,4,2.39991,0.78663,False
+b_zoom,net,author_corrected,Fig. 3d,,151,2.39991,5.79972,False
+c,oxygen,author_corrected,Fig. 3d,,157,2.4,1.23788,False
+c,methane,author_corrected,Fig. 3d,PAL,159,2.4,1.36972,False
+c,methane,author_corrected,Fig. 3d,atm right,159,2.4,0.583984,False
+c_zoom,oxygen,author_corrected,Fig. 3d,,174,2.39991,3.77496,False
+c_zoom,methane,author_corrected,Fig. 3d,PAL,134,2.39991,1.95286,False
+c_zoom,methane,author_corrected,Fig. 3d,atm right,134,2.39991,3.03675,False
+d,escape,author_corrected,Fig. 3d,,164,2.4,0.382483,False
+d,burial,author_corrected,Fig. 3d,,122,2.4,0.0288233,True
+d,input,author_corrected,Fig. 3d,,2,2.4,0.0359372,False
+d,net,author_corrected,Fig. 3d,,127,2.4,0.335082,False
+d_zoom,escape,author_corrected,Fig. 3d,,154,2.39991,5.97781,False
+d_zoom,burial,author_corrected,Fig. 3d,,6,2.39991,0.0328852,True
+d_zoom,input,author_corrected,Fig. 3d,,2,2.39991,0.553336,False
+d_zoom,net,author_corrected,Fig. 3d,,157,2.39991,6.43479,False
