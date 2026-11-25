@@ -174,6 +174,7 @@ uv run pytest -q                                   # whole suite (~4 min; 1,035 
 uv run pytest -q tests/test_paper_esm.py tests/test_paper_table_s1.py tests/test_paper_transient_figures.py
 make -C models/haze_world/paper/products check     # claims ledger against all four products, makedoc lint
 make -C models/haze_world/paper/products           # article, supplement and brief PDFs; brief two-page check
+                                                   # the supplement's links pin to HEAD: commit sources first
 uv run python -m terra_prisca.haze_world.paper_figures            # Figures 1–4 and the ESM tables
 uv run python -m terra_prisca.haze_world.paper_figures.graphical_abstract   # the brief's figure
 uv run python -c "from terra_prisca.haze_world.paper_figures import table_s1; table_s1.main()"

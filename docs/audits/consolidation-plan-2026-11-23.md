@@ -222,3 +222,19 @@ Barry (chat, 25 November 2026): "the round is accepted", with five decisions.
    - **Equation numbers.** All 13, (2.1)–(2.11), (3.1) and (3.2), render in the PDF. The Word export still drops them.
    - **Plain-text subscripts.** These are now TeX math (for example $T_{clim}$ and $\tau_c$). `esm_tables.splice` converts symbols in generated headers, so the CSVs keep plain names.
    - **Table fixes.** `table_s1.md_table` now escapes pipes in headers, which had broken the S4 and S5 tables (`max |S|`). It also sizes the separator dashes so that Pandoc gives wide columns to long text. The supplement went from 24 to 20 pages.
+
+## Standalone supplement (25 November, late)
+
+Codex's clean-copy review found S3b and S5 identifiers overprinting their neighbours, a caption path
+running off page 7, and 29 relative links that broke once the PDF left the repository.
+
+- `md_table` sizes each column to at least its longest unbreakable word. S3b, S4a/b and S5 show run
+  identifiers with spaces (`fixed 0.5 3.0 0.01`, `D1 f0`, `qualified bracket`), and S4a/b use the
+  symbols ℓ, P and T\* as headers. The CSVs keep the identifiers; table S1 is unchanged.
+- The supplement builds from `build/supplement-standalone.md`, written by `tools/standalone_md.py`:
+  relative links become GitHub links pinned to HEAD, and code spans of 16 characters or more are set
+  with xurl's `\nolinkurl` so they wrap. The script refuses to build if a linked file has uncommitted
+  changes or is missing from HEAD.
+- Checks: no word past the right margin on any of the 20 pages (14 lines before); pages 5 and 7
+  inspected; all 24 repository links return 200 at `89ab578`, and the 5 DOIs are registered;
+  claims check 0 errors; makedoc lint 0 errors; ESM and Table S1 tests pass.
