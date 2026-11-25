@@ -1,0 +1,72 @@
+# Haze-world abstract, brief and replication guide
+
+Codex (GPT-6), 25 November 2026. Review of the article at `39993fc`, the brief and guide at `899083d`, and the graphical abstract at `6fd990d`, requested in discussion 195. E17–E22 are approved with the amendments recorded in the [interpretation rules](../../models/haze_world/synthesis/estimands.md#e17-habitat-geometry-and-finite-supply-responses-c60-c61). The proposed product edits below go to Claude. All numerical checks used existing evidence.
+
+## Barry’s abstract, sentence by sentence
+
+| Sentence | Verdict against the claims ledger |
+|---|---|
+| 1. “Can life regulate …?” | Keep. This poses the question answered by the model. |
+| 2. “We test this in a model …” | Keep. “Inspired by” describes the coupling of transferred microbial physiology to a published haze-climate curve (E1). |
+| 3. “Two microbial groups …” | The two routes are correct (C05, C68). “Can form a cooling organic haze” would distinguish the haze branch from warming at lower methane. |
+| 4. “Temperature shifts the competitive advantage …” | Keep. Equal hydrogen requirements set the mixed temperature. A change in the groups’ shares can absorb changes in supply over the coexistence interval (C05, C06, C67). |
+| 5. “This needs some of the diverted hydrogen …” | Keep. The necessary condition is a lasting difference in methane yield between the routes. Acetate export or differential biomass export can supply it (C68). |
+| 6. “Exact control is fragile …” | Specify the recycling fraction and the first loss of **local equilibrium stability**. At the reference supply the limits are 0.149214 years with none recycled and 1.10276 years with half recycled (C63). The former still supports both groups in an oscillation at one year over the 30,000 years observed (C51). |
+| 7. “Imperfect control lasts far longer.” | Add “can”. The comparison holds in the original inventory (C54). In the later recycling experiment an exact state tolerated 30 years over a narrow range of lower supplies (C67). |
+| 8. “In the cases tested …” | Specify **four branches** and **local sensitivity per e-fold of supply**. The midpoint estimates for a 30-year margin are 0.07–0.31 K per e-fold (C57). Some resolved habitat mixtures tolerate centuries (C54, C61). A finite 2.7-fold change can leave the coexistence interval. |
+| 9. “In our reference runs …” | All 24 closed, uniform reference invasions ended with the invader alone (C52). The contrast between removal in decades and the first temperature crossing in millennia belongs to four fixed-product, zero-thermal-lag controls (C65). In two product-feedback runs the resident briefly grew faster before removal. |
+| 10. “The mixture formed where …” | Keep the mechanism and use “can” for the examples. Both buffered refuges assembled matching mixtures in the 12 key runs (C09). Tested positive immigration assembled materially active mixtures near the switch with zero or half recycling (C66). In two accelerated-methane controls the groups assembled in place (C65). |
+
+The following wording keeps Barry’s framing and gives 189 words with his first five sentences as written.
+
+> Exact control is fragile. At the reference supply the equilibrium first loses local stability at a climate response time of 0.15 years without acetate recycling or 1.1 years with half recycled. Imperfect control can last far longer. On four tested branches, a local sensitivity of 0.07–0.31 K per e-fold of supply bought tolerance of a 30-year response, and some habitat mixtures tolerated centuries. In all 24 closed, uniform reference invasions the invader ended alone. In four controls with fixed products, resident loss took decades and temperature took millennia to reach the point where the groups break even. Refuges or immigration can sustain the losing group until the climate catches up and the mixture forms.
+
+The new check compares successive saved log ratios of invader to resident biomass while both are still present. The ratio fell briefly during methanogen invasions with product feedback, zero recycling and thermal response times of 3 and 30 years. The falls span years 24–25 and 22–30 respectively. The residents were removed at 260 and 290 years. At year 24 of the latter run the resident acetogens grew at +0.02708 per year while the invading methanogens declined at −0.00013 per year. This establishes a temporary growth advantage. It does not identify temperature as its cause. All 24 native census files matched both recorded hashes. [Archive check](haze-world-invasion-wording-2026-11-25.py) · [Run inventory](../../models/haze_world/figures/dynamic_realisation/invasions.csv) · [Ledger](../../models/haze_world/synthesis/claims.csv)
+
+## The brief and graphical abstract
+
+The PDF prints on two A4 pages. The question, the four panels and the numbered findings read in order. The panel annotations are already small at print size. Shorten labels before reducing type.
+
+| Panel | Independent check | Edit for a reader seeing the figure on its own |
+|---|---|---|
+| 1. Competition | Interpolation of the two hydrogen-requirement curves puts their crossing at 281.53493 K, within 0.00012 K of the calculated 281.53482 K. [Requirements](../../models/haze_world/paper/figures/data/fig1b_hydrogen_requirement.csv) | Qualify the arrows with “near the switch on the haze-cooling branch”. A methanogen invasion in panel 4 initially warms the planet from 294.4 to 297.0 K. |
+| 2. Supply | With half recycling and exported biomass, the exact interval is 0.76393–1.52442 times the reference supply. The ratio is 1.99551. [Steady states](../../models/haze_world/paper/figures/data/fig1c_steady_state.csv) · [Independent budget](../../models/haze_world/review/issue4_acetate_fate.json) | Keep “a doubling” and attach C67 to the figure receipt and caption. Crop or mark the horizontal tails near 274 K. These follow the assumed flat climate beyond the highest extracted methane ratio; only the mixed plateau at 281.5 K comes from competition. |
+| 3. Stability | All 36 initially stable exact states in the original grid first lose stability at 0.057–7.080 years. Six exact states were already unstable. Of 122 initially stable graded states, nine have finite margins and 113 remain stable through the 10,000-year search. The four 30-year bracket midpoints are 0.278208, 0.314839, 0.070790 and 0.162716 K per e-fold. [Original states](../../models/haze_world/figures/continuum_habitats/c0_local_gain.csv) · [Resolved habitats](../../models/haze_world/figures/continuum_habitats/c1_resolved.csv) · [Bracket runs](../../models/haze_world/figures/graded_dials/threshold_refinement/dials.csv) | Label the strip “36 original exact states” and the horizontal quantity “local temperature sensitivity”. At full acetate recycling an exact state at lower supply first loses stability at 30.66 years (C67). |
+| 4. Assembly | All four native refuge records matched the manifest hashes. At 100,000 years, the two closed endpoints without refuges are 294.40263 K (acetogens invading) and 273.51685 K (methanogens invading). With two 2% refuges at 278 and 286 K, both directions reach 281.53482 K. Here half the acetate recycles and cells exchange at 10⁻⁶ per year. [Refuge runs and controls](../../models/haze_world/figures/buffered_refuges/selected_main.csv) | Use “Two refuges let both groups persist”. Immigration and fast methane response provide other routes. These refuge runs have instantaneous thermal adjustment; the populations wait for atmospheric methane to adjust. Cite C09 and its matched controls for the plotted trajectories. C52 covers the separate 24-invasion experiment. |
+
+The plotted selection of 164 states and the 59 nonzero dial points agree with their upstream records. Article Figure 3’s caption and rings now use bracket midpoints. Its shading still runs from the smallest lower bracket edge to the largest upper edge (0.0702–0.3155), alongside a fixed midpoint label. Derive the band and label from the same midpoint data, or identify the shading explicitly as bracket uncertainty. This resolves the remaining 0.31/0.32 discrepancy. [Figure 3 generator](../../src/terra_prisca/haze_world/paper_figures/fig3.py) · [Graphical abstract receipt](../../models/haze_world/paper/products/figures/graphical_abstract_checks.csv)
+
+### Corrections to the two-page brief
+
+- **What escaped as methane.** Finding 1 says the regulatory difference vanishes if all acetate returns as methane. At full acetate recycling, unequal biomass export still gives a 1.04682-fold supply window. Say “If both the acetate and lost biomass returned as methane, the two groups would deliver the same yield.” Scope the seven-year statement and the conclusion to the original grid. Full recycling buys an exact state a 30-year margin within that roughly 5% window (C67–C68).
+- **Survival.** Describe continuous populations checked against a one-cell floor every ten years. Report the 24 invasion endpoints, the four timing controls and the separate refuge and immigration experiments as such. Use “near the set point” for immigration. Its lowest input was a mean 0.1 cells per year, and material mixtures occurred at zero and half recycling (C52, C65–C66).
+- **Hydrogen.** 401 Tmol per year is the model’s gross reference supply at the assumed methane lifetime. Compare it with the cited *base cases for fresh geological input*. Narrowing through fermentation assumes glucose supplies all the hydrogen and half the acetate from each source becomes methane outside the shared hydrogen pool. The same qualification belongs on “enlarge the lasting sink” in article §4.4. Section 3.7 correctly gives the calculation as a conditional budget (C69–C70).
+- **Precedent.** Replace “Whether it survives a slowly responding climate was untested” with “We asked whether this hydrogen-competition thermostat survives a slow climate response.” Thermal inertia had already been tested in Daisyworld, as the article’s Introduction acknowledges. [Weaver & Dyke (2012)](https://eprints.soton.ac.uk/342026/1/YJTBI_7011.PDF)
+
+## Replication guide and interpretation rules
+
+E17–E22 now record the four sampled supplies in the habitat analysis, the imposed-warming endpoint and climate-curve qualifications, the distinct invasion experiments, the biomass-export exception, the scope of the fermentation budget and the distinction between losing local stability and losing a population. Four parts of the [agent guide](../../models/haze_world/paper/products/text/for-agents.md) need corresponding changes.
+
+- In §2 qualify case D with “on its extracted curve”. Its assumed low-methane extension admits a state near supply potential 0.0233. State the recycling fractions for immigration and the 12-run selection for matching refuges. The ten- and hundred-year disturbance runs took at least one continuous population below one cell. Point to the [perturbation runs](../../models/haze_world/figures/dynamic_realisation/oscillations.csv) separately from the C52 invasion censuses.
+- Define fixed products as fixed **effects on physiological hydrogen thresholds**. The methane and acetate stocks still evolve. Define supply sensitivity as the derivative of **equilibrium temperature** with respect to log supply. Using the separately defined physiological switch temperature in the numerator would make the graded sensitivity vanish by definition. Scope “C65 covers only four” to its removal-versus-crossing comparison. C65 also covers methane-speed variants and lifeless starts.
+- In the Figure 3 provenance row include both the original local-gain and the resolved habitat tables linked above. The 0.070–0.316 range uses outer bracket edges. The reported 0.07–0.31 uses midpoints. The selected original graded rows require a negative frozen-composition response and exclude six already-unstable cases. The 113 upper-limit markers are lower bounds on tolerated lag.
+- A Git-only copy passed the four paper tests and regenerated Figures 3 and 4 and the graphical abstract. Figure 2’s refresh reintegrates. Figure 4’s refresh requires 24 native census files and four native refuge records. These have manifests, but the earlier Stage-A package predates them. Link [archive status](../reproducibility/haze-world-core.md) and [ESM S11](../../models/haze_world/paper/esm/esm.md#s11-provenance-and-ai-use-record). Add the separate graphical-abstract command, `uv run python -m terra_prisca.haze_world.paper_figures.graphical_abstract`. When updating a claim, commit its evidence before stamping it. A stale evidence stamp only issues a warning. The graphic builder verifies exports and selected assertions. Checking their wording against the ledger requires a semantic review.
+
+The article’s revised §3.5 keeps the distinction between an imposed warming and a solar experiment. The §3.7 numbers and the Fable and Gemini role statements match their records. The products check returned 70 ledger claims, 40 cited and zero errors. The render check passed on both pages.
+
+## Rendered Interface length
+
+At `39993fc`, the article contains **6,721 words** counting the current cover title, abstract, main text, end statements and 38 formatted references. Including Table 1 and all four captions gives **7,972**. These are LibreOffice Writer document statistics after Pandoc rendered numeric citations and the Interface bibliography, using 37 journal records and one book. [Counting convention](../../models/haze_world/synthesis/jrsi-format-notes.md)
+
+| Component | Words |
+|---|---:|
+| Cover title | 16 |
+| Abstract | 174 |
+| Main text, including section headings | 5,269 |
+| End statements and headings | 244 |
+| Formatted references | 1,016 |
+| Abstract and References headings | 2 |
+| Table 1 | 451 |
+| Four captions and their group heading | 800 |
+
+The first count leaves 1,279 words to the 8,000-word limit. The count including displays leaves 28. Adding the name, institution and ORCID already on record and restoring all 13 equation labels as visible text gives 6,741 and 7,992 respectively. Recount when the cover, declarations and archive entry are complete.

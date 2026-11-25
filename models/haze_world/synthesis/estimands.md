@@ -337,6 +337,8 @@ preserve PD1–PD4 and the original 32 settings.
 
 ## E17. Habitat geometry and finite supply responses (C60, C61)
 
+Codex reviewed and amended E17–E22 on 25 November 2026. [Review and numerical checks](../../../docs/audits/haze-world-products-review-2026-11-25.md)
+
 **Estimands.** The local supply sensitivity |S| of weakly connected,
 fixed-chemistry spread communities against the no-fit relation of equation
 (3.1); and the finite temperature span over the uniform coexistence range at
@@ -350,7 +352,11 @@ fixed-chemistry spread communities against the no-fit relation of equation
   (observed, modern) and equator-to-pole (modelled, Archean) contrasts set an
   illustrative scale only; the spread among active Archean hydrogen-fed
   habitats is unknown. Do not call them "the Archean habitat contrasts".
-  Wider or asymmetric spreads are an unrun sensitivity stage.
+  C60 tests a local approximation with uniform offsets and fixed products.
+  C61's finite spans (1.91 and 5.41 K) use half-widths of 1 and 3 K,
+  half the acetate recycled and exchange of 10⁻⁴ per year. Margins were
+  evaluated at four supplies. The partial 6 and 8 K branches end at
+  numerical stops. Wider or asymmetric offsets require a separate analysis.
 
 ## E18. Imposed warming (C62, C63, C64)
 
@@ -358,15 +364,21 @@ fixed-chemistry spread communities against the no-fit relation of equation
 case-B climate curve, linearised for regular graded states, and the range of
 F over which fixed-product exact states hold T\*.
 
-- Imposed warming is a controlled surrogate for sunlight, not a solar
-  calculation. Supply and imposed warming are attenuated by the same
-  closed-loop factor; do not describe the regulator as "loose against supply
-  but tight against sunlight".
-- **Allowed:** "exact states hold T\* for shifts from about −15 to +8 K";
-  "sampled interior states are stable"; "on a rough young-Sun scale the
-  window spans about a fifth of sunlight".
-- **Not allowed:** stability at the window's two ends: both groups persist
-  there, but each warming-side one-sided linearisation has a growing mode.
+- The same local attenuation factor applies to supply and imposed warming
+  on regular graded cooling-branch states with linear methane removal
+  and no direct methane-product feedback. Fixed products pin temperature
+  through equality of the hydrogen requirements. With methane-product
+  feedback a supply-pinned state can move slightly under imposed warming.
+- At reference supply in case B, with fixed products and f = 0 or 0.5,
+  both groups coexist at T\* across shifts of −15.47 to +8.14 K. The
+  sampled interior states are stable at zero thermal lag. At each end
+  the warming-side linearisation has a growing mode. Endpoint stability
+  remains open. The young-/modern-Sun pair gives an illustrative scale
+  of about a fifth of young-Sun flux for the window. A matched solar
+  sweep would be needed to infer a sunlight range.
+- C64 concerns the extracted curves. Cases A and C reach T\*. Case D's
+  extracted curve stays below T\*, although its assumed low-methane
+  extension admits a model equilibrium.
 
 ## E19. Assembly (C52, C65, C66, C09)
 
@@ -374,16 +386,24 @@ F over which fixed-product exact states hold T\*.
 habitat; the same with faster methane response at fixed equilibria, from a
 lifeless start, with buffered refuges and with immigration.
 
-- **Allowed:** "in all 24 closed, uniform reference invasions the invader
-  ended alone"; "with fixed products the resident was lost within decades";
-  "refuges or immigration let the mixture form".
-- **Not allowed:** "within decades" for every invasion: three
-  product-feedback invasions took 260–290 years. "Never assembles" without
-  the single-uniform-habitat, reference-run scope: a thousandfold faster
-  methane response assembled the mixture in place from acetogen invasions.
-  That speed-up is a fixed-equilibrium response-speed test, not a shorter
-  physical methane lifetime. Do not claim that refuge-assembled mixtures are
-  durable against slow climate: their margin was not computed.
+- The invader ended alone in all 24 closed, uniform reference invasions.
+  Every ten years the census removes a guild whose continuous biomass
+  represents less than one cell. Resident removals took 10–70 years with
+  fixed products and 260–290 years in three product-feedback invasions.
+  In two of the latter the resident briefly grew faster before removal.
+  Distinguish the eventual winner from its growth advantage along the path.
+  [Archived-trajectory check](../../../docs/audits/haze-world-invasion-wording-2026-11-25.py)
+- In C65's four fixed-product controls at zero thermal lag the switch was
+  first crossed after 1,029–13,459 years. Tenfold faster methane response
+  preserved the winners. At a thousandfold acceleration both acetogen
+  invasions assembled the mixture in place. The experiment held equilibria
+  fixed by scaling all methane sources and losses together.
+- The two buffered refuges restored matching mixtures in the **12 key
+  runs**. Positive mean immigration gave two materially active groups
+  **near** T\* in each tested case at f = 0 and 0.5. At f = 0.9 it gave
+  no material mixture. These are separate designs with instantaneous
+  thermal response and slowly adjusting methane. The refuge-assembled
+  mixture's margin against thermal lag has not been measured.
 
 ## E20. Acetate fate and the lasting sink (C67, C68)
 
@@ -401,6 +421,12 @@ combined acetate-plus-biomass export at fixed supply.
   window narrows because the routes' methane yields converge); "the
   Archean recycling fraction was …". The fate of acetate on the early Earth
   is an open condition.
+- The lasting loss must differ between the routes per unit hydrogen
+  consumed. Exported biomass can supply this difference even at complete
+  acetate recycling. Returning both acetate and lost biomass as methane
+  closes the composition-controlled supply window when their ultimate
+  yields become equal. The biomass-recycling comparison is budget
+  arithmetic. Its stability margins have not been calculated.
 
 ## E21. Hydrogen supply in planetary units (C69, C70)
 
@@ -411,21 +437,31 @@ fermentation-fed supply.
 - **Allowed:** "about 400 Tmol H₂ a year, far above base-case fresh
   geological inputs"; "fermentation is one possible source"; "if half the
   acetate from each source became methane, the window would narrow to a
-  factor of about 1.3".
+  factor of about 1.3 in the glucose-fermentation budget". That calculation
+  supplies all hydrogen by fermentation and routes the recycled acetate
+  outside the shared hydrogen pool. Its feasible bounds are pure-guild
+  limits. It does not establish any change in stability or assembly.
 - **Not allowed:** "the regulator requires oxygenic photosynthesis" or
   "requires fermentation": gross delivery can include recycled hydrogen, and
   published anoxygenic ecosystems reach comparable methane fluxes. The
-  planetary scale moves inversely with the assumed lifetime.
+  geological estimates are named scenarios. The planetary scale moves
+  inversely with the assumed lifetime at fixed supply potential.
 
 ## E22. Headline phrasings across the products (consolidation, 23–25 November 2026)
 
-- Say the reference state "loses stability" at a climate response time of
-  about 0.15 years (no recycling) or about one year (half recycled). Not
-  "fails": at a 1-year lag the reference keeps both groups for 30,000 years
-  while oscillating (C51).
-- "A fraction of a kelvin per e-fold of supply buys tolerance of a 30-year
-  response" holds on the four tested branches (C57). "Looser control
-  tolerated centuries" refers to the resolved habitat-spread states (C54,
-  C61), not to every graded state.
+- The fixed-product reference equilibrium first loses local stability at
+  about 0.15 years with no acetate recycling or 1.10 years with half
+  recycled. In the zero-recycling one-year-lag run both groups persist
+  for 30,000 years while oscillating (C51). Local stability, population
+  survival and duration of observation answer different questions.
+- The 7.08-year maximum belongs to the **36 initially stable exact states
+  in the original inventory** (C54). With full acetate recycling and biomass
+  export, an exact state at lower supply remains stable at a 30-year lag
+  (C67). A 30-year margin can therefore coexist with exact supply control.
+- C57's bracket midpoints are 0.07–0.31 K per e-fold on the four tested
+  branches. This is a local temperature derivative, not a finite drift
+  after multiplying supply by e. Quote the bracket endpoints when reporting
+  numerical resolution. Some resolved habitat mixtures tolerate centuries
+  (C54, C61). Stability through the search ceiling gives a lower bound.
 - The set point T\* = 281.5 K is a model temperature under transferred
   physiology. It is not an estimate of Archean surface temperature (E1).
