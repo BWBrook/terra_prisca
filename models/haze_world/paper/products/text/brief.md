@@ -4,9 +4,7 @@ Barry W. Brook (University of Tasmania), with Claude (Anthropic), Codex (OpenAI)
 
 <div id="figures"></div>
 
-<!-- ![](../figures/graphical_abstract.pdf){#fig-brief width=100%} -->
-
-<!-- *Graphical abstract.* Caption to be written with the figure, citing the claims each panel shows. -->
+![*Graphical abstract.* (1) Hydrogen feeds two competing groups; temperature decides which wins, and so how much cooling haze forms. (2) Together they hold temperature at the set point over a doubling of supply[]{.C06}. (3) Exact control loses stability within years of climate delay; a small drift buys decades or more[]{.C54}[]{.C57}. (4) Refuges let both groups reach the set point[]{.C52}[]{.C09}.](../figures/graphical_abstract.pdf){#fig-brief width=100%}
 
 ## The puzzle
 
@@ -20,8 +18,7 @@ near a *set point*, the temperature a regulator returns to?
 ## Why it is hard
 
 Microbial populations change within years. Climate does not: oceans store
-heat, so the surface takes years to centuries to catch up with a change in
-the air. A regulator that acts fast on a slow system can overshoot, the way a
+heat, so the surface takes years to centuries to catch up. A regulator that acts fast on a slow system can overshoot, the way a
 shower swings between too hot and too cold when the water takes a while to
 reach you. Earlier models showed that a living thermostat is possible in
 principle [@watson1983BiologicalHomeostasisGlobal; @seto2007CoexistenceIntroducingRegulation]. Whether it survives a
@@ -38,9 +35,8 @@ slowly responding climate was untested.
 - Ran [24]{.C52} invasions with populations counted in whole cells, so that a
   group can die out, and repeated them with small sheltered habitats and with
   a trickle of immigrants.
-- Pressure-tested the result five ways: habitats of different temperatures, a
-  warming climate, how the community forms, where the diverted hydrogen goes,
-  and how much hydrogen the planet must supply.
+- Pressure-tested the result five ways, from habitat temperatures to the
+  size of the hydrogen supply.
 
 ## What we found
 
@@ -55,19 +51,17 @@ slowly responding climate was untested.
    unknown.
 2. **Exact control is fragile.** With no acetate recycled, the reference
    state loses stability once the climate takes more than [0.15]{.C63} years
-   to respond, and with half recycled, about a year []{.C63}. Every stable exact state
-   we found lost stability within [7]{.C54} years, mostly sooner than the
-   few-year fast response of a modern climate model [@held2010ProbingFastSlow]. Past that limit the regulator swings widely
+   to respond, and with half recycled, about a year[]{.C63}. Every stable exact state
+   we found lost stability within [7]{.C54} years. Past that limit the regulator swings widely
    or a population crashes.
 3. **Slightly imperfect control lasts far longer.** Where acetate slows its
    own producers, or habitats differ slightly in temperature, temperature
    drifts as the supply changes. A drift of [0.07]{.C57} to [0.31]{.C57} K
    for each *e-fold* (a 2.7-fold change) of supply let the regulator tolerate
-   a 30-year climate response, and looser control tolerated centuries
-   []{.C61}.
+   a 30-year climate response, and looser control tolerated centuries[]{.C61}.
 4. **The regulating community does not form in a single uniform habitat.**
    In all [24]{.C52} closed invasions the newcomer ended alone. The group
-   favoured at the starting temperature removed the other within decades []{.C65},
+   favoured at the starting temperature removed the other within decades[]{.C65},
    while the climate needed more than a thousand years to cross the set
    point. Two small sheltered habitats, or as little as [0.1]{.C66} immigrant
    cells per year, let both groups persist and the mixture form at the set
@@ -76,7 +70,7 @@ slowly responding climate was untested.
    lifetime, the model needs about [401]{.C69} trillion moles of hydrogen a
    year, far more than volcanoes and rocks are thought to have supplied. Fermentation of organic
    matter is one possible source, but it also makes acetate, which would
-   narrow the range of supply the regulator can handle []{.C70}.
+   narrow the range of supply the regulator can handle[]{.C70}.
 
 ## What it means
 

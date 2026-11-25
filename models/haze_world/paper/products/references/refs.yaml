@@ -48,32 +48,6 @@ references:
   article-number: 2011RG000375
   publisher: American Geophysical Union (AGU)
   DOI: 10.1029/2011rg000375
-- id: held2010ProbingFastSlow
-  citation-key: held2010ProbingFastSlow
-  type: article-journal
-  title: Probing the Fast and Slow Components of Global Warming by Returning Abruptly to Preindustrial Forcing
-  author:
-  - family: Held
-    given: Isaac M.
-  - family: Winton
-    given: Michael
-  - family: Takahashi
-    given: Ken
-  - family: Delworth
-    given: Thomas
-  - family: Zeng
-    given: Fanrong
-  - family: Vallis
-    given: Geoffrey K.
-  issued:
-    date-parts:
-    - - 2010
-  container-title: Journal of Climate
-  volume: '23'
-  issue: '9'
-  page: 2418–2427
-  publisher: American Meteorological Society
-  DOI: 10.1175/2009jcli3466.1
 - id: sagan1972EarthMarsEvolution
   citation-key: sagan1972EarthMarsEvolution
   type: article-journal
