@@ -25,7 +25,7 @@ Interpretive choices shared by every reading:
 
   PAL     0.2095 mu = 3.714e19 mol. The source never states PAL in moles; mu is
           "the number of moles in the present atmosphere" and O2 is 20.95% of it.
-  beta    1e13 / (N_MODERN + R_TODAY) = 2.614e-3. The SI gives beta (N + r) =
+  beta    1e13 / (N_MODERN + R_TODAY) = 2.667e-3. The SI gives beta (N + r) =
           1e13 mol/yr today with C = 1.66e21 mol (hence w = 6e-9 /yr) but never
           beta itself; today's r is the caption's 7.5e10. Steady states do not
           depend on beta; the transients do.
@@ -37,7 +37,7 @@ from dataclasses import dataclass, replace
 
 import numpy as np
 from scipy.integrate import solve_ivp
-from scipy.optimize import brentq
+from scipy.optimize import brentq, minimize_scalar
 
 MU = 1.773e20                 # mol, moles in the present atmosphere (Methods)
 O2_FRACTION = 0.2095          # interpretive: PAL = O2_FRACTION * MU
@@ -151,26 +151,54 @@ def is_stable(O, N, r, rd: Reading) -> bool:
     return bool(np.all(np.linalg.eigvals(jacobian(y, N, r, rd)).real < 0))
 
 
-def steady_states(N, r, rd: Reading, lo=O_VALID[0], hi=1e21, n=6001):
-    """All roots of eq. 12 in O, ascending, each with its stability. The search
-    starts at the polynomial's stated lower validity limit; below it the
-    extrapolated polynomial can create spurious roots."""
-    grid = np.logspace(np.log10(lo), np.log10(hi), n)
-    f = steady_residual(grid, N, r, rd)
+def _check_domain(lo, hi, extrapolate):
+    if not extrapolate and (lo < O_VALID[0] * (1 - 1e-12) or hi > O_VALID[1] * (1 + 1e-12)):
+        raise ValueError(f"O range {lo:.3g}-{hi:.3g} mol leaves the oxidation fit's stated "
+                         f"domain {O_VALID[0]:.0e}-{O_VALID[1]:.0e} mol; pass extrapolate=True")
+
+
+def steady_states(N, r, rd: Reading, lo=O_VALID[0], hi=O_VALID[1], n=6001, extrapolate=False):
+    """All roots of eq. 12 in O, ascending, each with its stability.
+
+    The residual is bracketed between its own turning points (grid extrema
+    refined by bounded minimisation), so a pair of roots closer together than
+    the grid spacing near a fold is still found. By default the search keeps to
+    the polynomial's stated domain; outside it the extrapolated quartic is not
+    the source's model and can create spurious roots."""
+    _check_domain(lo, hi, extrapolate)
+    q = np.linspace(np.log10(lo), np.log10(hi), n)
+    f = lambda x: float(steady_residual(10.0**x, N, r, rd))
+    fq = steady_residual(10.0**q, N, r, rd)
+    d = np.diff(fq)
+    breaks = [q[0]]
+    for i in np.where(np.sign(d[:-1]) != np.sign(d[1:]))[0] + 1:
+        sgn = 1.0 if d[i - 1] < 0 else -1.0          # +1 at a minimum, -1 at a maximum
+        res = minimize_scalar(lambda x: sgn * f(x), bounds=(q[i - 1], q[i + 1]), method="bounded",
+                              options={"xatol": 1e-13})
+        breaks.append(float(res.x))
+    breaks.append(q[-1])
     roots = []
-    for i in np.where(np.sign(f[:-1]) != np.sign(f[1:]))[0]:
-        lo_, hi_ = np.log10(grid[i]), np.log10(grid[i + 1])
-        lo10 = brentq(lambda q: steady_residual(10**q, N, r, rd), lo_, hi_, xtol=1e-14)
-        roots.append(10**lo10)
-    return [(o, is_stable(o, N, r, rd)) for o in roots]
+    for a, b in zip(breaks[:-1], breaks[1:]):
+        fa, fb = f(a), f(b)
+        if fa == 0.0:
+            roots.append(a)
+        elif np.sign(fa) != np.sign(fb) and fb != 0.0:
+            roots.append(brentq(f, a, b, xtol=1e-15))
+    if f(breaks[-1]) == 0.0:
+        roots.append(breaks[-1])
+    roots = sorted(roots)
+    roots = [x for i, x in enumerate(roots) if i == 0 or x - roots[i - 1] > 1e-12]
+    return [(10.0**x, is_stable(10.0**x, N, r, rd)) for x in roots]
 
 
-def branch_curve(rd: Reading, *, N=None, r=None, o_pal=(1e-12, 1.2), n=4001):
+def branch_curve(rd: Reading, *, N=None, r=None, o_mol=O_VALID, n=4001, extrapolate=False):
     """Steady-state curve traced parametrically in O (mol): returns O, the free
-    parameter (r if N is fixed, N if r is fixed), and stability at each point."""
+    parameter (r if N is fixed, N if r is fixed), and stability at each point.
+    The default O range is the oxidation fit's stated domain."""
     if (N is None) == (r is None):
         raise ValueError("fix exactly one of N and r")
-    O = np.logspace(np.log10(o_pal[0] * rd.pal_mol), np.log10(o_pal[1] * rd.pal_mol), n)
+    _check_domain(*o_mol, extrapolate)
+    O = np.logspace(np.log10(o_mol[0]), np.log10(o_mol[1]), n)
     if N is not None:
         free = r_of_o(O, N, rd)
         stable = np.array([is_stable(o, N, x, rd) for o, x in zip(O, free)])

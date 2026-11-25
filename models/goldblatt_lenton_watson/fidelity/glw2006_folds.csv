@@ -1,31 +1,41 @@
 panel,curve,value,reading,fold,printed_log10_param,printed_log10_O_PAL,model_log10_param,model_log10_O_PAL
-a,solid,as captioned,faithful,upper,11.7389,-2.3077,12.5358,-2.1449
-a,solid,as captioned,faithful,lower,11.1303,-4.84311,11.5186,-4.94274
-a,solid,as captioned,author_p,upper,11.7389,-2.3077,11.7419,-2.34873
-a,solid,as captioned,author_p,lower,11.1303,-4.84311,11.1261,-4.70115
-a,solid,as captioned,author_corrected,upper,11.7389,-2.3077,12.0024,-2.34873
-a,solid,as captioned,author_corrected,lower,11.1303,-4.84311,11.3868,-4.70115
-a,dashed,as captioned,faithful,upper,11.3095,-2.3077,12.1062,-2.14339
-a,dashed,as captioned,faithful,lower,10.6993,-4.84311,11.0886,-4.94274
-a,dashed,as captioned,author_p,upper,11.3095,-2.3077,11.3119,-2.34873
-a,dashed,as captioned,author_p,lower,10.6993,-4.84311,10.6961,-4.70115
-a,dashed,as captioned,author_corrected,upper,11.3095,-2.3077,11.5725,-2.34873
-a,dashed,as captioned,author_corrected,lower,10.6993,-4.84311,10.9568,-4.70115
-b,solid,as captioned,faithful,upper,14.9689,-2.27583,14.4107,-2.14339
-b,solid,as captioned,faithful,lower,15.3902,-4.93375,15.1235,-4.94274
-b,solid,as captioned,author_p,upper,14.9689,-2.27583,14.9672,-2.34873
-b,solid,as captioned,author_p,lower,15.3902,-4.93375,15.3983,-4.70115
-b,solid,as captioned,author_corrected,upper,14.9689,-2.27583,14.7847,-2.34873
-b,solid,as captioned,author_corrected,lower,15.3902,-4.93375,15.2158,-4.70115
-b,dashed,as captioned,faithful,upper,15.3902,-2.30763,14.1321,-2.14339
-b,dashed,as captioned,faithful,lower,15.8196,-4.73636,14.845,-4.94274
-b,dashed,as captioned,author_p,upper,15.3902,-2.30763,14.6886,-2.34873
-b,dashed,as captioned,author_p,lower,15.8196,-4.73636,15.1197,-4.70115
-b,dashed,as captioned,author_corrected,upper,15.3902,-2.30763,14.5061,-2.34873
-b,dashed,as captioned,author_corrected,lower,15.8196,-4.73636,14.9372,-4.70115
-b,dashed,r = 3e11,faithful,upper,15.3902,-2.30763,14.8324,-2.14339
-b,dashed,r = 3e11,faithful,lower,15.8196,-4.73636,15.545,-4.94274
-b,dashed,r = 3e11,author_p,upper,15.3902,-2.30763,15.3887,-2.34873
-b,dashed,r = 3e11,author_p,lower,15.8196,-4.73636,15.8197,-4.70115
-b,dashed,r = 3e11,author_corrected,upper,15.3902,-2.30763,15.2062,-2.34873
-b,dashed,r = 3e11,author_corrected,lower,15.8196,-4.73636,15.6373,-4.70115
+a,solid,as captioned,faithful,upper,11.7389,-2.3077,12.5358,-2.14539
+a,solid,as captioned,faithful,lower,11.1303,-4.84311,11.5186,-4.94289
+a,solid,as captioned,author_p,upper,11.7389,-2.3077,11.7419,-2.34939
+a,solid,as captioned,author_p,lower,11.1303,-4.84311,11.1261,-4.70139
+a,solid,as captioned,author_corrected,upper,11.7389,-2.3077,12.0024,-2.34939
+a,solid,as captioned,author_corrected,lower,11.1303,-4.84311,11.3868,-4.70139
+a,solid,as captioned,si_fig_s3,upper,11.7389,-2.3077,11.7412,-2.34939
+a,solid,as captioned,si_fig_s3,lower,11.1303,-4.84311,11.1255,-4.69989
+a,dashed,as captioned,faithful,upper,11.3095,-2.3077,12.1062,-2.14389
+a,dashed,as captioned,faithful,lower,10.6993,-4.84311,11.0886,-4.94289
+a,dashed,as captioned,author_p,upper,11.3095,-2.3077,11.3119,-2.34939
+a,dashed,as captioned,author_p,lower,10.6993,-4.84311,10.6961,-4.70139
+a,dashed,as captioned,author_corrected,upper,11.3095,-2.3077,11.5725,-2.34939
+a,dashed,as captioned,author_corrected,lower,10.6993,-4.84311,10.9568,-4.70139
+a,dashed,as captioned,si_fig_s3,upper,11.3095,-2.3077,11.3112,-2.34939
+a,dashed,as captioned,si_fig_s3,lower,10.6993,-4.84311,10.6954,-4.69989
+b,solid,as captioned,faithful,upper,14.9689,-2.27583,14.4107,-2.14239
+b,solid,as captioned,faithful,lower,15.3902,-4.93375,15.1235,-4.94289
+b,solid,as captioned,author_p,upper,14.9689,-2.27583,14.9672,-2.34939
+b,solid,as captioned,author_p,lower,15.3902,-4.93375,15.3983,-4.70139
+b,solid,as captioned,author_corrected,upper,14.9689,-2.27583,14.7847,-2.34939
+b,solid,as captioned,author_corrected,lower,15.3902,-4.93375,15.2158,-4.70139
+b,solid,as captioned,si_fig_s3,upper,14.9689,-2.27583,14.9677,-2.34939
+b,solid,as captioned,si_fig_s3,lower,15.3902,-4.93375,15.3987,-4.69989
+b,dashed,as captioned,faithful,upper,15.3902,-2.30763,14.1321,-2.14239
+b,dashed,as captioned,faithful,lower,15.8196,-4.73636,14.845,-4.94289
+b,dashed,as captioned,author_p,upper,15.3902,-2.30763,14.6886,-2.34939
+b,dashed,as captioned,author_p,lower,15.8196,-4.73636,15.1197,-4.70139
+b,dashed,as captioned,author_corrected,upper,15.3902,-2.30763,14.5061,-2.34939
+b,dashed,as captioned,author_corrected,lower,15.8196,-4.73636,14.9372,-4.70139
+b,dashed,as captioned,si_fig_s3,upper,15.3902,-2.30763,14.6891,-2.34939
+b,dashed,as captioned,si_fig_s3,lower,15.8196,-4.73636,15.1202,-4.69989
+b,dashed,r = 3e11,faithful,upper,15.3902,-2.30763,14.8324,-2.14389
+b,dashed,r = 3e11,faithful,lower,15.8196,-4.73636,15.545,-4.94289
+b,dashed,r = 3e11,author_p,upper,15.3902,-2.30763,15.3887,-2.34939
+b,dashed,r = 3e11,author_p,lower,15.8196,-4.73636,15.8197,-4.70139
+b,dashed,r = 3e11,author_corrected,upper,15.3902,-2.30763,15.2062,-2.34939
+b,dashed,r = 3e11,author_corrected,lower,15.8196,-4.73636,15.6373,-4.70139
+b,dashed,r = 3e11,si_fig_s3,upper,15.3902,-2.30763,15.3892,-2.34939
+b,dashed,r = 3e11,si_fig_s3,lower,15.8196,-4.73636,15.8202,-4.69989

@@ -1,24 +1,24 @@
-panel,curve,fixed,value,reading,printed_vertices,printed_to_model_pt,model_to_printed_pt,stability_agreement
-a,solid,N,as captioned,faithful,798,8.27389,6.38185,0.997494
-a,solid,N,as captioned,author_p,798,0.0313759,0.0312398,0.997494
-a,solid,N,as captioned,author_corrected,798,2.41861,2.98511,0.996241
-a,solid,N,null,null: flat at median log O,798,29.1879,20.7226,nan
-a,solid,N,null,null: printed curve shifted one decade,798,8.56792,9.49196,nan
-a,dashed,N,as captioned,faithful,803,7.64435,6.25592,0.997509
-a,dashed,N,as captioned,author_p,803,0.0300225,0.42521,0.997509
-a,dashed,N,as captioned,author_corrected,803,2.35053,3.00573,0.996264
-a,dashed,N,null,null: flat at median log O,803,29.3129,20.5183,nan
-a,dashed,N,null,null: printed curve shifted one decade,803,8.6367,9.35577,nan
-b,solid,r,as captioned,faithful,714,6.24658,5.13073,0.997199
-b,solid,r,as captioned,author_p,714,0.0270413,0.0382546,0.997199
-b,solid,r,as captioned,author_corrected,714,1.91465,2.52952,0.997199
-b,solid,r,null,null: flat at median log O,714,31.9475,18.5626,nan
-b,solid,r,null,null: printed curve shifted one decade,714,10.3027,10.5022,nan
-b,dashed,r,as captioned,faithful,698,16.1751,13.0383,0.97851
-b,dashed,r,as captioned,author_p,698,8.35928,9.98652,0.988539
-b,dashed,r,as captioned,author_corrected,698,10.8204,11.341,0.977077
-b,dashed,r,r = 3e11,faithful,698,6.31358,5.19968,0.997135
-b,dashed,r,r = 3e11,author_p,698,0.0269378,0.0225322,0.997135
-b,dashed,r,r = 3e11,author_corrected,698,1.93575,2.539,0.997135
-b,dashed,r,null,null: flat at median log O,698,31.6969,18.661,nan
-b,dashed,r,null,null: printed curve shifted one decade,698,10.4097,10.7088,nan
+panel,curve,fixed,value,reading,printed_to_model_pt,model_to_printed_pt,printed_outside_support_pt,model_outside_support_pt,model_off_frame_pt,stability_agreement
+a,solid,N,as captioned,faithful,10.8722,7.51951,0.0399999,0,44.6842,0.996241
+a,solid,N,as captioned,author_p,0.0259324,0.0233434,0.0399999,0,48.2591,0.997494
+a,solid,N,as captioned,author_corrected,2.38582,2.57839,0.0399999,0,48.2581,0.996241
+a,solid,N,null,null: flat at median log O,32.9587,25.7862,0,0,0,nan
+a,solid,N,null,null: printed curve shifted one decade,11.4151,11.2517,0,0,0,nan
+a,dashed,N,as captioned,faithful,9.90353,7.55122,0,5.4182,44.6889,0.997509
+a,dashed,N,as captioned,author_p,0.0245067,0.0219863,0.365788,3.6738,50.624,0.997509
+a,dashed,N,as captioned,author_corrected,2.27313,2.59417,0,5.5864,48.2586,0.996264
+a,dashed,N,null,null: flat at median log O,32.9695,25.3582,0,0,0,nan
+a,dashed,N,null,null: printed curve shifted one decade,11.3235,10.9529,0,0,0,nan
+b,solid,r,as captioned,faithful,6.38325,5.61958,0.048803,0,32.9453,0.997199
+b,solid,r,as captioned,author_p,0.0297502,0.0294548,0.048803,0,35.4606,0.997199
+b,solid,r,as captioned,author_corrected,2.19273,2.16618,0.048803,0,35.37,0.997199
+b,solid,r,null,null: flat at median log O,31.4505,22.4633,0,0,0,nan
+b,solid,r,null,null: printed curve shifted one decade,13.7584,13.4189,0,0,0,nan
+b,dashed,r,as captioned,faithful,16.7442,16.2438,0.0496296,0,33.033,0.97851
+b,dashed,r,as captioned,author_p,9.24731,10.2054,0.0496296,0,35.5544,0.988539
+b,dashed,r,as captioned,author_corrected,11.8589,12.4721,0.0496296,0,35.423,0.977077
+b,dashed,r,r = 3e11,faithful,6.42825,5.66547,0.0496296,0,32.8582,0.997135
+b,dashed,r,r = 3e11,author_p,0.0227402,0.022226,0.0496296,0,35.3707,0.997135
+b,dashed,r,r = 3e11,author_corrected,2.20503,2.17754,0.0496296,0,35.3218,0.997135
+b,dashed,r,null,null: flat at median log O,31.112,22.5121,0,0,0,nan
+b,dashed,r,null,null: printed curve shifted one decade,13.9565,13.5167,0,0,0,nan

@@ -1,38 +1,63 @@
 claim,stated,author_p,source,note
 "steady states at modern N, r = 3e+11","low branch, ~1e-6 PAL (with BIF-era r)",1.28e-06 PAL (stable); 0.000495 PAL (unstable); 0.0231 PAL (stable),p. 684,
 "steady states at modern N, r = 7.5e+10","high branch only, ~0.1 PAL",0.0816 PAL (stable),p. 684,
-lowest high-branch O at modern N,> 5e-3 PAL,0.00448 PAL,p. 684,
+lowest high-branch O at modern N,> 5e-3 PAL,0.00447 PAL,p. 684,
 highest low-branch O at modern N,< 1e-5 PAL,1.99e-05 PAL,p. 684,
-bistable range of r at modern N,contains part of 1.25e11-7.5e11 (shaded band),1.34e+11-5.52e+11,Fig. 2a,
-"prebiotic rise: N at O = 1e-12 PAL, r = 7.5e10",when N exceeds r,N = 8.66e+10,p. 685,
+bistable range of r at modern N,contains part of 1.25e11-7.5e11 (shaded band),1.337e+11-5.519e+11,Fig. 2a,
+low stable state above the SI's 1e-5 PAL sulphur bound,low state below 1e-5 PAL,for r between 1.337e+11 and 1.403e+11 at modern N,"SI p. 1, Fig. 2a","the low branch ends at the lower fold, 1.99e-5 PAL"
+"prebiotic rise: N at O = 1e-12 PAL, r = 7.5e10 (EXTRAPOLATION)",when N exceeds r,N = 8.66e+10 (quartic extended); 8.46e+10 (log-linear from 1e8 mol),p. 685,"1e-12 PAL = 3.71e+07 mol, below the fit's stated 1e8 mol limit"
 simplified eq. (6) equivalent to full eq. above,1e9 PAL (as printed),1.9e-08 PAL (1% in r); 4.3e-09 PAL (10%),"Fig. 2 caption, SI p. 10",
-respiration threshold d_gamma,0.01 PAL (Pasteur point),0.366 PAL,"p. 684, Methods",[O] = 100 uM; text value matches if 1 PAL = 1.36e+21 mol
-methanotrophy threshold d_delta,2e-4 PAL; [O] = 2 uM,0.00735 PAL,"p. 684, Methods",[O] = 2.00 uM; text value matches if 1 PAL = 1.36e+21 mol
+respiration (d_gamma) threshold,0.01 PAL (Pasteur point),half-saturation 0.366 PAL; 0.027 saturated at the stated level,"p. 684, Methods",[O] at half-saturation = 99.72 uM; the source does not define the threshold operationally; it equals half-saturation only if 1 PAL = 1.36e+21 mol
+methanotrophy (d_delta) threshold,2e-4 PAL; [O] = 2 uM,half-saturation 0.00735 PAL; 0.026 saturated at the stated level,"p. 684, Methods",[O] at half-saturation = 2.00 uM; the source does not define the threshold operationally; it equals half-saturation only if 1 PAL = 1.36e+21 mol
+escape coefficient s from Catling et al. (2001) eq. (1),3.7e-5 /yr (Goldblatt's later note),3.769e-05 /yr,Catling et al. p. 839,"R_E = 6371 km, MU = 1.773e+20 mol; the figures were drawn with s = 2.03e-05"
 "total oxidation, Fig. 3b (beta SI)",3e18 mol,3.05e+18 mol; final O 3.03e+18 mol,Fig. 3 caption,
-"transition time, case a (beta SI)",150 kyr,1e-5 PAL: 126 kyr; upper fold 5e-3 PAL: 487 kyr; half the log rise: 146 kyr; 90% of the log rise: 438 kyr,p. 685,
-"methane fall, case a (beta SI)",factor 2-6,factor 4.00,p. 685,
+"transition time, case a (beta SI)",150 kyr,1e-5 PAL: 126 kyr; upper fold 5e-3 PAL: 487 kyr; 25% of the log rise: 133 kyr; half the log rise: 146 kyr; 75% of the log rise: 194 kyr; 90% of the log rise: 438 kyr; 25-75% duration: 61 kyr,p. 685,the source does not define its clock
+"oxygen after the switch, case a (beta SI)",rises to ~0.08 PAL,0.00517 PAL at 0.5 Myr; 0.0108 at 1 Myr; peak 0.08158 at 400.0 Myr; 0.08158 at 400 Myr,"p. 685, Fig. 3",
+"time to 0.075 PAL, case a (beta SI)",,47.7 Myr,Fig. 3a,
+"methane fall when O crosses 1e-5 PAL, case a (beta SI)",factor 2-6,factor 2.138 at 126 kyr (83.35 -> 38.99 ppm),p. 685,
+"methane, first trough and run minimum, case a (beta SI)",,first trough factor 2.244 at 143 kyr; minimum factor 3.997 at 400.0 Myr,Fig. 3,
+"cooling at fixed CO2 when O crosses 1e-5 PAL, case a (beta SI)",4-9 C (Kasting et al. 2001),2.53-3.54 K over pCO2 1e-5 to 1e-2 atm,p. 685; Kasting et al. eq. 1,0.8 solar luminosity; the fit is quoted to about 1 K
 "methane re-adjustment (escape within 10% of r), case a (beta SI)",about 50 Myr (case a),54.0 Myr,p. 684,
 "total oxidation, Fig. 3d (beta SI)",9e17 mol,9.72e+17 mol; final O 9.69e+17 mol,Fig. 3 caption,
-"transition time, case c (beta SI)",50 kyr,1e-5 PAL: 77 kyr; upper fold 5e-3 PAL: 374 kyr; half the log rise: 86 kyr; 90% of the log rise: 382 kyr,p. 685,
-"methane fall, case c (beta SI)",factor 2-6,factor 4.51,p. 685,
+"transition time, case c (beta SI)",50 kyr,1e-5 PAL: 77 kyr; upper fold 5e-3 PAL: 374 kyr; 25% of the log rise: 80 kyr; half the log rise: 86 kyr; 75% of the log rise: 132 kyr; 90% of the log rise: 382 kyr; 25-75% duration: 52 kyr,p. 685,the source does not define its clock
+"oxygen after the switch, case c (beta SI)","rises, then falls back",0.0068 PAL at 0.5 Myr; 0.013 at 1 Myr; peak 0.0886 at 41.8 Myr; 0.02609 at 400 Myr,"p. 685, Fig. 3",
+"methane fall when O crosses 1e-5 PAL, case c (beta SI)",factor 2-6,factor 2.138 at 77 kyr (83.35 -> 38.99 ppm),p. 685,
+"methane, first trough and run minimum, case c (beta SI)",,first trough factor 2.244 at 84 kyr; minimum factor 4.512 at 41.8 Myr,Fig. 3,
+"cooling at fixed CO2 when O crosses 1e-5 PAL, case c (beta SI)",4-9 C (Kasting et al. 2001),2.53-3.54 K over pCO2 1e-5 to 1e-2 atm,p. 685; Kasting et al. eq. 1,0.8 solar luminosity; the fit is quoted to about 1 K
 "methane re-adjustment (escape within 10% of r), case c (beta SI)",recovers (case c),388.4 Myr,p. 684,
 "organic carbon increase after 400 Myr, case c (beta SI)",3% over ~500 Myr,2.81%,Fig. 3 caption,
 "total oxidation, Fig. 3b (beta Fig. 3d)",3e18 mol,3.05e+18 mol; final O 3.03e+18 mol,Fig. 3 caption,
-"transition time, case a (beta Fig. 3d)",150 kyr,1e-5 PAL: 126 kyr; upper fold 5e-3 PAL: 486 kyr; half the log rise: 146 kyr; 90% of the log rise: 437 kyr,p. 685,
-"methane fall, case a (beta Fig. 3d)",factor 2-6,factor 4.00,p. 685,
+"transition time, case a (beta Fig. 3d)",150 kyr,1e-5 PAL: 126 kyr; upper fold 5e-3 PAL: 486 kyr; 25% of the log rise: 133 kyr; half the log rise: 146 kyr; 75% of the log rise: 194 kyr; 90% of the log rise: 437 kyr; 25-75% duration: 61 kyr,p. 685,the source does not define its clock
+"oxygen after the switch, case a (beta Fig. 3d)",rises to ~0.08 PAL,0.00517 PAL at 0.5 Myr; 0.0108 at 1 Myr; peak 0.08159 at 400.0 Myr; 0.08159 at 400 Myr,"p. 685, Fig. 3",
+"time to 0.075 PAL, case a (beta Fig. 3d)",,47.5 Myr,Fig. 3a,
+"methane fall when O crosses 1e-5 PAL, case a (beta Fig. 3d)",factor 2-6,factor 2.138 at 126 kyr (83.35 -> 38.99 ppm),p. 685,
+"methane, first trough and run minimum, case a (beta Fig. 3d)",,first trough factor 2.244 at 143 kyr; minimum factor 3.997 at 400.0 Myr,Fig. 3,
+"cooling at fixed CO2 when O crosses 1e-5 PAL, case a (beta Fig. 3d)",4-9 C (Kasting et al. 2001),2.53-3.54 K over pCO2 1e-5 to 1e-2 atm,p. 685; Kasting et al. eq. 1,0.8 solar luminosity; the fit is quoted to about 1 K
 "methane re-adjustment (escape within 10% of r), case a (beta Fig. 3d)",about 50 Myr (case a),53.7 Myr,p. 684,
 "total oxidation, Fig. 3d (beta Fig. 3d)",9e17 mol,9.42e+17 mol; final O 9.4e+17 mol,Fig. 3 caption,
-"transition time, case c (beta Fig. 3d)",50 kyr,1e-5 PAL: 126 kyr; upper fold 5e-3 PAL: 486 kyr; half the log rise: 146 kyr; 90% of the log rise: 435 kyr,p. 685,
-"methane fall, case c (beta Fig. 3d)",factor 2-6,factor 2.62,p. 685,
+"transition time, case c (beta Fig. 3d)",50 kyr,1e-5 PAL: 126 kyr; upper fold 5e-3 PAL: 486 kyr; 25% of the log rise: 131 kyr; half the log rise: 146 kyr; 75% of the log rise: 192 kyr; 90% of the log rise: 435 kyr; 25-75% duration: 61 kyr,p. 685,the source does not define its clock
+"oxygen after the switch, case c (beta Fig. 3d)","rises, then falls back",0.00517 PAL at 0.5 Myr; 0.0108 at 1 Myr; peak 0.05976 at 31.8 Myr; 0.0253 at 400 Myr,"p. 685, Fig. 3",
+"methane fall when O crosses 1e-5 PAL, case c (beta Fig. 3d)",factor 2-6,factor 2.138 at 126 kyr (83.35 -> 38.99 ppm),p. 685,
+"methane, first trough and run minimum, case c (beta Fig. 3d)",,first trough factor 2.244 at 143 kyr; minimum factor 2.623 at 31.8 Myr,Fig. 3,
+"cooling at fixed CO2 when O crosses 1e-5 PAL, case c (beta Fig. 3d)",4-9 C (Kasting et al. 2001),2.53-3.54 K over pCO2 1e-5 to 1e-2 atm,p. 685; Kasting et al. eq. 1,0.8 solar luminosity; the fit is quoted to about 1 K
 "methane re-adjustment (escape within 10% of r), case c (beta Fig. 3d)",recovers (case c),340.2 Myr,p. 684,
 "organic carbon increase after 400 Myr, case c (beta Fig. 3d)",3% over ~500 Myr,2.81%,Fig. 3 caption,
-"reverse switch time, r stepped 7.5e10 -> 7.5e+11",3-7 Myr,6.61 Myr,p. 685,the source does not state the reverse forcing
-"reverse switch time, r stepped 7.5e10 -> 1e+12",3-7 Myr,4.14 Myr,p. 685,the source does not state the reverse forcing
-"reverse switch time, r stepped 7.5e10 -> 3e+12",3-7 Myr,1.10 Myr,p. 685,the source does not state the reverse forcing
-"printed transition time, Fig. 3a zoom (half the log rise within the 1 Myr window)",150 kyr,146 kyr,Fig. 3 zoom,"read from the published vertices, not the model"
-"printed transition time, Fig. 3c zoom (half the log rise within the 1 Myr window)",50 kyr,145 kyr,Fig. 3 zoom,"read from the published vertices, not the model"
+"reverse switch time, r stepped 7.5e10 -> 5.6e+11",3-7 Myr,25.28 Myr,p. 685,the source does not state the reverse forcing; time to O < 1e-5 PAL
+"reverse switch time, r stepped 7.5e10 -> 6e+11",3-7 Myr,12.26 Myr,p. 685,the source does not state the reverse forcing; time to O < 1e-5 PAL
+"reverse switch time, r stepped 7.5e10 -> 7.5e+11",3-7 Myr,6.61 Myr,p. 685,the source does not state the reverse forcing; time to O < 1e-5 PAL
+"reverse switch time, r stepped 7.5e10 -> 1e+12",3-7 Myr,4.14 Myr,p. 685,the source does not state the reverse forcing; time to O < 1e-5 PAL
+"reverse switch time, r stepped 7.5e10 -> 3e+12",3-7 Myr,1.10 Myr,p. 685,the source does not state the reverse forcing; time to O < 1e-5 PAL
+"printed transition, Fig. 3a zoom (log rise within the 1 Myr window)",150 kyr,half: 146 kyr; 25-75%: 61 kyr,Fig. 3 zoom,"read from the published vertices, not the model"
+"printed methane fall when O crosses 1e-5 PAL, Fig. 3a zoom",factor 2-6,factor 2.139 at 126 kyr,Fig. 3 zoom,read from the published vertices
+"printed transition, Fig. 3c zoom (log rise within the 1 Myr window)",50 kyr,half: 145 kyr; 25-75%: 62 kyr,Fig. 3 zoom,"read from the published vertices, not the model"
+"printed methane fall when O crosses 1e-5 PAL, Fig. 3c zoom",factor 2-6,factor 2.165 at 126 kyr,Fig. 3 zoom,read from the published vertices
+"printed peak oxygen, Fig. 3c",,0.05969 PAL at 2.373 Gyr ago,Fig. 3c,read from the published vertices
 "Fig. 3b pre-step fluxes, main vs zoom panel","input -3e11, escape 3e11","input: main -2.992e11, zoom -3.330e11; escape: main 3.009e11, zoom 3.371e11",Fig. 3b,the same quantities drawn in both panels
 "Fig. 3d pre-step fluxes, main vs zoom panel","input -3e11, escape 3e11","input: main -3.001e11, zoom -2.840e11; escape: main 2.998e11, zoom 3.105e11",Fig. 3d,the same quantities drawn in both panels
+Fig. 3a right axis: atm at 1 PAL,0.2095 (O2 fraction),0.1960,Fig. 3a,from the right-hand ticks
+Fig. 3a_zoom right axis: atm at 1 PAL,0.2095 (O2 fraction),0.1952,Fig. 3a_zoom,from the right-hand ticks
+Fig. 3c right axis: atm at 1 PAL,0.2095 (O2 fraction),0.1907,Fig. 3c,from the right-hand ticks
+Fig. 3c_zoom right axis: atm at 1 PAL,0.2095 (O2 fraction),0.2005,Fig. 3c_zoom,from the right-hand ticks
 delta13C carbonate after 3% more burial,"f = 0.206, +0.23 permil","f = 0.2060, 0.227 permil",Methods,
 beta implied by Fig. 3d burial step,not printed,0.001998,Fig. 3d,SI-derived beta = 0.002667
 figure PAL offset (decades) for author_p,PAL not printed,-0.0010,Fig. 2,zero means the figure's PAL is 0.2095 mu = 3.714e+19 mol

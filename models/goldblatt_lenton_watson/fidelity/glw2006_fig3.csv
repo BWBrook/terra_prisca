@@ -1,193 +1,193 @@
-panel,curve,reading,beta,methane_axis,printed_vertices,printed_to_model_pt,fitted_to_this_trace
-a,methane,null: no switch,,,124,2.45447,False
-a,oxygen,null: no switch,,,118,30.3952,False
-a_zoom,methane,null: no switch,,,130,1.39523,False
-a_zoom,oxygen,null: no switch,,,166,16.4072,False
-b,net,null: no switch,,,122,6.22217,False
-b,escape,null: no switch,,,122,5.35291,False
-b,burial,null: no switch,,,2,0.0507221,False
-b,input,null: no switch,,,4,5.31739,False
-b_zoom,net,null: no switch,,,151,10.8606,False
-b_zoom,escape,null: no switch,,,152,5.46563,False
-b_zoom,burial,null: no switch,,,2,0.0352775,False
-b_zoom,input,null: no switch,,,4,6.01763,False
-a,oxygen,faithful,SI,,118,8.11665,False
-a,methane,faithful,SI,PAL,124,0.913347,False
-a,methane,faithful,SI,atm right,124,2.61997,False
-a_zoom,oxygen,faithful,SI,,166,23.6164,False
-a_zoom,methane,faithful,SI,PAL,130,1.42045,False
-a_zoom,methane,faithful,SI,atm right,130,2.59995,False
-b,escape,faithful,SI,,122,2.49429,False
-b,burial,faithful,SI,,2,0.0508069,False
-b,input,faithful,SI,,4,0.0386217,False
-b,net,faithful,SI,,122,2.4786,False
-b_zoom,escape,faithful,SI,,152,5.97904,False
-b_zoom,burial,faithful,SI,,2,0.093312,False
-b_zoom,input,faithful,SI,,4,0.79412,False
-b_zoom,net,faithful,SI,,151,5.76561,False
-c,methane,null: no switch,,,159,1.72984,False
-c,oxygen,null: no switch,,,157,30.354,False
-c_zoom,methane,null: no switch,,,134,1.39904,False
-c_zoom,oxygen,null: no switch,,,174,16.9247,False
-d,net,null: no switch,,,127,5.93487,False
-d,escape,null: no switch,,,164,4.30521,False
-d,burial,null: no switch,,,122,5.28171,False
-d,input,null: no switch,,,2,0.0507221,False
-d_zoom,net,null: no switch,,,157,9.88923,False
-d_zoom,escape,null: no switch,,,154,4.90887,False
-d_zoom,burial,null: no switch,,,6,6.15902,False
-d_zoom,input,null: no switch,,,2,0.0352775,False
-c,oxygen,faithful,SI,,157,7.7707,False
-c,methane,faithful,SI,PAL,159,0.759067,False
-c,methane,faithful,SI,atm right,159,1.89424,False
-c_zoom,oxygen,faithful,SI,,174,23.2222,False
-c_zoom,methane,faithful,SI,PAL,134,1.43508,False
-c_zoom,methane,faithful,SI,atm right,134,2.71326,False
-d,escape,faithful,SI,,164,2.05475,False
-d,burial,faithful,SI,,122,1.54409,False
-d,input,faithful,SI,,2,0.0508383,False
-d,net,faithful,SI,,127,1.99411,False
-d_zoom,escape,faithful,SI,,154,5.06443,False
-d_zoom,burial,faithful,SI,,6,1.78394,False
-d_zoom,input,faithful,SI,,2,0.539442,False
-d_zoom,net,faithful,SI,,157,3.67035,False
-a,oxygen,faithful,Fig. 3d,,118,8.11681,False
-a,methane,faithful,Fig. 3d,PAL,124,0.91257,False
-a,methane,faithful,Fig. 3d,atm right,124,2.61888,False
-a_zoom,oxygen,faithful,Fig. 3d,,166,23.6164,False
-a_zoom,methane,faithful,Fig. 3d,PAL,130,1.42046,False
-a_zoom,methane,faithful,Fig. 3d,atm right,130,2.59994,False
-b,escape,faithful,Fig. 3d,,122,2.49369,False
-b,burial,faithful,Fig. 3d,,2,0.0507913,False
-b,input,faithful,Fig. 3d,,4,0.0386217,False
-b,net,faithful,Fig. 3d,,122,2.47742,False
-b_zoom,escape,faithful,Fig. 3d,,152,5.97913,False
-b_zoom,burial,faithful,Fig. 3d,,2,0.0954061,False
-b_zoom,input,faithful,Fig. 3d,,4,0.79412,False
-b_zoom,net,faithful,Fig. 3d,,151,5.76323,False
-c,oxygen,faithful,Fig. 3d,,157,7.64213,False
-c,methane,faithful,Fig. 3d,PAL,159,0.690957,False
-c,methane,faithful,Fig. 3d,atm right,159,2.38339,False
-c_zoom,oxygen,faithful,Fig. 3d,,174,23.2171,False
-c_zoom,methane,faithful,Fig. 3d,PAL,134,1.4278,False
-c_zoom,methane,faithful,Fig. 3d,atm right,134,2.72023,False
-d,escape,faithful,Fig. 3d,,164,1.99945,False
-d,burial,faithful,Fig. 3d,,122,0.0249584,True
-d,input,faithful,Fig. 3d,,2,0.0508383,False
-d,net,faithful,Fig. 3d,,127,2.23215,False
-d_zoom,escape,faithful,Fig. 3d,,154,5.02147,False
-d_zoom,burial,faithful,Fig. 3d,,6,0.0263523,True
-d_zoom,input,faithful,Fig. 3d,,2,0.539442,False
-d_zoom,net,faithful,Fig. 3d,,157,4.69268,False
-a,oxygen,author_p,SI,,118,0.0171283,False
-a,methane,author_p,SI,PAL,124,0.0165129,False
-a,methane,author_p,SI,atm right,124,1.74249,False
-a_zoom,oxygen,author_p,SI,,166,0.0176558,False
-a_zoom,methane,author_p,SI,PAL,130,0.0164622,False
-a_zoom,methane,author_p,SI,atm right,130,1.91759,False
-b,escape,author_p,SI,,122,0.0201573,False
-b,burial,author_p,SI,,2,0.0508069,False
-b,input,author_p,SI,,4,0.0386217,False
-b,net,author_p,SI,,122,0.0202453,False
-b_zoom,escape,author_p,SI,,152,1.176,False
-b_zoom,burial,author_p,SI,,2,0.093312,False
-b_zoom,input,author_p,SI,,4,0.79412,False
-b_zoom,net,author_p,SI,,151,0.962038,False
-c,oxygen,author_p,SI,,157,0.648407,False
-c,methane,author_p,SI,PAL,159,0.842878,False
-c,methane,author_p,SI,atm right,159,1.22909,False
-c_zoom,oxygen,author_p,SI,,174,1.61808,False
-c_zoom,methane,author_p,SI,PAL,134,0.844421,False
-c_zoom,methane,author_p,SI,atm right,134,2.37426,False
-d,escape,author_p,SI,,164,1.03964,False
-d,burial,author_p,SI,,122,1.54409,False
-d,input,author_p,SI,,2,0.0508383,False
-d,net,author_p,SI,,127,0.530921,False
-d_zoom,escape,author_p,SI,,154,1.55701,False
-d_zoom,burial,author_p,SI,,6,1.78394,False
-d_zoom,input,author_p,SI,,2,0.539442,False
-d_zoom,net,author_p,SI,,157,2.60806,False
-a,oxygen,author_p,Fig. 3d,,118,0.0171645,False
-a,methane,author_p,Fig. 3d,PAL,124,0.0164264,False
-a,methane,author_p,Fig. 3d,atm right,124,1.74071,False
-a_zoom,oxygen,author_p,Fig. 3d,,166,0.0207448,False
-a_zoom,methane,author_p,Fig. 3d,PAL,130,0.0176146,False
-a_zoom,methane,author_p,Fig. 3d,atm right,130,1.91851,False
-b,escape,author_p,Fig. 3d,,122,0.0205298,False
-b,burial,author_p,Fig. 3d,,2,0.0507913,False
-b,input,author_p,Fig. 3d,,4,0.0386217,False
-b,net,author_p,Fig. 3d,,122,0.0201437,False
-b_zoom,escape,author_p,Fig. 3d,,152,1.17455,False
-b_zoom,burial,author_p,Fig. 3d,,2,0.0954061,False
-b_zoom,input,author_p,Fig. 3d,,4,0.79412,False
-b_zoom,net,author_p,Fig. 3d,,151,0.957335,False
-c,oxygen,author_p,Fig. 3d,,157,0.0182104,False
-c,methane,author_p,Fig. 3d,PAL,159,0.0167501,False
-c,methane,author_p,Fig. 3d,atm right,159,1.87886,False
-c_zoom,oxygen,author_p,Fig. 3d,,174,0.0167343,False
-c_zoom,methane,author_p,Fig. 3d,PAL,134,0.0168614,False
-c_zoom,methane,author_p,Fig. 3d,atm right,134,1.91714,False
-d,escape,author_p,Fig. 3d,,164,0.0186203,False
-d,burial,author_p,Fig. 3d,,122,0.0249584,True
-d,input,author_p,Fig. 3d,,2,0.0508383,False
-d,net,author_p,Fig. 3d,,127,0.0209088,False
-d_zoom,escape,author_p,Fig. 3d,,154,0.24286,False
-d_zoom,burial,author_p,Fig. 3d,,6,0.0263523,True
-d_zoom,input,author_p,Fig. 3d,,2,0.539442,False
-d_zoom,net,author_p,Fig. 3d,,157,0.0707717,False
-a,oxygen,author_corrected,SI,,118,0.955368,False
-a,methane,author_corrected,SI,PAL,124,1.09746,False
-a,methane,author_corrected,SI,atm right,124,0.67543,False
-a_zoom,oxygen,author_corrected,SI,,166,3.92836,False
-a_zoom,methane,author_corrected,SI,PAL,130,1.93773,False
-a_zoom,methane,author_corrected,SI,atm right,130,2.98125,False
-b,escape,author_corrected,SI,,122,0.442958,False
-b,burial,author_corrected,SI,,2,0.0508069,False
-b,input,author_corrected,SI,,4,0.0386217,False
-b,net,author_corrected,SI,,122,0.361408,False
-b_zoom,escape,author_corrected,SI,,152,5.28734,False
-b_zoom,burial,author_corrected,SI,,2,0.093312,False
-b_zoom,input,author_corrected,SI,,4,0.79412,False
-b_zoom,net,author_corrected,SI,,151,5.69917,False
-c,oxygen,author_corrected,SI,,157,1.64676,False
-c,methane,author_corrected,SI,PAL,159,2.01395,False
-c,methane,author_corrected,SI,atm right,159,0.580653,False
-c_zoom,oxygen,author_corrected,SI,,174,4.10083,False
-c_zoom,methane,author_corrected,SI,PAL,134,2.05851,False
-c_zoom,methane,author_corrected,SI,atm right,134,3.11901,False
-d,escape,author_corrected,SI,,164,0.953383,False
-d,burial,author_corrected,SI,,122,1.54409,False
-d,input,author_corrected,SI,,2,0.0508383,False
-d,net,author_corrected,SI,,127,0.879192,False
-d_zoom,escape,author_corrected,SI,,154,5.87128,False
-d_zoom,burial,author_corrected,SI,,6,1.78394,False
-d_zoom,input,author_corrected,SI,,2,0.539442,False
-d_zoom,net,author_corrected,SI,,157,6.67619,False
-a,oxygen,author_corrected,Fig. 3d,,118,0.95613,False
-a,methane,author_corrected,Fig. 3d,PAL,124,1.09893,False
-a,methane,author_corrected,Fig. 3d,atm right,124,0.674169,False
-a_zoom,oxygen,author_corrected,Fig. 3d,,166,3.92885,False
-a_zoom,methane,author_corrected,Fig. 3d,PAL,130,1.93786,False
-a_zoom,methane,author_corrected,Fig. 3d,atm right,130,2.98141,False
-b,escape,author_corrected,Fig. 3d,,122,0.441715,False
-b,burial,author_corrected,Fig. 3d,,2,0.0507913,False
-b,input,author_corrected,Fig. 3d,,4,0.0386217,False
-b,net,author_corrected,Fig. 3d,,122,0.362437,False
-b_zoom,escape,author_corrected,Fig. 3d,,152,5.28745,False
-b_zoom,burial,author_corrected,Fig. 3d,,2,0.0954061,False
-b_zoom,input,author_corrected,Fig. 3d,,4,0.79412,False
-b_zoom,net,author_corrected,Fig. 3d,,151,5.7,False
-c,oxygen,author_corrected,Fig. 3d,,157,1.24886,False
-c,methane,author_corrected,Fig. 3d,PAL,159,1.35396,False
-c,methane,author_corrected,Fig. 3d,atm right,159,0.597684,False
-c_zoom,oxygen,author_corrected,Fig. 3d,,174,3.90126,False
-c_zoom,methane,author_corrected,Fig. 3d,PAL,134,1.99055,False
-c_zoom,methane,author_corrected,Fig. 3d,atm right,134,3.05929,False
-d,escape,author_corrected,Fig. 3d,,164,0.383928,False
-d,burial,author_corrected,Fig. 3d,,122,0.0249584,True
-d,input,author_corrected,Fig. 3d,,2,0.0508383,False
-d,net,author_corrected,Fig. 3d,,127,0.33159,False
-d_zoom,escape,author_corrected,Fig. 3d,,154,5.89007,False
-d_zoom,burial,author_corrected,Fig. 3d,,6,0.0263523,True
-d_zoom,input,author_corrected,Fig. 3d,,2,0.539442,False
-d_zoom,net,author_corrected,Fig. 3d,,157,6.27101,False
+panel,curve,reading,beta,methane_axis,printed_vertices,printed_to_model_pt,model_to_printed_pt,printed_outside_support_pt,model_outside_support_pt,model_off_frame_pt,fitted_to_this_trace
+a,methane,null: no switch,,,124,3.47861,3.58116,0.0499936,0,0,False
+a,oxygen,null: no switch,,,118,27.6584,26.2087,0.0499979,0,0,False
+a_zoom,methane,null: no switch,,,130,1.49866,1.44461,0.0497963,0,0,False
+a_zoom,oxygen,null: no switch,,,166,19.9369,17.2475,0.0497963,0,0,False
+b,net,null: no switch,,,122,4.23893,0.340768,0.0499963,0,0,False
+b,escape,null: no switch,,,122,6.1983,6.53729,0.0499963,0,0,False
+b,burial,null: no switch,,,2,0,0,0.0499972,0,0,False
+b,input,null: no switch,,,4,6.61302,6.55439,0.049998,0,0,False
+b_zoom,net,null: no switch,,,151,12.5538,11.8347,0.0499588,0,0,False
+b_zoom,escape,null: no switch,,,152,6.52887,6.56742,0.0499586,0,0,False
+b_zoom,burial,null: no switch,,,2,0,0,0.0499987,0,0,False
+b_zoom,input,null: no switch,,,4,7.6968,7.53073,0.0499987,0,0,False
+a,oxygen,faithful,SI,,118,17.5794,8.0803,0.0599975,0,0,False
+a,methane,faithful,SI,PAL,124,0.484979,0.395377,0.0599924,0,0,False
+a,methane,faithful,SI,"atm (right, as ticked)",124,0.610638,0.544019,0.0599924,0,0,False
+a_zoom,oxygen,faithful,SI,,166,20.2861,12.028,0.0497963,0,0,False
+a_zoom,methane,faithful,SI,PAL,130,1.57336,1.53046,0.0497963,0,0,False
+a_zoom,methane,faithful,SI,"atm (right, as ticked)",130,1.44956,1.36337,0.0497963,0,0,False
+b,escape,faithful,SI,,122,1.7282,0.463718,0.0699949,0,0,False
+b,burial,faithful,SI,,2,0.00966388,0.00966756,0.0699961,0,0,False
+b,input,faithful,SI,,4,0.0126332,0.0126383,0.0699972,0,0,False
+b,net,faithful,SI,,122,1.68615,0.449318,0.0699949,0,0,False
+b_zoom,escape,faithful,SI,,152,7.5984,7.73124,0.0499586,0,0,False
+b_zoom,burial,faithful,SI,,2,0.0777104,0.0777341,0.0499987,0,0,False
+b_zoom,input,faithful,SI,,4,0.36428,0.329641,0.0499987,0,0,False
+b_zoom,net,faithful,SI,,151,6.89767,6.9497,0.0499588,0,0,False
+c,methane,null: no switch,,,159,1.24264,1.22011,0.049863,0,0,False
+c,oxygen,null: no switch,,,157,25.9404,24.2477,0.0480053,0,0,False
+c_zoom,methane,null: no switch,,,134,1.48277,1.42607,0.0499404,0,0,False
+c_zoom,oxygen,null: no switch,,,174,20.1331,17.5289,0.0494404,0,0,False
+d,net,null: no switch,,,127,4.1859,0.293272,0.0499966,0,0,False
+d,escape,null: no switch,,,164,3.22646,2.80276,0.048998,0,0,False
+d,burial,null: no switch,,,122,3.15895,2.72934,0.048998,0,0,False
+d,input,null: no switch,,,2,0,0,0.0499972,0,0,False
+d_zoom,net,null: no switch,,,157,11.245,10.8132,0.0497111,0,0,False
+d_zoom,escape,null: no switch,,,154,5.85511,5.916,0.0495486,0,0,False
+d_zoom,burial,null: no switch,,,6,6.85986,6.73137,0.0499946,0,0,False
+d_zoom,input,null: no switch,,,2,0,0,0.0499987,0,0,False
+c,oxygen,faithful,SI,,157,17.8864,8.72782,0.067973,0,0,False
+c,methane,faithful,SI,PAL,159,0.655807,0.614223,0.0598356,0,0,False
+c,methane,faithful,SI,"atm (right, as ticked)",159,0.553124,0.48597,0.0598356,0,0,False
+c_zoom,oxygen,faithful,SI,,174,20.2707,11.9854,0.0494404,0,0,False
+c_zoom,methane,faithful,SI,PAL,134,1.5202,1.45704,0.0499404,0,0,False
+c_zoom,methane,faithful,SI,"atm (right, as ticked)",134,1.46284,1.37836,0.0499404,0,0,False
+d,escape,faithful,SI,,164,1.80699,1.0663,0.0689568,0,0,False
+d,burial,faithful,SI,,122,0.93401,0.984567,0.0689568,0,0,False
+d,input,faithful,SI,,2,0.00343687,0.00343685,0.0699961,0,0,False
+d,net,faithful,SI,,127,1.09792,0.709371,0.0699953,0,0,False
+d_zoom,escape,faithful,SI,,154,6.13872,6.21728,0.0495486,0,0,False
+d_zoom,burial,faithful,SI,,6,2.17943,2.19697,0.0499946,0,0,False
+d_zoom,input,faithful,SI,,2,0.538384,0.538384,0.0499987,0,0,False
+d_zoom,net,faithful,SI,,157,3.93352,3.71988,0.0497111,0,0,False
+a,oxygen,faithful,Fig. 3d,,118,17.5796,8.08065,0.0599975,0,0,False
+a,methane,faithful,Fig. 3d,PAL,124,0.484098,0.39426,0.0599924,0,0,False
+a,methane,faithful,Fig. 3d,"atm (right, as ticked)",124,0.60947,0.542655,0.0599924,0,0,False
+a_zoom,oxygen,faithful,Fig. 3d,,166,20.2862,12.028,0.0497963,0,0,False
+a_zoom,methane,faithful,Fig. 3d,PAL,130,1.57341,1.53051,0.0497963,0,0,False
+a_zoom,methane,faithful,Fig. 3d,"atm (right, as ticked)",130,1.44961,1.36343,0.0497963,0,0,False
+b,escape,faithful,Fig. 3d,,122,1.72788,0.46256,0.0699949,0,0,False
+b,burial,faithful,Fig. 3d,,2,0.00763357,0.00763562,0.0699961,0,0,False
+b,input,faithful,Fig. 3d,,4,0.0126332,0.0126383,0.0699972,0,0,False
+b,net,faithful,Fig. 3d,,122,1.68489,0.449833,0.0699949,0,0,False
+b_zoom,escape,faithful,Fig. 3d,,152,7.59856,7.73141,0.0499586,0,0,False
+b_zoom,burial,faithful,Fig. 3d,,2,0.0822272,0.082242,0.0499987,0,0,False
+b_zoom,input,faithful,Fig. 3d,,4,0.36428,0.329641,0.0499987,0,0,False
+b_zoom,net,faithful,Fig. 3d,,151,6.89437,6.94622,0.0499588,0,0,False
+c,oxygen,faithful,Fig. 3d,,157,17.8343,8.5951,0.067973,0,0,False
+c,methane,faithful,Fig. 3d,PAL,159,0.387708,0.254332,0.0598356,0,0,False
+c,methane,faithful,Fig. 3d,"atm (right, as ticked)",159,0.478376,0.36563,0.0598356,0,0,False
+c_zoom,oxygen,faithful,Fig. 3d,,174,20.2634,11.9727,0.0494404,0,0,False
+c_zoom,methane,faithful,Fig. 3d,PAL,134,1.49642,1.42945,0.0499404,0,0,False
+c_zoom,methane,faithful,Fig. 3d,"atm (right, as ticked)",134,1.43993,1.35117,0.0499404,0,0,False
+d,escape,faithful,Fig. 3d,,164,1.6029,0.411924,0.0689568,0,0,False
+d,burial,faithful,Fig. 3d,,122,0.0212217,0.0211917,0.0689568,0,0,True
+d,input,faithful,Fig. 3d,,2,0.00343687,0.00343685,0.0699961,0,0,False
+d,net,faithful,Fig. 3d,,127,1.52843,0.394393,0.0699953,0,0,False
+d_zoom,escape,faithful,Fig. 3d,,154,6.05867,6.12513,0.0495486,0,0,False
+d_zoom,burial,faithful,Fig. 3d,,6,0.0141752,0.014175,0.0499946,0,0,True
+d_zoom,input,faithful,Fig. 3d,,2,0.538384,0.538384,0.0499987,0,0,False
+d_zoom,net,faithful,Fig. 3d,,157,5.40573,5.40968,0.0497111,0,0,False
+a,oxygen,author_p,SI,,118,0.0108725,0.0108473,0.0599975,0,0,False
+a,methane,author_p,SI,PAL,124,0.0107253,0.0106314,0.0599924,0,0,False
+a,methane,author_p,SI,"atm (right, as ticked)",124,0.199263,0.199221,0.0599924,0,0,False
+a_zoom,oxygen,author_p,SI,,166,0.0146072,0.0145375,0.0497963,0,0,False
+a_zoom,methane,author_p,SI,PAL,130,0.0119033,0.0118321,0.0497963,0,0,False
+a_zoom,methane,author_p,SI,"atm (right, as ticked)",130,0.215762,0.215021,0.0497963,0,0,False
+b,escape,author_p,SI,,122,0.016744,0.0177825,0.0699949,0,0,False
+b,burial,author_p,SI,,2,0.00966388,0.00966756,0.0699961,0,0,False
+b,input,author_p,SI,,4,0.0126332,0.0126383,0.0699972,0,0,False
+b,net,author_p,SI,,122,0.0103881,0.0121947,0.0699949,0,0,False
+b_zoom,escape,author_p,SI,,152,1.56844,1.55569,0.0499586,0,0,False
+b_zoom,burial,author_p,SI,,2,0.0777104,0.0777341,0.0499987,0,0,False
+b_zoom,input,author_p,SI,,4,0.36428,0.329641,0.0499987,0,0,False
+b_zoom,net,author_p,SI,,151,1.22359,1.22175,0.0499588,0,0,False
+c,oxygen,author_p,SI,,157,0.518374,0.519695,0.067973,0,0,False
+c,methane,author_p,SI,PAL,159,0.689191,0.693679,0.0598356,0,0,False
+c,methane,author_p,SI,"atm (right, as ticked)",159,0.562375,0.565027,0.0598356,0,0,False
+c_zoom,oxygen,author_p,SI,,174,1.39331,1.40918,0.0494404,0,0,False
+c_zoom,methane,author_p,SI,PAL,134,0.64307,0.495844,0.0499404,0,0,False
+c_zoom,methane,author_p,SI,"atm (right, as ticked)",134,0.656501,0.51535,0.0499404,0,0,False
+d,escape,author_p,SI,,164,0.881226,0.884397,0.0689568,0,0,False
+d,burial,author_p,SI,,122,0.93401,0.984567,0.0689568,0,0,False
+d,input,author_p,SI,,2,0.00343687,0.00343685,0.0699961,0,0,False
+d,net,author_p,SI,,127,0.23913,0.340491,0.0699953,0,0,False
+d_zoom,escape,author_p,SI,,154,1.41348,1.332,0.0495486,0,0,False
+d_zoom,burial,author_p,SI,,6,2.17943,2.19697,0.0499946,0,0,False
+d_zoom,input,author_p,SI,,2,0.538384,0.538384,0.0499987,0,0,False
+d_zoom,net,author_p,SI,,157,2.17906,2.25625,0.0497111,0,0,False
+a,oxygen,author_p,Fig. 3d,,118,0.0111776,0.0111538,0.0599975,0,0,False
+a,methane,author_p,Fig. 3d,PAL,124,0.0112146,0.0111272,0.0599924,0,0,False
+a,methane,author_p,Fig. 3d,"atm (right, as ticked)",124,0.197635,0.197595,0.0599924,0,0,False
+a_zoom,oxygen,author_p,Fig. 3d,,166,0.0186577,0.0185549,0.0497963,0,0,False
+a_zoom,methane,author_p,Fig. 3d,PAL,130,0.0134227,0.0133208,0.0497963,0,0,False
+a_zoom,methane,author_p,Fig. 3d,"atm (right, as ticked)",130,0.215956,0.215207,0.0497963,0,0,False
+b,escape,author_p,Fig. 3d,,122,0.0171747,0.0181878,0.0699949,0,0,False
+b,burial,author_p,Fig. 3d,,2,0.00763357,0.00763562,0.0699961,0,0,False
+b,input,author_p,Fig. 3d,,4,0.0126332,0.0126383,0.0699972,0,0,False
+b,net,author_p,Fig. 3d,,122,0.0103343,0.0121517,0.0699949,0,0,False
+b_zoom,escape,author_p,Fig. 3d,,152,1.56849,1.55595,0.0499586,0,0,False
+b_zoom,burial,author_p,Fig. 3d,,2,0.0822272,0.082242,0.0499987,0,0,False
+b_zoom,input,author_p,Fig. 3d,,4,0.36428,0.329641,0.0499987,0,0,False
+b_zoom,net,author_p,Fig. 3d,,151,1.21997,1.21836,0.0499588,0,1.42109e-14,False
+c,oxygen,author_p,Fig. 3d,,157,0.0161568,0.0161407,0.067973,0,0,False
+c,methane,author_p,Fig. 3d,PAL,159,0.0127617,0.0126837,0.0598356,0,0,False
+c,methane,author_p,Fig. 3d,"atm (right, as ticked)",159,0.245616,0.245494,0.0598356,0,0,False
+c_zoom,oxygen,author_p,Fig. 3d,,174,0.0147826,0.0147209,0.0494404,0,0,False
+c_zoom,methane,author_p,Fig. 3d,PAL,134,0.0141027,0.0140422,0.0499404,0,0,False
+c_zoom,methane,author_p,Fig. 3d,"atm (right, as ticked)",134,0.111583,0.111169,0.0499404,0,0,False
+d,escape,author_p,Fig. 3d,,164,0.0134394,0.0147005,0.0689568,0,0,False
+d,burial,author_p,Fig. 3d,,122,0.0212217,0.0211917,0.0689568,0,0,True
+d,input,author_p,Fig. 3d,,2,0.00343687,0.00343685,0.0699961,0,0,False
+d,net,author_p,Fig. 3d,,127,0.0162705,0.0171667,0.0699953,0,0,False
+d_zoom,escape,author_p,Fig. 3d,,154,0.242579,0.243701,0.0495486,0,0,False
+d_zoom,burial,author_p,Fig. 3d,,6,0.0141752,0.014175,0.0499946,0,0,True
+d_zoom,input,author_p,Fig. 3d,,2,0.538384,0.538384,0.0499987,0,0,False
+d_zoom,net,author_p,Fig. 3d,,157,0.0860031,0.0860428,0.0497111,0,0,False
+a,oxygen,author_corrected,SI,,118,1.87676,1.78297,0.0599975,0,0,False
+a,methane,author_corrected,SI,PAL,124,1.68466,1.69274,0.0599924,0,0,False
+a,methane,author_corrected,SI,"atm (right, as ticked)",124,1.48295,1.4894,0.0599924,0,0,False
+a_zoom,oxygen,author_corrected,SI,,166,3.50327,3.56269,0.0497963,0,0,False
+a_zoom,methane,author_corrected,SI,PAL,130,1.43966,1.14587,0.0497963,0,0,False
+a_zoom,methane,author_corrected,SI,"atm (right, as ticked)",130,1.42347,1.09358,0.0497963,0,0,False
+b,escape,author_corrected,SI,,122,0.418201,1.53806,0.0699949,0,13.807,False
+b,burial,author_corrected,SI,,2,0.00966388,0.00966756,0.0699961,0,0,False
+b,input,author_corrected,SI,,4,0.0126332,0.0126383,0.0699972,0,0,False
+b,net,author_corrected,SI,,122,0.136567,2.19936,0.0699949,0,8.73256,False
+b_zoom,escape,author_corrected,SI,,152,5.77465,5.39804,0.0499586,0,25.7473,False
+b_zoom,burial,author_corrected,SI,,2,0.0777104,0.0777341,0.0499987,0,0,False
+b_zoom,input,author_corrected,SI,,4,0.36428,0.329641,0.0499987,0,0,False
+b_zoom,net,author_corrected,SI,,151,5.42212,5.98879,0.0499588,0,17.4045,False
+c,oxygen,author_corrected,SI,,157,2.25568,2.19574,0.067973,0,0,False
+c,methane,author_corrected,SI,PAL,159,2.19082,2.20646,0.0598356,0,0,False
+c,methane,author_corrected,SI,"atm (right, as ticked)",159,1.95626,1.96959,0.0598356,0,0,False
+c_zoom,oxygen,author_corrected,SI,,174,3.67299,3.77551,0.0494404,0,0,False
+c_zoom,methane,author_corrected,SI,PAL,134,1.50022,1.20737,0.0499404,0,0,False
+c_zoom,methane,author_corrected,SI,"atm (right, as ticked)",134,1.48839,1.17447,0.0499404,0,0,False
+d,escape,author_corrected,SI,,164,0.934556,1.74654,0.0689568,0,13.7564,False
+d,burial,author_corrected,SI,,122,0.93401,0.984567,0.0689568,0,0,False
+d,input,author_corrected,SI,,2,0.00343687,0.00343685,0.0699961,0,0,False
+d,net,author_corrected,SI,,127,0.372836,2.22559,0.0699953,0,13.7376,False
+d_zoom,escape,author_corrected,SI,,154,6.14778,6.20914,0.0495486,0,24.3167,False
+d_zoom,burial,author_corrected,SI,,6,2.17943,2.19697,0.0499946,0,0,False
+d_zoom,input,author_corrected,SI,,2,0.538384,0.538384,0.0499987,0,0,False
+d_zoom,net,author_corrected,SI,,157,7.10602,7.64206,0.0497111,0,24.2531,False
+a,oxygen,author_corrected,Fig. 3d,,118,1.87723,1.78348,0.0599975,0,0,False
+a,methane,author_corrected,Fig. 3d,PAL,124,1.6862,1.69428,0.0599924,0,0,False
+a,methane,author_corrected,Fig. 3d,"atm (right, as ticked)",124,1.48449,1.49094,0.0599924,0,0,False
+a_zoom,oxygen,author_corrected,Fig. 3d,,166,3.50372,3.56322,0.0497963,0,0,False
+a_zoom,methane,author_corrected,Fig. 3d,PAL,130,1.43978,1.146,0.0497963,0,0,False
+a_zoom,methane,author_corrected,Fig. 3d,"atm (right, as ticked)",130,1.42362,1.0937,0.0497963,0,0,False
+b,escape,author_corrected,Fig. 3d,,122,0.417807,1.53799,0.0699949,0,13.807,False
+b,burial,author_corrected,Fig. 3d,,2,0.00763357,0.00763562,0.0699961,0,0,False
+b,input,author_corrected,Fig. 3d,,4,0.0126332,0.0126383,0.0699972,0,0,False
+b,net,author_corrected,Fig. 3d,,122,0.136949,2.19939,0.0699949,0,8.74264,False
+b_zoom,escape,author_corrected,Fig. 3d,,152,5.7738,5.3976,0.0499586,0,25.7443,False
+b_zoom,burial,author_corrected,Fig. 3d,,2,0.0822272,0.082242,0.0499987,0,0,False
+b_zoom,input,author_corrected,Fig. 3d,,4,0.36428,0.329641,0.0499987,0,0,False
+b_zoom,net,author_corrected,Fig. 3d,,151,5.42368,5.98979,0.0499588,0,17.4185,False
+c,oxygen,author_corrected,Fig. 3d,,157,2.04165,1.971,0.067973,0,0,False
+c,methane,author_corrected,Fig. 3d,PAL,159,1.71187,1.71966,0.0598356,0,0,False
+c,methane,author_corrected,Fig. 3d,"atm (right, as ticked)",159,1.46946,1.47529,0.0598356,0,0,False
+c_zoom,oxygen,author_corrected,Fig. 3d,,174,3.4849,3.55746,0.0494404,0,0,False
+c_zoom,methane,author_corrected,Fig. 3d,PAL,134,1.43622,1.14309,0.0499404,0,0,False
+c_zoom,methane,author_corrected,Fig. 3d,"atm (right, as ticked)",134,1.42689,1.11431,0.0499404,0,0,False
+d,escape,author_corrected,Fig. 3d,,164,0.423178,1.53622,0.0689568,0,13.7585,False
+d,burial,author_corrected,Fig. 3d,,122,0.0212217,0.0211917,0.0689568,0,0,True
+d,input,author_corrected,Fig. 3d,,2,0.00343687,0.00343685,0.0699961,0,0,False
+d,net,author_corrected,Fig. 3d,,127,0.130893,2.19892,0.0699953,0,8.71039,False
+d_zoom,escape,author_corrected,Fig. 3d,,154,6.57451,6.45521,0.0495486,0,25.6724,False
+d_zoom,burial,author_corrected,Fig. 3d,,6,0.0141752,0.014175,0.0499946,0,0,True
+d_zoom,input,author_corrected,Fig. 3d,,2,0.538384,0.538384,0.0499987,0,0,False
+d_zoom,net,author_corrected,Fig. 3d,,157,6.31285,7.15375,0.0497111,0,17.3415,False

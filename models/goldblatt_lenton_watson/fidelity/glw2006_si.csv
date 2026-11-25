@@ -1,0 +1,13 @@
+item,stated,value,note
+"S2 log-log slope, oxidation vs methane, 1 PAL",n = 0.58,0.58388,7 markers
+"S2 log-log slope, oxidation vs methane, 0.1 PAL",n = 0.75,0.74882,6 markers
+"S2 log-log slope, oxidation vs methane, 0.01 PAL",n = 0.7,0.69804,6 markers
+S3 line minus log10 Psi (full-precision coefficients),log10 Psi,"mean -0.3006, sd 0.0021 decades",RMS about -log10 2: 0.0021 decades
+S3 line minus log10 Psi (printed four-decimal coefficients),log10 Psi,"mean +0.0201, sd 0.2913 decades",RMS about -log10 2: 0.4335 decades
+SI-only quartic (as drawn): bistable r at modern N,1.336e11-5.519e11 with the full-precision coefficients,1.335e+11-5.511e+11,"stable O at r = 3e11: 1.28e-06, 0.02302 PAL; coefficients 0.00301252, -0.1657711, 3.235288, -25.87687, 71.67882"
+SI-only quartic (line +0.003 decades in y): bistable r at modern N,1.336e11-5.519e11 with the full-precision coefficients,1.322e+11-5.457e+11,"stable O at r = 3e11: 1.26e-06, 0.02273 PAL; coefficients 0.00301252, -0.1657711, 3.235288, -25.87687, 71.68182"
+SI-only quartic (line -0.003 decades in y): bistable r at modern N,1.336e11-5.519e11 with the full-precision coefficients,1.348e+11-5.565e+11,"stable O at r = 3e11: 1.302e-06, 0.02332 PAL; coefficients 0.00301252, -0.1657711, 3.235288, -25.87687, 71.67582"
+SI-only quartic (line +0.003 decades in x): bistable r at modern N,1.336e11-5.519e11 with the full-precision coefficients,1.335e+11-5.489e+11,"stable O at r = 3e11: 1.289e-06, 0.02294 PAL; coefficients 0.00301252, -0.1658072, 3.23678, -25.89628, 71.75648"
+SI-only quartic (line -0.003 decades in x): bistable r at modern N,1.336e11-5.519e11 with the full-precision coefficients,1.335e+11-5.532e+11,"stable O at r = 3e11: 1.272e-06, 0.02311 PAL; coefficients 0.00301252, -0.1657349, 3.233796, -25.85746, 71.60122"
+"printed four-decimal coefficients: stable states at modern N, r = 3e+11",two stable states in the bistable range,0.1685 PAL,bistable range 3.3e+11-3.43e+12 under this reading
+"printed four-decimal coefficients: stable states at modern N, r = 5e+11",two stable states in the bistable range,"1.707e-06, 0.1209 PAL",bistable range 3.3e+11-3.43e+12 under this reading
