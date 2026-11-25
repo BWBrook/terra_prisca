@@ -3,6 +3,7 @@
 Codex (GPT-6), 25 November 2026. Review of the article at `39993fc`, the brief and guide at `899083d`, and the graphical abstract at `6fd990d`, requested in discussion 195. E17–E22 are approved with the amendments recorded in the [interpretation rules](../../models/haze_world/synthesis/estimands.md#e17-habitat-geometry-and-finite-supply-responses-c60-c61). The proposed product edits below go to Claude. All numerical checks used existing evidence.
 
 The [follow-up on the applied edits](#confirmation-at-5ee433a) records which revisions passed and the remaining wording changes.
+The [clean-copy review](#clean-copy-review) checks the final abstract, numbered citations and supplement tables at `89022ed`.
 
 ## Barry’s abstract, sentence by sentence
 
@@ -86,3 +87,18 @@ Sentence 9 now scopes the timing to the four controls. Their resident losses occ
 Three short qualifications align page 2 with its figure and ledger. In finding 1 use panel 1’s “near the switch on the haze-cooling branch” for the warming and cooling directions. In finding 2 say “within **about** 7 years” (maximum 7.0795) and “in the disturbance runs” for the oscillations and population crashes. In finding 4 the 0.1-cell-per-year result applies at zero or half recycling. For standalone use, panel 3’s full-recycling note should specify **“with biomass exported”**. [C51, C66 and C67 in the ledger](../../models/haze_world/synthesis/claims.csv)
 
 **Length and checks.** Writer counted **6,768 words** at the applied commit with title, abstract, main text, end statements and 38 formatted references. Including Table 1 and the captions gives **8,024**, before the final cover and declarations. The ledger check returned 40 cited claims and zero errors, makedoc reported zero lint errors, and the four targeted paper tests passed.
+
+## Clean-copy review
+
+**Abstract S6 confirmed.** At the reference supply, the equilibrium first loses local stability at a thermal response time of 0.149214 years with zero acetate recycling and 1.102760 years with half recycled. [Zero-forcing rows](../../models/haze_world/review/issue2_forcing_window.csv)
+
+**Abstract S9 and brief finding 4 confirmed.** The invader ended alone in all 24 closed reference invasions. In the four fixed-product controls the resident was removed 10–70 years after invasion, and atmospheric methane took 1,029–13,459 years from invasion to move temperature across the switch. Recomputing temperature from saved methane reproduced each of the four temperature histories. On crossing, the missing resident would grow faster than the invader. [Census check](haze-world-invasion-wording-2026-11-25.py) · [Four controls](../../models/haze_world/review/issue3_assembly.json)
+
+**Article PDF.** All 64 citation mentions remain with their original passage, Table 1 cell or Figure 1 caption. The 52 printed citation groups resolve to the same 38 works, in first-citation order. Figure 1 still credits Seto and Akagi [15] for the plateau and Arney et al. [12] for the haze curve. The young-Sun comparison cites the separate Arney paper [20]. All 13 equation numbers appear on pages 3–7. [Article PDF](../../models/haze_world/paper/products/build/article.pdf)
+
+**Supplement tables.** Regeneration from empty table blocks reproduced all 22 files byte for byte, including 19 CSVs. After Pandoc parsed S4 and S5, all 18 headers and 72 data cells matched their CSVs, including the absolute-value signs. Both targeted supplement tests passed. [S4 summary](../../models/haze_world/paper/esm/s4_summary.csv) · [S5 brackets](../../models/haze_world/paper/esm/s5_brackets.csv)
+
+Two repairs remain for the standalone supplement.
+
+- On page 5, S3b's state names overprint the node counts 200 and 188. On page 7, S5's two habitat-branch identifiers overprint the initial brackets, the “evaluations” and “status” headings run together, and the caption's audit path runs off the page. Short display labels and a linked caption title would let readers distinguish the values while preserving the full identifiers in the CSVs. [Supplement PDF](../../models/haze_world/paper/products/build/supplement.pdf)
+- The PDF contains 29 relative links to 21 distinct files, including the full Table S1 and its CSV. All 21 resolve from the Markdown source directory and none resolve from the PDF's directory. Use repository URLs pinned to the version the PDF describes, or distribute the targets with the PDF and test the links from that bundle. [Table S1](../../models/haze_world/paper/esm/table_s1.md)
