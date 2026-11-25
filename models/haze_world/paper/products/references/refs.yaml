@@ -1,0 +1,130 @@
+---
+references:
+- id: arney2016PaleOrangeDot
+  citation-key: arney2016PaleOrangeDot
+  type: article-journal
+  title: 'The Pale Orange Dot: The Spectrum and Habitability of Hazy Archean Earth'
+  author:
+  - family: Arney
+    given: Giada
+  - family: Domagal-Goldman
+    given: Shawn D.
+  - family: Meadows
+    given: Victoria S.
+  - family: Wolf
+    given: Eric T.
+  - family: Schwieterman
+    given: Edward
+  - family: Charnay
+    given: Benjamin
+  - family: Claire
+    given: Mark
+  - family: Hébrard
+    given: Eric
+  - family: Trainer
+    given: Melissa G.
+  issued:
+    date-parts:
+    - - 2016
+  container-title: Astrobiology
+  volume: '16'
+  issue: '11'
+  page: 873–899
+  publisher: SAGE Publications
+  DOI: 10.1089/ast.2015.1422
+- id: feulner2012FaintYoungSun
+  citation-key: feulner2012FaintYoungSun
+  type: article-journal
+  title: The faint young Sun problem
+  author:
+  - family: Feulner
+    given: Georg
+  issued:
+    date-parts:
+    - - 2012
+  container-title: Reviews of Geophysics
+  volume: '50'
+  issue: '2'
+  article-number: 2011RG000375
+  publisher: American Geophysical Union (AGU)
+  DOI: 10.1029/2011rg000375
+- id: held2010ProbingFastSlow
+  citation-key: held2010ProbingFastSlow
+  type: article-journal
+  title: Probing the Fast and Slow Components of Global Warming by Returning Abruptly to Preindustrial Forcing
+  author:
+  - family: Held
+    given: Isaac M.
+  - family: Winton
+    given: Michael
+  - family: Takahashi
+    given: Ken
+  - family: Delworth
+    given: Thomas
+  - family: Zeng
+    given: Fanrong
+  - family: Vallis
+    given: Geoffrey K.
+  issued:
+    date-parts:
+    - - 2010
+  container-title: Journal of Climate
+  volume: '23'
+  issue: '9'
+  page: 2418–2427
+  publisher: American Meteorological Society
+  DOI: 10.1175/2009jcli3466.1
+- id: sagan1972EarthMarsEvolution
+  citation-key: sagan1972EarthMarsEvolution
+  type: article-journal
+  title: 'Earth and Mars: Evolution of Atmospheres and Surface Temperatures'
+  author:
+  - family: Sagan
+    given: Carl
+  - family: Mullen
+    given: George
+  issued:
+    date-parts:
+    - - 1972
+  container-title: Science
+  volume: '177'
+  issue: '4043'
+  page: 52–56
+  publisher: American Association for the Advancement of Science (AAAS)
+  DOI: 10.1126/science.177.4043.52
+- id: seto2007CoexistenceIntroducingRegulation
+  citation-key: seto2007CoexistenceIntroducingRegulation
+  type: article-journal
+  title: Coexistence introducing regulation of environmental conditions
+  author:
+  - family: Seto
+    given: Mayumi
+  - family: Akagi
+    given: Tasuku
+  issued:
+    date-parts:
+    - - 2007
+  container-title: Journal of Theoretical Biology
+  volume: '248'
+  issue: '2'
+  page: 267–274
+  publisher: Elsevier BV
+  DOI: 10.1016/j.jtbi.2007.05.013
+- id: watson1983BiologicalHomeostasisGlobal
+  citation-key: watson1983BiologicalHomeostasisGlobal
+  type: article-journal
+  title: 'Biological homeostasis of the global environment: the parable of Daisyworld'
+  author:
+  - family: Watson
+    given: Andrew J.
+  - family: Lovelock
+    given: James E.
+  issued:
+    date-parts:
+    - - 1983
+  container-title: Tellus B
+  volume: 35B
+  issue: '4'
+  page: 284–289
+  DOI: 10.1111/j.1600-0889.1983.tb00031.x
+...

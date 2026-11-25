@@ -334,3 +334,98 @@ preserve PD1–PD4 and the original 32 settings.
   evolution and literature findings accepted in the external-review triage.
   Joint writing-readiness review follows this stage; numerical completion alone
   does not close those dispositions.
+
+## E17. Habitat geometry and finite supply responses (C60, C61)
+
+**Estimands.** The local supply sensitivity |S| of weakly connected,
+fixed-chemistry spread communities against the no-fit relation of equation
+(3.1); and the finite temperature span over the uniform coexistence range at
+σ = 1 and 3 K, with sampled margins.
+
+- **Allowed:** "with weak exchange, residual sensitivity grows with the
+  habitat temperature spread"; "spreads of 1 and 3 K move temperature by
+  about 2 and 5 K across the uniform coexistence range, with margins of
+  centuries at sampled supplies".
+- **Not allowed:** placing a real planet on Figure 3. The seafloor
+  (observed, modern) and equator-to-pole (modelled, Archean) contrasts set an
+  illustrative scale only; the spread among active Archean hydrogen-fed
+  habitats is unknown. Do not call them "the Archean habitat contrasts".
+  Wider or asymmetric spreads are an unrun sensitivity stage.
+
+## E18. Imposed warming (C62, C63, C64)
+
+**Estimands.** The temperature response to a rigid vertical shift F of the
+case-B climate curve, linearised for regular graded states, and the range of
+F over which fixed-product exact states hold T\*.
+
+- Imposed warming is a controlled surrogate for sunlight, not a solar
+  calculation. Supply and imposed warming are attenuated by the same
+  closed-loop factor; do not describe the regulator as "loose against supply
+  but tight against sunlight".
+- **Allowed:** "exact states hold T\* for shifts from about −15 to +8 K";
+  "sampled interior states are stable"; "on a rough young-Sun scale the
+  window spans about a fifth of sunlight".
+- **Not allowed:** stability at the window's two ends: both groups persist
+  there, but each warming-side one-sided linearisation has a growing mode.
+
+## E19. Assembly (C52, C65, C66, C09)
+
+**Estimands.** Finite-census outcomes of closed invasions in one uniform
+habitat; the same with faster methane response at fixed equilibria, from a
+lifeless start, with buffered refuges and with immigration.
+
+- **Allowed:** "in all 24 closed, uniform reference invasions the invader
+  ended alone"; "with fixed products the resident was lost within decades";
+  "refuges or immigration let the mixture form".
+- **Not allowed:** "within decades" for every invasion: three
+  product-feedback invasions took 260–290 years. "Never assembles" without
+  the single-uniform-habitat, reference-run scope: a thousandfold faster
+  methane response assembled the mixture in place from acetogen invasions.
+  That speed-up is a fixed-equilibrium response-speed test, not a shorter
+  physical methane lifetime. Do not claim that refuge-assembled mixtures are
+  durable against slow climate: their margin was not computed.
+
+## E20. Acetate fate and the lasting sink (C67, C68)
+
+**Estimands.** The exact supply window, first-loss margin and graded
+sensitivity as functions of the acetate fate f, with biomass exported; the
+combined acetate-plus-biomass export at fixed supply.
+
+- **Allowed:** "exact control needs some diverted hydrogen to stay out of
+  methane for good"; "recycling trades supply range for tolerance of slow
+  climate"; "with full acetate recycling and biomass export, sampled margins
+  reach 21–31 years inside a window about 5% wide at lower supplies".
+- **Not allowed:** attaching the 21–31-year margins to the reference supply
+  (the reference mixture needs f below about 0.78); "more recycling leaves
+  less sink" (the combined export at fixed supply is independent of f; the
+  window narrows because the routes' methane yields converge); "the
+  Archean recycling fraction was …". The fate of acetate on the early Earth
+  is an open condition.
+
+## E21. Hydrogen supply in planetary units (C69, C70)
+
+**Estimands.** The reference supply converted to Tmol H₂ per year at the
+assumed 10,000-year methane lifetime; steady-state accounting of a
+fermentation-fed supply.
+
+- **Allowed:** "about 400 Tmol H₂ a year, far above base-case fresh
+  geological inputs"; "fermentation is one possible source"; "if half the
+  acetate from each source became methane, the window would narrow to a
+  factor of about 1.3".
+- **Not allowed:** "the regulator requires oxygenic photosynthesis" or
+  "requires fermentation": gross delivery can include recycled hydrogen, and
+  published anoxygenic ecosystems reach comparable methane fluxes. The
+  planetary scale moves inversely with the assumed lifetime.
+
+## E22. Headline phrasings across the products (consolidation, 23–25 November 2026)
+
+- Say the reference state "loses stability" at a climate response time of
+  about 0.15 years (no recycling) or about one year (half recycled). Not
+  "fails": at a 1-year lag the reference keeps both groups for 30,000 years
+  while oscillating (C51).
+- "A fraction of a kelvin per e-fold of supply buys tolerance of a 30-year
+  response" holds on the four tested branches (C57). "Looser control
+  tolerated centuries" refers to the resolved habitat-spread states (C54,
+  C61), not to every graded state.
+- The set point T\* = 281.5 K is a model temperature under transferred
+  physiology. It is not an estimate of Archean surface temperature (E1).

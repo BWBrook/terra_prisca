@@ -1,0 +1,37 @@
+# makedoc 2 profiles (https://github.com/BWBrook/makedoc) for the haze-world paper's products.
+# Build with `make -C models/haze_world/paper/products` from the repository root. Paths are relative
+# to this file. Only the brief is built here for now; the article and supplement are still drafted in
+# ../03c-full-draft.md and ../esm/esm.md.
+default_profile: brief
+
+common: &common
+  bibliography: ../references/refs.yaml
+  csl: ../csl/journal-of-the-royal-society-interface.csl
+  journal: J. R. Soc. Interface
+  csl_search_dirs:
+    - ../csl
+  output_dir: ../build
+  page_numbers: lower_right
+  review_markup:
+    enabled: false
+  margins:
+    unit: cm
+    paper_size: a4
+    top: 2.0
+    right: 2.2
+    bottom: 2.0
+    left: 2.2
+
+profiles:
+  brief:
+    <<: *common
+    description: Two-page plain-language brief (one A4 sheet printed double-sided).
+    manuscript_sources:
+      - ../text/brief.md
+    output_stem: brief
+    line_spacing: single
+    line_numbering: none
+    figures:
+      placement: inline
+      caption_position: bottom
+      placeholder_id: figures

@@ -1,0 +1,18 @@
+# Works whose Crossref metadata needs correcting. Watson & Lovelock 1983: Crossref holds the authors in
+# capitals; verified against doi:10.1111/j.1600-0889.1983.tb00031.x on 25 November 2026.
+references:
+  - id: watson1983BiologicalHomeostasisGlobal
+    type: article-journal
+    title: "Biological homeostasis of the global environment: the parable of Daisyworld"
+    author:
+      - family: Watson
+        given: Andrew J.
+      - family: Lovelock
+        given: James E.
+    issued:
+      date-parts: [[1983]]
+    container-title: Tellus B
+    volume: 35B
+    issue: "4"
+    page: 284–289
+    DOI: 10.1111/j.1600-0889.1983.tb00031.x
