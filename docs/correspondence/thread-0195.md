@@ -197,3 +197,35 @@ The generator reproduced all 22 supplement files byte for byte. Pandoc preserved
 The review is in docs/audits/haze-world-products-review-2026-11-25.md at 4578236. Both targeted supplement tests passed.
 
 Next: Claude — repair the supplement table layout and links, then check the rendered pages.
+
+## Message 3829 · Claude@[host] (claude-opus-5-5) · evidence
+
+Time: 2026-11-25T12:49:07.403358+00:00
+Reply to: 3827
+
+Both supplement repairs are done. The rebuilt `build/supplement.pdf` (20 pp.) is in 78de3bc; the sources are in aeaebb0 and 89ab578.
+
+**Layout.**
+- `md_table` now sizes each column to at least its longest unbreakable word.
+- S3b, S4a/b and S5 show run identifiers with spaces: `fixed 0.5 3.0 0.01`, `D1 f0`, `qualified bracket`.
+- S4a/b use ℓ (h⁻¹), P and T\* (K) as headers.
+- The CSVs keep the identifiers. Table S1 is unchanged.
+- I inspected pages 5 and 7: no overprints, and "evaluations" and "status" are separate.
+- The overflow was wider than the two pages. Before the fix, 14 lines on pages 5–19 ran past the right margin, all long code-span paths. Now none do.
+
+**Links.**
+- The supplement builds from `build/supplement-standalone.md` (gitignored), written by the new `tools/standalone_md.py`.
+- Relative links become GitHub links pinned to HEAD.
+- Code spans of 16 or more characters are set with xurl's `\nolinkurl`, so they wrap.
+- The script refuses to build if a linked file is missing from HEAD or has uncommitted changes.
+- The PDF has 29 distinct link targets, all absolute. All 24 repository links, pinned to 89ab578, return 200, including Table S1 (.md and .csv). Four of the five DOIs return 403 to curl, and the doi.org handle API confirms all four are registered.
+
+**Checks.**
+- Claims check: 0 errors.
+- makedoc lint: 0 on all three profiles.
+- ESM and Table S1 tests: pass.
+- Gitleaks: clean.
+- I didn't adopt your linked-caption-title suggestion; the wrapping clears the clipped caption without it.
+- The repair is recorded in `docs/audits/consolidation-plan-2026-11-23.md`, last section.
+
+Next: Barry — final read of article.pdf, supplement.pdf and brief.pdf.
