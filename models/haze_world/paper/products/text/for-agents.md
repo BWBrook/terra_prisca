@@ -2,7 +2,7 @@
 document: agent-facing paper
 study: haze-world regulator — microbial competition for hydrogen as a climate thermostat on a hazy early Earth
 status: internal draft, consolidated after five pressure tests; not yet submitted or released
-human_paper: models/haze_world/paper/03c-full-draft.md (+ esm/esm.md, products/text/brief.md)
+human_paper: models/haze_world/paper/products/text/main.md and figures.md (+ ../esm/esm.md, brief.md); built by `make -C models/haze_world/paper/products`
 claims_ledger: models/haze_world/synthesis/claims.csv (single source for all products; checked by tools/claims.py)
 interpretation: models/haze_world/synthesis/estimands.md (what each analysis bounds; allowed and forbidden phrasings)
 governing_docs: [AGENTS.md, docs/vision.md, models/haze_world/synthesis/jrsi-format-notes.md, docs/audits/consolidation-plan-2026-11-23.md]
@@ -22,7 +22,7 @@ is wrong: fix it in the same commit.
 1. This file, then `models/haze_world/synthesis/estimands.md` (E1–E22; E17–E22 cover the five pressure
    tests and the headline phrasings), then `models/haze_world/synthesis/claims.csv`. Quote a claim only
    with its limit.
-2. `models/haze_world/paper/03c-full-draft.md` for the argument; `models/haze_world/paper/esm/esm.md`
+2. `models/haze_world/paper/products/text/main.md` (with `figures.md`) for the argument; `models/haze_world/paper/esm/esm.md`
    for the machinery, including the staged predictions and their failures (S6).
 3. The review record in `docs/audits/`: `probe-issue1-*` to `probe-issue5-*` (pressure tests),
    `consolidation-plan-2026-11-23.md` and `consolidation-codex-review-2026-11-23.md` (latest wording
@@ -163,8 +163,9 @@ the 113 markers at the 10,000-yr search ceiling are lower bounds on tolerated la
 19. **"Fermentation enlarges the sink."** C70 is a conditional glucose budget: all hydrogen from
     fermentation, half of every source's acetate becoming methane outside the shared pool. Its window
     ends are pure-guild limits; it says nothing about stability or assembly (E21).
-20. **Old abstracts and step documents** (`01a`, `01b`, `02`, `03a`, `03b`) are dated stages of the
-    writing process, not current wording. The current text is `03c-full-draft.md`.
+20. **Old abstracts and step documents** (`01a`, `01b`, `02`, `03a`, `03b`, and `03c-full-draft.md` in
+    history) are dated stages of the writing process. The article moved to `products/text/main.md` on
+    25 November 2026 and is built by makedoc with numbered citations.
 
 ## 6. Checks before and after any change
 
@@ -172,7 +173,7 @@ the 113 markers at the 10,000-yr search ceiling are lower bounds on tolerated la
 uv run pytest -q                                   # whole suite (~4 min; 1,035 tests on 25 Nov 2026)
 uv run pytest -q tests/test_paper_esm.py tests/test_paper_table_s1.py tests/test_paper_transient_figures.py
 make -C models/haze_world/paper/products check     # claims ledger against all four products, makedoc lint
-make -C models/haze_world/paper/products           # brief PDF, then the two-page check
+make -C models/haze_world/paper/products           # article, supplement and brief PDFs; brief two-page check
 uv run python -m terra_prisca.haze_world.paper_figures            # Figures 1–4 and the ESM tables
 uv run python -m terra_prisca.haze_world.paper_figures.graphical_abstract   # the brief's figure
 uv run python -c "from terra_prisca.haze_world.paper_figures import table_s1; table_s1.main()"
@@ -202,9 +203,9 @@ most of them against the ledger): T\* = [281.53]{.C06} K at the reference; the f
 - **The refuge-assembled mixture's margin against slow climate.** Not computed.
 - **Temperature-dependent productivity.** The guilds coexist at the switch if supply there falls in the
   window; its effect on stability and assembly is untested (§4.7).
-- **Submission build.** The article is still in `03c-full-draft.md`; Word export drops the equation
-  numbers of (3.1) and (3.2). Moving the article into makedoc `main` and `supplement` profiles here is the
-  next step. Length is close to Interface's 8,000-word ceiling if displays count.
+- **Submission build.** makedoc builds `build/article.pdf` and `build/supplement.pdf`; the PDFs carry all
+  13 equation numbers, but the Word export drops them. Length is governed by Interface's own count
+  (Barry, 25 November 2026); recount when the cover and declarations are final.
 
 ## 8. Conduct in this repository
 

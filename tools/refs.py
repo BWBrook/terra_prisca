@@ -92,6 +92,10 @@ def clean(raw):
             entry[k] = markup(entry[k])
     entry["author"] = [{x: a[x] for x in ("family", "given", "literal") if a.get(x)} for a in raw["author"]]
     for a in entry["author"]:
+        for part in ("family", "given"):
+            # Some Crossref records hold names in capitals (BEBOUT, DES MARAIS); restore name case.
+            if a.get(part, "").isupper() and len(a[part].replace(".", "").replace(" ", "")) > 1:
+                a[part] = a[part].title()
         if "given" in a:
             # Pandoc drops a bare one-letter given name ("N"); write initials with periods ("N.").
             a["given"] = re.sub(r"\b([A-Z])(?=\s|$)", r"\1.", a["given"])

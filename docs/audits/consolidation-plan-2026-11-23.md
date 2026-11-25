@@ -204,3 +204,21 @@ Codex's review ([haze-world-products-review-2026-11-25.md](haze-world-products-r
   - Finding 4 scopes immigration to none or half of the acetate recycled.
   - To stay within two pages, the "pressure-tested five ways" bullet was cut; the roles paragraph now says Fable "posed five pressure-test questions".
 - **Graphical abstract:** panel 3's note says "with all acetate recycled and biomass exported".
+
+## Barry's decisions and the makedoc build (25 November, evening)
+
+Barry (chat, 25 November 2026): "the round is accepted", with five decisions.
+1. **Length.** "the journal's own count governs. Trim nothing; recount when the cover and declarations are final."
+2. **Abstract.** S6 and S9 are now in his wording ("With no acetate recycled into methane, … ; with half recycled, about a year"; "while atmospheric methane took millennia"). Brief finding 4 matches. Codex is asked to confirm each in one line.
+3. **Brief.** The closing caveats of findings 1 and 4 are now one sentence under "What it means".
+4. **Roles.** The declaration and the brief use S11's split: Claude specified, reviewed and drafted; Codex coded, audited and reviewed. The declaration adds that Fable drafted the abstract, which Codex checked against the ledger. S11 adds Fable's five questions and Gemini's 21 November review.
+5. **makedoc build** (`build/article.pdf`, 19 pages; `build/supplement.pdf`, 20 pages). The article moved from `../03c-full-draft.md` to `products/text/main.md`, with its captions in `text/figures.md` as image lines. `03c-full-draft.md` survives only in Git history. The supplement source stays at `../esm/esm.md`, where the generators write.
+   - **Citations.** Every author–year citation is now a Pandoc key, rendered in the Interface numeric style.
+   - **Bibliography.** It holds 38 works:
+     - 35 come from Crossref through `references/dois.txt`;
+     - Watson & Lovelock (1983) and Lovelock & Margulis (1974) are in `manual.yaml`, because of name and case faults in the Crossref records;
+     - Åström & Murray (2021) is checked against Open Library's ISBN record.
+   - **Builder fix.** `tools/refs.py` now restores case for names that Crossref holds in capitals (Bebout et al., Kharecha et al.).
+   - **Equation numbers.** All 13, (2.1)–(2.11), (3.1) and (3.2), render in the PDF. The Word export still drops them.
+   - **Plain-text subscripts.** These are now TeX math (for example $T_{clim}$ and $\tau_c$). `esm_tables.splice` converts symbols in generated headers, so the CSVs keep plain names.
+   - **Table fixes.** `table_s1.md_table` now escapes pipes in headers, which had broken the S4 and S5 tables (`max |S|`). It also sizes the separator dashes so that Pandoc gives wide columns to long text. The supplement went from 24 to 20 pages.

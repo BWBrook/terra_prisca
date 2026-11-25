@@ -4,12 +4,18 @@
 MAKEDOC := uvx --from git+https://github.com/BWBrook/makedoc@v2.0.1 makedoc
 ROOT := ../../../..
 LEDGER := ../../synthesis/claims.csv
-DOCS := ../03c-full-draft.md ../esm/esm.md text/brief.md text/for-agents.md
+DOCS := ../esm/esm.md text/main.md text/figures.md text/brief.md text/for-agents.md
 
-.PHONY: all brief check check-render
+.PHONY: all main supplement brief check check-render
 
-all: brief
+all: main supplement brief
 	@$(MAKE) --no-print-directory check-render
+
+main:
+	$(MAKEDOC) build -p main --strict
+
+supplement:
+	$(MAKEDOC) build -p supplement --strict
 
 brief:
 	$(MAKEDOC) build -p brief --strict

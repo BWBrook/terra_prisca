@@ -7,6 +7,7 @@ uv run python -m terra_prisca.haze_world.paper_figures table_s1
 """
 
 import csv
+import re
 import json
 import math
 from dataclasses import replace
@@ -40,7 +41,14 @@ def tau_text(status, tau):
     return "0 (unstable at zero lag)" if status == "already_unstable" else status
 
 
+MATH = {"τ_c": r"$\tau_c$", "τ_f": r"$\tau_f$", "s_A": "$s_A$", "K_A": "$K_A$", "s_M": "$s_M$", "K_M": "$K_M$",
+        "u_A": "$u_A$", "u_M": "$u_M$", "η_A": r"$\eta_A$", "p_atm": "$p_{atm}$", "G_loc": "$G_{loc}$"}
+MATH_TOKEN = re.compile("|".join(map(re.escape, MATH)) + r"(?![A-Za-z0-9_{])")
+
+
 def splice(name, text):
+    """Write a generated block; symbols in the Markdown become TeX math, the CSV keeps plain names."""
+    text = MATH_TOKEN.sub(lambda m: MATH[m.group(0)], text)
     path = ESM / "esm.md"
     body = path.read_text()
     start, end = f"<!-- table:{name} -->", f"<!-- /table:{name} -->"
