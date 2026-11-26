@@ -471,8 +471,13 @@ def write_csv(path, rows, columns):
 
 def md_table(rows, columns):
     esc = lambda s: str(s).replace("|", "\\|")
-    lines = ["| " + " | ".join(columns) + " |", "|" + "|".join("---" for _ in columns) + "|"]
-    lines += ["| " + " | ".join(esc(r.get(c, "")) for c in columns) + " |" for r in rows]
+    cells = [[esc(c)] + [esc(r.get(c, "")) for r in rows] for c in columns]
+    # Separator dashes set Pandoc's relative column widths: at least each column's longest unbreakable word,
+    # more for columns of long text.
+    width = [max(3, max(len(w) for x in col for w in x.split() or [""]) + 1, round(min(40, max(map(len, col))) ** 0.75))
+             for col in cells]
+    lines = ["| " + " | ".join(col[0] for col in cells) + " |", "|" + "|".join("-" * w for w in width) + "|"]
+    lines += ["| " + " | ".join(col[i] for col in cells) + " |" for i in range(1, len(rows) + 1)]
     return "\n".join(lines)
 
 

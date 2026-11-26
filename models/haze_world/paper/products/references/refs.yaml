@@ -1,0 +1,876 @@
+---
+references:
+- id: arney2016PaleOrangeDot
+  citation-key: arney2016PaleOrangeDot
+  type: article-journal
+  title: 'The Pale Orange Dot: The Spectrum and Habitability of Hazy Archean Earth'
+  author:
+  - family: Arney
+    given: Giada
+  - family: Domagal-Goldman
+    given: Shawn D.
+  - family: Meadows
+    given: Victoria S.
+  - family: Wolf
+    given: Eric T.
+  - family: Schwieterman
+    given: Edward
+  - family: Charnay
+    given: Benjamin
+  - family: Claire
+    given: Mark
+  - family: Hébrard
+    given: Eric
+  - family: Trainer
+    given: Melissa G.
+  issued:
+    date-parts:
+    - - 2016
+  container-title: Astrobiology
+  volume: '16'
+  issue: '11'
+  page: 873–899
+  publisher: SAGE Publications
+  DOI: 10.1089/ast.2015.1422
+- id: arney2017PaleOrangeDots
+  citation-key: arney2017PaleOrangeDots
+  type: article-journal
+  title: 'Pale Orange Dots: The Impact of Organic Haze on the Habitability and Detectability of Earthlike Exoplanets'
+  author:
+  - family: Arney
+    given: Giada N.
+  - family: Meadows
+    given: Victoria S.
+  - family: Domagal-Goldman
+    given: Shawn D.
+  - family: Deming
+    given: Drake
+  - family: Robinson
+    given: Tyler D.
+  - family: Tovar
+    given: Guadalupe
+  - family: Wolf
+    given: Eric T.
+  - family: Schwieterman
+    given: Edward
+  issued:
+    date-parts:
+    - - 2017
+  container-title: The Astrophysical Journal
+  volume: '836'
+  issue: '1'
+  page: '49'
+  publisher: American Astronomical Society
+  DOI: 10.3847/1538-4357/836/1/49
+- id: astrom2021FeedbackSystemsIntroduction
+  citation-key: astrom2021FeedbackSystemsIntroduction
+  type: book
+  title: 'Feedback systems: an introduction for scientists and engineers'
+  author:
+  - family: Åström
+    given: Karl Johan
+  - family: Murray
+    given: Richard M.
+  issued:
+    date-parts:
+    - - 2021
+  edition: '2'
+  publisher: Princeton University Press
+  publisher-place: Princeton, NJ
+  ISBN: 978-0-691-19398-4
+- id: bebout2004MethaneProductionMicrobial
+  citation-key: bebout2004MethaneProductionMicrobial
+  type: article-journal
+  title: Methane production by microbial mats under low sulphate concentrations
+  author:
+  - family: Bebout
+    given: Brad M.
+  - family: Hoehler
+    given: Tori M.
+  - family: Thamdrup
+    given: Bo
+  - family: Albert
+    given: Dan
+  - family: Carpenter
+    given: Steven P.
+  - family: Hogan
+    given: Mary
+  - family: Turk
+    given: Kendra
+  - family: Des Marais
+    given: David J.
+  issued:
+    date-parts:
+    - - 2004
+  container-title: Geobiology
+  volume: '2'
+  issue: '2'
+  page: 87–96
+  publisher: Wiley
+  DOI: 10.1111/j.1472-4677.2004.00024.x
+- id: canfield2006EarlyAnaerobicMetabolisms
+  citation-key: canfield2006EarlyAnaerobicMetabolisms
+  type: article-journal
+  title: Early anaerobic metabolisms
+  author:
+  - family: Canfield
+    given: Don E.
+  - family: Rosing
+    given: Minik T.
+  - family: Bjerrum
+    given: Christian
+  issued:
+    date-parts:
+    - - 2006
+  container-title: 'Philosophical Transactions of the Royal Society B: Biological Sciences'
+  volume: '361'
+  issue: '1474'
+  page: 1819–1836
+  publisher: The Royal Society
+  DOI: 10.1098/rstb.2006.1906
+- id: conrad1999ContributionHydrogenMethane
+  citation-key: conrad1999ContributionHydrogenMethane
+  type: article-journal
+  title: Contribution of hydrogen to methane production and control of hydrogen concentrations in methanogenic soils and sediments
+  author:
+  - family: Conrad
+    given: R.
+  issued:
+    date-parts:
+    - - 1999
+  container-title: FEMS Microbiology Ecology
+  volume: '28'
+  issue: '3'
+  page: 193–202
+  publisher: Oxford University Press (OUP)
+  DOI: 10.1111/j.1574-6941.1999.tb00575.x
+- id: cord-ruwisch1988CapacityHydrogenotrophicAnaerobic
+  citation-key: cord-ruwisch1988CapacityHydrogenotrophicAnaerobic
+  type: article-journal
+  title: The capacity of hydrogenotrophic anaerobic bacteria to compete for traces of hydrogen depends on the redox potential of the terminal electron acceptor
+  author:
+  - family: Cord-Ruwisch
+    given: Ralf
+  - family: Seitz
+    given: Hans-J�rgen
+  - family: Conrad
+    given: Ralf
+  issued:
+    date-parts:
+    - - 1988
+  container-title: Archives of Microbiology
+  volume: '149'
+  issue: '4'
+  page: 350–357
+  publisher: Springer Science and Business Media LLC
+  DOI: 10.1007/bf00411655
+- id: eagernash20233DClimateSimulations
+  citation-key: eagernash20233DClimateSimulations
+  type: article-journal
+  title: 3D Climate Simulations of the Archean Find That Methane has a Strong Cooling Effect at High Concentrations
+  author:
+  - family: Eager‐Nash
+    given: J. K.
+  - family: Mayne
+    given: N. J.
+  - family: Nicholson
+    given: A. E.
+  - family: Prins
+    given: J. E.
+  - family: Young
+    given: O. C. F.
+  - family: Daines
+    given: S. J.
+  - family: Sergeev
+    given: D. E.
+  - family: Lambert
+    given: F. H.
+  - family: Manners
+    given: J.
+  - family: Boutle
+    given: I. A.
+  - family: Wolf
+    given: E. T.
+  - family: Kamp
+    given: I. E. E.
+  - family: Kohary
+    given: K.
+  - family: Lenton
+    given: T. M.
+  issued:
+    date-parts:
+    - - 2023
+  container-title: 'Journal of Geophysical Research: Atmospheres'
+  volume: '128'
+  issue: '6'
+  article-number: e2022JD037544
+  publisher: American Geophysical Union (AGU)
+  DOI: 10.1029/2022jd037544
+- id: feulner2012FaintYoungSun
+  citation-key: feulner2012FaintYoungSun
+  type: article-journal
+  title: The faint young Sun problem
+  author:
+  - family: Feulner
+    given: Georg
+  issued:
+    date-parts:
+    - - 2012
+  container-title: Reviews of Geophysics
+  volume: '50'
+  issue: '2'
+  article-number: 2011RG000375
+  publisher: American Geophysical Union (AGU)
+  DOI: 10.1029/2011rg000375
+- id: fu2019CompetitionChemolithotrophicAcetogenesis
+  citation-key: fu2019CompetitionChemolithotrophicAcetogenesis
+  type: article-journal
+  title: 'Competition Between Chemolithotrophic Acetogenesis and Hydrogenotrophic Methanogenesis for Exogenous H2/CO2 in Anaerobically Digested Sludge: Impact of Temperature'
+  author:
+  - family: Fu
+    given: Bo
+  - family: Jin
+    given: Xin
+  - family: Conrad
+    given: Ralf
+  - family: Liu
+    given: Hongbo
+  - family: Liu
+    given: He
+  issued:
+    date-parts:
+    - - 2019
+  container-title: Frontiers in Microbiology
+  volume: '10'
+  article-number: '2418'
+  publisher: Frontiers Media SA
+  DOI: 10.3389/fmicb.2019.02418
+- id: fukami2015HistoricalContingencyCommunity
+  citation-key: fukami2015HistoricalContingencyCommunity
+  type: article-journal
+  title: 'Historical Contingency in Community Assembly: Integrating Niches, Species Pools, and Priority Effects'
+  author:
+  - family: Fukami
+    given: Tadashi
+  issued:
+    date-parts:
+    - - 2015
+  container-title: Annual Review of Ecology, Evolution, and Systematics
+  volume: '46'
+  issue: '1'
+  page: 1–23
+  publisher: Annual Reviews
+  DOI: 10.1146/annurev-ecolsys-110411-160340
+- id: hao2022AnoxicPhotochemicalWeathering
+  citation-key: hao2022AnoxicPhotochemicalWeathering
+  type: article-journal
+  title: Anoxic photochemical weathering of pyrite on Archean continents
+  author:
+  - family: Hao
+    given: Jihua
+  - family: Liu
+    given: Winnie
+  - family: Goff
+    given: Jennifer L.
+  - family: Steadman
+    given: Jeffrey A.
+  - family: Large
+    given: Ross R.
+  - family: Falkowski
+    given: Paul G.
+  - family: Yee
+    given: Nathan
+  issued:
+    date-parts:
+    - - 2022
+  container-title: Science Advances
+  volume: '8'
+  issue: '26'
+  article-number: eabn2226
+  publisher: American Association for the Advancement of Science (AAAS)
+  DOI: 10.1126/sciadv.abn2226
+- id: haqq-misra2008RevisedHazyMethane
+  citation-key: haqq-misra2008RevisedHazyMethane
+  type: article-journal
+  title: A Revised, Hazy Methane Greenhouse for the Archean Earth
+  author:
+  - family: Haqq-Misra
+    given: Jacob D.
+  - family: Domagal-Goldman
+    given: Shawn D.
+  - family: Kasting
+    given: Patrick J.
+  - family: Kasting
+    given: James F.
+  issued:
+    date-parts:
+    - - 2008
+  container-title: Astrobiology
+  volume: '8'
+  issue: '6'
+  page: 1127–1137
+  publisher: SAGE Publications
+  DOI: 10.1089/ast.2007.0197
+- id: held2010ProbingFastSlow
+  citation-key: held2010ProbingFastSlow
+  type: article-journal
+  title: Probing the Fast and Slow Components of Global Warming by Returning Abruptly to Preindustrial Forcing
+  author:
+  - family: Held
+    given: Isaac M.
+  - family: Winton
+    given: Michael
+  - family: Takahashi
+    given: Ken
+  - family: Delworth
+    given: Thomas
+  - family: Zeng
+    given: Fanrong
+  - family: Vallis
+    given: Geoffrey K.
+  issued:
+    date-parts:
+    - - 2010
+  container-title: Journal of Climate
+  volume: '23'
+  issue: '9'
+  page: 2418–2427
+  publisher: American Meteorological Society
+  DOI: 10.1175/2009jcli3466.1
+- id: hoehler2001RoleMicrobialMats
+  citation-key: hoehler2001RoleMicrobialMats
+  type: article-journal
+  title: The role of microbial mats in the production of reduced gases on the early Earth
+  author:
+  - family: Hoehler
+    given: Tori M.
+  - family: Bebout
+    given: Brad M.
+  - family: Des Marais
+    given: David J.
+  issued:
+    date-parts:
+    - - 2001
+  container-title: Nature
+  volume: '412'
+  issue: '6844'
+  page: 324–327
+  publisher: Springer Science and Business Media LLC
+  DOI: 10.1038/35085554
+- id: khammash2021PerfectAdaptationBiology
+  citation-key: khammash2021PerfectAdaptationBiology
+  type: article-journal
+  title: Perfect adaptation in biology
+  author:
+  - family: Khammash
+    given: Mustafa H.
+  issued:
+    date-parts:
+    - - 2021
+  container-title: Cell Systems
+  volume: '12'
+  issue: '6'
+  page: 509–521
+  publisher: Elsevier BV
+  DOI: 10.1016/j.cels.2021.05.020
+- id: kharecha2005CoupledAtmosphereecosystemModel
+  citation-key: kharecha2005CoupledAtmosphereecosystemModel
+  type: article-journal
+  title: A coupled atmosphere–ecosystem model of the early Archean Earth
+  author:
+  - family: Kharecha
+    given: P.
+  - family: Kasting
+    given: J.
+  - family: Siefert
+    given: J.
+  issued:
+    date-parts:
+    - - 2005
+  container-title: Geobiology
+  volume: '3'
+  issue: '2'
+  page: 53–76
+  publisher: Wiley
+  DOI: 10.1111/j.1472-4669.2005.00049.x
+- id: kotsyurbenko2001CompetitionHomoacetogenicBacteria
+  citation-key: kotsyurbenko2001CompetitionHomoacetogenicBacteria
+  type: article-journal
+  title: Competition between homoacetogenic bacteria and methanogenic archaea for hydrogen at low temperature
+  author:
+  - family: Kotsyurbenko
+    given: Oleg R.
+  - family: Glagolev
+    given: Michail V.
+  - family: Nozhevnikova
+    given: Alla N.
+  - family: Conrad
+    given: Ralf
+  issued:
+    date-parts:
+    - - 2001
+  container-title: FEMS Microbiology Ecology
+  volume: '38'
+  issue: 2-3
+  page: 153–159
+  publisher: Oxford University Press (OUP)
+  DOI: 10.1111/j.1574-6941.2001.tb00893.x
+- id: lovelock1974AtmosphericHomeostasisBiosphere
+  citation-key: lovelock1974AtmosphericHomeostasisBiosphere
+  type: article-journal
+  title: 'Atmospheric homeostasis by and for the biosphere: the Gaia hypothesis'
+  author:
+  - family: Lovelock
+    given: James E.
+  - family: Margulis
+    given: Lynn
+  issued:
+    date-parts:
+    - - 1974
+  container-title: Tellus
+  volume: '26'
+  issue: 1-2
+  page: 2–10
+  DOI: 10.1111/j.2153-3490.1974.tb01946.x
+- id: lovley1983SulfateReducersCan
+  citation-key: lovley1983SulfateReducersCan
+  type: article-journal
+  title: Sulfate Reducers Can Outcompete Methanogens at Freshwater Sulfate Concentrations
+  author:
+  - family: Lovley
+    given: Derek R.
+  - family: Klug
+    given: Michael J.
+  issued:
+    date-parts:
+    - - 1983
+  container-title: Applied and Environmental Microbiology
+  volume: '45'
+  issue: '1'
+  page: 187–192
+  publisher: American Society for Microbiology
+  DOI: 10.1128/aem.45.1.187-192.1983
+- id: lovley1987CompetitiveMechanismsInhibition
+  citation-key: lovley1987CompetitiveMechanismsInhibition
+  type: article-journal
+  title: Competitive Mechanisms for Inhibition of Sulfate Reduction and Methane Production in the Zone of Ferric Iron Reduction in Sediments
+  author:
+  - family: Lovley
+    given: Derek R.
+  - family: Phillips
+    given: Elizabeth J. P.
+  issued:
+    date-parts:
+    - - 1987
+  container-title: Applied and Environmental Microbiology
+  volume: '53'
+  issue: '11'
+  page: 2636–2641
+  publisher: American Society for Microbiology
+  DOI: 10.1128/aem.53.11.2636-2641.1987
+- id: mak20233DSimulationsArchean
+  citation-key: mak20233DSimulationsArchean
+  type: article-journal
+  title: 3D Simulations of the Archean Earth Including Photochemical Haze Profiles
+  author:
+  - family: Mak
+    given: M. T.
+  - family: Mayne
+    given: N. J.
+  - family: Sergeev
+    given: D. E.
+  - family: Manners
+    given: J.
+  - family: Eager‐Nash
+    given: J. K.
+  - family: Arney
+    given: G.
+  - family: Hébrard
+    given: E.
+  - family: Kohary
+    given: K.
+  issued:
+    date-parts:
+    - - 2023
+  container-title: 'Journal of Geophysical Research: Atmospheres'
+  volume: '128'
+  issue: '20'
+  article-number: e2023JD039343
+  publisher: American Geophysical Union (AGU)
+  DOI: 10.1029/2023jd039343
+- id: mollison1991DependenceEpidemicPopulation
+  citation-key: mollison1991DependenceEpidemicPopulation
+  type: article-journal
+  title: Dependence of epidemic and population velocities on basic parameters
+  author:
+  - family: Mollison
+    given: Denis
+  issued:
+    date-parts:
+    - - 1991
+  container-title: Mathematical Biosciences
+  volume: '107'
+  issue: '2'
+  page: 255–287
+  publisher: Elsevier BV
+  DOI: 10.1016/0025-5564(91)90009-8
+- id: olsman2019HardLimitsPerformance
+  citation-key: olsman2019HardLimitsPerformance
+  type: article-journal
+  title: Hard Limits and Performance Tradeoffs in a Class of Antithetic Integral Feedback Networks
+  author:
+  - family: Olsman
+    given: Noah
+  - family: Baetica
+    given: Ania-Ariadna
+  - family: Xiao
+    given: Fangzhou
+  - family: Leong
+    given: Yoke Peng
+  - family: Murray
+    given: Richard M.
+  - family: Doyle
+    given: John C.
+  issued:
+    date-parts:
+    - - 2019
+  container-title: Cell Systems
+  volume: '9'
+  issue: '1'
+  page: 49–63.e16
+  publisher: Elsevier BV
+  DOI: 10.1016/j.cels.2019.06.001
+- id: ozaki2018EffectsPrimitivePhotosynthesis
+  citation-key: ozaki2018EffectsPrimitivePhotosynthesis
+  type: article-journal
+  title: Effects of primitive photosynthesis on Earth’s early climate system
+  author:
+  - family: Ozaki
+    given: Kazumi
+  - family: Tajika
+    given: Eiichi
+  - family: Hong
+    given: Peng K.
+  - family: Nakagawa
+    given: Yusuke
+  - family: Reinhard
+    given: Christopher T.
+  issued:
+    date-parts:
+    - - 2018
+  container-title: Nature Geoscience
+  volume: '11'
+  issue: '1'
+  page: 55–59
+  publisher: Springer Science and Business Media LLC
+  DOI: 10.1038/s41561-017-0031-2
+- id: peters1998EfficiencyHydrogenUtilization
+  citation-key: peters1998EfficiencyHydrogenUtilization
+  type: article-journal
+  title: Efficiency of hydrogen utilization during unitrophic and mixotrophic growth of Acetobacterium woodii on hydrogen and lactate in the chemostat
+  author:
+  - family: Peters
+    given: V.
+  - family: Janssen
+    given: P.H.
+  - family: Conrad
+    given: R.
+  issued:
+    date-parts:
+    - - 1998
+  container-title: FEMS Microbiology Ecology
+  volume: '26'
+  issue: '4'
+  page: 317–324
+  publisher: Oxford University Press (OUP)
+  DOI: 10.1111/j.1574-6941.1998.tb00516.x
+- id: qian2018RealizingIntegralControl
+  citation-key: qian2018RealizingIntegralControl
+  type: article-journal
+  title: 'Realizing ‘integral control’ in living cells: how to overcome leaky integration due to dilution?'
+  author:
+  - family: Qian
+    given: Yili
+  - family: Del Vecchio
+    given: Domitilla
+  issued:
+    date-parts:
+    - - 2018
+  container-title: Journal of The Royal Society Interface
+  volume: '15'
+  issue: '139'
+  page: '20170902'
+  publisher: The Royal Society
+  DOI: 10.1098/rsif.2017.0902
+- id: sagan1972EarthMarsEvolution
+  citation-key: sagan1972EarthMarsEvolution
+  type: article-journal
+  title: 'Earth and Mars: Evolution of Atmospheres and Surface Temperatures'
+  author:
+  - family: Sagan
+    given: Carl
+  - family: Mullen
+    given: George
+  issued:
+    date-parts:
+    - - 1972
+  container-title: Science
+  volume: '177'
+  issue: '4043'
+  page: 52–56
+  publisher: American Association for the Advancement of Science (AAAS)
+  DOI: 10.1126/science.177.4043.52
+- id: sauterey2020CoevolutionPrimitiveMethanecycling
+  citation-key: sauterey2020CoevolutionPrimitiveMethanecycling
+  type: article-journal
+  title: Co-evolution of primitive methane-cycling ecosystems and early Earth’s atmosphere and climate
+  author:
+  - family: Sauterey
+    given: Boris
+  - family: Charnay
+    given: Benjamin
+  - family: Affholder
+    given: Antonin
+  - family: Mazevet
+    given: Stéphane
+  - family: Ferrière
+    given: Régis
+  issued:
+    date-parts:
+    - - 2020
+  container-title: Nature Communications
+  volume: '11'
+  issue: '1'
+  article-number: '2705'
+  publisher: Springer Science and Business Media LLC
+  DOI: 10.1038/s41467-020-16374-7
+- id: seto2007CoexistenceIntroducingRegulation
+  citation-key: seto2007CoexistenceIntroducingRegulation
+  type: article-journal
+  title: Coexistence introducing regulation of environmental conditions
+  author:
+  - family: Seto
+    given: Mayumi
+  - family: Akagi
+    given: Tasuku
+  issued:
+    date-parts:
+    - - 2007
+  container-title: Journal of Theoretical Biology
+  volume: '248'
+  issue: '2'
+  page: 267–274
+  publisher: Elsevier BV
+  DOI: 10.1016/j.jtbi.2007.05.013
+- id: sweetman2017MajorImpactsClimate
+  citation-key: sweetman2017MajorImpactsClimate
+  type: article-journal
+  title: Major impacts of climate change on deep-sea benthic ecosystems
+  author:
+  - family: Sweetman
+    given: Andrew K.
+  - family: Thurber
+    given: Andrew R.
+  - family: Smith
+    given: Craig R.
+  - family: Levin
+    given: Lisa A.
+  - family: Mora
+    given: Camilo
+  - family: Wei
+    given: Chih-Lin
+  - family: Gooday
+    given: Andrew J.
+  - family: Jones
+    given: Daniel O. B.
+  - family: Rex
+    given: Michael
+  - family: Yasuhara
+    given: Moriaki
+  - family: Ingels
+    given: Jeroen
+  - family: Ruhl
+    given: Henry A.
+  - family: Frieder
+    given: Christina A.
+  - family: Danovaro
+    given: Roberto
+  - family: Würzberg
+    given: Laura
+  - family: Baco
+    given: Amy
+  - family: Grupe
+    given: Benjamin M.
+  - family: Pasulka
+    given: Alexis
+  - family: Meyer
+    given: Kirstin S.
+  - family: Dunlop
+    given: Katherine M.
+  - family: Henry
+    given: Lea-Anne
+  - family: Roberts
+    given: J. Murray
+  issued:
+    date-parts:
+    - - 2017
+  container-title: 'Elementa: Science of the Anthropocene'
+  volume: '5'
+  article-number: '4'
+  publisher: University of California Press
+  DOI: 10.1525/elementa.203
+- id: thompson2019PhotoferrotrophyDepositionBanded
+  citation-key: thompson2019PhotoferrotrophyDepositionBanded
+  type: article-journal
+  title: Photoferrotrophy, deposition of banded iron formations, and methane production in Archean oceans
+  author:
+  - family: Thompson
+    given: Katharine J.
+  - family: Kenward
+    given: Paul A.
+  - family: Bauer
+    given: Kohen W.
+  - family: Warchola
+    given: Tyler
+  - family: Gauger
+    given: Tina
+  - family: Martinez
+    given: Raul
+  - family: Simister
+    given: Rachel L.
+  - family: Michiels
+    given: Céline C.
+  - family: Llirós
+    given: Marc
+  - family: Reinhard
+    given: Christopher T.
+  - family: Kappler
+    given: Andreas
+  - family: Konhauser
+    given: Kurt O.
+  - family: Crowe
+    given: Sean A.
+  issued:
+    date-parts:
+    - - 2019
+  container-title: Science Advances
+  volume: '5'
+  issue: '11'
+  article-number: eaav2869
+  publisher: American Association for the Advancement of Science (AAAS)
+  DOI: 10.1126/sciadv.aav2869
+- id: tijhuis1993ThermodynamicallyBasedCorrelation
+  citation-key: tijhuis1993ThermodynamicallyBasedCorrelation
+  type: article-journal
+  title: A thermodynamically based correlation for maintenance gibbs energy requirements in aerobic and anaerobic chemotrophic growth
+  author:
+  - family: Tijhuis
+    given: L.
+  - family: Van Loosdrecht
+    given: M. C. M.
+  - family: Heijnen
+    given: J. J.
+  issued:
+    date-parts:
+    - - 1993
+  container-title: Biotechnology and Bioengineering
+  volume: '42'
+  issue: '4'
+  page: 509–519
+  publisher: Wiley
+  DOI: 10.1002/bit.260420415
+- id: ward2019PrimaryProductivityWas
+  citation-key: ward2019PrimaryProductivityWas
+  type: article-journal
+  title: Primary Productivity Was Limited by Electron Donors Prior to the Advent of Oxygenic Photosynthesis
+  author:
+  - family: Ward
+    given: Lewis M.
+  - family: Rasmussen
+    given: Birger
+  - family: Fischer
+    given: Woodward W.
+  issued:
+    date-parts:
+    - - 2019
+  container-title: 'Journal of Geophysical Research: Biogeosciences'
+  volume: '124'
+  issue: '2'
+  page: 211–226
+  publisher: American Geophysical Union (AGU)
+  DOI: 10.1029/2018jg004679
+- id: watson1983BiologicalHomeostasisGlobal
+  citation-key: watson1983BiologicalHomeostasisGlobal
+  type: article-journal
+  title: 'Biological homeostasis of the global environment: the parable of Daisyworld'
+  author:
+  - family: Watson
+    given: Andrew J.
+  - family: Lovelock
+    given: James E.
+  issued:
+    date-parts:
+    - - 1983
+  container-title: Tellus B
+  volume: 35B
+  issue: '4'
+  page: 284–289
+  DOI: 10.1111/j.1600-0889.1983.tb00031.x
+- id: weaver2012ImportanceTimescalesEmergence
+  citation-key: weaver2012ImportanceTimescalesEmergence
+  type: article-journal
+  title: The importance of timescales for the emergence of environmental self-regulation
+  author:
+  - family: Weaver
+    given: Iain S.
+  - family: Dyke
+    given: James G.
+  issued:
+    date-parts:
+    - - 2012
+  container-title: Journal of Theoretical Biology
+  volume: '313'
+  page: 172–180
+  publisher: Elsevier BV
+  DOI: 10.1016/j.jtbi.2012.07.034
+- id: yi2000RobustPerfectAdaptation
+  citation-key: yi2000RobustPerfectAdaptation
+  type: article-journal
+  title: Robust perfect adaptation in bacterial chemotaxis through integral feedback control
+  author:
+  - family: Yi
+    given: Tau-Mu
+  - family: Huang
+    given: Yun
+  - family: Simon
+    given: Melvin I.
+  - family: Doyle
+    given: John
+  issued:
+    date-parts:
+    - - 2000
+  container-title: Proceedings of the National Academy of Sciences
+  volume: '97'
+  issue: '9'
+  page: 4649–4653
+  publisher: National Academy of Sciences
+  DOI: 10.1073/pnas.97.9.4649
+- id: zinder1984NonaceticlasticMethanogenesisAcetate
+  citation-key: zinder1984NonaceticlasticMethanogenesisAcetate
+  type: article-journal
+  title: 'Non-aceticlastic methanogenesis from acetate: acetate oxidation by a thermophilic syntrophic coculture'
+  author:
+  - family: Zinder
+    given: Stephen H.
+  - family: Koch
+    given: Markus
+  issued:
+    date-parts:
+    - - 1984
+  container-title: Archives of Microbiology
+  volume: '138'
+  issue: '3'
+  page: 263–272
+  publisher: Springer Science and Business Media LLC
+  DOI: 10.1007/bf00402133
+...

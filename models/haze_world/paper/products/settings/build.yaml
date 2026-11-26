@@ -1,0 +1,66 @@
+# makedoc 2 profiles (https://github.com/BWBrook/makedoc) for the haze-world paper's products.
+# Build with `make -C models/haze_world/paper/products` from the repository root. Paths are relative
+# to this file. The supplement's source stays at ../esm/esm.md, where esm_tables.py and table_s1.py
+# write its generated blocks; the Makefile builds from a copy whose links are pinned to the current
+# commit (tools/standalone_md.py), so the PDF's links work away from the repository.
+default_profile: main
+
+common: &common
+  bibliography: ../references/refs.yaml
+  csl: ../csl/journal-of-the-royal-society-interface.csl
+  journal: J. R. Soc. Interface
+  csl_search_dirs:
+    - ../csl
+  output_dir: ../build
+  page_numbers: lower_right
+  review_markup:
+    enabled: false
+  margins:
+    unit: cm
+    paper_size: a4
+    top: 2.0
+    right: 2.2
+    bottom: 2.0
+    left: 2.2
+
+profiles:
+  main:
+    <<: *common
+    description: Article, Interface layout for review (figures one per page after the references).
+    manuscript_sources:
+      - ../text/main.md
+      - ../text/figures.md
+    author_metadata: ../authors.yaml
+    output_stem: article
+    line_spacing: 1.25
+    line_numbering: continuous
+    figures:
+      placement: pages
+      caption_position: top
+      placeholder_id: figures
+
+  supplement:
+    <<: *common
+    description: Electronic supplementary material.
+    manuscript_sources:
+      - ../build/supplement-standalone.md
+    output_stem: supplement
+    line_spacing: single
+    line_numbering: none
+    figures:
+      placement: pages
+      caption_position: top
+      placeholder_id: figures
+
+  brief:
+    <<: *common
+    description: Two-page plain-language brief (one A4 sheet printed double-sided).
+    manuscript_sources:
+      - ../text/brief.md
+    output_stem: brief
+    line_spacing: single
+    line_numbering: none
+    figures:
+      placement: inline
+      caption_position: bottom
+      placeholder_id: figures

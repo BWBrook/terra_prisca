@@ -30,3 +30,7 @@ _targets/
 # Operating systems
 .DS_Store
 Thumbs.db
+# living-paper build outputs for the haze-world products (PDFs are tracked)
+models/haze_world/paper/products/build/*.docx
+models/haze_world/paper/products/build/*_build_manifest.json
+models/haze_world/paper/products/build/supplement-standalone.md

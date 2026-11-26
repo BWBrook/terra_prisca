@@ -1,0 +1,22 @@
+quantity,shown,value,source,selection,claim
+lines_end_last_extracted_climate_ratio,line ends (no number),0.2333365,models/haze_response/arney2016/figure4.csv,"max ch4_co2_ratio, case B; steady states above it (assumed flat 274.002 K climate) not drawn; last drawn supply 1.85 (both groups), 1.05 (methanogens alone)",
+supply_axis_start_haze_peak,axis start (no number),0.65,models/haze_world/paper/figures/data/fig1c_steady_state.csv,supply at the methanogens-alone temperature peak; lower supplies (assumed low-methane bridge) not drawn,
+T*_switch_temperature_K,281.53 K,281.53482280508206,models/haze_world/paper/figures/data/fig1_checks.csv,quantity == t_star_k,C05/C06
+coexistence_supply_range_factor,2.0-fold,1.9955133151732405,models/haze_world/paper/figures/data/fig1_checks.csv,"coexistence_end_supply_j_1e6 / coexistence_start_supply_j_1e6 (half acetate recycled, biomass exported)",C06/C67
+exact_states_cooling_branch_count,36,36,models/haze_world/paper/figures/data/fig3_states.csv,group == exact_cooling,C54
+exact_states_max_critical_response_yr,7.1 yr,7.079524561115154,models/haze_world/paper/figures/data/fig3_states.csv,max tau_c_yr where group == exact_cooling,C54
+exact_states_bridge_not_shown_count,6,6,models/haze_world/paper/figures/data/fig3_states.csv,"group == exact_bridge_unstable (named in the note below the panel, not plotted)",C54
+response_time_line_yr,30 yr,30.0,models/haze_world/paper/figures/data/fig3_thresholds.csv,tau_target_yr (all four branches),C57
+graded_price_30yr_low_K,0.07,0.0707903122821257,models/haze_world/paper/figures/data/fig3_thresholds.csv,min price_midpoint_K over branches,C57
+graded_price_30yr_high_K,0.31,0.3148387331085058,models/haze_world/paper/figures/data/fig3_thresholds.csv,max price_midpoint_K over branches,C57
+search_ceiling_yr,"10,000 yr",10000.0,models/haze_world/paper/figures/data/fig3_states.csv,tau_c_yr where tau_status == censored_at_1e4,C54
+no_refuge_acetogens_invade_final_K,294.4 K,294.40262984932224,models/haze_world/paper/figures/data/fig4_refuges.csv,"last row, configuration none, direction A_into_M (matched no-refuge control)",C09
+no_refuge_methanogens_invade_final_K,273.5 K,273.51684528663355,models/haze_world/paper/figures/data/fig4_refuges.csv,"last row, configuration none, direction M_into_A (matched no-refuge control)",C09
+refuge_both_final_K,T* (no number),281.534822789338,models/haze_world/paper/figures/data/fig4_refuges.csv,"last rows, configuration both, both directions",C09
+refuge_area_percent_each,2%,0.02,models/haze_world/figures/buffered_refuges/selected_main.csv,"refuge_fraction, configuration both",C09
+refuge_cold_K,278,278.0,models/haze_world/figures/buffered_refuges/selected_main.csv,"cold_k, configuration both",C09
+refuge_warm_K,286 K,286.0,models/haze_world/figures/buffered_refuges/selected_main.csv,"warm_k, configuration both",C09
+full_recycling_exact_tau_c_min_yr,21,21.272497288693398,models/haze_world/review/issue4_acetate_fate.json,"sweep, chemistry fixed, f 1.0 (biomass exported), window positions 0.05-0.95",C67
+full_recycling_exact_tau_c_max_yr,31 yr,30.656612129256928,models/haze_world/review/issue4_acetate_fate.json,"sweep, chemistry fixed, f 1.0 (biomass exported), window positions 0.05-0.95",C67
+full_recycling_window_width_percent,5%,1.0468153338370592,models/haze_world/review/issue4_acetate_fate.json,"windows, f 1.0, biomass_recycled 0.0: ratio high/low supply",C67
+other_route_immigration,named (no number),,models/haze_world/synthesis/claims.csv,immigration assembles a material mixture near T* at f = 0 and 0.5,C66

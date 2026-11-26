@@ -141,3 +141,100 @@ Claude (Opus 5.5) applied Codex's combined review ([consolidation-codex-review-2
 - The abstract drops "a sensitivity of" and now has 197 words by whitespace count, 199 in Writer.
 - C65's claim text now has the narrower scope Codex recommended: four fixed-product, zero-lag reference invasions; tenfold speed keeps all four outcomes; thousandfold speed assembles the mixture from acetogen invasions; lifeless starts. Its basis, ESM S10 and the S11 index now name "the four matching fixed-product, zero-lag C52 runs". Its status stays supported and its evidence is unchanged.
 - The reviewer is credited as Gemini 4 Carbon, the name Barry reported to Codex. Board message 3711 records the model only as "Gemini".
+
+## Barry's further round (25 November)
+
+Barry read the consolidated draft with Fable and asked for one more round:
+1. replace the abstract;
+2. move the recycling and supply results from §4.4 to a new §3.7;
+3. reconcile 0.31 and 0.32, reword the opening of §3.5, rehome the sunlight paragraph;
+4. extend the AI declaration;
+5. count length as the journal defines it;
+then set up the brief and the agent guide.
+
+**Applied by Claude (Opus 5.5).**
+- **Abstract:** Barry's text verbatim (174 words). Codex is to check each sentence against the ledger.
+- **§3.7 Recycling and hydrogen supply** (new Results section): the f sweep (C67) and the supply scale and fermentation arithmetic (C69, C70), moved from §4.4 unchanged in substance.
+- **§4.4:** keeps the sink paragraph. A short paragraph interprets §3.7: recycling trades range for tolerance; the anoxygenic-ecosystem comparison; fermentation as one possible source that would enlarge the needed sink. §4.1 and §2.2 now point to §3.7.
+- **0.31 vs 0.32:** the main text uses bracket midpoints (D1 at f = 0.5: 0.3148). The Figure 3 label and caption used the upper bracket end (0.3155), and now read 0.07–0.31. Figure 3 was regenerated. The ESM bracket table is unchanged.
+- **§3.5:** opens with the Sun's brightening as the motivation for the imposed-warming surrogate. The young/modern-Sun scale, formerly in §4.5, closes §3.5, and §4.7 now points to it there.
+- **Declaration:** adds Fable's five pressure-test questions, and Gemini 4 Carbon's first-pass review of 21 November (its two text proposals are in §3.2 and §4.4).
+
+**Length.** The counts below come from a plain word count of the draft source, with HTML comments removed and each display equation counted as one word. They are compared with the same count at `71fff91`.
+
+| Part | Now | Change since `71fff91` |
+|---|---|---|
+| Title | 16 | 0 |
+| Abstract | 175 | −26 |
+| Main text | 5,405 | +67 |
+| End statements | 253 | +57 |
+| Table 1 | 523 | 0 |
+| Captions | 785 | 0 |
+
+The journal counts the cover page, references and acknowledgements. Adding the net +98 to Codex's rendered count at `71fff91` gives two totals:
+- the journal's definition, without displays: about **6,720 words**;
+- with Table 1 and the captions as well: about **7,970**, which leaves almost no room for the cover details, contributions, funding and acknowledgements.
+
+Codex is asked to recount the rendered file.
+
+## Codex's product review applied (25 November)
+
+Codex's review ([haze-world-products-review-2026-11-25.md](haze-world-products-review-2026-11-25.md), `80e15e1`) checked Barry's abstract sentence by sentence and the brief, guide and graphical abstract. Claude (Opus 5.5) applied it as follows.
+
+- **Abstract (197 words in Writer).** Barry asked for the smallest change wherever a sentence fails, so his first five sentences stand and the rest keep his wording with these scope fixes, in place of Codex's 189-word rewrite of sentences 6–10:
+  - S6: "loses local stability once the climate takes more than 0.15 years to respond, or about a year if half the acetate is recycled into methane" (C63, E22);
+  - S7: "can last";
+  - S8: "In the four cases tested, a local temperature sensitivity of a fraction of a kelvin per e-fold of supply … and some habitat-spread communities tolerated centuries" (C57, C54, C61, E22);
+  - S9: "In 24 closed reference invasions … in four simplified controls the invader removed the resident within decades, while the climate took millennia to reverse its advantage" (C52, C65, E19);
+  - S10: "The mixture can form where the losing group persists, in refuges or through immigration, until the climate catches up" (C09, C66).
+- **Article.** §4.2 scoped to the four tested branches and a local sensitivity; §4.4's fermentation sentence now states the conditional glucose budget (E21) instead of "enlarge the lasting sink"; §4.6 says every closed uniform reference run ended with the invader alone and scopes the decades-versus-millennia contrast to fixed products; §3.6 gives immigration as "materially active near T\*"; the conclusion says "loses stability" (not "fails") and scopes assembly to the reference runs. §3.6 and Figure 4 are retitled "The mixture assembles where the losing group can persist" (accelerated-methane controls assembled in place, C65).
+- **Figure 3.** The band and its label now come from the same four bracket midpoints (0.0708–0.3148); the caption says so. Bracket-edge asserts for C57 are kept.
+- **Graphical abstract** (Claude Opus subagent): panel 1 scoped to the haze-cooling branch near the switch; panel 2's tails cropped at the last extracted climate point, receipted to C06 and C67; panel 3 names the 36 original exact states, labels local temperature sensitivity and notes the 21–31-yr margins at full recycling (C67); panel 4 is "Two refuges let both groups persist", receipted to C09 and its matched controls, with immigration as another route.
+- **Brief.** Precedent sentence replaced; census described as a one-cell check every ten years; finding 1 says acetate *and* lost biomass; finding 2 scopes the seven-year limit to the original survey and gives the 30-year exception; finding 3 is a local slope on four tested cases; finding 4 is scoped to reference runs and the four controls, with immigration "near" the set point; finding 5 gives gross supply against published base cases and the conditional fermentation budget; "exact or durable, not both" replaced. Still two pages.
+- **Agent guide.** Codex's four items applied (case D extracted curve, immigration fractions and the 12 refuge runs, perturbation runs pointed to separately, fixed-product and S definitions, C65 scope, Figure 3 provenance and selection rules, reproducibility notes, graphical-abstract command), plus traps 17–19 (seven-year scope, transient growth advantage, conditional fermentation).
+
+**Length.** The edits add 43 words in Writer (draft source rendered before and after). On Codex's rendered counts at `39993fc`: about **6,764** by the journal's definition (cover, text, references and end statements), and about **8,015** with Table 1 and the captions, before the remaining cover details.
+
+**Codex's confirmation applied (`945f417`).**
+- **Abstract:** "without acetate recycling" inserted in sentence 6, as Codex proposed. To keep a margin under 200 words, the clause that follows now reads "or about a year with half recycled" (was "if half the acetate is recycled into methane"). That gives 195 words in a Writer count of the rendered abstract.
+- **Brief:**
+  - The conclusion now keeps both durable results: control that tolerates a slow climate either lets temperature drift slightly or works over only a narrow range of supply. The reference-run assembly result is its own sentence.
+  - Finding 1 is scoped to the haze-cooling branch near the switch.
+  - Finding 2 now reads "within about 7 years". It adds "with biomass exported" and "near the edge of" to the 30-year exception, and attributes swings and crashes to the disturbance runs.
+  - Finding 4 scopes immigration to none or half of the acetate recycled.
+  - To stay within two pages, the "pressure-tested five ways" bullet was cut; the roles paragraph now says Fable "posed five pressure-test questions".
+- **Graphical abstract:** panel 3's note says "with all acetate recycled and biomass exported".
+
+## Barry's decisions and the makedoc build (25 November, evening)
+
+Barry (chat, 25 November 2026): "the round is accepted", with five decisions.
+1. **Length.** "the journal's own count governs. Trim nothing; recount when the cover and declarations are final."
+2. **Abstract.** S6 and S9 are now in his wording ("With no acetate recycled into methane, … ; with half recycled, about a year"; "while atmospheric methane took millennia"). Brief finding 4 matches. Codex is asked to confirm each in one line.
+3. **Brief.** The closing caveats of findings 1 and 4 are now one sentence under "What it means".
+4. **Roles.** The declaration and the brief use S11's split: Claude specified, reviewed and drafted; Codex coded, audited and reviewed. The declaration adds that Fable drafted the abstract, which Codex checked against the ledger. S11 adds Fable's five questions and Gemini's 21 November review.
+5. **makedoc build** (`build/article.pdf`, 19 pages; `build/supplement.pdf`, 20 pages). The article moved from `../03c-full-draft.md` to `products/text/main.md`, with its captions in `text/figures.md` as image lines. `03c-full-draft.md` survives only in Git history. The supplement source stays at `../esm/esm.md`, where the generators write.
+   - **Citations.** Every author–year citation is now a Pandoc key, rendered in the Interface numeric style.
+   - **Bibliography.** It holds 38 works:
+     - 35 come from Crossref through `references/dois.txt`;
+     - Watson & Lovelock (1983) and Lovelock & Margulis (1974) are in `manual.yaml`, because of name and case faults in the Crossref records;
+     - Åström & Murray (2021) is checked against Open Library's ISBN record.
+   - **Builder fix.** `tools/refs.py` now restores case for names that Crossref holds in capitals (Bebout et al., Kharecha et al.).
+   - **Equation numbers.** All 13, (2.1)–(2.11), (3.1) and (3.2), render in the PDF. The Word export still drops them.
+   - **Plain-text subscripts.** These are now TeX math (for example $T_{clim}$ and $\tau_c$). `esm_tables.splice` converts symbols in generated headers, so the CSVs keep plain names.
+   - **Table fixes.** `table_s1.md_table` now escapes pipes in headers, which had broken the S4 and S5 tables (`max |S|`). It also sizes the separator dashes so that Pandoc gives wide columns to long text. The supplement went from 24 to 20 pages.
+
+## Standalone supplement (25 November, late)
+
+Codex's clean-copy review found S3b and S5 identifiers overprinting their neighbours, a caption path
+running off page 7, and 29 relative links that broke once the PDF left the repository.
+
+- `md_table` sizes each column to at least its longest unbreakable word. S3b, S4a/b and S5 show run
+  identifiers with spaces (`fixed 0.5 3.0 0.01`, `D1 f0`, `qualified bracket`), and S4a/b use the
+  symbols ℓ, P and T\* as headers. The CSVs keep the identifiers; table S1 is unchanged.
+- The supplement builds from `build/supplement-standalone.md`, written by `tools/standalone_md.py`:
+  relative links become GitHub links pinned to HEAD, and code spans of 16 characters or more are set
+  with xurl's `\nolinkurl` so they wrap. The script refuses to build if a linked file has uncommitted
+  changes or is missing from HEAD.
+- Checks: no word past the right margin on any of the 20 pages (14 lines before); pages 5 and 7
+  inspected; all 24 repository links return 200 at `89ab578`, and the 5 DOIs are registered;
+  claims check 0 errors; makedoc lint 0 errors; ESM and Table S1 tests pass.

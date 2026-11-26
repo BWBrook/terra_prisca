@@ -1,0 +1,51 @@
+# Works whose Crossref metadata needs correcting. Watson & Lovelock 1983: Crossref holds the authors in
+# capitals; verified against doi:10.1111/j.1600-0889.1983.tb00031.x on 25 November 2026.
+references:
+  - id: watson1983BiologicalHomeostasisGlobal
+    type: article-journal
+    title: "Biological homeostasis of the global environment: the parable of Daisyworld"
+    author:
+      - family: Watson
+        given: Andrew J.
+      - family: Lovelock
+        given: James E.
+    issued:
+      date-parts: [[1983]]
+    container-title: Tellus B
+    volume: 35B
+    issue: "4"
+    page: 284–289
+    DOI: 10.1111/j.1600-0889.1983.tb00031.x
+  # Åström & Murray 2021: a book without a DOI; verified against Open Library's ISBN 9780691193984 record on
+  # 25 November 2026.
+  - id: astrom2021FeedbackSystemsIntroduction
+    type: book
+    title: "Feedback systems: an introduction for scientists and engineers"
+    author:
+      - family: Åström
+        given: Karl Johan
+      - family: Murray
+        given: Richard M.
+    issued:
+      date-parts: [[2021]]
+    edition: "2"
+    publisher: Princeton University Press
+    publisher-place: Princeton, NJ
+    ISBN: 978-0-691-19398-4
+  # Lovelock & Margulis 1974: Crossref writes "the gaia hypothesis" in lower case; otherwise its record,
+  # checked on 25 November 2026.
+  - id: lovelock1974AtmosphericHomeostasisBiosphere
+    type: article-journal
+    title: "Atmospheric homeostasis by and for the biosphere: the Gaia hypothesis"
+    author:
+      - family: Lovelock
+        given: James E.
+      - family: Margulis
+        given: Lynn
+    issued:
+      date-parts: [[1974]]
+    container-title: Tellus
+    volume: "26"
+    issue: 1-2
+    page: 2–10
+    DOI: 10.1111/j.2153-3490.1974.tb01946.x
