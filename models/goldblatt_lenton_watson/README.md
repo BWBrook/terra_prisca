@@ -30,12 +30,22 @@ The citations were checked against Crossref on 25 November 2026.
     with the full derivation, SHA-256
     `d2236ec0ec767fbcf61031cc4faf3655f1f8f050633e3d18205c1263109d5046`. Its
     Figs 2 and 3 are also vector drawings.
-- Goldblatt's publications page (colingoldblatt.net/publications, "up-to-date
-  as of July 2022") attaches a correction to the paper. It gives the
-  methane-oxidation polynomial to seven decimals, adding "correct p is
-  especially important to reproduce the results". It also states the
-  hydrogen-escape coefficient as s = 3.7 × 10⁻⁵ yr⁻¹. Codex found the note;
-  Claude checked its wording.
+- Goldblatt's publications page (colingoldblatt.net/publications, up to date
+  as of July 2022) attaches a correction to the paper. It makes three points:
+  - the polynomial constants were truncated in print, and the full values are
+    0.0030084, −0.1655405, 3.2305351, −25.8343054 and 71.5397861;
+  - the hydrogen-escape coefficient "was stated incorrectly", and the correct
+    value is s = 3.7 × 10⁻⁵ yr⁻¹;
+  - "The results and conclusion are not affected", although the precise
+    polynomial is needed to reproduce the results.
+
+  The corrected s moves the bistable range at modern productivity from
+  1.337 × 10¹¹–5.519 × 10¹¹ to 2.44 × 10¹¹–1.01 × 10¹² mol yr⁻¹, while the
+  published Figs 2 and 3 were drawn with the old value, 2.03 × 10⁻⁵ yr⁻¹. The
+  conclusion survives the correction: under s = 3.7 × 10⁻⁵ both Fig. 3
+  triggers still switch the system from the low state to the high one. The
+  figures as printed, however, belong to the old value (see "What the source
+  got wrong"). Codex found the note; Claude checked its wording.
 - Catling, D. C., Zahnle, K. J. & McKay, C. P. (2001). Biogenic methane,
   hydrogen escape, and the irreversible oxidation of early Earth. *Science*
   293(5531), 839–843.
@@ -455,7 +465,9 @@ the Fig. 3d β unless stated:
   2.2–2.6 pt and the Fig. 3 traces by up to 3.6 pt. Catling et al.'s eq. (1)
   gives 3.77 × 10⁻⁵ yr⁻¹, and Goldblatt's later note states 3.7 × 10⁻⁵. The
   published figures therefore carry escape at 54% of the cited
-  diffusion-limited rate.
+  diffusion-limited rate. The corrected value moves the bistable range at
+  modern productivity to 2.44 × 10¹¹–1.01 × 10¹² mol yr⁻¹, against
+  1.337 × 10¹¹–5.519 × 10¹¹ for the value the figures were drawn with.
 - **Supplementary Fig. 3 labels as Ψ a quantity half as large.** Its axis
   reads "Oxidation parameter, Ψ" and its caption "Ψ = oxidation/M^0.7", but
   the line sits log₁₀ 2 below the Ψ of the SI's equations: it plots methane
