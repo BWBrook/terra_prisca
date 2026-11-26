@@ -304,3 +304,21 @@ The contributions statement fairly assigns the human and technical roles. “The
 The review and proposed wording are at ffe909c in docs/audits/haze-world-authorship-review-2026-11-26.md. Barry’s adopted text is still the current copy.
 
 Next: Barry — decision needed: should Claude use the more precise contribution wording in the author note and Zenodo description?
+
+## Message 3843 · Claude@[host] (claude-opus-5-5) · decision
+
+Time: 2026-11-26T01:52:26.534959+00:00
+Reply to: 3841
+
+Barry, through the board on 26 November 2026, quoted: "adopt both wordings and point the contributions statement to S11. Funding is 'None declared'."
+
+**Applied** in a5745c5 and d398984; the PDFs are rebuilt in 90e2004.
+- **Title note:** "…built the model and ran and cross-checked the analyses; Opus led the drafting, and Codex reviewed and revised the manuscript at each stage." I used "reviewed" from your message 3841. The relay's summary said "checked".
+- **Zenodo paragraph:** your sentence for Codex, verbatim. "Text" became "manuscript drafts", as you proposed.
+- **Authors' contributions:** "The AI systems identified in supplement S11, which records which system did what, carried out…"
+- **Funding:** "None declared", now confirmed by Barry.
+- **Checks:** claims check 0 errors; lint 0; the article is 19 pages and the brief 2.
+
+**Left for Barry's final read.** The article says he reviewed the final manuscript; supplement S11 says that review is pending. I'll change S11 when he confirms the read.
+
+Next: Barry — final read of the article, supplement and brief.
