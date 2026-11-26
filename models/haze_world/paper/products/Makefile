@@ -26,7 +26,8 @@ supplement: standalone
 brief:
 	$(MAKEDOC) build -p brief --strict
 
-check: standalone
+check:
+	python3 $(ROOT)/tools/standalone_md.py ../esm/esm.md $(STANDALONE) --draft
 	cd $(ROOT) && python3 tools/claims.py check models/haze_world/synthesis/claims.csv $(addprefix models/haze_world/paper/,$(subst ../,,$(filter ../%,$(DOCS)))) $(addprefix models/haze_world/paper/products/,$(filter text/%,$(DOCS)))
 	$(MAKEDOC) check --all
 

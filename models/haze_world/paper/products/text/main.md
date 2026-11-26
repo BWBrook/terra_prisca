@@ -2,8 +2,6 @@
 
 <div id="authors"></div>
 
-\*B.W.B. is the sole author under the journal's authorship policy and takes full responsibility for this work. In practice it is a paper from a research group. Claude Opus 5.5 (Anthropic) and Codex GPT-6 (OpenAI) built the model, ran and cross-checked the analyses and drafted the manuscript. Gemini 4 Carbon (Google) reviewed the work independently. Claude Fable 5.2 advised throughout and posed five pressure tests. B.W.B. conceived the question, designed the collaboration, supervised and advised, made the decisions recorded in the project correspondence, and reviewed and edited the final manuscript, as the senior author of a group paper does. A byline tells readers who did the work and who answers for it. Here the two differ: the AI systems did most of the work, and B.W.B. answers for all of it. He regards them as co-authors by contribution, the project archive lists them as such [archive DOI], and he expects journal bylines to follow as public records like this one make such contributions verifiable.
-
 ## Abstract
 
 Can life regulate its planet's climate when that climate responds slowly?

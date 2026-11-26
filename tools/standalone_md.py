@@ -5,7 +5,9 @@ set with xurl's \\nolinkurl so they wrap at the margin. Every link target must e
 a linked file with uncommitted changes fails the build, so a pinned link never points at a version
 the PDF does not describe.
 
-    python3 tools/standalone_md.py SOURCE.md OUT.md
+    python3 tools/standalone_md.py SOURCE.md OUT.md [--draft]
+
+--draft skips the uncommitted-changes check, for linting before a commit.
 """
 import re
 import subprocess
@@ -21,7 +23,8 @@ def git(*args, cwd):
     return subprocess.run(["git", *args], cwd=cwd, capture_output=True, text=True, check=True).stdout.strip()
 
 
-def main(source, out):
+def main(source, out, flag=None):
+    draft = flag == "--draft"
     source, out = Path(source).resolve(), Path(out).resolve()
     root = Path(git("rev-parse", "--show-toplevel", cwd=source.parent))
     sha = git("rev-parse", "HEAD", cwd=root)
@@ -38,7 +41,7 @@ def main(source, out):
         kind = subprocess.run(["git", "cat-file", "-t", f"{sha}:{rel}"], cwd=root, capture_output=True, text=True).stdout.strip()
         if kind not in ("blob", "tree"):
             problems.append(f"{target}: not in commit {sha[:7]}")
-        elif kind == "blob" and subprocess.run(["git", "diff", "--quiet", "HEAD", "--", rel], cwd=root).returncode:
+        elif kind == "blob" and not draft and subprocess.run(["git", "diff", "--quiet", "HEAD", "--", rel], cwd=root).returncode:
             problems.append(f"{target}: uncommitted changes; commit before building")
         url = f"https://github.com/{repo}/{'tree' if kind == 'tree' else 'blob'}/{sha}/{rel}".rstrip("/")
         return m.group(1) + url + ("#" + anchor if anchor else "") + m.group(3)
