@@ -682,7 +682,7 @@ cited; their PDFs remain outside the public archive.
 
 **Declaration of AI use.** The roles of the AI systems are stated in the author note on the title page. ESM S11 gives the detailed record of which system did what.
 
-**Authors' contributions.** B.W.B.: conceptualisation, supervision, project administration, resources, writing – review and editing. He conceived the question, designed the collaboration and its cross-checks, directed the writing process, decided between options at each stage, and reviewed and edited the final manuscript. The AI systems named in the author note carried out the methodology, software, formal analysis, investigation, validation, visualisation and writing of the original draft; supplement S11 records which system did what.
+**Authors' contributions.** B.W.B.: conceptualisation, supervision, project administration, resources, writing – review and editing. He conceived the question, designed the collaboration and its cross-checks, directed the writing process, decided between options at each stage, and reviewed and edited the final manuscript. The AI systems identified in supplement S11, which records which system did what, carried out the methodology, software, formal analysis, investigation, validation, visualisation and writing of the original draft.
 
 **Conflict of interest.** None declared.
 
