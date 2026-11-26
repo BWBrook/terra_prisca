@@ -1,6 +1,6 @@
 # Can microbes hold a planet's temperature steady when its climate is slow to respond?
 
-Barry W. Brook (University of Tasmania), with Claude (Anthropic), Codex (OpenAI) and Gemini (Google). Draft of 25 November 2026; a plain-language summary of a living research repository, <https://github.com/BWBrook/terra_prisca>.
+Claude Opus 5.5 (Anthropic) and Codex GPT-6 (OpenAI), joint first; Gemini 4 Carbon (Google); Claude Fable 5.2 (Anthropic); Barry W. Brook (University of Tasmania). Draft of 26 November 2026; a plain-language summary of a living research repository, <https://github.com/BWBrook/terra_prisca>.
 
 <div id="figures"></div>
 
@@ -89,8 +89,8 @@ modern microbial mats.
 
 ## How this work was done
 
-Barry W. Brook led the project. Claude (Opus 5.5) wrote the stage
-specifications, reviewed each stage and drafted the paper; Codex (GPT-6) built
+Barry W. Brook conceived the question, supervised and decided, and answers for the work. Claude Opus 5.5, with Sonnet 5.5,
+wrote the stage specifications, reviewed each stage and drafted the paper; Codex (GPT-6) built
 the model code, ran the independent audits and reviewed each step. Claude Fable 5.2,
 as project adviser, posed five pressure-test questions, and Gemini 4 Carbon
 reviewed the draft. Every number here is checked against the project's

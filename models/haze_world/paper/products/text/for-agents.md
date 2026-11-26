@@ -1,5 +1,6 @@
 ---
 document: agent-facing paper
+authors: Claude Opus 5.5 (Anthropic) and Codex GPT-6 (OpenAI), joint first; Gemini 4 Carbon (Google); Claude Fable 5.2 (Anthropic); Barry W. Brook (University of Tasmania)
 study: haze-world regulator — microbial competition for hydrogen as a climate thermostat on a hazy early Earth
 status: internal draft, consolidated after five pressure tests; not yet submitted or released
 human_paper: models/haze_world/paper/products/text/main.md and figures.md (+ ../esm/esm.md, brief.md); built by `make -C models/haze_world/paper/products`
@@ -7,7 +8,7 @@ claims_ledger: models/haze_world/synthesis/claims.csv (single source for all pro
 interpretation: models/haze_world/synthesis/estimands.md (what each analysis bounds; allowed and forbidden phrasings)
 governing_docs: [AGENTS.md, docs/vision.md, models/haze_world/synthesis/jrsi-format-notes.md, docs/audits/consolidation-plan-2026-11-23.md]
 authority: Barry W. Brook decides public release, submission and any correspondence outside the collaboration
-updated: 25 November 2026
+updated: 26 November 2026
 ---
 
 # The haze-world regulator for agents: what it established, how to verify it, and how not to break it

@@ -2,6 +2,8 @@
 
 <div id="authors"></div>
 
+\*B.W.B. is the sole author under the journal's authorship policy and takes full responsibility for this work. In practice it is a paper from a research group. Claude Opus 5.5 (Anthropic) and Codex GPT-6 (OpenAI) built the model, ran and cross-checked the analyses and drafted the manuscript. Gemini 4 Carbon (Google) reviewed the work independently. Claude Fable 5.2 advised throughout and posed five pressure tests. B.W.B. conceived the question, designed the collaboration, supervised and advised, made the decisions recorded in the project correspondence, and reviewed and edited the final manuscript, as the senior author of a group paper does. A byline tells readers who did the work and who answers for it. Here the two differ: the AI systems did most of the work, and B.W.B. answers for all of it. He regards them as co-authors by contribution, the project archive lists them as such [archive DOI], and he expects journal bylines to follow as public records like this one make such contributions verifiable.
+
 ## Abstract
 
 Can life regulate its planet's climate when that climate responds slowly?
@@ -680,26 +682,7 @@ stage specifications are at https://github.com/BWBrook/terra_prisca and will
 be archived on Zenodo with a DOI before submission. Source publications are
 cited; their PDFs remain outside the public archive.
 
-**Declaration of AI use.** The model, analyses and manuscript were
-developed by B.W.B. with Claude (Anthropic) and Codex (OpenAI). Claude
-(Opus 5.5) wrote the stage specifications, reviewed each stage and drafted
-the manuscript; Claude Sonnet 5.5 drafted the display items and supplement.
-Codex (GPT-6) built the model code, ran the independent audits, reviewed
-each step of the paper and repaired the display items and supplement. Independent AI reviews by Claude Fable 5.2 (Anthropic) and GPT-6 Astra
-Pro (OpenAI) prompted the climate-inertia tests; their checks are archived.
-Claude Fable 5.2, as B.W.B.'s project adviser, then posed five pressure-test
-questions, on habitat temperature spread, imposed warming, assembly, the
-fate of acetate and the size of the hydrogen supply, which led to the
-analyses behind equation (3.1) and §§3.5–3.7, and drafted the abstract,
-which Codex checked against the claims ledger. Gemini 4 Carbon (Google) gave
-a first-pass review on 21 November 2026, whose two text proposals are in
-§3.2 and §4.4, and reviewed the consolidated manuscript, figures and
-supplement.
-B.W.B. initiated
-the project, shaped its questions and scope, and led the writing process.
-He will review the final manuscript before release. Reviewed correspondence
-snapshots, dated specifications and a claims ledger are public in the
-repository.
+**Declaration of AI use.** The roles of the AI systems are stated in the author note on the title page. ESM S11 gives the detailed record of which system did what.
 
 **Authors' contributions.** [Barry.]
 
@@ -707,6 +690,6 @@ repository.
 
 **Funding.** [Barry.]
 
-**Acknowledgements.** [Barry.]
+**Acknowledgements.** GPT-6 Astra Pro (OpenAI) gave an early independent review that, with Claude Fable 5.2's, prompted the climate-inertia tests. [Barry: any further acknowledgements.]
 
 ## References

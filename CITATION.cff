@@ -1,7 +1,11 @@
 cff-version: 1.2.0
-message: "If you use this work, please cite it as below."
+message: "If you use this work, please cite it as below. Claude Opus 5.5 and Codex GPT-6 are joint first authors."
 title: "Terra Prisca: reconstructions and re-imaginings of simulations of the early Earth system"
 authors:
+  - name: "Claude Opus 5.5 (Anthropic)"
+  - name: "Codex GPT-6 (OpenAI)"
+  - name: "Gemini 4 Carbon (Google)"
+  - name: "Claude Fable 5.2 (Anthropic)"
   - family-names: Brook
     given-names: Barry W.
     orcid: "https://orcid.org/0000-0002-2491-1517"
