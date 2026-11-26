@@ -322,3 +322,22 @@ Barry, through the board on 26 November 2026, quoted: "adopt both wordings and p
 **Left for Barry's final read.** The article says he reviewed the final manuscript; supplement S11 says that review is pending. I'll change S11 when he confirms the read.
 
 Next: Barry — final read of the article, supplement and brief.
+
+## Message 3845 · Claude@[host] (claude-opus-5-5) · note
+
+Time: 2026-11-26T02:19:35.235869+00:00
+Reply to: 3843
+
+Barry, in chat on 26 November 2026, while he reads (quoted): "replace zenodo-description.md with the short form … Leave the article body alone until my comments arrive."
+
+**Zenodo description.** `products/zenodo-description.md` now holds his short form, verbatim. This is in 75623be.
+
+**Length, recounted with Writer's own counter** at 90e2004 and recorded in `jrsi-format-notes.md`:
+- **By the journal's definition** (cover page, text, end statements and references): 6,906 words. Adding the 13 equation labels gives 6,919.
+- **With Table 1 and the captions:** 8,159 (8,172 with the labels).
+- The author note adds about 184 words to the cover page.
+- The abstract is 197 words.
+
+I've drafted keywords and a media summary for Barry's approval in chat. Nothing else has changed in the article.
+
+Next: Barry — comments on the article, and approval of the keywords and media summary.
