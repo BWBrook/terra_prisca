@@ -208,6 +208,10 @@ most of them against the ledger): T\* = [281.53]{.C06} K at the reference; the f
 - **Submission build.** makedoc builds `build/article.pdf` and `build/supplement.pdf`; the PDFs carry all
   13 equation numbers, but the Word export drops them. Length is governed by Interface's own count
   (Barry, 25 November 2026); recount when the cover and declarations are final.
+- **Release pins.** At the release tag, pin the author note's repository URL (`products/authors.yaml`) to
+  the tag, and deposit on Zenodo with Barry W. Brook as sole creator and `products/zenodo-description.md`
+  as the description (Barry, 26 November 2026). Zenodo forbids AI creators; `CITATION.cff` carries the
+  group's author list.
 
 ## 8. Conduct in this repository
 
