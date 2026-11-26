@@ -54,6 +54,9 @@ checked against the source when each model is started.
 A novel simulation of our own should grow out of the gaps this lineage
 exposes, rather than being designed up front.
 
+What the reconstructed families show together, family by family and across
+them, is in [`synthesis.md`](synthesis.md).
+
 ## Daisyworld: reconstruction and re-imaginings
 
 **Faithful reconstruction (first build).** Reproduce Figs 1a–d and 2 of
