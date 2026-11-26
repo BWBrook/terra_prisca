@@ -178,7 +178,11 @@ def _inside(x, spans):
 
 def _distance(pts, segs, k=4):
     """Exact distance from each point to the nearest of the polyline segments,
-    searched among the k segments with the nearest midpoints."""
+    searched among the k segments with the nearest midpoints. That search is
+    exact only for segments densified to STEP_PT (as `_samples` does); longer
+    segments fall back to searching all of them."""
+    if np.hypot(*(segs[:, 1] - segs[:, 0]).T).max() > STEP_PT * (1 + 1e-9):
+        k = len(segs)
     mid = segs.mean(axis=1)
     _, idx = cKDTree(mid).query(pts, k=min(k, len(segs)))
     idx = idx.reshape(len(pts), -1)

@@ -135,14 +135,25 @@ def _log_rhs(t, z, N, r, rd):
     return np.array([d[0] / M, d[1] / O, d[2]])
 
 
-def jacobian(y, N, r, rd: Reading, h=1e-6):
-    """Jacobian of the log-transformed system, by central differences."""
-    z = np.array([np.log(y[0]), np.log(y[1]), y[2]])
-    J = np.empty((3, 3))
-    for j in range(3):
-        dz = np.zeros(3)
-        dz[j] = h if j < 2 else h * max(abs(z[2]), 1.0)
-        J[:, j] = (_log_rhs(0, z + dz, N, r, rd) - _log_rhs(0, z - dz, N, r, rd)) / (2 * dz[j])
+def jacobian(y, N, r, rd: Reading):
+    """Exact Jacobian of the log-transformed system (log M, log O, C) at a
+    steady state, where each f_i/y_i term vanishes. Written analytically
+    because central differences of the cancelling fluxes (~4e15 mol/yr) can
+    invert the stability of a root very close to a fold."""
+    M, O, C = (float(v) for v in y)
+    om = float(omega(O))
+    dom = -om * (1.0 / (D_GAMMA + O) + 1.0 / (D_DELTA + O))
+    ox = float(psi(O, rd)) * M**METHANE_EXPONENT
+    dox_dO = ox * float(np.polyval(np.polyder(rd.coeffs), np.log10(O))) / O
+    dox_dM = METHANE_EXPONENT * ox / M
+    x = rd.beta * (N + r) - W * C
+    a = np.array([
+        [-rd.s - 0.5 * dox_dM, 0.5 * dom * (N + r) - 0.5 * dox_dO - 0.5 * dom * x, 0.5 * om * W],
+        [-rd.s - dox_dM, dom * (N + r) - dox_dO - dom * x, -(1.0 - om) * W],
+        [0.0, 0.0, -W],
+    ])
+    scale = np.array([M, O, 1.0])
+    J = a * scale[None, :] / scale[:, None]
     return J
 
 
@@ -174,7 +185,7 @@ def steady_states(N, r, rd: Reading, lo=O_VALID[0], hi=O_VALID[1], n=6001, extra
     d = np.diff(fq)
     breaks = [q[0]]
     for i in np.where(np.sign(d[:-1]) != np.sign(d[1:]))[0] + 1:
-        sgn = 1.0 if d[i - 1] < 0 else -1.0          # +1 at a minimum, -1 at a maximum
+        sgn = 1.0 if (d[i - 1] < 0 or d[i] > 0) else -1.0   # +1 at a minimum, -1 at a maximum
         res = minimize_scalar(lambda x: sgn * f(x), bounds=(q[i - 1], q[i + 1]), method="bounded",
                               options={"xatol": 1e-13})
         breaks.append(float(res.x))

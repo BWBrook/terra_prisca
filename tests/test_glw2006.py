@@ -256,3 +256,23 @@ def test_methane_falls_about_twofold_at_the_oxygen_crossing():
     ev = F.methane_events(F.run_case(rd, "a", 4e8), F.run_case(rd, "a", 1e6), rd)
     assert ev["fall_cross"] == pytest.approx(2.138, abs=0.01)
     assert ev["t_cross"] == pytest.approx(1.26e5, rel=0.02)
+
+
+def test_stability_exact_just_inside_lower_fold():
+    # Gemini GLW-G2: finite differences inverted the low pair here.
+    ss = g.steady_states(g.N_MODERN, 1.336945282964e11 * (1 + 2e-12), P)
+    assert [ok for _, ok in ss] == [True, False, True]
+    assert ss[0][0] / P.pal_mol == pytest.approx(1.992e-5, rel=1e-3)
+
+
+def test_analytic_jacobian_matches_differences():
+    r = 3e11
+    for o, _ in g.steady_states(g.N_MODERN, r, P):
+        y = (r / P.s, o, P.beta * (g.N_MODERN + r) / g.W)
+        z = np.array([np.log(y[0]), np.log(y[1]), y[2]])
+        fd = np.empty((3, 3))
+        for j in range(3):
+            dz = np.zeros(3)
+            dz[j] = 1e-5 if j < 2 else 1e-5 * abs(z[2])
+            fd[:, j] = (g._log_rhs(0, z + dz, g.N_MODERN, r, P) - g._log_rhs(0, z - dz, g.N_MODERN, r, P)) / (2 * dz[j])
+        assert np.allclose(g.jacobian(y, g.N_MODERN, r, P), fd, rtol=1e-6, atol=1e-12)

@@ -12,8 +12,8 @@ This page holds a reconstruction of their three-box model. It is scored
 against the vector geometry of the published Figs 2 and 3 and of
 Supplementary Figs 2 and 3, and every number the text states is recomputed.
 
-Status: **revised after Codex's review (GLW-R1 to R9); awaiting Codex's check,
-then Gemini's review before merge** (board thread 194).
+Status: **reconstructed; reviewed by Codex (GLW-R1 to R9) and Gemini
+(GLW-G1 to G4)** (board thread 194).
 
 ## Sources
 
@@ -196,8 +196,9 @@ Some choices came after figure data had been seen, and are labelled as such:
 - **Roots near folds.** The steady-state solver brackets the residual between
   its own turning points, refined by bounded minimisation. Pairs of roots
   closer than the search grid, as next to a fold, are therefore found.
-  Stability comes from the eigenvalues of the full three-box Jacobian; it
-  agrees with the sign of the residual's slope at every root tested.
+  Stability comes from the eigenvalues of the full three-box Jacobian,
+  written analytically so that it stays exact next to a fold; it agrees with
+  the sign of the residual's slope at every root tested.
 - **Stiffness.** The transients are integrated in log M and log O with Radau
   (rtol 10⁻¹⁰). Oxygen's turnover on the low branch is about 0.01 yr, while
   1/w is 170 Myr.
@@ -317,13 +318,13 @@ unless stated.
 |---|---|---|---|---|---|
 | 3a O₂ | **0.011 pt** | 0.011 pt | 1.9 pt | 17.6 pt | 27.7 pt |
 | 3a CH₄, left axis (PAL units) | **0.011 pt** | 0.011 pt | 1.7 pt | 0.48 pt | 3.6 pt |
-| 3a CH₄, right axis as ticked (atm) | 0.20 pt | – | 1.5 pt | – | – |
+| 3a CH₄, right axis as ticked (atm) | 0.20 pt | 0.20 pt | 1.5 pt | 0.61 pt | – |
 | 3a zoom O₂, CH₄ (left axis) | **0.013–0.019 pt** | 0.012–0.015 pt | 1.2–3.6 pt | 1.5–20 pt | 1.4–20 pt |
 | 3b escape, net | **0.010–0.018 pt** | 0.010–0.018 pt | 0.14–2.3 pt (8.4 pt unmatched) | 0.45–1.7 pt | 0.34–6.5 pt |
 | 3b burial, input | **0.008–0.013 pt** | 0.010–0.013 pt | 0.008–0.013 pt | 0.008–0.013 pt | 0–6.6 pt |
 | 3c O₂ | **0.016 pt** | 0.52 pt | 2.0 pt | 17.8 pt | 25.9 pt |
 | 3c CH₄, left axis (PAL units) | **0.013 pt** | 0.69 pt | 1.7 pt | 0.39 pt | 1.2 pt |
-| 3c CH₄, right axis as ticked (atm) | 0.25 pt | – | 1.5 pt | – | – |
+| 3c CH₄, right axis as ticked (atm) | 0.25 pt | 0.57 pt | 1.5 pt | 0.48 pt | – |
 | 3c zoom O₂, CH₄ (left axis) | **0.014–0.015 pt** | 0.50–1.4 pt | 1.1–3.6 pt | 1.4–20 pt | 1.4–20 pt |
 | 3d escape, net | **0.013–0.017 pt** | 0.24–0.88 pt | 0.13–2.2 pt (8.2 pt unmatched) | 0.39–1.6 pt | 0.29–4.2 pt |
 | 3d burial | 0.021 pt (step fitted) | 0.93–0.99 pt | 0.021 pt (step fitted) | 0.021 pt (step fitted) | 2.7–3.2 pt |
@@ -395,9 +396,9 @@ the Fig. 3d β unless stated:
   PAL scale; on the captioned atm scale methane lies within 0.11–0.25 pt. The only number read from a
   figure is β, and the same β also fits traces it was not taken from.
 - **The 2006 publication fixes the bistability quantitatively on its own.**
-  Supplementary Fig. 3 draws the oxidation fit at full precision: a quartic
-  fitted to the drawn line puts the bistable range within 1% of the range
-  from Goldblatt's later coefficients, and reproduces Fig. 2. Supplementary
+  A quartic fitted to the oxidation curve drawn in Supplementary Fig. 3 puts
+  the bistability limits within 1% of those obtained from Goldblatt's later
+  coefficients, and reproduces Fig. 2. Supplementary
   Fig. 2 recovers the three stated methane exponents to the two decimals
   given.
 - **The bistability is real in the model as specified.** At modern
@@ -414,10 +415,11 @@ the Fig. 3d β unless stated:
   state at r = 3 × 10¹¹, 0.023 PAL. Total oxidation matches the stated
   3 × 10¹⁸ and 9 × 10¹⁷ mol.
 - **Methane falls twofold while oxygen rises to 10⁻⁵ PAL**, the low end of the
-  stated factor of 2–6, in the model and in both printed zooms. Started from
-  the top of the BIF band instead, the same switch gives a 5.35-fold fall. At fixed CO₂,
-  Kasting et al.'s fit turns that fall into 2.5–3.5 K of cooling, nearly
-  independent of the CO₂ level, as the SI says. Methane takes about 50 Myr to
+  stated factor of 2–6, in the model and in both printed zooms. At fixed CO₂,
+  Kasting et al.'s fit turns that twofold fall into 2.5–3.5 K of cooling,
+  nearly independent of the CO₂ level, as the SI says. Started from the top
+  of the BIF band instead, the same switch gives a 5.35-fold fall and
+  6.9–8.5 K of cooling. Methane takes about 50 Myr to
   re-adjust in case a.
 - **The hysteresis spans millions of years.** Stepping r from today's value to
   the top of the BIF band or to 10¹² mol yr⁻¹ takes oxygen back below
@@ -444,8 +446,9 @@ the Fig. 3d β unless stated:
   survives (at r = 5 × 10¹¹ the printed coefficients give stable states at
   1.7 × 10⁻⁶ and 0.12 PAL), but the captioned Fig. 3 forcing, r = 3 × 10¹¹,
   then has only the high state, so neither Fig. 3 trigger can be rerun from
-  the printed numbers. The full precision is in Supplementary Fig. 3 and in
-  Goldblatt's later note.
+  the printed numbers. Supplementary Fig. 3 preserves the shape of the
+  oxidation fit to plotting precision. Goldblatt's later note supplies the
+  coefficients used to draw it.
 - **The escape coefficient is about half the value its cited source gives.**
   The SI scales s = 2.03 × 10⁻⁵ yr⁻¹ from Catling et al. (2001), and the
   figures were drawn with it: under 3.7 × 10⁻⁵, all four Fig. 2 curves miss by
@@ -460,6 +463,13 @@ the Fig. 3d β unless stated:
 - **The Fig. 2b caption misstates the dashed curve's reductant input.** The
   curve drawn is r = 3 × 10¹¹ (0.023 pt); the captioned 3 × 10¹⁰ misses by
   9–10 pt.
+- **The SI's description of the fit's low-oxygen limit is garbled.** SI p. 8
+  says that below 10¹⁴ mol the fit approximates a straight line with
+  "d log(oxidation)/dM = 1", which it glosses as a linear dependence of
+  oxidation on oxygen, so d log(oxidation)/d log O = 1 was evidently meant.
+  The quartic has that slope only between about 10¹⁰ and 10¹² mol (1.15 at
+  10¹⁰ and 0.98 at 10¹²); it falls to 0.30 at 10¹⁴ and 0.23 at the 10⁸ mol
+  edge of the domain, and turns negative below 5.5 × 10⁷ mol.
 - **"Equivalent when oxygen exceeds 1 × 10⁹ PAL"** (Fig. 2 caption, SI p. 10)
   cannot be right as printed. The simplified and full equations agree above
   about 10⁻⁸ PAL, so 10⁻⁹ was probably meant.
