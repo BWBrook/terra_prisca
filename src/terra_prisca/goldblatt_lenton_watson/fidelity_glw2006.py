@@ -574,6 +574,18 @@ def claims(vec, F, runs, beta3d: float) -> list[dict]:
     add("highest low-branch O at modern N", "< 1e-5 PAL", f"{f[0][0] / rd.pal_mol:.3g} PAL", "p. 684")
     add("bistable range of r at modern N", "contains part of 1.25e11-7.5e11 (shaded band)",
         f"{min(f[0][1], f[1][1]):.4g}-{max(f[0][1], f[1][1]):.4g}", "Fig. 2a")
+    rc = g.READINGS["author_corrected"]
+    Oc, freec, _ = g.branch_curve(rc, N=g.N_MODERN, n=8001)
+    fc = sorted(f[1] for f in g.folds(Oc, freec))
+    ends = []
+    for case in ("a", "c"):
+        N0, r0, N1, r1 = STEPS[case]
+        run = g.step(rc, N0=N0, r0=r0, N1=N1, r1=r1)
+        ends.append(f"case {case}: {run.O[0] / rc.pal_mol:.3g} -> {run.O[-1] / rc.pal_mol:.3g} PAL after 400 Myr")
+    add("corrected escape s = 3.7e-5 (Goldblatt's note): bistable range and Fig. 3 triggers",
+        "results and conclusion not affected (note)",
+        f"bistable r {fc[0]:.4g}-{fc[1]:.4g} at modern N; " + "; ".join(ends),
+        "Goldblatt's publications page", "author_corrected reading; the figures were drawn with s = 2.03e-5")
     r_bound = float(g.r_of_o(SULPHUR_BOUND_PAL * rd.pal_mol, g.N_MODERN, rd)[0])
     add("low stable state above the SI's 1e-5 PAL sulphur bound", "low state below 1e-5 PAL",
         f"for r between {f[0][1]:.4g} and {r_bound:.4g} at modern N", "SI Fig. 1 caption; Fig. 2a",

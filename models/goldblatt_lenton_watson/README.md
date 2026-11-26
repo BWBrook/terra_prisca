@@ -13,7 +13,10 @@ against the vector geometry of the published Figs 2 and 3 and of
 Supplementary Figs 2 and 3, and every number the text states is recomputed.
 
 Status: **reconstructed; reviewed by Codex (GLW-R1 to R9) and Gemini
-(GLW-G1 to G4)** (board thread 194).
+(GLW-G1 to G4)** (board thread 194). Claude Fable 5.2 (Anthropic), working in
+a separate session, rebuilt the steady states, folds and both transients
+independently and agrees with every number checked (reported by Barry W.
+Brook in chat, 26 November 2026).
 
 ## Sources
 
@@ -43,7 +46,9 @@ The citations were checked against Crossref on 25 November 2026.
   1.337 × 10¹¹–5.519 × 10¹¹ to 2.44 × 10¹¹–1.01 × 10¹² mol yr⁻¹, while the
   published Figs 2 and 3 were drawn with the old value, 2.03 × 10⁻⁵ yr⁻¹. The
   conclusion survives the correction: under s = 3.7 × 10⁻⁵ both Fig. 3
-  triggers still switch the system from the low state to the high one. The
+  triggers still switch the system from the low state to the high one
+  ([`glw2006_claims.csv`](fidelity/glw2006_claims.csv), the corrected-escape
+  row). The
   figures as printed, however, belong to the old value (see "What the source
   got wrong"). Codex found the note; Claude checked its wording.
 - Catling, D. C., Zahnle, K. J. & McKay, C. P. (2001). Biogenic methane,

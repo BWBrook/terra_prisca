@@ -16,7 +16,9 @@ Status: **Lovelock & Whitfield approved by Codex (1d7cd5d); Caldeira &
 Kasting approved by Codex (19efb5e); ingredient swap approved by Codex
 (cb73916)** (board thread 183). An external review by Gemini 4 Carbon
 (Google, through Antigravity) was addressed and approved by Codex (0db08ec,
-board thread 193).
+board thread 193). Claude Fable 5.2 (Anthropic), working in a separate
+session, rebuilt the family independently and agrees with every headline
+number (reported by Barry W. Brook in chat, 25 November 2026).
 
 ## Sources
 

@@ -276,3 +276,13 @@ def test_analytic_jacobian_matches_differences():
             dz[j] = 1e-5 if j < 2 else 1e-5 * abs(z[2])
             fd[:, j] = (g._log_rhs(0, z + dz, g.N_MODERN, r, P) - g._log_rhs(0, z - dz, g.N_MODERN, r, P)) / (2 * dz[j])
         assert np.allclose(g.jacobian(y, g.N_MODERN, r, P), fd, rtol=1e-6, atol=1e-12)
+
+
+def test_corrected_escape_keeps_bistability_and_both_triggers():
+    rc = g.READINGS["author_corrected"]
+    O, free, _ = g.branch_curve(rc, N=g.N_MODERN, n=8001)
+    lo, hi = sorted(f[1] for f in g.folds(O, free))
+    assert lo == pytest.approx(2.437e11, rel=2e-3) and hi == pytest.approx(1.006e12, rel=2e-3)
+    for N0, r0, N1, r1 in ((g.N_MODERN, 3e11, g.N_MODERN, 7.5e10), (3.6375e15, 3e11, g.N_MODERN, 3e11)):
+        run = g.step(rc, N0=N0, r0=r0, N1=N1, r1=r1, t_end=1e8)
+        assert run.O[0] / rc.pal_mol < 1e-5 and run.O[-1] / rc.pal_mol > 1e-2
