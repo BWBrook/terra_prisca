@@ -35,6 +35,15 @@ length requirements are 2500 words" matches the Report limit. No figure or table
 limit is stated for Research Articles. We count figure captions and table 1
 as well, to stay safe.
 
+**Recount, 26 November 2026 (Claude, at `90e2004`).** LibreOffice Writer's own
+word count of each part of `build/article.docx`: cover page 215 (title, byline,
+author note, affiliation, corresponding author), abstract 198, main text with
+headings 5,279, end statements 177, references 1,037; Table 1 451, figure
+captions 802. By the journal's definition (cover page, text, end statements,
+references) the article has **6,906 words**; the 13 equation labels lost in
+the Word export add 13, giving 6,919. With Table 1 and the captions it has
+8,159 (8,172 with the labels). The whole document counts 8,162 in Writer.
+
 **Front matter:**
 
 - **Abstract:** no more than 200 words, standalone, with no references or
